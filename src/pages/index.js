@@ -1,29 +1,29 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from "react";
+import { graphql } from "gatsby";
+import Errors from "../components/errors";
+import Page from "../templates/page";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+export const query = graphql`
+  query FrontpageQuery {
+    page: sanityFrontpageblock(_id: {eq: "frontpageblock"}) {
+      id
+      _rawPagebuildersectionarray
+      slug {
+        current
+      }
+      title
+    }
+  }
+`;
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+const IndexPage = props => {
+  const { data, errors } = props;
 
-export default IndexPage
+  if (errors) {
+    return <Errors errors={errors} />;
+  }
+
+  return <Page data={data} />;
+};
+
+export default IndexPage;
