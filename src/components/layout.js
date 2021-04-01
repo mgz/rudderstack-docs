@@ -7,32 +7,53 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
+
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import MainNavigation from "../components/main-navigation"
+
+import "../css/site.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+    {
+      allSanitySiteSettings {
+        edges {
+          node {
+            headerblock {
+              hdrlogo {
+                asset {
+                  fluid {
+                    src
+                  }
+                }
+              }
+              mainnavigation {
+                menu_block {
+                  menu_item_link
+                  menu_item_title
+                  _rawSubMenuSection
+                }
+              }
+            }
+            sitetitle
+          }
         }
       }
     }
   `)
+  console.log(data)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+        <header className="flex container mx-auto items-center">
+          <div className="w-1/3">
+            <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
+          </div>
+          <div className="w-2/3">
+            <MainNavigation />
+          </div>
+        </header>
         <main>{children}</main>
         <footer
           style={{
@@ -43,7 +64,6 @@ const Layout = ({ children }) => {
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
         </footer>
-      </div>
     </>
   )
 }
