@@ -2,12 +2,10 @@ import React from "react";
 import Image from "./image"
 
 function OurLogo(props) {
-  console.log('ourLogo: ', props)
   const maintitle = props.ourlogotitle
   const logoimages = props.outlogoimage
   return (
     <>
-    {/* {props} */}
       <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         <div className="flex flex-col w-full justify-center items-start text-center md:text-left">
           <h3 className="my-4 text-3xl font-bold leading-tight">{maintitle}</h3>
@@ -27,5 +25,4 @@ function OurLogo(props) {
     </>
   );
 }
-
 export default OurLogo;

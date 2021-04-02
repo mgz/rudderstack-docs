@@ -5,9 +5,9 @@ function renderImage(image) {
     const imgh = image.map(
         (imgs, i) => (
             (() => {
-                if(imgs != null && imgs != ''){
+                if(imgs !== null && imgs !== '' && typeof imgs !== 'undefined'){
                     return (
-                        <img src={imgs} />
+                        <img src={imgs} alt="" />
                     );
                 }
             })()
@@ -39,7 +39,7 @@ const Image = (props) => {
         const imgdata = images.map(
             (img, i) => (
                 (() => {
-                    if (img.node._id == props.props){                      
+                    if (img.node._id === props.props){                      
                         const image1 = img.node.fluid.src
                         return (
                             image1

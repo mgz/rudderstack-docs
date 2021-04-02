@@ -3,11 +3,11 @@ import { graphql } from "gatsby";
 
 import Hero from "../components/hero";
 import OurLogo from "../components/ourlogo";
-// import InfoRows from "../components/InfoRows";
-// import CTAColumns from "../components/cta-columns";
-// import CTA from "../components/cta";
-// import Pricing from "../components/pricing";
-// import { TopWave, BottomWave } from "../components/wave";
+import Tabs from "../components/tabs";
+import LeftRightImgCnt from "../components/left-right-image-content";
+import LatestBlog from "../components/latest-blog";
+import MiddleBanner from "../components/middle-banner";
+import Testimonial from "../components/testimonial";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
@@ -35,7 +35,7 @@ const Page = props => {
     );
   }
 
-  const site = (data || {}).site;
+  //const site = (data || {}).site;
 
 //   if (!site) {
 //     throw new Error(
@@ -48,10 +48,10 @@ const Page = props => {
     .filter(c => !c.disabled)
     .map((c, i) => {
       let el = null;
-      console.log(c)
+      console.log('template',c)
       switch (c._type) {
         // case "pricing":
-        //   el = <Pricing key={c._key} {...c} />;
+        //   el = <LeftRightImgCnt key={c._key} {...c} />;
         //   break;
         // case "infoRows":
         //   el = <InfoRows key={c._key} {...c} />;
@@ -61,11 +61,22 @@ const Page = props => {
           break;
         case "ourlogoblock":
           el = <OurLogo key={c._key} {...c} />;
-          console.log("test: ",el)
           break;
-        // case "ctaPlug":
-        //   el = <CTA key={c._key} {...c} />;
-        //   break;
+        case "tabsection":
+          el = <Tabs key={c._key} {...c} />;
+          break;
+        case "leftrightcontentimagesection":
+          el = <LeftRightImgCnt key={c._key} {...c} />;
+          break;
+        case "latestblogsection":
+          el = <LatestBlog key={c._key} {...c} />;
+          break;
+        case "middlebannersection":
+          el = <MiddleBanner key={c._key} {...c} />;
+          break;
+        case "testimonialsection":
+          el = <Testimonial key={c._key} {...c} />;
+          break;
         // case "uiComponentRef":
         //   switch (c.name) {
         //     case "topWave":
