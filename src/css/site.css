@@ -1,3 +1,118 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    background: linear-gradient(180deg, #E3F1F1 0%, rgba(238, 244, 245, 0) 100%);
+}
+@custom-media --media-min-small (min-width: 450px);
+@custom-media --media-max-small (max-width: 449px);
+@custom-media --media-min-medium (min-width: 675px);
+@custom-media --media-min-large (min-width: 900px);
+:root {
+    --font-family-sans: "Source Sans Pro", sans-serif;
+  
+    --color-black: #202123;
+    --color-dark-gray: #32373e;
+    --color-gray: #697a90;
+    --color-light-gray: #b4bcc7;
+    --color-very-light-gray: rgb(242, 244, 245);
+    --color-white: #fff;
+    --color-accent: #156dff;
+  
+    /* Typography */
+    --unit: 16;
+    --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
+    --font-micro-line-height: calc(12 / 10); /* 12px */
+    --font-small-size: calc(14 / var(--unit) * 1rem); /* 14px */
+    --font-small-line-height: calc(21 / 14); /* 21px */
+    --font-base-size: 1em; /* 16px */
+    --font-base-line-height: calc(24 / var(--unit)); /* 24px */
+    --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
+    --font-large-line-height: calc(27 / 18); /* 27px */
+  
+    --font-title3-size: calc(21 / var(--unit) * 1rem); /* 21px */
+    --font-title3-line-height: calc(30 / 21); /* 30px */
+    --font-title2-size: calc(24 / var(--unit) * 1rem); /* 24px */
+    --font-title2-line-height: calc(33 / 24); /* 33px */
+    --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
+    --font-title1-line-height: calc(57 / 49); /* 57px */
+  }
+  .header {
+    height: 60vh;
+    max-height: 460px;
+  }
+  .testimonials {
+    overflow: hidden;
+    position: relative;
+    max-height: 300px;
+  }
+  
+  /* .testimonials {
+    background: #161d25;
+  } */
+  
+  .one-slide,
+  .testimonial,
+  .message {
+    border: none !important;
+    outline: none !important;
+  }
+  
+  .icon-overlay {
+    position: absolute;
+    opacity: 0.3;
+    right: 10%;
+    top: 0;
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .carousel-controls .control {
+    position: absolute;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    z-index: 1;
+  }
+  
+  .prev {
+    left: -2.25rem;
+  }
+  
+  .next {
+    right: -2.25rem;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .testimonials {
+      max-height: 700px;
+    }
+    .icon-overlay {
+      height: 300px;
+      top: calc(50% - 150px);
+    }
+    .carousel-controls .control {
+      width: 25px;
+      height: 25px;
+      top: inherit;
+    }
+    .prev {
+      left: 0;
+    }
+    .next {
+      right: 0;
+    }
+    .control i {
+      font-size: .7rem;
+    }
+    .testimonials .message {
+      font-size: 1rem;
+    }
+    .testimonials h2 {
+      font-size: 1.5rem;
+    }
+  }
