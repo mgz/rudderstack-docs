@@ -5,8 +5,7 @@ import { connectSearchBox } from "react-instantsearch-dom"
 import Pagination from "../components/pagination"
 import algoliasearch from 'algoliasearch/lite';
 import CustomSearchBox from "../components/customSearchBox";
-import CustomMenu from "../components/blogCategoryList";
-import { InstantSearch, Configure, SortBy, Menu } from 'react-instantsearch-dom';
+import { InstantSearch, Configure, SortBy } from 'react-instantsearch-dom';
 import CustomHits from "../components/customHits"
 
 const Blog = (props) => {
@@ -15,18 +14,20 @@ const Blog = (props) => {
   const pageInfo = data.allSanityBlog.pageInfo
   return (
     <Layout>
-      <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+      <section className="blog-page">
         <InstantSearch
           searchClient={searchClient}
           indexName='rudderstack_blog'
           >
           <Configure hitsPerPage={13} />
-          <div className="container flex flex-wrap flex-col md:flex-row">
-            <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-solid border-b-2 border-grey-500">
-              <CustomMenu attribute="blog_category"/>
-            </div>
-            <div className="w-full md:w-2/5 pt-6 pb-3 text-center">
-              <CustomSearchBox />
+          <div className="">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2">
+              <div className="grid-cols-8">
+                <CustomSearchBox />
+              </div>
+              <div className="grid-cols-4">
+                <CustomSearchBox />
+              </div>
             </div>
             <div className="mt-8">
               <div id="hits-container">
@@ -43,7 +44,7 @@ const Blog = (props) => {
           </div>
 
         </InstantSearch>
-      </div>
+      </section>
     </Layout>
 )
 }

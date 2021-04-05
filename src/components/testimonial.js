@@ -1,12 +1,32 @@
 import React from "react";
+import $ from 'jquery'
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
 import Image from "./image"
     
 const Testimonial = (props) => {
-    console.log(props)
+    $(document).ready(function(){
+        $('.testimonial-slider').owlCarousel({
+            loop:true,
+            center: true,
+            nav:true,
+            dots:true,
+            autoplay:true,
+            autoplayTimeout:5000,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        })
+    });
     const testimonials = props.addtestimonial
-    // const smalldescription = props.smalldescription
-    // const title = props.title
-    // const btns = props.addbuttons
     return (
         <>
            <section class="testimonials py-5 text-black px-1 px-md-5 margin-top-xl">
@@ -17,13 +37,13 @@ const Testimonial = (props) => {
 
                         <div class="carousel-controls testimonial-carousel-controls">
 
-                        <div class="testimonial-carousel">
+                        <div className="testimonial-slider owl-carousel owl-theme">
                             {
                                 testimonials.map(
                                     (testimonial, i) => (
-                                        <div key={i} class="h5 font-weight-normal one-slide mx-auto">
+                                        <div key={i} class="item h5 font-weight-normal one-slide mx-auto">
                                         <div class="testimonial w-100 px-3 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
-                                        <div className="flex items-center mx-auto">
+                                        <div className="flex items-center w-max">
                                             <Image props={testimonial.clientimage.asset._ref} />
                                         </div>
                                             <p className="font-500 text-sm">{testimonial.clientname}</p>

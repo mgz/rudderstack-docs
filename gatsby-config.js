@@ -38,8 +38,7 @@ module.exports = {
         apiKey: 'f7fe2af9be190727bf81933dd11703df',
         queries: require("./src/utils/algolia"),
         enablePartialUpdates: true,
-        matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"],
-        attributesForFaceting: ["blog_category"]
+        matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
       },
     },
     `gatsby-plugin-styled-components`,

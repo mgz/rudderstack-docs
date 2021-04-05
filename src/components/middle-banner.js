@@ -6,7 +6,7 @@ const MiddleBanner = (props) => {
     const btns = props.addbuttons
     return (
         <>
-           <section className="bg-black text-white 100% border-b py-8">
+           <section className="bg-black text-white 100% py-8">
               <div className="container max-w-5xl mx-auto m-8">
                 <div className="w-full mb-4">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
