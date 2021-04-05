@@ -12,8 +12,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import MainNavigation from "../components/main-navigation"
 
-import "../css/site.css"
-
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     {
