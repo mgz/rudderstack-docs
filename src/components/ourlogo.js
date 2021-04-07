@@ -9,16 +9,16 @@ function OurLogo(props) {
     $('.logo-slider').owlCarousel({
         loop:true,
         margin:10,
-        nav:true,
-        dots:true,
+        nav:false,
+        dots:false,
         autoplay:true,
         autoplayTimeout:1000,
         responsive:{
             0:{
-                items:1
+                items:4
             },
             600:{
-                items:3
+                items:8
             },
             1000:{
                 items:15
@@ -30,8 +30,8 @@ function OurLogo(props) {
   const logoimages = props.outlogoimage
   return (
     <>
-      <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-        <div className="flex flex-col w-full justify-center items-start text-center md:text-left">
+      <section className="container px-3 mx-auto mb-20  flex flex-wrap flex-col md:flex-row items-center">
+        <div className="flex flex-col w-full justify-center items-start md:text-left">
           <h3 className="my-4 text-3xl font-bold leading-tight">{maintitle}</h3>
         </div>
         <div className="flex w-full justify-center">
@@ -49,7 +49,7 @@ function OurLogo(props) {
         }
          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

@@ -1,21 +1,18 @@
 import React from "react";
 import PortableText from "./portableText";
 import Image from "./image"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import '../lib/font-awesome';
     
 const LeftRightImgCnt = (props) => {
-    console.log('left: ', props)
     const maintitle = props.leftrightcontentmaintitle
     const smalltitle = props.leftrightcontentsmalltitle
     const contents = props.leftrightimageblock
     return (
         <>
-            <section className="bg-gray-100 100% border-b py-8">
-              <div className="container max-w-5xl mx-auto m-8">
-                <div className="flex flex-col w-full justify-center items-start text-center md:text-left">
+            <section className="bg-gray-100 100%">
+              <div className="container px-3 mx-auto">
+                <div className="flex flex-col w-full justify-center items-start md:text-left">
                     <p className="my-4 text-blue-500 font-bold uppercase">{smalltitle}</p>
-                    <h3 className="my-4 text-6xl font-bold leading-tight">{maintitle}</h3>
+                    <h3 className="my-4 text-4xl md:text-6xl font-bold leading-tight">{maintitle}</h3>
                 </div>
                 <div className="w-full mb-4">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -33,7 +30,7 @@ const LeftRightImgCnt = (props) => {
                                     const linkurl = content.addlink.cmnlink
                                     return (
                                         <div key={i} className="flex items-center flex-wrap flex-col-reverse sm:flex-row">	
-                                            <div className="w-full sm:w-1/2 p-6 mt-6">
+                                            <div className="w-full sm:w-1/2 md:p-6 mt-6">
                                             {(() => {
                                                 if (imgcondition === 'imageoption'){
                                                     const imgref = content.imageVideoConditionBlock.imageoption.asset._ref
@@ -44,7 +41,7 @@ const LeftRightImgCnt = (props) => {
                                                 return null;
                                             })()}
                                             </div>
-                                            <div className="w-full sm:w-1/2 p-6 mt-6">
+                                            <div className="w-full sm:w-1/2 md:p-6 mt-6">
                                                 <div className="align-middle">
                                                     <p className="my-4 text-blue-500 font-bold uppercase">{smalltitle}</p>
                                                     <h3 className="my-4 text-3xl font-bold leading-tight">{title}</h3>
@@ -52,10 +49,7 @@ const LeftRightImgCnt = (props) => {
                                                         <PortableText blocks={portabletext} />
                                                     </div>
                                                     <div className="my-8 flex items-center">
-                                                        <span className="border-black border rounded-full h-5 w-5 flex items-center justify-center">
-                                                            <FontAwesomeIcon icon="arrow-right" size="sm" />
-                                                        </span>
-                                                        <a href={linkurl} className="pl-3 font-bold leading-tight text-sm" >{linktext}</a>
+                                                        <a href={linkurl} className="font-bold leading-tight text-sm lr-icon" >{linktext}</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -72,20 +66,17 @@ const LeftRightImgCnt = (props) => {
                                     const linkurl = content.addlink.cmnlink
                                     return(
                                     <div key={i} className="flex items-center flex-wrap">
-                                        <div className="w-5/6 sm:w-1/2 p-6">
+                                        <div className="w-5/6 sm:w-1/2 md:p-6 mt-6">
                                             <p className="my-4 text-blue-500 font-bold uppercase">{smalltitle}</p>
                                             <h3 className="my-4 text-3xl font-bold leading-tight">{title}</h3>
                                             <div className="text-gray-500">
                                                 <PortableText blocks={portabletext} />
                                             </div>
                                             <div className="my-8 flex items-center">
-                                                <span className="border-black border rounded-full h-5 w-5 flex items-center justify-center">
-                                                    <FontAwesomeIcon icon="arrow-right" size="sm" />
-                                                </span>
-                                                <a href={linkurl} className="pl-3 font-bold leading-tight text-sm" >{linktext}</a>
+                                                <a href={linkurl} className="font-bold leading-tight text-sm lr-icon" >{linktext}</a>
                                             </div>
                                         </div>
-                                        <div className="w-full sm:w-1/2 p-6">
+                                        <div className="w-full sm:w-1/2 md:p-6 mt-6">
                                             {(() => {
                                                 if (imgcondition === 'imageoption'){
                                                     const imgref = content.imageVideoConditionBlock.imageoption.asset._ref

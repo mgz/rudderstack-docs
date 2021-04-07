@@ -68,14 +68,15 @@
    const footerlogo = data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.fluid.src
    return (
      <>
-         <header className="flex container mx-auto items-center">
+         {/* <header className="flex container mx-auto items-center">
            <div className="w-1/3">
              <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
            </div>
            <div className="w-2/3">
              <MainNavigation />
            </div>
-         </header>
+         </header> */}
+         <MainNavigation />
          <main>{children}</main>
  
          <footer className="bg-black">

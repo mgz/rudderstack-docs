@@ -1,7 +1,6 @@
 import React from "react";
 import PortableText from "./portableText";
 import Image from "./image"
-import '../lib/font-awesome';
     
 const RightSideHiglightedContent = (props) => {
     const maintitle = props.righthighlightedcontentmaintitle
@@ -10,14 +9,14 @@ const RightSideHiglightedContent = (props) => {
     const rightcontents = props.rhs_rightsection
     return (
         <>
-            <section className="bg-gray-100 100% py-8">
-              <div className="container mx-auto m-8">
-                <div className="flex flex-col w-full justify-center items-start text-center md:text-left">
-                    <p className="my-4 text-blue-500 font-bold uppercase">{smalltitle}</p>
-                    <h3 className="my-4 text-6xl font-bold leading-tight">{maintitle}</h3>
+            <section className="100% py-8">
+              <div className="container px-3 mx-auto">
+                <div className="flex flex-col w-full justify-center items-start md:text-left">
+                    <p className="mt-4 text-blue-500 font-bold uppercase">{smalltitle}</p>
+                    <h3 className="my-4 pb-10 text-4xl md:text-6xl font-bold leading-tight">{maintitle}</h3>
                 </div>
-                <div className="grid grid-cols-12 items-center flex-wrap">
-                    <div className="col-span-5 p-2">
+                <div className="grid md:grid-cols-12 items-center flex-wrap">
+                    <div className="md:col-span-5 p-2">
                     {
                         leftcontents.map(
                             (leftcontent, i) => (
@@ -27,9 +26,9 @@ const RightSideHiglightedContent = (props) => {
                                         const title = leftcontent.rhs_lb_title
                                         return (
                                             <>
-                                                <div className="">
+                                                <div className="mb-10">
                                                     <Image props={imgref} />
-                                                    <h3 className="mb-2 text-3xl font-bold leading-tight">{title}</h3>
+                                                    <h3 className="my-4 text-3xl font-bold leading-tight">{title}</h3>
                                                     <div className="text-gray-500">
                                                         <PortableText blocks={portabletext} />
                                                     </div>
@@ -41,7 +40,7 @@ const RightSideHiglightedContent = (props) => {
                         )
                     }  
                     </div>
-                    <div className="col-span-7 p-2 bg-green-50 rounded-lg">
+                    <div className="md:col-span-7 p-4 bg-green-50 rounded-lg">
                     {
                         rightcontents.map(
                             (rightcontent, i) => (
@@ -52,18 +51,18 @@ const RightSideHiglightedContent = (props) => {
                                         const buttons = rightcontent.rhs_rb_buttons
                                         return (
                                             <>
-                                                <div key={i} className="p-20">
+                                                <div key={i} className="md:p-20 lg:p-20">
                                                     <Image props={imgref} />
-                                                    <h3 className="mb-2 text-3xl font-bold leading-tight">{title}</h3>
+                                                    <h3 className="my-4 text-3xl font-bold leading-tight">{title}</h3>
                                                     <div className="text-gray-500">
                                                         <PortableText blocks={portabletext} />
                                                     </div>
-                                                    <div className="flex mt-6">
+                                                    <div className="md:flex block mt-6">
                                                     {
                                                         buttons.map(
                                                             (btn, i) => (
                                                             <>
-                                                                <a key={i} className={(btn.btnhiglight === true ? 'bg-black text-white' : '') + ` py-2 px-8 mr-4 rounded-lg border text-sm border-black`} href={btn.btnlink}>{btn.btntext}</a>
+                                                                <a key={i} className={(btn.btnhiglight === true ? 'bg-black text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-black`} href={btn.btnlink}>{btn.btntext}</a>
                                                             </>
                                                             )
                                                         )

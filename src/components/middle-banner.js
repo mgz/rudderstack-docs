@@ -8,24 +8,21 @@ const MiddleBanner = (props) => {
     const btns = props.addbuttons
     return (
         <>
-           <section className="bg-black text-white 100% py-8">
-              <div className="container max-w-5xl mx-auto m-8">
-                <div className="w-full mb-4">	
-                  <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
-                </div>
-                    <div className="flex flex-wrap flex-col-reverse items-center sm:flex-row">	
-                        <div className="w-full flex items-start sm:w-1/2 p-6 mt-6">
+           <section className="bg-black text-white 100% md:py-20 ">
+              <div className="container md:px-3 mx-auto">
+                    <div className="flex flex-wrap grid justify-items-center md:grid-cols-12 items-center sm:flex-row">	
+                        <div className="w-full flex items-start md:col-span-5 md:px-20 p-6 mt-6">
                             <FontAwesomeIcon icon="arrow-right" pull="left" className="text-blue-500 font-normal" size="6x" />
-                            <h3 className="my-4 text-6xl font-bold leading-tight">{title}</h3>
+                            <h3 className="my-4 text-4xl md:text-6xl font-bold leading-tight">{title}</h3>
                         </div>
-                        <div className="w-full sm:w-1/2 p-6 mt-6">
-                            <div className="align-middle">
+                        <div className="w-full md:col-span-7 md:px-20 p-6 mt-6">
+                            <div className="align-middle ">
                                 <p>{smalldescription}</p>
-                                <div className="flex pt-4">
+                                <div className="block md:flex pt-4">
                                 {
                                     btns.map(
                                         (btn, i) => (
-                                            <a key={i} className={(btn.btnhiglight === true ? 'bg-white text-black' : '') + ` py-2 px-8 mr-4 rounded-lg border border-white`} href={btn.btnlink}>{btn.btntext}</a>
+                                            <a key={i} className={(btn.btnhiglight === true ? 'bg-white text-black' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center mr-4 rounded-lg md:mb-0 mb-4 md:flex block border border-white`} href={btn.btnlink}>{btn.btntext}</a>
                                         )
                                     )
                                 }

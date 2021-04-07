@@ -8,11 +8,11 @@ const LatestBlog = (props) => {
     const latestblogs = props.latestblog
     return (
         <>
-           <section className="bg-white border-b py-8">
+           <section className="bg-white my-20">
               
-              <div className="container max-w-5xl mx-auto m-8 flex flex-wrap pt-4 pb-12">
+              <div className="container md:px-3 mx-auto flex flex-wrap pt-4 pb-12">
               
-                <h3 className="w-full my-2 text-3xl font-bold leading-tight text-gray-800">{maintitle}</h3>
+                <h3 className="w-full my-2 text-5xl px-6 font-bold leading-tight">{maintitle}</h3>
                 <div className="w-full mb-4">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>
@@ -27,7 +27,7 @@ const LatestBlog = (props) => {
                 }
                 
                 <div className="flex w-full text-center items-center">
-                    <p className="w-full my-2 text-blue-500 leading-tight text-center"><a href={viewallpostslink}>{viewalltext}</a></p>
+                    <p className="w-full my-2 text-blue-500 leading-tight text-center post-arrow"><a href={viewallpostslink}>{viewalltext}</a></p>
                 </div>
                 
               </div>
