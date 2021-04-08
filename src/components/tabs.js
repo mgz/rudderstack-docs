@@ -14,7 +14,7 @@ return (
             <h3 className="my-4 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
         </div>
         <div className="md:flex grid md:grid-cols-12 w-full md:gap-16">
-            <div className="md:col-span-5">
+            <div className="md:col-span-6">
             <ul
                 className="block mb-0 list-none pt-3 pb-4"
                 role="tablist"
@@ -46,9 +46,9 @@ return (
                 }
             </ul>
             </div>
-            <div className="pt-3 md:col-span-7 md:ml-8">
-            <div className="relative block bg-background p-4 min-w-0 break-words bg-white w-full mb-6 rounded">
-                <div className="md:px-24 lg:px-24">
+            <div className="pt-3 md:col-span-6 md:ml-8">
+            <div className="relative block bg-background p-4 min-w-0 break-words bg-white w-full mb-6 rounded-lg">
+                <div className="md:px-24 lg:px-24 py-16">
                 <div className="tab-content tab-space tab-content-item">
                 {
                     tabs.map(

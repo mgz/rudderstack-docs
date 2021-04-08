@@ -46,7 +46,7 @@ const Testimonial = (props) => {
                                                         <Image props={testimonial.clientimage.asset._ref} />
                                                     </div>
                                                 </div>
-                                                <p className="font-500 text-sm text-primary mb-2">{testimonial.clientname}</p>
+                                                <p className="font-bold text-sm text-primary mb-2">{testimonial.clientname}</p>
                                                 <p className="text-sm text-primary mb-4">{testimonial.clientdesignation}</p>
                                                 <div class="message text-center text-4xl tracking-wide font-bold text-primary blockquote">{testimonial.clientcontent}
                                                 </div>
