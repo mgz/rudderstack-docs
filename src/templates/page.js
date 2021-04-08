@@ -8,6 +8,8 @@ import LeftRightImgCnt from "../components/left-right-image-content";
 import LatestBlog from "../components/latest-blog";
 import MiddleBanner from "../components/middle-banner";
 import Testimonial from "../components/testimonial";
+import RightSideHiglightedContent from "../components/rightSideHiglightedContent";
+import FreeText from "../components/freeText";
 
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
@@ -77,6 +79,12 @@ const Page = props => {
         case "testimonialsection":
           el = <Testimonial key={c._key} {...c} />;
           break;
+        case "righthighlightedsection":
+          el = <RightSideHiglightedContent key={c._key} {...c} />;
+          break;
+        case "freetextwithrightimage":
+          el = <FreeText key={c._key} {...c} />;
+          break;
         // case "uiComponentRef":
         //   switch (c.name) {
         //     case "topWave":
@@ -112,7 +120,7 @@ const Page = props => {
           class: "leading-normal tracking-normal text-white gradient"
         }}
       />
-      <div className="pt-24">{content}</div>
+      <div className="pt-10">{content}</div>
     </Layout>
   );
 };
