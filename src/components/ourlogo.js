@@ -30,9 +30,9 @@ function OurLogo(props) {
   const logoimages = props.outlogoimage
   return (
     <>
-      <section className="container px-3 mx-auto mb-20  flex flex-wrap flex-col md:flex-row items-center">
+      <section className="container px-3 mx-auto md:mb-30 my-20 flex flex-wrap flex-col md:flex-row items-center">
         <div className="flex flex-col w-full justify-center items-start md:text-left">
-          <h3 className="my-4 text-3xl font-bold leading-tight">{maintitle}</h3>
+          <h3 className="my-4 text-3xl text-primary font-bold leading-tight">{maintitle}</h3>
         </div>
         <div className="flex w-full justify-center">
         <div className="logo-slider owl-carousel owl-theme">

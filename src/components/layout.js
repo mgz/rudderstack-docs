@@ -79,7 +79,7 @@
          <MainNavigation />
          <main>{children}</main>
  
-         <footer className="bg-black">
+         <footer className="bg-black text-sm">
            <div className="container mx-auto  px-8">
              <div className="w-full flex flex-col md:flex-row py-6">
                {
@@ -87,7 +87,7 @@
                      (menu, i) => (
                        <div key={i} className="flex-1">
                            <p className="uppercase text-white md:mb-6">{menu.widget_menu_section_title}</p>
-                           <ul className="list-reset mb-6">
+                           <ul className="list-reset mb-6 text-footer">
                                <FooterNav navRef={menu.widget_section_menu._ref} />
                            </ul>
                        </div>
@@ -99,7 +99,7 @@
                      (item, i) => (
                        <div key={i} className="flex-1">
                            <p className="uppercase text-white md:mb-6">{item.widget_desc_section_title}</p>
-                           <div className="text-gray-500">
+                           <div className="text-footer">
                              <PortableText blocks={item.widget_section_desc} />
                            </div>
                        </div>
@@ -144,7 +144,7 @@
                <p className="lowercase text-right px-2 text-sm">{data.allSanitySiteSettings.edges[0].node.sitetitle}</p>
              </div>
              <div className="flex flex-wrap w-1/2 items-end">
-               <p className="text-gray-500">{copyright}</p>
+               <p className="text-footer">{copyright}</p>
              </div>
            </div>
          </footer>

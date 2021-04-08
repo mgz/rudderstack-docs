@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #000000;
+  --secondary: #4E4E4E;
+  --blue: #0066FF;
+  --background: #EEF5F5;
+  --backgroundsecondary: #FAFAFA;
+  --white: #ffffff;
+  --postdate: #707A88;
+  --footer: #B1BECB;
+  --tabborder: #C6C6C6;
+  ;
+}
+
 body{
   background: linear-gradient(180deg, #E3F1F1 0%, rgba(238, 244, 245, 0) 100%)no-repeat !important; height: 835px; left: 0px; top: -5px;
 }
@@ -91,12 +104,40 @@ body{
   --main: #0d0106;
   --header: #2d3748;
 }
-  .header {
-    height: 60vh;
-    max-height: 460px;
-  }
-  /* .testimonials {
-    overflow: hidden;
-    position: relative;
-    max-height: 300px;
-  } */
+.header {
+  height: 60vh;
+  max-height: 460px;
+}
+.testimonials{
+  position: relative;
+}
+/* .bgimg{
+  background-image: url("../images/test-bg.png")no-repeat;
+  background-size: cover;
+  background-position: center top;
+} */
+/* .usr_img{
+  position: relative;
+  top: -50px;
+} */
+/*carosul*/
+.testimonials .owl-nav button.owl-prev {
+  top: 50% !important;
+  position: absolute;
+  left: 0px !important;
+  background: url("../images/prev.png")no-repeat !important;
+  width: 100%;
+  height: 100px;
+}
+.testimonials .owl-nav button.owl-next {
+top: 50% !important;
+position: absolute;
+right: 0px !important;
+background: url("../images/next.png")no-repeat !important;
+width: 100%;
+height: 100px;
+}
+/* .testimonial-slider{
+position: relative;
+top: -60px;
+} */

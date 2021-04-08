@@ -8,14 +8,11 @@ const LeftRightImgCnt = (props) => {
     const contents = props.leftrightimageblock
     return (
         <>
-            <section className="bg-gray-100 100%">
-              <div className="container px-3 mx-auto">
+            <section className="bg-backgroundsecondary 100%">
+              <div className="container px-3 mx-auto ">
                 <div className="flex flex-col w-full justify-center items-start md:text-left">
-                    <p className="my-4 text-blue-500 font-bold uppercase">{smalltitle}</p>
-                    <h3 className="my-4 text-4xl md:text-6xl font-bold leading-tight">{maintitle}</h3>
-                </div>
-                <div className="w-full mb-4">	
-                  <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+                    <p className="my-4 mt-20 text-blue text-sm font-bold uppercase">{smalltitle}</p>
+                    <h3 className="my-4 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
                 </div>
                 {
                     contents.map(
@@ -43,9 +40,9 @@ const LeftRightImgCnt = (props) => {
                                             </div>
                                             <div className="w-full sm:w-1/2 md:p-6 mt-6">
                                                 <div className="align-middle">
-                                                    <p className="my-4 text-blue-500 font-bold uppercase">{smalltitle}</p>
-                                                    <h3 className="my-4 text-3xl font-bold leading-tight">{title}</h3>
-                                                    <div className="text-gray-500">
+                                                    <p className="my-4 text-sm text-blue font-bold uppercase">{smalltitle}</p>
+                                                    <h3 className="my-4 text-3xl text-primary font-bold leading-tight">{title}</h3>
+                                                    <div className="text-secondary leading-7 text-lg">
                                                         <PortableText blocks={portabletext} />
                                                     </div>
                                                     <div className="my-8 flex items-center">
@@ -67,9 +64,9 @@ const LeftRightImgCnt = (props) => {
                                     return(
                                     <div key={i} className="flex items-center flex-wrap">
                                         <div className="w-5/6 sm:w-1/2 md:p-6 mt-6">
-                                            <p className="my-4 text-blue-500 font-bold uppercase">{smalltitle}</p>
-                                            <h3 className="my-4 text-3xl font-bold leading-tight">{title}</h3>
-                                            <div className="text-gray-500">
+                                            <p className="my-4 text-blue text-sm font-bold uppercase">{smalltitle}</p>
+                                            <h3 className="my-4 text-3xl text-primary font-bold leading-tight">{title}</h3>
+                                            <div className="text-secondary leading-7 text-lg">
                                                 <PortableText blocks={portabletext} />
                                             </div>
                                             <div className="my-8 flex items-center">

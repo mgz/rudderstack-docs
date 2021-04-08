@@ -23,7 +23,36 @@ module.exports = {
         priceCardBorder:'#E1E1E1',
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        "primary": "var(--primary)",
+        "secondary": "var(--secondary)",
+        "blue": "var(--blue)",
+        "background": "var(--background)",
+        "backgroundsecondary": "var(--backgroundsecondary)",
+        "white": "var(--white)",
+        "postdate": "var(--postdate)",
+        "footer": "var(--footer)",
+        "tabborder": "var(--tabborder)",
+      },
+      fontSize: {
+        'xs': '.75rem',
+        'sm': '14px',
+        'tiny': '.875rem',
+        'base': '16px',
+        'lg': '18px',
+        'xl': '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '28px',
+        '4xl': '40px',
+        '5xl': '50px',
+        '6xl': '64px',
+        '7xl': '5rem',
+       },
+       backgroundImage: theme => ({
+        'hero-pattern': "url('../images/test-bg.png')",
+       })
+    },
     fontFamily: {
       custom: ['Basis Grotesque Pro', 'sans-serif'],
     },

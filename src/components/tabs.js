@@ -10,8 +10,8 @@ return (
     <>
     <section className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-20">
         <div className="flex flex-col w-full justify-center items-start md:text-left mb-8">
-            <p className="my-4 text-blue-500 font-bold uppercase">{smalltitle}</p>
-            <h3 className="my-4 text-4xl md:text-6xl font-bold leading-tight">{maintitle}</h3>
+            <p className="my-4 text-blue text-sm font-bold uppercase">{smalltitle}</p>
+            <h3 className="my-4 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
         </div>
         <div className="md:flex grid md:grid-cols-12 w-full md:gap-16">
             <div className="md:col-span-5">
@@ -25,10 +25,10 @@ return (
                             <li key={i} className="-mb-px mr-2 last:mr-0 flex-auto my-2">
                             <a
                                 className={
-                                "text-sm px-5 py-3 block leading-normal " +
+                                "text-lg px-5 py-3 block leading-normal " +
                                 (openTab === i
-                                    ? "text-blue-500 border-l-4 border-blue-500"
-                                    : "text-black bg-white border-l-4 border-gray-400 ")
+                                    ? "text-blue border-l-4 border-blue"
+                                    : "text-secondary bg-white border-l-4 border-tabborder ")
                                 }
                                 onClick={e => {
                                 e.preventDefault();
@@ -47,7 +47,7 @@ return (
             </ul>
             </div>
             <div className="pt-3 md:col-span-7 md:ml-8">
-            <div className="relative block bg-green-50 p-4 min-w-0 break-words bg-white w-full mb-6 rounded">
+            <div className="relative block bg-background p-4 min-w-0 break-words bg-white w-full mb-6 rounded">
                 <div className="md:px-24 lg:px-24">
                 <div className="tab-content tab-space tab-content-item">
                 {
