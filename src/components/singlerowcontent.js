@@ -11,27 +11,24 @@ import { Link } from "gatsby"
 const Singlerowcontent = ({ hit }) => {
 
   return (
-    <div key="900"
-         className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">
-      <div className="md:flex">
-        <div className="md:flex-shrink-0">
+    <div key="0"
+         className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden border border-gray-200 shadow-md">
+      <div className="sm:flex">
+        <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link to={hit.slug}>
             <img src={hit.blogimage.src} alt={hit.title}
-                 className="h-56 md:max-w-2xl"
+                 className="sm:h-full lg:max-w-2xl object-cover"
                  loading="eager"/>
           </Link>
         </div>
         <div class="p-8">
-          <div
-            lassName="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{hit.blog_category}</div>
+          <div className="uppercase text-sm text-indigo-700 font-bold">{hit.blog_category}</div>
           <h2
-            className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
+            className="block mt-14 text-2xl md:text-2xl lg:text-4xl leading-tight font-medium text-black">
             <Link to={hit.slug}>{hit.title}</Link>
           </h2>
 
-          <div class="mt-2 text-gray-500">
-            <span>{hit.dateString}</span>
-            <span> | </span>
+          <div class="mt-2 text-2xl md:text-3xl text-indigo-700 font-bold">
             <span>By {hit.author_name}</span>
           </div>
         </div>

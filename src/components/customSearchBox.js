@@ -1,21 +1,26 @@
 import React from "react"
 import { connectSearchBox } from "react-instantsearch-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
 
 const SearchBox = ({ currentRefinement, isSearchStalled, refine }) => (
   <>
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <input
         type="text"
         autoCapitalize="off"
         autoComplete="off"
         autoCorrect="off"
-        placeholder="Search for…"
+        placeholder="Type your Keyword"
         role="textbox"
         spellCheck="false"
         value={currentRefinement}
-        className="form-input px-4 py-3 rounded-full"
+        className="border border-gray-400 bg-white h-10 px-5 pr-16 rounded text-sm focus:outline-none w-full"
         onChange={event => refine(event.currentTarget.value)}
       />
+      <div class="absolute top-0 right-0 rounded bg-indigo-500 hover:bg-indigo-600 w-12">
+        <FontAwesomeIcon icon={faSearch} size="lg" className="h-10 text-white pt-2 py-2"/>
+        </div>
     </div>
   </>
 )

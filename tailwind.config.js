@@ -27,6 +27,9 @@ module.exports = {
     fontFamily: {
       custom: ['Basis Grotesque Pro', 'sans-serif'],
     },
+    boxShadow: {
+      md: '0 1px 24px rgba(0, 0, 0, 0.05), 0 1px 24px rgba(0, 0, 0, 0.05)'
+    }
   },
   variants: {
     extend: {},

@@ -10,12 +10,12 @@ import React from "react"
 import { connectPagination } from 'react-instantsearch-dom';
 
 const Pagination = ({ currentRefinement, nbPages, refine, createURL }) => (
-    <ul>
+    <ul className="flex">
       {new Array(nbPages).fill(null).map((_, index) => {
         const page = index + 1;
 
         return (
-          <li key={index}>
+          <li key={index} className="pl-2 pr-2 text-base">
             <Link
               to={createURL(page)}
               onClick={event => {

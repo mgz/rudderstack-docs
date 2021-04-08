@@ -1,23 +1,36 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import Herobanner from "../components/herobanner"
+import BlockContent from '@sanity/block-content-to-react'
 
 
-const Singlecontent = ({data}) => {
-  const section = data.section
+const Singleblog = ({data}) => {
+  const blog = data.blog
   return (
     <Layout>
-      Blog content
+      <Herobanner title={blog.title} date={blog.blogdate} author={blog.author_name} image={blog.blog_image} />
+      <div className="pt-16 max-w-4xl m-auto">
+        <BlockContent blocks={blog._rawDescription} />
+        <div className="pt-8 flex bg-gray-200 rounded-2xl bg-opacity-40">
+          <div><img src={blog.author_image.asset.fluid.src} className="rounded-full h-24" /></div>
+          <div>
+            <div>About the author</div>
+            <div>{blog.author_name}</div>
+            <div>{blog.author_desc}</div>
+          </div>
+        </div>
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
   query GetSingleBlog($slug: String) {
-    section: sanityBlog(slug: { eq: $slug }) {
+    blog: sanityBlog(slug: { eq: $slug }) {
       title
       _rawDescription
-      blogdate(formatString: "MM-DD-YYYY")
+      blogdate(formatString: "MMMM DD, Y")
       author_position
       author_name
       author_desc
@@ -42,4 +55,4 @@ export const query = graphql`
   }
 `
 
-export default Singlecontent
+export default Singleblog
