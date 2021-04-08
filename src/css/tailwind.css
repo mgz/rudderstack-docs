@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1{
+    @apply leading-normal;
+  }
+  h2{
+    @apply text-4xl;
+  }
+  h4 {
+    @apply text-lg font-custom;
+  }
+  h6{
+    @apply text-grayNew-custom text-xl;
+  }
+}
+@layer components {
+  .td-first-colum{
+    @apply p-6 text-lg text-left;
+  }
+  .accordion__button{
+    @apply text-black-custom font-normal bg-grayNew-BgGray;
+  }
+  .faq-title{
+    @apply text-black-custom font-normal font-bold pr-12;
+  }
+  .faq-answer{
+    @apply text-base text-grayNew-custom leading-7 pr-12;
+  }
+  .checkImg{
+    @apply w-5 h-4;
+  }
+  
+}
+/* cards css */
+@media only screen and (min-width: 1024px) {
+  .pricing-plans:after{
+    content: '';
+    position: absolute;
+    right:-95%;
+    top:16%;
+    width:100%;
+    height: 1px;
+    border-top:10px solid #fff;
+  }
+  .pricing-plans:before{
+    content: '';
+    position: absolute;
+    left:-95%;
+    top:35%;
+    width:100%;
+    height: 1px;
+    border-top:10px solid #fff;
+  }
+  .proCard:before{
+    content: '';
+    position: absolute;
+    right:-25px;
+    top:34%;
+    width:50px;
+    height: 1px;
+    border-top:10px solid #fff;
+  }
+  .proCard:after{
+    content: '';
+    position: absolute;
+    left:-25px;
+    top:15%;
+    width:50px;
+    height: 1px;
+    border-top:10px solid #fff;
+  }
+}
+/* Faq Section Css */
+.accordion{
+  border:none;
+}
+.accordion__panel{
+  padding:10px 20px;
+}
+.accordion__button:hover{
+  background:none;
+}
+.accordion__button{
+  position: relative;
+}
+.accordion__button:before{
+  background-image: url('../images/math-plus.svg');
+  border: none;
+  transform: rotate(0deg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+.accordion__button[aria-expanded='true']::before{
+  background-image: url('../images/math-minus.svg');
+  border: none;
+  transform: rotate(0deg);
+  background-size: 100%;
+  width: 16px;
+  height:2px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 10px;
+  top: 30px;
+}
+.accordion__button:focus{
+  outline: none;
+}
+.accordion__item + .accordion__item{
+  border:none;
+}
+/* rangeslider Section Css */
+.rangeslider-horizontal{
+  height: 16px;
+}
+.rangeslider-horizontal .rangeslider__fill{
+  background-color:#0066FF;
+}
+.rangeslider-horizontal .rangeslider__handle:after{
+  width: 25px;
+  height: 25px;
+  background: #0066FF url('../images/select.png') no-repeat center center;
+  background-size: 16px;
+  top: 8px;
+  left: 8px;
+  box-shadow:none;
+}
+.rangeslider{
+  background-color: #EEF5F5;
+  margin:15px 0;
+}
+.rangeslider, .rangeslider .rangeslider__fill{
+  box-shadow:none;
+}
+.rangeslider-horizontal .rangeslider__handle{
+  border:none;
+  background:#EEF5F5;
+  width: 41px;
+  height: 41px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+}
+.rangeslider .rangeslider__handle:focus{
+  outline: none;
+}
+.rangeslider-horizontal .rangeslider__handle-tooltip{
+  top: auto;
+  bottom: -70px;
+  background-color: #0066FF;
+  font-size: 28px;
+  font-weight: bold;
+  width: auto;
+  padding: 0 25px;
+  height: 45px;
+  border-radius: 8px;
+}
+.rangeslider-horizontal .rangeslider__handle-tooltip span{
+  margin-top:0;
+}
+.rangeslider-horizontal .rangeslider__handle-tooltip:after{
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid #0066FF;
+  border-top: none;
+  left: 50%;
+  bottom: auto;
+  top:-14px;
+  transform: translate3d(-50%, 0, 0);
+}
+
+/* arrow cta css*/
+
+.arrow-cta:before{
+  position: absolute;
+  content:'';
+  width: 20px;
+  height: 20px;
+  background: url('../images/arrow-right-o.png') no-repeat center center;
+  background-size: 20px;
+  top:0;
+  left:0; 
+}
+
+@media only screen and (max-width: 348px) {
+  .arrow-cta{
+    padding:0 20px;
+  }
+  .arrow-cta:before{
+    left:10px;
+  }
+}
