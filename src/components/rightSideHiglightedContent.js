@@ -26,7 +26,7 @@ const RightSideHiglightedContent = (props) => {
                                         const title = leftcontent.rhs_lb_title
                                         return (
                                             <>
-                                                <div className="mb-10">
+                                                <div key={i} className="mb-10">
                                                     <Image props={imgref} />
                                                     <h3 className="my-4 text-3xl text-primary font-bold leading-tight">{title}</h3>
                                                     <div className="text-secondary text-lg leading-7">

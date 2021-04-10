@@ -50,7 +50,6 @@ const Page = props => {
     .filter(c => !c.disabled)
     .map((c, i) => {
       let el = null;
-      console.log('template',c)
       switch (c._type) {
         // case "pricing":
         //   el = <LeftRightImgCnt key={c._key} {...c} />;

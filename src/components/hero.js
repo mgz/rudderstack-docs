@@ -17,7 +17,7 @@ function Hero(props) {
                           herobannerbutton.map(
                               (btn, i) => (
                                 <>
-                                  <a key={i} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 md:mb-0 mb-4 md:flex block rounded-lg border border-black`} href={btn.btnlink}>{btn.btntext}</a>
+                                  <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 md:mb-0 mb-4 md:flex block rounded-lg border border-black`} href={btn.btnlink}>{btn.btntext}</a>
                                 </>
                               )
                           )
@@ -31,33 +31,6 @@ function Hero(props) {
           </div>
       </div>
   </section>
-
-    {/* <section className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-      
-      <div className="grid grid-cols-12 gap-20 sm:w-full">
-        <div className="col-span-6 flex flex-col justify-center p-15 items-start sm:w-full">
-          <div className="leading-normal text-2xl mb-8">
-            <h2 className="my-4 text-6xl font-bold leading-tight">{props.herobannertitle}</h2>
-            <PortableText blocks={props.herobannercontent} />
-          </div>
-          <div className="flex">
-          {
-              herobannerbutton.map(
-                  (btn, i) => (
-                    <>
-                      <a key={i} className={(btn.btnhiglight === true ? 'bg-black text-white' : '') + ` py-2 px-8 mr-4 rounded-lg border border-black`} href={btn.btnlink}>{btn.btntext}</a>
-                    </>
-                  )
-              )
-          }
-          </div>
-        </div>
-        
-        <div className="col-span-6 py-6 text-center sm:w-full">
-            <Image props={props.herobannerimage.asset._ref} />
-        </div>  
-      </div>
-    </section> */}
     </>
   );
 }

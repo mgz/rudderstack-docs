@@ -1,6 +1,6 @@
-require("dotenv").config({
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 module.exports = {
   siteMetadata: {
     title: `Rudderstack`,
@@ -33,13 +33,22 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-algolia`,
-      options: {
+      options:
+      {
         appId: 'CXEE6UEOI8',
         apiKey: 'f7fe2af9be190727bf81933dd11703df',
         queries: require("./src/utils/algolia"),
         enablePartialUpdates: true,
         matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
       },
+      // {
+      //   appId: '4K4TPPS0OQ',
+      //   apiKey: '0a5e12672bfb6f5c1076f7266bfed56d',
+      //   indexName: 'dev_gatsby_integration',
+      //   queries: require("./src/utils/integration-algolia"),
+      //   enablePartialUpdates: true,
+      //   matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
+      // },
     },
     `gatsby-plugin-styled-components`,
     {

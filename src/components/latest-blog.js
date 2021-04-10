@@ -5,7 +5,6 @@ const LatestBlog = (props) => {
     const maintitle = props.maintitle
     const viewalltext = props.viewalltext
     const viewallpostslink = props.viewallpostslink
-    const latestblogs = props.latestblog
     return (
         <>
            <section className="bg-white my-20">
@@ -16,16 +15,7 @@ const LatestBlog = (props) => {
                 <div className="w-full mb-4">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>
-                {
-                    latestblogs.map(
-                        (latestblog, i) => (
-                            <div key={i} className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-                                <BlogModule key={i} blogRef={latestblog._ref} />
-                            </div>
-                        )
-                    )
-                }
-                
+                <BlogModule  />
                 <div className="flex w-full text-center items-center">
                     <p className="w-full my-2 text-blue text-lg leading-tight text-center post-arrow"><a href={viewallpostslink}>{viewalltext}</a></p>
                 </div>

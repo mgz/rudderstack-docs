@@ -53,8 +53,8 @@ const MainNavigation = () => {
         <div className=" lg:flex-grow">
         {
           mainmenu.map(
-              (link, i) => (
-                  <Link to={link.menu_item_link} className="block mt-4 lg:inline-block lg:mt-0 text-main mr-4">
+              (link) => (
+                  <Link key={link._key} to={link.menu_item_link} className="block mt-4 lg:inline-block lg:mt-0 text-main mr-4">
                   {link.menu_item_title}
                       {/* {(() => {
                           if (link._rawSubMenuSection != null){

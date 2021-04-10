@@ -68,14 +68,6 @@
    const footerlogo = data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.fluid.src
    return (
      <>
-         {/* <header className="flex container mx-auto items-center">
-           <div className="w-1/3">
-             <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
-           </div>
-           <div className="w-2/3">
-             <MainNavigation />
-           </div>
-         </header> */}
          <MainNavigation />
          <main>{children}</main>
  
@@ -85,7 +77,7 @@
                {
                  footermenus.map(
                      (menu, i) => (
-                       <div key={i} className="flex-1">
+                       <div key={menu._key} className="flex-1">
                            <p className="uppercase text-white md:mb-6">{menu.widget_menu_section_title}</p>
                            <ul className="list-reset mb-6 text-footer">
                                <FooterNav navRef={menu.widget_section_menu._ref} />
@@ -97,7 +89,7 @@
                {
                  footerdescitems.map(
                      (item, i) => (
-                       <div key={i} className="flex-1">
+                       <div key={item._key} className="flex-1">
                            <p className="uppercase text-white md:mb-6">{item.widget_desc_section_title}</p>
                            <div className="text-footer">
                              <PortableText blocks={item.widget_section_desc} />
@@ -118,14 +110,14 @@
                        let rss = /rss/;
                        if (rss.test(socialitem.social_item_icon)){
                            return (
-                               <a key={i} className='icons pr-4' href={socialitem.social_item_link}>
+                               <a key={socialitem._key} className='icons pr-4' href={socialitem.social_item_link}>
                                  <FontAwesomeIcon 
                                    icon={socialitem.social_item_icon} />
                                </a>
                            )
                        }else{
                          return (
-                           <a key={i} className='icons pr-4' href={socialitem.social_item_link}>
+                           <a key={socialitem._key} className='icons pr-4' href={socialitem.social_item_link}>
                              <FontAwesomeIcon 
                                icon={['fab', socialitem.social_item_icon]} />
                            </a>
