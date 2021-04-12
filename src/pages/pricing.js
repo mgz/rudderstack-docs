@@ -16,7 +16,7 @@ const PricingPage = () => {
     <Layout>
     <SEO title="Pricing Page" />
     <div className="pt-24">
-      <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-skyblue to-blueNew-skyblue">
+      <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter">
         <div class="container px-3 mx-auto flex flex-wrap flex-col items-center text-center max-w-screen-md">
           <h1 className="my-4 text-5xl md:text-5xl font-bold font-custom leading-snug">
             Choose Your RudderStack Cloud Plan
@@ -32,21 +32,14 @@ const PricingPage = () => {
               <h6>Our Pro pricing starts at $750 for 25m events and gets cheaper as you scale</h6>
             </div>
           <div className="text-left mx-auto w-3/4 font-custom my-16">
-            <span className="text-grayNew-lighter text-lg font-bold">Events</span>
+            <span className="text-grayColor-lighter text-lg font-bold">Events</span>
             <Horizontal/>  
           </div>        
         </div>
       </section>
       <PricePlans/>
-      <div className="container px-3 mx-auto flex flex-wrap items-center pb-18">
-        <div className="py-8 mb-10 w-full text-lg text-center text-blueNew-custom font-bold border border-grayNew-priceCardBorder shadow-lg max-w-screen-lg m-auto">
-        <p>Currently running Segment? </p>
-         <a href="#" className="arrow-cta pl-7 text-xs	sm:text-sm text-black-custom font-bold inline-flex mt-3 relative">
-            Talk with one of our Segment Migration Specialists.
-          </a>
-        </div>
-      </div>
-      <Faq/>      
+      
+      <Faq/>  
     </div>
     
   </Layout>

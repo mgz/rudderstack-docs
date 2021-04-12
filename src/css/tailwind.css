@@ -13,7 +13,7 @@
     @apply text-lg font-custom;
   }
   h6{
-    @apply text-grayNew-custom text-xl;
+    @apply text-grayColor-custom text-xl;
   }
 }
 @layer components {
@@ -21,13 +21,13 @@
     @apply p-6 text-lg text-left;
   }
   .accordion__button{
-    @apply text-black-custom font-normal bg-grayNew-BgGray;
+    @apply text-black-custom font-normal bg-grayColor-BgGray;
   }
   .faq-title{
     @apply text-black-custom font-normal font-bold pr-12;
   }
   .faq-answer{
-    @apply text-base text-grayNew-custom leading-7 pr-12;
+    @apply text-base text-grayColor-custom leading-7 pr-12;
   }
   .checkImg{
     @apply w-5 h-4;
@@ -74,6 +74,9 @@
   }
 }
 /* Faq Section Css */
+.faqcta{
+  background-color: #ffffff;
+}
 .accordion{
   border:none;
 }
@@ -86,7 +89,11 @@
 .accordion__button{
   position: relative;
 }
-.accordion__button:before{
+.accordion__title{
+  position: relative;
+  width:100%;
+}
+.accordion .accordion__title:before{
   background-image: url('../images/math-plus.svg');
   border: none;
   transform: rotate(0deg);
@@ -95,26 +102,35 @@
   width: 16px;
   height: 16px;
   position: absolute;
-  right: 10px;
-  top: 20px;
+  content:'';
+  right: 0px;
+  top: 0px;
 }
-.accordion__button[aria-expanded='true']::before{
+.accordion.active .accordion__title:before{
+  display: none;
+}
+.accordion.active .accordion__title:after{
   background-image: url('../images/math-minus.svg');
   border: none;
   transform: rotate(0deg);
   background-size: 100%;
-  width: 16px;
-  height:2px;
   background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
   position: absolute;
-  right: 10px;
-  top: 30px;
+  content:'';
+  right: 0px;
+  top: 7px;
 }
-.accordion__button:focus{
+button.accordion:focus{
   outline: none;
 }
 .accordion__item + .accordion__item{
   border:none;
+}
+.accordion__title,
+.accordion__content{
+  padding-right: 50px;
 }
 /* rangeslider Section Css */
 .rangeslider-horizontal{
@@ -194,4 +210,50 @@
   .arrow-cta:before{
     left:10px;
   }
+}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
+
+/* Style the accordion section */
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+
+/* Style the accordion content title */
+.accordion__title {
+  font-weight: 700;
+  font-size: 18px;
+  text-align: left;
+  font-family: "Basis Grotesque Pro", sans-serif;
+}
+
+/* Style the accordion chevron icon */
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+
+/* Style the accordion content panel. Note: hidden by default */
+.accordion__content {
+  overflow: auto;
+  transition: max-height 0.2s ease;
+}
+
+/* Style the accordion content text */
+.accordion__text {
+  font-size: 16px;
+  padding: 18px;
+  font-family: "Basis Grotesque Pro", sans-serif;
 }

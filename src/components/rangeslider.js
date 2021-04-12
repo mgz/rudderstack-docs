@@ -51,10 +51,10 @@ class Horizontal extends Component {
           <span>25m</span><span className="ml-auto">150m+</span>
         </div>
         <div className="bg-blueNew-lighter lg:flex px-14 py-6 mt-16 text-center lg:text-left"> 
-          <div className="lg:w-1/3  py-2 lg:py-0 text-grayNew-custom"><span className="font-bold text-black-custom">Monthly price: </span><span id="text1">$1800</span></div>
-          <div className="lg:w-1/3 py-2 lg:py-0 text-grayNew-custom"><span className="font-bold text-black-custom text2">Monthly price: </span><span id="text2">$18000</span> <br/>
+          <div className="lg:w-1/3  py-2 lg:py-0 text-grayColor-custom"><span className="font-bold text-black-custom">Monthly price: </span><span id="text1">$1800</span></div>
+          <div className="lg:w-1/3 py-2 lg:py-0 text-grayColor-custom"><span className="font-bold text-black-custom text2">Monthly price: </span><span id="text2">$18000</span> <br/>
           <span className="lg:pl-28 italic" id="text3">16% discount</span></div>
-          <div className="lg:w-1/3 py-2 lg:py-0 text-center"><button class="sm:text-sm text-xs font-bold py-2.5 px-8 rounded bg-black-custom text-white-custom" id="text4">Sign up</button></div>
+          <div className="lg:w-1/3 py-2 lg:py-0 text-center"><button class="sm:text-sm text-xs font-bold py-2.5 px-8 rounded bg-black-custom text-whiteColor-custom" id="text4">Sign up</button></div>
         </div>
       </div>
     )

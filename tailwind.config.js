@@ -5,9 +5,6 @@ module.exports = {
     colors:{
       transparent: 'transparent',
       current: 'currentColor',
-      white: {        
-        custom: '#ffffff',       
-      },
       black: {        
         custom: '#000000',       
       },
@@ -16,11 +13,14 @@ module.exports = {
         skyblue:'#E3F1F1',
         custom: '#0066FF',     
       },
-      grayNew: {
+      grayColor: {
         custom:'#4E4E4E',
         lighter: '#A7A7A7', 
         BgGray:'#FAFAFA',
         priceCardBorder:'#E1E1E1',
+      },
+      whiteColor: {        
+        custom: '#ffffff',       
       },
     },
     extend: {
@@ -56,9 +56,6 @@ module.exports = {
     fontFamily: {
       custom: ['Basis Grotesque Pro', 'sans-serif'],
     },
-    boxShadow: {
-      md: '0 1px 24px rgba(0, 0, 0, 0.05), 0 1px 24px rgba(0, 0, 0, 0.05)'
-    }
   },
   variants: {
     extend: {},
