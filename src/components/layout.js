@@ -1,6 +1,6 @@
 /**
  * Layout component that queries for data
- * with Gatsby's useStaticQuery component
+ * with Gatsby's StaticQuery component
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
@@ -12,14 +12,14 @@
  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
  import '../lib/font-awesome';
  
- import { useStaticQuery, graphql } from "gatsby"
+ import { StaticQuery, graphql } from "gatsby"
  
  import MainNavigation from "../components/main-navigation"
  import FooterNav from "../components/footer-nav"
  import PortableText from "../components/portableText"
  
  const Layout = ({ children }) => {
-   const data = useStaticQuery(graphql`
+   const data = StaticQuery(graphql`
    {
      allSanitySiteSettings {
        edges {

@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "./image"
+//import Image from "./image"
 import { StaticImage } from "gatsby-plugin-image"
 
 function PricePlans(props) {
-  const herobannerbutton = props.herobannerbutton
+  //const herobannerbutton = props.herobannerbutton
  return (
    <section className='bg-white-custom'>
     <div className="container px-3 mx-auto flex-wrap items-center py-16 text-center pb-40">

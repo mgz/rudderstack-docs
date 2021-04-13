@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "./image"
+//import Image from "./image"
 import { StaticImage } from "gatsby-plugin-image"
 
 function PricingCards(props) {
-  const herobannerbutton = props.herobannerbutton
+  //const herobannerbutton = props.herobannerbutton
  return (
   
    <div className="container px-3 mx-auto flex flex-wrap items-center pb-18">

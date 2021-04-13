@@ -1,6 +1,6 @@
 import React from "react"
 import { Highlight, connectMenu } from "react-instantsearch-dom"
-import { graphql } from "gatsby"
+//import { graphql } from "gatsby"
 
 const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
   var selected = false;

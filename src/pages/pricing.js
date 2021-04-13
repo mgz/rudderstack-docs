@@ -1,13 +1,13 @@
 import React from "react";
 import Layout from "../components/layout"
-import MiddleBanner from "../components/middle-banner"
+//import MiddleBanner from "../components/middle-banner"
 import SEO from "../components/seo"
 import PricingCards from "../components/Pricingcards"
 import PricePlans from "../components/priceplan"
 import Faq from "../components/faq"
 import Horizontal from "../components/rangeslider"
 import "../css/tailwind.css"
-import { StaticImage } from "gatsby-plugin-image"
+//import { StaticImage } from "gatsby-plugin-image"
 
 
 const PricingPage = () => {
