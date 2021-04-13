@@ -25,7 +25,7 @@ exports.onCreateWebpackConfig = ({
   }
 
 exports.createPages = async ({graphql, actions}) => {
-  const {createPage} = actions
+  /*const {createPage} = actions
 
   const result = await graphql(`
     {
@@ -53,5 +53,5 @@ exports.createPages = async ({graphql, actions}) => {
       component: require.resolve('./src/templates/content.js'),
       context: {slug: edge.node.slug},
     })
-  })
+  })*/
 }

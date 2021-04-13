@@ -2,12 +2,12 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Hero from "../components/hero";
-import OurLogo from "../components/ourlogo";
+//import OurLogo from "../components/ourlogo";
 import Tabs from "../components/tabs";
 import LeftRightImgCnt from "../components/left-right-image-content";
 import LatestBlog from "../components/latest-blog";
 import MiddleBanner from "../components/middle-banner";
-import Testimonial from "../components/testimonial";
+//import Testimonial from "../components/testimonial";
 import RightSideHiglightedContent from "../components/rightSideHiglightedContent";
 import FreeText from "../components/freeText";
 
@@ -61,7 +61,7 @@ const Page = props => {
           el = <Hero key={c._key} {...c} />;
           break;
         case "ourlogoblock":
-          el = <OurLogo key={c._key} {...c} />;
+          el = null; //<OurLogo key={c._key} {...c} />;
           break;
         case "tabsection":
           el = <Tabs key={c._key} {...c} />;
@@ -76,7 +76,7 @@ const Page = props => {
           el = <MiddleBanner key={c._key} {...c} />;
           break;
         case "testimonialsection":
-          el = <Testimonial key={c._key} {...c} />;
+          el = null; //<Testimonial key={c._key} {...c} />;
           break;
         case "righthighlightedsection":
           el = <RightSideHiglightedContent key={c._key} {...c} />;
