@@ -1,5 +1,5 @@
 import React from "react";
-import PortableText from "./portableText";
+//import PortableText from "./portableText";
 
 function Herobanner({title,date,author,image}) {
   return (

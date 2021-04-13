@@ -1,10 +1,10 @@
 import React from "react";
-import Image from "./image"
-import ReactDOM from "react-dom";
+//import Image from "./image"
+//import ReactDOM from "react-dom";
 import Accordion from "./accordion";
 
 function Faq(props) {
-  const herobannerbutton = props.herobannerbutton
+  //const herobannerbutton = props.herobannerbutton
   return (
     
     <section class="bg-grayColor-BgGray py-10 pt-36 relative">

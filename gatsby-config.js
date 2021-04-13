@@ -27,7 +27,7 @@ module.exports = {
         dataset: `production`,
 
         //token: process.env.SANITY_TOKEN,
-        token: `skoSfz1i62D7DEEO0es1q457F6XhfTNBNh7qEazGbcCqKwcbecbGtLGDmmL9bNH4tGUO8xiu81WsPWPloO2X6YIB4nvV8v4sNpGnmgYTGXY00MnAEbqhhE1yvB1YE7W0VNThFzYBou5D8KJ8gTVm7H1DwrT2IgGJeG7Ri2WTYDOVRT1t1zZx`,
+        token: process.env.RS_GATSBY_TOKEN,
         //graphqlTag: 'default',
       }
     },
@@ -35,8 +35,8 @@ module.exports = {
       resolve: `gatsby-plugin-algolia`,
       options:
       {
-        appId: 'CXEE6UEOI8',
-        apiKey: 'f7fe2af9be190727bf81933dd11703df',
+        appId: process.env.RS_GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
         queries: require("./src/utils/algolia"),
         enablePartialUpdates: true,
         matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
