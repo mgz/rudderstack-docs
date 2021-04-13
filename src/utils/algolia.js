@@ -1,4 +1,4 @@
-const indexName = 'rudderstack_blog';
+const indexName = 'dev_gatsby_blog';
 
 const pageQuery = `{
   pages: allSanityBlog {

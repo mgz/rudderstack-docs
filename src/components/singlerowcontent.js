@@ -12,7 +12,7 @@ const Singlerowcontent = ({ hit }) => {
 
   return (
     <div key="0"
-         className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden border border-gray-200 shadow-md">
+         className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden border border-grayColor-priceCardBorder shadow-md">
       <div className="sm:flex">
         <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link to={hit.slug}>
@@ -22,13 +22,13 @@ const Singlerowcontent = ({ hit }) => {
           </Link>
         </div>
         <div class="p-8">
-          <div className="uppercase text-sm text-indigo-700 font-bold">{hit.blog_category}</div>
+          <div className="uppercase text-sm text-blueNew-textblue font-bold">{hit.blog_category}</div>
           <h2
             className="block mt-14 text-2xl md:text-2xl lg:text-4xl leading-tight font-medium text-black">
             <Link to={hit.slug}>{hit.title}</Link>
           </h2>
 
-          <div class="mt-2 text-2xl md:text-3xl text-indigo-700 font-bold">
+          <div class="mt-2 text-2xl md:text-3xl text-blueNew-textblue font-bold">
             <span>By {hit.author_name}</span>
           </div>
         </div>

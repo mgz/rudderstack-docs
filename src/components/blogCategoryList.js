@@ -1,6 +1,6 @@
 import React from "react"
 import { Highlight, connectMenu } from "react-instantsearch-dom"
-//import { graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
   var selected = false;
@@ -13,7 +13,7 @@ const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
       <li key="0" className="p-6 pl-0">
         <a
           href={createURL('')}
-          className={!selected ? 'border-solid border-b-2 border-indigo-500 text-indigo-500 pb-7' : ''}
+          className={!selected ? 'border-solid border-b border-blueNew-textblue text-blueNew-textblue pb-7 font-bold' : ''}
           onClick={event => {
             event.preventDefault();
             refine('');
@@ -26,7 +26,7 @@ const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
         <li key={item.value} className="p-6 pl-0">
           <a
             href={createURL(item.value)}
-            className={item.isRefined ? 'border-solid border-b-2 border-indigo-500 text-indigo-500 pb-7' : '' }
+            className={item.isRefined ? 'border-solid border-b border-blueNew-textblue text-blueNew-textblue pb-7 font-bold' : '' }
             onClick={event => {
             event.preventDefault();
             refine(item.value);
