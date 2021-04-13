@@ -141,3 +141,16 @@ height: 100px;
 position: relative;
 top: -60px;
 } */
+
+.block-description p, .block-description ol, .block-description ul {
+@apply mt-4
+}
+.block-description li {
+@apply mt-3
+}
+.block-description h2 {
+@apply mt-8 text-2xl
+}
+.block-description h3 {
+@apply mt-6 text-xl
+}
