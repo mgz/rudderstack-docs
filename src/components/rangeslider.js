@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Slider from 'react-rangeslider'
 import 'react-rangeslider/lib/index.css'
+import $ from 'jquery'
 
 class Horizontal extends Component {
   constructor (props, context) {
@@ -14,25 +15,19 @@ class Horizontal extends Component {
     this.setState({
       horizontal: value
     })
-    if(value == 150){
-      var p = document.getElementById("text1")      
-      p.innerText = "N/A"
-      var p = document.getElementById("text2")      
-      p.innerText = "Volume Discount"
-      var p = document.getElementById("text3")      
-      p.innerText = ""
-      var p = document.getElementById("text4")      
-      p.innerText = "Request pricing"
-    }else{
-      var p = document.getElementById("text1")      
-      p.innerText = "$1800"
-      var p = document.getElementById("text2")      
-      p.innerText = "$18000"
-      var p = document.getElementById("text3")      
-      p.innerText = "16% discount"
-      var p = document.getElementById("text4")      
-      p.innerText = "Sign up"
-    }    
+    if(value === 150){
+      $('#text1').html('N/A');
+      $('#text2').html('Volume Discount');
+      $('#text3').html('');
+      $('#text4').html('Request pricing');
+    }
+    else
+    {
+      $('#text1').html('$1800');
+      $('#text2').html('$18000');
+      $('#text3').html('16% discount');
+      $('#text4').html('Sign up');
+    }     
   };
   render () {
     const { horizontal} = this.state

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import Herobanner from "../components/herobanner"
 import BlockContent from '@sanity/block-content-to-react'
 

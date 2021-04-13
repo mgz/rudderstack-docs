@@ -1,19 +1,18 @@
 import React from "react";
 import { graphql } from "gatsby";
-
+import loadable from '@loadable/component'
 import Hero from "../components/hero";
-import OurLogo from "../components/ourlogo";
 import Tabs from "../components/tabs";
 import LeftRightImgCnt from "../components/left-right-image-content";
 import LatestBlog from "../components/latest-blog";
 import MiddleBanner from "../components/middle-banner";
-import Testimonial from "../components/testimonial";
 import RightSideHiglightedContent from "../components/rightSideHiglightedContent";
 import FreeText from "../components/freeText";
-
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../components/layout";
+const OurLogo = loadable(() => import('../components/ourlogo'));
+const Testimonial = loadable(() => import('../components/testimonial'));
 
 export const query = graphql`
   query PageTemplateQuery($id: String!) {
