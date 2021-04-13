@@ -13,15 +13,25 @@ exports.onCreateWebpackConfig = ({
     plugins,
     actions,
   }) => {
-    actions.setWebpackConfig({
-      plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery'
-        }),
-      ],
-    })
+    if (stage === "build-html") {
+      actions.setWebpackConfig({
+        module: {
+          rules: [
+            {
+              test: /owl.carousel/,
+              use: loaders.null(),
+            },
+          ],
+        },
+        plugins: [
+          new webpack.ProvidePlugin({
+              $: 'jquery',
+              jQuery: 'jquery',
+              'window.jQuery': 'jquery'
+          }),
+        ],
+      })
+    }
   }
 
 exports.createPages = async ({graphql, actions}) => {
