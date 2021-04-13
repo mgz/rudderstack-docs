@@ -1,9 +1,9 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import { format } from "date-fns";
 
 const BlogModule = () => {
-  const data = StaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     {
       allSanityPost(sort: {fields: _createdAt}, limit: 3) {
         edges {

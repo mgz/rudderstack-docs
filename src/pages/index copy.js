@@ -2,13 +2,13 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-  const data = StaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
         edges {

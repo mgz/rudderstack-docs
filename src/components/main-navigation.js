@@ -1,11 +1,11 @@
 import React, {useState} from "react"
 import Link from "gatsby-link"
 
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 
 const MainNavigation = () => {
   const [isExpanded, toggleExpansion] = useState(false)
-    const data = StaticQuery(graphql`
+    const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
         edges {
