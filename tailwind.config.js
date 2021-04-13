@@ -6,12 +6,14 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       black: {        
-        custom: '#000000',       
+        custom: '#000000',
+        lighter: '#4E4E4E'
       },
       blueNew: {   
         lighter:'#EEF5F5',
         skyblue:'#E3F1F1',
-        custom: '#0066FF',     
+        custom: '#0066FF',
+        textblue: '#0166FE'
       },
       grayColor: {
         custom:'#4E4E4E',
@@ -19,8 +21,11 @@ module.exports = {
         BgGray:'#FAFAFA',
         priceCardBorder:'#E1E1E1',
       },
-      whiteColor: {        
-        custom: '#ffffff',       
+      whiteColor: {
+        custom: '#ffffff',
+      },
+      red: {
+        custom: '#FF0000',
       },
     },
     extend: {

@@ -8,9 +8,10 @@ import CustomSearchBox from "../components/customSearchBox";
 import CustomMenu from "../components/blogCategoryList";
 import { InstantSearch, Configure, SortBy, Menu } from 'react-instantsearch-dom';
 import CustomHits from "../components/customHits"
+import Subscription from "../components/Subscription"
 
 const Blog = (props) => {
-  const searchClient = algoliasearch('CXEE6UEOI8', '88f9637ee245ea4c30cfa44892b3b5ec');
+  const searchClient = algoliasearch('4K4TPPS0OQ', '0a5e12672bfb6f5c1076f7266bfed56d');
   const { data } = props
   const pageInfo = data.allSanityBlog.pageInfo
   return (
@@ -22,7 +23,7 @@ const Blog = (props) => {
           >
           <Configure hitsPerPage={13} />
           <div className="container flex flex-wrap flex-col sm:flex-row">
-            <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-solid border-b-2 border-grey-500">
+            <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-solid border-b border-grayColor-lighter">
               <CustomMenu attribute="blog_category"/>
             </div>
             <div className="w-full md:w-2/5 pt-6 pb-3 text-center">
@@ -44,6 +45,7 @@ const Blog = (props) => {
 
         </InstantSearch>
       </div>
+      <Subscription />
     </Layout>
   )
 }
