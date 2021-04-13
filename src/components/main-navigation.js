@@ -41,7 +41,7 @@ const MainNavigation = () => {
   return (
     <>
     <nav className="container mx-auto px-3 flex items-center justify-between flex-wrap pt-10 ">
-      <div className="flex items-center mr-6 w-1/5">
+      <div className="flex items-center mr-6">
         <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
       </div>
       <div className="block lg:hidden">
@@ -49,44 +49,78 @@ const MainNavigation = () => {
           <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
         </button>
       </div>
-      <div className={`${ isExpanded ? `block` : `hidden` } block justify-center items-center lg:flex lg:items-center lg:w-auto w-4/5`}>
-        <div className="lg:flex-grow flex list-none">
+      <div className={`${ isExpanded ? `block` : `hidden` } w-full block justify-center items-center lg:flex lg:items-center lg:w-auto`}>
+        <div className=" lg:flex-grow">
         {
           mainmenu.map(
-          (link, i) => (
-              <li key={i} className={link._rawSubMenuSection != null}>
-                  <Link  className="block mt-4 lg:inline-block lg:mt-0 text-main mr-4 xl:mr-12 font-custom" activeClassName={link.menu_item_link} to={link.menu_item_link}>{link.menu_item_title}</Link>
-                  {(() => {
-                      if (link._rawSubMenuSection != null){
-                          const submenu = link._rawSubMenuSection.hassubmenu.add_sub_menu_items
-                          return (
-                              <ul className="hidden absolute capitalize sub-menu group-hover:block">
-                                  {
-                                      submenu.map(
-                                          (sublink, j) => (
-                                              <li key={j} className="p-1">
-                                                  <Link className={sublink.className} activeClassName={sublink.menu_item_link} to={sublink.sub_menu_item_link}>{sublink.sub_menu_item_title}</Link>
-                                              </li>
+              (link) => (
+                  <Link key={link._key} to={link.menu_item_link} className="block mt-4 lg:inline-block lg:mt-0 text-main mr-4">
+                  {link.menu_item_title}
+                      {/* {(() => {
+                          if (link._rawSubMenuSection != null){
+                              const submenu = link._rawSubMenuSection.hassubmenu.add_sub_menu_items
+                              return (
+                                  <ul className="hidden absolute capitalize sub-menu group-hover:block">
+                                      {
+                                          submenu.map(
+                                              (sublink, j) => (
+                                                  <li key={j} className="p-1">
+                                                      <Link className={sublink.className} activeClassName={sublink.menu_item_link} to={sublink.sub_menu_item_link}>{sublink.sub_menu_item_title}</Link>
+                                                  </li>
+                                              )
                                           )
-                                      )
-                                  }
-                              </ul>
-                          )
-                      }
-                      return null;
-                  })()}
-              </li> 
+                                      }
+                                  </ul>
+                              )
+                          }
+                          return null;
+                      })()} */}
+                  </Link>
+              )
           )
-       )
       }
         </div>
-        <div className="flex">
-          <Link to="/login"><span className="inline-block p-2 py-1.5 md:ml-3 font-custom font-bold mr-2">Log in</span></Link>
-          <Link to={trybtn.btnlink}><span className="inline-block text-white bg-black-custom text-sm normal-case font-custom rounded-lg px-8 py-1.5">{trybtn.btntext}</span></Link>
+        <div>
+          <Link to="/login"><span className="inline-block p-2 md:ml-24">Login</span></Link>
+          <Link to={trybtn.btnlink}><span className="inline-block p-3 text-white bg-primary text-sm normal-case">{trybtn.btntext}</span></Link>
         </div>
       </div>
     </nav>
-       
+        {/* <nav className="flex">
+            <ul className="list-reset flex capitalize items-center">
+            {
+                mainmenu.map(
+                    (link, i) => (
+                        <li key={i} className={link._rawSubMenuSection != null ? `group p-4` : `p-4`}>
+                            <Link className={link.className} activeClassName={link.menu_item_link} to={link.menu_item_link}>{link.menu_item_title}</Link>
+                            {(() => {
+                                if (link._rawSubMenuSection != null){
+                                    const submenu = link._rawSubMenuSection.hassubmenu.add_sub_menu_items
+                                    return (
+                                        <ul className="hidden absolute capitalize sub-menu group-hover:block">
+                                            {
+                                                submenu.map(
+                                                    (sublink, j) => (
+                                                        <li key={j} className="p-1">
+                                                            <Link className={sublink.className} activeClassName={sublink.menu_item_link} to={sublink.sub_menu_item_link}>{sublink.sub_menu_item_title}</Link>
+                                                        </li>
+                                                    )
+                                                )
+                                            }
+                                        </ul>
+                                    )
+                                }
+                                return null;
+                            })()}
+                        </li> 
+                    )
+                )
+            }
+
+            <li className="p-4 pr-2 "><Link to="/login"><span className="p-2 ml-24">Login</span></Link></li>
+            <li className="p-2 "><Link to={trybtn.btnlink}><span className="p-3 text-white bg-black normal-case">{trybtn.btntext}</span></Link></li>
+            </ul>
+        </nav> */}
         </>
     );
 }

@@ -14,7 +14,7 @@
     "@styled-icons/fa-solid": "^10.26.0",
     "algoliasearch": "^4.8.6",
     "dotenv": "^8.2.0",
-    "gatsby": "^3.1.1",
+    "gatsby": "^3.2.1",
     "gatsby-cli": "^3.2.0",
     "gatsby-plugin-algolia": "^0.18.0",
     "gatsby-plugin-gatsby-cloud": "^2.1.0",

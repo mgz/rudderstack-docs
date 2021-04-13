@@ -23,8 +23,8 @@ module.exports = {
     {
       resolve: `gatsby-source-sanity`,
       options: {
-        projectId: `97bpcflt`,
-        dataset: `production`,
+        projectId: process.env.RS_GATSBY_PROJECTID,
+        dataset: process.env.RS_GATSBY_DATASET,
 
         //token: process.env.SANITY_TOKEN,
         token: process.env.RS_GATSBY_TOKEN,
@@ -34,21 +34,21 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options:
-      {
-        appId: process.env.RS_GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
-        queries: require("./src/utils/algolia"),
-        enablePartialUpdates: true,
-        matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
-      },
       // {
-      //   appId: '4K4TPPS0OQ',
-      //   apiKey: '0a5e12672bfb6f5c1076f7266bfed56d',
-      //   indexName: 'dev_gatsby_integration',
-      //   queries: require("./src/utils/integration-algolia"),
-      //   enablePartialUpdates: true,
+      //   appId: process.env.RS_GATSBY_ALGOLIA_APP_ID,
+      //   apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
+      //   queries: require("./src/utils/algolia"),
+      //   //enablePartialUpdates: true,
       //   matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
       // },
+      {
+        appId: '4K4TPPS0OQ',
+        apiKey: 'fd45ebcb56b1207a4f326d6c28866b19',
+        indexName: 'dev_gatsby_integration',
+        queries: require("./src/utils/integration-algolia"),
+        // enablePartialUpdates: true,
+        // matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
+      },
     },
     `gatsby-plugin-styled-components`,
     {

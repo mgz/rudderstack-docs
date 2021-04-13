@@ -8,7 +8,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Threerowcontent = ({ hits }) => {
+const Integrationrowcontent = ({ hits }) => {
   console.log(hits)
   return (
     <div className="mt-24">
@@ -52,4 +52,4 @@ const Threerowcontent = ({ hits }) => {
 
 }
 
-export default Threerowcontent
+export default Integrationrowcontent

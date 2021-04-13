@@ -2,9 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Herobanner from "../components/herobanner"
-import Subscription from "../components/Subscription"
 import BlockContent from '@sanity/block-content-to-react'
-import { StaticImage } from "gatsby-plugin-image"
+
 
 const Singleblog = ({data}) => {
   const blog = data.blog
@@ -24,7 +23,6 @@ const Singleblog = ({data}) => {
           </div>
         </div>
       </div>
-      <Subscription />
     </Layout>
   )
 }
