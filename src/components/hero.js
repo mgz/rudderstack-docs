@@ -12,7 +12,7 @@ function Hero(props) {
               class="container relative z-20 flex flex-col w-full md:px-5 pb-1 mr-30 mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
                 <h2 className="my-4 md:text-6xl text-5xl  font-bold leading-tight">{props.herobannertitle}</h2>
                 <PortableText blocks={props.herobannercontent} />
-              <div class="relative block md:flex mt-4">
+              <div class="relative block md:flex mt-10">
                       {
                           herobannerbutton.map(
                               (btn, i) => (

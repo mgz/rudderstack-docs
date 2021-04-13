@@ -21,7 +21,7 @@ function OurLogo(props) {
                 items:8
             },
             1000:{
-                items:15
+                items:8
             }
         }
     })
@@ -31,16 +31,16 @@ function OurLogo(props) {
   return (
     <>
       <section className="container px-3 mx-auto md:mb-30 my-20 flex flex-wrap flex-col md:flex-row items-center">
-        <div className="flex flex-col w-full justify-center items-start md:text-left">
-          <h3 className="my-4 text-3xl text-primary font-bold leading-tight">{maintitle}</h3>
+        <div className="flex flex-col w-full justify-center items-start md:text-left max-w-screen-sm">
+          <h3 className="my-4 text-3xl text-primary font-bold leading-10">{maintitle}</h3>
         </div>
-        <div className="flex w-full justify-center">
+        <div className="flex w-full justify-center mt-10 our-logos">
         <div className="logo-slider owl-carousel owl-theme">
         {
           logoimages.map(
             (logoimage, i) => (
-              <div key={i} class="item">
-                <span className="flex p-4">
+              <div key={i} class="item inline-flex">
+                <span className="p-4">
                   <Image  props={logoimage.asset._ref} className="p-4"/>
                 </span>
               </div>

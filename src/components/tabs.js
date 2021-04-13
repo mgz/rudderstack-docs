@@ -48,7 +48,7 @@ return (
             </div>
             <div className="pt-3 md:col-span-6 md:ml-8">
             <div className="relative block bg-background p-4 min-w-0 break-words bg-white w-full mb-6 rounded-lg">
-                <div className="md:px-24 lg:px-24 py-16">
+                <div className="md:px-24 lg:px-20 py-12 bg-blueNew-lighter rounded-xl">
                 <div className="tab-content tab-space tab-content-item">
                 {
                     tabs.map(
