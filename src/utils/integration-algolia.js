@@ -88,9 +88,8 @@ const integrationQuery = `{
   const queries = [
     {
       query: integrationQuery,
-      //transformer: ({ data }) => data.integrations.nodes, // optional
       transformer: ({ data }) => data.integrations.edges.map(integrationToAlgoliaRecord),
-      indexName: 'dev_gatsby_integration',
+      indexName: process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX,
       settings: {},
     },
   ]

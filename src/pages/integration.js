@@ -1,16 +1,16 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { connectSearchBox } from "react-instantsearch-dom"
-import Pagination from "../components/pagination"
+// import { connectSearchBox } from "react-instantsearch-dom"
+// import Pagination from "../components/pagination"
 import algoliasearch from 'algoliasearch/lite';
 import CustomSearchBox from "../components/customSearchBox";
-import CustomMenu from "../components/blogCategoryList";
-import { InstantSearch, Configure, SortBy, Menu, Hits } from 'react-instantsearch-dom';
+import IntegrationCategoryMenu from "../components/integrationCategoryList";
+import { InstantSearch, SortBy, Menu, Hits } from 'react-instantsearch-dom';
 import IntegrationHits from "../components/integrationHits"
 
 const Integration = (props) => {
-  const searchClient = algoliasearch('4K4TPPS0OQ', '0a5e12672bfb6f5c1076f7266bfed56d');
+  const searchClient = algoliasearch(process.env.RS_GATSBY_ALGOLIA_APP_ID, process.env.RS_GATSBY_ALGOLIA_SEARCH_APIKEY);
   const { data } = props
   //const pageInfo = data.allSanityIntegration.pageInfo
   return (
@@ -18,12 +18,12 @@ const Integration = (props) => {
       <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         <InstantSearch
           searchClient={searchClient}
-          indexName='dev_gatsby_integration'
+          indexName={process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX}
           >
           {/* <Configure hitsPerPage={13} /> */}
           <div className="container flex flex-wrap flex-col sm:flex-row">
             <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-solid border-b-2 border-grey-500">
-              <CustomMenu attribute="integrationcategories"/>
+              <IntegrationCategoryMenu attribute="integrationcategories"/>
             </div>
             <div className="w-full md:w-2/5 pt-6 pb-3 text-center">
               <CustomSearchBox />
@@ -35,13 +35,7 @@ const Integration = (props) => {
                 </div>
               </div>
             </div>
-            {/* <div className="pt-8 pb-8 m-auto">
-              <div data-reactroot>
-                <Pagination pageInfo={pageInfo} />
-              </div>
-            </div> */}
           </div>
-
         </InstantSearch>
       </div>
     </Layout>
