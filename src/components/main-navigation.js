@@ -42,7 +42,9 @@ const MainNavigation = () => {
     <>
     <nav className="container mx-auto px-3 flex items-center justify-between flex-wrap pt-10 ">
       <div className="flex items-center mr-6 w-1/5">
-        <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
+        <Link to="/">
+          <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
+        </Link>
       </div>
       <div className="block lg:hidden">
         <button onClick={() => toggleExpansion(!isExpanded)} className="flex items-center px-3 py-2 border rounded text-main border-teal-400 hover:text-white hover:border-white">
