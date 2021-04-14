@@ -72,4 +72,34 @@ exports.createPages = async ({graphql, actions}) => {
       context: {slug: edge.node.slug},
     })
   })
+
+  const integration = await graphql(`
+    {
+      allSanityIntegration {
+        edges {
+          node {
+            title
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (integration.errors) {
+    throw integration.errors
+  }
+
+  const integrations = integration.data.allSanityIntegration.edges || []
+  integrations.forEach((edge, index) => {
+    const path = `/integration/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/integrationContent.js'),
+      context: {slug: edge.node.slug.current},
+    })
+  })
 }

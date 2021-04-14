@@ -1,6 +1,7 @@
 import React from "react";
 import BlogModule from "./latest-blog-module"
 import { StaticImage } from "gatsby-plugin-image"
+import Link from "gatsby-link"
     
 const LatestBlog = (props) => {
     const maintitle = props.maintitle
@@ -18,7 +19,8 @@ const LatestBlog = (props) => {
                 </div>
                 <BlogModule  />
                 <div className="w-full text-center items-center">
-                    <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center"><StaticImage className="mr-2" src="../images/arrow-right-o.png" alt="arrow right"/><a href={viewallpostslink}>{viewalltext}</a></p>
+                    <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center">
+                    <StaticImage className="mr-2" src="../images/arrow-right-o.png" alt="arrow right"/> <Link to={viewallpostslink}>{viewalltext}</Link></p>
                 </div>
                 
               </div>

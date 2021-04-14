@@ -1,4 +1,4 @@
-const indexName = 'rudderstack_blog';
+const indexName = process.env.RS_GATSBY_ALGOLIA_BLOGINDEX;
 
 const pageQuery = `{
   pages: allSanityBlog {

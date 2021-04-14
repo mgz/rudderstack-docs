@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { connectSearchBox } from "react-instantsearch-dom"
+// import { connectSearchBox } from "react-instantsearch-dom"
 import Pagination from "../components/pagination"
 import algoliasearch from 'algoliasearch/lite';
 import CustomSearchBox from "../components/customSearchBox";
@@ -10,15 +10,16 @@ import { InstantSearch, Configure, SortBy, Menu } from 'react-instantsearch-dom'
 import CustomHits from "../components/customHits"
 
 const Blog = (props) => {
-  const searchClient = algoliasearch('CXEE6UEOI8', '88f9637ee245ea4c30cfa44892b3b5ec');
+  const searchClient = algoliasearch(process.env.RS_GATSBY_ALGOLIA_APP_ID, process.env.RS_GATSBY_ALGOLIA_SEARCH_APIKEY);
   const { data } = props
   const pageInfo = data.allSanityBlog.pageInfo
+  console.log(process.env.RS_GATSBY_ALGOLIA_BLOGINDEX)
   return (
     <Layout>
       <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         <InstantSearch
           searchClient={searchClient}
-          indexName='rudderstack_blog'
+          indexName={process.env.RS_GATSBY_ALGOLIA_BLOGINDEX}
           >
           <Configure hitsPerPage={13} />
           <div className="container flex flex-wrap flex-col sm:flex-row">
