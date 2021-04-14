@@ -257,3 +257,15 @@ button.accordion:focus{
   padding: 18px;
   font-family: "Basis Grotesque Pro", sans-serif;
 }
+/*our logo section*/
+.our-logos .owl-stage{
+  display: flex;
+  align-items: center;
+}
+.our-logos .owl-item img{
+  width: auto;
+}
+.our-logos .owl-item{
+  display: inline-block;
+  text-align: center;
+}

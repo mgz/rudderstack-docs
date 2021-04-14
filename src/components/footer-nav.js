@@ -8,7 +8,7 @@ function renderFooterNav(menu) {
             (() => {
                 return (
                     <>
-                        <li key={i} className="mt-2 inline-block mr-2 md:block md:mr-0">
+                        <li key={i} className="mt-2.5 inline-block mr-2 md:block md:mr-0">
                             <a href={menuitem.menu_item_link} className="no-underline hover:underline text-gray-500">{menuitem.menu_item_title}</a>
                         </li>
                     </>

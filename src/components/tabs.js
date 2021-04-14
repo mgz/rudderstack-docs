@@ -9,7 +9,7 @@ const tabs = props.tabblock
 return (
     <>
     <section className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-20">
-        <div className="flex flex-col w-full justify-center items-start md:text-left mb-8">
+        <div className="flex flex-col w-full justify-center items-start md:text-left mb-8 max-w-screen-lg">
             <p className="my-4 text-blue text-sm font-bold uppercase">{smalltitle}</p>
             <h3 className="my-4 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
         </div>
@@ -48,7 +48,7 @@ return (
             </div>
             <div className="pt-3 md:col-span-6 md:ml-8">
             <div className="relative block bg-background p-4 min-w-0 break-words bg-white w-full mb-6 rounded-lg">
-                <div className="md:px-24 lg:px-24 py-16">
+                <div className="md:px-24 lg:px-20 py-12 bg-blueNew-lighter rounded-xl">
                 <div className="tab-content tab-space tab-content-item">
                 {
                     tabs.map(
