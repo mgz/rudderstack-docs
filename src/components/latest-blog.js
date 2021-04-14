@@ -1,5 +1,6 @@
 import React from "react";
 import BlogModule from "./latest-blog-module"
+import Link from "gatsby-link"
     
 const LatestBlog = (props) => {
     const maintitle = props.maintitle
@@ -17,7 +18,8 @@ const LatestBlog = (props) => {
                 </div>
                 <BlogModule  />
                 <div className="flex w-full text-center items-center">
-                    <p className="w-full my-2 text-blue text-lg leading-tight text-center post-arrow"><a href={viewallpostslink}>{viewalltext}</a></p>
+                    <p className="w-full my-2 text-blue text-lg leading-tight text-center post-arrow">
+                      <Link to={viewallpostslink}>{viewalltext}</Link></p>
                 </div>
                 
               </div>
