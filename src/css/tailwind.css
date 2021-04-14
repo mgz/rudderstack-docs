@@ -269,3 +269,38 @@ button.accordion:focus{
   display: inline-block;
   text-align: center;
 }
+.post-arrow.right-image:after{
+  display: none;
+}
+.testimonials .owl-nav button.owl-next,
+.testimonials .owl-nav button.owl-prev{
+  background: none !important;
+  width: 110px;
+}
+.testimonials .owl-nav button.owl-next:focus,
+.testimonials .owl-nav button.owl-prev:focus{
+  outline: none;
+}
+.testimonials .owl-nav button.owl-next span,
+.testimonials .owl-nav button.owl-prev span{
+  display: none;
+}
+.testimonials .owl-nav button.owl-next:after,
+.testimonials .owl-nav button.owl-prev:before{
+  position: absolute;
+  content: '';
+  width: 110px;
+  height: 100%;
+}
+.testimonials .owl-nav button.owl-prev:before{
+  left: -25px;
+  top: 0;
+  background: url('../images/prev.png') no-repeat center center;
+  background-size: 110px;
+}
+.testimonials .owl-nav button.owl-next:after{
+  right: -25px;
+  top: 0;
+  background: url('../images/next.png') no-repeat center center;
+  background-size: 110px;
+}

@@ -16,7 +16,7 @@ const MiddleBanner = (props) => {
                             <div className="">
                                 <StaticImage src="../images/Arrow.svg" alt="Get Started"/>
                             </div>
-                            <h3 className="text-4xl ml-5 md:text-5xl font-bold font-custom leading-tight max-w-xs">{title}</h3>
+                            <h3 className="text-4xl ml-8 md:text-5xl font-bold font-custom leading-tight max-w-xs">{title}</h3>
                         </div>
                         <div className="w-1/2 mt-6 max-w-lg">
                             <div className="align-middle text-lg leading-7 font-custom">

@@ -11,9 +11,9 @@ const FreeText = (props) => {
     return (
         <>
             <section className="bg-white 100%">
-              <div className="container px-3 mx-auto my-20">
+              <div className="container px-3 mx-auto my-20 lg:my-20">
                 <div className="flex items-center flex-wrap">
-                    <div className="md:w-3/4 p-2 block">
+                    <div className="md:w-3/4 p-2 block xl:pr-32">
                         <h3 className="mb-6 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
                         <div className="text-secondary text-lg leading-7 frtxt-contnt">
                             <PortableText blocks={portabletext} />

@@ -40,7 +40,7 @@ const RightSideHiglightedContent = (props) => {
                         )
                     }  
                     </div>
-                    <div className="md:col-span-7 p-4 bg-background rounded-lg">
+                    <div className="md:col-span-7 bg-background rounded-xl">
                     {
                         rightcontents.map(
                             (rightcontent, i) => (
