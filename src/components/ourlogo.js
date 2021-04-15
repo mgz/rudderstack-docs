@@ -12,7 +12,7 @@ function OurLogo(props) {
         nav:false,
         dots:false,
         autoplay:true,
-        autoplayTimeout:1000,
+        autoplayTimeout:3000,
         responsive:{
             0:{
                 items:4
