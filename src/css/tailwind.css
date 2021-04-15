@@ -304,3 +304,72 @@ button.accordion:focus{
   background: url('../images/next.png') no-repeat center center;
   background-size: 110px;
 }
+.left-right-section .flex:last-child.row-wrapper h3 {
+  font-size: 50px;
+  line-height: 60px;
+}
+.tab-section-wrapper{
+  max-width: 1099px;
+}
+.blog-title-wrap {
+  min-height: 145px;
+}
+div>a.transperent-btn:last-child{
+  font-weight: bold;
+}
+.testimonials-wrap {
+  background-position: center 85px;
+}
+@media only screen and (max-width: 639px) {
+  .banner-section p {
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 10px;
+  }
+  html,body{
+    overflow-x: hidden;
+  }
+  .tab-content-item p{
+    font-size: 14px;
+    color: #000000;
+  }
+  .tab-section .closetab,
+.tab-section .opentab {
+  position: relative;
+}
+.tab-section .closetab:after {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url('../images/chevron-down.png') no-repeat center center;
+  top: 23px;
+  right: 0;
+}
+.tab-section .opentab:after {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url('../images/chevron-up.png') no-repeat center center;
+  top: 23px;
+  right: 0;
+}
+  .lr-icon:before{
+    width: 0px;
+  }
+  .left-right-section .flex:last-child.row-wrapper h3{
+    font-size: 38px;
+    line-height: 46px;
+  }
+  .blog-title-wrap {
+     min-height: 100px;
+  }
+  .testimonials .owl-nav button.owl-prev:before{
+
+  }
+  .footer-menus-wrap .footer-menus:nth-child(3) {
+     clear: both;
+     width: 100%;
+  }
+}

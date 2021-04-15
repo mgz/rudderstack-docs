@@ -9,11 +9,11 @@ const LatestBlog = (props) => {
     const viewallpostslink = props.viewallpostslink
     return (
         <>
-           <section className="bg-white my-20">
+           <section className="bg-white pb-20">
               
-              <div className="container md:px-3 mx-auto flex flex-wrap pt-4 pb-12">
+              <div className="container px-4 md:px-0 mx-auto flex flex-wrap pt-4 pb-12">
               
-                <h3 className="w-full my-2 text-5xl px-6 text-primary font-bold leading-tight">{maintitle}</h3>
+                <h3 className="w-full my-2 text-4xl md:text-5xl px-6 text-primary font-bold leading-tight">{maintitle}</h3>
                 <div className="w-full mb-4">	
                   <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>

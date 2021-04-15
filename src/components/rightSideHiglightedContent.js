@@ -9,11 +9,11 @@ const RightSideHiglightedContent = (props) => {
     const rightcontents = props.rhs_rightsection
     return (
         <>
-            <section className="100%">
-              <div className="container px-3 mx-auto">
+            <section className="100% bg-whiteColor-custom">
+              <div className="container px-4 md:px-0 mx-auto">
                 <div className="flex flex-col w-full justify-center items-start md:text-left">
-                    <p className="my-4 mt-20 text-blue text-sm font-bold uppercase">{smalltitle}</p>
-                    <h3 className="my-4 pb-10 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
+                    <p className="my-4 mt-16 md:mt-20 text-blue text-sm font-bold uppercase">{smalltitle}</p>
+                    <h3 className="md:my-2 pb-16 md:pb-10 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
                 </div>
                 <div className="grid md:grid-cols-12 md:gap-16 items-center flex-wrap">
                     <div className="md:col-span-5 p-2">
@@ -26,10 +26,10 @@ const RightSideHiglightedContent = (props) => {
                                         const title = leftcontent.rhs_lb_title
                                         return (
                                             <>
-                                                <div key={i} className="mb-10">
+                                                <div key={i} className="mb-14">
                                                     <Image props={imgref} />
-                                                    <h3 className="my-4 text-3xl text-primary font-bold leading-tight">{title}</h3>
-                                                    <div className="text-secondary text-lg leading-7">
+                                                    <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
+                                                    <div className="text-secondary text-sm md:text-lg leading-6	md:leading-7">
                                                         <PortableText blocks={portabletext} />
                                                     </div>
                                                 </div>
@@ -51,10 +51,10 @@ const RightSideHiglightedContent = (props) => {
                                         const buttons = rightcontent.rhs_rb_buttons
                                         return (
                                             <>
-                                                <div key={i} className="md:p-20 lg:p-20">
+                                                <div key={i} className="py-14 px-8 md:p-20 lg:p-20">
                                                     <Image props={imgref} />
-                                                    <h3 className="my-4 text-3xl text-primary font-bold leading-tight">{title}</h3>
-                                                    <div className="text-secondary text-lg leading-7">
+                                                    <h3 className="my-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
+                                                    <div className="text-secondary text-sm md:text-lg leading-6 md:leading-7">
                                                         <PortableText blocks={portabletext} />
                                                     </div>
                                                     <div className="md:flex block mt-6">
@@ -62,7 +62,7 @@ const RightSideHiglightedContent = (props) => {
                                                         buttons.map(
                                                             (btn, i) => (
                                                             <>
-                                                                <a key={i} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-primary`} href={btn.btnlink}>{btn.btntext}</a>
+                                                                <a key={i} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-primary transperent-btn`} href={btn.btnlink}>{btn.btntext}</a>
                                                             </>
                                                             )
                                                         )

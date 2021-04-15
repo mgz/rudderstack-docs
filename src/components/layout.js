@@ -71,14 +71,14 @@
          <MainNavigation />
          <main>{children}</main>
  
-         <footer className="bg-black text-sm bg-black-custom pt-10">
-           <div className="container mx-auto px-3">
+         <footer className="bg-black px-4 sm:px-0 text-sm bg-black-custom md:pt-10">
+           <div className="container mx-auto footer-menus-wrap">
              <div className="w-full py-10 font-custom inline-block">
                {
                  footermenus.map(
                      (menu, i) => (
-                      <div key={menu._key} className="w-1/5 float-left">
-                        <div className="px-3">
+                      <div key={menu._key} className="w-1/2 md:w-1/5 float-left footer-menus">
+                        <div className="md:px-3">
                           <p className="uppercase text-white md:mb-4">{menu.widget_menu_section_title}</p>
                           <ul className="list-reset mb-6 text-footer">
                             <FooterNav navRef={menu.widget_section_menu._ref} />
@@ -91,8 +91,8 @@
                {
                  footerdescitems.map(
                      (item, i) => (
-                        <div key={item._key} className="w-1/5 float-left">
-                          <div className="px-3">
+                        <div key={item._key} className="md:w-1/5 md:float-left sm:clear-none clear-both pb-5 md:pb-0">
+                          <div className="md:px-3">
                             <p className="uppercase text-white md:mb-4">{item.widget_desc_section_title}</p>
                             <div className="text-footer">
                               <PortableText blocks={item.widget_section_desc} />
@@ -114,14 +114,14 @@
                        let rss = /rss/;
                        if (rss.test(socialitem.social_item_icon)){
                            return (
-                               <a key={socialitem._key} className='icons pr-4' href={socialitem.social_item_link}>
+                               <a key={socialitem._key} className='icons pr-6 md:pr-4' href={socialitem.social_item_link}>
                                  <FontAwesomeIcon 
                                    icon={socialitem.social_item_icon} />
                                </a>
                            )
                        }else{
                          return (
-                           <a key={socialitem._key} className='icons pr-4' href={socialitem.social_item_link}>
+                           <a key={socialitem._key} className='icons pr-6 md:pr-4' href={socialitem.social_item_link}>
                              <FontAwesomeIcon 
                                icon={['fab', socialitem.social_item_icon]} />
                            </a>
@@ -137,11 +137,14 @@
            <div className="container pb-1 py-4 w-full flex mx-auto flex-wrap  px-3">
              <div className="flex w-1/2 items-center text-white">
                <img src={footerlogo} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
-               <p className="lowercase text-right px-2 text-sm">{data.allSanitySiteSettings.edges[0].node.sitetitle}</p>
+               
              </div>
              <div className="flex flex-wrap w-1/2 items-end">
                <p className="text-footer w-full text-right">{copyright}</p>
              </div>
+             <div className="container px-3 w-full mx-auto">
+              <p className="text-white pl-6">k</p>
+            </div>
            </div>
          </footer>
      </>

@@ -11,7 +11,7 @@ const FreeText = (props) => {
     return (
         <>
             <section className="bg-white 100%">
-              <div className="container px-3 mx-auto my-20 lg:my-20">
+              <div className="container px-3 mx-auto py-12 pb-0 lg:py-28">
                 <div className="flex items-center flex-wrap">
                     <div className="md:w-3/4 p-2 block xl:pr-32">
                         <h3 className="mb-6 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
@@ -23,7 +23,7 @@ const FreeText = (props) => {
                             buttons.map(
                                 (btn, i) => (
                                 <>
-                                    <a key={i} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 mr-4 md:px-8 lg:px-8 px-2 text-center rounded-lg md:mb-0 mb-4 md:flex block border text-sm border-primary`} href={btn.btnlink}>{btn.btntext}</a>
+                                    <a key={i} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 mr-4 md:px-8 lg:px-8 px-2 text-center rounded-lg md:mb-0 mb-4 md:flex block border transperent-btn text-sm border-primary`} href={btn.btnlink}>{btn.btntext}</a>
                                 </>
                                 )
                             )

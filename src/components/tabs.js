@@ -8,12 +8,12 @@ const maintitle = props.tabmaintitle
 const tabs = props.tabblock
 return (
     <>
-    <section className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-20">
-        <div className="flex flex-col w-full justify-center items-start md:text-left mb-8 max-w-screen-lg">
+    <section className="container px-4 mx-auto flex flex-wrap flex-col md:flex-row items-center md:my-20 md:px-0">
+        <div className="flex flex-col w-full justify-center items-start md:text-left mb-8 tab-section-wrapper">
             <p className="my-4 text-blue text-sm font-bold uppercase">{smalltitle}</p>
-            <h3 className="my-4 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
+            <h3 className="mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
         </div>
-        <div className="md:flex grid md:grid-cols-12 w-full md:gap-16">
+        <div className="md:flex grid md:grid-cols-12 w-full md:gap-16 tab-section">
             <div className="md:col-span-6">
             <ul
                 className="block mb-0 list-none pt-3 pb-4"
@@ -25,10 +25,10 @@ return (
                             <li key={i} className="-mb-px mr-2 last:mr-0 flex-auto my-2">
                             <a
                                 className={
-                                "text-lg px-5 py-3 block leading-normal " +
+                                "text-lg py-5 pr-5 md:px-5 md:py-3 block leading-normal " +
                                 (openTab === i
-                                    ? "text-blue border-l-4 border-blue"
-                                    : "text-secondary bg-white border-l-4 border-tabborder ")
+                                    ? "text-blue md:border-l-4 md:border-blue opentab"
+                                    : "text-secondary md:bg-white bg-transparent border-b-2 md:border-b-0 md:border-l-4 border-tabborder closetab")
                                 }
                                 onClick={e => {
                                 e.preventDefault();
@@ -47,8 +47,8 @@ return (
             </ul>
             </div>
             <div className="pt-3 md:col-span-6 md:ml-8">
-            <div className="relative block bg-background p-4 min-w-0 break-words bg-white w-full mb-6 rounded-lg">
-                <div className="md:px-24 lg:px-20 py-12 bg-blueNew-lighter rounded-xl">
+            <div className="relative block md:bg-background bg-transperent p-4 min-w-0 break-words md:bg-white w-full mb-6 rounded-lg">
+                <div className="md:px-24 lg:px-20 md:py-12 md:bg-blueNew-lighter rounded-xl">
                 <div className="tab-content tab-space tab-content-item">
                 {
                     tabs.map(
