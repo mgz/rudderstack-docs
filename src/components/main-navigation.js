@@ -3,6 +3,7 @@ import Link from "gatsby-link"
 import { StaticImage } from "gatsby-plugin-image"
 
 import { useStaticQuery, graphql } from "gatsby"
+import MainNavigationMenuLink from "./MainNavigationMenuLink"
 
 const MainNavigation = () => {
   const [isExpanded, toggleExpansion] = useState(false)
@@ -59,48 +60,7 @@ const MainNavigation = () => {
         {
           mainmenu.map(
           (link, i) => (
-              <li key={i} className={link._rawSubMenuSection != null}>
-                {(() => {
-                  if (link.menu_item_externallink === true){
-                      return (
-                        <a className="block mt-4 lg:inline-block lg:mt-0 text-main mr-4 xl:mr-12 font-custom" href={link.menu_item_link}>{link.menu_item_title}</a>
-                      )
-                  }else{
-                      return(
-                      <Link  className="block mt-4 lg:inline-block lg:mt-0 text-main mr-4 xl:mr-12 font-custom" to={link.menu_item_link}>{link.menu_item_title}</Link>
-                      ) 
-                  }
-                })()}
-                  {(() => {
-                      if (link._rawSubMenuSection != null){
-                        const submenu = link._rawSubMenuSection.hassubmenu.add_sub_menu_items
-                        return (
-                          <ul className="hidden absolute capitalize sub-menu group-hover:block">
-                            {
-                              submenu.map(
-                                (sublink, j) => (
-                                    <li key={j} className="p-1">
-                                      {(() => {
-                                        if (sublink.sub_menu_item_externallink === true){
-                                            return (
-                                              <a className={sublink.className} activeClassName={sublink.menu_item_link} href={sublink.sub_menu_item_link}>{sublink.sub_menu_item_title}</a>
-                                            )
-                                        }else{
-                                            return(
-                                              <Link className={sublink.className} activeClassName={sublink.menu_item_link} to={sublink.sub_menu_item_link}>{sublink.sub_menu_item_title}</Link>
-                                            ) 
-                                        }
-                                      })()}
-                                    </li>
-                                )
-                              )
-                            }
-                          </ul>
-                        )
-                      }
-                      return null;
-                  })()}
-              </li> 
+            <MainNavigationMenuLink link={link} i={i} />
           )
        )
       }
