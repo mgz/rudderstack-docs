@@ -7,6 +7,7 @@ const LatestBlog = (props) => {
     const maintitle = props.maintitle
     const viewalltext = props.viewalltext
     const viewallpostslink = props.viewallpostslink
+    const viewexternallink = props.viewexternallink
     return (
         <>
            <section className="bg-white my-20">
@@ -20,7 +21,19 @@ const LatestBlog = (props) => {
                 <BlogModule  />
                 <div className="w-full text-center items-center">
                     <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center">
-                    <StaticImage className="mr-2" src="../images/arrow-right-o.png" alt="arrow right"/> <Link to={viewallpostslink}>{viewalltext}</Link></p>
+                    <StaticImage className="mr-2" src="../images/arrow-right-o.png" alt="arrow right"/>
+                    {(() => {
+                      if (viewexternallink === true){
+                        return (
+                          <a href={viewallpostslink} >{viewalltext}</a>
+                        )
+                      }else{
+                        return(
+                          <Link to={viewallpostslink}>{viewalltext}</Link>
+                        ) 
+                      }
+                    })()}
+                    </p>
                 </div>
                 
               </div>
