@@ -20,6 +20,7 @@ body{
 }
 .bg-hero-pattern {
   background-size:100%;
+  background-repeat: no-repeat;
 }
 .lr-icon::before{
   content: "";
@@ -171,8 +172,13 @@ top: -60px;
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 768px) {
   .about-us-banner {
     background:none;
+  }
+  .bg-hero-pattern {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center top;
   }
 }
