@@ -46,38 +46,16 @@ const RightSideHiglightedContent = (props) => {
                         rightcontents.map(
                             (rightcontent, i) => (
                                 (() => {
-<<<<<<< HEAD
-                                        const imgref = rightcontent.rhs_rb_icon.asset._ref
-                                        const portabletext = rightcontent.rhs_rb_content
-                                        const title = rightcontent.rhs_rb_title
-                                        const buttons = rightcontent.rhs_rb_buttons
-                                        return (
-                                            <>
-                                                <div key={i} className="py-14 px-8 md:p-20 lg:p-20">
-                                                    <Image props={imgref} />
-                                                    <h3 className="my-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
-                                                    <div className="text-secondary text-sm md:text-lg leading-6 md:leading-7">
-                                                        <PortableText blocks={portabletext} />
-                                                    </div>
-                                                    <div className="md:flex block mt-6">
-                                                    {
-                                                        buttons.map(
-                                                            (btn, i) => (
-                                                            <>
-                                                                <a key={i} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-primary transperent-btn`} href={btn.btnlink}>{btn.btntext}</a>
-                                                            </>
-                                                            )
-=======
                                     const imgref = rightcontent.rhs_rb_icon.asset._ref
                                     const portabletext = rightcontent.rhs_rb_content
                                     const title = rightcontent.rhs_rb_title
                                     const buttons = rightcontent.rhs_rb_buttons
                                     return (
                                         <>
-                                            <div key={i} className="md:p-20 lg:p-20">
+                                            <div key={i} className="py-14 px-8 md:p-20 lg:p-20">
                                                 <Image props={imgref} />
-                                                <h3 className="my-4 text-3xl text-primary font-bold leading-tight">{title}</h3>
-                                                <div className="text-secondary text-lg leading-7">
+                                                <h3 className="my-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
+                                                <div className="text-secondary text-sm md:text-lg leading-6 md:leading-7">
                                                     <PortableText blocks={portabletext} />
                                                 </div>
                                                 <div className="md:flex block mt-6">
@@ -88,18 +66,17 @@ const RightSideHiglightedContent = (props) => {
                                                         {(() => {
                                                             if (btn.btnexternallink === true){
                                                                 return (
-                                                                    <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-primary`} href={btn.btnlink}>{btn.btntext}</a>
+                                                                    <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-primary transperent-btn`} href={btn.btnlink}>{btn.btntext}</a>
                                                                 )
                                                             }else{
                                                                 return(
-                                                                    <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-primary`}>
+                                                                    <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-primary transperent-btn`}>
                                                                         <Link to={btn.btnlink} >{btn.btntext}</Link>
                                                                     </span>
                                                                 ) 
                                                             }
                                                         })()}
                                                         </>
->>>>>>> 8c57bd11197fb4d1b64fee6b8e1faa06ead082ee
                                                         )
                                                     )
                                                 }

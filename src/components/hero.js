@@ -25,7 +25,7 @@ function Hero(props) {
                                       )
                                   }else{
                                     return(
-                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'py-3 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 md:mb-0 mb-4 md:flex block rounded-lg border border-black transperent-btn`}>
+                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-3 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 md:mb-0 mb-4 md:flex block rounded-lg border border-black transperent-btn`}>
                                           <Link to={btn.btnlink} >{btn.btntext}</Link>
                                         </span>
                                     ) 
