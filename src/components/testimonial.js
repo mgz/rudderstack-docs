@@ -3,6 +3,7 @@ import $ from 'jquery'
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 import Image from "./image"
+import Link from "gatsby-link"
     
 const Testimonial = (props) => {
     $(document).ready(function(){
@@ -51,7 +52,19 @@ const Testimonial = (props) => {
                                                 <div class="message text-center text-2xl md:text-4xl tracking-wide font-bold text-primary blockquote mt-8">{testimonial.clientcontent}
                                                 </div>
                                                 <div className="text-center mt-8">
-                                                    <a className={(testimonial.button.btnhiglight === true ? 'bg-white text-primary' : '') + ` py-3.5 text-sm w-full sm:w-auto inline-block md:px-10 mr-4 rounded-lg border border-primary font-bold`} href={testimonial.button.btnlink}>{testimonial.button.btntext}</a>
+                                                {(() => {
+                                                    if (testimonial.button.btnexternallink === true){
+                                                        return (
+                                                            <a className={(testimonial.button.btnhiglight === true ? 'bg-white text-primary' : '') + ` py-3.5 text-sm w-full sm:w-auto inline-block md:px-10 mr-4 rounded-lg border border-primary font-bold`} href={testimonial.button.btnlink}>{testimonial.button.btntext}</a>
+                                                        )
+                                                    }else{
+                                                        return(
+                                                            <span className={(testimonial.button.btnhiglight === true ? 'bg-white text-primary' : '') + ` py-3.5 text-sm w-full sm:w-auto inline-block md:px-10 mr-4 rounded-lg border border-primary font-bold`}>
+                                                            <Link to={testimonial.button.btnlink} >{testimonial.button.btntext}</Link>
+                                                            </span>
+                                                        ) 
+                                                    }
+                                                })()}
                                                 </div>
                                             </div>
                                         </div>

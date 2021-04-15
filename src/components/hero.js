@@ -1,6 +1,7 @@
 import React from "react";
 import PortableText from "./portableText";
 import Image from "./image"
+import Link from "gatsby-link"
 
 function Hero(props) {
   const herobannerbutton = props.herobannerbutton
@@ -17,7 +18,19 @@ function Hero(props) {
                           herobannerbutton.map(
                               (btn, i) => (
                                 <>
-                                  <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-3 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 md:mb-0 mb-4 md:flex block rounded-lg border border-black transperent-btn`} href={btn.btnlink}>{btn.btntext}</a>
+                                {(() => {
+                                  if (btn.btnexternallink === true){
+                                      return (
+                                        <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-3 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 md:mb-0 mb-4 md:flex block rounded-lg border border-black transperent-btn`} href={btn.btnlink}>{btn.btntext}</a>
+                                      )
+                                  }else{
+                                    return(
+                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'py-3 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 md:mb-0 mb-4 md:flex block rounded-lg border border-black transperent-btn`}>
+                                          <Link to={btn.btnlink} >{btn.btntext}</Link>
+                                        </span>
+                                    ) 
+                                  }
+                              })()}
                                 </>
                               )
                           )

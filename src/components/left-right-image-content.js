@@ -1,6 +1,7 @@
 import React from "react";
 import PortableText from "./portableText";
 import Image from "./image"
+import Link from "gatsby-link"
     
 const LeftRightImgCnt = (props) => {
     const maintitle = props.leftrightcontentmaintitle
@@ -23,6 +24,7 @@ const LeftRightImgCnt = (props) => {
                                     const portabletext = content.content
                                     const smalltitle = content.smalltitle
                                     const title = content.title
+                                    const extralink = content.addlink.cmnexternallink
                                     const linktext = content.addlink.cmnlinktext
                                     const linkurl = content.addlink.cmnlink
                                     return (
@@ -46,7 +48,19 @@ const LeftRightImgCnt = (props) => {
                                                         <PortableText blocks={portabletext} />
                                                     </div>
                                                     <div className="my-8 flex items-center">
-                                                        <a href={linkurl} className="font-bold leading-tight text-sm lr-icon" >{linktext}</a>
+                                                    {(() => {
+                                                        if (extralink === true){
+                                                            return (
+                                                                <a href={linkurl} className="font-bold leading-tight text-sm lr-icon" >{linktext}</a>
+                                                            )
+                                                        }else{
+                                                            return(
+                                                                <span className="font-bold leading-tight text-sm lr-icon">
+                                                                    <Link to={linkurl} >{linktext}</Link>
+                                                                </span>
+                                                            ) 
+                                                        }
+                                                    })()}
                                                     </div>
                                                 </div>
                                             </div>
@@ -59,6 +73,7 @@ const LeftRightImgCnt = (props) => {
                                     const portabletext = content.content
                                     const smalltitle = content.smalltitle
                                     const title = content.title
+                                    const extralink = content.addlink.cmnexternallink
                                     const linktext = content.addlink.cmnlinktext
                                     const linkurl = content.addlink.cmnlink
                                     return(
@@ -70,7 +85,19 @@ const LeftRightImgCnt = (props) => {
                                                 <PortableText blocks={portabletext} />
                                             </div>
                                             <div className="my-8 flex items-center">
-                                                <a href={linkurl} className="font-bold leading-tight text-sm lr-icon relative inline-flex sm:inline-block" >{linktext}</a>
+                                            {(() => {
+                                                if (extralink === true){
+                                                    return (
+                                                        <a href={linkurl} className="font-bold leading-tight text-sm lr-icon relative inline-flex sm:inline-block" >{linktext}</a>
+                                                    )
+                                                }else{
+                                                    return(
+                                                        <span className="font-bold leading-tight text-sm lr-icon relative inline-flex sm:inline-block">
+                                                        <Link to={linkurl} >{linktext}</Link>
+                                                        </span>
+                                                    ) 
+                                                }
+                                            })()}
                                             </div>
                                         </div>
                                         <div className="w-full sm:w-1/2 md:p-6 mt-6">

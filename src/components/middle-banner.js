@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../lib/font-awesome';
 import { StaticImage } from "gatsby-plugin-image"
+import Link from "gatsby-link"
     
 const MiddleBanner = (props) => {
     const smalldescription = props.smalldescription
@@ -25,7 +26,19 @@ const MiddleBanner = (props) => {
                                 {
                                     btns.map(
                                         (btn, i) => (
-                                            <a key={i} className={(btn.btnhiglight === true ? 'bg-white text-primary' : '') + ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom`} href={btn.btnlink}>{btn.btntext}</a>
+                                            (() => {
+                                                if (btn.btnexternallink === true){
+                                                    return (
+                                                        <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-white text-primary' : '') + ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom`} href={btn.btnlink}>{btn.btntext}</a>
+                                                    )
+                                                }else{
+                                                  return(
+                                                    <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-white text-primary' : '') + ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom`}>
+                                                        <Link to={btn.btnlink} >{btn.btntext}</Link>
+                                                    </span>
+                                                  ) 
+                                                }
+                                            })()
                                         )
                                     )
                                 }

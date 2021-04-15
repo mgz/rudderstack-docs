@@ -18,6 +18,10 @@
 body{
   background: linear-gradient(180deg, #E3F1F1 0%, rgba(238, 244, 245, 0) 100%)no-repeat !important; height: 835px; left: 0px; top: -5px;
 }
+.bg-hero-pattern {
+  background-size:100%;
+  background-repeat: no-repeat;
+}
 .lr-icon::before{
   content: "";
   background: url("../images/arrow-right.png")no-repeat;
@@ -153,4 +157,28 @@ top: -60px;
 }
 .block-description h3 {
 @apply mt-6 text-xl
+}
+.about-us-banner {
+  background:url("../images/aboutus-banner.png");
+  background-repeat: no-repeat;
+  background-position: right 50%;
+  -webkit-background-size: 50%;
+  background-size: 50%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .about-us-banner {
+    background-position:right 25%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about-us-banner {
+    background:none;
+  }
+  .bg-hero-pattern {
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center top;
+  }
 }

@@ -2,6 +2,7 @@ import React from "react";
 import PortableText from "./portableText";
 import Image from "./image"
 import '../lib/font-awesome';
+import Link from "gatsby-link"
     
 const FreeText = (props) => {
     const maintitle = props.ftwri_title
@@ -23,7 +24,19 @@ const FreeText = (props) => {
                             buttons.map(
                                 (btn, i) => (
                                 <>
-                                    <a key={i} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 mr-4 md:px-8 lg:px-8 px-2 text-center rounded-lg md:mb-0 mb-4 md:flex block border transperent-btn text-sm border-primary`} href={btn.btnlink}>{btn.btntext}</a>
+                                {(() => {
+                                    if (btn.btnexternallink === true){
+                                        return (
+                                            <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 mr-4 md:px-8 lg:px-8 px-2 text-center rounded-lg md:mb-0 mb-4 md:flex block border transperent-btn text-sm border-primary`} href={btn.btnlink}>{btn.btntext}</a>
+                                        )
+                                    }else{
+                                        return(
+                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 mr-4 md:px-8 lg:px-8 px-2 text-center rounded-lg md:mb-0 mb-4 md:flex block border transperent-btn text-sm border-primary`}>
+                                            <Link to={btn.btnlink} >{btn.btntext}</Link>
+                                            </span>
+                                        ) 
+                                    }
+                                })()}
                                 </>
                                 )
                             )
