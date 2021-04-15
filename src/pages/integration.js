@@ -6,7 +6,8 @@ import Layout from "../components/layout"
 import algoliasearch from 'algoliasearch/lite';
 import CustomSearchBox from "../components/customSearchBox";
 import IntegrationCategoryMenu from "../components/integrationCategoryList";
-import { InstantSearch, SortBy, Menu, Hits } from 'react-instantsearch-dom';
+import IntegrationTypeMenu from "../components/integrationTypeList";
+import { InstantSearch } from 'react-instantsearch-dom';
 import IntegrationHits from "../components/integrationHits"
 
 const Integration = (props) => {
@@ -20,20 +21,27 @@ const Integration = (props) => {
           searchClient={searchClient}
           indexName={process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX}
           >
-          {/* <Configure hitsPerPage={13} /> */}
           <div className="container flex flex-wrap flex-col sm:flex-row">
-            <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-solid border-b-2 border-grey-500">
-              <IntegrationCategoryMenu attribute="integrationcategories"/>
-            </div>
-            <div className="w-full md:w-2/5 pt-6 pb-3 text-center">
+            <div className="w-full md:w-2/5 pt-6 pb-3 items-center text-center">
               <CustomSearchBox />
             </div>
             <div className="mt-8">
-              <div id="hits-container">
-                <div data-reactroot>
-                  <IntegrationHits />
+              <div className="flex items-center flex-wrap flex-col sm:flex-row">
+                <div className="w-full md:w-1/4 sm:w-1/2 md:p-6 mt-6">
+                  <IntegrationTypeMenu attribute='integrationtypes.title' />
+                  <div className="mt-8">
+                    <IntegrationCategoryMenu attribute='integrationcategories.title' />
+                  </div>
+                </div>
+                <div className="w-full md:w-3/4 sm:w-1/2 md:p-6 mt-6">
+                  <div id="hits-container">
+                    <div data-reactroot>
+                      <IntegrationHits />
+                    </div>
+                  </div>
                 </div>
               </div>
+              
             </div>
           </div>
         </InstantSearch>

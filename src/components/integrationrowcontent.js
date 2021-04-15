@@ -14,7 +14,6 @@ const Integrationrowcontent = ({ hits }) => {
       <h2 className="text-2xl font-bold mb-2">Integration</h2>
       <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 xl:gap-8">
         {hits.map((hit, index) => {
-          console.log('Hit: ', hit)
           if (index >= 0) {
             return (
               <section key={index} className="flex">

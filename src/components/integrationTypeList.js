@@ -4,26 +4,15 @@ import { Highlight, connectMenu } from "react-instantsearch-dom"
 
 const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
   var selected = false;
+  console.log('items: ', items)
   items.map(item => {
     if (item.isRefined) selected = true;
   })
 
   return (
     <>
-    <h2 className="text-xl uppercase">Categories</h2>
+    <h2 className="text-xl uppercase">Types</h2>
     <ul className="list-reset block capitalize items-center">
-      <li key="0" className="p-1 pl-0">
-        <a
-          href={createURL('')}
-          className={!selected ? 'border-solid border-b-2 border-indigo-500 text-indigo-500 pb-1' : ''}
-          onClick={event => {
-            event.preventDefault();
-            refine('');
-          }}
-          >
-          All categories
-        </a>
-      </li>
       {items.map(item => (
         <li key={item.value} className="p-1 pl-0">
           <a
@@ -52,6 +41,6 @@ const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
   )
 };
 
-const IntegrationCategoryMenu = connectMenu(Menu)
+const IntegrationTypeMenu = connectMenu(Menu)
 
-export default IntegrationCategoryMenu
+export default IntegrationTypeMenu
