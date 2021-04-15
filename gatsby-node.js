@@ -38,6 +38,7 @@ exports.onCreateWebpackConfig = ({
               'window.jQuery': 'jquery'
           }),
         ],
+        devtool: "eval-source-map"
       })
     }
   }
