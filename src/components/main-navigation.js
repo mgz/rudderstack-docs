@@ -55,8 +55,8 @@ const MainNavigation = () => {
           <div className="mobile-menu"> <StaticImage src="../images/menu.png" alt="Toggle"/></div>
         </button>
       </div>
-      <div className={`${ isExpanded ? `block` : `hidden` } block justify-center items-center lg:flex lg:items-center lg:w-auto w-4/5`}>
-        <div className="lg:flex-grow flex list-none">
+      <div className={`lg:flex ${ isExpanded ? `block` : `hidden` } justify-center items-center lg:items-center lg:w-auto w-4/5`}>
+        <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
         {
           mainmenu.map(
           (link, i) => (
@@ -64,7 +64,7 @@ const MainNavigation = () => {
           )
        )
       }
-        </div>
+        </ul>
         <div className="flex">
           <a href="https://app.rudderstack.com/login?_ga=2.236197633.1437852951.1618311746-1836483757.1616824969"><span className="inline-block p-2 py-1.5 md:ml-3 font-custom font-bold mr-2">Log in</span></a>
           {(() => {
