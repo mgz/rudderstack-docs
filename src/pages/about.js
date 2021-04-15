@@ -1,10 +1,17 @@
 import React from "react";
+import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
+import open_source from '../images/open_source.svg'
+import build from '../images/build.svg'
+import privacy from '../images/privacy.svg'
+import customerobsessed from '../images/customer-obsessed.svg'
+import Integrationschart from '../images/Integrations chart.svg'
 
-const Aboutus = () => {
-  
+
+const About = () => {
+
   return (
     <Layout>
     <SEO title="About Us" />
@@ -27,7 +34,7 @@ const Aboutus = () => {
             <p className="text-sm md:text-lg">RudderStack elegantly handles every piece of data from every source and syncs it with every tool in your stack.</p>
           </div>
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <StaticImage src="../images/Integrations_chart.png" alt="Integration Chart"/>
+            <img src={Integrationschart} alt="Integration Chart"/>
           </div>
         </div>
       </section>
@@ -42,7 +49,7 @@ const Aboutus = () => {
             <div className="md:w-1/2 p-4 mb-16 md:mb-24">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center mb-4">
-                  <StaticImage src="../images/open_source.svg" />
+                  <img src={open_source} />
                 </div>
                 <h2 className="text-lg font-bold mb-2">Open-source</h2>
                 <p className="leading-relaxed text-lg">We believe that companies should not be vendor-locked into proprietary software and held hostage to predatory pricing. Openness is not only good for society but also requires us to keep innovating.</p>
@@ -51,16 +58,16 @@ const Aboutus = () => {
             <div className="md:w-1/2 p-4 mb-16 md:mb-24">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center mb-4">
-                  <StaticImage src="../images/privacy.svg" />
+                  <img src={privacy} />
                 </div>
                 <h2 className="text-lg font-bold mb-2">Privacy &amp; Security-focused</h2>
                 <p className="leading-relaxed text-lg">We take user data privacy and security very seriously. Our core architecture was constructed on the idea of privacy and security first. That is not just a product choice for us; it is a principle.</p>
               </div>
             </div>
-            <div className="md:w-1/2 p-4 sm:mb-16">
+            <div className="md:w-1/2 p-4 mb-16 md:mb-24">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center mb-4">
-                  <StaticImage src="../images/build.svg" />
+                  <img src={build} />
                 </div>
                 <h2 className="text-lg font-bold title-font mb-2">Built for Engineers &amp; Data Scientists</h2>
                 <p className="leading-relaxed text-lg">We take data privacy and security seriously. RudderStack’s core architecture was constructed specifically with data privacy.</p>
@@ -69,7 +76,7 @@ const Aboutus = () => {
             <div className="md:w-1/2 p-4">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center mb-4">
-                  <StaticImage src="../images/customer-obsessed.svg" />
+                  <img src={customerobsessed} />
                 </div>
                 <h2 className="text-lg font-bold title-font mb-2">Customer-Obsessed</h2>
                 <p className="leading-relaxed text-lg">Every company wants to treat its customers well, but for us, it’s an obsession. We will always help our customers make the best product choice under all circumstances.</p>
@@ -193,9 +200,31 @@ const Aboutus = () => {
           </div>
         </div>
       </section>
+      <section className="bg-primary text-white 100% md:py-20 ">
+        <div className="container md:px-3 mx-auto">
+          <div className="flex flex-wrap justify-items-center items-center sm:flex-row">
+            <div className="flex items-start w-1/2 mt-6">
+              <div className="">
+                <StaticImage src="../images/Arrow.svg" alt="Get Started"/>
+              </div>
+              <h3 className="text-4xl ml-8 md:text-5xl font-bold font-custom leading-tight max-w-xs">Get started today</h3>
+            </div>
+            <div className="w-1/2 mt-6 max-w-lg">
+              <div className="align-middle text-lg leading-7 font-custom">
+                <p>Start building smarter customer data pipelines today with RudderStack. Our solutions engineering team is here to help.</p>
+                <div className="block md:flex pt-5">
+                  <a className="bg-white text-primary py-2 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom" href="">Sign up for free</a>
+                  <a className="bg-black text-white py-2 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom" href="">Get a demo</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
   </Layout>
 )
   
 }
 
-export default Aboutus
+export default About
