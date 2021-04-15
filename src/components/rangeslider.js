@@ -15,19 +15,25 @@ class Horizontal extends Component {
     this.setState({
       horizontal: value
     })
-    if(value === 150){
-      $('#text1').html('N/A');
+    console.log("initial value val = "+ value);
+    if(value <=100){
+      console.log("value val = "+ value);
+      var monthlyprice = 900+(value - 25)*12;
+      var anualprice = monthlyprice*10;
+      const formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 0
+      });
+      $('#text1').html(formatter.format(monthlyprice));
+      $('#text2').html(formatter.format(anualprice));
+    }else{
+      $('#text1').html('');
       $('#text2').html('Volume Discount');
       $('#text3').html('');
       $('#text4').html('Request pricing');
     }
-    else
-    {
-      $('#text1').html('$1800');
-      $('#text2').html('$18000');
-      $('#text3').html('16% discount');
-      $('#text4').html('Sign up');
-    }     
+       
   };
   render () {
     const { horizontal} = this.state
@@ -46,8 +52,8 @@ class Horizontal extends Component {
           <span>25m</span><span className="ml-auto">150m+</span>
         </div>
         <div className="bg-blueNew-lighter lg:flex px-14 py-6 mt-16 text-center lg:text-left"> 
-          <div className="lg:w-1/3  py-2 lg:py-0 text-grayColor-custom"><span className="font-bold text-black-custom">Monthly price: </span><span id="text1">$1800</span></div>
-          <div className="lg:w-1/3 py-2 lg:py-0 text-grayColor-custom"><span className="font-bold text-black-custom text2">Monthly price: </span><span id="text2">$18000</span> <br/>
+          <div className="lg:w-1/3  py-2 lg:py-0 text-grayColor-custom"><span className="font-bold text-black-custom">Monthly price: </span><span id="text1">$900</span></div>
+          <div className="lg:w-1/3 py-2 lg:py-0 text-grayColor-custom"><span className="font-bold text-black-custom text2">Anual price: </span><span id="text2">$9000</span> <br/>
           <span className="lg:pl-28 italic" id="text3">16% discount</span></div>
           <div className="lg:w-1/3 py-2 lg:py-0 text-center"><button class="sm:text-sm text-xs font-bold py-2.5 px-8 rounded bg-black-custom text-whiteColor-custom" id="text4">Sign up</button></div>
         </div>
