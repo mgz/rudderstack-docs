@@ -37,6 +37,7 @@ import { StaticImage } from "gatsby-plugin-image"
                menu_block {
                  menu_item_link
                  menu_item_title
+                 menu_target_link
                  _rawSubMenuSection
                }
              }

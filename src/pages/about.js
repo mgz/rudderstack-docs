@@ -15,9 +15,9 @@ const About = () => {
   return (
     <Layout>
     <SEO title="About Us" />
-    <div className="pt-24 mx-auto about-us-banner">
+    <div className="mt-16 mx-auto about-us-banner">
       <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter">
-        <div class="container px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
+        <div class="container md:mt-16 px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
           <div className="uppercase text-sm mb-5 text-blueNew-custom">OUR MISSION</div>
           <h1 className="text-5xl md:text-6xl font-bold font-custom leading-snug">
             Elevating Data Engineers
