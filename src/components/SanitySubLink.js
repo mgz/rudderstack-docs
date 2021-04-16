@@ -6,7 +6,7 @@ const SanitySubLink = (props) => {
   let sublink = props.link;
 
   if (sublink.sub_menu_item_externallink) {
-    return <a className="my-2 py-4 px-4 lg:py-6 lg:px-4 block" href={sublink.sub_menu_item_link} target={sublink.menu_target_link?"_blank":"_self"}>
+    return <a className="my-2 lg:my-0 py-4 px-4 lg:py-6 lg:px-4 block rounded-lg bg-grayColor-BgGray" href={sublink.sub_menu_item_link} target={sublink.menu_target_link?"_blank":"_self"}>
       {(
       sublink.menu_icon
         ?
@@ -19,7 +19,7 @@ const SanitySubLink = (props) => {
     </a>;
   }
   else {
-    return <Link className="my-2 py-4 px-4 lg:py-6 lg:px-4 block" to={sublink.sub_menu_item_link} target={sublink.menu_target_link?"_blank":"_self"}>
+    return <Link className="my-2 lg:my-0 py-4 px-4 lg:py-6 lg:px-4 block rounded-lg bg-grayColor-BgGray" to={sublink.sub_menu_item_link} target={sublink.menu_target_link?"_blank":"_self"}>
       {(
         sublink.menu_icon
           ?

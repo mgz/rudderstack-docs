@@ -45,9 +45,9 @@ const MainNavigation = () => {
   const trybtn = data.allSanitySiteSettings.edges[0].node.headerblock.try_free_btn;  
   return (
     <>
-    <nav className="md:container mx-auto md:px-4 md:px-3 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-10">
+    <nav className="md:container max-w-screen-sm mx-auto sm:px-4 md:px-3 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-10">
       <div className="flex items-center mr-6 w-2/5 md:w-1/5">
-        <Link to="/">
+        <Link to="/" className="pl-4 sm:pl-0">
           <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
         </Link>
       </div>
@@ -64,9 +64,16 @@ const MainNavigation = () => {
           }
         })()}
       </div>
-      <div className="block lg:hidden">
-        <button onClick={() => toggleExpansion(!isExpanded)} className="flex items-center px-3 py-2 text-main border-teal-400 hover:text-white hover:border-white">
-          <div className="mobile-menu"> <StaticImage src="../images/menu.png" alt="Toggle"/></div>
+      <div className="block lg:hidden pr-4 sm:pr-0">
+        <button onClick={() => toggleExpansion(!isExpanded)} className="flex items-center px-3 py-2 text-main border-teal-400 hover:text-white hover:border-white max-h-8">
+          <div className="mobile-menu">
+          {(!isExpanded
+            ?
+              <StaticImage src="../images/navmenu_open.svg" alt="Toggle" className="max-h-6" />
+            :
+              <StaticImage src="../images/navmenu_close.svg" alt="Toggle" className="w-6 h-6" />
+          )}
+          </div>
         </button>
       </div>
       <div className={`menu lg:flex ${ isExpanded ? `block` : `hidden` } py-4 px-6 justify-center items-center lg:items-center lg:w-auto w-4/5 md:w-full mt-2 lg:mt-0`}>
@@ -80,7 +87,7 @@ const MainNavigation = () => {
       }
         </ul>
         <div className="flex">
-          <a href="https://app.rudderstack.com/login?_ga=2.236197633.1437852951.1618311746-1836483757.1616824969"><span className="inline-block lg:p-2 lg:py-1.5 md:mt-6 lg:mt-0 font-custom font-bold mr-2">Log in</span></a>
+          <a href="https://app.rudderstack.com/login?_ga=2.236197633.1437852951.1618311746-1836483757.1616824969"><span className="inline-block lg:p-2 lg:py-1.5 mt-6 lg:mt-0 font-custom font-bold mr-2">Log in</span></a>
           {(() => {
             if (trybtn.btnexternallink === true){
               return (

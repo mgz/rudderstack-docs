@@ -52,7 +52,7 @@ body{
 }
 .lr-icon::before{
   content: "";
-  background: url("../images/arrow-right.png")no-repeat;
+  background: url("../images/arrow-right.svg")no-repeat;
   background-position: center;
   width: 75%;
   height: 100%;
@@ -195,7 +195,7 @@ top: -60px;
 }
 
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
   .about-us-banner {
     background-position:right 10px;
   }

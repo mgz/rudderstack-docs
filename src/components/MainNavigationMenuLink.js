@@ -17,11 +17,11 @@ const MainNavigationMenuLink = (props) => {
         if (link._rawSubMenuSection !== null){
           const submenu = link._rawSubMenuSection.hassubmenu.add_sub_menu_items
           return (
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 capitalize sub-menu group-hover:block lg:group-hover:grid relative lg:absolute hidden lg:shadow-menu lg:bg-whiteColor-custom lg:rounded-2xl py-1 lg:p-4 lg:mt-2 lg:-ml-6">
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 capitalize sub-menu group-hover:block lg:group-hover:grid relative lg:absolute hidden lg:shadow-menu lg:bg-whiteColor-custom lg:rounded-2xl py-1 lg:p-6 lg:mt-2 lg:-ml-6">
               {
                 submenu.map(
                   (sublink, j) => (
-                    <li key={j} className="rounded-lg bg-grayColor-BgGray text-sm">
+                    <li key={j} className="text-sm">
                       <SanitySubLink link={sublink} />
                     </li>
                   )
