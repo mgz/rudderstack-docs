@@ -59,7 +59,8 @@ module.exports = {
       custom: ['Basis Grotesque Pro', 'sans-serif'],
     },
     boxShadow: {
-      md: '0 1px 24px rgba(0, 0, 0, 0.05), 0 1px 24px rgba(0, 0, 0, 0.05)'
+      md: '0 1px 24px rgba(0, 0, 0, 0.05), 0 1px 24px rgba(0, 0, 0, 0.05)',
+      menu: '0 16px 40px rgba(0, 0, 0, 0.05), 0 16px 40px rgba(0, 0, 0, 0.05)'
     }
   },
   variants: {

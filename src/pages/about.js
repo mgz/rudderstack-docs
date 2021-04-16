@@ -15,9 +15,9 @@ const About = () => {
   return (
     <Layout>
     <SEO title="About Us" />
-    <div className="pt-24 mx-auto about-us-banner">
+    <div className="mt-16 mx-auto about-us-banner">
       <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter">
-        <div class="container px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
+        <div class="container md:mt-16 px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
           <div className="uppercase text-sm mb-5 text-blueNew-custom">OUR MISSION</div>
           <h1 className="text-5xl md:text-6xl font-bold font-custom leading-snug">
             Elevating Data Engineers
@@ -94,7 +94,7 @@ const About = () => {
           <div className="flex flex-wrap -m-4">
             <div className="p-4 w-2/3 md:w-1/3 m-auto">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
-                <StaticImage className="lg:h-48 md:h-36 w-full object-cover object-center" src="../images/soumyadeb.jpeg" />
+                <StaticImage className="lg:h-48 md:h-36 w-full object-cover object-center" src="../images/soumyadeb.jpg" />
                 <div className="py-12 text-center">
                   <h3 className="title-font text-2xl font-medium mb-3">Soumyadeb Mitra</h3>
                   <p className="leading-relaxed mb-3 text-xl">Founder &amp; CEO, RudderStack</p>
@@ -103,7 +103,7 @@ const About = () => {
             </div>
             <div className="p-4 w-2/3 md:w-1/3 m-auto">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
-                <StaticImage className="lg:h-48 md:h-36 w-full object-cover object-center" src="../images/Eric-Dodds.jpeg" />
+                <StaticImage className="lg:h-48 md:h-36 w-full object-cover object-center" src="../images/Eric.png" />
                 <div className="py-12 text-center">
                   <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">Eric Dodds</h3>
                   <p className="leading-relaxed mb-3 text-xl">Director, Customer Success</p>
@@ -112,7 +112,7 @@ const About = () => {
             </div>
             <div className="p-4 w-2/3 md:w-1/3 m-auto">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
-                <StaticImage className="lg:h-48 md:h-36 w-full object-cover object-center" src="../images/Brett-Umberg.jpeg" />
+                <StaticImage className="lg:h-48 md:h-36 w-full object-cover object-center" src="../images/Brett.png" />
                 <div className="py-12 text-center">
                   <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">Brett Umberg</h3>
                   <p className="leading-relaxed mb-3 text-xl">Head of BizOps &amp; Strategy</p>
@@ -133,7 +133,7 @@ const About = () => {
             </div>
             <div className="p-4 w-2/3 md:w-1/2 m-auto">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
-                <StaticImage className="lg:h-48 md:h-36 w-full object-cover object-center" src="../images/Kostas.jpeg" />
+                <StaticImage className="lg:h-48 md:h-36 w-full object-cover object-center" src="../images/Kostas.png" />
                 <div className="py-12 text-center">
                   <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">Alex Dovenmuehle</h3>
                   <p className="leading-relaxed mb-3 text-xl">Head of Engineering</p>

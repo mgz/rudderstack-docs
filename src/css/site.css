@@ -22,9 +22,40 @@ body{
   background-size:100%;
   background-repeat: no-repeat;
 }
+.menu li.has-submenu a:after {
+  display: inline-block;
+  position: relative;
+  content: "";
+  top: -3px;
+  right: 0;
+  margin-left: 4px;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  border-right: 2px solid rgba(0,0,0);
+  border-bottom: 2px solid rgba(0,0,0);
+}
+.menu li.has-submenu a.active:after {
+  transform: rotate(225deg);
+}
+.menu li.has-submenu li a:after {
+  display: none;
+}
+.sub-menu:after {
+  content:"";
+  position: absolute;
+  left: 35px;
+  top: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 17px 17px 17px;
+  border-color: transparent transparent #ffffff transparent;
+  z-index:9998;
+}
 .lr-icon::before{
   content: "";
-  background: url("../images/arrow-right.png")no-repeat;
+  background: url("../images/arrow-right.svg")no-repeat;
   background-position: center;
   width: 75%;
   height: 100%;
@@ -161,14 +192,35 @@ top: -60px;
 .about-us-banner {
   background:url("../images/aboutus-banner.png");
   background-repeat: no-repeat;
-  background-position: right 50%;
-  -webkit-background-size: 50%;
-  background-size: 50%;
+  background-position: right top;
+  -webkit-background-size: 51%;
+  background-size: 51%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1023px) {
+  .menu li.has-submenu:hover a:after {
+    transform: rotate(225deg);
+    top: 0px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
   .about-us-banner {
-    background-position:right 25%;
+    background-position:right 10px;
+  }
+  .menu {
+    background-color: #FFF !important;
+  @apply w-full !important;
+  }
+  .sub-menu:after {
+    display: none;
+  }
+  .menu li.has-submenu {
+    position: relative;
+  }
+  .menu li.has-submenu a:after {
+    position: absolute;
+    top: 20px;
   }
 }
 
