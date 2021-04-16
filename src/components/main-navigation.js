@@ -45,7 +45,7 @@ const MainNavigation = () => {
   return (
     <>
     <nav className="container mx-auto px-4 md:px-3 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-10 bg-blueNew-skyblue">
-      <div className="flex items-center mr-6 w-1/5">
+      <div className="flex items-center mr-6 w-3/5 md:w-1/5">
         <Link to="/">
           <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
         </Link>

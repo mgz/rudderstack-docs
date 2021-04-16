@@ -17,7 +17,7 @@ const RightSideHiglightedContent = (props) => {
                     <h3 className="md:my-2 pb-16 md:pb-10 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
                 </div>
                 <div className="grid md:grid-cols-12 md:gap-16 items-center flex-wrap">
-                    <div className="md:col-span-5 p-2">
+                    <div className="md:col-span-5 p-2 md:mt-12 h-full">
                     {
                         leftcontents.map(
                             (leftcontent, i) => (
@@ -41,7 +41,7 @@ const RightSideHiglightedContent = (props) => {
                         )
                     }  
                     </div>
-                    <div className="md:col-span-7 bg-background rounded-xl">
+                    <div className="md:col-span-7 bg-background rounded-xl h-full">
                     {
                         rightcontents.map(
                             (rightcontent, i) => (
@@ -58,7 +58,7 @@ const RightSideHiglightedContent = (props) => {
                                                 <div className="text-secondary text-sm md:text-lg leading-6 md:leading-7">
                                                     <PortableText blocks={portabletext} />
                                                 </div>
-                                                <div className="md:flex block mt-6">
+                                                <div className="lg:flex block mt-6">
                                                 {
                                                     buttons.map(
                                                         (btn, i) => (
@@ -66,11 +66,11 @@ const RightSideHiglightedContent = (props) => {
                                                         {(() => {
                                                             if (btn.btnexternallink === true){
                                                                 return (
-                                                                    <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-primary transperent-btn`} href={btn.btnlink}>{btn.btntext}</a>
+                                                                    <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center lg:mb-0 mb-4 md:flex block lg:mr-4 rounded-lg border text-sm border-primary transperent-btn`} href={btn.btnlink}>{btn.btntext}</a>
                                                                 )
                                                             }else{
                                                                 return(
-                                                                    <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 md:flex block mr-4 rounded-lg border text-sm border-primary transperent-btn`}>
+                                                                    <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center lg:mb-0 mb-4 md:flex block lg:mr-4 rounded-lg border text-sm border-primary transperent-btn`}>
                                                                         <Link to={btn.btnlink} >{btn.btntext}</Link>
                                                                     </span>
                                                                 ) 

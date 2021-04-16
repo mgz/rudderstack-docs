@@ -49,7 +49,7 @@ const Testimonial = (props) => {
                                                 </div>
                                                 <p className="font-bold text-sm text-primary mb-2">{testimonial.clientname}</p>
                                                 <p className="text-sm text-primary mb-4">{testimonial.clientdesignation}</p>
-                                                <div class="message text-center text-2xl md:text-4xl tracking-wide font-bold text-primary blockquote mt-8">{testimonial.clientcontent}
+                                                <div class="message text-center text-2xl md:text-4xl tracking-wide font-bold text-primary blockquote mt-8 px-12">{testimonial.clientcontent}
                                                 </div>
                                                 <div className="text-center mt-8">
                                                 {(() => {

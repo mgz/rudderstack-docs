@@ -1,17 +1,18 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-function renderImage(image) {
+function renderImage(image, classes) {
     const imgh = 
             (() => {
                 return (
-                    <img src={image.node.fluid.src} alt="" />
+                    <img src={image.node.fluid.src} alt="" className={classes} />
                 );
             })()
     return (
         imgh
     );
 };
+
 const Image = (props) => {
   return (
     <StaticQuery
@@ -33,7 +34,7 @@ const Image = (props) => {
         const imgdata = data.allSanityImageAsset.edges.find(
             imgdata => imgdata.node._id === props.props
         )
-        return(renderImage(imgdata))
+        return(renderImage(imgdata, props.classes))
       }}
     />
   );
