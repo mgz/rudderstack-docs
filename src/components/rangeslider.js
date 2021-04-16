@@ -32,8 +32,7 @@ class Horizontal extends Component {
       $('#text2').html('Volume Discount');
       $('#text3').html('');
       $('#text4').html('Request pricing');
-    }
-       
+    }       
   };
   render () {
     const { horizontal} = this.state
@@ -46,6 +45,7 @@ class Horizontal extends Component {
           max={150}
           value={horizontal}
           format={formatm}
+          handleLabel={horizontal}
           onChange={this.handleChangeHorizontal}
         />
         <div className='value flex text-lg font-bold mt-6'>

@@ -132,12 +132,21 @@ button.accordion:focus{
 .accordion__content{
   padding-right: 50px;
 }
+.accordion__text{
+  color: #4E4E4E;
+}
+p.accordion__title{
+  color: #000000;
+}
 /* rangeslider Section Css */
 .rangeslider-horizontal{
   height: 16px;
 }
 .rangeslider-horizontal .rangeslider__fill{
   background-color:#0066FF;
+}
+.rangeslider__handle{
+  position: relative;
 }
 .rangeslider-horizontal .rangeslider__handle:after{
   width: 25px;
@@ -165,9 +174,12 @@ button.accordion:focus{
 .rangeslider .rangeslider__handle:focus{
   outline: none;
 }
-.rangeslider-horizontal .rangeslider__handle-tooltip{
-  top: auto;
-  bottom: -70px;
+.rangeslider.rangeslider-horizontal {
+  position: relative;
+}
+.rangeslider__handle-label{
+  position: absolute;
+  top: 50px;
   background-color: #0066FF;
   font-size: 28px;
   font-weight: bold;
@@ -175,6 +187,10 @@ button.accordion:focus{
   padding: 0 25px;
   height: 45px;
   border-radius: 8px;
+  color: #ffffff;
+}
+.rangeslider-horizontal .rangeslider__handle-tooltip{
+  display: none;
 }
 .rangeslider-horizontal .rangeslider__handle-tooltip span{
   margin-top:0;
@@ -317,9 +333,6 @@ button.accordion:focus{
 div>a.transperent-btn:last-child{
   font-weight: bold;
 }
-.testimonials-wrap {
-  background-position: center 85px;
-}
 @media only screen and (max-width: 639px) {
   .banner-section p {
     font-size: 18px;
@@ -365,11 +378,31 @@ div>a.transperent-btn:last-child{
   .blog-title-wrap {
      min-height: 100px;
   }
-  .testimonials .owl-nav button.owl-prev:before{
-
-  }
   .footer-menus-wrap .footer-menus:nth-child(3) {
      clear: both;
      width: 100%;
+  }
+}
+@media only screen and (max-width: 1279px){
+  .testimonials-wrap {
+    background-position: center 85px;
+  }
+} 
+@media only screen and (max-width: 1023px){
+  .testimonials-wrap .owl-nav{
+    position: absolute;
+    bottom: 75px;
+    left: 0;
+    width: 100%;
+  }
+    .testimonials .owl-nav button.owl-prev:before {
+    left: 180px;
+    background-size: 90px;
+    width: 60px;
+  }
+  .testimonials .owl-nav button.owl-next:after{
+    right: 180px;
+    background-size: 90px;
+    width: 60px;
   }
 }
