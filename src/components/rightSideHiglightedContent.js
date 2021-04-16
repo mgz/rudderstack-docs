@@ -66,11 +66,11 @@ const RightSideHiglightedContent = (props) => {
                                                         {(() => {
                                                             if (btn.btnexternallink === true){
                                                                 return (
-                                                                    <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center lg:mb-0 mb-4 md:flex block lg:mr-4 rounded-lg border text-sm border-primary transperent-btn`} href={btn.btnlink}>{btn.btntext}</a>
+                                                                    <a key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-sm' : 'btn-secondary-sm') + ` lg:mb-0 mb-4 lg:mr-4`} href={btn.btnlink}>{btn.btntext}</a>
                                                                 )
                                                             }else{
                                                                 return(
-                                                                    <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:px-8 lg:px-8 px-2 text-center lg:mb-0 mb-4 md:flex block lg:mr-4 rounded-lg border text-sm border-primary transperent-btn`}>
+                                                                    <span key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-sm' : 'btn-secondary-sm') + ` lg:mb-0 mb-4 lg:mr-4`}>
                                                                         <Link to={btn.btnlink} >{btn.btntext}</Link>
                                                                     </span>
                                                                 ) 

@@ -30,7 +30,7 @@ const Testimonial = (props) => {
     const testimonials = props.addtestimonial
     return (
         <>
-           <section class="testimonials testimonials-wrap bg-white py-5 text-primary px-md-5 margin-top-xl bg-hero-pattern bg-no-repeat bg-cover">
+           <section class="testimonials testimonials-wrap bg-white py-5 text-primary px-md-5 margin-top-xl bg-hero-pattern bg-no-repeat bg-cover md:mt-32">
                 <div class="container mx-auto px-4 md:px-0 testimonial-img-wrap">
                     <div class="row">
                     <div className="block w-full">
@@ -55,11 +55,11 @@ const Testimonial = (props) => {
                                                 {(() => {
                                                     if (testimonial.button.btnexternallink === true){
                                                         return (
-                                                            <a className={(testimonial.button.btnhiglight === true ? 'bg-white text-primary' : '') + ` py-3.5 text-sm w-full sm:w-auto inline-block md:px-10 mr-4 rounded-lg border border-primary font-bold`} href={testimonial.button.btnlink}>{testimonial.button.btntext}</a>
+                                                            <a className={(testimonial.button.btnhiglight === true ? 'btn-primary-lg' : 'btn-secondary-large') + ` inline-block`} href={testimonial.button.btnlink}>{testimonial.button.btntext}</a>
                                                         )
                                                     }else{
                                                         return(
-                                                            <span className={(testimonial.button.btnhiglight === true ? 'bg-white text-primary' : '') + ` py-3.5 text-sm w-full sm:w-auto inline-block md:px-10 mr-4 rounded-lg border border-primary font-bold`}>
+                                                            <span className={(testimonial.button.btnhiglight === true ? 'btn-primary-lg' : 'btn-secondary-lg') + ` inline-block`}>
                                                             <Link to={testimonial.button.btnlink} >{testimonial.button.btntext}</Link>
                                                             </span>
                                                         ) 

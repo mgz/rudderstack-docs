@@ -1,5 +1,6 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
+import SanityLink from "./SanityLink"
 
 function renderFooterNav(menu) {
     const menuitems = menu.node.menu_block
@@ -9,7 +10,7 @@ function renderFooterNav(menu) {
                 return (
                     <>
                         <li key={i} className="mt-4 block mr-2 md:mr-0">
-                            <a href={menuitem.menu_item_link} className="no-underline hover:underline text-gray-500">{menuitem.menu_item_title}</a>
+                          <SanityLink link={menuitem} classes="no-underline hover:underline text-gray-500" />
                         </li>
                     </>
                 );
@@ -32,6 +33,7 @@ const FooterNav = (props) => {
                 menu_block {
                   menu_item_title
                   menu_item_link
+                  menu_item_externallink
                 }
               }
             }

@@ -51,11 +51,11 @@ const LeftRightImgCnt = (props) => {
                                                     {(() => {
                                                         if (extralink === true){
                                                             return (
-                                                                <a href={linkurl} className="font-bold leading-tight text-sm lr-icon" >{linktext}</a>
+                                                                <a href={linkurl} className="font-bold leading-normal text-sm lr-icon" >{linktext}</a>
                                                             )
                                                         }else{
                                                             return(
-                                                                <span className="font-bold leading-tight text-sm lr-icon">
+                                                                <span className="font-bold leading-normal text-sm lr-icon">
                                                                     <Link to={linkurl} >{linktext}</Link>
                                                                 </span>
                                                             ) 
@@ -88,12 +88,12 @@ const LeftRightImgCnt = (props) => {
                                             {(() => {
                                                 if (extralink === true){
                                                     return (
-                                                        <a href={linkurl} className="font-bold leading-tight text-sm lr-icon relative inline-flex sm:inline-block" >{linktext}</a>
+                                                        <a href={linkurl} className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block">{linktext}</a>
                                                     )
                                                 }else{
                                                     return(
-                                                        <span className="font-bold leading-tight text-sm lr-icon relative inline-flex sm:inline-block">
-                                                        <Link to={linkurl} >{linktext}</Link>
+                                                        <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block">
+                                                          <Link to={linkurl}>{linktext}</Link>
                                                         </span>
                                                     ) 
                                                 }

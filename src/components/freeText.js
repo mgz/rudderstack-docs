@@ -27,11 +27,11 @@ const FreeText = (props) => {
                                 {(() => {
                                     if (btn.btnexternallink === true){
                                         return (
-                                            <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:mr-4 md:px-8 lg:px-8 px-2 text-center rounded-lg md:mb-0 mb-4 md:flex block border transperent-btn text-sm border-primary`} href={btn.btnlink}>{btn.btntext}</a>
+                                            <a key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-lg' : 'btn-secondary-lg') + ` md:mr-4 md:mb-0 mb-4`} href={btn.btnlink}>{btn.btntext}</a>
                                         )
                                     }else{
                                         return(
-                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-2 md:mr-4 md:px-8 lg:px-8 px-2 text-center rounded-lg md:mb-0 mb-4 md:flex block border transperent-btn text-sm border-primary`}>
+                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-lg' : 'btn-secondary-lg') + ` md:mr-4 md:mb-0 mb-4`}>
                                             <Link to={btn.btnlink} >{btn.btntext}</Link>
                                             </span>
                                         ) 
@@ -43,7 +43,7 @@ const FreeText = (props) => {
                         }
                         </div>
                     </div>
-                    <div className="md:w-1/4 p-2 block">
+                    <div className="md:w-1/4 p-2 block mx-auto">
                         <Image props={imgref} />
                     </div>
                 </div>

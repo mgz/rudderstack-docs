@@ -21,11 +21,11 @@ function Hero(props) {
                                 {(() => {
                                   if (btn.btnexternallink === true){
                                       return (
-                                        <a key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-3 text-sm px-2 sm:px-8 text-center sm:mr-4 md:mb-0 mb-4 block rounded-lg border border-black transperent-btn`} href={btn.btnlink}>{btn.btntext}</a>
+                                        <a key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-lg' : 'btn-secondary-lg') + ` sm:mr-4 md:mb-0 mb-4`} href={btn.btnlink}>{btn.btntext}</a>
                                       )
                                   }else{
                                     return(
-                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'bg-primary text-white' : '') + ` py-3 text-sm px-2 sm:px-8 text-center sm:mr-4 md:mb-0 mb-4 block rounded-lg border border-black transperent-btn`}>
+                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-lg' : 'btn-secondary-lg') + ` sm:mr-4 md:mb-0 mb-4`}>
                                           <Link to={btn.btnlink} >{btn.btntext}</Link>
                                         </span>
                                     ) 

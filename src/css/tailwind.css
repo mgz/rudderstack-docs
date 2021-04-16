@@ -16,6 +16,7 @@
     @apply text-grayColor-custom text-xl;
   }
 }
+
 @layer components {
   .td-first-colum{
     @apply p-6 text-lg text-left;
@@ -32,8 +33,20 @@
   .checkImg{
     @apply w-5 h-4;
   }
-  
+  .btn-primary-lg {
+    @apply bg-primary text-white py-3 text-sm px-2 sm:px-10 text-center font-bold block rounded-lg border hover:bg-blueNew-custom;
+  }
+  .btn-secondary-lg {
+    @apply py-3 text-sm px-2 sm:px-10 text-center font-bold block rounded-lg border hover:bg-primary hover:text-white;
+  }
+  .btn-primary-sm {
+    @apply bg-primary text-white py-2 md:px-8 lg:px-8 px-2 text-center block rounded-lg border text-sm hover:bg-blueNew-custom;
+  }
+  .btn-secondary-sm {
+    @apply py-2 md:px-8 lg:px-8 px-2 text-center block rounded-lg border text-sm border-primary hover:bg-primary hover:text-white;
+  }
 }
+
 /* cards css */
 @media only screen and (min-width: 1024px) {
   .pricing-plans:after{
@@ -73,6 +86,7 @@
     border-top:10px solid #fff;
   }
 }
+
 /* Faq Section Css */
 .faqcta{
   background-color: #ffffff;
@@ -179,8 +193,8 @@ p.accordion__title{
 }
 .rangeslider__handle-label{
   position: absolute;
-  top: 62px;
-  left: -18px;
+  top: 64px;
+  left: -87%;
   background-color: #0066FF;
   font-size: 28px;
   font-weight: bold;
@@ -194,7 +208,7 @@ p.accordion__title{
   position: absolute;
   content: '';
   top: -15px;
-  left: 28px;
+  left: calc(50% - 9px);
   border-left: 11px solid transparent;
   border-right: 11px solid transparent;
   border-bottom: 18px solid #0066FF;
@@ -255,7 +269,6 @@ p.accordion__title{
   border: none;
   outline: none;
 }
-
 
 /* Style the accordion content title */
 .accordion__title {
@@ -343,6 +356,7 @@ p.accordion__title{
 div>a.transperent-btn:last-child{
   font-weight: bold;
 }
+
 @media only screen and (max-width: 639px) {
   .banner-section p {
     font-size: 18px;
@@ -356,28 +370,6 @@ div>a.transperent-btn:last-child{
     font-size: 14px;
     color: #000000;
   }
-  .tab-section .closetab,
-.tab-section .opentab {
-  position: relative;
-}
-.tab-section .closetab:after {
-  position: absolute;
-  content: '';
-  width: 20px;
-  height: 20px;
-  background: url('../images/chevron-down.png') no-repeat center center;
-  top: 23px;
-  right: 0;
-}
-.tab-section .opentab:after {
-  position: absolute;
-  content: '';
-  width: 20px;
-  height: 20px;
-  background: url('../images/chevron-up.png') no-repeat center center;
-  top: 23px;
-  right: 0;
-}
   .lr-icon:before{
     width: 0px;
   }
@@ -391,6 +383,20 @@ div>a.transperent-btn:last-child{
   .footer-menus-wrap .footer-menus:nth-child(3) {
      clear: both;
      width: 100%;
+  }
+  /* For plan cards css*/
+  .plans-section{
+    line-height: 54px;
+  }
+  .custom-bg {
+     background: #fff;
+  }
+  .custom-gradient{    
+    background: #eef5f5; /* Old browsers */
+    background: -moz-linear-gradient(top,  #eef5f5 0%, #e3f1f1 10%, #ffffff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #eef5f5 0%,#e3f1f1 10%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #eef5f5 0%,#e3f1f1 10%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eef5f5', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
   }
 }
 @media only screen and (max-width: 1279px){
@@ -414,5 +420,35 @@ div>a.transperent-btn:last-child{
     right: 180px;
     background-size: 90px;
     width: 60px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .tab-section .closetab,
+  .tab-section .opentab {
+    position: relative;
+  }
+  .tab-section .closetab:after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('../images/chevron-down.png') no-repeat center center;
+    top: 23px;
+    right: 0;
+  }
+  .tab-section .opentab:after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('../images/chevron-up.png') no-repeat center center;
+    top: 23px;
+    right: 0;
+  }
+}
+@media only screen and (min-width: 640px) {
+  .mobile-table {
+    display: none;
   }
 }
