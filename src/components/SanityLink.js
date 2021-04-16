@@ -4,21 +4,19 @@ import $ from 'jquery';
 
 const SanityLink = (props) => {
 
-  $('.has-submenu .parent-menu').unbind().on('click',function(event){
-    if ($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $(this).next('ul').hide();
-    }
-    else {
-      $(this).addClass('active');
-      $(this).next('ul').show();
-    }
-    event.preventDefault();
-  });
-
-
-
-
+  if (typeof window !== `undefined`) {
+    $('.has-submenu .parent-menu').unbind().on('click',function(event){
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).next('ul').hide();
+      }
+      else {
+        $(this).addClass('active');
+        $(this).next('ul').show();
+      }
+      event.preventDefault();
+    });
+  }
 
   let link = props.link;
   let classes = props.classes;

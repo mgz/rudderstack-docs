@@ -47,12 +47,12 @@ const MainNavigation = () => {
   return (
     <>
     <nav className="md:container max-w-screen-sm mx-auto sm:px-4 md:px-3 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-10">
-      <div className="flex items-center mr-6 w-2/5 md:w-1/5">
+      <div className="flex items-center mr-6 w-40 md:w-1/5">
         <Link to="/" className="pl-4 sm:pl-0">
           <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
         </Link>
       </div>
-      <div className="lg:hidden">
+      <div className="lg:hidden w-32 sm:w-3/5 text-right">
         {(() => {
           if (trybtn.btnexternallink === true){
             return (
