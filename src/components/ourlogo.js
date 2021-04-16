@@ -28,9 +28,10 @@ function OurLogo(props) {
   });
   const maintitle = props.ourlogotitle
   const logoimages = props.outlogoimage
+  console.log(logoimages);
   return (
     <>
-      <section className="container px-4 mx-auto md:mb-32 sm:my-20 flex flex-wrap flex-col md:flex-row items-center md:px-0">
+      <section className="max-w-6xl px-4 mx-auto md:mb-32 sm:my-20 flex flex-wrap flex-col md:flex-row items-center md:px-0">
         <div className="flex flex-col w-full justify-center items-start md:text-left max-w-screen-sm">
           <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10">{maintitle}</h3>
         </div>

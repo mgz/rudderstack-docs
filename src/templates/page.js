@@ -36,15 +36,8 @@ const Page = props => {
     );
   }
 
-  //const site = (data || {}).site;
-
-//   if (!site) {
-//     throw new Error(
-//       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
-//     );
-//   }
-
   const page = data.page || data.route.page;
+  console.log(page);
   const content = (page._rawPagebuildersectionarray || [])
     .filter(c => !c.disabled)
     .map((c, i) => {

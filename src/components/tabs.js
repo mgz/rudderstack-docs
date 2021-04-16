@@ -8,7 +8,7 @@ const Tabs = (props) => {
   const tabs = props.tabblock
   return (
     <>
-      <section className="container px-4 mx-auto flex flex-wrap flex-col md:flex-row items-center my-20 md:px-0">
+      <section className="max-w-6xl px-4 mx-auto flex flex-wrap flex-col md:flex-row items-center my-20 md:px-0">
         <div className="flex flex-col w-full justify-center items-start md:text-left mb-8 tab-section-wrapper">
           <p className="my-4 text-blue text-sm font-bold uppercase">{smalltitle}</p>
           <h3 className="mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>

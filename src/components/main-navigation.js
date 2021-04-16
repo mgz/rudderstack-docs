@@ -46,8 +46,8 @@ const MainNavigation = () => {
   const trybtn = data.allSanitySiteSettings.edges[0].node.headerblock.try_free_btn;
   return (
     <>
-    <nav className="md:container max-w-screen-sm mx-auto sm:px-4 md:px-3 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-10">
-      <div className="flex items-center mr-6 w-40 md:w-1/5">
+    <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 lg:px-0 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-6">
+      <div className="flex items-center mr-6 w-40 md:w-1/7">
         <Link to="/" className="pl-4 sm:pl-0">
           <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
         </Link>
@@ -88,7 +88,7 @@ const MainNavigation = () => {
       }
         </ul>
         <div className="flex">
-          <a href="https://app.rudderstack.com/login?_ga=2.236197633.1437852951.1618311746-1836483757.1616824969"><span className="inline-block lg:p-2 lg:py-1.5 mt-6 lg:mt-0 font-custom font-bold mr-2">Log in</span></a>
+          <a href="https://app.rudderstack.com/login"><span className="inline-block lg:p-2 lg:py-1.5 mt-6 lg:mt-0 font-custom font-bold mr-2">Log in</span></a>
           {(() => {
             if (trybtn.btnexternallink === true){
               return (

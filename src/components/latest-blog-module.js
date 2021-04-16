@@ -34,8 +34,6 @@ const BlogModule = () => {
 
   const latestblogs = data.allSanityBlog.edges;
 
-  console.log(latestblogs);
-
   return (
     <>
       {

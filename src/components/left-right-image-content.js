@@ -10,7 +10,7 @@ const LeftRightImgCnt = (props) => {
     return (
         <>
             <section className="bg-backgroundsecondary 100% left-right-section md:px-0 pb-6 md:pd-0">
-              <div className="container px-4 mx-auto">
+              <div className="max-w-6xl px-4 mx-auto">
                 <div className="flex flex-col w-full justify-center items-start md:text-left max-w-screen-md">
                     <p className="mt-20 text-blue text-sm font-bold uppercase">{smalltitle}</p>
                     <h3 className="md:mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
@@ -28,7 +28,7 @@ const LeftRightImgCnt = (props) => {
                                     const linktext = content.addlink.cmnlinktext
                                     const linkurl = content.addlink.cmnlink
                                     return (
-                                        <div key={i} className="flex items-center flex-wrap flex-col-reverse sm:flex-row mt-6">
+                                        <div key={i} id={smalltitle} className="flex items-center flex-wrap flex-col-reverse sm:flex-row mt-6">
                                             <div className="w-full sm:w-1/2 sm:p-6 mt-12 sm:mt-0">
                                             {(() => {
                                                 if (imgcondition === 'imageoption'){
@@ -77,7 +77,7 @@ const LeftRightImgCnt = (props) => {
                                     const linktext = content.addlink.cmnlinktext
                                     const linkurl = content.addlink.cmnlink
                                     return(
-                                    <div key={i} className="flex items-center flex-wrap mt-6">
+                                    <div key={i} id={smalltitle} className="flex items-center flex-wrap mt-6">
                                         <div className="sm:w-1/2 md:p-6 md:pr-20">
                                             <p className="mt-4 sm:mt-0 text-blue text-sm font-bold uppercase">{smalltitle}</p>
                                             <h3 className="mt-2 mb-4 pb-2 text-3xl text-primary font-bold leading-tight">{title}</h3>

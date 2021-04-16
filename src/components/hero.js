@@ -7,11 +7,11 @@ function Hero(props) {
   const herobannerbutton = props.herobannerbutton
   return (
     <>
-    <section class="container px-4 md:px-0 sm:my-20 md:mt-30 md:mb-40 mx-auto relative banner-section">
+    <section class="max-w-6xl px-4 md:px-0 sm:my-20 md:mt-30 md:mb-40 mx-auto relative banner-section">
       <div class="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0">
           <div
-              class="container relative z-20 flex flex-col w-full md:px-5 pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-                <h2 className="mb-10 md:my-4 md:text-6xl text-5xl  font-bold leading-tight">{props.herobannertitle}</h2>
+              class="container relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
+                <h2 className="mb-10 md:my-4 md:text-6xl text-5xl  font-bold leading-tight lg:mr-20">{props.herobannertitle}</h2>
                   <PortableText blocks={props.herobannercontent} />
               <div class="relative block sm:flex mt-10">
                       {
