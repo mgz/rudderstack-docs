@@ -11,13 +11,15 @@ module.exports = {
       blueNew: {   
         lighter:'#EEF5F5',
         skyblue:'#E3F1F1',
-        custom: '#0066FF',     
+        custom: '#0066FF',
+        category: '#0166FE'
       },
       grayColor: {
         custom:'#4E4E4E',
         lighter: '#A7A7A7', 
         BgGray:'#FAFAFA',
         priceCardBorder:'#E1E1E1',
+        dark: '#101836'
       },
       whiteColor: {        
         custom: '#ffffff',       
