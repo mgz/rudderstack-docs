@@ -86,6 +86,7 @@
     border-top:10px solid #fff;
   }
 }
+
 /* Faq Section Css */
 .faqcta{
   background-color: #ffffff;
@@ -145,12 +146,21 @@ button.accordion:focus{
 .accordion__content{
   padding-right: 50px;
 }
+.accordion__text{
+  color: #4E4E4E;
+}
+p.accordion__title{
+  color: #000000;
+}
 /* rangeslider Section Css */
 .rangeslider-horizontal{
   height: 16px;
 }
 .rangeslider-horizontal .rangeslider__fill{
   background-color:#0066FF;
+}
+.rangeslider__handle{
+  position: relative;
 }
 .rangeslider-horizontal .rangeslider__handle:after{
   width: 25px;
@@ -178,16 +188,33 @@ button.accordion:focus{
 .rangeslider .rangeslider__handle:focus{
   outline: none;
 }
-.rangeslider-horizontal .rangeslider__handle-tooltip{
-  top: auto;
-  bottom: -70px;
+.rangeslider.rangeslider-horizontal {
+  position: relative;
+}
+.rangeslider__handle-label{
+  position: absolute;
+  top: 64px;
+  left: -87%;
   background-color: #0066FF;
   font-size: 28px;
   font-weight: bold;
   width: auto;
   padding: 0 25px;
-  height: 45px;
+  height: 42px;
   border-radius: 8px;
+  color: #ffffff;
+}
+.rangeslider__handle-label:before {
+  position: absolute;
+  content: '';
+  top: -15px;
+  left: calc(50% - 9px);
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 18px solid #0066FF;
+}
+.rangeslider-horizontal .rangeslider__handle-tooltip{
+  display: none;
 }
 .rangeslider-horizontal .rangeslider__handle-tooltip span{
   margin-top:0;
@@ -323,11 +350,11 @@ button.accordion:focus{
 .tab-section-wrapper{
   max-width: 1099px;
 }
-/*.blog-title-wrap {
-  min-height: 176px;
-}*/
-.testimonials-wrap {
-  background-position: center 85px;
+.blog-title-wrap {
+  min-height: 145px;
+}
+div>a.transperent-btn:last-child{
+  font-weight: bold;
 }
 
 @media only screen and (max-width: 639px) {
@@ -357,6 +384,43 @@ button.accordion:focus{
      clear: both;
      width: 100%;
   }
+  /* For plan cards css*/
+  .plans-section{
+    line-height: 54px;
+  }
+  .custom-bg {
+     background: #fff;
+  }
+  .custom-gradient{    
+    background: #eef5f5; /* Old browsers */
+    background: -moz-linear-gradient(top,  #eef5f5 0%, #e3f1f1 10%, #ffffff 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #eef5f5 0%,#e3f1f1 10%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #eef5f5 0%,#e3f1f1 10%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eef5f5', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+  }
+}
+@media only screen and (max-width: 1279px){
+  .testimonials-wrap {
+    background-position: center 85px;
+  }
+} 
+@media only screen and (max-width: 1023px){
+  .testimonials-wrap .owl-nav{
+    position: absolute;
+    bottom: 75px;
+    left: 0;
+    width: 100%;
+  }
+    .testimonials .owl-nav button.owl-prev:before {
+    left: 180px;
+    background-size: 90px;
+    width: 60px;
+  }
+  .testimonials .owl-nav button.owl-next:after{
+    right: 180px;
+    background-size: 90px;
+    width: 60px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -381,5 +445,10 @@ button.accordion:focus{
     background: url('../images/chevron-up.png') no-repeat center center;
     top: 23px;
     right: 0;
+  }
+}
+@media only screen and (min-width: 640px) {
+  .mobile-table {
+    display: none;
   }
 }

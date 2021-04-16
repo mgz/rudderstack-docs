@@ -16,7 +16,7 @@ const PricingPage = () => {
     <Layout>
     <SEO title="Pricing Page" />
     <div className="pt-24">
-      <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter">
+      <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter custom-bg custom-gradient">
         <div class="container px-3 mx-auto flex flex-wrap flex-col items-center text-center max-w-screen-md">
           <h1 className="my-4 text-5xl md:text-5xl font-bold font-custom leading-snug">
             Choose Your RudderStack Cloud Plan
@@ -25,7 +25,7 @@ const PricingPage = () => {
         
         <PricingCards/>
       </section>
-      <section className="bg-white-custom">
+      <section className="bg-white-custom custom-bg">
         <div class="container px-3 mx-auto flex flex-wrap flex-col pt-10">
             <div className="items-center text-center">
               <h2 className="my-4 md:text-4xl font-bold">No MTUs and no cliffs, just volume</h2>
