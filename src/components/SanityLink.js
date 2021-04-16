@@ -1,7 +1,25 @@
 import React from "react";
 import Link from "gatsby-link";
+import $ from 'jquery';
 
 const SanityLink = (props) => {
+
+  $('.has-submenu .parent-menu').unbind().on('click',function(event){
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      $(this).next('ul').hide();
+    }
+    else {
+      $(this).addClass('active');
+      $(this).next('ul').show();
+    }
+    event.preventDefault();
+  });
+
+
+
+
+
   let link = props.link;
   let classes = props.classes;
   let activeClasses = props.activeClasses;

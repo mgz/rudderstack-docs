@@ -35,6 +35,9 @@ body{
   border-right: 2px solid rgba(0,0,0);
   border-bottom: 2px solid rgba(0,0,0);
 }
+.menu li.has-submenu a.active:after {
+  transform: rotate(225deg);
+}
 .menu li.has-submenu li a:after {
   display: none;
 }
@@ -194,6 +197,12 @@ top: -60px;
   background-size: 51%;
 }
 
+@media only screen and (min-width: 1023px) {
+  .menu li.has-submenu:hover a:after {
+    transform: rotate(225deg);
+    top: 0px;
+  }
+}
 
 @media only screen and (max-width: 1023px) {
   .about-us-banner {

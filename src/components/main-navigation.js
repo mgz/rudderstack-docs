@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import MainNavigationMenuLink from "./MainNavigationMenuLink"
 
 const MainNavigation = () => {
+
   const [isExpanded, toggleExpansion] = useState(false)
     const data = useStaticQuery(graphql`
     {
@@ -42,7 +43,7 @@ const MainNavigation = () => {
     }
   `)
   const mainmenu = data.allSanitySiteSettings.edges[0].node.headerblock.mainnavigation.menu_block;
-  const trybtn = data.allSanitySiteSettings.edges[0].node.headerblock.try_free_btn;  
+  const trybtn = data.allSanitySiteSettings.edges[0].node.headerblock.try_free_btn;
   return (
     <>
     <nav className="md:container max-w-screen-sm mx-auto sm:px-4 md:px-3 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-10">
