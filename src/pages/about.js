@@ -204,7 +204,7 @@ const About = () => {
         <div className="container md:px-3 mx-auto">
           <div className="flex flex-wrap justify-items-center items-center sm:flex-row">
             <div className="flex items-start w-1/2 mt-6">
-              <div className="">
+              <div className="mt-1">
                 <StaticImage src="../images/Arrow.svg" alt="Get Started"/>
               </div>
               <h3 className="text-4xl ml-8 md:text-5xl font-bold font-custom leading-tight max-w-xs">Get started today</h3>

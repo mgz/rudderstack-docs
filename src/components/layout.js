@@ -17,6 +17,7 @@
  import MainNavigation from "../components/main-navigation"
  import FooterNav from "../components/footer-nav"
  import PortableText from "../components/portableText"
+import { StaticImage } from "gatsby-plugin-image"
  
  const Layout = ({ children }) => {
    const data = useStaticQuery(graphql`
@@ -96,6 +97,23 @@
                             <p className="uppercase text-white md:mb-4">{item.widget_desc_section_title}</p>
                             <div className="text-footer">
                               <PortableText blocks={item.widget_section_desc} />
+                              {i === 0 ?
+                                <a href="https://resources.rudderstack.com/join-rudderstack-slack"
+                                   target="_blank"
+                                   rel="noreferrer"
+                                   className="font-bold py-3 my-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 inline-block border leading-tight border-white font-custom"
+                                >
+                                  <StaticImage src="../images/Slack.svg" className="mr-2" />
+                                  Join our Slack Community
+                                </a>
+                                : <a href="https://docs.rudderstack.com"
+                                     target="_blank"
+                                     rel="noreferrer"
+                                     className="font-bold py-3 my-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 inline-block border leading-tight border-white font-custom"
+                                  >
+                                  Go to docs
+                                </a>
+                              }
                             </div>
                           </div>
                        </div>
@@ -137,14 +155,10 @@
            <div className="container pb-1 py-4 w-full flex mx-auto flex-wrap  px-3">
              <div className="flex w-1/2 items-center text-white">
                <img src={footerlogo} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
-               
              </div>
              <div className="flex flex-wrap w-1/2 items-end">
                <p className="text-footer w-full text-right">{copyright}</p>
              </div>
-             <div className="container px-3 w-full mx-auto">
-              <p className="text-white pl-6">k</p>
-            </div>
            </div>
          </footer>
      </>
