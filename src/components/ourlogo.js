@@ -28,7 +28,6 @@ function OurLogo(props) {
   });
   const maintitle = props.ourlogotitle
   const logoimages = props.outlogoimage
-  console.log(logoimages);
   return (
     <>
       <section className="max-w-6xl px-4 mx-auto md:mb-32 sm:my-20 flex flex-wrap flex-col md:flex-row items-center md:px-0">

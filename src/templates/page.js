@@ -100,7 +100,8 @@ const Page = props => {
 //   };
 
 //   const menuItems = page.navMenu && (page.navMenu.items || []);
-  const pageTitle = data.title && !data.route.useSiteTitle && page.title;
+  console.log(data);
+  const pageTitle = page.title;
 
   return (
     <Layout >
