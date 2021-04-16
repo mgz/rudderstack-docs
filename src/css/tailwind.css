@@ -179,15 +179,25 @@ p.accordion__title{
 }
 .rangeslider__handle-label{
   position: absolute;
-  top: 50px;
+  top: 62px;
+  left: -18px;
   background-color: #0066FF;
   font-size: 28px;
   font-weight: bold;
   width: auto;
   padding: 0 25px;
-  height: 45px;
+  height: 42px;
   border-radius: 8px;
   color: #ffffff;
+}
+.rangeslider__handle-label:before {
+  position: absolute;
+  content: '';
+  top: -15px;
+  left: 28px;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 18px solid #0066FF;
 }
 .rangeslider-horizontal .rangeslider__handle-tooltip{
   display: none;
