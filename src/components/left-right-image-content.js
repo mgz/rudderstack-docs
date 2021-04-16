@@ -42,7 +42,7 @@ const LeftRightImgCnt = (props) => {
                                             </div>
                                             <div className="w-full sm:w-1/2 sm:p-6">
                                                 <div className="align-middle md:pl-16">
-                                                    <p className="mt-4 text-sm text-blue font-bold uppercase">{smalltitle}</p>
+                                                    <p className="mt-4 sm:mt-0 text-sm text-blue font-bold uppercase">{smalltitle}</p>
                                                     <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
                                                     <div className="text-secondary leading-7 text-sm sm:text-lg">
                                                         <PortableText blocks={portabletext} />
@@ -79,7 +79,7 @@ const LeftRightImgCnt = (props) => {
                                     return(
                                     <div key={i} className="flex items-center flex-wrap mt-6">
                                         <div className="sm:w-1/2 md:p-6 md:pr-20">
-                                            <p className="mt-4 text-blue text-sm font-bold uppercase">{smalltitle}</p>
+                                            <p className="mt-4 sm:mt-0 text-blue text-sm font-bold uppercase">{smalltitle}</p>
                                             <h3 className="mt-2 mb-4 pb-2 text-3xl text-primary font-bold leading-tight">{title}</h3>
                                             <div className="text-secondary leading-7 text-sm sm:text-lg">
                                                 <PortableText blocks={portabletext} />

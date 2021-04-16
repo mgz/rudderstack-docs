@@ -11,6 +11,7 @@ const SanitySubLink = (props) => {
         width="27"
         height="27"
         className="inline"
+        alt={sublink.sub_menu_item_title}
       />
       {sublink.sub_menu_item_title}
     </a>;
@@ -21,6 +22,7 @@ const SanitySubLink = (props) => {
            width="27"
            height="27"
            className="inline"
+           alt={sublink.sub_menu_item_title}
       />
       {sublink.sub_menu_item_title}
     </Link>;

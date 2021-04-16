@@ -70,7 +70,7 @@ body{
 }
 .tab-content-item a::before{
   content: "";
-  background: url("../images/arrow-right.png")no-repeat;
+  background: url("../images/arrow-right.svg")no-repeat;
   background-position: center;
   width: 75%;
   height: 100%;
