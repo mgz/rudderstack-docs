@@ -104,7 +104,7 @@ const Page = props => {
   const pageTitle = page.title;
 
   return (
-    <Layout >
+    <Layout>
       <SEO
         title={pageTitle}
         // description={site.description}

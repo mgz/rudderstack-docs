@@ -1,20 +1,18 @@
 import React from "react";
-//import Image from "./image"
 import { StaticImage } from "gatsby-plugin-image"
 
-function PricePlans(props) {
-  //const herobannerbutton = props.herobannerbutton
+function PricePlans() {
  return (
    <section className='bg-white plans-section'>
-    <div className="container px-6 sm:px-3 mx-auto flex-wrap items-center py-16 text-center pb-20 sm:pb-40">
+    <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center py-16 text-center pb-40">
       <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8">
       Compare Features by Plan
       </h2>
       
       <div className="hidden sm:block w-auto overflow-auto max-w-screen-lg m-auto">
-        <table class="sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
+        <table className="sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
           <thead >
-            <tr class="items-center">
+            <tr className="items-center">
               <th className="w-1/4 py-8"></th>
               <th className="w-1/4 py-8 text-center text-blueNew-custom text-2xl">
               <div className="ellipse flex items-center justify-center h-20">
@@ -203,7 +201,13 @@ function PricePlans(props) {
             <td className="p-6 text-base text-left">VPC Deployment</td>   
             <td className="p-6"><StaticImage src="../images/Line 1.png" alt="Line"/></td>
             <td className="p-6"><StaticImage src="../images/Line 1.png" alt="Line"/></td>
-            <td className="p-6"><StaticImage className="checkImg" src="../images/check-r.png" alt="check"/></td>           
+            <td className="p-6">
+              <a href="https://resources.rudderstack.com/enterprise-quote"
+                 className="text-sm text-black-custom leading-sm font-bold mt-3 lr-icon mx-auto" target="_blank"
+                 rel="noreferrer">
+                Talk to sales
+              </a>
+            </td>
           </tr>
           <tr>
             <td className="p-6 text-blueNew-custom text-2xl text-left uppercase font-bold" colspan="4">support</td>        

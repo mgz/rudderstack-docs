@@ -11,7 +11,7 @@ const RightSideHiglightedContent = (props) => {
     return (
         <>
             <section className="100% bg-whiteColor-custom">
-              <div className="max-w-6xl px-4 md:px-0 mx-auto">
+              <div className="max-w-6xl px-4 md:px-3 mx-auto">
                 <div className="flex flex-col w-full justify-center items-start md:text-left">
                     <p className="my-4 mt-16 md:mt-20 text-blue text-sm font-bold uppercase">{smalltitle}</p>
                     <h3 className="md:my-2 pb-16 md:pb-10 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>

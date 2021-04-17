@@ -31,7 +31,7 @@ const Testimonial = (props) => {
     return (
         <>
            <section class="testimonials testimonials-wrap bg-white py-5 text-primary px-md-5 margin-top-xl bg-hero-pattern bg-no-repeat bg-cover md:mt-32">
-                <div class="max-w-6xl mx-auto px-4 md:px-0 testimonial-img-wrap">
+                <div class="max-w-6xl mx-auto px-4 md:px-3 testimonial-img-wrap">
                     <div class="row">
                     <div className="block w-full">
                         <div class="carousel-controls testimonial-carousel-controls xl:-mt-20">

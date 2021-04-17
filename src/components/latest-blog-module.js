@@ -35,11 +35,10 @@ const BlogModule = () => {
   const latestblogs = data.allSanityBlog.edges;
 
   return (
-    <>
+    <div className="w-full grid grid-cols-1 sm:grid-cols-3 sm:gap-4 md:gap-8">
       {
         latestblogs.map(
           (latestblog, i) => (
-            <div key={i} className="w-full md:w-1/3 p-4 flex flex-col flex-grow flex-shrink">
               <div className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full">
                 <a href={`blog/` + latestblog.node.slug}
                    className="block bg-white rounded-t rounded-b-none overflow-hidden shadow relative h-full">
@@ -52,11 +51,10 @@ const BlogModule = () => {
                   <div className="text-blueNew-category text-sm px-5 font-bold absolute bottom-6">By {latestblog.node.author_name}</div>
                 </a>
               </div>
-            </div>
           )
         )
       }
-    </>
+    </div>
   );
 };
 export default BlogModule;

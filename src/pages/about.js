@@ -196,7 +196,7 @@ const About = () => {
           <div className="w-full text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Join Our Team</h2>
             <p className="text-xl mt-4">Help us make data engineers the heroes of their companies.</p>
-            <p className="mt-16 md:mt-16"><a className="bg-black-custom text-whiteColor-custom text-lg font-bold py-4 px-12 rounded-lg" href="#">View Open Positions</a></p>
+            <p className="mt-16 md:mt-16"><a className="bg-black-custom text-whiteColor-custom text-lg font-bold py-4 px-12 rounded-lg" href="https://www.linkedin.com/company/rudderlabs/jobs/">View Open Positions</a></p>
           </div>
         </div>
       </section>

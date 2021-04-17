@@ -34,16 +34,16 @@
     @apply w-5 h-4;
   }
   .btn-primary-lg {
-    @apply bg-primary text-white py-3 text-sm px-2 sm:px-10 text-center font-bold block rounded-lg border hover:bg-blueNew-custom;
+    @apply bg-primary text-white py-3 text-sm px-6 sm:px-10 text-center font-bold block rounded-lg border hover:bg-blueNew-custom;
   }
   .btn-secondary-lg {
-    @apply py-3 text-sm px-2 sm:px-10 text-center font-bold block rounded-lg border hover:bg-primary hover:text-white;
+    @apply py-3 text-sm px-6 sm:px-10 text-center font-bold block rounded-lg border hover:bg-primary hover:text-white;
   }
   .btn-primary-sm {
-    @apply bg-primary text-white py-2 md:px-8 lg:px-8 px-2 text-center block rounded-lg border text-sm hover:bg-blueNew-custom;
+    @apply bg-primary text-white py-2 px-6 md:px-8 lg:px-8 text-center block rounded-lg border text-sm hover:bg-blueNew-custom;
   }
   .btn-secondary-sm {
-    @apply py-2 md:px-8 lg:px-8 px-2 text-center block rounded-lg border text-sm border-primary hover:bg-primary hover:text-white;
+    @apply py-2 px-6 md:px-8 lg:px-8 text-center block rounded-lg border text-sm border-primary hover:bg-primary hover:text-white;
   }
 }
 
@@ -117,8 +117,8 @@
   height: 16px;
   position: absolute;
   content:'';
-  right: 0px;
-  top: 0px;
+  right: 0;
+  top: 7px;
 }
 .accordion.active .accordion__title:before{
   display: none;
@@ -263,7 +263,6 @@ p.accordion__title{
 .accordion {
   color: #444;
   cursor: pointer;
-  padding: 18px;
   display: flex;
   align-items: center;
   border: none;
@@ -272,8 +271,6 @@ p.accordion__title{
 
 /* Style the accordion content title */
 .accordion__title {
-  font-weight: 700;
-  font-size: 18px;
   text-align: left;
   font-family: "Basis Grotesque Pro", sans-serif;
 }
@@ -292,8 +289,6 @@ p.accordion__title{
 
 /* Style the accordion content text */
 .accordion__text {
-  font-size: 16px;
-  padding: 18px;
   font-family: "Basis Grotesque Pro", sans-serif;
 }
 /*our logo section*/
