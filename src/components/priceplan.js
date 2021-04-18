@@ -107,8 +107,8 @@ function PricePlans() {
           <tr>
             <td className="p-6 text-base text-left"># of Sources</td>   
             <td className="p-6"><StaticImage src="../images/Line 1.png" alt="Line"/></td>
-            <td className="p-6 text-base">Untdmited</td>
-            <td className="p-6 text-base">Untdmited</td>           
+            <td className="p-6 text-base">Unlimited</td>
+            <td className="p-6 text-base">Unlimited</td>           
           </tr>
           <tr className="bg-grayColor-BgGray">
             <td className="p-6 text-base text-left">Transformations</td>   
@@ -129,7 +129,7 @@ function PricePlans() {
             <td className="p-6 text-base text-left">Warehouse Connections</td>   
             <td className="p-6"><StaticImage src="../images/Line 1.png" alt="Line"/></td>
             <td className="p-6 text-base"><span>1</span></td>
-            <td className="p-6 text-base">Untdmited</td>           
+            <td className="p-6 text-base">Unlimited</td>           
           </tr>
           <tr>
             <td className="p-6 text-base text-left">Transformations</td>   
@@ -177,7 +177,7 @@ function PricePlans() {
             <td className="td-first-colum">Rudderstack Cloud</td>   
             <td className="p-6"><StaticImage className="checkImg" src="../images/check-r.png" alt="check"/></td>
             <td className="p-6"><StaticImage className="checkImg" src="../images/check-r.png" alt="check"/></td>
-            <td className="p-6 text-base">Untdmited</td>           
+            <td className="p-6 text-base">Unlimited</td>           
           </tr>
           <tr>
             <td className="p-6 text-base text-left">Team Members</td>   
