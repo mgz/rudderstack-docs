@@ -152,6 +152,10 @@ button.accordion:focus{
 p.accordion__title{
   color: #000000;
 }
+.faq-cta{
+  --tw-shadow: 0 1px 24px rgba(0, 0, 0, 0.05), 0 1px 24px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 /* rangeslider Section Css */
 .rangeslider-horizontal{
   height: 16px;
@@ -440,6 +444,10 @@ div>a.transperent-btn:last-child{
     background: url('../images/chevron-up.png') no-repeat center center;
     top: 23px;
     right: 0;
+  }
+  .accordion__section button.accordion,
+  .accordion__section .accordion__content{
+    padding-left: 0;
   }
 }
 @media only screen and (min-width: 640px) {
