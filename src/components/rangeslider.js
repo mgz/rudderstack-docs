@@ -17,14 +17,14 @@ const Horizontal = (props) => {
     <div className='slider custom-labels'>
       <Slider
         min={25}
-        max={150}
+        max={100}
         value={value}
         format={formatm}
         handleLabel={value + "m"}
         onChange={handleChangeHorizontal}
       />
       <div className='value flex text-lg md:text-3xl font-bold mt-6'>
-        <span>25m</span><span className="ml-auto">150m+</span>
+        <span>25m</span><span className="ml-auto">100m+</span>
       </div>
       <div className="bg-blueNew-lighter md:flex px-8 md:px-14 py-6 mt-16 text-center md:text-left rounded-sm rounded-md">
         <div className="md:w-1/3  py-2 md:py-0 text-grayColor-custom text-lg md:text-xl leading-7 md:leading-9 text-left md:text-center"><span className="font-bold text-black-custom">Monthly price: </span><span id="text1">{price ? "$" + price.toString() : "N/A"}</span></div>

@@ -186,7 +186,7 @@ function PricePlans() {
             <td className="p-6"><StaticImage className="checkImg" src="../images/check-r.svg" alt="check"/></td>           
           </tr>
           <tr className="bg-grayColor-BgGray">
-            <td className="p-6 text-base text-left">Mtrti-node Scatdng</td>   
+            <td className="p-6 text-base text-left">Multi-node Scaling</td>   
             <td className="p-6"><StaticImage src="../images/Line 2.svg" alt="Line"/></td>
             <td className="p-6"><StaticImage className="checkImg" src="../images/check-r.svg" alt="check"/></td>
             <td className="p-6"><StaticImage className="checkImg" src="../images/check-r.svg" alt="check"/></td>           
@@ -251,7 +251,7 @@ function PricePlans() {
                     </div>                
                     <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-custom">Free</h3>
                     <div class="text-grayColor-lighter text-sm leading-6 text-sm py-2">500,000 events/month</div>
-                    <span class="text-sm font-bold py-2.5 px-8 rounded-lg	bg-black-custom text-whiteColor-custom leading-5">Sign up free</span>
+                    <a href="https://app.rudderlabs.com/signup?type=freetrial" className="btn-primary-sm inline-block font-bold">Sign up free</a>
                 </div>
               </div>
               <div className="plan-features mt-6">
@@ -283,7 +283,7 @@ function PricePlans() {
                   </div>                
                   <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-custom">Pro</h3>
                   <div class="text-grayColor-lighter text-sm leading-6"><div className="text-grayColor-lighter text-sm leading-6 text-sm py-2">Starting at $750 for <br/>25M events/month</div></div>
-                  <span class="text-sm font-bold py-2.5 px-8 rounded-lg	bg-black-custom text-whiteColor-custom leading-5">Get a demo</span>
+                  <a href="https://resources.rudderstack.com/request-a-demo" className="btn-primary-sm inline-block font-bold">Get a demo</a>
               </div>             
             </div>
             <div className="plan-features mt-6">
@@ -328,7 +328,7 @@ function PricePlans() {
                   </div>                
                   <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-custom">Enterprise</h3>
                   <div class="text-grayColor-lighter text-sm leading-6"><div className="text-grayColor-lighter text-sm leading-6 text-sm py-2">Starting at $750 for <br/>Billions of events</div></div>
-                  <span class="text-sm font-bold py-2.5 px-8 rounded-lg	bg-black-custom text-whiteColor-custom leading-5">Request pricing</span>
+                  <a href="https://resources.rudderstack.com/enterprise-quote" className="btn-primary-sm inline-block font-bold">Request pricing</a>
               </div>             
             </div>
             <div className="plan-features mt-6">
