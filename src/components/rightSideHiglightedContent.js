@@ -17,7 +17,7 @@ const RightSideHiglightedContent = (props) => {
                     <h3 className="md:my-2 pb-16 md:pb-10 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
                 </div>
                 <div className="grid md:grid-cols-12 md:gap-16 items-center flex-wrap">
-                    <div className="md:col-span-5 p-2 md:mt-12 h-full">
+                    <div className="md:col-span-5 md:mt-12 h-full">
                     {
                         leftcontents.map(
                             (leftcontent, i) => (
