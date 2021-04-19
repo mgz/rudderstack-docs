@@ -5,8 +5,8 @@ function Faq(props) {
   return (
 
     <section class="bg-grayColor-BgGray py-10 pt-40 md:pt-44 relative font-custom">
-      <div className="px-4 md:px-0 mx-auto">
-        <div className="absolute md:w-full left-0 -top-24 md:-top-16 px-5 md:px-0">
+      <div className="px-4 mx-auto">
+        <div className="absolute md:w-full lg:w-4/5 -top-24 md:-top-16 px-5 md:px-0 faq-cta-box">
           <div
             className="py-8 text-center text-blueNew-custom font-bold border border-grayColor-priceCardBorder max-w-screen-lg m-auto faqcta rounded-xl shadow-xl faq-cta px-5 md:px-0">
             <p className="text-blueNew-custom text-2xl leading-8">Currently running Segment? </p>

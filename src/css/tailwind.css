@@ -362,9 +362,6 @@ div>a.transperent-btn:last-child{
     line-height: 28px;
     padding-bottom: 10px;
   }
-  html,body{
-    overflow-x: hidden;
-  }
   .tab-content-item p{
     font-size: 14px;
     color: #000000;
@@ -453,5 +450,26 @@ div>a.transperent-btn:last-child{
 @media only screen and (min-width: 640px) {
   .mobile-table {
     display: none;
+  }
+}
+@media only screen and (max-width: 479px){
+  .faq-cta-box{
+    left: 0;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 480px){
+  .faq-cta-box{
+    left: calc(50% - 227px);
+  }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px){
+  .faq-cta-box{
+    left: calc(50% - 350px);
+    max-width: 700px;
+  }
+}
+@media only screen and (min-width: 1024px){
+  .faq-cta-box{
+    left: 10%;
   }
 }
