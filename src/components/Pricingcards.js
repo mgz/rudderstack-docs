@@ -4,8 +4,8 @@ import { StaticImage } from "gatsby-plugin-image"
 function PricingCards(props) {
  return (
   
-   <div className="max-w-6xl px-4 md:px-3 lg:px-0 mx-auto flex flex-wrap items-center pb-18">
-     <div className="pricing-table-2 pt-6 md:pt-12 w-full">
+   <div className="max-w-6xl px-4 md:px-3 lg:px-0 mx-auto flex flex-wrap items-center pb-18 font-custom">
+     <div className="pricing-table-2 pt-1 md:pt-3 w-full">
       <div className="mx-auto">
         <div className="pricing-plans relative lg:flex mt-6 md:mt-12 w-full">
           <div className="pricing-plan-wrap lg:w-1/3 my-4 md:my-6 px-5">
@@ -14,16 +14,16 @@ function PricingCards(props) {
                 <div className="ellipse flex items-center justify-center h-20">
                   <StaticImage src="../images/EllipseImg1.png" alt="EllipseImg"/>
                 </div>                
-                <h3 className="font-medium leading-tight text-4xl text-blueNew-custom mr-2 font-bold">Free</h3>
-                <div className="text-grayColor-lighter mt-2 h-16 leading-7">500,000 <br/>events/month</div>
+                <h3 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-blueNew-custom mr-2 font-bold">Free</h3>
+                <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg text-lg">500,000 <br/>events/month</div>
               </div>
               <div className="p-6 pt-0 max-w-xs mx-auto text-left">
                 <ul className="text-lg h-52">
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span>Event Stream</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Near Real Time Data</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Warehouse</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> SDK Sources</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> 80+ destinations</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span>Event Stream</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Near Real Time Data</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Warehouse</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> SDK Sources</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> 80+ destinations</li>
                 </ul>
                 <div className="mt-6 py-4 text-center">
                   <a href="https://app.rudderlabs.com/signup?type=freetrial" className="btn-primary-sm inline-block font-bold">Sign up free</a>
@@ -38,17 +38,17 @@ function PricingCards(props) {
               <div className="ellipse flex items-center justify-center h-20">
                 <StaticImage src="../images/EllipseImg2.png" alt="Line"/>
                 </div>
-                <h4 className="font-medium leading-tight text-4xl text-blueNew-custom mr-2 font-bold">Pro</h4>
-                <div className="text-grayColor-lighter mt-2 h-16 leading-7">Starting at $750 for 25M <br/>events/month</div>
+                <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-blueNew-custom mr-2 font-bold">Pro</h4>
+                <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg">Starting at $750 for 25M <br/>events/month</div>
               </div>
               <div className="p-6 pt-0 max-w-xs mx-auto text-left">
                 <ul className="h-52">
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Everything in Free plus</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Cloud Extract</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Warehouse Actions</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Transformations</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Grafana Dashboards</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Priority Support</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Everything in Free plus</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Cloud Extract</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Warehouse Actions</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Transformations</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Grafana Dashboards</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Priority Support</li>
                 </ul>
                 <div className="mt-6 py-4 text-center">
                   <a href="https://resources.rudderstack.com/request-a-demo" className="btn-primary-sm inline-block font-bold">Get a demo</a>
@@ -63,17 +63,17 @@ function PricingCards(props) {
                 <div className="ellipse flex items-center justify-center h-20">
                 <StaticImage src="../images/EllipseImg3.png" alt="Line"/>
                 </div>
-                <h4 className="font-medium leading-tight text-4xl text-blueNew-custom mr-2 font-bold">Enterprise</h4>
-                <div className="text-grayColor-lighter mt-2 h-16 leading-7">Billions of events</div>
+                <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-blueNew-custom mr-2 font-bold">Enterprise</h4>
+                <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg">Billions of events</div>
               </div>
               
               <div className="p-6 pt-0 max-w-xs mx-auto text-left">
                 <ul className="h-52">
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Everything in Pro plus</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Event Replay</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> SSO</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> Single tenant</li>
-                  <li className="relative pl-8 py-1"><span className="absolute top-2 w-8 left-0"><StaticImage className="mr-2" src="../images/check-r.png" alt="check"/> </span> VPC Hosting Support <br/>(additional)</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Everything in Pro plus</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Event Replay</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> SSO</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> Single tenant</li>
+                  <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium"><span className="absolute top-2 w-7 left-0"><StaticImage className="mr-2" src="../images/check-r2x.png" alt="check"/> </span> VPC Hosting Support <br/>(additional)</li>
                 </ul>
                 <div className="mt-6 py-4 text-center">
                   <a href="https://resources.rudderstack.com/enterprise-quote" className="btn-primary-sm inline-block font-bold">Request pricing</a>
@@ -87,12 +87,12 @@ function PricingCards(props) {
       </div>
     </div>
 
-     <div className="py-8 pt-16 w-full text-lg text-center text-blueNew-custom font-bold">
+     <div className="py-8 pt-5 md:pt-16 w-full text-lg md:text-xl text-center text-blueNew-custom font-bold">
         <p>You can also deploy or contribute to RudderStack Open Source. </p>
-       <div className="mt-4 flex items-center">
+       <div className="mt-3 flex items-center">
         <a
           href="https://github.com/rudderlabs/rudder-server"
-          className="text-sm text-black-custom leading-sm font-bold mt-3 lr-icon mx-auto"
+          className="text-sm text-black-custom leading-8 font-bold lr-icon mx-auto"
           target="_blank"
           rel="noreferrer"
         >
