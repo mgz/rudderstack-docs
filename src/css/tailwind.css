@@ -251,7 +251,6 @@ p.accordion__title{
     left:10px;
   }
 }
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
 
 /* Style the accordion section */
 .accordion__section {
@@ -406,13 +405,17 @@ div>a.transperent-btn:last-child{
     left: 0;
     width: 100%;
   }
-    .testimonials .owl-nav button.owl-prev:before {
-    left: 180px;
+  .testimonials .owl-nav button.owl-prev, .testimonials .owl-nav button.owl-next {
+    width: 50%;
+  }
+  .testimonials .owl-nav button.owl-prev:before {
+    right: 30%;
+    left: unset;
     background-size: 90px;
     width: 60px;
   }
   .testimonials .owl-nav button.owl-next:after{
-    right: 180px;
+    left: 30%;
     background-size: 90px;
     width: 60px;
   }
@@ -440,6 +443,12 @@ div>a.transperent-btn:last-child{
     background: url('../images/chevron-up.png') no-repeat center center;
     top: 23px;
     right: 0;
+  }
+  .testimonials .owl-nav button.owl-prev:before {
+    right: 15%;
+  }
+  .testimonials .owl-nav button.owl-next:after{
+    left: 15%;
   }
 }
 @media only screen and (min-width: 640px) {

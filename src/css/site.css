@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: 'Basis Grotesque';
+  src: url('./fonts/Normal/Basis Grotesque.otf')  format('opentype'),
+  url('./fonts/Normal/Basis Grotesque.woff') format('woff'),
+  url('./fonts/Normal/Basis Grotesque.ttf')  format('truetype'),
+  url('./fonts/Normal/Basis Grotesque.svg#Basis Grotesque') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Basis Grotesque';
+  src: url('./fonts/Medium/Basis Grotesque Medium.otf')  format('opentype'),
+  url('./fonts/Medium/Basis Grotesque Medium.woff') format('woff'),
+  url('./fonts/Medium/Basis Grotesque Medium.ttf')  format('truetype'),
+  url('./fonts/Medium/Basis Grotesque Medium.svg#Basis Grotesque') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Basis Grotesque';
+  src: url('./fonts/Bold/Basis Grotesque Pro Bold.otf')  format('opentype'),
+  url('./fonts/Bold/Basis Grotesque Pro Bold.woff') format('woff'),
+  url('./fonts/Bold/Basis Grotesque Pro Bold.ttf')  format('truetype'),
+  url('./fonts/Bold/Basis Grotesque Pro Bold.svg#Basis Grotesque') format('svg');
+  font-weight: 700;
+  font-style:normal;
+}
+
 :root {
   --primary: #000000;
   --secondary: #4E4E4E;
