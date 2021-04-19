@@ -23,12 +23,13 @@ const LeftRightImgCnt = (props) => {
                     const imgcondition = content.imageVideoConditionBlock.condition
                     const portabletext = content.content
                     const smalltitle = content.smalltitle
+                    const section_id = content.section_id
                     const title = content.title
                     const extralink = content.addlink.cmnexternallink
                     const linktext = content.addlink.cmnlinktext
                     const linkurl = content.addlink.cmnlink
                     return (
-                      <div key={i} id={smalltitle}
+                      <div key={i} id={section_id?section_id:''}
                            className="flex items-center flex-wrap flex-col-reverse sm:flex-row mt-6">
                         <div className="w-full sm:w-1/2 sm:p-6 sm:pl-0 mt-12 sm:mt-0">
                           {(() => {
@@ -77,11 +78,12 @@ const LeftRightImgCnt = (props) => {
                     const portabletext = content.content
                     const smalltitle = content.smalltitle
                     const title = content.title
+                    const section_id = content.section_id
                     const extralink = content.addlink.cmnexternallink
                     const linktext = content.addlink.cmnlinktext
                     const linkurl = content.addlink.cmnlink
                     return (
-                      <div key={i} id={smalltitle} className="flex items-center flex-wrap mt-6">
+                      <div key={i} id={section_id?section_id:''} className="flex items-center flex-wrap mt-6">
                         <div className="sm:w-1/2 sm:p-6 sm:pl-0 md:pr-20">
                           <p className="mt-4 sm:mt-0 text-blue text-sm font-bold uppercase">{smalltitle}</p>
                           <h3 className="mt-2 mb-4 pb-2 text-3xl text-primary font-bold leading-tight">{title}</h3>

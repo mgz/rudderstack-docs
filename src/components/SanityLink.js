@@ -23,10 +23,10 @@ const SanityLink = (props) => {
   let activeClasses = props.activeClasses;
 
   if (link.menu_item_externallink) {
-    return <a className={classes} activeClassName={activeClasses} href={link.menu_item_link}>{link.menu_item_title}</a>;
+    return <a className={classes} activeClassName={activeClasses} href={link.menu_item_link} target={link.menu_target_link?"_blank":"_self"}>{link.menu_item_title}</a>;
   }
   else {
-    return <Link className={classes} activeClassName={activeClasses} to={link.menu_item_link}>{link.menu_item_title}</Link>;
+    return <Link className={classes} activeClassName={activeClasses} to={link.menu_item_link} target={link.menu_target_link?"_blank":"_self"}>{link.menu_item_title}</Link>;
   }
 }
 

@@ -26,8 +26,8 @@ const MainNavigation = () => {
                   menu_item_externallink
                   menu_item_link
                   menu_item_title
+                  menu_target_link
                   _rawSubMenuSection
-
                 }
               }
               try_free_btn {
@@ -47,12 +47,12 @@ const MainNavigation = () => {
   return (
     <>
     <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-6">
-      <div className="flex items-center mr-6 w-40 md:w-1/7">
+      <div className="flex items-center mr-6 w-32 md:w-1/7">
         <Link to="/" className="pl-4 sm:pl-0">
           <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
         </Link>
       </div>
-      <div className="lg:hidden w-32 sm:w-3/5 text-right">
+      <div className="lg:hidden w-30 sm:w-3/5 text-right">
         {(() => {
           if (trybtn.btnexternallink === true){
             return (
