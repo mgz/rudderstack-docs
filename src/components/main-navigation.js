@@ -47,7 +47,7 @@ const MainNavigation = () => {
   return (
     <>
     <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-6">
-      <div className="flex items-center mr-6 w-32 md:w-1/7">
+      <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
         <Link to="/" className="pl-4 sm:pl-0">
           <img src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
         </Link>
@@ -56,11 +56,11 @@ const MainNavigation = () => {
         {(() => {
           if (trybtn.btnexternallink === true){
             return (
-              <a href={trybtn.btnlink} ><span className="btn-primary-sm inline-block">{trybtn.btntext}</span></a>
+              <a href={trybtn.btnlink}><span className="btn-primary-sm inline-block px-3 sm:px-6">{trybtn.btntext}</span></a>
             )
           }else{
             return(
-              <Link to={trybtn.btnlink}><span className="btn-primary-sm inline-block">{trybtn.btntext}</span></Link>
+              <Link to={trybtn.btnlink}><span className="btn-primary-sm inline-block p-4">{trybtn.btntext}</span></Link>
             )
           }
         })()}
