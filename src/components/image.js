@@ -2,10 +2,11 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 
 function renderImage(image, classes) {
-    const imgh = 
+
+  const imgh =
             (() => {
                 return (
-                    <img src={image.node.fluid.src} alt="" className={classes} />
+                <img loading="lazy" src={image.node.fluid.src} alt={image.node._id} className={classes} />
                 );
             })()
     return (
@@ -18,20 +19,20 @@ const Image = (props) => {
     <StaticQuery
     query = {graphql`
     query {
-        allSanityImageAsset {
+        sanityimages:allSanityImageAsset {
         edges {
-            node {
-            fluid {
+          node {
+              fluid {
                 src
-            }
-            _id
-            }
+              }
+              _id
+          }
         }
         }
     }
     `}
     render={(data) => {
-        const imgdata = data.allSanityImageAsset.edges.find(
+        const imgdata = data.sanityimages.edges.find(
             imgdata => imgdata.node._id === props.props
         )
         return(renderImage(imgdata, props.classes))
