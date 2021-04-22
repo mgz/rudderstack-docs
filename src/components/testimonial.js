@@ -50,7 +50,7 @@ const Testimonial = (props) => {
                                                 </div>
                                                 <p className="font-bold text-sm text-primary mb-2">{testimonial.clientname}</p>
                                                 <p className="text-sm text-primary mb-4">{testimonial.clientdesignation}</p>
-                                                <div class="message text-center text-2xl md:text-4xl tracking-wide font-bold text-primary blockquote mt-8 px-12">{testimonial.clientcontent}
+                                                <div class="message text-center text-2xl md:text-4xl tracking-wide font-bold text-primary blockquote mt-8 px-0 md:px-24">{testimonial.clientcontent}
                                                 </div>
                                                 {testimonial.button.btnlink !== "" && testimonial.button.btntext !== "" && <div className="text-center mt-8">
                                                 {(() => {
