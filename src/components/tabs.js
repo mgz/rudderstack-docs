@@ -60,7 +60,7 @@ const Tabs = (props) => {
         <div className="pt-3 hidden md:block md:col-span-7">
           <div
             className="relative block md:bg-background bg-transperent p-4 min-w-0 break-words md:bg-white w-full mb-6 rounded-lg">
-            <div className="md:px-12 lg:px-14 md:py-12 md:bg-blueNew-lighter rounded-xl">
+            <div className="md:px-16 lg:px-16 md:py-10 md:bg-blueNew-lighter rounded-xl">
               <div className="tab-content tab-space tab-content-item">
                 {
                   tabs.map(

@@ -52,7 +52,7 @@ const RightSideHiglightedContent = (props) => {
                                     const buttons = rightcontent.rhs_rb_buttons
                                     return (
                                         <>
-                                            <div key={i} className="py-14 px-8 md:p-14 lg:p-14">
+                                            <div key={i} className="py-16 px-6 md:px-14 md:py-20">
                                                 <Image props={imgref} />
                                                 <h3 className="my-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
                                                 <div className="text-secondary text-sm md:text-lg leading-6 md:leading-7">

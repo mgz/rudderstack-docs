@@ -435,7 +435,7 @@ function PricePlans() {
               </tr>
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">
-                 <span className="uppercase">live Debuggers</span>  (Sources and Destinations)
+                 <span className="capitalize">live Debuggers</span>  (Sources and Destinations)
                 </td>
                 <td className="p-6">
                   {/* <StaticImage

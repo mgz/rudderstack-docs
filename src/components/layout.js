@@ -73,7 +73,7 @@ import { StaticImage } from "gatsby-plugin-image"
          <MainNavigation />
          <main>{children}</main>
  
-         <footer className="bg-black px-4 sm:px-0 text-sm bg-black-custom md:pt-10">
+         <footer className=" bg-black px-4 sm:px-0 text-sm bg-black-custom md:pt-10">
            <div className="max-w-6xl mx-auto footer-menus-wrap">
              <div className="w-full py-10 font-custom inline-block">
                {
@@ -153,7 +153,7 @@ import { StaticImage } from "gatsby-plugin-image"
              }
              </div>
            </div>
-           <div className="max-w-6xl pb-1 py-4 w-full flex mx-auto flex-wrap  px-3">
+           <div className="max-w-6xl pb-16 md:pb-32 py-4 w-full flex mx-auto flex-wrap  px-3">
              <div className="flex w-1/2 items-center text-white">
                <img src={footerlogo} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
              </div>
