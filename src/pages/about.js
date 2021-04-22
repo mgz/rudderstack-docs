@@ -172,7 +172,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap -m-4 mt-6 md:mt-32 content-center">
+          <div className="flex justify-center -m-4 mt-6 md:mt-32">
             <div class="w-full md:w-1/3 mb-6">
               <div class="h-full text-center">
                 <StaticImage className="w-32 h-32 mb-8 object-cover object-center inline-block" src="../images/Captura.png" />
