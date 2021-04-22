@@ -25,7 +25,6 @@ export const query = graphql`
   }
 `;
 
-
 const Page = props => {
   const { data, errors } = props;
 
