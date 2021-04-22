@@ -73,13 +73,13 @@ import { StaticImage } from "gatsby-plugin-image"
          <MainNavigation />
          <main>{children}</main>
  
-         <footer className=" bg-black px-4 sm:px-0 text-sm bg-black-custom md:pt-10">
+         <footer className=" bg-black px-4 sm:px-4 text-sm bg-black-custom md:pt-10">
            <div className="max-w-6xl mx-auto footer-menus-wrap">
              <div className="w-full py-10 font-custom inline-block">
                {
                  footermenus.map(
                      (menu, i) => (
-                      <div key={menu._key} className="w-1/2 md:w-1/6 float-left footer-menus">
+                      <div key={menu._key} className={`w-1/2 md:w-1/6 float-left footer-menus ${i === 2 ? 'sm:w-full' : ''}`}>
                         <div className="md:px-3">
                           <p className="uppercase text-white md:mb-4">{menu.widget_menu_section_title}</p>
                           <ul className="list-reset mb-6 text-footer">
@@ -92,8 +92,9 @@ import { StaticImage } from "gatsby-plugin-image"
                }
                {
                  footerdescitems.map(
-                     (item, i) => (
-                        <div key={item._key} className="md:w-1/4 md:float-left sm:clear-none clear-both pb-5 md:pb-0">
+                     (item, i) => {
+                       return (
+                        <div key={item._key} className="sm:w-1/2 md:w-1/4 md:float-left sm:clear-none clear-both pb-5 md:pb-0">
                           <div className="md:px-3">
                             <p className="uppercase text-white md:mb-4">{item.widget_desc_section_title}</p>
                             <div className="text-footer">
@@ -118,7 +119,7 @@ import { StaticImage } from "gatsby-plugin-image"
                             </div>
                           </div>
                        </div>
-                     )
+                     )}
                  )
                }
              </div>

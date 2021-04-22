@@ -12,7 +12,8 @@ function OurLogo(props) {
         nav:false,
         dots:false,
         autoplay:true,
-        autoplayTimeout:3000,
+        autoplayTimeout:2500,
+        smartSpeed:2500,
         responsive:{
             0:{
                 items:4
@@ -38,13 +39,14 @@ function OurLogo(props) {
         <div className="logo-slider owl-carousel owl-theme">
           {
             logoimages.map(
-              (logoimage, i) => (
+              (logoimage, i) => {
+                return(
                 <div key={i} class="item inline-flex">
                 <span className="p-4">
                   <Image props={logoimage.asset._ref} className="p-4"/>
                 </span>
                 </div>
-              )
+              )}
             )
           }
         </div>
