@@ -28,6 +28,7 @@ const Testimonial = (props) => {
         })
     });
     const testimonials = props.addtestimonial
+    // console.log(testimonials,'hari debug')
     return (
         <>
            <section class="testimonials testimonials-wrap bg-white py-5 text-primary px-md-5 margin-top-xl bg-hero-pattern bg-no-repeat bg-cover md:mt-32">
@@ -51,7 +52,7 @@ const Testimonial = (props) => {
                                                 <p className="text-sm text-primary mb-4">{testimonial.clientdesignation}</p>
                                                 <div class="message text-center text-2xl md:text-4xl tracking-wide font-bold text-primary blockquote mt-8 px-12">{testimonial.clientcontent}
                                                 </div>
-                                                <div className="text-center mt-8">
+                                                {testimonial.button.btnexternallink !== "" && testimonial.button.btntext !== "" && <div className="text-center mt-8">
                                                 {(() => {
                                                     if (testimonial.button.btnexternallink === true){
                                                         return (
@@ -65,7 +66,7 @@ const Testimonial = (props) => {
                                                         ) 
                                                     }
                                                 })()}
-                                                </div>
+                                                </div>}
                                             </div>
                                         </div>
                                     )

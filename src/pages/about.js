@@ -135,7 +135,7 @@ const About = () => {
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage className="lg:h-48 md:h-36 w-full object-cover object-center" src="../images/Kostas.png" />
                 <div className="py-12 text-center">
-                  <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">Kostas</h3>
+                  <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">Kostas Pardalis</h3>
                   <p className="leading-relaxed mb-3 text-xl">Head of Product</p>
                 </div>
               </div>
@@ -172,7 +172,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap -m-4 mt-6 md:mt-32">
+          <div className="flex flex-wrap -m-4 mt-6 md:mt-32 content-center">
             <div class="w-full md:w-1/3 mb-6">
               <div class="h-full text-center">
                 <StaticImage className="w-32 h-32 mb-8 object-cover object-center inline-block" src="../images/Captura.png" />
@@ -183,11 +183,7 @@ const About = () => {
                 <StaticImage className="w-32 h-32 mb-8 object-cover object-center inline-block" src="../images/capital.png" />
               </div>
             </div>
-            <div class="w-full md:w-1/3 mb-6">
-              <div class="h-full text-center">
-                <StaticImage className="w-32 h-32 mb-8 object-cover object-center inline-block" src="../images/Captura.png" />
-              </div>
-            </div>
+          
           </div>
         </div>
       </section>

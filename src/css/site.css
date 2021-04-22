@@ -90,6 +90,17 @@ body{
   padding: 10px;
   margin-right: 10px;
 }
+.check-icon::before{
+  content: "";
+  background: url("../images/check.svg")no-repeat;
+  background-position: center;
+  width: 75%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  padding: 12px;
+  margin-right: 10px;
+}
 .post-arrow::after{
   content: "";
   background: url("../images/short_right.png")no-repeat;
@@ -215,6 +226,7 @@ top: -60px;
 .block-description h3 {
 @apply mt-6 text-xl
 }
+
 .about-us-banner {
   background:url("../images/aboutus-banner.png");
   background-repeat: no-repeat;
