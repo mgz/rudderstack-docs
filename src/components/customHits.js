@@ -11,6 +11,7 @@ import Singlerowcontent from "./singlerowcontent"
 import Threerowcontent from "./threerowcontent"
 
 const Hits = ({ hits }) => {
+  console.log(hits,'hits')
   if (!hits.length) {
     return (
       <div>

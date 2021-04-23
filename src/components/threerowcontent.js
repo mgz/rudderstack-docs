@@ -18,10 +18,10 @@ const Threerowcontent = ({ hits }) => {
             return (
               <section key={index} className="flex">
                 <div
-                  className="w-full relative overflow-hidden rounded-3xl flex shadow-md border border-gray-200 bg-white">
+                  className="w-full relative overflow-hidden rounded-3xl flex shadow-md bg-white">
                   <div
                     className="w-full flex-col">
-                    <div className="relative sm:block">
+                    <div className="relative sm:block h-52">
                       <Link to={hit.slug}>
                         <img src={hit.blogimage.src} alt={hit.title}
                              className="h-full w-full object-cover"
@@ -29,12 +29,12 @@ const Threerowcontent = ({ hits }) => {
                       </Link>
                     </div>
                     <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-6">
-                      <div className="uppercase text-sm text-indigo-700 font-bold">{hit.blog_category}</div>
+                      <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">{hit.blog_category}</div>
                       <h2 className="mt-2 text-1xl md:text-2xl font-bold mb-2">
                         <Link to={hit.slug}>{hit.title}</Link>
                       </h2>
 
-                      <div className="mt-4 text-sm text-indigo-700 font-bold">
+                      <div className="mt-4 text-sm text-indigo-700 font-bold text-blueNew-custom">
                         <span>By {hit.author_name}</span>
                       </div>
                     </div>

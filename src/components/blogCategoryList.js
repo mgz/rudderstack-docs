@@ -2,12 +2,12 @@ import React from "react"
 import { Highlight, connectMenu } from "react-instantsearch-dom"
 //import { graphql } from "gatsby"
 
-const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
+const Menu = ({items, refine, isFromSearch,  searchForItems, createURL}) => {
   var selected = false;
+  console.log('menu',items)
   items.map(item => {
     if (item.isRefined) selected = true;
   })
-
   return (
     <ul className="list-reset flex capitalize items-center">
       <li key="0" className="p-6 pl-0">

@@ -13,6 +13,8 @@ const Blog_new = (props) => {
   const searchClient = algoliasearch(process.env.RS_GATSBY_ALGOLIA_APP_ID, process.env.RS_GATSBY_ALGOLIA_APIKEY);
   const { data } = props
   const pageInfo = data.allSanityBlog.pageInfo
+  
+  console.log(data,'blog')
   return (
     <Layout>
       <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
@@ -21,9 +23,9 @@ const Blog_new = (props) => {
           indexName={process.env.RS_GATSBY_ALGOLIA_BLOGINDEX}
           >
           <Configure hitsPerPage={13} />
-          <div className="container flex flex-wrap flex-col sm:flex-row">
-            <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-solid border-b-2 border-grey-500">
-              <CustomMenu attribute="blog_category"/>
+          <div className="container flex flex-wrap flex-col sm:flex-row px-28">
+            <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-grey-500">
+              <CustomMenu attribute="author_name"/>
             </div>
             <div className="w-full md:w-2/5 pt-6 pb-3 text-center">
               <CustomSearchBox />
