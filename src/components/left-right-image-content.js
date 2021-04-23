@@ -55,7 +55,7 @@ const LeftRightImgCnt = (props) => {
                                 if (extralink === true) {
                                   return (
                                     <a href={linkurl}
-                                       className="font-bold leading-normal text-sm lr-icon">{linktext}</a>
+                                       className="font-bold leading-normal text-sm lr-icon hover:text-blueNew-custom">{linktext}</a>
                                   )
                                 }
                                 else {
@@ -95,13 +95,13 @@ const LeftRightImgCnt = (props) => {
                               if (extralink === true) {
                                 return (
                                   <a href={linkurl}
-                                     className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block">{linktext}</a>
+                                     className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">{linktext}</a>
                                 )
                               }
                               else {
                                 return (
                                   <span
-                                    className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block">
+                                    className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
                                                           <Link to={linkurl}>{linktext}</Link>
                                                         </span>
                                 )

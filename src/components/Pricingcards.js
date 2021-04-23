@@ -267,7 +267,7 @@ function PricingCards(props) {
         <div className="mt-3 flex items-center">
           <a
             href="https://github.com/rudderlabs/rudder-server"
-            className="text-sm text-black-custom leading-8 font-bold lr-icon mx-auto"
+            className="text-sm text-black-custom leading-8 font-bold lr-icon mx-auto hover:text-blueNew-custom"
             target="_blank"
             rel="noreferrer"
           >

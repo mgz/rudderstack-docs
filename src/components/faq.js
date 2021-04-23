@@ -11,7 +11,7 @@ function Faq(props) {
             className="py-8 text-center text-blueNew-custom font-bold border border-grayColor-priceCardBorder max-w-screen-lg m-auto faqcta rounded-xl shadow-xl faq-cta px-5 md:px-0">
             <p className="text-blueNew-custom text-2xl leading-8">Currently running Segment? </p>
             <a href="https://resources.rudderstack.com/request-a-demo"
-              className="block text-sm text-black-custom leading-sm font-bold mt-4 md:mt-5 lr-icon mx-auto mt-3">
+              className="block text-sm text-black-custom leading-sm font-bold mt-4 md:mt-5 lr-icon mx-auto mt-3 hover:text-blueNew-custom">
               Talk with one of our Segment Migration Specialists.
             </a>
           </div>

@@ -192,7 +192,7 @@ const About = () => {
           <div className="w-full text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Join Our Team</h2>
             <p className="text-xl mt-4">Help us make data engineers the heroes of their companies.</p>
-            <p className="mt-16 md:mt-16"><a className="bg-black-custom text-whiteColor-custom text-lg font-bold py-4 px-12 rounded-lg" href="https://www.linkedin.com/company/rudderlabs/jobs/">View Open Positions</a></p>
+            <p className="mt-16 md:mt-16"><a className="bg-black-custom text-whiteColor-custom text-lg font-bold py-4 px-12 rounded-lg hover:bg-blueNew-custom" href="https://www.linkedin.com/company/rudderlabs/jobs/">View Open Positions</a></p>
           </div>
         </div>
       </section>
@@ -209,8 +209,8 @@ const About = () => {
               <div className="align-middle text-lg leading-7 font-custom">
                 <p>Start building smarter customer data pipelines today with RudderStack. Our solutions engineering team is here to help.</p>
                 <div className="block md:flex pt-5">
-                  <a className="bg-white text-primary py-2 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom" href="">Sign up for free</a>
-                  <a className="bg-black text-white py-2 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom" href="">Get a demo</a>
+                  <a className="bg-white text-primary py-2 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom btn-secondary-lg" href="">Sign up for free</a>
+                  <a className="bg-black text-white py-2 text-sm md:px-8 lg:px-8 px-2 text-center mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom btn-primary-lg" href="">Get a demo</a>
                 </div>
               </div>
             </div>

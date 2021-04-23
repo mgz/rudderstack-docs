@@ -12,8 +12,8 @@ function OurLogo(props) {
         nav:false,
         dots:false,
         autoplay:true,
-        autoplayTimeout:2500,
-        smartSpeed:2500,
+        autoplayTimeout:3000,
+        smartSpeed:5000,
         responsive:{
             0:{
                 items:4

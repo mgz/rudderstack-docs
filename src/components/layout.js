@@ -103,7 +103,7 @@ import { StaticImage } from "gatsby-plugin-image"
                                 <a href="https://resources.rudderstack.com/join-rudderstack-slack"
                                    target="_blank"
                                    rel="noreferrer"
-                                   className="font-bold py-3 my-6 md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg md:mb-0 mb-4 inline-block border leading-tight border-white font-custom"
+                                   className="font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg md:mb-0 mb-4 inline-block border leading-tight border-white font-custom"
                                 >
                                   <StaticImage src="../images/Slack.svg" className="mr-2" />
                                   Join our Slack Community
@@ -111,7 +111,7 @@ import { StaticImage } from "gatsby-plugin-image"
                                 : <a href="https://docs.rudderstack.com"
                                      target="_blank"
                                      rel="noreferrer"
-                                     className="font-bold py-3 my-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 inline-block border leading-tight border-white font-custom"
+                                     className="font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 inline-block border leading-tight border-white font-custom"
                                   >
                                   Go to docs
                                 </a>

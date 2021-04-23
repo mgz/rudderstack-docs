@@ -17,7 +17,7 @@ const LatestBlog = props => {
           </h3>
           <BlogModule />
           <div className="w-full text-center items-center mt-4 md:mt-12">
-            <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center">
+            <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center hover:text-blueNew-custom">
               {/* <StaticImage
                 className="mr-2"
                 src="../images/arrow-right-o.png"
@@ -26,14 +26,15 @@ const LatestBlog = props => {
               <a
                 href={viewallpostslink}
                 class="font-bold leading-normal text-sm lr-icon"
-              ></a>
-              {(() => {
-                if (viewexternallink === true) {
-                  return <a href={viewallpostslink}>{viewalltext}</a>
-                } else {
-                  return <Link to={viewallpostslink}>{viewalltext}</Link>
-                }
-              })()}
+              >
+                {(() => {
+                  if (viewexternallink === true) {
+                    return <a href={viewallpostslink}>{viewalltext}</a>
+                  } else {
+                    return <Link to={viewallpostslink}>{viewalltext}</Link>
+                  }
+                })()}
+              </a>
             </p>
           </div>
         </div>
