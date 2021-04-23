@@ -28,7 +28,6 @@ const Testimonial = (props) => {
         })
     });
     const testimonials = props.addtestimonial
-     console.log(testimonials,'hari debug')
     return (
         <>
            <section class="testimonials testimonials-wrap bg-white py-5 text-primary px-md-5 margin-top-xl bg-hero-pattern bg-no-repeat bg-cover md:mt-32">

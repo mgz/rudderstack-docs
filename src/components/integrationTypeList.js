@@ -4,7 +4,6 @@ import { Highlight, connectMenu } from "react-instantsearch-dom"
 
 const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
   var selected = false;
-  console.log('items: ', items)
   items.map(item => {
     if (item.isRefined) selected = true;
   })

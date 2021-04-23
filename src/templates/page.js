@@ -37,7 +37,6 @@ const Page = props => {
   }
 
   const page = data.page || data.route.page;
-  console.log(page);
   const content = (page._rawPagebuildersectionarray || [])
     .filter(c => !c.disabled)
     .map((c, i) => {
@@ -100,7 +99,6 @@ const Page = props => {
 //   };
 
 //   const menuItems = page.navMenu && (page.navMenu.items || []);
-  console.log(data);
   const pageTitle = page.title;
 
   return (
