@@ -11,7 +11,6 @@ import FreeText from "../components/freeText";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Layout from "../components/layout";
-import CookiesConsent from '../components/cookiesConsent';
 
 const OurLogo = loadable(() => import('../components/ourlogo'));
 const Testimonial = loadable(() => import('../components/testimonial'));
@@ -113,7 +112,6 @@ const Page = props => {
         }}
       />
       <div className="pt-10 font-custom">{content}</div>
-      <CookiesConsent />
     </Layout>
   );
 };
