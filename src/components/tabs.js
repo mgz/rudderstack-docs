@@ -9,7 +9,7 @@ const Tabs = (props) => {
   return (
     <section className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-20 md:px-0">
       <div className="flex flex-col w-full justify-center items-start md:text-left mb-8 tab-section-wrapper">
-        <p className="my-4 text-blue text-sm font-bold uppercase">{smalltitle}</p>
+        <p className="my-4 text-blue text-sm uppercase">{smalltitle}</p>
         <h3 className="mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
       </div>
       <div className="grid md:grid-cols-12 w-full md:gap-2 lg:gap-16 tab-section">
