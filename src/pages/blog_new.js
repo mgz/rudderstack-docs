@@ -25,7 +25,7 @@ const Blog_new = (props) => {
           <Configure hitsPerPage={13} />
           <div className="container flex flex-wrap flex-col sm:flex-row px-28">
             <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-grey-500">
-              <CustomMenu attribute="author_name"/>
+              <CustomMenu  attribute="author_name"/>
             </div>
             <div className="w-full md:w-2/5 pt-6 pb-3 text-center">
               <CustomSearchBox />
@@ -43,6 +43,7 @@ const Blog_new = (props) => {
               </div>
             </div>
           </div>
+
 
         </InstantSearch>
       </div>
