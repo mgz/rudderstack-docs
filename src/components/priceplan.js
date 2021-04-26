@@ -172,7 +172,7 @@ function PricePlans() {
               </tr>
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">
-                  Data Warehouse Destinations (Redshift, Snowflake, Ctdckhouse,
+                  Data Warehouse Destinations (Redshift, Snowflake, Clickhouse,
                   etc.)
                 </td>
                 <td className="py-6">
@@ -300,7 +300,7 @@ function PricePlans() {
                 </td>
               </tr>
               <tr className="bg-grayColor-BgGray">
-                <td className="p-6 text-base text-left">Sync Schedtre</td>
+                <td className="p-6 text-base text-left">Sync Schedule</td>
                 <td className="p-6">
                   <StaticImage src="../images/Line 2.svg" alt="Line" />
                 </td>
