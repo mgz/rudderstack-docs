@@ -35,7 +35,7 @@ function PricingCards(props) {
                           alt="check"
                         />{" "} */}
                       </span>
-                      Event Stream
+                      Event Stream (500k)
                     </li>
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -45,7 +45,7 @@ function PricingCards(props) {
                           alt="check"
                         />{" "} */}
                       </span>{" "}
-                      Near Real Time Data
+                      Cloud Extract (500k)
                     </li>
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -55,7 +55,7 @@ function PricingCards(props) {
                           alt="check"
                         />{" "} */}
                       </span>{" "}
-                      Warehouse
+                      Warehouse Actions (10k)
                     </li>
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -75,7 +75,7 @@ function PricingCards(props) {
                           alt="check"
                         />{" "} */}
                       </span>{" "}
-                      80+ destinations
+                      150+ destinations
                     </li>
                   </ul>
                   <div className="mt-6 py-4 text-center">
@@ -124,17 +124,7 @@ function PricingCards(props) {
                           alt="check"
                         />{" "} */}
                       </span>{" "}
-                      Cloud Extract
-                    </li>
-                    <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
-                      <span className="absolute top-2 w-7 left-0 check-icon">
-                        {/* <StaticImage
-                          className="mr-2"
-                          src="../images/check-r2x.png"
-                          alt="check"
-                        />{" "} */}
-                      </span>{" "}
-                      Warehouse Actions
+                      Near Real Time Data
                     </li>
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -155,6 +145,16 @@ function PricingCards(props) {
                         />{" "} */}
                       </span>{" "}
                       Grafana Dashboards
+                    </li>
+                    <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
+                      <span className="absolute top-2 w-7 left-0 check-icon">
+                        {/* <StaticImage
+                          className="mr-2"
+                          src="../images/check-r2x.png"
+                          alt="check"
+                        />{" "} */}
+                      </span>{" "}
+                      10 Team Members
                     </li>
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
