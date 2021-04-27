@@ -311,9 +311,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td className="p-6 text-base text-left"># of Sources</td>
-                <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
-                </td>
+                <td className="p-6">3</td>
                 <td className="p-6 text-base">Unlimited</td>
                 <td className="p-6 text-base">Unlimited</td>
               </tr>
@@ -373,9 +371,7 @@ function PricePlans() {
                 <td className="p-6 text-base text-left">
                   Warehouse Connections
                 </td>
-                <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
-                </td>
+                <td className="p-6">1</td>
                 <td className="p-6 text-base">
                   <span>1</span>
                 </td>
