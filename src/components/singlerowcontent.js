@@ -9,7 +9,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Singlerowcontent = ({ hit }) => {
-  console.log(hit,'single hit')
+  // console.log(hit,'single hit')
   return (
     <div key="0"
          className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden shadow-md">

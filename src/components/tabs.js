@@ -6,7 +6,7 @@ const Tabs = (props) => {
   const smalltitle = props.tabsmalltitle
   const maintitle = props.tabmaintitle
   const tabs = props.tabblock
-  console.log(tabs)
+  // console.log(tabs)
   return (
     <section className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-20 md:px-0">
       <div className="flex flex-col w-full justify-center items-start md:text-left mb-8 tab-section-wrapper">

@@ -14,7 +14,7 @@ const Blog_new = (props) => {
   const { data } = props
   const pageInfo = data.allSanityBlog.pageInfo
   
-  console.log(data,'blog')
+  // console.log(data,'blog')
   return (
     <Layout>
       <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
