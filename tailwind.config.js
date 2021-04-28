@@ -27,8 +27,8 @@ module.exports = {
     },
     extend: {
       padding: {
-        "15": "3.75rem",
-        "19": "4.75rem"
+        15: "3.75rem",
+        19: "4.75rem",
       },
       colors: {
         primary: "var(--primary)",
@@ -48,7 +48,9 @@ module.exports = {
         base: "16px",
         lg: "18px",
         xl: "1.25rem",
+        "xl-2": "1.375rem",
         "2xl": "1.5rem",
+        "2xl-2": "1.75rem",
         "3xl": "28px",
         "4xl": "40px",
         "5xl": "50px",

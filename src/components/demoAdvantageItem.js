@@ -9,8 +9,8 @@ const DemoAdvantageItem = props => {
       <div className="m-2">
         <Image props={props.data.demoAdvanageImage.asset._ref} />
       </div>
-      <div className="text-2xl font-bold mb-6">{props.data.demoAdvantageTitle}</div>
-      <div className="text-grayColor-custom">
+      <div className="text-2xl-2 font-bold mb-6">{props.data.demoAdvantageTitle}</div>
+      <div className="text-grayColor-custom text-lg">
         <PortableText blocks={props.data.demoAdvantageDesc} />
       </div>
     </div>
