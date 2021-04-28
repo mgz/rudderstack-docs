@@ -49,8 +49,8 @@ const Demo = ({ data, htmlId }) => {
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
 
-  const onDemoFormSubmit = async data => {
-    const res = await window.rudderanalytics.track(
+  const onDemoFormSubmit = data => {
+    window.rudderanalytics.track(
       "form_submit",
       {
         page: document.title,
@@ -74,7 +74,7 @@ const Demo = ({ data, htmlId }) => {
         },
       }
     )
-    console.log(res, "res")
+    // console.log(res, "res")
   }
   return (
     <Layout>
