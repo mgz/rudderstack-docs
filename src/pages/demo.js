@@ -24,7 +24,7 @@ export const query = graphql`
   }
 `
 
-const Demo = ({ data }) => {
+const Demo = ({ data, htmlId }) => {
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
@@ -49,15 +49,39 @@ const Demo = ({ data }) => {
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
 
+  const onDemoFormSubmit = async data => {
+    const res = await window.rudderanalytics.track(
+      "form_submit",
+      {
+        page: document.title,
+        page_URL: window.location.href,
+        form_id: "Blog-header-Subscribe-form",
+        utm_source: "",
+        utm_medium: "",
+        utm_campaign: "",
+        utm_content: "",
+        utm_term: "",
+        raid: "",
+        test_user: "",
+      },
+      {
+        traits: {
+          firstName: data.firstName,
+          email: data.email,
+          company: data.company,
+          jobTitle: data.jobTitle,
+          form_id: htmlId,
+        },
+      }
+    )
+    console.log(res, "res")
+  }
   return (
     <Layout>
       <SEO title="Schedule Demo" />
       <div className="font-custom">
         <section id="demo_hdr">
-          <div
-            className="relative demo-header pt-20 lg:pt-28"
-            
-          >
+          <div className="relative demo-header pt-20 lg:pt-28">
             {/* <div className="demo-header-bg-img bottom-2 right-2 w-full"></div> */}
             <StaticImage
               src={"../images/demo-background.png"}
@@ -70,7 +94,7 @@ const Demo = ({ data }) => {
             />
             <div
               className="text-whiteColor-custom text-4xl md:text-6xl font-bold"
-              style={{ lineHeight: "80px" }}
+              // style={{ lineHeight: "80px" }}
             >
               <PortableText
                 blocks={lv_scheduledemoheader[0].demo_header_text}
@@ -81,9 +105,7 @@ const Demo = ({ data }) => {
             <div className="w-full px-8 md:w-3/6 md:pl-16 xl:pl-60">
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
-                onDemoFormSubmit={data => {
-                  console.log("form Data", data)
-                }}
+                onDemoFormSubmit={onDemoFormSubmit}
               />
             </div>
             <div
@@ -97,7 +119,7 @@ const Demo = ({ data }) => {
           </div>
         </section>
         <section id="demo_advantages">
-          <div className="px-0 pb-0 pt-4  sm:px-12 lg:px-48 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
+          <div className="px-0 pb-0 pt-12  sm:px-12 lg:px-48 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
             <div className="mb-24">
               <span className="text-3xl md:text-5xl font-bold">
                 {lv_demoadvantages[0].advantage_header_text}
@@ -151,9 +173,7 @@ const Demo = ({ data }) => {
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                 isFooterForm={true}
-                onDemoFormSubmit={data => {
-                  console.log("form Data", data)
-                }}
+                onDemoFormSubmit={onDemoFormSubmit}
               />
             </div>
           </div>
