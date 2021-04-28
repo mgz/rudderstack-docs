@@ -143,7 +143,7 @@ const Demo = ({ data, htmlId }) => {
             </div>
           </div>
         </section>
-        <section id="logos">
+        <section id="logos" className="px-8">
           <OurLogo
             customHeaderText="The top companies in the world use RudderStack to Activate their customer data"
             {...lv_ourlogoblock[0]}
