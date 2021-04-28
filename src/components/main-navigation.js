@@ -50,7 +50,7 @@ const MainNavigation = () => {
     data.allSanitySiteSettings.edges[0].node.headerblock.try_free_btn
   return (
     <>
-      <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 flex-wrap sm:pt-6">
+      <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 flex-wrap">
         <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
           <Link to="/" className="pl-4 sm:pl-0">
             {/* <img
