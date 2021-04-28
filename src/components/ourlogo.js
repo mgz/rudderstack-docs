@@ -12,7 +12,7 @@ function OurLogo(props) {
         nav:false,
         dots:false,
         autoplay:true,
-        autoplayTimeout:3000,
+        autoplayTimeout:10000,
         smartSpeed:5000,
         responsive:{
             0:{
@@ -27,7 +27,7 @@ function OurLogo(props) {
         }
     })
   });
-  const maintitle = props.ourlogotitle
+  const maintitle = props.customHeaderText || props.ourlogotitle
   const logoimages = props.outlogoimage
   return (
     <section

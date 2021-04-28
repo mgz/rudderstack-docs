@@ -50,7 +50,7 @@ const MainNavigation = () => {
     data.allSanitySiteSettings.edges[0].node.headerblock.try_free_btn
   return (
     <>
-      <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-4 sm:py-0 flex-wrap sm:pt-6">
+      <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 flex-wrap sm:pt-6">
         <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
           <Link to="/" className="pl-4 sm:pl-0">
             {/* <img
@@ -110,10 +110,11 @@ const MainNavigation = () => {
         <div
           className={`menu lg:flex ${
             isExpanded ? `block` : `hidden`
-          } py-4 px-6 justify-center items-center lg:items-center lg:w-auto w-4/5 md:w-full mt-2 lg:mt-0`}
+          } py-4 justify-center items-center lg:items-center lg:w-auto w-4/5 md:w-full mt-2 lg:mt-0`}
         >
           <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
             {mainmenu.map((link, i) => (
+
               <MainNavigationMenuLink link={link} i={i} />
             ))}
           </ul>
