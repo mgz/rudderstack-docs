@@ -95,7 +95,7 @@ const Demo = ({ data, htmlId }) => {
               // height={270}
             />
             <div
-              className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight"
+              className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter"
               // style={{ lineHeight: "70px" }}
             >
               <PortableText
