@@ -1,4 +1,4 @@
-const indexName = process.env.RS_GATSBY_ALGOLIA_BLOGINDEX;
+let indexName = process.env.RS_GATSBY_ALGOLIA_BLOGINDEX
 
 const pageQuery = `{
   pages: allSanityBlog {
@@ -26,12 +26,24 @@ const pageQuery = `{
   }
 }`
 
-function pageToAlgoliaRecord({ node: { _id, title, blog_image,author_name,author_desc,weight, slug, blogdate, blog_category } }) {
-
-  let blogimage = '';
-  if(blog_image) {
-    blogimage = blog_image.asset.fluid;
+function pageToAlgoliaRecord({
+  node: {
+    _id,
+    title,
+    blog_image,
+    author_name,
+    author_desc,
+    weight,
+    slug,
+    blogdate,
+    blog_category,
+  },
+}) {
+  let blogimage = ""
+  if (blog_image) {
+    blogimage = blog_image.asset.fluid
   }
+  console.log("algolia push ")
   return {
     objectID: _id,
     title,
@@ -41,14 +53,16 @@ function pageToAlgoliaRecord({ node: { _id, title, blog_image,author_name,author
     weight,
     slug,
     blogdate,
-    blog_category
+    blog_category,
   }
 }
 
 const queries = [
   {
     query: pageQuery,
-    transformer: ({ data }) => data.pages.edges.map(pageToAlgoliaRecord),
+    transformer: ({ data }) => {
+      return data.pages.edges.map(pageToAlgoliaRecord)
+    },
     indexName,
     settings: {},
   },

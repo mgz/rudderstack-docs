@@ -45,6 +45,7 @@ module.exports = {
         enablePartialUpdates: true,
         matchFields: ["title", "author_name", "author_desc", "blogimage", "weight", "slug", "blogdate", "blog_category"]
       },
+
       // {
       //   appId: process.env.RS_GATSBY_ALGOLIA_APP_ID,
       //   apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,

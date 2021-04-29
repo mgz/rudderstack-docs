@@ -11,7 +11,7 @@ const DemoForm = props => {
 
   return (
     <div
-      className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-16 flex flex-col max-w-lg ${
+      className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-16 flex flex-col w-auto xl:w-120 max-w-lg ${
         props.isFooterForm === true ? "top-0" : "-top-24"
       }`}
     >

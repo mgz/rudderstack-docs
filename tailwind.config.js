@@ -30,6 +30,9 @@ module.exports = {
         15: "3.75rem",
         19: "4.75rem",
       },
+      width: {
+        "120": "30rem",
+      },
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",

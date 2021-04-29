@@ -105,7 +105,7 @@ const Demo = ({ data, htmlId }) => {
             </div>
           </div>
           <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap mb-6 px-4 sm:px-12 lg:px-32 xl:px-60">
-            <div className="w-full md:w-3/6 pr-0 sm:pr-4">
+            <div className="w-full md:w-3/6 pr-0 sm:pr-4 xl:flex xl:flex-row-reverse">
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                 onDemoFormSubmit={onDemoFormSubmit}
@@ -157,7 +157,7 @@ const Demo = ({ data, htmlId }) => {
         </section>
         <section id="demo_bottom">
           <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 sm:mb-24 sm:mt-40">
-            <div className="w-full px-8 pt-0 lg:pl-16 lg:pr-24 text-xl  md:w-3/6 md:block">
+            <div className="w-full px-8 pt-0 lg:pl-32 lg:pr-12 text-xl  md:w-3/6 md:block">
               <div className="mb-4">
                 <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight">
                   {lv_demofooterleft[0].demo_footer_header_text}
