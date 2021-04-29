@@ -104,15 +104,15 @@ const Demo = ({ data, htmlId }) => {
             </div>
           </div>
           <div className="bg-whiteColor-custom w-full">
-            <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-6 pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3">
-              <div className="w-full md:w-3/6 pr-0 sm:pr-4 xl:flex xl:flex-row-reverse">
+            <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
+              <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
                 <DemoForm
                   submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                   onDemoFormSubmit={onDemoFormSubmit}
                 />
               </div>
               <div
-                className="w-full pl-0 pt-0 -mt-8 sm:mt-0 sm:pt-8 lg:pl-20 lg:py-20 text-xl-2 md:w-3/6 text-grayColor-custom"
+                className="w-full pr-4 sm:pl-4 pt-0 -mt-8 sm:mt-0 sm:pt-8 lg:pl-20  text-xl-2 md:w-3/6 text-grayColor-custom"
                 style={{ lineHeight: "35px" }}
               >
                 <PortableText
@@ -124,7 +124,7 @@ const Demo = ({ data, htmlId }) => {
         </section>
         <section id="demo_advantages">
           {/* sm:px-12 lg:px-32 xl:px-60 */}
-          <div className='w-full bg-grayColor-BgGray'>
+          <div className="w-full bg-grayColor-BgGray">
             <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
               <div className="mb-24">
                 <span className="text-3xl md:text-5xl font-bold">
@@ -161,8 +161,8 @@ const Demo = ({ data, htmlId }) => {
         </section>
         {/* sm:px-12 lg:px-32 xl:px-60 */}
         <section id="demo_bottom">
-          <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 max-w-6xl mx-auto px-4 md:px-3 sm:mb-24 sm:mt-40">
-            <div className="w-full pr-8 pt-0  text-xl  md:w-3/6 md:block">
+          <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 max-w-6xl mx-auto px-6 sm:mb-24 sm:mt-12 md:mt-36">
+            <div className="w-full pr-4 lg:pr-16 pt-0  text-xl  md:w-3/6 md:block">
               <div className="mb-4">
                 <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight">
                   {lv_demofooterleft[0].demo_footer_header_text}
@@ -172,7 +172,7 @@ const Demo = ({ data, htmlId }) => {
                 <PortableText blocks={lv_demofooterleft[0].demo_footer_desc} />
               </div>
             </div>
-            <div className="w-full px-0 md:w-3/6 md:pr-16 xl:pr-60">
+            <div className="w-full px-0 md:w-3/6 flex flex-row justify-end">
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                 isFooterForm={true}
