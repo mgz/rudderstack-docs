@@ -50,6 +50,11 @@ const Demo = ({ data, htmlId }) => {
   ).filter(ii => ii._type === "middlebannersection")
 
   const onDemoFormSubmit = data => {
+    if (!window.rudderanalytics) {
+      console.log("rudderanalytics not found")
+      return
+    }
+
     window.rudderanalytics.track(
       "form_submit",
       {
@@ -81,35 +86,33 @@ const Demo = ({ data, htmlId }) => {
       <SEO title="Schedule Demo" />
       <div className="font-custom">
         <section id="demo_hdr">
-          <div className="relative demo-header pt-20 lg:pt-28">
-            {/* <div className="demo-header-bg-img bottom-2 right-2 w-full"></div> */}
+          <div className="relative demo-header flex flex-col justify-center items-center">
             <StaticImage
               src={"../images/demo-background.png"}
               alt={"sssss"}
-              style={{ zIndex: -1 }}
-              // layout="relative"
-              className="hidden md:block absolute bottom-4 right-4 "
-              width={640}
-              height={270}
+              style={{ zIndex: -1, width: "45%" }}
+              className="hidden md:block absolute bottom-0 right-0 "
+              // width={'45%'}
+              // height={270}
             />
             <div
-              className="text-whiteColor-custom text-4xl md:text-6xl font-bold"
-              // style={{ lineHeight: "80px" }}
+              className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-medium max-w-screen-md leading-tight"
+              // style={{ lineHeight: "70px" }}
             >
               <PortableText
                 blocks={lv_scheduledemoheader[0].demo_header_text}
               />
             </div>
           </div>
-          <div className="bg-whiteColor-custom  bg-current flex flex-row mb-6">
-            <div className="w-full px-8 md:w-3/6 md:pl-16 xl:pl-60">
+          <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap mb-6 px-4 sm:px-12 lg:px-32 xl:px-60">
+            <div className="w-full md:w-3/6 pr-0 sm:pr-4">
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                 onDemoFormSubmit={onDemoFormSubmit}
               />
             </div>
             <div
-              className="w-0 hidden px-8 pt-12 lg:pl-16 lg:pr-56 lg:pt-20 text-xl-2  md:w-3/6 md:block"
+              className="w-full pl-0 pt-0 -mt-8 sm:mt-0 sm:pt-8 lg:pl-20 lg:py-20 text-xl-2 md:w-3/6 text-grayColor-custom"
               style={{ lineHeight: "35px" }}
             >
               <PortableText
@@ -119,7 +122,7 @@ const Demo = ({ data, htmlId }) => {
           </div>
         </section>
         <section id="demo_advantages">
-          <div className="px-0 pb-0 pt-12  sm:px-12 lg:px-48 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
+          <div className="px-0 pb-0 pt-12  sm:px-12 lg:px-20 xl:px-48 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
             <div className="mb-24">
               <span className="text-3xl md:text-5xl font-bold">
                 {lv_demoadvantages[0].advantage_header_text}
@@ -145,7 +148,7 @@ const Demo = ({ data, htmlId }) => {
         </section>
         <section id="logos" className="px-8">
           <OurLogo
-            customHeaderText="The top companies in the world use RudderStack to Activate their customer data"
+            customHeaderText={`The top companies in the world use RudderStack to Activate their customer data`}
             {...lv_ourlogoblock[0]}
           />
         </section>
@@ -153,23 +156,18 @@ const Demo = ({ data, htmlId }) => {
           <Testimonial {...lv_testimonialsection[0]} />
         </section>
         <section id="demo_bottom">
-          <div className="bg-whiteColor-custom  bg-current flex flex-row my-8 sm:mb-24 sm:mt-40">
-            <div className="w-0 hidden px-8 pt-0 lg:pl-16 lg:pr-56 text-xl  md:w-3/6 md:block">
-              <div className="mb-8" style={{ lineHeight: "60px" }}>
-                <span className="text-4xl font-bold">
+          <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 sm:mb-24 sm:mt-40">
+            <div className="w-full px-8 pt-0 lg:pl-16 lg:pr-24 text-xl  md:w-3/6 md:block">
+              <div className="mb-4">
+                <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight">
                   {lv_demofooterleft[0].demo_footer_header_text}
                 </span>
               </div>
-              <div style={{ lineHeight: "35px" }}>
+              <div className="text-xl-2 text-grayColor-custom mb-12">
                 <PortableText blocks={lv_demofooterleft[0].demo_footer_desc} />
               </div>
             </div>
             <div className="w-full px-4 md:w-3/6 md:pr-16 xl:pr-60">
-              <div className=" md:hidden text-center mb-4">
-                <span className="text-3xl font-bold">
-                  {lv_demofooterleft[0].demo_footer_header_text}
-                </span>
-              </div>
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                 isFooterForm={true}

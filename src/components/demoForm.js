@@ -15,7 +15,7 @@ const DemoForm = props => {
         props.isFooterForm === true ? "top-0" : "-top-24"
       }`}
     >
-      <div className="font-medium text-base mb-2">
+      <div className="text-lg text-grayColor-custom mb-2 ">
         First Name <span className="text-blueNew-custom">*</span>
       </div>
       <input
@@ -27,7 +27,7 @@ const DemoForm = props => {
           setFormData({ ...formData, firstName: e.target.value })
         }}
       />
-      <div className="font-medium text-base mb-2">
+      <div className="text-lg text-grayColor-custom mb-2">
         Work email address <span className="text-blueNew-custom">*</span>
       </div>
       <input
@@ -40,7 +40,7 @@ const DemoForm = props => {
         }}
       />
 
-      <div className="font-medium text-base mb-2">
+      <div className="text-lg text-grayColor-custom mb-2">
         Company <span className="text-blueNew-custom">*</span>
       </div>
       <input
@@ -52,7 +52,7 @@ const DemoForm = props => {
         }}
       />
 
-      <div className="font-medium text-base mb-2">
+      <div className="text-lg text-grayColor-custom mb-2">
         Job Title <span className="text-blueNew-custom">*</span>
       </div>
       <input

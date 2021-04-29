@@ -23,7 +23,7 @@ const MainNavigationMenuLink = props => {
         menuIndex={i}
         classes={`${
           onClickEvent == 1 ? `active` : ``
-        } parent-menu block mt-4 lg:mt-0 text-base mr-4 xl:mr-10 ${i === 0 ? "font-bold" : "font-normal"} font-custom lg:py-2`}
+        } parent-menu block mt-4 lg:mt-0 text-base mr-4 xl:mr-10 ${i === 0 ? "font-normal" : "font-normal"} font-custom lg:py-2`}
         onclick={() =>
           link._rawSubMenuSection !== null && window.innerWidth < 1024
             ? setOnClickEvent(!onClickEvent)
@@ -40,7 +40,7 @@ const MainNavigationMenuLink = props => {
               }`}
             >
               {submenu.map((sublink, j) => (
-                <li key={j} className="text-sm font-bold font-custom">
+                <li key={j} className="text-sm font-custom">
                   <SanitySubLink link={sublink} />
                 </li>
               ))}
