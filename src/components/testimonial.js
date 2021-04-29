@@ -6,7 +6,7 @@ import Image from "./image"
 import Link from "gatsby-link"
 
 const Testimonial = props => {
-//   if (typeof window === "undefined" || !window.document) {
+  if (typeof window !== "undefined") {
     $(window.document).ready(function () {
         $(".testimonial-slider").owlCarousel({
           loop: true,
@@ -28,7 +28,7 @@ const Testimonial = props => {
           },
         })
       })    
-//   }
+  }
 
   const testimonials = props.addtestimonial
   return (

@@ -5,7 +5,7 @@ import "owl.carousel"
 import Image from "./image"
 
 function OurLogo(props) {
-  // if (typeof window === "undefined" || !window.document) {
+  if (typeof window !== "undefined") {
     $(window.document).ready(function () {
       $(".logo-slider").owlCarousel({
         loop: true,
@@ -28,7 +28,7 @@ function OurLogo(props) {
         },
       })
     })
-  // }
+  }
 
   const maintitle = props.customHeaderText || props.ourlogotitle
   const logoimages = props.outlogoimage
