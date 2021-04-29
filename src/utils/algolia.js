@@ -43,7 +43,7 @@ function pageToAlgoliaRecord({
   if (blog_image) {
     blogimage = blog_image.asset.fluid
   }
-  console.log("algolia push ")
+  // console.log("algolia push ")
   return {
     objectID: _id,
     title,

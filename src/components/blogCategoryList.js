@@ -2,23 +2,34 @@ import React from "react"
 import { Highlight, connectMenu } from "react-instantsearch-dom"
 //import { graphql } from "gatsby"
 
-const Menu = ({items, refine, isFromSearch,  searchForItems, createURL}) => {
-  var selected = false;
-  // console.log('menu',items)
+const Menu = ({
+  items,
+  currentRefinement,
+  refine,
+  isFromSearch,
+  searchForItems,
+  createURL,
+}) => {
+  var selected = false
+  console.log("menu", items)
   items.map(item => {
-    if (item.isRefined) selected = true;
+    if (item.isRefined) selected = true
   })
   return (
     <ul className="list-reset flex capitalize items-center">
       <li key="0" className="p-6 pl-0">
         <a
-          href={createURL('')}
-          className={!selected ? 'border-solid border-b-2 border-indigo-500 text-indigo-500 pb-7' : ''}
+          href={createURL("")}
+          className={
+            !selected
+              ? "border-solid border-b-2 border-indigo-500 text-indigo-500 pb-7"
+              : ""
+          }
           onClick={event => {
-            event.preventDefault();
-            refine('');
+            event.preventDefault()
+            refine("")
           }}
-          >
+        >
           All categories
         </a>
       </li>
@@ -26,12 +37,16 @@ const Menu = ({items, refine, isFromSearch,  searchForItems, createURL}) => {
         <li key={item.value} className="p-6 pl-0">
           <a
             href={createURL(item.value)}
-            className={item.isRefined ? 'border-solid border-b-2 border-indigo-500 text-indigo-500 pb-7' : '' }
+            className={
+              item.isRefined
+                ? "border-solid border-b-2 border-indigo-500 text-indigo-500 pb-7"
+                : ""
+            }
             onClick={event => {
-            event.preventDefault();
-            refine(item.value);
-          }}
-            >
+              event.preventDefault()
+              refine(item.value)
+            }}
+          >
             {isFromSearch ? (
               <Highlight attribute="label" hit={item} />
             ) : (
@@ -42,7 +57,7 @@ const Menu = ({items, refine, isFromSearch,  searchForItems, createURL}) => {
       ))}
     </ul>
   )
-};
+}
 
 const CustomMenu = connectMenu(Menu)
 

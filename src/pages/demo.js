@@ -50,35 +50,34 @@ const Demo = ({ data, htmlId }) => {
   ).filter(ii => ii._type === "middlebannersection")
 
   const onDemoFormSubmit = data => {
-    if (!window.rudderanalytics) {
-      console.log("rudderanalytics not found")
-      return
-    }
-
-    window.rudderanalytics.track(
-      "form_submit",
-      {
-        page: document.title,
-        page_URL: window.location.href,
-        form_id: "Blog-header-Subscribe-form",
-        utm_source: "",
-        utm_medium: "",
-        utm_campaign: "",
-        utm_content: "",
-        utm_term: "",
-        raid: "",
-        test_user: "",
-      },
-      {
-        traits: {
-          firstName: data.firstName,
-          email: data.email,
-          company: data.company,
-          jobTitle: data.jobTitle,
-          form_id: htmlId,
-        },
-      }
-    )
+    // if (!window.rudderanalytics) {
+    //   console.log("rudderanalytics not found")
+    //   return
+    // }
+    // window.rudderanalytics.track(
+    //   "form_submit",
+    //   {
+    //     page: document.title,
+    //     page_URL: window.location.href,
+    //     form_id: "Blog-header-Subscribe-form",
+    //     utm_source: "",
+    //     utm_medium: "",
+    //     utm_campaign: "",
+    //     utm_content: "",
+    //     utm_term: "",
+    //     raid: "",
+    //     test_user: "",
+    //   },
+    //   {
+    //     traits: {
+    //       firstName: data.firstName,
+    //       email: data.email,
+    //       company: data.company,
+    //       jobTitle: data.jobTitle,
+    //       form_id: htmlId,
+    //     },
+    //   }
+    // )
     // console.log(res, "res")
   }
   return (
@@ -96,7 +95,7 @@ const Demo = ({ data, htmlId }) => {
               // height={270}
             />
             <div
-              className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-medium max-w-screen-md leading-tight"
+              className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight"
               // style={{ lineHeight: "70px" }}
             >
               <PortableText
@@ -104,45 +103,50 @@ const Demo = ({ data, htmlId }) => {
               />
             </div>
           </div>
-          <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap mb-6 px-4 sm:px-12 lg:px-32 xl:px-60">
-            <div className="w-full md:w-3/6 pr-0 sm:pr-4 xl:flex xl:flex-row-reverse">
-              <DemoForm
-                submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
-                onDemoFormSubmit={onDemoFormSubmit}
-              />
-            </div>
-            <div
-              className="w-full pl-0 pt-0 -mt-8 sm:mt-0 sm:pt-8 lg:pl-20 lg:py-20 text-xl-2 md:w-3/6 text-grayColor-custom"
-              style={{ lineHeight: "35px" }}
-            >
-              <PortableText
-                blocks={lv_scheduledemoheader[0].demo_right_content}
-              />
+          <div className="bg-whiteColor-custom w-full">
+            <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-6 pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3">
+              <div className="w-full md:w-3/6 pr-0 sm:pr-4 xl:flex xl:flex-row-reverse">
+                <DemoForm
+                  submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
+                  onDemoFormSubmit={onDemoFormSubmit}
+                />
+              </div>
+              <div
+                className="w-full pl-0 pt-0 -mt-8 sm:mt-0 sm:pt-8 lg:pl-20 lg:py-20 text-xl-2 md:w-3/6 text-grayColor-custom"
+                style={{ lineHeight: "35px" }}
+              >
+                <PortableText
+                  blocks={lv_scheduledemoheader[0].demo_right_content}
+                />
+              </div>
             </div>
           </div>
         </section>
         <section id="demo_advantages">
-          <div className="px-0 pb-0 pt-12  sm:px-12 lg:px-20 xl:px-48 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
-            <div className="mb-24">
-              <span className="text-3xl md:text-5xl font-bold">
-                {lv_demoadvantages[0].advantage_header_text}
-              </span>
-            </div>
-            <div className="flex flex-wrap flex-row">
-              {(lv_demoadvantages[0].demo_content || []).map((itm, idx) => {
-                return (
-                  <div
-                    key={itm._key}
-                    className={`${
-                      idx === 2
-                        ? "w-full px-0 sm:px-12 lg:px-40"
-                        : "w-full sm:w-1/2"
-                    }`}
-                  >
-                    <DemoAdvantageItem data={itm} />
-                  </div>
-                )
-              })}
+          {/* sm:px-12 lg:px-32 xl:px-60 */}
+          <div className='w-full bg-grayColor-BgGray'>
+            <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
+              <div className="mb-24">
+                <span className="text-3xl md:text-5xl font-bold">
+                  {lv_demoadvantages[0].advantage_header_text}
+                </span>
+              </div>
+              <div className="flex flex-wrap flex-row">
+                {(lv_demoadvantages[0].demo_content || []).map((itm, idx) => {
+                  return (
+                    <div
+                      key={itm._key}
+                      className={`${
+                        idx === 2
+                          ? "w-full px-0 sm:px-12 lg:px-40"
+                          : "w-full sm:w-1/2"
+                      }`}
+                    >
+                      <DemoAdvantageItem data={itm} />
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         </section>
@@ -155,9 +159,10 @@ const Demo = ({ data, htmlId }) => {
         <section id="testimonials">
           <Testimonial {...lv_testimonialsection[0]} />
         </section>
+        {/* sm:px-12 lg:px-32 xl:px-60 */}
         <section id="demo_bottom">
-          <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 sm:mb-24 sm:mt-40">
-            <div className="w-full px-8 pt-0 lg:pl-32 lg:pr-12 text-xl  md:w-3/6 md:block">
+          <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 max-w-6xl mx-auto px-4 md:px-3 sm:mb-24 sm:mt-40">
+            <div className="w-full pr-8 pt-0  text-xl  md:w-3/6 md:block">
               <div className="mb-4">
                 <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight">
                   {lv_demofooterleft[0].demo_footer_header_text}
@@ -167,7 +172,7 @@ const Demo = ({ data, htmlId }) => {
                 <PortableText blocks={lv_demofooterleft[0].demo_footer_desc} />
               </div>
             </div>
-            <div className="w-full px-4 md:w-3/6 md:pr-16 xl:pr-60">
+            <div className="w-full px-0 md:w-3/6 md:pr-16 xl:pr-60">
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                 isFooterForm={true}

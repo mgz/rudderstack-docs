@@ -5,29 +5,31 @@ import "owl.carousel"
 import Image from "./image"
 
 function OurLogo(props) {
-  $(document).ready(function(){
-    $('.logo-slider').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false,
-        dots:false,
-        autoplay:true,
-        autoplayTimeout:10000,
-        smartSpeed:5000,
-        responsive:{
-            0:{
-                items:4
-            },
-            600:{
-                items:8
-            },
-            1000:{
-                items:8
-            }
-        }
+  // if (typeof window === "undefined" || !window.document) {
+    $(window.document).ready(function () {
+      $(".logo-slider").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        smartSpeed: 5000,
+        responsive: {
+          0: {
+            items: 4,
+          },
+          600: {
+            items: 8,
+          },
+          1000: {
+            items: 8,
+          },
+        },
+      })
     })
-  });
- 
+  // }
+
   const maintitle = props.customHeaderText || props.ourlogotitle
   const logoimages = props.outlogoimage
   return (
@@ -37,7 +39,7 @@ function OurLogo(props) {
           {maintitle}
         </h3>
       </div>
-      <div className="flex w-full justify-center mt-2 sm:mt-10 our-logos">
+      <div className="flex w-full justify-center mt-2 sm:mt-4 our-logos">
         <div className="logo-slider owl-carousel owl-theme">
           {logoimages.map((logoimage, i) => {
             return (

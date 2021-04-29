@@ -5,48 +5,43 @@
  */
 
 // You can delete this file if you're not using it
-var webpack = require("webpack");
-exports.onCreateWebpackConfig = ({
-                                   stage,
-                                   loaders,
-                                   actions
-                                 }) => {
+var webpack = require("webpack")
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {
         rules: [
           {
             test: /owl.carousel/,
-            use: loaders.null()
-          }
-        ]
+            use: loaders.null(),
+          },
+        ],
       },
       plugins: [
         new webpack.ProvidePlugin({
           $: "jquery",
           jQuery: "jquery",
-          "window.jQuery": "jquery"
-        })
-      ]
+          "window.jQuery": "jquery",
+        }),
+      ],
       //devtool: "eval-source-map"
     })
-  }
-  else {
+  } else {
     actions.setWebpackConfig({
       plugins: [
         new webpack.ProvidePlugin({
           $: "jquery",
           jQuery: "jquery",
-          "window.jQuery": "jquery"
-        })
-      ]
+          "window.jQuery": "jquery",
+        }),
+      ],
       //devtool: "eval-source-map"
     })
   }
 }
 
-exports.createPages = async ({graphql, actions}) => {
-  const {createPage} = actions
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
 
   const result = await graphql(`
     {
@@ -71,8 +66,8 @@ exports.createPages = async ({graphql, actions}) => {
 
     createPage({
       path,
-      component: require.resolve('./src/templates/content.js'),
-      context: {slug: edge.node.slug},
+      component: require.resolve("./src/templates/content.js"),
+      context: { slug: edge.node.slug },
     })
   })
 
@@ -101,8 +96,8 @@ exports.createPages = async ({graphql, actions}) => {
 
     createPage({
       path,
-      component: require.resolve('./src/templates/integrationContent.js'),
-      context: {slug: edge.node.slug.current},
+      component: require.resolve("./src/templates/integrationContent.js"),
+      context: { slug: edge.node.slug.current },
     })
   })
 }
