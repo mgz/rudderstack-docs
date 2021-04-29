@@ -89,7 +89,7 @@ const Demo = ({ data, htmlId }) => {
           <div className="relative demo-header flex flex-col justify-center items-center">
             <StaticImage
               src={"../images/demo-background.png"}
-              alt={"sssss"}
+              alt={"background"}
               style={{ zIndex: -1, width: "45%" }}
               className="hidden md:block absolute bottom-0 right-0 "
               // width={'45%'}

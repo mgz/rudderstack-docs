@@ -11,7 +11,7 @@ const DemoForm = props => {
 
   return (
     <div
-      className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-16 flex flex-col ${
+      className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-16 flex flex-col max-w-lg ${
         props.isFooterForm === true ? "top-0" : "-top-24"
       }`}
     >
@@ -65,7 +65,7 @@ const DemoForm = props => {
       />
 
       <button
-        class="btn-primary-lg md:mb-0 mb-4"
+        class="btn-primary-lg mt-3 md:mb-0 mb-4"
         // href="#"
         onClick={e => {
           e.preventDefault()
