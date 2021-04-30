@@ -186,7 +186,14 @@ body {
   display: flex;
   justify-content: center;
   background-repeat: no-repeat;
-  z-index: -2;
+  /* z-index: -2; */
+}
+
+.demo-header-bg {
+  background-image: url("../images/demo-background.png");
+  background-position: bottom right;
+  background-size: 640px auto;
+  background-repeat: no-repeat;
 }
 
 .demo_form {
@@ -226,7 +233,6 @@ body {
     url("../images/form-submit-header-right.png");
   background-position: top left, bottom right;
   background-size: 230px auto, 350px auto;
-
   background-repeat: no-repeat;
 }
 
@@ -351,6 +357,13 @@ top: -60px;
     background-position: bottom right;
     background-size: 350px auto;
 
+    background-repeat: no-repeat;
+  }
+
+  .demo-header-bg {
+    background-image: none;
+    background-position: bottom right;
+    background-size: 640px auto;
     background-repeat: no-repeat;
   }
 }

@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PortableText from "../components/portableText"
-import MiddleBanner from "../components/middle-banner"
+import Layout from "../../components/layout"
+import SEO from "../../components/seo"
+import PortableText from "../../components/portableText"
+import MiddleBanner from "../../components/middle-banner"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 export const query = graphql`
   query schDemoSubmit {

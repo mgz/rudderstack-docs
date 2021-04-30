@@ -75,7 +75,7 @@ const Demo = ({ data, htmlId }) => {
     })
       .then(res => {
         if (res.statusText === "OK") {
-          navigate("/demo-submit")
+          navigate("/request-demo/thank-you")
         }
       })
       .catch(err => {
@@ -90,7 +90,7 @@ const Demo = ({ data, htmlId }) => {
       <SEO title="Schedule Demo" />
       <div className="font-custom">
         <section id="demo_hdr">
-          <div className="relative demo-header flex flex-col justify-center items-center">
+          {/* <div className="relative demo-header flex flex-col justify-center items-center">
             <StaticImage
               src={"../images/demo-background.png"}
               alt={"background"}
@@ -99,9 +99,20 @@ const Demo = ({ data, htmlId }) => {
             />
             <div className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
               {lv_scheduledemoheader[0].demo_header_text}
-              {/* <PortableText
-                blocks={lv_scheduledemoheader[0].demo_header_text}
-              /> */}
+            </div>
+          </div> */}
+          <div className="demo-header">
+            <div className=" flex flex-col justify-center items-center demo-header-bg w-full">
+              {/* <StaticImage
+              src={"../images/demo-background.png"}
+              alt={"background"}
+              style={{ zIndex: -1, width: "45%" }}
+              className="hidden md:block absolute bottom-0 right-0 "
+            /> */}
+
+              <div className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
+                {lv_scheduledemoheader[0].demo_header_text}
+              </div>
             </div>
           </div>
           <div className="bg-whiteColor-custom w-full">
