@@ -146,27 +146,12 @@ function PricePlans() {
                   Cloud Destinations (GA, Amptdtude, Braze, etc.)
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
-                    className="checkImg"
-                    src="../images/check-r.svg"
-                    alt="check"
-                  /> */}
                   <span className="check-icon" />
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
-                    className="checkImg"
-                    src="../images/check-r.svg"
-                    alt="check"
-                  /> */}
                   <span className="check-icon" />
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
-                    className="checkImg"
-                    src="../images/check-r.svg"
-                    alt="check"
-                  /> */}
                   <span className="check-icon" />
                 </td>
               </tr>
@@ -176,27 +161,12 @@ function PricePlans() {
                   etc.)
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
-                    className="checkImg"
-                    src="../images/check-r.svg"
-                    alt="check"
-                  /> */}
                   <span className="check-icon" />
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
-                    className="checkImg"
-                    src="../images/check-r.svg"
-                    alt="check"
-                  /> */}
                   <span className="check-icon" />
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
-                    className="checkImg"
-                    src="../images/check-r.svg"
-                    alt="check"
-                  /> */}
                   <span className="check-icon" />
                 </td>
               </tr>
@@ -431,7 +401,8 @@ function PricePlans() {
               </tr>
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">
-                 <span className="capitalize">live Debuggers</span>  (Sources and Destinations)
+                  <span className="capitalize">live Debuggers</span> (Sources
+                  and Destinations)
                 </td>
                 <td className="p-6">
                   {/* <StaticImage
@@ -806,6 +777,47 @@ function PricePlans() {
                 Data Warehouse Destinations (Redshift, Snowflake, Clickhouse,
                 etc.)
               </div>
+              <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-4 mb-3">
+                <span className="checkimg mr-3 mt-1">
+                  <StaticImage
+                    className="checkImg"
+                    src="../images/check-r.svg"
+                    alt="check image"
+                  />
+                </span>
+                Data Lake Destinations (S3, Google Storage, etc.)
+              </div>
+
+              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+                CLOUD EXTRACT
+              </div>
+
+              <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-4 mb-3">
+                <span className="checkimg mr-3 mt-1">
+                  <StaticImage
+                    className="checkImg"
+                    src="../images/check-r.svg"
+                    alt="check image"
+                  />
+                </span>
+                # of Sources <br />3
+              </div>
+
+              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+                WAREHOUSE ACTIONS
+              </div>
+
+              <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-4 mb-3">
+                <span className="checkimg mr-3 mt-1">
+                  <StaticImage
+                    className="checkImg"
+                    src="../images/check-r.svg"
+                    alt="check image"
+                  />
+                </span>
+                Warehouse Connections <br />1
+              </div>
+
               <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Advanced Integration & Management
               </div>
@@ -949,6 +961,16 @@ function PricePlans() {
                     alt="check image"
                   />
                 </span>
+                Data Lake Destinations (S3, Google Storage, etc.)
+              </div>
+              <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
+                <span className="checkimg mr-3 mt-1">
+                  <StaticImage
+                    className="checkImg"
+                    src="../images/check-r.svg"
+                    alt="check image"
+                  />
+                </span>
                 Transformations
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
@@ -1010,6 +1032,43 @@ function PricePlans() {
                   />
                 </span>
                 Data Masking
+              </div>
+
+              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+                WAREHOUSE ACTIONS
+              </div>
+              <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
+                <span className="checkimg mr-3 mt-1">
+                  <StaticImage
+                    className="checkImg"
+                    src="../images/check-r.svg"
+                    alt="check image"
+                  />
+                </span>
+                <div className="flex-col">
+                  Warehouse Connections <br />
+                  <span className="font-normal">1</span>
+                </div>
+              </div>
+              <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
+                <span className="checkimg mr-3 mt-1">
+                  <StaticImage
+                    className="checkImg"
+                    src="../images/check-r.svg"
+                    alt="check image"
+                  />
+                </span>
+                <div className="flex-col">Transformations</div>
+              </div>
+              <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
+                <span className="checkimg mr-3 mt-1">
+                  <StaticImage
+                    className="checkImg"
+                    src="../images/check-r.svg"
+                    alt="check image"
+                  />
+                </span>
+                <div className="flex-col">Data Masking</div>
               </div>
 
               <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
@@ -1196,6 +1255,16 @@ function PricePlans() {
                     alt="check image"
                   />
                 </span>
+                Data Lake Destinations (S3, Google Storage, etc.)
+              </div>
+              <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
+                <span className="checkimg mr-3 mt-1">
+                  <StaticImage
+                    className="checkImg"
+                    src="../images/check-r.svg"
+                    alt="check image"
+                  />
+                </span>
                 Transformations
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
@@ -1362,7 +1431,8 @@ function PricePlans() {
                     alt="check image"
                   />
                 </span>
-                Rudderstack Cloud
+                Rudderstack Cloud<br />
+                Unlimited
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
@@ -1374,7 +1444,6 @@ function PricePlans() {
                 </span>
                 <div className="flex-col">
                   Team Members <br />
-                  Unlimited
                 </div>
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
@@ -1411,7 +1480,6 @@ function PricePlans() {
                 href="#"
                 className="text-sm text-black-custom font-bold items-center flex mt-3 pl-5"
               >
-                {" "}
                 <StaticImage
                   className="mr-2"
                   src="../images/arrow-right-o.png"

@@ -97,12 +97,11 @@ const Demo = ({ data, htmlId }) => {
               style={{ zIndex: -1, width: "45%" }}
               className="hidden md:block absolute bottom-0 right-0 "
             />
-            <div
-              className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter"
-            >
-              <PortableText
+            <div className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
+              {lv_scheduledemoheader[0].demo_header_text}
+              {/* <PortableText
                 blocks={lv_scheduledemoheader[0].demo_header_text}
-              />
+              /> */}
             </div>
           </div>
           <div className="bg-whiteColor-custom w-full">
@@ -160,7 +159,7 @@ const Demo = ({ data, htmlId }) => {
           />
         </section>
         <section id="testimonials">
-          <Testimonial {...lv_testimonialsection[0]} />
+          <Testimonial {...lv_testimonialsection[0]} isForDemoPage={true} />
         </section>
         {/* sm:px-12 lg:px-32 xl:px-60 */}
         <section id="demo_bottom">

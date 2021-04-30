@@ -8,26 +8,26 @@ import Link from "gatsby-link"
 const Testimonial = props => {
   if (typeof window !== "undefined") {
     $(window.document).ready(function () {
-        $(".testimonial-slider").owlCarousel({
-          loop: true,
-          center: true,
-          nav: true,
-          dots: true,
-          //  autoplay:true,
-          autoplayTimeout: 5000,
-          responsive: {
-            0: {
-              items: 1,
-            },
-            600: {
-              items: 1,
-            },
-            1000: {
-              items: 1,
-            },
+      $(".testimonial-slider").owlCarousel({
+        loop: true,
+        center: true,
+        nav: true,
+        dots: true,
+        //  autoplay:true,
+        autoplayTimeout: 5000,
+        responsive: {
+          0: {
+            items: 1,
           },
-        })
-      })    
+          600: {
+            items: 1,
+          },
+          1000: {
+            items: 1,
+          },
+        },
+      })
+    })
   }
 
   const testimonials = props.addtestimonial
@@ -56,7 +56,9 @@ const Testimonial = props => {
                         <p className="text-sm text-primary mb-4">
                           {testimonial.clientdesignation}
                         </p>
-                        <div class="message text-center text-2xl md:text-3xl-3 tracking-wide font-medium text-primary blockquote mt-8 px-0 md:px-24 leading-tight">
+                        <div
+                          class={`message text-center text-2xl md:text-3xl-3 tracking-wide font-normal text-primary blockquote mt-8 px-0 md:px-24 leading-tight`}
+                        >
                           {testimonial.clientcontent}
                         </div>
                         {testimonial.button.btnlink !== "" &&

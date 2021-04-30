@@ -30,9 +30,9 @@ const DemoForm = props => {
   }
 
   function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return re.test(String(email).toLowerCase())
+  }
 
   function validateField(field, value) {
     if (field === "email") {
@@ -137,6 +137,7 @@ const DemoForm = props => {
 
       <button
         class="btn-primary-lg mt-3 md:mb-0 mb-4"
+        disabled={props.isLoading}
         onClick={e => {
           e.preventDefault()
           if (validateForm(formData) === false) {
