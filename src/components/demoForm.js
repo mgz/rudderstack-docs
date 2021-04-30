@@ -29,10 +29,15 @@ const DemoForm = props => {
     return ret
   }
 
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
   function validateField(field, value) {
     if (field === "email") {
       return value.length > 0
-        ? /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(value)
+        ? validateEmail(value)
           ? ""
           : "Email is invalid."
         : "This field is required."
