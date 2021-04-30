@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link, navigate } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import DemoForm from "../components/demoForm"
@@ -9,6 +9,7 @@ import OurLogo from "../components/ourlogo"
 import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+
 export const query = graphql`
   query schDemo {
     sanitySchdemo {
@@ -49,36 +50,40 @@ const Demo = ({ data, htmlId }) => {
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
 
+  const [isLoading, setIsLoading] = React.useState(false)
+
   const onDemoFormSubmit = data => {
-    // if (!window.rudderanalytics) {
-    //   console.log("rudderanalytics not found")
-    //   return
-    // }
-    // window.rudderanalytics.track(
-    //   "form_submit",
-    //   {
-    //     page: document.title,
-    //     page_URL: window.location.href,
-    //     form_id: "Blog-header-Subscribe-form",
-    //     utm_source: "",
-    //     utm_medium: "",
-    //     utm_campaign: "",
-    //     utm_content: "",
-    //     utm_term: "",
-    //     raid: "",
-    //     test_user: "",
-    //   },
-    //   {
-    //     traits: {
-    //       firstName: data.firstName,
-    //       email: data.email,
-    //       company: data.company,
-    //       jobTitle: data.jobTitle,
-    //       form_id: htmlId,
-    //     },
-    //   }
-    // )
-    // console.log(res, "res")
+    setIsLoading(true)
+    fetch("https://usebasin.com/f/73ab69b8652a.json", {
+      method: "post",
+      body: JSON.stringify({
+        "First-Name": data.firstName,
+        Email: data.email,
+        Company: data.company,
+        "Job-Title": data.jobTitle,
+        utm_source: "",
+        utm_medium: "",
+        utm_campaign: "",
+        utm_content: "",
+        utm_term: "",
+        raid: "",
+        test_user: "",
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(res => {
+        if (res.statusText === "OK") {
+          navigate("/demo-submit")
+        }
+      })
+      .catch(err => {
+        //set error if received
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
   return (
     <Layout>
@@ -91,12 +96,9 @@ const Demo = ({ data, htmlId }) => {
               alt={"background"}
               style={{ zIndex: -1, width: "45%" }}
               className="hidden md:block absolute bottom-0 right-0 "
-              // width={'45%'}
-              // height={270}
             />
             <div
               className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter"
-              // style={{ lineHeight: "70px" }}
             >
               <PortableText
                 blocks={lv_scheduledemoheader[0].demo_header_text}
@@ -109,6 +111,7 @@ const Demo = ({ data, htmlId }) => {
                 <DemoForm
                   submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                   onDemoFormSubmit={onDemoFormSubmit}
+                  isLoading={isLoading}
                 />
               </div>
               <div
@@ -176,6 +179,7 @@ const Demo = ({ data, htmlId }) => {
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                 isFooterForm={true}
+                isLoading={isLoading}
                 onDemoFormSubmit={onDemoFormSubmit}
               />
             </div>

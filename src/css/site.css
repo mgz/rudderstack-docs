@@ -189,7 +189,6 @@ body {
   z-index: -2;
 }
 
-
 .demo_form {
   background: #ffffff;
   mix-blend-mode: normal;
@@ -202,13 +201,13 @@ body {
 }
 .demo_form input {
   height: 40px;
-  color:#4e4e4e;
+  color: #4e4e4e;
   background: #ffffff;
   border: 1px solid #a7a7a7;
   box-sizing: border-box;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
   padding: 9px 16px;
 }
 .demo_form input::placeholder {
@@ -217,11 +216,32 @@ body {
 }
 
 .demo_form input:focus {
-  outline: none ! important;
+  outline: none !important;
   border-color: #0066ff;
   border: 1px solid #0066ff;
   /* box-shadow: 0px 2px 4px #0066ff; */
-  }
+}
+.demo-submit-background {
+  background-image: url("../images/form-submit-header-left.png"),
+    url("../images/form-submit-header-right.png");
+  background-position: top left, bottom right;
+  background-size: 230px auto, 350px auto;
+
+  background-repeat: no-repeat;
+}
+
+/* .demo-submit-background-left {
+  background-image: url("../images/form-submit-header-left.png");
+  background-position: top left;
+  background-size: 230px auto;
+  background-repeat: no-repeat;
+}
+.demo-submit-background-right {
+  background-image: url("../images/form-submit-header-right.png");
+  background-position: bottom right;
+  background-size: 350px auto;
+  background-repeat: no-repeat;
+} */
 
 @custom-media --media-min-small (min-width: 450px);
 @custom-media --media-max-small (max-width: 449px);
@@ -325,8 +345,16 @@ top: -60px;
     top: 20px;
   }
 }
+@media only screen and (max-width: 1120px) {
+  .demo-submit-background {
+    background-image: url("../images/form-submit-header-right.png");
+    background-position: bottom right;
+    background-size: 350px auto;
 
-@media only screen and (max-width: 768px) {
+    background-repeat: no-repeat;
+  }
+}
+@media only screen and (max-width: 500px) {
   .about-us-banner {
     background: none;
   }
@@ -334,5 +362,10 @@ top: -60px;
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center top;
+  }
+
+  .demo-submit-background {
+    background-image: none;
+    background-repeat: no-repeat;
   }
 }

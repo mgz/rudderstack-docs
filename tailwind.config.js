@@ -14,6 +14,9 @@ module.exports = {
         custom: "#0066FF",
         category: "#0166FE",
       },
+      red: {
+        error: "#FF0000",
+      },
       grayColor: {
         custom: "#4E4E4E",
         lighter: "#A7A7A7",
@@ -31,7 +34,7 @@ module.exports = {
         19: "4.75rem",
       },
       width: {
-        "120": "30rem",
+        120: "30rem",
       },
       colors: {
         primary: "var(--primary)",

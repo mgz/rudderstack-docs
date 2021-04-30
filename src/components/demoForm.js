@@ -8,7 +8,45 @@ const DemoForm = props => {
     company: "",
     jobTitle: "",
   })
+  const [formError, setFormErrors] = useState({
+    firstName: "",
+    email: "",
+    company: "",
+    jobTitle: "",
+  })
 
+  function validateForm(data) {
+    let ret = false
+    let errObj = formError
+    Object.keys(data).forEach(function (key) {
+      let validateMsg = validateField(key, data[key])
+      errObj = { ...errObj, [key]: validateMsg }
+      if (validateMsg !== "") {
+        ret = true
+      }
+    })
+    setFormErrors(errObj)
+    return ret
+  }
+
+  function validateField(field, value) {
+    if (field === "email") {
+      return value.length > 0
+        ? /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(value)
+          ? ""
+          : "Email is invalid."
+        : "This field is required."
+    } else {
+      return value.length > 0 ? "" : "This field is required."
+    }
+  }
+
+  const onBlur = (field, value) => {
+    setFormErrors({
+      ...formError,
+      [field]: validateField(field, value),
+    })
+  }
   return (
     <div
       className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg ${
@@ -18,27 +56,42 @@ const DemoForm = props => {
       <div className="text-lg text-grayColor-custom mb-2 ">
         First Name <span className="text-blueNew-custom">*</span>
       </div>
+
       <input
         type="text"
         className="font-sm text-base"
         value={formData.firstName}
         placeholder="John Doe"
+        onBlur={e => onBlur("firstName", e.target.value)}
         onChange={e => {
           setFormData({ ...formData, firstName: e.target.value })
         }}
       />
+      <div className={`${formError.firstName !== "" ? "mb-2" : "mb-6"} `}>
+        {formError.firstName !== "" && (
+          <h6 className="text-red-error text-xs">{formError.firstName}</h6>
+        )}
+      </div>
+
       <div className="text-lg text-grayColor-custom mb-2">
         Work email address <span className="text-blueNew-custom">*</span>
       </div>
       <input
         type="email"
         value={formData.email}
+        onBlur={e => onBlur("email", e.target.value)}
         placeholder="you@company.com"
         title="Invalid email address"
         onChange={e => {
           setFormData({ ...formData, email: e.target.value })
         }}
       />
+
+      <div className={`${formError.email !== "" ? "mb-2" : "mb-6"} `}>
+        {formError.email !== "" && (
+          <h6 className="text-red-error text-xs">{formError.email}</h6>
+        )}
+      </div>
 
       <div className="text-lg text-grayColor-custom mb-2">
         Company <span className="text-blueNew-custom">*</span>
@@ -47,10 +100,17 @@ const DemoForm = props => {
         type="text"
         value={formData.company}
         placeholder="Awesome Co"
+        onBlur={e => onBlur("company", e.target.value)}
         onChange={e => {
           setFormData({ ...formData, company: e.target.value })
         }}
       />
+
+      <div className={`${formError.company !== "" ? "mb-2" : "mb-6"} `}>
+        {formError.company !== "" && (
+          <h6 className="text-red-error text-xs">{formError.company}</h6>
+        )}
+      </div>
 
       <div className="text-lg text-grayColor-custom mb-2">
         Job Title <span className="text-blueNew-custom">*</span>
@@ -58,18 +118,25 @@ const DemoForm = props => {
       <input
         type="text"
         value={formData.jobTitle}
+        onBlur={e => onBlur("jobTitle", e.target.value)}
         placeholder="Data engineering lead"
         onChange={e => {
           setFormData({ ...formData, jobTitle: e.target.value })
         }}
       />
+      <div className={`${formError.jobTitle !== "" ? "mb-2" : "mb-6"} `}>
+        {formError.jobTitle !== "" && (
+          <h6 className="text-red-error text-xs">{formError.jobTitle}</h6>
+        )}
+      </div>
 
       <button
         class="btn-primary-lg mt-3 md:mb-0 mb-4"
-        // href="#"
         onClick={e => {
           e.preventDefault()
-          props.onDemoFormSubmit(formData)
+          if (validateForm(formData) === false) {
+            props.onDemoFormSubmit(formData)
+          }
         }}
       >
         {props.submitDemoButtonName}
