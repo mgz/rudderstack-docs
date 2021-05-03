@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import Link from "gatsby-link"
 
 function PricingCards(props) {
   return (
@@ -168,12 +169,12 @@ function PricingCards(props) {
                     </li>
                   </ul>
                   <div className="mt-6 py-4 text-center">
-                    <a
-                      href="https://resources.rudderstack.com/request-a-demo"
+                    <Link
+                      to="/request-demo"
                       className="btn-primary-sm inline-block font-bold"
                     >
                       Get a demo
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

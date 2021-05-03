@@ -1,5 +1,6 @@
 import React from "react"
 import Accordion from "./accordion"
+import Link from "gatsby-link"
 
 function Faq(props) {
   return (
@@ -10,10 +11,10 @@ function Faq(props) {
           <div
             className="py-8 text-center text-blueNew-custom font-bold border border-grayColor-priceCardBorder max-w-screen-lg m-auto faqcta rounded-xl shadow-xl faq-cta px-5 md:px-0">
             <p className="text-blueNew-custom text-2xl leading-8">Currently running Segment? </p>
-            <a href="https://resources.rudderstack.com/request-a-demo"
+            <Link to="/request-demo"
               className="block text-sm text-black-custom leading-sm font-bold mt-4 md:mt-5 lr-icon mx-auto mt-3 hover:text-blueNew-custom">
               Talk with one of our Segment Migration Specialists.
-            </a>
+            </Link>
           </div>
         </div>
         <div className="max-w-screen-lg mx-auto flex flex-wrap m-auto">

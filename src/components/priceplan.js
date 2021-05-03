@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import Link from "gatsby-link"
 
 function PricePlans() {
   return (
@@ -890,12 +891,12 @@ function PricePlans() {
                     25M events/month
                   </div>
                 </div>
-                <a
-                  href="https://resources.rudderstack.com/request-a-demo"
+                <Link
+                  to="/request-demo"
                   className="btn-primary-sm inline-block font-bold leading-6"
                 >
                   Get a demo
-                </a>
+                </Link>
               </div>
             </div>
             <div className="plan-features mt-6 px-3">
