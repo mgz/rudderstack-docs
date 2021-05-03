@@ -144,7 +144,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td className="p-6 text-base text-left">
-                  Cloud Destinations (GA, Amptdtude, Braze, etc.)
+                  Cloud Destinations (GA, Amplitude, Braze, etc.)
                 </td>
                 <td className="py-6">
                   <span className="check-icon" />
