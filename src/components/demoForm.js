@@ -144,7 +144,7 @@ const DemoForm = props => {
       <button
         class="btn-primary-lg mt-3 md:mb-0 mb-4"
         disabled={props.isLoading}
-        type="submit"
+        // type="submit"
         onClick={e => {
           e.preventDefault()
           if (validateForm(formData) === false) {
