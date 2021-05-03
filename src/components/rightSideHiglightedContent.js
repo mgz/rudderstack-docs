@@ -14,7 +14,7 @@ const RightSideHiglightedContent = (props) => {
               <div className="max-w-6xl px-4 md:px-3 mx-auto">
                 <div className="flex flex-col w-full justify-center items-start md:text-left">
                     <p className="my-2 mt-16 md:mt-20 text-blue text-sm uppercase">{smalltitle}</p>
-                    <h3 className="md:my-0 pb-16 md:pb-10 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
+                    <h3 className="md:my-0 pb-16 md:pb-20 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
                 </div>
                 <div className="grid md:grid-cols-12 md:gap-16 items-center flex-wrap">
                     <div className="md:col-span-5 md:mt-12 h-full">
@@ -54,7 +54,7 @@ const RightSideHiglightedContent = (props) => {
                                         <>
                                             <div key={i} className="py-16 px-6 md:px-14 md:py-19">
                                                 <Image props={imgref} />
-                                                <h3 className="my-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
+                                                <h3 className="mt-8 mb-4 pb-0 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
                                                 <div className="text-secondary text-sm md:text-lg leading-6 md:leading-7">
                                                     <PortableText blocks={portabletext} />
                                                 </div>

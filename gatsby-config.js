@@ -76,7 +76,10 @@ module.exports = {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
-        trackPage: true
+        devKey: process.env.RS_PRODUCTION_WRITE_KEY,
+        trackPage: true,
+        // delayLoad: true,
+        // delayLoadTime: 1000
       }
     },
   ],

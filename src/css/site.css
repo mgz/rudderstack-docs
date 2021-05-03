@@ -149,8 +149,27 @@ body {
 .tab-content-item p {
   font-size: 18px;
   line-height: 160%;
-  color: #4e4e4e;
+  color: #4e4e4e !important;
   margin-bottom: 24px;
+}
+
+.tab-content-item a:hover {
+  color: #0066ff !important;
+}
+.tab-content-item a:hover:before {
+  content: "";
+  background: url("../images/arrow-right-o.svg") no-repeat;
+  background-position: center;
+  width: 75%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.tab-content-item a {
+  color: #000000 !important;
 }
 .tab-content-item a::before {
   content: "";

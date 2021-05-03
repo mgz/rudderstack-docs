@@ -35,7 +35,7 @@ const BlogModule = () => {
   const latestblogs = data.allSanityBlog.edges;
 
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-3 sm:gap-4 md:gap-8">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
       {
         latestblogs.map(
           (latestblog, i) => {
@@ -46,7 +46,7 @@ const BlogModule = () => {
                   <img src={latestblog.node.blog_image.asset.fluid.src} alt={latestblog.node.title} className="w-full"/>
                   {/* commented by Hari on 2021-04-23 */}
                   {/* <div className="uppercase text-blueNew-category text-sm px-5 font-bold pt-6">{categories[latestblog.node.blog_category]}</div> */}
-                  <div className="uppercase text-blueNew-category text-sm px-5 pt-6">{latestblog.node.blog_category}</div>
+                  <div className="uppercase text-blueNew-category text-sm font-bold px-5 pt-6">{latestblog.node.blog_category}</div>
                   <div
                     className="w-full text-lg md:text-2xl leading-6 md:leading-7 font-bold pt-2 pb-16 px-5 blog-title-wrap text-gray-dark">
                     {latestblog.node.title}

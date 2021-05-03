@@ -26,7 +26,7 @@ export const query = graphql`
   }
 `
 
-const Demo = ({ data, htmlId }) => {
+const Demo = ({ data, htmlId,location }) => {
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
@@ -56,13 +56,11 @@ const Demo = ({ data, htmlId }) => {
   const onDemoFormSubmit = data => {
     try {
       if (!window.rudderanalytics) {
-        console.log("step0,window.rudderanalytics")
         return
       }
-      // console.log("step0",window.rudderanalytics)
       setIsLoading(true)
 
-      // console.log("step1")
+      var params = new URLSearchParams(document.location.search.substring(1))
 
       window.rudderanalytics.identify(
         data.email,
@@ -73,13 +71,13 @@ const Demo = ({ data, htmlId }) => {
           company: data.company,
           form_id: data.formId, //{{Form ID}},
           conversion_page: document.title,
-          utm_source: "",
-          utm_medium: "",
-          utm_campaign: "",
-          utm_content: "",
-          utm_term: "",
-          raid: "",
-          test_user: "",
+          utm_source: params.get("utm_source"),
+          utm_medium: params.get("utm_medium"),
+          utm_campaign: params.get("utm_campaign"),
+          utm_content: params.get("utm_content"),
+          utm_term: params.get("utm_term"),
+          raid: params.get("raid"),
+          test_user: params.get("test_user"),
         },
         {
           integrations: {
@@ -96,13 +94,13 @@ const Demo = ({ data, htmlId }) => {
           page_URL: window.location.href,
           form_id: data.formId,
           conversion_page: document.title,
-          utm_source: "",
-          utm_medium: "",
-          utm_campaign: "",
-          utm_content: "",
-          utm_term: "",
-          raid: "",
-          test_user: "",
+          utm_source: params.get("utm_source"),
+          utm_medium: params.get("utm_medium"),
+          utm_campaign: params.get("utm_campaign"),
+          utm_content: params.get("utm_content"),
+          utm_term: params.get("utm_term"),
+          raid: params.get("raid"),
+          test_user: params.get("test_user"),
         },
         {
           traits: {
@@ -123,13 +121,13 @@ const Demo = ({ data, htmlId }) => {
           Email: data.email,
           Company: data.company,
           "Job-Title": data.jobTitle,
-          utm_source: "",
-          utm_medium: "",
-          utm_campaign: "",
-          utm_content: "",
-          utm_term: "",
-          raid: "",
-          test_user: "",
+          utm_source: params.get("utm_source"),
+          utm_medium: params.get("utm_medium"),
+          utm_campaign: params.get("utm_campaign"),
+          utm_content: params.get("utm_content"),
+          utm_term: params.get("utm_term"),
+          raid: params.get("raid"),
+          test_user: params.get("test_user"),
         }),
         headers: {
           "Content-Type": "application/json",
@@ -149,36 +147,14 @@ const Demo = ({ data, htmlId }) => {
       setIsLoading(false)
     }
   }
-  // // $(window.load())
-  // $(window.rudderanalytics).ready(() => {
-  //   console.log("we are all set!!!")
-  // })
 
   return (
     <Layout>
       <SEO title="Schedule Demo" />
       <div className="font-custom">
         <section id="demo_hdr">
-          {/* <div className="relative demo-header flex flex-col justify-center items-center">
-            <StaticImage
-              src={"../images/demo-background.png"}
-              alt={"background"}
-              style={{ zIndex: -1, width: "45%" }}
-              className="hidden md:block absolute bottom-0 right-0 "
-            />
-            <div className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
-              {lv_scheduledemoheader[0].demo_header_text}
-            </div>
-          </div> */}
           <div className="demo-header">
             <div className=" flex flex-col justify-center items-center demo-header-bg w-full">
-              {/* <StaticImage
-              src={"../images/demo-background.png"}
-              alt={"background"}
-              style={{ zIndex: -1, width: "45%" }}
-              className="hidden md:block absolute bottom-0 right-0 "
-            /> */}
-
               <div className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
                 {lv_scheduledemoheader[0].demo_header_text}
               </div>

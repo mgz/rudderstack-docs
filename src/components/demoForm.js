@@ -54,7 +54,8 @@ const DemoForm = props => {
     })
   }
   return (
-    <div
+    <form
+      id={props.formId}
       className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg ${
         props.isFooterForm === true ? "top-0" : "-top-24"
       }`}
@@ -65,6 +66,7 @@ const DemoForm = props => {
 
       <input
         type="text"
+        name="firstName"
         className="font-sm text-base"
         value={formData.firstName}
         placeholder="John Doe"
@@ -84,6 +86,7 @@ const DemoForm = props => {
       </div>
       <input
         type="email"
+        name="email"
         value={formData.email}
         onBlur={e => onBlur("email", e.target.value)}
         placeholder="you@company.com"
@@ -105,6 +108,7 @@ const DemoForm = props => {
       <input
         type="text"
         value={formData.company}
+        name="company"
         placeholder="Awesome Co"
         onBlur={e => onBlur("company", e.target.value)}
         onChange={e => {
@@ -124,6 +128,7 @@ const DemoForm = props => {
       <input
         type="text"
         value={formData.jobTitle}
+        name="jobTitle"
         onBlur={e => onBlur("jobTitle", e.target.value)}
         placeholder="Data engineering lead"
         onChange={e => {
@@ -139,6 +144,7 @@ const DemoForm = props => {
       <button
         class="btn-primary-lg mt-3 md:mb-0 mb-4"
         disabled={props.isLoading}
+        type="submit"
         onClick={e => {
           e.preventDefault()
           if (validateForm(formData) === false) {
@@ -148,7 +154,7 @@ const DemoForm = props => {
       >
         {props.submitDemoButtonName}
       </button>
-    </div>
+    </form>
   )
 }
 
