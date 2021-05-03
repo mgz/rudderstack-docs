@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link, navigate } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,6 +8,7 @@ import PortableText from "../components/portableText"
 import OurLogo from "../components/ourlogo"
 import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
+import $ from "jquery"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 export const query = graphql`
@@ -50,41 +51,109 @@ const Demo = ({ data, htmlId }) => {
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
 
-  const [isLoading, setIsLoading] = React.useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const onDemoFormSubmit = data => {
-    setIsLoading(true)
-    fetch("https://usebasin.com/f/73ab69b8652a.json", {
-      method: "post",
-      body: JSON.stringify({
-        "First-Name": data.firstName,
-        Email: data.email,
-        Company: data.company,
-        "Job-Title": data.jobTitle,
-        utm_source: "",
-        utm_medium: "",
-        utm_campaign: "",
-        utm_content: "",
-        utm_term: "",
-        raid: "",
-        test_user: "",
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then(res => {
-        if (res.statusText === "OK") {
-          navigate("/request-demo/thank-you")
+    try {
+      if (!window.rudderanalytics) {
+        console.log("step0,window.rudderanalytics")
+        return
+      }
+      // console.log("step0",window.rudderanalytics)
+      setIsLoading(true)
+
+      // console.log("step1")
+
+      window.rudderanalytics.identify(
+        data.email,
+        {
+          email: data.email,
+          firstName: data.firstName,
+          jobTitle: data.jobTitle,
+          company: data.company,
+          form_id: data.formId, //{{Form ID}},
+          conversion_page: document.title,
+          utm_source: "",
+          utm_medium: "",
+          utm_campaign: "",
+          utm_content: "",
+          utm_term: "",
+          raid: "",
+          test_user: "",
+        },
+        {
+          integrations: {
+            Salesforce: true,
+          },
         }
+      )
+      // console.log("step2")
+
+      window.rudderanalytics.track(
+        "form_submit",
+        {
+          page: document.title,
+          page_URL: window.location.href,
+          form_id: data.formId,
+          conversion_page: document.title,
+          utm_source: "",
+          utm_medium: "",
+          utm_campaign: "",
+          utm_content: "",
+          utm_term: "",
+          raid: "",
+          test_user: "",
+        },
+        {
+          traits: {
+            email: data.email,
+            firstName: data.firstName,
+            jobTitle: data.jobTitle,
+            company: data.company,
+            form_id: data.formId,
+            conversion_page: document.title,
+          },
+        }
+      )
+
+      fetch("https://usebasin.com/f/73ab69b8652a.json", {
+        method: "post",
+        body: JSON.stringify({
+          "First-Name": data.firstName,
+          Email: data.email,
+          Company: data.company,
+          "Job-Title": data.jobTitle,
+          utm_source: "",
+          utm_medium: "",
+          utm_campaign: "",
+          utm_content: "",
+          utm_term: "",
+          raid: "",
+          test_user: "",
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       })
-      .catch(err => {
-        //set error if received
-      })
-      .finally(() => {
-        setIsLoading(false)
-      })
+        .then(res => {
+          if (res.statusText === "OK") {
+            navigate("/request-demo/thank-you")
+          }
+        })
+        .catch(err => {
+          throw err
+        })
+    } catch (err) {
+      console.log("errror exception", err)
+    } finally {
+      setIsLoading(false)
+    }
   }
+  // // $(window.load())
+  // $(window.rudderanalytics).ready(() => {
+  //   console.log("we are all set!!!")
+  // })
+
   return (
     <Layout>
       <SEO title="Schedule Demo" />
@@ -119,6 +188,7 @@ const Demo = ({ data, htmlId }) => {
             <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
               <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
                 <DemoForm
+                  formId="request_demo_form_top"
                   submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                   onDemoFormSubmit={onDemoFormSubmit}
                   isLoading={isLoading}
@@ -188,6 +258,7 @@ const Demo = ({ data, htmlId }) => {
             <div className="w-full px-0 md:w-3/6 flex flex-row justify-end">
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
+                formId="request_demo_form_bottom"
                 isFooterForm={true}
                 isLoading={isLoading}
                 onDemoFormSubmit={onDemoFormSubmit}
