@@ -10,19 +10,14 @@ const LatestBlog = props => {
   const viewexternallink = props.viewexternallink
   return (
     <>
-      <section className="bg-white pb-20">
+      <section className="bg-white pb-0">
         <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap pt-3 md:pt-16 pb-12">
           <h3 className="w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-12">
             {maintitle}
           </h3>
           <BlogModule />
-          <div className="w-full text-center items-center mt-4 md:mt-12">
+          <div className="w-full text-center items-center mt-10 md:mt-12">
             <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center hover:text-blueNew-custom">
-              {/* <StaticImage
-                className="mr-2"
-                src="../images/arrow-right-o.png"
-                alt="arrow right"
-              /> */}
               <a
                 href={viewallpostslink}
                 class="font-bold leading-normal text-sm lr-icon"
