@@ -110,7 +110,7 @@ const MainNavigation = () => {
         <div
           className={`menu lg:flex ${
             isExpanded ? `block` : `hidden`
-          } p-4 justify-center items-center lg:items-center lg:w-auto w-4/5 md:w-full mt-2 lg:mt-0`}
+          } p-4 justify-center items-center lg:items-center lg:w-auto w-full mt-2 lg:mt-0`}
         >
           <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
             {mainmenu.map((link, i) => (
