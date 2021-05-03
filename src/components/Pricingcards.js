@@ -26,7 +26,7 @@ function PricingCards(props) {
                   </div>
                 </div>
                 <div className="p-6 pt-0 max-w-xs mx-auto text-left">
-                  <ul className="text-lg h-52">
+                  <ul className="h-52">
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
                         
