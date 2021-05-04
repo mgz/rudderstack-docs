@@ -13,8 +13,8 @@ function PricePlans() {
           <table className="sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
             <thead>
               <tr className="items-center">
-                <th className="w-1/4 py-8"></th>
-                <th className="w-1/4 py-8 text-center text-blueNew-custom text-3xl">
+                <th className="w-1/4 pt-4"></th>
+                <th className="w-1/4 pt-4 text-center text-blueNew-custom text-3xl">
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg1.png" alt="Free" />
                   </div>
@@ -26,7 +26,7 @@ function PricePlans() {
                     </span>
                   </div>
                 </th>
-                <th className="w-1/4 py-8 text-center text-blueNew-custom text-3xl">
+                <th className="w-1/4 pt-4 text-center text-blueNew-custom text-3xl">
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg2.png" alt="Pro" />
                   </div>
@@ -38,7 +38,7 @@ function PricePlans() {
                     </span>
                   </div>
                 </th>
-                <th className="w-1/4 py-8 text-center text-blueNew-custom text-3xl text-3xl">
+                <th className="w-1/4 pt-4 text-center text-blueNew-custom text-3xl ">
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage
                       src="../images/EllipseImg3.png"
@@ -263,7 +263,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6 text-blueNew-custom text-lg text-left uppercase font-bold"
+                  className="p-6 pt-14  text-blueNew-custom text-lg text-left uppercase font-bold"
                   colspan="4"
                 >
                   CLOUD EXTRACT
@@ -331,7 +331,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   WAREHOUSE ACTIONS
@@ -393,7 +393,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   Advanced Integration <br />& Management
@@ -496,7 +496,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   Deployment & Security
@@ -599,7 +599,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   support
@@ -699,7 +699,7 @@ function PricePlans() {
         </div>
 
         <div className="mobile-table font-custom">
-          <div className="freeplan mt-8">
+          <div className="freeplan mt-16">
             <div className="plan-header bg-white border border-grayColor-priceCardBorder rounded-2xl shadow-md sticky top-0 z-10">
               <div class="p-6 md:pt-8 md:pb-4">
                 <div className="ellipse flex items-center justify-center h-20">

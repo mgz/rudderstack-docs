@@ -8,19 +8,19 @@ function Faq(props) {
       <div className="px-4 mx-auto">
         <div className="absolute md:w-full lg:w-4/5 -top-24 md:-top-16 px-5 md:px-0 faq-cta-box">
           <div
-            className="py-8 text-center text-blueNew-custom font-bold border border-grayColor-priceCardBorder max-w-screen-lg m-auto faqcta rounded-xl shadow-xl faq-cta px-5 md:px-0">
+            className="py-8 text-center text-blueNew-custom font-bold border border-grayColor-priceCardBorder max-w-screen-lg m-auto faqcta rounded-xl shadow-xl faq-cta px-8 md:px-0">
             <p className="text-blueNew-custom text-2xl leading-8">Currently running Segment? </p>
             <a href="https://resources.rudderstack.com/request-a-demo"
-              className="block text-sm text-black-custom leading-sm font-bold mt-4 md:mt-5 lr-icon mx-auto mt-3 hover:text-blueNew-custom">
+              className="block text-sm text-black-custom leading-sm font-bold mt-4 md:mt-5 lr-icon px-4 mx-auto mt-3 hover:text-blueNew-custom">
               Talk with one of our Segment Migration Specialists.
             </a>
           </div>
         </div>
         <div className="max-w-screen-lg mx-auto flex flex-wrap m-auto">
 
-        <div className="md:w-1/4 md:px-4">
-          <h2 className="text-4xl font-bold mb-2">FAQ</h2>
-          <h4 className="text-2xl font-bold pt-2 md:pt-4 mb-12 md:mb-0">How can we help you?</h4>
+        <div className="md:w-1/4 px-4 md:pl-0 md:pr-10">
+          <h2 className="text-5xl font-bold mb-2">FAQ</h2>
+          <h4 className="text-2xl-2 font-bold pt-2 mb-12 md:mb-0">How can we help you?</h4>
         </div>
         <div className="md:w-3/4 2xl:pr-44 xl:pr-28 lg:pr-28 mt-2">
           <Accordion

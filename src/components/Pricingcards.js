@@ -7,9 +7,9 @@ function PricingCards(props) {
       <div className="pricing-table-2 pt-1 md:pt-3 w-full">
         <div className="mx-auto">
           <div className="pricing-plans relative lg:flex mt-6 md:mt-12 w-full">
-            <div className="pricing-plan-wrap lg:w-1/3 my-4 md:my-6 px-5">
+            <div className="pricing-plan-wrap lg:w-1/3 mt-4 mb-8 md:my-6 px-5">
               <div className="pricing-plan bg-whiteColor-custom border border-grayColor-priceCardBorder rounded-2xl text-center mx-auto shadow-md">
-                <div className="p-6 md:pt-8 md:pb-4">
+                <div className="p-6 pt-12 md:pt-16 md:pb-4">
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage
                       src="../images/EllipseImg1.png"
@@ -24,7 +24,7 @@ function PricingCards(props) {
                     events/month
                   </div>
                 </div>
-                <div className="p-6 pt-0 max-w-xs mx-auto text-left">
+                <div className="p-6 pt-0 pb-10 max-w-xs mx-auto text-left">
                   <ul className="text-lg h-52">
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -90,9 +90,9 @@ function PricingCards(props) {
               </div>
             </div>
 
-            <div className="pricing-plan-wrap proCard relative lg:w-1/3 my-4 md:my-6 px-5">
+            <div className="pricing-plan-wrap proCard relative lg:w-1/3 mt-4 mb-8 md:my-6 px-5">
               <div className="pricing-plan bg-whiteColor-custom border border-grayColor-priceCardBorder rounded-2xl text-center mx-auto shadow-md">
-                <div className="p-6 md:pt-8 md:pb-4">
+                <div className="p-6 md:pt-16 md:pb-4">
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg2.png" alt="Line" />
                   </div>
@@ -104,7 +104,7 @@ function PricingCards(props) {
                     events/month
                   </div>
                 </div>
-                <div className="p-6 pt-0 max-w-xs mx-auto text-left">
+                <div className="p-6 pt-0  pb-10 max-w-xs mx-auto text-left">
                   <ul className="h-52">
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -181,7 +181,7 @@ function PricingCards(props) {
 
             <div className="pricing-plan-wrap lg:w-1/3 my-4 md:my-6 px-5">
               <div className="pricing-plan bg-whiteColor-custom border border-grayColor-priceCardBorder rounded-2xl text-center mx-auto shadow-md	">
-                <div className="p-6 md:pt-8 md:pb-4">
+                <div className="p-6 md:pt-16 md:pb-4">
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg3.png" alt="Line" />
                   </div>
@@ -193,7 +193,7 @@ function PricingCards(props) {
                   </div>
                 </div>
 
-                <div className="p-6 pt-0 max-w-xs mx-auto text-left">
+                <div className="p-6 pt-0 pb-10 max-w-xs mx-auto text-left">
                   <ul className="h-52">
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">

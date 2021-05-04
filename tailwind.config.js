@@ -65,7 +65,7 @@ module.exports = {
         "5xl": "50px",
         "6xl": "64px",
         "7xl": "5rem",
-      },  
+      },
       backgroundImage: theme => ({
         "hero-pattern": "url('../images/test-bg.png')",
         "hero-pattern-mobile": "url('../images/test-bg-mobile.png')",
