@@ -99,7 +99,7 @@ const LeftRightImgCnt = props => {
                       <p className="mt-4 sm:mt-0 text-blue text-sm uppercase">
                         {smalltitle}
                       </p>
-                      <h3 className="mt-2 mb-4 pb-2 text-4xl md:text-5xl text-primary font-bold leading-tight">
+                      <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
                         {title}
                       </h3>
                       <div className="text-secondary leading-7 text-sm sm:text-lg">

@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import Link from "gatsby-link"
 
 function PricingCards(props) {
   return (
@@ -25,7 +26,7 @@ function PricingCards(props) {
                   </div>
                 </div>
                 <div className="p-6 pt-0 pb-10 max-w-xs mx-auto text-left">
-                  <ul className="text-lg h-52">
+                  <ul className="h-52 text-lg">
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
                         
@@ -168,12 +169,12 @@ function PricingCards(props) {
                     </li>
                   </ul>
                   <div className="mt-6 py-4 text-center">
-                    <a
-                      href="https://resources.rudderstack.com/request-a-demo"
+                    <Link
+                      to="/request-demo"
                       className="btn-primary-sm inline-block font-bold"
                     >
                       Get a demo
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
