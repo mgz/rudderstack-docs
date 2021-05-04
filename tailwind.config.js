@@ -69,6 +69,7 @@ module.exports = {
       backgroundImage: theme => ({
         "hero-pattern": "url('../images/test-bg.png')",
         "hero-pattern-mobile": "url('../images/test-bg-mobile.png')",
+        "hero-pattern-mobile-2": "url('../images/test-bg-mobile-2.png')",
       }),
     },
     fontFamily: {

@@ -88,7 +88,7 @@ const MainNavigation = () => {
         <div className="block lg:hidden pr-4 sm:pr-0">
           <button
             onClick={() => toggleExpansion(!isExpanded)}
-            className="flex items-center px-3 py-2 text-main border-teal-400 hover:text-white hover:border-white max-h-8"
+            className="flex items-center px-3 py-2 text-main border-teal-400 hover:text-white hover:border-white max-h-8 focus:outline-none"
           >
             <div className="mobile-menu">
               {!isExpanded ? (

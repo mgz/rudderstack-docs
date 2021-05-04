@@ -8,8 +8,21 @@ import build from "../images/build.svg"
 import privacy from "../images/privacy.svg"
 import customerobsessed from "../images/customer-obsessed.svg"
 import Integrationschart from "../images/Integrations chart.svg"
+import MiddleBanner from "../components/middle-banner"
 
-const About = () => {
+export const query = graphql`
+  query aboutPage {
+    sanityFrontpageblock {
+      _rawPagebuildersectionarray
+    }
+  }
+`
+
+const About = ({ data }) => {
+  const lv_middlebannersection = (
+    data.sanityFrontpageblock._rawPagebuildersectionarray || []
+  ).filter(ii => ii._type === "middlebannersection")
+
   return (
     <Layout>
       <SEO title="About Us" />
@@ -58,7 +71,7 @@ const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               We build on these Principles
             </h2>
-            <p className="w-full leading-relaxed text-sm md:text-lg text-grayColor-custom">
+            <p className="w-full leading-relaxed font-bold sm:font-normal text-sm md:text-lg text-grayColor-custom">
               Transparency drives everything we do at RudderStack. We enable you
               to fully leverage your customer data without giving up control,
               putting these principles first in all of our work.
@@ -71,7 +84,7 @@ const About = () => {
                   <img src={open_source} />
                 </div>
                 <h2 className="text-2xl-2 font-bold mb-2">Open-source</h2>
-                <p className="leading-relaxed text-lg  text-grayColor-custom">
+                <p className="leading-relaxed text-sm sm:text-lg  text-grayColor-custom">
                   We believe that companies should not be vendor-locked into
                   proprietary software and held hostage to predatory pricing.
                   Openness is not only good for society but also requires us to
@@ -87,7 +100,7 @@ const About = () => {
                 <h2 className="text-2xl-2 font-bold mb-2">
                   Privacy &amp; Security-focused
                 </h2>
-                <p className="leading-relaxed text-lg  text-grayColor-custom">
+                <p className="leading-relaxed text-sm sm:text-lg  text-grayColor-custom">
                   We take user data privacy and security very seriously. Our
                   core architecture was constructed on the idea of privacy and
                   security first. That is not just a product choice for us; it
@@ -103,7 +116,7 @@ const About = () => {
                 <h2 className="text-2xl-2 font-bold title-font mb-2">
                   Built for Engineers &amp; Data Scientists
                 </h2>
-                <p className="leading-relaxed text-lg  text-grayColor-custom lg:pr-16">
+                <p className="leading-relaxed text-sm sm:text-lg  text-grayColor-custom lg:pr-16">
                   We take data privacy and security seriously. RudderStack’s
                   core architecture was constructed specifically with data
                   privacy.
@@ -118,7 +131,7 @@ const About = () => {
                 <h2 className="text-2xl-2 font-bold title-font mb-2">
                   Customer-Obsessed
                 </h2>
-                <p className="leading-relaxed text-lg  text-grayColor-custom">
+                <p className="leading-relaxed text-sm sm:text-lg  text-grayColor-custom">
                   Every company wants to treat its customers well, but for us,
                   it’s an obsession. We will always help our customers make the
                   best product choice under all circumstances.
@@ -130,18 +143,18 @@ const About = () => {
       </section>
       <section className="">
         <div className="max-w-6xl px-5 pt-16 md:pt-28 mx-auto">
-          <div className="flex flex-wrap w-full mb-12 md:mb-20 flex-col">
+          <div className="flex flex-wrap w-full mb-8 md:mb-20 flex-col">
             <h2 className="sm:text-5xl text-2xl font-bold mb-6">Leadership</h2>
-            <p className="w-full leading-relaxed text-lg">
+            <p className="w-full leading-relaxed text-sm sm:text-lg">
               We’re an engineer-led team of data, security, and marketing
               experts.
             </p>
           </div>
           <div className="flex flex-wrap -m-4">
-            <div className="p-4 w-2/3 md:w-1/3 m-auto">
+            <div className="p-4 w-full md:w-1/3 m-auto">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
-                  className="h-68 w-full object-cover object-center"
+                  className="h-64 sm:h-72 w-full object-cover object-center"
                   src="../images/SoumyadebCropped.jpg"
                 />
                 <div className="py-4 text-center">
@@ -154,10 +167,10 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="p-4 w-2/3 md:w-1/3 m-auto">
+            <div className="p-4 w-full md:w-1/3 m-auto">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
-                  className="h-68 w-full object-cover object-center"
+                  className="h-64 sm:h-72 w-full object-cover object-center"
                   src="../images/Eric.png"
                 />
                 <div className="py-4 text-center">
@@ -170,10 +183,10 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="p-4 w-2/3 md:w-1/3 m-auto">
+            <div className="p-4 w-full md:w-1/3 m-auto">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
-                  className="h-68 w-full object-cover object-center"
+                  className="h-64 sm:h-72 w-full object-cover object-center"
                   src="../images/BrettCropped.jpg"
                 />
                 <div className="py-4 text-center">
@@ -189,10 +202,10 @@ const About = () => {
           </div>
           <div className="mt-4 md:mt-1 md:w-2/3 md:m-auto">
             <div className="flex flex-wrap -m-4">
-              <div className="p-4 w-2/3 md:w-1/2 m-auto">
+              <div className="p-4 w-full md:w-1/2 m-auto">
                 <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                   <StaticImage
-                    className="h-68 w-full object-cover object-center"
+                    className="h-64 sm:h-72 w-full object-cover object-center"
                     src="../images/sumanth-2.jpeg"
                   />
                   <div className="py-4 text-center">
@@ -205,10 +218,10 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              <div className="p-4 w-2/3 md:w-1/2 m-auto">
+              <div className="p-4 w-full md:w-1/2 m-auto">
                 <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                   <StaticImage
-                    className="h-68 w-full object-cover object-center"
+                    className="h-64 sm:h-72 w-full object-cover object-center"
                     src="../images/Kostas.png"
                   />
                   <div className="py-4 text-center">
@@ -227,8 +240,8 @@ const About = () => {
       </section>
       <section className="">
         <div className="max-w-6xl px-5 py-16 md:py-28 mx-auto">
-          <div className="flex flex-wrap w-full mb-12 md:mb-20 flex-col">
-            <h2 className="sm:text-5xl text-2xl font-bold mb-6">
+          <div className="flex flex-wrap w-full mb-0 md:mb-20 flex-col">
+            <h2 className="text-3xl-3 sm:text-5xl font-bold mb-6">
               Advisors and Investors
             </h2>
           </div>
@@ -274,8 +287,8 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center -m-4 mt-6 md:mt-32">
-            <div class="w-full md:w-1/3 mb-6">
+          <div className="flex justify-center flex-col sm:flex-row -m-4 mt-6 md:mt-32">
+            <div class="w-full md:w-1/2 mb-6">
               <div class="h-full text-center">
                 <StaticImage
                   className="w-32 h-32 mb-8 object-cover object-center inline-block"
@@ -283,7 +296,7 @@ const About = () => {
                 />
               </div>
             </div>
-            <div class="w-full md:w-1/3 mb-6">
+            <div class="w-full md:w-1/2 mb-6">
               <div class="h-full text-center">
                 <StaticImage
                   className="w-32 h-32 mb-8 object-cover object-center inline-block"
@@ -295,26 +308,35 @@ const About = () => {
         </div>
       </section>
       <section className="">
-        <div className="py-16 pb-16 lg:py-24 mx-auto bg-hero-pattern">
+        <div className="py-16 px-4 pb-16 lg:py-24 mx-auto bg-hero-pattern-mobile-2 sm:bg-hero-pattern">
           <div className="w-full text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Join Our Team
             </h2>
-            <p className="text-2xl-2 text-grayColor-custom mt-4 mb-8">
+            <p className="text-xl-2 sm:text-2xl-2 text-grayColor-custom mt-4 mb-8">
               Help us make data engineers the heroes of their companies.
             </p>
-            <p className="mt-16 md:mt-16">
+            <p className="mt-16 md:mt-16 flex justify-center">
               <a
-                className="bg-black-custom text-whiteColor-custom text-lg font-bold py-4 px-12 rounded-lg hover:bg-blueNew-custom"
+                className="bg-black-custom text-whiteColor-custom text-sm sm:text-lg py-4 px-4 sm:px-12 rounded-lg hover:bg-blueNew-custom  w-full sm:w-72"
                 href="https://www.linkedin.com/company/rudderlabs/jobs/"
               >
                 View Open Positions
               </a>
+              {/* <a
+                className="bg-black-custom text-whiteColor-custom text-sm sm:text-lg py-4 px-4 sm:px-12 rounded-lg hover:bg-blueNew-custom"
+                href="https://www.linkedin.com/company/rudderlabs/jobs/"
+              >
+                View Open Positions
+              </a> */}
             </p>
           </div>
         </div>
       </section>
-      <section className="bg-primary text-white 100% md:py-20 ">
+      <section id="footer_section_for_demo">
+        <MiddleBanner {...lv_middlebannersection[0]} />
+      </section>
+      {/* <section className="bg-primary text-white 100% md:py-20 ">
         <div className="max-w-6xl md:px-3 mx-auto">
           <div className="flex flex-wrap justify-items-center items-center sm:flex-row">
             <div className="flex items-start w-1/2 mt-6">
@@ -349,7 +371,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   )
 }
