@@ -22,7 +22,6 @@ const Tabs = props => {
             role="tablist"
           >
             {tabs.map((tab, i) => {
-              console.log(tab)
               return (
                 <li key={i} className="mr-2 last:mr-0 flex-auto md:my-1">
                   <a
