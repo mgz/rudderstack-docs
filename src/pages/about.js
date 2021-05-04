@@ -77,8 +77,8 @@ const About = ({ data }) => {
               putting these principles first in all of our work.
             </p>
           </div>
-          <div className="flex flex-wrap -m-4">
-            <div className="md:w-1/2 p-4 mb-16 md:mb-16">
+          <div className="flex flex-wrap">
+            <div className="md:w-1/2 mb-16 md:mb-16">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center">
                   <img src={open_source} />
@@ -92,7 +92,7 @@ const About = ({ data }) => {
                 </p>
               </div>
             </div>
-            <div className="md:w-1/2 p-4 mb-16 md:mb-16">
+            <div className="md:w-1/2 mb-16 md:mb-16">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center">
                   <img src={privacy} />
@@ -108,7 +108,7 @@ const About = ({ data }) => {
                 </p>
               </div>
             </div>
-            <div className="md:w-1/2 p-4 mb-16 md:mb-16">
+            <div className="md:w-1/2 mb-16 md:mb-16">
               <div className="lg:pr-16">
                 <div className="w-16 h-16 inline-flex items-center justify-center">
                   <img src={build} />
@@ -123,7 +123,7 @@ const About = ({ data }) => {
                 </p>
               </div>
             </div>
-            <div className="md:w-1/2 p-4">
+            <div className="md:w-1/2">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center">
                   <img src={customerobsessed} />
