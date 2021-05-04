@@ -17,7 +17,7 @@ const RightSideHiglightedContent = (props) => {
                     <h3 className="md:my-0 pb-16 md:pb-20 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
                 </div>
                 <div className="grid md:grid-cols-12 md:gap-16 items-center flex-wrap">
-                    <div className="md:col-span-5 md:mt-12 h-full">
+                    <div className="md:col-span-5 md:mt-0 h-full">
                     {
                         leftcontents.map(
                             (leftcontent, i) => (
@@ -27,7 +27,7 @@ const RightSideHiglightedContent = (props) => {
                                         const title = leftcontent.rhs_lb_title
                                         return (
                                             <>
-                                                <div key={i} className="mb-14">
+                                                <div key={i} className="mb-6">
                                                     <Image props={imgref} />
                                                     <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
                                                     <div className="text-secondary text-sm md:text-lg leading-6	md:leading-7">
@@ -41,7 +41,7 @@ const RightSideHiglightedContent = (props) => {
                         )
                     }  
                     </div>
-                    <div className="md:col-span-7 bg-background rounded-xl h-full">
+                    <div className="md:col-span-7 bg-background rounded-xl">
                     {
                         rightcontents.map(
                             (rightcontent, i) => (

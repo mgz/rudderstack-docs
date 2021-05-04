@@ -12,7 +12,7 @@ const FreeText = (props) => {
     return (
         <>
             <section className="bg-white 100%">
-              <div className="max-w-6xl px-4 md:px-3 mx-auto py-12 pb-0 lg:py-28">
+              <div className="max-w-6xl px-4 md:px-3 mx-auto py-12 pb-0 lg:py-32">
                 <div className="flex items-center flex-wrap">
                     <div className="md:w-3/4 p-2 block xl:pr-32">
                         <h3 className="mb-6 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
