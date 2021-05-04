@@ -12,13 +12,16 @@ const LeftRightImgCnt = props => {
       <section className="bg-backgroundsecondary 100% left-right-section md:px-0 pb-6 md:pd-0">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           <div className="flex flex-col w-full justify-center items-start md:text-left max-w-screen-md">
-            <p className="mt-20 mb-2 text-blue text-sm uppercase">{smalltitle}</p>
+            <p className="mt-20 mb-2 text-blue text-sm uppercase">
+              {smalltitle}
+            </p>
             <h3 className="md:mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">
               {maintitle}
             </h3>
           </div>
           {contents.map((content, i) =>
             (() => {
+              
               if (content.condition === "right") {
                 const imgcondition = content.imageVideoConditionBlock.condition
                 const portabletext = content.content
@@ -28,6 +31,8 @@ const LeftRightImgCnt = props => {
                 const extralink = content.addlink.cmnexternallink
                 const linktext = content.addlink.cmnlinktext
                 const linkurl = content.addlink.cmnlink
+                const isTitleBigger = content.isTitleBigger
+                // console.log("cnt",content,smalltitle)
                 return (
                   <div
                     key={i}
@@ -50,9 +55,16 @@ const LeftRightImgCnt = props => {
                         <p className="mt-4 sm:mt-0 text-sm text-blue uppercase">
                           {smalltitle}
                         </p>
-                        <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
-                          {title}
-                        </h3>
+                        {isTitleBigger === true ? (
+                          <h2 className="mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
+                            {title}
+                          </h2>
+                        ) : (
+                          <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+                            {title}
+                          </h3>
+                        )}
+
                         <div className="text-secondary leading-7 text-sm sm:text-lg">
                           <PortableText blocks={portabletext} />
                         </div>
@@ -89,6 +101,7 @@ const LeftRightImgCnt = props => {
                 const extralink = content.addlink.cmnexternallink
                 const linktext = content.addlink.cmnlinktext
                 const linkurl = content.addlink.cmnlink
+                const isTitleBigger = content.isTitleBigger
                 return (
                   <div
                     key={i}
@@ -99,9 +112,18 @@ const LeftRightImgCnt = props => {
                       <p className="mt-4 sm:mt-0 text-blue text-sm uppercase">
                         {smalltitle}
                       </p>
-                      <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+                      {/* <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
                         {title}
-                      </h3>
+                      </h3> */}
+                      {isTitleBigger === true ? (
+                          <h2 className="mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
+                            {title}
+                          </h2>
+                        ) : (
+                          <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+                            {title}
+                          </h3>
+                        )}
                       <div className="text-secondary leading-7 text-sm sm:text-lg">
                         <PortableText blocks={portabletext} />
                       </div>
