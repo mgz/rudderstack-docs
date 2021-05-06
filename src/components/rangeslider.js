@@ -18,6 +18,7 @@ const Horizontal = (props) => {
       <Slider
         min={25}
         max={100}
+        step={25}
         value={value}
         format={formatm}
         handleLabel={value + "m"}
