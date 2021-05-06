@@ -161,7 +161,7 @@ const CookiesConsent = () => {
         <div className="flex flex-row w-full md:w-auto">
           <h4 className="self-center text-lg mr-4">
             This website uses cookies to improve your experience. We'll assume
-            your're ok with this, but you can opt-out if you wish
+            your're ok with this, but you can opt-out if you wish.
             <a
               // className="bg-white text-primary btn-secondary-lg font-bold leading-tight border-white cursor-pointer mr-0 sm:mr-4 mb-2 sm:mb-0 w-full self-center"
               className="font-bold cursor-pointer text-blueNew-custom self-center mx-2"
