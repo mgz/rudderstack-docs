@@ -18,6 +18,7 @@ import MainNavigation from "../components/main-navigation"
 import FooterNav from "../components/footer-nav"
 import PortableText from "../components/portableText"
 import { StaticImage } from "gatsby-plugin-image"
+import CookiesConsent from "./cookiesConsent"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -78,6 +79,7 @@ const Layout = ({ children }) => {
       .src
   return (
     <>
+      <CookiesConsent />
       <MainNavigation />
       <main>{children}</main>
 
