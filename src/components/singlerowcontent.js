@@ -29,7 +29,7 @@ const Singlerowcontent = ({ hit }) => {
           </h2>
 
           <div class="mt-2 text-2xl md:text-3xl text-indigo-700 font-bold text-blueNew-custom">
-            <span>By {hit.author_name}</span>
+            <span>By {hit.blog_authors[0].author_name}</span>
           </div>
         </div>
       </div>
