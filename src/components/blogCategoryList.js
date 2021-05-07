@@ -1,6 +1,5 @@
-import React from "react"
+import React, { useState } from "react"
 import { Highlight, connectMenu } from "react-instantsearch-dom"
-//import { graphql } from "gatsby"
 
 const Menu = ({
   items,
@@ -11,48 +10,56 @@ const Menu = ({
   createURL,
 }) => {
   var selected = false
-  console.log("menu", items)
+
+  const [selectedCategory, setSelectedCategory] = useState("ALL")
+
+  // console.log("menu", items)
   items.map(item => {
     if (item.isRefined) selected = true
   })
+
   return (
     <ul className="list-reset flex capitalize items-center">
-      <li key="0" className="p-6 pl-0">
-        <a
-          href={createURL("")}
-          className={
-            !selected
-              ? "border-solid border-b-2 border-indigo-500 text-indigo-500 pb-7"
-              : ""
-          }
-          onClick={event => {
-            event.preventDefault()
-            refine("")
-          }}
+      <li key="ALL">
+        <div
+          className={`px-8 py-4 border-solid  ${
+            selectedCategory === "ALL"
+              ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
+              : "border-b border-grayColor-lighter"
+          }`}
         >
-          All categories
-        </a>
-      </li>
-      {items.map(item => (
-        <li key={item.value} className="p-6 pl-0">
           <a
-            href={createURL(item.value)}
-            className={
-              item.isRefined
-                ? "border-solid border-b-2 border-indigo-500 text-indigo-500 pb-7"
-                : ""
-            }
+            href={createURL("")}
+            className={"pb-7"}
             onClick={event => {
               event.preventDefault()
-              refine(item.value)
+              setSelectedCategory("ALL")
             }}
           >
-            {isFromSearch ? (
-              <Highlight attribute="label" hit={item} />
-            ) : (
-              item.label
-            )}
+            All categories
           </a>
+        </div>
+      </li>
+      {items.map(item => (
+        <li key={item.value}>
+          <div
+            className={`px-8 py-4 border-solid  ${
+              selectedCategory === item.value
+                ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
+                : "border-b border-grayColor-lighter"
+            }`}
+          >
+            <a
+              href={createURL("")}
+              className={"pb-7"}
+              onClick={event => {
+                event.preventDefault()
+                setSelectedCategory(item.value)
+              }}
+            >
+              {item.value}
+            </a>
+          </div>
         </li>
       ))}
     </ul>

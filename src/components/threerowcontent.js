@@ -35,7 +35,7 @@ const Threerowcontent = ({ hits }) => {
                       </h2>
 
                       <div className="mt-4 text-sm text-indigo-700 font-bold text-blueNew-custom">
-                        <span>By {hit.author_name}</span>
+                        <span>By {hit.blog_authors[0].author_name}</span>
                       </div>
                     </div>
                   </div>

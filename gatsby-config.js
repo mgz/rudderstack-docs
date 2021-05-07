@@ -39,11 +39,11 @@ module.exports = {
       resolve: `gatsby-plugin-algolia`,
       options:
       {
-        appId: process.env.RS_GATSBY_ALGOLIA_APP_ID,
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,        
         queries: require("./src/utils/algolia"),
         enablePartialUpdates: true,
-        matchFields: ["title", "author_name", "author_desc", "blogimage", "weight", "slug", "blogdate", "blog_category"]
+        matchFields: ["title", "blog_authors", "blogimage", "weight", "slug", "blogdate", "blog_category"]
       },
 
       // {

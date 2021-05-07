@@ -44,6 +44,7 @@ const DemoSubmit = ({ data, htmlId }) => {
         </section>
         <section id="footer_section_for_demo">
           <MiddleBanner {...lv_middlebannersection[0]} />
+          {/* test  */}
         </section>
       </div>
     </Layout>
