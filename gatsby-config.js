@@ -43,7 +43,7 @@ module.exports = {
         apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,        
         queries: require("./src/utils/algolia"),
         enablePartialUpdates: true,
-        matchFields: ["title", "author_name", "author_desc", "blogimage", "weight", "slug", "blogdate", "blog_category"]
+        matchFields: ["title", "blog_authors", "blogimage", "weight", "slug", "blogdate", "blog_category"]
       },
 
       // {

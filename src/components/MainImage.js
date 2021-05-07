@@ -1,8 +1,8 @@
-import React from "react";
-import { buildImageObj } from "../lib/helpers";
-import { imageUrlFor } from "../lib/image-url";
+import React from "react"
+import { buildImageObj } from "../lib/helpers"
+import { imageUrlFor } from "../lib/image-url"
 
-const MainImage = ({ mainImage, width = 1200 }) => {
+const MainImage = ({ mainImage, width = 1200, _key }) => {
   const imgUrl =
     mainImage &&
     imageUrlFor(buildImageObj(mainImage))
@@ -10,9 +10,13 @@ const MainImage = ({ mainImage, width = 1200 }) => {
       .height(Math.floor((9 / 16) * width))
       .fit("crop")
       .auto("format")
-      .url();
+      .url()
 
-  return imgUrl ? <img src={imgUrl} alt={mainImage.alt || ""} /> : <></>;
-};
+  return imgUrl ? (
+    <img key={_key} src={imgUrl} alt={mainImage.alt || ""} />
+  ) : (
+    <></>
+  )
+}
 
-export default MainImage;
+export default MainImage

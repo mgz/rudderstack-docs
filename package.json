@@ -32,6 +32,7 @@
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-source-sanity": "^7.0.0",
     "gatsby-transformer-sharp": "^3.2.0",
+    "get-youtube-id": "^1.0.1",
     "lottie-web": "^5.7.8",
     "owl.carousel": "^2.3.4",
     "postcss": "^8.2.9",
@@ -43,6 +44,7 @@
     "react-instantsearch-dom": "^6.10.3",
     "react-rangeslider": "^2.2.0",
     "react-router-dom": "^5.2.0",
+    "react-youtube": "^7.13.1",
     "styled-components": "^5.2.3",
     "tailwindcss": "^2.0.4",
     "universal-cookie": "^4.0.4"

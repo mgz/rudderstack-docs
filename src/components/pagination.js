@@ -17,7 +17,7 @@ const Pagination = ({
   selectedPageNo,
   onPageSelection
 }) => {
-  console.log("pagination", nbPages, selectedPageNo)
+  // console.log("pagination", nbPages, selectedPageNo)
   return (
     <ul className="flex">
       {new Array(nbPages).fill(null).map((_, index) => {
