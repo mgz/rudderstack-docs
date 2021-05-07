@@ -25,6 +25,7 @@ const Blog_new = props => {
   const { data } = props
   const pageInfo = data.allSanityBlog.pageInfo
   const [selectedPageNo, setSelectedPageNo] = useState(1)
+  const [selectedCategory, setSelectedCategory] = useState("ALL")
   // console.log(data,'blog')
   return (
     <Layout>
@@ -36,7 +37,14 @@ const Blog_new = props => {
           <Configure hitsPerPage={13} />
           <div className="flex flex-row flex-wrap mt-32">
             <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-grey-500">
-              <CustomMenu attribute="blog_category" />
+              <CustomMenu
+                attribute="blog_category"
+                selectedCategory={selectedCategory}
+                onCategoryChange={val => {
+                  setSelectedCategory(val)
+                  
+                }}
+              />
             </div>
             <div className="w-full md:w-2/5 pt-6 pb-3 text-center">
               <CustomSearchBox />

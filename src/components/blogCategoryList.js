@@ -8,16 +8,10 @@ const Menu = ({
   isFromSearch,
   searchForItems,
   createURL,
+  onCategoryChange,
+  selectedCategory,
 }) => {
-  var selected = false
-
-  const [selectedCategory, setSelectedCategory] = useState("ALL")
-
-  // console.log("menu", items)
-  items.map(item => {
-    if (item.isRefined) selected = true
-  })
-
+  console.log("list of itmes", currentRefinement)
   return (
     <ul className="list-reset flex capitalize items-center">
       <li key="ALL">
@@ -33,35 +27,47 @@ const Menu = ({
             className={"pb-7"}
             onClick={event => {
               event.preventDefault()
-              setSelectedCategory("ALL")
+              onCategoryChange("ALL")
+              refine()
             }}
           >
             All categories
           </a>
         </div>
       </li>
-      {items.map(item => (
-        <li key={item.value}>
-          <div
-            className={`px-8 py-4 border-solid  ${
-              selectedCategory === item.value
-                ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
-                : "border-b border-grayColor-lighter"
-            }`}
-          >
-            <a
-              href={createURL("")}
-              className={"pb-7"}
-              onClick={event => {
-                event.preventDefault()
-                setSelectedCategory(item.value)
-              }}
-            >
-              {item.value}
-            </a>
-          </div>
-        </li>
-      ))}
+      {items
+        .map(item => {
+          // console.log(
+          //   "for each menu",
+          //   selectedCategory === item.value,
+          //   selectedCategory,
+          //   item.value
+          // )
+          console.log("s1", items.count)
+          return (
+            <li key={item.value}>
+              <div
+                className={`px-8 py-4 border-solid  ${
+                  selectedCategory === item.value
+                    ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
+                    : "border-b border-grayColor-lighter"
+                }`}
+              >
+                <a
+                  href={createURL("")}
+                  className={"pb-7"}
+                  onClick={event => {
+                    event.preventDefault()
+                    onCategoryChange(item.value)
+                    refine(item.value)
+                  }}
+                >
+                  {item.value}
+                </a>
+              </div>
+            </li>
+          )
+        })}
     </ul>
   )
 }
