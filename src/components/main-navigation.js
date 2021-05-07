@@ -5,8 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
 import MainNavigationMenuLink from "./MainNavigationMenuLink"
 // import Logo from "../images/logo.png"
-// import { StaticImage } from "gatsby-plugin-image"
-// import Logo from "../images/logo-2x.png"
+
 const MainNavigation = () => {
   const [isExpanded, toggleExpansion] = useState(false)
   const data = useStaticQuery(graphql`
@@ -53,14 +52,11 @@ const MainNavigation = () => {
       <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 flex-wrap">
         <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
           <Link to="/" className="pl-4 sm:pl-0">
-            {/* <img
-              // src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src}
-              src={Logo}
+           
+             <StaticImage
+              src={"../images/logo-2x.png"}
               alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
-            /> */}
-            <StaticImage
-              src="../images/logo.png"
-              alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
+              placeholder="tracedSVG"
             />
           </Link>
         </div>
@@ -96,12 +92,14 @@ const MainNavigation = () => {
                   src="../images/navmenu_open.svg"
                   alt="Toggle"
                   className="max-h-6"
+                  placeholder="tracedSVG"
                 />
               ) : (
                 <StaticImage
                   src="../images/navmenu_close.svg"
                   alt="Toggle"
                   className="w-6 h-6"
+                  placeholder="tracedSVG"
                 />
               )}
             </div>
@@ -114,7 +112,6 @@ const MainNavigation = () => {
         >
           <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
             {mainmenu.map((link, i) => (
-
               <MainNavigationMenuLink link={link} i={i} />
             ))}
           </ul>

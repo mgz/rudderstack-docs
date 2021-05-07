@@ -11,7 +11,7 @@ import { InstantSearch } from 'react-instantsearch-dom';
 import IntegrationHits from "../components/integrationHits"
 
 const Integration = (props) => {
-  const searchClient = algoliasearch(process.env.RS_GATSBY_ALGOLIA_APP_ID, process.env.RS_GATSBY_ALGOLIA_SEARCH_APIKEY);
+  const searchClient = algoliasearch(process.env.GATSBY_ALGOLIA_APP_ID, process.env.GATSBY_ALGOLIA_SEARCH_APIKEY);
   const { data } = props
   //const pageInfo = data.allSanityIntegration.pageInfo
   return (
@@ -19,7 +19,7 @@ const Integration = (props) => {
       <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
         <InstantSearch
           searchClient={searchClient}
-          indexName={process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX}
+          indexName={process.env.GATSBY_ALGOLIA_INTEGRATIONINDEX}
           >
           <div className="container flex flex-wrap flex-col sm:flex-row">
             <div className="w-full md:w-2/5 pt-6 pb-3 items-center text-center">

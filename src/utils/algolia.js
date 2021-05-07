@@ -1,4 +1,4 @@
-let indexName = process.env.RS_GATSBY_ALGOLIA_BLOGINDEX
+let indexName = process.env.GATSBY_ALGOLIA_BLOGINDEX
 
 const pageQuery = `{
   pages: allSanityBlog {
