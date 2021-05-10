@@ -11,13 +11,12 @@ const Menu = ({
   onCategoryChange,
   selectedCategory,
 }) => {
-  console.log("list of itmes", currentRefinement)
   return (
     <ul className="list-reset flex capitalize items-center">
       <li key="ALL">
         <div
           className={`px-8 py-4 border-solid  ${
-            selectedCategory === "ALL"
+            currentRefinement === null
               ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
               : "border-b border-grayColor-lighter"
           }`}
@@ -27,7 +26,7 @@ const Menu = ({
             className={"pb-7"}
             onClick={event => {
               event.preventDefault()
-              onCategoryChange("ALL")
+              // onCategoryChange("ALL")
               refine()
             }}
           >
@@ -37,18 +36,12 @@ const Menu = ({
       </li>
       {items
         .map(item => {
-          // console.log(
-          //   "for each menu",
-          //   selectedCategory === item.value,
-          //   selectedCategory,
-          //   item.value
-          // )
-          console.log("s1", items.count)
+          
           return (
-            <li key={item.value}>
+            <li key={item.label}>
               <div
                 className={`px-8 py-4 border-solid  ${
-                  selectedCategory === item.value
+                  currentRefinement === item.label
                     ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
                     : "border-b border-grayColor-lighter"
                 }`}
@@ -58,11 +51,11 @@ const Menu = ({
                   className={"pb-7"}
                   onClick={event => {
                     event.preventDefault()
-                    onCategoryChange(item.value)
-                    refine(item.value)
+                    // onCategoryChange(item.value)
+                    refine(item.label)
                   }}
                 >
-                  {item.value}
+                  {item.label}
                 </a>
               </div>
             </li>
