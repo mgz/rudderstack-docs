@@ -20,7 +20,7 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 const Blog_new = props => {
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
-    process.env.RS_GATSBY_ALGOLIA_APIKEY
+    process.env.GATSBY_ALGOLIA_APIKEY
   )
   const { data } = props
   const pageInfo = data.allSanityBlog.pageInfo
@@ -30,7 +30,7 @@ const Blog_new = props => {
     "prod-vars",
     process.env.GATSBY_ALGOLIA_BLOGINDEX,
     process.env.GATSBY_ALGOLIA_APP_ID,
-    process.env.RS_GATSBY_ALGOLIA_APIKEY
+    process.env.GATSBY_ALGOLIA_APIKEY
   )
   return (
     <Layout>
