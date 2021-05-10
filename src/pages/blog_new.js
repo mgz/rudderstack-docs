@@ -26,7 +26,12 @@ const Blog_new = props => {
   const pageInfo = data.allSanityBlog.pageInfo
   const [selectedPageNo, setSelectedPageNo] = useState(1)
   const [selectedCategory, setSelectedCategory] = useState("ALL")
-  // console.log(data,'blog')
+  console.log(
+    "prod-vars",
+    process.env.GATSBY_ALGOLIA_BLOGINDEX,
+    process.env.GATSBY_ALGOLIA_APP_ID,
+    process.env.RS_GATSBY_ALGOLIA_APIKEY
+  )
   return (
     <Layout>
       <div className="max-w-6xl mx-auto flex flex-wrap flex-col px-4">
@@ -42,7 +47,6 @@ const Blog_new = props => {
                 selectedCategory={selectedCategory}
                 onCategoryChange={val => {
                   setSelectedCategory(val)
-                  
                 }}
               />
             </div>
