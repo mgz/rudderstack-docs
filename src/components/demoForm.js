@@ -8,6 +8,7 @@ const DemoForm = props => {
     company: "",
     jobTitle: "",
     formId: props.formId,
+    sectionId: props.sectionId
   })
   const [formError, setFormErrors] = useState({
     firstName: "",
