@@ -20,13 +20,11 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
-import useWindowDimensions from "../components/useWindowDimensions"
 
 const Blog_new = ({ data }) => {
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
-  const { width } = useWindowDimensions()
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_APIKEY
