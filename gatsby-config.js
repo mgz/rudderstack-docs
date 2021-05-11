@@ -40,7 +40,7 @@ module.exports = {
       options:
       {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.GATSBY_ALGOLIA_APIKEY,        
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,        
         queries: require("./src/utils/algolia"),
         enablePartialUpdates: true,
         matchFields: ["title", "blogimage", "weight", "slug", "blogdate", "blog_category"]
