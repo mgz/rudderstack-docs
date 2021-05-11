@@ -73,8 +73,8 @@ const Subscription = () => {
   }
 
   return (
-    <div className="container my-4 py-24 px-3 flex items-center mx-auto pb-10 mb-10 sm:flex-row flex-col">
-      <div className="inline-flex items-center justify-center flex-shrink-0 text-5xl font-bold py-0 px-12 self-start">
+    <div className="container my-4 py-16 md:py-24 px-3 flex items-center pb-10 mb-6 md:flex-row flex-col w-full md:w-3/5">
+      <div className="inline-flex items-center justify-center flex-shrink-0 text-3xl-4 md:text-5xl font-bold py-0 pl-0 pr-0 md:pr-12  self-start">
         <StaticImage
           src="../images/subscription_icon.png"
           alt="Subscription"
@@ -82,10 +82,10 @@ const Subscription = () => {
         />{" "}
         Subscribe
       </div>
-      <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0 py-4 px-12">
+      <div className="flex-grow text-left mt-0 sm:mt-0 pt-4 px-0 md:px-12 ">
         <div className="mb-2">
-          <p className="text-lg text-grayColor-custom">
-            We'll send you updates from the blog and <br /> monthly release
+          <p className="text-sm md:text-lg text-grayColor-custom">
+            We'll send you updates from the blog and monthly release
             notes.
           </p>
           <form
@@ -102,7 +102,7 @@ const Subscription = () => {
                   name="email"
                   value={email}
                   size={40}
-                  className="mt-6 rounded border border-grayColor-lighter p-2"
+                  className="mt-6 w-full md:w-auto rounded border border-grayColor-lighter p-2"
                   id="email"
                   aria-required="true"
                   aria-invalid="false"
@@ -128,7 +128,7 @@ const Subscription = () => {
               <input
                 type="submit"
                 defaultValue="Subscribe"
-                className="mt-4 rounded-lg text-whiteColor-custom bg-black-custom text-sm py-2 px-8"
+                className="mt-4 rounded-lg text-whiteColor-custom bg-black-custom text-sm py-2 px-8 w-full md:w-auto"
                 onClick={e => formSubmitted(e)}
               />
               <span className="ajax-loader" />
