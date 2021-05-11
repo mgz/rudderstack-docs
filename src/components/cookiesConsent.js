@@ -8,6 +8,10 @@ const CookiesConsent = () => {
   const [toggleNessesory, setToggleNessesory] = useState(false)
   const cookies = new Cookies()
 
+  const current = new Date()
+  const nextYear = new Date()
+  nextYear.setFullYear(current.getFullYear() + 1)
+
   useEffect(() => {
     const lv_ShownCookiePolicy = cookies.get("viewed_cookie_policy")
     if (lv_ShownCookiePolicy !== "yes") {
@@ -179,7 +183,10 @@ const CookiesConsent = () => {
             className="btn-primary-lg cursor-pointer self-center w-full"
             onClick={() => {
               setShowConsent(false)
-              cookies.set("viewed_cookie_policy", "yes", { path: "/" })
+              cookies.set("viewed_cookie_policy", "yes", {
+                path: "/",
+                expires: nextYear,
+              })
             }}
           >
             ACCEPT
