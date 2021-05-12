@@ -1,0 +1,33 @@
+/*Blog Custom Css*/
+
+
+.block-description h2 {
+  @apply text-2xl;
+  @apply font-bold;
+  @apply mt-20
+}
+.block-description h3 {
+  @apply mt-20;
+  @apply text-xl;
+  @apply font-bold;
+}
+.block-description p
+{
+  @apply mt-7;
+  @apply text-lg;
+  @apply leading-6;
+}
+.block-description p a
+{
+  /* @apply text-black; */
+  color: #000 !important;
+  @apply font-bold;
+}
+
+.block-description ol,
+.block-description ul {
+  @apply mt-7;
+}
+.block-description li {
+  @apply mt-3;
+}

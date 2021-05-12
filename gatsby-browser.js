@@ -7,4 +7,5 @@
 // You can delete this file if you're not using it
 import "./src/css/site.css"
 import "./src/css/cookies.css"
+import "./src/css/blog.css"
 

@@ -321,7 +321,7 @@ body {
 position: relative;
 top: -60px;
 } */
-
+/* 
 .block-description p,
 .block-description ol,
 .block-description ul {
@@ -335,7 +335,7 @@ top: -60px;
 }
 .block-description h3 {
   @apply mt-6 text-xl;
-}
+} */
 
 .about-us-banner {
   background: url("../images/aboutus-banner.png");
