@@ -1,4 +1,14 @@
 /*Blog Custom Css*/
+.blog_banner >  div >  div>  div>  div
+{
+  color: #fff;
+  
+} 
+.blog_banner h1
+{
+  @apply font-bold;
+  line-height: 69px;
+}
 .block-description
 {
   font-family: "Basis Grotesque";
