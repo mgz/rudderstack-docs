@@ -8,60 +8,57 @@ const Menu = ({
   isFromSearch,
   searchForItems,
   createURL,
+  onCategoryChange,
+  selectedCategory,
 }) => {
-  var selected = false
-
-  const [selectedCategory, setSelectedCategory] = useState("ALL")
-
-  // console.log("menu", items)
-  items.map(item => {
-    if (item.isRefined) selected = true
-  })
-
   return (
-    <ul className="list-reset flex capitalize items-center">
+    <ul className="list-reset flex capitalize items-center overflow-auto md:overflow-hidden whitespace-nowrap md:whitespace-normal w-full">
       <li key="ALL">
         <div
-          className={`px-8 py-4 border-solid  ${
-            selectedCategory === "ALL"
+          className={`px-2 md:px-8  pt-4 pb-0 md:pb-4 border-solid text-sm md:text-base  h-12 md:h-16 w-28 md:w-auto inline-block ${
+            currentRefinement === null
               ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
               : "border-b border-grayColor-lighter"
           }`}
         >
           <a
             href={createURL("")}
-            className={"pb-7"}
+            className={"pb-0 md:pb-7"}
             onClick={event => {
               event.preventDefault()
-              setSelectedCategory("ALL")
+              // onCategoryChange("ALL")
+              refine()
             }}
           >
             All categories
           </a>
         </div>
       </li>
-      {items.map(item => (
-        <li key={item.value}>
-          <div
-            className={`px-8 py-4 border-solid  ${
-              selectedCategory === item.value
-                ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
-                : "border-b border-grayColor-lighter"
-            }`}
-          >
-            <a
-              href={createURL("")}
-              className={"pb-7"}
-              onClick={event => {
-                event.preventDefault()
-                setSelectedCategory(item.value)
-              }}
+      {items.map(item => {
+        return (
+          <li key={item.label}>
+            <div
+              className={`px-2 md:px-8 pt-4 pb-0 md:pb-4 border-solid text-sm md:text-base h-12 md:h-16 w-28 md:w-auto inline-block ${
+                currentRefinement === item.label
+                  ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
+                  : "border-b border-grayColor-lighter"
+              }`}
             >
-              {item.value}
-            </a>
-          </div>
-        </li>
-      ))}
+              <a
+                href={createURL("")}
+                className={"pb-0 md:pb-7"}
+                onClick={event => {
+                  event.preventDefault()
+                  // onCategoryChange(item.value)
+                  refine(item.label)
+                }}
+              >
+                {item.label}
+              </a>
+            </div>
+          </li>
+        )
+      })}
     </ul>
   )
 }

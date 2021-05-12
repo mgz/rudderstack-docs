@@ -6,18 +6,17 @@
  */
 
 import React from "react"
-import { connectHits } from 'react-instantsearch-dom';
+import { connectHits } from "react-instantsearch-dom"
 import Singlerowcontent from "./singlerowcontent"
 import Threerowcontent from "./threerowcontent"
 
-const Hits = ({ hits }) => {
-  // console.log(hits,'hits')
+const Hits = ({ hits, onRefineHitsCountChange }) => {
+  // console.log(hits, "hits")
   if (!hits.length) {
-    return (
-      <div>
-        <div>No results found.</div>
-      </div>
-    );
+    onRefineHitsCountChange(0)
+    return <> </>
+  } else {
+    onRefineHitsCountChange(hits.length)
   }
 
   return (
@@ -25,9 +24,9 @@ const Hits = ({ hits }) => {
       <Singlerowcontent hit={hits[0]} />
       <Threerowcontent hits={hits} />
     </div>
-    )
+  )
 }
 
-const CustomHits = connectHits(Hits);
+const CustomHits = connectHits(Hits)
 
 export default CustomHits

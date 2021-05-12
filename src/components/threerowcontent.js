@@ -10,9 +10,9 @@ import { Link } from "gatsby"
 
 const Threerowcontent = ({ hits }) => {
   return (
-    <div className="mt-24">
+    <div className="mt-10 md:mt-24">
       <h2 className="text-2xl font-bold mb-2">Lorem ipsum dolor sit amet</h2>
-      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+      <div className="mt-7 md:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
         {hits.map((hit, index) => {
           if (index !== 0) {
             return (
@@ -30,7 +30,7 @@ const Threerowcontent = ({ hits }) => {
                     </div>
                     <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-6">
                       <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">{hit.blog_category}</div>
-                      <h2 className="mt-2 text-1xl md:text-2xl font-bold mb-2">
+                      <h2 className="mt-2 text-lg md:text-2xl font-bold mb-2">
                         <Link to={hit.slug}>{hit.title}</Link>
                       </h2>
 

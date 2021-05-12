@@ -151,7 +151,7 @@ const About = ({ data }) => {
             </p>
           </div>
           <div className="flex flex-wrap -m-4">
-            <div className="p-4 w-full md:w-1/3 m-auto">
+            <div className="p-4 w-full md:w-1/3 m-auto max-w-sm">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
@@ -167,7 +167,7 @@ const About = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="p-4 w-full md:w-1/3 m-auto">
+            <div className="p-4 w-full md:w-1/3 m-auto max-w-sm">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
@@ -183,7 +183,7 @@ const About = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="p-4 w-full md:w-1/3 m-auto">
+            <div className="p-4 w-full md:w-1/3 m-auto max-w-sm">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
@@ -200,38 +200,37 @@ const About = ({ data }) => {
               </div>
             </div>
           </div>
-          <div className="mt-4 md:mt-1 md:w-2/3 md:m-auto">
-            <div className="flex flex-wrap -m-4">
-              <div className="p-4 w-full md:w-1/2 m-auto">
-                <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
-                  <StaticImage
-                    className="h-64 sm:h-72 w-full object-cover object-center"
-                    src="../images/sumanth-2.jpeg"
-                  />
-                  <div className="py-4 text-center">
-                    <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">
-                      Sumanth Puram
-                    </h3>
-                    <p className="leading-relaxed mb-3 text-xl">
-                      Head of Engineering
-                    </p>
-                  </div>
+
+          <div className="flex flex-wrap -m-4 justify-center">
+            <div className="p-4 w-full mt-4 sm:mt-0 md:w-1/2 max-w-sm flex justify-end">
+              <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
+                <StaticImage
+                  className="h-64 sm:h-72 w-full object-cover object-center"
+                  src="../images/sumanth-2.jpeg"
+                />
+                <div className="py-4 text-center">
+                  <h3 className="title-font text-2xl font-medium mb-3">
+                    Sumanth Puram
+                  </h3>
+                  <p className="leading-relaxed mb-3 text-xl">
+                    Head of Engineering
+                  </p>
                 </div>
               </div>
-              <div className="p-4 w-full md:w-1/2 m-auto">
-                <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
-                  <StaticImage
-                    className="h-64 sm:h-72 w-full object-cover object-center"
-                    src="../images/Kostas.png"
-                  />
-                  <div className="py-4 text-center">
-                    <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">
-                      Kostas Pardalis
-                    </h3>
-                    <p className="leading-relaxed mb-3 text-xl">
-                      Head of Product
-                    </p>
-                  </div>
+            </div>
+            <div className="p-4 w-full md:w-1/2 max-w-sm">
+              <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
+                <StaticImage
+                  className="h-64 sm:h-72 w-full object-cover object-center"
+                  src="../images/Kostas.png"
+                />
+                <div className="py-4 text-center">
+                  <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">
+                    Kostas Pardalis
+                  </h3>
+                  <p className="leading-relaxed mb-3 text-xl">
+                    Head of Product
+                  </p>
                 </div>
               </div>
             </div>
@@ -239,7 +238,7 @@ const About = ({ data }) => {
         </div>
       </section>
       <section className="">
-        <div className="max-w-6xl px-5 py-16 md:py-28 mx-auto">
+        <div className="max-w-6xl px-5 py-16 md:py-28 mx-auto ">
           <div className="flex flex-wrap w-full mb-0 md:mb-20 flex-col">
             <h2 className="text-3xl-3 sm:text-5xl font-bold mb-6">
               Advisors and Investors

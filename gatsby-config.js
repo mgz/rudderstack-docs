@@ -43,7 +43,7 @@ module.exports = {
         apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,        
         queries: require("./src/utils/algolia"),
         enablePartialUpdates: true,
-        matchFields: ["title", "blog_authors", "blogimage", "weight", "slug", "blogdate", "blog_category"]
+        matchFields: ["title", "blogimage", "weight", "slug", "blogdate", "blog_category"]
       },
 
       // {
@@ -76,7 +76,8 @@ module.exports = {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
-        devKey: process.env.RS_PRODUCTION_WRITE_KEY,
+        //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
+        host: `https://rudderstack-dataplane.rudderstack.com`,
         trackPage: true,
         // delayLoad: true,
         // delayLoadTime: 1000
