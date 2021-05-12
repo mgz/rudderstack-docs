@@ -321,8 +321,8 @@ body {
 position: relative;
 top: -60px;
 } */
-/* 
-.block-description p,
+
+/* .block-description p,
 .block-description ol,
 .block-description ul {
   @apply mt-4;

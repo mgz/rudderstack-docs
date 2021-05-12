@@ -22,13 +22,15 @@ const Singleblog = ({ data, ...props }) => {
 
   return (
     <Layout>
+      <div className="blog_banner">
       <Herobanner
         title={blog.title}
         date={blog.blogdate}
         author={blog.blog_authors[0].author_name}
         image={blog.blog_image}
       />
-      <div className="block-description pt-16 max-w-4xl m-auto">
+      </div>
+      <div className="block-description pt-16 max-w-4xl m-auto px-4 md:px-3">
 
 
         <PortableText blocks={blog._rawDescription} />
@@ -98,8 +100,9 @@ const Singleblog = ({ data, ...props }) => {
           </div>
         </div>
       </section>
+      <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
       <Subscription />
-
+</div>
     </Layout>
   )
 }
