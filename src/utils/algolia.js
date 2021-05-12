@@ -44,7 +44,15 @@ function pageToAlgoliaRecord({
     blogimage = blog_image.asset.fluid
   }
 
-  // console.log("algolia push ", blog_authors)
+  if (!blog_category) {
+    blog_category = ""
+    console.warn("blog category not defined for ", title)
+  }
+  if (blog_authors.length === 0) {
+    blog_authors.push({ author_name: "", author_desc: "" })
+    console.warn("blog author not defined for ", title)
+  }
+  //
   return {
     objectID: _id,
     title,
