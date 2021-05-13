@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import ReactDOMServer from 'react-dom/server'
 import Page from "./page"
 import Singleblog from "./content"
+import Product from "./content"
 import Demo from "../pages/request-demo"
 import Thankyou from "../pages/request-demo/thank-you"
 
@@ -63,6 +64,18 @@ class PreviewTemplate extends Component {
         })
       });
     }
+    
+    else if (type === 'product') {
+      const query = '*[_id == $id]';
+      component = "Product";
+
+      await client.fetch(query, params).then((products) => {
+        products.forEach((product) => {
+          product.product = product;
+          this.setState({ data: product });
+        })
+      });
+    }
   }
 
   componentDidUpdate() {}
@@ -80,6 +93,9 @@ class PreviewTemplate extends Component {
         }
         {component === 'Singleblog' &&
           <Singleblog data={this.state.data} />
+        }
+         {component === 'Product' &&
+          <Product data={this.state.data} />
         }
       </>
     );

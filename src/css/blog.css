@@ -32,7 +32,6 @@
 }
 .block-description p a
 {
-  /* @apply text-black; */
   color: #000 !important;
   @apply font-bold;
 }
@@ -65,4 +64,10 @@
   .block-description h2 {
     @apply mt-10;
   }
+}
+@media only screen and (max-width: 480px)
+{
+  .blog_banner h1 {
+    line-height:50px;
+}
 }
