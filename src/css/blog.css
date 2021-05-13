@@ -40,11 +40,19 @@
 .block-description ul {
   @apply mt-7;
 }
+.block-description ul ul {
+  @apply mt-0;
+}
 .block-description li {
   @apply mt-3;
   @apply block ;
   @apply relative;
   @apply pl-8;
+}
+.block-description li li
+{
+  @apply mt-0;
+  @apply pl-0;
 }
 
 .block-description li::before {
@@ -58,16 +66,23 @@
   @apply left-0;
   
 }
-
+.block-description li li::before
+{
+  content: none;
+}
+@media (min-width: 992px)
+{
+  .custom-hero-banner
+  {
+    min-height: 550px;
+  }
+}
 @media only screen and (max-width: 767px)
 {
   .block-description h2 {
     @apply mt-10;
   }
-}
-@media only screen and (max-width: 480px)
-{
   .blog_banner h1 {
-    line-height:50px;
-}
+    @apply leading-none;
+  }
 }

@@ -15,7 +15,7 @@ const Singleblog = ({ data, ...props }) => {
   const viewalltext = props.viewalltext
   const viewallpostslink = props.viewallpostslink
   const viewexternallink = props.viewexternallink
-  const [items] = useState([1, 2]);{/*Array Blog Author For Test Purpose*/}
+  const [items] = useState([1, 2]); {/*Array Blog Author For Test Purpose*/ }
   return (
     <Layout>
       <div className="blog_banner">
@@ -35,7 +35,7 @@ const Singleblog = ({ data, ...props }) => {
             return (
               <div key={item} className="my-8 py-12 px-8 bg-blueNew-lighter rounded-2xl bg-opacity-50 flex items-center mx-auto pb-10 mb-10 sm:flex-row flex-col">
                 <div className="sm:w-32 sm:h-32 h-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
-                  <img
+                  <img alt="author"
                     src={
                       blog.blog_authors.length > 0
                         ? blog.blog_authors[0].author_image.asset.fluid.src
@@ -47,7 +47,7 @@ const Singleblog = ({ data, ...props }) => {
                 <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                   <div className="text-xs font-bold uppercase text-blueNew-category">
                     About the author
-            </div>
+              </div>
                   <div className="leading-4 text-lg font-bold mt-4">
                     {blog.blog_authors.length > 0
                       ? blog.blog_authors[0].author_name
