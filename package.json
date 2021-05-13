@@ -44,6 +44,7 @@
     "react-instantsearch-dom": "^6.10.3",
     "react-rangeslider": "^2.2.0",
     "react-router-dom": "^5.2.0",
+    "react-syntax-highlighter": "^15.4.3",
     "react-youtube": "^7.13.1",
     "styled-components": "^5.2.3",
     "tailwindcss": "^2.0.4",
