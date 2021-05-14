@@ -1,0 +1,8 @@
+/*Product Custom Css*/
+@media (min-width:992px)
+{
+  .product-page_banner
+  {
+    min-height: 700px;
+  }
+}
