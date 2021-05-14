@@ -7,6 +7,10 @@ import BlogModule from "../components/latest-blog-module"
 import Link from "gatsby-link"
 import Subscription from "../components/Subscription"
 import BlogHeroChart from "../images/blog-hero_chart.svg"
+import BlogTwitter from "../images/blogtwitter.svg"
+import BlogFb from "../images/blogfb.svg"
+import BlogIn from "../images/blogIn.svg"
+
 
 const Singleblog = ({ data, ...props }) => {
   const blog = data.blog
@@ -32,9 +36,12 @@ const Singleblog = ({ data, ...props }) => {
           image={blog.blog_image}
         />
       </div>
-      <div className="block-description pt-16 max-w-4xl m-auto px-4 md:px-3">
-        {" "}
-        {/*Blog Content*/}
+      <div className="block-description relative pt-16 max-w-4xl m-auto px-4 md:px-12">{/*Blog Content*/}
+        <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-24 top-0 lg:left-0 md:left-4">
+          <a className="block" href="#"><img src={BlogTwitter} alt="twitter"/></a>
+          <a className="my-3 block" href="#"><img src={BlogFb} alt="Facebook"/></a>
+          <a className="block" href="#"><img src={BlogIn} alt="linkdin"/></a>
+        </div>
         <PortableText blocks={blog._rawDescription} />
         <>
           {/*Array Blog Author For Test Purpose*/}
