@@ -19,6 +19,10 @@
   @apply font-bold;
   @apply mt-20;
 }
+.block-description h2:first-child
+{
+  @apply mt-6;
+}
 .block-description h3 {
   @apply mt-20;
   @apply text-xl;
@@ -29,7 +33,7 @@
   @apply mt-7;
   @apply text-lg;
   @apply leading-6;
-  @apply break-all;
+  @apply flex-wrap;
 }
 .block-description p a
 {
@@ -88,3 +92,5 @@
     @apply leading-none;
   }
 }
+
+

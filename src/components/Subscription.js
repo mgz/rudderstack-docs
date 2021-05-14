@@ -116,7 +116,7 @@ const Subscription = () => {
               </span>
               {error && (
                 <div
-                  className="text-red-custom text-sm mt-1"
+                  className="text-red-error text-sm mt-1"
                   role="alert"
                   aria-hidden="true"
                 >
