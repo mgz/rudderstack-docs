@@ -1,97 +1,126 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Herobanner from "../components/herobanner"
-// import BlockContent from "@sanity/block-content-to-react"
 import PortableText from "../components/portableText"
+import BlogModule from "../components/latest-blog-module"
+import Link from "gatsby-link"
+import Subscription from "../components/Subscription"
+import BlogHeroChart from "../images/blog-hero_chart.svg"
 
-const Singleblog = ({ data }) => {
+const Singleblog = ({ data, ...props }) => {
   const blog = data.blog
   const blogAuthors = data.blog.blog_authors
-  // console.log("blog details", blog, blogAuthors)
+  const maintitle = props.maintitle
+  const viewalltext = props.viewalltext
+  const viewallpostslink = props.viewallpostslink
+  const viewexternallink = props.viewexternallink
+  // const [items] = useState([1, 2]); {/*Array Blog Author For Test Purpose*/ }
+
+  let author_names = ""
+  blogAuthors.forEach(row => {
+    author_names += (author_names.length > 0 ? ", " : "") + row.author_name
+  })
+
   return (
     <Layout>
-      <Herobanner
-        title={blog.title}
-        date={blog.blogdate}
-        author={
-          blog.blog_authors.length > 0 ? blog.blog_authors[0].author_name : ""
-        }
-        image={blog.blog_image}
-      />
-      <div className="block-description pt-16 max-w-4xl m-auto">
-        <div>
-          <p className="text-xl font-bold leading-6">
-            Customer data pipelines play a critical role in the privacy of your
-            customer data. They are one of the primary and most expansive
-            collectors of your customers’ personally identifiable information
-            (PII). They are also one of the most expansive sharers of customer
-            data - with one of the primary use cases being event streaming to
-            frequently large libraries of destination integrations.
-          </p>
-          <p className="text-xl leading-6">
-            Due to their specialized role of collecting and sharing customer
-            data, customer data pipelines can either help ensure your data
-            privacy or wreak havoc on it.
-          </p>
-          <p className="text-xl leading-6">
-            In this post, we’ll explain how your customer data pipeline can help
-            improve your data privacy and how to ensure your data privacy with{" "}
-            <span className="font-bold">RudderStack.</span>
-          </p>
-        </div>
-        <div className="mt-16">
-          <h2 className="font-bold leading-6 mb-10">
-            Data Privacy vs. Data Security
-          </h2>
-          <p className="text-lg leading-6">
-            To remove one common vector of confusion before we launch into this
-            post, we want to make sure the difference between data privacy and
-            data security is clear.
-          </p>
-          <p className="text-lg leading-6">
-            <span className="font-bold">Data privacy</span> - the focus of this
-            post - is about what data is collected, stored, and for how long it
-            is retained; and what customer data is shared. What customer data
-            are you collecting and storing, and how are you using that data?
-          </p>
-          <p className="text-lg leading-6">
-            <span className="font-bold">Data security</span> is about how
-            collected data is protected - where data is stored, who has access,
-            whether data is encrypted, etc. How are you keeping the customer
-            data you store safe?
-          </p>
-        </div>
-        <PortableText blocks={blog._rawDescription} />
-
-        <div className="my-8 py-12 px-8 bg-blueNew-lighter rounded-2xl bg-opacity-50 flex items-center mx-auto pb-10 mb-10 sm:flex-row flex-col">
-          <div className="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
-            <img
-              src={
-                blog.blog_authors.length > 0
-                  ? blog.blog_authors[0].author_image.asset.fluid.src
-                  : ""
-              }
-              className="w-24 h-24 rounded-full"
-            />
-          </div>
-          <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-            <div className="text-xs font-bold mb-2 uppercase">
-              About the author
-            </div>
-            <div className="leading-relaxed text-lg font-bold mt-4">
-              {blog.blog_authors.length > 0
-                ? blog.blog_authors[0].author_name
-                : ""}
-            </div>
-            <div className="mt-6 ">
-              {blog.blog_authors.length > 0
-                ? blog.blog_authors[0].author_desc
-                : ""}
-            </div>
-          </div>
-        </div>
+      <div className="blog_banner">
+        <Herobanner
+          title={blog.title}
+          date={blog.blogdate}
+          author={author_names}
+          image={blog.blog_image}
+        />
       </div>
+      <div className="block-description pt-16 max-w-4xl m-auto px-4 md:px-3">
+        {" "}
+        {/*Blog Content*/}
+        <PortableText blocks={blog._rawDescription} />
+        <>
+          {/*Array Blog Author For Test Purpose*/}
+          {blogAuthors.map(item => {
+            return (
+              <div
+                key={item.author_name}
+                className="my-8 py-12 px-8 bg-blueNew-lighter rounded-2xl bg-opacity-50 flex items-center mx-auto pb-10 mb-10 sm:flex-row flex-col"
+              >
+                <div className="sm:w-32 sm:h-32 h-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
+                  <img
+                    alt="author"
+                    src={item.author_image.asset.fluid.src}
+                    className="w-24 h-24 rounded-full"
+                  />
+                </div>
+                <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                  <div className="text-xs font-bold uppercase text-blueNew-category">
+                    About the author
+                  </div>
+                  <div className="leading-4 text-lg font-bold mt-4">
+                    {item.author_name}
+                  </div>
+                  <div className="mt-6 text-sm">{item.author_desc}</div>
+                </div>
+              </div>
+            )
+          })}
+        </>
+        {/*Array Blog Author For Test Purpose*/}
+      </div>{" "}
+      {/*Blog Content*/}
+      <section className="bg-white pb-0">
+        {" "}
+        {/*Blog Post*/}
+        <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap pt-3 pb-12">
+          <h3 className="w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-12">
+            Recent Posts
+          </h3>
+          <BlogModule />
+          <div className="w-full text-center items-center mt-10 md:mt-12">
+            <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center hover:text-blueNew-custom">
+              <a
+                href={viewallpostslink}
+                className="font-bold leading-normal text-sm lr-icon"
+              >
+                {(() => {
+                  if (viewexternallink === true) {
+                    return <a href={viewallpostslink}>{viewalltext}</a>
+                  } else {
+                    return <Link to={viewallpostslink}>{viewalltext}</Link>
+                  }
+                })()}
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+      {/*Blog Post*/}
+      <section className="bg-backgroundsecondary 100% left-right-section">
+        {/*Sign Up Section*/}
+        <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
+          <div className="sm:w-1/2 sm:p-6 sm:pl-0 md:pr-20">
+            <p className="mt-20 mb-2 text-blue text-sm uppercase">SIGN UP</p>
+            <h3 className="text-3xl text-primary font-bold leading-tight">
+              Explore RudderStack Today
+            </h3>
+            <p className="text-secondary leading-7 text-sm sm:text-lg mt-7 mb-10">
+              Our Free plan includes 500,000 events per month so you can explore
+              and test the product. Install an SDK, connect a destination, and
+              see data start to flow.
+            </p>
+
+            <button className="btn-primary-lg">Sign up free</button>
+          </div>
+          <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0">
+            <img src={BlogHeroChart} alt="Data Masking" className="w-full" />
+          </div>
+        </div>
+      </section>
+      {/*Sign Up Section*/}
+      <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
+        {/*Subscription Component*/}
+        <Subscription />
+      </div>
+      {/*Subscription Component*/}
     </Layout>
   )
 }

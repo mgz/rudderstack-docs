@@ -82,7 +82,7 @@ const Subscription = () => {
         />{" "}
         Subscribe
       </div>
-      <div className="flex-grow text-left mt-0 sm:mt-0 pt-4 px-0 md:px-12 ">
+      <div className="flex-grow text-left mt-0 sm:mt-0 pt-4 px-0 md:pl-12 ">
         <div className="mb-2">
           <p className="text-sm md:text-lg text-grayColor-custom">
             We'll send you updates from the blog and monthly release
