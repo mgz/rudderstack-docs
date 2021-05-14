@@ -30,19 +30,21 @@ const Singlerowcontent = ({ hit }) => {
             />
           </Link>
         </div>
+        <Link to={hit.slug}>
+          <div class="px-8 pt-8 pb-4">
+            <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">
+              {hit.blog_category}
+            </div>
+            <h2 className="block  mt-4 md:mt-10 mb-4 text-3xl-4 lg:text-4xl leading-tight font-bold md:font-medium text-black">
+              {hit.title}
+              {/* <Link to={hit.slug}>{hit.title}</Link> */}
+            </h2>
 
-        <div class="px-8 pt-8 pb-4">
-          <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">
-            {hit.blog_category}
+            <div class="mt-2 text-xl-2 md:text-3xl text-indigo-700 font-bold text-blueNew-custom">
+              <span>{author_names}</span>
+            </div>
           </div>
-          <h2 className="block  mt-4 md:mt-10 mb-4 text-3xl-4 lg:text-4xl leading-tight font-bold md:font-medium text-black">
-            <Link to={hit.slug}>{hit.title}</Link>
-          </h2>
-
-          <div class="mt-2 text-xl-2 md:text-3xl text-indigo-700 font-bold text-blueNew-custom">
-            <span>{author_names}</span>
-          </div>
-        </div>
+        </Link>
       </div>
     </div>
   )
