@@ -9,6 +9,7 @@
   @apply font-bold;
   line-height: 69px;
 }
+
 .block-description
 {
   font-family: "Basis Grotesque";
@@ -82,6 +83,7 @@
   .block-description h2 {
     @apply mt-10;
   }
+  
   .blog_banner h1 {
     @apply leading-none;
   }

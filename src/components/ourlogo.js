@@ -1,34 +1,34 @@
 import React from "react"
-import $ from "jquery"
-import "owl.carousel/dist/assets/owl.carousel.css"
-import "owl.carousel"
+// import $ from "jquery"
+// import "owl.carousel/dist/assets/owl.carousel.css"
+// import "owl.carousel"
 import Image from "./image"
 
 function OurLogo(props) {
-  if (typeof window !== "undefined") {
-    $(window.document).ready(function () {
-      $(".logo-slider").owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: false,
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        smartSpeed: 5000,
-        responsive: {
-          0: {
-            items: 4,
-          },
-          600: {
-            items: 8,
-          },
-          1000: {
-            items: 8,
-          },
-        },
-      })
-    })
-  }
+  // if (typeof window !== "undefined") {
+  //   $(window.document).ready(function () {
+  //     $(".logo-slider").owlCarousel({
+  //       loop: true,
+  //       margin: 10,
+  //       nav: false,
+  //       dots: false,
+  //       autoplay: true,
+  //       autoplayTimeout: 5000,
+  //       smartSpeed: 5000,
+  //       responsive: {
+  //         0: {
+  //           items: 4,
+  //         },
+  //         600: {
+  //           items: 8,
+  //         },
+  //         1000: {
+  //           items: 8,
+  //         },
+  //       },
+  //     })
+  //   })
+  // }
 
   const maintitle = props.customHeaderText || props.ourlogotitle
   const logoimages = props.outlogoimage
@@ -39,18 +39,18 @@ function OurLogo(props) {
           {maintitle}
         </h3>
       </div>
-      <div className="flex w-full justify-center mt-2 sm:mt-2 our-logos">
-        <div className="logo-slider owl-carousel owl-theme">
+      <div className="flex w-full lg:justify-between justify-start flex-wrap mt-2 sm:mt-2 our-logos">
+       
           {logoimages.map((logoimage, i) => {
             return (
-              <div key={i} class="item inline-flex">
-                <span className="p-4">
-                  <Image props={logoimage.asset._ref} className="p-4" />
+              <div key={i} class="item inline-flex md:p-4 px-2 py-4">
+                <span className="">
+                  <Image props={logoimage.asset._ref}/>
                 </span>
               </div>
             )
           })}
-        </div>
+        
       </div>
     </section>
   )

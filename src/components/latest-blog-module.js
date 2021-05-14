@@ -39,6 +39,10 @@ const BlogModule = () => {
   return (
     <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
       {latestblogs.map((latestblog, i) => {
+        let author_names = ""
+        latestblog.node.blog_authors.forEach(row => {
+          author_names += (author_names.length > 0 ? ", " : "") + row.author_name
+        })
         return (
           <div className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full">
             <a
@@ -59,7 +63,7 @@ const BlogModule = () => {
                 {latestblog.node.title}
               </div>
               <div className="text-blueNew-category text-sm px-5 font-bold absolute bottom-6">
-                By {latestblog.node.blog_authors[0].author_name}
+                By {author_names}
               </div>
             </a>
           </div>

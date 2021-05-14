@@ -69,7 +69,7 @@ const Demo = ({ data, htmlId,location }) => {
           firstName: data.firstName,
           jobTitle: data.jobTitle,
           company: data.company,
-          form_id: data.formId, //{{Form ID}},
+          form_id: data.formId,
           conversion_page: document.title,
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
@@ -93,6 +93,8 @@ const Demo = ({ data, htmlId,location }) => {
           page: document.title,
           page_URL: window.location.href,
           form_id: data.formId,
+          label: data.formId,
+          category: data.sectionId,
           conversion_page: document.title,
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
@@ -169,6 +171,7 @@ const Demo = ({ data, htmlId,location }) => {
                   submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                   onDemoFormSubmit={onDemoFormSubmit}
                   isLoading={isLoading}
+                  sectionId="demo_hdr"
                 />
               </div>
               <div
@@ -239,6 +242,7 @@ const Demo = ({ data, htmlId,location }) => {
                 isFooterForm={true}
                 isLoading={isLoading}
                 onDemoFormSubmit={onDemoFormSubmit}
+                sectionId="demo_bottom"
               />
             </div>
           </div>
