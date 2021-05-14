@@ -15,7 +15,7 @@ const Menu = ({
     <ul className="list-reset flex capitalize items-center overflow-x-auto overflow-y-hidden whitespace-nowrap xl:whitespace-normal w-full">
       <li key="ALL">
         <div
-          className={`px-2 md:px-6 xl:px-8  pt-4 pb-0 md:pb-4 border-solid text-sm md:text-base  w-28 md:w-auto inline-block ${
+          className={`px-4 sm:px-6 xl:px-8  pt-4 pb-4 border-solid text-sm md:text-base  w-auto inline-block ${
             currentRefinement === null
               ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
               : "border-b border-grayColor-lighter"
@@ -38,7 +38,7 @@ const Menu = ({
         return (
           <li key={item.label}>
             <div
-              className={`px-2 md:px-6 xl:px-8 pt-4 pb-0 md:pb-4 border-solid text-sm md:text-base  w-28 md:w-auto inline-block ${
+              className={`px-4 sm:px-6 xl:px-8 pt-4 pb-4 border-solid text-sm md:text-base  w-auto inline-block ${
                 currentRefinement === item.label
                   ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
                   : "border-b border-grayColor-lighter"
