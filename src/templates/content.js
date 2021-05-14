@@ -11,14 +11,13 @@ import BlogTwitter from "../images/blogtwitter.svg"
 import BlogFb from "../images/blogfb.svg"
 import BlogIn from "../images/blogIn.svg"
 
-
 const Singleblog = ({ data, ...props }) => {
   const blog = data.blog
   const blogAuthors = data.blog.blog_authors
   const maintitle = props.maintitle
-  const viewalltext = props.viewalltext
-  const viewallpostslink = props.viewallpostslink
-  const viewexternallink = props.viewexternallink
+  const viewalltext = "See all posts"
+  const viewallpostslink = "https://rudderstack.com/blog/"
+  const viewexternallink = true
   // const [items] = useState([1, 2]); {/*Array Blog Author For Test Purpose*/ }
 
   let author_names = ""
@@ -36,11 +35,18 @@ const Singleblog = ({ data, ...props }) => {
           image={blog.blog_image}
         />
       </div>
-      <div className="block-description relative pt-16 max-w-4xl m-auto px-4 md:px-12">{/*Blog Content*/}
+      <div className="block-description relative pt-16 max-w-4xl m-auto px-4 md:px-12">
+        {/*Blog Content*/}
         <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-24 top-0 lg:left-0 md:left-4">
-          <a className="block" href="#"><img src={BlogTwitter} alt="twitter"/></a>
-          <a className="my-3 block" href="#"><img src={BlogFb} alt="Facebook"/></a>
-          <a className="block" href="#"><img src={BlogIn} alt="linkdin"/></a>
+          <a className="block" href="#">
+            <img src={BlogTwitter} alt="twitter" />
+          </a>
+          <a className="my-3 block" href="#">
+            <img src={BlogFb} alt="Facebook" />
+          </a>
+          <a className="block" href="#">
+            <img src={BlogIn} alt="linkdin" />
+          </a>
         </div>
         <PortableText blocks={blog._rawDescription} />
         <>
@@ -75,7 +81,6 @@ const Singleblog = ({ data, ...props }) => {
       </div>{" "}
       {/*Blog Content*/}
       <section className="bg-white pb-0">
-        {" "}
         {/*Blog Post*/}
         <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap pt-3 pb-12">
           <h3 className="w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-12">

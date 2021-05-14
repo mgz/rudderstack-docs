@@ -11,7 +11,7 @@ import { Link } from "gatsby"
 const Singlerowcontent = ({ hit }) => {
   let author_names = ""
   hit.blog_authors.forEach(row => {
-    author_names += (author_names.length > 0 ? ", " : "") + row.author_name
+    author_names += (author_names.length > 0 ? ", " : "By ") + row.author_name
   })
 
   return (
@@ -40,7 +40,7 @@ const Singlerowcontent = ({ hit }) => {
           </h2>
 
           <div class="mt-2 text-xl-2 md:text-3xl text-indigo-700 font-bold text-blueNew-custom">
-            <span>By {author_names}</span>
+            <span>{author_names}</span>
           </div>
         </div>
       </div>
