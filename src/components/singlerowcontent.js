@@ -9,7 +9,11 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Singlerowcontent = ({ hit }) => {
-  // console.log(hit,'single hit')
+  let author_names = ""
+  hit.blog_authors.forEach(row => {
+    author_names += (author_names.length > 0 ? ", " : "") + row.author_name
+  })
+
   return (
     <div
       key="0"
@@ -26,7 +30,7 @@ const Singlerowcontent = ({ hit }) => {
             />
           </Link>
         </div>
-        
+
         <div class="px-8 pt-8 pb-4">
           <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">
             {hit.blog_category}
@@ -36,7 +40,7 @@ const Singlerowcontent = ({ hit }) => {
           </h2>
 
           <div class="mt-2 text-xl-2 md:text-3xl text-indigo-700 font-bold text-blueNew-custom">
-            <span>By {hit.blog_authors[0].author_name}</span>
+            <span>By {author_names}</span>
           </div>
         </div>
       </div>

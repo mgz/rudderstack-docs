@@ -1,0 +1,90 @@
+/*Blog Custom Css*/
+.blog_banner >  div >  div>  div>  div
+{
+  color: #fff;
+  
+} 
+.blog_banner h1
+{
+  @apply font-bold;
+  line-height: 69px;
+}
+
+.block-description
+{
+  font-family: "Basis Grotesque";
+}
+.block-description h2 {
+  @apply text-2xl;
+  @apply font-bold;
+  @apply mt-20;
+}
+.block-description h3 {
+  @apply mt-20;
+  @apply text-xl;
+  @apply font-bold;
+}
+.block-description p
+{
+  @apply mt-7;
+  @apply text-lg;
+  @apply leading-6;
+  @apply break-all;
+}
+.block-description p a
+{
+  color: #000 !important;
+  @apply font-bold;
+}
+
+.block-description ol,
+.block-description ul {
+  @apply mt-7;
+}
+.block-description ul ul {
+  @apply mt-0;
+}
+.block-description li {
+  @apply mt-3;
+  @apply block ;
+  @apply relative;
+  @apply pl-8;
+}
+.block-description li li
+{
+  @apply mt-0;
+  @apply pl-0;
+}
+
+.block-description li::before {
+  @apply absolute;
+  content: "";
+  background: url('../images/arrow-right.svg');
+  @apply bg-center;
+  @apply w-5;
+  @apply h-5;
+  @apply top-1;
+  @apply left-0;
+  
+}
+.block-description li li::before
+{
+  content: none;
+}
+@media (min-width: 992px)
+{
+  .custom-hero-banner
+  {
+    min-height: 550px;
+  }
+}
+@media only screen and (max-width: 767px)
+{
+  .block-description h2 {
+    @apply mt-10;
+  }
+  
+  .blog_banner h1 {
+    @apply leading-none;
+  }
+}

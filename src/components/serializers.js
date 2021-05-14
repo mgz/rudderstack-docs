@@ -6,6 +6,7 @@ import MainImage from "./MainImage"
 // import LatexRenderer from "./Latex";
 import getYouTubeId from "get-youtube-id"
 import YouTube from "react-youtube"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 const AuthorReference = ({ node }) => {
   if (node && node.author && node.author.name) {
@@ -24,6 +25,18 @@ const serializers = {
       const id = getYouTubeId(url)
       return <YouTube key={node._key} videoId={id} />
     },
+    code: (props) => (
+      <SyntaxHighlighter
+        language={props.node.language}
+        customStyle={{
+          fontSize: 14,
+          marginTop: 0,
+          marginBottom: 16
+        }}
+      >
+        {props.node.code}
+      </SyntaxHighlighter>
+    ),
     // videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
     // instagram: ({ node }) => {
     //   if (!node.url) return null;
