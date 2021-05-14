@@ -6,7 +6,27 @@ import MainImage from "./MainImage"
 // import LatexRenderer from "./Latex";
 import getYouTubeId from "get-youtube-id"
 import YouTube from "react-youtube"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+// import BlockContent from "@sanity/block-content-to-react"
+
+// const overrides = {
+//   blockquote: props => {
+//     console.log("blockquote", props)
+//     return (
+//       <div className="px-11 py-16 text-2xl-2 my-20 text-blueNew-custom bg-blueNew-lighter rounded-lg">
+//         <span className="mt-0" {...props} />
+//       </div>
+//     )
+//   },
+// }
+
+const LargeQuotedText = ({ node }) => {
+  return (
+    <div className="px-11 py-16 text-2xl-2 my-20 text-blueNew-custom bg-blueNew-lighter rounded-lg">
+      <span className="mt-0">“{node.quoted_text}”</span>
+    </div>
+  )
+}
 
 const AuthorReference = ({ node }) => {
   if (node && node.author && node.author.name) {
@@ -17,6 +37,15 @@ const AuthorReference = ({ node }) => {
 
 const serializers = {
   types: {
+    // block: props =>
+    //   // Check if we have an override for the “style”
+    //   overrides[props.node.style]
+    //     ? // if so, call the function and pass in the children, ignoring
+    //       // the other unnecessary props
+    //       overrides[props.node.style]({ children: props.children })
+    //     : // otherwise, fallback to the provided default with all props
+    //       BlockContent.defaultSerializers.types.block(props),
+    large_quoted_text: LargeQuotedText,
     authorReference: AuthorReference,
     mainImage: ({ node }) => <MainImage mainImage={node} />,
     youtube: ({ node }) => {
@@ -25,13 +54,13 @@ const serializers = {
       const id = getYouTubeId(url)
       return <YouTube key={node._key} videoId={id} />
     },
-    code: (props) => (
+    code: props => (
       <SyntaxHighlighter
         language={props.node.language}
         customStyle={{
           fontSize: 14,
           marginTop: 0,
-          marginBottom: 16
+          marginBottom: 16,
         }}
       >
         {props.node.code}
