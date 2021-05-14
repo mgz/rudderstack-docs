@@ -45,10 +45,10 @@ const Blog_new = ({ data }) => {
           >
             <Configure hitsPerPage={13} />
             <div className="flex flex-row  flex-wrap-reverse mt-14 md:mt-32 w-full">
-              <div className="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left border-grey-500">
+              <div className="flex flex-col w-full lg:w-3/5 justify-center items-start text-center lg:text-left border-grey-500">
                 <CustomMenu attribute="blog_category" />
               </div>
-              <div className="w-full md:w-2/5 pt-0 md:pt-6 pb-3 text-center">
+              <div className="w-full lg:w-2/5 pt-0 md:pt-6 pb-3 text-center">
                 <CustomSearchBox
                   onRefineTextChange={val => setCurrentRefineText(val)}
                 />
