@@ -9,7 +9,8 @@ import Integrationschart from "../images/Integrations-chart.svg"
 import DriveChart from "../images/drive-chart.svg"
 import StreamData from "../images/stream-data.svg"
 import DataControl from "../images/data-control.svg"
-
+import ProductVideo from "../images/product-video-view.svg"
+import VideoPlayBtn from "../images/video_play-btn.svg"
 
 const Product_new = ({ data }) => {
   const lv_middlebannersection = (
@@ -22,23 +23,25 @@ const Product_new = ({ data }) => {
 
   return (
     <Layout>
-      <section className="w-full bg-black-custom product-page_banner text-white flex justify-center items-center">
-        <div className="max-w-6xl py-20 px-4 md:px-3 mx-auto relative">
-          <div className="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0">
-            <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-3/5 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
+      <section className="w-full product-page_banner text-white flex justify-center items-center relative overflow-hidden">
+        <div className="max-w-6xl pb-20 p1-16 px-4 md:px-3 mx-auto">
+          <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
+            <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-3/5 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
               <h2 className="md:text-6xl text-5xl font-bold leading-none">Event stream</h2>
               <h3 className="text-3xl leading-10 font-bold mt-5 mb-8">Replaces Segment or Snowplow Analytics</h3>
-              <p className="text-white text-lg leading-6">Simplify event streaming and integrations work. Instrument once with RudderStack to capture event data, then send it to your entire customer data stack.</p>
-              <div class="relative block sm:flex mt-12">
+              <p className="text-white text-lg leading-6 pr-40">Simplify event streaming and integrations work. Instrument once with RudderStack to capture event data, then send it to your entire customer data stack.</p>
+              <div class="block sm:flex mt-12">
                 <a class="btn-primary-lg bg-white text-primary sm:mr-4 md:mb-0 mb-6" href="#">Sign up for free</a>
                 <a class="btn-secondary-lg sm:mr-4 md:mb-0 mb-4" href="/request-demo">Get a demo</a>
               </div>
             </div>
 
             <div className="relative w-full px-5 rounded-lg flex-grow justify-items-end lg:w-2/5 sm:px-0 sm:items-center lg:items-start lg:mb-0">
-              <div class="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
-                video
-          </div>
+              <div class="relative rounded-md sm:px-0 items-center flex justify-center bg-white product-video">
+                <img src={ProductVideo} alt="Product Video" className="w-full"/>
+                <button className="absolute left-0 right-0 mx-auto" type="button"><img src={VideoPlayBtn} alt="Product Video" className="w-full"/></button>
+               
+              </div>
             </div>
           </div>
         </div>
@@ -116,7 +119,7 @@ const Product_new = ({ data }) => {
         </div>
 
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
-          <div className="flex flex-col-reverse sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 my-11 ">
+          <div className="flex flex-col-reverse sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 mb-20 mt-11">
             <div className="w-full sm:w-2/5 sm:p-6 sm:pr-0 list-stream">
               <img src={DataControl} alt="product" className="w-full" />
             </div>
@@ -131,8 +134,8 @@ const Product_new = ({ data }) => {
         </div>
 
       </section>
-      <section>
-      <div className="testimonials testimonials-wrap bg-white py-5 text-primary px-md-5 bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
+      <section className="overflow-hidden">
+      <div className="-mx-3 testimonials bg-white pb-24 pt-20 text-primary px-md-5 bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
           <div className="w-full text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Join Our Team
