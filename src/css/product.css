@@ -38,6 +38,14 @@
   left: 5px;
   width: 100%;
 }
+@media (min-width:1600px)
+{
+  .product-page_banner::before
+  {
+    background-size: 75% auto;
+  }
+}
+
 @media (min-width:1024px)
 {
   .product-page_banner
@@ -46,11 +54,25 @@
   }
 }
 
-@media (min-width:1600px)
+@media (min-width:640px) and (max-width:890px)
 {
+  .sm\:bg-hero-pattern
+  {
+    background-position: center;
+  }
+}
+@media (max-width:1024px)
+{
+  .product-video::before
+  {
+    display: none;
+  }
+}
+@media (max-width:575px)
+{
+  .product-video::before, 
   .product-page_banner::before
   {
-    background-size: 75% auto;
+    display: none;
   }
- 
 }

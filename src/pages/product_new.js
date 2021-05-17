@@ -23,14 +23,14 @@ const Product_new = ({ data }) => {
 
   return (
     <Layout>
-      <section className="w-full product-page_banner text-white flex justify-center items-center relative overflow-hidden">
-        <div className="max-w-6xl pb-20 p1-16 px-4 md:px-3 mx-auto">
+<section className="w-full product-page_banner text-white lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
+        <div className="max-w-6xl sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
           <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
-            <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-3/5 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-              <h2 className="md:text-6xl text-5xl font-bold leading-none">Event stream</h2>
-              <h3 className="text-3xl leading-10 font-bold mt-5 mb-8">Replaces Segment or Snowplow Analytics</h3>
-              <p className="text-white text-lg leading-6 pr-40">Simplify event streaming and integrations work. Instrument once with RudderStack to capture event data, then send it to your entire customer data stack.</p>
-              <div class="block sm:flex mt-12">
+            <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-3/5 sm:px-0sm:items-center lg:items-start lg:mb-0 hero-content">
+              <h2 className="mb-8 md:my-4 md:text-6xl text-5xl  font-bold leading-tight">Event stream</h2>
+              <h3 className="text-3xl leading-10 font-bold md:mt-5 mb-8">Replaces Segment or Snowplow Analytics</h3>
+              <p className="text-white text-lg leading-6 lg:pr-40">Simplify event streaming and integrations work. Instrument once with RudderStack to capture event data, then send it to your entire customer data stack.</p>
+              <div class="block sm:flex justify-center items-center mt-12">
                 <a class="btn-primary-lg bg-white text-primary sm:mr-4 md:mb-0 mb-6" href="#">Sign up for free</a>
                 <a class="btn-secondary-lg sm:mr-4 md:mb-0 mb-4" href="/request-demo">Get a demo</a>
               </div>
@@ -45,8 +45,8 @@ const Product_new = ({ data }) => {
             </div>
           </div>
         </div>
-      </section>
-      <section className="bg-backgroundsecondary 100% left-right-section py-24">
+      </section> 
+      <section className="bg-backgroundsecondary 100% left-right-section sm:py-24 py-11">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           <h3 className="md:mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight text-center">
             Stream events from any source to any destination
@@ -70,7 +70,7 @@ const Product_new = ({ data }) => {
       </section>
       <section className="100% bg-whiteColor-custom">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
-          <div className="flex flex-col sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 mt-11 ">
+          <div className="flex flex-col sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 md:mt-11 ">
             <div className="w-full sm:w-3/5 sm:p-6 sm:pl-0 mt-12 sm:mt-0">
               <h2 className="text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
                 Integrate your entire stack
@@ -89,7 +89,7 @@ const Product_new = ({ data }) => {
         </div>
 
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
-          <div className="flex flex-col-reverse sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 mt-11 ">
+          <div className="flex flex-col-reverse sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 md:mt-11 ">
             <div className="w-full sm:w-2/5 sm:p-6 sm:pr-0 list-stream">
               <img src={DriveChart} alt="product" className="w-full" />
             </div>
@@ -104,7 +104,7 @@ const Product_new = ({ data }) => {
         </div>
 
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
-          <div className="flex flex-col sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 mt-11 ">
+          <div className="flex flex-col sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 md:mt-11 ">
             <div className="w-full sm:w-3/5 sm:p-6 sm:pl-0 mt-12 sm:mt-0">
               <h2 className="text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
               Event streaming for your entire customer data stack
@@ -119,7 +119,7 @@ const Product_new = ({ data }) => {
         </div>
 
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
-          <div className="flex flex-col-reverse sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 mb-20 mt-11">
+          <div className="flex flex-col-reverse sm:flex-row items-center md:gap-12 justify-center mx-auto lg:p-0 mb-10 md:mt-11">
             <div className="w-full sm:w-2/5 sm:p-6 sm:pr-0 list-stream">
               <img src={DataControl} alt="product" className="w-full" />
             </div>
@@ -135,7 +135,7 @@ const Product_new = ({ data }) => {
 
       </section>
       <section className="overflow-hidden">
-      <div className="-mx-3 testimonials bg-white pb-24 pt-20 text-primary px-md-5 bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
+      <div className="testimonials bg-white px-7 py-10 sm:py-20 -mx-2.5 text-primary margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
           <div className="w-full text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Join Our Team
