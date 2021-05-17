@@ -19,7 +19,7 @@
   @apply font-bold;
   @apply mt-20;
 }
-.block-description h2:first-child
+.block-description div > h2:first-child
 {
   @apply mt-6;
 }
@@ -40,7 +40,11 @@
   color: #000 !important;
   @apply font-bold;
 }
-
+.block-description figure,
+.block-description iframe
+{
+  @apply mt-7;
+}
 .block-description ol,
 .block-description ul {
   @apply mt-7;
