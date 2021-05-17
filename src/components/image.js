@@ -2,13 +2,13 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 // import { GatsbyImage } from "gatsby-plugin-image"
 
-function renderImage(image, classes) {
+function renderImage(image, classes, alt) {
   const imgh = (() => {
     return (
       <img
         loading="lazy"
         src={image.node.fluid.src}
-        alt={image.node._id}
+        alt={alt ? alt : image.node._id}
         className={classes}
       />
       // <GatsbyImage
@@ -42,7 +42,7 @@ const Image = props => {
         const imgdata = data.sanityimages.edges.find(
           imgdata => imgdata.node._id === props.props
         )
-        return renderImage(imgdata, props.classes)
+        return renderImage(imgdata, props.classes, props.alt)
       }}
     />
   )

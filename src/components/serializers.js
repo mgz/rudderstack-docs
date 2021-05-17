@@ -6,6 +6,8 @@ import MainImage from "./MainImage"
 // import LatexRenderer from "./Latex";
 import getYouTubeId from "get-youtube-id"
 import YouTube from "react-youtube"
+import CustomAudioPlayer from "./CustomAudioPlayer"
+import ImageWithAddons from "./ImageWithAddons"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 // import BlockContent from "@sanity/block-content-to-react"
 
@@ -53,6 +55,11 @@ const serializers = {
       const { url } = node
       const id = getYouTubeId(url)
       return <YouTube key={node._key} videoId={id} />
+    },
+    image_with_addons: ({ node }) => <ImageWithAddons data={node} />,
+    embed_audio: ({ node }) => {
+      // The component we use to render the actual player
+      return <CustomAudioPlayer {...node} />
     },
     code: props => (
       <SyntaxHighlighter
