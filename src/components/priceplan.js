@@ -531,14 +531,7 @@ function PricePlans() {
                 <td className="p-6 text-base">
                   <span>10</span>
                 </td>
-                <td className="p-6">
-                  {/* <StaticImage
-                    className="checkImg"
-                    src="../images/check-r.svg"
-                    alt="check"
-                  /> */}
-                  <span className="check-icon" />
-                </td>
+                <td className="p-6 text-base">Unlimited</td>
               </tr>
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">Multi-node Scaling</td>
@@ -1445,6 +1438,7 @@ function PricePlans() {
                 </span>
                 <div className="flex-col">
                   Team Members <br />
+                  Unlimited
                 </div>
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">

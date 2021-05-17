@@ -61,7 +61,8 @@ const Testimonial = props => {
                         >
                           {testimonial.clientcontent}
                         </div>
-                        {testimonial.button.btnlink !== "" &&
+                        {testimonial.button &&
+                          testimonial.button.btnlink !== "" &&
                           testimonial.button.btntext !== "" && (
                             <div className="text-center mt-8">
                               {(() => {
