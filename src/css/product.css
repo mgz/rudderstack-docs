@@ -1,4 +1,17 @@
 /*Product Custom Css*/
+.list-stream li::before
+{
+  @apply absolute;
+  content: "";
+  background: url('../images/blue-check.svg');
+  @apply bg-center;
+  @apply w-5;
+  @apply h-5;
+  @apply top-3;
+  @apply left-0;
+}
+
+
 @media (min-width:992px)
 {
   .product-page_banner
