@@ -307,7 +307,7 @@ const About = ({ data }) => {
         </div>
       </section>
       <section className="">
-        <div className="py-16 px-4 pb-16 lg:py-24 mx-auto bg-hero-pattern-mobile-2 sm:bg-hero-pattern">
+        <div className="py-16 px-4 pb-16 lg:py-24 mx-auto bg-hero-pattern-mobile-2 bg-cover sm:bg-hero-pattern">
           <div className="w-full text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Join Our Team
@@ -317,7 +317,7 @@ const About = ({ data }) => {
             </p>
             <p className="mt-16 md:mt-16 flex justify-center">
               <a
-                className="bg-black-custom text-whiteColor-custom text-sm sm:text-lg py-4 px-4 sm:px-12 rounded-lg hover:bg-blueNew-custom  w-full sm:w-72"
+                className="bg-black-custom text-whiteColor-custom text-sm sm:text-lg py-3 px-4 sm:px-8 rounded-lg hover:bg-blueNew-custom  w-full sm:w-60"
                 href="https://www.linkedin.com/company/rudderlabs/jobs/"
               >
                 View Open Positions

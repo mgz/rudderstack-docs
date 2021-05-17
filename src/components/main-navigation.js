@@ -125,7 +125,7 @@ const MainNavigation = () => {
               if (trybtn.btnexternallink === true) {
                 return (
                   <a href={trybtn.btnlink}>
-                    <span className="inline-block text-white bg-black-custom text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg">
+                    <span className="inline-block text-white bg-black-custom text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg hover:bg-blueNew-custom">
                       {trybtn.btntext}
                     </span>
                   </a>
@@ -133,7 +133,7 @@ const MainNavigation = () => {
               } else {
                 return (
                   <Link to={trybtn.btnlink}>
-                    <span className="inline-block text-white bg-black-custom text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg">
+                    <span className="inline-block text-white bg-black-custom text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg hover:bg-blueNew-custom">
                       {trybtn.btntext}
                     </span>
                   </Link>

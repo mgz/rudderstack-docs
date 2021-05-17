@@ -583,7 +583,7 @@ function PricePlans() {
                 <td className="p-6">
                   <a
                     href="https://resources.rudderstack.com/enterprise-quote"
-                    className="text-sm text-black-custom leading-sm font-bold mt-3 lr-icon mx-auto"
+                    className="text-sm text-black-custom leading-sm font-bold mt-3 lr-icon mx-auto hover:text-blueNew-custom"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -1425,7 +1425,8 @@ function PricePlans() {
                     alt="check image"
                   />
                 </span>
-                Rudderstack Cloud<br />
+                Rudderstack Cloud
+                <br />
                 Unlimited
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
@@ -1473,10 +1474,10 @@ function PricePlans() {
               </div>
               <a
                 href="#"
-                className="text-sm text-black-custom font-bold items-center flex mt-3 pl-5"
+                className="text-sm text-black-custom font-bold items-center flex mt-3 pl-5 hover:text-blueNew-custom"
               >
                 <StaticImage
-                  className="mr-2"
+                  className="mr-2 "
                   src="../images/arrow-right-o.png"
                   alt="arrow right"
                 />
