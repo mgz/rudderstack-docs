@@ -133,14 +133,14 @@ const LeftRightImgCnt = props => {
                             return (
                               <a
                                 href={linkurl}
-                                className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom"
+                                className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block hover:text-blueNew-custom"
                               >
                                 {linktext}
                               </a>
                             )
                           } else {
                             return (
-                              <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                              <span className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block hover:text-blueNew-custom">
                                 <Link to={linkurl}>{linktext}</Link>
                               </span>
                             )
