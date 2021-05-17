@@ -7,7 +7,7 @@ import open_source from "../images/open_source.svg"
 import build from "../images/build.svg"
 import privacy from "../images/privacy.svg"
 import customerobsessed from "../images/customer-obsessed.svg"
-import Integrationschart from "../images/Integrations chart.svg"
+import Integrationschart from "../images/Integrations-chart.svg"
 import MiddleBanner from "../components/middle-banner"
 
 export const query = graphql`

@@ -1,8 +1,78 @@
 /*Product Custom Css*/
-@media (min-width:992px)
+.list-stream li::before
+{
+  @apply absolute;
+  content: "";
+  background: url('../images/blue-check.svg');
+  @apply bg-center;
+  @apply w-5;
+  @apply h-5;
+  @apply top-3;
+  @apply left-0;
+}
+.product-page_banner{
+  background: linear-gradient(180deg, #000000 0%, #4e4e4e 100%);
+
+}
+.product-page_banner::before
+{
+  background-image: url("../images/product-banner-line.png");
+  background-position: bottom right;
+  background-size: 77% auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+}
+.product-video::before
+{
+  background-image: url("../images/video-gradiant.svg");
+  position: absolute;
+  content: "";
+  min-width: 550px;
+  height: 71px;
+  bottom: -72px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  left: 5px;
+  width: 100%;
+}
+@media (min-width:1600px)
+{
+  .product-page_banner::before
+  {
+    background-size: 75% auto;
+  }
+}
+
+@media (min-width:1024px)
 {
   .product-page_banner
   {
     min-height: 700px;
+  }
+}
+
+@media (min-width:640px) and (max-width:890px)
+{
+  .sm\:bg-hero-pattern
+  {
+    background-position: center;
+  }
+}
+@media (max-width:1024px)
+{
+  .product-video::before
+  {
+    display: none;
+  }
+}
+@media (max-width:575px)
+{
+  .product-video::before, 
+  .product-page_banner::before
+  {
+    display: none;
   }
 }
