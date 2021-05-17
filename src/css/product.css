@@ -38,6 +38,23 @@
   left: 5px;
   width: 100%;
 }
+/*Cloud Desktop CSS*/
+.event-stream-list li::before
+
+  {
+    @apply absolute;
+    content: "";
+    background: url('../images/blue-check.svg');
+    @apply bg-center;
+    @apply w-5;
+    @apply h-5;
+    @apply top-1;
+    @apply left-0;
+  
+}
+
+
+
 @media (min-width:1600px)
 {
   .product-page_banner::before
