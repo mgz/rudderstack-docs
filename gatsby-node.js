@@ -71,6 +71,36 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  const products_result = await graphql(`
+    {
+      allSanityProductPage {
+        edges {
+          node {
+            title
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (products_result.errors) {
+    throw products_result.errors
+  }
+
+  const products = products_result.data.allSanityProductPage.edges || []
+  products.forEach((edge, index) => {
+    const path = `/product/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/products.js"),
+      context: { slug: edge.node.slug.current },
+    })
+  })
+
   const integration = await graphql(`
     {
       allSanityIntegration {

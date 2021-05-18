@@ -189,7 +189,7 @@ const Demo = ({ data, htmlId,location }) => {
           {/* sm:px-12 lg:px-32 xl:px-60 */}
           <div className="w-full bg-grayColor-BgGray">
             <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
-              <div className="mb-24">
+              <div className="sm:mb-24 mb-10">
                 <span className="text-3xl md:text-5xl font-bold">
                   {lv_demoadvantages[0].advantage_header_text}
                 </span>

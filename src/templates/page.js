@@ -60,7 +60,11 @@ const Page = props => {
           el = <Tabs key={c._key} {...c} />
           break
         case "leftrightcontentimagesection":
-          el = <LeftRightImgCnt key={c._key} {...c} />
+          el = (
+            <div className="bg-backgroundsecondary 100%" key={c._key}>
+              <LeftRightImgCnt {...c} />{" "}
+            </div>
+          )
           break
         case "latestblogsection":
           el = <LatestBlog key={c._key} {...c} />

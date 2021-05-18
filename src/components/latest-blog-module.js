@@ -41,7 +41,7 @@ const BlogModule = () => {
       {latestblogs.map((latestblog, i) => {
         let author_names = ""
         latestblog.node.blog_authors.forEach(row => {
-          author_names += (author_names.length > 0 ? ", " : "") + row.author_name
+          author_names += (author_names.length > 0 ? ", " : "By ") + row.author_name
         })
         return (
           <div className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full">
@@ -63,7 +63,7 @@ const BlogModule = () => {
                 {latestblog.node.title}
               </div>
               <div className="text-blueNew-category text-sm px-5 font-bold absolute bottom-6">
-                By {author_names}
+                {author_names}
               </div>
             </a>
           </div>

@@ -3,6 +3,9 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    letterSpacing: {
+      "tight-2": "-.04em",
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
