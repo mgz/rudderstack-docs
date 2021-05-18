@@ -52,10 +52,9 @@
     @apply left-0;
   
 }
+/*Cloud Desktop CSS*/
 
-
-
-@media (min-width:1600px)
+@media (min-width:1600px)/*Product Custom Css*/
 {
   .product-page_banner::before
   {
@@ -93,3 +92,4 @@
     display: none;
   }
 }
+/*Product Custom Css*/
