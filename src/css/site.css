@@ -345,6 +345,32 @@ top: -60px;
   background-size: 51%;
 }
 
+/*Integration Page Css*/
+.search-cover,
+.filter-menu
+{
+  
+  @apply border;
+  @apply border-solid;
+  border-color: #E1E1E1;
+  box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.05);
+}
+.filter-menu .ais-refinement-list--checkbox
+{
+  @apply w-5;
+  @apply h-5;
+  @apply cursor-pointer;
+}
+
+.content-box
+{
+  @apply border;
+  @apply border-solid;
+  border-color: #E1E1E1;
+}
+/*Integration Page Css*/
+
 @media only screen and (min-width: 1023px) {
   .menu li.has-submenu:hover a:after {
     transform: rotate(225deg);
