@@ -139,7 +139,7 @@ const Demo = ({ data, htmlId,location }) => {
       })
         .then(res => {
           if (res.statusText === "OK") {
-            navigate("/request-demo/thank-you")
+            //navigate("/request-demo/thank-you")
           }
         })
         .catch(err => {
