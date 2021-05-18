@@ -9,6 +9,7 @@ import privacy from "../images/privacy.svg"
 import customerobsessed from "../images/customer-obsessed.svg"
 import Integrationschart from "../images/Integrations-chart.svg"
 import MiddleBanner from "../components/middle-banner"
+import JoinOurTeam from "../components/joinOurTeam"
 
 export const query = graphql`
   query aboutPage {
@@ -307,30 +308,7 @@ const About = ({ data }) => {
         </div>
       </section>
       <section className="">
-        <div className="py-16 px-4 pb-16 lg:py-24 mx-auto bg-hero-pattern-mobile-2 bg-cover sm:bg-hero-pattern">
-          <div className="w-full text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Join Our Team
-            </h2>
-            <p className="text-xl-2 sm:text-2xl-2 text-grayColor-custom mt-4 mb-8">
-              Help us make data engineers the heroes of their companies.
-            </p>
-            <p className="mt-16 md:mt-16 flex justify-center">
-              <a
-                className="bg-black-custom text-whiteColor-custom text-sm sm:text-lg py-3 px-4 sm:px-8 rounded-lg hover:bg-blueNew-custom  w-full sm:w-60"
-                href="https://www.linkedin.com/company/rudderlabs/jobs/"
-              >
-                View Open Positions
-              </a>
-              {/* <a
-                className="bg-black-custom text-whiteColor-custom text-sm sm:text-lg py-4 px-4 sm:px-12 rounded-lg hover:bg-blueNew-custom"
-                href="https://www.linkedin.com/company/rudderlabs/jobs/"
-              >
-                View Open Positions
-              </a> */}
-            </p>
-          </div>
-        </div>
+      <JoinOurTeam />
       </section>
       <section id="footer_section_for_demo">
         <MiddleBanner {...lv_middlebannersection[0]} />
