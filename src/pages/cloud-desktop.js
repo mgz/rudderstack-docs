@@ -250,7 +250,7 @@ const CloudDesktop = ({ data }) => {
       </section>
       <section className="100% bg-whiteColor-custom">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
-          <div className="flex items-center flex-wrap sm:flex-row my-6 md:mt-16">
+          <div className="flex items-center flex-wrap sm:flex-row mb-6 md:mt-16">
             <div className="w-full sm:w-3/5 sm:p-6 sm:pl-0 mt-12 sm:mt-0">
               <h2 className="text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
                 Integrate your entire stack
