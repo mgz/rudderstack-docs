@@ -40,6 +40,7 @@
     "react": "^17.0.1",
     "react-accessible-accordion": "^3.3.4",
     "react-dom": "^17.0.1",
+    "react-h5-audio-player": "^3.7.0",
     "react-helmet": "^6.1.0",
     "react-instantsearch-dom": "^6.10.3",
     "react-rangeslider": "^2.2.0",
