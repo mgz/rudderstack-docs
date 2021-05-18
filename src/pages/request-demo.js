@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Helmet } from "react-helmet";
 import { graphql, Link, navigate } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -251,6 +252,17 @@ const Demo = ({ data, htmlId,location }) => {
           <MiddleBanner {...lv_middlebannersection[0]} />
         </section>
       </div>
+    <Helmet>
+      <script> 
+{`function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
+ChiliPiper.scheduling("rudderstack", "demo-request", {title: "Thanks! What time works best for a quick call?"})
+`}
+      </script>
+      <script
+        src="https://js.na.chilipiper.com/marketing.js"
+        type="text/javascript"
+      />
+    </Helmet>
     </Layout>
   )
 }
