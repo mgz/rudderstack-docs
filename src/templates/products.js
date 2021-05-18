@@ -9,15 +9,16 @@ import ProductImageWithListOfText from "../components/productImageWithListOfText
 import LeftRightImgCnt from "../components/left-right-image-content"
 import JoinOurTeam from "../components/joinOurTeam"
 
-const Product_new = ({ data }) => {
+const Products = ({ data, }) => {
+  // console.log('graphqldata',data.product)
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
 
   return (
     <Layout>
-      <div className="pt-10 font-custom">
-        {(data.sanityProductPage._rawPagebuildersectionarray || []).map(
+      <div className="font-custom">
+        {(data.product.nodes[0]._rawPagebuildersectionarray || []).map(
           (row, idx) => {
             if (row._type === "product_banner") {
               return <ProductHeroBanner key={row._id} {...row} />
@@ -43,19 +44,21 @@ const Product_new = ({ data }) => {
   )
 }
 
-export default Product_new
+export default Products
 
 export const pageQuery = graphql`
-  query {
-    sanityFrontpageblock {
-      _rawPagebuildersectionarray
-    }
-    sanityProductPage {
-      _id
-      slug {
-        current
+  query GetSingleProductPage($slug: String) {
+    product: allSanityProductPage(filter: {slug: {current: {eq: $slug}}}) {
+      nodes {
+        _rawPagebuildersectionarray
+        title
+        slug {
+          current
+        }
+        _id
       }
-      title
+    }
+    sanityFrontpageblock {
       _rawPagebuildersectionarray
     }
   }
