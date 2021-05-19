@@ -10,7 +10,7 @@ const ProductHeroBanner = props => {
       <div className="max-w-6xl sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
         <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
           <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-3/5 sm:px-0sm:items-center lg:items-start lg:mb-0 hero-content">
-            <h2 className="mb-8 md:my-4 md:text-6xl text-5xl  font-bold leading-tight">
+            <h2 className="mb-8 md:my-4 md:text-6xl text-5xl  font-bold tracking-tight-2">
               {props.productbannerheader}
             </h2>
             <h3 className="text-3xl leading-10 font-bold md:mt-5 mb-8">
