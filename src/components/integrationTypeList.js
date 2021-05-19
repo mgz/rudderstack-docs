@@ -10,12 +10,13 @@ const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
 
   return (
     <>
-    <h2 className="text-xl uppercase">Types</h2>
+    <h2 className="text-xl text-blue font-bold leading-7">Types</h2>
     <ul className="list-reset block capitalize items-center">
       {items.map(item => (
-        <li key={item.value} className="p-1 pl-0">
+        <li key={item.value} className="pt-5">
           <a
             href={createURL(item.value)}
+            className="leading-5 text-lg flex items-cente text-secondary"
             // className={item.isRefined ? 'border-solid border-b-2 border-indigo-500 text-indigo-500 pb-1' : '' }
             onClick={event => {
             event.preventDefault();
@@ -26,7 +27,7 @@ const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
             event.preventDefault();
             refine(item.value);
             }} checked={item.isRefined} onChange={e => {}}
-            className="ais-refinement-list--checkbox pr-2" value={item.value} />
+            className="ais-refinement-list--checkbox mr-3 flex items-center" value={item.value} />
             {isFromSearch ? (
               <Highlight attribute="label" hit={item} />
             ) : (

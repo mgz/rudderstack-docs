@@ -3,13 +3,18 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import "../lib/font-awesome"
 import MiddleBanner from "../components/middle-banner"
-
 import ProductHeroBanner from "../components/productHeroBanner"
 import ProductImageWithListOfText from "../components/productImageWithListOfText"
 import LeftRightImgCnt from "../components/left-right-image-content"
-import JoinOurTeam from "../components/joinOurTeam"
+import Testimonial from "../components/testimonial"
+
+
 
 const Products = ({ data, }) => {
+
+  const lv_testimonialsection = (
+  data.sanityFrontpageblock._rawPagebuildersectionarray || []
+).filter(ii => ii._type === "testimonialsection")
   // console.log('graphqldata',data.product)
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
@@ -33,9 +38,11 @@ const Products = ({ data, }) => {
             }
           }
         )}
-        <section className="overflow-hidden">
-          <JoinOurTeam />
+
+        <section id="testimonials">
+          <Testimonial {...lv_testimonialsection[0]} isForDemoPage={true} />
         </section>
+
         <section id="footer_section_for_demo">
           <MiddleBanner {...lv_middlebannersection[0]} />
         </section>

@@ -1,8 +1,22 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import Link from "gatsby-link"
+import Link from "gatsby-link";
 
 function PricePlans() {
+  {/*Pricing Table Header Fixed*/ }
+  const [sticky, setSticky] = useState(true);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  const handleScroll = () => {
+    if ((document.getElementsByClassName("cover-table")[0].offsetHeight + document.getElementsByClassName("cover-table")[0].offsetTop) - window.scrollY > 150) {
+      setSticky(true);
+    } else {
+      setSticky(false)
+    }
+  };
+  {/*Pricing Table Header Fixed*/ }
   return (
     <section className="bg-white plans-section pb-40 md:pb-20">
       <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-8 md:pt-24 md:py-16 text-center">
@@ -10,12 +24,12 @@ function PricePlans() {
           Compare Features by Plan
         </h2>
 
-        <div className="hidden sm:block w-auto overflow-auto max-w-screen-lg m-auto">
-          <table className="sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
+        <div className="sm:block w-auto max-w-screen-lg m-auto">
+          <table className="cover-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
             <thead>
-              <tr className="items-center">
-                <th className="w-1/4 pt-4"></th>
-                <th className="w-1/4 pt-4 text-center text-blueNew-custom text-3xl">
+              <tr>
+                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}></th>
+                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg1.png" alt="Free" />
                   </div>
@@ -27,7 +41,7 @@ function PricePlans() {
                     </span>
                   </div>
                 </th>
-                <th className="w-1/4 pt-4 text-center text-blueNew-custom text-3xl">
+                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg2.png" alt="Pro" />
                   </div>
@@ -39,7 +53,7 @@ function PricePlans() {
                     </span>
                   </div>
                 </th>
-                <th className="w-1/4 pt-4 text-center text-blueNew-custom text-3xl ">
+                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage
                       src="../images/EllipseImg3.png"
