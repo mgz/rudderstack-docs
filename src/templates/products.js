@@ -39,7 +39,7 @@ const Products = ({ data, }) => {
           }
         )}
 
-        <section id="testimonials" className="overflow-hidden">
+        <section id="testimonials">
           <Testimonial {...lv_testimonialsection[0]} isForDemoPage={true} />
         </section>
 
