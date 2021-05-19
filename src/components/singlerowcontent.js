@@ -13,7 +13,6 @@ const Singlerowcontent = ({ hit }) => {
   hit.blog_authors.forEach(row => {
     author_names += (author_names.length > 0 ? ", " : "By ") + row.author_name
   })
-
   return (
     <div
       key="0"

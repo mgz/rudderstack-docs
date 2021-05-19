@@ -43,7 +43,7 @@ const Blog_new = ({ data }) => {
             searchClient={searchClient}
             indexName={process.env.GATSBY_ALGOLIA_BLOGINDEX}
           >
-            <Configure hitsPerPage={13} />
+            <Configure hitsPerPage={10} />
             <div className="flex flex-row  flex-wrap-reverse mt-14 md:mt-32 w-full">
               <div className="flex flex-col w-full lg:w-3/5 justify-center items-start text-center lg:text-left border-grey-500">
                 <CustomMenu attribute="blog_category" />
@@ -121,7 +121,7 @@ export default Blog_new
 
 export const pageQuery = graphql`
   query {
-    allSanityBlog(limit: 13, sort: { fields: [weight], order: [ASC] }) {
+    allSanityBlog(limit: 10, sort: { fields: [weight], order: [ASC] }) {
       pageInfo {
         currentPage
         itemCount

@@ -90,7 +90,7 @@ const serializers = {
       // console.log(children, mark, "block contain")
       //added by Hari on 2021-04-30
       return (
-        <a style={{ color: "#0066FF" }} href={mark.href}>
+        <a className="underline" style={{ color: "#0066FF" }} href={mark.href}>
           {children}
         </a>
       )
