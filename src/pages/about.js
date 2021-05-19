@@ -307,7 +307,7 @@ const About = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="">
+      <section className="overflow-hidden">
       <JoinOurTeam />
       </section>
       <section id="footer_section_for_demo">

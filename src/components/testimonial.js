@@ -33,7 +33,7 @@ const Testimonial = props => {
   const testimonials = props.addtestimonial
   return (
     <>
-      <section class="testimonials testimonials-wrap bg-white py-5 text-primary px-md-5 margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover md:mt-32">
+      <section class="testimonials testimonials-wrap bg-white py-5 text-primary px-md-5 margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover md:mt-32 -mx-2.5">
         <div class="max-w-6xl mx-auto px-4 md:px-3 testimonial-img-wrap">
           <div class="row">
             <div className="block w-full">

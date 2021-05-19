@@ -45,7 +45,7 @@ const Integration = (props) => {
 
             </div>
             <div className="flex items-start flex-col sm:flex-row lg:gap-24">
-              <div className="w-full md:w-1/4 sm:w-1/2 md:px-6 py-6 md:py-0">
+              <div className="w-full md:w-1/4 sm:w-1/2 md:px-6 py-6 md:py-0 mt-24">
                 <div className="bg-white rounded-2xl filter-menu py-10 px-6">
                   <IntegrationTypeMenu attribute='integrationtypes.title' />
                   <div className="mt-8">
@@ -53,7 +53,7 @@ const Integration = (props) => {
                   </div>
                 </div>
               </div>
-              <div className="w-full md:w-3/4 sm:w-1/2 md:px-6 py-6 md:py-0">
+              <div className="w-full md:w-3/4 sm:w-1/2 md:px-6 py-6 md:py-0 mt-24">
                 <div id="hits-container">
                   <div data-reactroot>
                     <IntegrationHits />

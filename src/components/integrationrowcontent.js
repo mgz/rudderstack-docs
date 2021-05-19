@@ -20,16 +20,18 @@ const Integrationrowcontent = ({ hits }) => {
                 <div
                   className="w-full p-6 relative overflow-hidden rounded-2xl flex items-center justify-center bg-white content-box">
                   <div
-                    className="w-full flex-col">
+                    className="w-full flex-col text-center">
+                      <div className="text-blue text-sm text-indigo-700 font-bold">{(hit.integrationcategories !== null ? hit.integrationcategories.title : '')}</div>
                     <div className="relative sm:block">
                       <Link to={hit.slug.current}>
                         <img src={hit.logoimage} alt={hit.title}
                              className="h-full w-full object-cover"
                              loading="eager"/>
                       </Link>
+                     
                     </div>
-                    <div className="flex items-center flex-col justify-center">
-                      <div className="uppercase text-sm text-indigo-700 font-bold">{(hit.integrationcategories !== null ? hit.integrationcategories.title : '')}</div>
+                    <div className="flex">
+                      
                       <h2 className="mt-2 leading-5 text-lg text-secondary font-bold text-center">
                         <Link to={hit.slug.current}>{hit.title}</Link>
                       </h2>
