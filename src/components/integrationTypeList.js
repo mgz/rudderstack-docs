@@ -10,10 +10,10 @@ const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
 
   return (
     <>
-    <h2 className="text-xl text-blue font-bold">Types</h2>
+    <h2 className="text-xl text-blue font-bold leading-7">Types</h2>
     <ul className="list-reset block capitalize items-center">
       {items.map(item => (
-        <li key={item.value} className="pt-4">
+        <li key={item.value} className="pt-5">
           <a
             href={createURL(item.value)}
             className="leading-5 text-lg flex items-cente text-secondary"

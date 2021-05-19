@@ -10,9 +10,9 @@ const Menu = ({items, isFromSearch, refine, searchForItems, createURL}) => {
 
   return (
     <>
-    <h2 className="text-xl text-blue font-bold">Categories</h2>
+    <h2 className="text-xl text-blue font-bold leading-7">Categories</h2>
     <ul className="list-reset block capitalize items-center">
-      <li key="0" className="pt-4">
+      <li key="0" className="pt-5">
         <a
           href={createURL('')}
           className={!selected ? 'leading-5 text-lg flex items-center text-secondary' : ''}
