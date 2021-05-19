@@ -37,7 +37,7 @@
 }
 .block-description p a
 {
-  color: #000 !important;
+  /* color: #000; */
   @apply font-bold;
 }
 .block-description figure,
