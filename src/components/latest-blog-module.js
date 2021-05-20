@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { format } from "date-fns"
 import Link from "gatsby-link"
+import { useLocation } from '@reach/router';
 
 const categories = {
   technical: "Technical",
@@ -33,7 +34,7 @@ const BlogModule = () => {
       }
     }
   `)
-
+  const location = useLocation();
   const latestblogs = data.allSanityBlog.edges
 
   return (
@@ -46,7 +47,7 @@ const BlogModule = () => {
         return (
           <div className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full">
             <a
-              href={`blog/` + latestblog.node.slug}
+              href={ `${location.origin}/blog/` + latestblog.node.slug}
               className="block bg-white rounded-t rounded-b-none overflow-hidden shadow relative h-full"
             >
               <img

@@ -86,9 +86,7 @@ const Blog_new = ({ data }) => {
             </div>
 
             {currentRefineHitsCount === 0 && (
-              <div className="">
-                <BlogNotFound SearchText={currentRefineText} />
-              </div>
+              <BlogNotFound SearchText={currentRefineText} />
             )}
           </InstantSearch>
           {currentRefineHitsCount > 0 && (
