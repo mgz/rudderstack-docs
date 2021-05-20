@@ -24,7 +24,7 @@ const Singleblog = ({ data, ...props }) => {
   const maintitle = props.maintitle
   const viewalltext = "See all posts"
   const viewallpostslink = "https://rudderstack.com/blog/"
-  const viewexternallink = true
+  const viewexternallink = false
   // const [items] = useState([1, 2]); {/*Array Blog Author For Test Purpose*/ }
 
   let author_names = ""
