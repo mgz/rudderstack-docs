@@ -39,7 +39,7 @@ const CloudDesktop = ({ data }) => {
               <p className="text-white text-lg leading-6 lg:pr-36">Build customer data pipelines that connect your whole stack, then make them smarter by ingesting and activating enriched data from your warehouse.</p>
               <p className="text-white text-lg leading-6 lg:pr-40 mt-8">Start with RudderStack Cloud Free today and send up to 500,000 events per month. No credit card required, no time limit.</p>
               <div class="block sm:flex justify-center items-center mt-12">
-                <a class="btn-primary-lg bg-white text-primary sm:mr-4 md:mb-0 mb-6" href="#">Sign up for free</a>
+                <a class="btn-primary-lg bg-white text-primary sm:mr-4 md:mb-0 mb-6" href="https://app.rudderstack.com/signup?type=freetrial">Sign up for free</a>
                 <a class="btn-secondary-lg sm:mr-4 md:mb-0 mb-4" href="/request-demo">Get a demo</a>
               </div>
             </div>
@@ -121,7 +121,7 @@ const CloudDesktop = ({ data }) => {
               </div>
               <div class="flex items-center">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                  <a href="https://rudderstack.com/integration/">More about Event Stream</a>
+                  <a href="#/">More about Event Stream</a>
                 </span>
               </div>
             </div>
@@ -142,7 +142,7 @@ const CloudDesktop = ({ data }) => {
               </div>
               <div class="flex items-center mt-4">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                  <a href="https://rudderstack.com/integration/">More about Cloud Extract </a>
+                  <a href="#">More about Cloud Extract </a>
                 </span>
               </div>
             </div>
@@ -169,7 +169,7 @@ const CloudDesktop = ({ data }) => {
               </div>
               <div class="flex items-center">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                  <a href="https://rudderstack.com/integration/">More about Warehouse Actions</a>
+                  <a href="#">More about Warehouse Actions</a>
                 </span>
               </div>
             </div>
@@ -196,7 +196,7 @@ const CloudDesktop = ({ data }) => {
                   <div class="text-grayColor-custom text-lg"><p>Write custom JavaScript to transform and enrich your data as it passes through RudderStack. Use cases range from PII masking to enrichment.</p></div>
                   <div class="flex items-center mt-8">
                     <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="https://rudderstack.com/integration/">More from Rudderstack docs</a>
+                      <a href="#">More from Rudderstack docs</a>
                     </span>
                   </div>
                 </div>
@@ -210,7 +210,7 @@ const CloudDesktop = ({ data }) => {
                   <div class="text-grayColor-custom text-lg"><p>Diagnose and fix data consistency issues with easy access to your events and their metadata.</p></div>
                   <div class="flex items-center mt-8">
                     <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="https://rudderstack.com/integration/">More from Rudderstack docs</a>
+                      <a href="#">More from Rudderstack docs</a>
                     </span>
                   </div>
                 </div>
@@ -224,7 +224,7 @@ const CloudDesktop = ({ data }) => {
                   <div class="text-grayColor-custom text-lg"><p>Take the work out of use cases like customer journey analysis and sessionization.</p></div>
                   <div class="flex items-center mt-8">
                     <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="https://rudderstack.com/integration/">More from Rudderstack docs</a>
+                      <a href="#">More from Rudderstack docs</a>
                     </span>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ const CloudDesktop = ({ data }) => {
                   <div class="text-grayColor-custom text-lg"><p>Get full visibility into the health of your infrastructure via pre-configured Grafana dashboards.</p></div>
                   <div class="flex items-center mt-8">
                     <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="https://rudderstack.com/integration/">More from Rudderstack docs</a>
+                      <a href="#">More from Rudderstack docs</a>
                     </span>
                   </div>
 
