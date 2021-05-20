@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Herobanner from "../components/herobanner"
 import PortableText from "../components/portableText"
@@ -33,6 +34,15 @@ const Singleblog = ({ data, ...props }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{blog.meta_title || blog.title}</title>
+        <meta property="og:title" content={blog.meta_title || blog.title} />
+        <meta property="twitter:title" content={blog.meta_title || blog.title} />
+        <meta name="description" content={blog.meta_desc} />
+        <meta property="og:description" content={blog.meta_desc} />
+        <meta property="twitter:description" content={blog.meta_desc} />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <div className="blog_banner">
         <Herobanner
           title={blog.title}
@@ -172,6 +182,8 @@ export const query = graphql`
       blog_category
       title
       slug
+      meta_title
+      meta_desc
       _rawDescription
       blogdate(formatString: "MMMM DD, Y")
       blog_authors {
