@@ -15,35 +15,37 @@
   font-family: "Basis Grotesque";
 }
 .block-description h2 {
-  @apply text-2xl;
+  @apply text-3xl;
   @apply font-bold;
   @apply mt-20;
 }
-.block-description div > h2:first-child
+.block-description div > h2:first-child,
+.block-description div > h3:first-child
 {
-  @apply mt-6;
+  @apply mt-8;
 }
 .block-description h3 {
   @apply mt-20;
-  @apply text-xl;
+  @apply text-2xl;
   @apply font-bold;
+  @apply leading-7
 }
 .block-description p
 {
-  @apply mt-7;
+  @apply mt-10;
   @apply text-lg;
-  @apply leading-6;
+  @apply leading-5;
   @apply flex-wrap;
 }
-.block-description p a
+/* .block-description p a
 {
-  /* color: #000; */
+ 
   @apply font-bold;
-}
+} */
 .block-description figure,
 .block-description iframe
 {
-  @apply mt-7;
+  @apply mt-10;
 }
 .block-description ol,
 .block-description ul {
@@ -53,7 +55,7 @@
   @apply mt-0;
 }
 .block-description li {
-  @apply mt-3;
+  @apply mt-7;
   @apply block ;
   @apply relative;
   @apply pl-8;
@@ -78,6 +80,11 @@
 .block-description li li::before
 {
   content: none;
+}
+
+.block-description code
+{
+  @apply break-all;
 }
 @media (min-width: 992px)
 {

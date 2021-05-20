@@ -42,7 +42,7 @@ const Singleblog = ({ data, ...props }) => {
       </div>
       <div className="block-description relative pt-16 max-w-4xl m-auto px-4 md:px-12">
         {/*Blog Content*/}
-        <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-24 top-0 lg:left-0 md:left-4">
+        <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-24 mt-3 top-0 lg:left-0 md:left-4">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
             <a className="block" href="#">
               <img src={BlogTwitter} alt="twitter" />
@@ -98,7 +98,7 @@ const Singleblog = ({ data, ...props }) => {
       <section className="bg-white pb-0">
         {/*Blog Post*/}
         <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap pt-3 pb-12">
-          <h3 className="w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-12">
+          <h3 className="tracking-tight-2 w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-12">
             Recent Posts
           </h3>
           <BlogModule />
@@ -124,12 +124,12 @@ const Singleblog = ({ data, ...props }) => {
       <section className="bg-backgroundsecondary 100% left-right-section">
         {/*Sign Up Section*/}
         <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
-          <div className="sm:w-1/2 sm:p-6 sm:pl-0 md:pr-20">
-            <p className="mt-20 mb-2 text-blue text-sm uppercase">SIGN UP</p>
-            <h3 className="text-3xl text-primary font-bold leading-tight">
+          <div className="sm:w-1/2 sm:p-6 sm:pl-0 md:pr-12">
+            <p className="mt-4 sm:mt-0 text-blue text-sm uppercase">SIGN UP</p>
+            <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
               Explore RudderStack Today
             </h3>
-            <p className="text-secondary leading-7 text-sm sm:text-lg mt-7 mb-10">
+            <p className="text-secondary leading-7 text-sm sm:text-lg mb-8">
               Our Free plan includes 500,000 events per month so you can explore
               and test the product. Install an SDK, connect a destination, and
               see data start to flow.
@@ -137,7 +137,7 @@ const Singleblog = ({ data, ...props }) => {
 
             <button className="btn-primary-lg">Sign up free</button>
           </div>
-          <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0">
+          <div className="w-full sm:w-1/2 sm:pt-16 sm:pb-20 lg:pl-28">
             <img src={BlogHeroChart} alt="Data Masking" className="w-full" />
           </div>
         </div>
