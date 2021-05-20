@@ -29,7 +29,8 @@ const SearchBox = ({
       <div className="absolute top-0 right-0 rounded-r-lg bg-blueNew-custom  hover:bg-blueNew-textblue w-12">
         <FontAwesomeIcon
           icon={faSearch}
-          size="sm"
+          // size="sm"
+          style={{fontSize:'18px'}}
           className="h-11 text-white pt-2 py-2"
         />
       </div>

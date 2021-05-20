@@ -34,7 +34,7 @@
 {
   @apply mt-10;
   @apply text-lg;
-  @apply leading-5;
+  @apply leading-6;
   @apply flex-wrap;
 }
 /* .block-description p a

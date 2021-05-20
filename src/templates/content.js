@@ -135,7 +135,7 @@ const Singleblog = ({ data, ...props }) => {
               see data start to flow.
             </p>
 
-            <button className="btn-primary-lg">Sign up free</button>
+            <a className="btn-primary-lg cursor-pointer w-full sm:w-44" href={"https://app.rudderstack.com/signup"}>Sign up free</a>
           </div>
           <div className="w-full sm:w-1/2 sm:pt-16 sm:pb-20 lg:pl-28">
             <img src={BlogHeroChart} alt="Data Masking" className="w-full" />

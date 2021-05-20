@@ -10,7 +10,7 @@ const Subscription = () => {
 
   const formSubmitted = e => {
     e.preventDefault()
-
+    // console.log('on form submit -> 1')
     setFormSubmittedSuccessfully(false)
 
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -24,7 +24,6 @@ const Subscription = () => {
     if (!window.rudderanalytics) {
       return
     }
-
     const params = new URLSearchParams(document.location.search.substring(1))
 
     window.rudderanalytics.identify(
@@ -68,7 +67,7 @@ const Subscription = () => {
         },
       }
     )
-
+    setEmail("")
     setFormSubmittedSuccessfully(true)
   }
 
@@ -85,8 +84,7 @@ const Subscription = () => {
       <div className="flex-grow text-left mt-0 sm:mt-0 pt-4 px-0 md:pl-12 ">
         <div className="mb-2">
           <p className="text-sm md:text-lg text-grayColor-custom">
-            We'll send you updates from the blog and monthly release
-            notes.
+            We'll send you updates from the blog and monthly release notes.
           </p>
           <form
             action="/"
@@ -102,7 +100,7 @@ const Subscription = () => {
                   name="email"
                   value={email}
                   size={40}
-                  className="mt-6 w-full md:w-auto rounded border border-grayColor-lighter p-2"
+                  className="mt-6 w-full md:w-auto  rounded border border-grayColor-lighter p-2"
                   id="email"
                   aria-required="true"
                   aria-invalid="false"
@@ -128,13 +126,13 @@ const Subscription = () => {
               <input
                 type="submit"
                 defaultValue="Subscribe"
-                className="mt-4 rounded-lg text-whiteColor-custom bg-black-custom text-sm py-2 px-8 w-full md:w-auto"
+                className="mt-4 rounded-lg text-whiteColor-custom bg-black-custom text-sm py-2 px-8 w-full md:w-auto hover:bg-blueNew-custom cursor-pointer"
                 onClick={e => formSubmitted(e)}
               />
               <span className="ajax-loader" />
             </p>
             {formSubmittedSuccessfully && (
-              <div className="" role="alert" aria-hidden="true">
+              <div className="text-blueNew-custom" role="alert" aria-hidden="true">
                 Thank you for subscribing to our blog.
               </div>
             )}
