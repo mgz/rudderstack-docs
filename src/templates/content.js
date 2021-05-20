@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Herobanner from "../components/herobanner"
 import PortableText from "../components/portableText"
 import BlogModule from "../components/latest-blog-module"
+import Image from "../components/image"
 import Link from "gatsby-link"
 import Subscription from "../components/Subscription"
 import BlogHeroChart from "../images/blog-hero_chart.svg"
@@ -73,11 +74,18 @@ const Singleblog = ({ data, ...props }) => {
                 className="my-8 py-12 px-8 bg-blueNew-lighter rounded-2xl bg-opacity-50 flex items-center mx-auto pb-10 mb-10 sm:flex-row flex-col"
               >
                 <div className="sm:w-32 sm:h-32 h-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
-                  <img
+                  {/* <div className= "rounded-full"> */}
+                    <Image
+                      props={item.author_image.asset._id}
+                      classes="w-24 h-24 rounded-full"
+                    />
+                  {/* </div> */}
+
+                  {/* <img
                     alt="author"
                     src={item.author_image.asset.fluid.src}
                     className="w-24 h-24 rounded-full"
-                  />
+                  /> */}
                 </div>
                 <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                   <div className="text-xs font-bold uppercase text-blueNew-category">
@@ -135,7 +143,12 @@ const Singleblog = ({ data, ...props }) => {
               see data start to flow.
             </p>
 
-            <a className="btn-primary-lg cursor-pointer w-full sm:w-44" href={"https://app.rudderstack.com/signup"}>Sign up free</a>
+            <a
+              className="btn-primary-lg cursor-pointer w-full sm:w-44"
+              href={"https://app.rudderstack.com/signup"}
+            >
+              Sign up free
+            </a>
           </div>
           <div className="w-full sm:w-1/2 sm:pt-16 sm:pb-20 lg:pl-28">
             <img src={BlogHeroChart} alt="Data Masking" className="w-full" />
@@ -166,6 +179,7 @@ export const query = graphql`
         author_desc
         author_image {
           asset {
+            _id
             fluid {
               src
             }
