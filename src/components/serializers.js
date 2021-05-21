@@ -54,7 +54,11 @@ const serializers = {
       // console.log('you tube',node)
       const { url } = node
       const id = getYouTubeId(url)
-      return <YouTube key={node._key} videoId={id} />
+      return (
+        <div class="iframe-container">
+          <YouTube key={node._key} className="video" videoId={id} />
+        </div>
+      )
     },
     image_with_addons: ({ node }) => <ImageWithAddons data={node} />,
     embed_audio: ({ node }) => {
