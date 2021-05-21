@@ -23,7 +23,7 @@ const SearchBox = ({
         className="border border-grayColor-lighter bg-white h-12 px-5 pr-16 rounded-lg text-sm focus:outline-none w-full"
         onChange={event => {
           refine(event.currentTarget.value)
-          // onRefineTextChange(event.currentTarget.value)
+          onRefineTextChange(event.currentTarget.value)
         }}
       />
       <div className="absolute top-0 right-0 rounded-r-lg bg-blueNew-custom  hover:bg-blueNew-textblue w-12">

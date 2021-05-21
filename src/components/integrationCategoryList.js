@@ -1,10 +1,28 @@
-import React, { useState } from "react"
-import { Highlight, connectMenu } from "react-instantsearch-dom"
+import React, { useEffect, useState } from "react"
+import {
+  Highlight,
+  connectMenu,
+  connectRefinementList,
+} from "react-instantsearch-dom"
 //import { graphql } from "gatsby"
 
-const Menu = ({ items, isFromSearch, refine, searchForItems, createURL }) => {
-  const [selectedCategories, setSelectedCategories] = useState([])
-  // console.log("itms", items)
+const CustomIntegrationCategoryTypeList = ({
+  items,
+  currentRefinement,
+  refine,
+  isFromSearch,
+  searchForItems,
+  createURL,
+}) => {
+  const [isAllSelected, setIsAllSelected] = useState(true)
+
+  useEffect(() => {
+    if (currentRefinement && currentRefinement.length > 0) {
+      setIsAllSelected(false)
+    } else {
+      setIsAllSelected(true)
+    }
+  }, [currentRefinement])
 
   return (
     <div className="tab">
@@ -25,16 +43,20 @@ const Menu = ({ items, isFromSearch, refine, searchForItems, createURL }) => {
           <a
             className="leading-5 text-lg flex items-cente text-secondary"
             onClick={event => {
-              refine()
+              setIsAllSelected(true)
+              refine([])
             }}
           >
             <input
               type="checkbox"
               onClick={event => {}}
-              checked={false}
-              onChange={e => {}}
+              checked={isAllSelected}
+              onChange={e => {
+                setIsAllSelected(true)
+                refine([])
+              }}
               className="ais-refinement-list--checkbox mr-3"
-              value={"ALL"}
+              value={isAllSelected}
             />
             All Categories
           </a>
@@ -75,6 +97,8 @@ const Menu = ({ items, isFromSearch, refine, searchForItems, createURL }) => {
   )
 }
 
-const IntegrationCategoryMenu = connectMenu(Menu)
+const IntegrationCategoryMenu = connectRefinementList(
+  CustomIntegrationCategoryTypeList
+)
 
 export default IntegrationCategoryMenu
