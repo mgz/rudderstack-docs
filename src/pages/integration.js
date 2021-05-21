@@ -10,6 +10,9 @@ import IntegrationTypeMenu from "../components/integrationTypeList";
 import { InstantSearch } from 'react-instantsearch-dom';
 import IntegrationHits from "../components/integrationHits"
 import IntegrationsHelpBox from "../components/Integrations-help"
+import ScrollUpButton from "react-scroll-up-button";
+import ScrollTopBtn from "../images/float-btn.svg"
+
 
 
 const Integration = (props) => {
@@ -68,6 +71,16 @@ const Integration = (props) => {
             </div>
           </div>
         </InstantSearch>
+      </div>
+
+      <div>
+      <ScrollUpButton 
+     ContainerClassName="floatbtncoantiner"
+     TransitionClassName="floatbtnanimation"
+     ShowAtPosition={500}
+      >
+      <img src={ScrollTopBtn} alt="Source Integration" className="w-full" />
+      </ScrollUpButton>
       </div>
       </div>
     </Layout>
