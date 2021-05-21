@@ -55,7 +55,7 @@ const serializers = {
       const { url } = node
       const id = getYouTubeId(url)
       return (
-        <div class="iframe-container">
+        <div class="iframe-container mb-20 md:mb-0">
           <YouTube key={node._key} className="video" videoId={id} />
         </div>
       )
