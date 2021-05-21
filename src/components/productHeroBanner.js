@@ -5,6 +5,7 @@ import VideoPlayBtn from "../images/video_play-btn.svg"
 import Link from "gatsby-link"
 
 const ProductHeroBanner = props => {
+  
   return (
     <section className="w-full product-page_banner text-white lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
       <div className="max-w-6xl sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
