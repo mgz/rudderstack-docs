@@ -46,8 +46,8 @@ const BlogModule = () => {
         })
         return (
           <div className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full">
-            <a
-              href={ `${location.origin}/blog/` + latestblog.node.slug}
+            <Link
+              to={`/blog/` + latestblog.node.slug}
               className="block bg-white rounded-t rounded-b-none overflow-hidden shadow relative h-full"
             >
               <img
@@ -66,7 +66,7 @@ const BlogModule = () => {
               <div className="text-blueNew-category text-sm px-5 font-bold absolute bottom-6">
                 {author_names}
               </div>
-            </a>
+            </Link>
           </div>
         )
       })}
