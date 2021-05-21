@@ -56,6 +56,9 @@ const SourceIntegration = ({ data }) => {
             <h3 className="md:mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">What You Can Do with JavaScript SDK Source</h3>
           </div>
           <div className="flex items-center flex-wrap flex-col-reverse sm:flex-row mt-6 md:mt-16">
+
+            
+
             <div className="w-full sm:w-1/2  sm:p-6 sm:pl-0 mt-12 sm:mt-0">
 
             </div>

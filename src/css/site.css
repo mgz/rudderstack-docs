@@ -396,6 +396,20 @@ top: -60px;
   @apply border-solid;
   border-color: #E1E1E1;
 }
+
+.floatbtncoantiner {
+  position: fixed;
+  right: -100px;
+  bottom: 150px;
+  transition: right 0.5s;
+  cursor: pointer;
+  display: none;
+}
+
+.floatbtnanimation {
+  right: 20px;
+}
+
 /*Integration Page Css*/
 
 @media only screen and (min-width: 1023px) {
@@ -478,6 +492,50 @@ top: -60px;
 }
 
 } 
+
+
+@media only screen and (max-width:639px)
+{
+    /*Integration Page Css*/
+    .floatbtncoantiner 
+    {
+      display: block;
+    }
+    /* Tab content - closed */
+  .tab-content {
+    max-height: 0;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+    }
+    /* :checked - resize to full height */
+    .tab input:checked ~ .tab-content {
+    max-height: 100vh;
+    }
+    /* Icon */
+    .tab label
+    {
+      cursor: pointer;
+    }
+    .tab label::after {
+    float:right;
+    right: 0;
+    top: 0;
+    display: block;
+    -webkit-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+    }
+    /* Icon formatting - closed */
+    .tab input[type=checkbox] + label::after {
+    content: url("../images/chevron-down.svg");
+    }
+    /* Icon formatting - open */
+    .tab input[type=checkbox]:checked + label::after {
+    transform: rotate(180deg);
+    }
+}
+
 @media only screen and (max-width: 500px) {
   .about-us-banner {
     background: none;
@@ -492,6 +550,8 @@ top: -60px;
     background-image: none;
     background-repeat: no-repeat;
   }
+  
+
 }
 
 @media only screen and (max-width:480px)
@@ -507,3 +567,4 @@ top: -60px;
 }
 
 }
+
