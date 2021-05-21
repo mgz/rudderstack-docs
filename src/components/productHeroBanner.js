@@ -31,7 +31,8 @@ const ProductHeroBanner = props => {
                           className={
                             (btn.btnhiglight === true
                               ? "bg-white text-primary btn-primary-lg"
-                              : "btn-secondary-lg hover:bg-blueNew-custom") + ` sm:mr-4 md:mb-0 mb-6`
+                              : "btn-secondary-lg hover:bg-blueNew-custom") +
+                            ` sm:mr-4 md:mb-0 mb-6`
                           }
                           href={btn.btnlink}
                         >
@@ -45,7 +46,8 @@ const ProductHeroBanner = props => {
                           className={
                             (btn.btnhiglight === true
                               ? "bg-white text-primary btn-primary-lg"
-                              : "btn-secondary-lg hover:bg-blueNew-custom") + ` sm:mr-4 md:mb-0 mb-4`
+                              : "btn-secondary-lg hover:bg-blueNew-custom") +
+                            ` sm:mr-4 md:mb-0 mb-4`
                           }
                         >
                           <Link to={btn.btnlink}>{btn.btntext}</Link>
@@ -58,16 +60,24 @@ const ProductHeroBanner = props => {
             </div>
           </div>
 
-          <div className="relative w-full px-5 rounded-lg flex-grow justify-items-end lg:w-2/5 sm:px-0 sm:items-center lg:items-start lg:mb-0">
-            <div class="relative rounded-md sm:px-0 items-center flex justify-center bg-white product-video">
-              <img src={ProductVideo} alt="Product Video" className="w-full" />
+          <div className="relative w-full rounded-lg flex-grow justify-items-end lg:w-2/5 px-0 sm:items-center lg:items-start lg:mb-0">
+            <div class="relative rounded-md px-0 items-center flex justify-center bg-white product-video h-auto  sm:h-80">
+              <iframe
+                src={props.productbanneryoutubeambed.url}
+                frameborder="0"
+                className="w-full h-full"
+                allow="autoplay; encrypted-media"
+                allowfullscreen
+                title="video"
+              />
+              {/* <img src={ProductVideo} alt="Product Video" className="w-full" />
               <button className="absolute left-0 right-0 mx-auto" type="button">
                 <img
                   src={VideoPlayBtn}
                   alt="Product Video"
                   className="w-full"
                 />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
