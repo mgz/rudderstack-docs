@@ -417,8 +417,24 @@ top: -60px;
   right: 20px;
 }
 
-/*Integration Page Css*/
-
+/*Source Integration Page Css*/
+.what-can-do::before
+{
+  @apply absolute;
+  content: "";
+  background-image: url('../images/line-arrow-right.svg');
+  background-repeat: no-repeat;
+  @apply bg-center;
+  @apply w-5;
+  @apply h-5;
+  @apply top-1.5;
+  @apply left-0;
+}
+.int-img 
+{
+  background-color: #EEF4F5;
+  min-height: 220px;
+}
 @media only screen and (min-width: 1023px) {
   .menu li.has-submenu:hover a:after {
     transform: rotate(225deg);

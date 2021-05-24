@@ -39,13 +39,13 @@ const CloudDesktop = ({ data }) => {
               <h3 className="text-3xl leading-10 font-bold md:mt-5 mb-8">The complete customer data stack</h3>
               <p className="text-white text-lg leading-6 lg:pr-36">Build customer data pipelines that connect your whole stack, then make them smarter by ingesting and activating enriched data from your warehouse.</p>
               <p className="text-white text-lg leading-6 lg:pr-40 mt-8">Start with RudderStack Cloud Free today and send up to 500,000 events per month. No credit card required, no time limit.</p>
-              <div class="block sm:flex justify-center items-center mt-12">
-                <a class="btn-primary-lg bg-white text-primary sm:mr-4 md:mb-0 mb-6" href="https://app.rudderstack.com/signup?type=freetrial">Sign up for free</a>
-                <a class="btn-secondary-lg sm:mr-4 md:mb-0 mb-4" href="/request-demo">Get a demo</a>
+              <div className="block sm:flex justify-center items-center mt-12">
+                <a className="btn-primary-lg bg-white text-primary sm:mr-4 md:mb-0 mb-6" href="https://app.rudderstack.com/signup?type=freetrial">Sign up for free</a>
+                <a className="btn-secondary-lg sm:mr-4 md:mb-0 mb-4" href="/request-demo">Get a demo</a>
               </div>
             </div>
             <div className="relative w-full px-5 rounded-lg flex-grow justify-items-end lg:w-2/5 sm:px-0 sm:items-center lg:items-start lg:mb-0">
-              <div class="relative rounded-md sm:px-0 items-center flex justify-center bg-white product-video">
+              <div className="relative rounded-md sm:px-0 items-center flex justify-center bg-white product-video">
                 <img src={ProductVideo} alt="Product Video" className="w-full" />
                 <div className="absolute left-0 right-0 mx-auto z-0">
                   <img src={VideoChart} alt="Product Video" className="w-100 p-20 mx-auto" />
@@ -58,16 +58,16 @@ const CloudDesktop = ({ data }) => {
       </section>{/*banner*/}
       <section>{/*Advantage*/}
         <div className="w-full">
-          <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-28 flex flex-col justify-center text-center">
-            <div class="sm:mb-24 mb-10"><span class="text-3xl md:text-5xl font-bold">The RudderStack Advantage</span></div>
+          <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-20 flex flex-col justify-center text-center">
+            <div className="sm:mb-24 mb-10"><span className="text-3xl md:text-5xl font-bold">The RudderStack Advantage</span></div>
             <div className="flex flex-wrap flex-row">
               <div className="w-full sm:w-1/2">
                 <div className="flex flex-col justify-center items-center text-center mx-7 mb-20">
                   <div className="m-2">
                     <img src={WareHouse} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div class="text-2xl-2 font-bold mb-6">Warehouse-first</div>
-                  <div class="text-grayColor-custom text-lg"><p>No more silos! RudderStack builds your customer data lake on your data warehouse, giving you all the functionality of a CDP while you maintain full ownership of your data.</p></div>
+                  <div className="text-2xl-2 font-bold mb-6">Warehouse-first</div>
+                  <div className="text-grayColor-custom text-lg"><p>No more silos! RudderStack builds your customer data lake on your data warehouse, giving you all the functionality of a CDP while you maintain full ownership of your data.</p></div>
                 </div>
               </div>
               <div className="w-full sm:w-1/2">
@@ -75,8 +75,8 @@ const CloudDesktop = ({ data }) => {
                   <div className="m-2">
                     <img src={OpenSource} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div class="text-2xl-2 font-bold mb-6">Open-source</div>
-                  <div class="text-grayColor-custom text-lg"><p>We're open-source and API-first, so RudderStack can be easily integrated into your existing development processes. You can see all of our code, so you don’t have to worry about vendor lock-in or black-boxes.</p></div>
+                  <div className="text-2xl-2 font-bold mb-6">Open-source</div>
+                  <div className="text-grayColor-custom text-lg"><p>We're open-source and API-first, so RudderStack can be easily integrated into your existing development processes. You can see all of our code, so you don’t have to worry about vendor lock-in or black-boxes.</p></div>
                 </div>
               </div>
               <div className="w-full px-0 sm:px-12 lg:px-40">
@@ -84,8 +84,8 @@ const CloudDesktop = ({ data }) => {
                   <div className="m-2">
                     <img src={Pricing} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div class="text-2xl-2 font-bold mb-6">Transparent pricing</div>
-                  <div class="text-grayColor-custom text-lg">
+                  <div className="text-2xl-2 font-bold mb-6">Transparent pricing</div>
+                  <div className="text-grayColor-custom text-lg">
                     <p>Stop paying your CDP a premium to store your data. RudderStack’s warehouse-first architecture is efficient, because we don’t have to own storage of your data. This means we don’t need to build and maintain components most products do - like a big, elastic database - so we don’t have to charge for them.</p>
                     <p className="mt-5">RudderStack is free up to 500,000 events and our usage-based pricing scales transparently from there.</p>
                   </div>
@@ -120,9 +120,9 @@ const CloudDesktop = ({ data }) => {
                   <li className="text-sm sm:text-lg relative pl-8 pb-3">Segment source and destination (for simple migration)</li>
                 </ul>
               </div>
-              <div class="flex items-center">
-                <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                  <a href="https://resources.rudderstack.com/rudderstack-cloud?_ga=2.201464209.1437852951.1618311746-1836483757.1616824969">More about Event Stream</a>
+              <div className="flex items-center">
+                <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                  <a href="#/">More about Event Stream</a>
                 </span>
               </div>
             </div>
@@ -141,9 +141,9 @@ const CloudDesktop = ({ data }) => {
               <div className="text-secondary leading-7 text-sm sm:text-lg">
                 <p>Cloud Extract goes beyond event streaming. It enables you to build cloud-to-warehouse ELT pipelines from popular cloud applications like Salesforce, ZenDesk, and Customer.io (even Google Sheets) to your data warehouse, so you can use all of your customer data.</p>
               </div>
-              <div class="flex items-center mt-4">
-                <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                  <a href="https://rudderstack.com/blog/rudderstack-cloud-extract-makes-cloud-to-warehouse-pipelines-easy">More about Cloud Extract </a>
+              <div className="flex items-center mt-4">
+                <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                  <a href="#">More about Cloud Extract </a>
                 </span>
               </div>
             </div>
@@ -168,9 +168,9 @@ const CloudDesktop = ({ data }) => {
                   <li className="text-sm sm:text-lg relative pl-8 pb-3">Configurable sync schedule</li>
                 </ul>
               </div>
-              <div class="flex items-center">
-                <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                  <a href="https://rudderstack.com/blog/rudderstack-warehouse-actions-unlocks-the-data-in-your-warehouse/">More about Warehouse Actions</a>
+              <div className="flex items-center">
+                <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                  <a href="#">More about Warehouse Actions</a>
                 </span>
               </div>
             </div>
@@ -193,11 +193,11 @@ const CloudDesktop = ({ data }) => {
                   <div className="h-20">
                     <img src={Transformations} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div class="text-2xl-2 font-bold mb-6 mt-2">Transformations</div>
-                  <div class="text-grayColor-custom text-lg"><p>Write custom JavaScript to transform and enrich your data as it passes through RudderStack. Use cases range from PII masking to enrichment.</p></div>
-                  <div class="flex items-center mt-8">
-                    <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="https://docs.rudderstack.com/">More from Rudderstack docs</a>
+                  <div className="text-2xl-2 font-bold mb-6 mt-2">Transformations</div>
+                  <div className="text-grayColor-custom text-lg"><p>Write custom JavaScript to transform and enrich your data as it passes through RudderStack. Use cases range from PII masking to enrichment.</p></div>
+                  <div className="flex items-center mt-8">
+                    <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                      <a href="#">More from Rudderstack docs</a>
                     </span>
                   </div>
                 </div>
@@ -207,11 +207,11 @@ const CloudDesktop = ({ data }) => {
                   <div className="h-20">
                     <img src={DataAPI} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div class="text-2xl-2 font-bold mb-6 mt-2">Data Governance API</div>
-                  <div class="text-grayColor-custom text-lg"><p>Diagnose and fix data consistency issues with easy access to your events and their metadata.</p></div>
-                  <div class="flex items-center mt-8">
-                    <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="https://docs.rudderstack.com/">More from Rudderstack docs</a>
+                  <div className="text-2xl-2 font-bold mb-6 mt-2">Data Governance API</div>
+                  <div className="text-grayColor-custom text-lg"><p>Diagnose and fix data consistency issues with easy access to your events and their metadata.</p></div>
+                  <div className="flex items-center mt-8">
+                    <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                      <a href="#">More from Rudderstack docs</a>
                     </span>
                   </div>
                 </div>
@@ -221,11 +221,11 @@ const CloudDesktop = ({ data }) => {
                   <div className="h-20">
                     <img src={DbtModals} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div class="text-2xl-2 font-bold mb-6 mt-2">Pre-built DBT models</div>
-                  <div class="text-grayColor-custom text-lg"><p>Take the work out of use cases like customer journey analysis and sessionization.</p></div>
-                  <div class="flex items-center mt-8">
-                    <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="https://docs.rudderstack.com/">More from Rudderstack docs</a>
+                  <div className="text-2xl-2 font-bold mb-6 mt-2">Pre-built DBT models</div>
+                  <div className="text-grayColor-custom text-lg"><p>Take the work out of use cases like customer journey analysis and sessionization.</p></div>
+                  <div className="flex items-center mt-8">
+                    <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                      <a href="#">More from Rudderstack docs</a>
                     </span>
                   </div>
                 </div>
@@ -235,11 +235,11 @@ const CloudDesktop = ({ data }) => {
                   <div className="h-20">
                     <img src={Grafana} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div class="text-2xl-2 font-bold mb-6 mt-2">Grafana Dashboards</div>
-                  <div class="text-grayColor-custom text-lg"><p>Get full visibility into the health of your infrastructure via pre-configured Grafana dashboards.</p></div>
-                  <div class="flex items-center mt-8">
-                    <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="https://docs.rudderstack.com/">More from Rudderstack docs</a>
+                  <div className="text-2xl-2 font-bold mb-6 mt-2">Grafana Dashboards</div>
+                  <div className="text-grayColor-custom text-lg"><p>Get full visibility into the health of your infrastructure via pre-configured Grafana dashboards.</p></div>
+                  <div className="flex items-center mt-8">
+                    <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                      <a href="#">More from Rudderstack docs</a>
                     </span>
                   </div>
 
@@ -257,8 +257,8 @@ const CloudDesktop = ({ data }) => {
                 Integrate your entire stack
             </h2>
               <p className="text-secondary leading-7 text-sm sm:text-lg py-6">Rudderstack supports 100+ out of the box integrations, and we add more every month. Connect your customer data to all the tools your team uses to drive growth. Spend less time on vendor SDK implementations and third-party code management.</p>
-              <div class="flex items-center">
-                <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+              <div className="flex items-center">
+                <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
                   <a href="https://rudderstack.com/integration/">See all integrations</a>
                 </span>
               </div>

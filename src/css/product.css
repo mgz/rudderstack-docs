@@ -3,7 +3,8 @@
 {
   @apply absolute;
   content: "";
-  background: url('../images/blue-check.svg');
+  background-image: url('../images/blue-check.svg');
+  background-repeat: no-repeat;
   @apply bg-center;
   @apply w-5;
   @apply h-5;
@@ -45,6 +46,7 @@
     @apply absolute;
     content: "";
     background: url('../images/blue-check.svg');
+    background-repeat: no-repeat;
     @apply bg-center;
     @apply w-5;
     @apply h-5;
