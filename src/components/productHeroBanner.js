@@ -5,7 +5,6 @@ import VideoPlayBtn from "../images/video_play-btn.svg"
 import Link from "gatsby-link"
 
 const ProductHeroBanner = props => {
-  
   return (
     <section className="w-full product-page_banner text-white lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
       <div className="max-w-6xl sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
@@ -62,24 +61,27 @@ const ProductHeroBanner = props => {
           </div>
 
           <div className="relative w-full rounded-lg flex-grow justify-items-end lg:w-2/5 px-0 sm:items-center lg:items-start lg:mb-0">
-            <div class="relative rounded-md px-0 items-center flex justify-center bg-white product-video h-auto  sm:h-80">
+            <div class="iframe-container">
               <iframe
                 src={props.productbanneryoutubeambed.url}
                 frameborder="0"
-                className="w-full h-full"
-                allow="autoplay; encrypted-media"
                 allowfullscreen
-                title="video"
-              />
-              {/* <img src={ProductVideo} alt="Product Video" className="w-full" />
-              <button className="absolute left-0 right-0 mx-auto" type="button">
-                <img
-                  src={VideoPlayBtn}
-                  alt="Product Video"
-                  className="w-full"
-                />
-              </button> */}
+                class="video"
+              ></iframe>
             </div>
+            {/* <div class="relative rounded-md px-0 items-center flex justify-center  product-video h-72 sm:h-80">
+              <AspectRatio ratio="16/9" className="h-full w-full max-w-md" >
+                <iframe
+                  src={props.productbanneryoutubeambed.url}
+                  frameborder="0"
+                  className="w-full h-full"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen
+                  title="video"
+                />
+              </AspectRatio>
+            
+            </div> */}
           </div>
         </div>
       </div>

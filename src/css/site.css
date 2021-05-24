@@ -106,6 +106,20 @@ body {
   margin-right: 10px;
 }
 
+.iframe-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .check-icon::before {
   content: "";
   background: url("../images/check.svg") no-repeat;
@@ -346,11 +360,10 @@ top: -60px;
 }
 
 /*Integration Page Css*/
-.integration-banner::before
-{
+.integration-banner::before {
   background-image: url("../images/integration-right.png");
   background-position: right 84px;
-    background-size: 34% auto;
+  background-size: 34% auto;
   background-repeat: no-repeat;
   position: absolute;
   content: "";
@@ -358,8 +371,7 @@ top: -60px;
   height: 100%;
   z-index: -1;
 }
-.integration-banner::after
-{
+.integration-banner::after {
   background-image: url("../images/integration-left.png");
   background-position: 50px 0px;
   background-size: 30% auto;
@@ -372,29 +384,24 @@ top: -60px;
   z-index: -1;
 }
 
-
 .search-cover,
-.filter-menu
-{
-  
+.filter-menu {
   @apply border;
   @apply border-solid;
-  border-color: #E1E1E1;
+  border-color: #e1e1e1;
   box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.05);
 }
-.filter-menu .ais-refinement-list--checkbox
-{
+.filter-menu .ais-refinement-list--checkbox {
   @apply w-5;
   @apply h-5;
   @apply cursor-pointer;
 }
 
-.content-box
-{
+.content-box {
   @apply border;
   @apply border-solid;
-  border-color: #E1E1E1;
+  border-color: #e1e1e1;
 }
 
 .floatbtncoantiner {
@@ -454,8 +461,7 @@ top: -60px;
     top: 20px;
   }
   /*Integration Page Css*/
-  .integration-banner::before
-  {
+  .integration-banner::before {
     right: -190px;
     background-position: right 20px;
     background-size: 50% auto;
@@ -465,8 +471,6 @@ top: -60px;
     background-size: 25% auto;
     top: 8px;
   }
-
-
 }
 @media only screen and (max-width: 1120px) {
   .demo-submit-background {
@@ -483,20 +487,17 @@ top: -60px;
     background-size: 640px auto;
     background-repeat: no-repeat;
   }
-
 }
 
-@media (max-width:992px)
-{
+@media (max-width: 992px) {
   .integration-banner::after {
     background-position: -30px 0px;
     background-size: 265px auto;
     top: 6px;
-}
+  }
 }
 
-@media only screen and (max-width: 767px)
-{
+@media only screen and (max-width: 767px) {
   .integration-banner::after {
     top: 36px;
     background-position: -85px 0px;
@@ -505,51 +506,46 @@ top: -60px;
   .integration-banner::before {
     right: -160px;
     background-position: right 25px;
+  }
 }
 
-} 
-
-
-@media only screen and (max-width:639px)
-{
-    /*Integration Page Css*/
-    .floatbtncoantiner 
-    {
-      display: block;
-    }
-    /* Tab content - closed */
+@media only screen and (max-width: 639px) {
+  /*Integration Page Css*/
+  .floatbtncoantiner {
+    display: block;
+  }
+  /* Tab content - closed */
   .tab-content {
     max-height: 0;
-    -webkit-transition: max-height .35s;
-    -o-transition: max-height .35s;
-    transition: max-height .35s;
-    }
-    /* :checked - resize to full height */
-    .tab input:checked ~ .tab-content {
+    -webkit-transition: max-height 0.35s;
+    -o-transition: max-height 0.35s;
+    transition: max-height 0.35s;
+  }
+  /* :checked - resize to full height */
+  .tab input:checked ~ .tab-content {
     max-height: 100vh;
-    }
-    /* Icon */
-    .tab label
-    {
-      cursor: pointer;
-    }
-    .tab label::after {
-    float:right;
+  }
+  /* Icon */
+  .tab label {
+    cursor: pointer;
+  }
+  .tab label::after {
+    float: right;
     right: 0;
     top: 0;
     display: block;
-    -webkit-transition: all .35s;
-    -o-transition: all .35s;
-    transition: all .35s;
-    }
-    /* Icon formatting - closed */
-    .tab input[type=checkbox] + label::after {
+    -webkit-transition: all 0.35s;
+    -o-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  /* Icon formatting - closed */
+  .tab input[type="checkbox"] + label::after {
     content: url("../images/chevron-down.svg");
-    }
-    /* Icon formatting - open */
-    .tab input[type=checkbox]:checked + label::after {
+  }
+  /* Icon formatting - open */
+  .tab input[type="checkbox"]:checked + label::after {
     transform: rotate(180deg);
-    }
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -566,21 +562,16 @@ top: -60px;
     background-image: none;
     background-repeat: no-repeat;
   }
-  
-
 }
 
-@media only screen and (max-width:480px)
-{
-.integration-banner::before {
+@media only screen and (max-width: 480px) {
+  .integration-banner::before {
     right: -120px;
     background-position: right 18px;
+  }
+  .integration-banner::after {
+    top: 13px;
+    background-position: -120px 0px;
+    background-size: 175px auto;
+  }
 }
-.integration-banner::after {
-  top: 13px;
-  background-position: -120px 0px;
-  background-size: 175px auto;
-}
-
-}
-

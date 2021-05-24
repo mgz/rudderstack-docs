@@ -50,7 +50,9 @@ const Blog_new = ({ data }) => {
               </div>
               <div className="w-full lg:w-2/5 pt-0 md:pt-6 pb-3 text-center">
                 <CustomSearchBox
-                  onRefineTextChange={val => setCurrentRefineText(val)}
+                  onRefineTextChange={val => {
+                    setCurrentRefineText(val)
+                  }}
                 />
               </div>
             </div>

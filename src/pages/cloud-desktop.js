@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import algoliasearch from "algoliasearch/lite"
 import "../lib/font-awesome"
 import MiddleBanner from "../components/middle-banner"
+import JoinOurTeam from '../components/joinOurTeam'
 import Integrationschart from "../images/Integrations-chart.svg"
 import ProductVideo from "../images/product-video-view.svg"
 import VideoChart from "../images/video-hero-chart.svg"
@@ -57,8 +58,8 @@ const CloudDesktop = ({ data }) => {
       </section>{/*banner*/}
       <section>{/*Advantage*/}
         <div className="w-full">
-          <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-20 flex flex-col justify-center text-center">
-            <div className="sm:mb-24 mb-10"><span className="text-3xl md:text-5xl font-bold">The RudderStack Advantage</span></div>
+          <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-28 flex flex-col justify-center text-center">
+            <div class="sm:mb-24 mb-10"><span class="text-3xl md:text-5xl font-bold">The RudderStack Advantage</span></div>
             <div className="flex flex-wrap flex-row">
               <div className="w-full sm:w-1/2">
                 <div className="flex flex-col justify-center items-center text-center mx-7 mb-20">
@@ -119,9 +120,9 @@ const CloudDesktop = ({ data }) => {
                   <li className="text-sm sm:text-lg relative pl-8 pb-3">Segment source and destination (for simple migration)</li>
                 </ul>
               </div>
-              <div className="flex items-center">
-                <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                  <a href="#/">More about Event Stream</a>
+              <div class="flex items-center">
+                <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                  <a href="https://resources.rudderstack.com/rudderstack-cloud?_ga=2.201464209.1437852951.1618311746-1836483757.1616824969">More about Event Stream</a>
                 </span>
               </div>
             </div>
@@ -140,9 +141,9 @@ const CloudDesktop = ({ data }) => {
               <div className="text-secondary leading-7 text-sm sm:text-lg">
                 <p>Cloud Extract goes beyond event streaming. It enables you to build cloud-to-warehouse ELT pipelines from popular cloud applications like Salesforce, ZenDesk, and Customer.io (even Google Sheets) to your data warehouse, so you can use all of your customer data.</p>
               </div>
-              <div className="flex items-center mt-4">
-                <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                  <a href="#">More about Cloud Extract </a>
+              <div class="flex items-center mt-4">
+                <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                  <a href="https://rudderstack.com/blog/rudderstack-cloud-extract-makes-cloud-to-warehouse-pipelines-easy">More about Cloud Extract </a>
                 </span>
               </div>
             </div>
@@ -167,9 +168,9 @@ const CloudDesktop = ({ data }) => {
                   <li className="text-sm sm:text-lg relative pl-8 pb-3">Configurable sync schedule</li>
                 </ul>
               </div>
-              <div className="flex items-center">
-                <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                  <a href="#">More about Warehouse Actions</a>
+              <div class="flex items-center">
+                <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                  <a href="https://rudderstack.com/blog/rudderstack-warehouse-actions-unlocks-the-data-in-your-warehouse/">More about Warehouse Actions</a>
                 </span>
               </div>
             </div>
@@ -192,11 +193,11 @@ const CloudDesktop = ({ data }) => {
                   <div className="h-20">
                     <img src={Transformations} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div className="text-2xl-2 font-bold mb-6 mt-2">Transformations</div>
-                  <div className="text-grayColor-custom text-lg"><p>Write custom JavaScript to transform and enrich your data as it passes through RudderStack. Use cases range from PII masking to enrichment.</p></div>
-                  <div className="flex items-center mt-8">
-                    <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="#">More from Rudderstack docs</a>
+                  <div class="text-2xl-2 font-bold mb-6 mt-2">Transformations</div>
+                  <div class="text-grayColor-custom text-lg"><p>Write custom JavaScript to transform and enrich your data as it passes through RudderStack. Use cases range from PII masking to enrichment.</p></div>
+                  <div class="flex items-center mt-8">
+                    <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                      <a href="https://docs.rudderstack.com/">More from Rudderstack docs</a>
                     </span>
                   </div>
                 </div>
@@ -206,11 +207,11 @@ const CloudDesktop = ({ data }) => {
                   <div className="h-20">
                     <img src={DataAPI} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div className="text-2xl-2 font-bold mb-6 mt-2">Data Governance API</div>
-                  <div className="text-grayColor-custom text-lg"><p>Diagnose and fix data consistency issues with easy access to your events and their metadata.</p></div>
-                  <div className="flex items-center mt-8">
-                    <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="#">More from Rudderstack docs</a>
+                  <div class="text-2xl-2 font-bold mb-6 mt-2">Data Governance API</div>
+                  <div class="text-grayColor-custom text-lg"><p>Diagnose and fix data consistency issues with easy access to your events and their metadata.</p></div>
+                  <div class="flex items-center mt-8">
+                    <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                      <a href="https://docs.rudderstack.com/">More from Rudderstack docs</a>
                     </span>
                   </div>
                 </div>
@@ -220,11 +221,11 @@ const CloudDesktop = ({ data }) => {
                   <div className="h-20">
                     <img src={DbtModals} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div className="text-2xl-2 font-bold mb-6 mt-2">Pre-built DBT models</div>
-                  <div className="text-grayColor-custom text-lg"><p>Take the work out of use cases like customer journey analysis and sessionization.</p></div>
-                  <div className="flex items-center mt-8">
-                    <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="#">More from Rudderstack docs</a>
+                  <div class="text-2xl-2 font-bold mb-6 mt-2">Pre-built DBT models</div>
+                  <div class="text-grayColor-custom text-lg"><p>Take the work out of use cases like customer journey analysis and sessionization.</p></div>
+                  <div class="flex items-center mt-8">
+                    <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                      <a href="https://docs.rudderstack.com/">More from Rudderstack docs</a>
                     </span>
                   </div>
                 </div>
@@ -234,11 +235,11 @@ const CloudDesktop = ({ data }) => {
                   <div className="h-20">
                     <img src={Grafana} alt="cloud desktop" className="w-full" />
                   </div>
-                  <div className="text-2xl-2 font-bold mb-6 mt-2">Grafana Dashboards</div>
-                  <div className="text-grayColor-custom text-lg"><p>Get full visibility into the health of your infrastructure via pre-configured Grafana dashboards.</p></div>
-                  <div className="flex items-center mt-8">
-                    <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
-                      <a href="#">More from Rudderstack docs</a>
+                  <div class="text-2xl-2 font-bold mb-6 mt-2">Grafana Dashboards</div>
+                  <div class="text-grayColor-custom text-lg"><p>Get full visibility into the health of your infrastructure via pre-configured Grafana dashboards.</p></div>
+                  <div class="flex items-center mt-8">
+                    <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block hover:text-blueNew-custom">
+                      <a href="https://docs.rudderstack.com/">More from Rudderstack docs</a>
                     </span>
                   </div>
 
@@ -269,7 +270,8 @@ const CloudDesktop = ({ data }) => {
         </div>
       </section>
       <section className="overflow-hidden">{/*Join Our Team*/}
-        <div className="testimonials bg-white px-7 py-10 sm:py-20 -mx-2.5 text-primary margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
+        <JoinOurTeam />
+        {/* <div className="testimonials bg-white px-7 py-10 sm:py-20 -mx-2.5 text-primary margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
           <div className="w-full text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Join Our Team
@@ -286,7 +288,7 @@ const CloudDesktop = ({ data }) => {
               </a>
             </p>
           </div>
-        </div>
+        </div> */}
       </section>
       <section id="footer_section_for_demo">
         <MiddleBanner {...lv_middlebannersection[0]} />
