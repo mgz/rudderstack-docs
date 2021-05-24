@@ -435,6 +435,8 @@ top: -60px;
   background-color: #EEF4F5;
   min-height: 220px;
 }
+
+
 @media only screen and (min-width: 1023px) {
   .menu li.has-submenu:hover a:after {
     transform: rotate(225deg);
@@ -495,6 +497,11 @@ top: -60px;
     background-size: 265px auto;
     top: 6px;
   }
+      /*Source Integration Page*/
+      .int-img 
+      {
+        min-height: 150px;
+      }
 }
 
 @media only screen and (max-width: 767px) {
@@ -507,6 +514,7 @@ top: -60px;
     right: -160px;
     background-position: right 25px;
   }
+
 }
 
 @media only screen and (max-width: 639px) {
@@ -546,6 +554,12 @@ top: -60px;
   .filter-menu .tab input[type="checkbox"]:checked + label::after {
     transform: rotate(180deg);
   }
+ /*Source Integration Page*/
+ .int-img 
+ {
+   min-height: auto;
+ }
+
 }
 
 @media only screen and (max-width: 500px) {
