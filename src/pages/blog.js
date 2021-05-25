@@ -107,7 +107,7 @@ const Blog_new = ({ data }) => {
               </div>
             </div>
           )}
-          <Subscription />
+          <Subscription formId={"Blog-footer-Subscribe-form"} />
         </div>
         <section id="footer_section_for_demo">
           <MiddleBanner {...lv_middlebannersection[0]} />

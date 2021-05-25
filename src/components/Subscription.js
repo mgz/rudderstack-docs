@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
-const Subscription = () => {
+const Subscription = props => {
   const [email, setEmail] = useState("")
   const [error, setError] = useState(false)
   const [formSubmittedSuccessfully, setFormSubmittedSuccessfully] = useState(
@@ -30,7 +30,7 @@ const Subscription = () => {
       "",
       {
         email: email,
-        form_id: "",
+        form_id: props.formId,
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
         utm_campaign: params.get("utm_campaign"),
@@ -47,7 +47,7 @@ const Subscription = () => {
     )
 
     window.rudderanalytics.track(
-      "form_submit",
+      props.formId,
       {
         page: document.title,
         page_URL: window.location.href,
@@ -63,7 +63,7 @@ const Subscription = () => {
       {
         traits: {
           email: email,
-          form_id: "",
+          form_id: props.formId,
         },
       }
     )
@@ -91,7 +91,7 @@ const Subscription = () => {
             method="post"
             className=""
             noValidate="novalidate"
-            id=""
+            id={props.formId ? props.formId : ""}
           >
             <p className="">
               <span>
@@ -132,7 +132,11 @@ const Subscription = () => {
               <span className="ajax-loader" />
             </p>
             {formSubmittedSuccessfully && (
-              <div className="text-blueNew-custom" role="alert" aria-hidden="true">
+              <div
+                className="text-blueNew-custom"
+                role="alert"
+                aria-hidden="true"
+              >
                 Thank you for subscribing to our blog.
               </div>
             )}
