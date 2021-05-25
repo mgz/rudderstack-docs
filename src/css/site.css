@@ -436,6 +436,24 @@ top: -60px;
   min-height: 220px;
 }
 
+/*Video On Demand*/
+.video-banner-bg
+{
+    background: url('../images/video-banner-bg.svg');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 51%;
+}
+.speaker-pic
+{
+  @apply w-36;
+  @apply h-36;
+  @apply rounded-full;
+}
+.speaker
+{
+  background-color:#EEF5F5 ;
+}
 
 @media only screen and (min-width: 1023px) {
   .menu li.has-submenu:hover a:after {
