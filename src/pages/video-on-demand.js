@@ -13,7 +13,7 @@ import EventFilter from "../images/event-filtring.svg"
 import SourceInt from "../images/sdk-source-int.svg"
 import SourceBg from "../images/source-int-bg.svg"
 
-const SourceIntegration = ({ data }) => {
+const VideoOnDemand = ({ data }) => {
   const lv_testimonialsection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "testimonialsection")
@@ -190,7 +190,7 @@ const SourceIntegration = ({ data }) => {
   )
 }
 
-export default SourceIntegration
+export default VideoOnDemand
 
 export const pageQuery = graphql`
   query {
