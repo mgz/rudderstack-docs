@@ -12,10 +12,10 @@ function Faq({ accordions = [] }) {
             <h4 className="text-2xl-2 font-bold pt-2 mb-12 md:mb-0">How can we help you?</h4>
           </div>
           <div className="md:w-3/4 2xl:pr-44 xl:pr-28 lg:pr-28 mt-2">
-            {accordions.map((accordion, index) => <Accordion
+            {accordions.map((accordion, key) => <Accordion
               title={accordion.title}
               content={accordion.content}
-              index={index}
+              key={key}
             />)}
           </div>
         </div>

@@ -102,7 +102,7 @@ const SourceIntegration = ({ data }) => {
                   <div className="text-secondary leading-7 text-sm sm:text-lg">
                     <p>It's quite simple! Refer to our step-by-step guide and start using the JavaScript SDK in no time!</p>
                   </div>
-                  <div className="relative block sm:flex mt-14 sm:hidden">
+                  <div className="relative block sm:flex mt-14">
                     <a className="btn-primary-lg" href="#">View the documentation</a>
                   </div>
                 </div>
