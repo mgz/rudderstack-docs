@@ -54,6 +54,7 @@ const Demo = ({ data, htmlId,location }) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const onDemoFormSubmit = data => {
+    // console.log('on demo submit',data)
     try {
       if (!window.rudderanalytics) {
         return
@@ -115,7 +116,7 @@ const Demo = ({ data, htmlId,location }) => {
           },
         }
       )
-
+      // console.log("step3")
       fetch("https://usebasin.com/f/73ab69b8652a.json", {
         method: "post",
         body: JSON.stringify({
@@ -137,7 +138,8 @@ const Demo = ({ data, htmlId,location }) => {
         },
       })
         .then(res => {
-          if (res.statusText === "OK") {
+          // console.log('usebasin',res)
+          if (res.ok || res.statusText === "OK") {
             navigate("/request-demo/thank-you")
           }
         })
