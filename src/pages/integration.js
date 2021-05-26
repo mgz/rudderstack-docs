@@ -19,6 +19,7 @@ const Integration = props => {
     process.env.GATSBY_ALGOLIA_SEARCH_APIKEY
   )
   const { data } = props
+  const [searchedText, setSerchedText] = React.useState("")
   //const pageInfo = data.allSanityIntegration.pageInfo
   return (
     <Layout>
@@ -44,7 +45,11 @@ const Integration = props => {
               <div className="mx-auto w-full lg:w-10/12 lg:px-10 md:px-6 ">
                 <div className="search-cover bg-white rounded-2xl sm:px-24 sm:py-14 py-6 px-4">
                   <div className="w-full items-center text-center mx-auto">
-                    <CustomSearchBox />
+                    <CustomSearchBox
+                      onRefineTextChange={val => {
+                        setSerchedText(val)
+                      }}
+                    />
                   </div>
                 </div>
               </div>

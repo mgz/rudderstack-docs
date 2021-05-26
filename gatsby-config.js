@@ -1,6 +1,6 @@
-require('dotenv').config({
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-});
+})
 module.exports = {
   siteMetadata: {
     title: `Rudderstack`,
@@ -32,20 +32,25 @@ module.exports = {
         projectId: process.env.RS_SANITY_PROJECTID,
         dataset: process.env.RS_SANITY_DATASET,
         token: process.env.RS_SANITY_TOKEN,
-        graphqlTag: 'default',
-      }
+        graphqlTag: "default",
+      },
     },
     {
       resolve: `gatsby-plugin-algolia`,
-      options:
-      {
+      options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,        
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
         queries: require("./src/utils/algolia"),
         enablePartialUpdates: true,
-        matchFields: ["title", "blogimage", "weight", "slug", "blogdate", "blog_category"]
+        matchFields: [
+          "title",
+          "blogimage",
+          "weight",
+          "slug",
+          "blogdate",
+          "blog_category",
+        ],
       },
-
       // {
       //   appId: process.env.RS_GATSBY_ALGOLIA_APP_ID,
       //   apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
@@ -55,6 +60,17 @@ module.exports = {
       //   // matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
       // },
     },
+    // {
+    //   resolve: `gatsby-plugin-algolia`,
+    //   options: {
+    //     appId: process.env.GATSBY_ALGOLIA_APP_ID,
+    //     apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
+    //     indexName: process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX,
+    //     queries: require("./src/utils/integration-algolia"),
+    //     enablePartialUpdates: true,
+    //     // matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
+    //   },
+    // },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -81,7 +97,7 @@ module.exports = {
         trackPage: true,
         // delayLoad: true,
         // delayLoadTime: 1000
-      }
+      },
     },
   ],
 }

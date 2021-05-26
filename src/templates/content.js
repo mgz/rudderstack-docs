@@ -168,7 +168,7 @@ const Singleblog = ({ data, ...props }) => {
       {/*Sign Up Section*/}
       <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
         {/*Subscription Component*/}
-        <Subscription />
+        <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
       </div>
       {/*Subscription Component*/}
     </Layout>
