@@ -12,7 +12,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: process.env.SITE_URL,
+        host: process.env.RS_SITE_URL,
         sitemap: 'https://rudderstack.com/sitemap.xml',
         env: {
           development: {
