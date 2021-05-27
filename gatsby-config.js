@@ -1,15 +1,17 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-const siteUrl = `https://www.rudderstack.com/`
+const siteUrl = `https://www.rudderstack.com`
 module.exports = {
   siteMetadata: {
     title: `Rudderstack`,
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
     author: `@gatsbyjs`,
+    siteUrl: siteUrl,
   },
   plugins: [
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
@@ -99,34 +101,6 @@ module.exports = {
         trackPage: true,
         // delayLoad: true,
         // delayLoadTime: 1000
-      },
-    },
-    {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        query: `
-        {
-          allSitePage {
-            nodes {
-              path
-            }
-          }
-        }
-      `,
-        resolveSiteUrl: () => siteUrl,
-        resolvePages: ({
-          allSitePage: { nodes: allPages },
-        }) => {
-          return allPages.map(page => {
-            return { ...page,  }
-          })
-        },
-        serialize: ({ path, modifiedGmt }) => {
-          return {
-            url: path,
-            lastmod: modifiedGmt,
-          }
-        },
       },
     },
   ],
