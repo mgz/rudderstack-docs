@@ -15,7 +15,7 @@ const CustomIntegrationTypeList = ({
   createURL,
 }) => {
   return (
-    <div>
+    <div className={``}>
       <div className="tab">
         <input
           class="absolute opacity-0 "

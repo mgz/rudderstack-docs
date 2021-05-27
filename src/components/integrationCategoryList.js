@@ -25,7 +25,7 @@ const CustomIntegrationCategoryTypeList = ({
   }, [currentRefinement])
 
   return (
-    <div className="tab">
+    <div className={`tab`}>
       <input
         class="absolute opacity-0"
         id="tab-multi-two"

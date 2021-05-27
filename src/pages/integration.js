@@ -18,6 +18,7 @@ const Integration = props => {
   )
   const { data } = props
   const [searchedText, setSerchedText] = React.useState("")
+  const [resultCount, setResultCount] = React.useState(0)
   return (
     <Layout>
       <div className="font-custom">
@@ -52,21 +53,33 @@ const Integration = props => {
               </div>
               <div className="flex items-start flex-col sm:flex-row xl:gap-24 w-full">
                 <div className="w-full sm:w-1/3 lg:w-1/4  md:px-6 sm:pr-3 pl-0 md:mt-24 mt-8">
-                  <div className="bg-white rounded-2xl filter-menu py-10 px-6">
+                  <div
+                    className={`${
+                      resultCount === 0 ? "hidden" : "block"
+                    } bg-white rounded-2xl filter-menu py-10 px-6`}
+                  >
                     <IntegrationTypeMenu attribute="integration_type" />
                     <div className="mt-10">
                       <IntegrationCategoryMenu attribute="integration_category" />
                     </div>
                   </div>
-                  <div className="sm:mt-9 mt-8">
+                  <div className={`hidden md:block sm:mt-9 mt-8`}>
                     <IntegrationsHelpBox />
                   </div>
                 </div>
-                <div className="w-full smd:w-2/3 lg:w-3/4  md:px-6 sm:pl-3 pr-0 md:mt-24 mt-8">
+                <div className={`w-full smd:w-2/3 lg:w-3/4  md:px-6 sm:pl-3 pr-0 md:mt-24 ${resultCount === 0 ? 'mt-0' : 'mt-8'}`}>
                   <div id="hits-container">
                     <div data-reactroot>
-                      <IntegrationHits />
+                      <IntegrationHits
+                        onRecordCountChange={count => {
+                          setResultCount(count)
+                        }}
+                        searchedText={searchedText}
+                      />
                     </div>
+                  </div>
+                  <div className={`block md:hidden sm:mt-9 mt-8`}>
+                    <IntegrationsHelpBox />
                   </div>
                 </div>
               </div>
