@@ -15,24 +15,26 @@ const IntegrationSimilar = ({ data, allIntegrationData }) => {
               oo => oo.node._id === ii._ref
             )
             return (
-              <div
-                key={ii._ref}
-                className="flex justify-between flex-col border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full"
-              >
-                <div className="int-img md:py-auto lg:px-24 md:px-16 p-auto flex justify-center items-center">
-                  <Image
-                    props={
-                      l_integration_dtl.node._rawIntegrationLogo.asset._ref
-                    }
-                    classes="w-full"
-                  />
+              <Link to={`/integration/` + l_integration_dtl.node.slug.current}>
+                <div
+                  key={ii._ref}
+                  className="flex justify-between flex-col border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full"
+                >
+                  <div className="int-img md:py-auto lg:px-24 md:px-16 p-auto flex justify-center items-center">
+                    <Image
+                      props={
+                        l_integration_dtl.node._rawIntegrationLogo.asset._ref
+                      }
+                      classes="w-full"
+                    />
+                  </div>
+                  <div className="flex items-center px-10 py-5">
+                    <span className="font-bold leading-normal text-sm lr-icon relative sm:inline-block hover:text-blueNew-custom">
+                      <p>See more</p>
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center px-10 py-5">
-                  <span className="font-bold leading-normal text-sm lr-icon relative sm:inline-block hover:text-blueNew-custom">
-                    <a href="#">See more</a>
-                  </span>
-                </div>
-              </div>
+              </Link>
             )
           })}
         </div>
