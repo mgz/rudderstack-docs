@@ -43,15 +43,16 @@ function integrationToAlgoliaRecord({
   if (integrationLogo) {
     logoimage = integrationLogo.asset.fluid.src
   }
-
   return {
     objectID: id,
     title,
     weight,
     is_coming_soon,
     slug: slug.current,
-    integration_category: integrationcategories.title,
-    integration_type: integrationtypes.title,
+    integration_category: integrationcategories
+      ? integrationcategories.title
+      : "",
+    integration_type: integrationtypes ? integrationtypes.title : "",
     logoimage,
   }
 }
