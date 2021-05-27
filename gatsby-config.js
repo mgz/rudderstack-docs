@@ -51,26 +51,27 @@ module.exports = {
           "blog_category",
         ],
       },
-      // {
-      //   appId: process.env.RS_GATSBY_ALGOLIA_APP_ID,
-      //   apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
-      //   indexName: process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX,
-      //   queries: require("./src/utils/integration-algolia"),
-      //   // enablePartialUpdates: true,
-      //   // matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
-      // },
     },
-    // {
-    //   resolve: `gatsby-plugin-algolia`,
-    //   options: {
-    //     appId: process.env.GATSBY_ALGOLIA_APP_ID,
-    //     apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
-    //     indexName: process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX,
-    //     queries: require("./src/utils/integration-algolia"),
-    //     enablePartialUpdates: true,
-    //     // matchFields: ["title", "author_name", "author_desc", "blog_image", "weight", "slug", "blogdate", "blog_category"]
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
+        indexName: process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX,
+        queries: require("./src/utils/integration-algolia"),
+        enablePartialUpdates: true,
+        matchFields: ["slug"],
+        // matchFields: [
+        //   "title",
+        //   "integration_category",
+        //   "integration_type",
+        //   "logo_image",
+        //   "slug",
+        //   "weight",
+        //   "is_coming_soon",
+        // ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,

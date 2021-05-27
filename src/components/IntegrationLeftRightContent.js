@@ -14,7 +14,7 @@ const IntegrationLeftRightContent = ({ data }) => {
           className={`grid grid-flow-col grid-cols-1 md:grid-cols-2 grid-rows-${
             data.wycd_leftright_content.length
           } md:grid-rows-${
-            data.wycd_leftright_content.length / 2
+            parseInt((data.wycd_leftright_content.length / 2)) +  (data.wycd_leftright_content.length % 2)
           } gap-4 md:gap-12 mt-6 md:mt-20`}
         >
           {data.wycd_leftright_content.map(ii => {

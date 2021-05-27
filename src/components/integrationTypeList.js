@@ -14,7 +14,6 @@ const CustomIntegrationTypeList = ({
   searchForItems,
   createURL,
 }) => {
- 
   return (
     <div>
       <div className="tab">

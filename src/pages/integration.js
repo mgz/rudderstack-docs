@@ -1,8 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-// import { connectSearchBox } from "react-instantsearch-dom"
-// import Pagination from "../components/pagination"
 import algoliasearch from "algoliasearch/lite"
 import CustomSearchBox from "../components/customSearchBox"
 import IntegrationCategoryMenu from "../components/integrationCategoryList"
@@ -20,7 +18,6 @@ const Integration = props => {
   )
   const { data } = props
   const [searchedText, setSerchedText] = React.useState("")
-  //const pageInfo = data.allSanityIntegration.pageInfo
   return (
     <Layout>
       <div className="font-custom">
@@ -56,9 +53,9 @@ const Integration = props => {
               <div className="flex items-start flex-col sm:flex-row xl:gap-24 w-full">
                 <div className="w-full sm:w-1/3 lg:w-1/4  md:px-6 sm:pr-3 pl-0 md:mt-24 mt-8">
                   <div className="bg-white rounded-2xl filter-menu py-10 px-6">
-                    <IntegrationTypeMenu attribute="integrationtypes.title" />
+                    <IntegrationTypeMenu attribute="integration_type" />
                     <div className="mt-10">
-                      <IntegrationCategoryMenu attribute="integrationcategories.title" />
+                      <IntegrationCategoryMenu attribute="integration_category" />
                     </div>
                   </div>
                   <div className="sm:mt-9 mt-8">
