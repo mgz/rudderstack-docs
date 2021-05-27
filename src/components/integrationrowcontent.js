@@ -15,24 +15,30 @@ const Integrationrowcontent = ({ hits }) => {
         {hits.map((hit, index) => {
           if (index >= 0) {
             return (
-                <div key={index} className="w-full p-6 flex-col relative overflow-hidden rounded-2xl flex items-center justify-between bg-white content-box">
-                  <div className="text-blue text-sm text-indigo-700 font-bold mb-2.5">{hit.integration_category}</div>
-                    <div className="sm:block h-16">
-                      <Link to={hit.slug}>
-                        <img src={hit.logoimage} alt={hit.title}
-                             className="h-full w-100 object-cover"
-                             loading="eager"/>
-                      </Link>
-                    </div>
-                      <h2 className="mt-2 leading-5 text-lg text-secondary font-bold text-center">
-                        <Link to={hit.slug}>{hit.title}</Link>
-                      </h2>
-                              
+              <div
+                key={index}
+                className="w-full p-6 flex-col relative overflow-hidden rounded-2xl flex items-center justify-between bg-white content-box"
+              >
+                <div className="text-blue text-sm text-indigo-700 font-bold mb-2.5">
+                  {hit.integration_category}
                 </div>
+                <div className="sm:block h-24">
+                  <Link to={hit.slug}>
+                    <img
+                      src={hit.logoimage}
+                      alt={hit.title}
+                      className="object-scale-down h-full w-full"
+                      loading="eager"
+                    />
+                  </Link>
+                </div>
+                <h2 className="mt-2 leading-5 text-lg text-secondary font-bold text-center">
+                  <Link to={hit.slug}>{hit.title}</Link>
+                </h2>
+              </div>
             )
           }
-        })
-        }
+        })}
       </div>
     </div>
   )

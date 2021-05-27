@@ -89,6 +89,7 @@ const IntegrationsHelpBox = () => {
             aria-required="true"
             aria-invalid="false"
             // placeholder="you@company.com"
+            value={email}
             onChange={e => {
               setError(false)
               setEmail(e.target.value)

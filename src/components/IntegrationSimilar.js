@@ -25,7 +25,7 @@ const IntegrationSimilar = ({ data, allIntegrationData }) => {
                       props={
                         l_integration_dtl.node._rawIntegrationLogo.asset._ref
                       }
-                      classes="w-full"
+                      classes="object-scale-down h-full w-full"
                     />
                   </div>
                   <div className="flex items-center px-10 py-5">
