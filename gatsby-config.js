@@ -1,17 +1,29 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
-const siteUrl = `https://www.rudderstack.com`
 module.exports = {
   siteMetadata: {
     title: `Rudderstack`,
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
-    author: `@gatsbyjs`,
-    siteUrl: siteUrl,
+    author: `@gatsbyjs`
   },
   plugins: [
     `gatsby-plugin-postcss`,
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: process.env.SITE_URL,
+        sitemap: 'https://rudderstack.com/sitemap.xml',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: ['/'] }]
+          }
+        }
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
