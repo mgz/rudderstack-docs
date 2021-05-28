@@ -6,7 +6,7 @@ module.exports = {
     title: `Rudderstack`,
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
     author: `@gatsbyjs`,
-    siteUrl: process.env.RS_SITE_URL
+    siteUrl: 'https://rudderstack.com'
   },
   plugins: [
     `gatsby-plugin-postcss`,
