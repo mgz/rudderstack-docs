@@ -28,7 +28,7 @@ const Threerowcontent = ({ hits }) => {
                     <div className="relative sm:block h-52">
                       <Link to={hit.slug}>
                         <img
-                          src={hit.blogimage.src}
+                          src={hit.blogimage}
                           alt={hit.title}
                           className="h-full w-full object-cover"
                           loading="eager"

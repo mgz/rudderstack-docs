@@ -15,9 +15,7 @@ const pageQuery = `{
         blog_category
         blog_image {
           asset {
-            fluid {
-              src
-            }
+            url
           }
           _key
         }
@@ -41,7 +39,7 @@ function pageToAlgoliaRecord({
 }) {
   let blogimage = ""
   if (blog_image) {
-    blogimage = blog_image.asset.fluid
+    blogimage = blog_image.asset.url
   }
 
   if (!blog_category) {
