@@ -14,6 +14,8 @@ const Singlerowcontent = ({ hit }) => {
     author_names += (author_names.length > 0 ? ", " : "By ") + row.author_name
   })
   // console.log('hari test',hit.title,hit.blog_authors)
+  console.log(hit.blogimage);
+  console.log("-----");
   return (
     <div
       key="0"
@@ -23,7 +25,7 @@ const Singlerowcontent = ({ hit }) => {
         <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link to={hit.slug}>
             <img
-              src={hit.blogimage.src}
+              src={hit.blogimage}
               alt={hit.title}
               className="sm:h-full lg:max-w-2xl object-cover"
               loading="eager"

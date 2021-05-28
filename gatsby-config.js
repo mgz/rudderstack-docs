@@ -6,17 +6,24 @@ module.exports = {
     title: `Rudderstack`,
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
     author: `@gatsbyjs`,
+    siteUrl: 'https://rudderstack.com'
   },
   plugins: [
     `gatsby-plugin-postcss`,
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output:`/`,
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: process.env.RS_SITE_URL,
         sitemap: "https://rudderstack.com/sitemap.xml",
         env: {
           development: {
-            policy: [{ userAgent: "*", disallow: ["/"] }],
+            policy: [{ userAgent: '*', allow: ['/'] }]
           },
           production: {
             policy: [{ userAgent: "*", allow: ["/"] }],
