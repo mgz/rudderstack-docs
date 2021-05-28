@@ -5,24 +5,24 @@ module.exports = {
   siteMetadata: {
     title: `Rudderstack`,
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
-    author: `@gatsbyjs`
+    author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
         host: process.env.RS_SITE_URL,
-        sitemap: 'https://rudderstack.com/sitemap.xml',
+        sitemap: "https://rudderstack.com/sitemap.xml",
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{ userAgent: "*", disallow: ["/"] }],
           },
           production: {
-            policy: [{ userAgent: '*', allow: ['/'] }]
-          }
-        }
-      }
+            policy: [{ userAgent: "*", allow: ["/"] }],
+          },
+        },
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
@@ -75,7 +75,27 @@ module.exports = {
         indexName: process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX,
         queries: require("./src/utils/integration-algolia"),
         enablePartialUpdates: true,
-        matchFields: ["slug"],
+        matchFields: ["slug","title","integration_category","weight","is_coming_soon","logoimage"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
+        indexName: process.env.GATSBY_ALGOLIA_VIDEO_LIBRARY_INDEX,
+        queries: require("./src/utils/video-library-algolia"),
+        enablePartialUpdates: true,
+        matchFields: [
+          "slug",
+          "category",
+          "title",
+          "shortdescription",
+          "spekers",
+          "weight",
+          "duration",
+          "logoimage",
+        ],
       },
     },
     `gatsby-plugin-styled-components`,

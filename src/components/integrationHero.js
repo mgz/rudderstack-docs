@@ -13,7 +13,7 @@ function IntegrationHero({ data }) {
           </h2>
           <PortableText blocks={data.herodescritpion} />
           <div className="relative block sm:flex mt-12">
-            {data.herocta.btnexternallink &&
+            {data.herocta && data.herocta.btnexternallink &&
             data.herocta.btnexternallink === true ? (
               <a
                 href={data.herocta.btnlink}
@@ -23,7 +23,7 @@ function IntegrationHero({ data }) {
               </a>
             ) : (
               <span className="btn-primary-lg sm:mr-4 md:mb-0 mb-6">
-                <Link to={data.herocta.btnlink}>{data.herocta.btntext}</Link>
+                <Link to={data.herocta ? data.herocta : ""}>{data.herocta ? data.herocta : ""}</Link>
               </span>
             )}
           </div>
