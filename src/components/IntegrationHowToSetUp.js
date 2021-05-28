@@ -5,7 +5,11 @@ import Link from "gatsby-link"
 
 const IntegrationHowToSetUp = ({ data }) => {
   return (
-    <section className="bg-backgroundsecondary 100% left-right-section sm:pt-24 sm:pb-20 py-11">
+    <section
+      className={`${
+        !data.freetexttitle || data.freetexttitle !== "" ? "hidden" : "block"
+      }  bg-backgroundsecondary 100% left-right-section sm:pt-24 sm:pb-20 py-11`}
+    >
       <div className="max-w-6xl px-4 md:px-3 mx-auto">
         <div className="flex items-center flex-wrap">
           <div className="w-full justify-center items-start md:text-left max-w-screen-md">
@@ -35,10 +39,12 @@ const IntegrationHowToSetUp = ({ data }) => {
               </div>
             </div>
             <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 mt-14 sm:mt-0">
-              <Image
-                props={data.freetextrightimage.asset._ref}
-                classes="w-full"
-              />
+              {data.freetextrightimage && (
+                <Image
+                  props={data.freetextrightimage.asset._ref}
+                  classes="w-full"
+                />
+              )}
             </div>
           </div>
         </div>
