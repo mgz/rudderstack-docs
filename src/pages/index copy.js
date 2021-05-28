@@ -16,9 +16,7 @@ const IndexPage = () => {
             headerblock {
               hdrlogo {
                 asset {
-                  fluid {
-                    ...GatsbySanityImageFluid
-                  }
+                 url
                 }
               }
             }
@@ -53,7 +51,7 @@ const IndexPage = () => {
             </div>
 
             <div className="w-full md:w-3/5 py-6 text-center">
-              <img className="w-full md:w-4/5 z-50" src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.fluid.src} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
+              <img className="w-full md:w-4/5 z-50" src={data.allSanitySiteSettings.edges[0].node.headerblock.hdrlogo.asset.url} alt={data.allSanitySiteSettings.edges[0].node.sitetitle} />
             </div>
             
           </div>

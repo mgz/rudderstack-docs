@@ -17,9 +17,7 @@ const integrationQuery = `{
           }
           integrationLogo {
             asset {
-              fluid {
-                src
-              }
+             url
             }
           }
         }
@@ -41,7 +39,7 @@ function integrationToAlgoliaRecord({
 }) {
   let logoimage = ""
   if (integrationLogo) {
-    logoimage = integrationLogo.asset.fluid.src
+    logoimage = integrationLogo.asset.url
   }
   return {
     objectID: id,

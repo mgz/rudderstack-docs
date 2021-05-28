@@ -7,7 +7,7 @@ function renderImage(image, classes, alt) {
     return (
       <img
         loading="lazy"
-        src={image.node.fluid.src}
+        src={image.node.url}
         alt={alt ? alt : image.node._id}
         className={classes}
       />
@@ -29,9 +29,7 @@ const Image = props => {
           sanityimages: allSanityImageAsset {
             edges {
               node {
-                fluid {
-                  src
-                }
+                url
                 _id
               }
             }

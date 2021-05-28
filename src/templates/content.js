@@ -192,9 +192,7 @@ export const query = graphql`
         author_image {
           asset {
             _id
-            fluid {
-              src
-            }
+            url
           }
           _key
         }
@@ -203,9 +201,7 @@ export const query = graphql`
       weight
       blog_image {
         asset {
-          fluid {
-            src
-          }
+          url
         }
         _key
       }

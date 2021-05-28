@@ -24,9 +24,8 @@ const BlogModule = () => {
             }
             blog_image {
               asset {
-                fluid {
-                  src
-                }
+                id
+                url
               }
             }
           }
@@ -51,7 +50,7 @@ const BlogModule = () => {
               className="block bg-white rounded-t rounded-b-none overflow-hidden shadow relative h-full"
             >
               <img
-                src={latestblog.node.blog_image.asset.fluid.src}
+                src={latestblog.node.blog_image.asset.url}
                 alt={latestblog.node.title}
                 className="w-full"
               />

@@ -16,9 +16,7 @@ const MainNavigation = () => {
             headerblock {
               hdrlogo {
                 asset {
-                  fluid {
-                    src
-                  }
+                 url
                 }
               }
               mainnavigation {

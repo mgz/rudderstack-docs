@@ -29,9 +29,7 @@ const Layout = ({ children }) => {
             headerblock {
               hdrlogo {
                 asset {
-                  fluid {
-                    src
-                  }
+                  url
                 }
               }
               mainnavigation {
@@ -49,9 +47,7 @@ const Layout = ({ children }) => {
               _rawFooterWidgetSection
               footer_logo {
                 asset {
-                  fluid {
-                    src
-                  }
+                 url
                 }
               }
               copy_right_text
@@ -75,8 +71,7 @@ const Layout = ({ children }) => {
     data.allSanitySiteSettings.edges[0].node.socailmenublock
       ._rawSocialWidgetSection
   const footerlogo =
-    data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.fluid
-      .src
+    data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
   return (
     <>
       <CookiesConsent />
