@@ -10,7 +10,7 @@
  import ThreeRowContentVideoLibrary from "./threeRowContentVideoLibrary"
  
  const VideoLibraryHits = ({ hits, onRefineHitsCountChange }) => {
-   // console.log(hits, "hits")
+   console.log(hits, "hits")
    if (!hits.length) {
      onRefineHitsCountChange(0)
      return <> </>

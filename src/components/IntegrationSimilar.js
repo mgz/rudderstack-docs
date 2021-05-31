@@ -14,6 +14,9 @@ const IntegrationSimilar = ({ data, allIntegrationData }) => {
             let l_integration_dtl = allIntegrationData.edges.find(
               oo => oo.node._id === ii._ref
             )
+            if (!l_integration_dtl) {
+              return <></>
+            }
             return (
               <Link to={`/integration/` + l_integration_dtl.node.slug.current}>
                 <div
