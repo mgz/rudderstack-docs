@@ -125,11 +125,11 @@ exports.createPages = async ({ graphql, actions }) => {
     const path = `/integration/${edge.node.slug.current}`
     try {
       if (1 === 2) {
-      createPage({
-        path,
-        component: require.resolve("./src/templates/integrationContent.js"),
-        context: { slug: edge.node.slug.current },
-      })
+        createPage({
+          path,
+          component: require.resolve("./src/templates/integrationContent.js"),
+          context: { slug: edge.node.slug.current },
+        })
       }
       console.log("page build successful ", path)
     } catch {
@@ -137,5 +137,35 @@ exports.createPages = async ({ graphql, actions }) => {
     } finally {
       console.log("done with  ", path)
     }
+  })
+
+  const videoLib = await graphql(`
+    {
+      allSanityVideolibrary {
+        edges {
+          node {
+            slug {
+              current
+            }
+            title
+          }
+        }
+      }
+    }
+  `)
+
+  if (videoLib.errors) {
+    throw videoLib.errors
+  }
+
+  const videoLibrary = videoLib.data.allSanityVideolibrary.edges || []
+  videoLibrary.forEach((edge, index) => {
+    const path = `/video-library/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/videoContent.js"),
+      context: { slug: edge.node.slug.current },
+    })
   })
 }

@@ -104,6 +104,7 @@ module.exports = {
         matchFields: [
           "slug",
           "category",
+          "url_or_event_dttm",
           "title",
           "shortdescription",
           "spekers",

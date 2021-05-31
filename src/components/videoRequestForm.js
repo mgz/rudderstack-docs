@@ -1,20 +1,20 @@
 import { propTypes } from "@sanity/block-content-to-react"
 import React, { useState } from "react"
 
-const DemoForm = props => {
+const VideoRequestForm = props => {
   const [formData, setFormData] = useState({
     firstName: "",
+    lastName: "",
     email: "",
     company: "",
-    jobTitle: "",
     formId: props.formId,
     sectionId: props.sectionId,
   })
   const [formError, setFormErrors] = useState({
     firstName: "",
+    lastName: "",
     email: "",
     company: "",
-    jobTitle: "",
   })
 
   function validateForm(data) {
@@ -57,22 +57,21 @@ const DemoForm = props => {
   return (
     <form
       id={props.formId}
-      className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg ${
-        props.isFooterForm === true ? "top-0" : "-top-24"
-      }`}
+      className={`demo_form videoLibrary_form px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full xl:w-96 md:max-w-lg -top-40`}
     >
-      {props.hideLabels !== true && (
-        <div className="text-lg text-grayColor-custom mb-2 ">
-          First Name <span className="text-blueNew-custom">*</span>
-        </div>
-      )}
+      <div className="mb-12">
+        <p className="mb-6 font-bold text-blueNew-custom text-xl-2">
+          {props.formHeaderText}
+        </p>
+        <p className="text-lg text-grayColor-custom">{props.formShortDesc}</p>
+      </div>
 
       <input
         type="text"
         name="firstName"
         className="font-sm text-base"
         value={formData.firstName}
-        placeholder={"John Doe"}
+        placeholder={"First Name"}
         onBlur={e => onBlur("firstName", e.target.value)}
         onChange={e => {
           setFormData({ ...formData, firstName: e.target.value })
@@ -85,39 +84,29 @@ const DemoForm = props => {
         )}
       </div>
 
-      {props.hideLabels !== true && (
-        <div className="text-lg text-grayColor-custom mb-2">
-          Work email address <span className="text-blueNew-custom">*</span>
-        </div>
-      )}
       <input
-        type="email"
-        name="email"
-        value={formData.email}
-        onBlur={e => onBlur("email", e.target.value)}
-        placeholder="you@company.com"
-        title="Invalid email address"
+        type="text"
+        name="lastName"
+        className="font-sm text-base"
+        value={formData.lastName}
+        placeholder={"Last Name"}
+        onBlur={e => onBlur("lastName", e.target.value)}
         onChange={e => {
-          setFormData({ ...formData, email: e.target.value })
+          setFormData({ ...formData, lastName: e.target.value })
         }}
       />
 
-      <div className={`${formError.email !== "" ? "mb-2" : "mb-6"} `}>
-        {formError.email !== "" && (
-          <h6 className="text-red-error text-xs">{formError.email}</h6>
+      <div className={`${formError.lastName !== "" ? "mb-2" : "mb-6"} `}>
+        {formError.lastName !== "" && (
+          <h6 className="text-red-error text-xs">{formError.lastName}</h6>
         )}
       </div>
 
-      {props.hideLabels !== true && (
-        <div className="text-lg text-grayColor-custom mb-2">
-          Company <span className="text-blueNew-custom">*</span>
-        </div>
-      )}
       <input
         type="text"
         value={formData.company}
         name="company"
-        placeholder="Awesome Co"
+        placeholder="Company"
         onBlur={e => onBlur("company", e.target.value)}
         onChange={e => {
           setFormData({ ...formData, company: e.target.value })
@@ -130,24 +119,21 @@ const DemoForm = props => {
         )}
       </div>
 
-      {props.hideLabels !== true && (
-        <div className="text-lg text-grayColor-custom mb-2">
-          Job Title <span className="text-blueNew-custom">*</span>
-        </div>
-      )}
       <input
-        type="text"
-        value={formData.jobTitle}
-        name="jobTitle"
-        onBlur={e => onBlur("jobTitle", e.target.value)}
-        placeholder="Data engineering lead"
+        type="email"
+        name="email"
+        value={formData.email}
+        onBlur={e => onBlur("email", e.target.value)}
+        placeholder="Your email"
+        title="Invalid email address"
         onChange={e => {
-          setFormData({ ...formData, jobTitle: e.target.value })
+          setFormData({ ...formData, email: e.target.value })
         }}
       />
-      <div className={`${formError.jobTitle !== "" ? "mb-2" : "mb-6"} `}>
-        {formError.jobTitle !== "" && (
-          <h6 className="text-red-error text-xs">{formError.jobTitle}</h6>
+
+      <div className={`${formError.email !== "" ? "mb-2" : "mb-6"} `}>
+        {formError.email !== "" && (
+          <h6 className="text-red-error text-xs">{formError.email}</h6>
         )}
       </div>
 
@@ -168,4 +154,4 @@ const DemoForm = props => {
   )
 }
 
-export default DemoForm
+export default VideoRequestForm

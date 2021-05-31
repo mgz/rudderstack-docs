@@ -24,6 +24,7 @@ module.exports = {
       grayColor: {
         custom: "#4E4E4E",
         lighter: "#A7A7A7",
+        "lighter-2x": "#C7C7C7",
         BgGray: "#FAFAFA",
         priceCardBorder: "#E1E1E1",
         dark: "#101836",

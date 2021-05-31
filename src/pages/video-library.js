@@ -15,6 +15,7 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
+import SingleRowContentVideoLibrary from "../components/singleRowContentVideoLibrary"
 
 const VideoLibraryPage = ({ data }) => {
   const lv_middlebannersection = (
@@ -36,15 +37,22 @@ const VideoLibraryPage = ({ data }) => {
         <div className="max-w-6xl mx-auto flex flex-wrap flex-col px-4">
           <InstantSearch
             searchClient={searchClient}
-            indexName={process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_video_library"}
+            indexName={
+              process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_video_library"
+            }
           >
             <Configure />
-            <div className="flex flex-row  flex-wrap-reverse mt-14 md:mt-32 w-full">
+            <div className="my-10 w-full">
+              <SingleRowContentVideoLibrary data={data.videolibrary} />
+            </div>
+
+            <div className="flex flex-row  flex-wrap-reverse mt-0 w-full">
               <div className="flex flex-col w-full lg:w-3/5 justify-center items-start text-center lg:text-left border-grey-500">
                 <VideoLibraryMenu attribute="category" />
               </div>
               <div className="w-full lg:w-2/5 pt-0 md:pt-6 pb-3 text-center">
                 <CustomSearchBox
+                  pleaceholderText="Search webinar"
                   onRefineTextChange={val => {
                     setCurrentRefineText(val)
                   }}
@@ -53,9 +61,7 @@ const VideoLibraryPage = ({ data }) => {
             </div>
 
             <div className="flex flex-wrap flex-col sm:flex-row">
-              <div
-                className=""
-              >
+              <div className="">
                 <div id="hits-container">
                   <div data-reactroot>
                     <CustomVideoLibraryHits
@@ -87,6 +93,33 @@ export const pageQuery = graphql`
   query {
     sanityFrontpageblock {
       _rawPagebuildersectionarray
+    }
+    videolibrary: allSanityVideolibrary(
+      sort: {fields: weight, order: ASC}
+      limit: 1
+    ) {
+      edges {
+        node {
+          _rawVideoLibraryCategoryType
+          id
+          listing_image {
+            asset {
+              url
+            }
+          }
+          slug {
+            current
+          }
+          spekers {
+            author_name
+            author_desc
+          }
+          weight
+          duration
+          shortdescription
+          title
+        }
+      }
     }
   }
 `
