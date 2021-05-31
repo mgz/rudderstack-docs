@@ -20,16 +20,16 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: process.env.RS_SITE_URL,
-        sitemap: 'https://rudderstack.com/sitemap.xml',
+        sitemap: "https://rudderstack.com/sitemap.xml",
         env: {
           development: {
             policy: [{ userAgent: '*', allow: ['/'] }]
           },
           production: {
-            policy: [{ userAgent: '*', allow: ['/'] }]
-          }
-        }
-      }
+            policy: [{ userAgent: "*", allow: ["/"] }],
+          },
+        },
+      },
     },
     `gatsby-plugin-react-helmet`,
     {
@@ -82,7 +82,27 @@ module.exports = {
         indexName: process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX,
         queries: require("./src/utils/integration-algolia"),
         enablePartialUpdates: true,
-        matchFields: ["slug"],
+        matchFields: ["slug","title","integration_category","weight","is_coming_soon","logoimage"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
+        indexName: process.env.GATSBY_ALGOLIA_VIDEO_LIBRARY_INDEX,
+        queries: require("./src/utils/video-library-algolia"),
+        enablePartialUpdates: true,
+        matchFields: [
+          "slug",
+          "category",
+          "title",
+          "shortdescription",
+          "spekers",
+          "weight",
+          "duration",
+          "logoimage",
+        ],
       },
     },
     `gatsby-plugin-styled-components`,

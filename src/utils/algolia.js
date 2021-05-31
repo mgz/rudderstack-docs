@@ -39,7 +39,7 @@ function pageToAlgoliaRecord({
 }) {
   let blogimage = ""
   if (blog_image) {
-    blogimage = blog_image.asset.url
+    blogimage = { src: blog_image.asset.url }
   }
 
   if (!blog_category) {
