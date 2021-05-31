@@ -2,12 +2,14 @@ import React, { Component } from "react"
 import ReactDOMServer from 'react-dom/server'
 import Page from "./page"
 import Singleblog from "./content"
-import Product from "./content"
+import Product from "./products"
 import Demo from "../pages/request-demo"
 import Thankyou from "../pages/request-demo/thank-you"
 
 const sanityClient = require('@sanity/client')
 const project_id = process.env.RS_SANITY_PROJECTID;
+const dataset = process.env.RS_SANITY_DATASET;
+
 var component = '';
 
 class PreviewTemplate extends Component {
@@ -19,7 +21,7 @@ class PreviewTemplate extends Component {
   async componentDidMount(data) {
     const client = await sanityClient({
       projectId: project_id,
-      dataset: process.env.RS_SANITY_DATASET,
+      dataset: dataset,
       token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
       useCdn: false,
     })
@@ -28,13 +30,16 @@ class PreviewTemplate extends Component {
     const type = this.props.type;
 
     if (type === 'blog') {
-      const query = '*[_id == $id]';
+      const query = '*[_id == $id]{...,blog_authors[]->,blog_image{asset->{url}}}';
       component = "Singleblog";
 
       await client.fetch(query, params).then((blogs) => {
+        var blogdata = {};
         blogs.forEach((blog) => {
-          blog.blog = blog;
-          this.setState({ data: blog });
+          blogdata.blog = blog;
+          blogdata.blog._rawDescription = blog.description;
+          blogdata.blog.blog_image.asset.fluid = {src: blogdata.blog.blog_image.asset.url};
+          this.setState({ data: blogdata });
         })
       });
     }
@@ -64,15 +69,30 @@ class PreviewTemplate extends Component {
         })
       });
     }
-    
-    else if (type === 'product') {
+    else if (type === 'frontpageblock') {
+      const query = '*[_id == $id]';
+      component = "Page";
+
+      await client.fetch(query, params).then((pages) => {
+        var pagedata = {};
+        pages.forEach((page) => {
+          pagedata.page = page;
+          pagedata.page._rawPagebuildersectionarray = page.pagebuildersectionarray;
+          this.setState({ data: pagedata });
+        })
+      });
+    }
+    else if (type === 'product_page') {
       const query = '*[_id == $id]';
       component = "Product";
 
       await client.fetch(query, params).then((products) => {
+        var productdata = {};
         products.forEach((product) => {
-          product.product = product;
-          this.setState({ data: product });
+          productdata.product = product;
+          productdata.product._rawPagebuildersectionarray = product.pagebuildersectionarray;
+          productdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock;
+          this.setState({ data: productdata });
         })
       });
     }
@@ -94,8 +114,11 @@ class PreviewTemplate extends Component {
         {component === 'Singleblog' &&
           <Singleblog data={this.state.data} />
         }
-         {component === 'Product' &&
+        {component === 'Product' &&
           <Product data={this.state.data} />
+        }
+        {component === 'Page' &&
+          <Page data={this.state.data} />
         }
       </>
     );
