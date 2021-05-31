@@ -13,9 +13,6 @@ const Singlerowcontent = ({ hit }) => {
   hit.blog_authors.forEach(row => {
     author_names += (author_names.length > 0 ? ", " : "By ") + row.author_name
   })
-  // console.log('hari test',hit.title,hit.blog_authors)
-  console.log(hit.blogimage);
-  console.log("-----");
   return (
     <div
       key="0"
