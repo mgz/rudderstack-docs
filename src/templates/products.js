@@ -23,7 +23,7 @@ const Products = ({ data, }) => {
   return (
     <Layout>
       <div className="font-custom">
-        {(data.product.nodes[0]._rawPagebuildersectionarray || []).map(
+        {(data.product._rawPagebuildersectionarray || []).map(
           (row, idx) => {
             if (row._type === "product_banner") {
               return <ProductHeroBanner key={row._id} {...row} />
@@ -55,15 +55,13 @@ export default Products
 
 export const pageQuery = graphql`
   query GetSingleProductPage($slug: String) {
-    product: allSanityProductPage(filter: {slug: {current: {eq: $slug}}}) {
-      nodes {
-        _rawPagebuildersectionarray
-        title
-        slug {
-          current
-        }
-        _id
+    product: sanityProductPage(slug: {current: {eq: $slug}}) {
+      _rawPagebuildersectionarray
+      title
+      slug {
+        current
       }
+      _id
     }
     sanityFrontpageblock {
       _rawPagebuildersectionarray

@@ -86,7 +86,7 @@ const Singleblog = ({ data, ...props }) => {
                 <div className="sm:w-32 sm:h-32 h-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
                   {/* <div className= "rounded-full"> */}
                     <Image
-                      props={item.author_image.asset._id}
+                      props={item.author_image.asset._id ? item.author_image.asset._id : item.author_image.asset._ref}
                       classes="w-24 h-24 rounded-full"
                     />
                   {/* </div> */}
