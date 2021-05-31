@@ -37,7 +37,7 @@ const Blog_new = ({ data }) => {
         <div className="max-w-6xl mx-auto flex flex-wrap flex-col px-4">
           <InstantSearch
             searchClient={searchClient}
-            indexName={process.env.GATSBY_ALGOLIA_BLOGINDEX}
+            indexName={process.env.GATSBY_ALGOLIA_INDEX_PREFIX + '_rudderstack_gatsby_blog'}
           >
             <Configure hitsPerPage={10} />
             <div className="flex flex-row  flex-wrap-reverse mt-14 md:mt-32 w-full">

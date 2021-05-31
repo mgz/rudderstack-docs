@@ -42,12 +42,21 @@ function videoLibraryToAlgoliaRecord({
   if (listing_image) {
     logoimage = listing_image.asset.url
   }
-  let category=""
-  if(_rawVideoLibraryCategoryType && _rawVideoLibraryCategoryType.condition === "live_option"){
+  let category = ""
+  if (
+    _rawVideoLibraryCategoryType &&
+    _rawVideoLibraryCategoryType.condition === "live_option"
+  ) {
     category = "Live"
-  }else if(_rawVideoLibraryCategoryType && _rawVideoLibraryCategoryType.condition === "learn_option"){
+  } else if (
+    _rawVideoLibraryCategoryType &&
+    _rawVideoLibraryCategoryType.condition === "learn_option"
+  ) {
     category = "Learn RudderStack"
-  }else if(_rawVideoLibraryCategoryType && _rawVideoLibraryCategoryType.condition === "usecase_option"){
+  } else if (
+    _rawVideoLibraryCategoryType &&
+    _rawVideoLibraryCategoryType.condition === "usecase_option"
+  ) {
     category = "Use cases"
   }
 
@@ -71,7 +80,8 @@ const queries = [
       // console.log("on map , ", data)
       return data.videolibrary.edges.map(videoLibraryToAlgoliaRecord)
     },
-    indexName: process.env.GATSBY_ALGOLIA_VIDEO_LIBRARY_INDEX,
+    indexName:
+      process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_video_library",
     settings: {},
   },
 ]

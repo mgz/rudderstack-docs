@@ -37,7 +37,7 @@ const Integration = props => {
         <div className="xl:container px-3 pb-10 md:pb-40 mx-auto flex flex-wrap flex-col md:flex-row items-center">
           <InstantSearch
             searchClient={searchClient}
-            indexName={process.env.GATSBY_ALGOLIA_INTEGRATIONINDEX}
+            indexName={process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_integration"}
           >
             <div className="flex flex-wrap flex-col sm:flex-row w-full">
               <div className="mx-auto w-full lg:w-10/12 lg:px-10 md:px-6 ">

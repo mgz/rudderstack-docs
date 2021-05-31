@@ -13,7 +13,8 @@ function IntegrationHero({ data }) {
           </h2>
           <PortableText blocks={data.herodescritpion} />
           <div className="relative block sm:flex mt-12">
-            {data.herocta && data.herocta.btnexternallink &&
+            {data.herocta &&
+            data.herocta.btnexternallink &&
             data.herocta.btnexternallink === true ? (
               <a
                 href={data.herocta.btnlink}
@@ -23,16 +24,20 @@ function IntegrationHero({ data }) {
               </a>
             ) : (
               <span className="btn-primary-lg sm:mr-4 md:mb-0 mb-6">
-                <Link to={data.herocta ? data.herocta : ""}>{data.herocta ? data.herocta : ""}</Link>
+                <Link to={data.herocta ? data.herocta : ""}>
+                  {data.herocta ? data.herocta : ""}
+                </Link>
               </span>
             )}
           </div>
         </div>
         <div className="relative w-full px-5 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
           <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
-            <div className="w-full">
-              <Image props={data.heroleftimage.asset._ref} classes="w-full" />
-            </div>
+            {data.heroleftimage.asset && (
+              <div className="w-full">
+                <Image props={data.heroleftimage.asset._ref} classes="w-full" />
+              </div>
+            )}
           </div>
         </div>
       </div>

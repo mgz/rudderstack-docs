@@ -123,11 +123,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const integrations = integration.data.allSanityIntegration.edges || []
   integrations.forEach((edge, index) => {
     const path = `/integration/${edge.node.slug.current}`
-
-    createPage({
-      path,
-      component: require.resolve("./src/templates/integrationContent.js"),
-      context: { slug: edge.node.slug.current },
-    })
+    // if (1 === 2) {
+      createPage({
+        path,
+        component: require.resolve("./src/templates/integrationContent.js"),
+        context: { slug: edge.node.slug.current },
+      })
+    // }
   })
 }

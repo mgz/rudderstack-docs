@@ -36,7 +36,7 @@ const VideoLibraryPage = ({ data }) => {
         <div className="max-w-6xl mx-auto flex flex-wrap flex-col px-4">
           <InstantSearch
             searchClient={searchClient}
-            indexName={process.env.GATSBY_ALGOLIA_VIDEO_LIBRARY_INDEX}
+            indexName={process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_video_library"}
           >
             <Configure />
             <div className="flex flex-row  flex-wrap-reverse mt-14 md:mt-32 w-full">
@@ -54,9 +54,7 @@ const VideoLibraryPage = ({ data }) => {
 
             <div className="flex flex-wrap flex-col sm:flex-row">
               <div
-                className={`${
-                  currentRefineHitsCount > 0 ? "mt-10 md:mt-24" : ""
-                }`}
+                className=""
               >
                 <div id="hits-container">
                   <div data-reactroot>

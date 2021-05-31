@@ -13,7 +13,7 @@ import Faq from "../components/faq"
 import Testimonial from "../components/testimonial"
 
 const Singleintegration = ({ data }) => {
-  // console.log("integration-data", data)
+  // console.log("integration-data", data._rawIntegrationHeroSection.herotitle)
   const lv_testimonialsection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "testimonialsection")
@@ -40,14 +40,26 @@ const Singleintegration = ({ data }) => {
   return (
     <Layout>
       <div className="pt-10 font-custom">
-        <IntegrationHero data={data.integration._rawIntegrationHeroSection} />
-        <IntegrationLeftRightContent
-          data={data.integration._rawIntegrationLeftRightsection}
-        />
-        <IntegrationHowToSetUp data={data.integration._rawHowtosetupsection} />
-        <IntegrationGetMoreOutOf
-          data={data.integration._rawGetmoreoutofsection}
-        />
+        {data.integration._rawIntegrationHeroSection && (
+          <IntegrationHero data={data.integration._rawIntegrationHeroSection} />
+        )}
+
+        {data.integration._rawIntegrationLeftRightsection && (
+          <IntegrationLeftRightContent
+            data={data.integration._rawIntegrationLeftRightsection}
+          />
+        )}
+        {data.integration._rawHowtosetupsection && (
+          <IntegrationHowToSetUp
+            data={data.integration._rawHowtosetupsection}
+          />
+        )}
+
+        {data.integration._rawGetmoreoutofsection && (
+          <IntegrationGetMoreOutOf
+            data={data.integration._rawGetmoreoutofsection}
+          />
+        )}
 
         {faqData && (
           <section className="bg-grayColor-BgGray md:pt-32 md:pb-24 sm:pt-16 sm:pb-12 pt-11 pb-12 relative font-custom">
@@ -60,10 +72,13 @@ const Singleintegration = ({ data }) => {
           </section>
         )}
 
-        <IntegrationSimilar
-          data={data.integration._rawSimilarDestination}
-          allIntegrationData={data.allSanityIntegration}
-        />
+        {data.integration._rawSimilarDestination && (
+          <IntegrationSimilar
+            data={data.integration._rawSimilarDestination}
+            allIntegrationData={data.allSanityIntegration}
+          />
+        )}
+
         <section id="testimonials">
           <Testimonial {...lv_testimonialsection[0]} isForDemoPage={true} />
         </section>

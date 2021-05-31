@@ -2,6 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 
 const IntegrationLeftRightContent = ({ data }) => {
+  console.log(data)
   return (
     <section className="md:mb-24 sm:mb-20 sm:mt-0 mt-20 mb-10">
       {data && (
@@ -29,6 +30,9 @@ const IntegrationLeftRightContent = ({ data }) => {
                 </div>
               )
             })}
+          </div>
+          <div  className="relative  w-full text-xl leading-8">
+            <PortableText blocks={data.wycd_footer} />
           </div>
         </div>
       )}

@@ -6,24 +6,24 @@ module.exports = {
     title: `Rudderstack`,
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
     author: `@gatsbyjs`,
-    siteUrl: 'https://rudderstack.com'
+    siteUrl: "https://rudderstack.com",
   },
   plugins: [
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output:`/`,
-      }
+        output: `/`,
+      },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
         host: process.env.RS_SITE_URL,
         sitemap: "https://rudderstack.com/sitemap.xml",
         env: {
           development: {
-            policy: [{ userAgent: '*', allow: ['/'] }]
+            policy: [{ userAgent: "*", allow: ["/"] }],
           },
           production: {
             policy: [{ userAgent: "*", allow: ["/"] }],
@@ -79,10 +79,18 @@ module.exports = {
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
-        indexName: process.env.RS_GATSBY_ALGOLIA_INTEGRATIONINDEX,
+        indexName:
+          process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_integration",
         queries: require("./src/utils/integration-algolia"),
         enablePartialUpdates: true,
-        matchFields: ["slug","title","integration_category","weight","is_coming_soon","logoimage"],
+        matchFields: [
+          "slug",
+          "title",
+          "integration_category",
+          "weight",
+          "is_coming_soon",
+          "logoimage",
+        ],
       },
     },
     {
@@ -90,7 +98,7 @@ module.exports = {
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
-        indexName: process.env.GATSBY_ALGOLIA_VIDEO_LIBRARY_INDEX,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_video_library",
         queries: require("./src/utils/video-library-algolia"),
         enablePartialUpdates: true,
         matchFields: [
