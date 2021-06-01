@@ -18,9 +18,9 @@ const IntegrationSimilar = ({ data }) => {
                 >
                   <div
                     key={ii._ref}
-                    className="flex justify-between flex-col border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full"
+                    className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full"
                   >
-                    <div className="int-img md:py-auto lg:px-24 md:px-16 p-auto flex justify-center items-center">
+                    <div className="int-img lg:px-24 p-10 flex justify-center items-center">
                       <Image
                         props={
                           l_integration_dtl.integrationLogo.asset._id?l_integration_dtl.integrationLogo.asset._id:l_integration_dtl.integrationLogo.asset._ref
