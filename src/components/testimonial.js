@@ -34,7 +34,7 @@ const Testimonial = props => {
   return (
     <>
      <div className="overflow-hidden">
-      <div class="testimonials testimonials-wrap bg-white py-5 text-primary px-md-5 margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover md:mt-32 -mx-2.5">
+      <div class="testimonials testimonials-wrap py-5 text-primary px-md-5 margin-top-xl testimonila-bg md:mt-32">
         <div class="max-w-6xl mx-auto px-4 md:px-3 testimonial-img-wrap">
           <div class="row">
             <div className="block w-full">
@@ -54,14 +54,14 @@ const Testimonial = props => {
                               />
                             </div>
                           </div>
-                          <p className="font-bold text-sm text-primary mb-2">
+                          <p className="font-bold text-sm text-white mb-2">
                             {testimonial.clientname}
                           </p>
-                          <p className="text-sm text-primary mb-4">
+                          <p className="text-sm text-white mb-4">
                             {testimonial.clientdesignation}
                           </p>
                           <div
-                            class={`message text-center text-2xl md:text-3xl-3 tracking-wide font-normal text-primary blockquote mt-8 px-0 md:px-24 leading-tight`}
+                            class={`message text-center text-2xl md:text-3xl-3 tracking-wide font-normal text-white blockquote mt-8 px-0 md:px-24 leading-tight`}
                           >
                             {testimonial.clientcontent}
                           </div>

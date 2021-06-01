@@ -39,11 +39,11 @@ function OurLogo(props) {
           {maintitle}
         </h3>
       </div>
-      <div className="flex w-full lg:justify-between justify-start flex-wrap mt-2 sm:mt-2 our-logos">
+      <div className="flex w-full justify-start flex-wrap mt-2 sm:mt-2 our-logos">
        
           {logoimages.map((logoimage, i) => {
             return (
-              <div key={i} class="item inline-flex md:p-4 px-2 py-4">
+              <div key={i} class="w-1/5 flex justify-center md:pt-20 px-2 py-4">
                 <span className="">
                   <Image props={logoimage.asset._ref}/>
                 </span>

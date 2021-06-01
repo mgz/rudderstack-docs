@@ -34,7 +34,7 @@ const MiddleBanner = props => {
                             className={
                               (btn.btnhiglight === true
                                 ? "bg-white text-primary btn-secondary-lg"
-                                : "btn-primary-lg") +
+                                : "btn-primary-lg bg-black-custom") +
                               ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom`
                             }
                             href={btn.btnlink}
@@ -49,7 +49,7 @@ const MiddleBanner = props => {
                             className={
                               (btn.btnhiglight === true
                                 ? "bg-white text-primary btn-secondary-lg"
-                                : "btn-primary-lg") +
+                                : "btn-primary-lg bg-black-custom") +
                               ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom`
                             }
                           >

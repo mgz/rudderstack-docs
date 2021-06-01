@@ -89,14 +89,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5677ae', end
 
 }
 
-.radial-gradiant
+.testimonila-bg
 {
-background: #5677ae; /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  #5677ae 0%, #05677a 47%, #661284 100%); /* FF3.6-15 */
-background: -webkit-radial-gradient(center, ellipse cover,  #5677ae 0%,#05677a 47%,#661284 100%); /* Chrome10-25,Safari5.1-6 */
-background: radial-gradient(ellipse at center,  #5677ae 0%,#05677a 47%,#661284 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5677ae', endColorstr='#661284',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
+  background-image: url('../images/testimonial-bg.svg');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-position: top center;
 }
 
 .menu li.has-submenu a:after {
