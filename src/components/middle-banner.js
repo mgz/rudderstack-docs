@@ -10,7 +10,7 @@ const MiddleBanner = props => {
   const btns = props.addbuttons
   return (
     <>
-      <section className="bg-primary text-white 100% pt-10 md:py-28 px-0 sm:px-0">
+      <section className="bg-black-custom text-white 100% pt-10 md:py-28 px-0 sm:px-0">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           <div className="flex flex-wrap justify-items-center items-center sm:flex-row">
             <div className="flex items-start md:w-1/2">

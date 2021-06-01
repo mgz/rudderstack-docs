@@ -14,12 +14,12 @@ const LeftRightImgCnt = props => {
           {(smalltitle !== "" || maintitle !== "") && (
             <div className="flex flex-col w-full justify-center items-start md:text-left max-w-screen-md">
               {smalltitle !== "" && (
-                <p className="mt-20 mb-2 text-blue text-sm uppercase">
+                <p className="mt-20 mb-2 text-seegreen text-sm uppercase">
                   {smalltitle}
                 </p>
               )}
               {maintitle !== "" && (
-                <h3 className="md:mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">
+                <h3 className="md:mt-2 text-4xl md:text-5xl text-white font-bold leading-tight">
                   {maintitle}
                 </h3>
               )}
@@ -81,20 +81,20 @@ const LeftRightImgCnt = props => {
                       } sm:p-6 sm:pr-0`}
                     >
                       <div className="align-middle md:pl-12">
-                        <p className="mt-4 sm:mt-0 text-sm text-blue uppercase">
+                        <p className="mt-4 sm:mt-0 text-sm text-seegreen uppercase">
                           {smalltitle}
                         </p>
                         {isTitleBigger === true ? (
-                          <h2 className="mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
+                          <h2 className="mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl text-white font-bold leading-tight">
                             {title}
                           </h2>
                         ) : (
-                          <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+                          <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-white font-bold leading-tight">
                             {title}
                           </h3>
                         )}
 
-                        <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt">
+                        <div className="text-white leading-7 text-sm sm:text-lg frtxt-contnt">
                           <PortableText blocks={portabletext} />
                         </div>
                         <div className="mt-4 flex items-center">
@@ -104,7 +104,7 @@ const LeftRightImgCnt = props => {
                                 return (
                                   <a
                                     href={linkurl}
-                                    className="font-bold leading-normal text-sm lr-icon hover:text-blueNew-custom"
+                                    className="font-bold leading-normal text-sm lr-icon text-seegreen"
                                   >
                                     {linktext}
                                   </a>
@@ -155,22 +155,22 @@ const LeftRightImgCnt = props => {
                           : "sm:w-1/2"
                       } sm:p-6 sm:pl-0 md:pr-12`}
                     >
-                      <p className="mt-4 sm:mt-0 text-blue text-sm uppercase">
+                      <p className="mt-4 sm:mt-0 text-seegreen text-sm uppercase">
                         {smalltitle}
                       </p>
                       {/* <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
                         {title}
                       </h3> */}
                       {isTitleBigger === true ? (
-                        <h2 className="mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
+                        <h2 className="mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl text-white font-bold leading-tight">
                           {title}
                         </h2>
                       ) : (
-                        <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+                        <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-white font-bold leading-tight">
                           {title}
                         </h3>
                       )}
-                      <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt">
+                      <div className="text-white leading-7 text-sm sm:text-lg frtxt-contnt">
                         <PortableText blocks={portabletext} />
                       </div>
                       <div className="mt-4 flex items-center">
@@ -180,14 +180,14 @@ const LeftRightImgCnt = props => {
                               return (
                                 <a
                                   href={linkurl}
-                                  className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block hover:text-blueNew-custom"
+                                  className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block text-seegreen"
                                 >
                                   {linktext}
                                 </a>
                               )
                             } else {
                               return (
-                                <span className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block hover:text-blueNew-custom">
+                                <span className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block text-seegreen">
                                   <Link to={linkurl}>{linktext}</Link>
                                 </span>
                               )

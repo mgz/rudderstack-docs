@@ -10,7 +10,7 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       black: {
-        custom: "#000000",
+        custom: "#10174C", /*footer nav btn */
       },
       blueNew: {
         lighter: "#EEF5F5",
@@ -44,6 +44,8 @@ module.exports = {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         blue: "var(--blue)",
+        purple: "var(--purple)",
+        seegreen: "var(--seegreen)",
         background: "var(--background)",
         backgroundsecondary: "var(--backgroundsecondary)",
         white: "var(--white)",

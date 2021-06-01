@@ -10,7 +10,7 @@ const Tabs = props => {
   return (
     <section className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center my-20 md:px-0">
       <div className="flex flex-col w-full justify-center items-start md:text-left mb-8 tab-section-wrapper">
-        <p className="my-4 text-blue text-sm uppercase">{smalltitle}</p>
+        <p className="my-4 text-purple text-sm uppercase">{smalltitle}</p>
         <h3 className="mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">
           {maintitle}
         </h3>
@@ -28,7 +28,7 @@ const Tabs = props => {
                     className={
                       "text-lg py-6 pr-5 md:px-5 md:py-3 block leading-normal " +
                       (openTab === i
-                        ? "text-blue font-bold md:border-l-4 md:border-blue opentab"
+                        ? "mona font-bold md:border-l-4 md:border-blue opentab"
                         : "text-secondary md:bg-white bg-transparent border-b-2 md:border-b-0 md:border-l-4 border-tabborder closetab")
                     }
                     onClick={e => {
@@ -63,7 +63,7 @@ const Tabs = props => {
         </div>
         <div className="pt-3 hidden md:block md:col-span-7">
           <div className="relative block md:bg-background bg-transperent p-4 min-w-0 break-words md:bg-white w-full mb-6 rounded-lg">
-            <div className="md:px-15 lg:px-15 md:py-10 md:bg-blueNew-lighter rounded-xl">
+            <div className="md:px-15 lg:px-15 md:py-10 bg-gradiantprimary rounded-xl">
               <div className="tab-content tab-space tab-content-item">
                 {tabs.map((tab, i) => (
                   <div

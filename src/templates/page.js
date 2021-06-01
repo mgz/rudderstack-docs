@@ -61,7 +61,7 @@ const Page = props => {
           break
         case "leftrightcontentimagesection":
           el = (
-            <div className="bg-backgroundsecondary 100%" key={c._key}>
+            <div className="bg-gradiantsecondary 100%" key={c._key}>
               <LeftRightImgCnt {...c} />{" "}
             </div>
           )

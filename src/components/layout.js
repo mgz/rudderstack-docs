@@ -78,7 +78,7 @@ const Layout = ({ children }) => {
       <MainNavigation />
       <main>{children}</main>
 
-      <footer className=" bg-black px-4 sm:px-4 text-sm bg-black-custom md:pt-0">
+      <footer className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0">
         <div className="max-w-6xl mx-auto footer-menus-wrap">
           <div className="w-full py-6 font-custom inline-block">
             {footermenus.map((menu, i) => (
