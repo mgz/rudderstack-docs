@@ -131,11 +131,11 @@ exports.createPages = async ({ graphql, actions }) => {
         context: { slug: edge.node.slug.current },
       })
       // }
-      console.log("page build successful ", path)
+      // console.log("page build successful ", path)
     } catch {
       console.warn("erro while building", path)
     } finally {
-      console.log("done with  ", path)
+      // console.log("done with  ", path)
     }
   })
 

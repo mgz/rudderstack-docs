@@ -57,7 +57,7 @@ const VideoRequestForm = props => {
   return (
     <form
       id={props.formId}
-      className={`demo_form videoLibrary_form px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full xl:w-96 md:max-w-lg -top-40`}
+      className={`demo_form videoLibrary_form px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full xl:w-96 md:max-w-lg`}
     >
       <div className="mb-12">
         <p className="mb-6 font-bold text-blueNew-custom text-xl-2">

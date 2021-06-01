@@ -22,7 +22,7 @@ const IntegrationGetMoreOutOf = ({ data }) => {
         <Link to={data.freetextctc.btnlink}>{data.freetextctc.btntext}</Link>
       </span>
     )
-  }  
+  }
   return (
     <section className="100% bg-whiteColor-custom">
       <div className="max-w-6xl px-4 md:px-3 mx-auto pt-24 pb-28 pb-0 lg:py-24">
@@ -36,22 +36,8 @@ const IntegrationGetMoreOutOf = ({ data }) => {
             <div className="text-secondary leading-7 text-sm sm:text-lg">
               <PortableText blocks={data.freetextdescritpion} />
             </div>
-            {/* <span className="mt-11 sm:mt-14 font-bold leading-normal text-sm relative inline-flex sm:inline-block hover:text-blueNew-custom">
-              Ready to Get Started?
-            </span> */}
+
             <div className="relative block sm:flex sm:mt-14 mt-16">
-              {/* {data.freetextctc.btnexternallink &&
-              data.freetextctc.btnexternallink === true ? (
-                <a href={data.freetextctc.btnlink} className="btn-primary-lg">
-                  {data.freetextctc.btntext}
-                </a>
-              ) : (
-                <span className="btn-primary-lg">
-                  <Link to={data.freetextctc.btnlink}>
-                    {data.freetextctc.btntext}
-                  </Link>
-                </span>
-              )} */}
               {renderButton}
             </div>
           </div>
