@@ -22,7 +22,7 @@ const Singlerowcontent = ({ hit }) => {
         <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link to={hit.slug}>
             <img
-              src={hit.blogimage}
+              src={hit.blogimage.src}
               alt={hit.title}
               className="sm:h-full lg:max-w-2xl object-cover"
               loading="eager"

@@ -168,4 +168,34 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: edge.node.slug.current },
     })
   })
+
+  const thankyou = await graphql(`
+    {
+      allSanityThankyoupages {
+        edges {
+          node {
+            title
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (thankyou.errors) {
+    throw thankyou.errors
+  }
+
+  const thankyoupages = thankyou.data.allSanityThankyoupages.edges || []
+  thankyoupages.forEach((edge, index) => {
+    const path = `/form-submit/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/thankyou.js"),
+      context: { slug: edge.node.slug.current },
+    })
+  })
 }
