@@ -72,10 +72,9 @@ const Singleintegration = ({ data }) => {
           </section>
         )}
 
-        {data.integration._rawSimilarDestination && (
+        {data.integration.similarDestination && (
           <IntegrationSimilar
-            data={data.integration._rawSimilarDestination}
-            allIntegrationData={data.allSanityIntegration}
+            data={data.integration.similarDestination}
           />
         )}
 
@@ -99,7 +98,21 @@ export const query = graphql`
       _rawIntegrationHeroSection
       _rawIntegrationLeftRightsection
       _rawIntegrationLogo
-      _rawSimilarDestination
+      similarDestination {
+        sd_maintitle
+        sd_integrations {
+          integrationLogo {
+            asset {
+              _id
+            }
+          }
+          slug {
+            _key
+            _type
+            current
+          }
+        }
+      }
       _rawSlug
       _id
       _key
@@ -120,21 +133,6 @@ export const query = graphql`
     }
     sanityFrontpageblock {
       _rawPagebuildersectionarray
-    }
-    allSanityIntegration {
-      edges {
-        node {
-          _id
-          _key
-          _rawIntegrationLogo
-          title
-          weight
-          is_coming_soon
-          slug {
-            current
-          }
-        }
-      }
     }
   }
 `
