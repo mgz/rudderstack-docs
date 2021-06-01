@@ -124,13 +124,13 @@ exports.createPages = async ({ graphql, actions }) => {
   integrations.forEach((edge, index) => {
     const path = `/integration/${edge.node.slug.current}`
     try {
-      if (1 === 2) {
-        createPage({
-          path,
-          component: require.resolve("./src/templates/integrationContent.js"),
-          context: { slug: edge.node.slug.current },
-        })
-      }
+      // if (1 === 2) {
+      createPage({
+        path,
+        component: require.resolve("./src/templates/integrationContent.js"),
+        context: { slug: edge.node.slug.current },
+      })
+      // }
       console.log("page build successful ", path)
     } catch {
       console.warn("erro while building", path)

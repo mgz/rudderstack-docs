@@ -13,7 +13,7 @@ const videoContent = ({ data }) => {
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
-  console.log("fff", data)
+  // console.log("fff", data)
   return (
     <Layout>
       <div className="pt-0 font-custom">

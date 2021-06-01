@@ -4,6 +4,26 @@ import Image from "./image"
 import Link from "gatsby-link"
 
 function IntegrationHero({ data }) {
+  let renderButton = null
+  if (
+    data.herocta &&
+    data.herocta.btnexternallink &&
+    data.herocta.btnexternallink === true &&
+    data.herocta.btntext !== ""
+  ) {
+    renderButton = (
+      <a href={data.herocta.btnlink} className="btn-primary-lg">
+        {data.herocta.btntext}
+      </a>
+    )
+  } else if (data.herocta && data.herocta.btntext !== "") {
+    renderButton = (
+      <span className="btn-primary-lg">
+        <Link to={data.herocta.btnlink}>{data.herocta.btntext}</Link>
+      </span>
+    )
+  }
+
   return (
     <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative banner-section">
       <div className="flex flex-col items-center md:gap-1 justify-center mx-auto lg:flex-row lg:p-0">
@@ -13,7 +33,7 @@ function IntegrationHero({ data }) {
           </h2>
           <PortableText blocks={data.herodescritpion} />
           <div className="relative block sm:flex mt-12">
-            {data.herocta &&
+            {/* {data.herocta &&
             data.herocta.btnexternallink &&
             data.herocta.btnexternallink === true ? (
               <a
@@ -28,12 +48,13 @@ function IntegrationHero({ data }) {
                   {data.herocta ? data.herocta : ""}
                 </Link>
               </span>
-            )}
+            )} */}
+            {renderButton}
           </div>
         </div>
         <div className="relative w-full px-5 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
           <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
-            {data.heroleftimage.asset && (
+            {data.heroleftimage && data.heroleftimage.asset && (
               <div className="w-full">
                 <Image props={data.heroleftimage.asset._ref} classes="w-full" />
               </div>

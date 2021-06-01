@@ -10,36 +10,39 @@ const IntegrationSimilar = ({ data, allIntegrationData }) => {
           {data.sd_maintitle}
         </h3>
         <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
-          {data.sd_integrations.map(ii => {
-            let l_integration_dtl = allIntegrationData.edges.find(
-              oo => oo.node._id === ii._ref
-            )
-            if (!l_integration_dtl) {
-              return <></>
-            }
-            return (
-              <Link to={`/integration/` + l_integration_dtl.node.slug.current}>
-                <div
-                  key={ii._ref}
-                  className="flex justify-between flex-col border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full"
+          {data.sd_integrations &&
+            data.sd_integrations.map(ii => {
+              let l_integration_dtl = allIntegrationData.edges.find(
+                oo => oo.node._id === ii._ref
+              )
+              if (!l_integration_dtl) {
+                return <></>
+              }
+              return (
+                <Link
+                  to={`/integration/` + l_integration_dtl.node.slug.current}
                 >
-                  <div className="int-img md:py-auto lg:px-24 md:px-16 p-auto flex justify-center items-center">
-                    <Image
-                      props={
-                        l_integration_dtl.node._rawIntegrationLogo.asset._ref
-                      }
-                      classes="object-scale-down h-full w-full"
-                    />
+                  <div
+                    key={ii._ref}
+                    className="flex justify-between flex-col border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full"
+                  >
+                    <div className="int-img md:py-auto lg:px-24 md:px-16 p-auto flex justify-center items-center">
+                      <Image
+                        props={
+                          l_integration_dtl.node._rawIntegrationLogo.asset._ref
+                        }
+                        classes="object-scale-down h-full w-full"
+                      />
+                    </div>
+                    <div className="flex items-center px-10 py-5">
+                      <span className="font-bold leading-normal text-sm lr-icon relative sm:inline-block hover:text-blueNew-custom">
+                        <a>See more</a>
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex items-center px-10 py-5">
-                    <span className="font-bold leading-normal text-sm lr-icon relative sm:inline-block hover:text-blueNew-custom">
-                      <a>See more</a>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            )
-          })}
+                </Link>
+              )
+            })}
         </div>
       </div>
     </section>

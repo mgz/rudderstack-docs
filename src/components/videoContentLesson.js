@@ -3,7 +3,7 @@ import PortableText from "./portableText"
 import Image from "./image"
 
 const VideoContentLesson = ({ data }) => {
-  console.log("ssss", data)
+  // console.log("ssss", data)
   return (
     <section className="100% bg-whiteColor-custom">
       <div className="max-w-6xl px-4 mx-auto sm:pt-16 pb-16 md:pb-28">

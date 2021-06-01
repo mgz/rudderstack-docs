@@ -4,6 +4,26 @@ import Image from "./image"
 import Link from "gatsby-link"
 
 const IntegrationHowToSetUp = ({ data }) => {
+  let renderButton = null
+  if (
+    data.freetextctc &&
+    data.freetextctc.btnexternallink &&
+    data.freetextctc.btnexternallink === true &&
+    data.freetextctc.btntext !== ""
+  ) {
+    renderButton = (
+      <a href={data.freetextctc.btnlink} className="btn-primary-lg">
+        {data.freetextctc.btntext}
+      </a>
+    )
+  } else if (data.freetextctc && data.freetextctc.btntext !== "") {
+    renderButton = (
+      <span className="btn-primary-lg">
+        <Link to={data.freetextctc.btnlink}>{data.freetextctc.btntext}</Link>
+      </span>
+    )
+  }
+
   return (
     <section
       className={`${
@@ -24,7 +44,7 @@ const IntegrationHowToSetUp = ({ data }) => {
                 <PortableText blocks={data.freetextdescritpion} />
               </div>
               <div className="relative block sm:flex mt-14">
-                {data.freetextctc.btnexternallink &&
+                {/* {data.freetextctc.btnexternallink &&
                 data.freetextctc.btnexternallink === true ? (
                   <a href={data.freetextctc.btnlink} className="btn-primary-lg">
                     {data.freetextctc.btntext}
@@ -35,11 +55,12 @@ const IntegrationHowToSetUp = ({ data }) => {
                       {data.freetextctc.btntext}
                     </Link>
                   </span>
-                )}
+                )} */}
+                {renderButton}
               </div>
             </div>
             <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 mt-14 sm:mt-0">
-              {data.freetextrightimage && (
+              {data.freetextrightimage && data.freetextrightimage.asset && (
                 <Image
                   props={data.freetextrightimage.asset._ref}
                   classes="w-full"
