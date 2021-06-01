@@ -3,6 +3,7 @@ import ReactDOMServer from 'react-dom/server'
 import Page from "./page"
 import Singleblog from "./content"
 import Product from "./products"
+import Integration from "./integrationContent"
 import Demo from "../pages/request-demo"
 import Thankyou from "../pages/request-demo/thank-you"
 
@@ -96,6 +97,30 @@ class PreviewTemplate extends Component {
         })
       });
     }
+    else if (type === 'integration') {
+      const query = '*[_id == $id]{...,integrationLogo{asset->{url}},similarDestination{sd_integrations[]->}}';
+      component = "Integration";
+
+      await client.fetch(query, params).then((integrations) => {
+        var intdata = {};
+        integrations.forEach((integration) => {
+          console.log(integration);
+          intdata.integration = integration;
+          intdata.integration._rawFaqSection = integration.faqSection;
+          intdata.integration._rawGetmoreoutofsection = integration.getmoreoutofsection;
+          intdata.integration._rawHowtosetupsection = integration.howtosetupsection;
+          intdata.integration._rawIntegrationHeroSection = integration.integrationHeroSection;
+          intdata.integration._rawIntegrationLeftRightsection = integration.integrationLeftRightsection;
+          intdata.integration._rawIntegrationLogo = integration.integrationLogo;
+          intdata.integration._rawIntegrationLogo.node = {'url': integration.integrationLogo.asset.url};
+          intdata.integration._rawIntegrationcategories = integration.integrationcategories;
+          intdata.integration._rawIntegrationtypes = integration.integrationtypes;
+          intdata.integration._rawSimilarDestination = integration.similarDestination;
+          intdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock;
+          this.setState({ data: intdata });
+        })
+      });
+    }
   }
 
   componentDidUpdate() {}
@@ -119,6 +144,9 @@ class PreviewTemplate extends Component {
         }
         {component === 'Page' &&
           <Page data={this.state.data} />
+        }
+        {component === 'Integration' &&
+          <Integration data={this.state.data} />
         }
       </>
     );
