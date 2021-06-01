@@ -7,7 +7,7 @@ import Speaker2 from "../images/speaker2.svg"
 import Speaker1 from "../images/speaker1.svg"
 
 import VideoLibraryContentHeader from "../components/videoLibraryContentHeader"
-import VideoContentLesson from "../components/VideoContentLesson"
+import VideoContentLesson from "../components/videoContentLesson"
 
 const videoContent = ({ data }) => {
   const lv_middlebannersection = (
