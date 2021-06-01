@@ -70,7 +70,7 @@ const VideoRequestForm = props => {
         {
           email: data.email,
           firstName: data.firstName,
-          jobTitle: data.jobTitle,
+          lastName: data.lastName,
           company: data.company,
           form_id: data.formId,
           conversion_page: document.title,
@@ -111,7 +111,7 @@ const VideoRequestForm = props => {
           traits: {
             email: data.email,
             firstName: data.firstName,
-            jobTitle: data.jobTitle,
+            lastName: data.lastName,
             company: data.company,
             form_id: data.formId,
             conversion_page: document.title,
@@ -119,13 +119,13 @@ const VideoRequestForm = props => {
         }
       )
       // console.log("step3")
-      fetch("https://usebasin.com/f/73ab69b8652a.json", {
+      fetch("https://usebasin.com/f/8ab0a2a161d4.json", {
         method: "post",
         body: JSON.stringify({
           "First-Name": data.firstName,
+          "Last-Name": data.lastName,
           Email: data.email,
           Company: data.company,
-          "Job-Title": data.jobTitle,
           form_id: data.formId,
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
@@ -142,7 +142,7 @@ const VideoRequestForm = props => {
         .then(res => {
           // console.log('usebasin',res)
           if (res.ok || res.statusText === "OK") {
-            navigate("/request-demo/thank-you")
+            navigate("/video-library/webinar-thank-you")
           }
         })
         .catch(err => {

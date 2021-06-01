@@ -7,18 +7,15 @@ import MiddleBanner from "../components/middle-banner"
 
 const TrankYou = ({ data, htmlId }) => {
   console.log("new-thank-you-page", data)
-//   const lv_thankyoucontent = (
-//     data.sanityThankyoupages._rawPagebuildersectionarray || []
-//   ).filter(ii => ii._type === "thankyoucontent")
+  const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
-//   const lv_middlebannersection = (
-//     data.sanityFrontpageblock._rawPagebuildersectionarray || []
-//   ).filter(ii => ii._type === "middlebannersection")
+  const lv_middlebannersection = (
+    data.sanityFrontpageblock._rawPagebuildersectionarray || []
+  ).filter(ii => ii._type === "middlebannersection")
 
   return (
     <Layout>
-      Hari
-      {/* <div className="font-custom">
+      <div className="font-custom">
         <section id="demo_submit_hdr">
           <div className="w-full demo-submit-background">
             <div className="max-w-3xl pt-24 mt-0 sm:mt-16 m-auto py-4 px-4">
@@ -36,7 +33,7 @@ const TrankYou = ({ data, htmlId }) => {
         <section id="footer_section_for_demo">
           <MiddleBanner {...lv_middlebannersection[0]} />
         </section>
-      </div> */}
+      </div>
     </Layout>
   )
 }

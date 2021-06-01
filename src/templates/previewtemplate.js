@@ -5,7 +5,7 @@ import Singleblog from "./content"
 import Product from "./products"
 import Integration from "./integrationContent"
 import Demo from "../pages/request-demo"
-import Thankyou from "../pages/request-demo/thank-you"
+import Thankyou from "./thankyou"
 
 const sanityClient = require('@sanity/client')
 const project_id = process.env.RS_SANITY_PROJECTID;
