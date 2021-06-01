@@ -1,133 +1,12 @@
 import React, { useState } from "react"
-import { navigate } from "gatsby"
+
 import VideoRequestForm from "../components/videoRequestForm"
 
-const VideoLibraryContentHeader = ({ data }) => {
-  const [isLoading, setIsLoading] = useState(false)
+const VideoLibraryContentHeader = ({ data,category }) => {
+  
   // console.log("ssss", data)
 
-  let category = ""
-  let url_or_event_dttm = ""
-  if (
-    data._rawVideoLibraryCategoryType &&
-    data._rawVideoLibraryCategoryType.condition === "live_option"
-  ) {
-    category = "Live"
-    url_or_event_dttm = data._rawVideoLibraryCategoryType.live_option
-  } else if (
-    data._rawVideoLibraryCategoryType &&
-    data._rawVideoLibraryCategoryType.condition === "learn_option"
-  ) {
-    category = "Learn RudderStack"
-    url_or_event_dttm = data._rawVideoLibraryCategoryType.learn_option.url
-  } else if (
-    data._rawVideoLibraryCategoryType &&
-    data._rawVideoLibraryCategoryType.condition === "usecase_option"
-  ) {
-    category = "Use cases"
-    url_or_event_dttm = data._rawVideoLibraryCategoryType.usecase_option.url
-  }
-
-  const onFormSubmit = data => {
-    // console.log('on demo submit',data)
-    try {
-      if (!window.rudderanalytics) {
-        return
-      }
-      setIsLoading(true)
-
-      var params = new URLSearchParams(document.location.search.substring(1))
-
-      window.rudderanalytics.identify(
-        data.email,
-        {
-          email: data.email,
-          firstName: data.firstName,
-          jobTitle: data.jobTitle,
-          company: data.company,
-          form_id: data.formId,
-          conversion_page: document.title,
-          utm_source: params.get("utm_source"),
-          utm_medium: params.get("utm_medium"),
-          utm_campaign: params.get("utm_campaign"),
-          utm_content: params.get("utm_content"),
-          utm_term: params.get("utm_term"),
-          raid: params.get("raid"),
-          test_user: params.get("test_user"),
-        },
-        {
-          integrations: {
-            Salesforce: true,
-          },
-        }
-      )
-      // console.log("step2")
-
-      window.rudderanalytics.track(
-        "form_submit",
-        {
-          page: document.title,
-          page_URL: window.location.href,
-          form_id: data.formId,
-          label: data.formId,
-          category: data.sectionId,
-          conversion_page: document.title,
-          utm_source: params.get("utm_source"),
-          utm_medium: params.get("utm_medium"),
-          utm_campaign: params.get("utm_campaign"),
-          utm_content: params.get("utm_content"),
-          utm_term: params.get("utm_term"),
-          raid: params.get("raid"),
-          test_user: params.get("test_user"),
-        },
-        {
-          traits: {
-            email: data.email,
-            firstName: data.firstName,
-            jobTitle: data.jobTitle,
-            company: data.company,
-            form_id: data.formId,
-            conversion_page: document.title,
-          },
-        }
-      )
-      // console.log("step3")
-      fetch("https://usebasin.com/f/73ab69b8652a.json", {
-        method: "post",
-        body: JSON.stringify({
-          "First-Name": data.firstName,
-          Email: data.email,
-          Company: data.company,
-          "Job-Title": data.jobTitle,
-          form_id: data.formId,
-          utm_source: params.get("utm_source"),
-          utm_medium: params.get("utm_medium"),
-          utm_campaign: params.get("utm_campaign"),
-          utm_content: params.get("utm_content"),
-          utm_term: params.get("utm_term"),
-          raid: params.get("raid"),
-          test_user: params.get("test_user"),
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then(res => {
-          // console.log('usebasin',res)
-          if (res.ok || res.statusText === "OK") {
-            navigate("/request-demo/thank-you")
-          }
-        })
-        .catch(err => {
-          throw err
-        })
-    } catch (err) {
-      console.log("errror exception", err)
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
+ 
   return (
     <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative banner-section video-banner-bg">
       <div className="flex flex-col items-center md:gap-12 xl:gap-16 justify-center mx-auto lg:flex-row lg:p-0">
@@ -146,8 +25,6 @@ const VideoLibraryContentHeader = ({ data }) => {
                 formHeaderText={"Register Now"}
                 formShortDesc={"Register to watch now this video."}
                 submitDemoButtonName={"Register Now"}
-                onDemoFormSubmit={onFormSubmit}
-                isLoading={isLoading}
                 sectionId="video_library_hdr"
               />
             </div>
