@@ -12,7 +12,7 @@ const VideoLibraryTopicsToCover = props => {
               {props.data.title}
             </h3>
           </div>
-          {props.category !== "Live" && (
+          {props.category === "Live" && (
             <div className="flex items-start flex-wrap sm:flex-row mt-6 md:mt-20">
               <div className="w-full sm:w-1/2 sm:p-6 sm:pl-0">
                 <ul>
@@ -28,7 +28,7 @@ const VideoLibraryTopicsToCover = props => {
                   })}
                 </ul>
               </div>
-              <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0">
+              <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 flex justify-center">
                 <VideoRequestForm
                   formId="video_library_demo_form_bottom"
                   formHeaderText={"Register Now"}
@@ -36,6 +36,24 @@ const VideoLibraryTopicsToCover = props => {
                   submitDemoButtonName={"Register Now"}
                   sectionId="video_library_footer"
                 />
+              </div>
+            </div>
+          )}
+          {props.category !== "Live" && (
+            <div className="flex items-start flex-wrap sm:flex-row mt-6 md:mt-0">
+              <div className="w-full sm:p-6">
+                <ul className="grid grid-cols-2 gap-8">
+                  {props.data.content.map(ii => {
+                    return (
+                      <li
+                        key={ii._key}
+                        className="relative w-full what-can-do text-lg pl-11 sm:mt-14 mb-7 sm:mb-0"
+                      >
+                        <PortableText blocks={ii.leftrightcontent} />
+                      </li>
+                    )
+                  })}
+                </ul>
               </div>
             </div>
           )}

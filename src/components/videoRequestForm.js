@@ -179,7 +179,7 @@ const VideoRequestForm = props => {
         }}
       />
 
-      <div className={`${formError.firstName !== "" ? "mb-2" : "mb-6"} `}>
+      <div className={`${formError.firstName !== "" ? "mb-2" : "mb-4"} `}>
         {formError.firstName !== "" && (
           <h6 className="text-red-error text-xs">{formError.firstName}</h6>
         )}
@@ -197,7 +197,7 @@ const VideoRequestForm = props => {
         }}
       />
 
-      <div className={`${formError.lastName !== "" ? "mb-2" : "mb-6"} `}>
+      <div className={`${formError.lastName !== "" ? "mb-2" : "mb-4"} `}>
         {formError.lastName !== "" && (
           <h6 className="text-red-error text-xs">{formError.lastName}</h6>
         )}
@@ -214,7 +214,7 @@ const VideoRequestForm = props => {
         }}
       />
 
-      <div className={`${formError.company !== "" ? "mb-2" : "mb-6"} `}>
+      <div className={`${formError.company !== "" ? "mb-2" : "mb-4"} `}>
         {formError.company !== "" && (
           <h6 className="text-red-error text-xs">{formError.company}</h6>
         )}
@@ -232,7 +232,7 @@ const VideoRequestForm = props => {
         }}
       />
 
-      <div className={`${formError.email !== "" ? "mb-2" : "mb-6"} `}>
+      <div className={`${formError.email !== "" ? "mb-2" : "mb-4"} `}>
         {formError.email !== "" && (
           <h6 className="text-red-error text-xs">{formError.email}</h6>
         )}
