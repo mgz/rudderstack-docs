@@ -6,7 +6,6 @@ import PortableText from "../components/portableText"
 import MiddleBanner from "../components/middle-banner"
 
 const TrankYou = ({ data, htmlId }) => {
-  console.log("new-thank-you-page", data)
   const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
   const lv_middlebannersection = (

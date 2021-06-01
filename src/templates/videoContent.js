@@ -37,7 +37,6 @@ const videoContent = ({ data }) => {
       data.videoLib._rawVideoLibraryCategoryType.usecase_option.url
   }
 
-  console.log("fff", data)
 
   return (
     <Layout>

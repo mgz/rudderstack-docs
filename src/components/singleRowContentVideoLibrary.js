@@ -40,11 +40,11 @@ const SingleRowContentVideoLibrary = ({ data }) => {
   return (
     <div
       key="0"
-      className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden shadow-md"
+      className="w-full mx-auto bg-white rounded-3xl overflow-hidden shadow-md"
     >
       <div className="sm:flex">
-        <Link to={data.edges[0].node.slug.current}>
-          <div class="px-4 md:px-12 pt-8 pb-4">
+        <div class="px-4 md:px-12 pt-8 pb-4">
+          <Link to={data.edges[0].node.slug.current}>
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">
               {`${category} ${
                 category === "Live" ? "| " + url_or_event_dttm : ""
@@ -68,8 +68,9 @@ const SingleRowContentVideoLibrary = ({ data }) => {
                 <p>{data.edges[0].node.duration}</p>
               </div>
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
+
         <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link to={data.edges[0].node.slug.current}>
             <img
