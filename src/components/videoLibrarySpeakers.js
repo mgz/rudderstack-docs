@@ -9,7 +9,7 @@ const VideoLibrarySpeakers = ({ speakers, allAuthors }) => {
         <h3 className="w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-28">
           Speakers
         </h3>
-        <div className="flex items-start flex-wrap sm:flex-row ">
+        <div className="grid grid-cols-2 gap-4">
           {speakers.map(ii => {
             let l_currentAuthor = allAuthors.edges.find(
               oo => oo.node._id === ii._ref
@@ -18,14 +18,14 @@ const VideoLibrarySpeakers = ({ speakers, allAuthors }) => {
             return (
               <div
                 key={ii._key}
-                className="w-full sm:w-1/2 sm:p-6 sm:pl-0 sm:pr-3.5"
+                className="w-full sm:p-6 sm:pl-0 sm:pr-3.5 speaker rounded-2xl"
               >
-                <div className="speaker rounded-2xl py-12 sm:px-14 px-6 flex flex-col items-center text-center">
+                <div className=" py-12 sm:px-14 px-6 flex flex-col items-center text-center">
                   <div className="speaker-pic">
                     <img
                       src={l_currentAuthor.node.author_image.asset.url}
                       alt={l_currentAuthor.node.author_name}
-                      className="w-full"
+                      className="w-full h-full rounded-full"
                     />
                   </div>
                   <div className="speaker_name flex flex-col my-8">

@@ -41,8 +41,8 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                   <Link to={hit.slug}>
                     <div className="z-50 mt-4 w-10/12 text-sm absolute bottom-6 left-6 flex justify-between items-center">
                       <div>
-                        <p className="text-black font-bold text-sm leading-normal post-arrow right-image hover:text-blueNew-custom">
-                          <a>
+                        <p className="relative text-black font-bold text-sm leading-normal hover:text-blueNew-custom">
+                          <a className="lr-icon">
                             {hit.category === "Live"
                               ? "Register Now"
                               : "Watch Now"}
