@@ -431,7 +431,16 @@ top: -60px;
 }
 
 /*Source Integration Page Css*/
-.what-can-do::before
+.arrow-list-items ul li
+{
+  @apply relative;
+  @apply w-full;
+  @apply text-xl;
+  @apply leading-8;
+  @apply pl-11;
+  @apply mt-8;
+}
+.what-can-do::before, .arrow-list-items ul li::before
 {
   @apply absolute;
   content: "";
@@ -448,6 +457,7 @@ top: -60px;
   height: 220px;
   border-bottom: 1px solid #E1E1E1;
 }
+
 
 /*Video On Demand*/
 .video-banner-bg
