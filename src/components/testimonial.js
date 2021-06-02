@@ -78,7 +78,7 @@ const Testimonial = props => {
                                         className={
                                           (testimonial.button.btnhiglight ===
                                           true
-                                            ? "btn-primary-lg"
+                                            ? "btn-primary-lg bg-black-custom border-white text-white"
                                             : "btn-secondary-large") +
                                           ` inline-block`
                                         }
@@ -94,7 +94,7 @@ const Testimonial = props => {
                                           (testimonial.button.btnhiglight ===
                                           true
                                             ? "btn-primary-lg"
-                                            : "btn-secondary-lg") +
+                                            : "btn-secondary-lg bg-black-custom border-white text-white") +
                                           ` inline-block`
                                         }
                                       >
