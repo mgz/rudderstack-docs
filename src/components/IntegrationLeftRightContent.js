@@ -24,7 +24,7 @@ const IntegrationLeftRightContent = ({ data }) => {
               return (
                 <div
                   key={ii._key}
-                  className="relative w-full what-can-do text-xl leading-8 pl-11 sm:mb-0"
+                  className="relative w-full what-can-do text-xl leading-8 pl-11 sm:mb-0 arrow-list-items"
                 >
                   <PortableText blocks={ii.leftrightcontent} />
                 </div>

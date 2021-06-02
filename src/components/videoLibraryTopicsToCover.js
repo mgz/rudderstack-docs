@@ -42,7 +42,7 @@ const VideoLibraryTopicsToCover = props => {
           {props.category !== "Live" && (
             <div className="flex items-start flex-wrap sm:flex-row mt-6 md:mt-0">
               <div className="w-full sm:p-6">
-                <ul className="grid grid-cols-2 gap-8">
+                <ul className={`grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6`}>
                   {props.data.content.map(ii => {
                     return (
                       <li

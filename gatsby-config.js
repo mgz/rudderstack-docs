@@ -111,6 +111,7 @@ module.exports = {
           "weight",
           "duration",
           "logoimage",
+          "webinar_dttm"
         ],
       },
     },

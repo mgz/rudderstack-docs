@@ -9,7 +9,7 @@ const VideoLibrarySpeakers = ({ speakers, allAuthors }) => {
         <h3 className="w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-28">
           Speakers
         </h3>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {speakers.map(ii => {
             let l_currentAuthor = allAuthors.edges.find(
               oo => oo.node._id === ii._ref

@@ -20,6 +20,7 @@ const videoLibraryQuery = `{
             duration
             shortdescription
             title
+            webinar_dttm
           }
         }
       }
@@ -36,6 +37,7 @@ function videoLibraryToAlgoliaRecord({
     duration,
     shortdescription,
     title,
+    webinar_dttm
   },
 }) {
   let logoimage = ""
@@ -75,6 +77,7 @@ function videoLibraryToAlgoliaRecord({
     category: category,
     url_or_event_dttm:url_or_event_dttm,
     logoimage,
+    webinar_dttm
   }
 }
 

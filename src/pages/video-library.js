@@ -30,7 +30,6 @@ const VideoLibraryPage = ({ data }) => {
   const [selectedPageNo, setSelectedPageNo] = useState(1)
   const [currentRefineText, setCurrentRefineText] = useState("")
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
-  // console.log("device width", height, width)
   return (
     <Layout>
       <div className="font-custom">
@@ -94,10 +93,7 @@ export const pageQuery = graphql`
     sanityFrontpageblock {
       _rawPagebuildersectionarray
     }
-    videolibrary: allSanityVideolibrary(
-      sort: {fields: weight, order: ASC}
-      limit: 1
-    ) {
+    videolibrary: allSanityVideolibrary(sort: { fields: webinar_dttm, order: ASC }) {
       edges {
         node {
           _rawVideoLibraryCategoryType
@@ -118,6 +114,7 @@ export const pageQuery = graphql`
           duration
           shortdescription
           title
+          webinar_dttm
         }
       }
     }
