@@ -39,14 +39,14 @@ const IntegrationHowToSetUp = ({ data }) => {
             </h3>
           </div>
 
-          <div className="flex flex-col items-center lg:gap-60 xl:gap-80 justify-center mx-auto sm:flex-row">
+          <div className="flex flex-col items-center justify-center mx-auto sm:flex-row">
             <div className="sm:w-1/2 pt-10 sm:p-6 sm:pt-11 sm:pl-0">
-              <div className="text-secondary leading-7 text-sm sm:text-lg">
+              <div className="text-primary leading-7 text-sm sm:text-lg arrow-list-items">
                 <PortableText blocks={data.freetextdescritpion} />
               </div>
               <div className="relative block sm:flex mt-14">{renderButton}</div>
             </div>
-            <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 mt-14 sm:mt-0">
+            <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 mt-14 sm:mt-0 lg:pl-36 md:pl-28">
               {data.freetextrightimage && data.freetextrightimage.asset && (
                 <Image
                   props={data.freetextrightimage.asset._ref}
