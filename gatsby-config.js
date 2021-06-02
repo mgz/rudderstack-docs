@@ -20,7 +20,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: process.env.RS_SITE_URL,
-        sitemap: "https://rudderstack.com/sitemap.xml",
+        sitemap: "https://rudderstack.com/sitemap-0.xml",
         env: {
           development: {
             policy: [{ userAgent: "*", allow: ["/"] }],
