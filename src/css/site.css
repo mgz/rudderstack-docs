@@ -445,8 +445,8 @@ top: -60px;
 }
 .int-img 
 {
-  background-color: #EEF4F5;
   height: 220px;
+  border-bottom: 1px solid #E1E1E1;
 }
 
 /*Video On Demand*/
