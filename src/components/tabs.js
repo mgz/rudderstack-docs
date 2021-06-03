@@ -28,7 +28,7 @@ const Tabs = props => {
                     className={
                       "text-lg py-6 pr-5 md:px-5 md:py-3 block leading-normal " +
                       (openTab === i
-                        ? "mona font-bold md:border-l-4 md:border-blue opentab"
+                        ? "font-bold md:border-l-4 md:border-tabborderactive opentab text-darkblue"
                         : "text-secondary md:bg-white bg-transparent border-b-2 md:border-b-0 md:border-l-4 border-tabborder closetab")
                     }
                     onClick={e => {
@@ -64,7 +64,7 @@ const Tabs = props => {
         <div className="pt-3 hidden md:block md:col-span-7">
           <div className="relative block md:bg-background bg-transperent p-4 min-w-0 break-words md:bg-white w-full mb-6 rounded-lg">
             <div className="md:px-15 lg:px-15 md:py-10 bg-gradiantprimary rounded-xl">
-              <div className="tab-content tab-space tab-content-item">
+              <div className="tab-content tab-space tab-content-item action-icon">
                 {tabs.map((tab, i) => (
                   <div
                     key={i}

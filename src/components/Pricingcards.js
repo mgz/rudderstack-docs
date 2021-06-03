@@ -17,7 +17,7 @@ function PricingCards(props) {
                       alt="EllipseImg"
                     />
                   </div>
-                  <h3 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-blueNew-custom mr-2 font-bold">
+                  <h3 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
                     Free
                   </h3>
                   <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg text-lg">
@@ -97,7 +97,7 @@ function PricingCards(props) {
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg2.png" alt="Line" />
                   </div>
-                  <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-blueNew-custom mr-2 font-bold">
+                  <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
                     Pro
                   </h4>
                   <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg">
@@ -186,7 +186,7 @@ function PricingCards(props) {
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg3.png" alt="Line" />
                   </div>
-                  <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-blueNew-custom mr-2 font-bold">
+                  <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
                     Enterprise
                   </h4>
                   <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg">
@@ -263,12 +263,12 @@ function PricingCards(props) {
         </div>
       </div>
 
-      <div className="py-8 pt-5 md:pt-16 w-full text-lg md:text-xl text-center text-blueNew-custom font-bold">
-        <p>You can also deploy or contribute to RudderStack Open Source. </p>
+      <div className="py-8 pt-5 md:pt-16 w-full text-lg md:text-xl text-center font-bold">
+        <p className="text-primary">You can also deploy or contribute to RudderStack Open Source. </p>
         <div className="mt-3 flex items-center">
           <a
             href="https://github.com/rudderlabs/rudder-server"
-            className="text-sm text-black-custom leading-8 font-bold lr-icon mx-auto hover:text-blueNew-custom"
+            className="text-sm text-black leading-8 font-bold lr-icon mx-auto"
             target="_blank"
             rel="noreferrer"
           >

@@ -33,6 +33,8 @@
 :root {
   --primary: #17176E;
   --secondary: #4e4e4e;
+  --darkblue: #10174C;
+  --dark: #000;
   --blue: #0066ff;
   --purple:#A699D6;
   --seegreen:#96F3F7;
@@ -41,7 +43,8 @@
   --white: #ffffff;
   --postdate: #707a88;
   --footer: #b1becb;
-  --tabborder: #c6c6c6;
+  --tabborder:#4E527A;
+  --tabborderactive:#9D8ED2;
 }
 
 body {
@@ -55,6 +58,24 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
 }
+/*Footer*/
+.footer-social-icon
+{
+  @apply w-8;
+  @apply h-8;
+  @apply rounded-full;
+  @apply text-base;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply mr-3;
+}
+.footer-social-icon svg path
+{
+  fill: #10174C;
+}
+
+
 /*Gradiant Effect*/
 #gatsby-focus-wrapper
 {
@@ -164,6 +185,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5677ae', end
   padding: 0px 0px 3px 20px;
   
 }
+.action-icon::before, .action-icon:hover:before
+{
+  background: url("../images/arrow-right-action.svg") no-repeat;
+  padding: 0px 0px 3px 20px;
+}
 
 .iframe-container {
   position: relative;
@@ -256,6 +282,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5677ae', end
   padding: 10px;
   margin-right: 10px;
 }
+
+.action-icon a::before, .action-icon a:hover::before
+{
+  background: url("../images/arrow-right-action.svg") no-repeat;
+  padding: 0px 0px 3px 20px;
+}
 .tab-content-item a {
   font-size: 14px;
   line-height: 140%;
@@ -272,7 +304,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5677ae', end
 }
 
 .demo-header {
-  background: linear-gradient(180deg, #000000 0%, #4e4e4e 100%);
+  background: #6b96c3; /* Old browsers */
+  background: -moz-linear-gradient(left,  #6b96c3 0%, #111168 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #6b96c3 0%,#111168 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #6b96c3 0%,#111168 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
   height: 428px;
   width: 100%;
   text-align: center;

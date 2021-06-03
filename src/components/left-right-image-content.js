@@ -104,14 +104,14 @@ const LeftRightImgCnt = props => {
                                 return (
                                   <a
                                     href={linkurl}
-                                    className="font-bold leading-normal text-sm lr-icon text-seegreen"
+                                    className="font-bold leading-normal text-sm lr-icon action-icon text-seegreen"
                                   >
                                     {linktext}
                                   </a>
                                 )
                               } else {
                                 return (
-                                  <span className="font-bold leading-normal text-sm lr-icon">
+                                  <span className="font-bold leading-normal text-sm lr-icon action-icon">
                                     <Link to={linkurl}>{linktext}</Link>
                                   </span>
                                 )
@@ -180,14 +180,14 @@ const LeftRightImgCnt = props => {
                               return (
                                 <a
                                   href={linkurl}
-                                  className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block text-seegreen"
+                                  className="font-bold leading-normal text-sm lr-icon action-icon relative sm:inline-block text-seegreen"
                                 >
                                   {linktext}
                                 </a>
                               )
                             } else {
                               return (
-                                <span className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block text-seegreen">
+                                <span className="font-bold leading-normal text-sm lr-icon action-icon relative sm:inline-block text-seegreen">
                                   <Link to={linkurl}>{linktext}</Link>
                                 </span>
                               )

@@ -43,7 +43,9 @@ module.exports = {
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
+        darkblue: "var(--darkblue)",
         blue: "var(--blue)",
+        dark: "var(--dark)",
         purple: "var(--purple)",
         seegreen: "var(--seegreen)",
         background: "var(--background)",
@@ -52,6 +54,7 @@ module.exports = {
         postdate: "var(--postdate)",
         footer: "var(--footer)",
         tabborder: "var(--tabborder)",
+        tabborderactive: "var(--tabborderactive)",
       },
       fontSize: {
         xs: ".75rem",

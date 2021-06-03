@@ -143,7 +143,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
         <div className="max-w-6xl w-full flex mx-auto flex-wrap  px-3">
-          <div className="flex text-white">
+          <div className="flex">
             {socialitems.map((socialitem, i) => (
               <>
                 {(() => {
@@ -152,7 +152,7 @@ const Layout = ({ children }) => {
                     return (
                       <a
                         key={socialitem._key}
-                        className="icons pr-6 md:pr-4"
+                        className="footer-social-icon bg-seegreen"
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon icon={socialitem.social_item_icon} />
@@ -162,7 +162,7 @@ const Layout = ({ children }) => {
                     return (
                       <a
                         key={socialitem._key}
-                        className="icons pr-6 md:pr-4"
+                        className="footer-social-icon bg-seegreen"
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon

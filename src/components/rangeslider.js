@@ -33,7 +33,7 @@ const Horizontal = (props) => {
           <span className="text-sm md:text-lg pl-28 md:pl-0 lg:pl-28 italic text-left md:text-center inherit sm:inline-block" id="text3">{price ? "16% discount" : ""}</span></div>
         <div className="md:w-1/3 py-2 md:py-0 text-center">
           <a href={price ? "https://app.rudderlabs.com/signup?type=freetrial" : "https://resources.rudderstack.com/enterprise-quote"}
-             className="btn-primary-sm block md:inline-block"
+             className="btn-primary-sm bg-dark block md:inline-block"
              id="text4"
           >
             {price ? "Sign up" : "Request pricing"}
