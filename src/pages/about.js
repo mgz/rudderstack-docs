@@ -171,7 +171,7 @@ const About = ({ data }) => {
             <div className="p-4 w-full md:w-1/3 m-auto max-w-sm">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
-                  className="h-64 sm:h-72 w-full object-cover object-center"
+                  className="w-full object-cover object-center"
                   src="../images/Eric.png"
                 />
                 <div className="py-4 text-center">
