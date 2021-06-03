@@ -18,7 +18,7 @@ import {
   LinkedinShareButton,
 } from "react-share"
 
-const Singleblog = ({ data, ...props }) => {
+const Singleblog = ({ data, location, ...props }) => {
   const blog = data.blog
   const blogAuthors = data.blog.blog_authors
   const maintitle = props.maintitle
@@ -33,7 +33,7 @@ const Singleblog = ({ data, ...props }) => {
   })
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet>
         <title>{blog.meta_title || blog.title}</title>
         <meta property="og:title" content={blog.meta_title || blog.title} />
@@ -124,7 +124,7 @@ const Singleblog = ({ data, ...props }) => {
             <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center hover:text-blueNew-custom">
               <a
                 href={viewallpostslink}
-                className="font-bold leading-normal text-sm lr-icon"
+                className="font-bold leading-normal text-sm lr-icon seeall-icon"
               >
                 {(() => {
                   if (viewexternallink === true) {

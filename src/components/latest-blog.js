@@ -20,7 +20,7 @@ const LatestBlog = props => {
             <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center hover:text-blueNew-custom">
               <a
                 href={viewallpostslink}
-                class="font-bold leading-normal text-sm lr-icon"
+                class="font-bold leading-normal text-sm lr-icon seeall-icon"
               >
                 {(() => {
                   if (viewexternallink === true) {

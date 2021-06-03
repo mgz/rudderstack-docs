@@ -33,7 +33,7 @@ function PricePlans() {
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg1.png" alt="Free" />
                   </div>
-                  <div>
+                  <div className="text-primary">
                     Free
                     <br />
                     <span className="text-lg text-grayColor-lighter">
@@ -45,7 +45,7 @@ function PricePlans() {
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg2.png" alt="Pro" />
                   </div>
-                  <div>
+                  <div className="text-primary">
                     Pro
                     <br />
                     <span className="text-lg text-grayColor-lighter">
@@ -60,7 +60,7 @@ function PricePlans() {
                       alt="Ellipse"
                     />
                   </div>
-                  <div>
+                  <div className="text-primary">
                     Enterprise
                     <br />
                     <span className="text-lg text-grayColor-lighter">
@@ -72,7 +72,7 @@ function PricePlans() {
             </thead>
             <tbody>
               <tr>
-                <td className="p-6 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4">
+                <td className="p-6 text-primary text-lg text-left uppercase font-bold col-span-4">
                   Event Stream
                 </td>
               </tr>
@@ -278,7 +278,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6 pt-14  text-blueNew-custom text-lg text-left uppercase font-bold"
+                  className="p-6 pt-14  text-primary text-lg text-left uppercase font-bold"
                   colspan="4"
                 >
                   CLOUD EXTRACT
@@ -346,7 +346,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-primary text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   WAREHOUSE ACTIONS
@@ -408,7 +408,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-primary text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   Advanced Integration <br />& Management
@@ -511,7 +511,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-primary text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   Deployment & Security
@@ -607,7 +607,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-primary text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   support

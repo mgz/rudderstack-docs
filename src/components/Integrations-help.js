@@ -110,7 +110,7 @@ const IntegrationsHelpBox = () => {
           <input
             type="submit"
             defaultValue="Submit"
-            className="w-full text-sm leading-4 btn-primary-lg"
+            className="w-full text-sm leading-4 btn-primary-lg bg-dark"
             onClick={e => formSubmitted(e)}
           />
           <span className="ajax-loader" />

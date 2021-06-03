@@ -28,7 +28,7 @@ const Integration = props => {
               <h1 className="tracking-tight-2 text-4xl md:text-5xl font-bold font-custom sm:leading-snug leading-10">
                 Integrations
               </h1>
-              <p className="text-xl md:text-3xl text-primary font-bold leading-tight md:mt-5 mt-11">
+              <p className="text-xl md:text-3xl text-dark font-bold leading-tight md:mt-5 mt-11">
                 Send data to all of the tools in your customer data stack
               </p>
             </div>

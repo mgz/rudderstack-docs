@@ -20,7 +20,7 @@ import PortableText from "../components/portableText"
 import { StaticImage } from "gatsby-plugin-image"
 import CookiesConsent from "./cookiesConsent"
 
-const Layout = ({ children }) => {
+const Layout = ({ location, showExplicitGradient, children }) => {
   const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
               _rawFooterWidgetSection
               footer_logo {
                 asset {
-                 url
+                  url
                 }
               }
               copy_right_text
@@ -72,13 +72,30 @@ const Layout = ({ children }) => {
       ._rawSocialWidgetSection
   const footerlogo =
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
+
+  // console.log("path", location, showExplicitGradient)
+  let diableGradient = false
+  if (
+    location &&
+    (location.pathname.startsWith("/product/") ||
+      location.pathname.startsWith("/request-demo") ||
+      location.pathname.startsWith("/cloud") ||
+      (location.pathname.startsWith("/video-library/") &&
+        showExplicitGradient === false) ||
+      location.pathname.startsWith("/blog/"))
+  ) {
+    diableGradient = true
+  }
   return (
-    <>
+    <div
+      id="main-container"
+      className={`gradient-${diableGradient ? "disable" : "enable"}`}
+    >
       <CookiesConsent />
       <MainNavigation />
       <main>{children}</main>
 
-      <footer className=" bg-black px-4 sm:px-4 text-sm bg-black-custom md:pt-0">
+      <footer className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0">
         <div className="max-w-6xl mx-auto footer-menus-wrap">
           <div className="w-full py-6 font-custom inline-block">
             {footermenus.map((menu, i) => (
@@ -143,7 +160,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
         <div className="max-w-6xl w-full flex mx-auto flex-wrap  px-3">
-          <div className="flex text-white">
+          <div className="flex">
             {socialitems.map((socialitem, i) => (
               <>
                 {(() => {
@@ -152,7 +169,7 @@ const Layout = ({ children }) => {
                     return (
                       <a
                         key={socialitem._key}
-                        className="icons pr-6 md:pr-4"
+                        className="footer-social-icon bg-seegreen"
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon icon={socialitem.social_item_icon} />
@@ -162,7 +179,7 @@ const Layout = ({ children }) => {
                     return (
                       <a
                         key={socialitem._key}
-                        className="icons pr-6 md:pr-4"
+                        className="footer-social-icon bg-seegreen"
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon
@@ -188,7 +205,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   )
 }
 

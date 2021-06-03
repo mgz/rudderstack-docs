@@ -61,7 +61,7 @@ const PricingPage = () => {
       <div className="pt-14 md:pt-16">
         <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter custom-bg custom-gradient">
           <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap flex-col items-center text-center max-w-screen-lg">
-            <h1 className="my-4 text-5xl md:text-6xl font-bold font-custom leading-snug">
+            <h1 className="my-4 text-5xl md:text-6xl font-bold font-custom leading-snug text-primary">
               Choose Your RudderStack <br />
               Cloud Plan
             </h1>

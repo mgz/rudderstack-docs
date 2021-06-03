@@ -71,7 +71,7 @@ const SingleRowContentVideoLibrary = ({ data }) => {
             </p>
             <div class="mt-2 w-full flex justify-between items-center pt-6">
               <a
-                class="btn-primary-lg md:mr-4 md:mb-0 mb-4"
+                class="btn-primary-lg md:mr-4 md:mb-0 mb-4 bg-dark"
                 href={webinarObj.node.slug.current}
               >
                 {category === "Live" ? "Register Now" : "Watch Now"}

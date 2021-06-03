@@ -10,7 +10,7 @@ const MiddleBanner = props => {
   const btns = props.addbuttons
   return (
     <>
-      <section className="bg-primary text-white 100% pt-10 md:py-28 px-0 sm:px-0">
+      <section className="bg-black-custom text-white 100% pt-10 md:py-28 px-0 sm:px-0">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           <div className="flex flex-wrap justify-items-center items-center sm:flex-row">
             <div className="flex items-start md:w-1/2">
@@ -34,7 +34,7 @@ const MiddleBanner = props => {
                             className={
                               (btn.btnhiglight === true
                                 ? "bg-white text-primary btn-secondary-lg"
-                                : "btn-primary-lg") +
+                                : "btn-primary-lg bg-black-custom") +
                               ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom`
                             }
                             href={btn.btnlink}
@@ -49,7 +49,7 @@ const MiddleBanner = props => {
                             className={
                               (btn.btnhiglight === true
                                 ? "bg-white text-primary btn-secondary-lg"
-                                : "btn-primary-lg") +
+                                : "btn-primary-lg bg-black-custom") +
                               ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom`
                             }
                           >

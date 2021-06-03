@@ -10,7 +10,7 @@ import Testimonial from "../components/testimonial"
 
 
 
-const Products = ({ data, }) => {
+const Products = ({ data, location}) => {
 
   const lv_testimonialsection = (
   data.sanityFrontpageblock._rawPagebuildersectionarray || []
@@ -21,7 +21,7 @@ const Products = ({ data, }) => {
   ).filter(ii => ii._type === "middlebannersection")
 
   return (
-    <Layout>
+    <Layout location={location}>
       <div className="font-custom">
         {(data.product._rawPagebuildersectionarray || []).map(
           (row, idx) => {
@@ -31,7 +31,7 @@ const Products = ({ data, }) => {
               return <ProductImageWithListOfText key={row._id} {...row} />
             } else if (row._type === "leftrightcontentimagesection") {
               return (
-                <div key={row._key} className="100% bg-whiteColor-custom">
+                <div key={row._key} className="bg-gradiantsecondary 100%">
                   <LeftRightImgCnt {...row} />
                 </div>
               )

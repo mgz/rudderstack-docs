@@ -31,7 +31,7 @@ const Page = props => {
 
   if (errors) {
     return (
-      <Layout>
+      <Layout location={props.location}>
         <GraphQLErrorList errors={errors} />
       </Layout>
     )
@@ -61,7 +61,7 @@ const Page = props => {
           break
         case "leftrightcontentimagesection":
           el = (
-            <div className="bg-backgroundsecondary 100%" key={c._key}>
+            <div className="bg-gradiantsecondary 100%" key={c._key}>
               <LeftRightImgCnt {...c} />{" "}
             </div>
           )
@@ -108,7 +108,7 @@ const Page = props => {
   const pageTitle = page.title
 
   return (
-    <Layout>
+    <Layout location={props.location}>
       <SEO
         title={pageTitle}
         // description={site.description}

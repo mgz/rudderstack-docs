@@ -17,7 +17,7 @@ import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
 
-const Blog_new = ({ data }) => {
+const Blog_new = ({ data,location }) => {
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
@@ -32,7 +32,7 @@ const Blog_new = ({ data }) => {
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
   // console.log("device width", height, width)
   return (
-    <Layout>
+    <Layout location={location}>
       <div className="font-custom">
         <div className="max-w-6xl mx-auto flex flex-wrap flex-col px-4">
           <InstantSearch
