@@ -13,13 +13,13 @@ const IntegrationHowToSetUp = ({ data }) => {
     data.freetextctc.btntext !== ""
   ) {
     renderButton = (
-      <a href={data.freetextctc.btnlink} className="btn-primary-lg">
+      <a href={data.freetextctc.btnlink} className="btn-primary-lg bg-dark text-white">
         {data.freetextctc.btntext}
       </a>
     )
   } else if (data.freetextctc && data.freetextctc.btntext !== "") {
     renderButton = (
-      <span className="btn-primary-lg">
+      <span className="btn-primary-lg bg-dark text-white">
         <Link to={data.freetextctc.btnlink}>{data.freetextctc.btntext}</Link>
       </span>
     )
@@ -34,14 +34,14 @@ const IntegrationHowToSetUp = ({ data }) => {
       <div className="max-w-6xl px-4 md:px-3 mx-auto">
         <div className="flex items-center flex-wrap">
           <div className="w-full justify-center items-start md:text-left max-w-screen-md">
-            <h3 className="md:mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">
+            <h3 className="md:mt-2 text-4xl md:text-5xl text-dark font-bold leading-tight">
               {data.freetexttitle}
             </h3>
           </div>
 
           <div className="flex flex-col items-center justify-center mx-auto sm:flex-row">
             <div className="sm:w-1/2 pt-10 sm:p-6 sm:pt-11 sm:pl-0">
-              <div className="text-primary leading-7 text-sm sm:text-lg arrow-list-items">
+              <div className="text-dark leading-7 text-sm sm:text-lg arrow-list-items">
                 <PortableText blocks={data.freetextdescritpion} />
               </div>
               <div className="relative block sm:flex mt-14">{renderButton}</div>
