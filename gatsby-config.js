@@ -130,6 +130,7 @@ module.exports = {
           "shortdescription",
           "weight",
           "logoimage",
+          "article_dttm"
         ],
       },
     },

@@ -15,13 +15,23 @@ const caseStudyQuery = `{
             weight
             shortdescription
             category
+            article_dttm
           }
         }
       }
   }`
 
 function caseStudiesToAlgoliaRecord({
-  node: { id, listing_image, slug, title, weight, shortdescription, category },
+  node: {
+    id,
+    listing_image,
+    slug,
+    title,
+    weight,
+    shortdescription,
+    category,
+    article_dttm,
+  },
 }) {
   let logoimage = ""
   if (listing_image) {
@@ -35,7 +45,8 @@ function caseStudiesToAlgoliaRecord({
     logoimage,
     category,
     slug: slug.current,
-    shortdescription
+    shortdescription,
+    article_dttm,
   }
 }
 
@@ -46,8 +57,7 @@ const queries = [
       // console.log("on map , ", data)
       return data.casestudy.edges.map(caseStudiesToAlgoliaRecord)
     },
-    indexName:
-      process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_case_studies",
+    indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_case_studies",
     settings: {},
   },
 ]
