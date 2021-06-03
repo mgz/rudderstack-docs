@@ -52,7 +52,7 @@ const CloudDesktop = ({ data }) => {
               </p>
               <div className="block sm:flex justify-center items-center mt-12">
                 <a
-                  className="btn-primary-lg bg-white text-primary sm:mr-4 md:mb-0 mb-6"
+                  className="btn-primary-lg bg-white text-dark sm:mr-4 md:mb-0 mb-6 border-transparent"
                   href="https://app.rudderstack.com/signup?type=freetrial"
                 >
                   Sign up for free

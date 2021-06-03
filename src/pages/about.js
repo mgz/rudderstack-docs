@@ -207,7 +207,7 @@ const About = ({ data }) => {
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
-                  src="../images/katie-west.jpeg"
+                  src="../images/katie-west.jpg"
                 />
                 <div className="py-4 text-center">
                   <h3 className="title-font text-2xl font-medium mb-3">
