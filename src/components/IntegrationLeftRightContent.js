@@ -2,7 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 
 const IntegrationLeftRightContent = ({ data }) => {
-  console.log(data)
+  // console.log(data)
   return (
     <section className="md:mb-24 sm:mb-20 sm:mt-0 mt-20 mb-10">
       {data && (
@@ -24,14 +24,14 @@ const IntegrationLeftRightContent = ({ data }) => {
               return (
                 <div
                   key={ii._key}
-                  className="relative w-full what-can-do text-xl leading-8 pl-11 sm:mb-0"
+                  className="relative w-full what-can-do text-xl leading-8 pl-11 sm:mb-0 arrow-list-items"
                 >
                   <PortableText blocks={ii.leftrightcontent} />
                 </div>
               )
             })}
           </div>
-          <div  className="relative  w-full text-xl leading-8">
+          <div  className="relative text-secondary  w-full text-xl leading-8">
             <PortableText blocks={data.wycd_footer} />
           </div>
         </div>

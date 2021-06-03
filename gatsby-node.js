@@ -123,12 +123,86 @@ exports.createPages = async ({ graphql, actions }) => {
   const integrations = integration.data.allSanityIntegration.edges || []
   integrations.forEach((edge, index) => {
     const path = `/integration/${edge.node.slug.current}`
-    // if (1 === 2) {
+    try {
+      // if (1 === 2) {
       createPage({
         path,
         component: require.resolve("./src/templates/integrationContent.js"),
         context: { slug: edge.node.slug.current },
       })
-    // }
+      // }
+      // console.log("page build successful ", path)
+    } catch {
+      console.warn("erro while building", path)
+    } finally {
+      // console.log("done with  ", path)
+    }
+  })
+
+  const videoLib = await graphql(`
+    {
+      allSanityVideolibrary {
+        edges {
+          node {
+            slug {
+              current
+            }
+            title
+          }
+        }
+      }
+    }
+  `)
+
+  if (videoLib.errors) {
+    throw videoLib.errors
+  }
+
+  const videoLibrary = videoLib.data.allSanityVideolibrary.edges || []
+  videoLibrary.forEach((edge, index) => {
+    const path = `/video-library/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/videoContent.js"),
+      context: { slug: edge.node.slug.current },
+    })
+  })
+
+  const thankyou = await graphql(`
+    {
+      allSanityThankyoupages {
+        edges {
+          node {
+            title
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (thankyou.errors) {
+    throw thankyou.errors
+  }
+
+  const thankyoupages = thankyou.data.allSanityThankyoupages.edges || []
+  thankyoupages.forEach((edge, index) => {
+    let path = ""
+    if (edge.node.slug.current === "thank-you") {
+      path = `/request-demo/${edge.node.slug.current}`
+    } else if (edge.node.slug.current === "webinar-thank-you") {
+      path = `/video-library/${edge.node.slug.current}`
+    } else {
+      path = `/form-submit/${edge.node.slug.current}`
+    }
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/thankyou.js"),
+      context: { slug: edge.node.slug.current },
+    })
   })
 }

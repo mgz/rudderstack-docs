@@ -8,7 +8,7 @@ const DemoForm = props => {
     company: "",
     jobTitle: "",
     formId: props.formId,
-    sectionId: props.sectionId
+    sectionId: props.sectionId,
   })
   const [formError, setFormErrors] = useState({
     firstName: "",
@@ -61,30 +61,35 @@ const DemoForm = props => {
         props.isFooterForm === true ? "top-0" : "-top-24"
       }`}
     >
-      <div className="text-lg text-grayColor-custom mb-2 ">
-        First Name <span className="text-blueNew-custom">*</span>
-      </div>
+      {props.hideLabels !== true && (
+        <div className="text-lg text-grayColor-custom mb-2 ">
+          First Name <span className="text-blueNew-custom">*</span>
+        </div>
+      )}
 
       <input
         type="text"
         name="firstName"
         className="font-sm text-base"
         value={formData.firstName}
-        placeholder="John Doe"
+        placeholder={"John Doe"}
         onBlur={e => onBlur("firstName", e.target.value)}
         onChange={e => {
           setFormData({ ...formData, firstName: e.target.value })
         }}
       />
+
       <div className={`${formError.firstName !== "" ? "mb-2" : "mb-6"} `}>
         {formError.firstName !== "" && (
           <h6 className="text-red-error text-xs">{formError.firstName}</h6>
         )}
       </div>
 
-      <div className="text-lg text-grayColor-custom mb-2">
-        Work email address <span className="text-blueNew-custom">*</span>
-      </div>
+      {props.hideLabels !== true && (
+        <div className="text-lg text-grayColor-custom mb-2">
+          Work email address <span className="text-blueNew-custom">*</span>
+        </div>
+      )}
       <input
         type="email"
         name="email"
@@ -103,9 +108,11 @@ const DemoForm = props => {
         )}
       </div>
 
-      <div className="text-lg text-grayColor-custom mb-2">
-        Company <span className="text-blueNew-custom">*</span>
-      </div>
+      {props.hideLabels !== true && (
+        <div className="text-lg text-grayColor-custom mb-2">
+          Company <span className="text-blueNew-custom">*</span>
+        </div>
+      )}
       <input
         type="text"
         value={formData.company}
@@ -123,9 +130,11 @@ const DemoForm = props => {
         )}
       </div>
 
-      <div className="text-lg text-grayColor-custom mb-2">
-        Job Title <span className="text-blueNew-custom">*</span>
-      </div>
+      {props.hideLabels !== true && (
+        <div className="text-lg text-grayColor-custom mb-2">
+          Job Title <span className="text-blueNew-custom">*</span>
+        </div>
+      )}
       <input
         type="text"
         value={formData.jobTitle}

@@ -8,6 +8,7 @@ const SearchBox = ({
   isSearchStalled,
   refine,
   onRefineTextChange,
+  pleaceholderText,
 }) => (
   <>
     <div className="relative overflow-hidden">
@@ -16,7 +17,7 @@ const SearchBox = ({
         autoCapitalize="off"
         autoComplete="off"
         autoCorrect="off"
-        placeholder="Type your Keyword"
+        placeholder={pleaceholderText ? pleaceholderText : "Type your Keyword"}
         role="textbox"
         spellCheck="false"
         value={currentRefinement}
@@ -30,7 +31,7 @@ const SearchBox = ({
         <FontAwesomeIcon
           icon={faSearch}
           // size="sm"
-          style={{fontSize:'18px'}}
+          style={{ fontSize: "18px" }}
           className="h-11 text-white pt-2 py-2"
         />
       </div>
