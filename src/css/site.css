@@ -435,10 +435,8 @@ top: -60px;
 {
   @apply relative;
   @apply w-full;
-  @apply text-xl;
-  @apply leading-8;
   @apply pl-11;
-  @apply mt-8;
+  @apply mt-4;
 }
 .what-can-do::before, .arrow-list-items ul li::before
 {
