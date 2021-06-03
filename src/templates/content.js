@@ -12,6 +12,7 @@ import BlogHeroChart from "../images/blog-hero_chart.svg"
 import BlogTwitter from "../images/blogtwitter.svg"
 import BlogFb from "../images/blogfb.svg"
 import BlogIn from "../images/blogIn.svg"
+import MiddleBanner from "../components/middle-banner"
 import {
   TwitterShareButton,
   FacebookShareButton,
@@ -32,12 +33,19 @@ const Singleblog = ({ data, location, ...props }) => {
     author_names += (author_names.length > 0 ? ", " : "") + row.author_name
   })
 
+  const lv_middlebannersection = (
+    data.sanityFrontpageblock._rawPagebuildersectionarray || []
+  ).filter(ii => ii._type === "middlebannersection")
+
   return (
     <Layout location={location}>
       <Helmet>
         <title>{blog.meta_title || blog.title}</title>
         <meta property="og:title" content={blog.meta_title || blog.title} />
-        <meta property="twitter:title" content={blog.meta_title || blog.title} />
+        <meta
+          property="twitter:title"
+          content={blog.meta_title || blog.title}
+        />
         <meta name="description" content={blog.meta_desc} />
         <meta property="og:description" content={blog.meta_desc} />
         <meta property="twitter:description" content={blog.meta_desc} />
@@ -85,10 +93,14 @@ const Singleblog = ({ data, location, ...props }) => {
               >
                 <div className="sm:w-32 sm:h-32 h-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
                   {/* <div className= "rounded-full"> */}
-                    <Image
-                      props={item.author_image.asset._id ? item.author_image.asset._id : item.author_image.asset._ref}
-                      classes="w-24 h-24 rounded-full"
-                    />
+                  <Image
+                    props={
+                      item.author_image.asset._id
+                        ? item.author_image.asset._id
+                        : item.author_image.asset._ref
+                    }
+                    classes="w-24 h-24 rounded-full"
+                  />
                   {/* </div> */}
 
                   {/* <img
@@ -170,6 +182,9 @@ const Singleblog = ({ data, location, ...props }) => {
         {/*Subscription Component*/}
         <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
       </div>
+      <section id="footer_section_for_demo">
+        <MiddleBanner {...lv_middlebannersection[0]} />
+      </section>
       {/*Subscription Component*/}
     </Layout>
   )
@@ -177,6 +192,9 @@ const Singleblog = ({ data, location, ...props }) => {
 
 export const query = graphql`
   query GetSingleBlog($slug: String) {
+    sanityFrontpageblock {
+      _rawPagebuildersectionarray
+    }
     blog: sanityBlog(slug: { eq: $slug }) {
       id
       blog_category

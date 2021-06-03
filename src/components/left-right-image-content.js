@@ -111,7 +111,11 @@ const LeftRightImgCnt = props => {
                             {title}
                           </h2>
                         ) : (
-                          <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-dark font-bold leading-tight">
+                          <h3 className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl  ${
+                            props.applyGradientColorTheme
+                              ? "text-white"
+                              : "text-dark"
+                          } font-bold leading-tight`}>
                             {title}
                           </h3>
                         )}

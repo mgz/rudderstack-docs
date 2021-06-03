@@ -10,12 +10,19 @@ import IntegrationHits from "../components/integrationHits"
 import IntegrationsHelpBox from "../components/Integrations-help"
 import ScrollUpButton from "react-scroll-up-button"
 import ScrollTopBtn from "../images/float-btn.svg"
+import MiddleBanner from "../components/middle-banner"
 
 const Integration = props => {
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_APIKEY
   )
+  
+  const lv_middlebannersection = (
+    props.data.sanityFrontpageblock._rawPagebuildersectionarray || []
+  ).filter(ii => ii._type === "middlebannersection")
+
+
   const { data } = props
   const [searchedText, setSerchedText] = React.useState("")
   const [resultCount, setResultCount] = React.useState(0)
@@ -101,6 +108,10 @@ const Integration = props => {
           </ScrollUpButton>
         </div>
       </div>
+      <section id="footer_section_for_demo">
+        <MiddleBanner {...lv_middlebannersection[0]} />
+      </section>
+
     </Layout>
   )
 }
@@ -109,6 +120,9 @@ export default Integration
 
 export const pageQuery = graphql`
   query {
+    sanityFrontpageblock {
+      _rawPagebuildersectionarray
+    }
     allSanityIntegration {
       pageInfo {
         perPage

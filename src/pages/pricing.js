@@ -7,10 +7,12 @@ import PricePlans from "../components/priceplan"
 import Faq from "../components/faq"
 import MigrationSpecialists from "../components/MigrationSpecialists"
 import Horizontal from "../components/rangeslider"
+import MiddleBanner from "../components/middle-banner"
+import { graphql } from "gatsby"
 import "../css/tailwind.css"
 //import { StaticImage } from "gatsby-plugin-image"
 
-const PricingPage = () => {
+const PricingPage = ({ data }) => {
   const accordions = [
     {
       title: "Is your open-source code maintained and stable?",
@@ -55,6 +57,11 @@ const PricingPage = () => {
     },
   ]
 
+  // console.log("sss", data)
+  const lv_middlebannersection = (
+    data.sanityFrontpageblock._rawPagebuildersectionarray || []
+  ).filter(ii => ii._type === "middlebannersection")
+
   return (
     <Layout>
       <SEO title="RudderStack Pricing Open-Source CDP" />
@@ -97,8 +104,19 @@ const PricingPage = () => {
           />
         </section>
       </div>
+      <section id="footer_section_for_demo">
+        <MiddleBanner {...lv_middlebannersection[0]} />
+      </section>
     </Layout>
   )
 }
 
 export default PricingPage
+
+export const query = graphql`
+  query pricingPage {
+    sanityFrontpageblock {
+      _rawPagebuildersectionarray
+    }
+  }
+`
