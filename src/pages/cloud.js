@@ -40,7 +40,7 @@ const CloudDesktop = ({ data }) => {
               <p className="text-white text-lg leading-6 lg:pr-36">Build customer data pipelines that connect your whole stack, then make them smarter by ingesting and activating enriched data from your warehouse.</p>
               <p className="text-white text-lg leading-6 lg:pr-40 mt-8">Start with RudderStack Cloud Free today and send up to 500,000 events per month. No credit card required, no time limit.</p>
               <div className="block sm:flex justify-center items-center mt-12">
-                <a className="btn-primary-lg bg-white text-primary sm:mr-4 md:mb-0 mb-6" href="https://app.rudderstack.com/signup?type=freetrial">Sign up for free</a>
+                <a className="btn-primary-lg bg-white text-primary sm:mr-4 md:mb-0 mb-6 border-transparent text-dark" href="https://app.rudderstack.com/signup?type=freetrial">Sign up for free</a>
                 <a className="btn-secondary-lg sm:mr-4 md:mb-0 mb-4" href="/request-demo">Get a demo</a>
               </div>
             </div>
@@ -98,7 +98,7 @@ const CloudDesktop = ({ data }) => {
       <section className="bg-backgroundsecondary 100% left-right-section sm:py-24 py-11">{/*Collect your data*/}
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           <div className="flex flex-col w-full justify-center items-center">
-            <h3 className="md:mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight text-center max-w-screen-sm">
+            <h3 className="md:mt-2 text-4xl md:text-5xl text-dark font-bold leading-tight text-center max-w-screen-sm">
               Build a complete customer data stack
             </h3>
             <h3 className="md:mt-20 mt-10 text-4xl md:text-5xl text-blue font-bold leading-tight text-center">
@@ -107,7 +107,7 @@ const CloudDesktop = ({ data }) => {
           </div>
           <div className="flex items-center flex-wrap sm:flex-row mt-6 md:mt-16">{/*Event Stream*/}
             <div className="sm:w-1/2 sm:p-6 sm:pl-0 md:pr-20">
-              <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+              <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-dark font-bold leading-tight">
                 Event stream
               </h3>
               <div className="text-secondary leading-7 text-sm sm:text-lg">
@@ -130,12 +130,12 @@ const CloudDesktop = ({ data }) => {
               <img src={EventStream} alt="event stream" className="w-full" />
             </div>
           </div>
-          <div className="flex items-center flex-wrap flex-col-reverse sm:flex-row mt-6 md:mt-16">{/*Cloud Extract*/}
+          <div className="flex items-center flex-wrap flex-col-reverse sm:flex-row pt-6 md:pt-16">{/*Cloud Extract*/}
             <div className="w-full sm:w-1/2 sm:p-6 sm:pl-0 mt-12 sm:mt-0">
               <img src={CloudExtract} alt="cloud extract" className="w-full" />
             </div>
             <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0">
-              <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+              <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-dark font-bold leading-tight">
                 Cloud Extract
               </h3>
               <div className="text-secondary leading-7 text-sm sm:text-lg">
@@ -155,7 +155,7 @@ const CloudDesktop = ({ data }) => {
           </div>
           <div className="flex items-center flex-wrap sm:flex-row mt-6 md:mt-16">{/*Warehouse Actions*/}
             <div className="sm:w-1/2 sm:p-6 sm:pl-0 md:pr-20">
-              <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+              <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-dark font-bold leading-tight">
                 Warehouse Actions
               </h3>
               <div className="text-secondary leading-7 text-sm sm:text-lg">
@@ -182,7 +182,7 @@ const CloudDesktop = ({ data }) => {
             <h3 className="mt-24 text-4xl md:text-5xl text-blue font-bold leading-tight text-center">
               Govern, enrich, and understand your data
             </h3>
-            <h3 className="mt-10 mb-4 pb-2 text-2xl md:text-3xl text-primary text-center font-bold leading-tight">
+            <h3 className="mt-10 mb-4 pb-2 text-2xl md:text-3xl text-dark text-center font-bold leading-tight">
               RudderStack helps you achieve a seamless data workflow
               </h3>
           </div>
@@ -253,7 +253,7 @@ const CloudDesktop = ({ data }) => {
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           <div className="flex items-center flex-wrap sm:flex-row mb-6 md:mt-16">
             <div className="w-full sm:w-3/5 sm:p-6 sm:pl-0 mt-12 sm:mt-0">
-              <h2 className="text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
+              <h2 className="text-3xl-4 md:text-5xl text-dark font-bold leading-tight">
                 Integrate your entire stack
             </h2>
               <p className="text-secondary leading-7 text-sm sm:text-lg py-6">Rudderstack supports 100+ out of the box integrations, and we add more every month. Connect your customer data to all the tools your team uses to drive growth. Spend less time on vendor SDK implementations and third-party code management.</p>

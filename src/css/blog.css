@@ -88,7 +88,12 @@
 }
 .blog-banner-overlay
 {
-  background-color: rgba(12, 22, 82, 0.5);
+  /* background-color: rgba(12, 22, 82, 0.5); */
+  background-image: url('../images/blog-overlay.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  
 }
 @media (min-width: 992px)
 {

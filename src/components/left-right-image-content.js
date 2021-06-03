@@ -50,7 +50,7 @@ const LeftRightImgCnt = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap flex-col-reverse sm:flex-row mt-6 md:mt-16"
+                    className="flex items-center flex-wrap flex-col-reverse sm:flex-row ptt-6 md:pt-16"
                   >
                     <div
                       className={`w-full ${
@@ -111,7 +111,7 @@ const LeftRightImgCnt = props => {
                                 )
                               } else {
                                 return (
-                                  <span className="font-bold leading-normal text-sm lr-icon action-icon">
+                                  <span className="font-bold leading-normal text-sm lr-icon action-icon text-seegreen">
                                     <Link to={linkurl}>{linktext}</Link>
                                   </span>
                                 )
