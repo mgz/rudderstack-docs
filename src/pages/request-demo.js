@@ -154,7 +154,7 @@ const Demo = ({ data, htmlId,location }) => {
   }
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Schedule Demo" />
       <div className="font-custom">
         <section id="demo_hdr">

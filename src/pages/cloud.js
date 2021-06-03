@@ -20,7 +20,7 @@ import DataAPI from "../images/cloud-icon2.svg"
 import DbtModals from "../images/cloud-icon3.svg"
 import Grafana from "../images/cloud-icon4.svg"
 
-const CloudDesktop = ({ data }) => {
+const CloudDesktop = ({ data,location }) => {
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
@@ -30,7 +30,7 @@ const CloudDesktop = ({ data }) => {
   )
 
   return (
-    <Layout>
+    <Layout location={location}>
       <section className="w-full product-page_banner text-white lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
         <div className="max-w-6xl sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
           <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">

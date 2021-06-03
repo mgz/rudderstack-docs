@@ -18,7 +18,7 @@ import {
   LinkedinShareButton,
 } from "react-share"
 
-const Singleblog = ({ data, ...props }) => {
+const Singleblog = ({ data, location, ...props }) => {
   const blog = data.blog
   const blogAuthors = data.blog.blog_authors
   const maintitle = props.maintitle
@@ -33,7 +33,7 @@ const Singleblog = ({ data, ...props }) => {
   })
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet>
         <title>{blog.meta_title || blog.title}</title>
         <meta property="og:title" content={blog.meta_title || blog.title} />

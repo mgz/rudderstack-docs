@@ -20,7 +20,7 @@ import PortableText from "../components/portableText"
 import { StaticImage } from "gatsby-plugin-image"
 import CookiesConsent from "./cookiesConsent"
 
-const Layout = ({ location, children }) => {
+const Layout = ({ location, showExplicitGradient, children }) => {
   const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
@@ -73,9 +73,17 @@ const Layout = ({ location, children }) => {
   const footerlogo =
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
 
-  console.log("path", location)
+  console.log("path", location, showExplicitGradient)
   let diableGradient = false
-  if (location && location.pathname.includes("/product/")) {
+  if (
+    location &&
+    (location.pathname.startsWith("/product/") ||
+      location.pathname.startsWith("/request-demo") ||
+      location.pathname.startsWith("/cloud") ||
+      (location.pathname.startsWith("/video-library/") &&
+        showExplicitGradient === false) ||
+      location.pathname.startsWith("/blog/"))
+  ) {
     diableGradient = true
   }
   return (
