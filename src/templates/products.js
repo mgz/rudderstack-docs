@@ -31,8 +31,11 @@ const Products = ({ data, location}) => {
               return <ProductImageWithListOfText key={row._id} {...row} />
             } else if (row._type === "leftrightcontentimagesection") {
               return (
-                <div key={row._key} className="bg-gradiantsecondary 100%">
-                  <LeftRightImgCnt {...row} />
+                // <div key={row._key} className="bg-gradiantsecondary 100%">
+                //   <LeftRightImgCnt applyGradientColorTheme={false} {...row} />
+                // </div>
+                <div key={row._key} className="100%">
+                  <LeftRightImgCnt applyGradientColorTheme={false} {...row} />
                 </div>
               )
             }

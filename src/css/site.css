@@ -144,7 +144,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5677ae', endColorstr='#661284',GradientType=0 ); /* IE6-9 */
 }
 
-.testimonila-bg {
+.testimonila-bg-gradiant {
   background-image: url("../images/testimonial-bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -152,7 +152,7 @@ body {
   width: 100%;
   height: 100%;
 }
-
+ 
 .menu li.has-submenu a:after {
   display: inline-block;
   position: relative;

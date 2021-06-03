@@ -62,7 +62,7 @@ const Page = props => {
         case "leftrightcontentimagesection":
           el = (
             <div className="bg-gradiantsecondary 100%" key={c._key}>
-              <LeftRightImgCnt {...c} />{" "}
+              <LeftRightImgCnt applyGradientColorTheme={true} {...c} />{" "}
             </div>
           )
           break
@@ -73,7 +73,7 @@ const Page = props => {
           el = <MiddleBanner key={c._key} {...c} />
           break
         case "testimonialsection":
-          el = <Testimonial key={c._key} {...c} />
+          el = <Testimonial key={c._key} applyGradientColorTheme={true} {...c} />
           break
         case "righthighlightedsection":
           el = <RightSideHiglightedContent key={c._key} {...c} />
