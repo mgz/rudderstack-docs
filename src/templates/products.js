@@ -10,7 +10,7 @@ import Testimonial from "../components/testimonial"
 
 
 
-const Products = ({ data, }) => {
+const Products = ({ data, location}) => {
 
   const lv_testimonialsection = (
   data.sanityFrontpageblock._rawPagebuildersectionarray || []
@@ -21,7 +21,7 @@ const Products = ({ data, }) => {
   ).filter(ii => ii._type === "middlebannersection")
 
   return (
-    <Layout>
+    <Layout location={location}>
       <div className="font-custom">
         {(data.product._rawPagebuildersectionarray || []).map(
           (row, idx) => {

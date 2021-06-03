@@ -20,7 +20,7 @@ import PortableText from "../components/portableText"
 import { StaticImage } from "gatsby-plugin-image"
 import CookiesConsent from "./cookiesConsent"
 
-const Layout = ({ children }) => {
+const Layout = ({ location, children }) => {
   const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
               _rawFooterWidgetSection
               footer_logo {
                 asset {
-                 url
+                  url
                 }
               }
               copy_right_text
@@ -72,8 +72,17 @@ const Layout = ({ children }) => {
       ._rawSocialWidgetSection
   const footerlogo =
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
+
+  console.log("path", location)
+  let diableGradient = false
+  if (location && location.pathname.includes("/product/")) {
+    diableGradient = true
+  }
   return (
-    <>
+    <div
+      id="main-container"
+      className={`gradient-${diableGradient ? "disable" : "enable"}`}
+    >
       <CookiesConsent />
       <MainNavigation />
       <main>{children}</main>
@@ -188,7 +197,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   )
 }
 
