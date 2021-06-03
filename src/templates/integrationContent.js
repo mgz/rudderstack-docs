@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import IntegrationHero from "../components/integrationHero"
 import IntegrationLeftRightContent from "../components/IntegrationLeftRightContent"
@@ -39,6 +40,19 @@ const Singleintegration = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{data.integration.meta_title || data.integration.title}</title>
+        <meta property="og:title" content={data.integration.meta_title || data.integration.title} />
+        <meta
+          property="twitter:title"
+          content={data.integration.meta_title || data.integration.title}
+        />
+        <meta name="description" content={data.integration.meta_desc} />
+        <meta property="og:description" content={data.integration.meta_desc} />
+        <meta property="twitter:description" content={data.integration.meta_desc} />
+        <meta property="og:type" content="article" />
+      </Helmet>
+
       <div className="pt-10 font-custom">
         {data.integration._rawIntegrationHeroSection && (
           <IntegrationHero data={data.integration._rawIntegrationHeroSection} />
@@ -119,6 +133,8 @@ export const query = graphql`
       title
       weight
       is_coming_soon
+      meta_title
+      meta_desc
     }
     allSanityBlog(limit: 13, sort: { fields: [weight], order: [ASC] }) {
       pageInfo {
