@@ -115,6 +115,24 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_case_studies",
+        queries: require("./src/utils/case-studies-algolia"),
+        enablePartialUpdates: true,
+        matchFields: [
+          "slug",
+          "category",
+          "title",
+          "shortdescription",
+          "weight",
+          "logoimage",
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
