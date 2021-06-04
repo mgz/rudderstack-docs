@@ -6,6 +6,7 @@ import algoliasearch from "algoliasearch/lite"
 import CustomSearchBox from "../components/customSearchBox"
 // import CustomMenu from "../components/blogCategoryList"
 import CaseStudiesMenu from "../components/caseStudiesCategoryList"
+import SingleRowContentCaseStudy from '../components/singleRowContentCaseStrudy'
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import CustomHits from "../components/customHits"
 import CustomCaseStudiesHits from "../components/customCaseStudiesHits"
@@ -16,6 +17,7 @@ import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
 
 const CaseStudies = ({ data }) => {
+  // console.log('case-studies-full-data',data)
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
@@ -38,11 +40,12 @@ const CaseStudies = ({ data }) => {
             }
           >
             <Configure hitsPerPage={9} />
-            {/* <div className="my-10 w-full">
-              <SingleRowContentVideoLibrary data={data.videolibrary} />
-            </div> */}
+            
+            <div className="my-10 w-full">
+              <SingleRowContentCaseStudy data={data.casestudies} />
+            </div>
 
-            <div className="flex flex-row  flex-wrap-reverse mt-14 md:mt-32 w-full">
+            <div className="flex flex-row  flex-wrap-reverse mt-0 w-full">
               <div className="flex flex-col w-full lg:w-3/5 justify-center items-start text-center lg:text-left border-grey-500">
                 <CaseStudiesMenu attribute="category" />
               </div>
@@ -117,6 +120,29 @@ export const pageQuery = graphql`
   query {
     sanityFrontpageblock {
       _rawPagebuildersectionarray
+    }
+    casestudies: allSanityCaseStudies(sort: { fields: article_dttm, order: DESC }) {
+      edges {
+        node {
+          id
+          listing_image {
+            asset {
+              url
+            }
+          }
+          title
+          weight
+          shortdescription
+          category
+          slug {
+            current
+          }
+          article_dttm
+          meta_desc
+          meta_title
+          _rawPagebuildersectionarray
+        }
+      }
     }
   }
 `

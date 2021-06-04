@@ -205,4 +205,34 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: edge.node.slug.current },
     })
   })
+
+  const caseStudies = await graphql(`
+    {
+      allSanityCaseStudies {
+        edges {
+          node {
+            slug {
+              current
+            }
+            title
+          }
+        }
+      }
+    }
+  `)
+
+  if (caseStudies.errors) {
+    throw caseStudies.errors
+  }
+
+  const case_studies = caseStudies.data.allSanityCaseStudies.edges || []
+  case_studies.forEach((edge, index) => {
+    const path = `/case-studies/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/caseStudyContent.js"),
+      context: { slug: edge.node.slug.current },
+    })
+  })
 }
