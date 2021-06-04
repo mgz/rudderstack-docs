@@ -125,7 +125,7 @@ const LeftRightImgCnt = props => {
                             props.applyGradientColorTheme
                               ? "text-white"
                               : "text-dark"
-                          } leading-7 text-sm sm:text-lg frtxt-contnt`}
+                          } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
                         >
                           <PortableText blocks={portabletext} />
                         </div>
@@ -233,7 +233,7 @@ const LeftRightImgCnt = props => {
                           props.applyGradientColorTheme
                             ? "text-white"
                             : "text-dark"
-                        } leading-7 text-sm sm:text-lg frtxt-contnt`}
+                        } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
                       >
                         <PortableText blocks={portabletext} />
                       </div>

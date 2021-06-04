@@ -2,29 +2,17 @@ import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
+import loadable from "@loadable/component"
 import CaseStudyHero from "../components/caseStudyHero"
+import SignupV1 from "../components/signup_v1"
+import LeftRightImgCnt from "../components/left-right-image-content"
+
+const Testimonial = loadable(() => import("../components/testimonial"))
+const MiddleBanner = loadable(() => import("../components/middle-banner"))
+
 const CaseStudyContent = ({ data }) => {
-  //   const hero_section = data.casestudy._rawPagebuildersectionarray.find(
-  //     oo => oo._type === "case_studies_hero"
-  //   )
-  //   const data_stack_section = data.casestudy._rawPagebuildersectionarray.find(
-  //     oo => oo._type === "case_studies_data_stack"
-  //   )
-  //   const company_problem_section = data.casestudy._rawPagebuildersectionarray.find(
-  //     oo => oo._type === "case_studies_company_problem"
-  //   )
-  //   const secure_compliance_section = data.casestudy._rawPagebuildersectionarray.find(
-  //     oo => oo._type === "case_studies_secure_compliance"
-  //   )
-  //   const personalization_section = data.casestudy._rawPagebuildersectionarray.find(
-  //     oo => oo._type === "case_studies_personalization"
-  //   )
-  //   console.log("hero_section", hero_section)
-  //   console.log("data_stack_section", data_stack_section)
-  //   console.log("company_problem_section", company_problem_section)
-  //   console.log("secure_compliance_section", secure_compliance_section)
-  //   console.log("personalization_section", personalization_section)
-  console.log("sddadada", data.casestudy)
+  console.log("sddadada", data.sanityFrontpageblock)
+  console.log("pppp", data.casestudy)
   return (
     <Layout>
       <Helmet>
@@ -45,10 +33,49 @@ const CaseStudyContent = ({ data }) => {
         />
         <meta property="og:type" content="article" />
       </Helmet>
-      {}
-      {/* <CaseStudyHero /> */}
 
-      {JSON.stringify(data.casestudy)}
+      {data.casestudy._rawPagebuildersectionarray.map(section => {
+        if (
+          section._type === "common_global_sections" &&
+          section.common_section_type === "testimonial"
+        ) {
+          let l_data = data.sanityFrontpageblock._rawPagebuildersectionarray.find(
+            pp => pp._type === "testimonialsection"
+          )
+          return (
+            <Testimonial
+              key={section._key}
+              applyGradientColorTheme={false}
+              {...l_data}
+            />
+          )
+        } else if (
+          section._type === "common_global_sections" &&
+          section.common_section_type === "signup_v1"
+        ) {
+          return <SignupV1 key={section._key} />
+        } else if (
+          section._type === "common_global_sections" &&
+          section.common_section_type === "get_started"
+        ) {
+          let l_data = data.sanityFrontpageblock._rawPagebuildersectionarray.find(
+            pp => pp._type === "middlebannersection"
+          )
+          return (
+            <section key={section._key} id="footer_section_for_demo">
+              <MiddleBanner {...l_data} />
+            </section>
+          )
+        } else if (section._type === "leftrightcontentimagesection") {
+          return (
+            <div className="100%" key={section._key}>
+              <LeftRightImgCnt applyGradientColorTheme={false} {...section} />{" "}
+            </div>
+          )
+        } else {
+          return <div key={section._key}>{section._type}</div>
+        }
+      })}
     </Layout>
   )
 }
