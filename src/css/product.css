@@ -65,6 +65,25 @@
   height: 100%;
 }
  
+.segment-desktop-banner{
+  background: #6b96c3; /* Old browsers */
+  background: -moz-linear-gradient(left,  #6b96c3 0%, #111168 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  #6b96c3 0%,#111168 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  #6b96c3 0%,#111168 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
+  
+}
+.segment-desktop-banner::before
+{
+  background-image: url("../images/segment-desktop-banner.svg");
+  background-position: top 90px right 0;
+  background-size: 40% auto;
+  background-repeat: no-repeat;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+}
 /*Cloud Desktop CSS*/
 .event-stream-list li::before
 
