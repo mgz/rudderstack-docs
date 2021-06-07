@@ -38,7 +38,7 @@ function integrationToAlgoliaRecord({
   },
 }) {
   let logoimage = ""
-  if (integrationLogo) {
+  if (integrationLogo && integrationLogo.asset) {
     logoimage = integrationLogo.asset.url
   }
   return {
