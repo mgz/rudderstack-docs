@@ -41,13 +41,13 @@ const Tabs = props => {
                   >
                     {tab.tabtitle}
                   </a>
-                  <div className="md:col-span-7 md:hidden">
+                  <div className="md:col-span-7 md:hidden bg-gradiantprimary rounded-xl">
                     <div className="relative block md:bg-background bg-transperent min-w-0 break-words md:bg-white w-full rounded-lg">
                       <div className="md:px-12 lg:px-20 md:py-12 md:bg-blueNew-lighter rounded-xl">
-                        <div className="tab-content tab-space tab-content-item">
+                        <div className="tab-content tab-space tab-content-item action-icon">
                           <div
                             key={i}
-                            className={openTab === i ? "block" : "hidden"}
+                            className={openTab === i ? "block p-6" : "hidden"}
                             id={`link` + i}
                           >
                             <PortableText blocks={tab.tabcontent} />
