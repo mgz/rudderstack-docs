@@ -12,25 +12,27 @@ const IntegrationLeftRightContent = ({ data }) => {
               {data ? data.wycd_title : ""}
             </h3>
           </div>
-          <div
-            className={`grid grid-flow-col grid-cols-1 md:grid-cols-2 grid-rows-${
-              data.wycd_leftright_content.length
-            } md:grid-rows-${
-              parseInt(data.wycd_leftright_content.length / 2) +
-              (data.wycd_leftright_content.length % 2)
-            } gap-4 md:gap-12 mt-6 md:mt-20`}
-          >
-            {data.wycd_leftright_content.map(ii => {
-              return (
-                <div
-                  key={ii._key}
-                  className="relative w-full what-can-do text-xl leading-8 pl-11 sm:mb-0"
-                >
-                  <PortableText blocks={ii.leftrightcontent} />
-                </div>
-              )
-            })}
-          </div>
+          {data.wycd_leftright_content && (
+            <div
+              className={`grid grid-flow-col grid-cols-1 md:grid-cols-2 grid-rows-${
+                data.wycd_leftright_content.length
+              } md:grid-rows-${
+                parseInt(data.wycd_leftright_content.length / 2) +
+                (data.wycd_leftright_content.length % 2)
+              } gap-4 md:gap-12 mt-6 md:mt-20`}
+            >
+              {data.wycd_leftright_content.map(ii => {
+                return (
+                  <div
+                    key={ii._key}
+                    className="relative w-full what-can-do text-xl leading-8 pl-11 sm:mb-0"
+                  >
+                    <PortableText blocks={ii.leftrightcontent} />
+                  </div>
+                )
+              })}
+            </div>
+          )}
           <div  className="relative text-secondary  w-full text-xl leading-8">
             <PortableText blocks={data.wycd_footer} />
           </div>
