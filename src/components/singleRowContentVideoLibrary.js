@@ -89,8 +89,8 @@ const SingleRowContentVideoLibrary = ({ data }) => {
             <img
               src={webinarObj.node.listing_image.asset.url}
               alt={webinarObj.node.title}
-              // className="sm:h-full lg:max-w-2xl object-cover max-h-96"
-              className="sm:h-full lg:max-w-2xl object-cover"
+              className="sm:h-full lg:max-w-2xl object-cover max-h-96"
+              // className="sm:h-full lg:max-w-2xl object-cover"
               loading="eager"
             />
           </Link>
