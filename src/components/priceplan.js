@@ -24,7 +24,7 @@ function PricePlans() {
           Compare Features by Plan
         </h2>
 
-        <div className="sm:block w-auto max-w-screen-lg m-auto">
+        <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
           <table className="cover-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
             <thead>
               <tr>

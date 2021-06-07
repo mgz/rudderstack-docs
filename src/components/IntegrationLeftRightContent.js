@@ -33,7 +33,6 @@ const IntegrationLeftRightContent = ({ data }) => {
               })}
             </div>
           )}
-
           <div className="relative text-secondary  w-full text-xl leading-8 frtxt-contnt arrow-list-items">
             <PortableText blocks={data.wycd_footer} />
           </div>
