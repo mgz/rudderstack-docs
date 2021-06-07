@@ -12,13 +12,13 @@ const IntegrationGetMoreOutOf = ({ data }) => {
     data.freetextctc.btntext !== ""
   ) {
     renderButton = (
-      <a href={data.freetextctc.btnlink} className="btn-primary-lg bg-dark text-white">
+      <a href={data.freetextctc.btnlink} className="btn-primary-lg text-white">
         {data.freetextctc.btntext}
       </a>
     )
   } else if (data.freetextctc && data.freetextctc.btntext !== "") {
     renderButton = (
-      <span className="btn-primary-lg bg-dark text-white">
+      <span className="btn-primary-lg text-white">
         <Link to={data.freetextctc.btnlink}>{data.freetextctc.btntext}</Link>
       </span>
     )

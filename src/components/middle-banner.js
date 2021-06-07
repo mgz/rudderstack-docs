@@ -33,9 +33,9 @@ const MiddleBanner = props => {
                             key={btn._key}
                             className={
                               (btn.btnhiglight === true
-                                ? "bg-white text-primary btn-secondary-lg"
-                                : "btn-primary-lg bg-black-custom") +
-                              ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom`
+                                ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay hover:text-white"
+                                : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
+                              ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
                             }
                             href={btn.btnlink}
                           >
@@ -48,9 +48,9 @@ const MiddleBanner = props => {
                             key={btn._key}
                             className={
                               (btn.btnhiglight === true
-                                ? "bg-white text-primary btn-secondary-lg"
-                                : "btn-primary-lg bg-black-custom") +
-                              ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight border-white font-custom`
+                                ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
+                                : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
+                              ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
                             }
                           >
                             <Link to={btn.btnlink}>{btn.btntext}</Link>

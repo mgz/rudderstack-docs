@@ -27,11 +27,11 @@ const FreeText = (props) => {
                                 {(() => {
                                     if (btn.btnexternallink === true){
                                         return (
-                                            <a key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-lg bg-black-custom' : 'btn-secondary-lg border-dark-blue') + ` md:mr-4 md:mb-0 mb-4`} href={btn.btnlink}>{btn.btntext}</a>
+                                            <a key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-lg' : 'btn-secondary-lg ') + ` md:mr-4 md:mb-0 mb-4`} href={btn.btnlink}>{btn.btntext}</a>
                                         )
                                     }else{
                                         return(
-                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-lg bg-black-custom' : 'btn-secondary-lg border-dark-blue') + ` md:mr-4 md:mb-0 mb-4`}>
+                                        <span key={btn._key} className={(btn.btnhiglight === true ? 'btn-primary-lg' : 'btn-secondary-lg ') + ` md:mr-4 md:mb-0 mb-4`}>
                                             <Link to={btn.btnlink} >{btn.btntext}</Link>
                                             </span>
                                         ) 

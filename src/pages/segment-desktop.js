@@ -14,6 +14,8 @@ import MiddleBanner from "../components/middle-banner"
 import loadable from "@loadable/component"
 import ExploreRudderStack from "../components/ExploreRudderStack"
 import { StaticImage } from "gatsby-plugin-image"
+import MigrationSpecialists from "../components/MigrationSpecialists"
+
 import SegmentLogo from "../images/segment-logo.png"
 import Logo from "../images/logo-2x.png"
 const Testimonial = loadable(() => import("../components/testimonial"))
@@ -280,8 +282,9 @@ const SegmentDesktop = ({ data, location }) => {
         </section>
         <section
           id="segment_comparison"
-          className="bg-white plans-section pb-40 md:pb-20"
+          className="bg-white plans-section pb-40 md:pb-20 relative"
         >
+            <MigrationSpecialists />
           <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-8 md:pt-24 md:py-16 text-center">
             <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8">
               RudderStack vs. Segment Comparison

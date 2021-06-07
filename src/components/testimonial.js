@@ -98,7 +98,7 @@ const Testimonial = props => {
                                         <a
                                           className={`${
                                             testimonial.button.btnhiglight
-                                              ? "btn-primary-lg bg-black-custom border-white text-white"
+                                              ? "btn-primary-lg bg-black-custom hover:bg-blueNew-midnight border-white text-white"
                                               : "btn-secondary-large"
                                           } inline-block`}
                                           href={testimonial.button.btnlink}
@@ -113,7 +113,7 @@ const Testimonial = props => {
                                             (testimonial.button.btnhiglight ===
                                             true
                                               ? "btn-primary-lg"
-                                              : "btn-secondary-lg bg-black-custom border-white text-white") +
+                                              : "btn-secondary-lg bg-black-custom hover:bg-blueNew-midnight border-white text-white") +
                                             ` inline-block`
                                           }
                                         >

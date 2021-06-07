@@ -152,7 +152,7 @@ const DemoForm = props => {
       </div>
 
       <button
-        class="btn-primary-lg bg-dark mt-3 md:mb-0 mb-4"
+        class="btn-primary-lg mt-3 md:mb-0 mb-4"
         disabled={props.isLoading}
         // type="submit"
         onClick={e => {

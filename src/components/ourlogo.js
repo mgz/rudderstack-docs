@@ -40,17 +40,15 @@ function OurLogo(props) {
         </h3>
       </div>
       <div className="flex w-full justify-start flex-wrap mt-2 sm:mt-2 our-logos">
-       
-          {logoimages.map((logoimage, i) => {
-            return (
-              <div key={i} class="w-1/5 flex justify-center md:pt-20 px-2 py-4">
-                <span className="">
-                  <Image props={logoimage.asset._ref}/>
-                </span>
-              </div>
-            )
-          })}
-        
+        {logoimages.map((logoimage, i) => {
+          return (
+            <div key={i} class="w-1/5 flex justify-center md:pt-20 px-2 py-4">
+              <span className="h-10">
+                <Image classes="h-full w-auto" props={logoimage.asset._ref} />
+              </span>
+            </div>
+          )
+        })}
       </div>
     </section>
   )

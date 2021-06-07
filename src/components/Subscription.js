@@ -126,7 +126,7 @@ const Subscription = props => {
               <input
                 type="submit"
                 defaultValue="Subscribe"
-                className="mt-4 rounded-lg text-whiteColor-custom bg-dark text-sm py-2 px-8 w-full md:w-auto hover:bg-blueNew-custom cursor-pointer"
+                className="mt-4 rounded-lg text-whiteColor-custom bg-dark text-sm py-2 px-8 w-full md:w-auto hover:bg-blueNew-midnight cursor-pointer"
                 onClick={e => formSubmitted(e)}
               />
               <span className="ajax-loader" />

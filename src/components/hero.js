@@ -36,8 +36,8 @@ function Hero(props) {
                         key={btn._key}
                         className={
                           (btn.btnhiglight === true
-                            ? "btn-primary-lg bg-black-custom"
-                            : "btn-secondary-lg border-dark-blue") + ` sm:mr-4 md:mb-0 mb-6`
+                            ? "btn-primary-lg"
+                            : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
                         }
                         href={btn.btnlink}
                       >
@@ -50,8 +50,8 @@ function Hero(props) {
                         key={btn._key}
                         className={
                           (btn.btnhiglight === true
-                            ? "btn-primary-lg bg-black-custom"
-                            : "btn-secondary-lg border-dark-blue") + ` sm:mr-4 md:mb-0 mb-4`
+                            ? "btn-primary-lg"
+                            : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
                         }
                       >
                         <Link to={btn.btnlink}>{btn.btntext}</Link>

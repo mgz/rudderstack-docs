@@ -14,7 +14,7 @@ const ExploreRudderStack = () => {
         </p>
         <p className="mt-16 md:mt-16 flex justify-center">
           <a
-            className="bg-dark text-whiteColor-custom text-sm sm:text-lg py-3 px-4 sm:px-8 rounded-lg hover:bg-blueNew-custom  w-full sm:w-60"
+            className="bg-black-custom text-whiteColor-custom text-sm sm:text-lg py-3 px-4 sm:px-8 rounded-lg hover:bg-blueNew-midnight  w-full sm:w-60"
             href="https://app.rudderstack.com/signup?type=freetrial"
           >
             Sign up free

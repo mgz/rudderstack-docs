@@ -111,11 +111,13 @@ const LeftRightImgCnt = props => {
                             {title}
                           </h2>
                         ) : (
-                          <h3 className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl  ${
-                            props.applyGradientColorTheme
-                              ? "text-white"
-                              : "text-dark"
-                          } font-bold leading-tight`}>
+                          <h3
+                            className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl  ${
+                              props.applyGradientColorTheme
+                                ? "text-white"
+                                : "text-dark"
+                            } font-bold leading-tight`}
+                          >
                             {title}
                           </h3>
                         )}
@@ -136,9 +138,9 @@ const LeftRightImgCnt = props => {
                                 return (
                                   <a
                                     href={linkurl}
-                                    className={`font-bold leading-normal text-sm lr-icon ${
+                                    className={`font-bold leading-normal text-sm lr-icon${
                                       props.applyGradientColorTheme
-                                        ? "text-seegreen action-icon"
+                                        ? "-gradient"
                                         : ""
                                     }`}
                                   >
@@ -148,9 +150,9 @@ const LeftRightImgCnt = props => {
                               } else {
                                 return (
                                   <span
-                                    className={`font-bold leading-normal text-sm lr-icon ${
+                                    className={`font-bold leading-normal text-sm lr-icon${
                                       props.applyGradientColorTheme
-                                        ? "text-seegreen action-icon"
+                                        ? "-gradient"
                                         : ""
                                     }`}
                                   >
@@ -244,9 +246,9 @@ const LeftRightImgCnt = props => {
                               return (
                                 <a
                                   href={linkurl}
-                                  className={`font-bold leading-normal text-sm lr-icon relative sm:inline-block ${
+                                  className={`font-bold leading-normal text-sm relative sm:inline-block lr-icon${
                                     props.applyGradientColorTheme
-                                      ? "text-seegreen action-icon"
+                                      ? "-gradient"
                                       : ""
                                   }`}
                                 >
@@ -256,9 +258,9 @@ const LeftRightImgCnt = props => {
                             } else {
                               return (
                                 <span
-                                  className={`font-bold leading-normal text-sm lr-icon relative sm:inline-block ${
+                                  className={`font-bold leading-normal text-sm relative sm:inline-block lr-icon${
                                     props.applyGradientColorTheme
-                                      ? "text-seegreen action-icon"
+                                      ? "-gradient"
                                       : ""
                                   }`}
                                 >

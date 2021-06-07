@@ -12,13 +12,13 @@ function IntegrationHero({ data }) {
     data.herocta.btntext !== ""
   ) {
     renderButton = (
-      <a href={data.herocta.btnlink} className="btn-primary-lg bg-dark text-white">
+      <a href={data.herocta.btnlink} className="btn-primary-lg text-white">
         {data.herocta.btntext}
       </a>
     )
   } else if (data.herocta && data.herocta.btntext !== "") {
     renderButton = (
-      <span className="btn-primary-lg bg-dark text-white">
+      <span className="btn-primary-lg text-white">
         <Link to={data.herocta.btnlink}>{data.herocta.btntext}</Link>
       </span>
     )

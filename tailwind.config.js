@@ -10,13 +10,15 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       black: {
-        custom: "#10174C", /*footer nav btn */
+        custom: "#10174C" /*footer nav btn */,
       },
       blueNew: {
         lighter: "#EEF5F5",
         skyblue: "#E3F1F1",
         custom: "#0066FF",
         category: "#0166FE",
+        midnight: "#17176E",
+        eastbay: "#3F3C7F ",
       },
       red: {
         error: "#FF0000",
@@ -49,6 +51,7 @@ module.exports = {
         dark: "var(--dark)",
         purple: "var(--purple)",
         seegreen: "var(--seegreen)",
+        seegreenaction: "var(--seegreenaction)",
         background: "var(--background)",
         backgroundsecondary: "var(--backgroundsecondary)",
         white: "var(--white)",
