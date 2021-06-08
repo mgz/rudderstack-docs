@@ -32,7 +32,7 @@ const Integration = props => {
         <div className="lg:pt-40 pt-16 mx-auto integration-banner relative md:pb-20 pb-7 overflow-hidden">
           <section className="bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter">
             <div class="max-w-6xl lg:mt-16 px-3 md:px-3 mx-auto flex flex-wrap flex-col items-center text-center">
-              <h1 className="tracking-tight-2 text-4xl md:text-5xl font-bold font-custom sm:leading-snug leading-10">
+              <h1 className="tracking-tight-2 text-4xl md:text-5xl font-bold font-custom sm:leading-snug leading-10 text-blueNew-midnight">
                 Integrations
               </h1>
               <p className="text-xl md:text-3xl text-dark font-bold leading-tight md:mt-5 mt-11">

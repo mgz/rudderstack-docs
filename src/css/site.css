@@ -619,11 +619,12 @@ top: -60px;
   @apply cursor-pointer;
 }
 
+
 .content-box {
   @apply border;
   @apply border-solid;
   @apply bg-blueNew-eastbay;
-  border-color: #3f3c7f;
+  border-color: #3f3c7f ;
 }
 
 .floatbtncoantiner {
