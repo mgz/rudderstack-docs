@@ -14,7 +14,7 @@ import MiddleBanner from "../components/middle-banner"
 import loadable from "@loadable/component"
 import ExploreRudderStack from "../components/ExploreRudderStack"
 import { StaticImage } from "gatsby-plugin-image"
-import MigrationSpecialists from "../components/MigrationSpecialists"
+import SegmentSpecialistV2 from "../components/SegmentSpecialistV2"
 
 import SegmentLogo from "../images/segment-logo.png"
 import Logo from "../images/logo-2x.png"
@@ -75,12 +75,12 @@ const SegmentDesktop = ({ data, location }) => {
     <Layout location={location}>
       <div className="font-custom">
         <section className="w-full segment-desktop-banner text-white lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
-          <div className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-32 md:mb-20 mx-auto relative banner-section ">
-            <div className="w-full md:w-3/5 pr-0 md:pr-24">
-              <h1 className="text-6xl leading-tight font-bold">
+          <div className="max-w-6xl px-4 md:px-3 sm:my-20 lg:mt-32 md:mb-20 mx-auto relative banner-section flex flex-col justify-center z-50">
+            <div className="w-full lg:w-3/5 pr-0 lg:pr-2 mx-auto lg:mx-0 flex flex-col justify-center">
+              <h1 className="text-6xl leading-tight font-bold self-center text-center lg:self-start lg:text-left ">
                 RudderStack vs. Segment
               </h1>
-              <p className="pt-6 text-lg">
+              <p className="pt-6 text-lg self-center text-center lg:self-start lg:text-left">
                 Segment is great, but RudderStack is better. We give you the
                 same event streaming you need but rise above Segment, because we
                 are open source, warehouse-first, and have more sensible
@@ -95,7 +95,7 @@ const SegmentDesktop = ({ data, location }) => {
         </section>
         <section className="bg-grayColor-BgGray pb-8 md:pb-20">
           <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center">
-            <h3 className="mt-24 text-4xl md:text-5xl font-bold leading-tight text-center max-w-4xl">
+            <h3 className="mt-24 text-4xl md:text-5xl font-bold leading-tight text-center max-w-4xl text-blueNew-midnight">
               Here are the top reasons companies choose RudderStack over
               Segment:
             </h3>
@@ -202,10 +202,10 @@ const SegmentDesktop = ({ data, location }) => {
         </section>
         <section
           id="liked_feature_section"
-          className="bg-grayColor-BgGray pb-8 md:pb-20"
+          className="bg-grayColor-BgGray pb-8 md:pb-44"
         >
           <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center">
-            <h3 className="mt-24 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl">
+            <h3 className="mt-24 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
               When companies migrate from Segment, they love using these
               features:
             </h3>
@@ -284,9 +284,9 @@ const SegmentDesktop = ({ data, location }) => {
           id="segment_comparison"
           className="bg-white plans-section pb-40 md:pb-20 relative"
         >
-            <MigrationSpecialists />
-          <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-8 md:pt-24 md:py-16 text-center">
-            <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8">
+          <SegmentSpecialistV2 />
+          <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-8 md:pt-48 text-center">
+            <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8 text-blueNew-midnight">
               RudderStack vs. Segment Comparison
             </h2>
 

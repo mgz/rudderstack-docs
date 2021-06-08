@@ -246,10 +246,6 @@ body {
   margin-right: 10px;
 }
 
-
-
-
-
 .seeall-icon {
   color: #6e6ea4;
 }
@@ -294,8 +290,6 @@ body {
   background: url("../images/arrow-right-action.svg") no-repeat;
   padding: 0px 0px 3px 20px;
 } */
-
-
 
 .iframe-container {
   position: relative;
@@ -490,10 +484,9 @@ body {
   /* box-shadow: 0px 2px 4px #0066ff; */
 }
 .demo-submit-background {
-  background-image: url("../images/form-submit-header-left.png"),
-    url("../images/form-submit-header-right.png");
-  background-position: top left, bottom right;
-  background-size: 230px auto, 350px auto;
+  background-image: url("../images/form-submit-header-right.png");
+  background-position: bottom right;
+  background-size: 350px auto;
   background-repeat: no-repeat;
 }
 
@@ -615,7 +608,7 @@ top: -60px;
 .filter-menu {
   @apply border;
   @apply border-solid;
-  border-color: #e1e1e1;
+  border-color: #3f3c7f;
   box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0px 4px 15px 6px rgba(0, 0, 0, 0.05);
 }
@@ -629,7 +622,8 @@ top: -60px;
 .content-box {
   @apply border;
   @apply border-solid;
-  border-color: #e1e1e1;
+  @apply bg-blueNew-eastbay;
+  border-color: #3f3c7f;
 }
 
 .floatbtncoantiner {

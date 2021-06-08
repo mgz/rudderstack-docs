@@ -2,6 +2,7 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
 import { StaticImage } from "gatsby-plugin-image"
+import ArrowImg from "../images/Arrow.svg"
 import Link from "gatsby-link"
 
 const MiddleBanner = props => {
@@ -15,7 +16,12 @@ const MiddleBanner = props => {
           <div className="flex flex-wrap justify-items-center items-center sm:flex-row">
             <div className="flex items-start md:w-1/2">
               <div className="">
-                <StaticImage src="../images/Arrow.svg" alt="Get Started" />
+                {/* <img src={ArrowImg} alt="Get Started Image" /> */}
+                <StaticImage
+                  src="../images/Arrow.svg"
+                  placeholder="tracedSVG"
+                  alt="Get Started Image"
+                />
               </div>
               <h3 className="text-4xl pl-5 md:pl-8 md:text-5xl font-bold font-custom leading-tight max-w-xs">
                 {title}

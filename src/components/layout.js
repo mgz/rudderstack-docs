@@ -7,6 +7,7 @@
 
 import * as React from "react"
 import PropTypes from "prop-types"
+import SlackImg from "../images/Slack.svg"
 
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -136,8 +137,14 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                           className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                         >
+                          {/* <img
+                            src={SlackImg}
+                            alt="slack image"
+                            className="mr-2"
+                          /> */}
                           <StaticImage
                             src="../images/Slack.svg"
+                            placeholder="tracedSVG"
                             className="mr-2"
                           />
                           Join our Slack Community

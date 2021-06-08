@@ -75,14 +75,15 @@
 }
 .segment-desktop-banner::before
 {
-  background-image: url("../images/segment-desktop-banner.svg");
-  background-position: top 90px right 0;
-  background-size: 40% auto;
+  background-image: url("../images/rudderstack-segment2x.svg");
+  background-position: right -100px bottom 0px;
+  background-size: auto 65%;
   background-repeat: no-repeat;
   position: absolute;
   content: "";
   width: 100%;
   height: 100%;
+  z-index: 1;
 }
 /*Cloud Desktop CSS*/
 .event-stream-list li::before
@@ -128,6 +129,9 @@
 {
   .product-video::before
   {
+    display: none;
+  }
+  .segment-desktop-banner::before{
     display: none;
   }
 }
