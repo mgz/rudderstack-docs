@@ -105,7 +105,7 @@ const LeftRightImgCnt = props => {
                             className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
                               props.applyGradientColorTheme
                                 ? "text-white"
-                                : "text-dark"
+                                : "text-blueNew-midnight"
                             } font-bold leading-tight`}
                           >
                             {title}
@@ -115,7 +115,7 @@ const LeftRightImgCnt = props => {
                             className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl  ${
                               props.applyGradientColorTheme
                                 ? "text-white"
-                                : "text-dark"
+                                : "text-blueNew-midnight"
                             } font-bold leading-tight`}
                           >
                             {title}
@@ -126,7 +126,7 @@ const LeftRightImgCnt = props => {
                           className={`${
                             props.applyGradientColorTheme
                               ? "text-white"
-                              : "text-dark"
+                              : "text-grayColor-custom"
                           } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
                         >
                           <PortableText blocks={portabletext} />
@@ -214,7 +214,7 @@ const LeftRightImgCnt = props => {
                           className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
                             props.applyGradientColorTheme
                               ? "text-white"
-                              : "text-dark"
+                              : "text-blueNew-midnight"
                           } font-bold leading-tight`}
                         >
                           {title}
@@ -224,7 +224,7 @@ const LeftRightImgCnt = props => {
                           className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl ${
                             props.applyGradientColorTheme
                               ? "text-white"
-                              : "text-dark"
+                              : "text-blueNew-midnight"
                           } font-bold leading-tight`}
                         >
                           {title}
@@ -234,7 +234,7 @@ const LeftRightImgCnt = props => {
                         className={`${
                           props.applyGradientColorTheme
                             ? "text-white"
-                            : "text-dark"
+                            : "text-grayColor-custom"
                         } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
                       >
                         <PortableText blocks={portabletext} />

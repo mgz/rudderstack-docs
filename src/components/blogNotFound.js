@@ -12,7 +12,7 @@ const BlogNotFound = props => {
     >
       <h2 className="text-xl-2 md:text-3xl  font-bold py-9 px-2 text-center">
         <p className="text-grayColor-lighter">No results found matching</p>
-        {props.SearchText}
+        <span className="text-blueNew-midnight">{props.SearchText}</span>
       </h2>
     </div>
   )

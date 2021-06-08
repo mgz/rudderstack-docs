@@ -187,15 +187,15 @@ body {
 }
 
 .lr-icon {
-  @apply text-grayColor-dark;
+  @apply text-blueNew-magenta;
 }
 .lr-icon:hover {
-  @apply text-blueNew-custom;
+  @apply text-blueNew-midnight;
 }
 
 .lr-icon::before {
   content: "";
-  background: url("../images/arrow-right.svg") no-repeat;
+  background: url("../images/arrow-right-magenta.svg") no-repeat;
   background-position: center;
   width: 75%;
   height: 100%;
@@ -206,7 +206,7 @@ body {
 }
 
 .lr-icon:hover:before {
-  background: url("../images/arrow-right-o.svg") no-repeat;
+  background: url("../images/arrow-right-blue-midnight.svg") no-repeat;
   background-position: center;
   width: 75%;
   height: 100%;
@@ -376,6 +376,7 @@ body {
 
 .tab-content-item a {
   color: #96f3f7 !important;
+  text-decoration: none !important;
 }
 .tab-content-item a::before {
   content: "";
@@ -621,6 +622,7 @@ top: -60px;
 .filter-menu .ais-refinement-list--checkbox {
   @apply w-5;
   @apply h-5;
+  @apply bg-blueNew-eastbay;
   @apply cursor-pointer;
 }
 

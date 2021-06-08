@@ -27,7 +27,7 @@ const SearchBox = ({
           onRefineTextChange(event.currentTarget.value)
         }}
       />
-      <div className="absolute top-0 right-0 rounded-r-lg bg-blueNew-custom  hover:bg-blueNew-textblue w-12">
+      <div className="absolute top-0 right-0 rounded-r-lg bg-blueNew-eastbay  hover:bg-blueNew-textblue w-12">
         <FontAwesomeIcon
           icon={faSearch}
           // size="sm"

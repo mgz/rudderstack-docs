@@ -6,7 +6,7 @@ const SignupV1 = props => {
       {/*Sign Up Section*/}
       <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
         <div className="sm:w-1/2 sm:p-6 sm:pl-0 md:pr-12">
-          <p className="mt-4 sm:mt-0 text-blue text-sm uppercase">SIGN UP</p>
+          <p className="mt-4 sm:mt-0 text-blueNew-eastbay text-sm uppercase">SIGN UP</p>
           <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
             Explore RudderStack Today
           </h3>

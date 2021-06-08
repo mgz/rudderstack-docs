@@ -25,7 +25,7 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                   </div>
                   <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-6 cursor-pointer">
                     <Link to={hit.slug}>
-                      <div className="flex-initial uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">
+                      <div className="flex-initial uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
                         {`${hit.category} ${
                           hit.category === "Live"
                             ? "| " + hit.url_or_event_dttm
@@ -33,7 +33,7 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                         }`}
                       </div>
 
-                      <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6">
+                      <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6 text-blueNew-midnight">
                         {hit.title}
                       </h2>
                     </Link>
@@ -41,7 +41,7 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                   <Link to={hit.slug}>
                     <div className="z-50 mt-4 w-10/12 text-sm absolute bottom-6 left-6 flex justify-between items-center">
                       <div>
-                        <p className="relative text-black font-bold text-sm leading-normal hover:text-blueNew-custom">
+                        <p className="relative text-black font-bold text-sm leading-normal hover:text-blueNew-eastbay">
                           <a className="lr-icon">
                             {hit.category === "Live"
                               ? "Register Now"

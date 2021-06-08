@@ -63,7 +63,7 @@ const DemoForm = props => {
     >
       {props.hideLabels !== true && (
         <div className="text-lg text-grayColor-custom mb-2 ">
-          First Name <span className="text-blueNew-custom">*</span>
+          First Name <span className="text-blueNew-midnight">*</span>
         </div>
       )}
 
@@ -87,7 +87,7 @@ const DemoForm = props => {
 
       {props.hideLabels !== true && (
         <div className="text-lg text-grayColor-custom mb-2">
-          Work email address <span className="text-blueNew-custom">*</span>
+          Work email address <span className="text-blueNew-midnight">*</span>
         </div>
       )}
       <input
@@ -110,7 +110,7 @@ const DemoForm = props => {
 
       {props.hideLabels !== true && (
         <div className="text-lg text-grayColor-custom mb-2">
-          Company <span className="text-blueNew-custom">*</span>
+          Company <span className="text-blueNew-midnight">*</span>
         </div>
       )}
       <input
@@ -132,7 +132,7 @@ const DemoForm = props => {
 
       {props.hideLabels !== true && (
         <div className="text-lg text-grayColor-custom mb-2">
-          Job Title <span className="text-blueNew-custom">*</span>
+          Job Title <span className="text-blueNew-midnight">*</span>
         </div>
       )}
       <input

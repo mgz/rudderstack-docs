@@ -17,13 +17,13 @@ const PricingPage = ({ data }) => {
     {
       title: "Is your open-source code maintained and stable?",
       content:
-        'Yes, we actively contribute to our open-source code as you can see on our <a href="https://github.com/rudderlabs" class="text-blueNew-category hover:underline">GitHub</a> page. The core data processing layer is the same for both the Community and Enterprise edition. The Enterprise edition comes with some more advanced reporting & clustering features, but those are built on top of the data plane.',
+        'Yes, we actively contribute to our open-source code as you can see on our <a href="https://github.com/rudderlabs" class="text-purpleNew-custom underline hover:text-blueNew-midnight">GitHub</a> page. The core data processing layer is the same for both the Community and Enterprise edition. The Enterprise edition comes with some more advanced reporting & clustering features, but those are built on top of the data plane.',
     },
     {
       title:
         "What support is available with the Community plan and Enterprise plan?",
       content:
-        'If you are on the Free plan, we have an active community on Slack where you can ask questions. <a href="https://resources.rudderstack.com/join-rudderstack-slack" class="text-blueNew-category hover:underline">Click here to join us</a>! If you are on the Pro plan, you’ll get a dedicated, private live chat support from our Customer Success team. If you are on the Enterprise plan, you will have a dedicated account manager.',
+        'If you are on the Free plan, we have an active community on Slack where you can ask questions. <a href="https://resources.rudderstack.com/join-rudderstack-slack" class="text-purpleNew-custom underline hover:text-blueNew-midnight">Click here to join us</a>! If you are on the Pro plan, you’ll get a dedicated, private live chat support from our Customer Success team. If you are on the Enterprise plan, you will have a dedicated account manager.',
     },
     {
       title: "Is it evil to collect user-data?",
@@ -33,7 +33,7 @@ const PricingPage = ({ data }) => {
     {
       title: "Under what license is the open-source project released?",
       content:
-        'The open-source project is released under <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" class="text-blueNew-category hover:underline">AGPLv3</a>.',
+        'The open-source project is released under <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" class="text-purpleNew-custom underline hover:text-blueNew-midnight">AGPLv3</a>.',
     },
     {
       title: "How is RudderStack different from Segment?",
@@ -43,17 +43,17 @@ const PricingPage = ({ data }) => {
     {
       title: "Who are the people associated with this project?",
       content:
-        'We are a team of engineers with years of background in data. The company has been funded by <a href="https://www.s28capital.com/" class="text-blueNew-category hover:underline">S28 Capital</a> (investors behind other popular open-source projects like Mattermost and Gravitational).',
+        'We are a team of engineers with years of background in data. The company has been funded by <a href="https://www.s28capital.com/" class="text-purpleNew-custom underline hover:text-blueNew-midnight">S28 Capital</a> (investors behind other popular open-source projects like Mattermost and Gravitational).',
     },
     {
       title: "Weren't you guys on HackerNews?",
       content:
-        'Yes, we were. Here is the thread: <a href="https://news.ycombinator.com/item?id=21081756" class="text-blueNew-category hover:underline">https://news.ycombinator.com/item?id=21081756</a>.',
+        'Yes, we were. Here is the thread: <a href="https://news.ycombinator.com/item?id=21081756" class="text-purpleNew-custom underline hover:text-blueNew-midnight">https://news.ycombinator.com/item?id=21081756</a>.',
     },
     {
       title: "How do we contact you?",
       content:
-        'You can email me, Soumyadeb, the founder of RudderStack, at <a href="mailto:soumyadeb@rudderstack.com" class="text-blueNew-category hover:underline">soumyadeb@rudderstack.com</a>. Alternatively, you can also get in touch with us on our <a href="https://resources.rudderstack.com/join-rudderstack-slack" class="text-blueNew-category hover:underline">Slack community</a>, or any of our social media platforms such as <a href="https://twitter.com/rudderstack" class="text-blueNew-category hover:underline">Twitter</a> or <a href="https://www.linkedin.com/company/rudderlabs" class="text-blueNew-category hover:underline">LinkedIn</a>.',
+        'You can email me, Soumyadeb, the founder of RudderStack, at <a href="mailto:soumyadeb@rudderstack.com" class="text-purpleNew-custom underline hover:text-blueNew-midnight">soumyadeb@rudderstack.com</a>. Alternatively, you can also get in touch with us on our <a href="https://resources.rudderstack.com/join-rudderstack-slack" class="text-purpleNew-custom underline hover:text-blueNew-midnight">Slack community</a>, or any of our social media platforms such as <a href="https://twitter.com/rudderstack" class="text-purpleNew-custom underline hover:text-blueNew-midnight">Twitter</a> or <a href="https://www.linkedin.com/company/rudderlabs" class="text-purpleNew-custom underline hover:text-blueNew-midnight">LinkedIn</a>.',
     },
   ]
 
@@ -86,8 +86,8 @@ const PricingPage = ({ data }) => {
                 as you scale
               </h6>
             </div>
-            <div className="text-left mx-auto w-5/6 md:w-3/4 font-custom my-10 md:my-12">
-              <span className="text-grayColor-lighter text-xl md:text-3xl font-bold">
+            <div className="text-left mx-auto w-5/6 md:w-3/4 font-custom my-10 md:my-12 flex flex-col">
+              <span className="text-grayColor-lighter text-xl md:text-3xl font-bold  justify-center self-center">
                 Events
               </span>
               <Horizontal />

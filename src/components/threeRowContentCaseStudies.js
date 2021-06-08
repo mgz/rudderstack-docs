@@ -25,11 +25,11 @@ const ThreeRowContentCaseStudies = ({ hits }) => {
                   </div>
                   <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-6 cursor-pointer">
                     <Link to={hit.slug}>
-                      <div className="flex-initial uppercase text-sm text-indigo-700 font-bold text-blueNew-custom mb-6">
+                      <div className="flex-initial uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay mb-6">
                         {`${hit.category}`}
                       </div>
 
-                      <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6">
+                      <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6 text-blueNew-midnight">
                         {hit.title}
                       </h2>
                     </Link>

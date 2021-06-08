@@ -34,7 +34,7 @@ const IntegrationHowToSetUp = ({ data }) => {
       <div className="max-w-6xl px-4 md:px-3 mx-auto">
         <div className="flex items-center flex-wrap">
           <div className="w-full justify-center items-start md:text-left max-w-screen-md">
-            <h3 className="md:mt-2 text-4xl md:text-5xl text-dark font-bold leading-tight">
+            <h3 className="md:mt-2 text-4xl md:text-5xl text-blueNew-midnight font-bold leading-tight">
               {data.freetexttitle}
             </h3>
           </div>

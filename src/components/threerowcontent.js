@@ -37,17 +37,17 @@ const Threerowcontent = ({ hits }) => {
                     </div>
                     <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-6 cursor-pointer">
                       <Link to={hit.slug}>
-                        <div className="flex-initial uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">
+                        <div className="flex-initial uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
                           {hit.blog_category}
                         </div>
 
-                        <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6">
+                        <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6 text-blueNew-midnight">
                           {hit.title}
                         </h2>
                       </Link>
                     </div>
                     <Link to={hit.slug}>
-                      <div className="flex-initial mt-4 text-sm text-indigo-700 font-bold text-blueNew-custom absolute bottom-6 left-6">
+                      <div className="flex-initial mt-4 text-sm text-indigo-700 font-bold text-blueNew-eastbay absolute bottom-6 left-6">
                         <span>{author_names}</span>
                       </div>
                     </Link>

@@ -18,7 +18,13 @@ module.exports = {
         custom: "#0066FF",
         category: "#0166FE",
         midnight: "#17176E",
-        eastbay: "#3F3C7F ",
+        eastbay: "#3F3C7F",
+        magenta:"#6e6ea4",
+
+      },
+      purpleNew: {
+        custom: "#6e6ea4",
+        gigas: "#4E3B97",
       },
       red: {
         error: "#FF0000",

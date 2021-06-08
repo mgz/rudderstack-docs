@@ -29,7 +29,7 @@ const IntegrationSimilar = ({ data }) => {
                       />
                     </div>
                     <div className="flex items-center px-10 py-5">
-                      <span className="font-bold leading-normal text-sm lr-icon relative sm:inline-block hover:text-blueNew-custom">
+                      <span className="font-bold leading-normal text-sm lr-icon relative sm:inline-block">
                         <a>See more</a>
                       </span>
                     </div>

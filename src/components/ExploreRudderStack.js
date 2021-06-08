@@ -4,7 +4,7 @@ const ExploreRudderStack = () => {
   return (
     <div className="testimonials bg-white px-7 py-10 sm:py-20 text-primary margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
       <div className="w-full max-w-5xl m-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-blueNew-midnight">
           Explore RudderStack Today
         </h2>
         <p className="text-xl-2 text-grayColor-custom mt-4 mb-8">

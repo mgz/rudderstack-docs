@@ -133,7 +133,7 @@ const Subscription = props => {
             </p>
             {formSubmittedSuccessfully && (
               <div
-                className="text-blueNew-custom"
+                className="text-blueNew-midnight"
                 role="alert"
                 aria-hidden="true"
               >

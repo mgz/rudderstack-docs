@@ -4,7 +4,7 @@ const JoinOurTeam = () => {
   return (
     <div className="testimonials bg-white px-7 py-10 sm:py-20 -mx-2.5 text-primary margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
       <div className="w-full text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dark">Join Our Team</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-blueNew-midnight">Join Our Team</h2>
         <p className="text-xl-2 sm:text-2xl-2 text-grayColor-custom mt-4 mb-8">
           Help us make data engineers the heroes of their companies.
         </p>

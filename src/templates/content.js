@@ -8,7 +8,7 @@ import BlogModule from "../components/latest-blog-module"
 import Image from "../components/image"
 import Link from "gatsby-link"
 import Subscription from "../components/Subscription"
-import BlogHeroChart from "../images/blog-hero_chart.svg"
+
 import BlogTwitter from "../images/blogtwitter.svg"
 import BlogFb from "../images/blogfb.svg"
 import BlogIn from "../images/blogIn.svg"
@@ -66,7 +66,7 @@ const Singleblog = ({ data, location, ...props }) => {
         <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-24 mt-3 top-0 lg:left-0 md:left-4">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
             <a className="block" href="#">
-              <img src={BlogTwitter} alt="twitter" />
+              <img src={BlogTwitter} className="text-blueNew-midnight" alt="twitter" />
             </a>
           </TwitterShareButton>
           <FacebookShareButton
@@ -112,7 +112,7 @@ const Singleblog = ({ data, location, ...props }) => {
                   /> */}
                 </div>
                 <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-                  <div className="text-xs font-bold uppercase text-blueNew-category">
+                  <div className="text-xs font-bold uppercase text-blueNew-eastbay">
                     About the author
                   </div>
                   <div className="leading-4 text-lg font-bold mt-4">

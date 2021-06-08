@@ -71,7 +71,7 @@ const IntegrationsHelpBox = () => {
 
   return (
     <div className="bg-white filter-menu rounded-2xl py-8 px-6">
-      <h2 className="text-lg md:text-xl text-blue font-bold leading-7">
+      <h2 className="text-lg md:text-xl text-blueNew-eastbay font-bold leading-7">
         Don’t see that you need?
       </h2>
       <p className="text-sm md:text-xl leading-6 mt-2 text-secondary text-grayColor-custom">
@@ -110,14 +110,14 @@ const IntegrationsHelpBox = () => {
           <input
             type="submit"
             defaultValue="Submit"
-            className="w-full text-sm leading-4 btn-primary-lg bg-dark"
+            className="w-full text-sm leading-4 btn-primary-lg cursor-pointer"
             onClick={e => formSubmitted(e)}
           />
           <span className="ajax-loader" />
         </p>
 
         {formSubmittedSuccessfully && (
-          <div className="text-blueNew-custom" role="alert" aria-hidden="true">
+          <div className="text-blueNew-midnight" role="alert" aria-hidden="true">
             Thank you for contacting us.
           </div>
         )}

@@ -29,7 +29,7 @@ const SingleRowContentCaseStudy = ({ data }) => {
       <div className="sm:flex">
         <div class="px-4 md:px-12 pt-8 pb-4">
           <Link to={caseStudyObj.node.slug.current}>
-            <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">
+            <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {`${caseStudyObj.node.category}`}
             </div>
             <h2 className="block  my-4 text-2xl md:text-3xl leading-tight font-bold md:font-medium text-black">

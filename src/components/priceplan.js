@@ -1,22 +1,31 @@
 import React, { useState, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import Link from "gatsby-link";
+import Link from "gatsby-link"
 
 function PricePlans() {
-  {/*Pricing Table Header Fixed*/ }
-  const [sticky, setSticky] = useState(true);
+  {
+    /*Pricing Table Header Fixed*/
+  }
+  const [sticky, setSticky] = useState(true)
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
   const handleScroll = () => {
-    if ((document.getElementsByClassName("cover-table")[0].offsetHeight + document.getElementsByClassName("cover-table")[0].offsetTop) - window.scrollY > 150) {
-      setSticky(true);
+    if (
+      document.getElementsByClassName("cover-table")[0].offsetHeight +
+        document.getElementsByClassName("cover-table")[0].offsetTop -
+        window.scrollY >
+      150
+    ) {
+      setSticky(true)
     } else {
       setSticky(false)
     }
-  };
-  {/*Pricing Table Header Fixed*/ }
+  }
+  {
+    /*Pricing Table Header Fixed*/
+  }
   return (
     <section className="bg-white plans-section pb-40 md:pb-20">
       <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-8 md:pt-24 md:py-16 text-center">
@@ -28,7 +37,9 @@ function PricePlans() {
           <table className="cover-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
             <thead>
               <tr>
-                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}></th>
+                <th
+                  className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}
+                ></th>
                 <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage src="../images/EllipseImg1.png" alt="Free" />
@@ -597,7 +608,7 @@ function PricePlans() {
                 <td className="p-6">
                   <a
                     href="https://resources.rudderstack.com/enterprise-quote"
-                    className="text-sm text-black-custom leading-sm font-bold mt-3 lr-icon mx-auto hover:text-blueNew-custom"
+                    className="text-sm  leading-sm font-bold mt-3 lr-icon mx-auto"
                     target="_blank"
                     rel="noreferrer"
                   >

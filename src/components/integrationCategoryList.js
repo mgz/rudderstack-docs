@@ -34,7 +34,7 @@ const CustomIntegrationCategoryTypeList = ({
       />
       <label
         for="tab-multi-two"
-        className="text-xl text-blue font-bold leading-7"
+        className="text-xl text-blueNew-eastbay font-bold leading-7"
       >
         Categories
       </label>

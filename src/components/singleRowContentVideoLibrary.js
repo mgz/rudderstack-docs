@@ -58,12 +58,12 @@ const SingleRowContentVideoLibrary = ({ data }) => {
       <div className="sm:flex">
         <div class="px-4 md:px-12 pt-8 pb-4">
           <Link to={webinarObj.node.slug.current}>
-            <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">
+            <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {`${category} ${
                 category === "Live" ? "| " + url_or_event_dttm : ""
               }`}
             </div>
-            <h2 className="block  my-4 text-3xl lg:text-4xl leading-tight font-bold md:font-medium text-black">
+            <h2 className="block  my-4 text-3xl lg:text-4xl leading-tight font-bold md:font-medium text-blueNew-midnight">
               {webinarObj.node.title}
             </h2>
             <p className="text-lg text-grayColor-custom">
@@ -71,7 +71,7 @@ const SingleRowContentVideoLibrary = ({ data }) => {
             </p>
             <div class="mt-2 w-full flex justify-between items-center pt-6">
               <a
-                class="btn-primary-lg md:mr-4 md:mb-0 mb-4 bg-dark"
+                class="btn-primary-lg md:mr-4 md:mb-0 mb-4"
                 href={webinarObj.node.slug.current}
               >
                 {category === "Live" ? "Register Now" : "Watch Now"}
