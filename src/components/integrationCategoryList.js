@@ -74,12 +74,14 @@ const CustomIntegrationCategoryTypeList = ({
               }}
             >
               <input
+                id={item.value}
                 type="checkbox"
                 onClick={event => {
                   event.preventDefault()
                   refine(item.value)
                 }}
                 checked={item.isRefined}
+                // checked={item.isRefined ? "checked" : ""}
                 onChange={e => {}}
                 className="ais-refinement-list--checkbox mr-3"
                 value={item.value}

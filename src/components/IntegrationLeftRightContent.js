@@ -14,7 +14,7 @@ const IntegrationLeftRightContent = ({ data }) => {
           </div>
           {data.wycd_leftright_content && (
             <div
-              className={`grid grid-flow-col grid-cols-1 md:grid-cols-2 grid-rows-${
+              className={`grid grid-flow-col grid-cols-1 auto-rows-min md:grid-cols-2 grid-rows-${
                 data.wycd_leftright_content.length
               } md:grid-rows-${
                 parseInt(data.wycd_leftright_content.length / 2) +
