@@ -104,7 +104,7 @@ class PreviewTemplate extends Component {
       await client.fetch(query, params).then((integrations) => {
         var intdata = {};
         integrations.forEach((integration) => {
-          console.log(integration);
+          // console.log(integration);
           intdata.integration = integration;
           intdata.integration._rawFaqSection = integration.faqSection;
           intdata.integration._rawGetmoreoutofsection = integration.getmoreoutofsection;

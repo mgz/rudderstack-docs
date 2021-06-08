@@ -11,8 +11,8 @@ const Testimonial = loadable(() => import("../components/testimonial"))
 const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const CaseStudyContent = ({ data }) => {
-  console.log("sddadada", data.sanityFrontpageblock)
-  console.log("pppp", data.casestudy)
+  // console.log("sddadada", data.sanityFrontpageblock)
+  // console.log("pppp", data.casestudy)
   return (
     <Layout>
       <Helmet>
