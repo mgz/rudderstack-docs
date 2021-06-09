@@ -50,17 +50,18 @@ const MiddleBanner = props => {
                         )
                       } else {
                         return (
-                          <span
-                            key={btn._key}
-                            className={
-                              (btn.btnhiglight === true
-                                ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
-                                : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
-                              ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
-                            }
-                          >
-                            <Link to={btn.btnlink}>{btn.btntext}</Link>
-                          </span>
+                          <Link to={btn.btnlink} key={btn._key}>
+                            <span
+                              className={
+                                (btn.btnhiglight === true
+                                  ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
+                                  : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
+                                ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
+                              }
+                            >
+                              {btn.btntext}
+                            </span>
+                          </Link>
                         )
                       }
                     })()

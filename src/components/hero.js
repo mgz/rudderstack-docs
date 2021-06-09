@@ -49,16 +49,17 @@ function Hero(props) {
                     )
                   } else {
                     return (
-                      <span
-                        key={btn._key}
-                        className={
-                          (btn.btnhiglight === true
-                            ? "btn-primary-lg"
-                            : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
-                        }
-                      >
-                        <Link to={btn.btnlink}>{btn.btntext}</Link>
-                      </span>
+                      <Link key={btn._key} to={btn.btnlink}>
+                        <span
+                          className={
+                            (btn.btnhiglight === true
+                              ? "btn-primary-lg"
+                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                          }
+                        >
+                          {btn.btntext}
+                        </span>
+                      </Link>
                     )
                   }
                 })()}

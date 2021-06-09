@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import IconPC from "../images/icon-pc.svg"
-import IconStack from "../images/icon-stack.svg"
-import IconLock from "../images/icon-lock.svg"
-import IconLeaf from "../images/icon-leaf-dollar.svg"
 
-import IconTransformation from "../images/icon-transformation.svg"
-import IconDataGovernce from "../images/icon-data-goverance.svg"
-import IconRichGrafana from "../images/icon-rich-gafana.svg"
+import IconPC from "../images/spot-illustrations-developer-laptop.svg"
+import IconStack from "../images/spot-illustrations-warehouse.svg"
+import IconLock from "../images/spot-illustrations-security-control.svg"
+import IconLeaf from "../images/spot-illustrations-pricing.svg"
+
+import IconTransformation from "../images/spot-illustrations-transformations.svg"
+import IconDataGovernce from "../images/spot-illustrations-data-governance.svg"
+import IconRichGrafana from "../images/spot-illustrations-dashboard.svg"
 
 import MiddleBanner from "../components/middle-banner"
 import loadable from "@loadable/component"
@@ -204,16 +205,16 @@ const SegmentDesktop = ({ data, location }) => {
           id="liked_feature_section"
           className="bg-grayColor-BgGray pb-8 md:pb-44"
         >
-          <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center">
-            <h3 className="mt-24 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
+          <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-24 md:pb-0">
+            <h3 className="mt-24  text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
               When companies migrate from Segment, they love using these
               features:
             </h3>
           </div>
           <div className="max-w-6xl px-0 md:px-3 mx-auto">
             {/*Data WorkFlow*/}
-            <div className="flex flex-wrap flex-row ">
-              <div className="w-full sm:w-1/3 sm:px-2 mt-5">
+            <div className="flex flex-wrap flex-row">
+              <div className="w-full md:w-1/3 sm:px-2 mt-5">
                 <div className="h-full flex flex-col justify-start items-center text-center py-10 px-4 rounded-2xl">
                   <div className="h-20">
                     <img
@@ -235,7 +236,7 @@ const SegmentDesktop = ({ data, location }) => {
                 </div>
               </div>
 
-              <div className="w-full sm:w-1/3 sm:px-2 mt-5">
+              <div className="w-full md:w-1/3 sm:px-2 mt-5">
                 <div className="h-full flex flex-col justify-start items-center text-center py-10 px-4 rounded-2xl">
                   <div className="h-20">
                     <img
@@ -257,7 +258,7 @@ const SegmentDesktop = ({ data, location }) => {
                 </div>
               </div>
 
-              <div className="w-full sm:w-1/3 sm:px-2 mt-5">
+              <div className="w-full md:w-1/3 sm:px-2 mt-5">
                 <div className="h-full flex flex-col justify-start items-center text-center py-10 px-4 rounded-2xl">
                   <div className="h-20">
                     <img
@@ -306,7 +307,7 @@ const SegmentDesktop = ({ data, location }) => {
                     >
                       <div className="flex items-center justify-center px-12 py-6">
                         <StaticImage
-                          src="../images/logo-2x.png"
+                          src="../images/rudderstack-logo-header.png"
                           alt="Rudderstack Logo"
                           height={40}
                           width={200}
