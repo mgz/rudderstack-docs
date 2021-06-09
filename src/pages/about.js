@@ -36,11 +36,12 @@ const About = ({ data }) => {
               OUR MISSION
             </div>
             <h1 className="text-5xl md:text-6xl font-bold font-custom leading-snug text-blueNew-midnight">
-              Elevating Data Engineers
+              Built for Engineers & Data Scientists
             </h1>
             <p className="text-lg md:text-xl-2 mt-4 max-w-screen-md text-grayColor-custom">
-              Our mission is to help data engineers and developers become the
-              heroes of their companies by providing every team with rich data.
+              We have been data engineers and data scientists in our past jobs,
+              understand their challenges and pain points, and are building the
+              best product for them.
             </p>
           </div>
         </section>

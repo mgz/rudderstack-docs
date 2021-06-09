@@ -4,7 +4,7 @@ import Page from "./page"
 import Singleblog from "./content"
 import Product from "./products"
 import Integration from "./integrationContent"
-import Demo from "../pages/request-demo"
+import Demo from "./request-demo"
 import Thankyou from "./thankyou"
 import videoContent from "./videoContent"
 

@@ -250,7 +250,7 @@ const SegmentDesktop = ({ data, location }) => {
                   </div>
                   <div class="text-grayColor-custom text-lg">
                     <p>
-                      pull rich metadata on your event stream and integrate with
+                      Pull rich metadata on your event stream and integrate with
                       your existing alerting system and CI/CD pipeline, then
                       push schema enforcement back into system—all via API.
                     </p>
@@ -307,7 +307,7 @@ const SegmentDesktop = ({ data, location }) => {
                     >
                       <div className="flex items-center justify-center px-12 py-6">
                         <StaticImage
-                          src="../images/rudderstack-logo-header.png"
+                          src="../images/rudderstack-logo.svg"
                           alt="Rudderstack Logo"
                           height={40}
                           width={200}
@@ -410,7 +410,7 @@ const SegmentDesktop = ({ data, location }) => {
               {Object.keys(SEGMENT_COMPARISION_DATA[0])
                 .filter(ll => ll.includes("_val"))
                 .map(oo => {
-                  console.log(oo)
+                  // console.log(oo)
                   return (
                     <div className="freeplan mt-16" key={oo}>
                       <div className="plan-header bg-white border border-grayColor-priceCardBorder rounded-2xl shadow-md sticky top-0 z-10">
@@ -419,7 +419,7 @@ const SegmentDesktop = ({ data, location }) => {
                             {oo === "rudderstack_val" ? (
                               <StaticImage
                                 placeholder="tracedSVG"
-                                src={"../images/rudderstack-logo-header.png"}
+                                src="../images/rudderstack-logo.svg"
                                 alt={oo}
                                 height={40}
                                 width={200}

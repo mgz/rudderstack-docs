@@ -30,7 +30,7 @@ function PricePlans() {
     <section className="bg-white plans-section pb-40 md:pb-20">
       <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-8 md:pt-24 md:py-16 text-center">
         <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8">
-          Compare Features by Plan
+          Compare features by plan
         </h2>
 
         <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
@@ -590,7 +590,7 @@ function PricePlans() {
                 </td>
               </tr>
               <tr className="bg-grayColor-BgGray">
-                <td className="td-first-colum">Rudderstack Cloud</td>
+                <td className="p-6 text-base text-left">Rudderstack Cloud</td>
                 <td className="p-6">
                   {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
@@ -688,7 +688,7 @@ function PricePlans() {
                 </td>
                 <td className="p-6">
                   <a
-                    href="https://resources.rudderstack.com/enterprise-quote"
+                    href="enterprise-quote"
                     className="text-sm  leading-sm font-bold mt-3 lr-icon mx-auto"
                     target="_blank"
                     rel="noreferrer"
@@ -1343,7 +1343,7 @@ function PricePlans() {
                   </div>
                 </div>
                 <a
-                  href="https://resources.rudderstack.com/enterprise-quote"
+                  href="enterprise-quote"
                   className="btn-primary-sm inline-block font-bold leading-6"
                 >
                   Request pricing
@@ -1662,7 +1662,7 @@ function PricePlans() {
                 VPC Deployment
               </div>
               <a
-                href="#"
+                href="enterprise-quote"
                 className="text-sm text-black-custom font-bold items-center flex mt-3 pl-5 hover:text-blueNew-midnight"
               >
                 <StaticImage

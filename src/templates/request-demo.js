@@ -12,8 +12,8 @@ import $ from "jquery"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 export const query = graphql`
-  query schDemo {
-    sanitySchdemo {
+  query schDemo($slug: String) {
+    sanitySchdemo(slug: { current: { eq: $slug } }) {
       title
       _rawPagebuildersectionarray
       slug {
@@ -26,7 +26,7 @@ export const query = graphql`
   }
 `
 
-const Demo = ({ data, htmlId,location }) => {
+const Demo = ({ data, htmlId, location }) => {
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
@@ -153,6 +153,7 @@ const Demo = ({ data, htmlId,location }) => {
     }
   }
 
+  // console.log("sss", location)
   return (
     <Layout location={location}>
       <SEO title="Schedule Demo" />
@@ -169,7 +170,9 @@ const Demo = ({ data, htmlId,location }) => {
             <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
               <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
                 <DemoForm
-                  formId="request_demo_form_top"
+                  formId={`${location.pathname
+                    .replace("/", "")
+                    .replace("-", "_")}_form_top`}
                   submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                   onDemoFormSubmit={onDemoFormSubmit}
                   isLoading={isLoading}
@@ -240,7 +243,10 @@ const Demo = ({ data, htmlId,location }) => {
             <div className="w-full px-0 md:w-3/6 flex flex-row justify-end">
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
-                formId="request_demo_form_bottom"
+                formId={`${location.pathname
+                  .replace("/", "")
+                  .replace("-", "_")}_form_bottom`}
+                // formId="request_demo_form_bottom"
                 isFooterForm={true}
                 isLoading={isLoading}
                 onDemoFormSubmit={onDemoFormSubmit}

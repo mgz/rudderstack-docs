@@ -54,7 +54,7 @@ const Horizontal = props => {
             href={
               price
                 ? "https://app.rudderlabs.com/signup?type=freetrial"
-                : "https://resources.rudderstack.com/enterprise-quote"
+                : "enterprise-quote"
             }
             className="btn-primary-sm block md:inline-block"
             id="text4"

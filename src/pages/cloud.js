@@ -21,7 +21,7 @@ import DataAPI from "../images/spot-illustrations-data-governance.svg"
 import DbtModals from "../images/spot-illustrations-dbt-model.svg"
 import Grafana from "../images/spot-illustrations-dashboard.svg"
 
-const CloudDesktop = ({ data,location }) => {
+const CloudDesktop = ({ data, location }) => {
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
@@ -40,16 +40,16 @@ const CloudDesktop = ({ data,location }) => {
                 RudderStack Cloud
               </h2>
               <h3 className="text-3xl leading-10 font-bold md:mt-5 mb-8">
-                The complete customer data stack
+                The CDP for developers
               </h3>
               <p className="text-white text-lg leading-6 lg:pr-36">
                 Build customer data pipelines that connect your whole stack,
-                then make them smarter by ingesting and activating enriched data
-                from your warehouse.
+                then activate the data in your warehouse and business tools.
               </p>
               <p className="text-white text-lg leading-6 lg:pr-40 mt-8">
-                Start with RudderStack Cloud Free today and send up to 500,000
-                events per month. No credit card required, no time limit.
+                Test every feature in RudderStack Cloud Free and send up to
+                500,000 events per month (no credit card required, no time
+                limit).
               </p>
               <div className="block sm:flex justify-center items-center mt-12">
                 <a
@@ -93,7 +93,7 @@ const CloudDesktop = ({ data,location }) => {
           <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-28 flex flex-col justify-center text-center">
             <div class="sm:mb-24 mb-10">
               <span class="text-3xl md:text-5xl font-bold text-blueNew-midnight">
-                The RudderStack Advantage
+                The RudderStack advantage
               </span>
             </div>
             <div className="flex flex-wrap flex-row">
@@ -182,7 +182,7 @@ const CloudDesktop = ({ data,location }) => {
             {/*Event Stream*/}
             <div className="sm:w-1/2 sm:p-6 sm:pl-0 md:pr-20">
               <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-dark font-bold leading-tight">
-                Event stream
+                Event Stream
               </h3>
               <div className="text-secondary leading-7 text-sm sm:text-lg">
                 <p>
@@ -198,7 +198,7 @@ const CloudDesktop = ({ data,location }) => {
                     12+ SDKs for event streaming
                   </li>
                   <li className="text-sm sm:text-lg relative pl-8 pb-3">
-                    100+ cloud and warehouse destinations
+                    150+ cloud and warehouse destinations
                   </li>
                   <li className="text-sm sm:text-lg relative pl-8 pb-3">
                     Segment source and destination (for simple migration)
@@ -207,9 +207,7 @@ const CloudDesktop = ({ data,location }) => {
               </div>
               <div class="flex items-center">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                  <a href="https://resources.rudderstack.com/rudderstack-cloud?_ga=2.201464209.1437852951.1618311746-1836483757.1616824969">
-                    More about Event Stream
-                  </a>
+                  <a href="product/event-stream">More about Event Stream</a>
                 </span>
               </div>
             </div>
@@ -230,16 +228,13 @@ const CloudDesktop = ({ data,location }) => {
                 <p>
                   Cloud Extract goes beyond event streaming. It enables you to
                   build cloud-to-warehouse ELT pipelines from popular cloud
-                  applications like Salesforce, ZenDesk, and Customer.io (even
-                  Google Sheets) to your data warehouse, so you can use all of
-                  your customer data.
+                  applications like Salesforce, ZenDesk, and Customer.io to your
+                  data warehouse, so you can use all of your customer data.
                 </p>
               </div>
               <div class="flex items-center mt-4">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                  <a href="https://rudderstack.com/blog/rudderstack-cloud-extract-makes-cloud-to-warehouse-pipelines-easy">
-                    More about Cloud Extract{" "}
-                  </a>
+                  <a href="product/cloud-extract">More about Cloud Extract</a>
                 </span>
               </div>
             </div>
@@ -257,10 +252,11 @@ const CloudDesktop = ({ data,location }) => {
               </h3>
               <div className="text-secondary leading-7 text-sm sm:text-lg">
                 <p>
-                  The most valuable analysis is done in your data warehouse.
-                  Warehouse Actions lets you send this post-analysis data - and
-                  any data in your warehouse - to all the tools your teams use,
-                  by inserting it into their event streams.
+                  With Warehouse Actions, you can pull enriched audience and
+                  event data from your warehouse through RudderStack and send it
+                  to all of your customer tools by inserting it into their event
+                  streams - enabling lead scoring, personalization, and other
+                  advanced use cases.
                 </p>
               </div>
               <div className="event-stream-list my-5">
@@ -278,7 +274,7 @@ const CloudDesktop = ({ data,location }) => {
               </div>
               <div class="flex items-center">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                  <a href="https://rudderstack.com/blog/rudderstack-warehouse-actions-unlocks-the-data-in-your-warehouse/">
+                  <a href="product/warehouse-actions">
                     More about Warehouse Actions
                   </a>
                 </span>
@@ -324,8 +320,8 @@ const CloudDesktop = ({ data,location }) => {
                   </div>
                   <div class="flex items-center mt-8">
                     <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                      <a href="https://docs.rudderstack.com/">
-                        More from Rudderstack docs
+                      <a href="https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack">
+                        Learn more in the docs
                       </a>
                     </span>
                   </div>
@@ -347,8 +343,8 @@ const CloudDesktop = ({ data,location }) => {
                   </div>
                   <div class="flex items-center mt-8">
                     <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                      <a href="https://docs.rudderstack.com/">
-                        More from Rudderstack docs
+                      <a href="https://docs.rudderstack.com/data-governance">
+                        Learn more in the docs
                       </a>
                     </span>
                   </div>
@@ -374,8 +370,8 @@ const CloudDesktop = ({ data,location }) => {
                   </div>
                   <div class="flex items-center mt-8">
                     <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                      <a href="https://docs.rudderstack.com/">
-                        More from Rudderstack docs
+                      <a href="https://hub.getdbt.com/">
+                        See modesl on the DBT hub
                       </a>
                     </span>
                   </div>
@@ -417,7 +413,7 @@ const CloudDesktop = ({ data,location }) => {
                 Integrate your entire stack
               </h2>
               <p className="text-secondary leading-7 text-sm sm:text-lg py-6">
-                Rudderstack supports 100+ out of the box integrations, and we
+                Rudderstack supports 150+ out of the box integrations, and we
                 add more every month. Connect your customer data to all the
                 tools your team uses to drive growth. Spend less time on vendor
                 SDK implementations and third-party code management.

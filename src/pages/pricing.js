@@ -42,8 +42,7 @@ const PricingPage = ({ data }) => {
     },
     {
       title: "Who are the people associated with this project?",
-      content:
-        'We are a team of engineers with years of background in data. The company has been funded by <a href="https://www.s28capital.com/" class="text-purpleNew-custom underline hover:text-blueNew-midnight">S28 Capital</a> (investors behind other popular open-source projects like Mattermost and Gravitational).',
+      content:'We are a team of engineers with years of background in data. The company has been funded by <a href="https://www.kleinerperkins.com/" class="text-purpleNew-custom underline hover:text-blueNew-midnight">Kleiner Perkins</a> and  <a href="https://www.s28capital.com/" class="text-purpleNew-custom underline hover:text-blueNew-midnight">S28 Capital</a> (investors behind other popular open-source projects like Mattermost and Gravitational).'
     },
     {
       title: "Weren't you guys on HackerNews?",

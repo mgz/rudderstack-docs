@@ -116,7 +116,7 @@ function PricingCards(props) {
                           alt="check"
                         />{" "} */}
                       </span>{" "}
-                      Everything in Free plus
+                      Everything in Free, plus:
                     </li>
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -205,7 +205,7 @@ function PricingCards(props) {
                           alt="check"
                         />{" "} */}
                       </span>{" "}
-                      Everything in Pro plus
+                      Everything in Pro, plus:
                     </li>
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -251,7 +251,7 @@ function PricingCards(props) {
                   </ul>
                   <div className="mt-6 py-4 text-center">
                     <a
-                      href="https://resources.rudderstack.com/enterprise-quote"
+                      href="enterprise-quote"
                       className="btn-primary-sm inline-block font-bold"
                     >
                       Request pricing

@@ -235,4 +235,34 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: edge.node.slug.current },
     })
   })
+
+  const schDemos = await graphql(`
+    {
+      allSanitySchdemo {
+        edges {
+          node {
+            slug {
+              current
+            }
+            title
+          }
+        }
+      }
+    }
+  `)
+
+  if (schDemos.errors) {
+    throw schDemos.errors
+  }
+
+  const sch_demo = schDemos.data.allSanitySchdemo.edges || []
+  sch_demo.forEach((edge, index) => {
+    const path = `/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/request-demo.js"),
+      context: { slug: edge.node.slug.current },
+    })
+  })
 }
