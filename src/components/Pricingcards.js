@@ -13,8 +13,9 @@ function PricingCards(props) {
                 <div className="p-6 pt-12 md:pt-16 md:pb-4">
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage
-                      src="../images/EllipseImg1.png"
+                      src="../images/rudderstack-pricing-free.svg"
                       alt="EllipseImg"
+                      placeholder="tracedSVG"
                     />
                   </div>
                   <h3 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
@@ -95,7 +96,7 @@ function PricingCards(props) {
               <div className="pricing-plan bg-whiteColor-custom border border-grayColor-priceCardBorder rounded-2xl text-center mx-auto shadow-md">
                 <div className="p-6 md:pt-16 md:pb-4">
                   <div className="ellipse flex items-center justify-center h-20">
-                    <StaticImage src="../images/EllipseImg2.png" alt="Line" />
+                    <StaticImage src="../images/rudderstack-pricing-pro.svg" alt="Line" placeholder="tracedSVG" />
                   </div>
                   <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
                     Pro
@@ -184,7 +185,7 @@ function PricingCards(props) {
               <div className="pricing-plan bg-whiteColor-custom border border-grayColor-priceCardBorder rounded-2xl text-center mx-auto shadow-md	">
                 <div className="p-6 md:pt-16 md:pb-4">
                   <div className="ellipse flex items-center justify-center h-20">
-                    <StaticImage src="../images/EllipseImg3.png" alt="Line" />
+                    <StaticImage src="../images/rudderstack-pricing-enterprise.svg" alt="Line" placeholder="tracedSVG" />
                   </div>
                   <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
                     Enterprise

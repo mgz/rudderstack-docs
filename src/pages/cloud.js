@@ -5,20 +5,21 @@ import algoliasearch from "algoliasearch/lite"
 import "../lib/font-awesome"
 import MiddleBanner from "../components/middle-banner"
 import JoinOurTeam from "../components/joinOurTeam"
-import Integrationschart from "../images/Integrations-chart.svg"
-import ProductVideo from "../images/product-video-view.svg"
-import VideoChart from "../images/video-hero-chart.svg"
-import VideoPlayBtn from "../images/video_play-btn.svg"
-import WareHouse from "../images/warehouse.svg"
-import OpenSource from "../images/open-source.svg"
-import Pricing from "../images/pricing.svg"
-import EventStream from "../images/cloud-event-stream.png"
-import CloudExtract from "../images/cloud-extract.png"
-import WarehouseActions from "../images/warehouse-actions-chart.svg"
-import Transformations from "../images/cloud-icon1.svg"
-import DataAPI from "../images/cloud-icon2.svg"
-import DbtModals from "../images/cloud-icon3.svg"
-import Grafana from "../images/cloud-icon4.svg"
+
+import Integrationschart from "../images/illustration-integrations.svg"
+
+import WareHouse from "../images/spot-illustrations-warehouse.svg"
+import OpenSource from "../images/spot-illustrations-open-source.svg"
+import Pricing from "../images/spot-illustrations-pricing.svg"
+
+import EventStream from "../images/illustration-event-stream-identify-call.svg"
+import CloudExtract from "../images/illustration-cloud-extract-white-bg.svg"
+import WarehouseActions from "../images/illustration-warehouse-actions.svg"
+
+import Transformations from "../images/spot-illustrations-transformations.svg"
+import DataAPI from "../images/spot-illustrations-data-governance.svg"
+import DbtModals from "../images/spot-illustrations-dbt-model.svg"
+import Grafana from "../images/spot-illustrations-dashboard.svg"
 
 const CloudDesktop = ({ data,location }) => {
   const lv_middlebannersection = (
