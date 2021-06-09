@@ -6,6 +6,7 @@ import Product from "./products"
 import Integration from "./integrationContent"
 import Demo from "../pages/request-demo"
 import Thankyou from "./thankyou"
+import videoContent from "./videoContent"
 
 const sanityClient = require('@sanity/client')
 const project_id = process.env.RS_SANITY_PROJECTID;
@@ -38,6 +39,7 @@ class PreviewTemplate extends Component {
         var blogdata = {};
         blogs.forEach((blog) => {
           blogdata.blog = blog;
+          blogdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock;
           blogdata.blog._rawDescription = blog.description;
           blogdata.blog.blog_image.asset.fluid = {src: blogdata.blog.blog_image.asset.url};
           this.setState({ data: blogdata });
@@ -63,8 +65,8 @@ class PreviewTemplate extends Component {
 
       await client.fetch(query, params).then((pages) => {
         pages.forEach((page) => {
-          page.sanityThankyoupages = page;
-          page.sanityThankyoupages._rawPagebuildersectionarray = page.pagebuildersectionarray;
+          page.thankyou = page;
+          page.thankyou._rawPagebuildersectionarray = page.pagebuildersectionarray;
           page.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock;
           this.setState({ data: page });
         })
@@ -104,7 +106,6 @@ class PreviewTemplate extends Component {
       await client.fetch(query, params).then((integrations) => {
         var intdata = {};
         integrations.forEach((integration) => {
-          // console.log(integration);
           intdata.integration = integration;
           intdata.integration._rawFaqSection = integration.faqSection;
           intdata.integration._rawGetmoreoutofsection = integration.getmoreoutofsection;
@@ -118,6 +119,20 @@ class PreviewTemplate extends Component {
           intdata.integration._rawSimilarDestination = integration.similarDestination;
           intdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock;
           this.setState({ data: intdata });
+        })
+      });
+    }
+    else if (type === 'videolibrary') {
+      const query = '*[_id == $id]';
+      component = "videocontent";
+
+      await client.fetch(query, params).then((contents) => {
+        var contentdata = {};
+        contents.forEach((content) => {
+          contentdata.videoLib = content;
+          contentdata.videoLib._rawHeroSection = content.heroSection;
+          contentdata.videoLib._rawTopicsToCoverSection = content.topicsToCoverSection;
+          this.setState({ data: contentdata });
         })
       });
     }
@@ -147,6 +162,9 @@ class PreviewTemplate extends Component {
         }
         {component === 'Integration' &&
           <Integration data={this.state.data} />
+        }
+        {component === 'videocontent' &&
+          <videoContent data={this.state.data} />
         }
       </>
     );
