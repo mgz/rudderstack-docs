@@ -454,16 +454,9 @@ const SegmentDesktop = ({ data, location }) => {
                                         : "block"
                                     } text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-4`}
                                   >
-                                    {row[oo] === "<<CHECK>>" && (
-                                      <span className="checkimg mr-1 mt-1">
-                                        <StaticImage
-                                          placeholder="tracedSVG"
-                                          className="checkImg"
-                                          src="../images/check-r.svg"
-                                          alt="check image"
-                                        />
-                                      </span>
-                                    )}
+                                    {/* {(row[oo] === "<<CHECK>>" || row[oo] !== "<<UNCHECK>>") && ( */}
+                                    <span className={`check-icon`} />
+                                    {/* )} */}
                                     <div className="flex flex-col pl-4">
                                       {row.title}
                                       <span>

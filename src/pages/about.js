@@ -222,7 +222,24 @@ const About = ({ data }) => {
           </div>
 
           <div className="flex flex-wrap -m-4 justify-center">
-            <div className="p-4 w-full mt-4 sm:mt-0 md:w-1/2 max-w-sm flex justify-end">
+          <div className="p-4 w-full mt-4 sm:mt-0 md:w-1/3 max-w-sm flex justify-end">
+              <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
+                <StaticImage
+                  className="h-64 sm:h-72 w-full object-cover object-center"
+                  src="../images/katie-west.png"
+                />
+                <div className="py-4 text-center">
+                  <h3 className="title-font text-2xl font-medium mb-3">
+                    Katie West
+                  </h3>
+                  <p className="leading-relaxed mb-3 text-xl">
+                  Customer Success
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 w-full mt-4 sm:mt-0 md:w-1/3 max-w-sm flex justify-end">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
@@ -238,7 +255,7 @@ const About = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="p-4 w-full md:w-1/2 max-w-sm">
+            <div className="p-4 w-full md:w-1/3 max-w-sm">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
