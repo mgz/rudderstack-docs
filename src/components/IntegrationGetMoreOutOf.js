@@ -12,13 +12,13 @@ const IntegrationGetMoreOutOf = ({ data }) => {
     data.freetextctc.btntext !== ""
   ) {
     renderButton = (
-      <a href={data.freetextctc.btnlink} className="btn-primary-lg">
+      <a href={data.freetextctc.btnlink} className="btn-primary-lg text-white">
         {data.freetextctc.btntext}
       </a>
     )
   } else if (data.freetextctc && data.freetextctc.btntext !== "") {
     renderButton = (
-      <span className="btn-primary-lg">
+      <span className="btn-primary-lg text-white">
         <Link to={data.freetextctc.btnlink}>{data.freetextctc.btntext}</Link>
       </span>
     )
@@ -28,7 +28,7 @@ const IntegrationGetMoreOutOf = ({ data }) => {
       <div className="max-w-6xl px-4 md:px-3 mx-auto pt-24 pb-28 pb-0 lg:py-24">
         <div className="flex items-center flex-wrap">
           <div className="w-full justify-center items-start md:text-left max-w-screen-md">
-            <h3 className="md:mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">
+            <h3 className="md:mt-2 text-4xl md:text-5xl text-blueNew-midnight font-bold leading-tight">
               {data.freetexttitle}
             </h3>
           </div>

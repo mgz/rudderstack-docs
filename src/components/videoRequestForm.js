@@ -161,7 +161,7 @@ const VideoRequestForm = props => {
       className={`demo_form videoLibrary_form px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full xl:w-96 md:max-w-lg m-auto`}
     >
       <div className="mb-12">
-        <p className="mb-6 font-bold text-blueNew-custom text-xl-2">
+        <p className="mb-6 font-bold text-blueNew-eastbay text-xl-2">
           {props.formHeaderText}
         </p>
         <p className="text-lg text-grayColor-custom">{props.formShortDesc}</p>

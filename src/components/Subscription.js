@@ -75,8 +75,9 @@ const Subscription = props => {
     <div className="container my-4 py-16 md:py-24 px-3 flex items-center pb-10 mb-6 md:flex-row flex-col w-full md:w-3/5">
       <div className="inline-flex items-center justify-center flex-shrink-0 text-3xl-4 md:text-5xl font-bold py-0 pl-0 pr-0 md:pr-12  self-start">
         <StaticImage
-          src="../images/subscription_icon.png"
+          src="../images/subcription-new.png"
           alt="Subscription"
+          placeholder="tracedSVG"
           className="w-8 mr-7"
         />{" "}
         Subscribe
@@ -126,14 +127,14 @@ const Subscription = props => {
               <input
                 type="submit"
                 defaultValue="Subscribe"
-                className="mt-4 rounded-lg text-whiteColor-custom bg-black-custom text-sm py-2 px-8 w-full md:w-auto hover:bg-blueNew-custom cursor-pointer"
+                className="mt-4 rounded-lg text-whiteColor-custom bg-dark text-sm py-2 px-8 w-full md:w-auto hover:bg-blueNew-midnight cursor-pointer"
                 onClick={e => formSubmitted(e)}
               />
               <span className="ajax-loader" />
             </p>
             {formSubmittedSuccessfully && (
               <div
-                className="text-blueNew-custom"
+                className="text-blueNew-midnight"
                 role="alert"
                 aria-hidden="true"
               >

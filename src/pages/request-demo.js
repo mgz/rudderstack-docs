@@ -154,7 +154,7 @@ const Demo = ({ data, htmlId,location }) => {
   }
 
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Schedule Demo" />
       <div className="font-custom">
         <section id="demo_hdr">
@@ -192,7 +192,7 @@ const Demo = ({ data, htmlId,location }) => {
           <div className="w-full bg-grayColor-BgGray">
             <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
               <div className="sm:mb-24 mb-10">
-                <span className="text-3xl md:text-5xl font-bold">
+                <span className="text-3xl md:text-5xl font-bold text-blueNew-midnight">
                   {lv_demoadvantages[0].advantage_header_text}
                 </span>
               </div>
@@ -229,7 +229,7 @@ const Demo = ({ data, htmlId,location }) => {
           <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 max-w-6xl mx-auto px-6 sm:mb-24 sm:mt-12 md:mt-36">
             <div className="w-full pr-4 lg:pr-16 pt-0  text-xl  md:w-3/6 md:block">
               <div className="mb-4">
-                <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight">
+                <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight text-blueNew-midnight">
                   {lv_demofooterleft[0].demo_footer_header_text}
                 </span>
               </div>

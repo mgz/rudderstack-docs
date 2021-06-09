@@ -3,11 +3,13 @@ import { graphql, useStaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
-import open_source from "../images/open_source.svg"
-import build from "../images/build.svg"
-import privacy from "../images/privacy.svg"
-import customerobsessed from "../images/customer-obsessed.svg"
-import Integrationschart from "../images/Integrations-chart.svg"
+
+import open_source from "../images/spot-illustrations-open-source.svg"
+import build from "../images/spot-illustrations-developer-laptop.svg"
+import privacy from "../images/spot-illustrations-security-control.svg"
+import customerobsessed from "../images/spot-illustrations-customer.svg"
+
+import Integrationschart from "../images/illustration-integrations.svg"
 import MiddleBanner from "../components/middle-banner"
 import JoinOurTeam from "../components/joinOurTeam"
 
@@ -30,13 +32,13 @@ const About = ({ data }) => {
       <div className="mt-16 mx-auto about-us-banner lg:pb-20">
         <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter">
           <div class="max-w-6xl md:mt-16 px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
-            <div className="uppercase text-sm mb-5 text-blueNew-custom font-bold">
+            <div className="uppercase text-sm mb-5 text-blueNew-eastbay font-bold">
               OUR MISSION
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold font-custom leading-snug">
+            <h1 className="text-5xl md:text-6xl font-bold font-custom leading-snug text-blueNew-midnight">
               Elevating Data Engineers
             </h1>
-            <p className="text-lg md:text-xl-2 mt-4 max-w-screen-md">
+            <p className="text-lg md:text-xl-2 mt-4 max-w-screen-md text-grayColor-custom">
               Our mission is to help data engineers and developers become the
               heroes of their companies by providing every team with rich data.
             </p>
@@ -51,7 +53,7 @@ const About = ({ data }) => {
                 We accomplish our mission by building the most advanced,
                 bi-directional pipelines for your data stack
               </p>
-              <p className="text-sm md:text-lg">
+              <p className="text-sm md:text-lg text-grayColor-custom">
                 RudderStack elegantly handles every piece of data from every
                 source and syncs it with every tool in your stack.
               </p>
@@ -69,7 +71,7 @@ const About = ({ data }) => {
       <section className="bg-grayColor-BgGray">
         <div className="max-w-6xl px-3 py-16 md:py-20 mx-auto">
           <div className="flex flex-wrap w-full mb-24 flex-col">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blueNew-midnight">
               We build on these Principles
             </h2>
             <p className="w-full leading-relaxed font-bold sm:font-normal text-sm md:text-lg text-grayColor-custom">
@@ -145,8 +147,8 @@ const About = ({ data }) => {
       <section className="">
         <div className="max-w-6xl px-5 pt-16 md:pt-28 mx-auto">
           <div className="flex flex-wrap w-full mb-8 md:mb-20 flex-col">
-            <h2 className="sm:text-5xl text-2xl font-bold mb-6">Leadership</h2>
-            <p className="w-full leading-relaxed text-sm sm:text-lg">
+            <h2 className="sm:text-5xl text-2xl font-bold mb-6 text-blueNew-midnight">Leadership</h2>
+            <p className="w-full leading-relaxed text-sm sm:text-lg text-grayColor-custom">
               We’re an engineer-led team of data, security, and marketing
               experts.
             </p>
@@ -175,6 +177,23 @@ const About = ({ data }) => {
                   src="../images/Eric.png"
                 />
                 <div className="py-4 text-center">
+                  <h3 className="title-font text-2xl font-medium mb-3">
+                  Eric Dodds
+                  </h3>
+                  <p className="leading-relaxed mb-3 text-xl">
+                  Director, Customer Success
+                  </p>
+                </div>
+              </div>
+            </div>
+       
+            {/* <div className="p-4 w-full md:w-1/3 m-auto max-w-sm">
+              <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
+                <StaticImage
+                  className="w-full object-cover object-center"
+                  src="../images/Eric.png"
+                />
+                <div className="py-4 text-center">
                   <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">
                     Eric Dodds
                   </h3>
@@ -183,7 +202,7 @@ const About = ({ data }) => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="p-4 w-full md:w-1/3 m-auto max-w-sm">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
@@ -203,7 +222,24 @@ const About = ({ data }) => {
           </div>
 
           <div className="flex flex-wrap -m-4 justify-center">
-            <div className="p-4 w-full mt-4 sm:mt-0 md:w-1/2 max-w-sm flex justify-end">
+          <div className="p-4 w-full mt-4 sm:mt-0 md:w-1/3 max-w-sm flex justify-end">
+              <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
+                <StaticImage
+                  className="h-64 sm:h-72 w-full object-cover object-center"
+                  src="../images/katie-west.png"
+                />
+                <div className="py-4 text-center">
+                  <h3 className="title-font text-2xl font-medium mb-3">
+                    Katie West
+                  </h3>
+                  <p className="leading-relaxed mb-3 text-xl">
+                  Customer Success
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 w-full mt-4 sm:mt-0 md:w-1/3 max-w-sm flex justify-end">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
@@ -219,7 +255,7 @@ const About = ({ data }) => {
                 </div>
               </div>
             </div>
-            <div className="p-4 w-full md:w-1/2 max-w-sm">
+            <div className="p-4 w-full md:w-1/3 max-w-sm">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
@@ -241,7 +277,7 @@ const About = ({ data }) => {
       <section className="">
         <div className="max-w-6xl px-5 py-16 md:py-28 mx-auto ">
           <div className="flex flex-wrap w-full mb-0 md:mb-20 flex-col">
-            <h2 className="text-3xl-3 sm:text-5xl font-bold mb-6">
+            <h2 className="text-3xl-3 sm:text-5xl font-bold mb-6 text-blueNew-midnight">
               Advisors and Investors
             </h2>
           </div>

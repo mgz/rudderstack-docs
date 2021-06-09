@@ -17,10 +17,10 @@ const LatestBlog = props => {
           </h3>
           <BlogModule />
           <div className="w-full text-center items-center mt-10 md:mt-12">
-            <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center hover:text-blueNew-custom">
+            <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center ">
               <a
                 href={viewallpostslink}
-                class="font-bold leading-normal text-sm lr-icon"
+                class="font-bold leading-normal text-sm seeall-icon"
               >
                 {(() => {
                   if (viewexternallink === true) {

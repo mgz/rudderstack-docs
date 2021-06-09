@@ -17,7 +17,7 @@ const Menu = ({
         <div
           className={`px-4 sm:px-6 xl:px-8  pt-4 pb-4 border-solid text-sm md:text-base  w-auto inline-block ${
             currentRefinement === null
-              ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
+              ? "font-bold border-b-2 border-blueNew-eastbay text-blueNew-eastbay"
               : "border-b border-grayColor-lighter"
           }`}
         >
@@ -39,7 +39,7 @@ const Menu = ({
             <div
               className={`px-4 sm:px-6 xl:px-8 pt-4 pb-4 border-solid text-sm md:text-base  w-auto inline-block ${
                 currentRefinement === item.label
-                  ? "font-bold border-b-2 border-blueNew-custom text-blueNew-custom"
+                  ? "font-bold border-b-2 border-blueNew-eastbay text-blueNew-eastbay"
                   : "border-b border-grayColor-lighter"
               }`}
             >

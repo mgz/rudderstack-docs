@@ -8,17 +8,20 @@ import BlogModule from "../components/latest-blog-module"
 import Image from "../components/image"
 import Link from "gatsby-link"
 import Subscription from "../components/Subscription"
-import BlogHeroChart from "../images/blog-hero_chart.svg"
+
 import BlogTwitter from "../images/blogtwitter.svg"
 import BlogFb from "../images/blogfb.svg"
 import BlogIn from "../images/blogIn.svg"
+import MiddleBanner from "../components/middle-banner"
+import SignupV1 from "../components/signup_v1"
+
 import {
   TwitterShareButton,
   FacebookShareButton,
   LinkedinShareButton,
 } from "react-share"
 
-const Singleblog = ({ data, ...props }) => {
+const Singleblog = ({ data, location, ...props }) => {
   const blog = data.blog
   const blogAuthors = data.blog.blog_authors
   const maintitle = props.maintitle
@@ -32,12 +35,19 @@ const Singleblog = ({ data, ...props }) => {
     author_names += (author_names.length > 0 ? ", " : "") + row.author_name
   })
 
+  const lv_middlebannersection = (
+    data.sanityFrontpageblock._rawPagebuildersectionarray || []
+  ).filter(ii => ii._type === "middlebannersection")
+
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet>
         <title>{blog.meta_title || blog.title}</title>
         <meta property="og:title" content={blog.meta_title || blog.title} />
-        <meta property="twitter:title" content={blog.meta_title || blog.title} />
+        <meta
+          property="twitter:title"
+          content={blog.meta_title || blog.title}
+        />
         <meta name="description" content={blog.meta_desc} />
         <meta property="og:description" content={blog.meta_desc} />
         <meta property="twitter:description" content={blog.meta_desc} />
@@ -56,7 +66,7 @@ const Singleblog = ({ data, ...props }) => {
         <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-24 mt-3 top-0 lg:left-0 md:left-4">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
             <a className="block" href="#">
-              <img src={BlogTwitter} alt="twitter" />
+              <img src={BlogTwitter} className="text-blueNew-midnight" alt="twitter" />
             </a>
           </TwitterShareButton>
           <FacebookShareButton
@@ -85,10 +95,14 @@ const Singleblog = ({ data, ...props }) => {
               >
                 <div className="sm:w-32 sm:h-32 h-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
                   {/* <div className= "rounded-full"> */}
-                    <Image
-                      props={item.author_image.asset._id ? item.author_image.asset._id : item.author_image.asset._ref}
-                      classes="w-24 h-24 rounded-full"
-                    />
+                  <Image
+                    props={
+                      item.author_image.asset._id
+                        ? item.author_image.asset._id
+                        : item.author_image.asset._ref
+                    }
+                    classes="w-24 h-24 rounded-full"
+                  />
                   {/* </div> */}
 
                   {/* <img
@@ -98,7 +112,7 @@ const Singleblog = ({ data, ...props }) => {
                   /> */}
                 </div>
                 <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-                  <div className="text-xs font-bold uppercase text-blueNew-category">
+                  <div className="text-xs font-bold uppercase text-blueNew-eastbay">
                     About the author
                   </div>
                   <div className="leading-4 text-lg font-bold mt-4">
@@ -124,7 +138,7 @@ const Singleblog = ({ data, ...props }) => {
             <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center hover:text-blueNew-custom">
               <a
                 href={viewallpostslink}
-                className="font-bold leading-normal text-sm lr-icon"
+                className="font-bold leading-normal text-sm lr-icon seeall-icon"
               >
                 {(() => {
                   if (viewexternallink === true) {
@@ -139,37 +153,15 @@ const Singleblog = ({ data, ...props }) => {
         </div>
       </section>
       {/*Blog Post*/}
-      <section className="bg-backgroundsecondary 100% left-right-section">
-        {/*Sign Up Section*/}
-        <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
-          <div className="sm:w-1/2 sm:p-6 sm:pl-0 md:pr-12">
-            <p className="mt-4 sm:mt-0 text-blue text-sm uppercase">SIGN UP</p>
-            <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
-              Explore RudderStack Today
-            </h3>
-            <p className="text-secondary leading-7 text-sm sm:text-lg mb-8">
-              Our Free plan includes 500,000 events per month so you can explore
-              and test the product. Install an SDK, connect a destination, and
-              see data start to flow.
-            </p>
-
-            <a
-              className="btn-primary-lg cursor-pointer w-full sm:w-44"
-              href={"https://app.rudderstack.com/signup"}
-            >
-              Sign up free
-            </a>
-          </div>
-          <div className="w-full sm:w-1/2 sm:pt-16 sm:pb-20 lg:pl-28">
-            <img src={BlogHeroChart} alt="Data Masking" className="w-full" />
-          </div>
-        </div>
-      </section>
+      <SignupV1 />
       {/*Sign Up Section*/}
       <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
         {/*Subscription Component*/}
         <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
       </div>
+      <section id="footer_section_for_demo">
+        <MiddleBanner {...lv_middlebannersection[0]} />
+      </section>
       {/*Subscription Component*/}
     </Layout>
   )
@@ -177,6 +169,9 @@ const Singleblog = ({ data, ...props }) => {
 
 export const query = graphql`
   query GetSingleBlog($slug: String) {
+    sanityFrontpageblock {
+      _rawPagebuildersectionarray
+    }
     blog: sanityBlog(slug: { eq: $slug }) {
       id
       blog_category

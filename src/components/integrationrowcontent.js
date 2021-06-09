@@ -20,7 +20,7 @@ const Integrationrowcontent = ({ hits }) => {
                 key={index}
                 className="w-full p-6 flex-col relative overflow-hidden rounded-2xl flex items-center justify-between bg-white content-box"
               >
-                <div className="text-blue text-sm text-indigo-700 font-bold mb-2.5">
+                <div className="text-blueNew-eastbay text-sm text-indigo-700 font-bold mb-2.5">
                   {hit.integration_category}
                 </div>
                 <div className="sm:block h-24">

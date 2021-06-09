@@ -58,12 +58,12 @@ const SingleRowContentVideoLibrary = ({ data }) => {
       <div className="sm:flex">
         <div class="px-4 md:px-12 pt-8 pb-4">
           <Link to={webinarObj.node.slug.current}>
-            <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-custom">
+            <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {`${category} ${
                 category === "Live" ? "| " + url_or_event_dttm : ""
               }`}
             </div>
-            <h2 className="block  my-4 text-3xl lg:text-4xl leading-tight font-bold md:font-medium text-black">
+            <h2 className="block  my-4 text-3xl lg:text-4xl leading-tight font-bold md:font-medium text-blueNew-midnight">
               {webinarObj.node.title}
             </h2>
             <p className="text-lg text-grayColor-custom">
@@ -89,8 +89,8 @@ const SingleRowContentVideoLibrary = ({ data }) => {
             <img
               src={webinarObj.node.listing_image.asset.url}
               alt={webinarObj.node.title}
-              // className="sm:h-full lg:max-w-2xl object-cover max-h-96"
-              className="sm:h-full lg:max-w-2xl object-cover"
+              className="sm:h-full lg:max-w-2xl object-cover max-h-96"
+              // className="sm:h-full lg:max-w-2xl object-cover"
               loading="eager"
             />
           </Link>

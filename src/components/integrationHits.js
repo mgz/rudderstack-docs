@@ -20,7 +20,7 @@ const Hits = ({ hits, searchedText, onRecordCountChange }) => {
         } bg-white filter-menu rounded-2xl py-8 px-6 justify-center text-xl-2 md:text-2xl-2 font-bold text-center mx-0 md:mx-12`}
       >
         <p className=" text-grayColor-lighter">No results found matching</p>
-        <p>{searchedText}</p>
+        <p className="text-blueNew-midnight">{searchedText}</p>
       </div>
     )
   }

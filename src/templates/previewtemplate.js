@@ -39,6 +39,7 @@ class PreviewTemplate extends Component {
         var blogdata = {};
         blogs.forEach((blog) => {
           blogdata.blog = blog;
+          blogdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock;
           blogdata.blog._rawDescription = blog.description;
           blogdata.blog.blog_image.asset.fluid = {src: blogdata.blog.blog_image.asset.url};
           this.setState({ data: blogdata });
@@ -64,8 +65,8 @@ class PreviewTemplate extends Component {
 
       await client.fetch(query, params).then((pages) => {
         pages.forEach((page) => {
-          page.sanityThankyoupages = page;
-          page.sanityThankyoupages._rawPagebuildersectionarray = page.pagebuildersectionarray;
+          page.thankyou = page;
+          page.thankyou._rawPagebuildersectionarray = page.pagebuildersectionarray;
           page.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock;
           this.setState({ data: page });
         })

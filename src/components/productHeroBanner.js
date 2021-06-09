@@ -30,8 +30,8 @@ const ProductHeroBanner = props => {
                           key={btn._key}
                           className={
                             (btn.btnhiglight === true
-                              ? "bg-white text-primary btn-primary-lg"
-                              : "btn-secondary-lg hover:bg-blueNew-custom") +
+                              ? "bg-white text-primary btn-primary-lg border-transparent hover:bg-blueNew-midnight hover:text-white"
+                              : "btn-secondary-lg hover:bg-blueNew-midnight") +
                             ` sm:mr-4 md:mb-0 mb-6`
                           }
                           href={btn.btnlink}
@@ -45,8 +45,8 @@ const ProductHeroBanner = props => {
                           key={btn._key}
                           className={
                             (btn.btnhiglight === true
-                              ? "bg-white text-primary btn-primary-lg"
-                              : "btn-secondary-lg hover:bg-blueNew-custom") +
+                              ? "bg-white text-primary btn-primary-lg border-transparent hover:bg-blueNew-midnight hover:text-white"
+                              : "btn-secondary-lg hover:bg-blueNew-midnight") +
                             ` sm:mr-4 md:mb-0 mb-4`
                           }
                         >

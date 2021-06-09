@@ -10,12 +10,19 @@ import IntegrationHits from "../components/integrationHits"
 import IntegrationsHelpBox from "../components/Integrations-help"
 import ScrollUpButton from "react-scroll-up-button"
 import ScrollTopBtn from "../images/float-btn.svg"
+import MiddleBanner from "../components/middle-banner"
 
 const Integration = props => {
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_APIKEY
   )
+  
+  const lv_middlebannersection = (
+    props.data.sanityFrontpageblock._rawPagebuildersectionarray || []
+  ).filter(ii => ii._type === "middlebannersection")
+
+
   const { data } = props
   const [searchedText, setSerchedText] = React.useState("")
   const [resultCount, setResultCount] = React.useState(0)
@@ -25,10 +32,10 @@ const Integration = props => {
         <div className="lg:pt-40 pt-16 mx-auto integration-banner relative md:pb-20 pb-7 overflow-hidden">
           <section className="bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter">
             <div class="max-w-6xl lg:mt-16 px-3 md:px-3 mx-auto flex flex-wrap flex-col items-center text-center">
-              <h1 className="tracking-tight-2 text-4xl md:text-5xl font-bold font-custom sm:leading-snug leading-10">
+              <h1 className="tracking-tight-2 text-4xl md:text-5xl font-bold font-custom sm:leading-snug leading-10 text-blueNew-midnight">
                 Integrations
               </h1>
-              <p className="text-xl md:text-3xl text-primary font-bold leading-tight md:mt-5 mt-11">
+              <p className="text-xl md:text-3xl text-dark font-bold leading-tight md:mt-5 mt-11">
                 Send data to all of the tools in your customer data stack
               </p>
             </div>
@@ -101,6 +108,10 @@ const Integration = props => {
           </ScrollUpButton>
         </div>
       </div>
+      <section id="footer_section_for_demo">
+        <MiddleBanner {...lv_middlebannersection[0]} />
+      </section>
+
     </Layout>
   )
 }
@@ -109,6 +120,9 @@ export default Integration
 
 export const pageQuery = graphql`
   query {
+    sanityFrontpageblock {
+      _rawPagebuildersectionarray
+    }
     allSanityIntegration {
       pageInfo {
         perPage

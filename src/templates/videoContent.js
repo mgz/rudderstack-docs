@@ -8,7 +8,7 @@ import VideoLibraryContentHeader from "../components/videoLibraryContentHeader"
 import VideoContentLesson from "../components/videoContentLesson"
 import VideoLibraryTopicsToCover from "../components/videoLibraryTopicsToCover"
 import VideoLibrarySpeakers from "../components/videoLibrarySpeakers"
-const videoContent = ({ data }) => {
+const videoContent = ({ data, location }) => {
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
@@ -37,9 +37,11 @@ const videoContent = ({ data }) => {
       data.videoLib._rawVideoLibraryCategoryType.usecase_option.url
   }
 
-
   return (
-    <Layout>
+    <Layout
+      location={location}
+      showExplicitGradient={category === "Live" ? true : false}
+    >
       <div className="pt-0 font-custom">
         {/*banner*/}
         <VideoLibraryContentHeader
