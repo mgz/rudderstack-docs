@@ -80,7 +80,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
     location &&
     (location.pathname.startsWith("/product/") ||
       location.pathname.startsWith("/request-demo") ||
-      location.pathname.startsWith("/segment-desktop") ||
+      location.pathname.startsWith("/rudderstack-vs-segment") ||
       location.pathname.startsWith("/cloud") ||
       (location.pathname.startsWith("/video-library/") &&
         showExplicitGradient === false) ||
