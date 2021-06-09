@@ -9,7 +9,7 @@ import build from "../images/spot-illustrations-developer-laptop.svg"
 import privacy from "../images/spot-illustrations-security-control.svg"
 import customerobsessed from "../images/spot-illustrations-customer.svg"
 
-import Integrationschart from "../images/illustration-integrations.svg"
+import Integrationschart from "../images/illustration-integrations-new.svg"
 import MiddleBanner from "../components/middle-banner"
 import JoinOurTeam from "../components/joinOurTeam"
 
@@ -147,7 +147,9 @@ const About = ({ data }) => {
       <section className="">
         <div className="max-w-6xl px-5 pt-16 md:pt-28 mx-auto">
           <div className="flex flex-wrap w-full mb-8 md:mb-20 flex-col">
-            <h2 className="sm:text-5xl text-2xl font-bold mb-6 text-blueNew-midnight">Leadership</h2>
+            <h2 className="sm:text-5xl text-2xl font-bold mb-6 text-blueNew-midnight">
+              Leadership
+            </h2>
             <p className="w-full leading-relaxed text-sm sm:text-lg text-grayColor-custom">
               We’re an engineer-led team of data, security, and marketing
               experts.
@@ -178,15 +180,15 @@ const About = ({ data }) => {
                 />
                 <div className="py-4 text-center">
                   <h3 className="title-font text-2xl font-medium mb-3">
-                  Eric Dodds
+                    Eric Dodds
                   </h3>
                   <p className="leading-relaxed mb-3 text-xl">
-                  Director, Customer Success
+                    Director, Customer Success
                   </p>
                 </div>
               </div>
             </div>
-       
+
             {/* <div className="p-4 w-full md:w-1/3 m-auto max-w-sm">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
@@ -222,7 +224,7 @@ const About = ({ data }) => {
           </div>
 
           <div className="flex flex-wrap -m-4 justify-center">
-          <div className="p-4 w-full mt-4 sm:mt-0 md:w-1/3 max-w-sm flex justify-end">
+            <div className="p-4 w-full mt-4 sm:mt-0 md:w-1/3 max-w-sm flex justify-end">
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
@@ -233,7 +235,7 @@ const About = ({ data }) => {
                     Katie West
                   </h3>
                   <p className="leading-relaxed mb-3 text-xl">
-                  Customer Success
+                    Customer Success
                   </p>
                 </div>
               </div>
@@ -344,7 +346,7 @@ const About = ({ data }) => {
         </div>
       </section>
       <section className="overflow-hidden">
-      <JoinOurTeam />
+        <JoinOurTeam />
       </section>
       <section id="footer_section_for_demo">
         <MiddleBanner {...lv_middlebannersection[0]} />
