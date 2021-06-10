@@ -220,7 +220,7 @@ const Demo = ({ data, htmlId, location }) => {
         </section>
         <section id="logos" className="px-8">
           <OurLogo
-            customHeaderText={`The top companies in the world use RudderStack to Activate their customer data`}
+            customHeaderText={`The top companies in the world use RudderStack to activate their customer data`}
             {...lv_ourlogoblock[0]}
           />
         </section>
