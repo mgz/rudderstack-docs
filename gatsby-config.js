@@ -204,7 +204,7 @@ module.exports = {
               }
             }
             `,
-            output: "/blog.rss.xml",
+            output: "/blog/rss.xml",
           },
         ],
       },
