@@ -30,19 +30,19 @@ function Hero(props) {
   //   }, 3000)
   // }, [])
 
-  useEffect(() => {
-    var params = {
-      container: document.getElementById("lottie"),
-      renderer: "html",
-      loop: true,
-      autoplay: true,
-      animationData: HERO_ANIMATION_JSON,
-    }
+  // useEffect(() => {
+  //   var params = {
+  //     container: document.getElementById("lottie"),
+  //     renderer: "html",
+  //     loop: true,
+  //     autoplay: true,
+  //     animationData: HERO_ANIMATION_JSON,
+  //   }
 
-    var anim
+  //   var anim
 
-    anim = lottie.loadAnimation(params)
-  }, [])
+  //   anim = lottie.loadAnimation(params)
+  // }, [])
 
   return (
     <section class="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative gradiant-layer banner-section">
@@ -110,8 +110,15 @@ function Hero(props) {
             {/*<div className="lotti-body">
               <div id="lottie" />
             </div>*/}
-            <div className={`lotti-body`}>
+            {/* <div className={`lotti-body`}>
               <div id="lottie" />
+            </div> */}
+            <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
+              <StaticImage
+                src="../images/RubberStack_MAIN-3D_1-1_active_00000.png"
+                alt="RudderStack animation"
+                placeholder="tracedSVG"
+              />
             </div>
             {/* <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
               <div id="lottie" />
