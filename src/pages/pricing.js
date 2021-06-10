@@ -26,11 +26,6 @@ const PricingPage = ({ data }) => {
         'If you are on the Free plan, we have an active community on Slack where you can ask questions. <a href="https://resources.rudderstack.com/join-rudderstack-slack" class="text-purpleNew-custom underline hover:text-blueNew-midnight">Click here to join us</a>! If you are on the Pro plan, you’ll get a dedicated, private live chat support from our Customer Success team. If you are on the Enterprise plan, you will have a dedicated account manager.',
     },
     {
-      title: "Is it evil to collect user-data?",
-      content:
-        "Collecting user data is always a tricky subject. On one hand, you want to improve the product experience which requires you to collect data on how the users are using the app but on the other hand, you want to respect their privacy.<br /><br />A good middle ground is to avoid collecting PII or user-identifiable data as much as possible and keeping checks and controls on how has to access that data. From the fact that they are using your app, your users probably expect that you are keeping some data about them and would even prefer to have the personalized experience they can get.<br /><br />However, what should absolutely be avoided is sharing that data with 3rd party vendors (likes of Google, Facebook and tens of other vendors) unless absolutely required. Your users put their trust in you, not them. The increasing array of privacy regulations like CCPA, GDPR are increasingly making it illegal to do so.",
-    },
-    {
       title: "Under what license is the open-source project released?",
       content:
         'The open-source project is released under <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" class="text-purpleNew-custom underline hover:text-blueNew-midnight">AGPLv3</a>.',

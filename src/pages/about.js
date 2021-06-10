@@ -166,7 +166,7 @@ const About = ({ data }) => {
                     Soumyadeb Mitra
                   </h3>
                   <p className="leading-relaxed mb-3 text-xl">
-                    Founder &amp; CEO, RudderStack
+                    Founder &amp; CEO
                   </p>
                 </div>
               </div>
@@ -182,7 +182,7 @@ const About = ({ data }) => {
                     Eric Dodds
                   </h3>
                   <p className="leading-relaxed mb-3 text-xl">
-                    Director, Customer Success
+                    Growth
                   </p>
                 </div>
               </div>
@@ -251,7 +251,7 @@ const About = ({ data }) => {
                     Sumanth Puram
                   </h3>
                   <p className="leading-relaxed mb-3 text-xl">
-                    Head of Engineering
+                    Engineering
                   </p>
                 </div>
               </div>
@@ -267,7 +267,7 @@ const About = ({ data }) => {
                     Kostas Pardalis
                   </h3>
                   <p className="leading-relaxed mb-3 text-xl">
-                    Head of Product
+                    Product
                   </p>
                 </div>
               </div>
