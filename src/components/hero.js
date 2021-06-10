@@ -85,12 +85,12 @@ function Hero(props) {
             {/* <div dangerouslySetInnerHTML={{ __html: myHTML }} /> */}
 
             {/*<div className="lotti-body" id="lottie"></div>*/}
-            {/* <div className="w-full">
+            <div className="w-full">
               <StaticImage src="../images/RubberStack_MAIN-3D_1-1_active_00000.png" alt="RudderStack animation" placeholder="tracedSVG" />
-            </div> */}
-            <div className="lotti-body">
-              <div id="lottie" />
             </div>
+            {/*<div className="lotti-body">
+              <div id="lottie" />
+            </div>*/}
           </div>
         </div>
       </div>

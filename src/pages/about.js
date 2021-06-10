@@ -215,7 +215,7 @@ const About = ({ data }) => {
                     Brett Umberg
                   </h3>
                   <p className="leading-relaxed mb-3 text-xl">
-                    Head of BizOps &amp; Strategy
+                    BizOps &amp; Strategy
                   </p>
                 </div>
               </div>
