@@ -5,6 +5,9 @@ import {
   connectRefinementList,
 } from "react-instantsearch-dom"
 //import { graphql } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCheckSquare } from "@fortawesome/free-solid-svg-icons"
+import { faSquare } from "@fortawesome/free-regular-svg-icons"
 
 const CustomIntegrationTypeList = ({
   items,
@@ -31,16 +34,16 @@ const CustomIntegrationTypeList = ({
         </label>
         <ul className="list-reset block capitalize items-center tab-content overflow-hidden">
           {items.map(item => (
-            <li key={item.value} className="pt-5">
+            <li key={item.value} className="pt-0">
               <a
                 href={createURL(item.value)}
-                className="leading-5 text-lg flex items-cente text-secondary"
+                className="leading-5 text-lg flex items-cente text-secondary items-center"
                 onClick={event => {
                   event.preventDefault()
                   refine(item.value)
                 }}
               >
-                <input
+                {/* <input
                   type="checkbox"
                   onClick={event => {
                     event.preventDefault()
@@ -50,12 +53,19 @@ const CustomIntegrationTypeList = ({
                   onChange={e => {}}
                   className="ais-refinement-list--checkbox mr-3 flex items-center"
                   value={item.value}
+                /> */}
+                <FontAwesomeIcon
+                  icon={item.isRefined ? faCheckSquare : faSquare}
+                  style={{ fontSize: "22px" }}
+                  className="h-11 text-blueNew-eastbay rounded-lg pt-2 py-2 mr-2"
                 />
-                {isFromSearch ? (
-                  <Highlight attribute="label" hit={item} />
-                ) : (
-                  item.label
-                )}
+                <div className="text-center align-middle">
+                  {isFromSearch ? (
+                    <Highlight attribute="label" hit={item} />
+                  ) : (
+                    item.label
+                  )}
+                </div>
               </a>
             </li>
           ))}
