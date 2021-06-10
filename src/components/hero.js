@@ -6,6 +6,7 @@ import lottie from "lottie-web"
 import heroAnimation from "../animations/Homepage-Hero-Image2.json"
 import { Helmet } from "react-helmet"
 import { withPrefix } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 function Hero(props) {
   // const myHTML = `<h1>John Doe</h1>`;
@@ -83,14 +84,10 @@ function Hero(props) {
             {/* <div className="w-full" ref={animationContainer} /> */}
             {/* <div dangerouslySetInnerHTML={{ __html: myHTML }} /> */}
 
-            <div className="lotti-body" id="lottie"></div>
-            {/* <div className="w-full">
-              <iframe
-                src="/Rudderstack_iso_chrome_alpha.html"
-                title="dummy"
-                style={{ width: "800px", height: "600px" }}
-              ></iframe>
-            </div> */}
+            {/*<div className="lotti-body" id="lottie"></div>*/}
+            <div className="w-full">
+              <StaticImage src="../images/RubberStack_MAIN-3D_1-1_active_00000.png" alt="RudderStack animation" placeholder="tracedSVG" />
+            </div>
           </div>
         </div>
       </div>
