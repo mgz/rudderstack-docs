@@ -14,6 +14,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
 
 import { useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
+import { withPrefix } from "gatsby"
 
 import MainNavigation from "../components/main-navigation"
 import FooterNav from "../components/footer-nav"
@@ -94,6 +96,10 @@ const Layout = ({ location, showExplicitGradient, children }) => {
       id="main-container"
       className={`gradient-${diableGradient ? "disable" : "enable"}`}
     >
+      {/* <Helmet>
+        <script src={withPrefix("script.js")} type="text/javascript" />
+        <script src={withPrefix("script2.js")} type="text/javascript" />
+      </Helmet> */}
       <CookiesConsent />
       <MainNavigation />
       <main>{children}</main>

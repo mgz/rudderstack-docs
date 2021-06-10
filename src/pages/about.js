@@ -121,7 +121,9 @@ const About = ({ data }) => {
                   Built for Engineers &amp; Data Scientists
                 </h2>
                 <p className="leading-relaxed text-sm sm:text-lg  text-grayColor-custom lg:pr-16">
-                  We have been data engineers and data scientists in our past jobs, understand their challenges and pain points, and are building the best product for them.
+                  We have been data engineers and data scientists in our past
+                  jobs, understand their challenges and pain points, and are
+                  building the best product for them.
                 </p>
               </div>
             </div>
@@ -181,9 +183,7 @@ const About = ({ data }) => {
                   <h3 className="title-font text-2xl font-medium mb-3">
                     Eric Dodds
                   </h3>
-                  <p className="leading-relaxed mb-3 text-xl">
-                    Growth
-                  </p>
+                  <p className="leading-relaxed mb-3 text-xl">Growth</p>
                 </div>
               </div>
             </div>
@@ -208,7 +208,7 @@ const About = ({ data }) => {
               <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
                 <StaticImage
                   className="h-64 sm:h-72 w-full object-cover object-center"
-                  src="../images/BrettCropped.jpg"
+                  src="../images/Brett.png"
                 />
                 <div className="py-4 text-center">
                   <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">
@@ -250,9 +250,7 @@ const About = ({ data }) => {
                   <h3 className="title-font text-2xl font-medium mb-3">
                     Sumanth Puram
                   </h3>
-                  <p className="leading-relaxed mb-3 text-xl">
-                    Engineering
-                  </p>
+                  <p className="leading-relaxed mb-3 text-xl">Engineering</p>
                 </div>
               </div>
             </div>
@@ -266,9 +264,7 @@ const About = ({ data }) => {
                   <h3 className="title-font text-2xl font-medium text-gray-900 mb-3">
                     Kostas Pardalis
                   </h3>
-                  <p className="leading-relaxed mb-3 text-xl">
-                    Product
-                  </p>
+                  <p className="leading-relaxed mb-3 text-xl">Product</p>
                 </div>
               </div>
             </div>
@@ -295,7 +291,7 @@ const About = ({ data }) => {
                 <p class="text-lg">ex-CEO, Heroku</p>
               </div>
             </div>
-            <div class="w-full md:w-1/3 mb-6 p-4">
+            {/* <div class="w-full md:w-1/3 mb-6 p-4">
               <div class="h-full text-center">
                 <StaticImage
                   className="w-40 h-40 object-cover object-center rounded-full inline-block"
@@ -305,6 +301,18 @@ const About = ({ data }) => {
                   Florian Leibert
                 </h2>
                 <p class="text-lg">ex-CEO, Mesosphere</p>
+              </div>
+            </div> */}
+            <div class="w-full md:w-1/3 mb-6 p-4">
+              <div class="h-full text-center">
+                <StaticImage
+                  className="w-40 h-40 object-cover object-center rounded-full inline-block"
+                  src="../images/bucky-moore.png"
+                />
+                <h2 class="font-medium tracking-wider text-lg pt-10 pb-5">
+                  Bucky Moore
+                </h2>
+                <p class="text-lg">Partner, Kleiner Perkins</p>
               </div>
             </div>
             <div class="w-full md:w-1/3 mb-6 p-4">
@@ -325,7 +333,7 @@ const About = ({ data }) => {
             </div>
           </div>
           <div className="flex justify-center flex-col sm:flex-row -m-4 mt-6 md:mt-32">
-            <div class="w-full md:w-1/2 mb-6">
+            <div class="w-full md:w-1/3 mb-6">
               <div class="h-full text-center">
                 <StaticImage
                   className="w-32 h-32 mb-8 object-cover object-center inline-block"
@@ -333,14 +341,30 @@ const About = ({ data }) => {
                 />
               </div>
             </div>
-            <div class="w-full md:w-1/2 mb-6">
+            <div class="w-full md:w-1/3 mb-6">
+              <div class="h-full text-center">
+                <StaticImage
+                  className="w-32 h-32 mb-8 object-cover object-center inline-block"
+                  src="../images/investor-2.png"
+                />
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 mb-6">
+              <div class="h-full text-center">
+                <StaticImage
+                  className="w-32 h-32 mb-8 object-cover object-center inline-block"
+                  src="../images/investor-3.png"
+                />
+              </div>
+            </div>
+            {/* <div class="w-full md:w-1/2 mb-6">
               <div class="h-full text-center">
                 <StaticImage
                   className="w-32 h-32 mb-8 object-cover object-center inline-block"
                   src="../images/capital.png"
                 />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
