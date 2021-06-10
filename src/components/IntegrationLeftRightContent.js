@@ -13,14 +13,7 @@ const IntegrationLeftRightContent = ({ data }) => {
             </h3>
           </div>
           {data.wycd_leftright_content && (
-            // <div
-            //   className={`grid grid-flow-col grid-rows-${
-            //     data.wycd_leftright_content.length
-            //   } md:grid-rows-${
-            //     parseInt(data.wycd_leftright_content.length / 2) +
-            //     (data.wycd_leftright_content.length % 2)
-            //   }  auto-rows-auto  grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-6 md:mt-20 mb-8`}
-            // >
+           
             <div
               className={`grid md:grid-cols-2 gap-4 md:gap-6 mt-6 md:mt-20 mb-8`}
             >

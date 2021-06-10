@@ -1,4 +1,4 @@
-import React, { useEffect, createRef } from "react"
+import React, { useEffect, createRef, useState } from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
@@ -7,22 +7,41 @@ import heroAnimation from "../animations/Homepage-Hero-Image2.json"
 import { Helmet } from "react-helmet"
 import { withPrefix } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
+import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
 function Hero(props) {
   // const myHTML = `<h1>John Doe</h1>`;
-
+  const [showAnimation, setShowAnimation] = useState(false)
   const herobannerbutton = props.herobannerbutton
-  let animationContainer = createRef()
+  // let animationContainer = createRef()
+
+  // useEffect(() => {
+  //   const anim = lottie.loadAnimation({
+  //     container: animationContainer.current,
+  //     renderer: "svg",
+  //     loop: true,
+  //     autoplay: true,
+  //     animationData: heroAnimation,
+  //   })
+  //   return () => anim.destroy() // optional clean up for unmounting
+  // }, [])
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowAnimation(true)
+  //   }, 3000)
+  // }, [])
 
   useEffect(() => {
-    const anim = lottie.loadAnimation({
-      container: animationContainer.current,
-      renderer: "svg",
+    var params = {
+      container: document.getElementById("lottie"),
+      renderer: "html",
       loop: true,
       autoplay: true,
-      animationData: heroAnimation,
-    })
-    return () => anim.destroy() // optional clean up for unmounting
+      animationData: HERO_ANIMATION_JSON,
+    }
+
+    var anim
+
+    anim = lottie.loadAnimation(params)
   }, [])
 
   return (
@@ -85,15 +104,32 @@ function Hero(props) {
             {/* <div dangerouslySetInnerHTML={{ __html: myHTML }} /> */}
 
             {/*<div className="lotti-body" id="lottie"></div>*/}
-            <div className="w-full">
+            {/* <div className="w-full">
               <StaticImage src="../images/RubberStack_MAIN-3D_1-1_active_00000.png" alt="RudderStack animation" placeholder="tracedSVG" />
-            </div>
+            </div> */}
             {/*<div className="lotti-body">
               <div id="lottie" />
             </div>*/}
+            <div className={`lotti-body`}>
+              <div id="lottie" />
+            </div>
+            {/* <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
+              <div id="lottie" />
+            </div>
+            <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
+              <StaticImage
+                src="../images/RubberStack_MAIN-3D_1-1_active_00000.png"
+                alt="RudderStack animation"
+                placeholder="tracedSVG"
+              />
+            </div> */}
           </div>
         </div>
       </div>
+      {/* <Helmet>
+        <script src={withPrefix("script.js")} type="text/javascript" />
+        <script src={withPrefix("script2.js")} type="text/javascript" />
+      </Helmet> */}
     </section>
   )
 }
