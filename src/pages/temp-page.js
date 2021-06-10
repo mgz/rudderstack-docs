@@ -11,14 +11,15 @@ const TempPage = props => {
     <React.Fragment>
       <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />
-        <script src={withPrefix("script2.js")} type="text/javascript" />
       </Helmet>
       Hey There
       {/* <div className="lotti-body" id="lottie" ref={animationContainer} /> */}
-      <div className="lotti-body" id="lottie" />
-      {/*<Helmet>
+      <div className="lotti-body">
+        <div id="lottie" />
+      </div>
+      {<Helmet>
         <script src={withPrefix("script2.js")} type="text/javascript" />
-      </Helmet>*/}
+      </Helmet>}
     </React.Fragment>
   )
 }
