@@ -687,14 +687,14 @@ function PricePlans() {
                   />
                 </td>
                 <td className="p-6">
-                  <a
-                    href="enterprise-quote"
+                  <Link
+                    to="/enterprise-quote"
                     className="text-sm  leading-sm font-bold mt-3 lr-icon mx-auto"
                     target="_blank"
                     rel="noreferrer"
                   >
                     Talk to sales
-                  </a>
+                  </Link>
                 </td>
               </tr>
               <tr>
@@ -1342,12 +1342,12 @@ function PricePlans() {
                     Billions of events
                   </div>
                 </div>
-                <a
-                  href="enterprise-quote"
+                <Link
+                  to="/enterprise-quote"
                   className="btn-primary-sm inline-block font-bold leading-6"
                 >
                   Request pricing
-                </a>
+                </Link>
               </div>
             </div>
             <div className="plan-features mt-6 px-3">
@@ -1661,8 +1661,8 @@ function PricePlans() {
                 </span>
                 VPC Deployment
               </div>
-              <a
-                href="enterprise-quote"
+              <Link
+                to="/enterprise-quote"
                 className="text-sm text-black-custom font-bold items-center flex mt-3 pl-5 hover:text-blueNew-midnight"
               >
                 <StaticImage
@@ -1672,7 +1672,7 @@ function PricePlans() {
                   alt="arrow right"
                 />
                 Talk to sales
-              </a>
+              </Link>
 
               <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 SUPPORT

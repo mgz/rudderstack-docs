@@ -24,7 +24,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           "window.jQuery": "jquery",
         }),
       ],
-      //devtool: "eval-source-map"
+      devtool: "eval-source-map"
     })
   } else {
     actions.setWebpackConfig({
@@ -35,7 +35,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           "window.jQuery": "jquery",
         }),
       ],
-      //devtool: "eval-source-map"
+      devtool: "eval-source-map"
     })
   }
 }

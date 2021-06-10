@@ -121,9 +121,7 @@ const About = ({ data }) => {
                   Built for Engineers &amp; Data Scientists
                 </h2>
                 <p className="leading-relaxed text-sm sm:text-lg  text-grayColor-custom lg:pr-16">
-                  We take data privacy and security seriously. RudderStack’s
-                  core architecture was constructed specifically with data
-                  privacy.
+                  We have been data engineers and data scientists in our past jobs, understand their challenges and pain points, and are building the best product for them.
                 </p>
               </div>
             </div>

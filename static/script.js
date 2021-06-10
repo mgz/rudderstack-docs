@@ -14036,7 +14036,7 @@ typeof navigator !== "undefined" &&
     return lottie
   })
 
-var animationData = {
+/*var animationData = {
   v: "5.7.8",
   fr: 24,
   ip: 0,
@@ -46916,4 +46916,4 @@ var params = {
 
 var anim
 
-anim = lottie.loadAnimation(params)
+anim = lottie.loadAnimation(params)*/

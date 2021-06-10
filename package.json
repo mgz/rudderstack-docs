@@ -36,7 +36,7 @@
     "gatsby-source-sanity": "^7.0.4",
     "gatsby-transformer-sharp": "^3.2.0",
     "get-youtube-id": "^1.0.1",
-    "lottie-web": "^5.7.8",
+    "lottie-web": "^5.7.11",
     "owl.carousel": "^2.3.4",
     "postcss": "^8.2.9",
     "prop-types": "^15.7.2",

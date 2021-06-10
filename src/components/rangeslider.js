@@ -1,5 +1,6 @@
 import React, { useState, Component } from "react"
 import Slider from "react-rangeslider"
+import Link from "gatsby-link"
 import "react-rangeslider/lib/index.css"
 
 const Horizontal = props => {
@@ -50,17 +51,17 @@ const Horizontal = props => {
           </span>
         </div>
         <div className="md:w-1/3 py-2 md:py-0 text-center">
-          <a
-            href={
+          <Link
+            to={
               price
                 ? "https://app.rudderlabs.com/signup?type=freetrial"
-                : "enterprise-quote"
+                : "/enterprise-quote"
             }
             className="btn-primary-sm block md:inline-block"
             id="text4"
           >
             {price ? "Sign up" : "Request pricing"}
-          </a>
+          </Link>
         </div>
       </div>
     </div>

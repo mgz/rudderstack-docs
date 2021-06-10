@@ -1,5 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Link from "gatsby-link"
+
 import Layout from "../components/layout"
 import algoliasearch from "algoliasearch/lite"
 import "../lib/font-awesome"
@@ -207,7 +209,7 @@ const CloudDesktop = ({ data, location }) => {
               </div>
               <div class="flex items-center">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                  <a href="product/event-stream">More about Event Stream</a>
+                  <Link to="/product/event-stream">More about Event Stream</Link>
                 </span>
               </div>
             </div>
@@ -234,7 +236,7 @@ const CloudDesktop = ({ data, location }) => {
               </div>
               <div class="flex items-center mt-4">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                  <a href="product/cloud-extract">More about Cloud Extract</a>
+                  <Link to="/product/cloud-extract">More about Cloud Extract</Link>
                 </span>
               </div>
             </div>
@@ -274,9 +276,9 @@ const CloudDesktop = ({ data, location }) => {
               </div>
               <div class="flex items-center">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                  <a href="product/warehouse-actions">
+                  <Link to="/product/warehouse-actions">
                     More about Warehouse Actions
-                  </a>
+                  </Link>
                 </span>
               </div>
             </div>
@@ -393,7 +395,7 @@ const CloudDesktop = ({ data, location }) => {
                   </div>
                   <div class="flex items-center mt-8">
                     <span className="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                      <a href="https://docs.rudderstack.com/">
+                      <a href="https://docs.rudderstack.com/user-guides/administrators-guide/rudderstack-dashboard">
                         More from Rudderstack docs
                       </a>
                     </span>
