@@ -72,7 +72,7 @@ const IntegrationsHelpBox = () => {
   return (
     <div className="bg-white filter-menu rounded-2xl py-8 px-6">
       <h2 className="text-lg md:text-xl text-blueNew-eastbay font-bold leading-7">
-        Don’t see that you need?
+        Don’t see what you need?
       </h2>
       <p className="text-sm md:text-xl leading-6 mt-2 text-secondary text-grayColor-custom">
         Reach out! Our integrations team will follow up and get your feedback on
