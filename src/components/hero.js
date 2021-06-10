@@ -93,10 +93,6 @@ function Hero(props) {
             </div>
           </div>
         </div>
-        <Helmet>
-          <script src={withPrefix("script.js")} type="text/javascript" />
-          <script src={withPrefix("script2.js")} type="text/javascript" />
-        </Helmet>
       </div>
     </section>
   )

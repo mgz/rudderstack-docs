@@ -5,3 +5,19 @@
  */
 
 // You can delete this file if you're not using it
+import React from 'react'
+
+export const onRenderBody = ({ setPostBodyComponents }) => {
+  setPostBodyComponents([
+    <script
+      key="hero-banner-animation-first"
+      src={'/script.js'}
+      defer
+    />,
+    <script
+      key="hero-banner-animation-second"
+      src={'/script2.js'}
+      defer
+    />,
+  ])
+}
