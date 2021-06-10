@@ -63,7 +63,7 @@ const Integration = props => {
                   <div
                     className={`${
                       resultCount === 0 ? "hidden" : "block"
-                    } bg-white rounded-2xl filter-menu py-10 px-6 mb-8`}
+                    } bg-white rounded-2xl filter-menu py-10 pl-6 pr-2 mb-8`}
                   >
                     <IntegrationTypeMenu attribute="integration_type" />
                     <div className="mt-10">
