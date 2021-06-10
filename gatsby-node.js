@@ -24,7 +24,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           "window.jQuery": "jquery",
         }),
       ],
-      devtool: "eval-source-map"
+      //devtool: "eval-source-map"
     })
   } else {
     actions.setWebpackConfig({
@@ -35,7 +35,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           "window.jQuery": "jquery",
         }),
       ],
-      devtool: "eval-source-map"
+      //devtool: "eval-source-map"
     })
   }
 }
@@ -190,14 +190,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const thankyoupages = thankyou.data.allSanityThankyoupages.edges || []
   thankyoupages.forEach((edge, index) => {
-    let path = ""
-    if (edge.node.slug.current === "thank-you") {
-      path = `/request-demo/${edge.node.slug.current}`
-    } else if (edge.node.slug.current === "webinar-thank-you") {
-      path = `/video-library/${edge.node.slug.current}`
-    } else {
-      path = `/form-submit/${edge.node.slug.current}`
-    }
+    let path = edge.node.slug.current;
 
     createPage({
       path,
