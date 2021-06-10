@@ -162,5 +162,52 @@ module.exports = {
         // delayLoadTime: 1000
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+        {
+          site {
+          siteMetadata {
+            title
+            description
+            siteUrl
+            site_url: siteUrl
+          }
+        }
+        }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allSanityBlog } }) => {
+              return allSanityBlog.edges.map(edge => {
+                return Object.assign({}, edge.node, {
+                  description: edge.node.meta_desc,
+                  date: edge.node._createdAt,
+                  url: site.siteMetadata.siteUrl + '/blog/' + edge.node.slug,
+                  guid: site.siteMetadata.siteUrl + '/blog/' + edge.node.slug,
+                //  custom_elements: [{ "content:encoded": edge.node._rawDescription }],
+                })
+              })
+            },
+            query: `
+            {
+              allSanityBlog(sort: {fields: _createdAt, order: DESC}) {
+                edges {
+                  node {
+                    slug
+                    title
+                    _createdAt
+                    meta_desc
+                  }
+                }
+              }
+            }
+            `,
+            output: "/rss.xml",
+          },
+        ],
+      },
+    },
   ],
 }
