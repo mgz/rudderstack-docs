@@ -64,7 +64,6 @@ const MainNavigation = () => {
                 <a href={trybtn.btnlink}>
                   <span className="btn-primary-sm inline-block px-3 sm:px-6">
                     {trybtn.btntext}
-                    {""}
                   </span>
                 </a>
               )
