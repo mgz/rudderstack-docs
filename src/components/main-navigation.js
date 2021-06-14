@@ -54,6 +54,7 @@ const MainNavigation = () => {
               src={"../images/rudderstack-logo-v2.svg"}
               alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
               placeholder="tracedSVG"
+              
             />
           </Link>
         </div>
