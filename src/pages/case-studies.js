@@ -140,7 +140,6 @@ export const pageQuery = graphql`
           article_dttm
           meta_desc
           meta_title
-          _rawPagebuildersectionarray
         }
       }
     }

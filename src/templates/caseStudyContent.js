@@ -6,13 +6,17 @@ import loadable from "@loadable/component"
 import CaseStudyHero from "../components/caseStudyHero"
 import SignupV1 from "../components/signup_v1"
 import LeftRightImgCnt from "../components/left-right-image-content"
+import LeftRightContentWithTitle from "../components/leftRightContentWithTitle"
+import HeroBannerWithCenterTextAndImage from "../components/heroBannerWithCenterTextAndImage"
+import CaseStuduiesPersonalize from "../components/caseStuduiesPersonalize"
+import Image from "../components/image"
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const CaseStudyContent = ({ data }) => {
   // console.log("sddadada", data.sanityFrontpageblock)
-  // console.log("pppp", data.casestudy)
+  console.log("pppp", data.casestudy)
   return (
     <Layout>
       <Helmet>
@@ -37,7 +41,7 @@ const CaseStudyContent = ({ data }) => {
       {data.casestudy._rawPagebuildersectionarray.map(section => {
         if (
           section._type === "common_global_sections" &&
-          section.common_section_type === "testimonial"
+          section.common_section_type === "global_testimonial_section"
         ) {
           let l_data = data.sanityFrontpageblock._rawPagebuildersectionarray.find(
             pp => pp._type === "testimonialsection"
@@ -51,12 +55,13 @@ const CaseStudyContent = ({ data }) => {
           )
         } else if (
           section._type === "common_global_sections" &&
-          section.common_section_type === "signup_v1"
+          section.common_section_type ===
+            "global_signup_with_right_image_section"
         ) {
           return <SignupV1 key={section._key} />
         } else if (
           section._type === "common_global_sections" &&
-          section.common_section_type === "get_started"
+          section.common_section_type === "global_get_started_section"
         ) {
           let l_data = data.sanityFrontpageblock._rawPagebuildersectionarray.find(
             pp => pp._type === "middlebannersection"
@@ -70,6 +75,38 @@ const CaseStudyContent = ({ data }) => {
           return (
             <div className="100%" key={section._key}>
               <LeftRightImgCnt applyGradientColorTheme={false} {...section} />{" "}
+            </div>
+          )
+        } else if (section._type === "banner_center_image") {
+          return (
+            <div className="100%" key={section._key}>
+              <HeroBannerWithCenterTextAndImage
+                title={data.casestudy.title}
+                {...section}
+              />
+            </div>
+          )
+        } else if (section._type === "left_right_content_with_title") {
+          return (
+            <div className="100%" key={section._key}>
+              <LeftRightContentWithTitle {...section} />
+            </div>
+          )
+        } else if (section._type === "image") {
+          return (
+            <div
+              className="100% max-w-6xl flex flex-col justify-center mx-auto"
+              key={section._key}
+            >
+              <div className=" px-0 py-0 md:px-36 md:py-8">
+                <Image props={section.asset._ref} />
+              </div>
+            </div>
+          )
+        } else if (section._type === "case_studies_personalization") {
+          return (
+            <div className="100% mb-28" key={section._key}>
+              <CaseStuduiesPersonalize {...section} />
             </div>
           )
         } else {
