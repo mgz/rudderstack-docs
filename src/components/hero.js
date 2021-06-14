@@ -35,7 +35,7 @@ function Hero(props) {
       container: document.getElementById("lottie"),
       renderer: "html",
       loop: true,
-      autoplay: true,
+      autoplay: false,
       animationData: HERO_ANIMATION_JSON,
     }
 
