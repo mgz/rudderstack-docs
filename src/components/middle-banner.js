@@ -15,7 +15,7 @@ const MiddleBanner = props => {
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           <div className="flex flex-wrap justify-items-center items-center sm:flex-row">
             <div className="flex items-start md:w-1/2">
-              <div className="">
+              <div className="w-32">
                 {/* <img src={ArrowImg} alt="Get Started Image" /> */}
                 <StaticImage
                   src="../images/Arrow.svg"
@@ -23,11 +23,11 @@ const MiddleBanner = props => {
                   alt="Get Started Image"
                 />
               </div>
-              <h3 className="text-4xl pl-5 md:pl-8 md:text-5xl font-bold font-custom leading-tight max-w-xs">
+              <h3 className="text-3xl-3 pl-5 md:pl-8 md:text-5xl font-bold font-custom leading-tight">
                 {title}
               </h3>
             </div>
-            <div className="md:w-1/2 max-w-lg">
+            <div className="md:w-1/2 max-w-lg md:pl-4">
               <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom">
                 <p>{smalldescription}</p>
                 <div className="block md:flex pt-8 md:pt-5">

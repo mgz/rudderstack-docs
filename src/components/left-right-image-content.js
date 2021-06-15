@@ -46,6 +46,10 @@ const LeftRightImgCnt = props => {
                 const smalltitle = content.smalltitle
                 const section_id = content.section_id
                 const title = content.title
+                const link_display_as_button = content.addlink
+                  ? content.addlink.cmn_display_as_button
+                  : false
+
                 const extralink = content.addlink
                   ? content.addlink.cmnexternallink
                   : ""
@@ -57,6 +61,7 @@ const LeftRightImgCnt = props => {
                 const content_display_ratio = content.content_display_ratio
                   ? content.content_display_ratio
                   : "50:50"
+
                 // console.log("cnt",content,smalltitle)
                 return (
                   <div
@@ -138,11 +143,17 @@ const LeftRightImgCnt = props => {
                                 return (
                                   <a
                                     href={linkurl}
-                                    className={`font-bold leading-normal text-sm lr-icon${
-                                      props.applyGradientColorTheme
-                                        ? "-gradient"
+                                    className={`font-bold leading-normal text-sm ${
+                                      link_display_as_button
+                                        ? "btn-primary-lg"
                                         : ""
-                                    }`}
+                                    } ${
+                                      props.applyGradientColorTheme
+                                        ? "lr-icon-gradient"
+                                        : !link_display_as_button
+                                        ? "lr-icon"
+                                        : ""
+                                    } `}
                                   >
                                     {linktext}
                                   </a>
@@ -150,9 +161,15 @@ const LeftRightImgCnt = props => {
                               } else {
                                 return (
                                   <span
-                                    className={`font-bold leading-normal text-sm lr-icon${
+                                    className={`font-bold leading-normal text-sm ${
+                                      link_display_as_button
+                                        ? "btn-primary-lg"
+                                        : ""
+                                    } ${
                                       props.applyGradientColorTheme
-                                        ? "-gradient"
+                                        ? "lr-icon-gradient"
+                                        : !link_display_as_button
+                                        ? "lr-icon"
                                         : ""
                                     }`}
                                   >
@@ -176,6 +193,10 @@ const LeftRightImgCnt = props => {
                 const extralink = content.addlink
                   ? content.addlink.cmnexternallink
                   : ""
+                const link_display_as_button = content.addlink
+                  ? content.addlink.cmn_display_as_button
+                  : false
+
                 const linktext = content.addlink
                   ? content.addlink.cmnlinktext
                   : ""
@@ -246,9 +267,15 @@ const LeftRightImgCnt = props => {
                               return (
                                 <a
                                   href={linkurl}
-                                  className={`font-bold leading-normal text-sm relative sm:inline-block lr-icon${
+                                  className={`font-bold leading-normal text-sm ${
+                                    link_display_as_button
+                                      ? "btn-primary-lg"
+                                      : ""
+                                  } relative sm:inline-block ${
                                     props.applyGradientColorTheme
-                                      ? "-gradient"
+                                      ? "lr-icon-gradient"
+                                      : !link_display_as_button
+                                      ? "lr-icon"
                                       : ""
                                   }`}
                                 >
@@ -258,9 +285,15 @@ const LeftRightImgCnt = props => {
                             } else {
                               return (
                                 <span
-                                  className={`font-bold leading-normal text-sm relative sm:inline-block lr-icon${
+                                  className={`font-bold leading-normal text-sm ${
+                                    link_display_as_button
+                                      ? "btn-primary-lg"
+                                      : ""
+                                  } relative sm:inline-block ${
                                     props.applyGradientColorTheme
-                                      ? "-gradient"
+                                      ? "lr-icon-gradient"
+                                      : !link_display_as_button
+                                      ? "lr-icon"
                                       : ""
                                   }`}
                                 >

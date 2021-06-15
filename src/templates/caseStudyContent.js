@@ -16,7 +16,11 @@ const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const CaseStudyContent = ({ data }) => {
   // console.log("sddadada", data.sanityFrontpageblock)
-  console.log("pppp", data.casestudy)
+  // console.log("pppp", data.casestudy)
+  // console.log("section_get_started", data.section_get_started)
+  // console.log("section_our_logos", data.section_our_logos)
+  // console.log("section_sign_up", data.section_sign_up)
+  // console.log("section_testimonials", data.section_testimonials)
   return (
     <Layout>
       <Helmet>
@@ -39,39 +43,7 @@ const CaseStudyContent = ({ data }) => {
       </Helmet>
 
       {data.casestudy._rawPagebuildersectionarray.map(section => {
-        if (
-          section._type === "common_global_sections" &&
-          section.common_section_type === "global_testimonial_section"
-        ) {
-          let l_data = data.sanityFrontpageblock._rawPagebuildersectionarray.find(
-            pp => pp._type === "testimonialsection"
-          )
-          return (
-            <Testimonial
-              key={section._key}
-              applyGradientColorTheme={false}
-              {...l_data}
-            />
-          )
-        } else if (
-          section._type === "common_global_sections" &&
-          section.common_section_type ===
-            "global_signup_with_right_image_section"
-        ) {
-          return <SignupV1 key={section._key} />
-        } else if (
-          section._type === "common_global_sections" &&
-          section.common_section_type === "global_get_started_section"
-        ) {
-          let l_data = data.sanityFrontpageblock._rawPagebuildersectionarray.find(
-            pp => pp._type === "middlebannersection"
-          )
-          return (
-            <section key={section._key} id="footer_section_for_demo">
-              <MiddleBanner {...l_data} />
-            </section>
-          )
-        } else if (section._type === "leftrightcontentimagesection") {
+        if (section._type === "leftrightcontentimagesection") {
           return (
             <div className="100%" key={section._key}>
               <LeftRightImgCnt applyGradientColorTheme={false} {...section} />{" "}
@@ -86,7 +58,7 @@ const CaseStudyContent = ({ data }) => {
               />
             </div>
           )
-        } else if (section._type === "left_right_content_with_title") {
+        } else if (section._type === "two_column_content_with_title") {
           return (
             <div className="100%" key={section._key}>
               <LeftRightContentWithTitle {...section} />
@@ -98,7 +70,7 @@ const CaseStudyContent = ({ data }) => {
               className="100% max-w-6xl flex flex-col justify-center mx-auto"
               key={section._key}
             >
-              <div className=" px-0 py-0 md:px-36 md:py-8">
+              <div className=" px-4 py-8 md:px-36 md:py-8">
                 <Image props={section.asset._ref} />
               </div>
             </div>
@@ -108,6 +80,38 @@ const CaseStudyContent = ({ data }) => {
             <div className="100% mb-28" key={section._key}>
               <CaseStuduiesPersonalize {...section} />
             </div>
+          )
+        } else if (section._type === "ref_section_get_started") {
+          let l_section_info = data.section_get_started.edges.find(
+            kl => kl.node._id === section._ref
+          )
+          return (
+            <section key={section._key} id="footer_section_for_case_studies">
+              <MiddleBanner {...l_section_info.node._rawGetStarted} />
+            </section>
+          )
+        } else if (section._type === "ref_section_signup") {
+          let l_section_info = data.section_sign_up.edges.find(
+            kl => kl.node._id === section._ref
+          )
+          return (
+            <div className="bg-backgroundsecondary 100%" key={section._key}>
+              <LeftRightImgCnt
+                applyGradientColorTheme={false}
+                {...l_section_info.node._rawSignup}
+              />
+            </div>
+          )
+        } else if (section._type === "ref_section_testimonials") {
+          let l_section_info = data.section_testimonials.edges.find(
+            kl => kl.node._id === section._ref
+          )
+          return (
+            <Testimonial
+              key={section._key}
+              applyGradientColorTheme={false}
+              {...l_section_info.node._rawTestimonials}
+            />
           )
         } else {
           return <div key={section._key}>{section._type}</div>
@@ -138,6 +142,43 @@ export const query = graphql`
 
     sanityFrontpageblock {
       _rawPagebuildersectionarray
+    }
+
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
+    }
+    section_our_logos: allSanitySectionOurlogos {
+      edges {
+        node {
+          _id
+          section_name
+          _rawOurLogos
+        }
+      }
+    }
+    section_sign_up: allSanitySectionSignup {
+      edges {
+        node {
+          _id
+          section_name
+          _rawSignup
+        }
+      }
+    }
+    section_testimonials: allSanitySectionTestimonials {
+      edges {
+        node {
+          _id
+          section_name
+          _rawTestimonials
+        }
+      }
     }
   }
 `

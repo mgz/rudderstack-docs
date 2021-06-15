@@ -658,6 +658,26 @@ top: -60px;
   right: 20px;
 }
 
+.circle-check-items ul li {
+  @apply relative;
+  @apply w-full;
+  @apply pl-11;
+  @apply mt-4;
+}
+
+
+.circle-check-items ul li::before {
+  @apply absolute;
+  content: "";
+  background-image: url("../images/circle_check.svg");
+  background-repeat: no-repeat;
+  @apply bg-center;
+  @apply w-5;
+  @apply h-5;
+  @apply top-1.5;
+  @apply left-0;
+}
+
 /*Source Integration Page Css*/
 .arrow-list-items ul li {
   @apply relative;

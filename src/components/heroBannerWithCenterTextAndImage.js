@@ -6,7 +6,7 @@ const HeroBannerWithCenterTextAndImage = props => {
   return (
     <div className="max-w-6xl px-4 md:px-3 mx-auto">
       <div className="flex flex-col justify-center ">
-        <h2 className="my-6 text-2xl md:text-5xl text-blueNew-midnight font-bold max-w-4xl mx-auto text-center">{props.title}</h2>
+        <h2 className="my-6 text-3xl-3 md:text-5xl text-blueNew-midnight font-bold max-w-4xl mx-auto text-center">{props.title}</h2>
         <div className="mx-auto">
           <Image props={props.centerimage.asset._ref} />
         </div>
