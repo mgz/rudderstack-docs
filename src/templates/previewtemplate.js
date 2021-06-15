@@ -25,6 +25,7 @@ class PreviewTemplate extends Component {
     const client = await sanityClient({
       projectId: project_id,
       dataset: dataset,
+      apiVersion: 'v2021-06-07',
       token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
       useCdn: false,
     })
