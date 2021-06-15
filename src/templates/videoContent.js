@@ -3,19 +3,19 @@ import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import "../lib/font-awesome"
 
-// import Layout from "../components/layout"
-// import MiddleBanner from "../components/middle-banner"
-// import VideoLibraryContentHeader from "../components/videoLibraryContentHeader"
-// import VideoContentLesson from "../components/videoContentLesson"
-// import VideoLibraryTopicsToCover from "../components/videoLibraryTopicsToCover"
-// import VideoLibrarySpeakers from "../components/videoLibrarySpeakers"
+import Layout from "../components/layout"
+import MiddleBanner from "../components/middle-banner"
+import VideoLibraryContentHeader from "../components/videoLibraryContentHeader"
+import VideoContentLesson from "../components/videoContentLesson"
+import VideoLibraryTopicsToCover from "../components/videoLibraryTopicsToCover"
+import VideoLibrarySpeakers from "../components/videoLibrarySpeakers"
 
-const Layout = loadable(() => import("../components/layout"))
-const MiddleBanner = loadable(() => import("../components/middle-banner"))
-const VideoLibraryContentHeader = loadable(() => import("../components/videoLibraryContentHeader"))
-const VideoContentLesson = loadable(() => import("../components/videoContentLesson"))
-const VideoLibraryTopicsToCover = loadable(() => import("../components/videoLibraryTopicsToCover"))
-const VideoLibrarySpeakers = loadable(() => import("../components/videoLibrarySpeakers"))
+// const Layout = loadable(() => import("../components/layout"))
+// const MiddleBanner = loadable(() => import("../components/middle-banner"))
+// const VideoLibraryContentHeader = loadable(() => import("../components/videoLibraryContentHeader"))
+// const VideoContentLesson = loadable(() => import("../components/videoContentLesson"))
+// const VideoLibraryTopicsToCover = loadable(() => import("../components/videoLibraryTopicsToCover"))
+// const VideoLibrarySpeakers = loadable(() => import("../components/videoLibrarySpeakers"))
 
 const videoContent = ({ data, location }) => {
   const lv_middlebannersection = (

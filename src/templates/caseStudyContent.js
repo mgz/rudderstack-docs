@@ -3,40 +3,36 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 
 import loadable from "@loadable/component"
-// import Layout from "../components/layout"
-// import LeftRightImgCnt from "../components/left-right-image-content"
-// import LeftRightContentWithTitle from "../components/leftRightContentWithTitle"
-// import HeroBannerWithCenterTextAndImage from "../components/heroBannerWithCenterTextAndImage"
-// import CaseStuduiesPersonalize from "../components/caseStuduiesPersonalize"
-// import Image from "../components/image"
 
-const Layout = loadable(() =>
-  import("../components/layout")
-)
-const LeftRightImgCnt = loadable(() =>
-  import("../components/left-right-image-content")
-)
-const LeftRightContentWithTitle = loadable(() =>
-  import("../components/leftRightContentWithTitle")
-)
-const HeroBannerWithCenterTextAndImage = loadable(() =>
-  import("../components/heroBannerWithCenterTextAndImage")
-)
-const CaseStuduiesPersonalize = loadable(() =>
-  import("../components/caseStuduiesPersonalize")
-)
-const Image = loadable(() => import("../components/image"))
+import Layout from "../components/layout"
+import LeftRightImgCnt from "../components/left-right-image-content"
+import LeftRightContentWithTitle from "../components/leftRightContentWithTitle"
+import HeroBannerWithCenterTextAndImage from "../components/heroBannerWithCenterTextAndImage"
+import CaseStuduiesPersonalize from "../components/caseStuduiesPersonalize"
+import Image from "../components/image"
+
+// const Layout = loadable(() =>
+//   import("../components/layout")
+// )
+// const LeftRightImgCnt = loadable(() =>
+//   import("../components/left-right-image-content")
+// )
+// const LeftRightContentWithTitle = loadable(() =>
+//   import("../components/leftRightContentWithTitle")
+// )
+// const HeroBannerWithCenterTextAndImage = loadable(() =>
+//   import("../components/heroBannerWithCenterTextAndImage")
+// )
+// const CaseStuduiesPersonalize = loadable(() =>
+//   import("../components/caseStuduiesPersonalize")
+// )
+// const Image = loadable(() => import("../components/image"))
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const CaseStudyContent = ({ data }) => {
-  // console.log("sddadada", data.sanityFrontpageblock)
-  // console.log("pppp", data.casestudy)
-  // console.log("section_get_started", data.section_get_started)
-  // console.log("section_our_logos", data.section_our_logos)
-  // console.log("section_sign_up", data.section_sign_up)
-  // console.log("section_testimonials", data.section_testimonials)
+ 
   return (
     <Layout>
       <Helmet>

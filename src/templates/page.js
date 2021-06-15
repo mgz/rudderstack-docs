@@ -2,33 +2,33 @@ import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 
-// import Hero from "../components/hero"
-// import Tabs from "../components/tabs"
-// import LeftRightImgCnt from "../components/left-right-image-content"
-// import LatestBlog from "../components/latest-blog"
-// import MiddleBanner from "../components/middle-banner"
-// import RightSideHiglightedContent from "../components/rightSideHiglightedContent"
-// import FreeText from "../components/freeText"
-// import GraphQLErrorList from "../components/graphql-error-list"
-// import SEO from "../components/seo"
-// import Layout from "../components/layout"
+import Hero from "../components/hero"
+import Tabs from "../components/tabs"
+import LeftRightImgCnt from "../components/left-right-image-content"
+import LatestBlog from "../components/latest-blog"
+import MiddleBanner from "../components/middle-banner"
+import RightSideHiglightedContent from "../components/rightSideHiglightedContent"
+import FreeText from "../components/freeText"
+import GraphQLErrorList from "../components/graphql-error-list"
+import SEO from "../components/seo"
+import Layout from "../components/layout"
 
-const Hero = loadable(() => import("../components/hero"))
-const Tabs = loadable(() => import("../components/tabs"))
-const LeftRightImgCnt = loadable(() =>
-  import("../components/left-right-image-content")
-)
-const LatestBlog = loadable(() => import("../components/latest-blog"))
-const MiddleBanner = loadable(() => import("../components/middle-banner"))
-const RightSideHiglightedContent = loadable(() =>
-  import("../components/rightSideHiglightedContent")
-)
-const FreeText = loadable(() => import("../components/freeText"))
-const GraphQLErrorList = loadable(() =>
-  import("../components/graphql-error-list")
-)
-const SEO = loadable(() => import("../components/seo"))
-const Layout = loadable(() => import("../components/layout"))
+// const Hero = loadable(() => import("../components/hero"))
+// const Tabs = loadable(() => import("../components/tabs"))
+// const LeftRightImgCnt = loadable(() =>
+//   import("../components/left-right-image-content")
+// )
+// const LatestBlog = loadable(() => import("../components/latest-blog"))
+// const MiddleBanner = loadable(() => import("../components/middle-banner"))
+// const RightSideHiglightedContent = loadable(() =>
+//   import("../components/rightSideHiglightedContent")
+// )
+// const FreeText = loadable(() => import("../components/freeText"))
+// const GraphQLErrorList = loadable(() =>
+//   import("../components/graphql-error-list")
+// )
+// const SEO = loadable(() => import("../components/seo"))
+// const Layout = loadable(() => import("../components/layout"))
 
 const OurLogo = loadable(() => import("../components/ourlogo"))
 const Testimonial = loadable(() => import("../components/testimonial"))

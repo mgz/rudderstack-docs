@@ -2,25 +2,25 @@ import React, { useState } from "react"
 import { graphql, Link, navigate } from "gatsby"
 import loadable from "@loadable/component"
 
-// import Layout from "../components/layout"
-// import SEO from "../components/seo"
-// import DemoForm from "../components/demoForm"
-// import DemoAdvantageItem from "../components/demoAdvantageItem"
-// import PortableText from "../components/portableText"
-// import OurLogo from "../components/ourlogo"
-// import Testimonial from "../components/testimonial"
-// import MiddleBanner from "../components/middle-banner"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import DemoForm from "../components/demoForm"
+import DemoAdvantageItem from "../components/demoAdvantageItem"
+import PortableText from "../components/portableText"
+import OurLogo from "../components/ourlogo"
+import Testimonial from "../components/testimonial"
+import MiddleBanner from "../components/middle-banner"
 
-const Layout = loadable(() => import("../components/layout"))
-const SEO = loadable(() => import("../components/seo"))
-const DemoForm = loadable(() => import("../components/demoForm"))
-const DemoAdvantageItem = loadable(() =>
-  import("../components/demoAdvantageItem")
-)
-const PortableText = loadable(() => import("../components/portableText"))
-const OurLogo = loadable(() => import("../components/ourlogo"))
-const Testimonial = loadable(() => import("../components/testimonial"))
-const MiddleBanner = loadable(() => import("../components/middle-banner"))
+// const Layout = loadable(() => import("../components/layout"))
+// const SEO = loadable(() => import("../components/seo"))
+// const DemoForm = loadable(() => import("../components/demoForm"))
+// const DemoAdvantageItem = loadable(() =>
+//   import("../components/demoAdvantageItem")
+// )
+// const PortableText = loadable(() => import("../components/portableText"))
+// const OurLogo = loadable(() => import("../components/ourlogo"))
+// const Testimonial = loadable(() => import("../components/testimonial"))
+// const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 export const query = graphql`
   query schDemo($slug: String) {
