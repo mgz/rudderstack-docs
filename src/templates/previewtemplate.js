@@ -22,11 +22,19 @@ class PreviewTemplate extends Component {
   }
 
   async componentDidMount(data) {
+    // const client = await sanityClient({
+    //   projectId: project_id,
+    //   dataset: dataset,
+    //   apiVersion: 'v2021-06-07',
+    //   token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
+    //   useCdn: false,
+    // })
     const client = await sanityClient({
-      projectId: project_id,
-      dataset: dataset,
-      apiVersion: 'v2021-06-07',
-      token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
+      projectId: "97bpcflt",
+      dataset: "production",
+      apiVersion: "v2021-06-07",
+      token:
+        "skoSfz1i62D7DEEO0es1q457F6XhfTNBNh7qEazGbcCqKwcbecbGtLGDmmL9bNH4tGUO8xiu81WsPWPloO2X6YIB4nvV8v4sNpGnmgYTGXY00MnAEbqhhE1yvB1YE7W0VNThFzYBou5D8KJ8gTVm7H1DwrT2IgGJeG7Ri2WTYDOVRT1t1zZx", // or leave blank for unauthenticated usage
       useCdn: false,
     })
 
@@ -166,9 +174,9 @@ class PreviewTemplate extends Component {
         let contentdata = {}
         contents.forEach(content => {
           contentdata.casestudy = content
-          
-          contentdata.casestudy._rawPagebuildersectionarray = content.pagebuildersectionarray
-          
+
+          contentdata.casestudy._rawPagebuildersectionarray =
+            content.pagebuildersectionarray
 
           contentdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
           contentdata.section_get_started = this.props.frontblock.section_get_started
