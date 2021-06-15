@@ -11,6 +11,12 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     {
+      resolve: 'gatsby-plugin-preconnect',
+      options: {
+        domains: ['https://rudderstack.com', 'http://localhost:8000'],
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/`,

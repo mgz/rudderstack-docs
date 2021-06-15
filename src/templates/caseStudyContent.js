@@ -60,7 +60,7 @@ const CaseStudyContent = ({ data }) => {
           )
         } else if (section._type === "two_column_content_with_title") {
           return (
-            <div className="100%" key={section._key}>
+            <div className="100% mb-4 md:mb-32" key={section._key}>
               <LeftRightContentWithTitle {...section} />
             </div>
           )

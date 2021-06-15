@@ -2,11 +2,10 @@ import React from "react"
 import PortableText from "./portableText"
 
 const LeftRightContentWithTitle = props => {
-  console.log("LeftRightContentWithTitle", props)
   return (
     <div className="max-w-6xl px-4 md:px-3 mx-auto">
       <div className="flex flex-col justify-center">
-        {props.section_title !== "" && (
+        {props.section_title && props.section_title !== "" && (
           <div className="max-w-4xl mx-auto mb-20">
             <h2 className="text-3xl-3 font-bold text-blueNew-midnight text-center">
               {props.section_title}

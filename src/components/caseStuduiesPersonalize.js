@@ -2,7 +2,6 @@ import React from "react"
 import PortableText from "./portableText"
 
 const CaseStuduiesPersonalize = props => {
-  console.log("CaseStuduiesPersonalize", props)
   return (
     <div className="max-w-6xl px-4 md:px-3 mx-auto">
       <div className="flex flex-col justify-center">
