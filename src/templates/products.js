@@ -1,14 +1,21 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import "../lib/font-awesome"
-import MiddleBanner from "../components/middle-banner"
-import ProductHeroBanner from "../components/productHeroBanner"
-import ProductImageWithListOfText from "../components/productImageWithListOfText"
-import LeftRightImgCnt from "../components/left-right-image-content"
-import Testimonial from "../components/testimonial"
+import loadable from "@loadable/component"
 
+// import Layout from "../components/layout"
+// import MiddleBanner from "../components/middle-banner"
+// import ProductHeroBanner from "../components/productHeroBanner"
+// import ProductImageWithListOfText from "../components/productImageWithListOfText"
+// import LeftRightImgCnt from "../components/left-right-image-content"
+// import Testimonial from "../components/testimonial"
 
+const Layout = loadable(() => import("../components/layout"))
+const MiddleBanner = loadable(() => import("../components/middle-banner"))
+const ProductHeroBanner = loadable(() => import("../components/productHeroBanner"))
+const ProductImageWithListOfText = loadable(() => import("../components/productImageWithListOfText"))
+const LeftRightImgCnt = loadable(() => import("../components/left-right-image-content"))
+const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Products = ({ data, location}) => {
 

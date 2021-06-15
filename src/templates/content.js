@@ -1,25 +1,35 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import Layout from "../components/layout"
-import Herobanner from "../components/herobanner"
-import PortableText from "../components/portableText"
-import BlogModule from "../components/latest-blog-module"
-import Image from "../components/image"
 import Link from "gatsby-link"
-import Subscription from "../components/Subscription"
-
+import loadable from "@loadable/component"
 import BlogTwitter from "../images/blogtwitter.svg"
 import BlogFb from "../images/blogfb.svg"
 import BlogIn from "../images/blogIn.svg"
-import MiddleBanner from "../components/middle-banner"
-import SignupV1 from "../components/signup_v1"
-
 import {
   TwitterShareButton,
   FacebookShareButton,
   LinkedinShareButton,
 } from "react-share"
+
+// import Layout from "../components/layout"
+// import Herobanner from "../components/herobanner"
+// import PortableText from "../components/portableText"
+// import BlogModule from "../components/latest-blog-module"
+// import Image from "../components/image"
+// import Subscription from "../components/Subscription"
+// import MiddleBanner from "../components/middle-banner"
+// import SignupV1 from "../components/signup_v1"
+
+
+const Layout = loadable(() =>  import("../components/layout"))
+const Herobanner = loadable(() =>  import("../components/herobanner"))
+const PortableText = loadable(() =>  import("../components/portableText"))
+const BlogModule = loadable(() =>  import("../components/latest-blog-module"))
+const Image = loadable(() =>  import("../components/image"))
+const Subscription = loadable(() =>  import("../components/Subscription"))
+const MiddleBanner = loadable(() =>  import("../components/middle-banner"))
+const SignupV1 = loadable(() =>  import("../components/signup_v1"))
 
 const Singleblog = ({ data, location, ...props }) => {
   const blog = data.blog

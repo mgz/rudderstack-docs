@@ -1,17 +1,37 @@
 import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import Layout from "../components/layout"
-import IntegrationHero from "../components/integrationHero"
-import IntegrationLeftRightContent from "../components/IntegrationLeftRightContent"
-import IntegrationHowToSetUp from "../components/IntegrationHowToSetUp"
-import IntegrationGetMoreOutOf from "../components/IntegrationGetMoreOutOf"
-import IntegrationSimilar from "../components/IntegrationSimilar"
-
 import "../lib/font-awesome"
-import MiddleBanner from "../components/middle-banner"
-import Faq from "../components/faq"
-import Testimonial from "../components/testimonial"
+
+import loadable from "@loadable/component"
+
+// import Layout from "../components/layout"
+// import IntegrationHero from "../components/integrationHero"
+// import IntegrationLeftRightContent from "../components/IntegrationLeftRightContent"
+// import IntegrationHowToSetUp from "../components/IntegrationHowToSetUp"
+// import IntegrationGetMoreOutOf from "../components/IntegrationGetMoreOutOf"
+// import IntegrationSimilar from "../components/IntegrationSimilar"
+// import MiddleBanner from "../components/middle-banner"
+// import Faq from "../components/faq"
+// import Testimonial from "../components/testimonial"
+
+const Layout = loadable(() => import("../components/layout"))
+const IntegrationHero = loadable(() => import("../components/integrationHero"))
+const IntegrationLeftRightContent = loadable(() =>
+  import("../components/IntegrationLeftRightContent")
+)
+const IntegrationHowToSetUp = loadable(() =>
+  import("../components/IntegrationHowToSetUp")
+)
+const IntegrationGetMoreOutOf = loadable(() =>
+  import("../components/IntegrationGetMoreOutOf")
+)
+const IntegrationSimilar = loadable(() =>
+  import("../components/IntegrationSimilar")
+)
+const MiddleBanner = loadable(() => import("../components/middle-banner"))
+const Faq = loadable(() => import("../components/faq"))
+const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Singleintegration = ({ data }) => {
   // console.log("integration-data", data._rawIntegrationHeroSection.herotitle)
@@ -42,14 +62,20 @@ const Singleintegration = ({ data }) => {
     <Layout>
       <Helmet>
         <title>{data.integration.meta_title || data.integration.title}</title>
-        <meta property="og:title" content={data.integration.meta_title || data.integration.title} />
+        <meta
+          property="og:title"
+          content={data.integration.meta_title || data.integration.title}
+        />
         <meta
           property="twitter:title"
           content={data.integration.meta_title || data.integration.title}
         />
         <meta name="description" content={data.integration.meta_desc} />
         <meta property="og:description" content={data.integration.meta_desc} />
-        <meta property="twitter:description" content={data.integration.meta_desc} />
+        <meta
+          property="twitter:description"
+          content={data.integration.meta_desc}
+        />
         <meta property="og:type" content="article" />
       </Helmet>
 
@@ -87,9 +113,7 @@ const Singleintegration = ({ data }) => {
         )}
 
         {data.integration.similarDestination && (
-          <IntegrationSimilar
-            data={data.integration.similarDestination}
-          />
+          <IntegrationSimilar data={data.integration.similarDestination} />
         )}
 
         <section id="testimonials">

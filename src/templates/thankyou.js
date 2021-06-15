@@ -1,9 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import PortableText from "../components/portableText"
-import MiddleBanner from "../components/middle-banner"
+import loadable from "@loadable/component"
+
+// import Layout from "../components/layout"
+// import PortableText from "../components/portableText"
+// import MiddleBanner from "../components/middle-banner"
+
+const Layout = loadable(() => import("../components/layout"))
+const PortableText = loadable(() => import("../components/PortableText"))
+const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const TrankYou = ({ data, htmlId }) => {
   const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []

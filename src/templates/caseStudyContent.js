@@ -1,15 +1,31 @@
 import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import Layout from "../components/layout"
+
 import loadable from "@loadable/component"
-import CaseStudyHero from "../components/caseStudyHero"
-import SignupV1 from "../components/signup_v1"
-import LeftRightImgCnt from "../components/left-right-image-content"
-import LeftRightContentWithTitle from "../components/leftRightContentWithTitle"
-import HeroBannerWithCenterTextAndImage from "../components/heroBannerWithCenterTextAndImage"
-import CaseStuduiesPersonalize from "../components/caseStuduiesPersonalize"
-import Image from "../components/image"
+// import Layout from "../components/layout"
+// import LeftRightImgCnt from "../components/left-right-image-content"
+// import LeftRightContentWithTitle from "../components/leftRightContentWithTitle"
+// import HeroBannerWithCenterTextAndImage from "../components/heroBannerWithCenterTextAndImage"
+// import CaseStuduiesPersonalize from "../components/caseStuduiesPersonalize"
+// import Image from "../components/image"
+
+const Layout = loadable(() =>
+  import("../components/layout")
+)
+const LeftRightImgCnt = loadable(() =>
+  import("../components/left-right-image-content")
+)
+const LeftRightContentWithTitle = loadable(() =>
+  import("../components/leftRightContentWithTitle")
+)
+const HeroBannerWithCenterTextAndImage = loadable(() =>
+  import("../components/heroBannerWithCenterTextAndImage")
+)
+const CaseStuduiesPersonalize = loadable(() =>
+  import("../components/caseStuduiesPersonalize")
+)
+const Image = loadable(() => import("../components/image"))
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 const MiddleBanner = loadable(() => import("../components/middle-banner"))
