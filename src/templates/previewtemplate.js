@@ -22,9 +22,16 @@ class PreviewTemplate extends Component {
   }
 
   async componentDidMount(data) {
-    const client = await sanityClient({
-      projectId: project_id,
-      dataset: dataset,
+    // const client = await sanityClient({
+    //   projectId: process.env.GATSBY_SANITY_PROJECTID,
+    //   dataset: process.env.GATSBY_SANITY_DATASET,
+    //   apiVersion: '2021-03-25',
+    //   token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
+    //   useCdn: false,
+    // })
+    console.log('variables',{
+      projectId: process.env.GATSBY_SANITY_PROJECTID,
+      dataset: process.env.GATSBY_SANITY_DATASET,
       apiVersion: '2021-03-25',
       token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
       useCdn: false,
@@ -35,13 +42,14 @@ class PreviewTemplate extends Component {
     //     token: process.env.GATSBY_SANITY_TOKEN, // or leave blank for unauthenticated usage
     //     useCdn: false,
     //   })
-    // const client = await sanityClient({
-    //   projectId: "97bpcflt",
-    //   dataset: "production",
-    //   token:
-    //     "skoSfz1i62D7DEEO0es1q457F6XhfTNBNh7qEazGbcCqKwcbecbGtLGDmmL9bNH4tGUO8xiu81WsPWPloO2X6YIB4nvV8v4sNpGnmgYTGXY00MnAEbqhhE1yvB1YE7W0VNThFzYBou5D8KJ8gTVm7H1DwrT2IgGJeG7Ri2WTYDOVRT1t1zZx", // or leave blank for unauthenticated usage
-    //   useCdn: false,
-    // })
+    const client = await sanityClient({
+      projectId: "97bpcflt",
+      dataset: "production",
+      apiVersion: '2021-03-25',
+      token:
+        "skoSfz1i62D7DEEO0es1q457F6XhfTNBNh7qEazGbcCqKwcbecbGtLGDmmL9bNH4tGUO8xiu81WsPWPloO2X6YIB4nvV8v4sNpGnmgYTGXY00MnAEbqhhE1yvB1YE7W0VNThFzYBou5D8KJ8gTVm7H1DwrT2IgGJeG7Ri2WTYDOVRT1t1zZx", // or leave blank for unauthenticated usage
+      useCdn: false,
+    })
     // console.log("debug-client", client)
     const params = { id: this.props.pageid }
     const type = this.props.type
