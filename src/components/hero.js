@@ -8,6 +8,9 @@ import { Helmet } from "react-helmet"
 import { withPrefix } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
+
+import { isMobile, isTablet, isBrowser } from "react-device-detect"
+
 function Hero(props) {
   // const myHTML = `<h1>John Doe</h1>`;
   const [showAnimation, setShowAnimation] = useState(false)
@@ -26,9 +29,16 @@ function Hero(props) {
   // }, [])
 
   useEffect(() => {
-    setTimeout(() => {
+    // console.log("isMobile,isTablet,isBrowser", isMobile, isTablet, isBrowser)
+ 
+    if (isTablet) {
       setShowAnimation(true)
-    }, 3000)
+    } else if (isBrowser) {
+      setShowAnimation(true)
+    }
+    // setTimeout(() => {
+    //   setShowAnimation(true)
+    // }, 3000)
   }, [])
 
   useEffect(() => {
