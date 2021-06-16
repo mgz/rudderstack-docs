@@ -22,24 +22,23 @@ class PreviewTemplate extends Component {
   }
 
   async componentDidMount(data) {
-    // const client = await sanityClient({
-    //   projectId: project_id,
-    //   dataset: dataset,
-    //   apiVersion: 'v2021-06-07',
-    //   token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
-    //   useCdn: false,
-    // })
     const client = await sanityClient({
-      projectId: "97bpcflt",
-      dataset: "production",
-      token:
-        "skoSfz1i62D7DEEO0es1q457F6XhfTNBNh7qEazGbcCqKwcbecbGtLGDmmL9bNH4tGUO8xiu81WsPWPloO2X6YIB4nvV8v4sNpGnmgYTGXY00MnAEbqhhE1yvB1YE7W0VNThFzYBou5D8KJ8gTVm7H1DwrT2IgGJeG7Ri2WTYDOVRT1t1zZx", // or leave blank for unauthenticated usage
+      projectId: project_id,
+      dataset: dataset,
+      token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
       useCdn: false,
     })
-    console.log("hari-debug", client)
+    // const client = await sanityClient({
+    //   projectId: "97bpcflt",
+    //   dataset: "production",
+    //   token:
+    //     "skoSfz1i62D7DEEO0es1q457F6XhfTNBNh7qEazGbcCqKwcbecbGtLGDmmL9bNH4tGUO8xiu81WsPWPloO2X6YIB4nvV8v4sNpGnmgYTGXY00MnAEbqhhE1yvB1YE7W0VNThFzYBou5D8KJ8gTVm7H1DwrT2IgGJeG7Ri2WTYDOVRT1t1zZx", // or leave blank for unauthenticated usage
+    //   useCdn: false,
+    // })
+    console.log("debug-client", client)
     const params = { id: this.props.pageid }
     const type = this.props.type
-
+    console.log("type & param, ", type, params)
     if (type === "blog") {
       const query =
         "*[_id == $id]{...,blog_authors[]->,blog_image{asset->{url}}}"
