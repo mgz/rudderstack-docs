@@ -28,12 +28,12 @@ class PreviewTemplate extends Component {
       token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
       useCdn: false,
     })
-    console.log('variables',{
-        projectId: project_id,
-        dataset: dataset,
-        token: process.env.GATSBY_SANITY_TOKEN, // or leave blank for unauthenticated usage
-        useCdn: false,
-      })
+    // console.log('variables',{
+    //     projectId: project_id,
+    //     dataset: dataset,
+    //     token: process.env.GATSBY_SANITY_TOKEN, // or leave blank for unauthenticated usage
+    //     useCdn: false,
+    //   })
     // const client = await sanityClient({
     //   projectId: "97bpcflt",
     //   dataset: "production",
