@@ -14,7 +14,7 @@ const LeftRightContentWithTitle = props => {
         )}
         <div className="flex flex-col md:flex-row">
           <div className="w-full md:w-1/2 flex flex-col pr-4 md:pr-20 mb-6 md:mb-0">
-            <h3 className="md:h-16 text-3xl font-bold text-blueNew-midnight">
+            <h3 className={`${props.left_content_title && props.left_content_title !== "" ? 'md:h-16' : 'h-0 md:h-16'} text-3xl font-bold text-blueNew-midnight`}>
               {props.left_content_title}
             </h3>
             <div
@@ -30,7 +30,7 @@ const LeftRightContentWithTitle = props => {
             </div>
           </div>
           <div className="w-full md:w-1/2 flex flex-col pr-4 md:pr-20 mb-6 md:mb-0">
-            <h3 className="h-16 text-3xl font-bold text-blueNew-midnight">
+            <h3 className={`${props.right_content_title && props.right_content_title !== "" ? 'md:h-16' : 'h-0 md:h-16'} text-3xl font-bold text-blueNew-midnight`}>
               {props.right_content_title}
             </h3>
             <div
