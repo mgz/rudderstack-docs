@@ -1,10 +1,11 @@
 import React from "react"
 import PortableText from "./portableText"
+import { StaticImage } from "gatsby-plugin-image"
 import Image from "./image"
 import Link from "gatsby-link"
 
-const IntegrationHowToSetUp = ({ data }) => {
-  // console.log("howtosetup", data)
+const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
+  console.log("howtosetup", integrationLogo)
   let renderButton = null
   if (
     data.freetextctc &&
@@ -47,12 +48,47 @@ const IntegrationHowToSetUp = ({ data }) => {
               <div className="relative block sm:flex mt-14">{renderButton}</div>
             </div>
             <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 mt-14 sm:mt-0 lg:pl-36 md:pl-28">
-              {data.freetextrightimage && data.freetextrightimage.asset && (
+              <div className="flex flex-row">
+                <div className="bg-white rounded-lg p-8 shadow-md h-36  w-36">
+                  {/* <StaticImage
+                    src="../images/rudderstack-short-logo.png"
+                    alt="cust-logo"
+                    class="h-full w-full"
+                    placeholder="tracedSVG"
+                  /> */}
+                  <Image
+                    props={integrationLogo.asset._ref}
+                    // classes="w-full h-full"
+                    // classes="mx-auto my-auto"
+                    classes="object-scale-down h-full w-full"
+                  />
+                </div>
+                <div className="mx-auto my-auto">
+                  <StaticImage
+                    src="../images/plus-sign.png"
+                    alt="cust-logo"
+                    class="h-24 w-24"
+                    placeholder="tracedSVG"
+                  />
+                </div>
+
+                <div className="bg-white rounded-lg p-8 shadow-md h-36  w-36">
+                  <StaticImage
+                    src="../images/rudderstack-short-logo.png"
+                    alt="cust-logo"
+                    // class="h-full w-full"
+                    // classes="w-72 mx-auto my-auto"
+                    class="object-scale-down h-full w-full"
+                    placeholder="tracedSVG"
+                  />
+                </div>
+              </div>
+              {/* {data.freetextrightimage && data.freetextrightimage.asset && (
                 <Image
                   props={data.freetextrightimage.asset._ref}
                   classes="w-full"
                 />
-              )}
+              )} */}
             </div>
           </div>
         </div>
