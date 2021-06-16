@@ -34,7 +34,7 @@ import Testimonial from "../components/testimonial"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Singleintegration = ({ data }) => {
-  console.log("integration-data", data)
+  // console.log("integration-data", data)
   const lv_testimonialsection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "testimonialsection")

@@ -5,7 +5,7 @@ import Image from "./image"
 import Link from "gatsby-link"
 
 const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
-  console.log("howtosetup", integrationLogo)
+  // console.log("howtosetup", integrationLogo)
   let renderButton = null
   if (
     data.freetextctc &&
