@@ -26,7 +26,7 @@ class PreviewTemplate extends Component {
       projectId: process.env.GATSBY_SANITY_PROJECTID,
       dataset: process.env.GATSBY_SANITY_DATASET,
       apiVersion: '2021-03-25',
-      token: process.env.GATSBY_SANITY_PROJECTID, // or leave blank for unauthenticated usage
+      token: process.env.GATSBY_SANITY_TOKEN, // or leave blank for unauthenticated usage
       useCdn: false,
     })
     // console.log('variables',{
