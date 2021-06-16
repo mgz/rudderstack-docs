@@ -10,8 +10,8 @@ import VideoContent from "./videoContent"
 import CaseStudyContent from "./caseStudyContent"
 
 const sanityClient = require("@sanity/client")
-const project_id = process.env.RS_SANITY_PROJECTID
-const dataset = process.env.RS_SANITY_DATASET
+const project_id = process.env.GATSBY_SANITY_PROJECTID
+const dataset = process.env.GATSBY_SANITY_DATASET
 
 var component = ""
 
@@ -32,7 +32,7 @@ class PreviewTemplate extends Component {
     console.log('variables',{
         projectId: project_id,
         dataset: dataset,
-        token: process.env.RS_SANITY_TOKEN, // or leave blank for unauthenticated usage
+        token: process.env.GATSBY_SANITY_TOKEN, // or leave blank for unauthenticated usage
         useCdn: false,
       })
     const client = await sanityClient({
