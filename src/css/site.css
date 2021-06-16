@@ -478,7 +478,17 @@ body {
   /* margin-bottom: 24px; */
   padding: 9px 16px;
 }
-
+.demo_form textarea {
+  /* height: 40px; */
+  color: #4e4e4e;
+  background: #ffffff;
+  border: 1px solid #a7a7a7;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  /* margin-bottom: 24px; */
+  padding: 9px 16px;
+}
 .videoLibrary_form input {
   height: 40px;
   color: #4e4e4e;
@@ -497,6 +507,17 @@ body {
 }
 
 .demo_form input:focus {
+  outline: none !important;
+  border-color: #0066ff;
+  border: 1px solid #0066ff;
+  /* box-shadow: 0px 2px 4px #0066ff; */
+}
+.demo_form textarea::placeholder {
+  color: #a7a7a7;
+  font-size: 14px;
+}
+
+.demo_form textarea:focus {
   outline: none !important;
   border-color: #0066ff;
   border: 1px solid #0066ff;
@@ -711,6 +732,14 @@ top: -60px;
 }
 .video-banner-bg .text-5xl {
   font-size: 48px !important;
+}
+
+/*Video On Demand*/
+.conract-us-bg {
+  background: url("../images/video-banner-bg.svg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 51%;
 }
 
 .speaker-pic {
