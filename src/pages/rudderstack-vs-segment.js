@@ -2,23 +2,13 @@ import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-import IconPC from "../images/spot-illustrations-developer-laptop.svg"
-import IconStack from "../images/spot-illustrations-warehouse.svg"
-import IconLock from "../images/spot-illustrations-security-control.svg"
-import IconLeaf from "../images/spot-illustrations-pricing.svg"
-
-import IconTransformation from "../images/spot-illustrations-transformations.svg"
-import IconDataGovernce from "../images/spot-illustrations-data-governance.svg"
-import IconRichGrafana from "../images/spot-illustrations-dashboard.svg"
-
 import MiddleBanner from "../components/middle-banner"
 import loadable from "@loadable/component"
 import ExploreRudderStack from "../components/ExploreRudderStack"
 import { StaticImage } from "gatsby-plugin-image"
 import SegmentSpecialistV2 from "../components/SegmentSpecialistV2"
 
-import SegmentLogo from "../images/segment-logo.png"
-import Logo from "../images/logo-2x.png"
+
 const Testimonial = loadable(() => import("../components/testimonial"))
 
 const SegmentDesktop = ({ data, location }) => {
@@ -107,8 +97,9 @@ const SegmentDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2 sm:px-2 mt-5 mx-4 md:mx-0">
                 <div className="h-full flex flex-col justify-start items-center text-center bg-white py-10 px-10 rounded-2xl">
                   <div className="h-20">
-                    <img
-                      src={IconPC}
+                    <StaticImage
+                      src={"../images/spot-illustrations-developer-laptop.svg"}
+                      placeholder="tracedSVG"
                       alt="RudderStack is developer-focused"
                       className="w-full"
                     />
@@ -129,8 +120,9 @@ const SegmentDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2 sm:px-2 mt-5 mx-4 md:mx-0">
                 <div className="h-full flex flex-col justify-start items-center text-center bg-white py-10 px-10 rounded-2xl">
                   <div className="h-20">
-                    <img
-                      src={IconStack}
+                    <StaticImage
+                      src={"../images/spot-illustrations-warehouse.svg"}
+                      placeholder="tracedSVG"
                       alt="RudderStack is warehouse-first"
                       className="w-full"
                     />
@@ -152,8 +144,9 @@ const SegmentDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2 sm:px-2 mt-5 mx-4 md:mx-0">
                 <div className="h-full flex flex-col justify-start items-center text-center bg-white py-10 px-10 rounded-2xl">
                   <div className="h-20">
-                    <img
-                      src={IconLock}
+                    <StaticImage
+                      src={"../images/spot-illustrations-security-control.svg"}
+                      placeholder="tracedSVG"
                       alt="RudderStack doesn’t store any of your data"
                       className="w-full"
                     />
@@ -175,8 +168,9 @@ const SegmentDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2 sm:px-2 mt-5 mx-4 md:mx-0">
                 <div className="h-full flex flex-col justify-start items-center text-center bg-white py-10 px-10 rounded-2xl">
                   <div className="h-20">
-                    <img
-                      src={IconLeaf}
+                    <StaticImage
+                      src={"../images/spot-illustrations-pricing.svg"}
+                      placeholder="tracedSVG"
                       alt="RudderStack offers usage-based pricing"
                       className="w-full"
                     />
@@ -217,8 +211,9 @@ const SegmentDesktop = ({ data, location }) => {
               <div className="w-full md:w-1/3 sm:px-2 mt-5">
                 <div className="h-full flex flex-col justify-start items-center text-center py-10 px-4 rounded-2xl">
                   <div className="h-20">
-                    <img
-                      src={IconTransformation}
+                    <StaticImage
+                      src={"../images/spot-illustrations-transformations.svg"}
+                      placeholder="tracedSVG"
                       alt="Transformations"
                       className="w-full"
                     />
@@ -239,8 +234,9 @@ const SegmentDesktop = ({ data, location }) => {
               <div className="w-full md:w-1/3 sm:px-2 mt-5">
                 <div className="h-full flex flex-col justify-start items-center text-center py-10 px-4 rounded-2xl">
                   <div className="h-20">
-                    <img
-                      src={IconDataGovernce}
+                    <StaticImage
+                      src={"../images/spot-illustrations-data-governance.svg"}
+                      placeholder="tracedSVG"
                       alt="Data Governance API"
                       className="w-full"
                     />
@@ -261,8 +257,9 @@ const SegmentDesktop = ({ data, location }) => {
               <div className="w-full md:w-1/3 sm:px-2 mt-5">
                 <div className="h-full flex flex-col justify-start items-center text-center py-10 px-4 rounded-2xl">
                   <div className="h-20">
-                    <img
-                      src={IconRichGrafana}
+                    <StaticImage
+                      src={"../images/spot-illustrations-dashboard.svg"}
+                      placeholder="tracedSVG"
                       alt="Rich Grafana Dashboards"
                       className="w-full"
                     />

@@ -1,28 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Link from "gatsby-link"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import algoliasearch from "algoliasearch/lite"
 import "../lib/font-awesome"
 import MiddleBanner from "../components/middle-banner"
 import JoinOurTeam from "../components/joinOurTeam"
-
-import Integrationschart from "../images/illustration-integrations.svg"
-
-import WareHouse from "../images/spot-illustrations-warehouse.svg"
-import OpenSource from "../images/spot-illustrations-open-source.svg"
-import Pricing from "../images/spot-illustrations-pricing.svg"
-
-import EventStream from "../images/illustration-event-stream-identify-call.svg"
-import CloudExtract from "../images/illustration-cloud-extract-white-bg.svg"
-import WarehouseActions from "../images/illustration-warehouse-actions.svg"
-
-import Transformations from "../images/spot-illustrations-transformations.svg"
-import DataAPI from "../images/spot-illustrations-data-governance.svg"
-import DbtModals from "../images/spot-illustrations-dbt-model.svg"
-import Grafana from "../images/spot-illustrations-dashboard.svg"
-
+ 
 const CloudDesktop = ({ data, location }) => {
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
@@ -102,8 +88,9 @@ const CloudDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2">
                 <div className="flex flex-col justify-center items-center text-center mx-7 mb-20">
                   <div className="m-2">
-                    <img
-                      src={WareHouse}
+                    <StaticImage
+                      src={"../images/spot-illustrations-warehouse.svg"}
+                      placeholder="tracedSVG"
                       alt="cloud desktop"
                       className="w-full"
                     />
@@ -123,8 +110,9 @@ const CloudDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2">
                 <div className="flex flex-col justify-center items-center text-center mx-7 mb-20">
                   <div className="m-2">
-                    <img
-                      src={OpenSource}
+                    <StaticImage
+                      src={"../images/spot-illustrations-open-source.svg"}
+                      placeholder="tracedSVG"
                       alt="cloud desktop"
                       className="w-full"
                     />
@@ -143,7 +131,12 @@ const CloudDesktop = ({ data, location }) => {
               <div className="w-full px-0 sm:px-12 lg:px-40">
                 <div className="flex flex-col justify-center items-center text-center mx-7 mb-20">
                   <div className="m-2">
-                    <img src={Pricing} alt="cloud desktop" className="w-full" />
+                    <StaticImage
+                      src={"../images/spot-illustrations-pricing.svg"}
+                      placeholder="tracedSVG"
+                      alt="cloud desktop"
+                      className="w-full"
+                    />
                   </div>
                   <div className="text-2xl-2 font-bold mb-6">
                     Transparent pricing
@@ -209,18 +202,30 @@ const CloudDesktop = ({ data, location }) => {
               </div>
               <div class="flex items-center">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                  <Link to="/product/event-stream">More about Event Stream</Link>
+                  <Link to="/product/event-stream">
+                    More about Event Stream
+                  </Link>
                 </span>
               </div>
             </div>
             <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 mt-12 sm:mt-0">
-              <img src={EventStream} alt="event stream" className="w-full" />
+              <StaticImage
+                src={"../images/illustration-event-stream-identify-call.svg"}
+                placeholder="tracedSVG"
+                alt="event stream"
+                className="w-full"
+              />
             </div>
           </div>
           <div className="flex items-center flex-wrap flex-col-reverse sm:flex-row mt-6 md:mt-16">
             {/*Cloud Extract*/}
             <div className="w-full sm:w-1/2 sm:p-6 sm:pl-0 mt-12 sm:mt-0">
-              <img src={CloudExtract} alt="cloud extract" className="w-full" />
+              <StaticImage
+                src={"../images/illustration-cloud-extract-white-bg.svg"}
+                placeholder="tracedSVG"
+                alt="cloud extract"
+                className="w-full"
+              />
             </div>
             <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0">
               <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-dark font-bold leading-tight">
@@ -236,7 +241,9 @@ const CloudDesktop = ({ data, location }) => {
               </div>
               <div class="flex items-center mt-4">
                 <span class="font-bold leading-normal text-sm lr-icon relative inline-flex sm:inline-block ">
-                  <Link to="/product/cloud-extract">More about Cloud Extract</Link>
+                  <Link to="/product/cloud-extract">
+                    More about Cloud Extract
+                  </Link>
                 </span>
               </div>
             </div>
@@ -283,8 +290,9 @@ const CloudDesktop = ({ data, location }) => {
               </div>
             </div>
             <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 mt-12 sm:mt-">
-              <img
-                src={WarehouseActions}
+              <StaticImage
+                src={"../images/illustration-warehouse-actions.svg"}
+                placeholder="tracedSVG"
                 alt="event stream"
                 className="w-full"
               />
@@ -304,8 +312,9 @@ const CloudDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2 sm:px-5 mt-10">
                 <div className="h-full flex flex-col justify-start items-center text-center bg-white py-10 px-8 rounded-2xl">
                   <div className="h-20">
-                    <img
-                      src={Transformations}
+                    <StaticImage
+                      src={"../images/spot-illustrations-transformations.svg"}
+                      placeholder="tracedSVG"
                       alt="cloud desktop"
                       className="w-full"
                     />
@@ -332,7 +341,12 @@ const CloudDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2 sm:px-5 mt-10">
                 <div className="h-full flex flex-col justify-start items-center text-center bg-white py-10 px-8 rounded-2xl">
                   <div className="h-20">
-                    <img src={DataAPI} alt="cloud desktop" className="w-full" />
+                    <StaticImage
+                      src={"../images/spot-illustrations-data-governance.svg"}
+                      placeholder="tracedSVG"
+                      alt="cloud desktop"
+                      className="w-full"
+                    />
                   </div>
                   <div class="text-2xl-2 font-bold mb-6 mt-2">
                     Data Governance API
@@ -355,8 +369,9 @@ const CloudDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2 sm:px-5 mt-10">
                 <div className="h-full flex flex-col justify-start items-center text-center bg-white py-10 px-8 rounded-2xl">
                   <div className="h-20">
-                    <img
-                      src={DbtModals}
+                    <StaticImage
+                      src={"../images/spot-illustrations-dbt-model.svg"}
+                      placeholder="tracedSVG"
                       alt="cloud desktop"
                       className="w-full"
                     />
@@ -382,7 +397,12 @@ const CloudDesktop = ({ data, location }) => {
               <div className="w-full sm:w-1/2 sm:px-5 mt-10">
                 <div className="h-full flex flex-col justify-start items-center text-center bg-white py-10 px-8 rounded-2xl">
                   <div className="h-20">
-                    <img src={Grafana} alt="cloud desktop" className="w-full" />
+                    <StaticImage
+                      src={"../images/spot-illustrations-dashboard.svg"}
+                      placeholder="tracedSVG"
+                      alt="cloud desktop"
+                      className="w-full"
+                    />
                   </div>
                   <div class="text-2xl-2 font-bold mb-6 mt-2">
                     Grafana Dashboards
@@ -429,7 +449,12 @@ const CloudDesktop = ({ data, location }) => {
               </div>
             </div>
             <div className="w-full sm:w-2/5 sm:p-6 sm:pr-0 list-stream">
-              <img src={Integrationschart} alt="product" className="w-full" />
+              <StaticImage
+                src="../images/illustration-integrations.svg"
+                placeholder="tracedSVG"
+                alt="product"
+                className="w-full"
+              />
             </div>
           </div>
         </div>

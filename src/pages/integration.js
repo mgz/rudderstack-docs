@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import algoliasearch from "algoliasearch/lite"
 import CustomSearchBox from "../components/customSearchBox"
@@ -9,7 +10,6 @@ import { InstantSearch } from "react-instantsearch-dom"
 import IntegrationHits from "../components/integrationHits"
 import IntegrationsHelpBox from "../components/Integrations-help"
 import ScrollUpButton from "react-scroll-up-button"
-import ScrollTopBtn from "../images/float-btn.svg"
 import MiddleBanner from "../components/middle-banner"
 
 const Integration = props => {
@@ -100,8 +100,9 @@ const Integration = props => {
             TransitionClassName="floatbtnanimation"
             ShowAtPosition={500}
           >
-            <img
-              src={ScrollTopBtn}
+            <StaticImage
+              src={"../images/float-btn.svg"}
+              placeholder="tracedSVG"
               alt="Source Integration"
               className="w-full"
             />

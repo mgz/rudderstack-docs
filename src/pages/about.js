@@ -4,12 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { StaticImage } from "gatsby-plugin-image"
 
-import open_source from "../images/spot-illustrations-open-source.svg"
-import build from "../images/spot-illustrations-developer-laptop.svg"
-import privacy from "../images/spot-illustrations-security-control.svg"
-import customerobsessed from "../images/spot-illustrations-customer.svg"
-
-import Integrationschart from "../images/illustration-integrations-new.svg"
 import MiddleBanner from "../components/middle-banner"
 import JoinOurTeam from "../components/joinOurTeam"
 
@@ -60,9 +54,10 @@ const About = ({ data }) => {
               </p>
             </div>
             <div className="lg:max-w-lg lg:w-full md:w-1/2 w-full">
-              <img
-                src={Integrationschart}
+              <StaticImage
+                src="../images/illustration-integrations-new.svg"
                 alt="Integration Chart"
+                placeholder="tracedSVG"
                 className="w-full"
               />
             </div>
@@ -85,7 +80,11 @@ const About = ({ data }) => {
             <div className="md:w-1/2 mb-16 md:mb-16">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center">
-                  <img src={open_source} />
+                  <StaticImage
+                    src="../images/spot-illustrations-open-source.svg"
+                    alt="open source"
+                    placeholder="tracedSVG"
+                  />
                 </div>
                 <h2 className="text-2xl-2 font-bold mb-2">Open-source</h2>
                 <p className="leading-relaxed text-sm sm:text-lg  text-grayColor-custom">
@@ -99,7 +98,11 @@ const About = ({ data }) => {
             <div className="md:w-1/2 mb-16 md:mb-16">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center">
-                  <img src={privacy} />
+                  <StaticImage
+                    src="../images/spot-illustrations-security-control.svg"
+                    alt="privacy"
+                    placeholder="tracedSVG"
+                  />
                 </div>
                 <h2 className="text-2xl-2 font-bold mb-2">
                   Privacy &amp; Security-focused
@@ -115,7 +118,11 @@ const About = ({ data }) => {
             <div className="md:w-1/2 mb-16 md:mb-16">
               <div className="lg:pr-16">
                 <div className="w-16 h-16 inline-flex items-center justify-center">
-                  <img src={build} />
+                  <StaticImage
+                    src="../images/spot-illustrations-developer-laptop.svg"
+                    alt="build"
+                    placeholder="tracedSVG"
+                  />
                 </div>
                 <h2 className="text-2xl-2 font-bold title-font mb-2">
                   Built for Engineers &amp; Data Scientists
@@ -130,7 +137,11 @@ const About = ({ data }) => {
             <div className="md:w-1/2">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center">
-                  <img src={customerobsessed} />
+                  <StaticImage
+                    src="../images/spot-illustrations-customer.svg"
+                    alt="build"
+                    placeholder="tracedSVG"
+                  />
                 </div>
                 <h2 className="text-2xl-2 font-bold title-font mb-2">
                   Customer-Obsessed

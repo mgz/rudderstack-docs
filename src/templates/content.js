@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Link from "gatsby-link"
 import loadable from "@loadable/component"
+import { StaticImage } from "gatsby-plugin-image"
+
 import BlogTwitter from "../images/blogtwitter.svg"
 import BlogFb from "../images/blogfb.svg"
 import BlogIn from "../images/blogIn.svg"
@@ -20,7 +22,6 @@ import Image from "../components/image"
 import Subscription from "../components/Subscription"
 import MiddleBanner from "../components/middle-banner"
 import SignupV1 from "../components/signup_v1"
-
 
 // const Layout = loadable(() =>  import("../components/layout"))
 // const Herobanner = loadable(() =>  import("../components/herobanner"))
@@ -76,21 +77,34 @@ const Singleblog = ({ data, location, ...props }) => {
         <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-24 mt-3 top-0 lg:left-0 md:left-4">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
             <a className="block" href="#">
-              <img src={BlogTwitter} className="text-blueNew-midnight" alt="twitter" />
+              <StaticImage
+                src={"../images/blogtwitter.svg"}
+                placeholder="tracedSVG"
+                className="text-blueNew-midnight"
+                alt="twitter"
+              />
             </a>
           </TwitterShareButton>
           <FacebookShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
           >
             <a className="my-3 block" href="#">
-              <img src={BlogFb} alt="Facebook" />
+              <StaticImage
+                src={"../images/blogfb.svg"}
+                placeholder="tracedSVG"
+                alt="Facebook"
+              />
             </a>
           </FacebookShareButton>
           <LinkedinShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
           >
             <a className="block" href="#">
-              <img src={BlogIn} alt="linkdin" />
+              <StaticImage
+                src={"../images/blogIn.svg"}
+                placeholder="tracedSVG"
+                alt="linkdin"
+              />
             </a>
           </LinkedinShareButton>
         </div>

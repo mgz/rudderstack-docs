@@ -2,7 +2,6 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
 import { StaticImage } from "gatsby-plugin-image"
-import ArrowImg from "../images/Arrow.svg"
 import Link from "gatsby-link"
 
 const MiddleBanner = props => {

@@ -1,6 +1,4 @@
 import React from "react"
-import Speaker2 from "../images/speaker2.svg"
-import Speaker1 from "../images/speaker1.svg"
 
 const VideoLibrarySpeakers = ({ speakers, allAuthors }) => {
   return (

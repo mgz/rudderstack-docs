@@ -1,6 +1,4 @@
 import React from "react"
-import ProductVideo from "../images/product-video-view.svg"
-import VideoPlayBtn from "../images/video_play-btn.svg"
 // import PortableText from "./portableText"
 import Link from "gatsby-link"
 
