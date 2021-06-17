@@ -170,11 +170,11 @@ const ContactUsForm = props => {
   return (
     <form
       id={props.formId}
-      className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg top-0 mx-auto`}
+      className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-12 flex flex-col w-full xl:w-120 md:max-w-lg top-0 mx-auto`}
     >
       {props.hideLabels !== true && (
         <div className="text-lg text-grayColor-custom mb-2 ">
-          First Name <span className="text-blueNew-midnight">*</span>
+          First name <span className="text-blueNew-midnight">*</span>
         </div>
       )}
 
@@ -198,7 +198,7 @@ const ContactUsForm = props => {
 
       {props.hideLabels !== true && (
         <div className="text-lg text-grayColor-custom mb-2 ">
-          Last Name <span className="text-blueNew-midnight">*</span>
+          Last name <span className="text-blueNew-midnight">*</span>
         </div>
       )}
 
@@ -263,6 +263,7 @@ const ContactUsForm = props => {
       <textarea
         type="text"
         rows="4"
+        className="resize-none"
         value={formData.message}
         name="message"
         placeholder="Write your message here"

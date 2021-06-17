@@ -6,7 +6,7 @@ import algoliasearch from "algoliasearch/lite"
 import CustomSearchBox from "../components/customSearchBox"
 // import CustomMenu from "../components/blogCategoryList"
 import CaseStudiesMenu from "../components/caseStudiesCategoryList"
-import SingleRowContentCaseStudy from '../components/singleRowContentCaseStrudy'
+import SingleRowContentCaseStudy from "../components/singleRowContentCaseStrudy"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import CustomHits from "../components/customHits"
 import CustomCaseStudiesHits from "../components/customCaseStudiesHits"
@@ -40,8 +40,11 @@ const CaseStudies = ({ data }) => {
             }
           >
             <Configure hitsPerPage={9} />
-            
+
             <div className="my-10 w-full">
+              <p className="mb-14 text-3xl font-bold text-blueNew-midnight">
+                Case Studies
+              </p>
               <SingleRowContentCaseStudy data={data.casestudies} />
             </div>
 
@@ -121,7 +124,9 @@ export const pageQuery = graphql`
     sanityFrontpageblock {
       _rawPagebuildersectionarray
     }
-    casestudies: allSanityCaseStudies(sort: { fields: article_dttm, order: DESC }) {
+    casestudies: allSanityCaseStudies(
+      sort: { fields: article_dttm, order: DESC }
+    ) {
       edges {
         node {
           id

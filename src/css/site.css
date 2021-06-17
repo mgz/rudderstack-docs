@@ -882,6 +882,9 @@ top: -60px;
     background-image: none;
     background-repeat: no-repeat;
   }
+  .conract-us-bg {
+    background: none;
+  }
 }
 
 @media only screen and (max-width: 480px) {

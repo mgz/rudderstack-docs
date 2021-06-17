@@ -7,7 +7,7 @@ const LeftRightContentWithTitle = props => {
       <div className="flex flex-col justify-center">
         {props.section_title && props.section_title !== "" && (
           <div className="max-w-4xl mx-auto mb-20">
-            <h2 className="text-3xl-3 font-bold text-blueNew-midnight text-center">
+            <h2 className="text-3xl-3 font-bold text-blueNew-midnight text-center tracking-tight leading-tight">
               {props.section_title}
             </h2>
           </div>

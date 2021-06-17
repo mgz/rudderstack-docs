@@ -29,7 +29,7 @@ const ThreeRowContentCaseStudies = ({ hits }) => {
                         {`${hit.category}`}
                       </div>
 
-                      <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6 text-blueNew-midnight">
+                      <h2 className="flex-auto mt-0 text-lg md:text-xl-2 font-bold mb-6 text-blueNew-midnight">
                         {hit.title}
                       </h2>
                     </Link>
