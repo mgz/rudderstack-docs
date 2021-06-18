@@ -11,9 +11,9 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     {
-      resolve: 'gatsby-plugin-preconnect',
+      resolve: "gatsby-plugin-preconnect",
       options: {
-        domains: ['https://rudderstack.com', 'http://localhost:8000'],
+        domains: ["https://rudderstack.com", "http://localhost:8000"],
       },
     },
     {
@@ -104,7 +104,8 @@ module.exports = {
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
-        indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_video_library",
+        indexName:
+          process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_video_library",
         queries: require("./src/utils/video-library-algolia"),
         enablePartialUpdates: true,
         matchFields: [
@@ -117,7 +118,7 @@ module.exports = {
           "weight",
           "duration",
           "logoimage",
-          "webinar_dttm"
+          "webinar_dttm",
         ],
       },
     },
@@ -126,7 +127,8 @@ module.exports = {
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
-        indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_case_studies",
+        indexName:
+          process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_case_studies",
         queries: require("./src/utils/case-studies-algolia"),
         enablePartialUpdates: true,
         matchFields: [
@@ -136,7 +138,7 @@ module.exports = {
           "shortdescription",
           "weight",
           "logoimage",
-          "article_dttm"
+          "article_dttm",
         ],
       },
     },
@@ -190,9 +192,9 @@ module.exports = {
                 return Object.assign({}, edge.node, {
                   description: edge.node.meta_desc,
                   date: edge.node._createdAt,
-                  url: site.siteMetadata.siteUrl + '/blog/' + edge.node.slug,
-                  guid: site.siteMetadata.siteUrl + '/blog/' + edge.node.slug,
-                //  custom_elements: [{ "content:encoded": edge.node._rawDescription }],
+                  url: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug,
+                  guid: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug,
+                  //  custom_elements: [{ "content:encoded": edge.node._rawDescription }],
                 })
               })
             },
@@ -215,5 +217,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-meta-redirect` // make sure to put last in the array
   ],
 }

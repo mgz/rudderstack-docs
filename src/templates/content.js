@@ -5,9 +5,6 @@ import Link from "gatsby-link"
 import loadable from "@loadable/component"
 import { StaticImage } from "gatsby-plugin-image"
 
-import BlogTwitter from "../images/blogtwitter.svg"
-import BlogFb from "../images/blogfb.svg"
-import BlogIn from "../images/blogIn.svg"
 import {
   TwitterShareButton,
   FacebookShareButton,
@@ -33,6 +30,7 @@ import SignupV1 from "../components/signup_v1"
 // const SignupV1 = loadable(() =>  import("../components/signup_v1"))
 
 const Singleblog = ({ data, location, ...props }) => {
+
   const blog = data.blog
   const blogAuthors = data.blog.blog_authors
   const maintitle = props.maintitle

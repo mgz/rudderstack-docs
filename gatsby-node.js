@@ -41,7 +41,25 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 }
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
+  createRedirect({
+    fromPath: "/blog/why-it-needs-to-own-the-cdp",
+    toPath: "/why-engineering-and-it-need-to-own-the-cdp",
+    isPermanent: true,
+  })
+
+  createRedirect({
+    fromPath: "/case-studies",
+    toPath: "/blog",
+    isPermanent: true,
+  })
+
+  createRedirect({
+    fromPath: "/blog/why-you-dont-want-a-customer-data-platform",
+    toPath: "/blogs/why-you-dont-want-a-cdp-made-for-marketers",
+    isPermanent: true,
+  })
 
   const result = await graphql(`
     {
@@ -190,7 +208,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const thankyoupages = thankyou.data.allSanityThankyoupages.edges || []
   thankyoupages.forEach((edge, index) => {
-    let path = edge.node.slug.current;
+    let path = edge.node.slug.current
 
     createPage({
       path,
