@@ -12,34 +12,37 @@ const VideoLibrarySpeakers = ({ speakers, allAuthors }) => {
             let l_currentAuthor = allAuthors.edges.find(
               oo => oo.node._id === ii._ref
             )
-
-            return (
-              <div
-                key={ii._key}
-                className="w-full sm:p-6 sm:pl-0 sm:pr-3.5 speaker rounded-2xl"
-              >
-                <div className=" py-12 sm:px-14 px-6 flex flex-col items-center text-center">
-                  <div className="speaker-pic">
-                    <img
-                      src={l_currentAuthor.node.author_image.asset.url}
-                      alt={l_currentAuthor.node.author_name}
-                      className="w-full h-full rounded-full"
-                    />
+            if (l_currentAuthor) {
+              return (
+                <div
+                  key={ii._key}
+                  className="w-full sm:p-6 sm:pl-0 sm:pr-3.5 speaker rounded-2xl"
+                >
+                  <div className=" py-12 sm:px-14 px-6 flex flex-col items-center text-center">
+                    <div className="speaker-pic">
+                      <img
+                        src={l_currentAuthor.node.author_image.asset.url}
+                        alt={l_currentAuthor.node.author_name}
+                        className="w-full h-full rounded-full"
+                      />
+                    </div>
+                    <div className="speaker_name flex flex-col my-8">
+                      <label className="mb-1.5 leading-6 font-medium">
+                        {l_currentAuthor.node.author_name}
+                      </label>
+                      <span className="leading-6">
+                        {l_currentAuthor.node.author_position}
+                      </span>
+                    </div>
+                    <p className="leading-6">
+                      {l_currentAuthor.node.author_desc}
+                    </p>
                   </div>
-                  <div className="speaker_name flex flex-col my-8">
-                    <label className="mb-1.5 leading-6 font-medium">
-                      {l_currentAuthor.node.author_name}
-                    </label>
-                    <span className="leading-6">
-                      {l_currentAuthor.node.author_position}
-                    </span>
-                  </div>
-                  <p className="leading-6">
-                    {l_currentAuthor.node.author_desc}
-                  </p>
                 </div>
-              </div>
-            )
+              )
+            } else {
+              return null
+            }
           })}
         </div>
       </div>
