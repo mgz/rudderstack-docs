@@ -45,7 +45,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   createRedirect({
     fromPath: "/blog/why-it-needs-to-own-the-cdp",
-    toPath: "/why-engineering-and-it-need-to-own-the-cdp",
+    toPath: "/blog/why-engineering-and-it-need-to-own-the-cdp",
     isPermanent: true,
   })
 
@@ -57,7 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   createRedirect({
     fromPath: "/blog/why-you-dont-want-a-customer-data-platform",
-    toPath: "/blogs/why-you-dont-want-a-cdp-made-for-marketers",
+    toPath: "/blog/why-you-dont-want-a-cdp-made-for-marketers",
     isPermanent: true,
   })
 
