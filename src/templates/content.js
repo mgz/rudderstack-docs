@@ -59,6 +59,10 @@ const Singleblog = ({ data, location, ...props }) => {
           property="twitter:title"
           content={blog.meta_title || blog.title}
         />
+         <meta
+          property="og:type"
+          content="article"
+        />
         <meta
           property="twitter:description"
           content={blog.meta_desc}
@@ -69,10 +73,7 @@ const Singleblog = ({ data, location, ...props }) => {
           property="og:url"
           content={location.href}
         />
-        <meta
-          property="og:type"
-          content="article"
-        />
+       
         <meta
           property="og:image"
           content={blog.blog_image.asset.url}
@@ -83,7 +84,7 @@ const Singleblog = ({ data, location, ...props }) => {
         />
         <meta
           property="twitter:creator"
-          content={author_names || blog.meta_title || blog.title}
+          content={author_names || blog.title}
         />
         <meta
           property="twitter:image:alt"

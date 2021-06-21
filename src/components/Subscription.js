@@ -27,7 +27,7 @@ const Subscription = props => {
     const params = new URLSearchParams(document.location.search.substring(1))
 
     window.rudderanalytics.identify(
-      "",
+      email,
       {
         email: email,
         form_id: props.formId,
