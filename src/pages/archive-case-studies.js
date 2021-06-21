@@ -33,7 +33,8 @@ const CaseStudies = ({ data }) => {
   return (
     <Layout>
       <Helmet>
-        <meta property="robots" content={"noindex, nofollow"} />
+        <meta name="robots" content="noindex" />
+        <meta name="robots" content="nofollow" />
       </Helmet>
       <div className="font-custom">
         <div className="max-w-6xl mx-auto flex flex-wrap flex-col px-4 mb-8 md:mb-28">

@@ -30,7 +30,6 @@ import SignupV1 from "../components/signup_v1"
 // const SignupV1 = loadable(() =>  import("../components/signup_v1"))
 
 const Singleblog = ({ data, location, ...props }) => {
-
   const blog = data.blog
   const blogAuthors = data.blog.blog_authors
   const maintitle = props.maintitle
@@ -53,14 +52,50 @@ const Singleblog = ({ data, location, ...props }) => {
       <Helmet>
         <title>{blog.meta_title || blog.title}</title>
         <meta property="og:title" content={blog.meta_title || blog.title} />
+
+        <meta name="description" content={blog.meta_desc} />
+        <meta property="og:description" content={blog.meta_desc} />
         <meta
           property="twitter:title"
           content={blog.meta_title || blog.title}
         />
-        <meta name="description" content={blog.meta_desc} />
-        <meta property="og:description" content={blog.meta_desc} />
-        <meta property="twitter:description" content={blog.meta_desc} />
-        <meta property="og:type" content="article" />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="twitter:description"
+          content={blog.meta_desc}
+        />
+
+        {/* added by Hari on 2021-06-21 to show share card across twitter, linkedin and facebook */}
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:url"
+          content={location.href}
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:type"
+          content="article"
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:image"
+          content={blog.blog_image.asset.url}
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="twitter:card"
+          content="summary"
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="twitter:creator"
+          content={author_names || blog.meta_title || blog.title}
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="twitter:image:alt"
+          content={blog.title}
+        />
       </Helmet>
       <div className="blog_banner">
         <Herobanner
@@ -74,14 +109,14 @@ const Singleblog = ({ data, location, ...props }) => {
         {/*Blog Content*/}
         <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-24 mt-3 top-0 lg:left-0 md:left-4">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
-            <a className="block" href="#">
-              <StaticImage
-                src={"../images/blogtwitter.svg"}
-                placeholder="tracedSVG"
-                className="text-blueNew-midnight"
-                alt="twitter"
-              />
-            </a>
+            {/* <a className="block" href="#"> */}
+            <StaticImage
+              src={"../images/blogtwitter.svg"}
+              placeholder="tracedSVG"
+              className="text-blueNew-midnight"
+              alt="twitter"
+            />
+            {/* </a> */}
           </TwitterShareButton>
           <FacebookShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
