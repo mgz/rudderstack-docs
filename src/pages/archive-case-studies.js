@@ -15,6 +15,7 @@ import "../lib/font-awesome"
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
+import { Helmet } from "react-helmet"
 
 const CaseStudies = ({ data }) => {
   // console.log('case-studies-full-data',data)
@@ -31,6 +32,9 @@ const CaseStudies = ({ data }) => {
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
   return (
     <Layout>
+      <Helmet>
+        <meta property="robots" content={"noindex, nofollow"} />
+      </Helmet>
       <div className="font-custom">
         <div className="max-w-6xl mx-auto flex flex-wrap flex-col px-4 mb-8 md:mb-28">
           <InstantSearch
