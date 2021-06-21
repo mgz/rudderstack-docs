@@ -60,39 +60,32 @@ const Singleblog = ({ data, location, ...props }) => {
           content={blog.meta_title || blog.title}
         />
         <meta
-          prefix="og: http://ogp.me/ns#"
           property="twitter:description"
           content={blog.meta_desc}
         />
 
         {/* added by Hari on 2021-06-21 to show share card across twitter, linkedin and facebook */}
         <meta
-          prefix="og: http://ogp.me/ns#"
           property="og:url"
           content={location.href}
         />
         <meta
-          prefix="og: http://ogp.me/ns#"
           property="og:type"
           content="article"
         />
         <meta
-          prefix="og: http://ogp.me/ns#"
           property="og:image"
           content={blog.blog_image.asset.url}
         />
         <meta
-          prefix="og: http://ogp.me/ns#"
           property="twitter:card"
           content="summary"
         />
         <meta
-          prefix="og: http://ogp.me/ns#"
           property="twitter:creator"
           content={author_names || blog.meta_title || blog.title}
         />
         <meta
-          prefix="og: http://ogp.me/ns#"
           property="twitter:image:alt"
           content={blog.title}
         />

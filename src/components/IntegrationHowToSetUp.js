@@ -67,7 +67,7 @@ const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
                   <StaticImage
                     src="../images/plus-sign.png"
                     alt="cust-logo"
-                    class="h-24 w-24"
+                    class="md:h-24 md:w-24"
                     placeholder="tracedSVG"
                   />
                 </div>
