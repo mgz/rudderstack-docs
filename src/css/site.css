@@ -689,7 +689,6 @@ top: -60px;
   @apply mt-4;
 }
 
-
 .circle-check-items ul li::before {
   @apply absolute;
   content: "";
