@@ -414,6 +414,9 @@ body {
   font-weight: bold;
   color: #000000;
 }
+.frtxt-contnt h2 {
+  line-height: 46px !important;
+}
 .frtxt-contnt p {
   margin-bottom: 2rem;
 }
