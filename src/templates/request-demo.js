@@ -183,9 +183,10 @@ const Demo = ({ data, htmlId, location }) => {
             <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
               <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
                 <DemoForm
-                  formId={`${location.pathname
-                    .replace("/", "")
-                    .replace("-", "_")}_form_top`}
+                  // formId={`${location.pathname
+                  //   .replace("/", "")
+                  //   .replace("-", "_")}_form_top`}
+                  formId={'demo-or-quote-request'}
                   submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                   onDemoFormSubmit={onDemoFormSubmit}
                   isLoading={isLoading}
@@ -275,7 +276,7 @@ const Demo = ({ data, htmlId, location }) => {
       <Helmet>
         <script>
           {`function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
-ChiliPiper.scheduling("rudderstack", "request_demo_form_top", {title: "Thanks! What time works best for a quick call?"})
+ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {title: "Thanks! What time works best for a quick call?"})
 `}
         </script>
         <script
