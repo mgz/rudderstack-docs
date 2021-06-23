@@ -183,10 +183,9 @@ const Demo = ({ data, htmlId, location }) => {
             <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
               <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
                 <DemoForm
-                  // formId={`${location.pathname
-                  //   .replace("/", "")
-                  //   .replace("-", "_")}_form_top`}
-                  formId={'demo-or-quote-request'}
+                  formId={`${location.pathname
+                    .replace("/", "")
+                    .replace("-", "_")}_form_top`}
                   submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                   onDemoFormSubmit={onDemoFormSubmit}
                   isLoading={isLoading}
