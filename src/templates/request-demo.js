@@ -1,6 +1,8 @@
 import React, { useState } from "react"
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet"
 import { graphql, Link, navigate } from "gatsby"
+import loadable from "@loadable/component"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import DemoForm from "../components/demoForm"
@@ -9,12 +11,21 @@ import PortableText from "../components/portableText"
 import OurLogo from "../components/ourlogo"
 import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
-import $ from "jquery"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+
+// const Layout = loadable(() => import("../components/layout"))
+// const SEO = loadable(() => import("../components/seo"))
+// const DemoForm = loadable(() => import("../components/demoForm"))
+// const DemoAdvantageItem = loadable(() =>
+//   import("../components/demoAdvantageItem")
+// )
+// const PortableText = loadable(() => import("../components/portableText"))
+// const OurLogo = loadable(() => import("../components/ourlogo"))
+// const Testimonial = loadable(() => import("../components/testimonial"))
+// const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 export const query = graphql`
-  query schDemo {
-    sanitySchdemo {
+  query schDemo($slug: String) {
+    sanitySchdemo(slug: { current: { eq: $slug } }) {
       title
       _rawPagebuildersectionarray
       slug {
@@ -27,7 +38,7 @@ export const query = graphql`
   }
 `
 
-const Demo = ({ data, htmlId,location }) => {
+const Demo = ({ data, htmlId, location }) => {
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
@@ -55,6 +66,7 @@ const Demo = ({ data, htmlId,location }) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const onDemoFormSubmit = data => {
+    // console.log('on demo submit',data)
     try {
       if (!window.rudderanalytics) {
         return
@@ -116,7 +128,7 @@ const Demo = ({ data, htmlId,location }) => {
           },
         }
       )
-
+      // console.log("step3")
       fetch("https://usebasin.com/f/73ab69b8652a.json", {
         method: "post",
         body: JSON.stringify({
@@ -138,8 +150,9 @@ const Demo = ({ data, htmlId,location }) => {
         },
       })
         .then(res => {
-          if (res.statusText === "OK") {
-            //navigate("/request-demo/thank-you")
+          // console.log('usebasin',res)
+          if (res.ok || res.statusText === "OK") {
+            navigate("/request-demo/thank-you")
           }
         })
         .catch(err => {
@@ -152,8 +165,9 @@ const Demo = ({ data, htmlId,location }) => {
     }
   }
 
+  // console.log("sss", location)
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title="Schedule Demo" />
       <div className="font-custom">
         <section id="demo_hdr">
@@ -168,7 +182,9 @@ const Demo = ({ data, htmlId,location }) => {
             <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
               <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
                 <DemoForm
-                  formId="request_demo_form_top"
+                  formId={`${location.pathname
+                    .replace("/", "")
+                    .replace("-", "_")}_form_top`}
                   submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                   onDemoFormSubmit={onDemoFormSubmit}
                   isLoading={isLoading}
@@ -191,7 +207,7 @@ const Demo = ({ data, htmlId,location }) => {
           <div className="w-full bg-grayColor-BgGray">
             <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
               <div className="sm:mb-24 mb-10">
-                <span className="text-3xl md:text-5xl font-bold">
+                <span className="text-3xl md:text-5xl font-bold text-blueNew-midnight">
                   {lv_demoadvantages[0].advantage_header_text}
                 </span>
               </div>
@@ -216,7 +232,7 @@ const Demo = ({ data, htmlId,location }) => {
         </section>
         <section id="logos" className="px-8">
           <OurLogo
-            customHeaderText={`The top companies in the world use RudderStack to Activate their customer data`}
+            customHeaderText={`The top companies in the world use RudderStack to activate their customer data`}
             {...lv_ourlogoblock[0]}
           />
         </section>
@@ -228,7 +244,7 @@ const Demo = ({ data, htmlId,location }) => {
           <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 max-w-6xl mx-auto px-6 sm:mb-24 sm:mt-12 md:mt-36">
             <div className="w-full pr-4 lg:pr-16 pt-0  text-xl  md:w-3/6 md:block">
               <div className="mb-4">
-                <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight">
+                <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight text-blueNew-midnight">
                   {lv_demofooterleft[0].demo_footer_header_text}
                 </span>
               </div>
@@ -239,7 +255,10 @@ const Demo = ({ data, htmlId,location }) => {
             <div className="w-full px-0 md:w-3/6 flex flex-row justify-end">
               <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
-                formId="request_demo_form_bottom"
+                formId={`${location.pathname
+                  .replace("/", "")
+                  .replace("-", "_")}_form_bottom`}
+                // formId="request_demo_form_bottom"
                 isFooterForm={true}
                 isLoading={isLoading}
                 onDemoFormSubmit={onDemoFormSubmit}
@@ -252,17 +271,17 @@ const Demo = ({ data, htmlId,location }) => {
           <MiddleBanner {...lv_middlebannersection[0]} />
         </section>
       </div>
-    <Helmet>
-      <script> 
-{`function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
+      <Helmet>
+        <script>
+          {`function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
 ChiliPiper.scheduling("rudderstack", "demo-request", {title: "Thanks! What time works best for a quick call?"})
 `}
-      </script>
-      <script
-        src="https://js.na.chilipiper.com/marketing.js"
-        type="text/javascript"
-      />
-    </Helmet>
+        </script>
+        <script
+          src="https://js.na.chilipiper.com/marketing.js"
+          type="text/javascript"
+        />
+      </Helmet>
     </Layout>
   )
 }

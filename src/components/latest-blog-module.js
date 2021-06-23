@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { format } from "date-fns"
 import Link from "gatsby-link"
+import { useLocation } from '@reach/router';
 
 const categories = {
   technical: "Technical",
@@ -23,9 +24,8 @@ const BlogModule = () => {
             }
             blog_image {
               asset {
-                fluid {
-                  src
-                }
+                id
+                url
               }
             }
           }
@@ -33,7 +33,7 @@ const BlogModule = () => {
       }
     }
   `)
-
+  const location = useLocation();
   const latestblogs = data.allSanityBlog.edges
 
   return (
@@ -45,27 +45,27 @@ const BlogModule = () => {
         })
         return (
           <div className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full">
-            <a
-              href={`blog/` + latestblog.node.slug}
+            <Link
+              to={`/blog/` + latestblog.node.slug}
               className="block bg-white rounded-t rounded-b-none overflow-hidden shadow relative h-full"
             >
               <img
-                src={latestblog.node.blog_image.asset.fluid.src}
+                src={latestblog.node.blog_image.asset.url}
                 alt={latestblog.node.title}
                 className="w-full"
               />
               {/* commented by Hari on 2021-04-23 */}
               {/* <div className="uppercase text-blueNew-category text-sm px-5 font-bold pt-6">{categories[latestblog.node.blog_category]}</div> */}
-              <div className="uppercase text-blueNew-category text-sm font-bold px-5 pt-6">
+              <div className="uppercase text-purple text-sm font-bold px-5 pt-6">
                 {latestblog.node.blog_category}
               </div>
-              <div className="w-full text-lg md:text-2xl leading-6 md:leading-7 font-bold pt-2 pb-16 px-5 blog-title-wrap text-gray-dark">
+              <div className="w-full text-lg md:text-2xl leading-6 md:leading-7 font-bold pt-2 pb-16 px-5 blog-title-wrap text-primary">
                 {latestblog.node.title}
               </div>
-              <div className="text-blueNew-category text-sm px-5 font-bold absolute bottom-6">
+              <div className="text-purple text-sm px-5 font-bold absolute bottom-6">
                 {author_names}
               </div>
-            </a>
+            </Link>
           </div>
         )
       })}

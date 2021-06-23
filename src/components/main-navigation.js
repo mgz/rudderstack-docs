@@ -16,9 +16,7 @@ const MainNavigation = () => {
             headerblock {
               hdrlogo {
                 asset {
-                  fluid {
-                    src
-                  }
+                  url
                 }
               }
               mainnavigation {
@@ -52,9 +50,9 @@ const MainNavigation = () => {
       <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 flex-wrap">
         <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
           <Link to="/" className="pl-4 sm:pl-0">
-           
-             <StaticImage
-              src={"../images/logo-2x.png"}
+            <StaticImage
+              // src={"../images/rudderstack-logo-v2.svg"}
+              src={"../images/rudderstack-logo-header-v2.png"}
               alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
               placeholder="tracedSVG"
             />
@@ -125,7 +123,7 @@ const MainNavigation = () => {
               if (trybtn.btnexternallink === true) {
                 return (
                   <a href={trybtn.btnlink}>
-                    <span className="inline-block text-white bg-black-custom text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg hover:bg-blueNew-custom">
+                    <span className="border-transparent inline-block text-white  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg ">
                       {trybtn.btntext}
                     </span>
                   </a>
@@ -133,7 +131,7 @@ const MainNavigation = () => {
               } else {
                 return (
                   <Link to={trybtn.btnlink}>
-                    <span className="inline-block text-white bg-black-custom text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg hover:bg-blueNew-custom">
+                    <span className="border-transparent inline-block text-white  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg ">
                       {trybtn.btntext}
                     </span>
                   </Link>

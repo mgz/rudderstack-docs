@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
 
 import { useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
+import { withPrefix } from "gatsby"
 
 import MainNavigation from "../components/main-navigation"
 import FooterNav from "../components/footer-nav"
@@ -20,7 +22,7 @@ import PortableText from "../components/portableText"
 import { StaticImage } from "gatsby-plugin-image"
 import CookiesConsent from "./cookiesConsent"
 
-const Layout = ({ children }) => {
+const Layout = ({ location, showExplicitGradient, children }) => {
   const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
@@ -29,9 +31,7 @@ const Layout = ({ children }) => {
             headerblock {
               hdrlogo {
                 asset {
-                  fluid {
-                    src
-                  }
+                  url
                 }
               }
               mainnavigation {
@@ -49,9 +49,7 @@ const Layout = ({ children }) => {
               _rawFooterWidgetSection
               footer_logo {
                 asset {
-                  fluid {
-                    src
-                  }
+                  url
                 }
               }
               copy_right_text
@@ -75,15 +73,37 @@ const Layout = ({ children }) => {
     data.allSanitySiteSettings.edges[0].node.socailmenublock
       ._rawSocialWidgetSection
   const footerlogo =
-    data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.fluid
-      .src
+    data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
+
+  // console.log("path", location, showExplicitGradient)
+  let diableGradient = false
+  if (
+    location &&
+    (location.pathname.startsWith("/product/") ||
+      location.pathname.startsWith("/request-demo") ||
+      location.pathname.startsWith("/enterprise-quote") ||
+      location.pathname.startsWith("/rudderstack-vs-segment") ||
+      location.pathname.startsWith("/cloud") ||
+      (location.pathname.startsWith("/video-library/") &&
+        showExplicitGradient === false) ||
+      location.pathname.startsWith("/blog/"))
+  ) {
+    diableGradient = true
+  }
   return (
-    <>
+    <div
+      id="main-container"
+      className={`gradient-${diableGradient ? "disable" : "enable"}`}
+    >
+      {/* <Helmet>
+        <script src={withPrefix("script.js")} type="text/javascript" />
+        <script src={withPrefix("script2.js")} type="text/javascript" />
+      </Helmet> */}
       <CookiesConsent />
       <MainNavigation />
       <main>{children}</main>
 
-      <footer className=" bg-black px-4 sm:px-4 text-sm bg-black-custom md:pt-0">
+      <footer className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0">
         <div className="max-w-6xl mx-auto footer-menus-wrap">
           <div className="w-full py-6 font-custom inline-block">
             {footermenus.map((menu, i) => (
@@ -121,10 +141,16 @@ const Layout = ({ children }) => {
                           target="_blank"
                           rel="noreferrer"
                           // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                          className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-custom md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
+                          className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                         >
+                          {/* <img
+                            src={SlackImg}
+                            alt="slack image"
+                            className="mr-2"
+                          /> */}
                           <StaticImage
                             src="../images/Slack.svg"
+                            placeholder="tracedSVG"
                             className="mr-2"
                           />
                           Join our Slack Community
@@ -135,7 +161,7 @@ const Layout = ({ children }) => {
                           target="_blank"
                           rel="noreferrer"
                           // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                          className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-custom md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
+                          className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                         >
                           Go to docs
                         </a>
@@ -148,7 +174,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
         <div className="max-w-6xl w-full flex mx-auto flex-wrap  px-3">
-          <div className="flex text-white">
+          <div className="flex">
             {socialitems.map((socialitem, i) => (
               <>
                 {(() => {
@@ -157,7 +183,7 @@ const Layout = ({ children }) => {
                     return (
                       <a
                         key={socialitem._key}
-                        className="icons pr-6 md:pr-4"
+                        className="footer-social-icon bg-seegreen"
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon icon={socialitem.social_item_icon} />
@@ -167,7 +193,7 @@ const Layout = ({ children }) => {
                     return (
                       <a
                         key={socialitem._key}
-                        className="icons pr-6 md:pr-4"
+                        className="footer-social-icon bg-seegreen"
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon
@@ -193,7 +219,7 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   )
 }
 

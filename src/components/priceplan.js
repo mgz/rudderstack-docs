@@ -1,25 +1,54 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import Link from "gatsby-link"
 
 function PricePlans() {
+  {
+    /*Pricing Table Header Fixed*/
+  }
+  const [sticky, setSticky] = useState(true)
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+  const handleScroll = () => {
+    if (
+      document.getElementsByClassName("cover-table")[0].offsetHeight +
+        document.getElementsByClassName("cover-table")[0].offsetTop -
+        window.scrollY >
+      150
+    ) {
+      setSticky(true)
+    } else {
+      setSticky(false)
+    }
+  }
+  {
+    /*Pricing Table Header Fixed*/
+  }
   return (
     <section className="bg-white plans-section pb-40 md:pb-20">
       <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-8 md:pt-24 md:py-16 text-center">
         <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8">
-          Compare Features by Plan
+          Compare features by plan
         </h2>
 
-        <div className="hidden sm:block w-auto overflow-auto max-w-screen-lg m-auto">
-          <table className="sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
+        <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
+          <table className="cover-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
             <thead>
-              <tr className="items-center">
-                <th className="w-1/4 pt-4"></th>
-                <th className="w-1/4 pt-4 text-center text-blueNew-custom text-3xl">
+              <tr>
+                <th
+                  className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}
+                ></th>
+                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
                   <div className="ellipse flex items-center justify-center h-20">
-                    <StaticImage src="../images/EllipseImg1.png" alt="Free" />
+                    <StaticImage
+                      placeholder="tracedSVG"
+                      src="../images/rudderstack-pricing-free.svg"
+                      alt="Free"
+                    />
                   </div>
-                  <div>
+                  <div className="text-primary">
                     Free
                     <br />
                     <span className="text-lg text-grayColor-lighter">
@@ -27,11 +56,15 @@ function PricePlans() {
                     </span>
                   </div>
                 </th>
-                <th className="w-1/4 pt-4 text-center text-blueNew-custom text-3xl">
+                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
                   <div className="ellipse flex items-center justify-center h-20">
-                    <StaticImage src="../images/EllipseImg2.png" alt="Pro" />
+                    <StaticImage
+                      placeholder="tracedSVG"
+                      src="../images/rudderstack-pricing-pro.svg"
+                      alt="Pro"
+                    />
                   </div>
-                  <div>
+                  <div className="text-primary">
                     Pro
                     <br />
                     <span className="text-lg text-grayColor-lighter">
@@ -39,14 +72,15 @@ function PricePlans() {
                     </span>
                   </div>
                 </th>
-                <th className="w-1/4 pt-4 text-center text-blueNew-custom text-3xl ">
+                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage
-                      src="../images/EllipseImg3.png"
+                      placeholder="tracedSVG"
+                      src="../images/rudderstack-pricing-enterprise.svg"
                       alt="Ellipse"
                     />
                   </div>
-                  <div>
+                  <div className="text-primary">
                     Enterprise
                     <br />
                     <span className="text-lg text-grayColor-lighter">
@@ -58,7 +92,7 @@ function PricePlans() {
             </thead>
             <tbody>
               <tr>
-                <td className="p-6 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4">
+                <td className="p-6 text-primary text-lg text-left uppercase font-bold col-span-4">
                   Event Stream
                 </td>
               </tr>
@@ -68,11 +102,11 @@ function PricePlans() {
                   Event SDK Sources (Mobile, Web, Custom, etc.)
                 </td>
                 <td className="p-6 w-1/4">
-                  {/* <StaticImage className="checkImg" src="../images/check-r.svg" alt="check"/> */}
+                  {/* <StaticImage placeholder="tracedSVG" className="checkImg" src="../images/check-r.svg" alt="check"/> */}
                   <span className="check-icon" />
                 </td>
                 <td className="p-6 w-1/4">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -80,7 +114,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6 w-1/4">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -91,7 +125,7 @@ function PricePlans() {
               <tr>
                 <td className="p-6 text-base text-left">Segment Source</td>
                 <td className="py-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -99,7 +133,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -107,7 +141,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -118,7 +152,7 @@ function PricePlans() {
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">Looker Source</td>
                 <td className="py-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -126,7 +160,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -134,7 +168,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="py-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -177,7 +211,7 @@ function PricePlans() {
                   Data Lake Destinations (S3, Google Storage, etc.)
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -185,7 +219,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -193,7 +227,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -204,10 +238,14 @@ function PricePlans() {
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">Transformations</td>
                 <td className="p6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -215,7 +253,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -226,10 +264,14 @@ function PricePlans() {
               <tr>
                 <td className="p-6 text-base text-left">Data Masking</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -237,7 +279,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -248,13 +290,21 @@ function PricePlans() {
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">Event Replay</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -264,7 +314,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6 pt-14  text-blueNew-custom text-lg text-left uppercase font-bold"
+                  className="p-6 pt-14  text-primary text-lg text-left uppercase font-bold"
                   colspan="4"
                 >
                   CLOUD EXTRACT
@@ -273,7 +323,11 @@ function PricePlans() {
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">Sync Schedule</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6 text-base">Daily/hourly</td>
                 <td className="p-6 text-base">
@@ -289,10 +343,14 @@ function PricePlans() {
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">Transformations</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -300,7 +358,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -311,10 +369,14 @@ function PricePlans() {
               <tr>
                 <td className="p-6 text-base text-left">Data Masking</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -322,7 +384,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -332,7 +394,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-primary text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   WAREHOUSE ACTIONS
@@ -351,10 +413,14 @@ function PricePlans() {
               <tr>
                 <td className="p-6 text-base text-left">Transformations</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -362,7 +428,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -373,10 +439,14 @@ function PricePlans() {
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">Data Masking</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -384,7 +454,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -394,7 +464,7 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-primary text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   Advanced Integration <br />& Management
@@ -406,7 +476,7 @@ function PricePlans() {
                   and Destinations)
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -414,7 +484,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -422,7 +492,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -433,10 +503,14 @@ function PricePlans() {
               <tr>
                 <td className="p-6 text-base text-left">Selective Sync</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -444,7 +518,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -457,10 +531,14 @@ function PricePlans() {
                   Monitoring Dashboards (Grafana)
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -468,7 +546,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -481,13 +559,21 @@ function PricePlans() {
                   Alerting & Error Notifications
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -497,16 +583,16 @@ function PricePlans() {
               </tr>
               <tr>
                 <td
-                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-primary text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   Deployment & Security
                 </td>
               </tr>
               <tr className="bg-grayColor-BgGray">
-                <td className="td-first-colum">Rudderstack Cloud</td>
+                <td className="p-6 text-base text-left">Rudderstack Cloud</td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -514,7 +600,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -536,10 +622,14 @@ function PricePlans() {
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">Multi-node Scaling</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -547,7 +637,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -558,13 +648,21 @@ function PricePlans() {
               <tr>
                 <td className="p-6 text-base text-left">SSO</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -575,25 +673,33 @@ function PricePlans() {
               <tr className="bg-grayColor-BgGray">
                 <td className="p-6 text-base text-left">VPC Deployment</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  <a
-                    href="https://resources.rudderstack.com/enterprise-quote"
-                    className="text-sm text-black-custom leading-sm font-bold mt-3 lr-icon mx-auto hover:text-blueNew-custom"
+                  <Link
+                    to="/enterprise-quote"
+                    className="text-sm  leading-sm font-bold mt-3 lr-icon mx-auto"
                     target="_blank"
                     rel="noreferrer"
                   >
                     Talk to sales
-                  </a>
+                  </Link>
                 </td>
               </tr>
               <tr>
                 <td
-                  className="p-6  pt-14 text-blueNew-custom text-lg text-left uppercase font-bold col-span-4"
+                  className="p-6  pt-14 text-primary text-lg text-left uppercase font-bold col-span-4"
                   colspan="4"
                 >
                   support
@@ -604,7 +710,7 @@ function PricePlans() {
                   Slack Community Support
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -612,7 +718,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -620,7 +726,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -633,10 +739,14 @@ function PricePlans() {
                   Dedicated Chat Support
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -644,7 +754,7 @@ function PricePlans() {
                   <span className="check-icon" />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -657,13 +767,21 @@ function PricePlans() {
                   Customer Success Manager
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="check" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="check"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -674,13 +792,21 @@ function PricePlans() {
               <tr>
                 <td className="p-6 text-base text-left">Onboarding Service</td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  <StaticImage src="../images/Line 2.svg" alt="Line" />
+                  <StaticImage
+                    placeholder="tracedSVG"
+                    src="../images/Line 2.svg"
+                    alt="Line"
+                  />
                 </td>
                 <td className="p-6">
-                  {/* <StaticImage
+                  {/* <StaticImage placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check"
@@ -698,11 +824,12 @@ function PricePlans() {
               <div class="p-6 md:pt-8 md:pb-4">
                 <div className="ellipse flex items-center justify-center h-20">
                   <StaticImage
-                    src="../images/EllipseImg1.png"
+                    placeholder="tracedSVG"
+                    src="../images/rudderstack-pricing-free.svg"
                     alt="EllipseImg"
                   />
                 </div>
-                <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-custom">
+                <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-midnight">
                   Free
                 </h3>
                 <div class="text-grayColor-lighter text-sm leading-6 text-sm py-2">
@@ -717,12 +844,13 @@ function PricePlans() {
               </div>
             </div>
             <div className="plan-features mt-6 px-3">
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Event Stream
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -733,6 +861,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -743,6 +872,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -753,6 +883,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -763,6 +894,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-4 mb-3">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -774,6 +906,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-4 mb-3">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -782,13 +915,14 @@ function PricePlans() {
                 Data Lake Destinations (S3, Google Storage, etc.)
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 CLOUD EXTRACT
               </div>
 
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-4 mb-3">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -797,13 +931,14 @@ function PricePlans() {
                 # of Sources <br />3
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 WAREHOUSE ACTIONS
               </div>
 
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-4 mb-3">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -812,12 +947,13 @@ function PricePlans() {
                 Warehouse Connections <br />1
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Advanced Integration & Management
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -826,12 +962,13 @@ function PricePlans() {
                 Live Debuggers (Sources and Destinations)
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Deployment & Security
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -842,6 +979,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -850,12 +988,13 @@ function PricePlans() {
                 Team Members <br />3
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 SUPPORT
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -871,11 +1010,12 @@ function PricePlans() {
               <div class="p-6 md:pt-8 md:pb-4">
                 <div className="ellipse flex items-center justify-center h-20">
                   <StaticImage
-                    src="../images/EllipseImg2.png"
+                    placeholder="tracedSVG"
+                    src="../images/rudderstack-pricing-pro.svg"
                     alt="EllipseImg"
                   />
                 </div>
-                <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-custom">
+                <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-midnight">
                   Pro
                 </h3>
                 <div class="text-grayColor-lighter text-sm leading-6">
@@ -893,12 +1033,13 @@ function PricePlans() {
               </div>
             </div>
             <div className="plan-features mt-6 px-3">
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Event Stream
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -909,6 +1050,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -919,6 +1061,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -929,6 +1072,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -939,6 +1083,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -950,6 +1095,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -960,6 +1106,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -970,6 +1117,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -978,12 +1126,13 @@ function PricePlans() {
                 Data Masking
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 CLOUD EXTRACT
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -997,6 +1146,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1010,6 +1160,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1020,6 +1171,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1028,12 +1180,13 @@ function PricePlans() {
                 Data Masking
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 WAREHOUSE ACTIONS
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1047,6 +1200,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1057,6 +1211,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1065,12 +1220,13 @@ function PricePlans() {
                 <div className="flex-col">Data Masking</div>
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Advanced Integration & Management
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1081,6 +1237,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1091,6 +1248,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1099,12 +1257,13 @@ function PricePlans() {
                 Monitoring Dashboards (Grafana)
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Deployment & Security
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1115,6 +1274,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1126,6 +1286,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1134,12 +1295,13 @@ function PricePlans() {
                 Multi-node Scaling
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 SUPPORT
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1150,6 +1312,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1165,11 +1328,12 @@ function PricePlans() {
               <div class="p-6 md:pt-8 md:pb-4">
                 <div className="ellipse flex items-center justify-center h-20">
                   <StaticImage
-                    src="../images/EllipseImg3.png"
+                    placeholder="tracedSVG"
+                    src="../images/rudderstack-pricing-enterprise.svg"
                     alt="EllipseImg"
                   />
                 </div>
-                <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-custom">
+                <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-midnight">
                   Enterprise
                 </h3>
                 <div class="text-grayColor-lighter text-sm leading-6">
@@ -1178,21 +1342,22 @@ function PricePlans() {
                     Billions of events
                   </div>
                 </div>
-                <a
-                  href="https://resources.rudderstack.com/enterprise-quote"
+                <Link
+                  to="/enterprise-quote"
                   className="btn-primary-sm inline-block font-bold leading-6"
                 >
                   Request pricing
-                </a>
+                </Link>
               </div>
             </div>
             <div className="plan-features mt-6 px-3">
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Event Stream
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1203,6 +1368,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1213,6 +1379,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1223,6 +1390,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1233,6 +1401,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1244,6 +1413,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1254,6 +1424,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1264,6 +1435,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1274,6 +1446,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1281,12 +1454,13 @@ function PricePlans() {
                 </span>
                 Event Replay
               </div>
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 CLOUD EXTRACT
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1302,6 +1476,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1315,6 +1490,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1325,6 +1501,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1333,12 +1510,13 @@ function PricePlans() {
                 Data Masking
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 WAREHOUSE ACTIONS
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1352,6 +1530,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1362,6 +1541,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1370,12 +1550,13 @@ function PricePlans() {
                 Data Masking
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Advanced Integration & Management
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1386,6 +1567,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1396,6 +1578,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1406,6 +1589,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1414,12 +1598,13 @@ function PricePlans() {
                 Alerting & Error Notifications
               </div>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 Deployment & Security
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1432,6 +1617,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1445,6 +1631,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1455,6 +1642,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1465,6 +1653,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1472,24 +1661,26 @@ function PricePlans() {
                 </span>
                 VPC Deployment
               </div>
-              <a
-                href="#"
-                className="text-sm text-black-custom font-bold items-center flex mt-3 pl-5 hover:text-blueNew-custom"
+              <Link
+                to="/enterprise-quote"
+                className="text-sm text-black-custom font-bold items-center flex mt-3 pl-5 hover:text-blueNew-midnight"
               >
                 <StaticImage
+                  placeholder="tracedSVG"
                   className="mr-2 "
                   src="../images/arrow-right-o.png"
                   alt="arrow right"
                 />
                 Talk to sales
-              </a>
+              </Link>
 
-              <div className="text-blueNew-custom text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+              <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                 SUPPORT
               </div>
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1500,6 +1691,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1510,6 +1702,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"
@@ -1520,6 +1713,7 @@ function PricePlans() {
               <div className="text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-10">
                 <span className="checkimg mr-3 mt-1">
                   <StaticImage
+                    placeholder="tracedSVG"
                     className="checkImg"
                     src="../images/check-r.svg"
                     alt="check image"

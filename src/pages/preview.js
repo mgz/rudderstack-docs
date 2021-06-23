@@ -9,6 +9,59 @@ export const query = graphql `
           sanityFrontpageblock {
             _rawPagebuildersectionarray
           }
+
+          allSanityBlogauthor {
+            edges {
+              node {
+                _id
+                author_name
+                author_position
+                author_desc
+                author_image {
+                  asset {
+                    url
+                  }
+                }
+              }
+            }
+          }
+
+          section_get_started: allSanitySectionGetStarted {
+            edges {
+              node {
+                _id
+                section_name
+                _rawGetStarted
+              }
+            }
+          }
+          section_our_logos: allSanitySectionOurlogos {
+            edges {
+              node {
+                _id
+                section_name
+                _rawOurLogos
+              }
+            }
+          }
+          section_sign_up: allSanitySectionSignup {
+            edges {
+              node {
+                _id
+                section_name
+                _rawSignup
+              }
+            }
+          }
+          section_testimonials: allSanitySectionTestimonials {
+            edges {
+              node {
+                _id
+                section_name
+                _rawTestimonials
+              }
+            }
+          }
       }
     `
 

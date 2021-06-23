@@ -8,6 +8,7 @@ const SearchBox = ({
   isSearchStalled,
   refine,
   onRefineTextChange,
+  pleaceholderText,
 }) => (
   <>
     <div className="relative overflow-hidden">
@@ -16,7 +17,7 @@ const SearchBox = ({
         autoCapitalize="off"
         autoComplete="off"
         autoCorrect="off"
-        placeholder="Type your Keyword"
+        placeholder={pleaceholderText ? pleaceholderText : "Type your Keyword"}
         role="textbox"
         spellCheck="false"
         value={currentRefinement}
@@ -26,10 +27,12 @@ const SearchBox = ({
           onRefineTextChange(event.currentTarget.value)
         }}
       />
-      <div className="absolute top-0 right-0 rounded-r-lg bg-blueNew-custom  hover:bg-blueNew-textblue w-12">
+      
+      <div className="absolute top-0 right-0 rounded-r-lg bg-blueNew-eastbay  hover:bg-blueNew-textblue w-12">
         <FontAwesomeIcon
           icon={faSearch}
-          size="sm"
+          // size="sm"
+          style={{ fontSize: "18px" }}
           className="h-11 text-white pt-2 py-2"
         />
       </div>

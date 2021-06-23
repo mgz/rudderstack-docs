@@ -1,49 +1,47 @@
 /*Blog Custom Css*/
-.blog_banner >  div >  div>  div>  div
-{
+.blog_banner > div > div > div > div {
   color: #fff;
-  
-} 
-.blog_banner h1
-{
+}
+.blog_banner h1 {
   @apply font-bold;
   line-height: 69px;
 }
 
-.block-description
-{
+.block-description {
   font-family: "Basis Grotesque";
 }
 .block-description h2 {
-  @apply text-2xl;
+  @apply text-3xl;
   @apply font-bold;
+  @apply text-black-custom;
   @apply mt-20;
 }
-.block-description div > h2:first-child
-{
-  @apply mt-6;
+.block-description div > h2:first-child,
+.block-description div > h3:first-child {
+  @apply mt-8;
 }
 .block-description h3 {
   @apply mt-20;
-  @apply text-xl;
+  @apply text-2xl;
   @apply font-bold;
+  @apply text-black-custom;
+  @apply leading-7;
 }
-.block-description p
-{
-  @apply mt-7;
+.block-description p {
+  @apply mt-10;
   @apply text-lg;
   @apply leading-6;
   @apply flex-wrap;
+  @apply text-grayColor-custom;
 }
-.block-description p a
+/* .block-description p a
 {
-  color: #000 !important;
+ 
   @apply font-bold;
-}
+} */
 .block-description figure,
-.block-description iframe
-{
-  @apply mt-7;
+.block-description iframe {
+  @apply mt-10;
 }
 .block-description ol,
 .block-description ul {
@@ -52,14 +50,17 @@
 .block-description ul ul {
   @apply mt-0;
 }
+/* .block-description a {
+  @apply text-purpleNew-gigas;
+  
+} */
 .block-description li {
-  @apply mt-3;
-  @apply block ;
+  @apply mt-7;
+  @apply block;
   @apply relative;
   @apply pl-8;
 }
-.block-description li li
-{
+.block-description li li {
   @apply mt-0;
   @apply pl-0;
 }
@@ -67,34 +68,38 @@
 .block-description li::before {
   @apply absolute;
   content: "";
-  background: url('../images/arrow-right.svg');
+  background: url("../images/arrow-right.svg");
   @apply bg-center;
   @apply w-5;
   @apply h-5;
   @apply top-1;
   @apply left-0;
-  
 }
-.block-description li li::before
-{
+.block-description li li::before {
   content: none;
 }
-@media (min-width: 992px)
-{
-  .custom-hero-banner
-  {
+
+.block-description code {
+  @apply break-all;
+}
+.blog-banner-overlay {
+  /* background-color: rgba(12, 22, 82, 0.5); */
+  background-image: url("../images/blog-overlay.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+@media (min-width: 992px) {
+  .custom-hero-banner {
     min-height: 550px;
   }
 }
-@media only screen and (max-width: 767px)
-{
+@media only screen and (max-width: 767px) {
   .block-description h2 {
     @apply mt-10;
   }
-  
+
   .blog_banner h1 {
     @apply leading-none;
   }
 }
-
-

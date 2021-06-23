@@ -1,28 +1,71 @@
-import React, { useEffect,createRef } from "react"
+import React, { useEffect, createRef, useState } from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
 import lottie from "lottie-web"
 import heroAnimation from "../animations/Homepage-Hero-Image2.json"
+import { Helmet } from "react-helmet"
+import { withPrefix } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
+import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
+
+import { isMobile, isTablet, isBrowser } from "react-device-detect"
 
 function Hero(props) {
+  // const myHTML = `<h1>John Doe</h1>`;
+  const [showAnimation, setShowAnimation] = useState(false)
   const herobannerbutton = props.herobannerbutton
-  let animationContainer = createRef()
+  // let animationContainer = createRef()
+
+  // useEffect(() => {
+  //   const anim = lottie.loadAnimation({
+  //     container: animationContainer.current,
+  //     renderer: "svg",
+  //     loop: true,
+  //     autoplay: true,
+  //     animationData: heroAnimation,
+  //   })
+  //   return () => anim.destroy() // optional clean up for unmounting
+  // }, [])
+
   useEffect(() => {
-    const anim = lottie.loadAnimation({
-      container: animationContainer.current,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: heroAnimation,
-    })
-    return () => anim.destroy() // optional clean up for unmounting
+    // console.log("isMobile,isTablet,isBrowser", isMobile, isTablet, isBrowser)
+ 
+    if (isTablet) {
+      setShowAnimation(true)
+    } else if (isBrowser) {
+      setShowAnimation(true)
+    }
+    // setTimeout(() => {
+    //   setShowAnimation(true)
+    // }, 3000)
   }, [])
+
+  useEffect(() => {
+    if (showAnimation) {
+      var params = {
+        container: document.getElementById("lottie"),
+        renderer: "html",
+        loop: true,
+        autoplay: true,
+        animationData: HERO_ANIMATION_JSON,
+      }
+
+      var anim
+
+      anim = lottie.loadAnimation(params)
+    }
+  }, [showAnimation])
+
   return (
-    <section class="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative banner-section">
+    <section class="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative gradiant-layer banner-section">
+      {/* <Helmet>
+        <script src={withPrefix("script.js")} type="text/javascript" />
+        <script src={withPrefix("script2.js")} type="text/javascript" />
+      </Helmet> */}
       <div class="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0">
         <div class="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-          <h2 className="mb-8 md:my-4 md:text-6xl text-5xl  font-bold leading-tight">
+          <h2 className="text-primary mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight">
             {props.herobannertitle}
           </h2>
           <PortableText blocks={props.herobannercontent} />
@@ -46,16 +89,17 @@ function Hero(props) {
                     )
                   } else {
                     return (
-                      <span
-                        key={btn._key}
-                        className={
-                          (btn.btnhiglight === true
-                            ? "btn-primary-lg"
-                            : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
-                        }
-                      >
-                        <Link to={btn.btnlink}>{btn.btntext}</Link>
-                      </span>
+                      <Link key={btn._key} to={btn.btnlink}>
+                        <span
+                          className={
+                            (btn.btnhiglight === true
+                              ? "btn-primary-lg"
+                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                          }
+                        >
+                          {btn.btntext}
+                        </span>
+                      </Link>
                     )
                   }
                 })()}
@@ -63,13 +107,50 @@ function Hero(props) {
             ))}
           </div>
         </div>
-        <div class="relative w-full px-5 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
+        <div class="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
           <div class="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
+            {/* <Helmet>
+              
+            </Helmet> */}
             {/* <Image props={props.herobannerimage.asset._ref} classes="w-full" /> */}
-            <div className="w-full" ref={animationContainer} />
+            {/* <div className="w-full" ref={animationContainer} /> */}
+            {/* <div dangerouslySetInnerHTML={{ __html: myHTML }} /> */}
+
+            {/*<div className="lotti-body" id="lottie"></div>*/}
+            {/* <div className="w-full">
+              <StaticImage src="../images/RubberStack_MAIN-3D_1-1_active_00000.png" alt="RudderStack animation" placeholder="tracedSVG" />
+            </div> */}
+            {/*<div className="lotti-body">
+              <div id="lottie" />
+            </div>*/}
+            {/* <div className={`lotti-body`}>
+              <div id="lottie" />
+            </div> */}
+            <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
+              <StaticImage
+                src="../images/RubberStack_MAIN-3D_1-1_active_00000.png"
+                alt="RudderStack animation"
+                placeholder="tracedSVG"
+              />
+            </div>
+            <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
+              <div id="lottie" />
+            </div>
+            {/*
+            <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
+              <StaticImage
+                src="../images/RubberStack_MAIN-3D_1-1_active_00000.png"
+                alt="RudderStack animation"
+                placeholder="tracedSVG"
+              />
+            </div> */}
           </div>
         </div>
       </div>
+      {/* <Helmet>
+        <script src={withPrefix("script.js")} type="text/javascript" />
+        <script src={withPrefix("script2.js")} type="text/javascript" />
+      </Helmet> */}
     </section>
   )
 }

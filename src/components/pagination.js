@@ -28,7 +28,7 @@ const Pagination = ({
             key={index}
             className={`mx-2 px-1 text-base font-bold ${
               selectedPageNo === page
-                ? "border-solid border-b-4 border-blueNew-custom text-blueNew-custom"
+                ? "border-solid border-b-4 border-blueNew-eastbay text-blueNew-eastbay"
                 : ""
             }`}
           >

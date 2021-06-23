@@ -13,11 +13,12 @@ function PricingCards(props) {
                 <div className="p-6 pt-12 md:pt-16 md:pb-4">
                   <div className="ellipse flex items-center justify-center h-20">
                     <StaticImage
-                      src="../images/EllipseImg1.png"
+                      src="../images/rudderstack-pricing-free.svg"
                       alt="EllipseImg"
+                      placeholder="tracedSVG"
                     />
                   </div>
-                  <h3 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-blueNew-custom mr-2 font-bold">
+                  <h3 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
                     Free
                   </h3>
                   <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg text-lg">
@@ -95,9 +96,9 @@ function PricingCards(props) {
               <div className="pricing-plan bg-whiteColor-custom border border-grayColor-priceCardBorder rounded-2xl text-center mx-auto shadow-md">
                 <div className="p-6 md:pt-16 md:pb-4">
                   <div className="ellipse flex items-center justify-center h-20">
-                    <StaticImage src="../images/EllipseImg2.png" alt="Line" />
+                    <StaticImage src="../images/rudderstack-pricing-pro.svg" alt="Line" placeholder="tracedSVG" />
                   </div>
-                  <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-blueNew-custom mr-2 font-bold">
+                  <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
                     Pro
                   </h4>
                   <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg">
@@ -115,7 +116,7 @@ function PricingCards(props) {
                           alt="check"
                         />{" "} */}
                       </span>{" "}
-                      Everything in Free plus
+                      Everything in Free, plus:
                     </li>
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -184,9 +185,9 @@ function PricingCards(props) {
               <div className="pricing-plan bg-whiteColor-custom border border-grayColor-priceCardBorder rounded-2xl text-center mx-auto shadow-md	">
                 <div className="p-6 md:pt-16 md:pb-4">
                   <div className="ellipse flex items-center justify-center h-20">
-                    <StaticImage src="../images/EllipseImg3.png" alt="Line" />
+                    <StaticImage src="../images/rudderstack-pricing-enterprise.svg" alt="Line" placeholder="tracedSVG" />
                   </div>
-                  <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-blueNew-custom mr-2 font-bold">
+                  <h4 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
                     Enterprise
                   </h4>
                   <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg">
@@ -204,7 +205,7 @@ function PricingCards(props) {
                           alt="check"
                         />{" "} */}
                       </span>{" "}
-                      Everything in Pro plus
+                      Everything in Pro, plus:
                     </li>
                     <li className="relative pl-8 p-1.5 text-grayColor-custom font-medium">
                       <span className="absolute top-2 w-7 left-0 check-icon">
@@ -250,7 +251,7 @@ function PricingCards(props) {
                   </ul>
                   <div className="mt-6 py-4 text-center">
                     <a
-                      href="https://resources.rudderstack.com/enterprise-quote"
+                      href="enterprise-quote"
                       className="btn-primary-sm inline-block font-bold"
                     >
                       Request pricing
@@ -263,12 +264,12 @@ function PricingCards(props) {
         </div>
       </div>
 
-      <div className="py-8 pt-5 md:pt-16 w-full text-lg md:text-xl text-center text-blueNew-custom font-bold">
-        <p>You can also deploy or contribute to RudderStack Open Source. </p>
+      <div className="py-8 pt-5 md:pt-16 w-full text-lg md:text-xl text-center font-bold">
+        <p className="text-primary">You can also deploy or contribute to RudderStack Open Source. </p>
         <div className="mt-3 flex items-center">
           <a
             href="https://github.com/rudderlabs/rudder-server"
-            className="text-sm text-black-custom leading-8 font-bold lr-icon mx-auto hover:text-blueNew-custom"
+            className="text-sm text-black leading-8 font-bold lr-icon mx-auto"
             target="_blank"
             rel="noreferrer"
           >

@@ -1,32 +1,24 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../../components/layout"
-import SEO from "../../components/seo"
-import PortableText from "../../components/portableText"
-import MiddleBanner from "../../components/middle-banner"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
-export const query = graphql`
-  query schDemoSubmit {
-    sanityThankyoupages {
-      _rawPagebuildersectionarray
-    }
-    sanityFrontpageblock {
-      _rawPagebuildersectionarray
-    }
-  }
-`
+import loadable from "@loadable/component"
 
-const DemoSubmit = ({ data, htmlId }) => {
-  const lv_thankyoucontent = (
-    data.sanityThankyoupages._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "thankyoucontent")
+import Layout from "../components/layout"
+import PortableText from "../components/portableText"
+import MiddleBanner from "../components/middle-banner"
+
+// const Layout = loadable(() => import("../components/layout"))
+// const PortableText = loadable(() => import("../components/PortableText"))
+// const MiddleBanner = loadable(() => import("../components/middle-banner"))
+
+const TrankYou = ({ data, htmlId }) => {
+  const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
+
   return (
     <Layout>
-      {/* <SEO title="Thank you Demo" /> */}
       <div className="font-custom">
         <section id="demo_submit_hdr">
           <div className="w-full demo-submit-background">
@@ -44,11 +36,21 @@ const DemoSubmit = ({ data, htmlId }) => {
         </section>
         <section id="footer_section_for_demo">
           <MiddleBanner {...lv_middlebannersection[0]} />
-          {/* test  */}
         </section>
       </div>
     </Layout>
   )
 }
 
-export default DemoSubmit
+export default TrankYou
+
+export const pageQuery = graphql`
+  query GetSingleTrankYouPage($slug: String) {
+    thankyou: sanityThankyoupages(slug: { current: { eq: $slug } }) {
+      _rawPagebuildersectionarray
+    }
+    sanityFrontpageblock {
+      _rawPagebuildersectionarray
+    }
+  }
+`

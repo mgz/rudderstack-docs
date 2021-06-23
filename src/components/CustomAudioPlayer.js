@@ -15,7 +15,7 @@ const CustomAudioPlayer = props => {
   const assetRefParts = ref.split("-") // ["file", "ff7...", "m4a"]
   const id = assetRefParts[1] // "ff7..."
   const format = assetRefParts[2] // "m4a"
-  const assetUrl = `https://cdn.sanity.io/files/${process.env.RS_SANITY_PROJECTID}/${process.env.RS_SANITY_DATASET}/${id}.${format}`
+  const assetUrl = `https://cdn.sanity.io/files/${process.env.GATSBY_SANITY_PROJECTID}/${process.env.GATSBY_SANITY_DATASET}/${id}.${format}`
 
   return (
     <AudioPlayer

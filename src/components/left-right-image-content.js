@@ -4,8 +4,12 @@ import Image from "./image"
 import Link from "gatsby-link"
 
 const LeftRightImgCnt = props => {
-  const maintitle = props.leftrightcontentmaintitle ? props.leftrightcontentmaintitle : ""
-  const smalltitle = props.leftrightcontentsmalltitle ? props.leftrightcontentsmalltitle : ""
+  const maintitle = props.leftrightcontentmaintitle
+    ? props.leftrightcontentmaintitle
+    : ""
+  const smalltitle = props.leftrightcontentsmalltitle
+    ? props.leftrightcontentsmalltitle
+    : ""
   const contents = props.leftrightimageblock
   return (
     <>
@@ -14,12 +18,20 @@ const LeftRightImgCnt = props => {
           {(smalltitle !== "" || maintitle !== "") && (
             <div className="flex flex-col w-full justify-center items-start md:text-left max-w-screen-md">
               {smalltitle !== "" && (
-                <p className="mt-20 mb-2 text-blue text-sm uppercase">
+                <p
+                  className={`mt-20 mb-2 ${
+                    props.applyGradientColorTheme ? "text-seegreen" : ""
+                  }  text-sm uppercase`}
+                >
                   {smalltitle}
                 </p>
               )}
               {maintitle !== "" && (
-                <h3 className="md:mt-2 text-4xl md:text-5xl text-primary font-bold leading-tight">
+                <h3
+                  className={`md:mt-2 text-4xl md:text-5xl ${
+                    props.applyGradientColorTheme ? "text-white" : "text-dark"
+                  }  font-bold leading-tight`}
+                >
                   {maintitle}
                 </h3>
               )}
@@ -34,6 +46,10 @@ const LeftRightImgCnt = props => {
                 const smalltitle = content.smalltitle
                 const section_id = content.section_id
                 const title = content.title
+                const link_display_as_button = content.addlink
+                  ? content.addlink.cmn_display_as_button
+                  : false
+
                 const extralink = content.addlink
                   ? content.addlink.cmnexternallink
                   : ""
@@ -45,12 +61,13 @@ const LeftRightImgCnt = props => {
                 const content_display_ratio = content.content_display_ratio
                   ? content.content_display_ratio
                   : "50:50"
+
                 // console.log("cnt",content,smalltitle)
                 return (
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap flex-col-reverse sm:flex-row mt-6 md:mt-16"
+                    className="flex items-center flex-wrap flex-col-reverse sm:flex-row ptt-6 md:pt-16"
                   >
                     <div
                       className={`w-full ${
@@ -81,20 +98,42 @@ const LeftRightImgCnt = props => {
                       } sm:p-6 sm:pr-0`}
                     >
                       <div className="align-middle md:pl-12">
-                        <p className="mt-4 sm:mt-0 text-sm text-blue uppercase">
+                        <p
+                          className={`mt-4 sm:mt-0 text-sm ${
+                            props.applyGradientColorTheme ? "text-seegreen" : ""
+                          } uppercase`}
+                        >
                           {smalltitle}
                         </p>
                         {isTitleBigger === true ? (
-                          <h2 className="mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
+                          <h2
+                            className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
+                              props.applyGradientColorTheme
+                                ? "text-white"
+                                : "text-blueNew-midnight"
+                            } font-bold leading-tight`}
+                          >
                             {title}
                           </h2>
                         ) : (
-                          <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+                          <h3
+                            className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl  ${
+                              props.applyGradientColorTheme
+                                ? "text-white"
+                                : "text-blueNew-midnight"
+                            } font-bold leading-tight`}
+                          >
                             {title}
                           </h3>
                         )}
 
-                        <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt">
+                        <div
+                          className={`${
+                            props.applyGradientColorTheme
+                              ? "text-white"
+                              : "text-grayColor-custom"
+                          } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
+                        >
                           <PortableText blocks={portabletext} />
                         </div>
                         <div className="mt-4 flex items-center">
@@ -104,14 +143,36 @@ const LeftRightImgCnt = props => {
                                 return (
                                   <a
                                     href={linkurl}
-                                    className="font-bold leading-normal text-sm lr-icon hover:text-blueNew-custom"
+                                    className={`font-bold leading-normal text-sm ${
+                                      link_display_as_button
+                                        ? "btn-primary-lg"
+                                        : ""
+                                    } ${
+                                      props.applyGradientColorTheme
+                                        ? "lr-icon-gradient"
+                                        : !link_display_as_button
+                                        ? "lr-icon"
+                                        : ""
+                                    } `}
                                   >
                                     {linktext}
                                   </a>
                                 )
                               } else {
                                 return (
-                                  <span className="font-bold leading-normal text-sm lr-icon">
+                                  <span
+                                    className={`font-bold leading-normal text-sm ${
+                                      link_display_as_button
+                                        ? "btn-primary-lg"
+                                        : ""
+                                    } ${
+                                      props.applyGradientColorTheme
+                                        ? "lr-icon-gradient"
+                                        : !link_display_as_button
+                                        ? "lr-icon"
+                                        : ""
+                                    }`}
+                                  >
                                     <Link to={linkurl}>{linktext}</Link>
                                   </span>
                                 )
@@ -132,6 +193,10 @@ const LeftRightImgCnt = props => {
                 const extralink = content.addlink
                   ? content.addlink.cmnexternallink
                   : ""
+                const link_display_as_button = content.addlink
+                  ? content.addlink.cmn_display_as_button
+                  : false
+
                 const linktext = content.addlink
                   ? content.addlink.cmnlinktext
                   : ""
@@ -155,22 +220,44 @@ const LeftRightImgCnt = props => {
                           : "sm:w-1/2"
                       } sm:p-6 sm:pl-0 md:pr-12`}
                     >
-                      <p className="mt-4 sm:mt-0 text-blue text-sm uppercase">
+                      <p
+                        className={`mt-4 sm:mt-0 ${
+                          props.applyGradientColorTheme ? "text-seegreen" : ""
+                        } text-sm uppercase`}
+                      >
                         {smalltitle}
                       </p>
                       {/* <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
                         {title}
                       </h3> */}
                       {isTitleBigger === true ? (
-                        <h2 className="mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl text-primary font-bold leading-tight">
+                        <h2
+                          className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
+                            props.applyGradientColorTheme
+                              ? "text-white"
+                              : "text-blueNew-midnight"
+                          } font-bold leading-tight`}
+                        >
                           {title}
                         </h2>
                       ) : (
-                        <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+                        <h3
+                          className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl ${
+                            props.applyGradientColorTheme
+                              ? "text-white"
+                              : "text-blueNew-midnight"
+                          } font-bold leading-tight`}
+                        >
                           {title}
                         </h3>
                       )}
-                      <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt">
+                      <div
+                        className={`${
+                          props.applyGradientColorTheme
+                            ? "text-white"
+                            : "text-grayColor-custom"
+                        } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
+                      >
                         <PortableText blocks={portabletext} />
                       </div>
                       <div className="mt-4 flex items-center">
@@ -180,14 +267,36 @@ const LeftRightImgCnt = props => {
                               return (
                                 <a
                                   href={linkurl}
-                                  className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block hover:text-blueNew-custom"
+                                  className={`font-bold leading-normal text-sm ${
+                                    link_display_as_button
+                                      ? "btn-primary-lg"
+                                      : ""
+                                  } relative sm:inline-block ${
+                                    props.applyGradientColorTheme
+                                      ? "lr-icon-gradient"
+                                      : !link_display_as_button
+                                      ? "lr-icon"
+                                      : ""
+                                  }`}
                                 >
                                   {linktext}
                                 </a>
                               )
                             } else {
                               return (
-                                <span className="font-bold leading-normal text-sm lr-icon relative  sm:inline-block hover:text-blueNew-custom">
+                                <span
+                                  className={`font-bold leading-normal text-sm ${
+                                    link_display_as_button
+                                      ? "btn-primary-lg"
+                                      : ""
+                                  } relative sm:inline-block ${
+                                    props.applyGradientColorTheme
+                                      ? "lr-icon-gradient"
+                                      : !link_display_as_button
+                                      ? "lr-icon"
+                                      : ""
+                                  }`}
+                                >
                                   <Link to={linkurl}>{linktext}</Link>
                                 </span>
                               )

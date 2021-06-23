@@ -34,23 +34,21 @@ function OurLogo(props) {
   const logoimages = props.outlogoimage
   return (
     <section className="max-w-6xl px-4 my-12 md:px-3 mx-auto md:mb-23 sm:my-24 flex flex-wrap flex-col md:flex-row items-center">
-      <div className="flex flex-col w-full justify-center items-start md:text-left max-w-2xl">
-        <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10">
+      <div className="flex flex-col w-full justify-center items-start md:text-left max-w-2xl mx-auto">
+        <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10 text-center">
           {maintitle}
         </h3>
       </div>
-      <div className="flex w-full lg:justify-between justify-start flex-wrap mt-2 sm:mt-2 our-logos">
-       
-          {logoimages.map((logoimage, i) => {
-            return (
-              <div key={i} class="item inline-flex md:p-4 px-2 py-4">
-                <span className="">
-                  <Image props={logoimage.asset._ref}/>
-                </span>
-              </div>
-            )
-          })}
-        
+      <div className="flex w-full justify-start flex-wrap mt-2 sm:mt-2 our-logos">
+        {logoimages.map((logoimage, i) => {
+          return (
+            <div key={i} class="w-full md:w-1/5 flex justify-center md:pt-20 px-2 py-4">
+              <span className="h-10">
+                <Image classes="h-full w-auto" props={logoimage.asset._ref} />
+              </span>
+            </div>
+          )
+        })}
       </div>
     </section>
   )

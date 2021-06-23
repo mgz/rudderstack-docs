@@ -1,4 +1,4 @@
-let indexName = process.env.GATSBY_ALGOLIA_BLOGINDEX
+let indexName = process.env.GATSBY_ALGOLIA_INDEX_PREFIX + '_rudderstack_gatsby_blog'
 
 const pageQuery = `{
   pages: allSanityBlog {
@@ -15,9 +15,7 @@ const pageQuery = `{
         blog_category
         blog_image {
           asset {
-            fluid {
-              src
-            }
+            url
           }
           _key
         }
@@ -41,7 +39,7 @@ function pageToAlgoliaRecord({
 }) {
   let blogimage = ""
   if (blog_image) {
-    blogimage = blog_image.asset.fluid
+    blogimage = { src: blog_image.asset.url }
   }
 
   if (!blog_category) {

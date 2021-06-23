@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
+
 import Hero from "../components/hero"
 import Tabs from "../components/tabs"
 import LeftRightImgCnt from "../components/left-right-image-content"
@@ -11,6 +12,23 @@ import FreeText from "../components/freeText"
 import GraphQLErrorList from "../components/graphql-error-list"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+
+// const Hero = loadable(() => import("../components/hero"))
+// const Tabs = loadable(() => import("../components/tabs"))
+// const LeftRightImgCnt = loadable(() =>
+//   import("../components/left-right-image-content")
+// )
+// const LatestBlog = loadable(() => import("../components/latest-blog"))
+// const MiddleBanner = loadable(() => import("../components/middle-banner"))
+// const RightSideHiglightedContent = loadable(() =>
+//   import("../components/rightSideHiglightedContent")
+// )
+// const FreeText = loadable(() => import("../components/freeText"))
+// const GraphQLErrorList = loadable(() =>
+//   import("../components/graphql-error-list")
+// )
+// const SEO = loadable(() => import("../components/seo"))
+// const Layout = loadable(() => import("../components/layout"))
 
 const OurLogo = loadable(() => import("../components/ourlogo"))
 const Testimonial = loadable(() => import("../components/testimonial"))
@@ -31,7 +49,7 @@ const Page = props => {
 
   if (errors) {
     return (
-      <Layout>
+      <Layout location={props.location}>
         <GraphQLErrorList errors={errors} />
       </Layout>
     )
@@ -61,8 +79,8 @@ const Page = props => {
           break
         case "leftrightcontentimagesection":
           el = (
-            <div className="bg-backgroundsecondary 100%" key={c._key}>
-              <LeftRightImgCnt {...c} />{" "}
+            <div className="bg-gradiantsecondary 100%" key={c._key}>
+              <LeftRightImgCnt applyGradientColorTheme={true} {...c} />{" "}
             </div>
           )
           break
@@ -73,7 +91,9 @@ const Page = props => {
           el = <MiddleBanner key={c._key} {...c} />
           break
         case "testimonialsection":
-          el = <Testimonial key={c._key} {...c} />
+          el = (
+            <Testimonial key={c._key} applyGradientColorTheme={true} {...c} />
+          )
           break
         case "righthighlightedsection":
           el = <RightSideHiglightedContent key={c._key} {...c} />
@@ -108,7 +128,7 @@ const Page = props => {
   const pageTitle = page.title
 
   return (
-    <Layout>
+    <Layout location={props.location}>
       <SEO
         title={pageTitle}
         // description={site.description}

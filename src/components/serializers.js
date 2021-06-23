@@ -54,7 +54,11 @@ const serializers = {
       // console.log('you tube',node)
       const { url } = node
       const id = getYouTubeId(url)
-      return <YouTube key={node._key} videoId={id} />
+      return (
+        <div class="iframe-container mb-20 md:mb-0">
+          <YouTube key={node._key} className="video" videoId={id} />
+        </div>
+      )
     },
     image_with_addons: ({ node }) => <ImageWithAddons data={node} />,
     embed_audio: ({ node }) => {
@@ -90,7 +94,10 @@ const serializers = {
       // console.log(children, mark, "block contain")
       //added by Hari on 2021-04-30
       return (
-        <a style={{ color: "#0066FF" }} href={mark.href}>
+        <a
+          className="underline text-purpleNew-gigas hover:text-blueNew-midnight"
+          href={mark.href}
+        >
           {children}
         </a>
       )

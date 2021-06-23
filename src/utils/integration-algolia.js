@@ -1,96 +1,69 @@
 const integrationQuery = `{
-    integrations: allSanityIntegration {
+    integrations: allSanityIntegration (sort: {fields: weight, order: ASC}) {
       edges {
         node {
+          id
           title
-          _id
-          integrationLogo {
-            asset {
-              fluid {
-                src
-              }
-            }
-          }
-          imageSection {
-            imageTitle
-            mainImage {
-              asset {
-                fluid {
-                  src
-                }
-              }
-            }
-          }
-          integrationHeroSection {
-            herodescritpion {
-              _key
-              _type
-              style
-              list
-              _rawChildren
-            }
-          }
-          integrationLeftRightsection {
-            rightSection {
-              _key
-              _type
-              style
-              list
-              _rawChildren
-            }
-            title
+          weight
+          is_coming_soon
+          slug {
+            current
           }
           integrationcategories {
             title
-            description
-            _id
           }
           integrationtypes {
-            _id
             title
-            description
           }
-          signupSection {
-            signupbtntext
-            signupbtnlink
-          }
-          slug {
-            _key
-            _type
-            current
+          integrationLogo {
+            asset {
+             url
+            }
           }
         }
       }
     }
-    }`;
+  }`
 
-  function integrationToAlgoliaRecord({ node: { _id, title, integrationLogo,imageSection,integrationHeroSection,integrationLeftRightsection, slug, integrationtypes, signupSection, faqSection, integrationcategories } }) {
-
-    let logoimage = '';
-    if(integrationLogo) {
-        logoimage = integrationLogo.asset.fluid.src;
-    }
-    return {
-      objectID: _id,
-      title,
-      imageSection,
-      integrationHeroSection,
-      logoimage,
-      integrationLeftRightsection,
-      slug,
-      integrationtypes,
-      signupSection,
-      faqSection,
-      integrationcategories
-    }
+function integrationToAlgoliaRecord({
+  node: {
+    id,
+    title,
+    weight,
+    is_coming_soon,
+    slug,
+    integrationcategories,
+    integrationtypes,
+    integrationLogo,
+  },
+}) {
+  let logoimage = ""
+  if (integrationLogo && integrationLogo.asset) {
+    logoimage = integrationLogo.asset.url
   }
-  
-  const queries = [
-    {
-      query: integrationQuery,
-      transformer: ({ data }) => data.integrations.edges.map(integrationToAlgoliaRecord),
-      indexName: process.env.GATSBY_ALGOLIA_INTEGRATIONINDEX,
-      settings: {},
+  return {
+    objectID: id,
+    title,
+    weight,
+    is_coming_soon,
+    slug: slug.current,
+    integration_category: integrationcategories
+      ? integrationcategories.title
+      : "",
+    integration_type: integrationtypes ? integrationtypes.title : "",
+    logoimage,
+  }
+}
+
+const queries = [
+  {
+    query: integrationQuery,
+    transformer: ({ data }) => {
+      // console.log("on map , ", data)
+      return data.integrations.edges.map(integrationToAlgoliaRecord)
     },
-  ]
-  module.exports = queries
+    indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_integration",
+    settings: {},
+  },
+]
+module.exports = queries
