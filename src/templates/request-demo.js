@@ -152,7 +152,7 @@ const Demo = ({ data, htmlId, location }) => {
         .then(res => {
           // console.log('usebasin',res)
           if (res.ok || res.statusText === "OK") {
-            console.log('success',res)
+            console.log('success ',res)
             //navigate("/request-demo/thank-you")
           }
         })
