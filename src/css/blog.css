@@ -14,7 +14,7 @@
   @apply text-3xl;
   @apply font-bold;
   @apply text-black-custom;
-  @apply mt-20;
+  @apply mt-10;
 }
 .block-description div > h2:first-child,
 .block-description div > h3:first-child {
@@ -28,7 +28,7 @@
   @apply leading-7;
 }
 .block-description p {
-  @apply mt-10;
+  @apply mt-6;
   @apply text-lg;
   @apply leading-6;
   @apply flex-wrap;

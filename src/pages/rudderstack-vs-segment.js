@@ -38,7 +38,7 @@ const SegmentDesktop = ({ data, location }) => {
       <div className="font-custom">
         {data.allSanitySegmentComparision.nodes[0]._rawPagebuildersectionarray.map(
           section => {
-            if (section._type === "hero_banner_with_youtube") {
+            if (section._type === "hero_banner_segment") {
               return (
                 <section
                   key={section._key}
@@ -47,7 +47,7 @@ const SegmentDesktop = ({ data, location }) => {
                   <HeroSegment {...section} />
                 </section>
               )
-            } else if (section._type === "four_card_with_title") {
+            }  else if (section._type === "four_card_with_title") {
               return <FourCardsWithTitle key={section._key} {...section} />
             } else if (section._type === "ref_section_testimonials") {
               let l_section_info = data.section_testimonials.edges.find(
