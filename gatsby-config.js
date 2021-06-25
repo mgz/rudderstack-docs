@@ -166,6 +166,7 @@ module.exports = {
         //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
         host: `https://rudderstack-dataplane.rudderstack.com`,
         trackPage: true,
+        // loadAsync:true
         // delayLoad: true,
         // delayLoadTime: 1000
       },
