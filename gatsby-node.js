@@ -64,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // added by hari on 2021-06-22
   createRedirect({
     fromPath: "/blog/rudderstack-adds-pendo-and-marketo-as-destinations",
-    toPath: "Marketo LP Link",
+    toPath: "/integration/marketo/",
     isPermanent: true,
   })
   createRedirect({

@@ -12,6 +12,7 @@ import ThreeCardsWithTitle from "../components/threeCardsWithTitle"
 import SegmentComparisonComponent from "../components/segmentComparisonComponent"
 import HeroBannerCloud from "../components/heroBannerCloud"
 import LeftRightImgCnt from "../components/left-right-image-content"
+import LeftRightImgCntWithCentedHeading from "../components/left-right-image-content-with-centered-heading"
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 
@@ -54,20 +55,19 @@ const PageContent = ({ data, location }) => {
           } else if (section._type === "four_card_with_title") {
             return <FourCardsWithTitle key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
-            let greyBackground = false
-            if (data.pagedata.slug.current.includes("cloud")) {
-              greyBackground = true
-            }
-
             return (
-              <div
-                className={`${
-                  greyBackground
-                    ? "bg-grayColor-BgGray"
-                    : "bg-whiteColor-custom"
-                } 100%`}
-              >
+              <div className={`100%`}>
                 <LeftRightImgCnt
+                  key={section._key}
+                  {...section}
+                  applyGradientColorTheme={false}
+                />
+              </div>
+            )
+          }else if (section._type === "left_right_content_with_centered_heading") {
+            return (
+              <div className={`100%`}>
+                <LeftRightImgCntWithCentedHeading
                   key={section._key}
                   {...section}
                   applyGradientColorTheme={false}
