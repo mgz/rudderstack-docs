@@ -685,14 +685,14 @@ top: -60px;
 .circle-check-items ul li {
   @apply relative;
   @apply w-full;
-  @apply pl-11;
+  @apply pl-8;
   @apply mt-4;
 }
 
 .circle-check-items ul li::before {
   @apply absolute;
   content: "";
-  background-image: url("../images/circle_check.svg");
+  background-image: url("../images/check-new-theme.svg");
   background-repeat: no-repeat;
   @apply bg-center;
   @apply w-5;

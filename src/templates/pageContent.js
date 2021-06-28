@@ -8,9 +8,14 @@ import CentredContentWithButton from "../components/centredContentWithButton"
 
 import HeroSegment from "../components/heroSegment"
 import FourCardsWithTitle from "../components/fourCardsWithTitle"
+import FourCardsWithTitleLeftAligned from "../components/fourCardsWithTitleLeftAligned"
 import ThreeCardsWithTitle from "../components/threeCardsWithTitle"
 import SegmentComparisonComponent from "../components/segmentComparisonComponent"
 import HeroBannerCloud from "../components/heroBannerCloud"
+import HeroBannerAboutUs from "../components/heroBannerAboutUs"
+import Leadership from "../components/leadership"
+import AdvisorsAndInvestor from "../components/advisorsAndInvestors"
+
 import LeftRightImgCnt from "../components/left-right-image-content"
 import LeftRightImgCntWithCentedHeading from "../components/left-right-image-content-with-centered-heading"
 
@@ -52,8 +57,18 @@ const PageContent = ({ data, location }) => {
             )
           } else if (section._type === "hero_banner_cloud") {
             return <HeroBannerCloud key={section._key} {...section} />
+          } else if (section._type === "hero_banner_about") {
+            return <HeroBannerAboutUs key={section._key} {...section} />
           } else if (section._type === "four_card_with_title") {
             return <FourCardsWithTitle key={section._key} {...section} />
+          } else if (section._type === "leadership_section") {
+            return <Leadership key={section._key} {...section} />
+          } else if (section._type === "advisors_and_investors_section") {
+            return <AdvisorsAndInvestor key={section._key} {...section} />
+          } else if (section._type === "four_cards_left_aligned") {
+            return (
+              <FourCardsWithTitleLeftAligned key={section._key} {...section} />
+            )
           } else if (section._type === "leftrightcontentimagesection") {
             return (
               <div className={`100%`}>
@@ -64,7 +79,9 @@ const PageContent = ({ data, location }) => {
                 />
               </div>
             )
-          }else if (section._type === "left_right_content_with_centered_heading") {
+          } else if (
+            section._type === "left_right_content_with_centered_heading"
+          ) {
             return (
               <div className={`100%`}>
                 <LeftRightImgCntWithCentedHeading
@@ -100,7 +117,7 @@ const PageContent = ({ data, location }) => {
                   greyBackground
                     ? "bg-grayColor-BgGray"
                     : "bg-whiteColor-custom"
-                } ${extraBottomMargin ? "pb-40 md:pb-48" : "pb-8 md:pb-20"} `}
+                } ${extraBottomMargin ? "pb-40 md:pb-48" : "pb-8"} `}
               >
                 <ThreeCardsWithTitle key={section._key} {...section} />
               </section>

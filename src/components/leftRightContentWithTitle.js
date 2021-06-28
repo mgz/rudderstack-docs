@@ -17,6 +17,7 @@ const LeftRightContentWithTitle = props => {
             <h3 className={`${props.left_content_title && props.left_content_title !== "" ? 'md:h-16' : 'h-0 md:h-16'} text-3xl font-bold text-blueNew-midnight`}>
               {props.left_content_title}
             </h3>
+            
             <div
               className={`text-secondary leading-7 text-sm sm:text-lg frtxt-contnt ${
                 props.left_content_styling === "right_arrow"

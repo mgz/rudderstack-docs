@@ -4,6 +4,7 @@ import Image from "./image"
 import Link from "gatsby-link"
 
 const LeftRightImgCntWithCentedHeading = props => {
+  console.log("LeftRightImgCntWithCentedHeading", props)
   const maintitle = props.leftrightcontentmaintitle
     ? props.leftrightcontentmaintitle
     : ""
@@ -11,22 +12,24 @@ const LeftRightImgCntWithCentedHeading = props => {
     ? props.leftrightcontentsubtitle
     : ""
   const contents = props.leftrightimageblock
-  
+
   let l_bg_color = ""
-  if (contents.length > 0) {
-    if (contents[0].background_color === "grey") {
+  if (props.background_color) {
+    if (props.background_color === "grey") {
       l_bg_color = "bg-grayColor-BgGray"
-    } else if (contents[0].background_color === "white") {
+    } else if (props.background_color === "white") {
       l_bg_color = "bg-whiteColor-custom"
     }
   }
 
   return (
-    <section className={`left-right-section md:px-0 pb-6 md:pd-0`}>
+    <section
+      className={`left-right-section md:px-0 pb-6 md:pd-0 ${l_bg_color}`}
+    >
       <div className="max-w-6xl px-4 md:px-3 mx-auto">
         <div className="flex flex-col w-full justify-center items-center">
           {maintitle !== "" && (
-            <h3 className="md:mt-2 text-4xl md:text-5xl text-blueNew-midnight font-bold leading-tight text-center max-w-screen-sm">
+            <h3 className="md:mt-20 mt-10 text-4xl md:text-5xl text-blueNew-midnight font-bold leading-tight text-center max-w-screen-sm">
               {maintitle}
             </h3>
           )}
@@ -61,8 +64,6 @@ const LeftRightImgCntWithCentedHeading = props => {
               const content_display_ratio = content.content_display_ratio
                 ? content.content_display_ratio
                 : "50:50"
-
-              
 
               // console.log("cnt",content,smalltitle)
               return (
@@ -134,7 +135,13 @@ const LeftRightImgCntWithCentedHeading = props => {
                           props.applyGradientColorTheme
                             ? "text-white"
                             : "text-grayColor-custom"
-                        } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
+                        } leading-7 text-sm sm:text-lg frtxt-contnt ${
+                          content.content_list_styling === "right_arrow"
+                            ? "arrow-list-items"
+                            : content.content_list_styling === "check"
+                            ? "circle-check-items"
+                            : ""
+                        }`}
                       >
                         <PortableText blocks={portabletext} />
                       </div>
@@ -208,8 +215,6 @@ const LeftRightImgCntWithCentedHeading = props => {
                 ? content.content_display_ratio
                 : "50:50"
 
-              
-
               return (
                 <div
                   key={i}
@@ -261,7 +266,13 @@ const LeftRightImgCntWithCentedHeading = props => {
                         props.applyGradientColorTheme
                           ? "text-white"
                           : "text-grayColor-custom"
-                      } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
+                      } leading-7 text-sm sm:text-lg frtxt-contnt ${
+                        content.content_list_styling === "right_arrow"
+                          ? "arrow-list-items"
+                          : content.content_list_styling === "check"
+                          ? "circle-check-items"
+                          : ""
+                      }`}
                     >
                       <PortableText blocks={portabletext} />
                     </div>

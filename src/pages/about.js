@@ -77,6 +77,7 @@ const About = ({ data }) => {
             </p>
           </div>
           <div className="flex flex-wrap">
+
             <div className="md:w-1/2 mb-16 md:mb-16">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center">
@@ -95,6 +96,7 @@ const About = ({ data }) => {
                 </p>
               </div>
             </div>
+            
             <div className="md:w-1/2 mb-16 md:mb-16">
               <div className="lg:pr-36">
                 <div className="w-16 h-16 inline-flex items-center justify-center">

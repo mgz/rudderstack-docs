@@ -132,7 +132,13 @@ const LeftRightImgCnt = props => {
                             props.applyGradientColorTheme
                               ? "text-white"
                               : "text-grayColor-custom"
-                          } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
+                          } leading-7 text-sm sm:text-lg frtxt-contnt ${
+                            content.content_list_styling === "right_arrow"
+                              ? "arrow-list-items"
+                              : content.content_list_styling === "check"
+                              ? "circle-check-items"
+                              : ""
+                          }`}
                         >
                           <PortableText blocks={portabletext} />
                         </div>
@@ -256,7 +262,13 @@ const LeftRightImgCnt = props => {
                           props.applyGradientColorTheme
                             ? "text-white"
                             : "text-grayColor-custom"
-                        } leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items`}
+                        } leading-7 text-sm sm:text-lg frtxt-contnt ${
+                          content.content_list_styling === "right_arrow"
+                            ? "arrow-list-items"
+                            : content.content_list_styling === "check"
+                            ? "circle-check-items"
+                            : ""
+                        }`}
                       >
                         <PortableText blocks={portabletext} />
                       </div>
