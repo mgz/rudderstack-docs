@@ -5,7 +5,7 @@ import Link from "gatsby-link"
 
 const FourCardsWithTitleLeftAligned = props => {
   return (
-    <section className="bg-grayColor-BgGray pb-8 md:pb-24 px-4 md:px-0">
+    <section className="bg-grayColor-BgGray pb-8 md:pb-24 px-4 md:px-0 pt-20">
       <div className="max-w-6xl m-auto flex flex-wrap w-full mb-24 flex-col">
         {props.title !== "" && (
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blueNew-midnight">

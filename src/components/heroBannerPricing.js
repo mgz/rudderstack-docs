@@ -20,7 +20,7 @@ const HeroBannerPricing = props => {
     : ""
 
   return (
-    <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter custom-bg custom-gradient">
+    <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter custom-bg custom-gradient pt-8 md:pt-20">
       <div className="max-w-screen-lg px-4 md:px-12 mx-auto flex flex-wrap flex-col items-center text-center">
         <h1 className="my-4 text-5xl md:text-6xl font-bold font-custom leading-snug text-primary">
           {props.herobannertitle}
