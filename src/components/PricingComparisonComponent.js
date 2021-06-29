@@ -60,7 +60,7 @@ const PricingComparisonComponent = props => {
       id="pricing_comparison"
       className="bg-white plans-section pb-20 md:pb-20 relative"
     >
-      <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-20 text-center">
+      <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-20 md:pb-20 text-center">
         <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8 text-blueNew-midnight">
           {props.title}
         </h2>
@@ -253,7 +253,7 @@ const PricingComparisonComponent = props => {
                   </div>
                 </div>
 
-                <div className="plan-features mt-6 px-3">
+                <div className="plan-features mt-6 px-3 mb-20">
                   {pricingComparisionData.map((group, idx) => {
                     return (
                       <React.Fragment key={group.group}>

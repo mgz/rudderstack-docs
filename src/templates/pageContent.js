@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import MiddleBanner from "../components/middle-banner"
 import loadable from "@loadable/component"
 import CentredContentWithButton from "../components/centredContentWithButton"
-
+import MigrationSpecialists from "../components/MigrationSpecialists"
 import HeroSegment from "../components/heroSegment"
 import FourCardsWithTitle from "../components/fourCardsWithTitle"
 import FourCardsWithTitleLeftAligned from "../components/fourCardsWithTitleLeftAligned"
@@ -146,9 +146,10 @@ const PageContent = ({ data, location }) => {
 
             return (
               <section
-                className="bg-grayColor-BgGray md:pt-32 md:pb-24 sm:pt-16 sm:pb-12 pt-11 pb-12 relative font-custom"
+                className="bg-grayColor-BgGray py-10 pt-40 md:pt-44 relative font-custom"
                 key={section._key}
               >
+                <MigrationSpecialists />
                 <Faq
                   title={section.faqtitle}
                   subTitle={section.faqsubtitle}
