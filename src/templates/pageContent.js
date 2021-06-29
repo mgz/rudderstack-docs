@@ -11,13 +11,16 @@ import FourCardsWithTitle from "../components/fourCardsWithTitle"
 import FourCardsWithTitleLeftAligned from "../components/fourCardsWithTitleLeftAligned"
 import ThreeCardsWithTitle from "../components/threeCardsWithTitle"
 import SegmentComparisonComponent from "../components/segmentComparisonComponent"
+import PricingComparisonComponent from "../components/PricingComparisonComponent"
 import HeroBannerCloud from "../components/heroBannerCloud"
 import HeroBannerAboutUs from "../components/heroBannerAboutUs"
 import Leadership from "../components/leadership"
 import AdvisorsAndInvestor from "../components/advisorsAndInvestors"
-
+import Faq from "../components/faq"
 import LeftRightImgCnt from "../components/left-right-image-content"
 import LeftRightImgCntWithCentedHeading from "../components/left-right-image-content-with-centered-heading"
+import PricingCalculator from "../components/pricingCalculator"
+import HeroBannerPricing from "../components/heroBannerPricing"
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 
@@ -59,12 +62,16 @@ const PageContent = ({ data, location }) => {
             return <HeroBannerCloud key={section._key} {...section} />
           } else if (section._type === "hero_banner_about") {
             return <HeroBannerAboutUs key={section._key} {...section} />
+          } else if (section._type === "hero_banner_pricing") {
+            return <HeroBannerPricing key={section._key} {...section} />
           } else if (section._type === "four_card_with_title") {
             return <FourCardsWithTitle key={section._key} {...section} />
           } else if (section._type === "leadership_section") {
             return <Leadership key={section._key} {...section} />
           } else if (section._type === "advisors_and_investors_section") {
             return <AdvisorsAndInvestor key={section._key} {...section} />
+          } else if (section._type === "pricing_calculate") {
+            return <PricingCalculator key={section._key} {...section} />
           } else if (section._type === "four_cards_left_aligned") {
             return (
               <FourCardsWithTitleLeftAligned key={section._key} {...section} />
@@ -125,6 +132,30 @@ const PageContent = ({ data, location }) => {
           } else if (section._type === "comparision_with_title") {
             return (
               <SegmentComparisonComponent key={section._key} {...section} />
+            )
+          } else if (section._type === "pricing_comparision_with_title") {
+            return (
+              <PricingComparisonComponent key={section._key} {...section} />
+            )
+          } else if (section._type === "faq") {
+            let tmp = []
+
+            section.faqcontent.forEach(rr => {
+              tmp.push({ title: rr.faq_question, content: rr.faq_answer })
+            })
+
+            return (
+              <section
+                className="bg-grayColor-BgGray md:pt-32 md:pb-24 sm:pt-16 sm:pb-12 pt-11 pb-12 relative font-custom"
+                key={section._key}
+              >
+                <Faq
+                  title={section.faqtitle}
+                  subTitle={section.faqsubtitle}
+                  accordions={tmp}
+                  isBlockContent={true}
+                />
+              </section>
             )
           } else if (section._type === "ref_section_get_started") {
             let l_section_info = data.section_get_started.edges.find(
