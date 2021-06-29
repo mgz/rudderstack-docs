@@ -13,11 +13,6 @@ const Faq = ({ title, subTitle, isBlockContent, accordions = [] }) => {
         row.content[0].children.forEach(ee => (l_answer += ee.text))
       } else {
         l_answer = row.content
-        // var divContainer = document.createElement("div")
-        // divContainer.innerHTML = row.content
-        // l_answer = divContainer.textContent || divContainer.innerText || ""
-        // console.log("content", row.content)
-        // console.log("text", l_answer)
       }
       faqArr.push({
         "@type": "Question",

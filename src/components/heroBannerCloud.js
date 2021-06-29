@@ -1,7 +1,9 @@
 import React from "react"
 import PortableText from "./portableText"
+import Link from "gatsby-link"
 
 const HeroBannerCloud = props => {
+  // console.log("HeroBannerCloud", props)
   return (
     <section className="w-full product-page_banner text-white lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
       <div className="max-w-6xl sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
@@ -18,18 +20,43 @@ const HeroBannerCloud = props => {
             </div>
 
             <div className="block sm:flex justify-center items-center mt-12">
-              <a
-                className="btn-primary-lg bg-white text-dark hover:bg-blueNew-midnight hover:text-white sm:mr-4 md:mb-0 mb-6 border-transparent"
-                href="https://app.rudderstack.com/signup?type=freetrial"
-              >
-                Sign up for free
-              </a>
-              <a
-                className="btn-secondary-lg sm:mr-4 md:mb-0 mb-4"
-                href="/request-demo"
-              >
-                Get a demo
-              </a>
+              {props.herobannerbutton.map((btn, i) => (
+                <>
+                  {(() => {
+                    if (btn.btnexternallink === true) {
+                      return (
+                        <a
+                          key={btn._key}
+                          className={
+                            (btn.btnhiglight === true
+                              ? "btn-primary-lg"
+                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6 bg-white text-dark hover:bg-blueNew-midnight hover:text-white`
+                          }
+                          href={btn.btnlink}
+                        >
+                          {btn.btntext}
+                        </a>
+                      )
+                    } else {
+                      return (
+                        <Link key={btn._key} to={btn.btnlink}>
+                          <span
+                            className={
+                              (btn.btnhiglight === true
+                                ? "btn-primary-lg"
+                                : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                            }
+                          >
+                            {btn.btntext}
+                          </span>
+                        </Link>
+                      )
+                    }
+                  })()}
+                </>
+              ))}
+
+              
             </div>
           </div>
           <div className="relative w-full px-5 rounded-lg flex-grow justify-items-end lg:w-2/5 sm:px-0 sm:items-center lg:items-start lg:mb-0">
