@@ -36,9 +36,10 @@ const FourCardsWithTitleLeftAligned = props => {
                   <div className="w-16 h-16 inline-flex items-center justify-center">
                     <Image
                       props={item.card_image.asset._ref}
-                      classes="w-full"
+                      classes=""
                     />
                   </div>
+
                   <h2 className="text-2xl-2 font-bold mb-2">{item.title}</h2>
 
                   <div class="leading-relaxed text-sm sm:text-lg  text-grayColor-custom">

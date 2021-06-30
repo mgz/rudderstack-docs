@@ -12,8 +12,11 @@ const PricingComparisonComponent = props => {
 
   const handleScroll = () => {
     if (
-      document.getElementsByClassName("cover-table")[0].offsetHeight +
-        document.getElementsByClassName("cover-table")[0].offsetTop -
+      document.getElementsByClassName("pricing-table")[0].offsetHeight -
+        document
+          .getElementsByClassName("pricing-table")[0]
+          .getBoundingClientRect().top +
+        document.getElementsByClassName("pricing-table")[0].offsetTop -
         window.scrollY >
       150
     ) {
@@ -61,12 +64,12 @@ const PricingComparisonComponent = props => {
       className="bg-white plans-section pb-20 md:pb-20 relative"
     >
       <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-20 md:pb-20 text-center">
-        <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8 text-blueNew-midnight">
+        <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8">
           {props.title}
         </h2>
 
         <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
-          <table className="cover-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
+          <table className="pricing-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
             <thead>
               <tr>
                 <th

@@ -47,7 +47,7 @@ const SegmentDesktop = ({ data, location }) => {
                   <HeroSegment {...section} />
                 </section>
               )
-            }  else if (section._type === "four_card_with_title") {
+            } else if (section._type === "four_card_with_title") {
               return <FourCardsWithTitle key={section._key} {...section} />
             } else if (section._type === "ref_section_testimonials") {
               let l_section_info = data.section_testimonials.edges.find(
@@ -62,7 +62,21 @@ const SegmentDesktop = ({ data, location }) => {
                 </section>
               )
             } else if (section._type === "three_card_with_title") {
-              return <ThreeCardsWithTitle key={section._key} {...section} />
+              let greyBackground = false
+              let extraBottomMargin = true
+              return (
+                <section
+                  key={section._key}
+                  id="liked_feature_section"
+                  className={`${
+                    greyBackground
+                      ? "bg-grayColor-BgGray"
+                      : "bg-whiteColor-custom"
+                  } ${extraBottomMargin ? "pb-40 md:pb-48" : "pb-8"} `}
+                >
+                  <ThreeCardsWithTitle {...section} />
+                </section>
+              )
             } else if (section._type === "comparision_with_title") {
               let segmentComparisionData = []
               section.group_items.group_items.forEach(row => {
