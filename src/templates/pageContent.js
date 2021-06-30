@@ -80,6 +80,7 @@ const PageContent = ({ data, location }) => {
             return (
               <FourCardsWithTitleLeftAligned key={section._key} {...section} />
             )
+            
           } else if (section._type === "two_cards_left_aligned") {
             return <TwoCardsLeftAligned key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
