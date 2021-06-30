@@ -21,6 +21,8 @@ import LeftRightImgCnt from "../components/left-right-image-content"
 import LeftRightImgCntWithCentedHeading from "../components/left-right-image-content-with-centered-heading"
 import PricingCalculator from "../components/pricingCalculator"
 import HeroBannerPricing from "../components/heroBannerPricing"
+import HeroBannerContactUs from "../components/HeroBannerContactUs"
+import TwoCardsLeftAligned from "../components/twoCardsLeftAligned"
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 
@@ -64,6 +66,8 @@ const PageContent = ({ data, location }) => {
             return <HeroBannerAboutUs key={section._key} {...section} />
           } else if (section._type === "hero_banner_pricing") {
             return <HeroBannerPricing key={section._key} {...section} />
+          } else if (section._type === "hero_banner_contactus") {
+            return <HeroBannerContactUs key={section._key} {...section} />
           } else if (section._type === "four_card_with_title") {
             return <FourCardsWithTitle key={section._key} {...section} />
           } else if (section._type === "leadership_section") {
@@ -76,6 +80,8 @@ const PageContent = ({ data, location }) => {
             return (
               <FourCardsWithTitleLeftAligned key={section._key} {...section} />
             )
+          } else if (section._type === "two_cards_left_aligned") {
+            return <TwoCardsLeftAligned key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
             return (
               <div className={`100%`}>
