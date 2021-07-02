@@ -184,6 +184,8 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                       <a
                         key={socialitem._key}
                         className="footer-social-icon bg-seegreen"
+                        rel="noreferrer noopener"
+                        aria-label="This is an external link "
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon icon={socialitem.social_item_icon} />
@@ -194,6 +196,8 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                       <a
                         key={socialitem._key}
                         className="footer-social-icon bg-seegreen"
+                        rel="noreferrer noopener"
+                        aria-label="This is an external link "
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon

@@ -23,7 +23,13 @@ const Tabs = props => {
           >
             {tabs.map((tab, i) => {
               return (
-                <li key={i} className="mr-2 last:mr-0 flex-auto md:my-1">
+                <li
+                  key={i}
+                  className="mr-2 last:mr-0 flex-auto md:my-1"
+                  role="tab"
+                  aria-label={tab.tabtitle}
+                  aria-selected={openTab === i}
+                >
                   <a
                     className={
                       "text-lg py-6 pr-5 md:px-5 md:py-3 block leading-normal " +
@@ -36,8 +42,8 @@ const Tabs = props => {
                       setOpenTab(i)
                     }}
                     data-toggle="tab"
+                    rel="noreferrer noopener"
                     href={`#link` + i}
-                    role="tablist"
                   >
                     {tab.tabtitle}
                   </a>
