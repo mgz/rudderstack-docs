@@ -4,7 +4,6 @@ import Image from "./image"
 import Link from "gatsby-link"
 
 const LeftRightImgCntWithCentedHeading = props => {
-  console.log("LeftRightImgCntWithCentedHeading", props)
   const maintitle = props.leftrightcontentmaintitle
     ? props.leftrightcontentmaintitle
     : ""
