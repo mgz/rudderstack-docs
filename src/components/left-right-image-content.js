@@ -61,7 +61,9 @@ const LeftRightImgCnt = props => {
                 const content_display_ratio = content.content_display_ratio
                   ? content.content_display_ratio
                   : "50:50"
-
+                const titleColor = content.title_color
+                  ? content.title_color
+                  : ""
                 // console.log("cnt",content,smalltitle)
                 return (
                   <div
@@ -110,7 +112,11 @@ const LeftRightImgCnt = props => {
                             className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
                               props.applyGradientColorTheme
                                 ? "text-white"
-                                : "text-blueNew-midnight"
+                                : titleColor === "midnightBlue"
+                                ? "text-blueNew-midnight"
+                                : titleColor === "black"
+                                ? "text-black-custom"
+                                : ""
                             } font-bold leading-tight`}
                           >
                             {title}
@@ -120,8 +126,12 @@ const LeftRightImgCnt = props => {
                             className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl  ${
                               props.applyGradientColorTheme
                                 ? "text-white"
-                                : "text-blueNew-midnight"
-                            } font-bold leading-tight`}
+                                : titleColor === "midnightBlue"
+                                ? "text-blueNew-midnight"
+                                : titleColor === "black"
+                                ? "text-black-custom"
+                                : ""
+                            } font-bold leading-tight `}
                           >
                             {title}
                           </h3>
@@ -211,6 +221,11 @@ const LeftRightImgCnt = props => {
                 const content_display_ratio = content.content_display_ratio
                   ? content.content_display_ratio
                   : "50:50"
+
+                const titleColor = content.title_color
+                  ? content.title_color
+                  : ""
+
                 return (
                   <div
                     key={i}
@@ -241,7 +256,11 @@ const LeftRightImgCnt = props => {
                           className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
                             props.applyGradientColorTheme
                               ? "text-white"
-                              : "text-blueNew-midnight"
+                              : titleColor === "midnightBlue"
+                              ? "text-blueNew-midnight"
+                              : titleColor === "black"
+                              ? "text-black-custom"
+                              : ""
                           } font-bold leading-tight`}
                         >
                           {title}
@@ -251,7 +270,11 @@ const LeftRightImgCnt = props => {
                           className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl ${
                             props.applyGradientColorTheme
                               ? "text-white"
-                              : "text-blueNew-midnight"
+                              : titleColor === "midnightBlue"
+                              ? "text-blueNew-midnight"
+                              : titleColor === "black"
+                              ? "text-black-custom"
+                              : ""
                           } font-bold leading-tight`}
                         >
                           {title}

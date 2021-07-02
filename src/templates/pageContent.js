@@ -27,7 +27,7 @@ import TwoCardsLeftAligned from "../components/twoCardsLeftAligned"
 const Testimonial = loadable(() => import("../components/testimonial"))
 
 const PageContent = ({ data, location }) => {
-  console.log("data", data)
+  // console.log("data", data)
 
   return (
     <Layout location={location}>

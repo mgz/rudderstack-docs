@@ -21,6 +21,7 @@ import FooterNav from "../components/footer-nav"
 import PortableText from "../components/portableText"
 import { StaticImage } from "gatsby-plugin-image"
 import CookiesConsent from "./cookiesConsent"
+import "../css/tailwind.css"
 
 const Layout = ({ location, showExplicitGradient, children }) => {
   const data = useStaticQuery(graphql`
