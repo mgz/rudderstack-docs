@@ -83,6 +83,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
     (location.pathname.startsWith("/product/") ||
       location.pathname.startsWith("/request-demo") ||
       location.pathname.startsWith("/enterprise-quote") ||
+      location.pathname.startsWith("/404") ||
       location.pathname.startsWith("/rudderstack-vs-segment") ||
       location.pathname.startsWith("/cloud") ||
       (location.pathname.startsWith("/video-library/") &&

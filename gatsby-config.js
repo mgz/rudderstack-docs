@@ -218,5 +218,13 @@ module.exports = {
     },
     "gatsby-source-sanity-transform-images",
     `gatsby-plugin-meta-redirect`, // make sure to put last in the array
+    // {
+    //   resolve: `gatsby-plugin-remote-images`,
+    //   options: {
+    //     nodeType: 'sanityImageAsset',
+    //     imagePath: 'sanityImages',
+    //     name: 'allItemImages',
+    //   },
+    // },
   ],
 }

@@ -23,11 +23,12 @@ import PricingCalculator from "../components/pricingCalculator"
 import HeroBannerPricing from "../components/heroBannerPricing"
 import HeroBannerContactUs from "../components/heroBannerContactUs"
 import TwoCardsLeftAligned from "../components/twoCardsLeftAligned"
+import HeroBanner404 from "../components/heroBanner404"
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 
 const PageContent = ({ data, location }) => {
-  // console.log("data", data)
+  console.log("data", data)
 
   return (
     <Layout location={location}>
@@ -76,11 +77,12 @@ const PageContent = ({ data, location }) => {
             return <AdvisorsAndInvestor key={section._key} {...section} />
           } else if (section._type === "pricing_calculate") {
             return <PricingCalculator key={section._key} {...section} />
+          } else if (section._type === "hero_banner_404") {
+            return <HeroBanner404 key={section._key} {...section} />
           } else if (section._type === "four_cards_left_aligned") {
             return (
               <FourCardsWithTitleLeftAligned key={section._key} {...section} />
             )
-
           } else if (section._type === "two_cards_left_aligned") {
             return <TwoCardsLeftAligned key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
