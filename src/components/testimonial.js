@@ -54,7 +54,7 @@ const Testimonial = props => {
                             <div className="flex items-center flex grid justify-items-center">
                               <div class="usr_img mb-4">
                                 <Image
-                                  props={testimonial.clientimage.asset._ref}
+                                  props={testimonial.clientimage.asset._ref} 
                                 />
                               </div>
                             </div>

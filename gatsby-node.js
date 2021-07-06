@@ -637,4 +637,55 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: edge.node.slug.current },
     })
   })
+
+  // const l_count = await graphql(`
+  //   {
+  //     allSanityImageAsset {
+  //       totalCount
+  //       nodes {
+  //         _id
+  //         url
+  //         localFile {
+  //           childImageSharp {
+  //             fluid {
+  //               src
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+
+  // if (l_count.errors) {
+  //   throw l_count.errors
+  // }
+  // console.log("image count", l_count.data.allSanityImageAsset)
+  // const pageCount = l_count.data.allSanityImageAsset.totalCount
+  // const PAGINATION = 50
+  // let tmpRowsCount = 0
+  // while (tmpRowsCount < pageCount) {
+  //   const l_images = `
+  //   {
+  //     allSanityImageAsset(skip: ${tmpRowsCount}, limit: ${PAGINATION}) {
+  //       totalCount
+  //       nodes {
+  //         _id
+  //         url
+  //         localFile {
+  //           childImageSharp {
+  //             fluid {
+  //               src
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   `
+
+  //   tmpRowsCount += pageCount
+
+  //   console.log("for each batch", l_images.data.allSanityImageAsset)
+  // }
 }

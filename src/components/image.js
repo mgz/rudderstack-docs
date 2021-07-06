@@ -12,7 +12,7 @@
 //   //   }`
 //   // )
 //   const imgh = (() => {
-//     console.log("StaticQuery", image.localFile.childImageSharp)
+//     // console.log("StaticQuery", image.localFile.childImageSharp)
 //     return (
 //       // <StaticImage
 //       //   src={`http://localhost:8000${image.node.localFile.publicURL}`}
@@ -26,7 +26,7 @@
 //         src={`${
 //           image.localFile.childImageSharp
 //             ? "http://localhost:8000" +
-//               image.localFile.childImageSharp.fluid.src
+//               image.localFile.childImageSharp.fixed.src
 //             : image.url
 //         }`}
 //         alt={alt ? alt : image._id}
@@ -49,13 +49,12 @@
 //       query={graphql`
 //         {
 //           sanityimages: allSanityImageAsset {
-//             totalCount
 //             nodes {
 //               _id
 //               url
-//               localFile {
+//               localFile(width: 500) {
 //                 childImageSharp {
-//                   fluid {
+//                   fixed {
 //                     src
 //                   }
 //                 }
@@ -64,20 +63,18 @@
 //           }
 //         }
 //       `}
-//       variables={{ ref: props.props }}
+//       // variables={{ ref: props.props }}
 //       render={data => {
 //         const imgdata =
 //           data.sanityimages.nodes &&
 //           data.sanityimages.nodes.find(imgdata => imgdata._id === props.props)
-
+//         // console.log("imnage", data.sanityimages,imgdata)
 //         return renderImage(imgdata, props.classes, props.alt)
 //       }}
 //     />
 //   )
 // }
 // export default Image
-
-
 
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
