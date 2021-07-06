@@ -49,7 +49,7 @@ const MainNavigation = () => {
     <>
       <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 flex-wrap">
         <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
-          <Link to="/" className="pl-4 sm:pl-0">
+          <Link to="/" className="pl-4 sm:pl-0" rel="noopener noreferrer">
             <StaticImage
               // src={"../images/rudderstack-logo-v2.svg"}
               src={"../images/rudderstack-logo-header-v2.png"}

@@ -3,20 +3,19 @@ import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
 
-const FourCardsWithTitle = props => {
-
+const FourCardsWithTitleLeftAligned = props => {
   return (
-    <section className="bg-grayColor-BgGray pb-8 md:pb-24">
-      <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center">
+    <section className="bg-grayColor-BgGray pb-8 md:pb-24 px-4 md:px-0 pt-20">
+      <div className="max-w-6xl m-auto flex flex-wrap w-full mb-24 flex-col">
         {props.title !== "" && (
-          <h3 className="mt-24 mb-0 md:mb-10 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-blueNew-midnight">
             {props.title}
-          </h3>
+          </h2>
         )}
-        {props.subtitle !== "" && (
-          <h3 className="mt-10 mb-4 pb-2 text-2xl md:text-3xl text-blueNew-midnight text-center font-bold leading-tight">
-            {props.subtitle}
-          </h3>
+        {props.smalltitle !== "" && (
+          <p className="w-full leading-relaxed font-bold sm:font-normal text-sm md:text-lg text-grayColor-custom">
+            {props.smalltitle}
+          </p>
         )}
       </div>
       <div className="max-w-6xl px-0 md:px-3 mx-auto">
@@ -32,23 +31,21 @@ const FourCardsWithTitle = props => {
             const linkurl = item.addlink ? item.addlink.cmnlink : ""
 
             return (
-              <div
-                key={item._key}
-                className="w-full sm:w-1/2 sm:px-2 mt-5 mx-4 md:mx-0"
-              >
-                <div className="h-full flex flex-col justify-start items-center text-center bg-white py-10 px-10 rounded-2xl md:mx-1">
-                  <div className="h-20">
+              <div key={item._key} className="md:w-1/2 mb-16 md:mb-16">
+                <div className="lg:pr-36">
+                  <div className="w-16 h-16 inline-flex items-center justify-center">
                     <Image
                       props={item.card_image.asset._ref}
-                      classes="w-full"
+                      classes=""
                     />
                   </div>
-                  <div class="text-2xl-2 font-bold mb-6 mt-2 max-w-xs m-auto">
-                    {item.title}
-                  </div>
-                  <div class="text-grayColor-custom text-lg">
+
+                  <h2 className="text-2xl-2 font-bold mb-2">{item.title}</h2>
+
+                  <div class="leading-relaxed text-sm sm:text-lg  text-grayColor-custom">
                     <PortableText blocks={item.content} />
                   </div>
+
                   {linktext !== "" && (
                     <div class="flex items-center mt-8">
                       {(() => {
@@ -101,4 +98,4 @@ const FourCardsWithTitle = props => {
   )
 }
 
-export default FourCardsWithTitle
+export default FourCardsWithTitleLeftAligned

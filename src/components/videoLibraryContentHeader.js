@@ -26,7 +26,7 @@ const VideoLibraryContentHeader = ({ data, category, url_or_event_dttm }) => {
                     <VideoRequestForm
                       formId="video_library_demo_form_top"
                       formHeaderText={"Register Now"}
-                      formShortDesc={"Register to watch now this video."}
+                      // formShortDesc={"Register to watch now this video."}
                       submitDemoButtonName={"Register Now"}
                       sectionId="video_library_hdr"
                     />
