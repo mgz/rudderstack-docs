@@ -8,4 +8,5 @@
 import "./src/css/site.css"
 import "./src/css/cookies.css"
 import "./src/css/blog.css"
+import "./src/css/agreement.css"
 import "./src/css/product.css"
