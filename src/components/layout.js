@@ -21,6 +21,7 @@ import FooterNav from "../components/footer-nav"
 import PortableText from "../components/portableText"
 import { StaticImage } from "gatsby-plugin-image"
 import CookiesConsent from "./cookiesConsent"
+import "../css/tailwind.css"
 
 const Layout = ({ location, showExplicitGradient, children }) => {
   const data = useStaticQuery(graphql`
@@ -82,6 +83,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
     (location.pathname.startsWith("/product/") ||
       location.pathname.startsWith("/request-demo") ||
       location.pathname.startsWith("/enterprise-quote") ||
+      location.pathname.startsWith("/404") ||
       location.pathname.startsWith("/rudderstack-vs-segment") ||
       location.pathname.startsWith("/cloud") ||
       (location.pathname.startsWith("/video-library/") &&
@@ -184,6 +186,8 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                       <a
                         key={socialitem._key}
                         className="footer-social-icon bg-seegreen"
+                        rel="noreferrer noopener"
+                        aria-label="This is an external link "
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon icon={socialitem.social_item_icon} />
@@ -194,6 +198,8 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                       <a
                         key={socialitem._key}
                         className="footer-social-icon bg-seegreen"
+                        rel="noreferrer noopener"
+                        aria-label="This is an external link "
                         href={socialitem.social_item_link}
                       >
                         <FontAwesomeIcon

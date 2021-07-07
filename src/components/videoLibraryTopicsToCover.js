@@ -32,7 +32,7 @@ const VideoLibraryTopicsToCover = props => {
                 <VideoRequestForm
                   formId="video_library_demo_form_bottom"
                   formHeaderText={"Register Now"}
-                  formShortDesc={"Register to watch now this video."}
+                  // formShortDesc={"Register to watch now this video."}
                   submitDemoButtonName={"Register Now"}
                   sectionId="video_library_footer"
                 />

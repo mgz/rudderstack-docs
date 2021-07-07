@@ -1,71 +1,66 @@
-/*Blog Custom Css*/
-.blog_banner > div > div > div > div {
-  color: #fff;
-}
-.blog_banner h1 {
-  @apply font-bold;
-  line-height: 69px;
-}
-
-.block-description {
+/*Agreement Custom Css*/
+ 
+.agreement-description {
   font-family: "Basis Grotesque";
 }
-.block-description h2 {
+.agreement-description h2 {
   @apply text-3xl;
   @apply font-bold;
   @apply text-black-custom;
   @apply mt-10;
 }
-.block-description div > h2:first-child,
-.block-description div > h3:first-child {
+.agreement-description div > h2:first-child,
+.agreement-description div > h3:first-child {
   @apply mt-8;
 }
-.block-description h3 {
+.agreement-description h3 {
   @apply mt-20;
   @apply text-2xl;
   @apply font-bold;
   @apply text-black-custom;
   @apply leading-7;
 }
-.block-description p {
+.agreement-description p {
   @apply mt-6;
   @apply text-lg;
   @apply leading-6;
   @apply flex-wrap;
   @apply text-grayColor-custom;
 }
-/* .block-description p a
-{
- 
-  @apply font-bold;
-} */
-.block-description figure,
-.block-description iframe {
+/* .agreement-description p a
+  {
+   
+    @apply font-bold;
+  } */
+.agreement-description figure,
+.agreement-description iframe {
   @apply mt-10;
 }
-.block-description ol,
-.block-description ul {
+.agreement-description ol,
+.agreement-description ul {
   @apply mt-7;
 }
-.block-description ul ul {
+.agreement-description ul ul {
   @apply mt-0;
 }
-/* .block-description a {
-  @apply text-purpleNew-gigas;
-  
-} */
-.block-description li {
+/* .agreement-description a {
+    @apply text-purpleNew-gigas;
+    
+  } */
+.agreement-description li {
   @apply mt-7;
   @apply block;
   @apply relative;
   @apply pl-8;
+  @apply text-lg;
 }
-.block-description li li {
+.agreement-description li li {
   @apply mt-0;
   @apply pl-0;
+  @apply text-lg;
 }
 
-.block-description li::before {
+.agreement-description li::before {
   @apply absolute;
   content: "";
   background: url("../images/arrow-right.svg");
@@ -75,11 +70,11 @@
   @apply top-1;
   @apply left-0;
 }
-.block-description li li::before {
+.agreement-description li li::before {
   content: none;
 }
 
-.block-description code {
+.agreement-description code {
   @apply break-all;
 }
 .blog-banner-overlay {
@@ -95,7 +90,7 @@
   }
 }
 @media only screen and (max-width: 767px) {
-  .block-description h2 {
+  .agreement-description h2 {
     @apply mt-10;
   }
 

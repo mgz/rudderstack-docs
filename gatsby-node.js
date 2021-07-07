@@ -75,7 +75,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   createRedirect({
     fromPath: "/blog/rudderstack-adds-support-for-posthog-as-a-destination/",
-    toPath: "/integration/posthog/",
+    toPath: "/integration/posthog-analytics",
     isPermanent: true,
   })
   createRedirect({
@@ -131,7 +131,7 @@ exports.createPages = async ({ graphql, actions }) => {
   createRedirect({
     fromPath:
       "/blog/rudderstack-supports-customer-engagement-platforms-customerio-leanplum-braze",
-    toPath: "/integration/customerio/",
+    toPath: "/integration/customer-io/",
     isPermanent: true,
   })
   createRedirect({
@@ -207,13 +207,13 @@ exports.createPages = async ({ graphql, actions }) => {
   createRedirect({
     fromPath:
       "/blog/rudderstack-supports-clevertap-kustomer-and-bing-ads-as-destinations",
-    toPath: "/integration/bing-ads-2/",
+    toPath: "/integration/bing-ads/",
     isPermanent: true,
   })
   createRedirect({
     fromPath:
       "/blog/rudderstack-supports-data-warehouses-redshift-bigquery-snowflake",
-    toPath: "/integration/bigquery/",
+    toPath: "/integration/google-bigquery-source",
     isPermanent: true,
   })
   createRedirect({
@@ -606,4 +606,86 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: edge.node.slug.current },
     })
   })
+
+  //generic-pages
+  const l_pages = await graphql(`
+    {
+      allSanityPage {
+        edges {
+          node {
+            slug {
+              current
+            }
+            title
+          }
+        }
+      }
+    }
+  `)
+
+  if (l_pages.errors) {
+    throw l_pages.errors
+  }
+
+  const pages = l_pages.data.allSanityPage.edges || []
+  pages.forEach((edge, index) => {
+    const path = `/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/pageContent.js"),
+      context: { slug: edge.node.slug.current },
+    })
+  })
+
+  // const l_count = await graphql(`
+  //   {
+  //     allSanityImageAsset {
+  //       totalCount
+  //       nodes {
+  //         _id
+  //         url
+  //         localFile {
+  //           childImageSharp {
+  //             fluid {
+  //               src
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+
+  // if (l_count.errors) {
+  //   throw l_count.errors
+  // }
+  // console.log("image count", l_count.data.allSanityImageAsset)
+  // const pageCount = l_count.data.allSanityImageAsset.totalCount
+  // const PAGINATION = 50
+  // let tmpRowsCount = 0
+  // while (tmpRowsCount < pageCount) {
+  //   const l_images = `
+  //   {
+  //     allSanityImageAsset(skip: ${tmpRowsCount}, limit: ${PAGINATION}) {
+  //       totalCount
+  //       nodes {
+  //         _id
+  //         url
+  //         localFile {
+  //           childImageSharp {
+  //             fluid {
+  //               src
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   `
+
+  //   tmpRowsCount += pageCount
+
+  //   console.log("for each batch", l_images.data.allSanityImageAsset)
+  // }
 }
