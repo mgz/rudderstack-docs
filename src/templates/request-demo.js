@@ -11,6 +11,8 @@ import OurLogo from "../components/ourlogo"
 import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
 
+import DynamicInputForm from "../components/dynamicInputForm"
+
 // const Layout = loadable(() => import("../components/layout"))
 // const SEO = loadable(() => import("../components/seo"))
 // const DemoForm = loadable(() => import("../components/demoForm"))
@@ -34,10 +36,21 @@ export const query = graphql`
     sanityFrontpageblock {
       _rawPagebuildersectionarray
     }
+    allSanityFormInput {
+      nodes {
+        _id
+        tracking_field_name
+        title
+        submit_button_text
+        formheader
+        _rawFields
+      }
+    }
   }
 `
 
 const Demo = ({ data, htmlId, location }) => {
+  console.log("request-demo", data)
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
@@ -180,6 +193,8 @@ const Demo = ({ data, htmlId, location }) => {
           <div className="bg-whiteColor-custom w-full">
             <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
               <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
+                {/* <DynamicInputForm {...lv_scheduledemoheader[0].input_form} /> */}
+
                 <DemoForm
                   formId={`${location.pathname
                     .replace("/", "")
