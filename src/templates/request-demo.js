@@ -163,12 +163,12 @@ const Demo = ({ data, htmlId, location }) => {
           // console.log('usebasin',res)
           if (res.ok || res.statusText === "OK") {
             console.log("success ", res)
-            window.ChiliPiper.scheduling(
-              "rudderstack",
-              "demo-or-quote-request",
-              { formId: data.formId }
-            )
-            //navigate("/request-demo/thank-you")
+            // window.ChiliPiper.scheduling(
+            //   "rudderstack",
+            //   "demo-or-quote-request",
+            //   { formId: data.formId }
+            // )
+            navigate("/request-demo/thank-you")
           }
         })
         .catch(err => {
