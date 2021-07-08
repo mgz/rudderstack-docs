@@ -37,8 +37,13 @@ const DynamicInputForm = ({
       oo => oo._id === ref_form_input._ref
     )
     let tmpStructure
+    let tmpStructureError
     tmp._rawFields.map(field => {
-      tmpStructure = { ...tmpStructure, [field.field_name]: "" }
+      tmpStructure = {
+        ...tmpStructure,
+        [field.field_name]: field.field_type === "checkbox" ? false : "",
+      }
+      tmpStructureError = { ...tmpStructureError, [field.field_name]: "" }
     })
     setFormDefination(tmp)
     setFormData(tmpStructure)
@@ -65,6 +70,8 @@ const DynamicInputForm = ({
     }
     if (col_validation.is_required) {
       return value.length > 0 ? "" : "This field is required."
+    } else {
+      return ""
     }
   }
 
@@ -84,6 +91,7 @@ const DynamicInputForm = ({
         ret = true
       }
     })
+    // console.log("validate form", errObj, formData)
     setFormErrors(errObj)
     return ret
   }
@@ -189,7 +197,7 @@ const DynamicInputForm = ({
       onSubmit={e => {
         e.preventDefault()
         if (validateForm(formData) === false) {
-          // console.log("formData", formData)
+          console.log("formData", formData)
           onFormSubmit(formData)
         }
       }}
@@ -255,7 +263,7 @@ const DynamicInputForm = ({
 
               {field.field_type === "checkbox" && (
                 <div
-                  className="text-lg text-grayColor-custom mb-4 flex flex-row items-center cursor-pointer"
+                  className="text-lg text-grayColor-custom mb-0 flex flex-row items-center cursor-pointer"
                   onClick={() =>
                     setFormData({
                       ...formData,
