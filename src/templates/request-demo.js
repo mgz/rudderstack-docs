@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Helmet } from "react-helmet"
 import { graphql, Link, navigate } from "gatsby"
 import loadable from "@loadable/component"
@@ -39,6 +39,16 @@ export const query = graphql`
 `
 
 const Demo = ({ data, htmlId, location }) => {
+  useEffect(() => {
+    if (window.document) {
+      const script = window.document.createElement("script")
+      script.async = true
+      script.type = "text/javascript"
+      script.src = "https://js.chilipiper.com/marketing.js"
+      window.document.body.appendChild(script)
+    }
+  }, [])
+
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
@@ -295,11 +305,11 @@ ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {title: "Thanks! W
           ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {formId: "request_demo_form_bottom"})
         `}
         </script>
-        <script
+        {/* <script
           src="https://js.na.chilipiper.com/marketing.js"
           type="text/javascript"
           async
-        />
+        /> */}
       </Helmet>
     </Layout>
   )
