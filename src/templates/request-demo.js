@@ -193,9 +193,9 @@ const Demo = ({ data, htmlId, location }) => {
           <div className="bg-whiteColor-custom w-full">
             <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
               <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
-                {/* <DynamicInputForm {...lv_scheduledemoheader[0].input_form} /> */}
+                <DynamicInputForm {...lv_scheduledemoheader[0].input_form} />
 
-                <DemoForm
+                {/* <DemoForm
                   formId={`${location.pathname
                     .replace("/", "")
                     .replace("-", "_")}_form_top`}
@@ -203,7 +203,7 @@ const Demo = ({ data, htmlId, location }) => {
                   onDemoFormSubmit={onDemoFormSubmit}
                   isLoading={isLoading}
                   sectionId="demo_hdr"
-                />
+                /> */}
               </div>
               <div
                 className="w-full pr-4 sm:pl-4 pt-0 -mt-8 sm:mt-0 sm:pt-8 lg:pl-20  text-xl-2 md:w-3/6 text-grayColor-custom"
