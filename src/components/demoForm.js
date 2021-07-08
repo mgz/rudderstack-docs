@@ -61,12 +61,9 @@ const DemoForm = props => {
         props.isFooterForm === true ? "top-0" : "-top-24"
       }`}
       onSubmit={e => {
-        console.log('before save')
         e.preventDefault()
         if (validateForm(formData) === false) {
-          console.log('before save 2')
           props.onDemoFormSubmit(formData)
-          console.log('after save')
         }
       }}
     >

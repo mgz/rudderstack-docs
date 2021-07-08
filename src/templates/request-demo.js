@@ -39,15 +39,15 @@ export const query = graphql`
 `
 
 const Demo = ({ data, htmlId, location }) => {
-  useEffect(() => {
-    if (window.document) {
-      const script = window.document.createElement("script")
-      script.async = true
-      script.type = "text/javascript"
-      script.src = "https://js.chilipiper.com/marketing.js"
-      window.document.body.appendChild(script)
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (window.document) {
+  //     const script = window.document.createElement("script")
+  //     script.async = true
+  //     script.type = "text/javascript"
+  //     script.src = "https://js.chilipiper.com/marketing.js"
+  //     window.document.body.appendChild(script)
+  //   }
+  // }, [])
 
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
@@ -162,13 +162,13 @@ const Demo = ({ data, htmlId, location }) => {
         .then(res => {
           // console.log('usebasin',res)
           if (res.ok || res.statusText === "OK") {
-            console.log("success ", res)
+            // console.log("success ", res)
             // window.ChiliPiper.scheduling(
             //   "rudderstack",
             //   "demo-or-quote-request",
             //   { formId: data.formId }
             // )
-            navigate("/request-demo/thank-you")
+            // navigate("/request-demo/thank-you")
           }
         })
         .catch(err => {
@@ -305,11 +305,11 @@ ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {title: "Thanks! W
           ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {formId: "request_demo_form_bottom"})
         `}
         </script>
-        {/* <script
+        <script
           src="https://js.na.chilipiper.com/marketing.js"
           type="text/javascript"
           async
-        /> */}
+        />
       </Helmet>
     </Layout>
   )
