@@ -193,7 +193,10 @@ const Demo = ({ data, htmlId, location }) => {
           <div className="bg-whiteColor-custom w-full">
             <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
               <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
-                <DynamicInputForm {...lv_scheduledemoheader[0].input_form} />
+                <DynamicInputForm
+                  {...lv_scheduledemoheader[0].input_form}
+                  add_on_styling={"-top-24"}
+                />
 
                 {/* <DemoForm
                   formId={`${location.pathname
@@ -267,7 +270,12 @@ const Demo = ({ data, htmlId, location }) => {
               </div>
             </div>
             <div className="w-full px-0 md:w-3/6 flex flex-row justify-end">
-              <DemoForm
+              <DynamicInputForm
+                {...lv_demofooterleft[0].input_form}
+                add_on_styling={"top-0"}
+              />
+
+              {/* <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                 formId={`${location.pathname
                   .replace("/", "")
@@ -277,7 +285,7 @@ const Demo = ({ data, htmlId, location }) => {
                 isLoading={isLoading}
                 onDemoFormSubmit={onDemoFormSubmit}
                 sectionId="demo_bottom"
-              />
+              /> */}
             </div>
           </div>
         </section>
