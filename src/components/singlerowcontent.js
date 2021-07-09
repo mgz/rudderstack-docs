@@ -34,10 +34,10 @@ const Singlerowcontent = ({ hit }) => {
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {hit.blog_category}
             </div>
-            <h2 className="block  mt-4 md:mt-10 mb-4 text-3xl-4 lg:text-4xl leading-tight font-bold md:font-medium text-blueNew-midnight">
+            <h1 className="block  mt-4 md:mt-10 mb-4 text-3xl-4 lg:text-4xl leading-tight font-bold md:font-medium text-blueNew-midnight">
               {hit.title}
               {/* <Link to={hit.slug}>{hit.title}</Link> */}
-            </h2>
+            </h1>
 
             <div class="mt-2 text-xl-2 md:text-3xl text-indigo-700 font-bold text-blueNew-eastbay">
               <span>{author_names}</span>

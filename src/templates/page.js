@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
-
+import { Helmet } from "react-helmet"
 import Hero from "../components/hero"
 import Tabs from "../components/tabs"
 import LeftRightImgCnt from "../components/left-right-image-content"
@@ -56,7 +56,7 @@ const Page = props => {
   }
 
   const page = data.page || data.route.page
-  // console.log("hari test", page._rawPagebuildersectionarray)
+  console.log("hari test", page)
   const content = (page._rawPagebuildersectionarray || [])
     .filter(c => !c.disabled)
     .map((c, i) => {
@@ -129,13 +129,32 @@ const Page = props => {
 
   return (
     <Layout location={props.location}>
-      <SEO
+      <Helmet>
+        <title>{data.page.meta_title || data.page.title}</title>
+        <meta
+          property="og:title"
+          content={data.page.meta_title || data.page.title}
+        />
+        <meta
+          property="twitter:title"
+          content={data.page.meta_title || data.page.title}
+        />
+        <meta name="description" content={data.page.meta_desc} />
+        <meta property="og:description" content={data.page.meta_desc} />
+        <meta
+          property="twitter:description"
+          content={data.page.meta_desc}
+        />
+        {/* <meta property="og:type" content="article" /> */}
+      </Helmet>
+
+      {/* <SEO
         title={pageTitle}
         // description={site.description}
         bodyAttr={{
           class: "leading-normal tracking-normal text-white gradient",
         }}
-      />
+      /> */}
       <div className="pt-10 font-custom">{content}</div>
     </Layout>
   )

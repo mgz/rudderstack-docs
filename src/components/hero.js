@@ -30,7 +30,7 @@ function Hero(props) {
 
   useEffect(() => {
     // console.log("isMobile,isTablet,isBrowser", isMobile, isTablet, isBrowser)
- 
+
     if (isTablet) {
       setShowAnimation(true)
     } else if (isBrowser) {
@@ -65,9 +65,9 @@ function Hero(props) {
       </Helmet> */}
       <div class="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0">
         <div class="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-          <h2 className="text-primary mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight">
+          <h1 className="text-primary mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight">
             {props.herobannertitle}
-          </h2>
+          </h1>
           <PortableText blocks={props.herobannercontent} />
           <div class="relative block sm:flex mt-12">
             {herobannerbutton.map((btn, i) => (
