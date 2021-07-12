@@ -28,30 +28,46 @@ const DynamicInputForm = ({
   `)
 
   const [isLoading, setIsLoading] = useState(false)
-  const [formData, setFormData] = useState({})
-  const [formError, setFormErrors] = useState({})
 
-  useEffect(() => {
-    let tmp = data.allSanityFormInput.nodes.find(
-      oo => ref_form_input && oo._id === ref_form_input._ref
-    )
-    let tmpStructure
-    let tmpStructureError
-    tmp._rawFields.map(field => {
+  // useEffect(() => {
+  //   let tmp = data.allSanityFormInput.nodes.find(
+  //     oo => ref_form_input && oo._id === ref_form_input._ref
+  //   )
+  //   let tmpStructure
+  //   let tmpStructureError
+  //   tmp._rawFields.map(field => {
+  //     tmpStructure = {
+  //       ...tmpStructure,
+  //       [field.field_name]: field.field_type === "checkbox" ? false : "",
+  //     }
+  //     tmpStructureError = { ...tmpStructureError, [field.field_name]: "" }
+  //   })
+  //   // setFormDefinition(tmp)
+  //   setFormData(tmpStructure)
+  //   setFormErrors(tmpStructure)
+  // }, [])
+
+  // let tmp = data.allSanityFormInput.nodes.find(
+  //   oo => ref_form_input && oo._id === ref_form_input._ref
+  // )
+  let formDefinition = data.allSanityFormInput.nodes.find(
+    oo => ref_form_input && oo._id === ref_form_input._ref
+  )
+
+  let tmpStructure
+  let tmpStructureError
+  
+  formDefinition &&
+    formDefinition._rawFields.map(field => {
       tmpStructure = {
         ...tmpStructure,
         [field.field_name]: field.field_type === "checkbox" ? false : "",
       }
       tmpStructureError = { ...tmpStructureError, [field.field_name]: "" }
     })
-    // setFormDefination(tmp)
-    setFormData(tmpStructure)
-    setFormErrors(tmpStructure)
-  }, [])
 
-  let formDefination = data.allSanityFormInput.nodes.find(
-    oo => ref_form_input && oo._id === ref_form_input._ref
-  ) 
+  const [formData, setFormData] = useState(tmpStructure)
+  const [formError, setFormErrors] = useState(tmpStructure)
 
   function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -59,7 +75,7 @@ const DynamicInputForm = ({
   }
 
   function validateField(field, value) {
-    let col_validation = formDefination._rawFields.find(
+    let col_validation = formDefinition._rawFields.find(
       ll => ll.field_name === field
     )
     // console.log("ssss", col_validation, field, value)
@@ -109,7 +125,7 @@ const DynamicInputForm = ({
       var params = new URLSearchParams(document.location.search.substring(1))
 
       window.rudderanalytics.identify(
-        data[formDefination.tracking_field_name],
+        data[formDefinition.tracking_field_name],
         {
           ...data,
           form_id: form_id,
@@ -206,18 +222,18 @@ const DynamicInputForm = ({
       }}
       className={`demo_form px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg ${add_on_styling}`}
     >
-      {formDefination &&
-        formDefination.formheader &&
-        formDefination.formheader !== "" && (
+      {formDefinition &&
+        formDefinition.formheader &&
+        formDefinition.formheader !== "" && (
           <div className="mb-8">
             <p className="mb-6 font-bold text-blueNew-eastbay text-xl-2">
-              {formDefination.formheader}
+              {formDefinition.formheader}
             </p>
           </div>
         )}
 
-      {formDefination &&
-        formDefination._rawFields.map(field => {
+      {formDefinition &&
+        formDefinition._rawFields.map(field => {
           return (
             <React.Fragment key={field._key}>
               {field.show_label === true && field.field_type !== "checkbox" && (
@@ -302,7 +318,7 @@ const DynamicInputForm = ({
         disabled={isLoading}
         type="submit"
       >
-        {formDefination && formDefination.submit_button_text}
+        {formDefinition && formDefinition.submit_button_text}
       </button>
     </form>
   )
