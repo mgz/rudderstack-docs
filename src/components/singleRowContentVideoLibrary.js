@@ -63,9 +63,9 @@ const SingleRowContentVideoLibrary = ({ data }) => {
                 category === "Live" ? "| " + url_or_event_dttm : ""
               }`}
             </div>
-            <h2 className="block  my-4 text-2xl leading-tight font-bold text-blueNew-midnight">
+            <h1 className="block  my-4 text-2xl leading-tight font-bold text-blueNew-midnight">
               {webinarObj.node.title}
-            </h2>
+            </h1>
             <p className="text-base text-grayColor-custom">
               {webinarObj.node.shortdescription}
             </p>

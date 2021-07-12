@@ -391,6 +391,85 @@ exports.createPages = async ({ graphql, actions }) => {
     isPermanent: true,
   })
 
+  //addeed by hari on 2021-07-09
+
+  // createRedirect({
+  //   fromPath: "/blog/rss.xml",
+  //   toPath: "/blog/",
+  //   isPermanent: true,
+  // })
+  
+  createRedirect({
+    fromPath: "/integration/aws-s3/",
+    toPath: "https://rudderstack.com/integration/amazon-s3/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/video-library/video-library",
+    toPath: "/video-library/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/blog/rudder-an-open-source-alternative-to-segment",
+    toPath:
+      "https://resources.rudderstack.com/open-source-segment-alternative-free-trial",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/blog/rudderstack-v0-1-9-release",
+    toPath: "/blog/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/blog/podcast-roundUp-january-2021",
+    toPath: "/blog/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/snowplow-alternatives/",
+    toPath: "https://resources.rudderstack.com/rudderstack-vs-snowplow",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath:
+      "/blog/introducing-rudderstack-cloud-the-warehouse-first-cdp-for-developers-2",
+    toPath: "/blog/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/blog/inew-feature-roundup-2021-03-3",
+    toPath: "/blog/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath:
+      "/blog/how-proposify-leverages-real-time-data-for-inbound-attribution-marketing-and-analytics",
+    toPath: "/blog/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath:
+      "/blog/RudderStack-gitHub-sponsors-making-open-source-more-sustainable-for-developers",
+    toPath: "/blog/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/blog/RudderStacks-licensing-explained",
+    toPath: "/blog/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath:
+      "/resources/watch-now-how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions/",
+    toPath: "/",
+    isPermanent: true,
+  })
+  createRedirect({
+    fromPath: "/request-a-demo",
+    toPath: "/request-demo",
+    isPermanent: true,
+  })
+
   const result = await graphql(`
     {
       allSanityBlog {

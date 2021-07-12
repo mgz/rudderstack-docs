@@ -12,6 +12,8 @@ import OurLogo from "../components/ourlogo"
 import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
 
+import DynamicInputForm from "../components/dynamicInputForm"
+
 // const Layout = loadable(() => import("../components/layout"))
 // const SEO = loadable(() => import("../components/seo"))
 // const DemoForm = loadable(() => import("../components/demoForm"))
@@ -35,20 +37,21 @@ export const query = graphql`
     sanityFrontpageblock {
       _rawPagebuildersectionarray
     }
+    allSanityFormInput {
+      nodes {
+        _id
+        tracking_field_name
+        title
+        submit_button_text
+        formheader
+        _rawFields
+      }
+    }
   }
 `
 
 const Demo = ({ data, htmlId, location }) => {
-  // useEffect(() => {
-  //   if (window.document) {
-  //     const script = window.document.createElement("script")
-  //     script.async = true
-  //     script.type = "text/javascript"
-  //     script.src = "https://js.chilipiper.com/marketing.js"
-  //     window.document.body.appendChild(script)
-  //   }
-  // }, [])
-
+  // console.log("request-demo", data)
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
@@ -189,15 +192,20 @@ const Demo = ({ data, htmlId, location }) => {
         <section id="demo_hdr">
           <div className="demo-header">
             <div className=" flex flex-col justify-center items-center demo-header-bg w-full">
-              <div className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
+              <h1 className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
                 {lv_scheduledemoheader[0].demo_header_text}
-              </div>
+              </h1>
             </div>
           </div>
           <div className="bg-whiteColor-custom w-full">
             <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
               <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
-                <DemoForm
+                <DynamicInputForm
+                  {...lv_scheduledemoheader[0].input_form}
+                  add_on_styling={"-top-24"}
+                />
+
+                {/* <DemoForm
                   formId={`${location.pathname
                     .replace("/", "")
                     .replace("-", "_")}_form_top`}
@@ -205,7 +213,7 @@ const Demo = ({ data, htmlId, location }) => {
                   onDemoFormSubmit={onDemoFormSubmit}
                   isLoading={isLoading}
                   sectionId="demo_hdr"
-                />
+                /> */}
               </div>
               <div
                 className="w-full pr-4 sm:pl-4 pt-0 -mt-8 sm:mt-0 sm:pt-8 lg:pl-20  text-xl-2 md:w-3/6 text-grayColor-custom"
@@ -269,7 +277,12 @@ const Demo = ({ data, htmlId, location }) => {
               </div>
             </div>
             <div className="w-full px-0 md:w-3/6 flex flex-row justify-end">
-              <DemoForm
+              <DynamicInputForm
+                {...lv_demofooterleft[0].input_form}
+                add_on_styling={"top-0"}
+              />
+
+              {/* <DemoForm
                 submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
                 formId={`${location.pathname
                   .replace("/", "")
@@ -279,7 +292,7 @@ const Demo = ({ data, htmlId, location }) => {
                 isLoading={isLoading}
                 onDemoFormSubmit={onDemoFormSubmit}
                 sectionId="demo_bottom"
-              />
+              /> */}
             </div>
           </div>
         </section>

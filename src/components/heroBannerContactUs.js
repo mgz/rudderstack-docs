@@ -1,5 +1,6 @@
 import React from "react"
 import ContactUsForm from "./contactUsForm"
+import DynamicInputForm from "./dynamicInputForm"
 import PortableText from "./portableText"
 
 const HeroBannerContactUs = props => {
@@ -26,11 +27,12 @@ const HeroBannerContactUs = props => {
           </div>
           <div className=" w-full rounded-lg flex justify-center flex-grow justify-items-end sm:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
             <div className=" w-full rounded-md group sm:px-0 sm:items-center lg:items-start">
-              <div className="">
-                <ContactUsForm
+              <div className="mx-0 md:mx-8">
+                <DynamicInputForm {...props.input_form} />
+                {/* <ContactUsForm
                   formId="contact_us_form_top"
                   sectionId="contact_us_hdr"
-                />
+                /> */}
               </div>
             </div>
           </div>

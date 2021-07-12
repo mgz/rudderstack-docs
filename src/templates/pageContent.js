@@ -28,7 +28,7 @@ import HeroBanner404 from "../components/heroBanner404"
 const Testimonial = loadable(() => import("../components/testimonial"))
 
 const PageContent = ({ data, location }) => {
-  console.log("data", data)
+  // console.log("data", data)
 
   return (
     <Layout location={location}>

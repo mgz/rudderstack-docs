@@ -24,18 +24,26 @@ const videoContent = ({ data, location }) => {
 
   let category = ""
   let url_or_event_dttm = ""
+  let inputForm
   if (
     data.videoLib._rawVideoLibraryCategoryType &&
-    data.videoLib._rawVideoLibraryCategoryType.condition === "live_option"
+    data.videoLib._rawVideoLibraryCategoryType.condition ===
+      "live_option_with_form"
   ) {
     category = "Live"
-    url_or_event_dttm = data.videoLib._rawVideoLibraryCategoryType.live_option
+    url_or_event_dttm =
+      data.videoLib._rawVideoLibraryCategoryType.live_option_with_form
+        .event_datetime
+    inputForm =
+      data.videoLib._rawVideoLibraryCategoryType.live_option_with_form
+        .input_form
   } else if (
     data.videoLib._rawVideoLibraryCategoryType &&
     data.videoLib._rawVideoLibraryCategoryType.condition === "learn_option"
   ) {
     category = "Learn RudderStack"
     url_or_event_dttm =
+      data.videoLib._rawVideoLibraryCategoryType.learn_option &&
       data.videoLib._rawVideoLibraryCategoryType.learn_option.url
   } else if (
     data.videoLib._rawVideoLibraryCategoryType &&
@@ -57,11 +65,13 @@ const videoContent = ({ data, location }) => {
           data={data.videoLib}
           category={category}
           url_or_event_dttm={url_or_event_dttm}
+          inputForm={inputForm}
         />
         <VideoContentLesson data={data.videoLib._rawHeroSection} />
         <VideoLibraryTopicsToCover
           category={category}
           data={data.videoLib._rawTopicsToCoverSection}
+          inputForm={inputForm}
         />
         <VideoLibrarySpeakers
           speakers={data.videoLib._rawSpekers}
