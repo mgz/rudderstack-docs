@@ -203,6 +203,7 @@ const Demo = ({ data, htmlId, location }) => {
                 <DynamicInputForm
                   {...lv_scheduledemoheader[0].input_form}
                   add_on_styling={"-top-24"}
+                  location={location}
                 />
 
                 {/* <DemoForm
@@ -280,6 +281,7 @@ const Demo = ({ data, htmlId, location }) => {
               <DynamicInputForm
                 {...lv_demofooterleft[0].input_form}
                 add_on_styling={"top-0"}
+                location={location}
               />
 
               {/* <DemoForm
