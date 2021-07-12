@@ -56,7 +56,6 @@ const Page = props => {
   }
 
   const page = data.page || data.route.page
-  console.log("hari test", page)
   const content = (page._rawPagebuildersectionarray || [])
     .filter(c => !c.disabled)
     .map((c, i) => {

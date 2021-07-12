@@ -30,11 +30,10 @@ const DynamicInputForm = ({
   const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({})
   const [formError, setFormErrors] = useState({})
-  const [formDefination, setFormDefination] = useState()
 
   useEffect(() => {
     let tmp = data.allSanityFormInput.nodes.find(
-      oo => oo._id === ref_form_input._ref
+      oo => ref_form_input && oo._id === ref_form_input._ref
     )
     let tmpStructure
     let tmpStructureError
@@ -45,10 +44,14 @@ const DynamicInputForm = ({
       }
       tmpStructureError = { ...tmpStructureError, [field.field_name]: "" }
     })
-    setFormDefination(tmp)
+    // setFormDefination(tmp)
     setFormData(tmpStructure)
     setFormErrors(tmpStructure)
   }, [])
+
+  let formDefination = data.allSanityFormInput.nodes.find(
+    oo => ref_form_input && oo._id === ref_form_input._ref
+  ) 
 
   function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -197,7 +200,7 @@ const DynamicInputForm = ({
       onSubmit={e => {
         e.preventDefault()
         if (validateForm(formData) === false) {
-          console.log("formData", formData)
+          // console.log("formData", formData)
           onFormSubmit(formData)
         }
       }}

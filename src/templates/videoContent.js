@@ -43,6 +43,7 @@ const videoContent = ({ data, location }) => {
   ) {
     category = "Learn RudderStack"
     url_or_event_dttm =
+      data.videoLib._rawVideoLibraryCategoryType.learn_option &&
       data.videoLib._rawVideoLibraryCategoryType.learn_option.url
   } else if (
     data.videoLib._rawVideoLibraryCategoryType &&

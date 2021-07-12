@@ -58,7 +58,9 @@ function videoLibraryToAlgoliaRecord({
     _rawVideoLibraryCategoryType.condition === "learn_option"
   ) {
     category = "Learn RudderStack"
-    url_or_event_dttm = _rawVideoLibraryCategoryType.learn_option.url
+    url_or_event_dttm =
+      _rawVideoLibraryCategoryType.learn_option &&
+      _rawVideoLibraryCategoryType.learn_option.url
   } else if (
     _rawVideoLibraryCategoryType &&
     _rawVideoLibraryCategoryType.condition === "usecase_option"

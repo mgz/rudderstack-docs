@@ -18,10 +18,13 @@ const VideoContentLesson = ({ data }) => {
             </div>
           </div>
           <div className="w-full sm:w-7/12 pt-6 sm:p-6 sm:pr-0 md:pl-20">
-            <Image
-              props={data.herorightimage.asset._ref}
-              classes="w-full rounded-md"
-            />
+            {data.herorightimage && (
+              <Image
+                props={data.herorightimage.asset._ref}
+                classes="w-full rounded-md"
+              />
+            )}
+
             {/* <img src={DataStack} alt="event stream" className="w-full" /> */}
           </div>
         </div>
