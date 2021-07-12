@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { navigate, useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheckSquare } from "@fortawesome/free-solid-svg-icons"
 import { faSquare } from "@fortawesome/free-regular-svg-icons"
@@ -56,7 +57,7 @@ const DynamicInputForm = ({
 
   let tmpStructure
   let tmpStructureError
-  
+
   formDefinition &&
     formDefinition._rawFields.map(field => {
       tmpStructure = {
@@ -197,7 +198,8 @@ const DynamicInputForm = ({
             //   "demo-or-quote-request",
             //   { formId: data.formId }
             // )
-            navigate(on_success_navigate_url)
+            window.ChiliPiper.submit()
+            // navigate(on_success_navigate_url)
           }
         })
         .catch(err => {
@@ -320,6 +322,30 @@ const DynamicInputForm = ({
       >
         {formDefinition && formDefinition.submit_button_text}
       </button>
+      <Helmet>
+        <script>
+          {`
+          function validationSuccess(){
+            ChiliPiper.submit("rudderstack", "demo-or-quote-request", {
+                formId: "request_demo_form_top",
+                map: true,
+                lead: {
+                firstName: document.getElementById("firstName")[0].value,
+                lastName: '[not provided]',
+                email: document.getElementById("email")[0].value,
+                company: document.getElementById("company")[0].value,
+                jobTitle: document.getElementById("jobTitle")[0].value
+                }
+            })
+          }
+        `}
+        </script>
+        <script
+          src="https://js.na.chilipiper.com/marketing.js"
+          type="text/javascript"
+          async
+        />
+      </Helmet>
     </form>
   )
 }
