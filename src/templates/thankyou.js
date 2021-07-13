@@ -17,7 +17,6 @@ const TrankYou = ({ data, htmlId }) => {
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
 
-  console.log("TrankYou", data)
 
   return (
     <Layout>

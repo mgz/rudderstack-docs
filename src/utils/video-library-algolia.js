@@ -37,7 +37,7 @@ function videoLibraryToAlgoliaRecord({
     duration,
     shortdescription,
     title,
-    webinar_dttm
+    webinar_dttm,
   },
 }) {
   let logoimage = ""
@@ -48,16 +48,19 @@ function videoLibraryToAlgoliaRecord({
   let url_or_event_dttm = ""
   if (
     _rawVideoLibraryCategoryType &&
-    _rawVideoLibraryCategoryType.condition === "live_option"
+    _rawVideoLibraryCategoryType.condition === "live_option_with_form"
   ) {
     category = "Live"
-    url_or_event_dttm = _rawVideoLibraryCategoryType.live_option
+    url_or_event_dttm =
+      _rawVideoLibraryCategoryType.live_option_with_form.event_datetime
   } else if (
     _rawVideoLibraryCategoryType &&
     _rawVideoLibraryCategoryType.condition === "learn_option"
   ) {
     category = "Learn RudderStack"
-    url_or_event_dttm = _rawVideoLibraryCategoryType.learn_option.url
+    url_or_event_dttm =
+      _rawVideoLibraryCategoryType.learn_option &&
+      _rawVideoLibraryCategoryType.learn_option.url
   } else if (
     _rawVideoLibraryCategoryType &&
     _rawVideoLibraryCategoryType.condition === "usecase_option"
@@ -75,9 +78,9 @@ function videoLibraryToAlgoliaRecord({
     duration,
     shortdescription,
     category: category,
-    url_or_event_dttm:url_or_event_dttm,
+    url_or_event_dttm: url_or_event_dttm,
     logoimage,
-    webinar_dttm
+    webinar_dttm,
   }
 }
 
