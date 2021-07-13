@@ -51,7 +51,7 @@ export const query = graphql`
 `
 
 const Demo = ({ data, htmlId, location }) => {
-  console.log("request-demo", data)
+  // console.log("request-demo", data)
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
@@ -203,6 +203,7 @@ const Demo = ({ data, htmlId, location }) => {
                 <DynamicInputForm
                   {...lv_scheduledemoheader[0].input_form}
                   add_on_styling={"-top-24"}
+                  location={location}
                 />
 
                 {/* <DemoForm
@@ -280,6 +281,7 @@ const Demo = ({ data, htmlId, location }) => {
               <DynamicInputForm
                 {...lv_demofooterleft[0].input_form}
                 add_on_styling={"top-0"}
+                location={location}
               />
 
               {/* <DemoForm
@@ -300,12 +302,8 @@ const Demo = ({ data, htmlId, location }) => {
           <MiddleBanner {...lv_middlebannersection[0]} />
         </section>
       </div>
-      <Helmet>
-        {/* <script>
-          {`function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
-ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {title: "Thanks! What time works best for a quick call?"})
-`}
-        </script> */}
+      {/* <Helmet>
+ 
         <script>
           {`
           function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
@@ -323,7 +321,7 @@ ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {title: "Thanks! W
           type="text/javascript"
           async
         />
-      </Helmet>
+      </Helmet> */}
     </Layout>
   )
 }

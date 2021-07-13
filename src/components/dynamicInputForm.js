@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { navigate, useStaticQuery, graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheckSquare } from "@fortawesome/free-solid-svg-icons"
 import { faSquare } from "@fortawesome/free-regular-svg-icons"
@@ -11,6 +12,7 @@ const DynamicInputForm = ({
   section_id,
   usebasin_endpoint,
   add_on_styling,
+  location,
 }) => {
   const data = useStaticQuery(graphql`
     query FormInputQuery {
@@ -26,7 +28,7 @@ const DynamicInputForm = ({
       }
     }
   `)
-
+  // console.log("location", location)
   const [isLoading, setIsLoading] = useState(false)
 
   // useEffect(() => {
@@ -56,9 +58,16 @@ const DynamicInputForm = ({
 
   let tmpStructure
   let tmpStructureError
-  
+  let scriptObject = ""
+
   formDefinition &&
     formDefinition._rawFields.map(field => {
+      scriptObject +=
+        (scriptObject.length === 0 ? "" : ", ") +
+        `${[field.field_name]}: document.getElementById("${[
+          field.field_name,
+        ]}")[0].value`
+
       tmpStructure = {
         ...tmpStructure,
         [field.field_name]: field.field_type === "checkbox" ? false : "",
@@ -68,7 +77,7 @@ const DynamicInputForm = ({
 
   const [formData, setFormData] = useState(tmpStructure)
   const [formError, setFormErrors] = useState(tmpStructure)
-
+  const [formScript, setFormScript] = useState(scriptObject)
   function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     return re.test(String(email).toLowerCase())
@@ -197,7 +206,28 @@ const DynamicInputForm = ({
             //   "demo-or-quote-request",
             //   { formId: data.formId }
             // )
-            navigate(on_success_navigate_url)
+            // window.ChiliPiper.submit()
+            if (
+              location &&
+              (location.pathname.startsWith("/request-demo") ||
+                location.pathname.startsWith("/enterprise-quote"))
+            ) {
+              window.ChiliPiper.submit(
+                "rudderstack",
+                "demo-or-quote-request",
+                `{
+                formId: "${form_id}",
+                map: true,
+                lead: {
+                ${formScript}
+                }
+              }`
+              )
+            } else {
+              navigate(on_success_navigate_url)
+            }
+
+            // navigate(on_success_navigate_url)
           }
         })
         .catch(err => {
@@ -320,6 +350,13 @@ const DynamicInputForm = ({
       >
         {formDefinition && formDefinition.submit_button_text}
       </button>
+      <Helmet>
+        <script
+          src="https://js.na.chilipiper.com/marketing.js"
+          type="text/javascript"
+          async
+        />
+      </Helmet>
     </form>
   )
 }
