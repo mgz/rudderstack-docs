@@ -1,9 +1,8 @@
 /*Product Custom Css*/
-.list-stream li::before
-{
+.list-stream li::before {
   @apply absolute;
   content: "";
-  background-image: url('../images/blue-check.svg');
+  background-image: url("../images/blue-check.svg");
   background-repeat: no-repeat;
   @apply bg-center;
   @apply w-5;
@@ -11,16 +10,26 @@
   @apply top-3;
   @apply left-0;
 }
-.product-page_banner{
+.product-page_banner {
   background: #6b96c3; /* Old browsers */
-  background: -moz-linear-gradient(left,  #6b96c3 0%, #111168 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #6b96c3 0%,#111168 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #6b96c3 0%,#111168 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(
+    left,
+    #6b96c3 0%,
+    #111168 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #6b96c3 0%,
+    #111168 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6b96c3 0%,
+    #111168 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
-  
 }
-.product-page_banner::before
-{
+.product-page_banner::before {
   background-image: url("../images/product-banner-line.png");
   background-position: bottom right;
   background-size: 77% auto;
@@ -30,8 +39,7 @@
   width: 100%;
   height: 100%;
 }
-.product-video::before
-{
+.product-video::before {
   background-image: url("../images/video-gradiant.svg");
   position: absolute;
   content: "";
@@ -44,19 +52,29 @@
   width: 100%;
 }
 
-
-.video-library-banner{
+.video-library-banner {
   background: #6b96c3; /* Old browsers */
-  background: -moz-linear-gradient(left,  #6b96c3 0%, #111168 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #6b96c3 0%,#111168 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #6b96c3 0%,#111168 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(
+    left,
+    #6b96c3 0%,
+    #111168 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #6b96c3 0%,
+    #111168 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6b96c3 0%,
+    #111168 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
-  
 }
-.video-library-banner::before
-{
-  background-image: url("../images/pipe-start-right.svg"),url("../images/pipe-start-left.svg");
-  background-position: top 180px right 0,top 180px left 0;
+.video-library-banner::before {
+  background-image: url("../images/pipe-start-right.svg"),
+    url("../images/pipe-start-left.svg");
+  background-position: top 180px right 0, top 180px left 0;
   background-size: 40% auto;
   background-repeat: no-repeat;
   position: absolute;
@@ -64,18 +82,29 @@
   width: 100%;
   height: 100%;
 }
- 
-.segment-desktop-banner{
+
+.segment-desktop-banner {
   background: #6b96c3; /* Old browsers */
-  background: -moz-linear-gradient(left,  #6b96c3 0%, #111168 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #6b96c3 0%,#111168 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #6b96c3 0%,#111168 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(
+    left,
+    #6b96c3 0%,
+    #111168 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #6b96c3 0%,
+    #111168 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6b96c3 0%,
+    #111168 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
   z-index: 10;
 }
-.segment-desktop-banner::before
-{
-  background-image: url("../images/rudderstack-segment2x.svg");
+.segment-desktop-banner::before {
+  /* background-image: url("../images/rudderstack-segment2x.svg"); */
   background-position: right -100px bottom 0px;
   background-size: auto 65%;
   background-repeat: no-repeat;
@@ -85,61 +114,63 @@
   height: 100%;
   z-index: 10;
 }
-/*Cloud Desktop CSS*/
-.event-stream-list li::before
 
-  {
-    @apply absolute;
-    content: "";
-    background: url('../images/blue-check.svg');
-    background-repeat: no-repeat;
-    @apply bg-center;
-    @apply w-5;
-    @apply h-5;
-    @apply top-1;
-    @apply left-0;
-  
+.comparison-banner {
+  background-position: right -100px bottom 0px;
+  background-size: auto 65%;
+  background-repeat: no-repeat;
+  /* position: absolute; */
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+/*Cloud Desktop CSS*/
+.event-stream-list li::before {
+  @apply absolute;
+  content: "";
+  background: url("../images/blue-check.svg");
+  background-repeat: no-repeat;
+  @apply bg-center;
+  @apply w-5;
+  @apply h-5;
+  @apply top-1;
+  @apply left-0;
 }
 /*Cloud Desktop CSS*/
 
-@media (min-width:1600px)/*Product Custom Css*/
-{
-  .product-page_banner::before
-  {
+@media (min-width: 1600px) /*Product Custom Css*/ {
+  .product-page_banner::before {
     background-size: 75% auto;
   }
 }
 
-@media (min-width:1024px)
-{
-  .product-page_banner
-  {
+@media (min-width: 1024px) {
+  .product-page_banner {
     min-height: 700px;
   }
 }
 
-@media (min-width:640px) and (max-width:890px)
-{
-  .sm\:bg-hero-pattern
-  {
+@media (min-width: 640px) and (max-width: 890px) {
+  .sm\:bg-hero-pattern {
     background-position: center;
   }
 }
-@media (max-width:1024px)
-{
-  .product-video::before
-  {
+@media (max-width: 1024px) {
+  .product-video::before {
     display: none;
   }
-  .segment-desktop-banner::before{
+  .segment-desktop-banner::before {
     display: none;
+  }
+  .comparison-banner {
+    background-size: 0px 0px;
   }
 }
-@media (max-width:575px)
-{
-  .product-video::before, 
-  .product-page_banner::before
-  {
+@media (max-width: 575px) {
+  .product-video::before,
+  .product-page_banner::before {
     display: none;
   }
 }
