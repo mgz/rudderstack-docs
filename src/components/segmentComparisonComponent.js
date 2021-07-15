@@ -113,10 +113,12 @@ const SegmentComparisonComponent = props => {
                 </th>
                 <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
                   <div className="flex items-center justify-center px-12 py-6">
-                    <Image
-                      props={props.comparision_logo.asset._ref}
-                      classes="w-48 h-14 object-cover object-center inline-block"
-                    />
+                    {props.comparision_logo && (
+                      <Image
+                        props={props.comparision_logo.asset._ref}
+                        classes="w-48 h-14 object-cover object-center inline-block"
+                      />
+                    )}
 
                     {/* <StaticImage
                       src="../images/segment-logo.png"

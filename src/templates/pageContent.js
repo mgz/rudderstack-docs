@@ -55,7 +55,7 @@ const PageContent = ({ data, location }) => {
         {data.pagedata._rawPagebuildersection.map(section => {
           if (section._type === "hero_banner_segment") {
             let imgInfo = data.all_images.edges.find(
-              kk => kk.node._id === section.herobanner_image.asset._ref
+              kk => kk.node._id === section.herobanner_image && section.herobanner_image.asset._ref
             )
             return (
               <section
@@ -65,7 +65,7 @@ const PageContent = ({ data, location }) => {
                 <div
                   className="comparison-banner"
                   style={{
-                    backgroundImage: `url("${imgInfo.node.url}")`,
+                    backgroundImage: `url("${imgInfo ? imgInfo.node.url : ''}")`,
                   }}
                 >
                   <HeroSegment {...section} />
