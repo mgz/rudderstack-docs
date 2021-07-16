@@ -198,12 +198,12 @@ p.accordion__title{
 .rangeslider__handle-label{
   position: absolute;
   top: 64px;
-  left: -87%;
+  left: -95%;
   background-color: #17176E;
   font-size: 28px;
   font-weight: bold;
   width: auto;
-  padding: 0 25px;
+  padding: 0 10px;
   height: 42px;
   border-radius: 8px;
   color: #ffffff;
