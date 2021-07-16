@@ -3,7 +3,6 @@ import PortableText from "./portableText"
 import Link from "gatsby-link"
 
 const CentredContentWithButton = props => {
-  console.log("CentredContentWithButton", props)
   return (
     <div className="testimonials bg-white px-7 py-10 sm:py-20 text-primary margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
       <div className="w-full max-w-5xl m-auto text-center">

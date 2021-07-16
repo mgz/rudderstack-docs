@@ -3,7 +3,6 @@ import PortableText from "./portableText"
 import Link from "gatsby-link"
 
 const TwoCardsLeftAligned = props => {
-  console.log("TwoCardsLeftAligned", props)
   return (
     <section id="join_us_section">
       <div className="max-w-6xl px-4 md:px-0 mx-auto my-12">

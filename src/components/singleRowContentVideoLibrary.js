@@ -15,14 +15,14 @@ const SingleRowContentVideoLibrary = ({ data }) => {
   let webinarObj = null
   webinarObj = data.edges.find(
     oo =>
-      oo.node._rawVideoLibraryCategoryType.condition === "live_option" &&
+      oo.node._rawVideoLibraryCategoryType.condition === "live_option_with_form" &&
       oo.node.webinar_dttm <= Date()
   )
 
   //if now found then llok for recent webinar
   if (!webinarObj) {
     webinarObj = data.edges.find(
-      oo => oo.node._rawVideoLibraryCategoryType.condition !== "live_option"
+      oo => oo.node._rawVideoLibraryCategoryType.condition !== "live_option_with_form"
     )
   }
 
@@ -30,10 +30,10 @@ const SingleRowContentVideoLibrary = ({ data }) => {
   let url_or_event_dttm = ""
   if (
     webinarObj.node._rawVideoLibraryCategoryType &&
-    webinarObj.node._rawVideoLibraryCategoryType.condition === "live_option"
+    webinarObj.node._rawVideoLibraryCategoryType.condition === "live_option_with_form"
   ) {
     category = "Live"
-    url_or_event_dttm = webinarObj.node._rawVideoLibraryCategoryType.live_option
+    url_or_event_dttm = webinarObj.node._rawVideoLibraryCategoryType.live_option_with_form.event_datetime
   } else if (
     webinarObj.node._rawVideoLibraryCategoryType &&
     webinarObj.node._rawVideoLibraryCategoryType.condition === "learn_option"
@@ -63,9 +63,9 @@ const SingleRowContentVideoLibrary = ({ data }) => {
                 category === "Live" ? "| " + url_or_event_dttm : ""
               }`}
             </div>
-            <h2 className="block  my-4 text-2xl leading-tight font-bold text-blueNew-midnight">
+            <h1 className="block  my-2 text-2xl leading-tight font-bold text-blueNew-midnight">
               {webinarObj.node.title}
-            </h2>
+            </h1>
             <p className="text-base text-grayColor-custom">
               {webinarObj.node.shortdescription}
             </p>

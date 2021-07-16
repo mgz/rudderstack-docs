@@ -3,7 +3,6 @@ import PortableText from "./portableText"
 import Image from "./image"
 
 const ThreeCardsWithTitle = props => {
-  console.log("ThreeCardsWithTitle", props)
   return (
     <>
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">

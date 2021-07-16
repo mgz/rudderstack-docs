@@ -47,9 +47,10 @@ const Singleintegration = ({ data }) => {
   useEffect(() => {
     if (data.integration._rawFaqSection) {
       let tmp = []
-      data.integration._rawFaqSection.faqcontent.forEach(rr => {
-        tmp.push({ title: rr.faq_question, content: rr.faq_answer })
-      })
+      data.integration._rawFaqSection.faqcontent &&
+        data.integration._rawFaqSection.faqcontent.forEach(rr => {
+          tmp.push({ title: rr.faq_question, content: rr.faq_answer })
+        })
       setFaqData({
         faqTitle: data.integration._rawFaqSection.faqtitle,
         faqSubTitle: data.integration._rawFaqSection.faqsubtitle,

@@ -12,6 +12,8 @@ export const query = graphql`
         current
       }
       title
+      meta_title
+      meta_desc
     }
   }
 `;

@@ -23,11 +23,13 @@ import PricingCalculator from "../components/pricingCalculator"
 import HeroBannerPricing from "../components/heroBannerPricing"
 import HeroBannerContactUs from "../components/heroBannerContactUs"
 import TwoCardsLeftAligned from "../components/twoCardsLeftAligned"
+import HeroBanner404 from "../components/heroBanner404"
+import { node } from "prop-types"
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 
 const PageContent = ({ data, location }) => {
-  console.log("data", data)
+  // console.log("data", data)
 
   return (
     <Layout location={location}>
@@ -52,12 +54,29 @@ const PageContent = ({ data, location }) => {
       <div className="font-custom">
         {data.pagedata._rawPagebuildersection.map(section => {
           if (section._type === "hero_banner_segment") {
+            let imgInfo = data.all_images.edges.find(
+              kk =>
+                kk.node._id ===
+                (section.herobanner_image
+                  ? section.herobanner_image.asset._ref
+                  : "")
+            )
+            // console.log("imgInfo", imgInfo)
             return (
               <section
                 key={section._key}
                 className="w-full segment-desktop-banner text-white lg:py-0 py-10 flex justify-center items-center relative overflow-hidden"
               >
-                <HeroSegment {...section} />
+                <div
+                  className="comparison-banner"
+                  style={{
+                    backgroundImage: `url("${
+                      imgInfo ? imgInfo.node.url : ""
+                    }")`,
+                  }}
+                >
+                  <HeroSegment {...section} />
+                </div>
               </section>
             )
           } else if (section._type === "hero_banner_cloud") {
@@ -76,11 +95,12 @@ const PageContent = ({ data, location }) => {
             return <AdvisorsAndInvestor key={section._key} {...section} />
           } else if (section._type === "pricing_calculate") {
             return <PricingCalculator key={section._key} {...section} />
+          } else if (section._type === "hero_banner_404") {
+            return <HeroBanner404 key={section._key} {...section} />
           } else if (section._type === "four_cards_left_aligned") {
             return (
               <FourCardsWithTitleLeftAligned key={section._key} {...section} />
             )
-
           } else if (section._type === "two_cards_left_aligned") {
             return <TwoCardsLeftAligned key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
@@ -120,7 +140,7 @@ const PageContent = ({ data, location }) => {
           } else if (section._type === "three_card_with_title") {
             let extraBottomMargin = false
             let greyBackground = false
-            if (data.pagedata.slug.current.includes("rudderstack-vs-segment")) {
+            if (data.pagedata.slug.current.includes("rudderstack-vs")) {
               extraBottomMargin = true
               greyBackground = true
             }
@@ -233,6 +253,14 @@ export const query = graphql`
           _id
           section_name
           _rawTestimonials
+        }
+      }
+    }
+    all_images: allSanityImageAsset {
+      edges {
+        node {
+          url
+          _id
         }
       }
     }

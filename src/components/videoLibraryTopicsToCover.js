@@ -1,6 +1,7 @@
 import React from "react"
 import PortableText from "./portableText"
 import VideoRequestForm from "./videoRequestForm"
+import DynamicInputForm from "../components/dynamicInputForm"
 
 const VideoLibraryTopicsToCover = props => {
   return (
@@ -29,20 +30,24 @@ const VideoLibraryTopicsToCover = props => {
                 </ul>
               </div>
               <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 flex justify-center">
-                <VideoRequestForm
+                <DynamicInputForm {...props.inputForm} />
+
+                {/* <VideoRequestForm
                   formId="video_library_demo_form_bottom"
                   formHeaderText={"Register Now"}
                   // formShortDesc={"Register to watch now this video."}
                   submitDemoButtonName={"Register Now"}
                   sectionId="video_library_footer"
-                />
+                /> */}
               </div>
             </div>
           )}
           {props.category !== "Live" && (
             <div className="flex items-start flex-wrap sm:flex-row mt-6 md:mt-0">
               <div className="w-full sm:p-6">
-                <ul className={`grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6`}>
+                <ul
+                  className={`grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6`}
+                >
                   {props.data.content.map(ii => {
                     return (
                       <li

@@ -164,9 +164,10 @@ module.exports = {
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
-        host: `https://rudderstack-dataplane.rudderstack.com`,
+        //host: `https://rudderstack-dataplane.rudderstack.com`,
         trackPage: true,
         loadAsync: true,
+        dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
     },
     {
@@ -218,5 +219,13 @@ module.exports = {
     },
     "gatsby-source-sanity-transform-images",
     `gatsby-plugin-meta-redirect`, // make sure to put last in the array
+    // {
+    //   resolve: `gatsby-plugin-remote-images`,
+    //   options: {
+    //     nodeType: 'sanityImageAsset',
+    //     imagePath: 'sanityImages',
+    //     name: 'allItemImages',
+    //   },
+    // },
   ],
 }

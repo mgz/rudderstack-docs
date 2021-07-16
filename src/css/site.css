@@ -624,7 +624,14 @@ top: -60px;
   -webkit-background-size: 51%;
   background-size: 51%;
 }
-
+.banner-404 {
+  background: url("../images/banner-404.jpg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  /* background-size: 100% auto; */
+  -webkit-background-size: 100%;
+  background-size: 100%;
+}
 /*Integration Page Css*/
 .integration-banner::before {
   background-image: url("../images/integration-right.png");

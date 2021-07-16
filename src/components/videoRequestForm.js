@@ -28,6 +28,7 @@ const VideoRequestForm = props => {
         ret = true
       }
     })
+    
     setFormErrors(errObj)
     return ret
   }
