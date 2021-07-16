@@ -55,8 +55,13 @@ const PageContent = ({ data, location }) => {
         {data.pagedata._rawPagebuildersection.map(section => {
           if (section._type === "hero_banner_segment") {
             let imgInfo = data.all_images.edges.find(
-              kk => kk.node._id === section.herobanner_image && section.herobanner_image.asset._ref
+              kk =>
+                kk.node._id ===
+                (section.herobanner_image
+                  ? section.herobanner_image.asset._ref
+                  : "")
             )
+            // console.log("imgInfo", imgInfo)
             return (
               <section
                 key={section._key}
@@ -65,7 +70,9 @@ const PageContent = ({ data, location }) => {
                 <div
                   className="comparison-banner"
                   style={{
-                    backgroundImage: `url("${imgInfo ? imgInfo.node.url : ''}")`,
+                    backgroundImage: `url("${
+                      imgInfo ? imgInfo.node.url : ""
+                    }")`,
                   }}
                 >
                   <HeroSegment {...section} />
@@ -133,7 +140,7 @@ const PageContent = ({ data, location }) => {
           } else if (section._type === "three_card_with_title") {
             let extraBottomMargin = false
             let greyBackground = false
-            if (data.pagedata.slug.current.includes("rudderstack-vs-segment")) {
+            if (data.pagedata.slug.current.includes("rudderstack-vs")) {
               extraBottomMargin = true
               greyBackground = true
             }

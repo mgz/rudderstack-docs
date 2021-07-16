@@ -71,13 +71,13 @@ const SegmentComparisonComponent = props => {
         rudderstack_val:
           rr.cells[1] === "CHECK"
             ? "<<CHECK>>"
-            : ""
+            : rr.cells[1] === ""
             ? "<<UNCHECK>>"
             : rr.cells[1],
         segment_val:
           rr.cells[2] === "CHECK"
             ? "<<CHECK>>"
-            : ""
+            : rr.cells[2] === ""
             ? "<<UNCHECK>>"
             : rr.cells[2],
       })
