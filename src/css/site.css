@@ -196,7 +196,7 @@ body {
   display: none;
 }
 .sub-menu:after {
-  content: "";
+  /* content: "";
   position: absolute;
   left: 35px;
   top: -10px;
@@ -205,7 +205,7 @@ body {
   border-style: solid;
   border-width: 0 17px 17px 17px;
   border-color: transparent transparent #ffffff transparent;
-  z-index: 9998;
+  z-index: 9998; */
 }
 
 .lr-icon {

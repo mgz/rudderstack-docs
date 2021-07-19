@@ -23,7 +23,9 @@ const MainNavigationMenuLink = props => {
         menuIndex={i}
         classes={`${
           onClickEvent == 1 ? `active` : ``
-        } parent-menu block mt-4 lg:mt-0 text-base mr-4 xl:mr-10 ${i === 0 ? "font-normal" : "font-normal"} font-custom lg:py-2`}
+        } parent-menu block mt-4 lg:mt-0 text-base mr-4 xl:mr-10 ${
+          i === 0 ? "font-normal" : "font-normal"
+        } font-custom lg:py-2`}
         onclick={() =>
           link._rawSubMenuSection !== null && window.innerWidth < 1024
             ? setOnClickEvent(!onClickEvent)
@@ -35,9 +37,9 @@ const MainNavigationMenuLink = props => {
           const submenu = link._rawSubMenuSection.hassubmenu.add_sub_menu_items
           return (
             <ul
-              className={`grid-cols-1 md:grid-cols-2 gap-4 capitalize sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-menu lg:bg-whiteColor-custom lg:rounded-2xl py-1 lg:p-6 lg:-ml-6 z-50 ${
-                onClickEvent == 1 ? `block` : `grid hidden`
-              }`}
+              className={`grid-cols-1 md:grid-cols-4 gap-4 capitalize sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-menu  lg:rounded-0 py-1 lg:py-16 lg:p-6  z-50 
+              lg:right-0 lg:left-0 lg:bg-blueNew-midnight lg:place-items-center lg:px-24
+              ${onClickEvent == 1 ? `block` : `grid hidden`}`}
             >
               {submenu.map((sublink, j) => (
                 <li key={j} className="text-sm font-custom">
