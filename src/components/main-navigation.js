@@ -48,7 +48,7 @@ const MainNavigation = () => {
   return (
     <>
       <nav className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 flex-wrap">
-        <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
+        <div className="flex items-center sm:mr-6 w-32 md:w-1/7 lg:pb-4">
           <Link to="/" className="pl-4 sm:pl-0" rel="noopener noreferrer">
             <StaticImage
               // src={"../images/rudderstack-logo-v2.svg"}
@@ -58,7 +58,7 @@ const MainNavigation = () => {
             />
           </Link>
         </div>
-        <div className="lg:hidden w-30 sm:w-3/5 text-right">
+        <div className="lg:hidden w-30 sm:w-3/5 text-left flex justify-end">
           {(() => {
             if (trybtn.btnexternallink === true) {
               return (
@@ -106,7 +106,7 @@ const MainNavigation = () => {
         <div
           className={`menu lg:flex ${
             isExpanded ? `block` : `hidden`
-          } p-4 justify-center items-center lg:items-center lg:w-auto w-full mt-2 lg:mt-0`}
+          } p-4 justify-center items-center lg:items-center lg:w-auto w-full mt-2 lg:mt-0 bg-blueNew-midnight lg:bg-transparent text-white lg:text-black-custom lg:flex-1 lg:pb-6`}
         >
           <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
             {mainmenu.map((link, i) => (
@@ -115,7 +115,7 @@ const MainNavigation = () => {
           </ul>
           <div className="flex">
             <a href="https://app.rudderstack.com/login">
-              <span className="inline-block lg:p-2 lg:py-1.5 mt-6 lg:mt-0 font-custom font-bold mr-2">
+              <span className="inline-block lg:p-2 mt-6 lg:mt-0 font-custom font-bold mr-2 sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg">
                 Log in
               </span>
             </a>

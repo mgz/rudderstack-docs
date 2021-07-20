@@ -20,6 +20,7 @@ module.exports = {
         midnight: "#17176E",
         eastbay: "#3F3C7F",
         magenta: "#6e6ea4",
+        midnight_sub: "#2e2e7c",
       },
       purpleNew: {
         custom: "#6e6ea4",
