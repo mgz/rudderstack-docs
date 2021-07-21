@@ -43,8 +43,8 @@ function OurLogo(props) {
         {logoimages.map((logoimage, i) => {
           return (
             <div key={i} class="w-full md:w-1/5 flex justify-center md:pt-20 px-2 py-4">
-              <span className="h-10">
-                <Image classes="h-full w-auto" props={logoimage.asset._ref} />
+              <span className="h-auto">
+                <Image classes="object-contain h-full w-auto" props={logoimage.asset._ref} />
               </span>
             </div>
           )

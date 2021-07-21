@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import SegmentSpecialistV2 from "./SegmentSpecialistV2"
+import Image from "./image"
 
 const SegmentComparisonComponent = props => {
   const [sticky, setSticky] = useState(true)
@@ -10,11 +11,46 @@ const SegmentComparisonComponent = props => {
   }, [])
 
   const handleScroll = () => {
+    // if (
+    //   document.getElementsByClassName("comparision-table")[0].offsetHeight -
+    //     document
+    //       .getElementsByClassName("comparision-table")[0]
+    //       .getBoundingClientRect().top +
+    //     document.getElementsByClassName("comparision-table")[0].offsetTop -
+    //     window.scrollY >
+    //   150
+
+    //   // document.getElementsByClassName("cover-table")[0].offsetHeight +
+    //   //   document.getElementsByClassName("cover-table")[0].offsetTop -
+    //   //   window.scrollY >
+    //   // 150
+    // ) {
+    //   setSticky(true)
+    // } else {
+    //   setSticky(false)
+    // }
+    // console.log(
+    //   "on scroll",
+    //   document.getElementsByClassName("comparision-table")[0].offsetHeight,
+    //   document
+    //     .getElementsByClassName("comparision-table")[0]
+    //     .getBoundingClientRect().top,
+
+    //   window.scrollY,
+    //   document.getElementsByClassName("comparision-table")[0].offsetHeight -
+    //     document
+    //       .getElementsByClassName("comparision-table")[0]
+    //       .getBoundingClientRect().top +
+    //     document.getElementsByClassName("comparision-table")[0].offsetTop -
+    //     window.scrollY
+    // )
+
     if (
-      document.getElementsByClassName("cover-table")[0].offsetHeight +
-        document.getElementsByClassName("cover-table")[0].offsetTop -
-        window.scrollY >
-      150
+      window.scrollY >
+      window.scrollY +
+        document
+          .getElementsByClassName("comparision-table")[0]
+          .getBoundingClientRect().top
     ) {
       setSticky(true)
     } else {
@@ -35,32 +71,31 @@ const SegmentComparisonComponent = props => {
         rudderstack_val:
           rr.cells[1] === "CHECK"
             ? "<<CHECK>>"
-            : ""
+            : rr.cells[1] === ""
             ? "<<UNCHECK>>"
             : rr.cells[1],
         segment_val:
           rr.cells[2] === "CHECK"
             ? "<<CHECK>>"
-            : ""
+            : rr.cells[2] === ""
             ? "<<UNCHECK>>"
             : rr.cells[2],
       })
     })
   })
-
   return (
     <section
       id="segment_comparison"
       className="bg-white plans-section pb-20 md:pb-20 relative"
     >
-      <SegmentSpecialistV2 />
+      <SegmentSpecialistV2 {...props.divider_card} />
       <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-56 md:pt-48 text-center">
         <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8 text-blueNew-midnight">
           {props.title}
         </h2>
 
         <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
-          <table className="cover-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
+          <table className="comparision-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
             <thead>
               <tr>
                 <th
@@ -78,12 +113,19 @@ const SegmentComparisonComponent = props => {
                 </th>
                 <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
                   <div className="flex items-center justify-center px-12 py-6">
-                    <StaticImage
+                    {props.comparision_logo && (
+                      <Image
+                        props={props.comparision_logo.asset._ref}
+                        classes="w-48 h-14 object-cover object-center inline-block"
+                      />
+                    )}
+
+                    {/* <StaticImage
                       src="../images/segment-logo.png"
                       alt="SegmentLogo"
                       height={50}
                       width={200}
-                    />
+                    /> */}
 
                     {/* <img src={SegmentLogo} alt="Segment Logo" /> */}
                   </div>
@@ -181,13 +223,17 @@ const SegmentComparisonComponent = props => {
                           width={200}
                         />
                       ) : (
-                        <StaticImage
-                          placeholder="tracedSVG"
-                          src="../images/segment-logo.png"
-                          alt={oo}
-                          height={50}
-                          width={200}
+                        <Image
+                          props={props.comparision_logo.asset._ref}
+                          classes="w-48 h-14 object-cover object-center inline-block"
                         />
+                        // <StaticImage
+                        //   placeholder="tracedSVG"
+                        //   src="../images/segment-logo.png"
+                        //   alt={oo}
+                        //   height={50}
+                        //   width={200}
+                        // />
                       )}
                     </div>
                   </div>
