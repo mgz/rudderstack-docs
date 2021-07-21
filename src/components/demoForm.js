@@ -60,6 +60,12 @@ const DemoForm = props => {
       className={`demo_form px-8 py-8 sm:pt-12 sm:px-12 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg ${
         props.isFooterForm === true ? "top-0" : "-top-24"
       }`}
+      onSubmit={e => {
+        e.preventDefault()
+        if (validateForm(formData) === false) {
+          props.onDemoFormSubmit(formData)
+        }
+      }}
     >
       {props.hideLabels !== true && (
         <div className="text-lg text-grayColor-custom mb-2 ">
@@ -153,14 +159,15 @@ const DemoForm = props => {
 
       <button
         class="btn-primary-lg mt-3 md:mb-0 mb-4"
+        type="submit"
         disabled={props.isLoading}
         // type="submit"
-        onClick={e => {
-          e.preventDefault()
-          if (validateForm(formData) === false) {
-            props.onDemoFormSubmit(formData)
-          }
-        }}
+        // onClick={e => {
+        //   e.preventDefault()
+        //   if (validateForm(formData) === false) {
+        //     props.onDemoFormSubmit(formData)
+        //   }
+        // }}
       >
         {props.submitDemoButtonName}
       </button>
