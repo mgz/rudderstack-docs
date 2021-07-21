@@ -77,21 +77,37 @@ const Layout = ({ location, showExplicitGradient, children }) => {
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
 
   // console.log("path", location, showExplicitGradient)
-  let diableGradient = false
-  if (
+  // let diableGradient = false
+  const [diableGradient, setDiableGradient] = React.useState(
     location &&
-    (location.pathname.startsWith("/product/") ||
-      location.pathname.startsWith("/request-demo") ||
-      location.pathname.startsWith("/enterprise-quote") ||
-      location.pathname.startsWith("/404") ||
-      location.pathname.startsWith("/rudderstack-vs") ||
-      location.pathname.startsWith("/cloud") ||
-      (location.pathname.startsWith("/video-library/") &&
-        showExplicitGradient === false) ||
-      location.pathname.startsWith("/blog/"))
-  ) {
-    diableGradient = true
-  }
+      (location.pathname.startsWith("/product/") ||
+        location.pathname.startsWith("/request-demo") ||
+        location.pathname.startsWith("/enterprise-quote") ||
+        location.pathname.startsWith("/404") ||
+        location.pathname.startsWith("/rudderstack-vs") ||
+        location.pathname.startsWith("/cloud") ||
+        (location.pathname.startsWith("/video-library/") &&
+          showExplicitGradient === false) ||
+        location.pathname.startsWith("/blog/"))
+      ? true
+      : false
+  )
+  // if (
+  //   location &&
+  //   (location.pathname.startsWith("/product/") ||
+  //     location.pathname.startsWith("/request-demo") ||
+  //     location.pathname.startsWith("/enterprise-quote") ||
+  //     location.pathname.startsWith("/404") ||
+  //     location.pathname.startsWith("/rudderstack-vs") ||
+  //     location.pathname.startsWith("/cloud") ||
+  //     (location.pathname.startsWith("/video-library/") &&
+  //       showExplicitGradient === false) ||
+  //     location.pathname.startsWith("/blog/"))
+  // ) {
+  //   setDiableGradient(true)
+
+  //   // diableGradient = true
+  // }
   return (
     <div
       id="main-container"
@@ -102,7 +118,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         <script src={withPrefix("script2.js")} type="text/javascript" />
       </Helmet> */}
       <CookiesConsent />
-      <MainNavigation />
+      <MainNavigation diableGradient={diableGradient} />
       <main>{children}</main>
 
       <footer className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0">

@@ -49,6 +49,9 @@ module.exports = {
       width: {
         120: "30rem",
       },
+      // top: {
+      //   22: "88px",
+      // },
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",

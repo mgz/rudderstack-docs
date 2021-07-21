@@ -11,19 +11,49 @@ const PricingComparisonComponent = props => {
   }, [])
 
   const handleScroll = () => {
+    // console.log(
+    //   "is sticky",
+    //   document.getElementsByClassName("pricing-table")[0].offsetHeight -
+    //     document
+    //       .getElementsByClassName("pricing-table")[0]
+    //       .getBoundingClientRect().top +
+    //     document.getElementsByClassName("pricing-table")[0].offsetTop -
+    //     window.scrollY >
+    //     150
+    // )
+    // console.log(
+    //   "vals",
+    //   window.scrollY >
+    //     window.scrollY +
+    //       document
+    //         .getElementsByClassName("pricing-table")[0]
+    //         .getBoundingClientRect().top
+    // )
     if (
-      document.getElementsByClassName("pricing-table")[0].offsetHeight -
+      window.scrollY >
+      window.scrollY +
         document
           .getElementsByClassName("pricing-table")[0]
-          .getBoundingClientRect().top +
-        document.getElementsByClassName("pricing-table")[0].offsetTop -
-        window.scrollY >
-      150
+          .getBoundingClientRect().top
     ) {
       setSticky(true)
     } else {
       setSticky(false)
     }
+
+    // if (
+    //   document.getElementsByClassName("pricing-table")[0].offsetHeight -
+    //     document
+    //       .getElementsByClassName("pricing-table")[0]
+    //       .getBoundingClientRect().top +
+    //     document.getElementsByClassName("pricing-table")[0].offsetTop -
+    //     window.scrollY >
+    //   150
+    // ) {
+    //   setSticky(true)
+    // } else {
+    //   setSticky(false)
+    // }
   }
 
   let pricingComparisionData = []
@@ -73,7 +103,7 @@ const PricingComparisonComponent = props => {
             <thead>
               <tr>
                 <th
-                  className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}
+                  className={`${sticky ? "sticky" : ""} top-14 lg:top-20 bg-white z-10`}
                 ></th>
 
                 {props.pricing_columns.map(col => {
@@ -82,7 +112,7 @@ const PricingComparisonComponent = props => {
                       key={col._key}
                       className={`${
                         sticky ? "sticky" : ""
-                      } top-0 bg-white z-10`}
+                      } top-14 lg:top-20 bg-white z-10`}
                     >
                       <div className="ellipse flex items-center justify-center h-20">
                         <Image props={col.image.asset._ref} />
@@ -210,7 +240,7 @@ const PricingComparisonComponent = props => {
             // console.log(oo)
             return (
               <div className="freeplan mt-16" key={oo._key}>
-                <div className="plan-header bg-white border border-grayColor-priceCardBorder rounded-2xl shadow-md sticky top-0 z-10">
+                <div className="plan-header bg-white border border-grayColor-priceCardBorder rounded-2xl shadow-md sticky top-14 z-10">
                   <div class="p-6 md:pt-8 md:pb-4">
                     <div className="ellipse flex items-center justify-center h-20">
                       <Image props={oo.image.asset._ref} />
