@@ -54,7 +54,7 @@ const MainNavigation = props => {
           props.diableGradient ? "disable" : "enable"
         } sticky top-0 z-50`}
       >
-        <div className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 flex-wrap ">
+        <div className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 lg:pb-0 flex-wrap ">
           <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
             <Link to="/" className="pl-4 sm:pl-0" rel="noopener noreferrer">
               <StaticImage
@@ -113,14 +113,14 @@ const MainNavigation = props => {
           <div
             className={`menu lg:flex ${
               isExpanded ? `block` : `hidden`
-            } p-4 justify-center items-center lg:items-center lg:w-auto w-full mt-2 lg:mt-0`}
+            } p-4 justify-center items-center lg:items-center lg:w-auto w-full mt-2 lg:mt-0 lg:flex-1`}
           >
             <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
               {mainmenu.map((link, i) => (
                 <MainNavigationMenuLink link={link} i={i} />
               ))}
             </ul>
-            <div className="flex">
+            <div className="flex lg:pb-4">
               <a href="https://app.rudderstack.com/login">
                 <span className="inline-block lg:p-2 lg:py-1.5 mt-6 lg:mt-0 font-custom font-bold mr-2">
                   Log in

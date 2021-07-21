@@ -53,11 +53,11 @@ const MainNavigationMenuLink = props => {
                     return (
                       <div className="pb-2 pt-4 lg:pt-0">
                         <div className="flex text-white">
-                          <div className="px-3 pt-2">
+                          <div className="px-3">
                             {menuGroup.group_icon && (
                               <Image
                                 props={menuGroup.group_icon.asset._ref}
-                                classes="h-4 object-cover"
+                                classes="h-8 object-cover"
                               />
                             )}
                           </div>

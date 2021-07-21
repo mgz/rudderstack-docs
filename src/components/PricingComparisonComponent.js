@@ -103,7 +103,7 @@ const PricingComparisonComponent = props => {
             <thead>
               <tr>
                 <th
-                  className={`${sticky ? "sticky" : ""} top-14 lg:top-20 bg-white z-10`}
+                  className={`${sticky ? "sticky" : ""} top-14 lg:top-24 bg-white z-10`}
                 ></th>
 
                 {props.pricing_columns.map(col => {
@@ -112,7 +112,7 @@ const PricingComparisonComponent = props => {
                       key={col._key}
                       className={`${
                         sticky ? "sticky" : ""
-                      } top-14 lg:top-20 bg-white z-10`}
+                      } top-14 lg:top-24 bg-white z-10`}
                     >
                       <div className="ellipse flex items-center justify-center h-20">
                         <Image props={col.image.asset._ref} />
