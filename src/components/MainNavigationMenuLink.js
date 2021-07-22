@@ -62,7 +62,7 @@ const MainNavigationMenuLink = props => {
                             )}
                           </div>
                           <div>
-                            <div className="font-semibold text-lg pb-4 leading-6  ">
+                            <div className="font-bold text-lg pb-4 leading-6  ">
                               {menuGroup.group_title}
                             </div>
 
@@ -75,7 +75,7 @@ const MainNavigationMenuLink = props => {
                                       return (
                                         <li
                                           key={j}
-                                          className="text-xs font-custom pb-2 "
+                                          className="text-xs font-custom pb-2 font-bold"
                                         >
                                           <a
                                             className={`border-b border-solid border-transparent hover:border-white`}
