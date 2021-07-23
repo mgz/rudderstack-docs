@@ -47,6 +47,7 @@ const Singleblog = ({ data, location, ...props }) => {
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
 
+  // console.log("data", data)
   return (
     <Layout location={location}>
       <Helmet>
@@ -59,37 +60,16 @@ const Singleblog = ({ data, location, ...props }) => {
           property="twitter:title"
           content={blog.meta_title || blog.title}
         />
-         <meta
-          property="og:type"
-          content="article"
-        />
-        <meta
-          property="twitter:description"
-          content={blog.meta_desc}
-        />
+        <meta property="og:type" content="article" />
+        <meta property="twitter:description" content={blog.meta_desc} />
 
         {/* added by Hari on 2021-06-21 to show share card across twitter, linkedin and facebook */}
-        <meta
-          property="og:url"
-          content={location.href}
-        />
-       
-        <meta
-          property="og:image"
-          content={blog.blog_image.asset.url}
-        />
-        <meta
-          property="twitter:card"
-          content="summary"
-        />
-        <meta
-          property="twitter:creator"
-          content={author_names || blog.title}
-        />
-        <meta
-          property="twitter:image:alt"
-          content={blog.title}
-        />
+        <meta property="og:url" content={location.href} />
+
+        <meta property="og:image" content={blog.blog_image.asset.url} />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:creator" content={author_names || blog.title} />
+        <meta property="twitter:image:alt" content={blog.title} />
       </Helmet>
       <div className="blog_banner">
         <Herobanner

@@ -430,30 +430,17 @@ body {
 }
 
 .demo-header {
-  background: #6b96c3; /* Old browsers */
-  background: -moz-linear-gradient(
-    left,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    left,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to right,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
+    /* background: #6b96c3;
+    background: -moz-linear-gradient(left, #6b96c3 0%, #111168 100%);
+    background: -webkit-linear-gradient(left, #6b96c3 0%, #111168 100%);
+    background: linear-gradient(to right, #6b96c3 0%, #111168 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 );  */
   height: 428px;
   width: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
   background-repeat: no-repeat;
-  /* z-index: -2; */
 }
 
 .demo-header-bg {

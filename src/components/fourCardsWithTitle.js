@@ -6,7 +6,7 @@ import Link from "gatsby-link"
 const FourCardsWithTitle = props => {
 
   return (
-    <section className="bg-grayColor-BgGray pb-8 md:pb-24">
+    <section className="bg-whiteColor-custom pb-8 md:pb-24">
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center">
         {props.title !== "" && (
           <h3 className="mt-24 mb-0 md:mb-10 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">

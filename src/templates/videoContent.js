@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import "../lib/font-awesome"
-
+import PortableText from "../components/portableText"
 import Layout from "../components/layout"
 import MiddleBanner from "../components/middle-banner"
 import VideoLibraryContentHeader from "../components/videoLibraryContentHeader"
@@ -18,6 +18,7 @@ import VideoLibrarySpeakers from "../components/videoLibrarySpeakers"
 // const VideoLibrarySpeakers = loadable(() => import("../components/videoLibrarySpeakers"))
 
 const videoContent = ({ data, location }) => {
+  console.log("data", data)
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
@@ -77,7 +78,9 @@ const videoContent = ({ data, location }) => {
           speakers={data.videoLib._rawSpekers}
           allAuthors={data.allSanityBlogauthor}
         />
-
+        <div className="block-description relative pt-16 max-w-4xl m-auto px-4 md:px-12">
+          <PortableText blocks={data.videoLib._rawTranscript} />
+        </div>
         <section id="footer_section_for_demo">
           <MiddleBanner {...lv_middlebannersection[0]} />
         </section>
@@ -98,6 +101,7 @@ export const pageQuery = graphql`
       _rawSpekers
       _rawTopicsToCoverSection
       _rawVideoLibraryCategoryType
+      _rawTranscript
       title
       weight
       shortdescription
