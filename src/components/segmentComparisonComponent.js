@@ -99,9 +99,9 @@ const SegmentComparisonComponent = props => {
             <thead>
               <tr>
                 <th
-                  className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}
+                  className={`${sticky ? "sticky" : ""} top-14 lg:top-20 bg-white z-10`}
                 ></th>
-                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
+                <th className={`${sticky ? "sticky" : ""} top-14 lg:top-20 bg-white z-10`}>
                   <div className="flex items-center justify-center px-12 py-6">
                     <StaticImage
                       src="../images/rudderstack-logo.svg"
@@ -111,7 +111,7 @@ const SegmentComparisonComponent = props => {
                     />
                   </div>
                 </th>
-                <th className={`${sticky ? "sticky" : ""} top-0 bg-white z-10`}>
+                <th className={`${sticky ? "sticky" : ""} top-14 lg:top-20 bg-white z-10`}>
                   <div className="flex items-center justify-center px-12 py-6">
                     {props.comparision_logo && (
                       <Image
@@ -211,7 +211,7 @@ const SegmentComparisonComponent = props => {
             // console.log(oo)
             return (
               <div className="freeplan mt-16" key={oo}>
-                <div className="plan-header bg-white border border-grayColor-priceCardBorder rounded-2xl shadow-md sticky top-0 z-10">
+                <div className="plan-header bg-white border border-grayColor-priceCardBorder rounded-2xl shadow-md sticky top-14 lg:top-20 z-10">
                   <div class="p-6 md:pt-8 md:pb-4">
                     <div className="ellipse flex items-center justify-center h-20">
                       {oo === "rudderstack_val" ? (

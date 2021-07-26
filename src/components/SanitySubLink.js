@@ -5,6 +5,28 @@ import Image from "./image"
 const SanitySubLink = props => {
   let sublink = props.link
 
+  return (
+    <div className="pb-2">
+      <div className="flex md:text-white">
+        <div className="px-3">
+          <Image
+            props={sublink.menu_icon.asset._ref}
+            classes="w-11 h-6 inline"
+          />
+        </div>
+        <div>
+          <div className="font-normal text-lg pb-2 leading-5  ">Run Rudderstack</div>
+          <div className="text-sm pb-1">
+            <a href="#">Rudderstack Cloud</a>
+          </div>
+          <div className="text-sm pb-1  ">
+            <a href="#">Rudderstack Open Source</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+
   if (sublink.sub_menu_item_externallink) {
     return (
       <a
