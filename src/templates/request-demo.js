@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { Helmet } from "react-helmet"
 import { graphql, Link, navigate } from "gatsby"
 import loadable from "@loadable/component"
 
@@ -164,7 +165,13 @@ const Demo = ({ data, htmlId, location }) => {
         .then(res => {
           // console.log('usebasin',res)
           if (res.ok || res.statusText === "OK") {
-            navigate("/request-demo/thank-you")
+            // console.log("success ", res)
+            // window.ChiliPiper.scheduling(
+            //   "rudderstack",
+            //   "demo-or-quote-request",
+            //   { formId: data.formId }
+            // )
+            // navigate("/request-demo/thank-you")
           }
         })
         .catch(err => {
@@ -196,6 +203,7 @@ const Demo = ({ data, htmlId, location }) => {
                 <DynamicInputForm
                   {...lv_scheduledemoheader[0].input_form}
                   add_on_styling={"-top-24"}
+                  location={location}
                 />
 
                 {/* <DemoForm
@@ -273,6 +281,7 @@ const Demo = ({ data, htmlId, location }) => {
               <DynamicInputForm
                 {...lv_demofooterleft[0].input_form}
                 add_on_styling={"top-0"}
+                location={location}
               />
 
               {/* <DemoForm
@@ -293,6 +302,26 @@ const Demo = ({ data, htmlId, location }) => {
           <MiddleBanner {...lv_middlebannersection[0]} />
         </section>
       </div>
+      {/* <Helmet>
+ 
+        <script>
+          {`
+          function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
+          ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {formId: "request_demo_form_top"})
+        `}
+        </script>
+        <script>
+          {`
+          function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
+          ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {formId: "request_demo_form_bottom"})
+        `}
+        </script>
+        <script
+          src="https://js.na.chilipiper.com/marketing.js"
+          type="text/javascript"
+          async
+        />
+      </Helmet> */}
     </Layout>
   )
 }
