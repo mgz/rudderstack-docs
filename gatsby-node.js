@@ -398,7 +398,7 @@ exports.createPages = async ({ graphql, actions }) => {
   //   toPath: "/blog/",
   //   isPermanent: true,
   // })
-  
+
   createRedirect({
     fromPath: "/integration/aws-s3/",
     toPath: "https://rudderstack.com/integration/amazon-s3/",
