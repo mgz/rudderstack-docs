@@ -3,8 +3,8 @@ import React from "react"
 const TableContent = props => {
 //   console.log("TableContent", props)
   return (
-    <div className="block w-auto m-auto">
-      <table className="blog-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
+    <div className="block w-full sm:w-auto m-auto">
+      <table className="blog-table relative table-fixed font-custom bg-white text-grayColor-custom">
         <tbody>
           {props.data.rows.map((row, l_index) => {
             return (

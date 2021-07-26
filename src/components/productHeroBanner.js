@@ -58,8 +58,10 @@ const ProductHeroBanner = props => {
             </div>
           </div>
 
-          <div className="relative w-full rounded-lg flex-grow justify-items-end lg:w-1/2 px-0 sm:items-center lg:items-start lg:mb-0">
+          <div className="relative w-full rounded-xl flex-grow justify-items-end lg:w-1/2 px-0 sm:items-center lg:items-start lg:mb-0">
             <div class="iframe-container">
+              <div className="stack-frame-1"></div>
+              <div className="stack-frame-2"></div>
               <iframe
                 src={props.productbanneryoutubeambed.url}
                 frameborder="0"
@@ -67,19 +69,6 @@ const ProductHeroBanner = props => {
                 class="video"
               ></iframe>
             </div>
-            {/* <div class="relative rounded-md px-0 items-center flex justify-center  product-video h-72 sm:h-80">
-              <AspectRatio ratio="16/9" className="h-full w-full max-w-md" >
-                <iframe
-                  src={props.productbanneryoutubeambed.url}
-                  frameborder="0"
-                  className="w-full h-full"
-                  allow="autoplay; encrypted-media"
-                  allowfullscreen
-                  title="video"
-                />
-              </AspectRatio>
-            
-            </div> */}
           </div>
         </div>
       </div>

@@ -3,7 +3,12 @@ import DynamicInputForm from "../components/dynamicInputForm"
 
 import VideoRequestForm from "../components/videoRequestForm"
 
-const VideoLibraryContentHeader = ({ data, category, url_or_event_dttm,inputForm }) => {
+const VideoLibraryContentHeader = ({
+  data,
+  category,
+  url_or_event_dttm,
+  inputForm,
+}) => {
   // console.log("ssss", data)
 
   return (
@@ -24,9 +29,7 @@ const VideoLibraryContentHeader = ({ data, category, url_or_event_dttm,inputForm
               <div className=" w-full rounded-lg flex justify-center flex-grow justify-items-end sm:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
                 <div className=" w-full rounded-md group sm:px-0 sm:items-center lg:items-start">
                   <div className="mb-16 md:mb-0">
-                    <DynamicInputForm
-                      {...inputForm}
-                    />
+                    <DynamicInputForm {...inputForm} />
                     {/* <VideoRequestForm
                       formId="video_library_demo_form_top"
                       formHeaderText={"Register Now"}
@@ -54,6 +57,8 @@ const VideoLibraryContentHeader = ({ data, category, url_or_event_dttm,inputForm
 
               <div className="relative w-full rounded-lg flex-grow justify-items-end px-4 md:px-12 py-4 sm:items-center lg:items-start lg:mb-0">
                 <div class="iframe-container">
+                  <div className="stack-frame-1"></div>
+                  <div className="stack-frame-2"></div>
                   <iframe
                     src={url_or_event_dttm}
                     frameborder="0"
