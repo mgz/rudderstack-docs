@@ -17,16 +17,14 @@ const MainNavigationMenuLink = props => {
       key={i}
       className={`${
         link._rawSubMenuSection !== null ? `has-submenu group` : `group`
-      } mt-2 lg:mt-0`}
+      } mt-2 lg:mt-0 hover:font-bold`}
     >
       <SanityLink
         link={link}
         menuIndex={i}
         classes={`${
           onClickEvent == 1 ? `active` : ``
-        } parent-menu block text-base lg:mr-4 xl:mr-10 ${
-          i === 0 ? "font-normal" : "font-normal"
-        } font-custom p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm`}
+        } parent-menu block text-base lg:mr-4 xl:mr-10 font-custom font-normal  p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm `}
         onclick={() =>
           link._rawSubMenuSection !== null && window.innerWidth < 1024
             ? setOnClickEvent(!onClickEvent)
@@ -38,7 +36,7 @@ const MainNavigationMenuLink = props => {
           const submenugroup = link._rawSubMenuSection.hassubmenu.add_menu_group
           // console.log("submenugroup", submenugroup)
           return (
-            <div className="lg:pt-4 ">
+            <div className="lg:pt-2 ">
               <div
                 className={`capitalize sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-menu  lg:rounded-0 py-1 lg:py-14   z-50
               lg:right-0 lg:left-0 bg-blueNew-midnight lg:place-items-left ${
