@@ -3,7 +3,7 @@ import React from "react"
 const TableContent = props => {
 //   console.log("TableContent", props)
   return (
-    <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
+    <div className="block w-auto m-auto">
       <table className="blog-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
         <tbody>
           {props.data.rows.map((row, l_index) => {

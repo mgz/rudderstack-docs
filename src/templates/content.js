@@ -156,13 +156,13 @@ const Singleblog = ({ data, location, ...props }) => {
           })}
         </>
         {/*Array Blog Author For Test Purpose*/}
-      </div>{" "}
+      </div>
       {/*Blog Content*/}
       <section className="bg-white pb-0">
         {/*Blog Post*/}
         <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap pt-3 pb-12">
           <h3 className="tracking-tight-2 w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-12">
-            Recent Posts{""}
+            Recent Posts
           </h3>
           <BlogModule />
           <div className="w-full text-center items-center mt-10 md:mt-12">
