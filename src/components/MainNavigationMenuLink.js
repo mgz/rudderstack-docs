@@ -47,7 +47,7 @@ const MainNavigationMenuLink = props => {
              `}
               >
                 <ul
-                  className={`grid-cols-1 md:grid-cols-5 gap-3 lg:group-hover:grid lg:max-w-screen-lg py-4 md:py-0 w-full mx-auto `}
+                  className={`grid-cols-1 md:grid-cols-4 gap-3 lg:group-hover:grid lg:max-w-screen-lg py-4 md:py-0 w-full mx-auto `}
                 >
                   {submenugroup.map(menuGroup => {
                     return (
