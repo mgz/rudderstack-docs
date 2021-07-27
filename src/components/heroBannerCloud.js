@@ -30,7 +30,8 @@ const HeroBannerCloud = props => {
                           className={
                             (btn.btnhiglight === true
                               ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6 bg-white text-dark hover:bg-blueNew-midnight hover:text-white`
+                              : "btn-secondary-lg") +
+                            ` sm:mr-4 md:mb-0 mb-6 bg-white text-dark hover:bg-blueNew-midnight hover:text-white`
                           }
                           href={btn.btnlink}
                         >
@@ -55,12 +56,12 @@ const HeroBannerCloud = props => {
                   })()}
                 </>
               ))}
-
-              
             </div>
           </div>
           <div className="relative w-full px-5 rounded-lg flex-grow justify-items-end lg:w-2/5 sm:px-0 sm:items-center lg:items-start lg:mb-0">
             <div class="iframe-container">
+              <div className="stack-frame-1"></div>
+              <div className="stack-frame-2"></div>
               <iframe
                 src={props.herobanneryoutube_url.url}
                 frameborder="0"
