@@ -8,7 +8,7 @@ import getYouTubeId from "get-youtube-id"
 import YouTube from "react-youtube"
 import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
-import TableContent from "./TableContent"
+import TableContent from "./tableContent"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 // import BlockContent from "@sanity/block-content-to-react"
 
