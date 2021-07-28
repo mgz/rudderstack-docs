@@ -9,11 +9,11 @@ const FourCardsWithTitle = props => {
     <section className="bg-whiteColor-custom pb-8 md:pb-24">
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center">
         {props.title !== "" && (
-          <h3 className="mt-24 mb-0 md:mb-10 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
+          <h3 className="mt-24 mb-0 md:mb-10 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl ">
             {props.title}
           </h3>
         )}
-        {props.subtitle !== "" && (
+        {props.subtitle && props.subtitle !== "" && (
           <h3 className="mt-10 mb-4 pb-2 text-2xl md:text-3xl text-blueNew-midnight text-center font-bold leading-tight">
             {props.subtitle}
           </h3>
