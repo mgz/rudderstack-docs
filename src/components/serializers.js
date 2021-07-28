@@ -51,7 +51,7 @@ const serializers = {
     large_quoted_text: LargeQuotedText,
     authorReference: AuthorReference,
     mainImage: ({ node }) => <MainImage mainImage={node} />,
-    table: ({ node }) => <TableContent data={node} />,
+    table_with_header: ({ node }) => <TableContent data={node} />,
     youtube: ({ node }) => {
       // console.log('you tube',node)
       const { url } = node
