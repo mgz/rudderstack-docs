@@ -103,8 +103,12 @@ const PricingComparisonComponent = props => {
             <thead>
               <tr>
                 <th
-                  className={`${sticky ? "sticky" : ""} top-14 lg:top-24 bg-white z-10`}
-                ></th>
+                  className={`${
+                    sticky ? "sticky" : ""
+                  } top-14 lg:top-24 bg-white z-10`}
+                >
+                  {""}
+                </th>
 
                 {props.pricing_columns.map(col => {
                   return (
