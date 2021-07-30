@@ -64,7 +64,6 @@
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {
-    "gatsby-plugin-remove-trailing-slashes": "^3.10.0",
     "prettier": "2.2.1"
   },
   "keywords": [
