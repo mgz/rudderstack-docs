@@ -33,6 +33,8 @@ export const query = graphql`
       slug {
         current
       }
+      meta_title
+      meta_desc
     }
     sanityFrontpageblock {
       _rawPagebuildersectionarray
@@ -187,7 +189,26 @@ const Demo = ({ data, htmlId, location }) => {
   // console.log("sss", location)
   return (
     <Layout location={location}>
-      <SEO title="Schedule Demo" />
+      {/* <SEO title="Schedule Demo" /> */}
+      <Helmet>
+        <title>{data.sanitySchdemo.meta_title || data.sanitySchdemo.title}</title>
+        <meta
+          property="og:title"
+          content={data.sanitySchdemo.meta_title || data.sanitySchdemo.title}
+        />
+        <meta
+          property="twitter:title"
+          content={data.sanitySchdemo.meta_title || data.sanitySchdemo.title}
+        />
+        <meta name="description" content={data.sanitySchdemo.meta_desc} />
+        <meta property="og:description" content={data.sanitySchdemo.meta_desc} />
+        <meta
+          property="twitter:description"
+          content={data.sanitySchdemo.meta_desc}
+        />
+        <meta property="og:type" content="article" />
+      </Helmet>
+
       <div className="font-custom">
         <section id="demo_hdr">
           <div className="demo-header">
