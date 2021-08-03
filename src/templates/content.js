@@ -223,11 +223,13 @@ export const query = graphql`
     sanityFrontpageblock {
       _rawPagebuildersectionarray
     }
-    blog: sanityBlog(slug: { eq: $slug }) {
+    blog: sanityBlog(slug: { current: { eq: $slug } }) {
       id
       blog_category
       title
-      slug
+      slug{
+        current
+      }
       meta_title
       meta_desc
       _rawDescription

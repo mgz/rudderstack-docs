@@ -17,7 +17,9 @@ const BlogModule = () => {
           node {
             id
             title
-            slug
+            slug{
+              current
+            }
             blog_category
             blog_authors {
               author_name
@@ -46,7 +48,7 @@ const BlogModule = () => {
         return (
           <div className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full">
             <Link
-              to={`/blog/` + latestblog.node.slug}
+              to={`/blog/` + latestblog.node.slug.current}
               className="block bg-white rounded-t rounded-b-none overflow-hidden shadow relative h-full"
             >
               <img

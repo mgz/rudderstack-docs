@@ -476,7 +476,9 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             title
-            slug
+            slug {
+              current
+            }
           }
         }
       }
@@ -489,12 +491,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogs = result.data.allSanityBlog.edges || []
   blogs.forEach((edge, index) => {
-    const path = `/blog/${edge.node.slug}`
+    const path = `/blog/${edge.node.slug.current}`
 
     createPage({
       path,
       component: require.resolve("./src/templates/content.js"),
-      context: { slug: edge.node.slug },
+      context: { slug: edge.node.slug.current },
     })
   })
 
