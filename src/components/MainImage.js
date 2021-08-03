@@ -14,7 +14,7 @@ const MainImage = ({ mainImage, width = 1200, _key }) => {
 
   return imgUrl ? (
     // <img key={_key} src={imgUrl} alt={mainImage.alt || ""} />
-    <img key={_key} alt="some text" src={imgUrl} />
+    <img loading="lazy" key={_key} alt={_key} src={imgUrl} />
   ) : (
     <></>
   )
