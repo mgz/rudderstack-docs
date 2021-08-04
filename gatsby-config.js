@@ -192,8 +192,8 @@ module.exports = {
                 return Object.assign({}, edge.node, {
                   description: edge.node.meta_desc,
                   date: edge.node._createdAt,
-                  url: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug,
-                  guid: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug,
+                  url: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug.current,
+                  guid: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug.current,
                   //  custom_elements: [{ "content:encoded": edge.node._rawDescription }],
                 })
               })
@@ -203,7 +203,9 @@ module.exports = {
               allSanityBlog(sort: {fields: _createdAt, order: DESC}) {
                 edges {
                   node {
-                    slug
+                    slug{
+                      current
+                    }
                     title
                     _createdAt
                     meta_desc

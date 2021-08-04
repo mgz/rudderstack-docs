@@ -1,4 +1,5 @@
-let indexName = process.env.GATSBY_ALGOLIA_INDEX_PREFIX + '_rudderstack_gatsby_blog'
+let indexName =
+  process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_rudderstack_gatsby_blog"
 
 const pageQuery = `{
   pages: allSanityBlog {
@@ -11,7 +12,9 @@ const pageQuery = `{
           author_desc
         }
         weight
-        slug
+        slug {
+          current
+        }
         blog_category
         blog_image {
           asset {
@@ -51,13 +54,16 @@ function pageToAlgoliaRecord({
     console.warn("blog author not defined for ", title)
   }
   //
+  if(!slug.current){
+    console.warn("blog author not defined for ", slug)
+  }
   return {
     objectID: _id,
     title,
     blog_authors,
     blogimage,
     weight,
-    slug,
+    slug: slug.current,
     blogdate,
     blog_category,
   }
