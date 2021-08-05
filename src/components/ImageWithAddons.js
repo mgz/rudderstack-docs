@@ -1,9 +1,9 @@
 import React from "react"
 import Image from "./image"
 const ImageWithAddons = props => {
-  const alt = props.data.alt_attribute
-  const caption = props.data.image_caption
-  const keyphrase = props.data.keyphrase
+  // const alt = props.data.alt_attribute
+  // const caption = props.data.image_caption
+  // const keyphrase = props.data.keyphrase
   return (
     <div className="relative">
       <Image

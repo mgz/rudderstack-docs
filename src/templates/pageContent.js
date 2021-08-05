@@ -65,7 +65,7 @@ const PageContent = ({ data, location }) => {
             return (
               <section
                 key={section._key}
-                className="w-full segment-desktop-banner text-white lg:py-0 py-10 flex justify-center items-center relative overflow-hidden"
+                className="w-full segment-desktop-banner lg:py-0 py-10 flex justify-center items-center relative overflow-hidden"
               >
                 <div
                   className="comparison-banner"

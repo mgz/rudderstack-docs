@@ -10,25 +10,7 @@
   @apply top-3;
   @apply left-0;
 }
-.product-page_banner {
-  background: #6b96c3; /* Old browsers */
-  background: -moz-linear-gradient(
-    left,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    left,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to right,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
-}
+
 .product-page_banner::before {
   background-image: url("../images/product-banner-line.png");
   background-position: bottom right;
@@ -52,25 +34,7 @@
   width: 100%;
 }
 
-.video-library-banner {
-  background: #6b96c3; /* Old browsers */
-  background: -moz-linear-gradient(
-    left,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    left,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to right,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
-}
+
 .video-library-banner::before {
   background-image: url("../images/pipe-start-right.svg"),
     url("../images/pipe-start-left.svg");
@@ -83,26 +47,7 @@
   height: 100%;
 }
 
-.segment-desktop-banner {
-  background: #6b96c3; /* Old browsers */
-  background: -moz-linear-gradient(
-    left,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    left,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(
-    to right,
-    #6b96c3 0%,
-    #111168 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
-  z-index: 10;
-}
+
 .segment-desktop-banner::before {
   /* background-image: url("../images/rudderstack-segment2x.svg"); */
   background-position: right -100px bottom 0px;

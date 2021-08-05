@@ -78,6 +78,7 @@ const CookiesConsent = () => {
                         className="cli-privacy-readmore"
                         data-readmore-text="Show more"
                         data-readless-text="Show less"
+                        href="#"
                         onClick={() => {
                           setToggleShowMore(!toggleShowMore)
                         }}
@@ -87,7 +88,7 @@ const CookiesConsent = () => {
                   <div className="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
                     <div className="cli-tab-section cli-privacy-tab">
                       <div className="cli-tab-header">
-                        <a className="cli-nav-link cli-settings-mobile">
+                        <a className="cli-nav-link cli-settings-mobile" href="#">
                           Privacy Overview
                         </a>
                       </div>
@@ -121,6 +122,7 @@ const CookiesConsent = () => {
                           className="cli-nav-link cli-settings-mobile"
                           data-target="necessary"
                           data-toggle="cli-toggle-tab"
+                          href="#"
                           onClick={() => {
                             setToggleNessesory(!toggleNessesory)
                           }}
@@ -169,6 +171,7 @@ const CookiesConsent = () => {
             <a
               // className="bg-white text-primary btn-secondary-lg font-bold leading-tight border-white cursor-pointer mr-0 sm:mr-4 mb-2 sm:mb-0 w-full self-center"
               className="font-bold cursor-pointer text-blueNew-custom self-center mx-2"
+              href="#"
               onClick={() => {
                 setShowCookieSeting(true)
               }}
@@ -181,6 +184,7 @@ const CookiesConsent = () => {
         <div className="flex flex-col justify-center my-4 sm:my-0 w-full md:w-72">
           <a
             className="btn-primary-lg cursor-pointer self-center w-full"
+            href="#"
             onClick={() => {
               setShowConsent(false)
               cookies.set("viewed_cookie_policy", "yes", {

@@ -1,10 +1,6 @@
 import React, { useState } from "react"
-import Link from "gatsby-link"
 import Image from "./image"
 import SanityLink from "./SanityLink"
-import SanitySubLink from "./SanitySubLink"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
 
 const MainNavigationMenuLink = props => {
   const [onClickEvent, setOnClickEvent] = useState(false)
@@ -23,7 +19,7 @@ const MainNavigationMenuLink = props => {
         link={link}
         menuIndex={i}
         classes={`${
-          onClickEvent == 1 ? `active` : ``
+          onClickEvent === 1 ? `active` : ``
         } parent-menu block text-base lg:mr-4 xl:mr-10 font-custom font-normal  p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm `}
         onclick={() =>
           link._rawSubMenuSection !== null && window.innerWidth < 1024
@@ -40,7 +36,7 @@ const MainNavigationMenuLink = props => {
               <div
                 className={`capitalize sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-menu  lg:rounded-0 py-1 lg:py-14   z-50
               lg:right-0 lg:left-0 bg-blueNew-midnight lg:place-items-left ${
-                onClickEvent == 1 ? `flex` : `grid hidden`
+                onClickEvent === 1 ? `flex` : `grid hidden`
               }
              `}
               >
@@ -68,28 +64,26 @@ const MainNavigationMenuLink = props => {
                               {menuGroup.add_sub_menu_items &&
                                 menuGroup.add_sub_menu_items.map(
                                   (submenu, j) => {
-                                    {
-                                      // console.log("submenu", submenu)
-                                      return (
-                                        <li
-                                          key={j}
-                                          className="text-xs font-custom pb-2 font-bold"
+                                    // console.log("submenu", submenu)
+                                    return (
+                                      <li
+                                        key={j}
+                                        className="text-xs font-custom pb-2 font-bold"
+                                      >
+                                        <a
+                                          className={`border-b border-solid border-transparent hover:border-white`}
+                                          rel="noopener noreferrer"
+                                          href={submenu.sub_menu_item_link}
+                                          target={
+                                            submenu.menu_target_link
+                                              ? "_blank"
+                                              : "_self"
+                                          }
                                         >
-                                          <a
-                                            className={`border-b border-solid border-transparent hover:border-white`}
-                                            rel="noopener noreferrer"
-                                            href={submenu.sub_menu_item_link}
-                                            target={
-                                              submenu.menu_target_link
-                                                ? "_blank"
-                                                : "_self"
-                                            }
-                                          >
-                                            {submenu.sub_menu_item_title}
-                                          </a>
-                                        </li>
-                                      )
-                                    }
+                                          {submenu.sub_menu_item_title}
+                                        </a>
+                                      </li>
+                                    )
                                   }
                                 )}
                             </div>
