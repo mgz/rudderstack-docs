@@ -99,7 +99,7 @@ const CustomIntegrationCategoryTypeList = ({
                 style={{ fontSize: "22px" }}
                 className="h-11 text-blueNew-eastbay rounded-lg pt-2 py-2 mr-2"
               />
-              <div className="text-center align-middle">
+              <div className="text-left align-middle">
                 {isFromSearch ? (
                   <Highlight attribute="label" hit={item} />
                 ) : (
