@@ -84,7 +84,7 @@ function renderImage(image, classes, alt) {
     return (
       <img
         loading="lazy"
-        src={image.node.url}
+        src={image.node.localFile.publicURL}
         alt={alt ? alt : image.node._id}
         className={classes}
       />
@@ -103,6 +103,9 @@ const Image = props => {
               node {
                 url
                 _id
+                localFile {
+                  publicURL
+                }
               }
             }
           }

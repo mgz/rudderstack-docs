@@ -9,6 +9,8 @@ import YouTube from "react-youtube"
 import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import Image from "./image"
+
 // import BlockContent from "@sanity/block-content-to-react"
 
 // const overrides = {
@@ -50,6 +52,7 @@ const serializers = {
     large_quoted_text: LargeQuotedText,
     authorReference: AuthorReference,
     mainImage: ({ node }) => <MainImage mainImage={node} />,
+    image: ({ node }) => <MainImage mainImage={node} />,
     youtube: ({ node }) => {
       // console.log('you tube',node)
       const { url } = node
