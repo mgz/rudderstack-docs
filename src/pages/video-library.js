@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import algoliasearch from "algoliasearch/lite"
 import CustomSearchBox from "../components/customSearchBox"
 import VideoLibraryMenu from "../components/videoLibraryCategoryList"
-
+import { Helmet } from "react-helmet"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import CustomHits from "../components/customHits"
 import CustomVideoLibraryHits from "../components/customHitsVideoLibrary"
@@ -32,6 +32,29 @@ const VideoLibraryPage = ({ data }) => {
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
   return (
     <Layout>
+      <Helmet>
+        <title>{`RudderStack Video Library | Rudderstack.com`}</title>
+        <meta
+          property="og:title"
+          content={`RudderStack Video Library | Rudderstack.com`}
+        />
+        <meta
+          property="twitter:title"
+          content={`RudderStack Video Library | Rudderstack.com`}
+        />
+        <meta
+          name="description"
+          content={`Watch videos from Team RudderStack to learn how to use our tool and uncover new use cases. Click for more.`}
+        />
+        <meta
+          property="og:description"
+          content={`Watch videos from Team RudderStack to learn how to use our tool and uncover new use cases. Click for more.`}
+        />
+        <meta
+          property="twitter:description"
+          content={`Watch videos from Team RudderStack to learn how to use our tool and uncover new use cases. Click for more.`}
+        />
+      </Helmet>
       <div className="font-custom">
         <div className="max-w-6xl mx-auto flex flex-wrap flex-col px-4">
           <InstantSearch
@@ -93,7 +116,9 @@ export const pageQuery = graphql`
     sanityFrontpageblock {
       _rawPagebuildersectionarray
     }
-    videolibrary: allSanityVideolibrary(sort: { fields: webinar_dttm, order: ASC }) {
+    videolibrary: allSanityVideolibrary(
+      sort: { fields: webinar_dttm, order: ASC }
+    ) {
       edges {
         node {
           _rawVideoLibraryCategoryType
