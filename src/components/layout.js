@@ -80,14 +80,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
   // let diableGradient = false
   const [diableGradient, setDiableGradient] = React.useState(
     location &&
-      (location.pathname.startsWith("/product/") ||
-        location.pathname.startsWith("/request-demo") ||
-        location.pathname.startsWith("/enterprise-quote") ||
-        location.pathname.startsWith("/404") ||
-        location.pathname.startsWith("/rudderstack-vs") ||
-        location.pathname.startsWith("/cloud") ||
-        (location.pathname.startsWith("/video-library/") &&
-          showExplicitGradient === false) ||
+      (location.pathname.startsWith("/404") ||
         location.pathname.startsWith("/blog/"))
       ? true
       : false

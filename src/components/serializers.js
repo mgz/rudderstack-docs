@@ -8,6 +8,7 @@ import getYouTubeId from "get-youtube-id"
 import YouTube from "react-youtube"
 import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
+import TableContent from "./tableContent"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import Image from "./image"
 
@@ -53,6 +54,7 @@ const serializers = {
     authorReference: AuthorReference,
     mainImage: ({ node }) => <MainImage mainImage={node} />,
     image: ({ node }) => <MainImage mainImage={node} />,
+    table_with_header: ({ node }) => <TableContent data={node} />,
     youtube: ({ node }) => {
       // console.log('you tube',node)
       const { url } = node

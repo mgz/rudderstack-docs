@@ -6,7 +6,7 @@ const ThreeCardsWithTitle = props => {
   return (
     <>
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
-        <h3 className="mt-24 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
+        <h3 className="mt-24 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl ">
           {props.title}
         </h3>
       </div>

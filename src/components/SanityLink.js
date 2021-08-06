@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "gatsby-link";
-import $ from 'jquery';
 
 const SanityLink = (props) => {
 
