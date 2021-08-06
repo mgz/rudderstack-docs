@@ -5,10 +5,8 @@ import Pagination from "../components/pagination"
 import algoliasearch from "algoliasearch/lite"
 import CustomSearchBox from "../components/customSearchBox"
 import CustomMenu from "../components/blogCategoryList"
-import {
-  InstantSearch,
-  Configure,
-} from "react-instantsearch-dom"
+import { Helmet } from "react-helmet"
+import { InstantSearch, Configure } from "react-instantsearch-dom"
 import CustomHits from "../components/customHits"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
@@ -17,7 +15,7 @@ import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
 
-const Blog_new = ({ data,location }) => {
+const Blog_new = ({ data, location }) => {
   const lv_middlebannersection = (
     data.sanityFrontpageblock._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "middlebannersection")
@@ -33,11 +31,38 @@ const Blog_new = ({ data,location }) => {
   // console.log("device width", height, width)
   return (
     <Layout location={location}>
+      <Helmet>
+        <title>{`The RudderStack Blog | Rudderstack.com`}</title>
+        <meta
+          property="og:title"
+          content={`The RudderStack Blog | Rudderstack.com`}
+        />
+        <meta
+          property="twitter:title"
+          content={`The RudderStack Blog | Rudderstack.com`}
+        />
+        <meta
+          name="description"
+          content={`Read the latest from Team RudderStack on solving data engineering problems, big picture data industry analysis, and product updates.`}
+        />
+        <meta
+          property="og:description"
+          content={`Read the latest from Team RudderStack on solving data engineering problems, big picture data industry analysis, and product updates.`}
+        />
+        <meta
+          property="twitter:description"
+          content={`Read the latest from Team RudderStack on solving data engineering problems, big picture data industry analysis, and product updates.`}
+        />
+      </Helmet>
+
       <div className="font-custom">
         <div className="max-w-6xl mx-auto flex flex-wrap flex-col px-4">
           <InstantSearch
             searchClient={searchClient}
-            indexName={process.env.GATSBY_ALGOLIA_INDEX_PREFIX + '_rudderstack_gatsby_blog'}
+            indexName={
+              process.env.GATSBY_ALGOLIA_INDEX_PREFIX +
+              "_rudderstack_gatsby_blog"
+            }
           >
             <Configure hitsPerPage={10} />
             <div className="flex flex-row  flex-wrap-reverse mt-14 md:mt-32 w-full">

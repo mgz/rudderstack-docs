@@ -13,9 +13,7 @@ const IntegrationSimilar = ({ data }) => {
           {data.sd_integrations &&
             data.sd_integrations.map((l_integration_dtl, ii) => {
               return (
-                <Link
-                  to={`/integration/` + l_integration_dtl.slug.current}
-                >
+                <Link to={`/integration/` + l_integration_dtl.slug.current}>
                   <div
                     key={ii._ref}
                     className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full"
@@ -23,14 +21,16 @@ const IntegrationSimilar = ({ data }) => {
                     <div className="int-img lg:px-24 p-10 flex justify-center items-center">
                       <Image
                         props={
-                          l_integration_dtl.integrationLogo.asset._id?l_integration_dtl.integrationLogo.asset._id:l_integration_dtl.integrationLogo.asset._ref
+                          l_integration_dtl.integrationLogo.asset._id
+                            ? l_integration_dtl.integrationLogo.asset._id
+                            : l_integration_dtl.integrationLogo.asset._ref
                         }
                         classes="object-scale-down h-full w-full"
                       />
                     </div>
                     <div className="flex items-center px-10 py-5">
                       <span className="font-bold leading-normal text-sm lr-icon relative sm:inline-block">
-                        <a>See more</a>
+                        <a href={`/integration/` + l_integration_dtl.slug.current}>See more</a>
                       </span>
                     </div>
                   </div>

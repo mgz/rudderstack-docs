@@ -50,7 +50,7 @@ const Products = ({ data, location}) => {
         )}
 
         <section id="testimonials">
-          <Testimonial {...lv_testimonialsection[0]} isForDemoPage={true} />
+          <Testimonial {...lv_testimonialsection[0]} applyGradientColorTheme={true} isForDemoPage={true} />
         </section>
 
         <section id="footer_section_for_demo">

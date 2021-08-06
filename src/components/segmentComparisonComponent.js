@@ -90,7 +90,7 @@ const SegmentComparisonComponent = props => {
     >
       <SegmentSpecialistV2 {...props.divider_card} />
       <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-56 md:pt-48 text-center">
-        <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8 text-blueNew-midnight">
+        <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8 ">
           {props.title}
         </h2>
 

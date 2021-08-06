@@ -213,7 +213,7 @@ const Demo = ({ data, htmlId, location }) => {
         <section id="demo_hdr">
           <div className="demo-header">
             <div className=" flex flex-col justify-center items-center demo-header-bg w-full">
-              <h1 className="text-whiteColor-custom px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
+              <h1 className=" px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
                 {lv_scheduledemoheader[0].demo_header_text}
               </h1>
             </div>

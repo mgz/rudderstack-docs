@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
+import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import algoliasearch from "algoliasearch/lite"
 import CustomSearchBox from "../components/customSearchBox"
@@ -28,6 +29,29 @@ const Integration = props => {
   const [resultCount, setResultCount] = React.useState(0)
   return (
     <Layout>
+      <Helmet>
+        <title>{`Integrations Library | RudderStack CDP`}</title>
+        <meta
+          property="og:title"
+          content={`Integrations Library | RudderStack CDP`}
+        />
+        <meta
+          property="twitter:title"
+          content={`Integrations Library | RudderStack CDP`}
+        />
+        <meta
+          name="description"
+          content={`Connect your customer data to all the tools your team uses to drive growth. Spend less time on vendor SDK implementations and third-party code management.`}
+        />
+        <meta
+          property="og:description"
+          content={`Connect your customer data to all the tools your team uses to drive growth. Spend less time on vendor SDK implementations and third-party code management.`}
+        />
+        <meta
+          property="twitter:description"
+          content={`Connect your customer data to all the tools your team uses to drive growth. Spend less time on vendor SDK implementations and third-party code management.`}
+        />
+      </Helmet>
       <div className="font-custom">
         <div className="lg:pt-40 pt-16 mx-auto integration-banner relative md:pb-20 pb-7 overflow-hidden">
           <section className="bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter">
