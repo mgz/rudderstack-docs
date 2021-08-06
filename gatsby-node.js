@@ -491,6 +491,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const blogs = result.data.allSanityBlog.edges || []
   blogs.forEach((edge, index) => {
+    // console.log('for each blog',edge.node.slug)
     const path = `/blog/${edge.node.slug.current}`
 
     createPage({
