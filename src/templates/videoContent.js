@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import "../lib/font-awesome"
+import { Helmet } from "react-helmet"
 import PortableText from "../components/portableText"
 import Layout from "../components/layout"
 import MiddleBanner from "../components/middle-banner"
@@ -60,6 +61,24 @@ const videoContent = ({ data, location }) => {
       location={location}
       showExplicitGradient={category === "Live" ? true : false}
     >
+      <Helmet>
+        <title>{data.videoLib.meta_title || data.videoLib.title}</title>
+        <meta
+          property="og:title"
+          content={data.videoLib.meta_title || data.videoLib.title}
+        />
+        <meta
+          property="twitter:title"
+          content={data.videoLib.meta_title || data.videoLib.title}
+        />
+        <meta name="description" content={data.videoLib.meta_desc} />
+        <meta property="og:description" content={data.videoLib.meta_desc} />
+        <meta
+          property="twitter:description"
+          content={data.videoLib.meta_desc}
+        />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <div className="pt-0 font-custom">
         {/*banner*/}
         <VideoLibraryContentHeader
