@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
-
+import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import PortableText from "../components/portableText"
 import MiddleBanner from "../components/middle-banner"
@@ -20,6 +20,25 @@ const TrankYou = ({ data, htmlId }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{data.thankyou.meta_title || data.thankyou.title}</title>
+        <meta
+          property="og:title"
+          content={data.thankyou.meta_title || data.thankyou.title}
+        />
+        <meta
+          property="twitter:title"
+          content={data.thankyou.meta_title || data.thankyou.title}
+        />
+        <meta name="description" content={data.thankyou.meta_desc} />
+        <meta property="og:description" content={data.thankyou.meta_desc} />
+        <meta
+          property="twitter:description"
+          content={data.thankyou.meta_desc}
+        />
+        <meta property="og:type" content="article" />
+      </Helmet>
+
       <div className="font-custom">
         <section id="demo_submit_hdr">
           <div className="w-full demo-submit-background">
@@ -74,6 +93,9 @@ export const pageQuery = graphql`
   query GetSingleTrankYouPage($slug: String) {
     thankyou: sanityThankyoupages(slug: { current: { eq: $slug } }) {
       _rawPagebuildersectionarray
+      meta_title
+      meta_desc
+      title
     }
     sanityFrontpageblock {
       _rawPagebuildersectionarray
