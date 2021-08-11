@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import "../lib/font-awesome"
 import loadable from "@loadable/component"
-
+import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import MiddleBanner from "../components/middle-banner"
 import ProductHeroBanner from "../components/productHeroBanner"
@@ -29,6 +29,24 @@ const Products = ({ data, location}) => {
 
   return (
     <Layout location={location}>
+       <Helmet>
+        <title>{data.product.meta_title || data.product.title}</title>
+        <meta
+          property="og:title"
+          content={data.product.meta_title || data.product.title}
+        />
+        <meta
+          property="twitter:title"
+          content={data.product.meta_title || data.product.title}
+        />
+        <meta name="description" content={data.product.meta_desc} />
+        <meta property="og:description" content={data.product.meta_desc} />
+        <meta
+          property="twitter:description"
+          content={data.product.meta_desc}
+        />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <div className="font-custom">
         {(data.product._rawPagebuildersectionarray || []).map(
           (row, idx) => {
@@ -72,6 +90,8 @@ export const pageQuery = graphql`
         current
       }
       _id
+      meta_title
+      meta_desc
     }
     sanityFrontpageblock {
       _rawPagebuildersectionarray
