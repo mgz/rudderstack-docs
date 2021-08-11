@@ -39,7 +39,7 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                     </Link>
                   </div>
                   <Link to={hit.slug}>
-                    <div className="z-50 mt-4 w-10/12 text-sm absolute bottom-6 left-6 flex justify-between items-center">
+                    <div className="z-20 mt-4 w-10/12 text-sm absolute bottom-6 left-6 flex justify-between items-center">
                       <div>
                         <p className="relative text-black font-bold text-sm leading-normal hover:text-blueNew-eastbay">
                           <a className="lr-icon">
