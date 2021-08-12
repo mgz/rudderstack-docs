@@ -650,7 +650,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const case_studies = caseStudies.data.allSanityCaseStudies.edges || []
   case_studies.forEach((edge, index) => {
-    const path = `/case-studies/${edge.node.slug.current}`
+    const path = `/customers/${edge.node.slug.current}`
 
     createPage({
       path,

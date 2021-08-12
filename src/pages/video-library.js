@@ -65,7 +65,10 @@ const VideoLibraryPage = ({ data }) => {
           >
             <Configure />
             <div className="my-10 w-full">
-              <SingleRowContentVideoLibrary data={data.videolibrary} />
+              <SingleRowContentVideoLibrary
+                data={data.videolibrary}
+                dataWeightWise={data.videolibraryWeightWise}
+              />
             </div>
 
             <div className="flex flex-row  flex-wrap-reverse mt-0 w-full">
@@ -118,6 +121,34 @@ export const pageQuery = graphql`
     }
     videolibrary: allSanityVideolibrary(
       sort: { fields: webinar_dttm, order: ASC }
+    ) {
+      edges {
+        node {
+          _rawVideoLibraryCategoryType
+          id
+          listing_image {
+            asset {
+              url
+            }
+          }
+          slug {
+            current
+          }
+          spekers {
+            author_name
+            author_desc
+          }
+          weight
+          duration
+          shortdescription
+          title
+          webinar_dttm
+        }
+      }
+    }
+
+    videolibraryWeightWise: allSanityVideolibrary(
+      sort: { fields: weight, order: DESC }
     ) {
       edges {
         node {

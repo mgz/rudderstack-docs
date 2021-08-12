@@ -6,7 +6,7 @@ const CaseStuduiesPersonalize = props => {
     <div className="max-w-6xl px-4 md:px-3 mx-auto">
       <div className="flex flex-col justify-center">
         <div className="">
-          <h2 className="my-10 text-2xl md:text-5xl text-blueNew-midnight font-bold max-w-2xl mx-auto text-center">
+          <h2 className="my-10 text-2xl md:text-5xl font-bold max-w-2xl mx-auto text-center">
             {props.csp_title}
           </h2>
           <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt px-4 md:px-24 text-center mb-8 md:mb-24">

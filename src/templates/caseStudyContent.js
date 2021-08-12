@@ -83,7 +83,7 @@ const CaseStudyContent = ({ data }) => {
               key={section._key}
             >
               <div className=" px-4 py-8 md:px-36 md:py-8">
-                <Image props={section.asset._ref} />
+                <Image props={section.asset._ref} classes="mx-auto" />
               </div>
             </div>
           )

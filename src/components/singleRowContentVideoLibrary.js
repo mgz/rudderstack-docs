@@ -10,30 +10,31 @@ import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faClock } from "@fortawesome/free-solid-svg-icons"
 
-const SingleRowContentVideoLibrary = ({ data }) => {
+const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
   //check the top future webinar from now
   let webinarObj = null
   webinarObj = data.edges.find(
     oo =>
-      oo.node._rawVideoLibraryCategoryType.condition === "live_option_with_form" &&
-      oo.node.webinar_dttm <= Date()
+      oo.node._rawVideoLibraryCategoryType.condition ===
+        "live_option_with_form" && oo.node.webinar_dttm <= Date()
   )
 
-  //if now found then llok for recent webinar
+  //if now found then llok for max weight webinar
   if (!webinarObj) {
-    webinarObj = data.edges.find(
-      oo => oo.node._rawVideoLibraryCategoryType.condition !== "live_option_with_form"
-    )
+    webinarObj = dataWeightWise.edges.find(oo => oo.node.weight !== null)
   }
 
   let category = ""
   let url_or_event_dttm = ""
   if (
     webinarObj.node._rawVideoLibraryCategoryType &&
-    webinarObj.node._rawVideoLibraryCategoryType.condition === "live_option_with_form"
+    webinarObj.node._rawVideoLibraryCategoryType.condition ===
+      "live_option_with_form"
   ) {
     category = "Live"
-    url_or_event_dttm = webinarObj.node._rawVideoLibraryCategoryType.live_option_with_form.event_datetime
+    url_or_event_dttm =
+      webinarObj.node._rawVideoLibraryCategoryType.live_option_with_form
+        .event_datetime
   } else if (
     webinarObj.node._rawVideoLibraryCategoryType &&
     webinarObj.node._rawVideoLibraryCategoryType.condition === "learn_option"

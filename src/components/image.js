@@ -124,7 +124,6 @@ const Image = props => {
           }
         }
       `}
-      
       render={data => {
         const imgdata = data.sanityimages.edges.find(
           imgdata => imgdata.node._id === props.props
