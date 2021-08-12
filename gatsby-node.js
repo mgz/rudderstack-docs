@@ -425,48 +425,85 @@ exports.createPages = async ({ graphql, actions }) => {
     toPath: "/blog/",
     isPermanent: true,
   })
-  createRedirect({
-    fromPath: "/snowplow-alternatives/",
-    toPath: "https://resources.rudderstack.com/rudderstack-vs-snowplow",
-    isPermanent: true,
-  })
-  createRedirect({
-    fromPath:
-      "/blog/introducing-rudderstack-cloud-the-warehouse-first-cdp-for-developers-2",
-    toPath: "/blog/",
-    isPermanent: true,
-  })
+  // createRedirect({
+  //   fromPath: "/snowplow-alternatives/",
+  //   toPath: "https://resources.rudderstack.com/rudderstack-vs-snowplow",
+  //   isPermanent: true,
+  // })
+  // createRedirect({
+  //   fromPath:
+  //     "/blog/introducing-rudderstack-cloud-the-warehouse-first-cdp-for-developers-2",
+  //   toPath: "/blog/",
+  //   isPermanent: true,
+  // })
   createRedirect({
     fromPath: "/blog/inew-feature-roundup-2021-03-3",
     toPath: "/blog/",
     isPermanent: true,
   })
-  createRedirect({
-    fromPath:
-      "/blog/how-proposify-leverages-real-time-data-for-inbound-attribution-marketing-and-analytics",
-    toPath: "/blog/",
-    isPermanent: true,
-  })
-  createRedirect({
-    fromPath:
-      "/blog/RudderStack-gitHub-sponsors-making-open-source-more-sustainable-for-developers",
-    toPath: "/blog/",
-    isPermanent: true,
-  })
-  createRedirect({
-    fromPath: "/blog/RudderStacks-licensing-explained",
-    toPath: "/blog/",
-    isPermanent: true,
-  })
-  createRedirect({
-    fromPath:
-      "/resources/watch-now-how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions/",
-    toPath: "/",
-    isPermanent: true,
-  })
+  // createRedirect({
+  //   fromPath:
+  //     "/blog/how-proposify-leverages-real-time-data-for-inbound-attribution-marketing-and-analytics",
+  //   toPath: "/blog/",
+  //   isPermanent: true,
+  // })
+  // createRedirect({
+  //   fromPath:
+  //     "/blog/RudderStack-gitHub-sponsors-making-open-source-more-sustainable-for-developers",
+  //   toPath: "/blog/",
+  //   isPermanent: true,
+  // })
+  // createRedirect({
+  //   fromPath: "/blog/RudderStacks-licensing-explained",
+  //   toPath: "/blog/",
+  //   isPermanent: true,
+  // })
+  // createRedirect({
+  //   fromPath:
+  //     "/resources/watch-now-how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions/",
+  //   toPath: "/",
+  //   isPermanent: true,
+  // })
   createRedirect({
     fromPath: "/request-a-demo",
     toPath: "/request-demo",
+    isPermanent: true,
+  })
+
+  //redirect link added by Hari on 2021-08-12
+  createRedirect({
+    fromPath: "/snowplow-alternatives",
+    toPath: "/rudderstack-vs-snowplow",
+    isPermanent: true,
+  })
+
+  createRedirect({
+    fromPath: "/blog/introducing-rudderstack-cloud-the-warehouse-first-cdp-for-developers-2",
+    toPath: "/blog/introducing-rudderstack-cloud-the-warehouse-first-cdp-for-developers",
+    isPermanent: true,
+  })
+
+  createRedirect({
+    fromPath: "/blog/how-proposify-leverages-real-time-data-for-inbound-attribution-marketing-and-analytics",
+    toPath: "/blog/proposifys-data-stack-explained-making-marketing-channel-analytics-and-inbound-attribution-a-solvable-problem-with-rudderstack",
+    isPermanent: true,
+  })
+
+  createRedirect({
+    fromPath: "/blog/RudderStack-gitHub-sponsors-making-open-source-more-sustainable-for-developers",
+    toPath: "/blog/rudderstack-github-sponsors-making-open-source-more-sustainable-for-developers",
+    isPermanent: true,
+  })
+
+  createRedirect({
+    fromPath: "/blog/RudderStacks-licensing-explained",
+    toPath: "/blog/rudderstacks-licensing-explained",
+    isPermanent: true,
+  })
+
+  createRedirect({
+    fromPath: "/resources/watch-now-how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions",
+    toPath: "/video-library/how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions",
     isPermanent: true,
   })
 

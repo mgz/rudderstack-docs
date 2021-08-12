@@ -88,7 +88,7 @@ function renderImage(image, classes, alt) {
         // src={image.node.url}
         alt={alt ? alt : image.node._id}
         className={classes}
-      />
+      />  
     )
   })()
   return imgh
