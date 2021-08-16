@@ -14,6 +14,7 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
+import { useQueryParam, StringParam } from "use-query-params"
 
 const Blog_new = ({ data, location }) => {
   const lv_middlebannersection = (
@@ -29,6 +30,9 @@ const Blog_new = ({ data, location }) => {
   const [currentRefineText, setCurrentRefineText] = useState("")
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
   // console.log("device width", height, width)
+
+  const [category, setCategory] = useQueryParam("category", StringParam)
+  console.log("category", category)
   return (
     <Layout location={location}>
       <Helmet>
@@ -67,9 +71,13 @@ const Blog_new = ({ data, location }) => {
             <Configure hitsPerPage={10} />
             <div className="flex flex-row  flex-wrap-reverse mt-14 md:mt-32 w-full">
               <div className="flex flex-col w-full lg:w-3/5 justify-center items-start text-center lg:text-left border-grey-500">
-                <CustomMenu attribute="blog_category" />
+                <CustomMenu
+                  attribute="blog_category"
+                  defaultRefinement={category}
+                />
               </div>
               <div className="w-full lg:w-2/5 pt-0 md:pt-6 pb-3 text-center">
+                
                 <CustomSearchBox
                   onRefineTextChange={val => {
                     setCurrentRefineText(val)

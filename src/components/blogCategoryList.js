@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { connectMenu } from "react-instantsearch-dom"
 
 const Menu = ({
@@ -11,6 +11,7 @@ const Menu = ({
   onCategoryChange,
   selectedCategory,
 }) => {
+  // console.log('items',items)
   return (
     <ul className="list-reset flex capitalize items-center overflow-x-auto overflow-y-hidden whitespace-nowrap xl:whitespace-normal w-full">
       <li key="ALL">
@@ -20,7 +21,7 @@ const Menu = ({
               ? "font-bold border-b-2 border-blueNew-eastbay text-blueNew-eastbay"
               : "border-b border-grayColor-lighter"
           }`}
-        >
+        > 
           <a
             href={createURL("")}
             className={"pb-0 md:pb-7"}

@@ -16,6 +16,7 @@ import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
 import SingleRowContentVideoLibrary from "../components/singleRowContentVideoLibrary"
+import { useQueryParam, StringParam } from "use-query-params"
 
 const VideoLibraryPage = ({ data }) => {
   const lv_middlebannersection = (
@@ -30,6 +31,8 @@ const VideoLibraryPage = ({ data }) => {
   const [selectedPageNo, setSelectedPageNo] = useState(1)
   const [currentRefineText, setCurrentRefineText] = useState("")
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
+  const [category, setCategory] = useQueryParam("category", StringParam)
+
   return (
     <Layout>
       <Helmet>
@@ -73,7 +76,10 @@ const VideoLibraryPage = ({ data }) => {
 
             <div className="flex flex-row  flex-wrap-reverse mt-0 w-full">
               <div className="flex flex-col w-full lg:w-3/5 justify-center items-start text-center lg:text-left border-grey-500">
-                <VideoLibraryMenu attribute="category" />
+                <VideoLibraryMenu
+                  attribute="category"
+                  defaultRefinement={category}
+                />
               </div>
               <div className="w-full lg:w-2/5 pt-0 md:pt-6 pb-3 text-center">
                 <CustomSearchBox

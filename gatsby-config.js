@@ -221,6 +221,7 @@ module.exports = {
         ],
       },
     },
+    "gatsby-plugin-use-query-params",
     "gatsby-source-sanity-transform-images",
     `gatsby-plugin-meta-redirect`, // make sure to put last in the array
     // {
