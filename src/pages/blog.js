@@ -32,7 +32,7 @@ const Blog_new = ({ data, location }) => {
   // console.log("device width", height, width)
 
   const [category, setCategory] = useQueryParam("category", StringParam)
-  console.log("category", category)
+  // console.log("category", category)
   return (
     <Layout location={location}>
       <Helmet>
