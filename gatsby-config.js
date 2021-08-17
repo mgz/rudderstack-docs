@@ -168,7 +168,7 @@ module.exports = {
         trackPage: true,
         loadAsync: true,
         delayLoad: true,
-        delayLoadTime: 1500,
+        delayLoadTime: 200,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
     },
