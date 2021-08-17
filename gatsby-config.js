@@ -167,6 +167,8 @@ module.exports = {
         //host: `https://rudderstack-dataplane.rudderstack.com`,
         trackPage: true,
         loadAsync: true,
+        delayLoad: true,
+        delayLoadTime: 1500,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
     },
