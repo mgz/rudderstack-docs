@@ -64,6 +64,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: "mwovquhr",
+        dataset: "production",
+        token:
+          "skPnMsc9RbXpzOjYtOaEx8VjMdXJXurNLsTWpHN7rYl3XCNFpBgeeR8BjpZfiaxLgna1Fb1hPJdfVfx9erLWbWW3vmCazYhMhy0xXZr551SQ6cCJv8nnm91kG5xyhhSztyuZJoaZXg2vrlOkzQxephrO52ujahJq4Y7Zv56rpp5hhkHsqg69",
+        graphqlTag: "default",
+      },
+    },
+    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -159,7 +169,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-     {
+    {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
@@ -194,8 +204,14 @@ module.exports = {
                 return Object.assign({}, edge.node, {
                   description: edge.node.meta_desc,
                   date: edge.node._createdAt,
-                  url: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug.current,
-                  guid: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug.current,
+                  url:
+                    site.siteMetadata.siteUrl +
+                    "/blog/" +
+                    edge.node.slug.current,
+                  guid:
+                    site.siteMetadata.siteUrl +
+                    "/blog/" +
+                    edge.node.slug.current,
                   //  custom_elements: [{ "content:encoded": edge.node._rawDescription }],
                 })
               })
@@ -222,6 +238,14 @@ module.exports = {
       },
     },
     "gatsby-plugin-use-query-params",
+    // {
+    //   resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+    //   options: {
+    //     analyzerMode: "server",
+    //     analyzerPort: "8888",
+    //     devMode: true,
+    //   },
+    // },
     "gatsby-source-sanity-transform-images",
     `gatsby-plugin-meta-redirect`, // make sure to put last in the array
     // {

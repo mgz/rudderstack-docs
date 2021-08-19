@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@fontsource/noto-sans": "^4.5.0",
+    "@fontsource/plus-jakarta-sans": "^4.5.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
@@ -61,11 +63,13 @@
     "react-syntax-highlighter": "^15.4.3",
     "react-youtube": "^7.13.1",
     "styled-components": "^5.2.3",
+    "super-react-gist": "^1.0.4",
     "tailwindcss": "^2.0.4",
     "universal-cookie": "^4.0.4",
     "use-query-params": "^1.2.3"
   },
   "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
     "prettier": "2.2.1"
   },
   "keywords": [

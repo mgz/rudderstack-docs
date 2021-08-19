@@ -757,4 +757,33 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+
+  const guides = await graphql(`
+    {
+      allSanityContent {
+        edges {
+          node {
+            title
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+  if (guides.errors) {
+    throw guides.errors;
+  }
+
+  const projects = guides.data.allSanityContent.edges || [];
+  projects.forEach((edge, index) => {
+    const path = `/guides/${edge.node.slug}`;
+    // console.log("slug", 'http://localhost:8000/'+edge.node.slug);
+    createPage({
+      path,
+      component: require.resolve("./src/templates/contentGuides.js"),
+      context: { slug: edge.node.slug },
+    });
+  });
+
 }

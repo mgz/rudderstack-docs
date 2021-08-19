@@ -5,8 +5,14 @@
  */
 
 // You can delete this file if you're not using it
+// import "@fontsource/noto-sans/400.css"
+// import "@fontsource/noto-sans/700.css"
+// import "@fontsource/plus-jakarta-sans/700.css"
+// import "./src/guides/css/main.css"
+
 import "./src/css/site.css"
 import "./src/css/cookies.css"
 import "./src/css/blog.css"
 import "./src/css/agreement.css"
 import "./src/css/product.css"
+
