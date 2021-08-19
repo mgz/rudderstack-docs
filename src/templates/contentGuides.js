@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 // import Layout from "../guides/components/Layout"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import MiddleBanner from "../components/middle-banner"
 import Sections from "../guides/components/Sections"
 import Header from "../guides/components/Header"
@@ -31,9 +31,7 @@ const Singlecontent = ({ data }) => {
 
 export const query = graphql`
   query GetSingleContent($slug: String) {
-    sanityFrontpageblock {
-      _rawPagebuildersectionarray
-    }
+    
     section: sanityContent(slug: { eq: $slug }) {
       _key
       title
@@ -63,6 +61,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    sanityFrontpageblock {
+      _rawPagebuildersectionarray
     }
   }
 `

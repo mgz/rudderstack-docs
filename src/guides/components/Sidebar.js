@@ -29,7 +29,7 @@ function Sidebar({
     var sidebar_height = document.getElementsByClassName("side-container")[0]
       .offsetHeight
 
-    console.log("header-height", header_height, position, header_height + 50)
+    // console.log("header-height", header_height, position, header_height + 50)
 
     $(".details h2").each(function () {
       if ($(window).scrollTop() >= $(this).offset().top - 100) {
@@ -108,7 +108,7 @@ function Sidebar({
 
   return (
     <aside>
-      <div className="side-container">
+      <div className="side-container ">
         <span className="selectitem" onClick={handleClickMobile}>
           {contents[0].section_subtitle}
         </span>
