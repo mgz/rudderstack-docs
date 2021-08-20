@@ -15,7 +15,7 @@ const Singlecontent = ({ data }) => {
 
   return (
     <Layout>
-      <div className="font-custom" id="guides-container">
+      <div className="font-custom bg-whiteColor-custom" id="guides-container">
         <Header title={section.title} excerpt={section._rawExcerpt} />
         <div className="max-w-6xl mx-auto">
           <Sections section={section} />

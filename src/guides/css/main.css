@@ -230,12 +230,18 @@ ol {
 #guides-container .project ol li {
   margin-top: 8px;
   margin-bottom: 8px;
+  padding-left: 18px;
+}
+#guides-container .project ul li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-left: 18px;
 }
 #guides-container .project li::before {
   /* margin-left: 30px; */
   background: url("../../images/arrow-right.svg") top left no-repeat;
   position: absolute;
-  left: -24px;
+  left: -8px;
   top: 3px;
   height: 21px;
   width: 21px;

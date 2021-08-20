@@ -3,12 +3,12 @@ import { Link } from "gatsby"
 
 const Sidebarctablock = ({block_title, block_button, button_url}) => {
   return (
-    <div className="sidebar-block">
+    <div className="sidebar-block rounded-lg">
       {block_title &&
       <div className="sidebar-block-title">{block_title}</div>
       }
       {block_button &&
-      <Link to={button_url} className="block-button">{block_button}</Link>
+      <Link to={button_url} className="font-bold leading-normal text-sm btn-primary-lg py-4">{block_button}</Link>
       }
     </div>
   )

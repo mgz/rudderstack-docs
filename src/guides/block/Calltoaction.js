@@ -5,7 +5,7 @@ import serializers from "../components/serializers";
 
 const Description = ({ section }) => {
   return (
-    <div className="calltoaction">
+    <div className="calltoaction rounded-lg">
       <h3 className="title">{section.block_title}</h3>
       {section._rawBlockDescription && (
         <div className="block-description">
@@ -24,7 +24,7 @@ const Description = ({ section }) => {
         </div>
       )}
       {section.block_button_text && (
-        <Link to={section.block_button_url} className="block-button">
+        <Link to={section.block_button_url} className="btn-secondary-lg leading-normal text-sm bg-whiteColor-custom  py-4 hover:bg-blueNew-eastbay">
           {section.block_button_text}
         </Link>
       )}
