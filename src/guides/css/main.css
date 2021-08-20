@@ -100,9 +100,13 @@ ol {
   margin-bottom: 1rem;
   color: #707a88;
 }
-#guides-container p strong {
-  color: #6423a1;
+#guides-container p a {
+  color: #0000EE;
+  text-decoration: underline;
 }
+/* #guides-container p strong {
+  color: #6423a1;
+} */
 /*  global classes */
 
 #guides-container .container {
@@ -179,7 +183,7 @@ ol {
 
 #guides-container .menu li a {
   padding: 1rem;
-  color: var(--guides-clr-blue-dark-1);
+  color: #707a88;
   font-weight: 700;
   display: block;
   -webkit-border-radius: 5px;
@@ -190,7 +194,7 @@ ol {
 }
 
 #guides-container .menu li a.active {
-  background-color: #845b9d;
+  background-color: midnightblue;
   color: #fff;
   opacity: 1;
 }
@@ -210,16 +214,31 @@ ol {
 }
 
 #guides-container .section strong {
-  color: #6423a1;
+  color: midnightblue;
 }
 
 #guides-container .section-details ul {
   list-style: disc;
   margin-left: 20px;
+  position: relative;
 }
 
 #guides-container .project ol {
   margin-left: 20px;
+  position: relative;
+}
+#guides-container .project ol li {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+#guides-container .project li::before {
+  /* margin-left: 30px; */
+  background: url("../../images/arrow-right.svg") top left no-repeat;
+  position: absolute;
+  left: -24px;
+  top: 3px;
+  height: 21px;
+  width: 21px;
 }
 
 #guides-container .project img {
@@ -436,7 +455,6 @@ ol {
   #guides-container ul.menu {
     display: block !important;
   }
-  
 }
 
 @media (max-width: 575px) {
