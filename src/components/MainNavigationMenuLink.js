@@ -7,7 +7,7 @@ const MainNavigationMenuLink = props => {
 
   let link = props.link
   let i = props.i
-
+  console.log("link", link)
   return (
     <li
       key={i}
@@ -19,7 +19,7 @@ const MainNavigationMenuLink = props => {
         link={link}
         menuIndex={i}
         classes={`${
-          onClickEvent === 1 ? `active` : ``
+          onClickEvent == 1 ? `active` : ``
         } parent-menu block text-base lg:mr-4 xl:mr-10 font-custom font-normal  p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm `}
         onclick={() =>
           link._rawSubMenuSection !== null && window.innerWidth < 1024
@@ -36,7 +36,7 @@ const MainNavigationMenuLink = props => {
               <div
                 className={`capitalize sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-menu  lg:rounded-0 py-1 lg:py-14   z-50
               lg:right-0 lg:left-0 bg-blueNew-midnight lg:place-items-left ${
-                onClickEvent === 1 ? `flex` : `grid hidden`
+                onClickEvent == 1 ? `flex` : `grid hidden`
               }
              `}
               >
