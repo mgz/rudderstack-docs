@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
 // import Layout from "../guides/components/Layout"
 import Layout from "../components/layout"
 import MiddleBanner from "../components/middle-banner"
@@ -15,6 +16,24 @@ const Singlecontent = ({ data }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <title>{data.section.meta_title || data.section.title}</title>
+        <meta
+          property="og:title"
+          content={data.section.meta_title || data.section.title}
+        />
+        <meta
+          property="twitter:title"
+          content={data.section.meta_title || data.section.title}
+        />
+        <meta name="description" content={data.section.meta_desc} />
+        <meta property="og:description" content={data.section.meta_desc} />
+        <meta
+          property="twitter:description"
+          content={data.section.meta_desc}
+        />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <div className="font-custom bg-whiteColor-custom" id="guides-container">
         <Header title={section.title} excerpt={section._rawExcerpt} />
         <div className="max-w-6xl mx-auto">
@@ -37,6 +56,8 @@ export const query = graphql`
       title
       _rawDescription
       _rawExcerpt
+      meta_title
+      meta_desc
       cta_block_button
       cta_block_button_url
       cta_block_title
