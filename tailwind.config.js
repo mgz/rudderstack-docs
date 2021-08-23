@@ -18,6 +18,7 @@ module.exports = {
         custom: "#0066FF",
         category: "#0166FE",
         midnight: "#17176E",
+        midnight_v2: "#10174C",
         eastbay: "#3F3C7F",
         magenta: "#6e6ea4",
         midnight_sub: "#2e2e7c",

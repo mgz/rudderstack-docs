@@ -56,7 +56,7 @@ const Page = props => {
   }
 
   console.log("all data page", data)
-
+  let l_section_info
   const page = data.page || data.route.page
   const content = (page._rawPagebuildersectionarray || [])
     .filter(c => !c.disabled)
@@ -75,12 +75,19 @@ const Page = props => {
         case "ourlogoblock":
           el = <OurLogo key={c._key} {...c} />
           break
+        case "ref_section_ourlogos":
+          l_section_info = data.section_our_logos.edges.find(
+            kl => kl.node._id === c._ref
+          )
+
+          el = <OurLogo key={c._key} {...l_section_info.node._rawOurLogos} />
+          break
         case "tabsection":
           el = <Tabs key={c._key} {...c} />
           break
         case "leftrightcontentimagesection":
           el = (
-            <div className="bg-gradiantsecondary 100%" key={c._key}>
+            <div className="bg-blueNew-midnight_v2 100% pt-32" key={c._key}>
               <LeftRightImgCnt applyGradientColorTheme={true} {...c} />{" "}
             </div>
           )
@@ -91,9 +98,29 @@ const Page = props => {
         case "middlebannersection":
           el = <MiddleBanner key={c._key} {...c} />
           break
+        case "ref_section_get_started":
+          l_section_info = data.section_get_started.edges.find(
+            kl => kl.node._id === c._ref
+          )
+
+          el = <MiddleBanner key={c._key} {...l_section_info.node._rawGetStarted} />
+          break
         case "testimonialsection":
           el = (
             <Testimonial key={c._key} applyGradientColorTheme={true} {...c} />
+          )
+          break
+        case "ref_section_testimonials":
+          l_section_info = data.section_testimonials.edges.find(
+            kl => kl.node._id === c._ref
+          )
+
+          el = (
+            <Testimonial
+              key={c._key}
+              applyGradientColorTheme={true}
+              {...l_section_info.node._rawTestimonials}
+            />
           )
           break
         case "righthighlightedsection":
