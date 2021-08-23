@@ -55,6 +55,8 @@ const Page = props => {
     )
   }
 
+  console.log("all data page", data)
+
   const page = data.page || data.route.page
   const content = (page._rawPagebuildersectionarray || [])
     .filter(c => !c.disabled)
@@ -140,10 +142,7 @@ const Page = props => {
         />
         <meta name="description" content={data.page.meta_desc} />
         <meta property="og:description" content={data.page.meta_desc} />
-        <meta
-          property="twitter:description"
-          content={data.page.meta_desc}
-        />
+        <meta property="twitter:description" content={data.page.meta_desc} />
         {/* <meta property="og:type" content="article" /> */}
       </Helmet>
 

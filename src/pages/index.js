@@ -5,7 +5,7 @@ import Page from "../templates/page";
 
 export const query = graphql`
   query FrontpageQuery {
-    page: sanityFrontpageblock(_id: {eq: "frontpageblock"}) {
+    page: sanityFrontpageblock(_id: {eq: "5f894b8e-fe7c-4bbb-a3f7-1995278390f4"}) {
       id
       _rawPagebuildersectionarray
       slug {
@@ -14,6 +14,43 @@ export const query = graphql`
       title
       meta_title
       meta_desc
+    }
+
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
+    }
+    section_our_logos: allSanitySectionOurlogos {
+      edges {
+        node {
+          _id
+          section_name
+          _rawOurLogos
+        }
+      }
+    }
+    section_sign_up: allSanitySectionSignup {
+      edges {
+        node {
+          _id
+          section_name
+          _rawSignup
+        }
+      }
+    }
+    section_testimonials: allSanitySectionTestimonials {
+      edges {
+        node {
+          _id
+          section_name
+          _rawTestimonials
+        }
+      }
     }
   }
 `;
