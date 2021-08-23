@@ -10,6 +10,9 @@ import MiddleBanner from "../components/middle-banner"
 import RightSideHiglightedContent from "../components/rightSideHiglightedContent"
 import FreeText from "../components/freeText"
 import GraphQLErrorList from "../components/graphql-error-list"
+import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
+import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
+
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
@@ -103,12 +106,23 @@ const Page = props => {
             kl => kl.node._id === c._ref
           )
 
-          el = <MiddleBanner key={c._key} {...l_section_info.node._rawGetStarted} />
+          el = (
+            <MiddleBanner
+              key={c._key}
+              {...l_section_info.node._rawGetStarted}
+            />
+          )
           break
         case "testimonialsection":
           el = (
             <Testimonial key={c._key} applyGradientColorTheme={true} {...c} />
           )
+          break
+        case "three_card_with_title":
+          el = <ThreeCardsWithTitleLeftAligned key={c._key} {...c} />
+          break
+        case "centered_aligned_title_with_youtube":
+          el = <CenteredAlignedTitleWithYoutube key={c._key} {...c} />
           break
         case "ref_section_testimonials":
           l_section_info = data.section_testimonials.edges.find(
@@ -118,7 +132,7 @@ const Page = props => {
           el = (
             <Testimonial
               key={c._key}
-              applyGradientColorTheme={true}
+              applyGradientColorTheme={false}
               {...l_section_info.node._rawTestimonials}
             />
           )
