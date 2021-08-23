@@ -40,7 +40,7 @@ function OurLogo(props) {
         </h3>
       </div>
       <div className="flex w-full justify-start flex-wrap mt-2 sm:mt-2 our-logos">
-        {logoimages.map((logoimage, i) => {
+        {logoimages && logoimages.map((logoimage, i) => {
           return (
             <div key={i} class="w-full md:w-1/5 flex justify-center md:pt-20 px-2 py-4">
               <span className="h-auto">

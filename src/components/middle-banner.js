@@ -30,7 +30,7 @@ const MiddleBanner = props => {
               <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom">
                 <p>{smalldescription}</p>
                 <div className="block md:flex pt-8 md:pt-5">
-                  {btns.map((btn, i) =>
+                  {btns && btns.map((btn, i) =>
                     (() => {
                       if (btn.btnexternallink === true) {
                         return (

@@ -44,7 +44,7 @@ const Testimonial = props => {
               <div className="block w-full">
                 <div class="carousel-controls testimonial-carousel-controls xl:-mt-20">
                   <div className="testimonial-slider owl-carousel owl-theme ">
-                    {testimonials.map((testimonial, i) => {
+                    {testimonials && testimonials.map((testimonial, i) => {
                       return (
                         <div
                           key={i}
