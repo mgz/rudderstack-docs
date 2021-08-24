@@ -1,12 +1,14 @@
 import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
+import Link from "gatsby-link"
 
 const ThreeCardsWithTitleLeftAligned = props => {
+  console.log('ThreeCardsWithTitleLeftAligned',props)
   return (
     <>
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
-        <h3 className="mt-24 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
+        <h3 className="mt-16 md:mt-40 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
           {props.title}
         </h3>
       </div>
@@ -41,6 +43,41 @@ const ThreeCardsWithTitleLeftAligned = props => {
             )
           })}
         </div>
+      </div>
+      <div className="w-full max-w-5xl m-auto text-center">
+      <p className="mt-16 md:mt-16 flex justify-center mb-6 md:mb-16">
+          {(() => {
+            if (props.button.btnexternallink === true) {
+              return (
+                <a
+                  key={props.button._key}
+                  className={
+                    (props.button.btnhiglight === true
+                      ? "btn-primary-lg"
+                      : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
+                  }
+                  href={props.button.btnlink}
+                >
+                  {props.button.btntext}
+                </a>
+              )
+            } else {
+              return (
+                <Link key={props.button._key} to={props.button.btnlink}>
+                  <span
+                    className={
+                      (props.button.btnhiglight === true
+                        ? "btn-primary-lg"
+                        : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                    }
+                  >
+                    {props.button.btntext}
+                  </span>
+                </Link>
+              )
+            }
+          })()}
+        </p>
       </div>
     </>
   )
