@@ -58,6 +58,7 @@ const BlogModule = () => {
                 src={latestblog.node.blog_image.asset.localFile.publicURL}
                 alt={latestblog.node.title}
                 className="w-full"
+                loading="lazy"
               />
               {/* commented by Hari on 2021-04-23 */}
               {/* <div className="uppercase text-blueNew-category text-sm px-5 font-bold pt-6">{categories[latestblog.node.blog_category]}</div> */}
