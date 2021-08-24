@@ -49,7 +49,7 @@ const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
             </div>
             <div className="w-full sm:w-1/2 sm:p-6 sm:pr-0 mt-14 sm:mt-0 lg:pl-36 md:pl-28">
               <div className="flex flex-row">
-                <div className="bg-white rounded-lg p-8 shadow-md h-36  w-36">
+                <div className="bg-white rounded-lg p-8 shadow-md w-36">
                   {/* <StaticImage
                     src="../images/rudderstack-short-logo.png"
                     alt="cust-logo"
@@ -72,13 +72,12 @@ const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
                   />
                 </div>
 
-                <div className="bg-white rounded-lg p-8 shadow-md h-36  w-36">
+                <div className="bg-white rounded-lg p-8 shadow-md w-36">
                   <StaticImage
                     src="../images/rudderstack-short-logo.png"
                     alt="cust-logo"
                     // class="h-full w-full"
                     // classes="w-72 mx-auto my-auto"
-                    class="object-scale-down h-full w-full"
                     placeholder="tracedSVG"
                   />
                 </div>
