@@ -72,7 +72,7 @@ const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
                   />
                 </div>
 
-                <div className="bg-white rounded-lg p-8 shadow-md w-36">
+                <div className="bg-white rounded-lg p-8 shadow-md w-36 items-center flex">
                   <StaticImage
                     src="../images/rudderstack-short-logo.png"
                     alt="cust-logo"
