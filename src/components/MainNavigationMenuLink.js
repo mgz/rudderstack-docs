@@ -7,7 +7,6 @@ const MainNavigationMenuLink = props => {
 
   let link = props.link
   let i = props.i
-  //console.log("link", link)
   return (
     <li
       key={i}

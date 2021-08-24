@@ -1,7 +1,6 @@
 import React from "react"
 
 const TableContent = props => {
-  console.log("TableContent", props)
   return (
     <div className="w-full sm:w-auto m-auto">
       <table className="hidden sm:block blog-table relative table-fixed font-custom bg-white text-grayColor-custom">

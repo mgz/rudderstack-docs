@@ -222,6 +222,20 @@ module.exports = {
         ],
       },
     },
+  //  {
+  //   resolve: `gatsby-plugin-purgecss`,
+  //     options: {
+  //       printRejected: true, // Print removed selectors and processed file names
+  //       // develop: true, // Enable while using `gatsby develop`
+  //       tailwind: true, // Enable tailwindcss support
+  //       // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+  //       purgeOnly : ['/'], // Purge only these files/folders
+  //       purgeCSSOptions: {
+  //         // https://purgecss.com/configuration.html#options
+  //          safelist: ['gradient-enable'], // Don't remove this selector
+  //       },
+  //     },
+  //  },
     "gatsby-plugin-use-query-params",
     "gatsby-source-sanity-transform-images",
     `gatsby-plugin-meta-redirect`, // make sure to put last in the array

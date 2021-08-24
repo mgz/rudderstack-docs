@@ -173,7 +173,7 @@ export const query = graphql`
         totalCount
       }
     }
-    sanityFrontpageblock {
+    sanityFrontpageblock(_id: {eq: "frontpageblock"}) {
       _rawPagebuildersectionarray
     }
   }
