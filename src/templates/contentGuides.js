@@ -83,7 +83,7 @@ export const query = graphql`
         }
       }
     }
-    sanityFrontpageblock {
+    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
       _rawPagebuildersectionarray
     }
   }

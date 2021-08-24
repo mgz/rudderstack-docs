@@ -136,7 +136,7 @@ export const pageQuery = graphql`
       duration
       id
     }
-    sanityFrontpageblock {
+    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
       _rawPagebuildersectionarray
     }
     allSanityBlogauthor {

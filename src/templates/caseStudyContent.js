@@ -152,7 +152,7 @@ export const query = graphql`
       _rawPagebuildersectionarray
     }
 
-    sanityFrontpageblock {
+    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
       _rawPagebuildersectionarray
     }
 

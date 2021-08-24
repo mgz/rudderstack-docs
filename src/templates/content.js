@@ -200,7 +200,7 @@ const Singleblog = ({ data, location, ...props }) => {
 
 export const query = graphql`
   query GetSingleBlog($slug: String) {
-    sanityFrontpageblock {
+    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
       _rawPagebuildersectionarray
     }
     blog: sanityBlog(slug: { current: { eq: $slug } }) {

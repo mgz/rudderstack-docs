@@ -93,7 +93,7 @@ export const pageQuery = graphql`
       meta_title
       meta_desc
     }
-    sanityFrontpageblock {
+    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
       _rawPagebuildersectionarray
     }
   }

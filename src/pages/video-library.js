@@ -122,7 +122,7 @@ export default VideoLibraryPage
 
 export const pageQuery = graphql`
   query {
-    sanityFrontpageblock {
+    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
       _rawPagebuildersectionarray
     }
     videolibrary: allSanityVideolibrary(
