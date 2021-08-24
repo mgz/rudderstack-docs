@@ -11,7 +11,7 @@ import PortableText from "../components/portableText"
 import OurLogo from "../components/ourlogo"
 import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
-
+import clientConfig from "../../client-config"
 import DynamicInputForm from "../components/dynamicInputForm"
 
 // const Layout = loadable(() => import("../components/layout"))
@@ -36,8 +36,33 @@ export const query = graphql`
       meta_title
       meta_desc
     }
-    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
-      _rawPagebuildersectionarray
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
+    }
+
+    section_our_logos: allSanitySectionOurlogos {
+      edges {
+        node {
+          _id
+          section_name
+          _rawOurLogos
+        }
+      }
+    }
+    section_testimonials: allSanitySectionTestimonials {
+      edges {
+        node {
+          _id
+          section_name
+          _rawTestimonials
+        }
+      }
     }
     allSanityFormInput {
       nodes {
@@ -66,18 +91,17 @@ const Demo = ({ data, htmlId, location }) => {
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "demofooterleft")
 
-  const lv_ourlogoblock = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "ourlogoblock")
+  const lv_ourlogoblock = data.section_our_logos.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.ourLogos
+  )
 
-  const lv_testimonialsection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "testimonialsection")
+  const lv_testimonialsection = data.section_testimonials.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
+  )
 
-  const lv_middlebannersection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "middlebannersection")
-
+  const lv_middlebannersection = data.section_get_started.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
   const [isLoading, setIsLoading] = useState(false)
 
   const onDemoFormSubmit = data => {
@@ -191,7 +215,9 @@ const Demo = ({ data, htmlId, location }) => {
     <Layout location={location}>
       {/* <SEO title="Schedule Demo" /> */}
       <Helmet>
-        <title>{data.sanitySchdemo.meta_title || data.sanitySchdemo.title}</title>
+        <title>
+          {data.sanitySchdemo.meta_title || data.sanitySchdemo.title}
+        </title>
         <meta
           property="og:title"
           content={data.sanitySchdemo.meta_title || data.sanitySchdemo.title}
@@ -201,7 +227,10 @@ const Demo = ({ data, htmlId, location }) => {
           content={data.sanitySchdemo.meta_title || data.sanitySchdemo.title}
         />
         <meta name="description" content={data.sanitySchdemo.meta_desc} />
-        <meta property="og:description" content={data.sanitySchdemo.meta_desc} />
+        <meta
+          property="og:description"
+          content={data.sanitySchdemo.meta_desc}
+        />
         <meta
           property="twitter:description"
           content={data.sanitySchdemo.meta_desc}
@@ -279,11 +308,14 @@ const Demo = ({ data, htmlId, location }) => {
         <section id="logos" className="px-8">
           <OurLogo
             customHeaderText={`The top companies in the world use RudderStack to activate their customer data`}
-            {...lv_ourlogoblock[0]}
+            {...lv_ourlogoblock[0].node._rawOurLogos}
           />
         </section>
         <section id="testimonials">
-          <Testimonial {...lv_testimonialsection[0]} isForDemoPage={true} />
+          <Testimonial
+            {...lv_testimonialsection[0].node._rawTestimonials}
+            isForDemoPage={true}
+          />
         </section>
         {/* sm:px-12 lg:px-32 xl:px-60 */}
         <section id="demo_bottom">
@@ -320,7 +352,7 @@ const Demo = ({ data, htmlId, location }) => {
           </div>
         </section>
         <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0]} />
+          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
       {/* <Helmet>

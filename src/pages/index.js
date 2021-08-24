@@ -5,7 +5,7 @@ import Page from "../templates/page";
 
 export const query = graphql`
   query FrontpageQuery {
-    page: sanityFrontpageblock(_id: {eq: "5f894b8e-fe7c-4bbb-a3f7-1995278390f4"}) {
+    page: sanityFrontpageblock {
       id
       _rawPagebuildersectionarray
       slug {

@@ -6,7 +6,7 @@ import * as queryString from 'query-string';
 
 export const query = graphql `
       query Frontblock {
-          sanityFrontpageblock (_id: {eq: "frontpageblock"}){
+          sanityFrontpageblock{
             _rawPagebuildersectionarray
           }
 

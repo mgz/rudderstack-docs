@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import PortableText from "../components/portableText"
 import MiddleBanner from "../components/middle-banner"
-
+import clientConfig from "../../client-config"
 // const Layout = loadable(() => import("../components/layout"))
 // const PortableText = loadable(() => import("../components/PortableText"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
@@ -13,9 +13,9 @@ import MiddleBanner from "../components/middle-banner"
 const TrankYou = ({ data, htmlId }) => {
   const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
-  const lv_middlebannersection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "middlebannersection")
+  const lv_middlebannersection = data.section_get_started.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
 
 
   return (
@@ -80,7 +80,7 @@ const TrankYou = ({ data, htmlId }) => {
         </section>
 
         <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0]} />
+        <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
     </Layout>
@@ -97,8 +97,14 @@ export const pageQuery = graphql`
       meta_desc
       title
     }
-    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
-      _rawPagebuildersectionarray
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
     }
   }
 `

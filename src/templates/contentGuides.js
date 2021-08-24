@@ -6,13 +6,14 @@ import Layout from "../components/layout"
 import MiddleBanner from "../components/middle-banner"
 import Sections from "../guides/components/Sections"
 import Header from "../guides/components/Header"
+import clientConfig from "../../client-config"
 import "../guides/css/main.css"
 
 const Singlecontent = ({ data }) => {
   const section = data.section
-  const lv_middlebannersection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "middlebannersection")
+  const lv_middlebannersection = data.section_get_started.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
 
   return (
     <Layout>
@@ -41,7 +42,7 @@ const Singlecontent = ({ data }) => {
         </div>
 
         <section name="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0]} />
+          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
     </Layout>
@@ -83,8 +84,14 @@ export const query = graphql`
         }
       }
     }
-    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
-      _rawPagebuildersectionarray
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
     }
   }
 `

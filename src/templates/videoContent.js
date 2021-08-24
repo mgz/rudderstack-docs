@@ -10,6 +10,7 @@ import VideoLibraryContentHeader from "../components/videoLibraryContentHeader"
 import VideoContentLesson from "../components/videoContentLesson"
 import VideoLibraryTopicsToCover from "../components/videoLibraryTopicsToCover"
 import VideoLibrarySpeakers from "../components/videoLibrarySpeakers"
+import clientConfig from "../../client-config"
 
 // const Layout = loadable(() => import("../components/layout"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
@@ -19,11 +20,10 @@ import VideoLibrarySpeakers from "../components/videoLibrarySpeakers"
 // const VideoLibrarySpeakers = loadable(() => import("../components/videoLibrarySpeakers"))
 
 const videoContent = ({ data, location }) => {
-  console.log("data", data)
-  const lv_middlebannersection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "middlebannersection")
-
+  
+  const lv_middlebannersection = data.section_get_started.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
   let category = ""
   let url_or_event_dttm = ""
   let inputForm
@@ -108,7 +108,7 @@ const videoContent = ({ data, location }) => {
           )}
 
         <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0]} />
+          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
     </Layout>
@@ -136,8 +136,14 @@ export const pageQuery = graphql`
       duration
       id
     }
-    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
-      _rawPagebuildersectionarray
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
     }
     allSanityBlogauthor {
       edges {

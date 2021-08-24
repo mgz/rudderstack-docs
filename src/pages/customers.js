@@ -15,13 +15,14 @@ import "../lib/font-awesome"
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
+import clientConfig from "../../client-config"
 import { Helmet } from "react-helmet"
 
 const CaseStudies = ({ data }) => {
   // console.log('case-studies-full-data',data)
-  const lv_middlebannersection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "middlebannersection")
+  const lv_middlebannersection = data.section_get_started.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
 
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
@@ -115,7 +116,7 @@ const CaseStudies = ({ data }) => {
           )}
         </div>
         <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0]} />
+          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
     </Layout>
@@ -126,8 +127,14 @@ export default CaseStudies
 
 export const pageQuery = graphql`
   query {
-    sanityFrontpageblock (_id: {eq: "frontpageblock"}){
-      _rawPagebuildersectionarray
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
     }
     casestudies: allSanityCaseStudies(
       sort: { fields: article_dttm, order: DESC }
