@@ -11,12 +11,13 @@ const LeftRightImgCnt = props => {
     ? props.leftrightcontentsmalltitle
     : ""
   const contents = props.leftrightimageblock
+  console.log('props',props)
   return (
     <>
       <section className="left-right-section md:px-0 pb-6 md:pd-0">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           {(smalltitle !== "" || maintitle !== "") && (
-            <div className="flex flex-col w-full justify-center items-start md:text-left max-w-screen-md">
+            <div className={`flex flex-col w-full justify-center items-start md:text-${props.header_alignment !== "" ? props.header_alignment : 'left'} mx-auto max-w-screen-md`}>
               {smalltitle !== "" && (
                 <p
                   className={`mt-20 mb-2 ${
@@ -69,7 +70,7 @@ const LeftRightImgCnt = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap flex-col-reverse sm:flex-row ptt-6 md:pt-16"
+                    className="flex items-center flex-wrap flex-col-reverse sm:flex-row pt-6 md:pt-16"
                   >
                     <div
                       className={`w-full ${
@@ -230,7 +231,7 @@ const LeftRightImgCnt = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap mt-6"
+                    className="flex items-center flex-wrap mt-12"
                   >
                     <div
                       className={`${

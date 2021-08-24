@@ -177,6 +177,28 @@ body {
   height: 100%;
 }
 
+.testimonila-bg-gradiant-v2 {
+  background-image: url("../images/testimonial-bg-v2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  width: 100%;
+  height: 100%;
+}
+
+.homepage-middle-bg-gradiant {
+  background: linear-gradient(226.32deg, #6b96c3 -50.9%, #111168 108.01%);
+}
+.homepage-middle-bg-image {
+  background-image: url("../images/Union.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  width: 100%;
+  bottom: -24px;
+  /* height: 100%; */
+}
+
 .menu li.has-submenu a:after {
   display: inline-block;
   position: relative;

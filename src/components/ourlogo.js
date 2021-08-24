@@ -32,6 +32,7 @@ function OurLogo(props) {
 
   const maintitle = props.customHeaderText || props.ourlogotitle
   const logoimages = props.outlogoimage
+  // console.log("props",props)
   return (
     <section className="max-w-6xl px-4 my-12 md:px-3 mx-auto md:mb-23 sm:my-24 flex flex-wrap flex-col md:flex-row items-center">
       <div className="flex flex-col w-full justify-center items-start md:text-left max-w-2xl mx-auto">
