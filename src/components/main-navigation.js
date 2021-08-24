@@ -50,6 +50,7 @@ const MainNavigation = props => {
   return (
     <>
       <nav
+        name={"header-container"}
         className={`gradient-${
           props.diableGradient ? "disable" : "enable"
         } sticky top-0 z-50`}
