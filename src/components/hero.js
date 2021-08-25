@@ -7,9 +7,13 @@ import heroAnimation from "../animations/Homepage-Hero-Image2.json"
 import { Helmet } from "react-helmet"
 import { withPrefix } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
+import {lazily} from 'react-lazily';
+
+import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2";
 
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
+
+//const {HERO_ANIMATION_JSON} = lazily(() => import("../animations/homepage-animation-v2.js"));
 
 function Hero(props) {
   // const myHTML = `<h1>John Doe</h1>`;

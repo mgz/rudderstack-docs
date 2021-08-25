@@ -222,6 +222,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
     "gatsby-plugin-use-query-params",
     "gatsby-source-sanity-transform-images",
     `gatsby-plugin-meta-redirect`, 
