@@ -28,7 +28,7 @@ const LeftRightImgCntWithCentedHeading = props => {
       <div className="max-w-6xl px-4 md:px-3 mx-auto">
         <div className="flex flex-col w-full justify-center items-center">
           {maintitle !== "" && (
-            <h3 className="md:mt-20 mt-10 text-4xl md:text-5xl text-blueNew-midnight font-bold leading-tight text-center max-w-screen-sm">
+            <h3 className="md:mt-20 mt-10 text-4xl md:text-5xl text-blueNew-midnight font-bold leading-tight text-center max-w-screen-sm pr-0 md:pr-4">
               {maintitle}
             </h3>
           )}
@@ -255,7 +255,7 @@ const LeftRightImgCntWithCentedHeading = props => {
                           props.applyGradientColorTheme
                             ? "text-white"
                             : "text-blueNew-midnight"
-                        } font-bold leading-tight`}
+                        } font-bold leading-tight pr-0 md:pr-4`}
                       >
                         {title}
                       </h3>

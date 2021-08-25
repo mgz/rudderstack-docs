@@ -29,7 +29,7 @@ const CenteredAlignedTitleWithYoutube = props => {
       <div className="homepage-middle-bg-gradiant">
         <div className="homepage-middle-bg-image text-whiteColor-custom pt-24 pb-12 md:pb-24">
           <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
-            <h3 className="mt-12 md:mt-24 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-3xl ">
+            <h3 className="mt-12 md:mt-24 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-4xl px-0 md:px-4">
               {props.footer_title}
             </h3>
           </div>
@@ -43,7 +43,7 @@ const CenteredAlignedTitleWithYoutube = props => {
                     className={`w-full md:w-1/2 sm:px-2 mt-5 `}
                   >
                     <div className="h-full flex flex-col items-center md:items-left text-center md:text-left py-10 px-8 rounded-2xl border-grayColor-custom shadow-md  mx-3 text-blueNew-midnight bg-whiteColor-custom">
-                      <div class="text-2xl-2 font-bold mb-2 mt-2 text-left">
+                      <div class="text-2xl-2 font-bold mb-2 mt-2 text-left pr-0 md:pr-4">
                         {item.title}
                       </div>
                       <div class=" text-lg">

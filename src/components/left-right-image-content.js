@@ -11,7 +11,7 @@ const LeftRightImgCnt = props => {
     ? props.leftrightcontentsmalltitle
     : ""
   const contents = props.leftrightimageblock
-  console.log('props',props)
+  // console.log('props',props)
   return (
     <>
       <section className="left-right-section md:px-0 pb-6 md:pb-12">
@@ -31,7 +31,7 @@ const LeftRightImgCnt = props => {
                 <h3
                   className={`md:mt-2 text-4xl md:text-5xl ${
                     props.applyGradientColorTheme ? "text-white" : "text-dark"
-                  }  font-bold leading-tight`}
+                  }  font-bold leading-tight pr-0 md:pr-4`}
                 >
                   {maintitle}
                 </h3>
@@ -132,7 +132,7 @@ const LeftRightImgCnt = props => {
                                 : titleColor === "black"
                                 ? "text-black-custom"
                                 : ""
-                            } font-bold leading-tight `}
+                            } font-bold leading-tight pr-0 md:pr-4`}
                           >
                             {title}
                           </h3>
@@ -262,7 +262,7 @@ const LeftRightImgCnt = props => {
                               : titleColor === "black"
                               ? "text-black-custom"
                               : ""
-                          } font-bold leading-tight`}
+                          } font-bold leading-tight `}
                         >
                           {title}
                         </h2>
@@ -276,7 +276,7 @@ const LeftRightImgCnt = props => {
                               : titleColor === "black"
                               ? "text-black-custom"
                               : ""
-                          } font-bold leading-tight`}
+                          } font-bold leading-tight pr-0 md:pr-4`}
                         >
                           {title}
                         </h3>
