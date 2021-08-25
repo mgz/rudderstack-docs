@@ -7,7 +7,7 @@ import heroAnimation from "../animations/Homepage-Hero-Image2.json"
 import { Helmet } from "react-helmet"
 import { withPrefix } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import { loadable } from "@loadable/component"
+import loadable from "@loadable/component"
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
 
 const HERO_ANIMATION_JSON = loadable(() => import("../animations/homepage-animation-v2"))
