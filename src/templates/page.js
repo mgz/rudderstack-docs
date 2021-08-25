@@ -194,7 +194,7 @@ const Page = props => {
           class: "leading-normal tracking-normal text-white gradient",
         }}
       /> */}
-      <div className="pt-10 font-custom">{content}</div>
+      <div className="pt-0 font-custom">{content}</div>
     </Layout>
   )
 }

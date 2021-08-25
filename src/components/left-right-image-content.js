@@ -14,7 +14,7 @@ const LeftRightImgCnt = props => {
   console.log('props',props)
   return (
     <>
-      <section className="left-right-section md:px-0 pb-6 md:pd-0">
+      <section className="left-right-section md:px-0 pb-6 md:pb-12">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           {(smalltitle !== "" || maintitle !== "") && (
             <div className={`flex flex-col w-full justify-center items-start md:text-${props.header_alignment !== "" ? props.header_alignment : 'left'} mx-auto max-w-screen-md`}>
@@ -231,7 +231,7 @@ const LeftRightImgCnt = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap mt-12"
+                    className="flex items-center flex-wrap pt-16"
                   >
                     <div
                       className={`${
