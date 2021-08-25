@@ -12,7 +12,7 @@ const MainNavigationMenuLink = props => {
       key={i}
       className={`${
         link._rawSubMenuSection !== null ? `has-submenu group` : `group`
-      } mt-2 lg:mt-0 hover:font-bold`}
+      } mt-2 lg:mt-0 hover:font-bold text-whiteColor-custom md:text-blueNew-midnight`}
     >
       <SanityLink
         link={link}

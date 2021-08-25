@@ -98,7 +98,7 @@ h4 {
 ul,
 ol {
   margin-bottom: 1rem;
-  color: #707a88;
+  /* color: #707a88; */
 }
 #guides-container p a {
   color: #0000EE;
