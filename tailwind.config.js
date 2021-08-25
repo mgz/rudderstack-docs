@@ -1,9 +1,6 @@
 module.exports = {
   important: true,
-  purge: {
-    enabled: true,
-    content: ['/'],
-  },
+  purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     letterSpacing: {
