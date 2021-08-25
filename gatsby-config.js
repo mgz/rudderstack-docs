@@ -224,7 +224,9 @@ module.exports = {
     },
     "gatsby-plugin-use-query-params",
     "gatsby-source-sanity-transform-images",
-    `gatsby-plugin-meta-redirect`, // make sure to put last in the array
+    `gatsby-plugin-meta-redirect`, 
+    "gatsby-plugin-preload-fonts",
+    // make sure to put last in the array
     // {
     //   resolve: `gatsby-plugin-remote-images`,
     //   options: {

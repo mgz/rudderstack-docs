@@ -28,6 +28,7 @@
     "gatsby-plugin-offline": "^4.1.0",
     "gatsby-plugin-postcss": "^4.2.0",
     "gatsby-plugin-preconnect": "^1.2.0",
+    "gatsby-plugin-preload-fonts": "^2.12.0",
     "gatsby-plugin-purgecss": "^6.0.1",
     "gatsby-plugin-react-helmet": "^4.3.0",
     "gatsby-plugin-react-helmet-canonical-urls": "^1.4.0",
@@ -73,6 +74,7 @@
   ],
   "license": "0BSD",
   "scripts": {
+    "preload-fonts": "gatsby-preload-fonts",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",

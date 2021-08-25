@@ -105,7 +105,7 @@ const CaseStudies = ({ data }) => {
                   window.scrollTo({
                     top: 0,
                     behavior: "smooth",
-                  })
+                  }, {passive: true})
                 }}
               >
                 Back to top&nbsp;&nbsp;

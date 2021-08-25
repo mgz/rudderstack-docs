@@ -51,7 +51,7 @@ const Testimonial = props => {
                           class="item h5 font-weight-normal one-slide mx-auto pb-0 w-100 max-w-6xl justify-items-center"
                         >
                           <div class="testimonial pb-12 w-100 px-3 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
-                            <div className="flex items-center flex grid justify-items-center">
+                            <div className="items-center flex grid justify-items-center">
                               <div class="usr_img mb-4">
                                 <Image
                                   props={testimonial.clientimage.asset._ref} 

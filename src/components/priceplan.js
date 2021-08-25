@@ -8,7 +8,7 @@ function PricePlans() {
   }
   const [sticky, setSticky] = useState(true)
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, {passive: true})
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
   const handleScroll = () => {
@@ -832,7 +832,7 @@ function PricePlans() {
                 <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-midnight">
                   Free
                 </h3>
-                <div class="text-grayColor-lighter text-sm leading-6 text-sm py-2">
+                <div class="text-grayColor-lighter leading-6 text-sm py-2">
                   500,000 events/month
                 </div>
                 <a
@@ -1019,7 +1019,7 @@ function PricePlans() {
                   Pro
                 </h3>
                 <div class="text-grayColor-lighter text-sm leading-6">
-                  <div className="text-grayColor-lighter text-sm leading-6 text-sm py-2">
+                  <div className="text-grayColor-lighter leading-6 text-sm py-2">
                     Starting at $750 for <br />
                     25M events/month
                   </div>
@@ -1337,7 +1337,7 @@ function PricePlans() {
                   Enterprise
                 </h3>
                 <div class="text-grayColor-lighter text-sm leading-6">
-                  <div className="text-grayColor-lighter text-sm leading-6 text-sm py-2">
+                  <div className="text-grayColor-lighter leading-6 text-sm py-2">
                     Starting at $750 for <br />
                     Billions of events
                   </div>
