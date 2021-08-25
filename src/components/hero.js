@@ -7,10 +7,10 @@ import heroAnimation from "../animations/Homepage-Hero-Image2.json"
 import { Helmet } from "react-helmet"
 import { withPrefix } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import loadable from "@loadable/component"
+import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
+
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
 
-const HERO_ANIMATION_JSON = loadable(() => import("../animations/homepage-animation-v2"))
 function Hero(props) {
   // const myHTML = `<h1>John Doe</h1>`;
   const [showAnimation, setShowAnimation] = useState(false)
@@ -58,14 +58,14 @@ function Hero(props) {
   }, [showAnimation])
 
   return (
-    <section class="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-32 mx-auto relative gradiant-layer banner-section">
+    <section class="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative gradiant-layer banner-section">
       {/* <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" />
       </Helmet> */}
       <div class="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0">
         <div class="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-          <h1 className="text-primary mb-8 md:my-4 text-5xl font-bold leading-tight">
+          <h1 className="text-primary mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight">
             {props.herobannertitle}
           </h1>
           <PortableText blocks={props.herobannercontent} />
