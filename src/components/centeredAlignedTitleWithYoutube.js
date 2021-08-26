@@ -1,9 +1,13 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PortableText from "./portableText"
 import Image from "./image"
-import '@justinribeiro/lite-youtube';
 
 const CenteredAlignedTitleWithYoutube = props => {
+
+  useEffect(() => {
+    import('@justinribeiro/lite-youtube')
+  }, [])
+
   console.log("CenteredAlignedTitleWithYoutube", props)
   return (
     <section>
