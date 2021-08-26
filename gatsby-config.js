@@ -238,20 +238,12 @@ module.exports = {
         ],
       },
     },
-  //  {
-  //   resolve: `gatsby-plugin-purgecss`,
-  //     options: {
-  //       printRejected: true, // Print removed selectors and processed file names
-  //       // develop: true, // Enable while using `gatsby develop`
-  //       tailwind: true, // Enable tailwindcss support
-  //       // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-  //       purgeOnly : ['/'], // Purge only these files/folders
-  //       purgeCSSOptions: {
-  //         // https://purgecss.com/configuration.html#options
-  //          safelist: ['gradient-enable'], // Don't remove this selector
-  //       },
-  //     },
-  //  },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
+      },
+    },
     "gatsby-plugin-use-query-params",
     // {
     //   resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
@@ -262,7 +254,9 @@ module.exports = {
     //   },
     // },
     "gatsby-source-sanity-transform-images",
-    `gatsby-plugin-meta-redirect`, // make sure to put last in the array
+    `gatsby-plugin-meta-redirect`, 
+    "gatsby-plugin-preload-fonts",
+    // make sure to put last in the array
     // {
     //   resolve: `gatsby-plugin-remote-images`,
     //   options: {
