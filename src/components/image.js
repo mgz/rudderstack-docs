@@ -7,7 +7,7 @@ function renderImage(image, classes, alt) {
       <img
         loading="lazy"
         src={image.node.localFile.publicURL} //Development code
-        //src={image.node.url} //Production code
+        // src={image.node.url} //Production code
         alt={alt ? alt : image.node._id}
         className={classes}
       />  
@@ -20,18 +20,18 @@ const Image = props => {
   return (
     <StaticQuery
       /* Development query below */
-      /* query={graphql`
-        query {
-          sanityimages: allSanityImageAsset {
-            edges {
-              node {
-                url
-                _id
-              }
-            }
-          }
-        }
-      `} */
+      //  query={graphql`
+      //   query {
+      //     sanityimages: allSanityImageAsset {
+      //       edges {
+      //         node {
+      //           url
+      //           _id
+      //         }
+      //       }
+      //     }
+      //   }
+      // `} 
       /* Production query below */
       query={graphql`
         query {

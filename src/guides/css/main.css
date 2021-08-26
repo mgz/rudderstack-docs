@@ -168,6 +168,7 @@ ol {
 #guides-container .side-container.stick {
   position: fixed;
   top: 106px;
+  /* padding-left: 2px; */
   width: 27%;
 }
 
@@ -384,7 +385,7 @@ ol {
   font-size: 16px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1024px) {
   #guides-container .header {
     padding: 102px 1rem 41px;
   }
@@ -461,13 +462,13 @@ ol {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1024px) {
   #guides-container ul.menu {
     display: block !important;
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 1024px) {
   #guides-container .side-container.stick {
     top: 55px;
   }
