@@ -247,5 +247,12 @@ module.exports = {
     //     name: 'allItemImages',
     //   },
     // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/docs`,
+      },
+    },
   ],
 }
