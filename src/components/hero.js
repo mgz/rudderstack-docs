@@ -127,7 +127,7 @@ function Hero(props) {
             </div>
             <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
               {/* <div id="lottie" /> */}
-              {showAnimation && !isMobile && (<Suspense fallback={<div>Loading...</div>}>
+              {showAnimation && !isMobile && (<Suspense fallback={<div></div>}>
                 <LottieAnim />
               </Suspense>)}
             </div>
