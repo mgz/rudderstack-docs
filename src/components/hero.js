@@ -1,15 +1,17 @@
-import React, { useEffect, createRef, useState } from "react"
+import React, { useEffect, createRef, useState, Suspense } from "react"
 import PortableText from "./portableText"
-import Image from "./image"
+//import Image from "./image"
 import Link from "gatsby-link"
-import lottie from "lottie-web"
-import heroAnimation from "../animations/Homepage-Hero-Image2.json"
-import { Helmet } from "react-helmet"
-import { withPrefix } from "gatsby"
+//import lottie from "lottie-web"
+//import heroAnimation from "../animations/Homepage-Hero-Image2.json"
+/* import { Helmet } from "react-helmet"
+import { withPrefix } from "gatsby" */
 import { StaticImage } from "gatsby-plugin-image"
-import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
-
+//import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
+//import loadable from "@loadable/component";
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
+
+const LottieAnim = React.lazy(() => import("../animations/homepage-animation-v2"));
 
 function Hero(props) {
   // const myHTML = `<h1>John Doe</h1>`;
@@ -43,17 +45,7 @@ function Hero(props) {
 
   useEffect(() => {
     if (showAnimation) {
-      var params = {
-        container: document.getElementById("lottie"),
-        renderer: "html",
-        loop: true,
-        autoplay: true,
-        animationData: HERO_ANIMATION_JSON,
-      }
-
-      var anim
-
-      anim = lottie.loadAnimation(params)
+      
     }
   }, [showAnimation])
 
@@ -134,7 +126,10 @@ function Hero(props) {
               />
             </div>
             <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
-              <div id="lottie" />
+              {/* <div id="lottie" /> */}
+              {showAnimation && !isMobile && (<Suspense fallback={<div>Loading...</div>}>
+                <LottieAnim />
+              </Suspense>)}
             </div>
             {/*
             <div className={`${showAnimation ? "hidden" : "block"} w-full`}>

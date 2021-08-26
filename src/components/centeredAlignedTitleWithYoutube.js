@@ -1,6 +1,7 @@
 import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
+import '@justinribeiro/lite-youtube';
 
 const CenteredAlignedTitleWithYoutube = props => {
   console.log("CenteredAlignedTitleWithYoutube", props)
@@ -17,12 +18,16 @@ const CenteredAlignedTitleWithYoutube = props => {
           <div class="iframe-container">
             <div className="stack-frame-1"></div>
             <div className="stack-frame-2"></div>
-            <iframe
+            {/* <iframe
               src={props.youtube.url}
               frameborder="0"
               allowfullscreen
               class="video"
-            ></iframe>
+            ></iframe> */}
+            <lite-youtube 
+              videoid={'5xaeM8waB9Y'}
+              class="video"
+            ></lite-youtube>
           </div>
         </div>
       </div>
