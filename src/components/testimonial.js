@@ -60,13 +60,14 @@ const Testimonial = props => {
                     showThumbs={false}
                     showStatus={false}
                     infiniteLoop={true}
+                    useKeyboardArrows={true}
                   >
                     {testimonials &&
                       testimonials.map((testimonial, i) => {
                         return (
                           <div
                             key={i}
-                            className="item h5 font-weight-normal one-slide mx-auto pb-0 w-100 max-w-6xl justify-items-center"
+                            className="item h5 font-weight-normal one-slide mx-auto pb-0 w-100 max-w-6xl justify-items-center md:px-24"
                           >
                             <div className="testimonial pb-12 w-100 px-3 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
                               <div className="items-center flex justify-center">
@@ -99,7 +100,7 @@ const Testimonial = props => {
                                   props.applyGradientColorTheme
                                     ? "text-white"
                                     : "text-dark"
-                                } blockquote mt-8 px-0 md:px-24 leading-tight`}
+                                } blockquote mt-8 px-0 leading-tight`}
                               >
                                 {testimonial.clientcontent}
                               </div>
@@ -126,7 +127,11 @@ const Testimonial = props => {
                                         )
                                       } else {
                                         return (
-                                          <span
+                                          
+                                            <Link
+                                              to={testimonial.button.btnlink}
+                                            >
+                                              <span
                                             className={
                                               (testimonial.button
                                                 .btnhiglight === true
@@ -135,12 +140,9 @@ const Testimonial = props => {
                                               ` inline-block`
                                             }
                                           >
-                                            <Link
-                                              to={testimonial.button.btnlink}
-                                            >
                                               {testimonial.button.btntext}
-                                            </Link>
-                                          </span>
+                                              </span>
+                                          </Link>
                                         )
                                       }
                                     })()}
