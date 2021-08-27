@@ -8,11 +8,11 @@ const CenteredAlignedTitleWithYoutube = props => {
     import('@justinribeiro/lite-youtube')
   }, [])
 
-  console.log("CenteredAlignedTitleWithYoutube", props)
+  // console.log("CenteredAlignedTitleWithYoutube", props)
   return (
-    <section>
+    <section className="md:mb-10">
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
-        <h3 className="mt-16 md:mt-36 text-4xl md:text-5xl font-bold leading-tight text-center text-blueNew-midnight max-w-3xl">
+        <h3 className="mt-16 md:mt-24 text-4xl md:text-5xl font-bold leading-tight text-center text-blueNew-midnight max-w-3xl">
           {props.title}
         </h3>
         <div className="mt-4 text-lg  leading-tight text-center text-grayColor-custom max-w-2xl px-4">

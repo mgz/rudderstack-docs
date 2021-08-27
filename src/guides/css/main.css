@@ -101,7 +101,7 @@ ol {
   /* color: #707a88; */
 }
 #guides-container p a {
-  color: #0000EE;
+  color: #0000ee;
   text-decoration: underline;
 }
 /* #guides-container p strong {
@@ -385,7 +385,7 @@ ol {
   font-size: 16px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   #guides-container .header {
     padding: 102px 1rem 41px;
   }
@@ -462,13 +462,22 @@ ol {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   #guides-container ul.menu {
     display: block !important;
   }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
+  #guides-container .side-container.stick {
+    position: fixed;
+    top: 60px;
+    /* padding-left: 2px; */
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
   #guides-container .side-container.stick {
     top: 55px;
   }

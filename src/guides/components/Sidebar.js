@@ -46,7 +46,7 @@ function Sidebar({
       }
     })
 
-    if (position > header_height + 106) {
+    if (position > header_height - 55) {
       document
         .getElementsByClassName("side-container")[0]
         .classList.add("stick")

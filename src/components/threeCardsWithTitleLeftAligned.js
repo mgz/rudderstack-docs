@@ -8,7 +8,7 @@ const ThreeCardsWithTitleLeftAligned = props => {
   return (
     <>
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
-        <h3 className="mt-16 md:mt-40 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
+        <h3 className="mt-16 md:mt-28 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-5xl text-blueNew-midnight">
           {props.title}
         </h3>
       </div>
@@ -23,7 +23,7 @@ const ThreeCardsWithTitleLeftAligned = props => {
                   item.display_ratio === "w-full"
                     ? "w-full sm:px-12 lg:px-40"
                     : item.display_ratio
-                } sm:px-2 mt-5 `}
+                } sm:px-2 mt-10 `}
               >
                 <div className="h-full flex flex-col items-center md:items-left text-center md:text-left py-10 px-8 rounded-2xl border-grayColor-custom shadow-md  mx-3 text-blueNew-midnight">
                   <div className="h-20 mb-8 self-center md:self-start">
@@ -32,7 +32,7 @@ const ThreeCardsWithTitleLeftAligned = props => {
                       classes="w-full object-cover"
                     />
                   </div>
-                  <div class="text-xl font-bold mb-6 mt-2 max-w-xs m-auto">
+                  <div class="text-3xl font-bold mb-6 mt-2 max-w-lg pr-0 md:pr-8 ">
                     {item.title}
                   </div>
                   <div class=" text-lg">
