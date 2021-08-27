@@ -3,8 +3,11 @@ import PageLinks from "../constants/links"
 // import logoImage from '../images/Rudderstack.svg'
 import logoImage1 from '../images/footerLogo.png'
 import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
+import { library } from "@fortawesome/fontawesome-svg-core";
 import { faRssSquare } from "@fortawesome/free-solid-svg-icons"
 import {faTwitterSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+
+library.add(faRssSquare, faTwitterSquare, faLinkedin);
 
 const Footer = () => {
   return (

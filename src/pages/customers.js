@@ -10,13 +10,16 @@ import SingleRowContentCaseStudy from "../components/singleRowContentCaseStrudy"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import CustomHits from "../components/customHits"
 import CustomCaseStudiesHits from "../components/customCaseStudiesHits"
+import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import "../lib/font-awesome"
+/* import "../lib/font-awesome" */
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
 import { Helmet } from "react-helmet"
+
+library.add(faArrowUp);
 
 const CaseStudies = ({ data }) => {
   // console.log('case-studies-full-data',data)

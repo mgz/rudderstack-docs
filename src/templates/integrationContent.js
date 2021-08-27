@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import "../lib/font-awesome"
 
-import loadable from "@loadable/component"
+//import loadable from "@loadable/component"
 
 import Layout from "../components/layout"
 import IntegrationHero from "../components/integrationHero"

@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react"
 import { navigate, useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
+import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheckSquare } from "@fortawesome/free-solid-svg-icons"
 import { faSquare } from "@fortawesome/free-regular-svg-icons"
+
+library.add(faCheckSquare, faSquare);
 
 const DynamicInputForm = ({
   form_id,

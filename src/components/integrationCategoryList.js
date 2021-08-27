@@ -6,8 +6,11 @@ import {
 } from "react-instantsearch-dom"
 //import { graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCheckSquare } from "@fortawesome/free-solid-svg-icons"
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faCheckSquare, faClock } from "@fortawesome/free-solid-svg-icons"
 import { faSquare } from "@fortawesome/free-regular-svg-icons"
+
+library.add(faCheckSquare, faClock, faSquare);
 
 const CustomIntegrationCategoryTypeList = ({
   items,
