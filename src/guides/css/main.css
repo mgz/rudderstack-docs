@@ -15,7 +15,7 @@ Variables
   /* dark shades of primary color*/
 
   --guides-clr-blue-dark-1: #0f1936;
-  --guides-clr-purple-light: #845b9d;
+  --guides-clr-purple-light: #17176e;
   --guides-clr-purple-dark: #6423a1;
   --guides-clr-purple-medium: #a388a7;
   --guides-clr-blue-light: #f0f2fd;
@@ -129,7 +129,7 @@ ol {
 }
 
 #guides-container .pagesection {
-  margin-top: 50px;
+  margin-top: 16px;
 }
 
 #guides-container .col-4 {
@@ -162,7 +162,9 @@ ol {
 }
 
 #guides-container .side-container {
-  max-width: 300px;
+  max-width: 320px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #guides-container .side-container.stick {
@@ -170,6 +172,7 @@ ol {
   top: 106px;
   /* padding-left: 2px; */
   width: 27%;
+  z-index: 10;
 }
 
 #guides-container ul.menu {
@@ -356,7 +359,7 @@ ol {
 
 #guides-container .footer .row {
   padding: 50px 0px;
-  border-bottom: 1px solid #845b9d;
+  border-bottom: 1px solid #17176e;
 }
 
 #guides-container .footer ul.footer-menu li {
@@ -385,7 +388,7 @@ ol {
   font-size: 16px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   #guides-container .header {
     padding: 102px 1rem 41px;
   }
@@ -407,8 +410,10 @@ ol {
   #guides-container .sidebar-block {
     display: none;
   }
+
   #guides-container .side-container {
     max-width: 100%;
+    width: 100%;
     margin-bottom: 20px;
     cursor: pointer;
   }
@@ -420,7 +425,7 @@ ol {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #845b9d;
+    background-color: #17176e;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 0;
@@ -440,7 +445,7 @@ ol {
   #guides-container ul.menu {
     display: none;
     width: 100%;
-    background-color: #845b9d;
+    background-color: #17176e;
     overflow: scroll;
     max-height: 400px;
   }
@@ -462,7 +467,7 @@ ol {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 767px) {
   #guides-container ul.menu {
     display: block !important;
   }
@@ -473,12 +478,22 @@ ol {
     position: fixed;
     top: 60px;
     /* padding-left: 2px; */
-    width: 30%;
+    width: 34%;
+  }
+
+  #guides-container .side-container {
+    max-width: 270px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #guides-container .side-container.stick {
     top: 55px;
+    
+  }
+  #guides-container .side-container {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
   }
 }

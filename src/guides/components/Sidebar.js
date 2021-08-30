@@ -24,8 +24,8 @@ function Sidebar({
     var header_height =
       document.getElementsByName("header-container")[0].offsetHeight +
       document.getElementsByName("guides-header")[0].offsetHeight
-    var footer_offset = document.getElementsByName("footer_section_for_demo")[0]
-      .offsetTop - 100
+    var footer_offset =
+      document.getElementsByName("footer_section_for_demo")[0].offsetTop - 100
     var sidebar_height = document.getElementsByClassName("side-container")[0]
       .offsetHeight
 
@@ -50,7 +50,7 @@ function Sidebar({
       document
         .getElementsByClassName("side-container")[0]
         .classList.add("stick")
-      if (window.innerWidth > 800) {
+      if (window.innerWidth > 752) {
         if (position + sidebar_height > footer_offset) {
           document
             .getElementsByClassName("side-container")[0]
@@ -72,10 +72,12 @@ function Sidebar({
         }
       }
     } else {
+      // console.log("sidebar-d3", position, header_height, footer_offset, 55)
       document
         .getElementsByClassName("side-container")[0]
         .classList.remove("stick")
     }
+    
   }
 
   function handleClick(e) {
