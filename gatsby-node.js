@@ -778,7 +778,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const projects = guides.data.allSanityContent.edges || [];
   projects.forEach((edge, index) => {
     const path = `/guides/${edge.node.slug}`;
-    // console.log("slug", 'http://localhost:8000/'+edge.node.slug);
     createPage({
       path,
       component: require.resolve("./src/templates/contentGuides.js"),
