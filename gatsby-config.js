@@ -254,5 +254,6 @@ module.exports = {
         path: `${__dirname}/src/docs`,
       },
     },
+    "gatsby-transformer-remark"
   ],
 }
