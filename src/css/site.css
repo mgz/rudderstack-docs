@@ -238,6 +238,9 @@ body {
 .carousel .control-prev.control-arrow {
   left: -25px !important;
 }
+.yt-video {
+  z-index: 20;
+}
 .menu li.has-submenu a:after {
   display: inline-block;
   position: relative;
