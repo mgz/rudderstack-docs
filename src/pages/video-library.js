@@ -11,7 +11,7 @@ import CustomVideoLibraryHits from "../components/customHitsVideoLibrary"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 /* import "../lib/font-awesome" */
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp"
 import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"

@@ -13,7 +13,7 @@ import CustomCaseStudiesHits from "../components/customCaseStudiesHits"
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 /* import "../lib/font-awesome" */
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"

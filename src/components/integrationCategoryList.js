@@ -7,8 +7,9 @@ import {
 //import { graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCheckSquare, faClock } from "@fortawesome/free-solid-svg-icons"
-import { faSquare } from "@fortawesome/free-regular-svg-icons"
+import { faCheckSquare} from "@fortawesome/free-solid-svg-icons/faCheckSquare"
+import {  faClock  } from "@fortawesome/free-solid-svg-icons/faClock"
+import { faSquare } from "@fortawesome/free-regular-svg-icons/faSquare"
 
 library.add(faCheckSquare, faClock, faSquare);
 

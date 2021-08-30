@@ -4,8 +4,9 @@ import PageLinks from "../constants/links"
 import logoImage1 from '../images/footerLogo.png'
 import { FontAwesomeIcon }  from '@fortawesome/react-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faRssSquare } from "@fortawesome/free-solid-svg-icons"
-import {faTwitterSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { faRssSquare } from "@fortawesome/free-solid-svg-icons/faRssSquare"
+import {faTwitterSquare } from "@fortawesome/free-brands-svg-icons/faTwitterSquare"
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin"
 
 library.add(faRssSquare, faTwitterSquare, faLinkedin);
 
