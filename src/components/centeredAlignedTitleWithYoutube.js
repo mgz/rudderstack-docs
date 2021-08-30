@@ -3,12 +3,14 @@ import PortableText from "./portableText"
 import Image from "./image"
 
 const CenteredAlignedTitleWithYoutube = props => {
-
   useEffect(() => {
-    import('@justinribeiro/lite-youtube')
+    import("@justinribeiro/lite-youtube")
   }, [])
-
-  // console.log("CenteredAlignedTitleWithYoutube", props)
+  let tmp_youtube_url_split = props.youtube.url.split("?")[0].split("/")
+  // console.log(
+  //   "CenteredAlignedTitleWithYoutube",
+  //   tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
+  // )
   return (
     <section className="md:mb-10">
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
@@ -28,8 +30,8 @@ const CenteredAlignedTitleWithYoutube = props => {
               allowfullscreen
               class="video"
             ></iframe> */}
-            <lite-youtube 
-              videoid={'5xaeM8waB9Y'}
+            <lite-youtube
+              videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
               class="video"
             ></lite-youtube>
           </div>
