@@ -228,9 +228,16 @@ body {
 .carousel .slider-wrapper {
   width: 80% !important;
 }
-/* .carousel .slider-wrapper.axis-horizontal .slider .slide {
-  min-width: 100% !important;
-} */
+.carousel .control-arrow,
+.carousel.carousel-slider .control-arrow {
+  opacity: 1 !important;
+}
+.carousel .control-next.control-arrow {
+  right: -25px !important;
+}
+.carousel .control-prev.control-arrow {
+  left: -25px !important;
+}
 .menu li.has-submenu a:after {
   display: inline-block;
   position: relative;

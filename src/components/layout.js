@@ -163,6 +163,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             src="../images/Slack.svg"
                             placeholder="tracedSVG"
                             className="mr-2"
+                            alt="Slack"
                           />
                           Join our Slack Community
                         </a>

@@ -19,18 +19,18 @@ const CenteredAlignedTitleWithYoutube = props => {
           <PortableText blocks={props.content} />
         </div>
         <div className="relative w-full rounded-lg flex-grow justify-items-end px-4 md:px-12 py-4 sm:items-center lg:items-start lg:mb-0 max-w-5xl -bottom-20 md:-bottom-16 pr-12">
-          <div class="iframe-container">
+          <div className="iframe-container">
             <div className="stack-frame-1"></div>
             <div className="stack-frame-2"></div>
             {/* <iframe
               src={props.youtube.url}
               frameborder="0"
               allowfullscreen
-              class="video"
+              className="video"
             ></iframe> */}
             <lite-youtube 
               videoid={'5xaeM8waB9Y'}
-              class="video"
+              className="video z-10"
             ></lite-youtube>
           </div>
         </div>
@@ -52,10 +52,10 @@ const CenteredAlignedTitleWithYoutube = props => {
                     className={`w-full md:w-1/2 sm:px-2 mt-5 `}
                   >
                     <div className="h-full flex flex-col items-center md:items-left text-center md:text-left py-10 px-8 rounded-2xl border-grayColor-custom shadow-md  mx-3 text-blueNew-midnight bg-whiteColor-custom">
-                      <div class="text-2xl-2 font-bold mb-2 mt-2 text-left pr-0 md:pr-4">
+                      <div className="text-2xl-2 font-bold mb-2 mt-2 text-left pr-0 md:pr-4">
                         {item.title}
                       </div>
-                      <div class=" text-lg">
+                      <div className=" text-lg">
                         <PortableText blocks={item.content} />
                       </div>
                     </div>

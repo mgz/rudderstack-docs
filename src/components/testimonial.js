@@ -4,8 +4,8 @@ import "owl.carousel/dist/assets/owl.carousel.css"
 import "owl.carousel" */
 import Image from "./image"
 import Link from "gatsby-link"
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Testimonial = props => {
   /* if (typeof window !== "undefined") {
@@ -37,12 +37,12 @@ const Testimonial = props => {
     <>
       <div className="overflow-hidden">
         <div
-          // class={`testimonials testimonials-wrap py-5 text-primary px-md-5 margin-top-xl ${
+          // className={`testimonials testimonials-wrap py-5 text-primary px-md-5 margin-top-xl ${
           //   props.applyGradientColorTheme
           //     ? "testimonila-bg-gradiant"
           //     : "bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover"
           // } md:mt-32`}
-          class={`testimonials testimonials-wrap py-5 text-primary px-md-5 margin-top-xl ${
+          className={`testimonials testimonials-wrap py-5 text-primary px-md-5 margin-top-xl ${
             props.applyGradientColorTheme
               ? "testimonila-bg-gradiant"
               : "testimonila-bg-gradiant-v2"
@@ -53,106 +53,105 @@ const Testimonial = props => {
               <div className="block w-full">
                 <div className="carousel-controls testimonial-carousel-controls xl:-mt-20">
                   <div className="testimonial-slider">
-                  <Carousel
-                    centerMode={true}
-                    autoPlay={false}
-                    showIndicators={false}
-                    showThumbs={false}
-                    showStatus={false}
-                    infiniteLoop={true}
-                    useKeyboardArrows={true}
-                  >
-                    {testimonials &&
-                      testimonials.map((testimonial, i) => {
-                        return (
-                          <div
-                            key={i}
-                            className="item h5 font-weight-normal one-slide mx-auto pb-0 w-100 max-w-6xl justify-items-center md:px-24"
-                          >
-                            <div className="testimonial pb-12 w-100 px-3 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
-                              <div className="items-center flex justify-center">
-                                <div className="usr_img mb-4">
-                                  <Image
-                                    props={testimonial.clientimage.asset._ref}
-                                  />
-                                </div>
-                              </div>
-                              <p
-                                className={`font-bold text-sm ${
-                                  props.applyGradientColorTheme
-                                    ? "text-white"
-                                    : "text-dark"
-                                } mb-2`}
-                              >
-                                {testimonial.clientname}
-                              </p>
-                              <p
-                                className={`text-sm ${
-                                  props.applyGradientColorTheme
-                                    ? "text-white"
-                                    : "text-dark"
-                                } mb-4`}
-                              >
-                                {testimonial.clientdesignation}
-                              </p>
-                              <div
-                                className={`message text-center text-2xl md:text-3xl-3 tracking-wide font-normal ${
-                                  props.applyGradientColorTheme
-                                    ? "text-white"
-                                    : "text-dark"
-                                } blockquote mt-8 px-0 leading-tight`}
-                              >
-                                {testimonial.clientcontent}
-                              </div>
-                              {testimonial.button &&
-                                testimonial.button.btnlink !== "" &&
-                                testimonial.button.btntext !== "" && (
-                                  <div className="text-center mt-8">
-                                    {(() => {
-                                      if (
-                                        testimonial.button.btnexternallink ===
-                                        true
-                                      ) {
-                                        return (
-                                          <a
-                                            className={`${
-                                              testimonial.button.btnhiglight
-                                                ? "btn-primary-lg bg-black-custom hover:bg-blueNew-midnight border-white text-white"
-                                                : "btn-secondary-large"
-                                            } inline-block`}
-                                            href={testimonial.button.btnlink}
-                                          >
-                                            {testimonial.button.btntext}
-                                          </a>
-                                        )
-                                      } else {
-                                        return (
-                                          
-                                            <Link
-                                              to={testimonial.button.btnlink}
-                                            >
-                                              <span
-                                            className={
-                                              (testimonial.button
-                                                .btnhiglight === true
-                                                ? "btn-primary-lg"
-                                                : "btn-secondary-lg bg-black-custom hover:bg-blueNew-midnight border-white text-white") +
-                                              ` inline-block`
-                                            }
-                                          >
-                                              {testimonial.button.btntext}
-                                              </span>
-                                          </Link>
-                                        )
-                                      }
-                                    })()}
+                    <Carousel
+                      showThumbs={false}
+                      showStatus={false}
+                      infiniteLoop={true}
+                      className="testimonial-carousel"
+                      width={'100%'}
+                      showIndicators={false}
+                    >
+                      {testimonials &&
+                        testimonials.map((testimonial, i) => {
+                          return (
+                            <div
+                              key={i}
+                              className="item h5 font-weight-normal mx-auto pb-0 w-100 max-w-6xl justify-items-center"
+                            >
+                              <div className="testimonial pb-12 w-100 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
+                                <div className="items-center flex justify-center">
+                                  <div className="usr_img mb-4">
+                                    <Image
+                                      props={testimonial.clientimage.asset._ref}
+                                    />
                                   </div>
-                                )}
+                                </div>
+                                <p
+                                  className={`font-bold text-sm ${
+                                    props.applyGradientColorTheme
+                                      ? "text-white"
+                                      : "text-dark"
+                                  } mb-2`}
+                                >
+                                  {testimonial.clientname}
+                                </p>
+                                <p
+                                  className={`text-sm ${
+                                    props.applyGradientColorTheme
+                                      ? "text-white"
+                                      : "text-dark"
+                                  } mb-4`}
+                                >
+                                  {testimonial.clientdesignation}
+                                </p>
+                                <div
+                                  className={`message text-center text-2xl md:text-3xl-3 tracking-wide font-normal ${
+                                    props.applyGradientColorTheme
+                                      ? "text-white"
+                                      : "text-dark"
+                                  } blockquote mt-8 px-0 leading-tight`}
+                                >
+                                  {testimonial.clientcontent}
+                                </div>
+                                {testimonial.button &&
+                                  testimonial.button.btnlink !== "" &&
+                                  testimonial.button.btntext !== "" && (
+                                    <div className="text-center mt-8">
+                                      {(() => {
+                                        if (
+                                          testimonial.button.btnexternallink ===
+                                          true
+                                        ) {
+                                          return (
+                                            <a
+                                              className={`${
+                                                testimonial.button.btnhiglight
+                                                  ? "btn-primary-lg bg-black-custom hover:bg-blueNew-midnight border-white text-white"
+                                                  : "btn-secondary-large"
+                                              } inline-block`}
+                                              href={testimonial.button.btnlink}
+                                            >
+                                              {testimonial.button.btntext}
+                                            </a>
+                                          )
+                                        } else {
+                                          return (
+                                            
+                                              <Link
+                                                to={testimonial.button.btnlink}
+                                              >
+                                                <span
+                                              className={
+                                                (testimonial.button
+                                                  .btnhiglight === true
+                                                  ? "btn-primary-lg"
+                                                  : "btn-secondary-lg bg-black-custom hover:bg-blueNew-midnight border-white text-white") +
+                                                ` inline-block`
+                                              }
+                                            >
+                                                {testimonial.button.btntext}
+                                                </span>
+                                            </Link>
+                                          )
+                                        }
+                                      })()}
+                                    </div>
+                                  )}
+                              </div>
                             </div>
-                          </div>
-                        )
-                      })}
-                  </Carousel>
+                          )
+                        })}
+                    </Carousel>
                   </div>
                 </div>
               </div>
