@@ -162,7 +162,7 @@ ol {
 }
 
 #guides-container .side-container {
-  max-width: 320px;
+  max-width: 300px;
   padding-left: 8px;
   padding-right: 8px;
 }
@@ -198,7 +198,7 @@ ol {
 }
 
 #guides-container .menu li a.active {
-  background-color: midnightblue;
+  background-color: #845b9d;
   color: #fff;
   opacity: 1;
 }
@@ -425,7 +425,7 @@ ol {
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: #17176e;
+    background-color: #845b9d;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 0;
@@ -473,6 +473,12 @@ ol {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  #guides-container .side-container {
+    max-width: 270px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   #guides-container .side-container.stick {
     position: fixed;
@@ -482,14 +488,13 @@ ol {
   }
 
   #guides-container .side-container {
-    max-width: 270px;
+    /* max-width: 270px; */
   }
 }
 
 @media (max-width: 767px) {
   #guides-container .side-container.stick {
     top: 55px;
-    
   }
   #guides-container .side-container {
     padding-left: 0px;
