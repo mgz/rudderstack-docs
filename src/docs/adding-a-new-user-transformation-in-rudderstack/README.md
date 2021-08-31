@@ -1,4 +1,6 @@
 ---
+slug: "/docs/adding-a-new-user-transformation-in-rudderstack"
+title: "Transformations - RudderStack"
 description: Detailed technical documentation on RudderStack's Transformations feature.
 ---
 
@@ -6,11 +8,11 @@ description: Detailed technical documentation on RudderStack's Transformations f
 
 Transformations is one of RudderStack's key features. It gives you the ability to code custom JavaScript functions to implement specific use-cases on your event data, like:
 
-* Filtering/sampling events.
-* Enriching events by implementing static logic or leveraging an external API.
-* Cleaning/aggregating data.
-* Data masking or removing sensitive PII information in the events to ensure data privacy.
-* Implementing external actions on the events using an API.
+- Filtering/sampling events.
+- Enriching events by implementing static logic or leveraging an external API.
+- Cleaning/aggregating data.
+- Data masking or removing sensitive PII information in the events to ensure data privacy.
+- Implementing external actions on the events using an API.
 
 {% hint style="success" %}
 Transformations can be used across your [**Event Stream**](../stream-sources/), [**Warehouse Actions**](../warehouse-actions/), and [**Cloud Extract**](../cloud-extract-sources/) pipelines.
@@ -21,7 +23,7 @@ Here's a quick 2-minute walkthrough of this feature:
 {% embed url="https://www.youtube.com/watch?v=-1F4YeJCXU8" %}
 
 {% hint style="info" %}
-For details on how to add a transformation in RudderStack, check the [**Adding a New Transformation**](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack#adding-a-transformation) section below. 
+For details on how to add a transformation in RudderStack, check the [**Adding a New Transformation**](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack#adding-a-transformation) section below.
 {% endhint %}
 
 {% hint style="success" %}
@@ -36,20 +38,20 @@ To know more about the Cloud mode in RudderStack, check out the [**RudderStack C
 
 ## Adding a Transformation
 
-* Log into your [**RudderStack dashboard**](https://app.rudderstack.com/).
-* Click on the [**Transformations**](https://app.rudderstack.com/transformations) link from the left panel in the dashboard, as shown:
+- Log into your [**RudderStack dashboard**](https://app.rudderstack.com/).
+- Click on the [**Transformations**](https://app.rudderstack.com/transformations) link from the left panel in the dashboard, as shown:
 
 ![](../.gitbook/assets/image%20%2890%29.png)
 
-* Click on the **Create New** option as shown:
+- Click on the **Create New** option as shown:
 
 ![](../.gitbook/assets/image%20%2892%29.png)
 
-* Next, assign a name for this new transformation. Enter the transformation function's code in the **Transformation** window, as shown:
+- Next, assign a name for this new transformation. Enter the transformation function's code in the **Transformation** window, as shown:
 
 ![](../.gitbook/assets/image%20%28100%29.png)
 
-* Add your transformation code within the `transformEvent` function in the **Transformation** window. You can also add other functions and call them from within `transformEvent`.
+- Add your transformation code within the `transformEvent` function in the **Transformation** window. You can also add other functions and call them from within `transformEvent`.
 
 ![](../.gitbook/assets/image%20%2899%29.png)
 
@@ -63,22 +65,22 @@ You can copy-paste the entire code of any of the functions present in this repos
 Remember to delete the pre-populated `transformEvent` function in such cases, before pasting your code.
 {% endhint %}
 
-* RudderStack also gives you the ability to test your transformation function with the **Run Test** option as shown:
+- RudderStack also gives you the ability to test your transformation function with the **Run Test** option as shown:
 
 ![](../.gitbook/assets/image%20%2897%29.png)
 
-* In case you want to perform any aggregation/roll-up operation on a micro batch of events, use the `transformBatch` feature, as shown:
+- In case you want to perform any aggregation/roll-up operation on a micro batch of events, use the `transformBatch` feature, as shown:
 
 ```text
-/***  
+/***
 * This function gets executed on a batch of events before it gets pushed to a destination
 * events    => JSON list of events sent to rudder
 * metadata (optional) => Javascript function which can be used to access metadata of
-                        the given event by calling metadata(event)  
-* After all the transformations are done, the final event that 
+                        the given event by calling metadata(event)
+* After all the transformations are done, the final event that
 * needs to be pushed to the destination should be returned by this function
 ***/
-export function transformBatch(events, metadata) {      
+export function transformBatch(events, metadata) {
   return events
 }
 ```
@@ -99,15 +101,15 @@ One of the key features of RudderStack Transformations is the ability to reuse c
 
 To create a library, follow these steps:
 
-* Click on the [**Transformations**](https://app.rudderstack.com/transformations) link in the left nav bar and go to the **Libraries** section. Click on the **Create New** option to add new libraries, as shown:
+- Click on the [**Transformations**](https://app.rudderstack.com/transformations) link in the left nav bar and go to the **Libraries** section. Click on the **Create New** option to add new libraries, as shown:
 
 ![](../.gitbook/assets/image%20%2889%29.png)
 
-* Add the library's **Name**, an optional **Description**, and include the custom functions that you need to reuse across all other transformations.
+- Add the library's **Name**, an optional **Description**, and include the custom functions that you need to reuse across all other transformations.
 
 ![](../.gitbook/assets/image%20%2891%29.png)
 
-* You can add more functions under a single library, as shown:
+- You can add more functions under a single library, as shown:
 
 ![](../.gitbook/assets/image%20%2895%29.png)
 
@@ -146,7 +148,7 @@ On running a test, an example event not having the specified email domain is fil
 
 ### Importing Multiple Functions From Single Library
 
-When importing a single function or multiple functions from a library, it is important to keep the import statement to one line. Breaking the import function out into multiple lines will lead to an error. 
+When importing a single function or multiple functions from a library, it is important to keep the import statement to one line. Breaking the import function out into multiple lines will lead to an error.
 
 The following snippets highlight how to properly import functions from a library:
 
@@ -163,16 +165,16 @@ import { getPrice, getRevenue, getProfit } from getFinanceData;
 ```javascript
 Incorrect Way ❌
 -----------------
-import { 
-  getPrice 
+import {
+  getPrice
 } from getFinanceData;
 
 OR
 
-import { 
-  getPrice, 
-  getRevenue, 
-  getProfit 
+import {
+  getPrice,
+  getRevenue,
+  getProfit
 } from getFinanceData;
 ```
 
@@ -186,12 +188,12 @@ RudderStack injects a function `metadata(event)` into your transformations as an
 
 The following properties, if available, are present in the metadata response:
 
-| Property Name | Description |
-| :--- | :--- |
-| `sourceId` | This refers to the ID of the source configured on your RudderStack dashboard. Note that it different from the source **Write Key**. Refer to the image below for more details. |
-| `destinationId` | ID of the destination configured on your RudderStack dashboard. |
-| `messageId` | Corresponds to the unique ID for each event. |
-| `sessionId` | If sessions are enabled, this corresponds to the value of the session ID. |
+| Property Name   | Description                                                                                                                                                                    |
+| :-------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `sourceId`      | This refers to the ID of the source configured on your RudderStack dashboard. Note that it different from the source **Write Key**. Refer to the image below for more details. |
+| `destinationId` | ID of the destination configured on your RudderStack dashboard.                                                                                                                |
+| `messageId`     | Corresponds to the unique ID for each event.                                                                                                                                   |
+| `sessionId`     | If sessions are enabled, this corresponds to the value of the session ID.                                                                                                      |
 
 ![Source ID](../.gitbook/assets/image%20%2898%29.png)
 
@@ -218,6 +220,7 @@ An example of how to use the `fetch` function in transformations is shown below:
 
 {% tabs %}
 {% tab title="Basic" %}
+
 ```text
 export async function transformEvent(event) {
     const res = await fetch("any_api_endpoint");
@@ -225,9 +228,11 @@ export async function transformEvent(event) {
     return event;
 }
 ```
+
 {% endtab %}
 
 {% tab title="POST" %}
+
 ```text
 export async function transformEvent(event) {
     const res = await fetch("post_url", {
@@ -241,9 +246,11 @@ export async function transformEvent(event) {
     return event;
 }
 ```
+
 {% endtab %}
 
 {% tab title="Headers" %}
+
 ```text
 export async function transformEvent(event) {
     const res = await fetch("post_url", {
@@ -258,6 +265,7 @@ export async function transformEvent(event) {
     return event;
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -275,17 +283,17 @@ You can access event-related logs while running a test by including the `log()` 
 
 ```javascript
 export function transformEvent(event, metadata) {
-  const meta = metadata(event);
+  const meta = metadata(event)
   event.sourceId = meta.sourceId
 
-  log("Event Name is", event.event, ";", "Message Id is", event.messageId);
-  log("Source Id is", meta.sourceId);
+  log("Event Name is", event.event, ";", "Message Id is", event.messageId)
+  log("Source Id is", meta.sourceId)
 
-  return event;
+  return event
 }
 ```
 
-On running a test on the above code, you can see the logs in the **Logs** section of the  dashboard, as shown:
+On running a test on the above code, you can see the logs in the **Logs** section of the dashboard, as shown:
 
 ![](../.gitbook/assets/image%20%28103%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
@@ -297,10 +305,10 @@ Arguments to the `log` function can be a String, Number or Object.
 
 You should take into account the memory and time limits when adding a new transformation. Each invocation of the transformation should not exceed the following limits:
 
-| Parameter | Limit |
-| :--- | :--- |
-| Memory Limit | 8 MB |
-| Time Limit | 4 seconds |
+| Parameter    | Limit     |
+| :----------- | :-------- |
+| Memory Limit | 8 MB      |
+| Time Limit   | 4 seconds |
 
 {% hint style="warning" %}
 The user transformation fails if these limits are exceeded.
@@ -309,4 +317,3 @@ The user transformation fails if these limits are exceeded.
 ## Contact Us
 
 For more information on transformations and libraries in RudderStack, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

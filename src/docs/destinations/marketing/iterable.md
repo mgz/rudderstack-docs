@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/iterable"
+title: "Iterable - RudderStack"
 description: Step-by-step guide to send event data from RudderStack to Iterable
 ---
 
@@ -14,10 +16,10 @@ To enable sending data to Iterable, you will first need to add it as a destinati
 
 Before configuring your source and destination on the RudderStack, please verify if the source platform is supported by Iterable, by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **-** | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **-**         | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -25,14 +27,14 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Iterable, please perform the steps below:
 
-* Choose a source to which you would like to add Iterable as a destination.
+- Choose a source to which you would like to add Iterable as a destination.
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
 {% endhint %}
 
-* Select the destination as **Iterable** to your source. Give your destination a name and then click on **Next**.
-* On the **Connection Settings** page, fill all the fields with the relevant information and click **Next.**
+- Select the destination as **Iterable** to your source. Give your destination a name and then click on **Next**.
+- On the **Connection Settings** page, fill all the fields with the relevant information and click **Next.**
 
 ![Iterable Connection Settings in RudderStack](../../.gitbook/assets/image%20%2857%29.png)
 
@@ -40,13 +42,13 @@ Please follow our [Adding a Source and Destination](https://docs.rudderstack.com
 
 The following are the settings to be configured:
 
-* **Iterable API Key**: The API key can be found under **API Configuration Settings** in your Iterable account.
-* **Map All Pages to Single Event Name**: If this is enabled, all the pages will be tracked to Iterable with the same event name.
-  * For page: `Loaded a Page`
-  * For screen: `Loaded a Screen`
-* **Track All Pages**: All page events will be sent, if enabled.
-* **Track Categorized Pages**: Only pages having a category will be tracked, if enabled.
-* **Track Named Pages**: Only pages having a name will be tracked, if enabled.
+- **Iterable API Key**: The API key can be found under **API Configuration Settings** in your Iterable account.
+- **Map All Pages to Single Event Name**: If this is enabled, all the pages will be tracked to Iterable with the same event name.
+  - For page: `Loaded a Page`
+  - For screen: `Loaded a Screen`
+- **Track All Pages**: All page events will be sent, if enabled.
+- **Track Categorized Pages**: Only pages having a category will be tracked, if enabled.
+- **Track Named Pages**: Only pages having a name will be tracked, if enabled.
 
 ## Identify
 
@@ -101,8 +103,8 @@ rudderanalytics.page({
   url: "url",
   title: "title",
   search: "search",
-  referrer: "referrer"
-});
+  referrer: "referrer",
+})
 ```
 
 ## Screen
@@ -150,31 +152,31 @@ User properties, item properties and total are compulsory for sending the order 
 Below is an example `Order Completed` event.
 
 ```javascript
-rudderanalytics.track('Order Completed', {
-  "total": 1000,
-  "products": [
+rudderanalytics.track("Order Completed", {
+  total: 1000,
+  products: [
     {
-      "product_id": "507f1f77bcf86cd799439011",
-      "sku": "45790-32",
-      "name": "Monopoly: 3rd Edition",
-      "price": "19",
-      "position": "1",
-      "category": "Cars",
-      "url": "https://www.example.com/product/path",
-      "image_url": "https://www.example.com/product/path.jpg"
+      product_id: "507f1f77bcf86cd799439011",
+      sku: "45790-32",
+      name: "Monopoly: 3rd Edition",
+      price: "19",
+      position: "1",
+      category: "Cars",
+      url: "https://www.example.com/product/path",
+      image_url: "https://www.example.com/product/path.jpg",
     },
     {
-      "product_id": "507f1f77bcf86cd799439011",
-      "sku": "45790-32",
-      "name": "Monopoly: 3rd Edition",
-      "price": "19",
-      "quantity": "2",
-      "position": "1",
-      "category": "Cars",
-      "url": "https://www.example.com/product/path",
-      "image_url": "https://www.example.com/product/path.jpg"
-    }
-  ]
+      product_id: "507f1f77bcf86cd799439011",
+      sku: "45790-32",
+      name: "Monopoly: 3rd Edition",
+      price: "19",
+      quantity: "2",
+      position: "1",
+      category: "Cars",
+      url: "https://www.example.com/product/path",
+      image_url: "https://www.example.com/product/path.jpg",
+    },
+  ],
 })
 ```
 
@@ -185,31 +187,31 @@ The eCommerce event `Product Added` or `Product Removed` is supported by RudderS
 For this event, the user has to send the whole updated cart and not the individual items that are being added or removed.
 
 ```javascript
-rudderanalytics.track('Product Added', {
-  "total": 1000,
-  "products": [
+rudderanalytics.track("Product Added", {
+  total: 1000,
+  products: [
     {
-      "product_id": "507f1f77bcf86cd799439011",
-      "sku": "45790-32",
-      "name": "Monopoly: 3rd Edition",
-      "price": "19",
-      "position": "1",
-      "category": "Cars",
-      "url": "https://www.example.com/product/path",
-      "image_url": "https://www.example.com/product/path.jpg"
+      product_id: "507f1f77bcf86cd799439011",
+      sku: "45790-32",
+      name: "Monopoly: 3rd Edition",
+      price: "19",
+      position: "1",
+      category: "Cars",
+      url: "https://www.example.com/product/path",
+      image_url: "https://www.example.com/product/path.jpg",
     },
     {
-      "product_id": "507f1f77bcf86cd799439011",
-      "sku": "45790-32",
-      "name": "Monopoly: 3rd Edition",
-      "price": "19",
-      "quantity": "2",
-      "position": "1",
-      "category": "Cars",
-      "url": "https://www.example.com/product/path",
-      "image_url": "https://www.example.com/product/path.jpg"
-    }
-  ]
+      product_id: "507f1f77bcf86cd799439011",
+      sku: "45790-32",
+      name: "Monopoly: 3rd Edition",
+      price: "19",
+      quantity: "2",
+      position: "1",
+      category: "Cars",
+      url: "https://www.example.com/product/path",
+      image_url: "https://www.example.com/product/path.jpg",
+    },
+  ],
 })
 ```
 
@@ -234,4 +236,3 @@ If this setting is enabled, only the pages having a category will be tracked.
 ## Contact Us
 
 If you come across any issues while configuring or using Iterable with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

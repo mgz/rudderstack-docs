@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/attribution/adjust"
+title: "Adjust - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Adjust
 ---
 
@@ -16,18 +18,18 @@ RudderStack allows you to configure your mobile devices with our SDKs to send yo
 
 Before configuring your source and destination on the RudderStack app, please check whether the platform you are working on is supported by Adjust. Refer to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | **Supported** | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | -             | **Supported** | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
- To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Adjust, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Adjust as a destination.
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Adjust as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
@@ -47,19 +49,19 @@ Depending on your platform of integration, follow the steps below to add Adjust 
 {% tab title="iOS" %}
 To add Adjust to your iOS project, please follow these steps:
 
-* Add the following line to your  [CocoaPods](https://cocoapods.org) `Podfile`
+- Add the following line to your [CocoaPods](https://cocoapods.org) `Podfile`
 
 ```ruby
 pod 'Rudder-Adjust'
 ```
 
-* After adding the dependency, you must register the `RudderAdjustFactory` with your `RudderClient` initialization as a `factory` of `RudderConfig`. To do this, run the following command to import the `RudderAdjustFactory.h` file in your `AppDelegate.m` file.
+- After adding the dependency, you must register the `RudderAdjustFactory` with your `RudderClient` initialization as a `factory` of `RudderConfig`. To do this, run the following command to import the `RudderAdjustFactory.h` file in your `AppDelegate.m` file.
 
 ```objectivec
 #import <Rudder-Adjust/RudderAdjustFactory.h>
 ```
 
-* Then, change the SDK initialization to the following:
+- Then, change the SDK initialization to the following:
 
 ```objectivec
 RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
@@ -67,12 +69,13 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 [builder withFactory:[RudderAdjustFactory instance]];
 [RudderClient getInstance:WRITE_KEY config:[builder build]];
 ```
+
 {% endtab %}
 
 {% tab title="Android" %}
 To add Adjust to your Android project, please follow these steps:
 
-* Add this `url` to the `repositories` section of your `app/build.gradle` file.
+- Add this `url` to the `repositories` section of your `app/build.gradle` file.
 
 ```groovy
 repositories {
@@ -80,7 +83,7 @@ repositories {
 }
 ```
 
-* Add the following line to your `app/build.gradle` file under `dependencies` section:
+- Add the following line to your `app/build.gradle` file under `dependencies` section:
 
 ```groovy
 implementation 'com.rudderstack.android.sdk:core:1.+'
@@ -88,13 +91,13 @@ implementation 'com.rudderstack.android.integration:adjust:s+'
 implementation 'com.adjust.sdk:adjust-android:4.+'
 ```
 
-* After adding the dependency you must register the `RudderAdjustFactory` with your `RudderClient` initialization as a `factory` of `RudderConfig` . To do this, import this in your `Application` class as shown:
+- After adding the dependency you must register the `RudderAdjustFactory` with your `RudderClient` initialization as a `factory` of `RudderConfig` . To do this, import this in your `Application` class as shown:
 
 ```java
 import com.rudderstack.android.integration.adjust.AdjustIntegrationFactory;
 ```
 
-* Finally, change the SDK initialization to the following:
+- Finally, change the SDK initialization to the following:
 
 ```kotlin
 val rudderClient: RudderClient = RudderClient.getInstance(
@@ -106,25 +109,26 @@ val rudderClient: RudderClient = RudderClient.getInstance(
         .build()
 )
 ```
+
 {% endtab %}
 
 {% tab title="Unity" %}
 To enable Adjust to track your game event data through RudderStack, please follow these steps:
 
-* First, you will need to add RudderStack's Unity SDK to your project.
+- First, you will need to add RudderStack's Unity SDK to your project.
 
 {% hint style="info" %}
 Follow our guide on [Getting Started with Unity SDK](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/getting-started-with-unity-sdk) to know how to do this.
 {% endhint %}
 
-* Once you have added the SDK to your project, simply download the [Adjust SDK extension package](https://github.com/rudderlabs/rudder-sdk-unity/tree/master/Integrations/Adjust/RudderAdjust) from GitHub and import it to your project. 
+- Once you have added the SDK to your project, simply download the [Adjust SDK extension package](https://github.com/rudderlabs/rudder-sdk-unity/tree/master/Integrations/Adjust/RudderAdjust) from GitHub and import it to your project.
 
 {% hint style="warning" %}
 The package comes with Adjust Unity SDK embedded in it along with the required `jar` files for Android Install Referrer. We **don't recommend** adding the Adjust SDK separately.
 {% endhint %}
 
-* After importing the `rudder-unity-extension-adjust.unitypackage` to your project, attach the `RudderPreferbs.prefab`  file from `RudderUnityPlugin` to your main `GameObject` 
-* Finally change the initialization of the SDK using the following code:
+- After importing the `rudder-unity-extension-adjust.unitypackage` to your project, attach the `RudderPreferbs.prefab` file from `RudderUnityPlugin` to your main `GameObject`
+- Finally change the initialization of the SDK using the following code:
 
 ```csharp
 // Build your config
@@ -138,6 +142,7 @@ RudderClient rudderClient = RudderClient.GetInstance(
     configBuilder.Build()
 );
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -154,7 +159,7 @@ Here is an example:
 
 ## Track
 
-When you make the `track` call, RudderStack maps the `eventName` with the pre-defined list of custom events from Adjust. 
+When you make the `track` call, RudderStack maps the `eventName` with the pre-defined list of custom events from Adjust.
 
 {% hint style="warning" %}
 You **must** define the map of Adjust `eventToken` to `eventName` in the dashboard. If you don't define the mapping Adjust will not accept the event.
@@ -162,7 +167,7 @@ You **must** define the map of Adjust `eventToken` to `eventName` in the dashboa
 
 We add all the properties as `callbackParameter` in the Adjust event.
 
-The following snippet is a simple demonstration of the `track`call: 
+The following snippet is a simple demonstration of the `track`call:
 
 ```objectivec
 [[RudderClient sharedInstance] track:@"test_event"
@@ -199,4 +204,3 @@ The Adjust environment depends on the `RudderLogLevel`. `RudderLogLevel.DEBUG` o
 ## Contact Us
 
 If you come across any issues while configuring Adjust with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

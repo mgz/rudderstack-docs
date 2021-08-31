@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/customer-io"
+title: "Customer.io - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Customer.io
 ---
 
@@ -16,10 +18,10 @@ RudderStack supports sending your events to CustomerIO from the cloud mode S2S \
 
 Before configuring your source and destination on the RudderStack app, please check whether the platform you are working on is supported. You can refer the following table to do so:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **Supported** | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,13 +29,13 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Customer.io, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Customer.io as a destination.
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Customer.io as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Fill the required fields such as API Key and Site ID as shown in the screenshot below:
+- Fill the required fields such as API Key and Site ID as shown in the screenshot below:
 
 ![Customer.io Connection Settings](../../.gitbook/assets/photo-17-03-2021.png)
 
@@ -122,9 +124,9 @@ For anonymous users, customer.io does not allow an event name more than the size
 
 We register the `deviceToken` to [Customer.io](https://customer.io) on the following Application Lifecycle Events.
 
-* `Application Installed`
-* `Application Opened`
-* `Application Unistalled`
+- `Application Installed`
+- `Application Opened`
+- `Application Unistalled`
 
 To use this feature, you've to turn on the feature `trackApplicationLifecycleEvents` in your mobile SDK implementation code. Moreover, you have to register your `deviceToken` after initializing the SDK.
 
@@ -132,15 +134,19 @@ Example for registering `deviceToken` is as follows:
 
 {% tabs %}
 {% tab title="iOS" %}
+
 ```text
 [[[RudderClient sharedInstance] getContext] putDeviceToken:[self getDeviceToken]];
 ```
+
 {% endtab %}
 
 {% tab title="Android" %}
+
 ```text
 rudderClient!!.rudderContext.putDeviceToken(getDeviceToken())
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -153,4 +159,3 @@ In order to obtain the API Key and Site ID, you will first need to create an acc
 ## Contact Us
 
 If you come across any issues while configuring Customer.io with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

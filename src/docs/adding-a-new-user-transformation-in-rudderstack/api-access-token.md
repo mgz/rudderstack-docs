@@ -1,4 +1,6 @@
 ---
+slug: "/docs/adding-a-new-user-transformation-in-rudderstack/access-token"
+title: "API Access Token - RudderStack"
 description: >-
   Detailed description on managing your access token required to use the
   RudderStack Transformation API.
@@ -10,7 +12,7 @@ To consume the RudderStack Transformation API you need access to it. This guide 
 
 ## Operations on the Access Token
 
-In order to use the Transformation API, you will need an Access Token associated with your account. You can create your own Access Token by following steps below: 
+In order to use the Transformation API, you will need an Access Token associated with your account. You can create your own Access Token by following steps below:
 
 {% hint style="success" %}
 You can use Postman, Fiddler or any other API client to make your request.
@@ -56,6 +58,7 @@ Name of access token
   }
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -65,6 +68,7 @@ A sample request is as shown:
 
 {% tabs %}
 {% tab title="Curl" %}
+
 ```text
 curl --location -X POST 'https://api.rudderstack.com/accessTokens' \
 -H 'Authorization: Basic Base64Enc(workspacetoken:)' \
@@ -74,32 +78,35 @@ curl --location -X POST 'https://api.rudderstack.com/accessTokens' \
     "description": "some-description"
 }'
 ```
+
 {% endtab %}
 
 {% tab title="Httpie" %}
+
 ```text
  http POST 'https://api.rudderstack.com/accessTokens' \
  name=some-test-access-token description=some-description \
  Authorization:'Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
  Content-Type:'application/json'
 ```
+
 {% endtab %}
 {% endtabs %}
 
-We use Basic Auth consisting of three parts: 
+We use Basic Auth consisting of three parts:
 
-* `Basic`
-* `Base64Encoded(Token)`
-* Token = _`workspace token` + `colon`_
+- `Basic`
+- `Base64Encoded(Token)`
+- Token = _`workspace token` + `colon`_
 
 You can get the workspace token by logging into your RudderStack dashboard, as shown:
 
 ![](../.gitbook/assets/1-copy.png)
 
-**An example is as shown :** 
+**An example is as shown :**
 
-* Workspace Token **- abcd1234**
-* Headers **- Basic {Base64Encoded\(abcd1234:\)}**
+- Workspace Token **- abcd1234**
+- Headers **- Basic {Base64Encoded\(abcd1234:\)}**
 
 {% hint style="danger" %}
 Copy your access token and keep it safely with you. You won't be able to get it back once lost. Your AccessToken carry many privileges, so be sure to keep them secret.
@@ -143,6 +150,7 @@ Base64encoded **workspace token.**
     },
 ]
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -154,17 +162,21 @@ Here you will get a list of objects. Note that RudderStack does not send your ac
 
 {% tabs %}
 {% tab title="Curl" %}
+
 ```text
 curl --location -X GET 'https://api.rudderstack.com/accessTokens' \
 -H 'Authorization: Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
 ```
+
 {% endtab %}
 
 {% tab title="Httpie" %}
+
 ```text
 http GET 'https://api.rudderstack.com/accessTokens' \
 'Authorization: Basic Base64Enc(workspacetoken:)'
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -203,6 +215,7 @@ All access token will be deleted with given name.
     success: true
 }
 ```
+
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
@@ -210,34 +223,37 @@ All access token will be deleted with given name.
 
 {% tabs %}
 {% tab title="Curl" %}
+
 ```text
 curl --location -X DELETE 'https://api.rudderstack.com/accessTokens?name=some-test-access-token' \
 -H 'Authorization: Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
 ```
+
 {% endtab %}
 
 {% tab title="Httpie" %}
+
 ```text
 http DELETE 'http://api.rudderstack.com/accessTokens?name=sdc' \
 'Authorization: Basic Base64Enc(workspacetoken:)'
 ```
+
 {% endtab %}
 {% endtabs %}
 
 ## Errors
 
-RudderStack uses standard HTTP response codes to indicate the success or failure of an API request. 
+RudderStack uses standard HTTP response codes to indicate the success or failure of an API request.
 
-| **Http Response Code** | **Description** |
-| :--- | :--- |
-| **200 - OK** | **Everything worked as expected.** |
-| **400 - Bad Request** | **The request was unacceptable. This often happens due to a missing required field.** |
-| **401 – Unauthorized** | **No valid Access Token was provided, or the user does not have the required access to the resource.** |
-| **403 – Forbidden** | **User does not have the permission to create or access the data.** |
-| **404 - Not Found** | **The requested resource does not exist.** |
-| **500 - Internal Server Error** | **Something went wrong on RudderStack's end.** |
+| **Http Response Code**          | **Description**                                                                                        |
+| :------------------------------ | :----------------------------------------------------------------------------------------------------- |
+| **200 - OK**                    | **Everything worked as expected.**                                                                     |
+| **400 - Bad Request**           | **The request was unacceptable. This often happens due to a missing required field.**                  |
+| **401 – Unauthorized**          | **No valid Access Token was provided, or the user does not have the required access to the resource.** |
+| **403 – Forbidden**             | **User does not have the permission to create or access the data.**                                    |
+| **404 - Not Found**             | **The requested resource does not exist.**                                                             |
+| **500 - Internal Server Error** | **Something went wrong on RudderStack's end.**                                                         |
 
 ## Contact Us
 
 For more information on the access tokens, or if face any issues related to accessing it, you can [contact us](mailto:%20docs@rudderstack.com) or you can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

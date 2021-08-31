@@ -8,6 +8,7 @@ module.exports = {
     author: `@gatsbyjs`,
     siteUrl: "https://rudderstack.com",
   },
+  pathPrefix: 'src/docs',
   plugins: [
     `gatsby-plugin-postcss`,
     {
@@ -254,6 +255,21 @@ module.exports = {
         path: `${__dirname}/src/docs`,
       },
     },
-    "gatsby-transformer-remark"
+    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-theme-apollo-docs",
+      options: {
+        root: `${__dirname}/src`,
+        siteName: 'RudderStack Docs',
+        description: 'RudderStack Documentation',
+        contentDir: 'docs',
+        sidebarCategories: {
+          null: [
+            'index',
+            'get-started'
+          ]
+        }
+      }
+    }
   ],
 }

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/appcues"
+title: "Appcues - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Appcues
 ---
 
@@ -16,10 +18,10 @@ Find the open-source transformer code for this destination in our [GitHub repo](
 
 Before configuring your source and destination on the RudderStack, please check whether the platform you are sending the events from is supported by Appcues. Please refer the following table to do so:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **Supported** | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 If you would like to use the entire functionality of Appcues like displaying flows, checklists, and surveys, please use Appcues **device mode** and not **cloud mode**.
@@ -31,17 +33,17 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Appcues, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and select **Appcues** from the list of destinations.
+- From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and select **Appcues** from the list of destinations.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Name your destination, and click on **Next**. You should be able to see the following screen:
+- Name your destination, and click on **Next**. You should be able to see the following screen:
 
 ![Connection settings for Appcues destination](../../.gitbook/assets/appcues.png)
 
-* Enter the relevant details and click on **Next** to complete the setup. To get the **API Key** & **Account ID** field, please login to Appcues and navigate to **Settings** - **Account**. Here, copy the values of both your API key and the Account ID.
+- Enter the relevant details and click on **Next** to complete the setup. To get the **API Key** & **Account ID** field, please login to Appcues and navigate to **Settings** - **Account**. Here, copy the values of both your API key and the Account ID.
 
 {% hint style="info" %}
 You need to make an `identify` call before making any call to Appcues.
@@ -67,7 +69,7 @@ rudderanalytics.identify("userId", {
   country: "US",
   street: "Sample Address",
   state: "TX",
-});
+})
 ```
 
 The above call is directly passed on to Appcues via its `Appcues.identify(userId,[properties])` call.
@@ -82,7 +84,7 @@ A sample `track` call looks like the following:
 rudderanalytics.track("Clicked button", {
   color: "red",
   buttonText: "Get started",
-});
+})
 ```
 
 {% hint style="info" %}
@@ -96,7 +98,7 @@ A `page` call contains information such as the URL or the name of the web page v
 A sample `page` call looks like the following:
 
 ```javascript
-rudderanalytics.page("homepage");
+rudderanalytics.page("homepage")
 ```
 
 {% hint style="info" %}
@@ -136,4 +138,3 @@ You can find the Appcues Account Id on the [Appcues Settings Page](https://studi
 ## Contact Us
 
 If you come across any issues while configuring Appcues with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/advertising/fb-pixel"
+title: "Facebook Pixel - RudderStack"
 description: Step-by-step guide to send event data from RudderStack to Facebook Pixel.
 ---
 
@@ -18,10 +20,10 @@ To enable sending your event data to Facebook Pixel, you will first need to add 
 
 Before configuring your source and destination on the RudderStack, please verify if the source platform is supported by Facebook Pixel, by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **Supported** | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -29,13 +31,13 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Facebook, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Facebook Pixel**.
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Facebook Pixel**.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![](../../.gitbook/assets/screen-shot-2021-03-03-at-1.09.06-pm.png)
 
@@ -45,44 +47,43 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 The connection settings are:
 
-* Enter your **Facebook Pixel ID** \(Required for both Device Mode and Cloud Mode\) If you have a **Business Access Token \(**required for Cloud Mode\), enter that as well.
+- Enter your **Facebook Pixel ID** \(Required for both Device Mode and Cloud Mode\) If you have a **Business Access Token \(**required for Cloud Mode\), enter that as well.
 
 {% hint style="info" %}
 More information on how to find your Facebook Pixel ID and Business Access Token can be found in our FAQs below.
 {% endhint %}
 
-* Some other important settings are:  
+- Some other important settings are:
 
-
-  * **Value Field Identifier**: You can set this field to `properties.price` or `properties.value` and will be assigned to the value field of the Facebook payload. 
-  * **Blacklist PII Properties**:  The PII properties mentioned in this field will not be sent to Facebook if **Blacklist PII Hash Property** is not enabled. If it is enabled, the property will be hashed by SHA256 and sent to Facebook. The properties listed below are the default blacklisted properties. If you would still like to send one of these properties but instead hashed by SHA256, you will need to enter the property name in the field and enable the **Blacklist PII Hash Property** toggle.
+  - **Value Field Identifier**: You can set this field to `properties.price` or `properties.value` and will be assigned to the value field of the Facebook payload.
+  - **Blacklist PII Properties**: The PII properties mentioned in this field will not be sent to Facebook if **Blacklist PII Hash Property** is not enabled. If it is enabled, the property will be hashed by SHA256 and sent to Facebook. The properties listed below are the default blacklisted properties. If you would still like to send one of these properties but instead hashed by SHA256, you will need to enter the property name in the field and enable the **Blacklist PII Hash Property** toggle.
 
   ```text
   Default Blacklisted PII
   -----------------------
-  "email", 
-  "firstName", 
-  "lastName", 
-  "firstname", 
-  "lastname", 
-  "first_name", 
-  "last_name", 
-  "gender", 
-  "city", 
-  "country", 
-  "phone", 
-  "state", 
-  "zip", 
+  "email",
+  "firstName",
+  "lastName",
+  "firstname",
+  "lastname",
+  "first_name",
+  "last_name",
+  "gender",
+  "city",
+  "country",
+  "phone",
+  "state",
+  "zip",
   "birthday"
   ```
 
-  * **Whitelist PII Properties**: The PII properties mentioned in this field will be sent to Facebook if they are present in the properties of the events. This is only necessary for properties that match the **Default Blacklisted PII** properties above. 
-  * **Standard Events Custom Properties**: For the standard events, some predefined properties are taken by Facebook. If you want to send more properties for your events, those properties should be mentioned in this setting. 
-  * **Use as Test Destination:** If you will be using this destination for testing purposes, toggle this switch on. Then, enter the `Test Event Code` below. This code can be found on your Facebook Pixel dashboard and is required if the Test Destination flag is turned on.
+  - **Whitelist PII Properties**: The PII properties mentioned in this field will be sent to Facebook if they are present in the properties of the events. This is only necessary for properties that match the **Default Blacklisted PII** properties above.
+  - **Standard Events Custom Properties**: For the standard events, some predefined properties are taken by Facebook. If you want to send more properties for your events, those properties should be mentioned in this setting.
+  - **Use as Test Destination:** If you will be using this destination for testing purposes, toggle this switch on. Then, enter the `Test Event Code` below. This code can be found on your Facebook Pixel dashboard and is required if the Test Destination flag is turned on.
 
   \*\*\*\*
 
-  * **Limited Data Usage**: If enabled, RudderStack will take the data processing information from the payload and send it to Facebook. The data in the RudderStack payload should be as follows:
+  - **Limited Data Usage**: If enabled, RudderStack will take the data processing information from the payload and send it to Facebook. The data in the RudderStack payload should be as follows:
 
 ```javascript
 "context": {
@@ -122,10 +123,10 @@ More information on how to find your Facebook Pixel ID and Business Access Token
 ```
 
 {% hint style="info" %}
-The `context.dataProcessingOptions` will be mapped to **`data_processing_options`** in Facebook as is mentioned in the [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event#data-processing-options). 
+The `context.dataProcessingOptions` will be mapped to **`data_processing_options`** in Facebook as is mentioned in the [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event#data-processing-options).
 {% endhint %}
 
-* Finally, click on **Next** to complete the configuration.
+- Finally, click on **Next** to complete the configuration.
 
 ## Identify
 
@@ -134,7 +135,7 @@ In Facebook Pixel, the immediate updating of user properties via the `identify` 
 The following snippet highlights the use of the `identify` call:
 
 ```javascript
-rudderanalytics.identify("userId", userVars); // userVars is a JSON object
+rudderanalytics.identify("userId", userVars) // userVars is a JSON object
 ```
 
 ## Page
@@ -144,17 +145,34 @@ When the `page`call is made, the `track` event is sent as `PageView` to `fbq('tr
 A sample `page` call is as shown:
 
 ```javascript
-rudderanalytics.page();
+rudderanalytics.page()
 ```
 
 ## Track
 
-The `track` call lets you track custom events as they occur in your web application. 
+The `track` call lets you track custom events as they occur in your web application.
 
 A sample call looks like the following code snippet:
 
 ```javascript
 rudderanalytics.track("Product Added", {
+  order_ID: "123",
+  category: "boots",
+  product_name: "yellow_cowboy_boots",
+  price: 99.95,
+  currency: "EUR",
+  revenue: 2000,
+  value: 3000,
+  checkinDate: "Thu Mar 24 2018 17:46:45 GMT+0000 (UTC)",
+})
+```
+
+In addition to the above call, a `contentType` in the integrations options can be available. If present, it will precede the default value or dashboard settings of `contentType`.
+
+```javascript
+rudderanalytics.track(
+  "Product Added",
+  {
     order_ID: "123",
     category: "boots",
     product_name: "yellow_cowboy_boots",
@@ -162,26 +180,12 @@ rudderanalytics.track("Product Added", {
     currency: "EUR",
     revenue: 2000,
     value: 3000,
-    checkinDate: "Thu Mar 24 2018 17:46:45 GMT+0000 (UTC)"
-});
-```
-
-In addition to the above call, a `contentType` in the integrations options can be available. If present, it will precede the default value or dashboard settings of `contentType`.
-
-```javascript
-rudderanalytics.track("Product Added", {
-        order_ID: "123",
-        category: "boots",
-        product_name: "yellow_cowboy_boots",
-        price: 99.95,
-        currency: "EUR",
-        revenue: 2000,
-        value: 3000,
-        checkinDate: "Thu Mar 24 2018 17:46:45 GMT+0000 (UTC)"
-    },{
-        'Facebook Pixel': { contentType: 'mycustomtype' }
-    }
-);
+    checkinDate: "Thu Mar 24 2018 17:46:45 GMT+0000 (UTC)",
+  },
+  {
+    "Facebook Pixel": { contentType: "mycustomtype" },
+  }
+)
 ```
 
 ## Standard Events
@@ -194,14 +198,14 @@ Please go through our guide on [E-Commerce Event Specifications](https://docs.ru
 
 The mapping is done as follows in RudderStack:
 
-| Rudder Event | Facebook Standard Event |
-| :--- | :--- |
-| `Product List Viewed` | `ViewContent` |
-| `Product Viewed` | `ViewContent` |
-| `Product Added` | `AddToCart` |
-| `Order Completed` | `Purchase` |
-| `Products Searched` | `Search` |
-| `Checkout Started` | `InitiateCheckout` |
+| Rudder Event          | Facebook Standard Event |
+| :-------------------- | :---------------------- |
+| `Product List Viewed` | `ViewContent`           |
+| `Product Viewed`      | `ViewContent`           |
+| `Product Added`       | `AddToCart`             |
+| `Order Completed`     | `Purchase`              |
+| `Products Searched`   | `Search`                |
+| `Checkout Started`    | `InitiateCheckout`      |
 
 In Pixel, a currency for **Purchase** events is required to be specified. If not provided the default will be set to **`USD`**.
 
@@ -215,7 +219,7 @@ This is only available for device mode.
 
 ## Custom Events
 
-Custom events are used to send any event that does not appear in any of the mappings. 
+Custom events are used to send any event that does not appear in any of the mappings.
 
 ## Deduplication
 
@@ -229,12 +233,12 @@ For more information on Facebook Deduplication, you can refer to [this article.]
 
 Facebook's \(and RudderStack's\) recommended form of deduplication is to leverage the `event_name` and `event_id` properties. When two events coming into Facebook meet the following criteria, they will be deduplicated.
 
-* They are sent within 48 hours of each other
-* They are received by the same Facebook Pixel ID
-* They have the same `event_name` i.e. `Purchase` etc.
-* They have the same `event_id` 
-  * The `event_id` must be unique to that specific event and the same for both of the events coming from the Pixel and Conversion API
-  * For example: the `event_id` could be the purchase order number etc.
+- They are sent within 48 hours of each other
+- They are received by the same Facebook Pixel ID
+- They have the same `event_name` i.e. `Purchase` etc.
+- They have the same `event_id`
+  - The `event_id` must be unique to that specific event and the same for both of the events coming from the Pixel and Conversion API
+  - For example: the `event_id` could be the purchase order number etc.
 
 To set the `event_id`, simply include the `event_id` key-value pair either in the `context.traits` object or the `properties` object. The `event_name` will be whatever the name of the event is.
 
@@ -242,15 +246,15 @@ To set the `event_id`, simply include the `event_id` key-value pair either in th
 For more information regarding the logic behind the `event_id` deduplication, read [this article](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#event-id-and-event-name---recommended).
 {% endhint %}
 
-#### `fbp`  and `external_id` Method \(Not Recommended\)
+#### `fbp` and `external_id` Method \(Not Recommended\)
 
 For this approach, it is necessary to send an event, first from the browser, then from the server. Both events must have the same `event_name`, and the same `fbp` parameter and the same `external_id`. If the browser event is received before the server event and both events have the same `event_name` and the same `fbp` and `external_id`, then the server event will be discarded. Below are a few shortcomings for this deduplication method.
 
-* It will always discard the server event is Facebook identifies a redundant event.
-* This method only works for deduplicating events sent first from the browser and then the server. 
-* There will be no deduplication if two consecutive browser events with the same information are sent to Facebook. The same is true if two server events with the same information is sent to Facebook
+- It will always discard the server event is Facebook identifies a redundant event.
+- This method only works for deduplicating events sent first from the browser and then the server.
+- There will be no deduplication if two consecutive browser events with the same information are sent to Facebook. The same is true if two server events with the same information is sent to Facebook
 
-RudderStack maps the `event_name` from whatever the name of the event that is being sent is. The `fbp` parameter is taken from the `context.fbp` key-value pair. Finally, the `external_id` will just be the `userId` or `anonymousId` \(if `userId` is not present\). 
+RudderStack maps the `event_name` from whatever the name of the event that is being sent is. The `fbp` parameter is taken from the `context.fbp` key-value pair. Finally, the `external_id` will just be the `userId` or `anonymousId` \(if `userId` is not present\).
 
 {% hint style="info" %}
 For more information regarding the logic behind the `fbp` and `external_id` deduplication, read [this article](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id).
@@ -258,9 +262,9 @@ For more information regarding the logic behind the `fbp` and `external_id` dedu
 
 ## Timestamps
 
-Facebook Pixel uses ISO 8601 timestamp without the timezone information. 
+Facebook Pixel uses ISO 8601 timestamp without the timezone information.
 
-Facebook expects them to be sent in the following format: 
+Facebook expects them to be sent in the following format:
 
 `"checkinDate", "checkoutDate", "departingArrivalDate", "departingDepartureDate", "returningArrivalDate", "returningDepartureDate", "travelEnd", "travelStart"`
 
@@ -268,7 +272,7 @@ Facebook expects them to be sent in the following format:
 
 **Where can I find the Pixel ID?**
 
-To get your Pixel ID, go to your Facebook Ads Manager account. On the left navigation bar, select Business Tools, and click on **Events Manager** under **Manage Business**. 
+To get your Pixel ID, go to your Facebook Ads Manager account. On the left navigation bar, select Business Tools, and click on **Events Manager** under **Manage Business**.
 
 ![](../../.gitbook/assets/screen-shot-2021-03-03-at-1.22.01-pm.png)
 
@@ -280,8 +284,8 @@ In the Data Sources, you should be able to see your Pixel ID underneath your sit
 
 In order to use the Facebook Conversions API, you need to generate an access token. We recommend using the Facebook Events Manager to do so, by following these steps:
 
-* Choose the relevant Facebook Pixel and click on the **Settings** tab.
-* In the Conversions API section, click on **Generate access token** under the **Set up manually** section, as shown:
+- Choose the relevant Facebook Pixel and click on the **Settings** tab.
+- In the Conversions API section, click on **Generate access token** under the **Set up manually** section, as shown:
 
 ![](../../.gitbook/assets/screen-shot-2021-03-03-at-1.44.33-pm.png)
 
@@ -295,16 +299,16 @@ Yes. Facebook Pixel requires all user data, data coming from `context.traits`, t
 
 ```javascript
 rudderanalytics.track(
-  'some_event_name', 
-  { some_properties }, 
+  "some_event_name",
+  { some_properties },
   {
-    'integrations': {
-      'Facebook Pixel': {
-        hashed: true
-      }
-    }
+    integrations: {
+      "Facebook Pixel": {
+        hashed: true,
+      },
+    },
   }
-);
+)
 ```
 
 The `integrations` object with these key-values will tell RudderStack not to hash the traits in `context.traits` because they are already hashed. Otherwise, RudderStack will hash your data again and Facebook will not be able to match the traits. Please keep in mind that Facebook will not accept un-hashed data.
@@ -312,4 +316,3 @@ The `integrations` object with these key-values will tell RudderStack not to has
 ## Contact Us
 
 If you come across any issues while configuring Facebook Pixel with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/google-analytics-ga"
+title: "Google Analytics - RudderStack"
 description: >-
   Step-by-step guide to send your event data from RudderStack to Google
   Analytics
@@ -18,10 +20,10 @@ RudderStack supports sending events from RudderStack SDKs to the Google Analytic
 
 Before configuring your source and destination on the RudderStack app, please check whether the platform you are working on is supported by Google Analytics. Refer to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device Mode** | **Supported** | - | - |
-| **Cloud Mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device Mode**     | **Supported** | -             | -             |
+| **Cloud Mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -29,7 +31,7 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Google Analytics, perform the steps below:
 
-To enable sending data to Google Analytics, you will first need to add it as a destination to the source from which you are sending the event data. 
+To enable sending data to Google Analytics, you will first need to add it as a destination to the source from which you are sending the event data.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
@@ -53,21 +55,21 @@ We send a `pageview` hit to Google Analytics whenever you make a **`page()`** ca
 
 From our JavaScript libraries, we automatically collect the following page properties with the **`page()`** call just after the **`load()`** call:
 
-* `path`
-* `url`
-* `title`
-* `search`
-* `referrer`
+- `path`
+- `url`
+- `title`
+- `search`
+- `referrer`
 
-> For a page loaded at [http://localhost/test\_browser.html?param1=true](http://localhost/test_browser.html?param1=true) with title "Page Load"
+> For a page loaded at [http://localhost/test_browser.html?param1=true](http://localhost/test_browser.html?param1=true) with title "Page Load"
 
-| Property | Value |
-| :--- | :--- |
-| `path` | /test\_browser.html |
-| `referrer` | "" |
-| `search` | ?param1=true |
-| `title` | Page Load |
-| `url` | [http://localhost/test\_browser.html?param1=true](http://localhost/test_browser.html?param1=true) |
+| Property   | Value                                                                                            |
+| :--------- | :----------------------------------------------------------------------------------------------- |
+| `path`     | /test_browser.html                                                                               |
+| `referrer` | ""                                                                                               |
+| `search`   | ?param1=true                                                                                     |
+| `title`    | Page Load                                                                                        |
+| `url`      | [http://localhost/test_browser.html?param1=true](http://localhost/test_browser.html?param1=true) |
 
 You can also override these values and call `page()` with properties as shown below:
 
@@ -90,26 +92,25 @@ There are other variants of the `page()` call that you can send, which involve g
 ```javascript
 // Passing page category and name
 rudderanalytics.page("category", "name", {
-        path: "path",
-        url: "url",
-        title: "title",
-        search: "search",
-        referrer: "referrer"
-}); 
+  path: "path",
+  url: "url",
+  title: "title",
+  search: "search",
+  referrer: "referrer",
+})
 
-
-// "home" is the name of the page. 
+// "home" is the name of the page.
 rudderanalytics.page("home", {
-        path: "path",
-        url: "url",
-        title: "title",
-        search: "search",
-        referrer: "referrer"
-}); 
+  path: "path",
+  url: "url",
+  title: "title",
+  search: "search",
+  referrer: "referrer",
+})
 ```
 
 {% hint style="info" %}
-For a server-side screen call, the application name is passed from RudderStack's `context.app.name` as **`an`**, otherwise the event will be rejected by GA. 
+For a server-side screen call, the application name is passed from RudderStack's `context.app.name` as **`an`**, otherwise the event will be rejected by GA.
 
 If **Include the Querystring in Page Views** option is turned on under Advanced options of RudderStack destination settings \(please refer to the settings in the Getting Started section above\), then the whole URL with query string will be sent as **`dp`** \(Document Path\). Otherwise, the query string will be removed from the URL.
 {% endhint %}
@@ -139,7 +140,7 @@ You can call `identify` once in order to set the `userId` and `user traits`for a
 
 In Google Analytics, we can configure custom dimensions in the [Admin](https://support.google.com/analytics/answer/6132368?hl=en) page.
 
-There are multiple scopes for custom dimensions, such as `hits`, `session`, `user`, and `products` \(If Enhanced eCommerce is enabled\). Once these are set up in Google Analytics, the traits and properties can be mapped to custom dimensions as set by the user in the RudderStack destination settings page \(as seen in the Getting Started section\). 
+There are multiple scopes for custom dimensions, such as `hits`, `session`, `user`, and `products` \(If Enhanced eCommerce is enabled\). Once these are set up in Google Analytics, the traits and properties can be mapped to custom dimensions as set by the user in the RudderStack destination settings page \(as seen in the Getting Started section\).
 
 A custom dimension should be set as `dimension{index}` . For example, `dimension1` and it will map accordingly when the user sets the dimension in GA settings as shown below.
 
@@ -171,10 +172,10 @@ rudderanalytics.track("Track me")
 
 This will send the following `Event Category` and `Event Action` :
 
-| Property | Value |
-| :--- | :--- |
-| Event Category | All |
-| Event Action | `Track me` |
+| Property       | Value      |
+| :------------- | :--------- |
+| Event Category | All        |
+| Event Action   | `Track me` |
 
 {% hint style="info" %}
 We do not populate the `Event Category` field by default. If you face such a requirement, use our custom transformations to populate the event payload with a `category` property.
@@ -192,16 +193,16 @@ rudderanalytics.track("Track me", {
 
 The following properties are sent to the Google Analytics event:
 
-| Property | Value |
-| :--- | :--- |
+| Property       | Value      |
+| :------------- | :--------- |
 | Event Category | `category` |
-| Event Action  | `Track me` |
-| Event Label | `label` |
-| Event Value | `value` |
+| Event Action   | `Track me` |
+| Event Label    | `label`    |
+| Event Value    | `value`    |
 
 ## Non-Interaction Events
 
-If the non-interaction setting is enabled in the RudderStack destination settings, `nonInteraction` with value `1` will be sent. 
+If the non-interaction setting is enabled in the RudderStack destination settings, `nonInteraction` with value `1` will be sent.
 
 ```text
 {
@@ -221,8 +222,8 @@ RudderStack supports basic E-Commerce tracking for Google Analytics.
 
 The required steps are:
 
-* For every order completed, `orderId` is required. For each product in the order, there must be an `id` and `name`. Other properties are optional.
-* The E-Commerce tracking should be enabled otherwise it will not be shown in the reports.
+- For every order completed, `orderId` is required. For each product in the order, there must be an `id` and `name`. Other properties are optional.
+- The E-Commerce tracking should be enabled otherwise it will not be shown in the reports.
 
 ## Enhanced E-Commerce
 
@@ -232,9 +233,9 @@ Enhanced E-Commerce must be enabled in Google Analytics, and should follow Rudde
 
 The required steps are:
 
-* Similar to E-Commerce tracking, for every order completed the `orderId` is required. For each product, `id` and `name`are required.
-* The product ID or name must be passed for all the events that has the product details. `product_id` will check if `properties.product_id` is present or not. Else `properties.sku`  will be picked.
-* `order_id` is required for refunded orders.
+- Similar to E-Commerce tracking, for every order completed the `orderId` is required. For each product, `id` and `name`are required.
+- The product ID or name must be passed for all the events that has the product details. `product_id` will check if `properties.product_id` is present or not. Else `properties.sku` will be picked.
+- `order_id` is required for refunded orders.
 
 To send Enhanced E-Commerce events, please enable it in the RudderStack destination settings page.
 
@@ -246,7 +247,7 @@ You can configure the checkout funnel in the Google Analytics admin interface as
 
 ![](../../.gitbook/assets/image%20%2821%29.png)
 
-The checkout flow can be implemented by calling `track` with **`checkout step viewed`** and **`checkout step completed`** for the steps you have added in Google Analytics. 
+The checkout flow can be implemented by calling `track` with **`checkout step viewed`** and **`checkout step completed`** for the steps you have added in Google Analytics.
 
 An example of this is as shown:
 
@@ -452,7 +453,7 @@ On the client-side tracking, the IP address of the HTTP request is sent automati
 
 ## UTM Parameters
 
-The UTM parameters need to be passed manually to the server. 
+The UTM parameters need to be passed manually to the server.
 
 UTM parameters are passed in the context object in `context.campaign`. `campaign.name` and `campaign.mediums` must be sent together to show up in the report. Also, `campaign.term` and `campaign.content` are optional.
 
@@ -462,12 +463,12 @@ There are some other important features associated with Google Analytics integra
 
 ### Named Tracker
 
-If you turn on the named tracker in RudderStack destination setting under the **Other Settings** option, Rudder will push the events to a GA tracker named as `rudderGATracker`  instead of the default tracker.  
+If you turn on the named tracker in RudderStack destination setting under the **Other Settings** option, Rudder will push the events to a GA tracker named as `rudderGATracker` instead of the default tracker.  
 For more information on creating trackers please follow:
 
 [https://developers.google.com/analytics/devguides/collection/analyticsjs/creating-trackers](https://developers.google.com/analytics/devguides/collection/analyticsjs/creating-trackers)
 
-If it is turned off default tracker which is internally given the name `t0` will be set. 
+If it is turned off default tracker which is internally given the name `t0` will be set.
 
 #### Multiple Trackers
 
@@ -478,22 +479,17 @@ An example of sending events to GA with another tracking id:
 ```javascript
 // without any tracker name
 window.rudderanalytics.ready(() => {
-      console.log("we are all set!!!");
-      window.ga('create', 'UA-XXXXXXX-1', 'auto');
-      window.ga('send', 'pageview');
-});
-      
+  console.log("we are all set!!!")
+  window.ga("create", "UA-XXXXXXX-1", "auto")
+  window.ga("send", "pageview")
+})
+
 // with a tracker name
 window.rudderanalytics.ready(() => {
-      console.log("we are all set!!!");
-      window.ga(
-            'create', 
-            'UA-XXXXXXX-1', 
-            'auto', 
-            { 'name': 'newTracker' }
-      );
-      window.ga('newTracker.send', 'pageview');
-});
+  console.log("we are all set!!!")
+  window.ga("create", "UA-XXXXXXX-1", "auto", { name: "newTracker" })
+  window.ga("newTracker.send", "pageview")
+})
 ```
 
 ### Anonymize IP Address
@@ -502,14 +498,14 @@ You can turn on **Anonymize IP Address** in the RudderStack destination settings
 
 ### Cookie Domain Name
 
-The default value of this is set to `auto` . However, you can change it in the destination settings. You can get more information on this feature by referring to  [Google documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/domains). 
+The default value of this is set to `auto` . However, you can change it in the destination settings. You can get more information on this feature by referring to [Google documentation](https://developers.google.com/analytics/devguides/collection/analyticsjs/domains).
 
 ### Cross-domain Tracking
 
 There are two ways to do this:
 
-* Tracking visitors with `userid`: If the **Send User ID** destination setting is enabled, it will be sent to identify the user, However, this only works for the identified users. Anonymous visitor sessions will not be maintained.
-* Tracking Anonymous Visitors: `allowLinker` is enabled automatically by RudderStack as Google Analytics provides an auto-linking plugin that allows you to track cookies and anonymous visitors when moving from one page to the other.
+- Tracking visitors with `userid`: If the **Send User ID** destination setting is enabled, it will be sent to identify the user, However, this only works for the identified users. Anonymous visitor sessions will not be maintained.
+- Tracking Anonymous Visitors: `allowLinker` is enabled automatically by RudderStack as Google Analytics provides an auto-linking plugin that allows you to track cookies and anonymous visitors when moving from one page to the other.
 
 ### Ignored Referrers
 
@@ -533,7 +529,7 @@ If the query is `abc.com/s=xyz`the setting should be as follows:
 
 ### Optimize
 
-Add your **Optimize Container ID** in destinations settings. 
+Add your **Optimize Container ID** in destinations settings.
 
 ### Content Groupings
 
@@ -542,8 +538,6 @@ You can set the content group mapping in the RudderStack dashboard and Google An
 ![Content Group Mapping in RudderStack](../../.gitbook/assets/image%20%2867%29.png)
 
 ![Content Grouping Settings in Google Analytics](../../.gitbook/assets/image%20%2826%29.png)
-
-
 
 When you use `rudderanalytics.page(name, properties)` with the custom properties, RudderStack will use the value of the property you designate as the value of the specified content grouping.
 
@@ -559,7 +553,7 @@ This feature specifies what percentage of users should be tracked. The default v
 
 This feature defines the sample size for Site Speed data collection. The default value is set to 1.
 
-### Server-side Identification 
+### Server-side Identification
 
 If enabled, the `identify` calls will be made only from the server-side.
 
@@ -611,20 +605,17 @@ Yes, you can. Please check the Real-time reports in Google Analytics. A sample d
 
 Please adjust the Google Analytics' default reporting time frame from a month ago to **the required date**, in order to view the processed events of that day.
 
-
-
 ![Changing the website URL from HTTP to HTTPS](../../.gitbook/assets/faq1.png)
 
 ### Why are my page views in Google Analytics different when sent from device mode as against the cloud mode?
 
 There could be 2 reasons for this:
 
-* There can be ad blockers enabled in the user's browser while visiting your site. This blocks the Google Analytics requests from being sent directly from the browser.
-* For the cloud mode, RudderStack is not blocked by ad blockers presently. If the events are sent to Google Analytics via the cloud mode, the actual number of events intended to be sent to Google Analytics are forwarded by the RudderStack server. So, the number of requests from the native mode or device mode is expected to be lower than cloud mode.
+- There can be ad blockers enabled in the user's browser while visiting your site. This blocks the Google Analytics requests from being sent directly from the browser.
+- For the cloud mode, RudderStack is not blocked by ad blockers presently. If the events are sent to Google Analytics via the cloud mode, the actual number of events intended to be sent to Google Analytics are forwarded by the RudderStack server. So, the number of requests from the native mode or device mode is expected to be lower than cloud mode.
 
 The RudderStack JavaScript SDK provides a way of detecting how many page view requests are potentially being blocked by the ad blockers throughout your site pages. Please check the section on [Detecting Ad-blocked Pages](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#detecting-ad-blocked-pages) for more information.
 
 ## Contact Us
 
 If you come across any issues while configuring Google Analytics with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

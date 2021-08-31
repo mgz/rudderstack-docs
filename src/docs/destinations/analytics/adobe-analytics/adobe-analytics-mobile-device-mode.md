@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/adobe-analytics/mobile-device-mode"
+title: "Mobile Device Mode Settings - RudderStack"
 description: >-
   Detailed technical documentation on the mobile device mode settings for Adobe
   Analytics destination.
@@ -14,12 +16,12 @@ Mobile [**device mode**](https://docs.rudderstack.com/connections/rudderstack-co
 
 To configure Adobe Analytics via the mobile device mode, follow these steps:
 
-* Click on the **Manage Apps** option on the left nav bar on your [**Adobe Mobile Services**](https://mobilemarketing.adobe.com/) dashboard. 
-* **Add** your app or click on an existing app and configure the required settings under the **Manage App Settings** tab, as shown:
+- Click on the **Manage Apps** option on the left nav bar on your [**Adobe Mobile Services**](https://mobilemarketing.adobe.com/) dashboard.
+- **Add** your app or click on an existing app and configure the required settings under the **Manage App Settings** tab, as shown:
 
 ![](https://user-images.githubusercontent.com/59817155/124233542-92a2fb80-db30-11eb-8722-c91a07cfa7ab.png)
 
-* Click on the **Config File** option present at the bottom of the same page, as shown:
+- Click on the **Config File** option present at the bottom of the same page, as shown:
 
 ![](https://user-images.githubusercontent.com/59817155/124233808-db5ab480-db30-11eb-900f-75a3aa9a5367.png)
 
@@ -33,9 +35,9 @@ Then, follow the instructions in the [**Adobe documentation**](https://experienc
 
 For iOS, drag and drop the `ADBMobileConfig.json` under the `Pods` section in the `Project Navigator`and verify the following:
 
-* The `Copy items if needed` checkbox is selected.
-* `Create groups` is selected.
-* None of the checkboxes in the `Add to targets` section is selected.
+- The `Copy items if needed` checkbox is selected.
+- `Create groups` is selected.
+- None of the checkboxes in the `Add to targets` section is selected.
 
 In the File Inspector, add the JSON file to the `AdobeMobileSDK` target.
 
@@ -47,20 +49,20 @@ Then, follow the instructions in the [**Adobe documentation**](https://experienc
 {% tab title="iOS" %}
 Follow these steps to add Adobe Analytics to your iOS project:
 
-* In your `Podfile`, add the `Rudder-Adobe` extension:
+- In your `Podfile`, add the `Rudder-Adobe` extension:
 
 ```ruby
 pod 'Rudder-Adobe'
 ```
 
-* After adding the dependency followed by `pod install` , add the imports to your `AppDelegate.m` file as shown:
+- After adding the dependency followed by `pod install` , add the imports to your `AppDelegate.m` file as shown:
 
 ```objectivec
 #import <Rudder/Rudder.h>
 #import <RudderAdobeFactory.h>
 ```
 
-* Then, add the initialization of your `RSClient` as shown:
+- Then, add the initialization of your `RSClient` as shown:
 
 ```objectivec
 RSConfigBuilder *configBuilder = [[RSConfigBuilder alloc] init];
@@ -68,12 +70,13 @@ RSConfigBuilder *configBuilder = [[RSConfigBuilder alloc] init];
 [configBuilder withFactory:[RudderAdobeFactory instance]];
 [RSClient getInstance:<YOUR_WRITE_KEY> config:[configBuilder build]];
 ```
+
 {% endtab %}
 
 {% tab title="Android" %}
 To add Adobe Analytics to your Android project, follow these steps :
 
-* Open your `app/build.gradle` file and add the following under the `dependencies` section :
+- Open your `app/build.gradle` file and add the following under the `dependencies` section :
 
 ```groovy
 implementation 'com.rudderstack.android.sdk:core:1.+'
@@ -84,7 +87,7 @@ implementation 'com.rudderstack.android.integration:adobe:1.0.0'
 implementation 'com.adobe.mobile:adobeMobileLibrary:4.18.2'
 ```
 
-* Initialize the RudderStack SDK in the `Application` class'  `onCreate()` method as shown:
+- Initialize the RudderStack SDK in the `Application` class' `onCreate()` method as shown:
 
 ```kotlin
 // initializing Rudder SDK
@@ -98,12 +101,13 @@ val rudderClient = RudderClient.getInstance(
 )
 ```
 
-* For Android, make sure you add these permissions to your `AndroidManifest.xml`:
+- For Android, make sure you add these permissions to your `AndroidManifest.xml`:
 
 ```groovy
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -111,10 +115,10 @@ val rudderClient = RudderClient.getInstance(
 
 Configure the following settings in the RudderStack dashboard to use the mobile device mode:
 
-* Set the **Heartbeat Tracking Server URL** and it should be in the format of `[your_namespace].hb.omtrdc.net`.
-* Toggle **Check for Heartbeat calls to be made over HTTPS** to enable or disable the SSL mode.
-* Enter **Prefix to add before all contextData property** to append a prefix before a custom property.
-* Select **Product Identifier** to look for `Product Id`. By default, it is set to `Product Name`.
+- Set the **Heartbeat Tracking Server URL** and it should be in the format of `[your_namespace].hb.omtrdc.net`.
+- Toggle **Check for Heartbeat calls to be made over HTTPS** to enable or disable the SSL mode.
+- Enter **Prefix to add before all contextData property** to append a prefix before a custom property.
+- Select **Product Identifier** to look for `Product Id`. By default, it is set to `Product Name`.
 
 ## Sending Events
 
@@ -136,15 +140,19 @@ A sample `identify` call looks like the following:
 
 {% tabs %}
 {% tab title="iOS" %}
+
 ```objectivec
 [[RSClient sharedInstance] identify:@"Adobe_iOS_user"];
 ```
+
 {% endtab %}
 
 {% tab title="Android" %}
+
 ```java
 MainApplication.rudderClient.identify("AdobeUser");
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -156,6 +164,7 @@ A sample `track` call is as shown:
 
 {% tabs %}
 {% tab title="iOS" %}
+
 ```objectivec
 [[RSClient sharedInstance] track:@"Order Completed" properties:@{
         @"orderId" : @2002,
@@ -166,9 +175,11 @@ A sample `track` call is as shown:
         @"quantity" : @12
     }];
 ```
+
 {% endtab %}
 
 {% tab title="Android" %}
+
 ```java
 MainApplication.rudderClient.track("Order Completed",
             RudderProperty()
@@ -180,6 +191,7 @@ MainApplication.rudderClient.track("Order Completed",
                 .putValue("promotion_id", "PROMO_1234")
         );
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -191,21 +203,25 @@ A sample `screen` call looks like the following:
 
 {% tabs %}
 {% tab title="iOS" %}
+
 ```objectivec
 [[RSClient sharedInstance] track:@"Home Screen"
                               properties:@{
                                   @"Width" : @"13"
                               }];
 ```
+
 {% endtab %}
 
 {% tab title="Android" %}
+
 ```java
 MainApplication.rudderClient.screen("Home Screen",
             RudderProperty()
                 .putValue("Width",12)
         )
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -221,15 +237,19 @@ A sample `reset` call is as shown:
 
 {% tabs %}
 {% tab title="iOS" %}
+
 ```objectivec
 [[RSClient sharedInstance] reset];
 ```
+
 {% endtab %}
 
 {% tab title="Android" %}
+
 ```java
 MainApplication.rudderClient.reset()
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -250,4 +270,3 @@ The `flush` call is supported only in Android.
 ## Contact Us
 
 For more information on any of the sections mentioned in this guide, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

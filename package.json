@@ -40,6 +40,7 @@
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-source-sanity": "^7.0.4",
     "gatsby-source-sanity-transform-images": "0.0.7",
+    "gatsby-theme-apollo-docs": "^4.7.16",
     "gatsby-transformer-remark": "^4.9.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "get-youtube-id": "^1.0.1",

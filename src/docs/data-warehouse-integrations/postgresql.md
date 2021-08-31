@@ -1,4 +1,6 @@
 ---
+slug: "/docs/data-warehouse-integrations/postgresql"
+title: "PostgreSQL - RudderStack"
 description: Step-by-step guide to set up PostgreSQL as a destination in RudderStack
 ---
 
@@ -38,7 +40,7 @@ If you don't grant the `CREATE, TEMPORARY` privileges the events don't get expor
 You will need to whitelist the RudderStack IPs to enable network access to it.
 
 {% hint style="info" %}
-**The IPs to be whitelisted are : `3.216.35.97`, `34.198.90.241` , `54.147.40.62`** , **`23.20.96.9`,** and  **`18.214.35.254`**.
+**The IPs to be whitelisted are : `3.216.35.97`, `34.198.90.241` , `54.147.40.62`** , **`23.20.96.9`,** and **`18.214.35.254`**.
 {% endhint %}
 
 ## Configuring PostgreSQL in RudderStack
@@ -47,37 +49,37 @@ In order to enable dumping data to PostgreSQL, you will first need to add it as 
 
 To configure PostgreSQL as a destination, please follow these steps:
 
-* Choose a source to which you would like to add PostgreSQL as a destination. You can also simply create a destination and connect it to a source later.
+- Choose a source to which you would like to add PostgreSQL as a destination. You can also simply create a destination and connect it to a source later.
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
 {% endhint %}
 
-* After choosing a source, select **PostgreSQL** from the list of destinations.
-* Give your destination a name and then click on **Next**. You should then see the following screen:
+- After choosing a source, select **PostgreSQL** from the list of destinations.
+- Give your destination a name and then click on **Next**. You should then see the following screen:
 
 ![PostgreSQL Destination Settings on the RudderStack dashboard](../.gitbook/assets/image%20%2869%29.png)
 
-* Add the required credentials in the **Connection Settings** as mentioned below:
-  * **Host -** The host name of your PostgreSQL service.
-  * **Database -** The database name in your PostgreSQL instance where the data gets loaded.
-  * **User** - The username which has the required read/write access to the above database.
-  * **Password** - The password for the above user.
-  * **SSL Mode** - SSL modes for connecting to your PostgreSQL instance.
-  * **Bucket Provider** - Intermediate storage for storing staging files. Currently we support S3, MinIO, Google Cloud Storage, and Azure Blob Storage.
+- Add the required credentials in the **Connection Settings** as mentioned below:
+  - **Host -** The host name of your PostgreSQL service.
+  - **Database -** The database name in your PostgreSQL instance where the data gets loaded.
+  - **User** - The username which has the required read/write access to the above database.
+  - **Password** - The password for the above user.
+  - **SSL Mode** - SSL modes for connecting to your PostgreSQL instance.
+  - **Bucket Provider** - Intermediate storage for storing staging files. Currently we support S3, MinIO, Google Cloud Storage, and Azure Blob Storage.
 
 ## FAQs
 
 ### I am using Rudderstack to mirror my source tables to PostgreSQL. I have all of the data in the S3 staging folders. But RudderStack doesn't create the corresponding PostgreSQL tables when I press on 'sync'. What do I do?
 
-* Firstly, check the status of the sync in the [**RudderStack dashboard**](https://app.rudderstack.com/syncs).
-* Make sure you have set up the [**required user permissions**](https://docs.rudderstack.com/data-warehouse-integrations/postgresql#setting-postgresql-user-permissions) ****for PostgreSQL.
-* Check if the database is accessible by whitelisting all the RudderStack IPs listed [**here**](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-faqs#which-ips-should-be-whitelisted).
-* Ensure that all the security group policies for S3 are set as specified [**here**](https://docs.rudderstack.com/destinations/storage-platforms/amazon-s3#permissions).
+- Firstly, check the status of the sync in the [**RudderStack dashboard**](https://app.rudderstack.com/syncs).
+- Make sure you have set up the [**required user permissions**](https://docs.rudderstack.com/data-warehouse-integrations/postgresql#setting-postgresql-user-permissions) \*\*\*\*for PostgreSQL.
+- Check if the database is accessible by whitelisting all the RudderStack IPs listed [**here**](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-faqs#which-ips-should-be-whitelisted).
+- Ensure that all the security group policies for S3 are set as specified [**here**](https://docs.rudderstack.com/destinations/storage-platforms/amazon-s3#permissions).
 
 ### **How are reserved words handled by RudderStack?**
 
-There are some limitations when it comes to using [reserved words](https://www.postgresql.org/docs/current/sql-keywords-appendix.html) in a schema, table, or column names. If such words are used as event names, traits or properties, they will be prefixed with a `_` when  RudderStack creates tables or columns for them in your schema.
+There are some limitations when it comes to using [reserved words](https://www.postgresql.org/docs/current/sql-keywords-appendix.html) in a schema, table, or column names. If such words are used as event names, traits or properties, they will be prefixed with a `_` when RudderStack creates tables or columns for them in your schema.
 
 Also, it is important to note that integers are not allowed at the start of the schema or table name. Hence, RudderStack prefixes such schema, column or table names with a `_`.
 
@@ -90,4 +92,3 @@ RudderStack converts the event keys into lower case before exporting the data in
 ## Contact Us
 
 If you come across any issues while configuring PostgreSQL with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com) or start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel. We will be happy to help you.
-

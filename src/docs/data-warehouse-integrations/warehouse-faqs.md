@@ -1,4 +1,6 @@
 ---
+slug: "/docs/data-warehouse-integrations/warehouse-faqs"
+title: "Warehouse FAQ - RudderStack"
 description: >-
   Solutions to the generally asked questions related to the RudderStack data
   warehouse integrations
@@ -6,7 +8,7 @@ description: >-
 
 # Warehouse FAQs
 
-### When does Rudderstack load data into the data warehouse/s? 
+### When does Rudderstack load data into the data warehouse/s?
 
 Rudderstack gives you the flexibility to choose when to sync the latest data into the warehouse. The default option is 30 minutes, but you can choose to extend this value to go up to 24 hours. You can also configure the time at which the data is to be loaded.
 
@@ -27,7 +29,7 @@ The warehouse upload status can be viewed in Live Events section of the destinat
 
 ### How can I change the schema and the namespace name of my data warehouse?
 
-The default namespace will be the source name with some modifications to the name. However, RudderStack also provides an option in the dashboard to change the namespace of the dataset. 
+The default namespace will be the source name with some modifications to the name. However, RudderStack also provides an option in the dashboard to change the namespace of the dataset.
 
 Please refer to the warehouse-specific destination settings for configuring the namespace in the RudderStack UI.
 
@@ -49,11 +51,11 @@ RudderStack will load all events into staging buckets that are configured with y
 
 If you are using the hosted RudderStack service, the following IPs need to be whitelisted in your destination's security configuration:
 
-* **`3.216.35.97`**
-* **`34.198.90.241`**
-* **`54.147.40.62`**
-* **`23.20.96.9`**
-* **`18.214.35.254`**
+- **`3.216.35.97`**
+- **`34.198.90.241`**
+- **`54.147.40.62`**
+- **`23.20.96.9`**
+- **`18.214.35.254`**
 
 ### How can I speed-up my warehouse uploads
 
@@ -119,5 +121,4 @@ If you are using the hosted RudderStack service, the following IPs need to be wh
 
 ## Contact Us
 
-In case you have any other queries related to using the RudderStack data warehouse integrations, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also join our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel and start a conversation with us any time. We will be happy to help you. 
-
+In case you have any other queries related to using the RudderStack data warehouse integrations, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also join our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel and start a conversation with us any time. We will be happy to help you.

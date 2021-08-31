@@ -1,12 +1,14 @@
 ---
+slug: "/docs/data-warehouse-integrations/identity-resolution-in-rudderstack"
+title: "Identity Resolution - RudderStack"
 description: Technical description of the Identity Resolution feature in RudderStack
 ---
 
 # Identity Resolution
 
-Understanding your users is crucial to every behavioral analysis. Hence, it is quite essential to tie the events or activities to the individual users generating those events. 
+Understanding your users is crucial to every behavioral analysis. Hence, it is quite essential to tie the events or activities to the individual users generating those events.
 
-There are various analytics platforms that help you collect this event data. Unfortunately, this is not trivial in a world where users often browse anonymously, or use multiple identities \(e.g., email ID, phone, etc.\) with the same product, or access your app/website from different devices and channels. 
+There are various analytics platforms that help you collect this event data. Unfortunately, this is not trivial in a world where users often browse anonymously, or use multiple identities \(e.g., email ID, phone, etc.\) with the same product, or access your app/website from different devices and channels.
 
 With Identity Resolution, you can tie these different identities together whenever required, in a way that preserves your users' privacy.
 
@@ -18,7 +20,7 @@ Identity Resolution is available as a part of RudderStack's Enterprise plan.
 
 ## Identity Resolution Explained
 
-In this section, we walk you through a user's journey - Alice, in this case - in the context of an e-commerce company using RudderStack. 
+In this section, we walk you through a user's journey - Alice, in this case - in the context of an e-commerce company using RudderStack.
 
 After integrating RudderStack, you can collect events from sources to build a profile for every user. All this is done on top of your data warehouse without sharing the data with a third-party vendor.
 
@@ -30,7 +32,7 @@ Later, she signs up on the website with her email, verifies her mobile number an
 
 ![](../.gitbook/assets/image%20%2893%29.png)
 
-Alice then reports an issue via her phone and a ticket for the same is created using Zendesk. This ticket confirmation email is sent to Alice using CustomerIO. 
+Alice then reports an issue via her phone and a ticket for the same is created using Zendesk. This ticket confirmation email is sent to Alice using CustomerIO.
 
 This data can be collected using the RudderStack cloud sources, as shown:
 
@@ -132,4 +134,3 @@ WHERE
 ## Contact Us
 
 For more information on identity mapping and how we have implemented it at RudderStack, feel free to [contact us](mailto:%20docs@rudderstack.com). You can also contact us on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel, and we will be happy to help you!
-

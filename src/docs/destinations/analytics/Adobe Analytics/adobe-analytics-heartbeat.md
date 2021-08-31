@@ -17,10 +17,9 @@ For sending the heartbeat events to Adobe Analytics, you will need the Heartbeat
 The [RudderStack dashboard settings](https://docs.rudderstack.com/destinations/analytics/adobe-analytics/adobe-analytics-rudder-dashboard-settings) also has a toggle for SSL which, if enabled, will send the Heartbeat Tracking URL in the HTTPS mode.
 {% endhint %}
 
-
 ## Playback Head
 
-For sending video heartbeat events to Adobe Analytics through RudderStack's Web (JavaScript) SDK, Adobe's Media Heartbeat SDK needs a playhead update at least once every second for the main content. The video/ad start and heartbeat update playhead type of events update this playhead using the `position` property. 
+For sending video heartbeat events to Adobe Analytics through RudderStack's Web (JavaScript) SDK, Adobe's Media Heartbeat SDK needs a playhead update at least once every second for the main content. The video/ad start and heartbeat update playhead type of events update this playhead using the `position` property.
 
 To stop triggering this event for every second, the playhead to the window needs to be set. This can be done by setting `window.rudderHBPlayheads` to the key-value pair of the current content’s `session_id` and `position` as shown:
 
@@ -33,65 +32,58 @@ window.rudderHBPlayheads = {
 RudderStack sends the Adobe heartbeat events as per the following categories:
 
 ## Initialize Heartbeat
-    
+
 - Adobe Analytics Method Triggered: `trackSessionStart`
-      
 - Description: This is used for initializing all the heartbeat calls. The Context Data is set as mapped in the settings.
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `channel` | Needs to be set for media heartbeat property channel or an empty string will be sent. | - |
-| `video_player`  | Needs to be set for media heartbeat property playerName or "unknown" will be sent. | - |
-| `session_id` | To check if present in `window.rudderHBPlayheads`| "default" |
-| `bitrate` | Sent for creating `QoSObject`.| 0 |
-| `startupTime` | Sent for creating `QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-| `livestream` | Sent for creating `MediaObject` | - |
-| `title` | Sent for creating `MediaObject`.| "no title" |
-| `asset_id` | Sent for creating `MediaObject`.| "default ad" |
-| `total_length` | Sent for creating `MediaObject`.| 0 |
-
+| RudderStack property | Description                                                                           | Default Value |
+| :------------------- | :------------------------------------------------------------------------------------ | :------------ |
+| `channel`            | Needs to be set for media heartbeat property channel or an empty string will be sent. | -             |
+| `video_player`       | Needs to be set for media heartbeat property playerName or "unknown" will be sent.    | -             |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`                                     | "default"     |
+| `bitrate`            | Sent for creating `QoSObject`.                                                        | 0             |
+| `startupTime`        | Sent for creating `QoSObject`.                                                        | 0             |
+| `fps`                | Sent for creating `QoSObject` .                                                       | 0             |
+| `droppedFrames`      | Sent for creating `QoSObject`.                                                        | 0             |
+| `livestream`         | Sent for creating `MediaObject`                                                       | -             |
+| `title`              | Sent for creating `MediaObject`.                                                      | "no title"    |
+| `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
+| `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
 
-
-   
 ## Heartbeat Video Start
 
 - Adobe Analytics Method Triggered: `trackSessionStart`, `trackPlay`, `trackEvent(ChapterStart)`
-      
 - Description: This is used when a video is started. The Context Data is set as mapped in settings.
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `channel` | Needs to be set for media heartbeat property channel or an empty string will be sent. | - |
-| `video_player`  | Needs to be set for media heartbeat property playerName or "unknown" will be sent. | - |
-| `session_id` | To check if present in `window.rudderHBPlayheads`| "default" |
-| `bitrate` | Sent for creating `QoSObject`.| 0 |
-| `startupTime` | Sent for creating `QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-| `livestream` | Sent for creating `MediaObject` | - |
-| `title` | Sent for creating `MediaObject`.| "no title" |
-| `asset_id` | Sent for creating `MediaObject`.| "default ad" |
-| `total_length` | Sent for creating `MediaObject`.| 0 |
-| `chapter_name` | Sent for creating `createChapterObject`. | "no chapter name" |
-| `position`  | Sent for creating `createChapterObject`.| 1 |
-| `length` | Sent for creating `createChapterObject`. | 6000 |
-| `start_time` | Sent for creating `createChapterObject`. | 0 |
+| RudderStack property | Description                                                                           | Default Value     |
+| :------------------- | :------------------------------------------------------------------------------------ | :---------------- |
+| `channel`            | Needs to be set for media heartbeat property channel or an empty string will be sent. | -                 |
+| `video_player`       | Needs to be set for media heartbeat property playerName or "unknown" will be sent.    | -                 |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`                                     | "default"         |
+| `bitrate`            | Sent for creating `QoSObject`.                                                        | 0                 |
+| `startupTime`        | Sent for creating `QoSObject`.                                                        | 0                 |
+| `fps`                | Sent for creating `QoSObject` .                                                       | 0                 |
+| `droppedFrames`      | Sent for creating `QoSObject`.                                                        | 0                 |
+| `livestream`         | Sent for creating `MediaObject`                                                       | -                 |
+| `title`              | Sent for creating `MediaObject`.                                                      | "no title"        |
+| `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"      |
+| `total_length`       | Sent for creating `MediaObject`.                                                      | 0                 |
+| `chapter_name`       | Sent for creating `createChapterObject`.                                              | "no chapter name" |
+| `position`           | Sent for creating `createChapterObject`.                                              | 1                 |
+| `length`             | Sent for creating `createChapterObject`.                                              | 6000              |
+| `start_time`         | Sent for creating `createChapterObject`.                                              | 0                 |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
-
-
 
 ## Heartbeat Video Paused
 
@@ -101,25 +93,23 @@ The properties mapped in the **Standard Video Metadata** section below will also
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `channel` | Needs to be set for media heartbeat property channel or an empty string will be sent. | - |
-| `video_player`  | Needs to be set for media heartbeat property playerName or "unknown" will be sent. | - |
-| `session_id` | To check if present in `window.rudderHBPlayheads`| "default" |
-| `bitrate` | Sent for creating `QoSObject`.| 0 |
-| `startupTime` | Sent for creating `QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-| `livestream` | Sent for creating `MediaObject` | - |
-| `title` | Sent for creating `MediaObject`.| "no title" |
-| `asset_id` | Sent for creating `MediaObject`.| "default ad" |
-| `total_length` | Sent for creating `MediaObject`.| 0 |
-
+| RudderStack property | Description                                                                           | Default Value |
+| :------------------- | :------------------------------------------------------------------------------------ | :------------ |
+| `channel`            | Needs to be set for media heartbeat property channel or an empty string will be sent. | -             |
+| `video_player`       | Needs to be set for media heartbeat property playerName or "unknown" will be sent.    | -             |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`                                     | "default"     |
+| `bitrate`            | Sent for creating `QoSObject`.                                                        | 0             |
+| `startupTime`        | Sent for creating `QoSObject`.                                                        | 0             |
+| `fps`                | Sent for creating `QoSObject` .                                                       | 0             |
+| `droppedFrames`      | Sent for creating `QoSObject`.                                                        | 0             |
+| `livestream`         | Sent for creating `MediaObject`                                                       | -             |
+| `title`              | Sent for creating `MediaObject`.                                                      | "no title"    |
+| `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
+| `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
-
 
 ## Heartbeat Video Complete
 
@@ -129,25 +119,23 @@ The properties mapped in the **Standard Video Metadata** section below will also
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `channel` | Needs to be set for media heartbeat property channel or an empty string will be sent. | - |
-| `video_player`  | Needs to be set for media heartbeat property playerName or "unknown" will be sent. | - |
-| `session_id` | To check if present in `window.rudderHBPlayheads`| "default" |
-| `bitrate` | Sent for creating `QoSObject`.| 0 |
-| `startupTime` | Sent for creating `QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-| `livestream` | Sent for creating `MediaObject` | - |
-| `title` | Sent for creating `MediaObject`.| "no title" |
-| `asset_id` | Sent for creating `MediaObject`.| "default ad" |
-| `total_length` | Sent for creating `MediaObject`.| 0 |
-
+| RudderStack property | Description                                                                           | Default Value |
+| :------------------- | :------------------------------------------------------------------------------------ | :------------ |
+| `channel`            | Needs to be set for media heartbeat property channel or an empty string will be sent. | -             |
+| `video_player`       | Needs to be set for media heartbeat property playerName or "unknown" will be sent.    | -             |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`                                     | "default"     |
+| `bitrate`            | Sent for creating `QoSObject`.                                                        | 0             |
+| `startupTime`        | Sent for creating `QoSObject`.                                                        | 0             |
+| `fps`                | Sent for creating `QoSObject` .                                                       | 0             |
+| `droppedFrames`      | Sent for creating `QoSObject`.                                                        | 0             |
+| `livestream`         | Sent for creating `MediaObject`                                                       | -             |
+| `title`              | Sent for creating `MediaObject`.                                                      | "no title"    |
+| `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
+| `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
-
 
 ## Heartbeat Session End
 
@@ -157,25 +145,23 @@ The properties mapped in the **Standard Video Metadata** section below will also
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `channel` | Needs to be set for media heartbeat property channel or an empty string will be sent. | - |
-| `video_player`  | Needs to be set for media heartbeat property playerName or "unknown" will be sent. | - |
-| `session_id` | To check if present in `window.rudderHBPlayheads`| "default" |
-| `bitrate` | Sent for creating `QoSObject`.| 0 |
-| `startupTime` | Sent for creating `QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-| `livestream` | Sent for creating `MediaObject` | - |
-| `title` | Sent for creating `MediaObject`.| "no title" |
-| `asset_id` | Sent for creating `MediaObject`.| "default ad" |
-| `total_length` | Sent for creating `MediaObject`.| 0 |
-
+| RudderStack property | Description                                                                           | Default Value |
+| :------------------- | :------------------------------------------------------------------------------------ | :------------ |
+| `channel`            | Needs to be set for media heartbeat property channel or an empty string will be sent. | -             |
+| `video_player`       | Needs to be set for media heartbeat property playerName or "unknown" will be sent.    | -             |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`                                     | "default"     |
+| `bitrate`            | Sent for creating `QoSObject`.                                                        | 0             |
+| `startupTime`        | Sent for creating `QoSObject`.                                                        | 0             |
+| `fps`                | Sent for creating `QoSObject` .                                                       | 0             |
+| `droppedFrames`      | Sent for creating `QoSObject`.                                                        | 0             |
+| `livestream`         | Sent for creating `MediaObject`                                                       | -             |
+| `title`              | Sent for creating `MediaObject`.                                                      | "no title"    |
+| `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
+| `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
-
 
 ## Heartbeat Ad Started
 
@@ -185,70 +171,64 @@ The properties mapped in the **Standard Video Metadata** section below will also
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `session_id` | To check if present in `window.rudderHBPlayheads`. | "default" |
-| `title` | Sent for creating `AdObject` and `AdBreakObject`. | "no title" |
-| `asset_id` | Sent for creating `AdObject`. | "default ad" |
-| `position` | Sent for creating `AdObject` and `AdBreakObject`. | 1 |
-| `total_length` | Sent for creating `MediaObject`. | 0 |
-| `type` | Sent for creating `AdBreakObject`. | "unknown" |
-| `start_time` | Sent for creating `AdBreakObject`. | 0 |
-| `content` | Sent for `trackEvent`. | empty JSON |
-
+| RudderStack property | Description                                        | Default Value |
+| :------------------- | :------------------------------------------------- | :------------ |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`. | "default"     |
+| `title`              | Sent for creating `AdObject` and `AdBreakObject`.  | "no title"    |
+| `asset_id`           | Sent for creating `AdObject`.                      | "default ad"  |
+| `position`           | Sent for creating `AdObject` and `AdBreakObject`.  | 1             |
+| `total_length`       | Sent for creating `MediaObject`.                   | 0             |
+| `type`               | Sent for creating `AdBreakObject`.                 | "unknown"     |
+| `start_time`         | Sent for creating `AdBreakObject`.                 | 0             |
+| `content`            | Sent for `trackEvent`.                             | empty JSON    |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
 
-
 ## Heartbeat Ad Completed
 
-- Adobe Analytics Method Triggered: `trackEvent(AdComplete)`, `trackEvent(AdBreakComplete)`. If an ad break is in progress, then `trackEvent(AdBreakStart)` and  `trackEvent(AdStart)` are also triggered.
+- Adobe Analytics Method Triggered: `trackEvent(AdComplete)`, `trackEvent(AdBreakComplete)`. If an ad break is in progress, then `trackEvent(AdBreakStart)` and `trackEvent(AdStart)` are also triggered.
 
 - Description: This is used when an ad is completed. The Context Data is set as mapped in the settings.
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `session_id` | To check if present in `window.rudderHBPlayheads`. | "default" |
-| `title` | Sent for creating `AdObject`. | "no title" |
-| `asset_id` | Sent for creating `AdObject`. | "default ad" |
-| `position` | Sent for creating `AdObject` and `AdBreakObject`. | 1 |
-| `total_length` | Sent for creating `MediaObject`. | 0 |
-| `type` | Sent for creating `AdBreakObject`. | "unknown" |
-| `content` | Sent for `trackEvent`. | empty JSON |
-
+| RudderStack property | Description                                        | Default Value |
+| :------------------- | :------------------------------------------------- | :------------ |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`. | "default"     |
+| `title`              | Sent for creating `AdObject`.                      | "no title"    |
+| `asset_id`           | Sent for creating `AdObject`.                      | "default ad"  |
+| `position`           | Sent for creating `AdObject` and `AdBreakObject`.  | 1             |
+| `total_length`       | Sent for creating `MediaObject`.                   | 0             |
+| `type`               | Sent for creating `AdBreakObject`.                 | "unknown"     |
+| `content`            | Sent for `trackEvent`.                             | empty JSON    |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
 
-
 ## Heartbeat Ad Skipped
 
-- Adobe Analytics Method Triggered: `trackEvent(AdSkip)`, `trackEvent(AdBreakComplete)`. If an ad break is in progress, then `trackEvent(AdBreakStart)` and  `trackEvent(AdStart)` are also triggered.
+- Adobe Analytics Method Triggered: `trackEvent(AdSkip)`, `trackEvent(AdBreakComplete)`. If an ad break is in progress, then `trackEvent(AdBreakStart)` and `trackEvent(AdStart)` are also triggered.
 
 - Description: This is used when an ad is skipped. The Context Data is set as mapped in the settings.
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `session_id` | To check if present in `window.rudderHBPlayheads`. | "default" |
-| `title` | Sent for creating `AdObject`. | "no title" |
-| `asset_id` | Sent for creating `AdObject`. | "default ad" |
-| `position` | Sent for creating `AdObject` and `AdBreakObject`. | 1 |
-| `total_length` | Sent for creating `MediaObject`. | 0 |
-| `type` | Sent for creating `AdBreakObject`. | "unknown" |
-| `content` | Sent for `trackEvent`. | empty JSON |
-
+| RudderStack property | Description                                        | Default Value |
+| :------------------- | :------------------------------------------------- | :------------ |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`. | "default"     |
+| `title`              | Sent for creating `AdObject`.                      | "no title"    |
+| `asset_id`           | Sent for creating `AdObject`.                      | "default ad"  |
+| `position`           | Sent for creating `AdObject` and `AdBreakObject`.  | 1             |
+| `total_length`       | Sent for creating `MediaObject`.                   | 0             |
+| `type`               | Sent for creating `AdBreakObject`.                 | "unknown"     |
+| `content`            | Sent for `trackEvent`.                             | empty JSON    |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
-
 
 ## Heartbeat Seek Started
 
@@ -258,26 +238,23 @@ The properties mapped in the **Standard Video Metadata** section below will also
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `channel` | Needs to be set for media heartbeat property channel or an empty string will be sent. | - |
-| `video_player`  | Needs to be set for media heartbeat property playerName or "unknown" will be sent. | - |
-| `session_id` | To check if present in `window.rudderHBPlayheads`| "default" |
-| `bitrate` | Sent for creating `QoSObject`.| 0 |
-| `startupTime` | Sent for creating `QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-| `livestream` | Sent for creating `MediaObject` | - |
-| `title` | Sent for creating `MediaObject`.| "no title" |
-| `asset_id` | Sent for creating `MediaObject`.| "default ad" |
-| `total_length` | Sent for creating `MediaObject`.| 0 |
-
+| RudderStack property | Description                                                                           | Default Value |
+| :------------------- | :------------------------------------------------------------------------------------ | :------------ |
+| `channel`            | Needs to be set for media heartbeat property channel or an empty string will be sent. | -             |
+| `video_player`       | Needs to be set for media heartbeat property playerName or "unknown" will be sent.    | -             |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`                                     | "default"     |
+| `bitrate`            | Sent for creating `QoSObject`.                                                        | 0             |
+| `startupTime`        | Sent for creating `QoSObject`.                                                        | 0             |
+| `fps`                | Sent for creating `QoSObject` .                                                       | 0             |
+| `droppedFrames`      | Sent for creating `QoSObject`.                                                        | 0             |
+| `livestream`         | Sent for creating `MediaObject`                                                       | -             |
+| `title`              | Sent for creating `MediaObject`.                                                      | "no title"    |
+| `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
+| `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
-
-
 
 ## Heartbeat Seek Completed
 
@@ -287,25 +264,23 @@ The properties mapped in the **Standard Video Metadata** section below will also
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `channel` | Needs to be set for media heartbeat property channel or an empty string will be sent. | - |
-| `video_player`  | Needs to be set for media heartbeat property playerName or "unknown" will be sent. | - |
-| `session_id` | To check if present in `window.rudderHBPlayheads`| "default" |
-| `bitrate` | Sent for creating `QoSObject`.| 0 |
-| `startupTime` | Sent for creating `QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-| `livestream` | Sent for creating `MediaObject` | - |
-| `title` | Sent for creating `MediaObject`.| "no title" |
-| `asset_id` | Sent for creating `MediaObject`.| "default ad" |
-| `total_length` | Sent for creating `MediaObject`.| 0 |
-
+| RudderStack property | Description                                                                           | Default Value |
+| :------------------- | :------------------------------------------------------------------------------------ | :------------ |
+| `channel`            | Needs to be set for media heartbeat property channel or an empty string will be sent. | -             |
+| `video_player`       | Needs to be set for media heartbeat property playerName or "unknown" will be sent.    | -             |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`                                     | "default"     |
+| `bitrate`            | Sent for creating `QoSObject`.                                                        | 0             |
+| `startupTime`        | Sent for creating `QoSObject`.                                                        | 0             |
+| `fps`                | Sent for creating `QoSObject` .                                                       | 0             |
+| `droppedFrames`      | Sent for creating `QoSObject`.                                                        | 0             |
+| `livestream`         | Sent for creating `MediaObject`                                                       | -             |
+| `title`              | Sent for creating `MediaObject`.                                                      | "no title"    |
+| `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
+| `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
-
 
 ## Heartbeat Buffer Started
 
@@ -315,26 +290,23 @@ The properties mapped in the **Standard Video Metadata** section below will also
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `channel` | Needs to be set for media heartbeat property channel or an empty string will be sent. | - |
-| `video_player`  | Needs to be set for media heartbeat property playerName or "unknown" will be sent. | - |
-| `session_id` | To check if present in `window.rudderHBPlayheads`| "default" |
-| `bitrate` | Sent for creating `QoSObject`.| 0 |
-| `startupTime` | Sent for creating `QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-| `livestream` | Sent for creating `MediaObject` | - |
-| `title` | Sent for creating `MediaObject`.| "no title" |
-| `asset_id` | Sent for creating `MediaObject`.| "default ad" |
-| `total_length` | Sent for creating `MediaObject`.| 0 |
-
+| RudderStack property | Description                                                                           | Default Value |
+| :------------------- | :------------------------------------------------------------------------------------ | :------------ |
+| `channel`            | Needs to be set for media heartbeat property channel or an empty string will be sent. | -             |
+| `video_player`       | Needs to be set for media heartbeat property playerName or "unknown" will be sent.    | -             |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`                                     | "default"     |
+| `bitrate`            | Sent for creating `QoSObject`.                                                        | 0             |
+| `startupTime`        | Sent for creating `QoSObject`.                                                        | 0             |
+| `fps`                | Sent for creating `QoSObject` .                                                       | 0             |
+| `droppedFrames`      | Sent for creating `QoSObject`.                                                        | 0             |
+| `livestream`         | Sent for creating `MediaObject`                                                       | -             |
+| `title`              | Sent for creating `MediaObject`.                                                      | "no title"    |
+| `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
+| `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
-
-
 
 ## Heartbeat Buffer Completed
 
@@ -344,26 +316,23 @@ The properties mapped in the **Standard Video Metadata** section below will also
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `channel` | Needs to be set for media heartbeat property channel or an empty string will be sent. | - |
-| `video_player`  | Needs to be set for media heartbeat property playerName or "unknown" will be sent. | - |
-| `session_id` | To check if present in `window.rudderHBPlayheads`| "default" |
-| `bitrate` | Sent for creating `QoSObject`.| 0 |
-| `startupTime` | Sent for creating `QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-| `livestream` | Sent for creating `MediaObject` | - |
-| `title` | Sent for creating `MediaObject`.| "no title" |
-| `asset_id` | Sent for creating `MediaObject`.| "default ad" |
-| `total_length` | Sent for creating `MediaObject`.| 0 |
-
+| RudderStack property | Description                                                                           | Default Value |
+| :------------------- | :------------------------------------------------------------------------------------ | :------------ |
+| `channel`            | Needs to be set for media heartbeat property channel or an empty string will be sent. | -             |
+| `video_player`       | Needs to be set for media heartbeat property playerName or "unknown" will be sent.    | -             |
+| `session_id`         | To check if present in `window.rudderHBPlayheads`                                     | "default"     |
+| `bitrate`            | Sent for creating `QoSObject`.                                                        | 0             |
+| `startupTime`        | Sent for creating `QoSObject`.                                                        | 0             |
+| `fps`                | Sent for creating `QoSObject` .                                                       | 0             |
+| `droppedFrames`      | Sent for creating `QoSObject`.                                                        | 0             |
+| `livestream`         | Sent for creating `MediaObject`                                                       | -             |
+| `title`              | Sent for creating `MediaObject`.                                                      | "no title"    |
+| `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
+| `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
 {% hint style="info" %}
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 {% endhint %}
-
-
 
 ## Heartbeat Quality Updated
 
@@ -371,44 +340,42 @@ The properties mapped in the **Standard Video Metadata** section below will also
 
 - Properties used:
 
-| RudderStack property| Description | Default Value |
-| :--- | :--- | :--- |
-| `bitrate` | Sent for creating `QoSObject`. | 0|
-| `startupTime` | `Sent for creating QoSObject`.| 0 |
-| `fps` | Sent for creating `QoSObject` . | 0|
-| `droppedFrames` | Sent for creating `QoSObject`. | 0 |
-
+| RudderStack property | Description                     | Default Value |
+| :------------------- | :------------------------------ | :------------ |
+| `bitrate`            | Sent for creating `QoSObject`.  | 0             |
+| `startupTime`        | `Sent for creating QoSObject`.  | 0             |
+| `fps`                | Sent for creating `QoSObject` . | 0             |
+| `droppedFrames`      | Sent for creating `QoSObject`.  | 0             |
 
 ## Heartbeat Playhead Update
 
 - Description: This changes the playhead position. Initially, the playhead is set to 0. While initiliazing the heartbeat, it is set to the `position` value of that `session_id` in `window.rudderHBPlayheads`.
 
-
 ## Standard Video Metadata
 
 The following RudderStack properties must also be sent for mapping to the standard video metadata:
 
-| RudderStack property| Standard Video Adobe Metadata |
-| :--- | :--- |
-| `program` | `MediaHeartbeat.VideoMetadataKeys.SHOW` |
-| `season`  | `MediaHeartbeat.VideoMetadataKeys.SEASON`|
-| `episode` |`MediaHeartbeat.VideoMetadataKeys.EPISODE` |
-| `assetId` | `MediaHeartbeat.VideoMetadataKeys.ASSET_ID` |
-| `contentAssetId` | `MediaHeartbeat.VideoMetadataKeys.ASSET_ID` |
-| `genre` | `MediaHeartbeat.VideoMetadataKeys.GENRE` |
-| `airdate` | `MediaHeartbeat.VideoMetadataKeys.FIRST_AIR_DATE` |
-| `publisher` | `MediaHeartbeat.VideoMetadataKeys.ORIGINATOR` |
-| `channel`| `MediaHeartbeat.VideoMetadataKeys.NETWORK` |
-| `rating` | `MediaHeartbeat.VideoMetadataKeys.RATING` |
+| RudderStack property | Standard Video Adobe Metadata                     |
+| :------------------- | :------------------------------------------------ |
+| `program`            | `MediaHeartbeat.VideoMetadataKeys.SHOW`           |
+| `season`             | `MediaHeartbeat.VideoMetadataKeys.SEASON`         |
+| `episode`            | `MediaHeartbeat.VideoMetadataKeys.EPISODE`        |
+| `assetId`            | `MediaHeartbeat.VideoMetadataKeys.ASSET_ID`       |
+| `contentAssetId`     | `MediaHeartbeat.VideoMetadataKeys.ASSET_ID`       |
+| `genre`              | `MediaHeartbeat.VideoMetadataKeys.GENRE`          |
+| `airdate`            | `MediaHeartbeat.VideoMetadataKeys.FIRST_AIR_DATE` |
+| `publisher`          | `MediaHeartbeat.VideoMetadataKeys.ORIGINATOR`     |
+| `channel`            | `MediaHeartbeat.VideoMetadataKeys.NETWORK`        |
+| `rating`             | `MediaHeartbeat.VideoMetadataKeys.RATING`         |
 
 ## Standard Ad Metadata
 
 The following RudderStack properties must also be sent for mapping to the standard ad metadata:
 
-| RudderStack property| Standard Video Adobe Metadata |
-| :--- | :--- |
-| `publisher` | `MediaHeartbeat.AdMetadataKeys.ADVERTISER`|
-           
+| RudderStack property | Standard Video Adobe Metadata              |
+| :------------------- | :----------------------------------------- |
+| `publisher`          | `MediaHeartbeat.AdMetadataKeys.ADVERTISER` |
+
 ## Contact Us
 
 For more information on any of the sections covered in this documentation, you can [contact us](mailto:%20docs@rudderstack.com) or start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel.

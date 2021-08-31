@@ -1,4 +1,6 @@
 ---
+slug: "/docs/data-warehouse-integrations"
+title: "Warehouse Destinations - RudderStack"
 description: >-
   Detailed technical documentation on sending your event data from RudderStack
   to your specified data warehouse platforms
@@ -27,6 +29,3 @@ This section gives you detailed guidance on how to integrate RudderStack with th
 ## Contact Us
 
 For more information on the supported data warehouse integrations or the RudderStack platform in general, feel free to [contact us](mailto:%20contact@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel. We will be happy to talk to you.
-
-
-

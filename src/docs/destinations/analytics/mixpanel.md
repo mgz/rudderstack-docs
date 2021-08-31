@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/mixpanel"
+title: "Mixpanel - RudderStack"
 description: Step-by-step guide to set up Mixpanel as a destination in RudderStack.
 ---
 
@@ -16,10 +18,10 @@ RudderStack supports Mixpanel as a destination to which you can seamlessly send 
 
 Before configuring your source and destination on the RudderStack, verify if the source platform is supported by Mixpanel by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **Supported** | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,13 +29,13 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the source supports sending events to Mixpanel, perform the steps below:
 
-* From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Mixpanel**.
+- From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Mixpanel**.
 
 {% hint style="info" %}
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![](../../.gitbook/assets/screen-shot-2021-07-28-at-5.45.20-pm.png)
 
@@ -57,14 +59,14 @@ Choose **EU** in **Data Residency** settings to send your event data to the Mixp
 
 The following settings are applicable if you are using this destination via the web Device mode:
 
-* **Use Mixpanel People**: This option sends all your `identify` calls to Mixpanel People. More information on this option can be found [**below**](https://docs.rudderstack.com/destinations/analytics/mixpanel#mixpanel-people). 
-* **Automatically Set all Traits as Super Properties and People properties**: More information on this option can be found [**here**](https://docs.rudderstack.com/destinations/analytics/mixpanel#explicitly-setting-people-properties-and-super-properties). 
-* **Page Tracking Options**: For Device mode, RudderStack offers three options for `page` calls. More information on these options can be found [**here**](https://docs.rudderstack.com/destinations/analytics/mixpanel#page-web-device-mode). 
-* **Source Name**: If set, RudderStack sends this source name to Mixpanel for every event/`page`/`screen` call. 
-* **Cross Subdomain Cookie**: If enabled, this option allows the Mixpanel cookie to persist between different pages of your application. 
-* **Persistence Type**: This option lets you choose the persistence type for your Mixpanel cookies. 
-* **Secure Cookie**: Enabling this option will mark the Mixpanel cookie as secure, i.e it will only transmit over HTTPs. 
-* **Group Key Settings**: RudderStack sends the `group` calls to Mixpanel only if one or more group keys are specified here. For more information, check out the [**Group**](https://docs.rudderstack.com/destinations/analytics/mixpanel#group) section below.
+- **Use Mixpanel People**: This option sends all your `identify` calls to Mixpanel People. More information on this option can be found [**below**](https://docs.rudderstack.com/destinations/analytics/mixpanel#mixpanel-people).
+- **Automatically Set all Traits as Super Properties and People properties**: More information on this option can be found [**here**](https://docs.rudderstack.com/destinations/analytics/mixpanel#explicitly-setting-people-properties-and-super-properties).
+- **Page Tracking Options**: For Device mode, RudderStack offers three options for `page` calls. More information on these options can be found [**here**](https://docs.rudderstack.com/destinations/analytics/mixpanel#page-web-device-mode).
+- **Source Name**: If set, RudderStack sends this source name to Mixpanel for every event/`page`/`screen` call.
+- **Cross Subdomain Cookie**: If enabled, this option allows the Mixpanel cookie to persist between different pages of your application.
+- **Persistence Type**: This option lets you choose the persistence type for your Mixpanel cookies.
+- **Secure Cookie**: Enabling this option will mark the Mixpanel cookie as secure, i.e it will only transmit over HTTPs.
+- **Group Key Settings**: RudderStack sends the `group` calls to Mixpanel only if one or more group keys are specified here. For more information, check out the [**Group**](https://docs.rudderstack.com/destinations/analytics/mixpanel#group) section below.
 
 ## Page
 
@@ -80,9 +82,9 @@ Rudderstack will send 1 event to Mixpanel per `page` call.
 
 For Device mode, RudderStack offers the following three options for `page` calls:
 
-* With **Track All Pages with a Consolidated Event Name** option enabled by default, RudderStack sends all the `page` and `screen` calls with the name `Loaded a Page` with the corresponding properties of the call. This allows you to leverage Mixpanel's reporting for page/screen analytics in the best possible way. Note that this option is given the **highest precedence**, even if the following two options \(**Track Categorized Pages to Mixpanel** and **Track Named Pages to Mixpanel**\) are enabled.
-* RudderStack tracks the categorized pages to Mixpanel. If you enable the **Track Categorized Pages to Mixpanel** option, RudderStack sends a `Viewed [category] Page` event. If the page name is also present in the event, then `Viewed [category page_name] Page` event is sent.
-* RudderStack tracks the named pages to Mixpanel. If you enable the **Track Named Pages to Mixpanel** option, RudderStack will send a `Viewed [page_name] Page` event. Note that this option has the least precedence and comes to effect only if the above two options are disabled in the RudderStack dashboard.
+- With **Track All Pages with a Consolidated Event Name** option enabled by default, RudderStack sends all the `page` and `screen` calls with the name `Loaded a Page` with the corresponding properties of the call. This allows you to leverage Mixpanel's reporting for page/screen analytics in the best possible way. Note that this option is given the **highest precedence**, even if the following two options \(**Track Categorized Pages to Mixpanel** and **Track Named Pages to Mixpanel**\) are enabled.
+- RudderStack tracks the categorized pages to Mixpanel. If you enable the **Track Categorized Pages to Mixpanel** option, RudderStack sends a `Viewed [category] Page` event. If the page name is also present in the event, then `Viewed [category page_name] Page` event is sent.
+- RudderStack tracks the named pages to Mixpanel. If you enable the **Track Named Pages to Mixpanel** option, RudderStack will send a `Viewed [page_name] Page` event. Note that this option has the least precedence and comes to effect only if the above two options are disabled in the RudderStack dashboard.
 
 {% hint style="info" %}
 RudderStack expects atleast one of the three options listed above to be enabled for sending the `page` events to Mixpanel using device mode.
@@ -110,14 +112,14 @@ rudderanalytics.identify("12345",
 
 Mixpanel has some reserved properties:
 
-* `$first_name`
-* `$last_name`
-* `$name`
-* `$username`
-* `$created`
-* `$email`
-* `$phone`
-* `$avatar`
+- `$first_name`
+- `$last_name`
+- `$name`
+- `$username`
+- `$created`
+- `$email`
+- `$phone`
+- `$avatar`
 
 {% hint style="warning" %}
 You can create custom properties. However, note that you should not create properties that begin with a `$` sign.
@@ -231,21 +233,21 @@ RudderStack maps these fields only in the `identify` requests.
 {% endhint %}
 
 | Mixpanel Property Name | RudderStack Property Name |
-| :--- | :--- |
-| `$created` | `traits.createdAt` |
-| `$email` | `traits.email` |
-| `$firstName` | `traits.firstName` |
-| `$lastName` | `traits.lastName` |
-| `$name` | `traits.name` |
-| `$username` | `traits.username` |
-| `$phone` | `traits.phone` |
-| `$avator` | `traits.avator` |
-| `ip` or `$ip` | `context.ip` |
-| `campaign_id` | `context.campaign.name` |
-| `$current_url` | `context.page.url` |
-| `$os` | `context.os.name` |
-| `$referrer` | `context.page.referrer` |
-| `$carrier` | `context.network.carrier` |
+| :--------------------- | :------------------------ |
+| `$created`             | `traits.createdAt`        |
+| `$email`               | `traits.email`            |
+| `$firstName`           | `traits.firstName`        |
+| `$lastName`            | `traits.lastName`         |
+| `$name`                | `traits.name`             |
+| `$username`            | `traits.username`         |
+| `$phone`               | `traits.phone`            |
+| `$avator`              | `traits.avator`           |
+| `ip` or `$ip`          | `context.ip`              |
+| `campaign_id`          | `context.campaign.name`   |
+| `$current_url`         | `context.page.url`        |
+| `$os`                  | `context.os.name`         |
+| `$referrer`            | `context.page.referrer`   |
+| `$carrier`             | `context.network.carrier` |
 
 ## Explicitly Setting People Properties and Super Properties
 
@@ -268,15 +270,15 @@ This feature is available in the native web Device mode only.
 The following table lists all the properties that RudderStack sends to Mixpanel as special traits:
 
 | Mixpanel Properties | RudderStack Properties |
-| :--- | :--- |
-| `created` | `$created` |
-| `email` | `$email` |
-| `firstName` | `$first_name` |
-| `lastName` | `$last_name` |
-| `lastSeen` | `$last_seen` |
-| `name` | `$name` |
-| `username` | `$username` |
-| `phone` | `$phone` |
+| :------------------ | :--------------------- |
+| `created`           | `$created`             |
+| `email`             | `$email`               |
+| `firstName`         | `$first_name`          |
+| `lastName`          | `$last_name`           |
+| `lastSeen`          | `$last_seen`           |
+| `name`              | `$name`                |
+| `username`          | `$username`            |
+| `phone`             | `$phone`               |
 
 ## Incrementing Events
 
@@ -304,11 +306,10 @@ This feature is available in the native web Device mode only.
 
 ## Cross Subdomain Cookies
 
-* **Cross Subdomain Cookie**: This option will allow the Mixpanel cookie to be persisted between different pages of your application.
-* **Persistence Type**: This option lets you choose the persistence type for your Mixpanel cookies.
-* **Secure Cookie**: Enabling this option will mark the Mixpanel cookie as secure, i.e it will only transmit over HTTPs.
+- **Cross Subdomain Cookie**: This option will allow the Mixpanel cookie to be persisted between different pages of your application.
+- **Persistence Type**: This option lets you choose the persistence type for your Mixpanel cookies.
+- **Secure Cookie**: Enabling this option will mark the Mixpanel cookie as secure, i.e it will only transmit over HTTPs.
 
 ## Contact Us
 
 If you come across any issues while configuring Mixpanel with RudderStack, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

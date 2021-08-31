@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/autopilot"
+title: "Autopilot - RudderStack"
 description: Step-by-step guide to set up Autopilot as a destination in RudderStack.
 ---
 
@@ -16,28 +18,28 @@ RudderStack allows you to configure Autopilot as a destination to which you can 
 
 To enable sending data to Autopilot, you will first need to add it as a destination to the source from which you are sending your event data. Once the destination is enabled, events from our SDK will start flowing to Autopilot.
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | - | - |
-| **Cloud mode** | - | **Supported** | **Supported** |
+| **Connection Mode** | **Web** | **Mobile**    | **Server**    |
+| :------------------ | :------ | :------------ | :------------ |
+| **Device mode**     | -       | -             | -             |
+| **Cloud mode**      | -       | **Supported** | **Supported** |
 
 {% hint style="info" %}
- To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Autopilot, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Autopilot.**
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Autopilot.**
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen.
+- Give a name to the destination and click on **Next**. You should then see the following screen.
 
 ![Autopilot Settings](../../.gitbook/assets/autopilot.png)
 
-* Fill up the details and click on **Next** to complete the configuration. Autopilot should now be added and enabled as a destination in RudderStack.
+- Fill up the details and click on **Next** to complete the configuration. Autopilot should now be added and enabled as a destination in RudderStack.
 
 ## Identify
 
@@ -78,4 +80,3 @@ You can retrieve the API key from the settings page of the [Autopilot](https://d
 ## Contact Us
 
 If you come across any issues while configuring Autopilot with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

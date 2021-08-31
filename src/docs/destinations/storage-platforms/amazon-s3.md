@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/storage-platforms/amazon-s3"
+title: "Amazon S3 - RudderStack"
 description: Step-by-step guide to set up Amazon S3 as a destination in RudderStack.
 ---
 
@@ -16,8 +18,8 @@ RudderStack allows you to configure Amazon S3 as a destination to which you can 
 
 Follow these steps to set up Amazon S3 before adding it as a destination in RudderStack:
 
-* Login to your [Amazon AWS S3 console](https://aws.amazon.com/console/).
-* Create a new bucket. Alternatively, you can also choose already existing bucket.
+- Login to your [Amazon AWS S3 console](https://aws.amazon.com/console/).
+- Create a new bucket. Alternatively, you can also choose already existing bucket.
 
 ## Permissions
 
@@ -25,8 +27,8 @@ The Following are two ways to give permissions to RudderStack for writing in you
 
 #### 1. Creating Credentials for an IAM user and providing it to RudderStack
 
-* Login to your [Amazon AWS IAM Console](https://console.aws.amazon.com/iam/home?region=us-east-1)
-* Create an IAM user with programmatic access and choose a policy that has write access to your bucket. Here is a reference for the policy.
+- Login to your [Amazon AWS IAM Console](https://console.aws.amazon.com/iam/home?region=us-east-1)
+- Create an IAM user with programmatic access and choose a policy that has write access to your bucket. Here is a reference for the policy.
 
 ```javascript
 {
@@ -41,7 +43,7 @@ The Following are two ways to give permissions to RudderStack for writing in you
 }
 ```
 
-* Make a note of both access key ID and secret access key as these will be required while configuring S3 as a destination
+- Make a note of both access key ID and secret access key as these will be required while configuring S3 as a destination
 
 {% hint style="info" %}
 If the AWS credentials are **already configured** on your instance where the RudderStack server is set up, you will **not** need the security credentials.
@@ -49,7 +51,7 @@ If the AWS credentials are **already configured** on your instance where the Rud
 
 #### 2. Allow RudderStack user to write into your bucket
 
-* In order to allow RudderStack user to write into your bucket, you have to add the following JSON in your bucket policy.
+- In order to allow RudderStack user to write into your bucket, you have to add the following JSON in your bucket policy.
 
 ```javascript
 {
@@ -72,13 +74,13 @@ If the AWS credentials are **already configured** on your instance where the Rud
 }
 ```
 
-* Replace `YOUR_BUCKET_NAME` in the above JSON with your bucket name. By adding the above policy, RudderStack user \(_arn:aws:iam::422074288268:user/s3-copy_\) has the permission to write into your bucket.
+- Replace `YOUR_BUCKET_NAME` in the above JSON with your bucket name. By adding the above policy, RudderStack user \(_arn:aws:iam::422074288268:user/s3-copy_\) has the permission to write into your bucket.
 
 {% hint style="info" %}
 The above approach will only work if you are using managed RudderStack
 {% endhint %}
 
-If you are hosting RudderStack on your instances and don't want to follow option 1, then you have to create your IAM user with programmatic access and attach the below policy. 
+If you are hosting RudderStack on your instances and don't want to follow option 1, then you have to create your IAM user with programmatic access and attach the below policy.
 
 ```bash
 {
@@ -93,7 +95,7 @@ If you are hosting RudderStack on your instances and don't want to follow option
 }
 ```
 
-* Add the following bucket policy to your bucket. Replace ACCOUNT\_ID, USER\_ARN, YOUR\_BUCKET\_NAME with your AWS account id, the above created user arn, your bucket name.
+- Add the following bucket policy to your bucket. Replace ACCOUNT_ID, USER_ARN, YOUR_BUCKET_NAME with your AWS account id, the above created user arn, your bucket name.
 
 ```javascript
 {
@@ -116,7 +118,7 @@ If you are hosting RudderStack on your instances and don't want to follow option
 }
 ```
 
-* Add the above created IAM user programmatic access credentials to the environment of your RudderStack
+- Add the above created IAM user programmatic access credentials to the environment of your RudderStack
 
 ```javascript
 RUDDER_AWS_S3_COPY_USER_ACCESS_KEY_ID=<above created user access key>
@@ -129,14 +131,14 @@ In order to enable dumping data to Amazon S3, you will first need to add it as a
 
 To do so, please follow these steps:
 
-* Choose a source to which you would like to add Amazon S3 as a destination. You can also simply create a destination and connect it to a source later.
+- Choose a source to which you would like to add Amazon S3 as a destination. You can also simply create a destination and connect it to a source later.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Select the destination as **Amazon S3** to your source. Give your destination a name and then click on **Next**.
-* Next, in the **Connection Settings**, ****fill all the fields with the relevant information \(please refer to the Setting up Amazon S3 section above\) and click on **Next**.
+- Select the destination as **Amazon S3** to your source. Give your destination a name and then click on **Next**.
+- Next, in the **Connection Settings**, \***\*fill all the fields with the relevant information \(please refer to the Setting up Amazon S3 section above\) and click on **Next\*\*.
 
 ![S3 Destination Settings](../../.gitbook/assets/screenshot-2020-06-01-at-2.29.13-pm.png)
 
@@ -144,20 +146,20 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 If the AWS credentials are already configured on your data plane's environment via [environment credentials](https://docs.aws.amazon.com/sdk-for-go/v1/developer-guide/configuring-sdk.html#specifying-credentials) or by following the [below steps](https://docs.rudderstack.com/destinations-guides/amazon-s3#permissions), you can skip adding the credentials in this step. Only the S3 Bucket Name is required.
 {% endhint %}
 
-* If you need any transformation, choose one from the list. Else, click on **Next**.
+- If you need any transformation, choose one from the list. Else, click on **Next**.
 
 That's it! You have successfully added Amazon S3 as a destination in RudderStack. Once you send an event from your source, you can find it dumped to your S3 bucket.
 
 ## Encryption
 
-Amazon S3 provides encryption at rest. Object gets encrypted while saving it to S3 and gets decrypted before downloading from S3. S3 provides a way to set the default encryption behavior for a bucket. You can set the default encryption on a bucket from its properties. The objects are encrypted using server-side encryption with either Amazon S3-managed keys \(SSE-S3\) or AWS Key Management Service \(AWS KMS\) customer master keys \(CMKs\). 
+Amazon S3 provides encryption at rest. Object gets encrypted while saving it to S3 and gets decrypted before downloading from S3. S3 provides a way to set the default encryption behavior for a bucket. You can set the default encryption on a bucket from its properties. The objects are encrypted using server-side encryption with either Amazon S3-managed keys \(SSE-S3\) or AWS Key Management Service \(AWS KMS\) customer master keys \(CMKs\).
 
 ### Server-Side Encryption: Using AWS KMS \(SSE-KMS\) <a id="sse"></a>
 
-RudderStack can write to S3 buckets when default encryption is set to AWS-KMS. Objects are encrypted using customer managed keys \(CMK\) when uploaded to the bucket. CMK can be  created in your AWS Key Management Service \(KMS\). Follow the steps below to enable encryption using AWS KMS Managed Keys:
+RudderStack can write to S3 buckets when default encryption is set to AWS-KMS. Objects are encrypted using customer managed keys \(CMK\) when uploaded to the bucket. CMK can be created in your AWS Key Management Service \(KMS\). Follow the steps below to enable encryption using AWS KMS Managed Keys:
 
-* Create a new customer managed key in Key Management Services \(KMS\) and add your IAM user in the key usage permission section. This will allow the IAM user to use the key for cryptographic operations
-* Choose the above created CMK when you set AWS-KMS in the default Encryption property for the bucket
+- Create a new customer managed key in Key Management Services \(KMS\) and add your IAM user in the key usage permission section. This will allow the IAM user to use the key for cryptographic operations
+- Choose the above created CMK when you set AWS-KMS in the default Encryption property for the bucket
 
 {% hint style="info" %}
 Amazon S3 supports only [symmetric CMKs](https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks)
@@ -174,4 +176,3 @@ You can also set the Default Encryption property to `AES-256` for the bucket, by
 ## Contact Us
 
 If you come across any issues while configuring Amazon S3 with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

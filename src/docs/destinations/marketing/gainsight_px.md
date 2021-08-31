@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/gainsight-px"
+title: "Gainsight PX - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Gainsight PX.
 ---
 
@@ -22,10 +24,10 @@ See our [**Connections**](https://docs.rudderstack.com/connections) guide to lea
 
 Before you get started, check if the source platform is supported by Gainsight PX by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | -             | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -33,25 +35,25 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you've confirmed that the source platform supports sending events to RudderStack, follow these steps:
 
-* From your [**RudderStack dashboard**](https://app.rudderlabs.com/), add the source and select **Gainsight PX** from the list of supported destinations.
+- From your [**RudderStack dashboard**](https://app.rudderlabs.com/), add the source and select **Gainsight PX** from the list of supported destinations.
 
 {% hint style="info" %}
 To add a source, follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack).
 {% endhint %}
 
-* Assign a name to this destination and click on **Next**. You should then see the following **Connection Settings** screen:
+- Assign a name to this destination and click on **Next**. You should then see the following **Connection Settings** screen:
 
 ![Connection Settings for Gainsight PX](../../.gitbook/assets/gainsight-px-connection-settings-1.png)
 
 You will need to enter the following settings under **Connection Settings**:
 
-* **API Key**: Enter the API key required for using the Gainsight PX REST API. To generate the API Key, go to your Gainsight dashboard and navigate to **Administration** - **Integrations** - **Rest API**.
+- **API Key**: Enter the API key required for using the Gainsight PX REST API. To generate the API Key, go to your Gainsight dashboard and navigate to **Administration** - **Integrations** - **Rest API**.
 
 {% hint style="info" %}
 More information on the Gainsight PX Rest API can be found [**here**](https://support.gainsight.com/PX/API_for_Developers/02Usage_of_Different_APIs/Work_with_the_Gainsight_PX_REST_API).
 {% endhint %}
 
-* **Product Tag Key**: Provide the **Tag key** for your product. To create a new product or copy a product tag key, go to **Administration** - **Products** as shown below:
+- **Product Tag Key**: Provide the **Tag key** for your product. To create a new product or copy a product tag key, go to **Administration** - **Products** as shown below:
 
 ![Gainsight PX](../../.gitbook/assets/gainsight-px-product-tag.png)
 
@@ -96,7 +98,7 @@ rudderanalytics.identify("sample-user-id", {
   score: 100,
   hobbyCustomField: "Painting",
   title: "Doctor",
-});
+})
 ```
 
 In the above example, `hobbyCustomField` is a custom field. You will need to provide the mapping for `hobbyCustomField` to the corresponding Custom Attribute name \(`hobby`, as shown in the screenshot above\) in Gainsight PX. If this mapping is not provided, RudderStack will drop the `hobbyCustomField` attribute and send the other attributes to Gainsight PX.
@@ -105,20 +107,20 @@ In the above example, `hobbyCustomField` is a custom field. You will need to pro
 
 The mapping of the location properties from the Gainsight PX **`User`** object to the RudderStack payload is as shown:
 
-| **Gainsight PX Property** | **RudderStack Trait Name** |
-| :--- | :--- |
-| `location.countryName` | `countryName` |
-| `location.countryCode` | `countryCode` |
-| `location.stateName` | `stateName` |
-| `location.stateCode` | `stateCode` |
-| `location.city` | `city` |
-| `location.street` | `street` |
-| `location.postalCode` | `postalCode` |
-| `location.continent` | `continent` |
-| `location.regionName` | `regionName` |
-| `location.timeZone` | `timeZone` |
-| `location.coordinates.latitude` | `latitude` |
-| `location.coordinates.longitude` | `longitude` |
+| **Gainsight PX Property**        | **RudderStack Trait Name** |
+| :------------------------------- | :------------------------- |
+| `location.countryName`           | `countryName`              |
+| `location.countryCode`           | `countryCode`              |
+| `location.stateName`             | `stateName`                |
+| `location.stateCode`             | `stateCode`                |
+| `location.city`                  | `city`                     |
+| `location.street`                | `street`                   |
+| `location.postalCode`            | `postalCode`               |
+| `location.continent`             | `continent`                |
+| `location.regionName`            | `regionName`               |
+| `location.timeZone`              | `timeZone`                 |
+| `location.coordinates.latitude`  | `latitude`                 |
+| `location.coordinates.longitude` | `longitude`                |
 
 ## Group
 
@@ -137,7 +139,7 @@ rudderanalytics.group("sample-group-id", {
   numberOfEmployees: 10000,
   website: "www.exmaple-group.com",
   cultureCustomField: "cool",
-});
+})
 ```
 
 In the above example, `cultureCustomField` is a custom field. You will need to provide the mapping for `cultureCustomField` to the corressponding Custom Attribute name in Gainsight PX. If this mapping is not provided, RudderStack will drop the `cultureCustomField` attribute and send the other default attributes to Gainsight.
@@ -146,20 +148,20 @@ In the above example, `cultureCustomField` is a custom field. You will need to p
 
 The mapping of the location properties from your Gainsight PX **`Account`** object to the RudderStack payload is as shown:
 
-| **Gainsight PX Property** | **RudderStack Trait Name** |
-| :--- | :--- |
-| `location.countryName` | `countryName` |
-| `location.countryCode` | `countryCode` |
-| `location.stateName` | `stateName` |
-| `location.stateCode` | `stateCode` |
-| `location.city` | `city` |
-| `location.street` | `street` |
-| `location.postalCode` | `postalCode` |
-| `location.continent` | `continent` |
-| `location.regionName` | `regionName` |
-| `location.timeZone` | `timeZone` |
-| `location.coordinates.latitude` | `latitude` |
-| `location.coordinates.longitude` | `longitude` |
+| **Gainsight PX Property**        | **RudderStack Trait Name** |
+| :------------------------------- | :------------------------- |
+| `location.countryName`           | `countryName`              |
+| `location.countryCode`           | `countryCode`              |
+| `location.stateName`             | `stateName`                |
+| `location.stateCode`             | `stateCode`                |
+| `location.city`                  | `city`                     |
+| `location.street`                | `street`                   |
+| `location.postalCode`            | `postalCode`               |
+| `location.continent`             | `continent`                |
+| `location.regionName`            | `regionName`               |
+| `location.timeZone`              | `timeZone`                 |
+| `location.coordinates.latitude`  | `latitude`                 |
+| `location.coordinates.longitude` | `longitude`                |
 
 ## Track
 
@@ -171,7 +173,7 @@ A sample `track` call is as shown:
 rudderanalytics.track("Track User", {
   description: "Example track call",
   status: "demo",
-});
+})
 ```
 
 The `event` field in the RudderStack payload is mapped to the `eventName` field in the Gainsight PX payload.
@@ -193,7 +195,7 @@ rudderanalytics.track("Track User", {
   globalContext: {
     projectId: "p-123",
   },
-});
+})
 ```
 
 {% hint style="info" %}
@@ -207,4 +209,3 @@ For `identify`, `group` and `track` calls, `userId` is required. If `userId` is 
 ## Contact Us
 
 If you come across any issues while configuring Gainsight PX with RudderStack, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

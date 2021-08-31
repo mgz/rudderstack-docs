@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/crm/hubspot"
+title: "HubSpot - RudderStack"
 description: Step-by-step guide to send event data from RudderStack to HubSpot
 ---
 
@@ -16,10 +18,10 @@ RudderStack supports HubSpot as a destination to send your event data through ou
 
 Before configuring your source and destination in RudderStack, please check whether the platform you are working on is supported by HubSpot. Refer the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **Supported** | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -29,23 +31,23 @@ Once you have confirmed that the platform supports sending events to HubSpot, pe
 
 Once you have confirmed that the platform supports sending events to HubSpot, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **HubSpot** as a destination.
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **HubSpot** as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![Connection Settings for HubSpot in RudderStack](../../.gitbook/assets/hubspot.png)
 
-* Provide your HubSpot **API key** and **Hub ID** in the required fields. Please find [**API Key**](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key) and  [**Hub ID**](https://knowledge.hubspot.com/account/manage-multiple-hubspot-accounts#identify-the-current-account-s-hub-id) in your Hubspot Account.
+- Provide your HubSpot **API key** and **Hub ID** in the required fields. Please find [**API Key**](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key) and [**Hub ID**](https://knowledge.hubspot.com/account/manage-multiple-hubspot-accounts#identify-the-current-account-s-hub-id) in your Hubspot Account.
 
 {% hint style="warning" %}
 API Key is mandatory if you need to send data to Hubspot using `cloud-mode`
 {% endhint %}
 
-* Provide your preference to flow the data to HubSpot through native SDK or through the RudderStack backend. Click on **Next** to finish the configuration.
+- Provide your preference to flow the data to HubSpot through native SDK or through the RudderStack backend. Click on **Next** to finish the configuration.
 
 {% hint style="info" %}
 The setting to enable / disable native SDK to send events can be changed later. However, for that to reflect in your website, you will need to refresh the web page.
@@ -66,8 +68,9 @@ To send the data to HubSpot, an initial `page` call is required. For more inform
 The following snippet is an example of a `page` call:
 
 ```javascript
-rudderanalytics.page();
+rudderanalytics.page()
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -90,42 +93,41 @@ In Device mode, you must call either `page` or `track` after the identify call t
 Here is an example `identify` call:
 
 ```javascript
-rudderanalytics.identify(
-  {
-    firstName: "Tintin",
-    city: "Brussels",
-    country: "Belgium",
-    phone: "1234567890",
-    email: "tintin@twentiethcentury.com",
-    custom_flavor: "chocolate",
-    custom_date: 1574769933368,
-    custom_date1: new Date("2019-10-14T11:15:53.296Z")
-  }
-);
+rudderanalytics.identify({
+  firstName: "Tintin",
+  city: "Brussels",
+  country: "Belgium",
+  phone: "1234567890",
+  email: "tintin@twentiethcentury.com",
+  custom_flavor: "chocolate",
+  custom_date: 1574769933368,
+  custom_date1: new Date("2019-10-14T11:15:53.296Z"),
+})
 ```
 
 ### Special fields
 
 HubSpot supports the following traits as special fields:
 
-* `address`
-* `city`
-* `companyName`
-* `email`
-* `firstName`
-* `lastName`
-* `position`
-* `phone`
-* `zip`
+- `address`
+- `city`
+- `companyName`
+- `email`
+- `firstName`
+- `lastName`
+- `position`
+- `phone`
+- `zip`
 
 ### Custom properties
 
 Hubspot also supports custom properties. You can update values of the `contact` property that you have created in HubSpot.
 
 {% hint style="warning" %}
-* Note that when you provide any custom property, it automatically converts to lower case and any space will be replaced with an underscore. HubSpot does not accept properties in upper case and spaces.
-* HubSpot discards any property which doesn't exists and returns `400 Bad Request`.
-{% endhint %}
+
+- Note that when you provide any custom property, it automatically converts to lower case and any space will be replaced with an underscore. HubSpot does not accept properties in upper case and spaces.
+- HubSpot discards any property which doesn't exists and returns `400 Bad Request`.
+  {% endhint %}
 
 ### Dates
 
@@ -143,7 +145,7 @@ The following code snippet shows a sample `track` event:
 rudderanalytics.track(
   "Purchase",
   {
-    value: 30
+    value: 30,
   },
   {
     context: {
@@ -152,11 +154,11 @@ rudderanalytics.track(
         city: "Brussels",
         country: "Belgium",
         phone: "1234567890",
-        email: "tintin@twentiethcentury.com"
-      }
-    }
+        email: "tintin@twentiethcentury.com",
+      },
+    },
   }
-);
+)
 ```
 
 ### Revenue events
@@ -178,31 +180,28 @@ Here is a sample `screen` call in using RudderStack iOS SDK:
 
 We support [HubSpot CRM Custom Object](https://developers.hubspot.com/docs/api/crm/crm-custom-objects) thorugh our `identify` call. We expect an object with the name `hubspot` and following properties under it.
 
-* `contactId`
-* `qualifiedName`
-* `objects`
+- `contactId`
+- `qualifiedName`
+- `objects`
 
 The `objects` should be an array containing the objects with two properties, `objectId` and `objectType`. Also, the `contactId` is the HubSpot ID of your HubSpot contact. We associate the contact with the objects you provided in the `objects` array.
 
 Here is an example of the `identify` call for HubSpot CRM Custom Object
 
 ```javascript
-rudderanalytics.identify(
-  "userId",
-   {
-     email: "name@domain.com",
-     hubspot: {
-       contactId: "512",
-       qualifiedName: "p99688696_car",
-       objects: [
-         {
-           objectId: "32921360",
-           objectType: "car"
-         }
-       ]
-     }
-   }
-);
+rudderanalytics.identify("userId", {
+  email: "name@domain.com",
+  hubspot: {
+    contactId: "512",
+    qualifiedName: "p99688696_car",
+    objects: [
+      {
+        objectId: "32921360",
+        objectType: "car",
+      },
+    ],
+  },
+})
 ```
 
 ## FAQs
@@ -213,8 +212,8 @@ You can get the API Key and Hub ID for Hubspot by logging into your [Hubspot acc
 
 Please refer to the following documentations offered by Hubspot for more details:
 
-* Obtaining the [API Key](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key)
-* Obtaining the [Hub ID](https://knowledge.hubspot.com/account/manage-multiple-hubspot-accounts#identify-the-current-account-s-hub-id)
+- Obtaining the [API Key](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key)
+- Obtaining the [Hub ID](https://knowledge.hubspot.com/account/manage-multiple-hubspot-accounts#identify-the-current-account-s-hub-id)
 
 ### Can we use Hubspot website analytics?
 
@@ -223,4 +222,3 @@ Yes - `page` calls are supported in Device mode and can be used for Hubspot webs
 ## Contact Us
 
 If you come across any issues while configuring HubSpot with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

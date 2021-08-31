@@ -1,4 +1,6 @@
 ---
+slug: "/docs/advertising/reddit-pixel"
+title: "Reddit Pixel - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Reddit Pixel.
 ---
 
@@ -12,10 +14,10 @@ You can now seamlessly send your event data to Reddit Pixel by adding it as a de
 
 Before configuring Reddit Pixel as a destination in RudderStack, verify if the source platform is supported by Reddit Pixel by referring to the table below: ̦
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | - | - | - |
+| **Connection Mode** | **Web**       | **Mobile** | **Server** |
+| :------------------ | :------------ | :--------- | :--------- |
+| **Device mode**     | **Supported** | -          | -          |
+| **Cloud mode**      | -             | -          | -          |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, refer to the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -23,17 +25,17 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the source supports sending events to Reddit Pixel, perform the steps below:
 
-* From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Reddit Pixel**.
+- From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Reddit Pixel**.
 
 {% hint style="info" %}
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more information.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![](../../.gitbook/assets/RedditPixel-1.png)
 
-* Enter your **Reddit Pixel Advertiser ID**.
+- Enter your **Reddit Pixel Advertiser ID**.
 
 {% hint style="info" %}
 For more information on how to find your Reddit Pixel Advertiser ID, refer to the FAQs below.
@@ -48,7 +50,7 @@ For more information on the `identify` call, check out the [**RudderStack API sp
 A sample `identify` call is as shown:
 
 ```javascript
-rudderanalytics.identify();
+rudderanalytics.identify()
 ```
 
 ## Page
@@ -60,7 +62,7 @@ For more information on the `page` call, check out the [**RudderStack API spec**
 A sample `page` call is as shown:
 
 ```javascript
-rudderanalytics.page();
+rudderanalytics.page()
 ```
 
 ## Track
@@ -70,24 +72,24 @@ The `track` call lets you track custom events in your website.
 A sample call looks like the following code snippet:
 
 ```javascript
-rudderanalytics.track("Product Added");
+rudderanalytics.track("Product Added")
 ```
 
 RudderStack transforms the following events to Reddit Pixel's Standard Events:
 
-| **RudderStack Event Name** | **Reddit Pixel Standard Event** |
-| :--- | :--- |
-| `Product Added` | `Add to Cart` |
-| `Product Added to Wishlist` | `Add to Wishlist` |
-| `Order Completed` | `Purchase` |
+| **RudderStack Event Name**  | **Reddit Pixel Standard Event** |
+| :-------------------------- | :------------------------------ |
+| `Product Added`             | `Add to Cart`                   |
+| `Product Added to Wishlist` | `Add to Wishlist`               |
+| `Order Completed`           | `Purchase`                      |
 
 In addition, RudderStack also supports mapping the following custom events:
 
 | **RudderStack Event Name** | **Reddit Pixel Standard Event** |
-| :--- | :--- |
-| `Lead` | `Lead` |
-| `View Content` | `ViewContent` |
-| `Search` | `Search` |
+| :------------------------- | :------------------------------ |
+| `Lead`                     | `Lead`                          |
+| `View Content`             | `ViewContent`                   |
+| `Search`                   | `Search`                        |
 
 {% hint style="warning" %}
 Reddit Pixel does not support any other custom events apart from the ones mentioned above.
@@ -104,4 +106,3 @@ To get your Reddit Pixel Advertiser ID, go to your Reddit Ads Manager account. U
 ## Contact Us
 
 If you come across any issues while configuring Reddit Pixel with RudderStack, feel free to [**contact us**](mailto:%20docs@rudderstack.com). You can also start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

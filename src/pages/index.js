@@ -19,6 +19,7 @@ export const query = graphql`
 `;
 
 const IndexPage = props => {
+  console.log('Page props', props);
   const { data, errors } = props;
 
   if (errors) {

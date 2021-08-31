@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/drip/drip-web-device-mode"
+title: "Device Mode - RudderStack"
 description: >-
   Detailed technical documentation on sending events to Drip using the
   RudderStack Web Device mode.
@@ -45,21 +47,21 @@ rudderanalytics.identify(
       },
     ],
   }
-);
+)
 ```
 
 The following table lists the properties that RudderStack transforms and maps to Drip's standard properties:
 
 | **RudderStack Property Name** | **Drip Standard Property** |
-| :--- | :--- |
-| `email` | `email` |
-| `newEmail` | `new_email` |
-| `userId or anonymousId` | `user_id` |
-| `tags` | `tags` |
-| `removeTags` | `remove_tags` |
-| `prospect` | `prospect` |
-| `euConsent` | `eu_consent` |
-| `euConsentMessage` | `eu_consent_message` |
+| :---------------------------- | :------------------------- |
+| `email`                       | `email`                    |
+| `newEmail`                    | `new_email`                |
+| `userId or anonymousId`       | `user_id`                  |
+| `tags`                        | `tags`                     |
+| `removeTags`                  | `remove_tags`              |
+| `prospect`                    | `prospect`                 |
+| `euConsent`                   | `eu_consent`               |
+| `euConsentMessage`            | `eu_consent_message`       |
 
 {% hint style="info" %}
 All other fields in `context.traits` will be passed as custom fields.
@@ -70,8 +72,8 @@ You can subscribe a user to a [**Email Series Campaign**](https://www.drip.com/l
 If you want to add a subscriber to your account without subscribing them to an email series campaign, use the `identify` call instead. You can also send some additional properties with the `identify` call. These are listed in the following table:
 
 | **RudderStack Property Name** | **Drip Standard Property** |
-| :--- | :--- |
-| `doubleOptin` | `double_optin` |
+| :---------------------------- | :------------------------- |
+| `doubleOptin`                 | `double_optin`             |
 
 ## Track
 
@@ -87,18 +89,17 @@ A sample `track` call is as shown:
 rudderanalytics.track("randomProduct", {
   email: "sampleUser@rudderstackdrip.com",
   revenue: 100,
-});
+})
 ```
 
 The following table lists the properties that RudderStack transforms and maps to Drip's standard properties:
 
-| **RudderStack Property Name** | **Drip Standard Property** |
-| :--- | :--- |
-| `email` | `email` |
-| `revenue` | `value` |
-| `occurred_at or originalTimestamp` | `occurred_at` |
+| **RudderStack Property Name**      | **Drip Standard Property** |
+| :--------------------------------- | :------------------------- |
+| `email`                            | `email`                    |
+| `revenue`                          | `value`                    |
+| `occurred_at or originalTimestamp` | `occurred_at`              |
 
 ## Contact Us
 
 For any questions related to any of the sections covered in this guide, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

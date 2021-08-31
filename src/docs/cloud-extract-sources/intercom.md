@@ -1,4 +1,6 @@
 ---
+slug: "/docs/cloud-extract-sources/intercom"
+title: "Intercom - RudderStack"
 description: Step-by-step guide to ingest data from Intercom into RudderStack.
 ---
 
@@ -16,22 +18,22 @@ This document guides you in setting up Intercom as a source in RudderStack. Once
 
 To set up Intercom as a source on the RudderStack dashboard, follow these steps:
 
-* Log into your [RudderStack dashboard](https://app.rudderlabs.com/signup?type=freetrial).
-* From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
+- Log into your [RudderStack dashboard](https://app.rudderlabs.com/signup?type=freetrial).
+- From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
 
 ![](../.gitbook/assets/1%20%284%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29%20%281%29.png)
 
-* Next, select **Intercom** from the list of **Cloud Sources**, and click on **Next**.
+- Next, select **Intercom** from the list of **Cloud Sources**, and click on **Next**.
 
 ![](../.gitbook/assets/2%20%2812%29.png)
 
-* Assign a name to your source, and click on **Next**.
+- Assign a name to your source, and click on **Next**.
 
 ![](../.gitbook/assets/3%20%2810%29.png)
 
 ### Specifying Connection Credentials
 
-* Next, authenticate RudderStack with Intercom by clicking on the Connect with Intercom option, as shown: 
+- Next, authenticate RudderStack with Intercom by clicking on the Connect with Intercom option, as shown:
 
 ![](../.gitbook/assets/4%20%2810%29.png)
 
@@ -41,19 +43,19 @@ If you've already configured Intercom as a source before, you can choose the acc
 
 ### Setting the Data Update Schedule
 
-* Next, you will be required to set the **Run Frequency** to schedule the data import from your Intercom account to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option.
+- Next, you will be required to set the **Run Frequency** to schedule the data import from your Intercom account to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option.
 
 ![](../.gitbook/assets/5%20%2811%29.png)
 
 ### Selecting the Data to Import
 
-* Finally, choose the Intercom data that you wish to ingest via RudderStack. You can either select all the data, or choose specific Intercom data attributes, as per your requirement.
+- Finally, choose the Intercom data that you wish to ingest via RudderStack. You can either select all the data, or choose specific Intercom data attributes, as per your requirement.
 
 ![](../.gitbook/assets/6%20%2812%29.png)
 
-That's it! Intercom is now successfully configured as a source on your RudderStack dashboard. 
+That's it! Intercom is now successfully configured as a source on your RudderStack dashboard.
 
-RudderStack will start ingesting data from Intercom as per the specified frequency. You can further connect this source to your data warehouse by clicking on **Connect Destinations** or **Add Destination**, as shown: 
+RudderStack will start ingesting data from Intercom as per the specified frequency. You can further connect this source to your data warehouse by clicking on **Connect Destinations** or **Add Destination**, as shown:
 
 ![](../.gitbook/assets/7%20%287%29.png)
 
@@ -65,11 +67,10 @@ Use the **Connect Destinations** option if you have already configured a data wa
 
 #### Is it possible to have multiple Cloud Extract sources writing to the same schema?
 
-Yes, it is. 
+Yes, it is.
 
 We have implemented a feature wherein RudderStack associates a table prefix for every Cloud Extract source writing to a warehouse schema. This way, multiple Cloud Extract sources can write to the same schema with different table prefixes.
 
 ## Contact Us
 
 If you come across any issues while configuring Intercom as a source on the RudderStack dashboard, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

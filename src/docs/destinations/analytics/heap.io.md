@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/heap-io"
+title: "Heap.io - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Heap.io.
 ---
 
@@ -18,10 +20,10 @@ To enable sending data to Heap.io, you will first need to add it as a destinatio
 
 Before configuring your source and destination on the RudderStack, verify if the source platform is supported by Heap, by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | **-** |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **Supported** | -             | **-**         |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -29,19 +31,19 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Heap.io, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderstack.com/signup?type=freetrial), add the source. Then, from the list of destinations, select Heap.io**.**
+- From your [RudderStack dashboard](https://app.rudderstack.com/signup?type=freetrial), add the source. Then, from the list of destinations, select Heap.io**.**
 
 {% hint style="info" %}
 Follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![Heap.io Connection Settings on RudderStack dashboard](../../.gitbook/assets/screen-shot-2020-12-03-at-2.20.59-pm.png)
 
 To configure Heap.io as a destination, you need the Heap App ID. To get the App ID, login to your Heap account and navigate to [**App** - **Settings** - **Projects**](https://heapanalytics.com/app/settings/projects), and copy the development or production App ID.
 
-* Once you've entered the Heap App ID, click on **Next**. Heap.io should now be configured as a destination on your RudderStack dashboard.
+- Once you've entered the Heap App ID, click on **Next**. Heap.io should now be configured as a destination on your RudderStack dashboard.
 
 {% hint style="info" %}
 The Heap destination currently supports only **`track`** and **`identify`** calls.
@@ -61,7 +63,7 @@ A sample `identify` payload is as shown in the snippet below:
 rudderanalytics.identify("user123", {
   name: "Name LastName",
   email: "example@domain.com",
-});
+})
 ```
 
 ## Track
@@ -82,7 +84,7 @@ rudderanalytics.track("Order Completed", {
   shipping: 13.99,
   tax: 10.99,
   promotion_id: "PROMO_NOW",
-});
+})
 ```
 
 ## FAQs
@@ -94,4 +96,3 @@ You can procure your Heap ID by logging into your Heap account and navigate to A
 ## Contact Us
 
 To know more about the Heap.io integration and how to use it, feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel, and we will be happy to help you.
-

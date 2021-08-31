@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/kubit"
+title: "Kubit - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Kubit.
 ---
 
@@ -35,8 +37,8 @@ A sample `identify` call is as shown:
 ```javascript
 rudderanalytics.identify("userId", {
   name: "Name",
-  email: "name@xyz.com"
-  });
+  email: "name@xyz.com",
+})
 ```
 
 ### Track
@@ -53,11 +55,10 @@ A sample `track` call is as shown:
 rudderanalytics.track("Order Completed", {
   orderId: "1234567",
   price: "567",
-  currency: "USD"
-});
+  currency: "USD",
+})
 ```
 
 ## Contact Us
 
 If you come across any issues while using the Kubit integration, please feel free to [contact us](mailto:%20docs@rudderstack.com) or start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel. We will be happy to help you.
-

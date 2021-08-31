@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/testing-and-personalization/optimizely-full-stack"
+title: "Optimizely Full Stack - RudderStack"
 description: >-
   Step-by-step guide to set up Optimizely Full Stack as a destination in
   RudderStack
@@ -6,7 +8,7 @@ description: >-
 
 # Optimizely Full Stack
 
-[Optimizely Full Stack](https://www.optimizely.com/products/full-stack/) is a powerful A/B testing, feature flagging and experimentation platform. It allows you to track every aspect of your customer's overall product journey, and experiment with various application features. 
+[Optimizely Full Stack](https://www.optimizely.com/products/full-stack/) is a powerful A/B testing, feature flagging and experimentation platform. It allows you to track every aspect of your customer's overall product journey, and experiment with various application features.
 
 With a fully-functional cross-platform support, Optimizely Full Stack allows you to roll out product features that best suit your application, and in turn boost your overall sales and customer engagement.
 
@@ -14,14 +16,14 @@ RudderStack supports Optimizely Full Stack as a destination to which you can sen
 
 ## Getting Started
 
-To enable sending data to Optimizely Full Stack, you will first need to add it as a destination to the source from which you are sending your event data. Once the destination is enabled, events from our SDK will start flowing to Optimizely Full Stack. 
+To enable sending data to Optimizely Full Stack, you will first need to add it as a destination to the source from which you are sending your event data. Once the destination is enabled, events from our SDK will start flowing to Optimizely Full Stack.
 
 Before configuring your source and destination on the RudderStack, please verify if the source platform is supported by Optimizely Full Stack, by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **-** | **Supported** | **-** |
-| **Cloud mode** | **-** | **-** | **-** |
+| **Connection Mode** | **Web** | **Mobile**    | **Server** |
+| :------------------ | :------ | :------------ | :--------- |
+| **Device mode**     | **-**   | **Supported** | **-**      |
+| **Cloud mode**      | **-**   | **-**         | **-**      |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -29,21 +31,21 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Optimizely Full Stack, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select Optimizely Full Stack**.**
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select Optimizely Full Stack**.**
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![Connection Settings for Optimizely Full Stack](../../.gitbook/assets/image.png)
 
 The connection settings are explained in more detail below:
 
-* **Track Known Users**: Optimizely does not alias known and unknown users. Therefore, RudderStack will send the `anonymousId` to Optimizely by default if this setting is disabled. Otherwise, the `userId` will be sent.
-* **Send the  experiment and variation information as properties on a track call**: By enabling this setting, the experiment data can be sent to the other destinations as a `track` call. This is done by triggering the `Experiment Viewed` event every time an Optimizely live variable is accessed.
-*  **Specifies the experiment viewed as non interaction event for Google Analytics**: Enabling this option sends `Experiment Viewed` as a non-interaction event.
+- **Track Known Users**: Optimizely does not alias known and unknown users. Therefore, RudderStack will send the `anonymousId` to Optimizely by default if this setting is disabled. Otherwise, the `userId` will be sent.
+- **Send the experiment and variation information as properties on a track call**: By enabling this setting, the experiment data can be sent to the other destinations as a `track` call. This is done by triggering the `Experiment Viewed` event every time an Optimizely live variable is accessed.
+- **Specifies the experiment viewed as non interaction event for Google Analytics**: Enabling this option sends `Experiment Viewed` as a non-interaction event.
 
 Configure the settings according to your requirements and click on **Next** to complete the setup. Optimizely Full Stack should now be added and enabled as a destination in RudderStack.
 
@@ -52,9 +54,9 @@ Configure the settings according to your requirements and click on **Next** to c
 Unlike other destinations, Optimizely Full Stack for the mobile integration works a little differently. You will have to implement some Optimizely functions natively to make sure the experiment logic runs correctly.
 
 {% hint style="info" %}
-RudderStack maps the `track` calls with Optimizely's `track` calls. You need to implement all the Optimizely's decision-based methods like `activate` and `isFeatureEnabled` natively. 
+RudderStack maps the `track` calls with Optimizely's `track` calls. You need to implement all the Optimizely's decision-based methods like `activate` and `isFeatureEnabled` natively.
 
-For more details please checkout [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) and the [Optimizely SDK reference Guide](https://docs.developers.optimizely.com/full-stack/docs/sdk-reference-guides#section-ios-and-tvos). 
+For more details please checkout [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) and the [Optimizely SDK reference Guide](https://docs.developers.optimizely.com/full-stack/docs/sdk-reference-guides#section-ios-and-tvos).
 {% endhint %}
 
 ## Adding Optimizely to Your Mobile Project
@@ -71,17 +73,17 @@ repositories {
 }
 ```
 
-   2.   After that, add the following `dependency` in the same file:
+2.  After that, add the following `dependency` in the same file:
 
 ```text
 implementation 'com.rudderstack.android.integration:optimizely:0.1.1'
 implementation 'com.optimizely.ab:android-sdk:3.0.0'
 ```
 
-  3. Initialize the Optimizely Manager:
+3. Initialize the Optimizely Manager:
 
 {% hint style="success" %}
-Optimizely recommends initializing their SDK as soon as possible. You need to initialize the Optimizely Manager before proceeding to the next step \(Step 4\) . 
+Optimizely recommends initializing their SDK as soon as possible. You need to initialize the Optimizely Manager before proceeding to the next step \(Step 4\) .
 
 Please refer to the Optimizely [Initializing the SDK](https://docs.developers.optimizely.com/full-stack/docs/initialize-sdk-android) guide for more information.
 {% endhint %}
@@ -92,7 +94,7 @@ val optimizelyManager =  OptimizelyManager.builder()
             .build(this)
 ```
 
-  4. Finally, change the initialization of your `RudderClient` in your `Application` class:
+4. Finally, change the initialization of your `RudderClient` in your `Application` class:
 
 ```text
 val rudderClient = RudderClient.getInstance(
@@ -119,8 +121,7 @@ Follow these steps to add Optimizely to your iOS project:
 pod 'Rudder-Optimizely'
 ```
 
-    2.  After adding the dependency followed by `pod install` , you can add the imports to your `AppDelegate.m` file as shown:  
-
+    2.  After adding the dependency followed by `pod install` , you can add the imports to your `AppDelegate.m` file as shown:
 
 ```text
 #import "RudderOptimizelyFactory.h"
@@ -137,15 +138,15 @@ OPTLYLoggerDefault *optlyLogger = [[OPTLYLoggerDefault alloc] initWithLogLevel:O
  self.optlyManager = [[OPTLYManager alloc] initWithBuilder:[OPTLYManagerBuilder  builderWithBlock:^(OPTLYManagerBuilder * _Nullable builder) {
         builder.sdkKey = @<SDK KEY>;
         builder.logger = optlyLogger;
-    }]];  
+    }]];
 [builder withFactory:[RudderOptimizelyFactory instanceWithOptimizely:self.optlyManager]];
 [builder withLoglevel:RSLogLevelDebug];
 [RSClient getInstance:WRITE_KEY config:[builder build]];
 ```
+
 {% endtab %}
 {% endtabs %}
 
 ## Contact Us
 
 If you come across any issues while configuring or using Optimizely Full Stack with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

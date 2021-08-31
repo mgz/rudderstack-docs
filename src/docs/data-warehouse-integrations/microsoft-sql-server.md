@@ -1,4 +1,6 @@
 ---
+slug: "/docs/data-warehouse-integrations/microsoft-sql-server"
+title: "Microsoft SQL Server - RudderStack"
 description: Step-by-step guide to set up SQL Server as a destination in RudderStack
 ---
 
@@ -23,7 +25,7 @@ After setting up your MS SQL Server database, the next step is to create a user 
 Run the following commands to create a SQL Server instance on Docker:
 
 ```text
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Test@123" -p 1433:1433 --name rudder_mssql -h rudder_mssql -d mcr.microsoft.com/mssql/server:2019-latest 
+docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Test@123" -p 1433:1433 --name rudder_mssql -h rudder_mssql -d mcr.microsoft.com/mssql/server:2019-latest
 ```
 
 ```text
@@ -48,7 +50,7 @@ GRANT CREATE TABLE TO testuser
 EXEC sp_addrolemember N'db_owner', N'testuser'
 ```
 
-### Using AWS RDS instance 
+### Using AWS RDS instance
 
 You can execute the same commands above via Azure Studio or using **cmdline sqlcmd**.
 
@@ -58,27 +60,25 @@ In order to enable sending data to SQL Server, you will first need to add it as 
 
 To configure SQL Server as a destination, please follow these steps:
 
-* Configure your data source on RudderStack if you haven't already. You can also simply create a destination and connect it to a source later.
+- Configure your data source on RudderStack if you haven't already. You can also simply create a destination and connect it to a source later.
 
 {% hint style="success" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
 {% endhint %}
 
-* After choosing a source, click on the **Add Destination** button and select **SQL Server** from the list of destinations.
-* Assign a name to your destination and then click on **Next**. You should then see the following screen:
+- After choosing a source, click on the **Add Destination** button and select **SQL Server** from the list of destinations.
+- Assign a name to your destination and then click on **Next**. You should then see the following screen:
 
 ![](../.gitbook/assets/mssqlconnection.png)
 
-
-
-* Enter the following credentials in the **Connection Settings**: 
-  * **Host -** The host name of your SQL Server service.
-  * **Database -** The database name in your SQL Server instance where the data is to be sent.
-  * **User** - The username which has the required read/write access to the above database.
-  * **Port** - Enter the port number associated with the SQL Server database instance.
-  * **Password** - The password for the above user.
-  * **SSL Mode** - Enter the SSL modes for connecting to your SQL Server instance.
-  * **Bucket Provider** - Select the intermediate storage for storing the staging files. RudderStack currently supports Amazon S3, MinIO, Google Cloud Storage, and Azure Blob Storage.
+- Enter the following credentials in the **Connection Settings**:
+  - **Host -** The host name of your SQL Server service.
+  - **Database -** The database name in your SQL Server instance where the data is to be sent.
+  - **User** - The username which has the required read/write access to the above database.
+  - **Port** - Enter the port number associated with the SQL Server database instance.
+  - **Password** - The password for the above user.
+  - **SSL Mode** - Enter the SSL modes for connecting to your SQL Server instance.
+  - **Bucket Provider** - Select the intermediate storage for storing the staging files. RudderStack currently supports Amazon S3, MinIO, Google Cloud Storage, and Azure Blob Storage.
 
 {% hint style="success" %}
 You can also set the **Sync Frequency** to set the frequency of the data import into your SQL Server database. Optionally, you can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option.
@@ -88,7 +88,7 @@ You can also set the **Sync Frequency** to set the frequency of the data import 
 
 ### **How are reserved words handled by RudderStack?**
 
-There are some limitations when it comes to using [reserved words](https://www.postgresql.org/docs/current/sql-keywords-appendix.html) in a schema, table, or column names. If such words are used as event names, traits or properties, they will be prefixed with a `_` when  RudderStack creates tables or columns for them in your schema.
+There are some limitations when it comes to using [reserved words](https://www.postgresql.org/docs/current/sql-keywords-appendix.html) in a schema, table, or column names. If such words are used as event names, traits or properties, they will be prefixed with a `_` when RudderStack creates tables or columns for them in your schema.
 
 Also, it is important to note that integers are not allowed at the start of the schema or table name. Hence, RudderStack prefixes such schema, column or table names with a `_`.
 
@@ -101,4 +101,3 @@ RudderStack converts the event keys into lower case before exporting the data in
 ## Contact Us
 
 If you come across any issues while configuring SQL Server with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com) or start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel. We will be happy to help you.
-

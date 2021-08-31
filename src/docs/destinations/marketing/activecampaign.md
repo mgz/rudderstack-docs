@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/activecampaign"
+title: "ActiveCampaign - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to ActiveCampaign
 ---
 
@@ -16,10 +18,10 @@ You can now send your event data directly to ActiveCampaign through RudderStack.
 
 Before configuring your source and destination on the RudderStack, please check whether the platform you are sending the events from is supported by ActiveCampaign. Please refer the following table to do so:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | -             | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,7 +29,7 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to ActiveCampaign, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and ActiveCampaign as a destination.
+- From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and ActiveCampaign as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
@@ -39,10 +41,10 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 To successfully configure ActiveCampaign as a destination, you will need to configure the following settings:
 
-* **API URL:** Your API URL is the unique URL generated against your account. It can be found in your account on the **Settings** page under the **Developer** tab.
-* **API Key:** Your API key can be found in your account on the **Settings** page under the **Developer** tab. Each user in your ActiveCampaign account has their own unique API key.
-* **Event Key:** This value is unique to your ActiveCampaign account and can be found as the **Event Key** in **Settings** - **Tracking** - **Event Tracking**, in your ActiveCampaign account.
-* **ActID:** This value is unique to your ActiveCampaign account, and can be found as **actid** in **Settings** - **Tracking** - **Event Tracking API**.
+- **API URL:** Your API URL is the unique URL generated against your account. It can be found in your account on the **Settings** page under the **Developer** tab.
+- **API Key:** Your API key can be found in your account on the **Settings** page under the **Developer** tab. Each user in your ActiveCampaign account has their own unique API key.
+- **Event Key:** This value is unique to your ActiveCampaign account and can be found as the **Event Key** in **Settings** - **Tracking** - **Event Tracking**, in your ActiveCampaign account.
+- **ActID:** This value is unique to your ActiveCampaign account, and can be found as **actid** in **Settings** - **Tracking** - **Event Tracking API**.
 
 ## Page
 
@@ -59,7 +61,7 @@ rudderanalytics.page("home", {
   title: "title",
   search: "search",
   referrer: "referrer",
-});
+})
 ```
 
 In the above sample, RudderStack captures the information related to the page being viewed, the URL `property` is used to whiltelist the website in the destination.
@@ -88,8 +90,8 @@ A sample `track` call looks like the following:
 
 ```javascript
 rudderanalytics.track("Product Purchased", {
-  name: "Rubik's Cube"
-});
+  name: "Rubik's Cube",
+})
 ```
 
 In the above snippet, RudderStack captures the information related to the `Product Purchased` event, along with any additional info about that event - in this case the name of the product.
@@ -113,7 +115,7 @@ rudderanalytics.identify({
     name: "John Doe",
     phone: "2364556",
   },
-});
+})
 ```
 
 In the above snippet, RudderStack captures relevant information about the user such as the `userId` as well as the associated traits such as `email`, `phone`, and `name` of that user.
@@ -136,7 +138,7 @@ rudderanalytics.identify({
     phone: "2364556",
     tags: ["Returning User", "Coupon Used"],
   },
-});
+})
 ```
 
 {% hint style="info" %}
@@ -164,7 +166,7 @@ rudderanalytics.identify({
       Hobbies: ["Cricket", "Tennis"],
     },
   },
-});
+})
 ```
 
 {% hint style="info" %}
@@ -204,7 +206,7 @@ rudderanalytics.identify({
       },
     ],
   },
-});
+})
 ```
 
 {% hint style="info" %}
@@ -214,4 +216,3 @@ For associating a contact to any field, you need to create the list from ActiveC
 ## Contact Us
 
 If you come across any issues while configuring ActiveCampaign with RudderStack, please feel free to [contact us](mailto:docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

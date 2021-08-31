@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/clevertap"
+title: "Clevertap - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to CleverTap.
 ---
 
@@ -16,10 +18,10 @@ You can now send your event data directly to CleverTap through RudderStack.
 
 Before configuring your source and destination on the RudderStack, please check whether the platform you are sending the events from is supported by CleverTap. Please refer the following table to do so:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | **Supported** | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **Supported** | **Supported** | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,7 +29,7 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to CleverTap, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and CleverTap as a destination.
+- From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and CleverTap as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
@@ -39,11 +41,11 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 To successfully configure CleverTap as a destination, you will need to configure the following settings:
 
-* **Account ID:** Your account ID is an unique ID generated for your account. It can be found in your account in the **Settings** as your **Project ID**.
-* **Passcode:** Your account passcode is an unique code generated for your account. It can be found in the **Settings** as **Passcode**.
-* **Enable track for anonymous user:** Enable this option to track anonymous users in CleverTap.
-* **Region:** Server Only: This is your dedicated CleverTap region.
-* **Use Native SDK to send Events:** Enable this option if you want to send events using device mode.
+- **Account ID:** Your account ID is an unique ID generated for your account. It can be found in your account in the **Settings** as your **Project ID**.
+- **Passcode:** Your account passcode is an unique code generated for your account. It can be found in the **Settings** as **Passcode**.
+- **Enable track for anonymous user:** Enable this option to track anonymous users in CleverTap.
+- **Region:** Server Only: This is your dedicated CleverTap region.
+- **Use Native SDK to send Events:** Enable this option if you want to send events using device mode.
 
 {% hint style="info" %}
 Note: All server-side destination requests require either a `anonymousId` or a `userId` in the payload.
@@ -55,7 +57,7 @@ Note: All server-side destination requests require either a `anonymousId` or a `
 {% tab title="Android" %}
 To add CleverTap to your Android project and enable functionalities like push notifications, follow these steps :
 
-* Open your project level `build.gradle` file, and add the following:
+- Open your project level `build.gradle` file, and add the following:
 
 ```groovy
 buildscript {
@@ -71,8 +73,8 @@ allprojects {
 }
 ```
 
-* Ensure that `android.useAndroidX` is set to `true` in your `gradle.properties` file.
-* Also, add the following under the `dependencies` section:
+- Ensure that `android.useAndroidX` is set to `true` in your `gradle.properties` file.
+- Also, add the following under the `dependencies` section:
 
 ```kotlin
 // ruddder core sdk
@@ -85,7 +87,7 @@ implementation 'com.clevertap.android:clevertap-android-sdk:4.+'
 implementation 'com.google.code.gson:gson:2.8.6'
 ```
 
-* Initialize the RudderStack SDK in the `Application` class's `onCreate()` method as shown:
+- Initialize the RudderStack SDK in the `Application` class's `onCreate()` method as shown:
 
 ```kotlin
 import com.rudderstack.android.integrations.clevertap.CleverTapIntegrationFactory
@@ -102,24 +104,25 @@ val rudderClient = RudderClient.getInstance(
         .build()
     )
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
 Follow these steps to add CleverTap to your iOS project:
 
-* Go your `Podfile` and add the `Rudder-CleverTap` extension as shown below:
+- Go your `Podfile` and add the `Rudder-CleverTap` extension as shown below:
 
 ```objectivec
 pod 'Rudder-CleverTap'
 ```
 
-* After adding the dependency followed by `pod install` , you can add the imports to your `AppDelegate.m` file as shown:
+- After adding the dependency followed by `pod install` , you can add the imports to your `AppDelegate.m` file as shown:
 
 ```objectivec
 #import "RudderCleverTapFactory.h"
 ```
 
-* Finally, change the initialization of your `RudderClient` as shown:
+- Finally, change the initialization of your `RudderClient` as shown:
 
 ```objectivec
 RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
@@ -127,6 +130,7 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 [builder withFactory:[RudderCleverTapFactory instance]];
 [RudderClient getInstance:WRITE_KEY config:[builder build]];
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -145,16 +149,17 @@ Run `pod install` inside the `ios` directory of your project adding `@rudderstac
 Import the module you added above and add it to your SDK initialization code as shown below:
 
 ```typescript
-import rudderClient from '@rudderstack/rudder-sdk-react-native';
-import clevertap from "@rudderstack/rudder-integration-clevertap-react-native";
+import rudderClient from "@rudderstack/rudder-sdk-react-native"
+import clevertap from "@rudderstack/rudder-integration-clevertap-react-native"
 
 const config = {
-    dataPlaneUrl: DATA_PLANE_URL,
-    trackAppLifecycleEvents: true,
-    withFactories: [clevertap]
-};
-rudderClient.setup(WRITE_KEY, config);
+  dataPlaneUrl: DATA_PLANE_URL,
+  trackAppLifecycleEvents: true,
+  withFactories: [clevertap],
+}
+rudderClient.setup(WRITE_KEY, config)
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -164,8 +169,9 @@ The steps to configure push notifications for CleverTap for the platform of your
 
 {% tabs %}
 {% tab title="Android" %}
-* Register push notifications for Android devices on your CleverTap dashboard either by uploading your FCM credentials or any other supported credentials by navigating to **Settings** - **Channels** - **Mobile Push** - **Android**.
-* Add the following dependency in your project level `build.gradle` file inside the `buildscript`:
+
+- Register push notifications for Android devices on your CleverTap dashboard either by uploading your FCM credentials or any other supported credentials by navigating to **Settings** - **Channels** - **Mobile Push** - **Android**.
+- Add the following dependency in your project level `build.gradle` file inside the `buildscript`:
 
 ```groovy
 dependencies {
@@ -173,7 +179,7 @@ dependencies {
 }
 ```
 
-* Next, add the following dependencies and plugin to your app level `build.gradle` file:
+- Next, add the following dependencies and plugin to your app level `build.gradle` file:
 
 ```groovy
 dependencies {
@@ -184,8 +190,8 @@ dependencies {
 apply plugin: 'com.google.gms.google-services'
 ```
 
-* Place the `google-services.json` downloaded from the `Firebase console` into the root folder of your `app`.
-* Add your `CLEVERTAP_ACCOUNT_ID` , `CLEVERTAP_TOKEN` & `FcmMessageListenerService` to the `application` tag of your app's `AndroidManifest.xml`, as below:
+- Place the `google-services.json` downloaded from the `Firebase console` into the root folder of your `app`.
+- Add your `CLEVERTAP_ACCOUNT_ID` , `CLEVERTAP_TOKEN` & `FcmMessageListenerService` to the `application` tag of your app's `AndroidManifest.xml`, as below:
 
 ```markup
 <meta-data
@@ -201,7 +207,7 @@ apply plugin: 'com.google.gms.google-services'
 </service>
 ```
 
-* Finally, create a notification channel anywhere in your application using the following block of code. You can then use this `channel Id` while creating any campaign on your CleverTap Dashboard.
+- Finally, create a notification channel anywhere in your application using the following block of code. You can then use this `channel Id` while creating any campaign on your CleverTap Dashboard.
 
 ```kotlin
 import android.app.Application;
@@ -225,10 +231,11 @@ To know more on this you can check the [CleverTap documentation on push notifica
 {% endtab %}
 
 {% tab title="iOS" %}
-* Add Push Notification as a capability by navigating to Target - `Signing & Capabilities` of your app when opened in Xcode.
-* Enable `Background Modes/Remote notifications` by navigating to **Targets** -&gt; **Your App** -&gt; **Capabilities** -&gt; **Background Modes** and then check `Remote notifications`
-* Register the push notifications for the iOS devices on your CleverTap dashboard either by uploading Auth Key or APNS Push Certificate by navigating to **Settings** -&gt; **Channels** -&gt; **Mobile Push** -&gt; **iOS**.
-* Then, add the following code in your app just after initializing RudderStack's iOS SDK to register the push notifications.
+
+- Add Push Notification as a capability by navigating to Target - `Signing & Capabilities` of your app when opened in Xcode.
+- Enable `Background Modes/Remote notifications` by navigating to **Targets** -&gt; **Your App** -&gt; **Capabilities** -&gt; **Background Modes** and then check `Remote notifications`
+- Register the push notifications for the iOS devices on your CleverTap dashboard either by uploading Auth Key or APNS Push Certificate by navigating to **Settings** -&gt; **Channels** -&gt; **Mobile Push** -&gt; **iOS**.
+- Then, add the following code in your app just after initializing RudderStack's iOS SDK to register the push notifications.
 
 ```objectivec
 #import <UserNotifications/UserNotifications.h>
@@ -246,7 +253,7 @@ completionHandler:^(BOOL granted, NSError * _Nullable error) {
 }];
 ```
 
-* Finally, add the below handlers to handle the tokens and push notifications accordingly:
+- Finally, add the below handlers to handle the tokens and push notifications accordingly:
 
 ```objectivec
 #import "RudderCleverTapIntegration.h"
@@ -268,13 +275,15 @@ completionHandler:^(BOOL granted, NSError * _Nullable error) {
   [[RudderCleverTapIntegration alloc] receivedRemoteNotification:response.notification.request.content.userInfo];
 }
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
-* Open `android` folder of your React Native app and do follow all the steps mentioned in `Android` tab of [Configuring Push Notifications](clevertap.md#configuring-push-notifications)
-* Open `ios` folder of your React Native app and do follow all the steps mentioned in `iOS` tab of [Configuring Push Notifications](clevertap.md#configuring-push-notifications)
-{% endtab %}
-{% endtabs %}
+
+- Open `android` folder of your React Native app and do follow all the steps mentioned in `Android` tab of [Configuring Push Notifications](clevertap.md#configuring-push-notifications)
+- Open `ios` folder of your React Native app and do follow all the steps mentioned in `iOS` tab of [Configuring Push Notifications](clevertap.md#configuring-push-notifications)
+  {% endtab %}
+  {% endtabs %}
 
 ## Page
 
@@ -291,7 +300,7 @@ rudderanalytics.page("Cart", "Cart Viewed", {
   search: "term",
   title: "test_item",
   url: "http://test.in",
-});
+})
 ```
 
 ## Screen
@@ -322,7 +331,7 @@ rudderanalytics.track("Checked Out", {
   Clicked_Rush_delivery_Button: true,
   total_value: 2000,
   revenue: 2000,
-});
+})
 ```
 
 In the above snippet, RudderStack captures the information related to the `Checked Out` event, along with any additional info about that event - in this case the details of the `Checked out` event.
@@ -342,56 +351,56 @@ When you track an event with the name `Order Completed` using the using Rudderst
 A number of Rudderstack's specific fields map to CleverTap’s standard `Charged` event fields
 
 | **Rudderstack** | **CleverTap** |
-| :--- | :--- |
-| `checkout_id` | `Charged ID` |
-| `revenue` | `Amount` |
-| `products` | `Items` |
+| :-------------- | :------------ |
+| `checkout_id`   | `Charged ID`  |
+| `revenue`       | `Amount`      |
+| `products`      | `Items`       |
 
 A sample `Order Completed` event looks like the following:
 
 ```javascript
- rudderanalytics.track("Order Completed", {
-   checkout_id: "12345",
-   order_id: "1234",
-   affiliation: "Apple Store",
-   "Payment mode": "Credit Card",
-   total: 20,
-   revenue: 15.0,
-   shipping: 22,
-   tax: 1,
-   discount: 1.5,
-   coupon: "Games",
-   currency: "USD",
-   products: [
-     {
-       product_id: "123",
-       sku: "G-32",
-       name: "Monopoly",
-       price: 14,
-       quantity: 1,
-       category: "Games",
-       url: "https://www.website.com/product/path",
-       image_url: "https://www.website.com/product/path.jpg",
-     },
-     {
-       product_id: "345",
-       sku: "F-32",
-       name: "UNO",
-       price: 3.45,
-       quantity: 2,
-       category: "Games",
-     },
-     {
-       product_id: "125",
-       sku: "S-32",
-       name: "Ludo",
-       price: 14,
-       quantity: 7,
-       category: "Games",
-       brand: "Ludo King",
-     },
-   ],
- });
+rudderanalytics.track("Order Completed", {
+  checkout_id: "12345",
+  order_id: "1234",
+  affiliation: "Apple Store",
+  "Payment mode": "Credit Card",
+  total: 20,
+  revenue: 15.0,
+  shipping: 22,
+  tax: 1,
+  discount: 1.5,
+  coupon: "Games",
+  currency: "USD",
+  products: [
+    {
+      product_id: "123",
+      sku: "G-32",
+      name: "Monopoly",
+      price: 14,
+      quantity: 1,
+      category: "Games",
+      url: "https://www.website.com/product/path",
+      image_url: "https://www.website.com/product/path.jpg",
+    },
+    {
+      product_id: "345",
+      sku: "F-32",
+      name: "UNO",
+      price: 3.45,
+      quantity: 2,
+      category: "Games",
+    },
+    {
+      product_id: "125",
+      sku: "S-32",
+      name: "Ludo",
+      price: 14,
+      quantity: 7,
+      category: "Games",
+      brand: "Ludo King",
+    },
+  ],
+})
 ```
 
 {% hint style="info" %}
@@ -404,18 +413,18 @@ The `identify` call lets you associate a user with their actions and capture all
 
 A number of Rudderstack's special traits map to CleverTap’s standard user profile fields, as shown in the table below. You will be required to pass the key on the left into Rudderstack and RudderStack will transform it to the key on the right before sending to CleverTap.
 
-| **Rudderstack** | **Clevertap** |
-| :--- | :--- |
-| `name` | `Name` |
-| `birthday` | `DOB` |
-| `avatar` | `Photo` |
-| `gender` | `Gender` |
-| `phone` | `Phone` |
-| `email` | `Email` |
-| `employed` | `Employed` |
-| `education` | `Education` |
-| `married` | `Married` |
-| `customerType` | `Customer Type` |
+| **Rudderstack** | **Clevertap**   |
+| :-------------- | :-------------- |
+| `name`          | `Name`          |
+| `birthday`      | `DOB`           |
+| `avatar`        | `Photo`         |
+| `gender`        | `Gender`        |
+| `phone`         | `Phone`         |
+| `email`         | `Email`         |
+| `employed`      | `Employed`      |
+| `education`     | `Education`     |
+| `married`       | `Married`       |
+| `customerType`  | `Customer Type` |
 
 All other traits will be sent to CleverTap as custom attributes.
 
@@ -460,4 +469,3 @@ Example: To disable push notifications for a user, set `MSG-push` to `false`
 ## Contact Us
 
 If you come across any issues while configuring CleverTap with RudderStack, please feel free to [contact us](mailto:docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

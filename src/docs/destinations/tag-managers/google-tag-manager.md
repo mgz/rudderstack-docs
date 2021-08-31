@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/tag-managers/google-tag-manager"
+title: "Google Tag Manager - RudderStack"
 description: >-
   Step-by-step guide to send your event data from RudderStack to Google Tag
   Manager
@@ -14,10 +16,10 @@ RudderStack enables you to send events to the **GTM dataLayer** using the JavaSc
 
 To enable sending data to Google Tag Manager, you will first need to add it as a destination to the source from which you are sending the event data. Before that, however, please ensure that the source type is supported by Google Tag Manager by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | - | - | - |
+| **Connection Mode** | **Web**       | **Mobile** | **Server** |
+| :------------------ | :------------ | :--------- | :--------- |
+| **Device mode**     | **Supported** | -          | -          |
+| **Cloud mode**      | -             | -          | -          |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -29,17 +31,17 @@ Google Tag Manager is available only for the RudderStack JavaScript SDK. You sho
 
 Once you have confirmed that the platform supports sending data to Google Tag Manager, please perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Google Tag Manager as a destination.
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Google Tag Manager as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* In the configuration settings, please add the **Container ID** which you can find in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/).
+- In the configuration settings, please add the **Container ID** which you can find in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/).
 
 ![](../../.gitbook/assets/image%20%2817%29%20%281%29%20%281%29.png)
 
-That's it! Google Tag Manager will now load on any page where the RudderStack snippet is initialized, and `rudderanalytics.page` is called on the client-side. 
+That's it! Google Tag Manager will now load on any page where the RudderStack snippet is initialized, and `rudderanalytics.page` is called on the client-side.
 
 {% hint style="info" %}
 You can use the RudderStack track events to populate the Google Tag Manager `dataLayer` once you have enabled GTM through RudderStack.
@@ -62,7 +64,7 @@ In `rudderanalytics.js` , a `page` call is included by default, just after `rudd
 A sample `page` call looks like the following:
 
 ```text
-// "home" is the name of the page. 
+// "home" is the name of the page.
 rudderanalytics.page("home", {
         path: "path",
         url: "url",
@@ -74,14 +76,14 @@ rudderanalytics.page("home", {
 
 The above call will populate Google Tag Manager with the below properties along with their values:
 
-* `userId`
-* `anonymousId`
-* `event` - The viewed `home` page
-* `path` 
-* `url`
-* `title`
-* `search`
-* `referrer`
+- `userId`
+- `anonymousId`
+- `event` - The viewed `home` page
+- `path`
+- `url`
+- `title`
+- `search`
+- `referrer`
 
 {% hint style="info" %}
 Making a call to the `page` API will send out an object to the **GTM dataLayer** containing your page related properties and an event name with its associated value.
@@ -103,12 +105,12 @@ rudderanalytics.track("Track me", {
 
 The above call will populate Google Tag Manager with the below properties along with their values:
 
-* `userId`
-* `anonymousId`
-* `event`
-* `category` 
-* `label`
-* `value`
+- `userId`
+- `anonymousId`
+- `event`
+- `category`
+- `label`
+- `value`
 
 ## FAQs
 
@@ -123,4 +125,3 @@ You can find the Container ID in the admin section of your [GTM dashboard](https
 ## Contact Us
 
 If you come across any issues while configuring Google Tag Manager with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

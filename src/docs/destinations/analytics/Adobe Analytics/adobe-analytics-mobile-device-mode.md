@@ -7,17 +7,17 @@ description: >-
 
 ## Adding Device Mode Integration
 
-* Configure the Manage App Settings tab with the required details on the [**Adobe Mobile Services**](https://mobilemarketing.adobe.com/) dashboard.
+- Configure the Manage App Settings tab with the required details on the [**Adobe Mobile Services**](https://mobilemarketing.adobe.com/) dashboard.
 
-* Download the `ADBMobileConfig.json` file by clicking on `Config File` option present at the bottom of the same page and place it inside your app in the following path `src/main/assets/`. 
+- Download the `ADBMobileConfig.json` file by clicking on `Config File` option present at the bottom of the same page and place it inside your app in the following path `src/main/assets/`.
 
-* Follow the instructions in Adobe documentation here to create the report suite [**Android**](https://experienceleague.adobe.com/docs/mobile-services/android/getting-started-android/dev-qs.html?lang=en)
+- Follow the instructions in Adobe documentation here to create the report suite [**Android**](https://experienceleague.adobe.com/docs/mobile-services/android/getting-started-android/dev-qs.html?lang=en)
 
 {% tabs %}
 {% tab title="Android" %}
 To add Adobe Analytics to your Android Project please follow these steps :
 
-* Open your `app/build.gradle` \(Module: app\) file, and add the following under the `dependencies` section :
+- Open your `app/build.gradle` \(Module: app\) file, and add the following under the `dependencies` section :
 
 ```groovy
 implementation 'com.rudderstack.android.sdk:core:1.+'
@@ -27,7 +27,7 @@ implementation 'com.google.code.gson:gson:2.8.6'
 implementation 'com.adobe.mobile:adobeMobileLibrary:4.18.2'
 ```
 
-* Initialize the Rudder SDK in the `Application` class's  `onCreate()` method as following:
+- Initialize the Rudder SDK in the `Application` class's `onCreate()` method as following:
 
 ```kotlin
 // initializing Rudder SDK
@@ -41,7 +41,7 @@ val rudderClient = RudderClient.getInstance(
 )
 ```
 
-* For Android, make sure you add these permissions to your `AndroidManifest.xml`:
+- For Android, make sure you add these permissions to your `AndroidManifest.xml`:
 
 ```groovy
 <uses-permission android:name="android.permission.INTERNET" />
@@ -50,7 +50,6 @@ val rudderClient = RudderClient.getInstance(
 
 {% endtab %}
 {% tab title="Android" %}
-
 
 ## Sending Events
 
@@ -129,10 +128,10 @@ MainApplication.rudderClient.flush()
 
 Configure the below settings at the Rudderstack dashboard:
 
-* Set the `Heartbeat Tracking Server URL` and it should be in the format of `[your_namespace].hb.omtrdc.net`.
-* Toggle `Check for Heartbeat calls to be made over https` to enable or disable the `ssl`.
-* Enter `Prefix to add before all contextData property` to append a prefix before custom property.
-* Select `Product Identifier` to look for `Product Id` and its defaulted to `Product Name`.
+- Set the `Heartbeat Tracking Server URL` and it should be in the format of `[your_namespace].hb.omtrdc.net`.
+- Toggle `Check for Heartbeat calls to be made over https` to enable or disable the `ssl`.
+- Enter `Prefix to add before all contextData property` to append a prefix before custom property.
+- Select `Product Identifier` to look for `Product Id` and its defaulted to `Product Name`.
 
 ## Contact Us
 

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/storage-platforms/minio"
+title: "MinIO - RudderStack"
 description: Step-by-step guide to set up MinIO as a destination in RudderStack.
 ---
 
@@ -16,15 +18,15 @@ RudderStack allows you to configure MinIO as a destination to which you can dump
 
 Please follow these steps to set up MinIO before adding it as a destination in RudderStack:
 
-* Login to your MinIO service
-* Create a new bucket. Alternatively, you can also use an already existing bucket.
-* You will need to provide `access key ID` and `secret access key` to authorize RudderStack to write to your bucket.
+- Login to your MinIO service
+- Create a new bucket. Alternatively, you can also use an already existing bucket.
+- You will need to provide `access key ID` and `secret access key` to authorize RudderStack to write to your bucket.
 
 {% hint style="info" %}
- `access key ID` is the user ID that uniquely identifies your MinIO account, and `secret access key` is the password to your account.
+`access key ID` is the user ID that uniquely identifies your MinIO account, and `secret access key` is the password to your account.
 {% endhint %}
 
-* Make a note of both the `access key ID` and `secret access key` as these will be required while configuring MinIO as a destination.
+- Make a note of both the `access key ID` and `secret access key` as these will be required while configuring MinIO as a destination.
 
 ## **Configuring** MinIO **in RudderStack**
 
@@ -32,22 +34,21 @@ In order to enable dumping data to MinIO, you will first need to add it as a des
 
 To do so, please follow these steps:
 
-* Choose a source to which you would like to add MinIO as a destination. You can also simply create a destination and connect it to a source later.
+- Choose a source to which you would like to add MinIO as a destination. You can also simply create a destination and connect it to a source later.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Select the destination as **MinIO** to your source. Give your destination a name and then click on **Next**.
-* Next, in the **Connection Settings**, ****fill all the fields with the relevant information \(please refer to the [Setting up MinIO](https://docs.rudderstack.com/destinations/minio#setting-up-minio) section above\) and click on **Next**.
+- Select the destination as **MinIO** to your source. Give your destination a name and then click on **Next**.
+- Next, in the **Connection Settings**, \***\*fill all the fields with the relevant information \(please refer to the [Setting up MinIO](https://docs.rudderstack.com/destinations/minio#setting-up-minio) section above\) and click on **Next\*\*.
 
 ![MinIO connection settings](../../.gitbook/assets/screenshot-2020-02-26-at-7.22.29-pm.png)
 
-* If you need any transformation, choose one from the list. Else, click on **Next**.
+- If you need any transformation, choose one from the list. Else, click on **Next**.
 
 That's it! You have successfully added MinIO as a destination in RudderStack. Once you send an event from your source, you can find it dumped to your MinIO bucket.
 
 ## Contact Us
 
 If you come across any issues while configuring MinIO with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

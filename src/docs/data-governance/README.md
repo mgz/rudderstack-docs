@@ -1,18 +1,20 @@
 ---
+slug: "/docs/data-governance"
+title: "Data Governance - RudderStack"
 description: Description of RudderStack's data governance feature.
 ---
 
 # Data Governance
 
-Modern companies generate real-time events across their websites and applications. These events are mainly used by the product and marketing teams to better understand their customers' product interactions. They are captured in a specific format which generally includes the event name, properties, and the associated metadata. 
+Modern companies generate real-time events across their websites and applications. These events are mainly used by the product and marketing teams to better understand their customers' product interactions. They are captured in a specific format which generally includes the event name, properties, and the associated metadata.
 
-To effectively analyze customer behavior or drive high-value marketing campaigns and personalizations, teams rely on the consistency of the event data formats. ****Any inconsistency in the events can lower the quality of analytics significantly and requires a lot of time and engineering effort to clean up.
+To effectively analyze customer behavior or drive high-value marketing campaigns and personalizations, teams rely on the consistency of the event data formats. \*\*\*\*Any inconsistency in the events can lower the quality of analytics significantly and requires a lot of time and engineering effort to clean up.
 
 In reality, however, as multiple stakeholders define and implement the event specifications differently, there are always some inconsistencies introduced in the event data. Some of the reasons for these inconsistencies include:
 
-* **Missing fields**
-* **Capitalization / Casing errors** : For example, one event sets the product name to lower case, while another sets it to upper case.
-* **Unit errors** : For example, one event tracks the revenue in 100 dollar units, while another tracks it in dollars.
+- **Missing fields**
+- **Capitalization / Casing errors** : For example, one event sets the product name to lower case, while another sets it to upper case.
+- **Unit errors** : For example, one event tracks the revenue in 100 dollar units, while another tracks it in dollars.
 
 ## **Data Governance with RudderStack**
 
@@ -50,4 +52,3 @@ A detailed, step-by-step explanation of using the RudderStack Data Governance AP
 ## Contact Us
 
 For more information on the RudderStack Data Governance API, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel, and we will be happy to help you.
-

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/lytics"
+title: "Lytics - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Lytics.
 ---
 
@@ -18,10 +20,10 @@ To enable sending data to Lytics, you will first need to add it as a destination
 
 Before configuring your source and destination on the RudderStack, verify if the source platform is supported by Lytics, by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | **-** |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **Supported** | -             | **-**         |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -29,28 +31,28 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Lytics, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderstack.com/signup?type=freetrial), add the source. Then, from the list of destinations, select Lytics**.**
+- From your [RudderStack dashboard](https://app.rudderstack.com/signup?type=freetrial), add the source. Then, from the list of destinations, select Lytics**.**
 
 {% hint style="info" %}
 Follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![Lytics Destination Settings on the RudderStack dashboard](../../.gitbook/assets/lytics.png)
 
 The connection settings are explained in more detail as follows:
 
-* **Account ID**: Enter the the Lytics account ID obtained from your Lytics dashboard. For more information, check out the [**Lytics support page**](https://support.lytics.com/hc/en-us/articles/115001231351-How-do-I-find-my-Lytics-account-ID-).
-* **API Key**: Create an API key from Lytics dashboard and enter the details here.
+- **Account ID**: Enter the the Lytics account ID obtained from your Lytics dashboard. For more information, check out the [**Lytics support page**](https://support.lytics.com/hc/en-us/articles/115001231351-How-do-I-find-my-Lytics-account-ID-).
+- **API Key**: Create an API key from Lytics dashboard and enter the details here.
 
 {% hint style="info" %}
 To get the API Key, go to your Lytics dashboard, and navigate to **Account** - **Manage Accounts** - **Account Settings** - **API Token**. You can create an API token here and use this information to configure Lytics as a destination.
 {% endhint %}
 
-* **Stream**: Assign a name for the stream where you want to send your data.
-* **Ensure Entity\(Block Load\)**: When this option is enabled, RudderStack gets your most updated audience membership and profile data, before sending it to Lytics.
-* **Allow UID Sharing Across Multiple Domains\(Load ID\)**: When enabled, this option lets you identify users across domains.
+- **Stream**: Assign a name for the stream where you want to send your data.
+- **Ensure Entity\(Block Load\)**: When this option is enabled, RudderStack gets your most updated audience membership and profile data, before sending it to Lytics.
+- **Allow UID Sharing Across Multiple Domains\(Load ID\)**: When enabled, this option lets you identify users across domains.
 
 ## Page
 
@@ -66,7 +68,7 @@ A sample `page` call is as shown:
 rudderanalytics.page("new category", "page name", {
   url: "url",
   path: "/path",
-});
+})
 ```
 
 Similarly, we can also make `screen` calls. However, this is supported only in the cloud-mode.
@@ -103,7 +105,7 @@ rudderanalytics.track("Order Completed", {
   shipping: 13.99,
   tax: 20.99,
   promotion_id: "PROMO_1234",
-});
+})
 ```
 
 ## Identify
@@ -120,7 +122,7 @@ A sample `identify` payload is as shown in the snippet below:
 rudderanalytics.identify("abc123", {
   name: "FirstName LastName",
   email: "example@gmail.com",
-});
+})
 ```
 
 ## FAQs
@@ -132,4 +134,3 @@ Go to your Lytics dashboard, and navigate to **Account** - **Manage Accounts** -
 ## Contact Us
 
 To know more about the Lytics integration and how to use it, feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel, and we will be happy to help you.
-

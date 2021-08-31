@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/drip"
+title: "Drip - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Drip.
 ---
 
@@ -21,4 +23,3 @@ This documentation is split into the following sections:
 ## Contact Us
 
 If you come across any issues while configuring or using Drip with RudderStack, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

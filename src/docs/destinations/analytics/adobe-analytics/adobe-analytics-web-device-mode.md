@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/adobe-analytics/web-device-mode-settings"
+title: "Web Device Mode Settings - RudderStack"
 description: >-
   Detailed technical documentation on the web device mode settings for Adobe
   Analytics destination.
@@ -35,8 +37,8 @@ rudderanalytics.page("category", "name", {
   url: "url",
   title: "title",
   search: "search",
-  referrer: "referrer"
-});
+  referrer: "referrer",
+})
 ```
 
 If this call is made the `pageName` of the `window.s` variable will be set as **Viewed Page name**. RudderStack also sends other information like `referrer`,`url`, etc.
@@ -67,17 +69,17 @@ For more info on the RudderStack E-Commerce Spec, follow the [**E-Commerce Track
 
 The mapping is as shown:
 
-| Rudder E-Commerce Event | Adobe Event |
-| :--- | :--- |
-| `product viewed` | `prodView` |
-| `product list viewed` | `prodView` |
-| `product added` | `scAdd` |
-| `product removed` | `scRemove` |
-| `order completed` | `purchase` |
-| `cart viewed` | `scView` |
-| `checkout started` | `scCheckout` |
-| `cart opened` | `scOpen` |
-| `opened cart` | `scOpen` |
+| Rudder E-Commerce Event | Adobe Event  |
+| :---------------------- | :----------- |
+| `product viewed`        | `prodView`   |
+| `product list viewed`   | `prodView`   |
+| `product added`         | `scAdd`      |
+| `product removed`       | `scRemove`   |
+| `order completed`       | `purchase`   |
+| `cart viewed`           | `scView`     |
+| `checkout started`      | `scCheckout` |
+| `cart opened`           | `scOpen`     |
+| `opened cart`           | `scOpen`     |
 
 A sample `track` call is as shown:
 
@@ -85,11 +87,10 @@ A sample `track` call is as shown:
 rudderanalytics.track("Track me", {
   category: "category",
   label: "label",
-  value: "value"
-});
+  value: "value",
+})
 ```
 
 ## Contact Us
 
 For more information on any of the sections mentioned in this guide, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

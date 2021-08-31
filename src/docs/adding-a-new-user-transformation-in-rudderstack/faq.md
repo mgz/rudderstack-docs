@@ -1,4 +1,6 @@
 ---
+slug: "/docs/adding-a-new-user-transformation-in-rudderstack/faq"
+title: "FAQ - Adding a new user - RudderStack"
 description: Commonly asked questions about RudderStack's Transformations feature.
 ---
 
@@ -10,9 +12,9 @@ This document contains some of the commonly asked questions regarding RudderStac
 
 RudderStack's Transformations feature lets you transform the events collected from a source into a destination-specific format. Some key benefits of this feature are:
 
-* These transformations can be applied to your in-transit events, in real-time.
-* You can implement specific use-cases depending on your business requirements using this feature. Some examples include PII masking, event filtering based on specific criteria, aggregating and enriching events, and so on.
-* They're easier to build and manage, and can be reused as well.
+- These transformations can be applied to your in-transit events, in real-time.
+- You can implement specific use-cases depending on your business requirements using this feature. Some examples include PII masking, event filtering based on specific criteria, aggregating and enriching events, and so on.
+- They're easier to build and manage, and can be reused as well.
 
 {% hint style="success" %}
 Read more about why your data pipeline needs to have an efficient event transformations capability in our [blog](https://rudderstack.com/blog/the-future-of-data-pipeline-tools-must-include-better-transformations-than-etl-ever-had).
@@ -22,13 +24,13 @@ Read more about why your data pipeline needs to have an efficient event transfor
 
 We have changed the way transformations are written. RudderStack now supports writing functions that transform a single event instead of a batch of events. You can now define your transformation in the following manner:
 
- `export function transformEvent(event, metadata) {}` 
+`export function transformEvent(event, metadata) {}`
 
 ## I want to write a transformation that can be applied to a small batch of events. Can I not do this anymore?
 
 You can. Simply define your transformation in the following manner:
 
- `export function transformBatch(event, metadata) {}` . 
+`export function transformBatch(event, metadata) {}` .
 
 {% hint style="warning" %}
 This can cause a loss of the event metadata that RudderStack uses internally to maintain event ordering for you.
@@ -41,4 +43,3 @@ Previously created transformations shown as `Version: V0` don't support librarie
 ## Contact Us
 
 For more information on transformations and libraries in RudderStack, feel free to [contact us](mailto:%20docs@rudderstack.com). You can also talk to us on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/crm/delighted"
+title: "Delighted - RudderStack"
 description: Step-by-step guide to set up Delighted as a destination in RudderStack.
 ---
 
@@ -16,10 +18,10 @@ RudderStack supports Delighted as a destination to which you can seamlessly send
 
 Before configuring your source and destination on the RudderStack, verify if the source platform is supported by Delighted by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | - | - |
-| **Cloud** **mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | -             | -             | -             |
+| **Cloud** **mode**  | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,44 +29,44 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the source supports sending events to Delighted, follow these steps:
 
-* From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Delighted**.
+- From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Delighted**.
 
 {% hint style="info" %}
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more information.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![Delighted Connection Settings](../../.gitbook/assets/Delighted.png)
 
-* Enter your Delighted **API Key**.
+- Enter your Delighted **API Key**.
 
 {% hint style="info" %}
 For more information on how to get your Delighted API key, refer to the Delighted [**docs**](https://app.delighted.com/docs/api).
 {% endhint %}
 
-* By default, the channel is set to **Email**. You can also select **SMS** from the dropdown.
-* Set the **Delay** value \(in seconds\) here. By default it is set to **0**.
-* To make a `track` call, enter the **Event Names** for which `track` call will be triggered.
+- By default, the channel is set to **Email**. You can also select **SMS** from the dropdown.
+- Set the **Delay** value \(in seconds\) here. By default it is set to **0**.
+- To make a `track` call, enter the **Event Names** for which `track` call will be triggered.
 
 {% hint style="warning" %}
 If the RudderStack dashboard does not contain the **Event** for which the `track` call is triggered, RudderStack will throw an error.
 {% endhint %}
 
-* Finally, click on **Next**. Delighted will now be enabled as a destination in Rudderstack.
+- Finally, click on **Next**. Delighted will now be enabled as a destination in Rudderstack.
 
 ## Identify
 
 The `identify` call lets you to add a user to your **People** [**List**](https://app.delighted.com/people). If the user already exists, RudderStack will update the user with the latest information. This includes `userId` as well as other additional properties related to user like name,phone number/email, channel, and the 'Last sent at' timestamp.
 
-* The `userId` provided during the call must match the **Channel** type. The channel type can be either set from Rudderstack dashboard or you can send it via the `identify` call with the parameter `DelightedChannelType`.
+- The `userId` provided during the call must match the **Channel** type. The channel type can be either set from Rudderstack dashboard or you can send it via the `identify` call with the parameter `DelightedChannelType`.
 
 {% hint style="info" %}
 The channel type set via the `identify` call will get a higher precedence.
 {% endhint %}
 
-* You can provide the user email or phone number. Both are not required at the same time, since one of the values will be set from the `userId`.
-* You can also send the `last_sent_at` value with the call. Refer to the example below for more details.
+- You can provide the user email or phone number. Both are not required at the same time, since one of the values will be set from the `userId`.
+- You can also send the `last_sent_at` value with the call. Refer to the example below for more details.
 
 {% hint style="info" %}
 `Last sent at` \(in UNIX timestamp\) is used to manually set the time a person was most recently sent a survey. This value will be used in the Delighted **Survey throttling** system, which ensures that same person won’t be surveyed more than once per month.
@@ -83,7 +85,7 @@ rudderanalytics.identify("name@surname.com", {
     {
         type: "delightedChannelType",
         id: "sms"
-    } 
+    }
   ]}
 });
 ```
@@ -117,7 +119,7 @@ rudderanalytics.track("Test", {
     {
         type: "delightedChannelType",
         id: "sms"
-    } 
+    }
   ]}
 });
 ```
@@ -132,11 +134,11 @@ Delighted also provides some custom properties by itself. In the above example, 
 
 Some other default properties provided by Delighted are mentioned in the table below:
 
-| **Delighted Property** | **Description** |
-| :--- | :--- |
-| `question_product_name` | Delighted shows this question in the survey. |
-| `delighted_intro_message` | Delighted displays this message in the email subject. |
-| `locale` | This property determines the localization \(including language\) of the survey experience. |
+| **Delighted Property**    | **Description**                                                                            |
+| :------------------------ | :----------------------------------------------------------------------------------------- |
+| `question_product_name`   | Delighted shows this question in the survey.                                               |
+| `delighted_intro_message` | Delighted displays this message in the email subject.                                      |
+| `locale`                  | This property determines the localization \(including language\) of the survey experience. |
 
 For more default properties, check out this Delighted [**support page**](https://help.delighted.com/article/577-special-properties).
 
@@ -153,7 +155,7 @@ The `previousId` and `userId` must be of the same type, i.e., either email or ph
 A sample `alias` call is as shown below:
 
 ```javascript
-rudderanalytics.alias("new@email.com", "old@email.com");
+rudderanalytics.alias("new@email.com", "old@email.com")
 ```
 
 {% hint style="info" %}
@@ -163,4 +165,3 @@ Both `previousId` and `userId` are required.
 ## Contact Us
 
 If you come across any issues while configuring Delighted with RudderStack, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/posthog"
+title: "Posthog - RudderStack"
 description: Step-by-step guide to send event data from RudderStack to PostHog.
 ---
 
@@ -18,10 +20,10 @@ To enable sending data to **PostHog**, you will first need to add it as a destin
 
 Before configuring your source and destination on the RudderStack, please verify if the source platform is supported by PostHog, by referring to the table below:
 
-| **Connection Mode** | Web | Mobile | Server |
-| :--- | :--- | :--- | :--- |
-| **Device Mode** | **Supported** | **-** | **-** |
-| **Cloud Mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | Web           | Mobile        | Server        |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device Mode**     | **Supported** | **-**         | **-**         |
+| **Cloud Mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -29,14 +31,14 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to PostHog, please perform the steps below:
 
-* Choose a source to which you would like to add PostHog as a destination.
+- Choose a source to which you would like to add PostHog as a destination.
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to add a source in RudderStack.
 {% endhint %}
 
-* Select the destination as **PostHog** to your source. Give your destination a name and then click on **Next**.
-* On the **Connection Settings** page, fill all the fields with the relevant information and click **Next**.
+- Select the destination as **PostHog** to your source. Give your destination a name and then click on **Next**.
+- On the **Connection Settings** page, fill all the fields with the relevant information and click **Next**.
 
 ![PostHog Connection Settings in RudderStack](../../.gitbook/assets/image%20%2894%29.png)
 
@@ -50,12 +52,12 @@ If you’re hosting your own PostHog instance, add the URL of your instance with
 
 ![PostHog Web Settings in RudderStack](../../.gitbook/assets/posthog-web.png)
 
-* **Use native SDK to send events** - This will send event data using the [Posthog JavaScript SDK](https://posthog.com/docs/integrations/js-integration).
-* **Enable autocapture with PostHog** - Enable this option to allow PostHog to send [auto-captured](https://posthog.com/docs/integrations/js-integration#usage) events.
-* **Allow PostHog to automatically capture pageview events** - This allows PostHog Javascript SDK to send a pageview event each time it is loaded on page.
-* **Disable session recoding** - Turning this to enabled will stop PostHog from recording user sessions. Find more info on this option [here](https://posthog.com/docs/features/session-recording).
-* **Additional headers to pass with XHR requests to PostHog API** - Add a list of key-value pairs, RudderStack Javascript SDK will forward these headers on the event  requests sent to PostHog server.
-* **Property black list** - Add a list of traits or event properties that you want the PostHog SDK to filter.
+- **Use native SDK to send events** - This will send event data using the [Posthog JavaScript SDK](https://posthog.com/docs/integrations/js-integration).
+- **Enable autocapture with PostHog** - Enable this option to allow PostHog to send [auto-captured](https://posthog.com/docs/integrations/js-integration#usage) events.
+- **Allow PostHog to automatically capture pageview events** - This allows PostHog Javascript SDK to send a pageview event each time it is loaded on page.
+- **Disable session recoding** - Turning this to enabled will stop PostHog from recording user sessions. Find more info on this option [here](https://posthog.com/docs/features/session-recording).
+- **Additional headers to pass with XHR requests to PostHog API** - Add a list of key-value pairs, RudderStack Javascript SDK will forward these headers on the event requests sent to PostHog server.
+- **Property black list** - Add a list of traits or event properties that you want the PostHog SDK to filter.
 
 ## Identify
 
@@ -74,7 +76,7 @@ rudderanalytics.identify("name123", {
   last_name: "Surname",
   email: "name@surname.com",
   createdAt: "Thu Mar 24 2020 17:46:45 GMT+0000 (UTC)",
-});
+})
 ```
 
 We pass the user traits passed along with the `identify` call to PostHog under the `$set` key according to the [PostHog Identify API](https://posthog.com/docs/api/post-only-endpoints#identify) .
@@ -85,12 +87,12 @@ The `page` call allows you to record information whenever a user sees a web page
 
 ```javascript
 rudderanalytics.page({
-        path: "path",
-        url: "url",
-        title: "title",
-        search: "search",
-        referrer: "referrer"
- });
+  path: "path",
+  url: "url",
+  title: "title",
+  search: "search",
+  referrer: "referrer",
+})
 ```
 
 {% hint style="info" %}
@@ -153,7 +155,7 @@ rudderanalytics.track("Order Completed", {
       image_url: "https://www.example.com/product/bacon-jam.jpg",
     },
   ],
-});
+})
 ```
 
 {% hint style="info" %}
@@ -167,11 +169,11 @@ Calling `rudderanalytics.alias()` \_\*\*\_passes an `alias`call with `userId` an
 The following code snippet shows a sample `alias` call in RudderStack:
 
 ```javascript
-rudderanalytics.alias("newUserId");
+rudderanalytics.alias("newUserId")
 ```
 
 {% hint style="info" %}
-For alias call, we send $create\_alias as an event to PostHog according to [PostHog Alias API](https://posthog.com/docs/api/post-only-endpoints#alias).
+For alias call, we send $create_alias as an event to PostHog according to [PostHog Alias API](https://posthog.com/docs/api/post-only-endpoints#alias).
 {% endhint %}
 
 {% hint style="info" %}
@@ -190,7 +192,7 @@ The group call sends `$group` as an event to PostHog according to the [PostHog G
 rudderanalytics.group("sample_group_id", {
   name: "CompanyA",
   location: "USA",
-});
+})
 ```
 
 ## Super Properties in Web
@@ -247,49 +249,48 @@ Super properties related info can be passed to any of `track`, `page` and `ident
 
 RudderStack maps the following `properties` sent to Posthog standard contextual properties:
 
-| Standard Rudder Field | Standard Posthog Field |
-| :--- | :--- |
-| `context.os.name` | `$os` |
-| `context.page.url` | `$current_url` |
-| `url` | `$host` |
-| `context.page.path` | `$pathname` |
-| `context.screen.height` | `$screen_height` |
-| `context.screen.width` | `$screen_width` |
-| `context.library.name` | `$lib` |
-| `context.library.version` | `$lib_version` |
-| `originalTimestamp`,`timestamp` | `$time` |
-| `context.device.id` | `$device_id` |
-| `request_ip`,`context.ip` | `$ip` |
-| `timestamp`,`originalTimestamp` | `$timestamp` |
-| `anonymousId` | `$anon_distinct_id` |
-| `userId`,`anonymousId` | `distinct_id` |
-| `context.screen.density` | `$screen_density` |
-| `context.device.manufacturer` | `$device_manufacturer` |
-| `context.os.version` | `$os_version` |
-| `context.timezone` | `$timezone` |
-| `context.locale` | `$locale` |
-| `context.userAgent` | `$user_agent` |
-| `context.app.version` | `$app_version` |
-| `context.device.name` | `$device_name` |
-| `context.network.carrier` | `$network_carrier` |
-| `context.app.name` | `$app_name` |
-| `context.device.model` | `$device_model` |
-| `context.app.namespace` | `$app_namespace` |
-| `context.app.build` | `$app_build` |
+| Standard Rudder Field           | Standard Posthog Field |
+| :------------------------------ | :--------------------- |
+| `context.os.name`               | `$os`                  |
+| `context.page.url`              | `$current_url`         |
+| `url`                           | `$host`                |
+| `context.page.path`             | `$pathname`            |
+| `context.screen.height`         | `$screen_height`       |
+| `context.screen.width`          | `$screen_width`        |
+| `context.library.name`          | `$lib`                 |
+| `context.library.version`       | `$lib_version`         |
+| `originalTimestamp`,`timestamp` | `$time`                |
+| `context.device.id`             | `$device_id`           |
+| `request_ip`,`context.ip`       | `$ip`                  |
+| `timestamp`,`originalTimestamp` | `$timestamp`           |
+| `anonymousId`                   | `$anon_distinct_id`    |
+| `userId`,`anonymousId`          | `distinct_id`          |
+| `context.screen.density`        | `$screen_density`      |
+| `context.device.manufacturer`   | `$device_manufacturer` |
+| `context.os.version`            | `$os_version`          |
+| `context.timezone`              | `$timezone`            |
+| `context.locale`                | `$locale`              |
+| `context.userAgent`             | `$user_agent`          |
+| `context.app.version`           | `$app_version`         |
+| `context.device.name`           | `$device_name`         |
+| `context.network.carrier`       | `$network_carrier`     |
+| `context.app.name`              | `$app_name`            |
+| `context.device.model`          | `$device_model`        |
+| `context.app.namespace`         | `$app_namespace`       |
+| `context.app.build`             | `$app_build`           |
 
 {% hint style="warning" %}
-**Note**: Posthog has a property **$insert\_id** which is auto generated by posthog sdk when using device-mode. But when using RudderStack cloud-mode we do not map any value to this property.
+**Note**: Posthog has a property **$insert_id** which is auto generated by posthog sdk when using device-mode. But when using RudderStack cloud-mode we do not map any value to this property.
 {% endhint %}
 
 ## FAQs
 
 ### **How do you get the PostHog Team API Key?**
 
-* Login to PostHog dashboard.
-* Go to the **Settings** tab under the **Project** section on the left sidebar.
-* You will find your key written as **Project API Key** or **Team API Key**.
+- Login to PostHog dashboard.
+- Go to the **Settings** tab under the **Project** section on the left sidebar.
+- You will find your key written as **Project API Key** or **Team API Key**.
 
 ## Contact Us
 
 If you come across any issues while configuring PostHog with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com) or start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel. We will be happy to help you.
-

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/data-ingestion/google-pub-sub"
+title: "Google Pub/Sub - RudderStack"
 description: Step-by-step guide to send event data from RudderStack to Google Pub/Sub.
 ---
 
@@ -16,10 +18,10 @@ RudderStack allows you to configure Google Pub/Sub as a destination and send you
 
 To enable sending data to Google Pub/Sub, you will first need to add it as a destination to the source from which you are sending your event data. Once the destination is enabled, events from our SDK will start flowing to Google Pub/Sub.
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| Device mode | **-** | **-** | **-** |
-| Cloud mode | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| Device mode         | **-**         | **-**         | **-**         |
+| Cloud mode          | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,25 +29,25 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Google Pub/Sub, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Google Pub/Sub.**
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Google Pub/Sub.**
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![Google Pub/Sub Connection Settings](../../.gitbook/assets/image%20%2879%29%20%282%29%20%282%29%20%283%29%20%283%29%20%283%29%20%282%29%20%282%29.png)
 
-* Enter the following details:
-  * **Connection Settings**
-    * **Project ID** and the **Credentials**: Follow these steps to obtain the project ID as well as the required credentials:
-      * Create a service account from Google Cloud Console.
-      * You can get the **Project ID** when you log in to your Google Cloud Console.
-      * Use the **Select a role** dropdown to add the **Pub/Sub Publisher** role.
-      * Create a key as JSON and download it.
-      * Paste this downloaded JSON in the **Credentials** field
-    * Enter the **Event Name** as well as the corresponding **Topic ID**. You can get the topic id from your topics page, as shown:
+- Enter the following details:
+  - **Connection Settings**
+    - **Project ID** and the **Credentials**: Follow these steps to obtain the project ID as well as the required credentials:
+      - Create a service account from Google Cloud Console.
+      - You can get the **Project ID** when you log in to your Google Cloud Console.
+      - Use the **Select a role** dropdown to add the **Pub/Sub Publisher** role.
+      - Create a key as JSON and download it.
+      - Paste this downloaded JSON in the **Credentials** field
+    - Enter the **Event Name** as well as the corresponding **Topic ID**. You can get the topic id from your topics page, as shown:
 
 ![Google Pub/Sub Topic ID and Name](../../.gitbook/assets/image%20%2848%29.png)
 
@@ -55,9 +57,9 @@ For the `track` events you can specify the event name based on the `event` name 
 
 For example:
 
-* If the event name is **`page`** it will send all the calls with the `type` page.
-* If the event name is  **`product added`** , it will send all the track events with the **`event`** as **`product added`**.
-{% endhint %}
+- If the event name is **`page`** it will send all the calls with the `type` page.
+- If the event name is **`product added`** , it will send all the track events with the **`event`** as **`product added`**.
+  {% endhint %}
 
 {% hint style="success" %}
 If you want to send all the events to a particular stream irrespective of the type or name, you can use **`*`** as the event name.
@@ -67,7 +69,7 @@ If you want to send all the events to a particular stream irrespective of the ty
 The **topic ID** is **case-sensitive** and has to be exactly as seen in Google Pub/Sub. On the other hand, the **event name** is **case insensitive**, and thus `Page` or `page` will both be considered as valid.
 {% endhint %}
 
-* Finally, click on **Next** to complete the configuration. Pub/Sub should now be added and enabled as a destination in RudderStack.
+- Finally, click on **Next** to complete the configuration. Pub/Sub should now be added and enabled as a destination in RudderStack.
 
 ## Attributes
 
@@ -77,9 +79,9 @@ You can send attributes to Google Pub/Sub along with the message. In order to se
 
 The following are some examples:
 
-* If the `event` is **`Product Viewed`** and the `key` is **`coupon`**, RudderStack will add the `coupon` key-value pair from the message to the attributes' metadata object.
-* If multiple mappings are provided for **`Product Viewed`**, all such key-value pairs from the message body will be added to attributes' metadata object.
-* If the event name is **`page`** it will send all the calls with the `type` page.
+- If the `event` is **`Product Viewed`** and the `key` is **`coupon`**, RudderStack will add the `coupon` key-value pair from the message to the attributes' metadata object.
+- If multiple mappings are provided for **`Product Viewed`**, all such key-value pairs from the message body will be added to attributes' metadata object.
+- If the event name is **`page`** it will send all the calls with the `type` page.
 
 {% hint style="warning" %}
 For the `key` fields provided in the attributes map, the `key` is searched in the message body in **`root`**, **`properties`**, **`traits`** and **`context.traits`** - in that specific order.
@@ -102,9 +104,9 @@ rudderanalytics.track("Track me", {
 
 For the above `track` call, you can specify an attribute mapping for `metadataID` as shown below:
 
-| **Event** | **Field** |
-| :--- | :--- |
-| Track me | `metadata.metadataId` |
+| **Event** | **Field**             |
+| :-------- | :-------------------- |
+| Track me  | `metadata.metadataId` |
 
 This will create the below attribute metadata object:
 
@@ -130,8 +132,8 @@ rudderanalytics.page({
   url: "url",
   title: "title",
   search: "search",
-  referrer: "referrer"
-});
+  referrer: "referrer",
+})
 ```
 
 ## Identify
@@ -147,8 +149,8 @@ A sample `identify` payload is as shown in the snippet below:
 ```javascript
 rudderanalytics.identify("abc123", {
   name: "FirstName LastName",
-  email: "example@gmail.com"
-});
+  email: "example@gmail.com",
+})
 ```
 
 ## Track
@@ -163,18 +165,18 @@ A sample `track` payload is as shown in the snippet below:
 
 ```javascript
 rudderanalytics.track("Track me", {
-        category: "category",
-        label: "label",
-        value: "value"
- });
+  category: "category",
+  label: "label",
+  value: "value",
+})
 ```
 
 ## FAQs <a id="faqs"></a>
 
 ### How does event mapping work with the topic ID? <a id="how-does-event-mapping-work-with-the-delivery-stream"></a>
 
-* If there is no topic ID set for an event, it will not be sent.
-* If an event is set with a topic id, the payload will be sent to Pub/Sub to that particular topic id.
+- If there is no topic ID set for an event, it will not be sent.
+- If an event is set with a topic id, the payload will be sent to Pub/Sub to that particular topic id.
 
 {% hint style="info" %}
 If you have set all event type, event and \* for mapping the priority will be given to `event` ,  
@@ -196,4 +198,3 @@ In order to send multiple attribute keys for a particular event, enter the requi
 ## Contact Us
 
 If you come across any issues while configuring or using Google Pub/Sub with RudderStack, please feel free to [contact us](mailto:%20contact@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

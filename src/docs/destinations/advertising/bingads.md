@@ -1,4 +1,6 @@
 ---
+slug: "/docs/advertising/bingads"
+title: "Bing Ads - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Bing Ads
 ---
 
@@ -14,10 +16,10 @@ To enable sending data to Bing Ads, you will first need to add it as a destinati
 
 Before configuring your source and destination on the RudderStack, please check whether the platform you are sending the events from is supported by Bing Ads. Please refer the following table to do so:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | - | - | - |
+| **Connection Mode** | **Web**       | **Mobile** | **Server** |
+| :------------------ | :------------ | :--------- | :--------- |
+| **Device mode**     | **Supported** | -          | -          |
+| **Cloud mode**      | -             | -          | -          |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -25,18 +27,18 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Bing Ads, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and Bing Ads as a destination.
+- From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and Bing Ads as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![Configuration Settings for Bing Ads](../../.gitbook/assets/Bing_Ads.PNG)
 
-* Please enter the **Tag ID** of your Bing Ads account.
-* Click on **Save** to finish the configuration. Bing Ads will now be added and enabled as a destination in RudderStack.
+- Please enter the **Tag ID** of your Bing Ads account.
+- Click on **Save** to finish the configuration. Bing Ads will now be added and enabled as a destination in RudderStack.
 
 ## Page
 
@@ -45,7 +47,7 @@ You can make a `page` call to Bing Ads to record a page view. The SDK will send 
 A sample `page` call is as shown:
 
 ```javascript
-rudderanalytics.page();
+rudderanalytics.page()
 ```
 
 ## Track
@@ -60,12 +62,12 @@ A sample `track` call looks like the following:
 
 ```javascript
 rudderanalytics.track("Item Purchased", {
-  category: 'MyCategory',
-  currency: 'INR',
+  category: "MyCategory",
+  currency: "INR",
   total: 5,
   revenue: 125,
-  value: 100  
-});
+  value: 100,
+})
 ```
 
 {% hint style="info" %}
@@ -81,4 +83,3 @@ The UET tag can be created after logging into your Bing Ads account and navigati
 ## Contact Us
 
 If you come across any issues while configuring Bing Ads with RudderStack, please feel free to [contact us](mailto:docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/adobe-analytics/e-commerce-events"
+title: "Adobe Analytics Heartbeat Events - RudderStack"
 description: >-
   Detailed technical documentation on the supported E-commerce events for the
   Adobe Analytics destination.
@@ -10,79 +12,79 @@ RudderStack broadly classifies the E-commerce events \(Merchandizing\) as shown 
 
 ## Product Viewed
 
-* Adobe Event Name: `prodView`
-* RudderStack Events: `Product Viewed`, `Product List Viewed`
-* Properties used:
+- Adobe Event Name: `prodView`
+- RudderStack Events: `Product Viewed`, `Product List Viewed`
+- Properties used:
 
 | RudderStack property | Adobe Property | Default Value |
-| :--- | :--- | :--- |
-| currency | currencyCode | "USD" |
+| :------------------- | :------------- | :------------ |
+| currency             | currencyCode   | "USD"         |
 
 ## Product Added
 
-* Adobe Event Name: `scAdd`
-* RudderStack Event: `Product Added`
-* Properties used:
+- Adobe Event Name: `scAdd`
+- RudderStack Event: `Product Added`
+- Properties used:
 
 | RudderStack property | Adobe Property | Default Value |
-| :--- | :--- | :--- |
-| currency | currencyCode | "USD" |
+| :------------------- | :------------- | :------------ |
+| currency             | currencyCode   | "USD"         |
 
 ## Product Removed
 
-* Adobe Event Name: `scRemove`
-* RudderStack Event: `Product Removed`
-* Properties used:
+- Adobe Event Name: `scRemove`
+- RudderStack Event: `Product Removed`
+- Properties used:
 
 | RudderStack property | Adobe Property | Default Value |
-| :--- | :--- | :--- |
-| currency | currencyCode | "USD" |
+| :------------------- | :------------- | :------------ |
+| currency             | currencyCode   | "USD"         |
 
 ## Order Completed
 
-* Adobe Event Name: `purchase`
-* Rudder Events: `Order Completed`
-* Properties used:
+- Adobe Event Name: `purchase`
+- Rudder Events: `Order Completed`
+- Properties used:
 
-| RudderStack property | Adobe Property |
-| :--- | :--- |
-| currency | currencyCode. Default "USD" |
-| purchaseId | purchaseID |
-| transactionId | transactionID |
-| order\_id | purchaseID/transactionID \(if purchaseId or transactionId is not present\) |
+| RudderStack property | Adobe Property                                                             |
+| :------------------- | :------------------------------------------------------------------------- |
+| currency             | currencyCode. Default "USD"                                                |
+| purchaseId           | purchaseID                                                                 |
+| transactionId        | transactionID                                                              |
+| order_id             | purchaseID/transactionID \(if purchaseId or transactionId is not present\) |
 
 ## Cart Viewed
 
-* Adobe Event Name: `scView`
-* Rudder Events: `Cart Viewed`
-* Properties used:
+- Adobe Event Name: `scView`
+- Rudder Events: `Cart Viewed`
+- Properties used:
 
 | RudderStack property | Adobe Property | Default Value |
-| :--- | :--- | :--- |
-| currency | currencyCode | "USD" |
+| :------------------- | :------------- | :------------ |
+| currency             | currencyCode   | "USD"         |
 
 ## Checkout Started
 
-* Adobe Event Name: `scCheckout`
-* Rudder Events: `Checkout Started`
-* Properties used:
+- Adobe Event Name: `scCheckout`
+- Rudder Events: `Checkout Started`
+- Properties used:
 
-| RudderStack property | Adobe Property |
-| :--- | :--- |
-| currency | currencyCode. Default "USD" |
-| purchaseId | purchaseID |
-| transactionId | transactionID |
-| order\_id | purchaseID/transactionID \(If purchaseId or transactionId is not present\) |
+| RudderStack property | Adobe Property                                                             |
+| :------------------- | :------------------------------------------------------------------------- |
+| currency             | currencyCode. Default "USD"                                                |
+| purchaseId           | purchaseID                                                                 |
+| transactionId        | transactionID                                                              |
+| order_id             | purchaseID/transactionID \(If purchaseId or transactionId is not present\) |
 
 ## Cart Opened
 
-* Adobe Event Name: `scOpen`
-* Rudder Events: `Cart Opened`
-* Properties used:
+- Adobe Event Name: `scOpen`
+- Rudder Events: `Cart Opened`
+- Properties used:
 
 | RudderStack property | Adobe Property | Default Value |
-| :--- | :--- | :--- |
-| currency | currencyCode | "USD" |
+| :------------------- | :------------- | :------------ |
+| currency             | currencyCode   | "USD"         |
 
 ## Workflow for Sending E-commerce Events to Adobe Analytics
 
@@ -103,4 +105,3 @@ The `tl()` method is useful for tracking links and other elements that would not
 ## Contact Us
 
 For more information on any of the sections covered in this guide, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

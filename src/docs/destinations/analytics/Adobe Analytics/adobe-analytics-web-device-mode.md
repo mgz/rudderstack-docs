@@ -11,7 +11,7 @@ description: >-
 
 ## Initialization
 
-We initialize [`appmeasurement.js`](https://cdn.rudderlabs.com/adobe-analytics-js/adobe-analytics-js.js) or [`mediaSDK.js`](https://cdn.rudderlabs.com/adobe-analytics-js/adobe-analytics-js-heartbeat.js) according to the settings in the RudderStack dashboard. 
+We initialize [`appmeasurement.js`](https://cdn.rudderlabs.com/adobe-analytics-js/adobe-analytics-js.js) or [`mediaSDK.js`](https://cdn.rudderlabs.com/adobe-analytics-js/adobe-analytics-js-heartbeat.js) according to the settings in the RudderStack dashboard.
 
 RudderStack first checks if any global properties are set in `window.s_account` or `window.s objects`. If already present, they will be used. Otherwise, RudderStack uses the Report Suite IDs, Tracking Server URL, and Tracking Server Secure URl (optional) as set in the RudderStack dashboard.
 
@@ -28,15 +28,14 @@ RudderStack sends a page view event to Adobe Analytics whenever you make a **`pa
 A sample `page` call is as shown:
 
 ```javascript
-
 // Passing page category, name and properties
 rudderanalytics.page("category", "name", {
   path: "path",
   url: "url",
   title: "title",
   search: "search",
-  referrer: "referrer"
-});
+  referrer: "referrer",
+})
 ```
 
 If this call is made the `pageName` of the `window.s` variable will be set as **Viewed Page name**. RudderStack also sends other information like `referrer`,`url`, etc.
@@ -44,7 +43,6 @@ If this call is made the `pageName` of the `window.s` variable will be set as **
 {% hint style="info" %}
 The mappings done in the RudderStack dashboard will be set as context data, eVars, hiers, lists and props for every `page` call. The `t()` method is called to compile all the variables set and send them to Adobe Analytics.
 {% endhint %}
-
 
 ## Track
 
@@ -68,17 +66,17 @@ For more info on the RudderStack E-Commerce Spec, follow the [E-Commerce Trackin
 
 The mapping is as shown:
 
-| Rudder E-Commerce event | Adobe Event |
-| :--- | :--- |
-| product viewed | `prodView` |
-| product list viewed  | `prodView` |
-| product added | `scAdd` |
-| product removed | `scRemove` |
-| order completed | `purchase` |
-| cart viewed | `scView` |
-| checkout started | `scCheckout` |
-| cart opened | `scOpen` |
-| opened cart | `scOpen` |
+| Rudder E-Commerce event | Adobe Event  |
+| :---------------------- | :----------- |
+| product viewed          | `prodView`   |
+| product list viewed     | `prodView`   |
+| product added           | `scAdd`      |
+| product removed         | `scRemove`   |
+| order completed         | `purchase`   |
+| cart viewed             | `scView`     |
+| checkout started        | `scCheckout` |
+| cart opened             | `scOpen`     |
+| opened cart             | `scOpen`     |
 
 A sample `track` call is as shown:
 
@@ -86,8 +84,8 @@ A sample `track` call is as shown:
 rudderanalytics.track("Track me", {
   category: "category",
   label: "label",
-  value: "value"
-});
+  value: "value",
+})
 ```
 
 ## Contact Us

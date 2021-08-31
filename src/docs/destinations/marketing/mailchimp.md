@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/mailchimp"
+title: "Mailchimp - RudderStack"
 description: Step-by-step guide to add people to your Mailchimp list using RudderStack
 ---
 
@@ -16,10 +18,10 @@ RudderStack allows you to add people to your Mailchimp list via a simple `identi
 
 Before configuring Mailchimp as a destination in RudderStack, please make sure that the source platform is supported by Mailchimp. You can refer to the following table to do so:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | -             | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,17 +29,17 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that Mailchimp supports the source type, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Mailchimp as a destination.
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Mailchimp as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a suitable name to the destination, and then click on **Next**. You should then see the following screen:
+- Give a suitable name to the destination, and then click on **Next**. You should then see the following screen:
 
 ![Mailchimp Connection Settings screen](../../.gitbook/assets/image%20%2872%29.png)
 
-* Enter the relevant information in the fields such as the **Mailchimp API Key**, **Audience ID** and **DataCenter ID**. Then, click on **Next**.
+- Enter the relevant information in the fields such as the **Mailchimp API Key**, **Audience ID** and **DataCenter ID**. Then, click on **Next**.
 
 {% hint style="info" %}
 It is recommended that you create a new API key for your RudderStack destination. Mailchimp restricts each API key to a maximum of 10 concurrent requests. Hence, creating a dedicated key for RudderStack ensures maximum throughput for the outgoing calls. Please read more about the API keys by going to [Mailchimp’s documentation](https://mailchimp.com/help/about-api-keys/).
@@ -61,9 +63,9 @@ rudderanalytics.identify("user123", {
 
 Every time an `identify` call is made with an email address included, RudderStack performs the following steps:
 
-* RudderStack first checks with Mailchimp whether that specific email address exists for the `listId` provided in the destination settings.
-* If the email address does not exist in the list, RudderStack will subscribe the associated user to the list immediately. If the `doubleOptIn` setting is enabled, Mailchimp will send a confirmation email to that user, and that email will be tagged with a subscriber status of `pending`. The subscriber status automatically changes to `subscribed` once the user confirms the email.
-* If the user already has a subscriber status such as `pending`, `subscribed`, `unsubscribed` or `cleaned`, RudderStack will **not** resubscribe them, but only update their associated user traits.
+- RudderStack first checks with Mailchimp whether that specific email address exists for the `listId` provided in the destination settings.
+- If the email address does not exist in the list, RudderStack will subscribe the associated user to the list immediately. If the `doubleOptIn` setting is enabled, Mailchimp will send a confirmation email to that user, and that email will be tagged with a subscriber status of `pending`. The subscriber status automatically changes to `subscribed` once the user confirms the email.
+- If the user already has a subscriber status such as `pending`, `subscribed`, `unsubscribed` or `cleaned`, RudderStack will **not** resubscribe them, but only update their associated user traits.
 
 {% hint style="info" %}
 For the `identify` call in RudderStack, email is a required field. The rest of the fields must match the **Merge Field** tag in Mailchimp.
@@ -73,8 +75,8 @@ For the `identify` call in RudderStack, email is a required field. The rest of t
 
 To send custom merge fields or user traits to Mailchimp, please follow these steps:
 
-* Create the merge field in Mailchimp for every trait you want sent to it.
-* When you make the `identify` call, the keys that match the traits above will automatically appear in your Mailchimp list.
+- Create the merge field in Mailchimp for every trait you want sent to it.
+- When you make the `identify` call, the keys that match the traits above will automatically appear in your Mailchimp list.
 
 {% hint style="info" %}
 The `identify` call will **not change** in this case.
@@ -106,7 +108,7 @@ In the example above, we override the default `listId` with the `listId` as `esf
 
 ### Updating the subscription status
 
-RudderStack gives you the option of manually updating the subscription status of a user. Simply pass on an additional parameter to Mailchimp called `subscriptionStatus`. 
+RudderStack gives you the option of manually updating the subscription status of a user. Simply pass on an additional parameter to Mailchimp called `subscriptionStatus`.
 
 An example of how to do this is as shown in the code snippet below:
 
@@ -138,13 +140,12 @@ To get the Mailchimp API Key, log in to Mailchimp, and go to **Account** - **Ext
 
 ### Where do I get the Mailchimp Audience ID?
 
-You can find the Mailchimp Audience ID by logging in to Mailchimp and navigating to **Audience** - **Manage Audience** - **Settings** - **Audience name and defaults** 
+You can find the Mailchimp Audience ID by logging in to Mailchimp and navigating to **Audience** - **Manage Audience** - **Settings** - **Audience name and defaults**
 
 ### Where do I get the Mailchimp DataCenter ID?
 
-* To get the DataCenter ID, please refer to your Mailchimp URL in the browser. For example, if the URL is `https://us20.admin.mailchimp.com/lists`, the DataCenter ID is `us20` in this case.
+- To get the DataCenter ID, please refer to your Mailchimp URL in the browser. For example, if the URL is `https://us20.admin.mailchimp.com/lists`, the DataCenter ID is `us20` in this case.
 
 ## Contact Us
 
 If you come across any issues while configuring Mailchimp with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

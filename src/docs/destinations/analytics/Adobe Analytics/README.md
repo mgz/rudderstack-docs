@@ -9,6 +9,6 @@ description: >-
 
 RudderStack supports sending real-time customer events to Adobe Analytics.
 
-
 ## Contact Us
+
 If you come across any issues while configuring Adobe Analytics with RudderStack, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel.

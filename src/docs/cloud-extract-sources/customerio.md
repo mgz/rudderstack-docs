@@ -1,4 +1,6 @@
 ---
+slug: "/docs/cloud-extract-sources/customerio"
+title: "Customer.io - RudderStack"
 description: Step-by-step guide to ingest event data from Customer.io into RudderStack
 ---
 
@@ -12,25 +14,25 @@ This document guides you in setting up Customer.io as a source in RudderStack. B
 
 In order to add Customer.io as a source in RudderStack, please follow these steps:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), click on **Add Source**. From the list of sources, select **Customer.io**, as shown:
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), click on **Add Source**. From the list of sources, select **Customer.io**, as shown:
 
 ![](../.gitbook/assets/image%20%2820%29%20%281%29.png)
 
-* Enter the name of your source.
+- Enter the name of your source.
 
 {% hint style="info" %}
 If you wish to connect this source to our warehouse destinations, the source name should match the name of your warehouse schema.
 {% endhint %}
 
-* Once you have entered the name of your source, click on **Next** and save the source.
+- Once you have entered the name of your source, click on **Next** and save the source.
 
 ![](../.gitbook/assets/image%20%2861%29.png)
 
-* Head over to your Customer.io account and navigate to the **Integrations** page from the sidebar. Look for the integration **Reporting Webhooks**, as shown:
+- Head over to your Customer.io account and navigate to the **Integrations** page from the sidebar. Look for the integration **Reporting Webhooks**, as shown:
 
 ![](../.gitbook/assets/image%20%2862%29.png)
 
-* Click on **Add Webhook** and add a webhook pointing to the URL in the following format:`<your_dataplane_url>/v1/webhook?writeKey=<your_customer_io_source_write_key>`
+- Click on **Add Webhook** and add a webhook pointing to the URL in the following format:`<your_dataplane_url>/v1/webhook?writeKey=<your_customer_io_source_write_key>`
 
 An example URL would like the following:
 
@@ -46,20 +48,20 @@ A sample figure highlighting this step is as shown:
 
 ![Webhook Settings](../.gitbook/assets/image%20%2830%29.png)
 
-* Finally, save the webhook.
+- Finally, save the webhook.
 
 ## Supported Events
 
 We currently support only the Email Events as listed in the table below:
 
-| **Email Event** | **Description** |
-| :--- | :--- |
-| `Delivered` | The delivery provider's report that the email was delivered to the inbox of the recipient |
-| `Opened` | An email was opened by the recipient |
-| `Clicked` | A tracked link in an email was clicked by the recipient / customer |
-| `Bounced` | The delivery provider's report that it was unable to deliver the email to the recipient |
-| `Spammed` | An email was marked as spam by the recipient |
-| `Unsubscribed` | The customer unsubscribed via a particular email |
+| **Email Event** | **Description**                                                                           |
+| :-------------- | :---------------------------------------------------------------------------------------- |
+| `Delivered`     | The delivery provider's report that the email was delivered to the inbox of the recipient |
+| `Opened`        | An email was opened by the recipient                                                      |
+| `Clicked`       | A tracked link in an email was clicked by the recipient / customer                        |
+| `Bounced`       | The delivery provider's report that it was unable to deliver the email to the recipient   |
+| `Spammed`       | An email was marked as spam by the recipient                                              |
+| `Unsubscribed`  | The customer unsubscribed via a particular email                                          |
 
 ## RudderStack Event Transformation
 
@@ -68,4 +70,3 @@ The webhook event from Customer.io is ingested into RudderStack after converting
 ## Contact Us
 
 If you come across any issues while configuring Customer.io as a source with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel - we will be happy to talk to you!
-

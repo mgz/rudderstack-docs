@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/data-ingestion/apache-kafka"
+title: "Apache Kafka - RudderStack"
 description: Step-by-step guide to send event data from RudderStack to Apache Kafka
 ---
 
@@ -18,10 +20,10 @@ In order to enable dumping data to Kafka, you will first need to add it as a des
 
 Before configuring your source and destination on the [dashboard](https://app.rudderestack.com), please check whether the platform you are working on is supported by Apache Kafka. Please refer to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | - | - |
-| **Cloud** **mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | -             | -             | -             |
+| **Cloud** **mode**  | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -29,25 +31,25 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Kafka, perform the steps below:
 
-* Choose a source to which you would like to add Kafka as a destination.
+- Choose a source to which you would like to add Kafka as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Select the destination as **Kafka** to your source. Give your destination a name and then click on **Next**.
-* Next, in the **Connection Settings**, **\*\*fill all the fields with the relevant information and click** Next\*\*
+- Select the destination as **Kafka** to your source. Give your destination a name and then click on **Next**.
+- Next, in the **Connection Settings**, **\*\*fill all the fields with the relevant information and click** Next\*\*
 
 ![Kafka Connection Settings](../../.gitbook/assets/screenshot-2020-05-17-at-4.34.38-pm.png)
 
-* **Host Name**: Your Kafka server broker's host name goes here.
-* **Port:** The port to connect to the broker goes here.
-* **Topic Name**: Provide the topic name, to which you want to send data.
-* **SSL Enabled**: Enable this option if you have enabled SSL to connect to your broker.
-* **CA Certificate**: If you have enabled SSL, provide the CA certificate in this field.
-* **Enable SASL with SSL**: If you have enabled SSL, you can optionally use SASL for client authentication.
-* **Username**: Provide the username as configured in Kafka for authenticating clients with SASL.
-* **Password**: Provide the password as configured in Kafka for authenticating clients with SASL.
+- **Host Name**: Your Kafka server broker's host name goes here.
+- **Port:** The port to connect to the broker goes here.
+- **Topic Name**: Provide the topic name, to which you want to send data.
+- **SSL Enabled**: Enable this option if you have enabled SSL to connect to your broker.
+- **CA Certificate**: If you have enabled SSL, provide the CA certificate in this field.
+- **Enable SASL with SSL**: If you have enabled SSL, you can optionally use SASL for client authentication.
+- **Username**: Provide the username as configured in Kafka for authenticating clients with SASL.
+- **Password**: Provide the password as configured in Kafka for authenticating clients with SASL.
 
 {% hint style="warning" %}
 You need to enable SSL to use SASL authentication.
@@ -57,9 +59,9 @@ You need to enable SSL to use SASL authentication.
 
 RudderStack currently supports the following SASL types:
 
-* **PLAIN**
-* **SCRAM SHA-256**
-* **SCRAM SHA-512**
+- **PLAIN**
+- **SCRAM SHA-256**
+- **SCRAM SHA-512**
 
 {% hint style="info" %}
 For more information on the Apache Kafka SASL authentication, visit the [official documentation](https://kafka.apache.org/documentation/#security_sasl).
@@ -85,7 +87,7 @@ If you have enabled 2-way SSL, i.e. your server requires client authentication, 
 
 Please follow the steps below that make use of Java's **keytool** utility.
 
-1. **Generate Key and Certificates:**     `keytool -keystore kafka.server.keystore.jks -alias localhost -keyalg RSA -genkey`
+1. **Generate Key and Certificates:** `keytool -keystore kafka.server.keystore.jks -alias localhost -keyalg RSA -genkey`
 2. **Create your own CA**
    1. Generate a CA that is simply a public-private key pair and certificate, and it is intended to sign other certificates. **You need to put this certificate at the RudderStack Web App as CA certificate**.
 
@@ -97,9 +99,9 @@ Please follow the steps below that make use of Java's **keytool** utility.
 
    `keytool -keystore kafka.server.truststore.jks -alias CARoot -importcert -file ca-cert` 3. **Sign the certificates**
 
-2. Export the certificate from the keystore, like so:   `keytool -keystore kafka.server.keystore.jks -alias localhost -certreq -file cert-file`
-3. Sign it with the CA:  `openssl x509 -req -CA ca-cert -CAkey ca-key -in cert-file -out cert-signed -days {validity} -CAcreateserial -passin pass:{ca-password}`
-4. Import both the certificate of the CA and the signed certificate into the broker keystore:  `1. keytool -keystore kafka.server.keystore.jks -alias CARoot -import -file ca-cert  2. keytool -keystore kafka.server.keystore.jks -alias localhost -import -file cert-signed`
+2. Export the certificate from the keystore, like so: `keytool -keystore kafka.server.keystore.jks -alias localhost -certreq -file cert-file`
+3. Sign it with the CA: `openssl x509 -req -CA ca-cert -CAkey ca-key -in cert-file -out cert-signed -days {validity} -CAcreateserial -passin pass:{ca-password}`
+4. Import both the certificate of the CA and the signed certificate into the broker keystore: `1. keytool -keystore kafka.server.keystore.jks -alias CARoot -import -file ca-cert 2. keytool -keystore kafka.server.keystore.jks -alias localhost -import -file cert-signed`
 
 By following all the steps described above, the script to create the CA and broker and client truststores and keystores is as shown:
 
@@ -113,7 +115,7 @@ keytool -keystore kafka.server.keystore.jks -alias CARoot -import -file ca-cert
 keytool -keystore kafka.server.keystore.jks -alias localhost -import -file cert-signed
 ```
 
-* Put the below parameters in your `server.properties`
+- Put the below parameters in your `server.properties`
 
 ```markup
 ssl.keystore.location=<keystore location>
@@ -127,7 +129,7 @@ ssl.truststore.type=JKS
 ssl.keystore.type=JKS
 ```
 
-* You also need to put RudderStack's CA certificate to your truststore, as shown: _\*\*_
+- You also need to put RudderStack's CA certificate to your truststore, as shown: _\*\*_
 
 ```bash
 keytool -keystore kafka.server.truststore.jks -alias CARootRudder -import -file ca-cert-rudder
@@ -192,4 +194,3 @@ You should configure your Zookeeper with `SASL_SSL`.
 ## Contact Us
 
 If you come across any issues while configuring or using Kafka with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

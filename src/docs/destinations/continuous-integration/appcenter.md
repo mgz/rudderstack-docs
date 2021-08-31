@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/continuous-integration/appcenter"
+title: "Visual Studio App Center - RudderStack"
 description: >-
   Step-by-step guide to send your event data from RudderStack to Visual Studio
   App Center
@@ -14,10 +16,10 @@ RudderStack lets you send your event data to App Center via its native web SDKs.
 
 Before configuring your source and destination on the RudderStack, please check whether the platform you are sending the events from is supported by App Center. Please refer the following table to do so:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | **Supported** | - |
-| **Cloud mode** | - | - | - |
+| **Connection Mode** | **Web** | **Mobile**    | **Server** |
+| :------------------ | :------ | :------------ | :--------- |
+| **Device mode**     | -       | **Supported** | -          |
+| **Cloud mode**      | -       | -             | -          |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -25,23 +27,23 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to App Center, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and select **App Center** from the list of destinations.
+- From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and select **App Center** from the list of destinations.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Name your destination, and click on **Next**. You should be able to see the following screen:
+- Name your destination, and click on **Next**. You should be able to see the following screen:
 
 ![Connection settings for App Center destination](../../.gitbook/assets/appcenter.png)
 
-* Enter the relevant details and click on **Next** to complete the setup. The **API Secret Key** can be found as **App Secret** on the **Getting Started** page or **Settings** page on the App Center portal.
+- Enter the relevant details and click on **Next** to complete the setup. The **API Secret Key** can be found as **App Secret** on the **Getting Started** page or **Settings** page on the App Center portal.
 
 {% tabs %}
 {% tab title="Android" %}
 Follow these steps to add App Center to your Android project:
 
-* Add the following `dependencies` to your `app/build.gradle` file as shown:
+- Add the following `dependencies` to your `app/build.gradle` file as shown:
 
 ```groovy
 implementation 'com.rudderstack.android.sdk:core:1.+'
@@ -49,14 +51,14 @@ implementation 'com.rudderstack.android.integration:appcenter:1.0.0'
 implementation 'com.google.code.gson:gson:2.8.6'
 ```
 
-* Also add the App Center `analytics` depedencies to your `app/build.gradle` as shown below:
+- Also add the App Center `analytics` depedencies to your `app/build.gradle` as shown below:
 
 ```groovy
 def appCenterSdkVersion = '4.1.0'
 implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
 ```
 
-* Make sure that the `minSdkVersion` in your `app/build.gradle` is atleast `21`.
+- Make sure that the `minSdkVersion` in your `app/build.gradle` is atleast `21`.
 
 ```groovy
 defaultConfig {
@@ -64,7 +66,7 @@ defaultConfig {
 }
 ```
 
-* Finally, change the initialization of your `RudderClient` in your `Application` class, as shown:
+- Finally, change the initialization of your `RudderClient` in your `Application` class, as shown:
 
 ```kotlin
 val rudderClient = RudderClient.getInstance(
@@ -76,24 +78,25 @@ val rudderClient = RudderClient.getInstance(
         .build()
 )
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
 Follow these steps to add App Center to your iOS project:
 
-* Go your `Podfile` and add the `Rudder-AppCenter` extension
+- Go your `Podfile` and add the `Rudder-AppCenter` extension
 
 ```ruby
 pod 'Rudder-AppCenter'
 ```
 
-* After adding the dependency followed by `pod install` , you can add the imports to your `AppDelegate.m` file, as shown:
+- After adding the dependency followed by `pod install` , you can add the imports to your `AppDelegate.m` file, as shown:
 
 ```text
 #import <RudderAppCenterFactory.h>
 ```
 
-* Finally, change the initialization of your `RudderClient` as shown:
+- Finally, change the initialization of your `RudderClient` as shown:
 
 ```text
 RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
@@ -127,35 +130,36 @@ Run `pod install` inside the `ios` directory of your project adding `@rudderstac
 Import the module you added above and add it to your SDK initialization code as shown below:
 
 ```typescript
-import rudderClient from '@rudderstack/rudder-sdk-react-native';
-import appcenter from "@rudderstack/rudder-integration-appcenter-react-native";
+import rudderClient from "@rudderstack/rudder-sdk-react-native"
+import appcenter from "@rudderstack/rudder-integration-appcenter-react-native"
 
 const config = {
-    dataPlaneUrl: DATA_PLANE_URL,
-    trackAppLifecycleEvents: true,
-    withFactories: [appcenter]
-};
-rudderClient.setup(WRITE_KEY, config);
+  dataPlaneUrl: DATA_PLANE_URL,
+  trackAppLifecycleEvents: true,
+  withFactories: [appcenter],
+}
+rudderClient.setup(WRITE_KEY, config)
 ```
+
 {% endtab %}
 
 {% tab title="Flutter" %}
 To add AppCenter to your Flutter project, add the RudderStack-App Center module to your app by following these steps:
 
-* Open `pubspec.yaml`  and add `rudder_integration_appcenter_flutter` under `dependencies` section:
+- Open `pubspec.yaml` and add `rudder_integration_appcenter_flutter` under `dependencies` section:
 
 ```groovy
 dependencies:
   rudder_integration_appcenter_flutter: ^1.0.0
 ```
 
-* Navigate to your application's root folder and install all the required dependencies as shown:
+- Navigate to your application's root folder and install all the required dependencies as shown:
 
 ```bash
 flutter pub get
 ```
 
-* Import the module you added above and add it to your SDK initialization code as shown:
+- Import the module you added above and add it to your SDK initialization code as shown:
 
 ```typescript
 import 'package:rudder_sdk_flutter/RudderClient.dart';
@@ -245,7 +249,7 @@ Please refer to the below section for more details on how to use this feature
 {% tab title="Android" %}
 Firstly import Appcenter's `Analytics` Module as shown below: \`\`groovy import com.microsoft.appcenter.analytics.Analytics;
 
-```text
+````text
 Then add the below script just after the initialization of the Android SDK:
 ```kotlin
 rudderClient.onIntegrationReady("App Center") {
@@ -258,7 +262,8 @@ rudderClient.onIntegrationReady("App Center") {
         Analytics.setEnabled(false);
     }
 }
-```
+````
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -282,28 +287,30 @@ else
     [MSACAnalytics setEnabled:false];
 }
 ```
+
 {% endtab %}
 
 {% tab title="React Native" %}
 Firstly import the `AppCenterIntegrationFactory` as shown below:
 
 ```javascript
-import AppcenterIntegrationFactory from '@rudderstack/rudder-integration-appcenter-react-native/src/bridge';
+import AppcenterIntegrationFactory from "@rudderstack/rudder-integration-appcenter-react-native/src/bridge"
 ```
 
 Then add the below script just after the initalization of the React Native SDK:
 
 ```javascript
-await rudderClient.registerCallback('App Center', () => {
-    if (userconsent) {
-        // enabling appcenter's analytics module
-        AppcenterIntegrationFactory.enableAnalytics()
-    } else {
-        // disabling appcenter's analytics module
-        AppcenterIntegrationFactory.disableAnalytics()
-    }
+await rudderClient.registerCallback("App Center", () => {
+  if (userconsent) {
+    // enabling appcenter's analytics module
+    AppcenterIntegrationFactory.enableAnalytics()
+  } else {
+    // disabling appcenter's analytics module
+    AppcenterIntegrationFactory.disableAnalytics()
+  }
 })
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -320,4 +327,3 @@ The App Center SDK uploads logs in a batch of 50. If the SDK doesn't have 50 log
 ## Contact Us
 
 If you come across any issues while configuring App Center with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/analytics/google-analytics-360"
+title: "Google Analytics 360 - RudderStack"
 description: >-
   Step-by-step guide to send your event data from RudderStack to Google
   Analytics 360.
@@ -20,10 +22,10 @@ To enable sending data to Google Analytics 360, you will first need to add it as
 
 Before configuring Google Analytics 360 as a destination, verify if the source platform supports sending events to RudderStack, by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device Mode** | **Supported** | - | - |
-| **Cloud Mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device Mode**     | **Supported** | -             | -             |
+| **Cloud Mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -31,14 +33,14 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Then, perform the steps below:
 
-* Choose a source for which you would like to add Google Analytics 360 as a destination. 
+- Choose a source for which you would like to add Google Analytics 360 as a destination.
 
 {% hint style="info" %}
 Follow the guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more details.
 {% endhint %}
 
-* From the list of destinations, select **Google Analytics 360**. Then, assign a name to the destination and click on **Next**.
-* You should then see the following **Connection Settings** page:
+- From the list of destinations, select **Google Analytics 360**. Then, assign a name to the destination and click on **Next**.
+- You should then see the following **Connection Settings** page:
 
 ![](../../.gitbook/assets/1%20%2820%29.png)
 
@@ -46,14 +48,14 @@ Follow the guide on [How to Add a Source and Destination in RudderStack](https:/
 
 ![](../../.gitbook/assets/3%20%2823%29.png)
 
-* **Tracking ID** is a required field to configure the destination. You can configure the other options as per your preference. 
-* To add a transformation, click on **Create New Transformation**. Otherwise, click on **Next**.
+- **Tracking ID** is a required field to configure the destination. You can configure the other options as per your preference.
+- To add a transformation, click on **Create New Transformation**. Otherwise, click on **Next**.
 
 {% hint style="info" %}
 See the [**Transformations**]() guide for more details on this feature.
 {% endhint %}
 
-* The destination is now configured and enabled.
+- The destination is now configured and enabled.
 
 ![](../../.gitbook/assets/final.png)
 
@@ -67,7 +69,7 @@ For details on the supported events and other additional features refer to the [
 
 ### Can I anonymize an IP Address in Google Analytics 360?
 
-Yes, you can. Turn on the **Anonymize IP Addresses** setting under the **Other Settings** option in the RudderStack dashboard while configuring Google Analytics 360. 
+Yes, you can. Turn on the **Anonymize IP Addresses** setting under the **Other Settings** option in the RudderStack dashboard while configuring Google Analytics 360.
 
 This setting lets Google Analytics anonymize the address at the earliest possible stage of the data collection.
 
@@ -79,11 +81,6 @@ For more information and other FAQs, refer to the [**Google Analytics documentat
 
 If you come across any issues while configuring Google Analytics 360 with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
 
-
-
-
-
 \*\*\*\*
 
-## 
-
+##

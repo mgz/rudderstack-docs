@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/attribution/kochava"
+title: "Kochava - RudderStack"
 description: Step-by-step guide to send event data from RudderStack to Kochava.
 ---
 
@@ -16,10 +18,10 @@ RudderStack allows you to send relevant events to Kochava through a S2S \(Server
 
 Before configuring your source and destination on the RudderStack app, please check whether the platform you are working on is supported by Kochava. Refer the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | **Supported** | - |
-| **Cloud mode** | - | **Supported** | - |
+| **Connection Mode** | **Web** | **Mobile**    | **Server** |
+| :------------------ | :------ | :------------ | :--------- |
+| **Device mode**     | -       | **Supported** | -          |
+| **Cloud mode**      | -       | **Supported** | -          |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,14 +29,14 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Kochava, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source from which you want to send the event data.
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source from which you want to send the event data.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Once you have added the source, select Kochava from the list of destinations.
-* In the **Connection Settings** page, please enter the relevant information in the fields shown in the following screen:
+- Once you have added the source, select Kochava from the list of destinations.
+- In the **Connection Settings** page, please enter the relevant information in the fields shown in the following screen:
 
 ![Destination Settings for Kochava](../../.gitbook/assets/kochava.png)
 
@@ -42,17 +44,17 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 To successfully configure Kochava as a destination, you will need to configure the following settings:
 
-* **App GUID:** Kochava generates a unique ID for your application, called the **App GUID**. You can find this ID by going to your Kochava account and navigating to **Apps & Assets** - **All Apps**. You can then select your app to the view the App GUID.
+- **App GUID:** Kochava generates a unique ID for your application, called the **App GUID**. You can find this ID by going to your Kochava account and navigating to **Apps & Assets** - **All Apps**. You can then select your app to the view the App GUID.
 
 **NOTE**: The following two settings are applicable for `iOS Device Mode` only:
 
-* **Enable AppTrackingTransparency \(ATT\):** Enable this setting if you want to enable the `AppTrackingTransparency` feature provided by the Kochava iOS SDK.
+- **Enable AppTrackingTransparency \(ATT\):** Enable this setting if you want to enable the `AppTrackingTransparency` feature provided by the Kochava iOS SDK.
 
 {% hint style="info" %}
 Make sure you include the key `NSUserTrackingUsageDescription` in your `info.plist` along with a string value explaining why you are requesting authorization to track.
 {% endhint %}
 
-* **Enable skAdNetwork:** Enable this setting if you want to enable the `skAdNetwork` feature provided by the Kochava iOS SDK.
+- **Enable skAdNetwork:** Enable this setting if you want to enable the `skAdNetwork` feature provided by the Kochava iOS SDK.
 
 ## Adding Device Mode Integration
 
@@ -60,7 +62,7 @@ Make sure you include the key `NSUserTrackingUsageDescription` in your `info.pli
 {% tab title="Android" %}
 To add Kochava to your Android project and enable functionalities like push notifications, follow these steps :
 
-* Open your project level `build.gradle` file, and add the following:
+- Open your project level `build.gradle` file, and add the following:
 
 ```groovy
 buildscript {
@@ -75,7 +77,7 @@ allprojects {
 }
 ```
 
-* Also, add the following under the `dependencies` section:
+- Also, add the following under the `dependencies` section:
 
 ```kotlin
 // ruddder core sdk
@@ -88,7 +90,7 @@ implementation 'com.kochava.base:tracker:3.10.0'
 implementation 'com.google.code.gson:gson:2.8.6'
 ```
 
-* Initialize the RudderStack SDK in the `Application` class' `onCreate()` method as shown:
+- Initialize the RudderStack SDK in the `Application` class' `onCreate()` method as shown:
 
 ```kotlin
 import com.rudderstack.android.integrations.kochava.KochavaIntegrationFactory
@@ -105,24 +107,25 @@ val rudderClient = RudderClient.getInstance(
         .build()
 )
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
 Follow these steps to add Kochava to your iOS project:
 
-* Go your `Podfile` and add the `Rudder-Kochava` extension as shown below:
+- Go your `Podfile` and add the `Rudder-Kochava` extension as shown below:
 
 ```objectivec
 pod 'Rudder-Kochava'
 ```
 
-* After adding the dependency followed by `pod install` , you can add the imports to your `AppDelegate.m` file as shown:
+- After adding the dependency followed by `pod install` , you can add the imports to your `AppDelegate.m` file as shown:
 
 ```objectivec
 #import "RudderKochavaFactory.h"
 ```
 
-* Finally, change the initialization of your `RudderClient` as shown:
+- Finally, change the initialization of your `RudderClient` as shown:
 
 ```objectivec
 RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
@@ -130,6 +133,7 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 [builder withFactory:[RudderKochavaFactory instance]];
 [RudderClient getInstance:WRITE_KEY config:[builder build]];
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -139,14 +143,14 @@ The `track` event captures information related to the actions performed by the u
 
 RudderStack transforms the following events to Kochava's Standard Events, as shown in the table below:
 
-| RudderStack Event Name | Kochava Standard Event |
-| :--- | :--- |
-| `Product Added` | `Add to Cart` |
-| `Product Added to Wishlist` | `Add to Wishlist` |
-| `Checkout Started` | `Checkout Start` |
-| `Order Completed` | `Purchase` |
-| `Product Reviewed` | `Rating` |
-| `Products Searched` | `Search` |
+| RudderStack Event Name      | Kochava Standard Event |
+| :-------------------------- | :--------------------- |
+| `Product Added`             | `Add to Cart`          |
+| `Product Added to Wishlist` | `Add to Wishlist`      |
+| `Checkout Started`          | `Checkout Start`       |
+| `Order Completed`           | `Purchase`             |
+| `Product Reviewed`          | `Rating`               |
+| `Products Searched`         | `Search`               |
 
 {% hint style="info" %}
 Rest of the events are sent to Kochava as custom events.
@@ -192,8 +196,9 @@ Follow these steps to configure push notifications for Kochava for the platform 
 
 {% tabs %}
 {% tab title="Android" %}
-* Register push notifications for your Android device in the Kochava dashboard.
-* Add the following dependency in your project level `build.gradle` file inside the `buildscript`:
+
+- Register push notifications for your Android device in the Kochava dashboard.
+- Add the following dependency in your project level `build.gradle` file inside the `buildscript`:
 
 ```groovy
 dependencies {
@@ -201,7 +206,7 @@ dependencies {
  }
 ```
 
-* Next, add the following dependencies and plugin to your app level `build.gradle` file:
+- Next, add the following dependencies and plugin to your app level `build.gradle` file:
 
 ```groovy
 dependencies {
@@ -211,8 +216,8 @@ dependencies {
 apply plugin: 'com.google.gms.google-services'
 ```
 
-* Place the `google-services.json` downloaded from the `Firebase console` into the root folder of your `app`.
-* Passing the new Push Token received from FCM to the Kochava SDK. For more information, look into the **sample-kotlin** app.
+- Place the `google-services.json` downloaded from the `Firebase console` into the root folder of your `app`.
+- Passing the new Push Token received from FCM to the Kochava SDK. For more information, look into the **sample-kotlin** app.
 
 ```text
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -230,13 +235,15 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="iOS" %}
-* Add Push Notification as a capability by navigating to **Target** - **Signing & Capabilities** of your app when opened in Xcode.
-* Enable **Background Modes/Remote notifications** by navigating to **Targets** - **Your App** - **Capabilities** - **Background Modes** and then check `Remote notifications`
-* Register the push notifications for the iOS devices in your Kochava dashboard.
-* Then, add the following code in your app just after initializing RudderStack's iOS SDK to register the push notifications.
+
+- Add Push Notification as a capability by navigating to **Target** - **Signing & Capabilities** of your app when opened in Xcode.
+- Enable **Background Modes/Remote notifications** by navigating to **Targets** - **Your App** - **Capabilities** - **Background Modes** and then check `Remote notifications`
+- Register the push notifications for the iOS devices in your Kochava dashboard.
+- Then, add the following code in your app just after initializing RudderStack's iOS SDK to register the push notifications.
 
 ```objectivec
 #import <UserNotifications/UserNotifications.h>
@@ -253,7 +260,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }];
 ```
 
-* Finally, add the below handlers to handle the tokens and push notifications accordingly:
+- Finally, add the below handlers to handle the tokens and push notifications accordingly:
 
 ```objectivec
 #import <RudderKochavaIntegration.h>
@@ -273,6 +280,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     [[RudderKochavaIntegration alloc] receivedRemoteNotification:response.notification.request.content.userInfo withActionString:response.actionIdentifier];
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
@@ -292,4 +300,3 @@ For more information, please check the [Kochava support guide](https://support.k
 ## Contact Us
 
 If you come across any issues while configuring Kochava with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

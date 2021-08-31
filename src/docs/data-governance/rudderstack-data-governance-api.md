@@ -1,4 +1,6 @@
 ---
+slug: "/docs/data-governance/rudderstack-data-governance-api"
+title: "Data Governance API - RudderStack"
 description: >-
   Detailed technical documentation of the RudderStack Data Governance API calls
   and properties of the returned objects.
@@ -36,9 +38,9 @@ Please note that the base URL for all the API requests will be your RudderStack 
 
 ### schemas/event-models
 
-| **Description** | **Arguments** | **Supported Method Types** |
-| :--- | :--- | :--- |
-| Gets the event models for your data plane | None required. **\*\*You may** optionally **add** `WriteKey`\*\* as a query parameter to get event-models for only one source | `GET` |
+| **Description**                           | **Arguments**                                                                                                                 | **Supported Method Types** |
+| :---------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| Gets the event models for your data plane | None required. **\*\*You may** optionally **add** `WriteKey`\*\* as a query parameter to get event-models for only one source | `GET`                      |
 
 #### **Example Request**
 
@@ -233,15 +235,15 @@ curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/sch
 
 ### schemas/event-model/{EventID}/metadata
 
-| **Description** | **Arguments** | **Supported Method Types** |
-| :--- | :--- | :--- |
-| Gets the metadata for an event-model | **`EventID`**is a mandatory url parameter to get metadata for an event-model. This is obtained from the above API. | `GET` |
+| **Description**                      | **Arguments**                                                                                                      | **Supported Method Types** |
+| :----------------------------------- | :----------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| Gets the metadata for an event-model | **`EventID`**is a mandatory url parameter to get metadata for an event-model. This is obtained from the above API. | `GET`                      |
 
 The metadata of given event-model comes with three information points:
 
-* **`SampledEvents`**: This includes the sample events that belong to the given event-model
-* **`TotalCount`**: Represents the number of events collected for the event-model
-* **`FrequentValues`**: This is a list of all values that frequently appear for each key in the master-schema along with their frequencies. By default, we consider any value that is seen once every hundred samples as a frequent value
+- **`SampledEvents`**: This includes the sample events that belong to the given event-model
+- **`TotalCount`**: Represents the number of events collected for the event-model
+- **`FrequentValues`**: This is a list of all values that frequently appear for each key in the master-schema along with their frequencies. By default, we consider any value that is seen once every hundred samples as a frequent value
 
 **Example Request**
 
@@ -382,15 +384,15 @@ curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/sch
 
 ### schemas/event-version/{VersionID}/metadata
 
-| **Description** | **Arguments** | **Supported Method Types** |
-| :--- | :--- | :--- |
-| Gets the metadata for a schema-version | **`VersionID`**a mandatory url parameter to get metadata for a schema-version. This is obtained from the above API. | `GET` |
+| **Description**                        | **Arguments**                                                                                                       | **Supported Method Types** |
+| :------------------------------------- | :------------------------------------------------------------------------------------------------------------------ | :------------------------- |
+| Gets the metadata for a schema-version | **`VersionID`**a mandatory url parameter to get metadata for a schema-version. This is obtained from the above API. | `GET`                      |
 
 The metadata of given schema-version comes with three information points:
 
-* **`SampledEvents`**: This includes the sample events that follow the given schema-version
-* **`TotalCount`**: Represents the number of events collected with the given schema-version
-* **`FrequentValues`**: This is a list of all values that frequently appear for each key in the schema along with their frequencies. By default, we consider any value that is seen once every hundred samples as a frequent value
+- **`SampledEvents`**: This includes the sample events that follow the given schema-version
+- **`TotalCount`**: Represents the number of events collected with the given schema-version
+- **`FrequentValues`**: This is a list of all values that frequently appear for each key in the schema along with their frequencies. By default, we consider any value that is seen once every hundred samples as a frequent value
 
 **Example Request**
 
@@ -506,9 +508,9 @@ curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/sch
 
 ### schemas/event-model/{EventID}/key-counts
 
-| **Description** | **Arguments** | **Supported Method Types** |
-| :--- | :--- | :--- |
-| Gets the key-wise counts for an event-model | `EventID` is a mandatory url parameter to get the keys count for an event-model. This is obtained from the above API. | `GET` |
+| **Description**                             | **Arguments**                                                                                                         | **Supported Method Types** |
+| :------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| Gets the key-wise counts for an event-model | `EventID` is a mandatory url parameter to get the keys count for an event-model. This is obtained from the above API. | `GET`                      |
 
 **Example Request**
 
@@ -554,9 +556,9 @@ curl -u <RUDDER_ADMIN_USER>:<DATA_PLANE_URL> https://<your-data-plane-url>/schem
 
 ### schemas/event-version/{VersionID}/missing-keys
 
-| **Description** | **Arguments** | **Supported Method Types** |
-| :--- | :--- | :--- |
-| Gets the missing keys for an event-version | `VersionID` is a mandatory url parameter to get the missing keys for a schema-version. This is obtained from the above API. | `GET` |
+| **Description**                            | **Arguments**                                                                                                               | **Supported Method Types** |
+| :----------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| Gets the missing keys for an event-version | `VersionID` is a mandatory url parameter to get the missing keys for a schema-version. This is obtained from the above API. | `GET`                      |
 
 **Example Request**
 
@@ -583,4 +585,3 @@ curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/sch
 ## Contact Us
 
 For more information on the RudderStack Data Governance API, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel, and we will be happy to help you.
-

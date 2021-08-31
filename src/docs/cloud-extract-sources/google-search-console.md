@@ -1,4 +1,6 @@
 ---
+slug: "/docs/cloud-extract-sources/google-search-console"
+title: "Google Search Console - RudderStack"
 description: Step-by-step guide to ingest your Google Search Console data into RudderStack.
 ---
 
@@ -16,22 +18,22 @@ This document guides you in setting up Google Search Console as a source in Rudd
 
 To add Google Search Console as a source in RudderStack, follow these steps:
 
-* Log into your [RudderStack dashboard](https://app.rudderlabs.com/signup?type=freetrial).
-* From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
+- Log into your [RudderStack dashboard](https://app.rudderlabs.com/signup?type=freetrial).
+- From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
 
 ![](../.gitbook/assets/1%20%284%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29.png)
 
-* Next, select **Google Search Console** from the list of **Cloud Sources**, and click on **Next**.
+- Next, select **Google Search Console** from the list of **Cloud Sources**, and click on **Next**.
 
 ![](../.gitbook/assets/screen-shot-2020-12-18-at-10.43.57-am.png)
 
-* Assign a name to your source, and click on **Next**.
+- Assign a name to your source, and click on **Next**.
 
 ![](../.gitbook/assets/screen-shot-2020-12-18-at-10.44.25-am.png)
 
 ### Setting Up the Connection
 
-* Click on **Connect with Google Search Console** and give RudderStack the required access permissions. Then, click on **Next**.
+- Click on **Connect with Google Search Console** and give RudderStack the required access permissions. Then, click on **Next**.
 
 ![](../.gitbook/assets/screen-shot-2020-12-18-at-10.44.41-am.png)
 
@@ -41,7 +43,7 @@ If you have already connected RudderStack to your Google Search Console account,
 
 ### Configuring the Source Settings
 
-* For configuring the source, enter the **Site URL** of the website linked to your Google Search Console account, as well as the **Dimensions** you want RudderStack to sync. You also need to specify the **Start from date**, which corresponds to the date RudderStack will start importing the historical data.
+- For configuring the source, enter the **Site URL** of the website linked to your Google Search Console account, as well as the **Dimensions** you want RudderStack to sync. You also need to specify the **Start from date**, which corresponds to the date RudderStack will start importing the historical data.
 
 ![](../.gitbook/assets/screen-shot-2020-12-18-at-10.59.43-am.png)
 
@@ -50,7 +52,7 @@ In the **Site URL**, make sure to use the **exact URL** of the website as specif
 ![](../.gitbook/assets/image%20%2813%29%20%281%29.png)
 
 {% hint style="success" %}
-The available dimensions that you can query are **country**, **device**, ****and **page**. 
+The available dimensions that you can query are **country**, **device**, \***\*and **page\*\*.
 {% endhint %}
 
 {% hint style="info" %}
@@ -59,11 +61,11 @@ Please note that this **Start from date** is valid only for the first \(historic
 
 ### Setting the Data Update Schedule
 
-* Next, you will be required to set the **Run Frequency** to schedule the data import from your Google Search Console account to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option.
+- Next, you will be required to set the **Run Frequency** to schedule the data import from your Google Search Console account to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option.
 
 ![](../.gitbook/assets/screen-shot-2020-12-18-at-11.00.31-am.png)
 
-That's it! Google Search Console is now successfully configured as a source on your RudderStack dashboard. 
+That's it! Google Search Console is now successfully configured as a source on your RudderStack dashboard.
 
 RudderStack will start importing data from Google Search Console as per the specified frequency. You can further connect this source to your data warehouse by clicking on **Connect Destinations** or **Add Destination**, as shown:
 
@@ -87,11 +89,10 @@ The synchronization also depends on your destination's sync schedule.
 
 #### Is it possible to have multiple Cloud Extract sources writing to the same schema?
 
-Yes, it is. 
+Yes, it is.
 
 We have implemented a feature wherein RudderStack associates a table prefix for every Cloud Extract source writing to a warehouse schema. This way, multiple Cloud Extract sources can write to the same schema with different table prefixes.
 
 ## Contact Us
 
 If you come across any issues while configuring Google Search Console as a source on the RudderStack dashboard, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

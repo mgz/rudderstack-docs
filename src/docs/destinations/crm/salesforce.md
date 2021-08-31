@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/crm/salesforce"
+title: "Salesforce - RudderStack"
 description: Step-by-step guide to set up Salesforce as a destination in RudderStack.
 ---
 
@@ -16,10 +18,10 @@ RudderStack lets you identify your leads in Salesforce without having to use the
 
 Before configuring your source and destination on the RudderStack, please verify if the source platform is supported by Salesforce by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | - | - |
-| **Cloud** **mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | -             | -             | -             |
+| **Cloud** **mode**  | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,18 +29,18 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the source supports sending events to Salesforce, follow these steps:
 
-* From your [**RudderStack dashboard**](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Salesforce**.
+- From your [**RudderStack dashboard**](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Salesforce**.
 
 {% hint style="info" %}
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 {% endhint %}
 
-* Give a name to the destination and click on **Next**. You should then see the following screen:
+- Give a name to the destination and click on **Next**. You should then see the following screen:
 
 ![Salesforce Connection Settings](https://user-images.githubusercontent.com/59817155/125079748-9a8b0e80-e0e1-11eb-8d58-eda8f773afcf.png)
 
-* Provide your Salesforce username and password here along with the access token.
-* If you are using a Sandbox environment for integration, enable the **Sandbox Mode** option. Then, click on **Next**. Salesforce will now be enabled as a destination in RudderStack.
+- Provide your Salesforce username and password here along with the access token.
+- If you are using a Sandbox environment for integration, enable the **Sandbox Mode** option. Then, click on **Next**. Salesforce will now be enabled as a destination in RudderStack.
 
 {% hint style="info" %}
 To know more about Salesforce Sandbox, click [**here**](https://help.salesforce.com/articleView?id=sf.deploy_sandboxes_parent.htm&type=5).
@@ -61,24 +63,28 @@ RudderStack makes it very easy for you to get your leads from your website or mo
 The following code snippet demonstrates a sample `identify` call in RudderStack:
 
 ```javascript
-rudderanalytics.identify('userid', {
-  name: 'John Doe',
-  title: 'CEO',
-  email: 'name.surname@domain.com',
-  company: 'Company123',
-  phone: '123-456-7890',
-  state: 'Texas',
-  rating: 'Hot',
-  city: 'Austin',
-  postalCode: '12345',
-  country: 'US',
-  street: 'Sample Address',
-  state: 'TX'
-}, {
-  'integrations': {
-    'Salesforce': true
+rudderanalytics.identify(
+  "userid",
+  {
+    name: "John Doe",
+    title: "CEO",
+    email: "name.surname@domain.com",
+    company: "Company123",
+    phone: "123-456-7890",
+    state: "Texas",
+    rating: "Hot",
+    city: "Austin",
+    postalCode: "12345",
+    country: "US",
+    street: "Sample Address",
+    state: "TX",
+  },
+  {
+    integrations: {
+      Salesforce: true,
+    },
   }
-});
+)
 ```
 
 This snippet identifies a unique user based on the `userid` and the associated traits passed in the `identify` call.
@@ -100,7 +106,7 @@ As `lastName` and `company` are needed by the [**Salesforce Leads API**](https:/
 For example, if you wish to collect a custom trait in RudderStack named `newProp`, create a field label named `newProp`. This will generate an API name as `newProp__c`. RudderStack automatically appends the `__c` to any custom trait.
 
 {% hint style="info" %}
-**Make sure you are consistent with your casing**. If the custom fields are created in camelCase, make sure sure that you send the traits to RudderStack in camelCase. If you're creating custom fields in snake\_case, make sure you send the traits in the same format.
+**Make sure you are consistent with your casing**. If the custom fields are created in camelCase, make sure sure that you send the traits to RudderStack in camelCase. If you're creating custom fields in snake_case, make sure you send the traits in the same format.
 {% endhint %}
 
 ## Updating Salesforce Objects
@@ -113,21 +119,21 @@ You can pass multiple object types in a single request and RudderStack will crea
 
 ```javascript
 client.identify({
-  userId: '123456',
+  userId: "123456",
   traits: {
     FirstName: "John",
     LastName: "Gibbs",
-    Email: "john@peterson.com"
+    Email: "john@peterson.com",
   },
   context: {
     externalId: [
       {
         type: "Salesforce-Contact",
-        id: "sf-contact-id"
-      }
-    ]
-  }
-});
+        id: "sf-contact-id",
+      },
+    ],
+  },
+})
 ```
 
 In the example above, RudderStack updates the `Contact` object in Salesforce with `id` as `sf-contact-id` and send the `traits` object to Salesforce.
@@ -159,4 +165,3 @@ Salesforce has a very strict API limit. Moreover, RudderStack by default does no
 ## Contact Us
 
 If you come across any issues while configuring Salesforce with RudderStack, please feel free to [**contact us**](mailto:%20contact@rudderstack.com). You can also start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

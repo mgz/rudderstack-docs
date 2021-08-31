@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/gainsight"
+title: "Gainsight - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Gainsight CS.
 ---
 
@@ -26,10 +28,10 @@ See our [Connections](https://docs.rudderstack.com/connections) guide to learn m
 
 Please check if the source platform is supported by Gainsight CS by referring to the table below:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | - | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | -             | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -37,31 +39,31 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you've confirmed that the source platform supports sending events to RudderStack, follow these steps:
 
-* From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **Gainsight** from the list of supported destinations.
+- From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **Gainsight** from the list of supported destinations.
 
 {% hint style="info" %}
 Follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source in RudderStack.
 {% endhint %}
 
-* Assign a name to this destination, and click on **Next**. You should then see the following screen:
+- Assign a name to this destination, and click on **Next**. You should then see the following screen:
 
 ![Connection screen for Gainsight](../../.gitbook/assets/gainsightcs-settings.png)
 
 You will need to enter the following settings under **Connection Settings**:
 
-* **Access Key**: This key is required for the `identify` and `group` calls. To generate the access key in Gainsight, go to **Administration** - **Connectors 2.0** - **Connectors** tab and click on **Gainsight API**.
+- **Access Key**: This key is required for the `identify` and `group` calls. To generate the access key in Gainsight, go to **Administration** - **Connectors 2.0** - **Connectors** tab and click on **Gainsight API**.
 
 {% hint style="info" %}
 For more information on generating the Gainsight Access Key, refer to their [support page](https://support.gainsight.com/SFDC_Edition/Connectors/04API_Integration/Generate_API_Access_Key).
 {% endhint %}
 
-* **Domain or Subdomain Name**: Subdomain or custom domain is a required field to work with the Gainsight API. required to work with the Gainsight API.
+- **Domain or Subdomain Name**: Subdomain or custom domain is a required field to work with the Gainsight API. required to work with the Gainsight API.
 
 {% hint style="info" %}
 More information on setting up a Gainsight custom domain can be found in their [support page](https://support.gainsight.com/Gainsight_NXT/06Surveys/02Admin_Guides/Setup_a_Gainsight_Domain).
 {% endhint %}
 
-* **Gainsight Event Settings**: This setting is related to the Gainsight Events Framework. 
+- **Gainsight Event Settings**: This setting is related to the Gainsight Events Framework.
 
 {% hint style="success" %}
 Refer to the [**Track**](https://docs.rudderstack.com/destinations/marketing/gainsight#track) section of this documentation for more details.
@@ -76,35 +78,35 @@ For the default fields in Gainsight `Person` object, the camelCase notation is u
 The mapping of the RudderStack traits to the Gainsight `Person` object fields is as shown:
 
 | **Gainsight Person Field** | **RudderStack Trait Name** |
-| :--- | :--- |
-| `Email` | `email` |
-| `Name` | `name` |
-| `FirstName` | `firstName` |
-| `MiddleName` | `middleName` |
-| `LastName` | `lastName` |
-| `LinkedinUrl` | `linkedinUrl` |
-| `Location` | `location` |
-| `ExternalRecordID__gc` | `externalRecordId` |
-| `EmailOptOut` | `emailOptOut` |
-| `DynamicResolutionKey` | `dynamicResolutionKey` |
-| `Comments` | `comments` |
-| `Timezone` | `timezone` |
-| `MasterRecordID` | `masterRecordId` |
-| `MasterAvatarTypeCode` | `masterAvatarTypeCode` |
+| :------------------------- | :------------------------- |
+| `Email`                    | `email`                    |
+| `Name`                     | `name`                     |
+| `FirstName`                | `firstName`                |
+| `MiddleName`               | `middleName`               |
+| `LastName`                 | `lastName`                 |
+| `LinkedinUrl`              | `linkedinUrl`              |
+| `Location`                 | `location`                 |
+| `ExternalRecordID__gc`     | `externalRecordId`         |
+| `EmailOptOut`              | `emailOptOut`              |
+| `DynamicResolutionKey`     | `dynamicResolutionKey`     |
+| `Comments`                 | `comments`                 |
+| `Timezone`                 | `timezone`                 |
+| `MasterRecordID`           | `masterRecordId`           |
+| `MasterAvatarTypeCode`     | `masterAvatarTypeCode`     |
 
 An example of the `identify` call in RudderStack is as shown:
 
 ```javascript
-  rudderanalytics.identify(
-    "sample-user-id",
-    { 
-      email: "user@email.com",
-      firstName: "John",
-      lastName: "Doe",
-      comments: "example identify call",
-    },
-    () => console.log("identify callback")
-  );
+rudderanalytics.identify(
+  "sample-user-id",
+  {
+    email: "user@email.com",
+    firstName: "John",
+    lastName: "Doe",
+    comments: "example identify call",
+  },
+  () => console.log("identify callback")
+)
 ```
 
 {% hint style="info" %}
@@ -136,41 +138,41 @@ For making a `group` call, `email` is a mandatory field in `context.traits` of t
 The mapping of the RudderStack traits to the Gainsight `Company` object fields is as shown:
 
 | **Gainsight Company Field** | **RudderStack Trait Name** |
-| :--- | :--- |
-| `Name` | `name` |
-| `Employees` | `employees` |
-| `Arr` | `arr` |
-| `BillingAddress` | `billingAddress` |
-| `Summary` | `summary` |
-| `Csm` | `csm` |
-| `CustomerlifetimeInMonths` | `customerLifetimeInMonths` |
-| `Industry` | `industry` |
-| `LifecycleInWeeks` | `lifecycleInWeeks` |
-| `ManagedAs` | `managedAs` |
-| `Mrr` | `mrr` |
-| `OriginalContractDate` | `originalContractDate` |
-| `ParentCompany` | `parentCompany` |
-| `RenewalDate` | `renewalDate` |
-| `Stage` | `stage` |
-| `Status` | `status` |
-| `Tags` | `tags` |
-| `TickerSymbol` | `tickerSymbol` |
-| `Users` | `users` |
-| `SfdcAccountId` | `sfdcAccountId` |
-| `IndustryNew` | `industryNew` |
+| :-------------------------- | :------------------------- |
+| `Name`                      | `name`                     |
+| `Employees`                 | `employees`                |
+| `Arr`                       | `arr`                      |
+| `BillingAddress`            | `billingAddress`           |
+| `Summary`                   | `summary`                  |
+| `Csm`                       | `csm`                      |
+| `CustomerlifetimeInMonths`  | `customerLifetimeInMonths` |
+| `Industry`                  | `industry`                 |
+| `LifecycleInWeeks`          | `lifecycleInWeeks`         |
+| `ManagedAs`                 | `managedAs`                |
+| `Mrr`                       | `mrr`                      |
+| `OriginalContractDate`      | `originalContractDate`     |
+| `ParentCompany`             | `parentCompany`            |
+| `RenewalDate`               | `renewalDate`              |
+| `Stage`                     | `stage`                    |
+| `Status`                    | `status`                   |
+| `Tags`                      | `tags`                     |
+| `TickerSymbol`              | `tickerSymbol`             |
+| `Users`                     | `users`                    |
+| `SfdcAccountId`             | `sfdcAccountId`            |
+| `IndustryNew`               | `industryNew`              |
 
 An example `group` call is as shown below:
 
 ```javascript
-  rudderanalytics.group(
-    "sample-group-id",
-    { 
-      name: "Example Company",
-      employees: 1000,
-      industry: "Software"
-    },
-    () => console.log("group callback")
-  );
+rudderanalytics.group(
+  "sample-group-id",
+  {
+    name: "Example Company",
+    employees: 1000,
+    industry: "Software",
+  },
+  () => console.log("group callback")
+)
 ```
 
 {% hint style="info" %}
@@ -209,10 +211,10 @@ Provide the required event settings in the RudderStack dashboard as shown:
 
 The required settings are:
 
-* **Shared Secret**: This is a required field. Go to **Administration** - **Events** and click on **Register as Publisher** to get this key.
-* **TenantId**: The Tenant ID of the Publisher is a required field. You can copy this ID by going to **Administration** - **Application Settings**.
-* **Contract ID**: This field is optional. If a user subscribes to a contract, only those subscribers associated with this contract will get the event.
-* **Topic Name**: This is a required field. The events are grouped under topic.
+- **Shared Secret**: This is a required field. Go to **Administration** - **Events** and click on **Register as Publisher** to get this key.
+- **TenantId**: The Tenant ID of the Publisher is a required field. You can copy this ID by going to **Administration** - **Application Settings**.
+- **Contract ID**: This field is optional. If a user subscribes to a contract, only those subscribers associated with this contract will get the event.
+- **Topic Name**: This is a required field. The events are grouped under topic.
 
 The **Contract ID** an be provided in the RudderStack dashboard or in the `track` payload as `externalId`. If both are present, RudderStack gives higher precedence to the `externalId` .
 
@@ -223,18 +225,18 @@ rudderanalytics.track(
   "Ticket Closure",
   {
     name: "John Doe",
-    status: "resolved"
+    status: "resolved",
   },
   {
     externalId: [
       {
         type: "gainsightEventContractId",
-        id: "sample-contract-id"
-      }
-    ]
+        id: "sample-contract-id",
+      },
+    ],
   },
   () => console.log("track callback")
-);
+)
 ```
 
 ### Using RudderStack's `track` call with Gainsight Events
@@ -260,10 +262,10 @@ rudderanalytics.track(
   "Ticket Closure",
   {
     name: "John Doe",
-    status: "resolved"
+    status: "resolved",
   },
   () => console.log("track callback")
-);
+)
 ```
 
 {% hint style="info" %}
@@ -273,4 +275,3 @@ To send Gainsight Events to more than one topic, we recommend creating new Gains
 ## Contact Us
 
 If you come across any issues while configuring Gainsight with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

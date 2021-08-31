@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/klaviyo"
+title: "Klaviyo - RudderStack"
 description: Step-by-step guide to send your event data from RudderStack to Klaviyo.
 ---
 
@@ -16,10 +18,10 @@ You can now send your event data directly to Klaviyo through RudderStack.
 
 Before configuring your source and destination on the RudderStack, please check whether the platform you are sending the events from is supported by Klaviyo. Please refer the following table to do so:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | **Supported** | **Supported** | **Supported** |
+| **Connection Mode** | **Web**       | **Mobile**    | **Server**    |
+| :------------------ | :------------ | :------------ | :------------ |
+| **Device mode**     | **Supported** | -             | -             |
+| **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -27,7 +29,7 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the platform supports sending events to Klaviyo, perform the steps below:
 
-* From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and Klaviyo as a destination.
+- From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and Klaviyo as a destination.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
@@ -39,15 +41,15 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 To successfully configure Klaviyo as a destination, you will need to configure the following settings:
 
-* **Public API Key:** Your Public API Key is the unique key generated against your account. It can be found in your account on the **Account** section under the **Settings** tab.
-* **Private API Key:** Your Private API key can be generated for your account on the **Account** section under the **Settings** tab. This key allows you to add users to list or subscribe them using personalised emails/sms.
-* **Enforce Email as Primary Identifier:** If this option is enabled, we will never set `$id` field to your `userId` when you send events. Instead, we will only set a custom attribute `_id` and only set `$email` as the primary identifier with your `traits.email` or `properties.email`. You should be careful when enabling this option and understand its full implications. This should only be enabled if you are experiencing an issue with duplicate profiles being created inside Klaviyo.
-* **List Id:** Your default List Id to which you want to add/subscribe identified users.
-* **Consent:** If you are a GDPR-compliant business, you will need to include `consent` in your API call,`consent` is a Klaviyo-specific property and only accepts the following values: `email`, `web`, `sms`, `directmail`, and `mobile`.
-* **SMS Consent:** If you are updating the consent for a phone number, or would like to send an opt-in SMS to the profile \(for double opt-in lists\), include an `smsConsent` key in the properties with a value of `true` or `false`
-* **Send Page As Track:** If you wish send page events as track events, along with `name` and `category` you need to enable this option.
-* **Additional Page info:** If you are sending page events as track, you can also choose to send in additional `properties` for the event by enabling this field.
-* **Use Native SDK to send Events:** Enable this option if you want to send events using device mode
+- **Public API Key:** Your Public API Key is the unique key generated against your account. It can be found in your account on the **Account** section under the **Settings** tab.
+- **Private API Key:** Your Private API key can be generated for your account on the **Account** section under the **Settings** tab. This key allows you to add users to list or subscribe them using personalised emails/sms.
+- **Enforce Email as Primary Identifier:** If this option is enabled, we will never set `$id` field to your `userId` when you send events. Instead, we will only set a custom attribute `_id` and only set `$email` as the primary identifier with your `traits.email` or `properties.email`. You should be careful when enabling this option and understand its full implications. This should only be enabled if you are experiencing an issue with duplicate profiles being created inside Klaviyo.
+- **List Id:** Your default List Id to which you want to add/subscribe identified users.
+- **Consent:** If you are a GDPR-compliant business, you will need to include `consent` in your API call,`consent` is a Klaviyo-specific property and only accepts the following values: `email`, `web`, `sms`, `directmail`, and `mobile`.
+- **SMS Consent:** If you are updating the consent for a phone number, or would like to send an opt-in SMS to the profile \(for double opt-in lists\), include an `smsConsent` key in the properties with a value of `true` or `false`
+- **Send Page As Track:** If you wish send page events as track events, along with `name` and `category` you need to enable this option.
+- **Additional Page info:** If you are sending page events as track, you can also choose to send in additional `properties` for the event by enabling this field.
+- **Use Native SDK to send Events:** Enable this option if you want to send events using device mode
 
 {% hint style="info" %}
 Note that in case of absence of `userId` rudderstack will try to fallback on `anonymousId` for mapping the user with an unique identifier. In case of absence of `userId` and `anonymousId` then `email` or `phone` will be considered as primary identifier for the user.
@@ -68,7 +70,7 @@ rudderanalytics.page("Cart", "Cart Viewed", {
   search: "term",
   title: "test_item",
   url: "http://test.in",
-});
+})
 ```
 
 {% hint style="info" %}
@@ -103,7 +105,7 @@ rudderanalytics.track("Checked Out", {
   total_value: 2000,
   Odered: ["T-Shirt", "jacket"],
   revenue: 2000,
-});
+})
 ```
 
 In the above snippet, RudderStack captures the information related to the `Checked Out` event, along with any additional info about that event - in this case the details of the `Checked out` event.
@@ -129,7 +131,7 @@ client.track({
       email: "user2@gmail.com",
     },
   },
-});
+})
 ```
 
 In the above snippet, RudderStack captures the information related to the `Item Purchased` event, along with any additional info about that event in `properties` - in this case the revenue, along with product information. Moreover since this event is captured usinng server-side sdk we are passing user information in `context`, along with an unique `userId`.
@@ -169,7 +171,7 @@ rudderanalytics.identify("userid", {
     consent: "email",
     smsConsent: true,
   },
-});
+})
 ```
 
 In the above snippet, RudderStack captures relevant information about the user such as the `email`, `phone` as well as the associated traits of that user.
@@ -194,12 +196,12 @@ A sample server-side `group` call looks like the following:
 
 ```javascript
 client.group({
-  userId: 'userId',
-  groupId: 'listId',
+  userId: "userId",
+  groupId: "listId",
   traits: {
-    subscribe: true
+    subscribe: true,
   },
-  context:{
+  context: {
     traits: {
       email: "user.test@gmail.com",
       city: "city",
@@ -208,11 +210,11 @@ client.group({
       age: 23,
       plan: "free",
       consent: "email",
-      phone: '1-617-555-1333',
-      smsConsent: true
-    }
-  }
-});
+      phone: "1-617-555-1333",
+      smsConsent: true,
+    },
+  },
+})
 ```
 
 In the above snippet, the user with the associated traits is added to list, and also subscribed using the `subscribe` flag.
@@ -232,4 +234,3 @@ You can add or subscribe users to a specific list via the `group` event only in 
 ## Contact Us
 
 If you come across any issues while configuring Klaviyo with RudderStack, please feel free to [contact us](mailto:docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

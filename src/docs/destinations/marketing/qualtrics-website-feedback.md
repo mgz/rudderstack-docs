@@ -1,4 +1,6 @@
 ---
+slug: "/docs/destinations/marketing/qualtrics-website-feedback"
+title: "Qualtrics - RudderStack"
 description: >-
   Step-by-step guide to send your event data from RudderStack to Qualtrics
   Website Feedback.
@@ -14,10 +16,10 @@ RudderStack supports Qualtrics as a [**website feedback destination**](https://a
 
 Before configuring Qualtrics as a destination in RudderStack, verify if Qualtrics supports the source platform you are sending the events from. Refer to the following table:
 
-| **Connection Mode** | **Web** | **Mobile** | **Server** |
-| :--- | :--- | :--- | :--- |
-| **Device mode** | **Supported** | - | - |
-| **Cloud mode** | - | - | - |
+| **Connection Mode** | **Web**       | **Mobile** | **Server** |
+| :------------------ | :------------ | :--------- | :--------- |
+| **Device mode**     | **Supported** | -          | -          |
+| **Cloud mode**      | -             | -          | -          |
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
@@ -25,7 +27,7 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 
 Once you have confirmed that the source platform supports sending events to Qualtrics, follow these steps:
 
-* From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source and select **Qualtrics** from the list of destinations.
+- From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source and select **Qualtrics** from the list of destinations.
 
 {% hint style="info" %}
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more information.
@@ -37,14 +39,14 @@ Follow our guide on [**How to Add a Source and Destination in RudderStack**](htt
 
 To successfully configure Qualtrics as a destination, you will need to configure the following settings:
 
-* **Project ID:** Enter your Qualtrics Project ID here.
-* **Brand ID:** Enter your Qualtrics Brand ID here.
+- **Project ID:** Enter your Qualtrics Project ID here.
+- **Brand ID:** Enter your Qualtrics Brand ID here.
 
 {% hint style="info" %}
 Refer to the **FAQ** section below for steps on how to get your Qualtrics Project ID and Brand ID.
 {% endhint %}
 
-* **Enable Generic Page Title:** If this field is enabled, RudderStack sends every `page` call with the name `Viewed a Page`.
+- **Enable Generic Page Title:** If this field is enabled, RudderStack sends every `page` call with the name `Viewed a Page`.
 
 {% hint style="info" %}
 This field is useful only when using the `page` call.
@@ -71,8 +73,8 @@ rudderanalytics.page("category", "name", {
   title: "title",
   search: "search",
   referrer: "referrer",
-  testDimension: "true"
-});
+  testDimension: "true",
+})
 ```
 
 For the above example, The event will be sent as `Viewed category name Page`, if the **Generic Page Title** option is disabled in the RudderStack dashboard. If this option is enabled, the event will be sent as `Viewed a Page`.
@@ -87,8 +89,8 @@ rudderanalytics.page("name", {
   title: "title",
   search: "search",
   referrer: "referrer",
-  testDimension: "true"
-});
+  testDimension: "true",
+})
 ```
 
 For the above example, the event will be sent as `Viewed category name Page`, if the **Generic Page Title** option is disabled in the RudderStack dashboard. If it is enabled, the event will be sent as `Viewed a Page`.
@@ -102,8 +104,8 @@ rudderanalytics.page("name", {
   title: "title",
   search: "search",
   referrer: "referrer",
-  testDimension: "true"
-});
+  testDimension: "true",
+})
 ```
 
 For the above example, The event will be sent as `Viewed name Page`, if the **Generic Page Title** option is disabled in the RudderStack dashboard. If enabled, the event will be sent as `Viewed a Page`.
@@ -129,7 +131,7 @@ In this case, the value of event field of the `track` call will be used as the e
 A sample `track` call is as shown:
 
 ```javascript
-rudderanalytics.track("Test Event");
+rudderanalytics.track("Test Event")
 ```
 
 In the above example, the event will be sent to Qualtrics as `Test Event`.
@@ -140,13 +142,13 @@ In the above example, the event will be sent to Qualtrics as `Test Event`.
 
 To get your Qualtrics Project ID and Brand ID, follow these steps:
 
-* Log into your [**Qualtrics account**](https://login.qualtrics.com/login?lang=au).
-* Click on the project you will be using.
-* Click on **Settings** tab, followed by **Manage Project** option \(the right-most dropdown menu in the dashboard\).
+- Log into your [**Qualtrics account**](https://login.qualtrics.com/login?lang=au).
+- Click on the project you will be using.
+- Click on **Settings** tab, followed by **Manage Project** option \(the right-most dropdown menu in the dashboard\).
 
 ![](https://user-images.githubusercontent.com/59817155/128864100-05ef5c5a-8c04-4607-b742-633938f440ac.png)
 
-* Click on **Project ID's**. Here you will find both your Project ID and Brand ID, as shown:
+- Click on **Project ID's**. Here you will find both your Project ID and Brand ID, as shown:
 
 ![](https://user-images.githubusercontent.com/59817155/128864303-2660ccb8-a91d-4633-b6bf-eef4253cb381.png)
 
@@ -161,4 +163,3 @@ An example is shown below:
 ## Contact Us
 
 For questions on any of the sections covered in this guide, feel free to [**contact us**](mailto:docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-
