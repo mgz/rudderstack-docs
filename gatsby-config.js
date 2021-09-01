@@ -258,15 +258,26 @@ module.exports = {
     {
       resolve: "gatsby-plugin-mdx",
       options: {
-        extensions: [".mdx",".md"]
+        extensions: [".mdx",".md"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-embedder`,
+            options:{
+              services: {
+                'YouTube': "https://www.youtube.com/watch?v=vOaw9pKn6\_M"
+              } 
+            }
+          }
+        ]
       }
     },
     {
       resolve: "@rocketseat/gatsby-theme-docs-core",
       options: {
-        basePath: __dirname,
-        baseDir: '/src/docs',
-        withMdx: false
+        basePath: `/docs`,
+        docsPath: `src/docs`,
+        withMdx: false,
+        configPath: `src/docsconfig`
       }
     }
   ],

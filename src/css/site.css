@@ -797,6 +797,14 @@ top: -60px;
   background-color: #eef5f5;
 }
 
+.docs-main-content h1 {
+  @apply text-3xl;
+  @apply pb-6;
+  @apply mb-6;
+  @apply border-b;
+  @apply border-grayColor-lighter;
+}
+
 @media only screen and (min-width: 1023px) {
   .menu li.has-submenu:hover a:after {
     transform: rotate(225deg);

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/user-guides/administrators-guide/horizontal-scaling-1"
+title: "Horizontal Scaling - RudderStack"
 description: >-
   Detailed technical description of the horizontal scaling options for the
   open-source as well as enterprise version of RudderStack.
@@ -6,7 +8,7 @@ description: >-
 
 # Horizontal Scaling
 
-RudderStack makes it easier for you to add more nodes to your Kubernetes cluster, to process the events in a timely and effective manner. This guide shows you how to effectively configure your [Helm charts](https://github.com/rudderlabs/rudderstack-helm) to trigger a horizontal scale up/down, based on the version of RudderStack you are using. 
+RudderStack makes it easier for you to add more nodes to your Kubernetes cluster, to process the events in a timely and effective manner. This guide shows you how to effectively configure your [Helm charts](https://github.com/rudderlabs/rudderstack-helm) to trigger a horizontal scale up/down, based on the version of RudderStack you are using.
 
 ## RudderStack Open-source Version
 
@@ -20,7 +22,7 @@ There are, however, a couple of challenges in scaling up or down this way.
 
 ### Event Ordering
 
-In a single-node cluster, all events are routed to the same RudderStack node. This guarantees the  ordering of all events it has received for a given user. In case of a multi-node cluster, since the events of a same user can go to different nodes, the event ordering is not guaranteed by the cluster.
+In a single-node cluster, all events are routed to the same RudderStack node. This guarantees the ordering of all events it has received for a given user. In case of a multi-node cluster, since the events of a same user can go to different nodes, the event ordering is not guaranteed by the cluster.
 
 ![Event Ordering While Scaling Up from 1 Node to 2 Nodes](../../.gitbook/assets/image%20%2817%29.png)
 
@@ -53,4 +55,3 @@ RudderStack Enterprise includes a separate process named **Jobs DB Migrator**. T
 ## Contact Us
 
 If you want to know more about horizontal scaling in RudderStack, or if you have any queries or concerns on how to implement it effectively, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel to know more about this feature.
-

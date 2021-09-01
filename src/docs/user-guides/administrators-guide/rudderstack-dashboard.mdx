@@ -1,10 +1,12 @@
 ---
+slug: "/docs/user-guides/administrators-guide/rudderstack-dashboard"
+title: "RudderStack Dashboard - RudderStack"
 description: Detailed explanation of the various RudderStack dashboard panels
 ---
 
 # Understanding the RudderStack Dashboard
 
-The RudderStack dashboard is powered by Grafana. It gives you detailed insights into your RudderStack server's performance. You get a real-time view of the events sent and received by  RudderStack, along with various other metrics such as RudderStack's performance under load, errors encountered while processing events, statistics about event delivery, etc.
+The RudderStack dashboard is powered by Grafana. It gives you detailed insights into your RudderStack server's performance. You get a real-time view of the events sent and received by RudderStack, along with various other metrics such as RudderStack's performance under load, errors encountered while processing events, statistics about event delivery, etc.
 
 All the performance metrics are stored in InfluxDB, where Grafana queries them and gives you their visual overview.
 
@@ -22,23 +24,23 @@ Refers to the data warehouses like Amazon Redshift, Google BigQuery, Snowflake, 
 
 Refers to the object storage destinations like Amazon S3, Google Cloud Storage, Azure Blob Storage, MinIO, and DigitalOcean Spaces - which are currently supported by RudderStack.
 
-### Router 
+### Router
 
 All the connected destinations other than the two mentioned above are referred to as router destinations.
 
-### User Transformation 
+### User Transformation
 
 Refers to RudderStack's internal service which lets you enrich the events real-time using your custom JavaScript function.
 
-### Destination Transformation 
+### Destination Transformation
 
 Refers to RudderStack's internal service which allows you to transform your event payload into a destination-specific payload.
 
-### Gateway 
+### Gateway
 
 Refers to RudderStack's internal service which is responsible for ingesting the incoming events.
 
-### Processor 
+### Processor
 
 Refers to RudderStack's internal service which is responsible for processing new events, applying user transformations, and destination transformations.
 
@@ -56,7 +58,7 @@ Corresponds to the number of HTTP requests RudderStack has received in the selec
 
 This section refers to the number of events RudderStack has received in the selected time period. The RudderStack API allows multiple events to be [batched inside a single HTTP request](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification#12-batch).
 
-### **Delivered Events** 
+### **Delivered Events**
 
 Refers to the number of events RudderStack has delivered across all destinations in a selected time period. If you have set up a warehouse destination in RudderStack, every event will be delivered into two different tables in warehouse and counted as two delivered events.
 
@@ -78,7 +80,7 @@ In this section, the events are stored to the gateway \(PostgreSQL\) and acknowl
 
 ### Gateway Throughput
 
-The RudderStack Processor module picks events from gateway for further processing. If `Input Requests` &gt; `Output Requests` then the inflow is higher than what the processor can handle. 
+The RudderStack Processor module picks events from gateway for further processing. If `Input Requests` &gt; `Output Requests` then the inflow is higher than what the processor can handle.
 
 {% hint style="info" %}
 This usually happens during a sudden surge in the traffic, but syncs over a period of time. If this is consistently high, **consider adding an extra RudderStack node**.
@@ -108,7 +110,7 @@ Corresponds to the average time taken for delivering the events to the object st
 
 ### Events Sync Lag Time - Warehouse
 
-Highlights the longest sync delay for delivering the events to the warehouse destination. RudderStack batches events every 30 minutes \(default value\) before uploading to the data warehouse, so the delivery takes at least this much batching period. 
+Highlights the longest sync delay for delivering the events to the warehouse destination. RudderStack batches events every 30 minutes \(default value\) before uploading to the data warehouse, so the delivery takes at least this much batching period.
 
 This section reports the lag for the oldest event in a batch. For example, if the batching period is 30 minutes and the reported lag time is 50 minutes, then the average lag time would be **50 - \(30/2\) = 35 min**
 
@@ -148,7 +150,7 @@ This dashboard indicates the number of errors incurred during the transformation
 
 ![Router Throughput](../../.gitbook/assets/6%20%288%29.png)
 
-### Router Throughput - &lt;destination\_type&gt;
+### Router Throughput - &lt;destination_type&gt;
 
 The router picks the transformed events that are ready to be sent to the destinations, and then forwards them to the destinations. If a destination is down for sometime, it retries up to a configured time window \(default value being 3 hours\). If **IN &gt; OUT** \(refer to the second graph in the image above\), then there would be a delay in delivering the events. Some possible reasons include a sudden surge of events, or that the destination is slow in accepting new event requests.
 
@@ -213,6 +215,3 @@ For real-time deliveries, it is important to maintain queue size at 1 or 2.
 ## Contact Us
 
 To get more information on any of the above metrics related to the RudderStack dashboards, feel free to [contact us](mailto:%20docs@rudderstack.com). You can also talk to us on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel - we will be happy to help you!
-
-
-

@@ -1,4 +1,6 @@
 ---
+slug: "/docs/user-guides/administrators-guide/admin-troubleshooting-guide"
+title: "Troubleshooting Guide - RudderStack"
 description: >-
   Quick solutions to the common and not-so-common problems you are likely to
   encounter as an admin while using RudderStack
@@ -28,13 +30,13 @@ If the control plane is accessible from your network but is down, we are already
 
 ## All the destinations receive events except a few. What should I do?
 
-1. Check if those destination are enabled  in Control Plane
+1. Check if those destination are enabled in Control Plane
 2. Verify that the config parameters such as API key, tracking ID, etc. are correct
 
 ## Events are lagging in the destination. What should I do?
 
-1. There is a possibility that a destination service \(Google Analytics, S3, etc.\) is down. 
-2. Check the number of pending gateway tables \(tables that start with `gw_`\),  router tables \(tables that start with `rt_`\), and batch router tables \(tables that start with `batch_rt_`_\)._
+1. There is a possibility that a destination service \(Google Analytics, S3, etc.\) is down.
+2. Check the number of pending gateway tables \(tables that start with `gw_`\), router tables \(tables that start with `rt_`\), and batch router tables \(tables that start with `batch_rt_`_\)._
 3. If the number for any of the above possibilities is high \(&gt; 5\), then we have incoming requests at a higher rate than what we can process. Consider adding another RudderStack node if possible.
 4. If you have access to RudderStack Enterprise edition, check out the Grafana dashboards.
 
@@ -62,12 +64,12 @@ If you have sessions enabled, RudderStack caches the session information. Please
 
 ## Gateway tables are not getting dumped
 
-* If there are tables that start with _``_`pre_drop```_ but if you don't see them being removed, verify the access credentials to your object storage like S3.
-* If you have multiple instances of Data Plane, each table dump will be inside a specific folder named after the `INSTANCE_NAME`.
+- If there are tables that start with _``_`pre*drop```* but if you don't see them being removed, verify the access credentials to your object storage like S3.
+- If you have multiple instances of Data Plane, each table dump will be inside a specific folder named after the `INSTANCE_NAME`.
 
 ## How do I check the health of RudderStack daily?
 
-1. If you have access to RudderStack Enterprise, you already have a visualization of the RudderStack server metrics at your disposal for tracking the health of your server. 
+1. If you have access to RudderStack Enterprise, you already have a visualization of the RudderStack server metrics at your disposal for tracking the health of your server.
 2. Ensure that the number of`jobsDB` tables is not increasing.
 3. Verify that the server mode is **normal**.
 
@@ -110,4 +112,3 @@ If your system is hitting TCP limits and returning HTTP errors, the above config
 ## Contact Us
 
 For any other issues or bugs that you might encounter, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel, and we will be happy to help!
-

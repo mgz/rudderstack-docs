@@ -1,4 +1,6 @@
 ---
+slug: "/docs/stream-sources/rudderstack-sdk-integration-guides/dot-net"
+title: ".NET - RudderStack"
 description: >-
   Detailed technical documentation on using RudderStack’s .NET SDK to send
   events to various destinations
@@ -30,21 +32,21 @@ To initialize the RudderStack client, run the following code snippet:
 using RudderStack;
 
 RudderAnalytics.Initialize(
-    YOUR_WRITE_KEY, 
+    YOUR_WRITE_KEY,
     new RudderConfig(dataPlaneUrl: DATA_PLANE_URL)
 );
 ```
 
 ## Sending Events from RudderStack
 
-Once the RudderStack client is initialized, you can then use it to send relevant customer events. 
+Once the RudderStack client is initialized, you can then use it to send relevant customer events.
 
 An example `track` call is as shown:
 
 ```csharp
 RudderAnalytics.Client.Track(
-    "userId", 
-    "CTA Clicked", 
+    "userId",
+    "CTA Clicked",
     new Dictionary<string, object> {# {"plan", "premium"}, }
 );
 ```
@@ -61,21 +63,21 @@ A sample `identify` call is as shown:
 
 ```csharp
 RudderAnalytics.Client.Identify(
-    "userId", 
+    "userId",
     new Dictionary<string, object> { {"subscription", "inactive"}, }
 );
 ```
 
 The `identify` method parameters are as described below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
-| `traits` | Object | Optional | Dictionary of the traits associated with the user, such as `name`or `email` |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
+| `traits`       | Object   | Optional                                  | Dictionary of the traits associated with the user, such as `name`or `email`                                                |
 
 ## Track
 
@@ -89,27 +91,27 @@ An example of a `track` call is shown below:
 
 ```python
 RudderAnalytics.Client.Track(
-    "userId", 
-    "CTA Clicked", 
+    "userId",
+    "CTA Clicked",
     new Dictionary<string, object> {# {"plan", "premium"}, }
 );
 ```
 
 The `track` method parameters are:
 
-| Name | Type | Presence | Description |
-| :--- | :--- | :--- | :--- |
-| `user_id` | String | Required | The developer identification for your user |
-| `event` | String | Required | Name of the event being performed by the user |
-| `properties` | Object | Optional | Dictionary of the properties associated with a particular event. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| Name           | Type   | Presence | Description                                                                                                                |
+| :------------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `user_id`      | String | Required | The developer identification for your user                                                                                 |
+| `event`        | String | Required | Name of the event being performed by the user                                                                              |
+| `properties`   | Object | Optional | Dictionary of the properties associated with a particular event.                                                           |
+| `context`      | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `timestamp`    | Date   | Optional | The timestamp of the message's arrival.                                                                                    |
 | `anonymous_id` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
+| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled.                                                 |
 
 ## Page
 
-The `page` call allows you to record the page views on your website. It also records the other relevant information about the page that is being viewed. 
+The `page` call allows you to record the page views on your website. It also records the other relevant information about the page that is being viewed.
 
 {% hint style="info" %}
 For a detailed explanation of the `page` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
@@ -119,25 +121,25 @@ An example `page` call is as shown:
 
 ```csharp
 RudderAnalytics.Client.Page(
-    "userId", 
-    "Sign Up", 
-    new Dictionary<string, object> { 
-        {"url", "https://wwww.example.com/sign-up"}, 
+    "userId",
+    "Sign Up",
+    new Dictionary<string, object> {
+        {"url", "https://wwww.example.com/sign-up"},
     }
 );
 ```
 
 The `page` method parameters are as described below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `name` | String | Required | Name of the page being viewed. |
-| `properties` | Object | Optional | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer` |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `name`         | String   | Required                                  | Name of the page being viewed.                                                                                             |
+| `properties`   | Object   | Optional                                  | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer`                           |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
 ## Screen
 
@@ -151,25 +153,25 @@ An example `screen` call is as shown:
 
 ```csharp
 RudderAnalytics.Client.Screen(
-    "userId", 
-    "Dashboard", 
-    new Dictionary<string, object> { 
-        {"name", "Paid Dashboard"}, 
+    "userId",
+    "Dashboard",
+    new Dictionary<string, object> {
+        {"name", "Paid Dashboard"},
     }
 );
 ```
 
 The `screen` method parameters are as described below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `name` | String | Required | Name of the screen being viewed. |
-| `properties` | Object | Optional | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer` |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `name`         | String   | Required                                  | Name of the screen being viewed.                                                                                           |
+| `properties`   | Object   | Optional                                  | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer`                           |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
 ## Group
 
@@ -183,23 +185,23 @@ An example `group` call is as shown:
 
 ```csharp
 RudderAnalytics.Client.Group(
-    "userId", 
-    "accountId", 
+    "userId",
+    "accountId",
     new Dictionary<string, object> { {"role", "Owner"}, }
 );
 ```
 
 The `group` method parameters are as follows:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `groupId` | String | Required | Unique identifier of the group, as present in your database. |
-| `traits` | Object | Optional | Dictionary of the properties or traits associated with the group, such as `email` or `name`. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `groupId`      | String   | Required                                  | Unique identifier of the group, as present in your database.                                                               |
+| `traits`       | Object   | Optional                                  | Dictionary of the properties or traits associated with the group, such as `email` or `name`.                               |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
 ## Alias
 
@@ -217,14 +219,14 @@ RudderAnalytics.Client.Alias("anonUserId", "userId");
 
 The `alias` method parameters are as mentioned below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `previousId` | String | Required | The previous unique identifier of the user. |
-| `traits` | Object | Optional | Dictionary of the properties or traits associated with the group, such as `email` or `name`. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                       |
+| :------------- | :------- | :---------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                             |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                            |
+| `previousId`   | String   | Required                                  | The previous unique identifier of the user.                                                                           |
+| `traits`       | Object   | Optional                                  | Dictionary of the properties or traits associated with the group, such as `email` or `name`.                          |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                               |
 
 {% hint style="info" %}
 For a detailed explanation of the `alias` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
@@ -235,4 +237,3 @@ For a detailed explanation of the `alias` call, please refer to our [RudderStack
 To know more about the RudderStack .NET SDK, you can [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
 
 In case you come across any issues while using this SDK, please feel free to report it on our [GitHub repository](https://github.com/rudderlabs/rudder-sdk-.net).
-

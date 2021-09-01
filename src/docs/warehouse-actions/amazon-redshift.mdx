@@ -1,4 +1,6 @@
 ---
+slug: "/docs/warehouse-actions/amazon-redshift"
+title: "Amazon Redshift - RudderStack"
 description: Step-by-step guide to ingest your data from Amazon Redshift into RudderStack.
 ---
 
@@ -23,18 +25,18 @@ GRANT CREATE ON SCHEMA "testschema" to RUDDER;
 
 To set up Amazon Redshift as a source in RudderStack, follow these steps:
 
-* Log into your [RudderStack dashboard](https://app.rudderlabs.com/signup?type=freetrial).
-* From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
+- Log into your [RudderStack dashboard](https://app.rudderlabs.com/signup?type=freetrial).
+- From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
 
 ![](../.gitbook/assets/image%20%2897%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%283%29%20%284%29.png)
 
-* Scroll down to the **Warehouse Sources** and select **Redshift**. Then, click on **Next**.
+- Scroll down to the **Warehouse Sources** and select **Redshift**. Then, click on **Next**.
 
 ![](../.gitbook/assets/screen-shot-2021-01-06-at-4.03.08-pm.png)
 
 ### Setting Up the Connection
 
-* Assign a name to your source, and click on **Create Credentials from Scratch**. Then, click on **Next**.
+- Assign a name to your source, and click on **Create Credentials from Scratch**. Then, click on **Next**.
 
 ![](../.gitbook/assets/screen-shot-2021-01-06-at-3.54.12-pm.png)
 
@@ -42,20 +44,20 @@ To set up Amazon Redshift as a source in RudderStack, follow these steps:
 If you've already configured Redshift as a source before, your existing credentials will automatically appear under **Use Existing Credentials**.
 {% endhint %}
 
-* Next, enter the relevant connection details in the **Connection Credentials** as shown below:
+- Next, enter the relevant connection details in the **Connection Credentials** as shown below:
 
 ![](../.gitbook/assets/screen-shot-2021-01-06-at-3.59.08-pm.png)
 
-* The required settings are:
-  * **Host -** The host name of your Redshift service.
-  * **Database -** The database name in your Redshift instance where the data is loaded.
-  * **User** - The username which has the required read/write access to the above database.
-  * **Password** - The password for the above user should be specified here.
-  * **Port** - The port number of your Redshift service should be specified here.
+- The required settings are:
+  - **Host -** The host name of your Redshift service.
+  - **Database -** The database name in your Redshift instance where the data is loaded.
+  - **User** - The username which has the required read/write access to the above database.
+  - **Password** - The password for the above user should be specified here.
+  - **Port** - The port number of your Redshift service should be specified here.
 
 ### Specifying the Data to Import
 
-* Next, select the **Schema** and the **Table** from which you want RudderStack to import the data.
+- Next, select the **Schema** and the **Table** from which you want RudderStack to import the data.
 
 ![](../.gitbook/assets/screen-shot-2021-01-06-at-3.58.07-pm.png)
 
@@ -63,17 +65,17 @@ If you've already configured Redshift as a source before, your existing credenti
 Your table must include one of the following columns - `email`, `user_id`, or `anonymous_id`.
 {% endhint %}
 
-* Once you specify the table containing the required columns, you will be able to preview a snippet of your data, as shown below:
+- Once you specify the table containing the required columns, you will be able to preview a snippet of your data, as shown below:
 
 ![](../.gitbook/assets/screen-shot-2021-01-05-at-3.21.38-pm.png)
 
-* Here, you can select all or only a few specific columns of your choice, search the columns by a keyword, and also edit the **JSON Trait Key**, as shown below. You can also preview the resultant JSON on the right. Once you've select the required table columns to import the data from, click on **Next**.
+- Here, you can select all or only a few specific columns of your choice, search the columns by a keyword, and also edit the **JSON Trait Key**, as shown below. You can also preview the resultant JSON on the right. Once you've select the required table columns to import the data from, click on **Next**.
 
 ![](../.gitbook/assets/screen-shot-2021-01-05-at-3.22.09-pm.png)
 
 ### Setting the Data Update Schedule
 
-* Next, you will be required to set the **Run Frequency** to schedule the data import from your Redshift instance to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option. Then, click on **Next**.
+- Next, you will be required to set the **Run Frequency** to schedule the data import from your Redshift instance to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option. Then, click on **Next**.
 
 ![](../.gitbook/assets/screen-shot-2021-01-06-at-4.05.51-pm%20%281%29%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29%20%283%29%20%282%29%20%281%29.png)
 
@@ -90,4 +92,3 @@ If you have already configured a destination on the RudderStack platform, choose
 ## Contact Us
 
 If you come across any issues while configuring Amazon Redshift as a source on the RudderStack dashboard, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

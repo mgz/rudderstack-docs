@@ -1,4 +1,6 @@
 ---
+slug: "/docs/stream-sources/rudderstack-event-streams/appsflyer"
+title: "AppsFlyer - RudderStack"
 description: Step-by-step guide to ingest your event data from AppsFlyer into RudderStack.
 ---
 
@@ -12,19 +14,19 @@ This document guides you in setting up AppsFlyer as a source in RudderStack. You
 
 In order to add AppsFlyer as a source in RudderStack, please follow these steps:
 
-* From your [RudderStack dashboard](https://app.rudderstack.com/), click on **Add Source**. From the list of sources, select **AppsFlyer**, as shown:
+- From your [RudderStack dashboard](https://app.rudderstack.com/), click on **Add Source**. From the list of sources, select **AppsFlyer**, as shown:
 
 ![Choose AppsFlyer as a source](../../.gitbook/assets/AF_choose_src.png)
 
-* Enter the name of your source, and click on **Next**.
+- Enter the name of your source, and click on **Next**.
 
 ![Provide source name](../../.gitbook/assets/AF_src_name.png)
 
-* Head over to your AppsFlyer account and navigate to the **API Access** section under **Integration** from the sidebar. Look for the **Push API** section, as shown:
+- Head over to your AppsFlyer account and navigate to the **API Access** section under **Integration** from the sidebar. Look for the **Push API** section, as shown:
 
 ![](../../.gitbook/assets/AF_Dashboard.png)
 
-* Under the **Endpoint Configuration**, add an endpoint URL pointing to RudderStack in the following format:`<DATA_PLANE_URL>/v1/webhook?writeKey=<your_AppsFlyer_source_write_key>`
+- Under the **Endpoint Configuration**, add an endpoint URL pointing to RudderStack in the following format:`<DATA_PLANE_URL>/v1/webhook?writeKey=<your_AppsFlyer_source_write_key>`
 
 An example URL should like the following:
 
@@ -42,7 +44,7 @@ You can validate the endpoint using the **Send Test** button.
 
 ![Endpoint Configuration](../../.gitbook/assets/AF_src_sendtest.png)
 
-* Finally, save the endpoint.
+- Finally, save the endpoint.
 
 ## RudderStack Event Transformation
 
@@ -50,30 +52,29 @@ The Push events from AppsFlyer are ingested into RudderStack after converting it
 
 Also, RudderStack populates the following properties from AppsFlyer event payload to the RudderStack event:
 
-| AppsFlyer Property | RudderStack Property |
-| :--- | :--- |
-| `customer_user_id` | `userId`, `context.traits.userId` |
-| `event_name` | `event` |
-| `event_time` | `timestamp`, `originalTimestamp` |
-| `ip` | `context.ip` |
-| `selected_timezone` | `context.timezone` |
-| `user_agent` | `context.userAgent` |
-| `bundle_id` | `context.app.namespace` |
-| `app_version` | `context.app.version` |
-| `app_name` | `context.app.name` |
-| `device_type` | `context.device.model` |
-| `wifi` | `context.network.wifi` |
-| `carrier` | `context.network.carrier` |
-| `platform` | `platform`, `context.os.name` |
-| `idfa` | `context.device.advertisingId` for iOS |
-| `android_id` | `context.device.advertisingId` for android |
-| `appsflyer_id` | `context.externalId[0].value` |
-| `os_version` | `context.os.version` |
-| `city` | `traits.address.city`, `context.traits.address.city` |
-| `postal_code` | `traits.address.zip`, `context.traits.address.zip` |
-| `country_code` | `traits.address.country`, `context.traits.address.country` |
+| AppsFlyer Property  | RudderStack Property                                       |
+| :------------------ | :--------------------------------------------------------- |
+| `customer_user_id`  | `userId`, `context.traits.userId`                          |
+| `event_name`        | `event`                                                    |
+| `event_time`        | `timestamp`, `originalTimestamp`                           |
+| `ip`                | `context.ip`                                               |
+| `selected_timezone` | `context.timezone`                                         |
+| `user_agent`        | `context.userAgent`                                        |
+| `bundle_id`         | `context.app.namespace`                                    |
+| `app_version`       | `context.app.version`                                      |
+| `app_name`          | `context.app.name`                                         |
+| `device_type`       | `context.device.model`                                     |
+| `wifi`              | `context.network.wifi`                                     |
+| `carrier`           | `context.network.carrier`                                  |
+| `platform`          | `platform`, `context.os.name`                              |
+| `idfa`              | `context.device.advertisingId` for iOS                     |
+| `android_id`        | `context.device.advertisingId` for android                 |
+| `appsflyer_id`      | `context.externalId[0].value`                              |
+| `os_version`        | `context.os.version`                                       |
+| `city`              | `traits.address.city`, `context.traits.address.city`       |
+| `postal_code`       | `traits.address.zip`, `context.traits.address.zip`         |
+| `country_code`      | `traits.address.country`, `context.traits.address.country` |
 
 ## Contact Us
 
 If you come across any issues while configuring AppsFlyer as a source with RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel - we will be happy to talk to you!
-

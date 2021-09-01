@@ -1,4 +1,6 @@
 ---
+slug: "/docs/warehouse-actions"
+title: "Warehouse Actions Sources - RudderStack"
 description: >-
   Detailed technical description of RudderStack's Warehouse Actions feature,
   with step-by-step instructions for configuration.
@@ -38,23 +40,23 @@ Here's a detailed walkthrough of the Warehouse Actions feature:
 
 To configure your data warehouse as a source on the RudderStack dashboard, follow these steps:
 
-* Log into your [**RudderStack dashboard**](https://app.rudderlabs.com/signup?type=freetrial).
-* Navigate to **Sources**, present in the left panel of the dashboard.
-* Choose your preferred data warehouse which you want to configure as a source, as shown. Then, click on **Next**.
+- Log into your [**RudderStack dashboard**](https://app.rudderlabs.com/signup?type=freetrial).
+- Navigate to **Sources**, present in the left panel of the dashboard.
+- Choose your preferred data warehouse which you want to configure as a source, as shown. Then, click on **Next**.
 
 ![](../.gitbook/assets/1%20%288%29.png)
 
 ### Specifying Connection Credentials
 
-* Assign a name to your source. Then, click on the **Create credentials from scratch** button, if you are configuring your data warehouse in the RudderStack dashboard for the first time.
+- Assign a name to your source. Then, click on the **Create credentials from scratch** button, if you are configuring your data warehouse in the RudderStack dashboard for the first time.
 
 ![](../.gitbook/assets/2%20%281%29%20%281%29.png)
 
 {% hint style="info" %}
-If you have previously configured your data warehouse as a source on the RudderStack dashboard, you can simply use the existing credentials and proceed. 
+If you have previously configured your data warehouse as a source on the RudderStack dashboard, you can simply use the existing credentials and proceed.
 {% endhint %}
 
-* Next, enter the connection credentials to configure your data warehouse connection with RudderStack, as shown:
+- Next, enter the connection credentials to configure your data warehouse connection with RudderStack, as shown:
 
 ![](../.gitbook/assets/screen-shot-2020-12-08-at-9.37.06-pm.png)
 
@@ -64,33 +66,33 @@ RudderStack currently supports **Google BigQuery**, **PostgreSQL**, **ClickHouse
 
 ### Specifying Warehouse Schema and Table
 
-* Next, enter the data warehouse schema and the table name. RudderStack will collect the data from this table.
+- Next, enter the data warehouse schema and the table name. RudderStack will collect the data from this table.
 
 ![](../.gitbook/assets/4%20%287%29.png)
 
 {% hint style="warning" %}
 Please note that your source table must include at least one of the following columns for it to be considered a valid source:
 
-* **`email`**
-* **`user_id`**
-* **`anonymous_id`**
-{% endhint %}
+- **`email`**
+- **`user_id`**
+- **`anonymous_id`**
+  {% endhint %}
 
-* If the table is valid, you can then preview a snippet of the data, as shown:
+- If the table is valid, you can then preview a snippet of the data, as shown:
 
 ![](../.gitbook/assets/5.png)
 
-* You can also filter, select and edit the column names of the table to be included as the data source, as shown:
+- You can also filter, select and edit the column names of the table to be included as the data source, as shown:
 
 ![](../.gitbook/assets/6%20%286%29.png)
 
 ![](../.gitbook/assets/7%20%282%29%20%281%29.png)
 
-* Once you've selected all the the required table columns, click on **Next**.
+- Once you've selected all the the required table columns, click on **Next**.
 
 ### Setting the Data Update Schedule
 
-* RudderStack also allows you to specify the data update frequency and set a data synchronization time as per your requirement.
+- RudderStack also allows you to specify the data update frequency and set a data synchronization time as per your requirement.
 
 ![](../.gitbook/assets/8.png)
 
@@ -110,25 +112,25 @@ Constants give you the ability to add new fields to each event with a pre-define
 
 ### How to add a Warehouse Actions constant
 
-Adding a new constant when configuring a Warehouse Actions source is very easy: 
+Adding a new constant when configuring a Warehouse Actions source is very easy:
 
-* Click on the **Add Constant** button as shown below, while [mapping your table](https://docs.rudderstack.com/warehouse-actions#specifying-warehouse-schema-and-table):
+- Click on the **Add Constant** button as shown below, while [mapping your table](https://docs.rudderstack.com/warehouse-actions#specifying-warehouse-schema-and-table):
 
 ![](../.gitbook/assets/image%20%2877%29.png)
 
-* Add your preferred key and value for the constant, select **Ok** and then click on **Confirm**, as shown:
+- Add your preferred key and value for the constant, select **Ok** and then click on **Confirm**, as shown:
 
 ![](../.gitbook/assets/image%20%2876%29.png)
 
-* The new constant appears in the table and also in the JSON preview inside the traits, as shown:
+- The new constant appears in the table and also in the JSON preview inside the traits, as shown:
 
 ![](../.gitbook/assets/screenshot_2021-03-18_at_3.51.11_pm.png)
 
-* You can also use dot notation to define a Warehouse Actions constant, as shown below:
+- You can also use dot notation to define a Warehouse Actions constant, as shown below:
 
 ![](../.gitbook/assets/screenshot_2021-03-18_at_3.52.00_pm.png)
 
-* The result would look something like:
+- The result would look something like:
 
 ![](../.gitbook/assets/screenshot_2021-03-18_at_3.52.26_pm.png)
 
@@ -157,4 +159,3 @@ Currently all events from the RudderStack warehouse actions are `identify()` eve
 ## Contact Us
 
 To know more about RudderStack's Warehouse Actions feature, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-

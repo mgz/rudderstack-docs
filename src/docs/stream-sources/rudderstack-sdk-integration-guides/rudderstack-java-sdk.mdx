@@ -1,4 +1,6 @@
 ---
+slug: "/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-java-sdk"
+title: "Java - RudderStack"
 description: >-
   Detailed technical documentation on using RudderStack’s Java SDK to send
   events to various destinations
@@ -78,14 +80,14 @@ analytics.enqueue(IdentifyMessage.builder()
 
 The `identify` method parameters are as described below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
-| `traits` | Object | Optional | Dictionary of the traits associated with the user, such as `name`or `email` |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
+| `traits`       | Object   | Optional                                  | Dictionary of the traits associated with the user, such as `name`or `email`                                                |
 
 ## Track
 
@@ -111,15 +113,15 @@ Map<String, Object> properties = new LinkedHashMap<>();
 
 The `track` method parameters are as described below:
 
-| Name | Type | Presence | Description |
-| :--- | :--- | :--- | :--- |
-| `user_id` | String | Required | The developer identification for your user |
-| `event` | String | Required | Name of the event being performed by the user |
-| `properties` | Object | Optional | Dictionary of the properties associated with a particular event. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| Name           | Type   | Presence | Description                                                                                                                |
+| :------------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `user_id`      | String | Required | The developer identification for your user                                                                                 |
+| `event`        | String | Required | Name of the event being performed by the user                                                                              |
+| `properties`   | Object | Optional | Dictionary of the properties associated with a particular event.                                                           |
+| `context`      | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `timestamp`    | Date   | Optional | The timestamp of the message's arrival.                                                                                    |
 | `anonymous_id` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
+| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled.                                                 |
 
 ## Page
 
@@ -144,15 +146,15 @@ analytics.enqueue(PageMessage.builder("Schedule")
 
 The `page` method parameters are as described below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `name` | String | Required | Name of the page being viewed. |
-| `properties` | Object | Optional | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer` |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `name`         | String   | Required                                  | Name of the page being viewed.                                                                                             |
+| `properties`   | Object   | Optional                                  | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer`                           |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
 ## Screen
 
@@ -177,15 +179,15 @@ analytics.enqueue(ScreenMessage.builder("Schedule")
 
 The `screen` method parameters are as described below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `name` | String | Required | Name of the screen being viewed. |
-| `properties` | Object | Optional | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer` |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `name`         | String   | Required                                  | Name of the screen being viewed.                                                                                           |
+| `properties`   | Object   | Optional                                  | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer`                           |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
 ## Group
 
@@ -210,15 +212,15 @@ analytics.enqueue(GroupMessage.builder("group123")
 
 The `group` method parameters are as follows:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `groupId` | String | Required | Unique identifier of the group, as present in your database. |
-| `traits` | Object | Optional | Dictionary of the properties or traits associated with the group, such as `email` or `name`. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `groupId`      | String   | Required                                  | Unique identifier of the group, as present in your database.                                                               |
+| `traits`       | Object   | Optional                                  | Dictionary of the properties or traits associated with the group, such as `email` or `name`.                               |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
 ## Alias
 
@@ -238,14 +240,14 @@ analytics.enqueue(AliasMessage.builder("previousId")
 
 The `alias` method parameters are as mentioned below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `previousId` | String | Required | The previous unique identifier of the user. |
-| `traits` | Object | Optional | Dictionary of the properties or traits associated with the group, such as `email` or `name`. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                       |
+| :------------- | :------- | :---------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                             |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                            |
+| `previousId`   | String   | Required                                  | The previous unique identifier of the user.                                                                           |
+| `traits`       | Object   | Optional                                  | Dictionary of the properties or traits associated with the group, such as `email` or `name`.                          |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                               |
 
 {% hint style="info" %}
 For a detailed explanation of the `alias` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
@@ -268,17 +270,17 @@ RudderAnalytics analytics = RudderAnalytics.builder(
 )
 // optional (default : false).
 // It is required to block further method invocation until the flush completes.
-.synchronize(true) 
-.plugin(new PluginLog()) // optional. Used for Logging 
+.synchronize(true)
+.plugin(new PluginLog()) // optional. Used for Logging
 .build();
 
 // ...YOUR CODE...
 
-// optional. Triggers a flush and block until the flush completes. 
-// Required in case of Synchronize. 
-// It calls implicitly the `flush` method. 
+// optional. Triggers a flush and block until the flush completes.
+// Required in case of Synchronize.
+// It calls implicitly the `flush` method.
 // So, explicit `flush` call is not required.
-analytics.blockFlush(); 
+analytics.blockFlush();
 analytics.shutdown(); // Shut down after the flush is complete.
 ```
 
@@ -291,4 +293,3 @@ Yes. You need to use the Guava library. You can also use the plain old Java Maps
 ## Contact Us
 
 To know more about the RudderStack Java SDK, you can [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you!
-

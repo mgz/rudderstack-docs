@@ -757,4 +757,27 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  const docPages_query = await graphql(`
+  {
+    allMdx {
+      nodes {
+        frontmatter {
+          slug
+        }
+      }
+    }
+  }
+  `);
+  const docPages = docPages_query.data.allMdx.nodes || []
+  docPages.forEach((edge, index) => {
+    const path = `${edge.frontmatter.slug}`
+    console.log('docsPath', edge.frontmatter.slug);
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/docsTemplate.js"),
+      context: { slug: edge.frontmatter.slug },
+    })
+  })
+
 }

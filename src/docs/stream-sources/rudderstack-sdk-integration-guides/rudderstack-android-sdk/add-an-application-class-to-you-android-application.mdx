@@ -1,4 +1,6 @@
 ---
+slug: "/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk/add-an-application-class-to-your-android-application"
+title: "Add an Application Class to Your Android App - RudderStack"
 description: Detailed steps to add an Application class to initialize the RudderStack SDK
 ---
 
@@ -6,24 +8,27 @@ description: Detailed steps to add an Application class to initialize the Rudder
 
 We recommend using a global [Application](https://developer.android.com/reference/android/app/Application.html) class to initialize our SDK. If you don't have an Application class for your project, follow these steps:
 
-* Create a class that extends `Application`.
+- Create a class that extends `Application`.
 
 {% tabs %}
 {% tab title="Kotlin" %}
+
 ```kotlin
 import android.app.Application
 
 class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        
+
         // initialize Rudder SDK here
     }
 }
 ```
+
 {% endtab %}
 
 {% tab title="JAVA" %}
+
 ```java
 import android.app.Application;
 
@@ -31,16 +36,17 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        
+
         // initialize Rudder SDK here
     }
 }
 ```
+
 {% endtab %}
 {% endtabs %}
 
-* Open `AndroidManifest.xml` file of your app and locate `<application>` tag.
-* Add an attribute `android:name` and set it to your new application class.
+- Open `AndroidManifest.xml` file of your app and locate `<application>` tag.
+- Add an attribute `android:name` and set it to your new application class.
 
 ```markup
 <application
@@ -52,4 +58,3 @@ public class MainApplication extends Application {
 ## Contact Us
 
 In case of any queries, you can always [contact us](mailto:%20docs@rudderstack.com), or feel free to open an issue on our [GitHub Issues](https://github.com/rudderlabs/rudder-sdk-android/issues) page if you come across any error or discrepancy.
-

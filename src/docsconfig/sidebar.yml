@@ -1,0 +1,11 @@
+# Home
+- label: "Home"
+  link: "/"
+- label: "Get Started"
+  link: "/get-started"
+  items:
+    - label: "Install and Set Up RudderStack"
+      link: "/installing-and-setting-up-rudderstack"
+      items:
+        - - label: "Docker"
+            link: "/docker"

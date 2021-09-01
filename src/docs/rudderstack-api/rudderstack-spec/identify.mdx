@@ -1,4 +1,6 @@
 ---
+slug: "/docs/rudderstack-api/rudderstack-spec/identify"
+title: "Identify - RudderStack"
 description: Detailed technical description of the Identify API call.
 ---
 
@@ -14,10 +16,10 @@ As a best practice, make sure `identify` is called at the start of every session
 
 Ideally, you should call `identify` in the following scenarios:
 
-* After a user registers on your website or app
-* After a user logs in to your site or app
-* When a user updates their information, e.g., residential address, email ID
-* When you load a page accessible by a logged-in user: Although this is optional, many tools \(such as Intercom, for example\) require an initial identify call to know who the user is when they first start the session.
+- After a user registers on your website or app
+- After a user logs in to your site or app
+- When a user updates their information, e.g., residential address, email ID
+- When you load a page accessible by a logged-in user: Although this is optional, many tools \(such as Intercom, for example\) require an initial identify call to know who the user is when they first start the session.
 
 ## Sample Payload
 
@@ -39,26 +41,26 @@ The corresponding event that generates the above payload via the JavaScript SDK 
 ```javascript
 rudderanalytics.identify("hashed_user_id", {
   name: "Name Surname",
-  email: "sample@example.com"
-});
+  email: "sample@example.com",
+})
 ```
 
 ## Identify Fields
 
 The `identify` call has the following fields in addition to the [**Common Fields**](common-fields.md):
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `userId` | String | Optional, **if** `anonymousId` is set. | Your user's unique identifier. Every `identify` call requires a `userId` or an `anonymousId`. |
-| `traits` | Object | Optional | Includes the traits of the user such as their `name`, `email`, etc. For more more information, check the **Traits** section below. |
+| **Field** | **Type** | **Presence**                           | **Description**                                                                                                                    |
+| :-------- | :------- | :------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| `userId`  | String   | Optional, **if** `anonymousId` is set. | Your user's unique identifier. Every `identify` call requires a `userId` or an `anonymousId`.                                      |
+| `traits`  | Object   | Optional                               | Includes the traits of the user such as their `name`, `email`, etc. For more more information, check the **Traits** section below. |
 
 ## User ID vs Anonymous ID
 
- RudderStack requires every `identify` call to have either a `userId` or an `anonymousId`. This section highlights the difference between the two.
+RudderStack requires every `identify` call to have either a `userId` or an `anonymousId`. This section highlights the difference between the two.
 
 ### User ID
 
-A user ID \(`userId`\) uniquely identifies your user present in your database. It is a permanent identifier of your customer which never changes - like a database ID. 
+A user ID \(`userId`\) uniquely identifies your user present in your database. It is a permanent identifier of your customer which never changes - like a database ID.
 
 {% hint style="info" %}
 For `identify` calls, you should include a `userId` as often as possible to identify the most up to date traits of the customer.
@@ -89,134 +91,177 @@ RudderStack has some reserved traits that it handles in special ways. These are 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>Trait</b>
+      <th style="text-align:left">
+        <b>Trait</b>
       </th>
-      <th style="text-align:left"><b>Type</b>
+      <th style="text-align:left">
+        <b>Type</b>
       </th>
-      <th style="text-align:left"><b>Description</b>
+      <th style="text-align:left">
+        <b>Description</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><code>id</code>
+      <td style="text-align:left">
+        <code>id</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">Your user&apos;s unique ID.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>firstName</code>
+      <td style="text-align:left">
+        <code>firstName</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">User&apos;s first name.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>lastName</code>
+      <td style="text-align:left">
+        <code>lastName</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">User&apos;s last name.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>name</code>
+      <td style="text-align:left">
+        <code>name</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">
         <p>Full name of the user. If you have</p>
-        <p>already passed the <code>firstName</code> and</p>
-        <p><code>lastName</code>, RudderStack will</p>
+        <p>
+          already passed the <code>firstName</code> and
+        </p>
+        <p>
+          <code>lastName</code>, RudderStack will
+        </p>
         <p>automatically fill this field.</p>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>age</code>
+      <td style="text-align:left">
+        <code>age</code>
       </td>
       <td style="text-align:left">Number</td>
       <td style="text-align:left">User&apos;s age.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>email</code>
+      <td style="text-align:left">
+        <code>email</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">User&apos;s email address.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>phone</code>
+      <td style="text-align:left">
+        <code>phone</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">User&apos;s phone number.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>address</code>
+      <td style="text-align:left">
+        <code>address</code>
       </td>
       <td style="text-align:left">Object</td>
       <td style="text-align:left">
         <p>User&apos;s street address. This can</p>
-        <p>optionally contain either / all of
-          <br />the following fields:</p>
+        <p>
+          optionally contain either / all of
+          <br />
+          the following fields:
+        </p>
         <p></p>
         <ul>
-          <li><code>city</code>
+          <li>
+            <code>city</code>
           </li>
-          <li><code>country</code>
+          <li>
+            <code>country</code>
           </li>
-          <li><code>postalCode</code>
+          <li>
+            <code>postalCode</code>
           </li>
-          <li><code>state</code>
+          <li>
+            <code>state</code>
           </li>
-          <li><code>street</code>
+          <li>
+            <code>street</code>
           </li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>birthday</code>
+      <td style="text-align:left">
+        <code>birthday</code>
       </td>
       <td style="text-align:left">Date</td>
       <td style="text-align:left">User&apos;s date of birth.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>company</code>
+      <td style="text-align:left">
+        <code>company</code>
       </td>
       <td style="text-align:left">Object</td>
       <td style="text-align:left">
         <p>User&apos;s company. This can</p>
-        <p>optionally contain either / all of
-          <br />the following fields:</p>
+        <p>
+          optionally contain either / all of
+          <br />
+          the following fields:
+        </p>
         <p></p>
         <ul>
-          <li><code>name</code> (String)</li>
-          <li><code>id</code> (String / Number)</li>
-          <li><code>industry</code> (String)</li>
-          <li><code>employee_count</code> (Number)</li>
-          <li><code>plan</code> (String)</li>
+          <li>
+            <code>name</code> (String)
+          </li>
+          <li>
+            <code>id</code> (String / Number)
+          </li>
+          <li>
+            <code>industry</code> (String)
+          </li>
+          <li>
+            <code>employee_count</code> (Number)
+          </li>
+          <li>
+            <code>plan</code> (String)
+          </li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>createdAt</code>
+      <td style="text-align:left">
+        <code>createdAt</code>
       </td>
       <td style="text-align:left">Date</td>
       <td style="text-align:left">
         <p>Date of user&apos;s account creation.</p>
-        <p>We recommend using the <b>ISO-8601</b>
+        <p>
+          We recommend using the <b>ISO-8601</b>
         </p>
         <p>date string format.</p>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>description</code>
+      <td style="text-align:left">
+        <code>description</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">User&apos;s description.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>gender</code>
+      <td style="text-align:left">
+        <code>gender</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">User&apos;s gender.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>title</code>
+      <td style="text-align:left">
+        <code>title</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">
@@ -225,7 +270,8 @@ RudderStack has some reserved traits that it handles in special ways. These are 
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>username</code>
+      <td style="text-align:left">
+        <code>username</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">
@@ -234,13 +280,15 @@ RudderStack has some reserved traits that it handles in special ways. These are 
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>website</code>
+      <td style="text-align:left">
+        <code>website</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">User&apos;s website.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>avatar</code>
+      <td style="text-align:left">
+        <code>avatar</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">URL of the user&apos;s avatar image.</td>
@@ -263,8 +311,8 @@ An example of how you can pass traits to an `identify` call from our [**JavaScri
 ```javascript
 rudderanalytics.identify("user-id", {
   name: "username",
-  gender: "male"
-});
+  gender: "male",
+})
 ```
 
 In the above example, `{name: "username", gender: "male"}` are the traits stored in a cookie and passed along all the subsequent calls.
@@ -272,10 +320,3 @@ In the above example, `{name: "username", gender: "male"}` are the traits stored
 ## Contact Us
 
 For more information on any of the sections covered in this doc, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-
-
-
-
-
-
-

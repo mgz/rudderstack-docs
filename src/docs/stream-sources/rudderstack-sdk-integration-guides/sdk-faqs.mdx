@@ -1,4 +1,6 @@
 ---
+slug: "/docs/stream-sources/rudderstack-sdk-integration-guides/sdk-faqs"
+title: "SDK FAQs - RudderStack"
 description: Answers to the generally asked questions related to the RudderStack SDKs
 ---
 
@@ -15,7 +17,7 @@ The following are the different ways in which RudderStack handles **`anonymousId
 The RudderStack JavaScript SDK automatically generates one unique `anonymousId` to identify a user uniquely. It then stores it in a cookie named `rl_anonymous_id` and attaches it to every subsequent event. This helps in identifying the users from other sites that are hosted under a sub-domain.
 
 {% hint style="info" %}
-If `anonymousId` is explicitly provided by the user using the **`setAnonymousId`** method,  the user-specified `anonymousId` overrides the SDK-generated one.
+If `anonymousId` is explicitly provided by the user using the **`setAnonymousId`** method, the user-specified `anonymousId` overrides the SDK-generated one.
 {% endhint %}
 
 {% hint style="success" %}
@@ -54,15 +56,15 @@ For more information on how RudderStack handles `anonymousId` in the iOS SDK, pl
 
 To identify anonymous users across both client-side and server-side, **it is advisable to use a separate, new cookie at your end**.
 
-During the user's first visit, your server generates a new `anonymousId` to make the event calls using the server-side SDKs and sends the `set_cookie` response to the browser to set the `visitor_id` cookie. 
+During the user's first visit, your server generates a new `anonymousId` to make the event calls using the server-side SDKs and sends the `set_cookie` response to the browser to set the `visitor_id` cookie.
 
-* If the RudderStack JavaScript SDK is **not blocked**, you can use the `setAnonymousId` method to set the same value as the `visitor_id`. 
-* In case the RudderStack JavaScript SDK **is blocked**, still the next requests to the server will have the `visitor_id` cookie which can be used by the server-side events for `anonymousId`.
+- If the RudderStack JavaScript SDK is **not blocked**, you can use the `setAnonymousId` method to set the same value as the `visitor_id`.
+- In case the RudderStack JavaScript SDK **is blocked**, still the next requests to the server will have the `visitor_id` cookie which can be used by the server-side events for `anonymousId`.
 
 {% hint style="info" %}
-The RudderStack JavaScript SDK generates a unique `anonymousId` for every unique user visit. It then stores this value in a cookie named `rl_anonymous_id` and attaches it to every subsequent event. 
+The RudderStack JavaScript SDK generates a unique `anonymousId` for every unique user visit. It then stores this value in a cookie named `rl_anonymous_id` and attaches it to every subsequent event.
 
-Users sometimes try to directly use the browser APIs to get or set the value for this cookie. However, this is not advisable since the RudderStack cookies are encrypted, and the cookie may not be present altogether \(if the SDK is blocked\). 
+Users sometimes try to directly use the browser APIs to get or set the value for this cookie. However, this is not advisable since the RudderStack cookies are encrypted, and the cookie may not be present altogether \(if the SDK is blocked\).
 
 It is, therefore, always advisable to use RudderStack's `getAnonymousId` and `setAnonymousId` methods to update the cookie value.
 {% endhint %}
@@ -94,13 +96,13 @@ When the dataplane gets disconnected from the SDK and events are no longer able 
 
 #### General Support and Logic
 
-| SDK | Supported | Event Storage | Retry limit |
-| :--- | :--- | :--- | :--- |
-| JavaScript SDK | Yes | 100 events in Local Storage | 10 times |
-| Android SDK | Yes | 10k events in sqlite db | Infinity |
-| iOS SDK | Yes | 10k events in sqlite db | Infinity |
-| Node SDK | Yes | 20k events in-memory | 10 times |
-| All Other SDKs | No | N/A | N/A |
+| SDK            | Supported | Event Storage               | Retry limit |
+| :------------- | :-------- | :-------------------------- | :---------- |
+| JavaScript SDK | Yes       | 100 events in Local Storage | 10 times    |
+| Android SDK    | Yes       | 10k events in sqlite db     | Infinity    |
+| iOS SDK        | Yes       | 10k events in sqlite db     | Infinity    |
+| Node SDK       | Yes       | 20k events in-memory        | 10 times    |
+| All Other SDKs | No        | N/A                         | N/A         |
 
 #### JavaScript SDK
 
@@ -127,10 +129,9 @@ $$
 Where, $$dt$$ is the delay time in ms and $$n$$ is the current retry attempt. The SDK will retry until the attempts surpass the `maxAttempts` value which is set to 10 attempts. With each retry attempt, the delay time will grow exponentially. However, it will never be greater than the maximum delay duration which is 30 seconds.
 
 {% hint style="info" %}
-The Node SDK does have a feature to persist the event data in Redis for more event storage and better guarantees of failed event delivery. Instructions on how to configure the Redis solution can be found[ here](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk#data-persistence-in-node-js-sdk). 
+The Node SDK does have a feature to persist the event data in Redis for more event storage and better guarantees of failed event delivery. Instructions on how to configure the Redis solution can be found[ here](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk#data-persistence-in-node-js-sdk).
 {% endhint %}
 
 ## Contact Us
 
 For more information on the RudderStack SDKs, you can [contact us](mailto:%20docs@rudderstack.com). You can also talk to us on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel - we will be happy to help you!
-

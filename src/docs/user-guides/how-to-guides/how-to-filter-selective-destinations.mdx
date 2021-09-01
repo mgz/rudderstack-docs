@@ -1,4 +1,6 @@
 ---
+slug: "/docs/user-guides/how-to-guides/how-to-filter-selective-destinations"
+title: "Filter Selective Destinations - RudderStack"
 description: >-
   An easy-to-follow guide on filtering selective destinations while sending
   event data in RudderStack
@@ -23,10 +25,10 @@ rudderanalytics.identify(
     integrations: {
       All: false,
       "Google Analytics": true,
-      "Intercom": true
-    }
+      Intercom: true,
+    },
   }
-);
+)
 ```
 
 {% hint style="success" %}
@@ -49,10 +51,10 @@ rudderanalytics.identify(
   {
     integrations: {
       "Google Analytics": false,
-      "Intercom": false,
+      Intercom: false,
     },
   }
-);
+)
 ```
 
 {% hint style="info" %}
@@ -81,18 +83,18 @@ rudderanalytics.track(
     integrations: {
       All: false,
       "Amazon S3": true,
-      "Heap.io": false
+      "Heap.io": false,
     },
   }
-);
+)
 ```
 
 ### Python SDK
 
 ```python
 rudder_analytics.track(
-    'sampleName', 
-    'sampleEventName', 
+    'sampleName',
+    'sampleEventName',
     {
       'email': 'name@email.org',
       'name': 'Samplename'
@@ -120,4 +122,3 @@ These destination names are case sensitive!
 ## Contact Us
 
 For more information on any of the sections in this guide, feel free to [contact us](mailto:%20docs@rudderstack.com) or start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel, and we will be happy to help you!
-

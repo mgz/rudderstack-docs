@@ -1,4 +1,6 @@
 ---
+slug: "/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-go-sdk"
+title: "Go - RudderStack"
 description: >-
   Detailed technical documentation on using RudderStack’s Go SDK to send events
   to various destinations
@@ -77,14 +79,14 @@ func main() {
 
 The `Config` object parameters are as described below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `Interval` | time.Duration | Optional | Messages will be sent when this flushing interval time triggers |
-| `BatchSize` | int | Optional | Total number of messages to be sent in a single batch |
-| `Verbose` | bool | Optional | When set to true, the client will send more frequent and detailed messages to its logger |
-| `RetryAfter` | time.Duration | Optional | This can be used to set up how long the failed messages can be retried |
-| `maxConcurrentRequests` | int | Optional | The maximum number of parallel goroutines which will be spawned |
-| `NoProxySupport` | bool | Optional | Setting this variable to true will disable making calls to cluster-info end point |
+| **Field**               | **Type**      | **Presence** | **Description**                                                                          |
+| :---------------------- | :------------ | :----------- | :--------------------------------------------------------------------------------------- |
+| `Interval`              | time.Duration | Optional     | Messages will be sent when this flushing interval time triggers                          |
+| `BatchSize`             | int           | Optional     | Total number of messages to be sent in a single batch                                    |
+| `Verbose`               | bool          | Optional     | When set to true, the client will send more frequent and detailed messages to its logger |
+| `RetryAfter`            | time.Duration | Optional     | This can be used to set up how long the failed messages can be retried                   |
+| `maxConcurrentRequests` | int           | Optional     | The maximum number of parallel goroutines which will be spawned                          |
+| `NoProxySupport`        | bool          | Optional     | Setting this variable to true will disable making calls to cluster-info end point        |
 
 For Users who do not use a proxy can make the NoProxySupport to true while initialising Config , this will avoid making calls to the proxy for fetching the total number of nodes in case of multi-node setup
 
@@ -121,14 +123,14 @@ client.Enqueue(analytics.Identify{
 
 The `identify` method parameters are as described below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
-| `traits` | Object | Optional | Dictionary of the traits associated with the user, such as `name`or `email` |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
+| `traits`       | Object   | Optional                                  | Dictionary of the traits associated with the user, such as `name`or `email`                                                |
 
 ## Track
 
@@ -151,15 +153,15 @@ client.Enqueue(analytics.Track{
 
 The `track` method parameters are as described below:
 
-| Name | Type | Presence | Description |
-| :--- | :--- | :--- | :--- |
-| `user_id` | String | Required | The developer identification for your user |
-| `event` | String | Required | Name of the event being performed by the user |
-| `properties` | Object | Optional | Dictionary of the properties associated with a particular event. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| Name           | Type   | Presence | Description                                                                                                                |
+| :------------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `user_id`      | String | Required | The developer identification for your user                                                                                 |
+| `event`        | String | Required | Name of the event being performed by the user                                                                              |
+| `properties`   | Object | Optional | Dictionary of the properties associated with a particular event.                                                           |
+| `context`      | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `timestamp`    | Date   | Optional | The timestamp of the message's arrival.                                                                                    |
 | `anonymous_id` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
+| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled.                                                 |
 
 ## Page
 
@@ -182,15 +184,15 @@ client.Enqueue(analytics.Page{
 
 The `page` method parameters are as described below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `name` | String | Required | Name of the page being viewed. |
-| `properties` | Object | Optional | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer` |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `name`         | String   | Required                                  | Name of the page being viewed.                                                                                             |
+| `properties`   | Object   | Optional                                  | Dictionary of the properties associated with the page being viewed, such as `url` and `referrer`                           |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
 ## Group
 
@@ -215,15 +217,15 @@ client.Enqueue(analytics.Group{
 
 The `group` method parameters are as follows:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `anonymousId` | String | Optional | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `groupId` | String | Required | Unique identifier of the group, as present in your database. |
-| `traits` | Object | Optional | Dictionary of the properties or traits associated with the group, such as `email` or `name`. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                            |
+| :------------- | :------- | :---------------------------------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| `anonymousId`  | String   | Optional                                  | Sets the user ID for cases where there is no unique identifier for the user. Either `userId` or `anonymousId` is required. |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                                  |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call.      |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                                 |
+| `groupId`      | String   | Required                                  | Unique identifier of the group, as present in your database.                                                               |
+| `traits`       | Object   | Optional                                  | Dictionary of the properties or traits associated with the group, such as `email` or `name`.                               |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
 
 ## Alias
 
@@ -244,14 +246,14 @@ client.Enqueue(analytics.Alias{
 
 The `alias` method parameters are as mentioned below:
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `userId` | String | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database. |
-| `context` | Object | Optional | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
-| `integrations` | Object | Optional | A dictionary containing the destinations to be either enabled or disabled. |
-| `previousId` | String | Required | The previous unique identifier of the user. |
-| `traits` | Object | Optional | Dictionary of the properties or traits associated with the group, such as `email` or `name`. |
-| `timestamp` | Date | Optional | The timestamp of the message's arrival. |
+| **Field**      | **Type** | **Presence**                              | **Description**                                                                                                       |
+| :------------- | :------- | :---------------------------------------- | :-------------------------------------------------------------------------------------------------------------------- |
+| `userId`       | String   | Optional, if `anonymousId` is already set | Unique identifier for a particular user in your database.                                                             |
+| `context`      | Object   | Optional                                  | Dictionary of information that provides context about a message. However, it is not directly related to the API call. |
+| `integrations` | Object   | Optional                                  | A dictionary containing the destinations to be either enabled or disabled.                                            |
+| `previousId`   | String   | Required                                  | The previous unique identifier of the user.                                                                           |
+| `traits`       | Object   | Optional                                  | Dictionary of the properties or traits associated with the group, such as `email` or `name`.                          |
+| `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                               |
 
 {% hint style="info" %}
 For a detailed explanation of the `alias` call, please refer to our [RudderStack API specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
@@ -260,4 +262,3 @@ For a detailed explanation of the `alias` call, please refer to our [RudderStack
 ## Contact Us
 
 To know more about the RudderStack Go SDK, you can [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel; we will be happy to talk to you.
-

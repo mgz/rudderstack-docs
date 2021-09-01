@@ -1,4 +1,6 @@
 ---
+slug: "/docs/user-guides/administrators-guide/alerting"
+title: "Alerting Guide - RudderStack"
 description: >-
   Detailed technical description of the alerting feature in the open-source and
   enterprise version of RudderStack.
@@ -12,13 +14,13 @@ Real-time alerts are critical to every system. You need to be notified if the sy
 
 The open-source version of RudderStack has support for the following alerts:
 
-### RudderStack Crash Alerts 
+### RudderStack Crash Alerts
 
 If you configure the variable `BUGSNAG_KEY` environment variable, the crashes are automatically sent to the Bugsnag destination.
 
 ### RudderStack Running Mode Alert
 
-If the RudderStack server starts in a degraded or maintenance mode, you will be alerted. We support [**PagerDuty**](https://www.pagerduty.com/) and [**VictorOps**](https://victorops.com/) integrations for this alert. 
+If the RudderStack server starts in a degraded or maintenance mode, you will be alerted. We support [**PagerDuty**](https://www.pagerduty.com/) and [**VictorOps**](https://victorops.com/) integrations for this alert.
 
 {% hint style="info" %}
 To learn more about the different running modes in RudderStack, please check our guide on the [RudderStack Server Running Modes](https://docs.rudderstack.com/administrators-guide/high-availability#normal-mode).
@@ -28,9 +30,9 @@ To learn more about the different running modes in RudderStack, please check our
 
 Please follow these steps to configure PagerDuty:
 
-* Add a new **Events API v2 Integration** in your PagerDuty dashboard.
-* Copy the `Integration Key`
-* Add the following environment variables:
+- Add a new **Events API v2 Integration** in your PagerDuty dashboard.
+- Copy the `Integration Key`
+- Add the following environment variables:
 
 ```text
 ALERT_PROVIDER=pagerduty
@@ -41,13 +43,13 @@ PG_ROUTING_KEY=<your_integration_key>
 
 In order to configure VictorOps, please follow these steps:
 
-* Create a new **REST generic integration** in VictorOps dashboard
-* The URL would then look like the following: 
+- Create a new **REST generic integration** in VictorOps dashboard
+- The URL would then look like the following:
 
 `https://alert.victorops.com/integrations/generic/20131114/alert/<YOUR_INTEGRATION_KEY`
 
-* Copy the `Integration Key`
-* Add the following environment variables:
+- Copy the `Integration Key`
+- Add the following environment variables:
 
 ```text
 ALERT_PROVIDER=victorops
@@ -62,14 +64,14 @@ This alerting system is designed to help you identify and debug the problems qui
 
 The following are a few examples where the alerts would be triggered:
 
-* Request Latency - 99 percentile, 95 percentile values
-* Blocked requests / Invalid requests
-* Warehouse upload failures
-* PostgreSQL Disk usage
-* Transformations execution time
-* Degraded / Maintenance mode
-* Jobs DB table count \(This is a metric to measure the unprocessed events\)
-* Control Plane API errors
+- Request Latency - 99 percentile, 95 percentile values
+- Blocked requests / Invalid requests
+- Warehouse upload failures
+- PostgreSQL Disk usage
+- Transformations execution time
+- Degraded / Maintenance mode
+- Jobs DB table count \(This is a metric to measure the unprocessed events\)
+- Control Plane API errors
 
 ### Warning Alerts
 
@@ -106,8 +108,3 @@ Enterprise alerting has native integrations with various third-party incident ma
 ## Contact Us
 
 To know more about the alerting feature of RudderStack, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel. We will be happy to help you.
-
-
-
-
-

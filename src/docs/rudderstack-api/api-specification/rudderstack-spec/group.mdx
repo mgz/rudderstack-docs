@@ -1,4 +1,6 @@
 ---
+slug: "/docs/rudderstack-api/api-specification/rudderstack-spec/group"
+title: "Group - RudderStack"
 description: Detailed technical description of the Group API call.
 ---
 
@@ -7,7 +9,7 @@ description: Detailed technical description of the Group API call.
 The `group` call allows you to link an identified user with a group, such as a company, organization, or an account. It also lets you record any custom traits associated with that group, such as the name of the company, the number of employees, etc.
 
 {% hint style="info" %}
-An identified user can be in more than one group. 
+An identified user can be in more than one group.
 {% endhint %}
 
 ## Sample Payload
@@ -34,18 +36,18 @@ rudderanalytics.group("12345", {
   name: "MyGroup",
   industry: "IT",
   employees: 450,
-  plan: "basic"
-});
+  plan: "basic",
+})
 ```
 
 ## Group Fields
 
 The `group` call has the following fields in addition to the [**Common Fields**](common-fields.md):
 
-| **Field** | **Type** | **Presence** | **Description** |
-| :--- | :--- | :--- | :--- |
-| `groupId` | String | Required | Your group's unique identifier which lets you identify the group in your database. |
-| `traits` | Object | Optional | Includes the traits of the group such as `name`, `email`, `employees`, etc. For more more information, check the **Traits** section below. |
+| **Field** | **Type** | **Presence** | **Description**                                                                                                                            |
+| :-------- | :------- | :----------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| `groupId` | String   | Required     | Your group's unique identifier which lets you identify the group in your database.                                                         |
+| `traits`  | Object   | Optional     | Includes the traits of the group such as `name`, `email`, `employees`, etc. For more more information, check the **Traits** section below. |
 
 ## Traits
 
@@ -56,64 +58,81 @@ RudderStack has some reserved traits that it handles in special ways. These are 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>Trait</b>
+      <th style="text-align:left">
+        <b>Trait</b>
       </th>
-      <th style="text-align:left"><b>Type</b>
+      <th style="text-align:left">
+        <b>Type</b>
       </th>
-      <th style="text-align:left"><b>Description</b>
+      <th style="text-align:left">
+        <b>Description</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><code>id</code>
+      <td style="text-align:left">
+        <code>id</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">The group&apos;s unique ID.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>name</code>
+      <td style="text-align:left">
+        <code>name</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">The group name.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>email</code>
+      <td style="text-align:left">
+        <code>email</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">The group&apos;s email address.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>phone</code>
+      <td style="text-align:left">
+        <code>phone</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">Phone number associated with the group</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>address</code>
+      <td style="text-align:left">
+        <code>address</code>
       </td>
       <td style="text-align:left">Object</td>
       <td style="text-align:left">
         <p>The group&apos;s street address. This can</p>
-        <p>optionally contain either / all of
-          <br />the following fields:</p>
+        <p>
+          optionally contain either / all of
+          <br />
+          the following fields:
+        </p>
         <p></p>
         <ul>
-          <li><code>city</code>
+          <li>
+            <code>city</code>
           </li>
-          <li><code>country</code>
+          <li>
+            <code>country</code>
           </li>
-          <li><code>postalCode</code>
+          <li>
+            <code>postalCode</code>
           </li>
-          <li><code>state</code>
+          <li>
+            <code>state</code>
           </li>
-          <li><code>street</code>
+          <li>
+            <code>street</code>
           </li>
         </ul>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>industry</code>
+      <td style="text-align:left">
+        <code>industry</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">
@@ -122,24 +141,28 @@ RudderStack has some reserved traits that it handles in special ways. These are 
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>createdAt</code>
+      <td style="text-align:left">
+        <code>createdAt</code>
       </td>
       <td style="text-align:left">Date</td>
       <td style="text-align:left">
         <p>Date of the group&apos;s account creation.</p>
-        <p>We recommend using the <b>ISO-8601</b>
+        <p>
+          We recommend using the <b>ISO-8601</b>
         </p>
         <p>date string format.</p>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>description</code>
+      <td style="text-align:left">
+        <code>description</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">The group&apos;s description.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>employees</code>
+      <td style="text-align:left">
+        <code>employees</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">
@@ -148,19 +171,22 @@ RudderStack has some reserved traits that it handles in special ways. These are 
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>plan</code>
+      <td style="text-align:left">
+        <code>plan</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">The plan that the group is subscribed to.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>website</code>
+      <td style="text-align:left">
+        <code>website</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">The group&apos;s website.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>avatar</code>
+      <td style="text-align:left">
+        <code>avatar</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">URL of the group&apos;s avatar image.</td>
@@ -171,6 +197,3 @@ RudderStack has some reserved traits that it handles in special ways. These are 
 ## Contact Us
 
 For more information on any of the sections covered in this doc, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
-
-
-
