@@ -4,7 +4,6 @@ import Image from "./image"
 import Link from "gatsby-link"
 
 const ThreeCardsWithTitleLeftAligned = props => {
-  console.log('ThreeCardsWithTitleLeftAligned',props)
   return (
     <>
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
