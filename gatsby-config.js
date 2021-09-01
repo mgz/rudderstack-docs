@@ -255,20 +255,18 @@ module.exports = {
         path: `${__dirname}/src/docs`,
       },
     },
-    "gatsby-transformer-remark",
     {
-      resolve: "gatsby-theme-apollo-docs",
+      resolve: "gatsby-plugin-mdx",
       options: {
-        root: `${__dirname}/src`,
-        siteName: 'RudderStack Docs',
-        description: 'RudderStack Documentation',
-        contentDir: 'docs',
-        sidebarCategories: {
-          null: [
-            'index',
-            'get-started'
-          ]
-        }
+        extensions: [".mdx",".md"]
+      }
+    },
+    {
+      resolve: "@rocketseat/gatsby-theme-docs-core",
+      options: {
+        basePath: __dirname,
+        baseDir: '/src/docs',
+        withMdx: false
       }
     }
   ],
