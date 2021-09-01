@@ -39,7 +39,7 @@ const MainNavigationMenuLink = props => {
                bg-whiteColor-custom lg:place-items-left ${
                  onClickEvent == 1 ? `flex` : `flex hidden`
                }
-               overflow-y-auto lg:overflow-hidden h-80 lg:h-none
+               overflow-y-auto lg:overflow-hidden h-80 lg:h-64
              `}
               >
                 <ul
@@ -52,7 +52,7 @@ const MainNavigationMenuLink = props => {
                           className={`py-2 lg:py-6 ${
                             submenugroup.length - 1 === idx
                               ? ""
-                              : "border-b border-grayColor-lighter-2x lg:border-r"
+                              : "lg:border-b lg:border-grayColor-lighter-2x lg:border-r"
                           } `}
                         >
                           <div className="flex flex-row lg:flex-col text-blueNew-midnight ">
