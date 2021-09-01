@@ -36,7 +36,7 @@ function OurLogo(props) {
   return (
     <section className="max-w-6xl px-4 my-12 md:px-3 mx-auto md:mb-23 sm:my-24 flex flex-wrap flex-col md:flex-row items-center">
       <div className="flex flex-col w-full justify-center items-start md:text-left max-w-2xl mx-auto">
-        <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10 text-center">
+        <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10 text-center normal-case">
           {maintitle}
         </h3>
       </div>
