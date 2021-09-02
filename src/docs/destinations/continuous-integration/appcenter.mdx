@@ -23,6 +23,7 @@ Before configuring your source and destination on the RudderStack, please check 
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to App Center, perform the steps below:
@@ -31,6 +32,7 @@ Once you have confirmed that the platform supports sending events to App Center,
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Name your destination, and click on **Next**. You should be able to see the following screen:
@@ -107,6 +109,7 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 
 {% hint style="info" %}
 The following requirements must be met to use App Center: Your iOS project is set up in Xcode 11 or later on macOS version 10.14.4 or later. You're targeting devices running on iOS 9.0 or later.
+
 {% endhint %}
 {% endtab %}
 
@@ -123,6 +126,7 @@ yarn add @rudderstack/rudder-integration-appcenter-react-native
 
 {% hint style="info" %}
 Make sure the `minSdkVersion` of your `build.gradle` in the root of `android` directory is atleast `21`
+
 {% endhint %}
 
 Run `pod install` inside the `ios` directory of your project adding `@rudderstack/rudder-integration-appcenter-react-native` to your project.
@@ -176,6 +180,7 @@ RudderClient.getInstance(WRITE_KEY,
 
 {% hint style="info" %}
 Make sure the `minSdkVersion` of your `build.gradle` in the root of `android` directory is atleast `21`.
+
 {% endhint %}
 {% endtab %}
 {% endtabs %}
@@ -195,6 +200,7 @@ A sample `track` call looks like the following:
 
 {% hint style="info" %}
 The above track call is directly passed on to App Center via its `trackEvent` api in both the RudderStack `Android` & `iOS` SDKs.
+
 {% endhint %}
 
 The `eventProperties` object should only contain the values of type `String` and `Number`- the other property types will be simply ignored, if sent.
@@ -237,6 +243,7 @@ In the above snippet, RudderStack captures the information related to the screen
 
 {% hint style="info" %}
 The above `screen` call is directly passed on to App Center as a `track` event via its `trackEvent` API, with event name as `Viewed {screen name} screen` along with the its properties. The above example will be sent as a `track` event with name `Viewed MainActivity screen` along with its properties.
+
 {% endhint %}
 
 ## Opt-in & Opt-out

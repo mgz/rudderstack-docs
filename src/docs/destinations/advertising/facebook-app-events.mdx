@@ -13,7 +13,9 @@ description: >-
 RudderStack supports Facebook App Events as a destination to which you can send your event data seamlessly.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb)**.**
 {% endhint %}
 
 ## Getting Started
@@ -29,6 +31,7 @@ Before configuring App Events as a destination, verify if Facebook supports the 
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the source supports sending events to Facebook App Events, follow these steps:
@@ -37,6 +40,7 @@ Once you have confirmed that the source supports sending events to Facebook App 
 
 {% hint style="info" %}
 Please follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more information.
+
 {% endhint %}
 
 - Assign a name to the destination and click on **Next**. You should then see the following screen:
@@ -50,7 +54,9 @@ The following options are applicable if you are using the Device mode to send yo
 - **Limited Data Use**: If this option is enabled, you can send the country and state of the end-user so that Facebook processes the user data according to the data regulations set for that region.
 
 {% hint style="success" %}
-For more information on this option, refer to the [**Limited Data Use**](https://docs.rudderstack.com/destinations/advertising/facebook-app-events#limited-data-use) section below.
+For more information on this option, refer to the [**Limited Data
+Use**](https://docs.rudderstack.com/destinations/advertising/facebook-app-events#limited-data-use)
+section below.
 {% endhint %}
 
 - Click on **Next** to complete the configuration.
@@ -120,6 +126,7 @@ pod 'Rudder-Facebook'
 
 {% hint style="info" %}
 Make sure you replace `fbAPP-ID` , `APP-ID`, `CLIENT-TOKEN`, `APP-NAME` with the app-specific details from the [**Facebook for Developers platform**](https://developers.facebook.com/).
+
 {% endhint %}
 
 - After adding the dependency, register the `RudderFacebookFactory` with your `RudderClient` initialization as a `factory` of `RudderConfig`. To do this, run the following command to import the `RudderFacebookFactory.h` file in your `AppDelegate.m` file:
@@ -233,6 +240,7 @@ A sample `track` call for an iOS application is as shown:.
 When `revenue` and `currency` are present in the event properties of any `track` call, RudderStack makes a `Purchase` call to Facebook using its `logPurchase` API along with the normal `track` call using the `logEvent` API.
 
 If `currency` is absent in the event properties RudderStack sets the default value to `USD`.
+
 {% endhint %}
 
 ## Screen
@@ -251,6 +259,7 @@ In the above snippet, RudderStack captures the information related to the viewed
 
 {% hint style="info" %}
 The above `screen` call is directly passed on to Facebook as a `track` event via its `logEvent` API, with the event name as `Viewed {screen name} screen` along with the the associated properties. The above example will be sent as a `track` event with name `Viewed Home screen` along with its properties.
+
 {% endhint %}
 
 ## Limited Data Use
@@ -267,7 +276,8 @@ To use this feature, simply enable the **Limited Data Use** setting on the Rudde
 | **Data Processing Options Country** | **`0`**           | Use Facebook’s geolocation to determine the end-user's country. |
 
 {% hint style="success" %}
-Learn more about the different data processing options accepted by Facebook [**here**](https://developers.facebook.com/docs/marketing-apis/data-processing-options).
+Learn more about the different data processing options accepted by Facebook
+[**here**](https://developers.facebook.com/docs/marketing-apis/data-processing-options).
 {% endhint %}
 
 ## Configuring Facebook App Events SDK Based on User Consent

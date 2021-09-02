@@ -11,7 +11,9 @@ description: Step-by-step guide to add people to your Mailchimp list using Rudde
 RudderStack allows you to add people to your Mailchimp list via a simple `identify` call.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/mailchimp)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/mailchimp)**.**
 {% endhint %}
 
 ## Getting Started
@@ -25,6 +27,7 @@ Before configuring Mailchimp as a destination in RudderStack, please make sure t
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that Mailchimp supports the source type, perform the steps below:
@@ -33,6 +36,7 @@ Once you have confirmed that Mailchimp supports the source type, perform the ste
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a suitable name to the destination, and then click on **Next**. You should then see the following screen:
@@ -43,6 +47,7 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 {% hint style="info" %}
 It is recommended that you create a new API key for your RudderStack destination. Mailchimp restricts each API key to a maximum of 10 concurrent requests. Hence, creating a dedicated key for RudderStack ensures maximum throughput for the outgoing calls. Please read more about the API keys by going to [Mailchimp’s documentation](https://mailchimp.com/help/about-api-keys/).
+
 {% endhint %}
 
 ## Identify
@@ -69,6 +74,7 @@ Every time an `identify` call is made with an email address included, RudderStac
 
 {% hint style="info" %}
 For the `identify` call in RudderStack, email is a required field. The rest of the fields must match the **Merge Field** tag in Mailchimp.
+
 {% endhint %}
 
 ### **Using custom merge fields in RudderStack**
@@ -80,6 +86,7 @@ To send custom merge fields or user traits to Mailchimp, please follow these ste
 
 {% hint style="info" %}
 The `identify` call will **not change** in this case.
+
 {% endhint %}
 
 ### Overriding `listId`
@@ -130,6 +137,7 @@ rudderanalytics.identify(
 
 {% hint style="info" %}
 Please note that this setting will **NOT** work for new users. New users will always have the subscription status set for them as either `pending` or `subscribed` , depending on the set `doubleOptIn` setting.
+
 {% endhint %}
 
 ## FAQs

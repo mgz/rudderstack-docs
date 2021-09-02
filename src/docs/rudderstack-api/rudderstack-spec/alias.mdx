@@ -10,6 +10,7 @@ The `alias` call lets you merge different identities of a known user.
 
 {% hint style="info" %}
 `alias` is an advanced method that lets you change the tracked user's ID explicitly. This method is useful when managing identities for some of the downstream destinations.
+
 {% endhint %}
 
 {% hint style="success" %}
@@ -39,11 +40,13 @@ rudderanalytics.alias("12345")
 ```
 
 {% hint style="success" %}
-The RudderStack SDK automatically passes the user's `anonymousId` as `previousId` in the payload, as seen above.
+The RudderStack SDK automatically passes the user's `anonymousId` as
+`previousId` in the payload, as seen above.
 {% endhint %}
 
 {% hint style="warning" %}
 When instrumenting a website with the JavaScript SDK, making the `alias` call via the client-side is important as the `anonymousId` is generated via the browser. Similarly, if you're using a server-side SDK, the `alias`call must be made from the server-side as the session ID is set as the `anonymousId`.
+
 {% endhint %}
 
 ## Page Fields

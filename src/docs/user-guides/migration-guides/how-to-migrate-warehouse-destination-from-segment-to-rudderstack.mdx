@@ -22,6 +22,7 @@ Create a new warehouse destination and set the namespace to be the same as the s
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to know how to add a destination in RudderStack.
+
 {% endhint %}
 
 ### **Step 2: Route new events to RudderStack**
@@ -34,6 +35,7 @@ Follow these steps:
 
 {% hint style="info" %}
 If both Segment and RudderStack try to write to the same tables at the same time, it could result in Serializable isolation errors in some warehouses like Redshift. This is an intermittent issue, and would succeed on retrying.
+
 {% endhint %}
 
 ## Migrating Client-side Sources
@@ -61,6 +63,7 @@ Follow the below steps to easily migrate to RudderStack and storing the event da
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to know how to add a source and destination in RudderStack.
+
 {% endhint %}
 
 ### **Step 4:** **Configure Warehouse Sync Interval in RudderStack**
@@ -72,6 +75,7 @@ Some important points to note here:
 
 {% hint style="info" %}
 If both Segment and RudderStack try to write to the same tables at the same time, it could result in Serializable isolation errors in some warehouses like Redshift. This is an intermittent issue, and should succeed after retrying.
+
 {% endhint %}
 
 ### **Step 5: Disable Warehouse Destination in Segment**

@@ -23,6 +23,7 @@ Before configuring your source and destination on the RudderStack app, please ch
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Optimizely Web, perform the steps below:
@@ -33,6 +34,7 @@ Once you have confirmed that the platform supports sending events to Optimizely 
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
+
 {% endhint %}
 
 - Select the destination as **Optimizely Web** to your source. Give your destination a name and then click on **Next**. You should see the following screen:
@@ -101,6 +103,7 @@ This `track` event call consists of the following properties:
 
 {% hint style="info" %}
 If you provide the `custom campaign properties` in the destination settings, then the campaign metadata key will be overridden by the corresponding event property.
+
 {% endhint %}
 
 A sample `track` call made on a page load is as shown:
@@ -128,6 +131,7 @@ If the setting **Send experiment data as identify call** is enabled, one `identi
 
 {% hint style="info" %}
 The `identify` traits are appended with the subsequent calls. In case multiple experiments are active, then multiple `identify` calls will be made and the subsequent `identify` calls will contain traits of previous `identify` calls as well.
+
 {% endhint %}
 
 A sample `identify` call made on a page load is as shown:

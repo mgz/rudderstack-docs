@@ -11,7 +11,9 @@ description: Step-by-step guide to send event data from RudderStack to Google Sh
 RudderStack allows you to configure Google Sheets as a destination and send your event data to it directly.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/googlesheets)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/googlesheets)**.**
 {% endhint %}
 
 ## Getting Started
@@ -25,6 +27,7 @@ To enable sending data to Google Sheets, you will first need to add it as a dest
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Google Sheets, perform the steps below:
@@ -33,6 +36,7 @@ Once you have confirmed that the platform supports sending events to Google Shee
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Assign a name to the destination and click on **Next**. You should then see the following screen:
@@ -53,6 +57,7 @@ Before you add Google Sheets as a destination in RudderStack, follow these steps
 
 {% hint style="warning" %}
 Once you have completed the connection, make sure you have enabled [Google-Sheets-API](https://console.cloud.google.com/apis/library/sheets.googleapis.com?q=sheets&id=739c20c5-5641-41e8-a938-e55ddc082ad1&project=rudder-integration&supportedpurview=project) in the project of your service account.
+
 {% endhint %}
 
 Then, enter the following details under **Connection Settings** in the RudderStack dashboard.
@@ -65,6 +70,7 @@ Then, enter the following details under **Connection Settings** in the RudderSta
 
 {% hint style="warning" %}
 The **Sheet Name** is **case-sensitive** and has to be exactly as seen in Google Sheets.
+
 {% endhint %}
 
 - Next, enter the **Event Properties** corresponding to **Column Name** under the **Map Event to Google Sheets section**.
@@ -73,12 +79,14 @@ The **Sheet Name** is **case-sensitive** and has to be exactly as seen in Google
 
 {% hint style="warning" %}
 If you have **Nested Attributes** inside `properties` or `traits`, please use the **dot notation** for mapping to respective **Column** \(For e.g.: `address.zip`, `address.city`..\)
+
 {% endhint %}
 
 {% hint style="info" %}
 For mapping `attributes` from event `properties` or `traits`/`context.traits`, RudderStack also supports absolute mapping. For example: adding `context.traits.firstName` will map the same value as adding `firstName`.
 
 **Note**: We advise you to map with absolute path as it resolves the ambiguity when you have same `attribute` name in `traits`, `context.traits` or `properties`.
+
 {% endhint %}
 
 - Finally, click on **Next** to complete the configuration.
@@ -91,6 +99,7 @@ The `page` call contains information related to the page, such as the URL of the
 
 {% hint style="info" %}
 For more information on the `page` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 A sample `page` payload is as shown in the snippet below:
@@ -111,6 +120,7 @@ The `identify` call captures the relevant details about the visiting user.
 
 {% hint style="info" %}
 For more information on the `identify` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 A sample `identify` payload is as shown in the snippet below:
@@ -129,6 +139,7 @@ The `track` call captures the information related to the actions performed by th
 
 {% hint style="info" %}
 For more information on the `track` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 A sample `track` payload is as shown in the snippet below:

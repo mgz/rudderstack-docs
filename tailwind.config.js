@@ -36,6 +36,8 @@ module.exports = {
         BgGray: "#FAFAFA",
         priceCardBorder: "#E1E1E1",
         dark: "#101836",
+        lightBorder: "#DEE2E7",
+        docsText: "#2F353F"
       },
       whiteColor: {
         custom: "#ffffff",

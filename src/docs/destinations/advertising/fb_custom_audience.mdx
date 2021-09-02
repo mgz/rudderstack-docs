@@ -16,10 +16,13 @@ You can now send your customer events data list directly for adding them to alre
 
 {% hint style="info" %}
 The user information in your events may include email, phone number, gender, etc. For more information on the supported fields, refer the documentation [**here**](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#hash).
+
 {% endhint %}
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb_custom_audience)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb_custom_audience)**.**
 {% endhint %}
 
 ## Getting Started
@@ -35,6 +38,7 @@ Before configuring Facebook Custom Audience as a destination, verify if the sour
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Custom Audience, perform the steps below:
@@ -43,6 +47,7 @@ Once you have confirmed that the platform supports sending events to Custom Audi
 
 {% hint style="info" %}
 Please follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Assign a name to the destination and click on **Next**. You will then see the following screen:
@@ -57,22 +62,26 @@ To add Custom Audience as a destination in RudderStack, you will need to configu
 
 {% hint style="info" %}
 Check the **FAQ** section for more information on how to find your User Access Token.
+
 {% endhint %}
 
 - **Schema Fields** Choose your schema fields \(at least one\) from the available options. **This is a mandatory field**. RudderStack expects the user events to consist of **every** schema field that has been chosen on the dashboard, in the same order.
 
 {% hint style="info" %}
 RudderStack will ignore any user information which does not adhere to the specified schema fields in the dashboard settings.
+
 {% endhint %}
 
 - **Map Specific Events To Audience ID**: Enter the **Event Name\(s\)** you are going to use to send your user data to Rudderstack \(for e.g.`uploadingCustomAudience`,`trimmingCustomAudience` etc.\). Also, specify the corresponding **Custom Audience ID\(s\)** to which the audiences will be added to/removed from.
 
 {% hint style="info" %}
 Check the **FAQ** section for more information on how to find your Audience ID.
+
 {% endhint %}
 
 {% hint style="info" %}
 You can only send `track` events with the event names specified in the dashboard.
+
 {% endhint %}
 
 - Some other important settings are:
@@ -83,6 +92,7 @@ You can only send `track` events with the event names specified in the dashboard
 
 {% hint style="warning" %}
 **The Facebook Custom Audience destination supports only `track` calls.**
+
 {% endhint %}
 
 The `userListAdd` and `userListDelete` arrays containing the user data objects are expected inside the properties field of the `track` event.
@@ -102,10 +112,12 @@ A detailed description of the session fields as prescribed in the [**Facebook do
 
 {% hint style="warning" %}
 You cannot add or remove users from a custom audience using the same value for `sessionIdAdd` and `sessionIdDelete`.
+
 {% endhint %}
 
 {% hint style="info" %}
 For adding the session information to any user addition/deletion operation, the Facebook Marketing API expects the `session_id`, `batch_seq`, `last_batch_flag` fields to be present. **However, note that the data addition and deletion operations are possible without explicitly specifying the session information.**
+
 {% endhint %}
 
 ## Schema Fields Mapping
@@ -135,6 +147,7 @@ The following table details the mapping of the schema fields specified in the [*
 
 {% hint style="warning" %}
 RudderStack modifies the schema names visible in the dashboard to ensure better readability. However, during the event call, the field names **must be exactly the same as** the schema names specified by Facebook Marketing API, as mentioned in the table above.
+
 {% endhint %}
 
 ## Explicit Formatting Feature
@@ -209,6 +222,7 @@ rudder_analytics.track('USER-ID', 'EVENT-NAME', {
 `sessionIdAdd` and `sessionIdDelete` helps you track and use a particular session ID while adding or removing users. This is useful when you are sending data in chunks. If you do not include these fields, Facebook creates a session ID itself.
 
 Refer to the [**Facebook documentation**](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#step-2--specify-a-list-of-users) for more information on this.
+
 {% endhint %}
 
 The following code snippet shows a `track` event having only `userListAdd` with the schema fields \(e.g.`EMAIL`,`FIRST NAME`\) specified in the RudderStack dashboard:
@@ -236,10 +250,12 @@ As the `sessionIdAdd` field is absent, the above example does not create a sessi
 
 {% hint style="info" %}
 Similarly, you can use `userListDelete` in order to remove users from a particular custom audience without creating a session.
+
 {% endhint %}
 
 {% hint style="warning" %}
 The event payload must include `userListAdd` or `userListDelete` . Otherwise, the user data won’t be transformed and sent to Custom Audience.
+
 {% endhint %}
 
 ### FAQs
@@ -282,6 +298,7 @@ To use the Facebook Marketing API, you need to generate a user access token. Fol
 
 {% hint style="info" %}
 For more information on using this access token or generating the access token via your app, check out Facebook's [**developer documentation**](https://developers.facebook.com/docs/marketing-apis/overview/authentication).
+
 {% endhint %}
 
 ### Should I use `sessionIdAdd` or `sessionIdDelete` before adding/removing users in Custom Audience?

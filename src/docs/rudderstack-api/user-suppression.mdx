@@ -16,6 +16,7 @@ This guide covers the user suppression feature in detail.
 
 {% hint style="info" %}
 For all the requests mentioned in this guide, we use the basic HTTP authorization.
+
 {% endhint %}
 
 ## What is User Suppression?
@@ -26,6 +27,7 @@ When a user is suppressed, RudderStack will drop the events from that user. Thos
 
 {% hint style="warning" %}
 Please note that once suppressed, replaying of these events will not be possible.
+
 {% endhint %}
 
 ## HTTP Authorization
@@ -95,6 +97,7 @@ To get a regulation, you can send a `GET` request as shown:
 
 {% hint style="info" %}
 Pass `regulation_id` in the URL. The `regulation_id` is received in the response when a regulation is created.
+
 {% endhint %}
 
 {% tabs %}
@@ -147,6 +150,7 @@ To delete a regulation, you can send a `DELETE` request as shown below:
 
 {% hint style="info" %}
 Pass the `regulation_id` in the URL. The `regulation_id` is received in the response when a regulation is created.
+
 {% endhint %}
 
 {% tabs %}
@@ -175,6 +179,7 @@ You can suppress a user's data on a particular source too. A sample payload is a
 
 {% hint style="info" %}
 You need to pass `source_id` in the URL. You can provide a list of user ids in the `values` array.
+
 {% endhint %}
 
 #### Payload

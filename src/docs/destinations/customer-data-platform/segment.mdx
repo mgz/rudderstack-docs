@@ -23,6 +23,7 @@ Before configuring Segment in RudderStack, verify if the source platform support
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Then, perform the steps below:
@@ -31,6 +32,7 @@ Then, perform the steps below:
 
 {% hint style="info" %}
 Follow the guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more details.
+
 {% endhint %}
 
 - From the list of destinations, select **Segment**.
@@ -63,6 +65,7 @@ The `identify` call lets you associate a visiting user to their actions as well 
 
 {% hint style="info" %}
 As a best practice, please make sure that the `identify`call is made at the start of every session or page load for logged-in users, if possible. This will ensure all the latest traits are captured.
+
 {% endhint %}
 
 A sample `identify` call is as shown:
@@ -81,6 +84,7 @@ rudderanalytics.identify("userid", {
 
 {% hint style="info" %}
 For more information on the `identify` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+
 {% endhint %}
 
 ## Track
@@ -97,6 +101,7 @@ rudderanalytics.track("Event Name", {
 
 {% hint style="info" %}
 For more information on the `track` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+
 {% endhint %}
 
 ## Page
@@ -117,6 +122,7 @@ rudderanalytics.page("Cart", "Cart Viewed", {
 
 {% hint style="info" %}
 For more information on the `page` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+
 {% endhint %}
 
 ## Group
@@ -138,6 +144,7 @@ rudderanalytics.group(
 
 {% hint style="info" %}
 For more information on the `group` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+
 {% endhint %}
 
 ## Alias
@@ -161,6 +168,7 @@ The above `alias` call has the following parameters:
 
 {% hint style="info" %}
 For more information on the `alias` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+
 {% endhint %}
 
 ## FAQs

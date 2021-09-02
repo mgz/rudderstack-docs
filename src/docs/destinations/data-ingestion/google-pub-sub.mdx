@@ -11,7 +11,9 @@ description: Step-by-step guide to send event data from RudderStack to Google Pu
 RudderStack allows you to configure Google Pub/Sub as a destination and send your event data to it directly.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/googlepubsub)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/googlepubsub)**.**
 {% endhint %}
 
 ## Getting Started
@@ -25,6 +27,7 @@ To enable sending data to Google Pub/Sub, you will first need to add it as a des
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Google Pub/Sub, perform the steps below:
@@ -33,6 +36,7 @@ Once you have confirmed that the platform supports sending events to Google Pub/
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
@@ -62,11 +66,13 @@ For example:
   {% endhint %}
 
 {% hint style="success" %}
-If you want to send all the events to a particular stream irrespective of the type or name, you can use **`*`** as the event name.
+If you want to send all the events to a particular stream irrespective of the
+type or name, you can use **`*`** as the event name.
 {% endhint %}
 
 {% hint style="warning" %}
 The **topic ID** is **case-sensitive** and has to be exactly as seen in Google Pub/Sub. On the other hand, the **event name** is **case insensitive**, and thus `Page` or `page` will both be considered as valid.
+
 {% endhint %}
 
 - Finally, click on **Next** to complete the configuration. Pub/Sub should now be added and enabled as a destination in RudderStack.
@@ -85,6 +91,7 @@ The following are some examples:
 
 {% hint style="warning" %}
 For the `key` fields provided in the attributes map, the `key` is searched in the message body in **`root`**, **`properties`**, **`traits`** and **`context.traits`** - in that specific order.
+
 {% endhint %}
 
 **Note: You can also specify the key path in the payload using the dot notation.**
@@ -122,6 +129,7 @@ The `page` call contains information related to the page, such as the URL of the
 
 {% hint style="info" %}
 For more information on the `page` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 A sample `page` payload is as shown in the snippet below:
@@ -142,6 +150,7 @@ The `identify` call captures the relevant details about the visiting user.
 
 {% hint style="info" %}
 For more information on the `identify` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 A sample `identify` payload is as shown in the snippet below:
@@ -159,6 +168,7 @@ The `track` call captures the information related to the actions performed by th
 
 {% hint style="info" %}
 For more information on the `track` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 A sample `track` payload is as shown in the snippet below:
@@ -181,6 +191,7 @@ rudderanalytics.track("Track me", {
 {% hint style="info" %}
 If you have set all event type, event and \* for mapping the priority will be given to `event` ,  
 then `type` , followed by \*.
+
 {% endhint %}
 
 For example, let the type of event be `track`, the event name be `product added`. The mapping is done as:

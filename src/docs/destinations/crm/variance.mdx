@@ -23,6 +23,7 @@ Before configuring Variance in RudderStack, verify if the source platform suppor
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the source platform is supported by Variance, perform the steps below:
@@ -31,6 +32,7 @@ Once you have confirmed that the source platform is supported by Variance, perfo
 
 {% hint style="info" %}
 Follow the guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more details on adding a source in RudderStack.
+
 {% endhint %}
 
 - From the list of destinations, select **Variance**.
@@ -50,6 +52,7 @@ The `identify` call lets you associate a visiting user to their actions as well 
 
 {% hint style="info" %}
 As a best practice, make sure that the `identify` call is made at the start of every session or page load for logged-in users, if possible. This will ensure all their latest traits are captured.
+
 {% endhint %}
 
 A sample `identify` call is as shown:
@@ -67,6 +70,7 @@ rudderanalytics.identify("userid", {
 
 {% hint style="info" %}
 For more information on the `identify` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+
 {% endhint %}
 
 ## Track
@@ -83,6 +87,7 @@ rudderanalytics.track("Event Name", {
 
 {% hint style="info" %}
 For more information on the `track` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+
 {% endhint %}
 
 ## Page
@@ -103,6 +108,7 @@ rudderanalytics.page("Cart", "Cart Viewed", {
 
 {% hint style="info" %}
 For more information on the `page` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+
 {% endhint %}
 
 ## Group
@@ -121,6 +127,7 @@ rudderanalytics.group("sample-group-id", {
 
 {% hint style="info" %}
 For more information on the `group` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+
 {% endhint %}
 
 ## Account Mapping
@@ -143,6 +150,7 @@ If you don't use either of the methods above, Variance can extract the domain fr
 
 {% hint style="info" %}
 If none of these methods work for your setup, [**reach out to Variance support**](mailto:support@variance.com) \*\*\*\*to discuss alternatives.
+
 {% endhint %}
 
 ## FAQs

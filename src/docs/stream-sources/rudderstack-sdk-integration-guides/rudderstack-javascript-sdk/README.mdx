@@ -16,6 +16,7 @@ RudderStack's JavaScript SDK leverages the `rudder-analytics.js` library to trac
 
 {% hint style="info" %}
 **NOTE:** To quickly get up and running with setting up and using the RudderStack JavaScript SDK, please go through our [quick start guide](https://github.com/rudderlabs/rudder-sdk-js#how-to-use-the-rudderstack-javascript-sdk).
+
 {% endhint %}
 
 To integrate the RudderStack JavaScript SDK with your website, place either the minified or non-minified version of the code snippet in the `<head>` section of your website.
@@ -32,6 +33,7 @@ rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track"
 
 {% hint style="info" %}
 **You can find your source write key and the data plane URL on your RudderStack dashboard.**
+
 {% endhint %}
 
 ![Source write key and Data Plane URL](../../../.gitbook/assets/workspace-token%20%284%29%20%283%29%20%284%29%20%284%29%20%284%29%20%284%29%20%282%29%20%281%29%20%284%29.png)
@@ -76,6 +78,7 @@ rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track"
 **NOTE**: The above code snippet will load `rudder-analytics.js` on to your page synchronously. To load the SDK asynchronously to keep your page load time unaffected, use the following instead:
 
 **`<script async src="https://cdn.rudderlabs.com/v1/rudder-analytics.min.js"></script>`**
+
 {% endhint %}
 
 Combining the initialization and the above async script together, we get:
@@ -115,10 +118,12 @@ npm install rudder-sdk-js --save
 
 {% hint style="info" %}
 This NPM module is only meant to be used for a browser installation. If you want to integrate RudderStack with your Node.js applications, please refer to [the RudderStack Node.js repository](https://github.com/rudderlabs/rudder-sdk-node).
+
 {% endhint %}
 
 {% hint style="warning" %}
 **Important**: Since the module exports the related APIs on an already-defined object combined with the Node.js module caching, you should run the below code snippet **only once** and use the exported object throughout your project.
+
 {% endhint %}
 
 ```jsx
@@ -218,6 +223,7 @@ The related APIs exported by the module are:
 
 {% hint style="info" %}
 If the SDK doesn't work on the versions you are targeting, verify if adding the browser polyfills to your application solves the issue.
+
 {% endhint %}
 
 ## 3. JavaScript SDK APIs
@@ -236,6 +242,7 @@ The `load()`method is defined as follows:
 
 {% hint style="info" %}
 **NOTE**: You need to replace `<YOUR_WRITE_KEY>` with the write key in the RudderStack Control Plane and `<DATA_PLANE_URL>` with the URL of the RudderStack Server.
+
 {% endhint %}
 
 ### 3.1.1. Load Options
@@ -283,6 +290,7 @@ More information on the Load **`IntegrationOpts`** option can be found here:
 
 - [Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
 - [Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+
   {% endhint %}
 
 - The structure of **`QueueOpts`** looks like the following:
@@ -412,10 +420,12 @@ More information on the **`IntegrationOpts`** option can be found here:
 
 {% hint style="info" %}
 **NOTE**: The `anonymousId` is a **UUID** **\(Universally Unique Identifier\)** generated to uniquely identify the user. Also, if it is provided by the user using the `setAnonymousId` method, the user-specified `anonymousId` overrides the SDK-generated one.
+
 {% endhint %}
 
 {% hint style="success" %}
-There is no need to call`identify()`for anonymous visitors to your website. Such visitors are automatically assigned an `anonymousId`
+There is no need to call`identify()`for anonymous visitors to your website.
+Such visitors are automatically assigned an `anonymousId`
 {% endhint %}
 
 ### 3.2.2. `identify` Options
@@ -424,6 +434,7 @@ The JavaScript SDK generates one unique `anonymousId` , stores it in a cookie na
 
 {% hint style="info" %}
 As an example, if you include the RudderStack JavaScript SDK in both **admin.samplewebsite.com** and **app.samplewebsite.com**, the SDK will store the cookie in the top-level domain **samplewebsite.com**.
+
 {% endhint %}
 
 If you identify a user with your application's unique identifier like email, database ID etc. RudderStack stores this ID in a cookie named `rl_user_id` and attaches to every event.
@@ -436,6 +447,7 @@ There can be scenarios where you may want to provide your own `anonymousID` inst
 
 {% hint style="info" %}
 All other events will have`anonymousId` from the one persisted in the cookie, except this event where you override the options.
+
 {% endhint %}
 
 An example of this approach is as shown in the code snippet below:
@@ -488,6 +500,7 @@ If you would like to set the `userid` to be empty, pass an empty string or `""`.
 
 {% hint style="warning" %}
 Do **not** identify with `null`, as this will not allow you to pass a traits object and it will keep the current `userid`.
+
 {% endhint %}
 
 ### 3.2.6. Identifying New Users
@@ -498,6 +511,7 @@ To identify new users in scenarios like a new login, you can take one of the fol
 
 {% hint style="info" %}
 The `anonymousId` will remain unchanged in this case. It will be the value that you set explicitly using `setAnonymousId` , or the auto-generated value set by the SDK while loading.
+
 {% endhint %}
 
 - Explicitly call `rudderanalytics.reset()` and then call `identify`. It has the same effect as described above.
@@ -834,6 +848,7 @@ rudderanalytics.reset()
 
 {% hint style="info" %}
 **NOTE**: The `reset()`method only clears the cookies and local storage set by RudderStack, and not the information stored by the integrated destinations. To completely clear the user session, please refer to the documentation provided by those respective tools.
+
 {% endhint %}
 
 ## 4. How to Filter Selective Destinations to Send Event Data
@@ -901,6 +916,7 @@ Below shows some of the supported names that RudderStack can intake for each des
 
 {% hint style="info" %}
 **NOTE:** You can also refer to [this section](https://docs.rudderstack.com/user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention) for more information on the naming convention of the `destinations names`.
+
 {% endhint %}
 
 ### 4.2. Specifying Selective Destinations in the `load` Method
@@ -919,6 +935,7 @@ Where `<destination_name>` is the name of the destination.
 
 {% hint style="info" %}
 Please refer to the section above for the common destinations names or refer to [this section](https://docs.rudderstack.com/user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention) for destination naming convention.
+
 {% endhint %}
 
 An example of the `load` method is as shown:
@@ -947,6 +964,7 @@ A context is a dictionary of additional information about a particular data, suc
 
 {% hint style="info" %}
 **NOTE**: A context is a complete and specific piece of information. Any other information provided outside of this specification is ignored.
+
 {% endhint %}
 
 ### 5.2. Trait
@@ -1027,6 +1045,7 @@ Some of the properties in the snippet above are:
 
 {% hint style="info" %}
 Since most ad blockers block the request to the Google AdSense servers, this is assumed as a good measure to detect ad-blocked pages.
+
 {% endhint %}
 
 - `sendAdblockPageOptions`: The RudderStack SDK will make an implicit `page` call about the ad-blocked pages if `sendAdblockPage` is set to `true`. With `sendAdblockPageOptions`, you can provide the destinations to which you want to forward this `page` call.
@@ -1093,6 +1112,7 @@ To check if data is being transmitted to the specified destinations, go to the `
 
 {% hint style="info" %}
 **NOTE**: If the outbound request is not being shown, check if you have installed and set up the RudderStack JavaScript SDK correctly, or if ad-blockers are enabled on your browser.
+
 {% endhint %}
 
 ### **What is the size limit on the requests?**
@@ -1115,6 +1135,7 @@ rudderanalytics.getAnonymousId()
 
 {% hint style="info" %}
 **NOTE:** In case the `anonymousId` value is null, calling the above function will lead to automatically setting a new `anonymousId`.
+
 {% endhint %}
 
 ### What is the `Reserved Keyword` error?

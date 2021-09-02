@@ -13,6 +13,7 @@
     "@loadable/component": "^5.14.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@rocketseat/gatsby-theme-docs": "^2.4.0",
     "@rocketseat/gatsby-theme-docs-core": "^2.3.2",
     "@sanity/block-content-to-html": "^1.3.8",
     "@sanity/block-content-to-react": "^2.0.7",

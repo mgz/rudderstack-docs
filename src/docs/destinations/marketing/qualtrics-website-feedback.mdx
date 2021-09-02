@@ -23,6 +23,7 @@ Before configuring Qualtrics as a destination in RudderStack, verify if Qualtric
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the source platform supports sending events to Qualtrics, follow these steps:
@@ -31,6 +32,7 @@ Once you have confirmed that the source platform supports sending events to Qual
 
 {% hint style="info" %}
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more information.
+
 {% endhint %}
 
 ![Configuration Settings for Qualtrics](https://user-images.githubusercontent.com/59817155/128999630-37a8cac7-cd8c-4ba8-8b15-1435afeff4ca.png)
@@ -44,16 +46,19 @@ To successfully configure Qualtrics as a destination, you will need to configure
 
 {% hint style="info" %}
 Refer to the **FAQ** section below for steps on how to get your Qualtrics Project ID and Brand ID.
+
 {% endhint %}
 
 - **Enable Generic Page Title:** If this field is enabled, RudderStack sends every `page` call with the name `Viewed a Page`.
 
 {% hint style="info" %}
 This field is useful only when using the `page` call.
+
 {% endhint %}
 
 {% hint style="info" %}
 If this option is disabled, RudderStack will search for the category and name of the `page` call and send the event as `Viewed <category_field> <name_field> Page`. If any of the two fields is absent, RudderStack sends the `page` call as `Viewed <category_field>/<name_field> Page`.
+
 {% endhint %}
 
 ## Page
@@ -61,7 +66,8 @@ If this option is disabled, RudderStack will search for the category and name of
 The `page` call lets you track how many times a user performs certain actions. RudderStack passes any tracked events as embedded data to the Qualtrics [**intercept**](https://www.qualtrics.com/support/website-app-feedback/getting-started-with-website-app-feedback/step-4-setting-up-your-intercept/) target. After the `page` call, the Qualtrics survey is loaded.
 
 {% hint style="success" %}
-You can set the intercepts when a user creates the project or after they have created the project.
+You can set the intercepts when a user creates the project or after they have
+created the project.
 {% endhint %}
 
 A sample `page` call is as shown:
@@ -112,6 +118,7 @@ For the above example, The event will be sent as `Viewed name Page`, if the **Ge
 
 {% hint style="warning" %}
 If both the name and category fields are absent in the `page` call and the **Generic Page Title** option is disabled, RudderStack will not send the event to Qualtrics.
+
 {% endhint %}
 
 ## Track
@@ -120,10 +127,12 @@ The `track` call lets you track how many times a user performs certain actions. 
 
 {% hint style="info" %}
 At the destination end, i.e. Qualtrics, both `page` and `track` calls have the same functionality.
+
 {% endhint %}
 
 {% hint style="success" %}
-You can set the intercepts when a user creates the project or after they have created the project.
+You can set the intercepts when a user creates the project or after they have
+created the project.
 {% endhint %}
 
 In this case, the value of event field of the `track` call will be used as the event name while sending it to Qualtrics.

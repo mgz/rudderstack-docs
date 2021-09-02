@@ -248,35 +248,18 @@ module.exports = {
     //     name: 'allItemImages',
     //   },
     // },
-    {
+    /* {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
         path: `${__dirname}/src/docs`,
       },
-    },
+    }, */
     {
-      resolve: "gatsby-plugin-mdx",
-      options: {
-        extensions: [".mdx",".md"],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-embedder`,
-            options:{
-              services: {
-                'YouTube': "https://www.youtube.com/watch?v=vOaw9pKn6\_M"
-              } 
-            }
-          }
-        ]
-      }
-    },
-    {
-      resolve: "@rocketseat/gatsby-theme-docs-core",
+      resolve: "@rocketseat/gatsby-theme-docs",
       options: {
         basePath: `/docs`,
         docsPath: `src/docs`,
-        withMdx: false,
         configPath: `src/docsconfig`
       }
     }

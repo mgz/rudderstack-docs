@@ -35,24 +35,24 @@ const Testimonial = props => {
     <>
       <div className="overflow-hidden">
         <div
-          class={`testimonials testimonials-wrap py-5 text-primary px-md-5 margin-top-xl ${
+          className={`testimonials testimonials-wrap py-5 text-primary px-md-5 margin-top-xl ${
             props.applyGradientColorTheme ? "testimonila-bg-gradiant" : "bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover"
           } md:mt-32`}
         >
-          <div class="max-w-6xl mx-auto px-4 md:px-3 testimonial-img-wrap">
-            <div class="row">
+          <div className="max-w-6xl mx-auto px-4 md:px-3 testimonial-img-wrap">
+            <div className="row">
               <div className="block w-full">
-                <div class="carousel-controls testimonial-carousel-controls xl:-mt-20">
+                <div className="carousel-controls testimonial-carousel-controls xl:-mt-20">
                   <div className="testimonial-slider owl-carousel owl-theme ">
                     {testimonials && testimonials.map((testimonial, i) => {
                       return (
                         <div
                           key={i}
-                          class="item h5 font-weight-normal one-slide mx-auto pb-0 w-100 max-w-6xl justify-items-center"
+                          className="item h5 font-weight-normal one-slide mx-auto pb-0 w-100 max-w-6xl justify-items-center"
                         >
-                          <div class="testimonial pb-12 w-100 px-3 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
+                          <div className="testimonial pb-12 w-100 px-3 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center">
                             <div className="flex items-center flex grid justify-items-center">
-                              <div class="usr_img mb-4">
+                              <div className="usr_img mb-4">
                                 <Image
                                   props={testimonial.clientimage.asset._ref} 
                                 />
@@ -77,7 +77,7 @@ const Testimonial = props => {
                               {testimonial.clientdesignation}
                             </p>
                             <div
-                              class={`message text-center text-2xl md:text-3xl-3 tracking-wide font-normal ${
+                              className={`message text-center text-2xl md:text-3xl-3 tracking-wide font-normal ${
                                 props.applyGradientColorTheme
                                   ? "text-white"
                                   : "text-dark"

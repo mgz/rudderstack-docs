@@ -1,5 +1,5 @@
 import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
 import { StaticImage } from "gatsby-plugin-image"
 import Link from "gatsby-link"
@@ -40,7 +40,7 @@ const MiddleBanner = props => {
                               (btn.btnhiglight === true
                                 ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay hover:text-white"
                                 : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
-                              ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
+                              ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
                             }
                             href={btn.btnlink}
                           >
@@ -55,7 +55,7 @@ const MiddleBanner = props => {
                                 (btn.btnhiglight === true
                                   ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
                                   : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
-                                ` font-bold py-3 mb-6 md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
+                                ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
                               }
                             >
                               {btn.btntext}

@@ -32,11 +32,14 @@ rudderanalytics.identify(
 ```
 
 {% hint style="success" %}
-**NOTE**: Unless explicitly defined otherwise, `'All'` is always set to `true`. This means that sending events to all destinations is enabled by default.
+**NOTE**: Unless explicitly defined otherwise, `'All'` is always set to
+`true`. This means that sending events to all destinations is enabled by
+default.
 {% endhint %}
 
 {% hint style="info" %}
 The line **`All: false`** instructs RudderStack **not** to send the event data to any destinations **by default,** unless they are explicitly listed as **`true`** in the subsequent lines.
+
 {% endhint %}
 
 You can also disable sending event data to certain destinations. In this case, the event data is sent to **all the other destinations** except the specified ones. An example of this is as shown from the JavaScript SDK:
@@ -59,6 +62,7 @@ rudderanalytics.identify(
 
 {% hint style="info" %}
 As seen in the above code snippet, RudderStack will send the event data to all the destinations except `Google Analytics` and `Intercom`.
+
 {% endhint %}
 
 ## Examples
@@ -67,6 +71,7 @@ The following are examples for the same `track()` call from a variety of SDK's.
 
 {% hint style="info" %}
 Please Note: Some of the SDK's follow their own convention that is different than the examples below. The notable SDK's with different convention are IOS and Android. Please read the respective `SDK Integration Guide` section for your given SDK to find the correct format to filter selective destinations.
+
 {% endhint %}
 
 ### JavaScript SDK
@@ -109,6 +114,7 @@ rudder_analytics.track(
 
 {% hint style="info" %}
 In these examples above, the track events will only be sent to `Amazon S3` and `Heap.io` destinations.
+
 {% endhint %}
 
 ## Destination Naming Convention
@@ -117,6 +123,7 @@ By default, for the destination name please use the `displayed destination name`
 
 {% hint style="info" %}
 These destination names are case sensitive!
+
 {% endhint %}
 
 ## Contact Us

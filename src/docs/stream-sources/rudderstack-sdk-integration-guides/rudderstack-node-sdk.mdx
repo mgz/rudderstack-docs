@@ -11,7 +11,8 @@ description: >-
 RudderStack’s Node.js SDK lets you track your customer event data from your Node.js app and route them to your specified destination platforms.
 
 {% hint style="success" %}
-Find the code for this SDK in our [**GitHub repository**](https://github.com/rudderlabs/rudder-sdk-node).
+Find the code for this SDK in our [**GitHub
+repository**](https://github.com/rudderlabs/rudder-sdk-node).
 {% endhint %}
 
 ## Installing the RudderStack Node.js SDK
@@ -39,6 +40,7 @@ The `identify` call lets you associate a user to their actions as well as captur
 
 {% hint style="info" %}
 For a detailed explanation of the `identify` call, refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/identify) guide.
+
 {% endhint %}
 
 An example `identify` call is as shown:
@@ -72,6 +74,7 @@ The `track` call lets you record the users' actions along with their associated 
 
 {% hint style="info" %}
 For a detailed explanation of the `track` call, please refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/track) guide.
+
 {% endhint %}
 
 An example `track` call is as shown:
@@ -105,6 +108,7 @@ The `page` call allows you to record the page views on your website. It also rec
 
 {% hint style="info" %}
 For a detailed explanation of the `page` call, please refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/page) guide.
+
 {% endhint %}
 
 An example `page` call is as shown:
@@ -140,6 +144,7 @@ The `group` call allows you to link an identified user with a group, such as a c
 
 {% hint style="info" %}
 For a detailed explanation of the `group` call, refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/group) guide.
+
 {% endhint %}
 
 An example `group` call is as shown:
@@ -173,10 +178,12 @@ The `alias` call lets you merge different identities of a known user.
 
 {% hint style="info" %}
 `alias` is an advanced method that lets you change the tracked user's ID explicitly. This method is useful when managing identities for some of the downstream destinations.
+
 {% endhint %}
 
 {% hint style="info" %}
 For a detailed explanation of the `alias` call, refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/alias) guide.
+
 {% endhint %}
 
 An example `alias` call is as shown:
@@ -203,6 +210,7 @@ The `alias` method parameters are as mentioned below:
 
 {% hint style="info" %}
 This feature is still in beta. Contact us on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel in case you face any issues.
+
 {% endhint %}
 
 The Node.js SDK retries event delivery `n` times, if it fails to successfully deliver the event data to RudderStack. Since the data is in-memory, `n` should ideally be a small number, failing which there is a possibility of data loss if RudderStack is not available for a larger duration.
@@ -213,6 +221,7 @@ You will need to host a Redis server and use it as the intermediary data storage
 
 {% hint style="info" %}
 We use [**Bull**](https://github.com/OptimalBits/bull) as the interface layer between the Node.js SDK and Redis.
+
 {% endhint %}
 
 The initialization of the SDK is as follows:
@@ -250,6 +259,7 @@ QueueOpts {
 
 {% hint style="info" %}
 More information on this parameter can be found in the [**Bull docs**](https://github.com/OptimalBits/bull/blob/develop/REFERENCE.md#queue).
+
 {% endhint %}
 
 ```jsx
@@ -278,10 +288,12 @@ Calling the `createPersistenceQueue` method will initialize a Redis list by call
 
 {% hint style="info" %}
 It is recommended to retry calling `createPersistenceQueue` with a backoff, if the callback returns with an error.
+
 {% endhint %}
 
 {% hint style="warning" %}
 If the `createPersistenceQueue` method is not called after initializing the SDK, the SDK will work without any persistence.
+
 {% endhint %}
 
 ### **Configurable Parameters**
@@ -302,6 +314,7 @@ client.flush(function (err, batch) {
 
 {% hint style="warning" %}
 If the same queue \(RudderStack SDK initialized with the same queue name\) is used in multiple servers, set this value to `true`as event ordering is not present in this case.
+
 {% endhint %}
 
 ### **Flow**

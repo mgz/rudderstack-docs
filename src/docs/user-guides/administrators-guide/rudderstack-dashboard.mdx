@@ -84,6 +84,7 @@ The RudderStack Processor module picks events from gateway for further processin
 
 {% hint style="info" %}
 This usually happens during a sudden surge in the traffic, but syncs over a period of time. If this is consistently high, **consider adding an extra RudderStack node**.
+
 {% endhint %}
 
 ## Event Delivery
@@ -180,10 +181,12 @@ This graph corresponds to the number of events delivered to the warehouse destin
 
 {% hint style="info" %}
 A `user_logged_in` event of `track` type will be synced to `tracks` and `user_logged_in` tables. Check out our [RudderStack Warehouse Schema](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-schemas) for more details. Similarly, the `identify` events are synced to the `identifies` and `users` tables. Since each event is being synced to two tables, number of synced rows is generally twice the number of events.
+
 {% endhint %}
 
 {% hint style="info" %}
 If an event property does not match the data type in the corresponding table of warehouse, that column is not synced into the actual table but moved into `rudder_discards` table. Check [this guide](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-schemas#data-type-mismatch-handling) on how RudderStack handles data type mismatch, for more details.
+
 {% endhint %}
 
 ### Synced Rows
@@ -192,6 +195,7 @@ Corresponds to the number of new rows created in the `grouped by` table during w
 
 {% hint style="warning" %}
 If there are a lot of synced rows in `rudder_discards`, this implies that the data types are not consistent from your sources. It is recommended to check such entries and fix the issue.
+
 {% endhint %}
 
 ### Events Sync Lag Time - Warehouse
@@ -210,6 +214,7 @@ RudderStack processes events from these queues. If the size of the queue keeps i
 
 {% hint style="warning" %}
 For real-time deliveries, it is important to maintain queue size at 1 or 2.
+
 {% endhint %}
 
 ## Contact Us

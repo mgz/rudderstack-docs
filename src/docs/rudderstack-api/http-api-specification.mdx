@@ -10,9 +10,7 @@ description: >-
 
 The RudderStack HTTP API allows you to track your customer event data from anywhere, and route it to your desired destinations. We recommend using our SDKs for automatic tagging of the `identify` context, batching the events, and retrying the functionality. If you cannot use our SDKs, it is possible to send your event data using the HTTP API.
 
-{% hint style="success" %}
-RudderStack HTTP API is compatible with Segment.
-{% endhint %}
+{% hint style="success" %}RudderStack HTTP API is compatible with Segment.{% endhint %}
 
 ## 1. RudderStack Data Plane
 
@@ -24,6 +22,7 @@ Import the Postman collection using this [**URL**](https://www.getpostman.com/co
 
 {% hint style="info" %}
 If you are using RudderStack Cloud, the data plane URL should be set to: [https://hosted.rudderlabs.com](https://hosted.rudderlabs.com).
+
 {% endhint %}
 
 ## 3. HTTP Authorization
@@ -34,6 +33,7 @@ RudderStack uses Basic Authentication for authenticating all the HTTP requests. 
 `writeKey`is the _user name_
 
 `""` is the _password \(empty string\)_
+
 {% endhint %}
 
 All the popular HTTP clients \(eg. CURL, Postman, HTTPie\) have default support for Basic Authentication.
@@ -44,6 +44,7 @@ This is a sample [basic auth header generator](https://www.blitter.se/utils/basi
 
 {% hint style="info" %}
 In order to send the event data to our RudderStack HTTP API, the `content-type` header must be set to `application/json`
+
 {% endhint %}
 
 ## 4. HTTP Responses
@@ -61,6 +62,7 @@ The `identify` call allows you to associate a visiting user to their actions. It
 
 {% hint style="info" %}
 As a best practice, please make sure that the `identify`call is made at the start of every session or page load for logged-in users, if possible. This will ensure all the latest traits are captured.
+
 {% endhint %}
 
 ### 6.1. `identify` Payload
@@ -596,6 +598,7 @@ RudderStack allows you to import any historical data by simply adding the `times
 
 {% hint style="warning" %}
 In case you are tracking current events, it is advisable to leave out the `timestamp` field. RudderStack will automatically add the timestamps to the event requests.
+
 {% endhint %}
 
 ## Contact Us

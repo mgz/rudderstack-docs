@@ -149,14 +149,17 @@ https://hosted.rudderlabs.com/pixel/v1/page?writeKey=${writeKey}&context.library
 
 {% hint style="warning" %}
 For this endpoint, RudderStack expects that the basic page view properties like `path`, `url`, `referrer`, `title` be passed either with `context.page.<page_basic_properties>` or with `properties.<page_basic_properties>`.
+
 {% endhint %}
 
 {% hint style="info" %}
 The dot \*\*\*\*\(`.`\) separated query parameters are mapped by RudderStack to a familiar [`page`](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification#8-1-page-payload) payload before sending them to the destinations.
+
 {% endhint %}
 
 {% hint style="warning" %}
 Note that for this endpoint, RudderStack does not currently support overriding the `integration` key for sending data to selective destinations.
+
 {% endhint %}
 
 ## Sending a `track` call to RudderStack
@@ -295,14 +298,17 @@ https://hosted.rudderlabs.com/pixel/v1/track?writeKey=${writeKey}&context.librar
 
 {% hint style="warning" %}
 For this endpoint, RudderStack expects the basic `page` view properties like `path`, `url`, `referrer`, and `title` to be passed with `context.page.<page_basic_properties>`. The event-related properties should be sent as `properties.<*key1*>=${value}`.
+
 {% endhint %}
 
 {% hint style="info" %}
 The dot \(`.`\) separated query parameters are mapped by RudderStack to a familiar [`track`](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification#7-2-track-usage) payload before being sent to destinations.
+
 {% endhint %}
 
 {% hint style="warning" %}
 Note that for this endpoint, RudderStack currently does not support overriding the `integration` key for sending the data to selective destination.
+
 {% endhint %}
 
 ## Contact Us

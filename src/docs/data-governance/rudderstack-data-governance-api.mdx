@@ -26,6 +26,7 @@ You will need to use HTTP Basic Authentication for authenticating the APIs.
 
 {% hint style="info" %}
 You can send the API calls using CURL/HTTPie from the command line, or with any programming language of your choice.
+
 {% endhint %}
 
 ### Understanding API responses
@@ -152,24 +153,37 @@ curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/sch
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>Description</b>
+      <th style="text-align:left">
+        <b>Description</b>
       </th>
-      <th style="text-align:left"><b>Arguments</b>
+      <th style="text-align:left">
+        <b>Arguments</b>
       </th>
-      <th style="text-align:left"><b>Supported Method Types</b>
+      <th style="text-align:left">
+        <b>Supported Method Types</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">Gets the schema versions for an event type.</td>
       <td style="text-align:left">
-        <p><b><code>EventID</code></b> is a <b>mandatory</b> query parameter to get
-          the schema
-          <br />versions for an event model. This is obtained from the above API</p>
-        <p>(<b>event-models</b>).</p>
+        Gets the schema versions for an event type.
       </td>
-      <td style="text-align:left"><code>GET</code>
+      <td style="text-align:left">
+        <p>
+          <b>
+            <code>EventID</code>
+          </b>{" "}
+          is a <b>mandatory</b> query parameter to get the schema
+          <br />
+          versions for an event model. This is obtained from the above API
+        </p>
+        <p>
+          (<b>event-models</b>).
+        </p>
+      </td>
+      <td style="text-align:left">
+        <code>GET</code>
       </td>
     </tr>
   </tbody>

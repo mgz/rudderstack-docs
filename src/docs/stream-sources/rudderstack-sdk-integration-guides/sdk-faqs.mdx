@@ -18,10 +18,13 @@ The RudderStack JavaScript SDK automatically generates one unique `anonymousId` 
 
 {% hint style="info" %}
 If `anonymousId` is explicitly provided by the user using the **`setAnonymousId`** method, the user-specified `anonymousId` overrides the SDK-generated one.
+
 {% endhint %}
 
 {% hint style="success" %}
-For more information on how RudderStack handles overriding `anonymousId`, please refer to our [docs](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#3-2-2-overriding-anonymousid-in-the-options-parameter).
+For more information on how RudderStack handles overriding `anonymousId`,
+please refer to our
+[docs](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#3-2-2-overriding-anonymousid-in-the-options-parameter).
 {% endhint %}
 
 **For the Android SDK**
@@ -32,10 +35,13 @@ You can use the `setAnonymousId` method to override and use your own `anonymousI
 
 {% hint style="info" %}
 On the Android devices, the `deviceId` is assigned during the first boot. It remains consistent across the applications and installs. It changes only after a factory reset.
+
 {% endhint %}
 
 {% hint style="success" %}
-For more information on how RudderStack handles `anonymousId` in the iOS SDK, please refer to our [docs](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-android-sdk#anonymous-id).
+For more information on how RudderStack handles `anonymousId` in the iOS SDK,
+please refer to our
+[docs](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-android-sdk#anonymous-id).
 {% endhint %}
 
 **For the iOS SDK**
@@ -46,10 +52,13 @@ You can use the `setAnonymousId` method to override and use your own `anonymousI
 
 {% hint style="info" %}
 According to the Apple [documentation](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor), if the device has multiple apps from the same vendor, all those apps will be assigned the same `deviceId`. If all these apps are uninstalled, then on the next install, the apps will be assigned a new `deviceId`.
+
 {% endhint %}
 
 {% hint style="success" %}
-For more information on how RudderStack handles `anonymousId` in the iOS SDK, please refer to our [docs](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-ios-sdk#anonymous-id).
+For more information on how RudderStack handles `anonymousId` in the iOS SDK,
+please refer to our
+[docs](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-ios-sdk#anonymous-id).
 {% endhint %}
 
 ### How do I identify anonymous users across client-side and server-side?
@@ -67,6 +76,7 @@ The RudderStack JavaScript SDK generates a unique `anonymousId` for every unique
 Users sometimes try to directly use the browser APIs to get or set the value for this cookie. However, this is not advisable since the RudderStack cookies are encrypted, and the cookie may not be present altogether \(if the SDK is blocked\).
 
 It is, therefore, always advisable to use RudderStack's `getAnonymousId` and `setAnonymousId` methods to update the cookie value.
+
 {% endhint %}
 
 To set `anonymousId`, use the `setAnonymousId` call after the SDK snippet as below:
@@ -92,6 +102,7 @@ When the dataplane gets disconnected from the SDK and events are no longer able 
 
 {% hint style="warning" %}
 **NOTE:** The retry of failed events is not supported by all SDKs. Please see table below for support.
+
 {% endhint %}
 
 #### General Support and Logic
@@ -130,6 +141,7 @@ Where, $$dt$$ is the delay time in ms and $$n$$ is the current retry attempt. Th
 
 {% hint style="info" %}
 The Node SDK does have a feature to persist the event data in Redis for more event storage and better guarantees of failed event delivery. Instructions on how to configure the Redis solution can be found[ here](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk#data-persistence-in-node-js-sdk).
+
 {% endhint %}
 
 ## Contact Us

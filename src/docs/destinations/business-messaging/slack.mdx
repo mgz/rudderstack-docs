@@ -11,7 +11,9 @@ Slack is a popular business communication platform that allows you to organize a
 RudderStack supports integration with Slack and allows you to send your business messaging data to Slack seamlessly.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/slack)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/slack)**.**
 {% endhint %}
 
 ## Getting Started
@@ -27,6 +29,7 @@ Before configuring your source and destination on the RudderStack, please verify
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Slack, perform the steps below:
@@ -35,6 +38,7 @@ Once you have confirmed that the platform supports sending events to Slack, perf
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination and select the source to connect this destination, then click on **Next**. You should then see the following screen:
@@ -55,6 +59,7 @@ There are three settings to configure.
 
 {% hint style="warning" %}
 Add the regex expression without the global\(`g`\) parameter. It is added by Rudder implicitly.
+
 {% endhint %}
 
 - Identify Template \*\*\*\*
@@ -72,6 +77,7 @@ where the traits key and value are the key-value pairs in the traits object of [
 
 {% hint style="info" %}
 The **whitelisted traits** list is given priority when building the identify template. Only the traits there will be part of the template, else all the traits will be sent to Slack.
+
 {% endhint %}
 
 - Event Templates

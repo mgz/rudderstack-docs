@@ -11,7 +11,10 @@ description: >-
 RudderStack is an independent, stand-alone system with dependency only on the database \(**PostgreSQL**\). Its backend is written in Go, with a rich UI written in React.js.
 
 {% hint style="success" %}
-**Start building a better, warehouse-first CDP that delivers complete, unified data to every part of your marketing and analytics stack.** [**Sign up**](https://app.rudderlabs.com/signup?type=freetrial) **for** [**RudderStack Cloud Free**](https://app.rudderlabs.com/signup?type=freetrial) **today.**
+**Start building a better, warehouse-first CDP that delivers complete, unified
+data to every part of your marketing and analytics stack.** [**Sign
+up**](https://app.rudderlabs.com/signup?type=freetrial) **for** [**RudderStack
+Cloud Free**](https://app.rudderlabs.com/signup?type=freetrial) **today.**
 {% endhint %}
 
 A high-level view of RudderStack’s architecture is as shown:
@@ -37,6 +40,7 @@ The Data Plane is RudderStack's \*\*\*\*core engine responsible for:
 
 {% hint style="info" %}
 The RudderStack Data Plane uses PostgreSQL as a streaming database for the event data. Refer to the **Data Plane Architecture** section below for more information.
+
 {% endhint %}
 
 ## **Transformation**
@@ -46,7 +50,9 @@ RudderStack's Transformations module transforms the received event data into a s
 RudderStack also supports user-specific transformations for real-time operations, such as aggregation, filtering, and sampling.
 
 {% hint style="success" %}
-Refer to the [**RudderStack Transformations**](../adding-a-new-user-transformation-in-rudderstack/) guide for more information on this feature.
+Refer to the [**RudderStack
+Transformations**](../adding-a-new-user-transformation-in-rudderstack/) guide
+for more information on this feature.
 {% endhint %}
 
 ## **Data Plane Architecture**
@@ -91,6 +97,7 @@ The Transformation module takes the event data from the Processor and converts t
 RudderStack supports user-defined transformations where event data can be transformed using custom JavaScript functions. Some common use-cases include modifying the events, performing event aggregation, sampling, etc.
 
 Check out the [**GitHub repository**](https://github.com/rudderlabs/sample-user-transformers) for more information related to these functions.
+
 {% endhint %}
 
 ## **Data Plane Workflow**
@@ -125,6 +132,7 @@ Although the default configuration works just fine for most use-cases, RudderSta
 
 {% hint style="info" %}
 Refer to the [**Configuration Parameters**](../user-guides/administrators-guide/config-parameters.md) guide for more information on these configuration options.
+
 {% endhint %}
 
 ## Contact Us

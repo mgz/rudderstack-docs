@@ -26,6 +26,7 @@ There are 2 key advantages of using the navigator.sendBeacon utility to send you
 
 {% hint style="info" %}
 You can find the `sendBeacon` version of the RudderStack JavaScript SDK located at [https://cdn.rudderlabs.com/v2/rudder-analytics.min.js?transport=beacon](https://cdn.rudderlabs.com/v2/rudder-analytics.min.js?transport=beacon). For using its XMLHTTP version, please use [https://cdn.rudderlabs.com/v2/rudder-analytics.min.js](https://cdn.rudderlabs.com/v2/rudder-analytics.min.js?transport=beacon).
+
 {% endhint %}
 
 ### Important Notes
@@ -36,6 +37,7 @@ A couple of important pointers to note before you opt to use `sendBeacon` for se
 
 {% hint style="warning" %}
 If this is indeed a requirement for your site, we suggest you use the XHR version of the JavaScript SDK, where RudderStack retries event delivery based on status codes and other errors.
+
 {% endhint %}
 
 - The Beacon queue maintained by browsers also has the limitation on the total size of elements present in the beacon queue at any snapshot, and peaks out at 64k. Thus, inherently sending very high frequency hits at one go from main thread is not supported, as the Beacon queue cannot take up cycles to dequeue itself. The RudderStack JavaScript SDK handles this by maintaining a separate queue, which retries pushing events to the Beacon queue in case they fail to be pushed the first time. Our current queue handles approximately 500 hits per 30 ms and ensures eventual successful delivery of events after retries to Beacon. A similar comparison on Google Analytics’ `analytics.js` shows a hit rate of 2 hits/sec.
@@ -55,7 +57,9 @@ The core SDK maintains a call queue, and the API calls to it are processed one a
 For instance, in the above call `rudderanalytics.requireIntegration("GA")`, the subsequent calls to the SDK \(such as `page`, `track`, `alias`, `group`, etc.\) will get enqueued until the `GAPlugin.js` and Google Analytics' `analytics.js` is loaded on the web page. Once the plugin and the end destination snippet is loaded, the subsequent calls in the call queue will be processed, and the corresponding calls to `analytics.js` will start flowing.
 
 {% hint style="success" %}
-For this example, Google Analytics' `trackingId` and other configuration settings are fetched from the RudderStack dashboard as noted earlier and `analytics.js` is configured using these settings.
+For this example, Google Analytics' `trackingId` and other configuration
+settings are fetched from the RudderStack dashboard as noted earlier and
+`analytics.js` is configured using these settings.
 {% endhint %}
 
 ### Sample Call Flow for the RudderStack JavaScript SDK
@@ -82,10 +86,12 @@ rudderanalytics.requireIntegration(
 
 {% hint style="info" %}
 We support a few canonical names for destinations. You can find more information regarding these canonical names in the [common destination names](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names) section of our JavaScript SDK guide.
+
 {% endhint %}
 
 {% hint style="warning" %}
 Currently, we only support plugins for **Google Analytics**, **Hotjar** and **Hubspot**. We are working on adding support for more destinations very soon, so stay tuned!
+
 {% endhint %}
 
 ## **Contact Us**

@@ -13,7 +13,9 @@ Google Analytics is the world's most popular analytics service that allows you t
 RudderStack supports sending events from RudderStack SDKs to the Google Analytics endpoints. We support the connection mode **S2S** **\(Server-to-Server\)** through our data plane, making requests to Google Analytics endpoints through Google Analytics' **Measurement Protocol** specification.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/ga)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/ga)**.**
 {% endhint %}
 
 ## Getting Started
@@ -27,6 +29,7 @@ Before configuring your source and destination on the RudderStack app, please ch
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Google Analytics, perform the steps below:
@@ -35,6 +38,7 @@ To enable sending data to Google Analytics, you will first need to add it as a d
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 Once the destination is enabled, events from our servers will start flowing to Google Analytics. You will start seeing the events in Google Analytics' real-time view.
@@ -85,6 +89,7 @@ rudderanalytics.page({
 
 {% hint style="warning" %}
 It is important to send a `path` or `url` property with page call, otherwise Google Analytics will silently reject the event.
+
 {% endhint %}
 
 There are other variants of the `page()` call that you can send, which involve giving your page's `name` and `category` :
@@ -113,6 +118,7 @@ rudderanalytics.page("home", {
 For a server-side screen call, the application name is passed from RudderStack's `context.app.name` as **`an`**, otherwise the event will be rejected by GA.
 
 If **Include the Querystring in Page Views** option is turned on under Advanced options of RudderStack destination settings \(please refer to the settings in the Getting Started section above\), then the whole URL with query string will be sent as **`dp`** \(Document Path\). Otherwise, the query string will be removed from the URL.
+
 {% endhint %}
 
 ## Identify
@@ -179,6 +185,7 @@ This will send the following `Event Category` and `Event Action` :
 
 {% hint style="info" %}
 We do not populate the `Event Category` field by default. If you face such a requirement, use our custom transformations to populate the event payload with a `category` property.
+
 {% endhint %}
 
 A more verbose `track` call that you can make is as shown:
@@ -268,6 +275,7 @@ rudderanalytics.track('checkout step completed', {
 
 {% hint style="info" %}
 For more information, please check our guide on the [RudderStack E-Commerce Events Specification](https://docs.rudderstack.com/rudderstack-api-spec/rudderstack-ecommerce-events-specification).
+
 {% endhint %}
 
 ### Measuring Promotions
@@ -543,6 +551,7 @@ When you use `rudderanalytics.page(name, properties)` with the custom properties
 
 {% hint style="info" %}
 For more information on content grouping, please refer to this [guide](https://support.google.com/analytics/answer/2853423?hl=en#:~:text=Content%20Grouping%20lets%20you%20group,page%20title%2C%20or%20screen%20name.).
+
 {% endhint %}
 
 ### Sample Rate

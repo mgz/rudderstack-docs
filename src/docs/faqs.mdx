@@ -14,10 +14,12 @@ This section aims to address the queries and issues you might encounter while us
 **To quickly find the solution you are looking for, we recommend using the Contents panel on the right hand side of this guide to quickly navigate to the section you are looking for.**
 
 **Alternatively, you can use the search feature at the top-right hand side of this page with the relevant keywords to look for solutions on a specific topic.**
+
 {% endhint %}
 
 {% hint style="info" %}
 If you come across any issue that is not listed in this guide, feel free to start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
+
 {% endhint %}
 
 ## Installation and Setup
@@ -100,6 +102,7 @@ However, here are some ballpark figures:
 
 {% hint style="info" %}
 Please note that these are conservative numbers. A single RudderStack node can handle **5x**+ event load at the peak; just that those events will get cached locally and then drained as per the regular throughput.
+
 {% endhint %}
 
 #### 3. How can I speed up the number of events sent to a destination?
@@ -141,6 +144,7 @@ Note that the open-source config-generator will only generate the source-destina
 
 {% hint style="warning" %}
 The self-hosted control plane \(UI\) does not support features like **Transformations** and **Live Events Debugger**, which are included for free in the [**RudderStack-hosted control plane**](https://app.rudderstack.com).
+
 {% endhint %}
 
 #### 2. I am using the RudderStack Config Generator to generate the `workspaceConfig.json` file. But when I import this file, I get an error:
@@ -344,6 +348,7 @@ maxFailedCountForJob = 8
 
 {% hint style="warning" %}
 Note that if a user event fails, the other events are not sent until the failed event is successfully sent or aborted \(as per above behavior\). This is to ensure event ordering for all events of a single user.
+
 {% endhint %}
 
 ## Throttling Behavior

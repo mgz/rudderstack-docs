@@ -12,12 +12,14 @@ The RudderStack AMP component makes it easy to send the event data from your AMP
 
 {% hint style="info" %}
 Since the AMP source sends the data directly to the RudderStack data plane, we support only `cloud-mode` destinations for AMP projects.
+
 {% endhint %}
 
 ## Getting Started
 
 {% hint style="info" %}
 You can learn more about the AMP project from their [official website](https://amp.dev/) if you are new to this domain. To get started and set up your AMP project, you might want to check out their [Quick Start guide](https://amp.dev/documentation/guides-and-tutorials/start/create/).
+
 {% endhint %}
 
 Once you are done with the initial setup of your AMP project, follow the steps below to start sending your event data to RudderStack:
@@ -26,6 +28,7 @@ Once you are done with the initial setup of your AMP project, follow the steps b
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) tutorial guide to learn how to add a source in RudderStack.
+
 {% endhint %}
 
 - Include the RudderStack AMP component before the closing `</head>` tag, as shown:
@@ -60,6 +63,7 @@ RudderStack's AMP analytics component includes an automatic page view. You can s
 
 {% hint style="warning" %}
 If you fail to provide the value for the `pageName` variable, RudderStack automatically sets the page name to `Unknown Page`
+
 {% endhint %}
 
 ```markup
@@ -116,6 +120,7 @@ You can send extra properties for your `page` or `track` event to add more infor
 
 {% hint style="warning" %}
 Prepend `properties.` with the `extraUrlParams` so that it can be parsed as the property value in RudderStack
+
 {% endhint %}
 
 ### Default Properties

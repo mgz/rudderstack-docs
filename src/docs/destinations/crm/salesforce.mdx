@@ -11,7 +11,9 @@ description: Step-by-step guide to set up Salesforce as a destination in RudderS
 RudderStack lets you identify your leads in Salesforce without having to use the REST APIs.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/salesforce)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/salesforce)**.**
 {% endhint %}
 
 ## Getting Started
@@ -25,6 +27,7 @@ Before configuring your source and destination on the RudderStack, please verify
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the source supports sending events to Salesforce, follow these steps:
@@ -33,6 +36,7 @@ Once you have confirmed that the source supports sending events to Salesforce, f
 
 {% hint style="info" %}
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
@@ -44,14 +48,17 @@ Follow our guide on [**How to Add a Source and Destination in RudderStack**](htt
 
 {% hint style="info" %}
 To know more about Salesforce Sandbox, click [**here**](https://help.salesforce.com/articleView?id=sf.deploy_sandboxes_parent.htm&type=5).
+
 {% endhint %}
 
 {% hint style="info" %}
 We **recommend** that you create a new Salesforce account to use it with RudderStack. This will protect any confidential information present in your existing Salesforce account. However, this is **entirely optional**. You can also use your existing Salesforce account.
+
 {% endhint %}
 
 {% hint style="info" %}
 To create a new account, go to **Setup** - **Administration Setup** - **Users** - **New User** and create a **System Administrator** profile. This should give RudderStack the required permissions to access the API.
+
 {% endhint %}
 
 ## Identify
@@ -93,12 +100,14 @@ When the `identify` method is called, RudderStack checks if the lead already exi
 
 {% hint style="warning" %}
 It is mandatory to include `'Salesforce':true` in every Salesforce integration object. As Salesforce has strict API limits, this is required in order to prevent the users from hitting their limits. By default, RudderStack does not send `identify` calls to Salesforce. Hence, any `identify` call that does not include `'Salesforce':true` in its payload will be ignored.
+
 {% endhint %}
 
 ### Updating Custom Fields in Salesforce
 
 {% hint style="info" %}
 If you wish to update custom fields in Salesforce using RudderStack, make sure that you first create those lead fields in Salesforce before sending the data through RudderStack. For more information on how to do this, check out the [**Salesforce docs**](https://help.salesforce.com/articleView?id=sf.adding_fields.htm&type=5).
+
 {% endhint %}
 
 As `lastName` and `company` are needed by the [**Salesforce Leads API**](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_lead.htm), the absence of either of these fields will result in RudderStack automatically appending the `'n/a'`string to both the fields - even if they have been specified in some previous request.
@@ -107,6 +116,7 @@ For example, if you wish to collect a custom trait in RudderStack named `newProp
 
 {% hint style="info" %}
 **Make sure you are consistent with your casing**. If the custom fields are created in camelCase, make sure sure that you send the traits to RudderStack in camelCase. If you're creating custom fields in snake_case, make sure you send the traits in the same format.
+
 {% endhint %}
 
 ## Updating Salesforce Objects
@@ -140,6 +150,7 @@ In the example above, RudderStack updates the `Contact` object in Salesforce wit
 
 {% hint style="info" %}
 By default, RudderStack creates a `Lead` object in Salesforce and maps the `traits` to it, as mentioned above. For other objects, RudderStack does not modify the `traits`; they are sent to Salesforce as it is.
+
 {% endhint %}
 
 ## FAQs

@@ -1,11 +1,12 @@
 # Home
 - label: "Home"
   link: "/"
-- label: "Get Started"
-  link: "/get-started"
-  items:
-    - label: "Install and Set Up RudderStack"
-      link: "/installing-and-setting-up-rudderstack"
-      items:
-        - - label: "Docker"
-            link: "/docker"
+# - label: "Getting Started"
+#   link: "/get-started"
+#   items:
+#     - label: "Install and Set Up RudderStack"
+#       link: "/get-started/installing-and-setting-up-rudderstack"
+#     - label: "Docker"
+#       link: "/get-started/installing-and-setting-up-rudderstack/docker"
+#     - label: "Kubernetes"
+#       link: "/get-started/installing-and-setting-up-rudderstack/kubernetes"

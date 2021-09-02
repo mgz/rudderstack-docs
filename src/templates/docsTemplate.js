@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import GraphQLErrorList from "../components/graphql-error-list"
-import DocsSidebar from "../components/docsSidebar";
+//import DocsSidebar from "../components/docsSidebar";
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
@@ -13,7 +13,8 @@ const Docs = props => {
 
   console.log('Docs data', props);
 
-  const pageContent = data.mdx.body || ""
+  const pageContent = data.mdx.body || "";
+
 
 
   if (errors) {
@@ -46,13 +47,13 @@ const Docs = props => {
         <meta property="og:type" content="article" /> 
       </Helmet>
 
-      <div className="flex min-h-screen font-custom">
-        <aside className="sidebar-nav sticky border-r border-gray-200">
-          <DocsSidebar />
+      <div className="flex min-h-screen font-custom text-base mx-auto docs-wrapper">
+        <aside className="sidebar-nav border-r border-grayColor-lightBorder">
+          {/* <DocsSidebar /> */}
         </aside>
         <main className="docs-main-content p-8">
           <MDXProvider>
-            <MDXRenderer frontmatter={data.frontmatter}>{data.mdx.body}</MDXRenderer>
+            <MDXRenderer>{pageContent}</MDXRenderer>
           </MDXProvider>
         </main>
       </div>

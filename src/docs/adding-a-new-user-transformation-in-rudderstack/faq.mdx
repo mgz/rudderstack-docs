@@ -17,7 +17,9 @@ RudderStack's Transformations feature lets you transform the events collected fr
 - They're easier to build and manage, and can be reused as well.
 
 {% hint style="success" %}
-Read more about why your data pipeline needs to have an efficient event transformations capability in our [blog](https://rudderstack.com/blog/the-future-of-data-pipeline-tools-must-include-better-transformations-than-etl-ever-had).
+Read more about why your data pipeline needs to have an efficient event
+transformations capability in our
+[blog](https://rudderstack.com/blog/the-future-of-data-pipeline-tools-must-include-better-transformations-than-etl-ever-had).
 {% endhint %}
 
 ## I used to write transformations like `function transform(events) {}`. Why am I not able to create new transformations this way?
@@ -34,6 +36,7 @@ You can. Simply define your transformation in the following manner:
 
 {% hint style="warning" %}
 This can cause a loss of the event metadata that RudderStack uses internally to maintain event ordering for you.
+
 {% endhint %}
 
 ## I cannot import libraries into my existing transformations. What do I do?

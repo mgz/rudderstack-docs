@@ -12,6 +12,7 @@ RudderStack supports Pinterest as a destination to which you can send your custo
 
 {% hint style="info" %}
 Find the implementation of this integration on our [GitHub](https://github.com/rudderlabs/rudder-sdk-js/tree/production/integrations/PinterestTag).
+
 {% endhint %}
 
 ## Getting Started
@@ -27,6 +28,7 @@ Before configuring your source and destination on the RudderStack, please verify
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Pinterest, perform the steps below:
@@ -35,6 +37,7 @@ Once you have confirmed that the platform supports sending events to Pinterest, 
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to add a source in RudderStack.
+
 {% endhint %}
 
 - After configuring your source, select the destination as **Pinterest Tag**. Give this destination a name and then click on **Next**.
@@ -76,6 +79,7 @@ This call will set the identification parameters to `test@email.com` and any suc
 
 {% hint style="info" %}
 Nothing appears in the network tab in your browser or in the tag helper extension after `identify()` is called. However, a hashed value for an `em` parameter is added in the next event call, in a JSON object encoded in the URL.
+
 {% endhint %}
 
 ## Track
@@ -158,7 +162,9 @@ The following properties are nested within the E-Commerce products array:
 | brand                     | `product_brand`         |
 
 {% hint style="success" %}
-If you wish to pass any extra properties other than what we support, you can use our **Custom Properties** section while configuring your Pinterest destination in RudderStack.
+If you wish to pass any extra properties other than what we support, you can
+use our **Custom Properties** section while configuring your Pinterest
+destination in RudderStack.
 {% endhint %}
 
 ### Custom Properties

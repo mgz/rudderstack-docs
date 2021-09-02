@@ -21,6 +21,7 @@ Before adding a **Device mode** destination libraries to RudderStack JS, the cor
 
 {% hint style="info" %}
 Check if the destination is already available in RudderStack destinations. If not, add a new destination by following our [Adding a New Destination Definition](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) tutorial.
+
 {% endhint %}
 
 The following screenshot demonstrates how to enable the native SDK to send events:
@@ -76,6 +77,7 @@ export { SampleIntegration }
 
 {% hint style="warning" %}
 The exported integration object must be under the **key name that matches the config-plane destination name.**
+
 {% endhint %}
 
 ![This exports the list of all native integrations](../../../.gitbook/assets/screenshot-2019-12-10-at-7.21.35-pm.png)
@@ -197,6 +199,7 @@ export default process.browser ? GA : GANode
 
 {% hint style="info" %}
 You can ignore the Node counterpart as it's legacy. We have a separate [Node.js SDK](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-node-sdk) for sending events to RudderStack \(in the server-side connection mode\)
+
 {% endhint %}
 
 The following is the code for adding the newly-added integration to the export list. The key name must be the same as the one configured in the config plane.
@@ -236,6 +239,7 @@ The native integrations should have the following methods for initializing the d
 
 {% hint style="info" %}
 RudderStack JavaScript SDK makes a call to the config plane to fetch all native SDK-enabled destinations, before constructing and initializing the integration object with the fetched configuration. The **`isLoaded`**method should return true when the destination is ready to accept events.
+
 {% endhint %}
 
 ## Contact Us

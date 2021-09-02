@@ -16,6 +16,7 @@ You can find this SDK in our [GitHub repository](https://github.com/rudderlabs/r
 
 {% hint style="warning" %}
 **As Bintray has sunset from 1st may, 2021, we're moving our SDK to Maven Central. All the versions from 1.0.1 will now be available in Maven Central only.**
+
 {% endhint %}
 
 We distribute our Java SDK through [Maven Central](https://search.maven.org). The recommended and easiest way to add the SDK to your project is through the Maven build system.
@@ -63,6 +64,7 @@ The `identify` call lets you associate a user to their actions as well as captur
 
 {% hint style="info" %}
 For a detailed explanation of the `identify` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 An example `identify` call is as shown:
@@ -95,6 +97,7 @@ The `track` call lets you record the users' actions along with their associated 
 
 {% hint style="info" %}
 For a detailed explanation of the `track` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 An example `track` call is as shown:
@@ -129,6 +132,7 @@ The `page` call allows you to record the page views on your website. It also rec
 
 {% hint style="info" %}
 For a detailed explanation of the `page` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 An example `page` call is as shown:
@@ -162,6 +166,7 @@ The `screen` call is the mobile equivalent of the page call. It allows you to re
 
 {% hint style="info" %}
 For a detailed explanation of the `screen` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 An example `screen` call is as shown:
@@ -195,6 +200,7 @@ The `group` call allows you to associate an identified user to a group - either 
 
 {% hint style="info" %}
 For a detailed explanation of the `group` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 An example `group` call is as shown:
@@ -228,6 +234,7 @@ The `alias` call allows you to associate one identity with another.
 
 {% hint style="info" %}
 `alias` is an advanced method. However, it is required when managing user identities in some destinations.
+
 {% endhint %}
 
 An example `alias` call is as shown:
@@ -251,12 +258,14 @@ The `alias` method parameters are as mentioned below:
 
 {% hint style="info" %}
 For a detailed explanation of the `alias` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+
 {% endhint %}
 
 ## Block Flush
 
 {% hint style="info" %}
 This feature is only available from version `1.0.1` onwards.
+
 {% endhint %}
 
 If you want to block `flush` until all the events are uploaded , the Java SDK has a builder method called `synchronize()` with default value `false` which needs to be set to `true` .

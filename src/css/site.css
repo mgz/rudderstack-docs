@@ -796,13 +796,74 @@ top: -60px;
 .speaker {
   background-color: #eef5f5;
 }
+/*=== Docs styles ===*/
+.sidebar-nav {
+  width: 300px;
+}
+
+.sidebar-nav-content a {
+  @apply block;
+  @apply p-1;
+}
+
+.docs-wrapper {
+  max-width: 1440px;
+}
+
+.docs-main-content {
+  width: calc(100% - 500px);
+}
+
+.docs-main-content p {
+  @apply text-grayColor-custom;
+}
 
 .docs-main-content h1 {
-  @apply text-3xl;
+  @apply text-4xl;
   @apply pb-6;
   @apply mb-6;
   @apply border-b;
-  @apply border-grayColor-lighter;
+  @apply border-grayColor-lightBorder;
+  @apply text-grayColor-docsText;
+}
+
+.docs-main-content h2 {
+  @apply mt-10;
+  @apply mb-3;
+  @apply text-3xl;
+  @apply text-grayColor-docsText;
+  @apply font-semibold;
+}
+
+.docs-main-content blockquote {
+  @apply px-5;
+  @apply py-3;
+  @apply my-4;
+  @apply border-l-2;
+  @apply border-primary;
+}
+
+.docs-main-content a {
+  @apply text-primary;
+  @apply hover:underline;
+}
+
+.docs-main-content blockquote strong {
+  @apply font-semibold;
+}
+
+.docs-main-content blockquote a {
+  @apply font-bold;
+}
+
+.docs-main-content ul {
+  @apply ml-5;
+  @apply list-disc;
+  @apply text-grayColor-custom;
+}
+
+.docs-main-content ul li {
+  @apply mb-3;
 }
 
 @media only screen and (min-width: 1023px) {

@@ -11,7 +11,9 @@ description: Step-by-step guide to send event data from RudderStack to Leanplum.
 RudderStack allows you to configure Leanplum as a destination and send your event data to it directly.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/leanplum)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/leanplum)**.**
 {% endhint %}
 
 ## Getting Started
@@ -27,6 +29,7 @@ Before configuring your source and destination on the RudderStack, please verify
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Leanplum, perform the steps below:
@@ -35,6 +38,7 @@ Once you have confirmed that the platform supports sending events to Leanplum, p
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
@@ -48,6 +52,7 @@ Leanplum should now be added and enabled as a destination in RudderStack.
 
 {% hint style="warning" %}
 If you choose to keep the **Use in Development Environment** flag as on, then please put your `developmentKey` in the `Client Key` field. Failing to do so will result to faulty initialization of the SDK and events will not be passed.
+
 {% endhint %}
 
 ## Adding Leanplum to your project
@@ -126,6 +131,7 @@ The code for Android is the same as below:
 RudderStack follows a similar pattern for iOS as well.
 
 While searching for `userId` in the persisted traits, RudderStack looks for either of these fields: `userId` and `id`.
+
 {% endhint %}
 
 ## Identify

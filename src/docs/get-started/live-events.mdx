@@ -14,6 +14,7 @@ With this feature, you can easily debug any errors in the failing events at a de
 
 {% hint style="warning" %}
 To use this feature, make sure you have configured your source and destination in RudderStack. For more information on adding a source and destination in RudderStack, follow this [**guide**](../connections/adding-source-and-destination-rudderstack.md).
+
 {% endhint %}
 
 ## **How to View the Live Events** <a id="how-to-view-the-live-events"></a>
@@ -39,6 +40,7 @@ To view the live events collected from your source in real-time, follow these st
 
 {% hint style="info" %}
 For details on the information available in the **Live Events** window, check the **Source Live Events** section.
+
 {% endhint %}
 
 ### Destinations
@@ -49,6 +51,7 @@ To view the live events sent to your destination in real-time, follow these step
 
 {% hint style="warning" %}
 Make sure your destination is configured in the **Cloud mode**. Refer to the [**Connection Modes**](../connections/rudderstack-connection-modes.md) guide for more information on the Cloud mode.
+
 {% endhint %}
 
 - Select the **Connections** option on your left nav bar and click on the destination for which you want to view the live events.
@@ -65,6 +68,7 @@ Make sure your destination is configured in the **Cloud mode**. Refer to the [**
 
 {% hint style="info" %}
 For details on the information available in the **Live Events** window, check the **Destination Live Events** section.
+
 {% endhint %}
 
 ## **Source Live Events**
@@ -76,7 +80,9 @@ The **Live Events** feature gives you real-time visibility into the source event
 - **Date** and time of the collected event.
 
 {% hint style="success" %}
-This feature is very handy in case you want to check if your source is correctly configured. For example, you can check if your JavaScript SDK loads correctly on your website.
+This feature is very handy in case you want to check if your source is
+correctly configured. For example, you can check if your JavaScript SDK loads
+correctly on your website.
 {% endhint %}
 
 ## **Destination Live Events**
@@ -105,11 +111,13 @@ You can click on the **See full error** option to see the error response, as sho
 As seen above, you were trying to send an `identify` event to Facebook Custom Audience, which the destination does not support. You can refer to the [**Custom Audience documentation**](../destinations/advertising/fb_custom_audience.md) to confirm that only `track` events are supported. As a result, when RudderStack tries sending the `identify` event to the destination, an error is thrown. RudderStack tries sending this event several times before marking it as aborted.
 
 {% hint style="success" %}
-The responses received from the destination help you in quickly identifying and resolving the issues.
+The responses received from the destination help you in quickly identifying
+and resolving the issues.
 {% endhint %}
 
 {% hint style="warning" %}
 Live events are shown for all the destinations. However, the **payload of the events** is not shown for some destinations like the [**object storage platforms**](../destinations/storage-platforms/) and the [**data warehouses**](../data-warehouse-integrations/) supported by RudderStack.
+
 {% endhint %}
 
 ## **FAQs**

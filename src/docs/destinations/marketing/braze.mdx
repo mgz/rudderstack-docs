@@ -11,7 +11,9 @@ Braze is an industry-leading customer engagement platform. It allows you to bett
 With RudderStack's SDK for mobile and web platforms, you can send your in-app event data to Braze directly for contextual analysis.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/braze)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/braze)**.**
 {% endhint %}
 
 ## Getting Started
@@ -25,12 +27,14 @@ Before getting started, please determine whether the platform you are sending yo
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 In order to start sending data to Braze, you will first need to add it as a destination to the source from which you are sending the event data.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 Please follow these steps once you have added a source in the RudderStack app:
@@ -39,6 +43,7 @@ Please follow these steps once you have added a source in the RudderStack app:
 
 {% hint style="info" %}
 When creating a new Braze Rest API Key for your app, you will only need to select the **users.track**, **users.identify**, and **users.alias.new** endpoints under the **User Data** permissions
+
 {% endhint %}
 
 - Once you have added the source, configure the Braze settings to complete the setup.
@@ -150,6 +155,7 @@ rudderanalytics.identify("userid", {
 
 {% hint style="info" %}
 Ideally, the `identify` method is called when the user registers to the app for the first time. It can also be called after the user logs into the app, or updates their information.
+
 {% endhint %}
 
 ## Track

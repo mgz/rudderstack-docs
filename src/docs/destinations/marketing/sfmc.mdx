@@ -13,7 +13,9 @@ description: >-
 RudderStack allows you to integrate your source to Salesforce Marketing Cloud and send data to Salesforce Marketing Data Extensions.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/sfmc)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/sfmc)**.**
 {% endhint %}
 
 ## Getting Started
@@ -27,6 +29,7 @@ Before configuring your source and destination on the RudderStack, please verify
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Salesforce Marketing, perform the steps below:
@@ -35,6 +38,7 @@ Once you have confirmed that the platform supports sending events to Salesforce 
 
 {% hint style="info" %}
 Follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
@@ -65,6 +69,7 @@ Follow our guide on [How to Add a Source and Destination in RudderStack](https:/
 
 {% hint style="info" %}
 You can find the external key in the SFMC interface by going to **Data & Analytics**, and navigating to **Contact Builder** - **Data Extensions**. The extension's name can be found in the **External Key** column.
+
 {% endhint %}
 
 ![Salesforce Connection Settings for Track](../../.gitbook/assets/sfmc-2.png)
@@ -75,10 +80,12 @@ You can find the external key in the SFMC interface by going to **Data & Analyti
 
 {% hint style="warning" %}
 If you do not map an event to an External Key and it gets sent to SFMC, you may receive a message saying `"Event not mapped for this track call"`
+
 {% endhint %}
 
 {% hint style="info" %}
 You can find the external key in the SFMC interface by going to **Data & Analytics**, and navigating to **Contact Builder** - **Data Extensions**. The extension's name can be found in the **External Key** column.
+
 {% endhint %}
 
 - **Map events to Primary Key:** For all events going to a Data Extension, there needs to be a `Primary Key`. By default, if you do not use this setting, RudderStack will create a `Primary Key` called `Contact Key` and assign it to the `userId` of the event. If no `userId` is present, then it will be assigned to the `email`. Use this setting if you would like to map your own `Primary Key`. In the "Event Name" field, indicate the name of the event you would like to choose your own `Primary Key` for. Then choose what key from the event payload you would like to act as the `Primary Key`. The key should be present in your `event.properties` and ensure that it is set as a `Primary Key` in your SFMC Data Extension. You can add multiple primary keys by separating them with commas. \*\*\*\*
@@ -92,10 +99,12 @@ In SFMC, keys that are not present in the selected data extension are ignored, s
 
 {% hint style="warning" %}
 All attributes in the Data Extension should be created in title case, regardless of the casing used in your RudderStack `identify` or `track` calls. When RudderStack sends these calls to SFMC, they are first transformed into title case.
+
 {% endhint %}
 
 {% hint style="info" %}
 A Primary Key for the Identify Data Extension called **Contact Key** is required to be created. RudderStack will use this to link the users to SFMC's built-in **Contact Key** key. This field will be populated with `userId` or `email` by default during the `identify` calls.
+
 {% endhint %}
 
 For setting up Primary Keys in Track calls, you can set up different primary keys for various events. If no primary key is set, the default primary key will be **Contact Key**. You can specify multiple, comma-separated primary keys if you have multiple primary keys in your data extension.
@@ -128,18 +137,22 @@ rudderanalytics.identify("userid", {
 
 {% hint style="info" %}
 Identify events will create or update the contacts in Salesforce marketing cloud if **Do Not Create or Update Contacts** is turned off. Otherwise, no creation or updating of contacts will occur.
+
 {% endhint %}
 
 {% hint style="warning" %}
 `UserId` or `email` trait is required in every `identify` call, otherwise the event will not be triggered.
+
 {% endhint %}
 
 {% hint style="warning" %}
 Salesforce marketing cloud does not allow colon characters \(":"\) in the **Contact Key** field, so they must be removed from any `userId` fields. SFMC doesn't handle nested objects.
+
 {% endhint %}
 
 {% hint style="warning" %}
 SFMC only accepts ISO-8601 type dates and rejects any other types if the attribute is of DateTime. For example, refer to the `createdAt` trait in the above snippet.
+
 {% endhint %}
 
 ## Track
@@ -156,6 +169,7 @@ Enter your external key and the primary key against each event. If no primary ke
 
 {% hint style="info" %}
 You can also turn on UUID for particular events. If it is on, you can set UUID as a primary key in your data extensions. The `messageId` is then set as the UUID.
+
 {% endhint %}
 
 ## Data Formatting and Mapping
@@ -166,6 +180,7 @@ The table below lists the RudderStack context properties available for SFMC and 
 
 {% hint style="info" %}
 Note that camel cases and snake cases will be formatted to title cases.
+
 {% endhint %}
 
 | **RudderStack Context Properties** | **SFMC Attribute name** |
