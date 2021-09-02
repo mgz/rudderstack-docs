@@ -32,6 +32,7 @@ const Image = props => {
           }
         }
       `}  
+      
       /* Production query below */
       // query={graphql`
       //   query {
