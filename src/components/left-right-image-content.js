@@ -2,6 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
+import { StaticImage } from "gatsby-plugin-image"
 
 const LeftRightImgCnt = props => {
   const maintitle = props.leftrightcontentmaintitle
@@ -157,19 +158,30 @@ const LeftRightImgCnt = props => {
                         >
                           <PortableText blocks={portabletext} />
                         </div>
-                        <div className="w-full flex flex-row flex-wrap paragraph-check">
+                        <div
+                          className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
+                        >
                           {content.pointer_contents &&
                             content.pointer_contents.map(row => {
                               return (
-                                <p
-                                  className={`${
-                                    content.pointer_content_cols === "2"
-                                      ? "w-1/2"
-                                      : "w-full"
-                                  } my-2 font-bold text-grayColor-custom text-xl `}
+                                <div
+                                  key={row}
+                                  // className={`${
+                                  //   content.pointer_content_cols === "2"
+                                  //     ? "w-1/2"
+                                  //     : "w-full"
+                                  // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+                                  className={`my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
                                 >
-                                  {row}
-                                </p>
+                                  <div className="w-10 h-10 pt-1 px-2">
+                                    <StaticImage
+                                      src="../images/check-icon.svg"
+                                      alt="Check"
+                                      placeholder="tracedSVG"
+                                    />
+                                  </div>
+                                  <p className="w-full">{row}</p>
+                                </div>
                               )
                             })}
                         </div>
@@ -316,19 +328,30 @@ const LeftRightImgCnt = props => {
                       >
                         <PortableText blocks={portabletext} />
                       </div>
-                      <div className="w-full flex flex-row flex-wrap paragraph-check">
+                      <div
+                        className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
+                      >
                         {content.pointer_contents &&
                           content.pointer_contents.map(row => {
                             return (
-                              <p
-                                className={`${
-                                  content.pointer_content_cols === "2"
-                                    ? "w-1/2"
-                                    : "w-full"
-                                } my-2 font-bold text-grayColor-custom text-xl `}
+                              <div
+                                key={row}
+                                // className={`${
+                                //   content.pointer_content_cols === "2"
+                                //     ? "w-1/2"
+                                //     : "w-full"
+                                // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+                                className={`my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
                               >
-                                {row}
-                              </p>
+                                <div className="w-10 h-10 pt-1 px-2">
+                                  <StaticImage
+                                    src="../images/check-icon.svg"
+                                    alt="Check"
+                                    placeholder="tracedSVG"
+                                  />
+                                </div>
+                                <p className="w-full">{row}</p>
+                              </div>
                             )
                           })}
                       </div>

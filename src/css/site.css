@@ -105,18 +105,22 @@ body {
   height: 100%;
   background-position: top right;
 } */
-
-
-.paragraph-check p::before{
+/* 
+.paragraph-check {
+  position: relative;
+}
+.paragraph-check p {
+  padding-left: 32px;
+}
+.paragraph-check p::before {
   position: absolute;
   content: "";
-  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xMC4wNDcyIDEyLjU3MTNMMTEuMzMyOSAxMy44NTdMMTUuMTg5OCAxMEwxMS4zMzI5IDYuMTQzMDlMMTAuMDQ3MiA3LjQyODc0TDExLjcwOTQgOS4wOTA5NUg0Ljg1NzQ3VjEwLjkwOTFIMTEuNzA5NEwxMC4wNDcyIDEyLjU3MTNaIiBmaWxsPSJibGFjayIvPg0KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy4wNzExIDE3LjA3MTFDMjAuOTc2MyAxMy4xNjU4IDIwLjk3NjMgNi44MzQxOCAxNy4wNzExIDIuOTI4OTNDMTMuMTY1OCAtMC45NzYzMTEgNi44MzQxOCAtMC45NzYzMTEgMi45Mjg5MyAyLjkyODkzQy0wLjk3NjMxMSA2LjgzNDE4IC0wLjk3NjMxMSAxMy4xNjU4IDIuOTI4OTMgMTcuMDcxMUM2LjgzNDE4IDIwLjk3NjMgMTMuMTY1OCAyMC45NzYzIDE3LjA3MTEgMTcuMDcxMVpNMTUuNzg1NCAxNS43ODU0QzE4Ljk4MDYgMTIuNTkwMiAxOC45ODA2IDcuNDA5NzggMTUuNzg1NCA0LjIxNDU4QzEyLjU5MDIgMS4wMTkzOCA3LjQwOTc4IDEuMDE5MzggNC4yMTQ1OCA0LjIxNDU4QzEuMDE5MzggNy40MDk3OCAxLjAxOTM4IDEyLjU5MDIgNC4yMTQ1OCAxNS43ODU0QzcuNDA5NzggMTguOTgwNiAxMi41OTAyIDE4Ljk4MDYgMTUuNzg1NCAxNS43ODU0WiIgZmlsbD0iYmxhY2siLz4NCjwvc3ZnPg0K);
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIGZpbGw9IiM0OTNEOEQiLz4KPHBhdGggZD0iTTguODU2OTUgMTMuNzEzOUw1IDkuODU2OTVMNi4yODU2NSA4LjU3MTNMOC44NTY5NSAxMS4xNDI2TDEzLjk5OTUgNkwxNS4yODUyIDcuMjg1NjVMOC44NTY5NSAxMy43MTM5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
   background-position: center;
   width: 1.25rem;
   height: 1.25rem;
-  top: 0.25rem;
-  left: 0px;
-}
+  left : 8px
+} */
 
 .gradient-enable {
   background-image: url("../images/banner-gradiant.jpg");
@@ -308,8 +312,6 @@ body {
   border-color: transparent transparent #ffffff transparent;
   z-index: 9998; */
 }
-
-
 
 .lr-icon {
   @apply text-blueNew-magenta;

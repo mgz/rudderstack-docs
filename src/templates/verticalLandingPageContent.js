@@ -73,7 +73,7 @@ const VerticalLandingPageContent = ({ data, location }) => {
 
             return (
               <section key={section._key} id="our_logos">
-                <OurLogo key={section._key} {...l_ourLogo_info.node._rawOurLogos} />
+                <OurLogo key={section._key} {...l_ourLogo_info.node._rawOurLogos} removeSectionVerticalMargin={true} />
               </section>
             )
           }

@@ -1,46 +1,23 @@
 import React from "react"
-// import $ from "jquery"
-// import "owl.carousel/dist/assets/owl.carousel.css"
-// import "owl.carousel"
 import Image from "./image"
 
 function OurLogo(props) {
-  // if (typeof window !== "undefined") {
-  //   $(window.document).ready(function () {
-  //     $(".logo-slider").owlCarousel({
-  //       loop: true,
-  //       margin: 10,
-  //       nav: false,
-  //       dots: false,
-  //       autoplay: true,
-  //       autoplayTimeout: 5000,
-  //       smartSpeed: 5000,
-  //       responsive: {
-  //         0: {
-  //           items: 4,
-  //         },
-  //         600: {
-  //           items: 8,
-  //         },
-  //         1000: {
-  //           items: 8,
-  //         },
-  //       },
-  //     })
-  //   })
-  // }
-
   const maintitle = props.customHeaderText || props.ourlogotitle
   const logoimages = props.outlogoimage
-  console.log("props", props)
   return (
-    <section className="max-w-6xl px-4 my-12 md:px-3 mx-auto md:mb-23 sm:my-24 flex flex-wrap flex-col md:flex-row items-center">
+    <section
+      className={`max-w-6xl px-4 ${
+        props.removeSectionVerticalMargin ? "" : "my-12"
+      }  md:px-3 mx-auto sm:${
+        props.removeSectionVerticalMargin ? "" : "my-24"
+      } flex flex-wrap flex-col md:flex-row items-center`}
+    >
       <div
         className={`flex flex-col w-full justify-center items-start md:text-left ${
           props.title_alignment === "left" ? "" : "max-w-2xl mx-auto"
         }`}
       >
-        <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10 text-center normal-case">
+        <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10 text-center normal-case md:mx-0 mx-auto">
           {maintitle}
         </h3>
       </div>
