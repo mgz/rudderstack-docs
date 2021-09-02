@@ -17,7 +17,11 @@ const LeftRightImgCnt = props => {
       <section className="left-right-section md:px-0 pb-6 md:pb-12">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           {(smalltitle !== "" || maintitle !== "") && (
-            <div className={`flex flex-col w-full justify-center items-start md:text-${props.header_alignment !== "" ? props.header_alignment : 'left'} mx-auto max-w-screen-md`}>
+            <div
+              className={`flex flex-col w-full justify-center items-start md:text-${
+                props.header_alignment !== "" ? props.header_alignment : "left"
+              } mx-auto max-w-screen-md`}
+            >
               {smalltitle !== "" && (
                 <p
                   className={`mt-20 mb-2 ${
@@ -40,7 +44,7 @@ const LeftRightImgCnt = props => {
           )}
           {contents.map((content, i) =>
             (() => {
-              // console.log("ccc", content)
+              console.log("ccc", content)
               if (content.condition === "right") {
                 const imgcondition = content.imageVideoConditionBlock.condition
                 const portabletext = content.content
@@ -152,6 +156,22 @@ const LeftRightImgCnt = props => {
                           }`}
                         >
                           <PortableText blocks={portabletext} />
+                        </div>
+                        <div className="w-full flex flex-row flex-wrap paragraph-check">
+                          {content.pointer_contents &&
+                            content.pointer_contents.map(row => {
+                              return (
+                                <p
+                                  className={`${
+                                    content.pointer_content_cols === "2"
+                                      ? "w-1/2"
+                                      : "w-full"
+                                  } my-2 font-bold text-grayColor-custom text-xl `}
+                                >
+                                  {row}
+                                </p>
+                              )
+                            })}
                         </div>
                         <div className="mt-4 flex items-center">
                           {(() => {
@@ -295,6 +315,22 @@ const LeftRightImgCnt = props => {
                         }`}
                       >
                         <PortableText blocks={portabletext} />
+                      </div>
+                      <div className="w-full flex flex-row flex-wrap paragraph-check">
+                        {content.pointer_contents &&
+                          content.pointer_contents.map(row => {
+                            return (
+                              <p
+                                className={`${
+                                  content.pointer_content_cols === "2"
+                                    ? "w-1/2"
+                                    : "w-full"
+                                } my-2 font-bold text-grayColor-custom text-xl `}
+                              >
+                                {row}
+                              </p>
+                            )
+                          })}
                       </div>
                       <div className="mt-4 flex items-center">
                         {(() => {

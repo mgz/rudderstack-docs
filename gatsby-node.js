@@ -478,20 +478,26 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   createRedirect({
-    fromPath: "/blog/introducing-rudderstack-cloud-the-warehouse-first-cdp-for-developers-2",
-    toPath: "/blog/introducing-rudderstack-cloud-the-warehouse-first-cdp-for-developers",
+    fromPath:
+      "/blog/introducing-rudderstack-cloud-the-warehouse-first-cdp-for-developers-2",
+    toPath:
+      "/blog/introducing-rudderstack-cloud-the-warehouse-first-cdp-for-developers",
     isPermanent: true,
   })
 
   createRedirect({
-    fromPath: "/blog/how-proposify-leverages-real-time-data-for-inbound-attribution-marketing-and-analytics",
-    toPath: "/blog/proposifys-data-stack-explained-making-marketing-channel-analytics-and-inbound-attribution-a-solvable-problem-with-rudderstack",
+    fromPath:
+      "/blog/how-proposify-leverages-real-time-data-for-inbound-attribution-marketing-and-analytics",
+    toPath:
+      "/blog/proposifys-data-stack-explained-making-marketing-channel-analytics-and-inbound-attribution-a-solvable-problem-with-rudderstack",
     isPermanent: true,
   })
 
   createRedirect({
-    fromPath: "/blog/RudderStack-gitHub-sponsors-making-open-source-more-sustainable-for-developers",
-    toPath: "/blog/rudderstack-github-sponsors-making-open-source-more-sustainable-for-developers",
+    fromPath:
+      "/blog/RudderStack-gitHub-sponsors-making-open-source-more-sustainable-for-developers",
+    toPath:
+      "/blog/rudderstack-github-sponsors-making-open-source-more-sustainable-for-developers",
     isPermanent: true,
   })
 
@@ -502,8 +508,10 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   createRedirect({
-    fromPath: "/resources/watch-now-how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions",
-    toPath: "/video-library/how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions",
+    fromPath:
+      "/resources/watch-now-how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions",
+    toPath:
+      "/video-library/how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions",
     isPermanent: true,
   })
 
@@ -757,7 +765,6 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-
   const guides = await graphql(`
     {
       allSanityContent {
@@ -769,20 +776,53 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `);
+  `)
 
   if (guides.errors) {
-    throw guides.errors;
+    throw guides.errors
   }
 
-  const projects = guides.data.allSanityContent.edges || [];
+  const projects = guides.data.allSanityContent.edges || []
   projects.forEach((edge, index) => {
-    const path = `/guides/${edge.node.slug}`;
+    const path = `/guides/${edge.node.slug}`
     createPage({
       path,
       component: require.resolve("./src/templates/contentGuides.js"),
       context: { slug: edge.node.slug },
-    });
-  });
+    })
+  })
 
+  //vertical pages
+  const l_VertialPages = await graphql(`
+    {
+      allSanityVerticalLandingPage {
+        edges {
+          node {
+            title
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (l_VertialPages.errors) {
+    throw l_VertialPages.errors
+  }
+
+  const verticalPages =
+    l_VertialPages.data.allSanityVerticalLandingPage.edges || []
+  verticalPages.forEach((edge, index) => {
+    const path = `/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve(
+        "./src/templates/verticalLandingPageContent.js"
+      ),
+      context: { slug: edge.node.slug.current },
+    })
+  })
 }
