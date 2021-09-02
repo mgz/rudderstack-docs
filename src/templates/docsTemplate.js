@@ -11,7 +11,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 const Docs = props => {
   const { data, errors } = props;
 
-  console.log('Docs data', props);
+  //console.log('Docs data', props);
 
   const pageContent = data.mdx.body || ""
 
@@ -46,13 +46,13 @@ const Docs = props => {
         <meta property="og:type" content="article" /> 
       </Helmet>
 
-      <div className="flex min-h-screen font-custom">
-        <aside className="sidebar-nav sticky border-r border-gray-200">
+      <div className="flex min-h-screen font-custom mx-auto docs-wrapper">
+        <aside className="sidebar-nav sticky border-r border-grayColor-lightBorder py-5">
           <DocsSidebar />
         </aside>
         <main className="docs-main-content p-8">
           <MDXProvider>
-            <MDXRenderer frontmatter={data.frontmatter}>{data.mdx.body}</MDXRenderer>
+            <MDXRenderer frontmatter={data.frontmatter}>{pageContent}</MDXRenderer>
           </MDXProvider>
         </main>
       </div>

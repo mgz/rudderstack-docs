@@ -28,6 +28,8 @@ module.exports = {
       },
       red: {
         error: "#FF0000",
+        dangerBorder: "#ff4642",
+        dangerBg: "#f18a88"
       },
       grayColor: {
         custom: "#4E4E4E",
@@ -36,9 +38,15 @@ module.exports = {
         BgGray: "#FAFAFA",
         priceCardBorder: "#E1E1E1",
         dark: "#101836",
+        lightBorder: "#DEE2E7",
+        docsText: "#2F353F"
       },
       whiteColor: {
         custom: "#ffffff",
+      },
+      orange:{
+        warningBorder: "#f77d05",
+        warningBg: "#f1be8d"
       },
     },
     extend: {

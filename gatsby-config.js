@@ -272,12 +272,12 @@ module.exports = {
       }
     },
     {
-      resolve: "@rocketseat/gatsby-theme-docs-core",
+      resolve: "@rocketseat/gatsby-theme-docs",
       options: {
         basePath: `/docs`,
         docsPath: `src/docs`,
         withMdx: false,
-        configPath: `src/docsconfig`
+        configPath: `src/docsconfig`,
       }
     }
   ],

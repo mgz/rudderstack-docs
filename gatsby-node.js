@@ -771,7 +771,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const docPages = docPages_query.data.allMdx.nodes || []
   docPages.forEach((edge, index) => {
     const path = `${edge.frontmatter.slug}`
-    console.log('docsPath', edge.frontmatter.slug);
+    //console.log('docsPath', edge.frontmatter.slug);
 
     createPage({
       path,
