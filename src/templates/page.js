@@ -58,7 +58,6 @@ const Page = props => {
     )
   }
 
-  console.log("all data page", data)
   let l_section_info
   const page = data.page || data.route.page
   const content = (page._rawPagebuildersectionarray || [])
