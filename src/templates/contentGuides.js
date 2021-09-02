@@ -29,16 +29,15 @@ const Singlecontent = ({ data }) => {
         />
         <meta name="description" content={data.section.meta_desc} />
         <meta property="og:description" content={data.section.meta_desc} />
-        <meta
-          property="twitter:description"
-          content={data.section.meta_desc}
-        />
+        <meta property="twitter:description" content={data.section.meta_desc} />
         <meta property="og:type" content="article" />
       </Helmet>
-      <div className="font-custom bg-whiteColor-custom" id="guides-container">
-        <Header title={section.title} excerpt={section._rawExcerpt} />
-        <div className="max-w-6xl mx-auto">
-          <Sections section={section} />
+      <div className="font-custom bg-whiteColor-custom">
+        <div id="guides-container">
+          <Header title={section.title} excerpt={section._rawExcerpt} />
+          <div className="max-w-6xl mx-auto">
+            <Sections section={section} />
+          </div>
         </div>
 
         <section name="footer_section_for_demo">
@@ -51,7 +50,6 @@ const Singlecontent = ({ data }) => {
 
 export const query = graphql`
   query GetSingleContent($slug: String) {
-    
     section: sanityContent(slug: { eq: $slug }) {
       _key
       title
