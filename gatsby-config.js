@@ -259,7 +259,7 @@ module.exports = {
       resolve: "@rocketseat/gatsby-theme-docs",
       options: {
         basePath: `/docs`,
-        docsPath: `src/docs`,
+        docsPath: `/`,
         configPath: `src/docsconfig`
       }
     }
