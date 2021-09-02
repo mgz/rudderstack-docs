@@ -52,7 +52,7 @@ const MainNavigationMenuLink = props => {
                           className={`py-2 lg:py-6 ${
                             submenugroup.length - 1 === idx
                               ? ""
-                              : "lg:border-b lg:border-grayColor-lighter-2x lg:border-r"
+                              : "lg:border-grayColor-lighter-2x lg:border-r"
                           } `}
                         >
                           <div className="flex flex-row lg:flex-col text-blueNew-midnight ">
