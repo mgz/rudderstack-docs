@@ -8,7 +8,7 @@ module.exports = {
     author: `@gatsbyjs`,
     siteUrl: "https://rudderstack.com",
   },
-  pathPrefix: 'src/docs',
+ //pathPrefix: '/src/docs',
   plugins: [
     `gatsby-plugin-postcss`,
     {
@@ -258,9 +258,9 @@ module.exports = {
     {
       resolve: "@rocketseat/gatsby-theme-docs",
       options: {
-        basePath: `/docs`,
+        basePath: `/src/docs`,
         docsPath: `/`,
-        configPath: `src/docsconfig`
+        configPath: `/src/docsconfig`
       }
     }
   ],
