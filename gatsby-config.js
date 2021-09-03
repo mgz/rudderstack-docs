@@ -255,7 +255,7 @@ module.exports = {
         path: `${__dirname}/src/docs`,
       },
     },
-    {
+    /* {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx",".md"],
@@ -270,13 +270,12 @@ module.exports = {
           }
         ]
       }
-    },
+    }, */
     {
       resolve: "@rocketseat/gatsby-theme-docs",
       options: {
         basePath: `/docs`,
         docsPath: `src/docs`,
-        withMdx: false,
         configPath: `src/docsconfig`,
       }
     }

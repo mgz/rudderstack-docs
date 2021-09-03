@@ -29,7 +29,7 @@ module.exports = {
       red: {
         error: "#FF0000",
         dangerBorder: "#ff4642",
-        dangerBg: "#f18a88"
+        dangerBg: "#f5c3c2"
       },
       grayColor: {
         custom: "#4E4E4E",

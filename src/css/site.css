@@ -933,33 +933,67 @@ top: -60px;
   @apply text-secondary;
   @apply px-5;
   @apply py-2;
+  @apply pl-12;
   @apply bg-blueNew-skyblue;
   @apply border-l-2;
   @apply border-blueNew-custom;
   @apply relative;
   @apply mb-3;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .warningBlock {
   @apply text-secondary;
   @apply px-5;
   @apply py-2;
+  @apply pl-12;
   @apply bg-orange-warningBg;
   @apply border-l-2;
   @apply border-orange-warningBorder;
   @apply relative;
   @apply mb-3;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .dangerBlock {
   @apply text-secondary;
   @apply px-5;
   @apply py-2;
+  @apply pl-12;
   @apply bg-red-dangerBg;
   @apply border-l-2;
   @apply border-red-dangerBorder;
   @apply relative;
   @apply mb-3;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.infoBlock:before {
+  content: url("../images/info-icon.svg");
+  width: 1em;
+  height: 1em;
+  @apply absolute;
+  @apply top-1/2;
+  transform: translateY(-50%);
+  @apply left-3;
+}
+.warningBlock:before {
+  content: url("../images/warning-icon.svg");
+  width: 1em;
+  height: 1em;
+  @apply absolute;
+  @apply top-1/2;
+  transform: translateY(-50%);
+  @apply left-3;
+}
+.dangerBlock:before {
+  content: url("../images/danger-icon.svg");
+  width: 1em;
+  height: 1em;
+  @apply absolute;
+  @apply top-1/2;
+  transform: translateY(-50%);
+  @apply left-3;
 }
 
 @media (max-width: 992px) {
