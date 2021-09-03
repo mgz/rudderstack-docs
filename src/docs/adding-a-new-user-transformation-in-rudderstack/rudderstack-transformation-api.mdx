@@ -18,10 +18,12 @@ You can authenticate your account when using the API by including your **email a
 
 {% hint style="warning" %}
 It is mandatory to generate your access token before you make any API calls. If you have not generated your access token visit our [**Access Token**](api-access-token.md) page.
+
 {% endhint %}
 
 {% hint style="danger" %}
 Any API requests without the authentication will fail.
+
 {% endhint %}
 
 You can also pass your access token in the authorization headers, as shown:
@@ -43,7 +45,8 @@ Some examples are as shown:
 - Headers **- `Basic {Base64Encoded(myemailaddressis@gmail.com:1pHxUIA3jmxS2ip01zY696F80j7)}`**
 
 {% hint style="success" %}
-To make a successful request all of the upcoming endpoints should include this header.
+To make a successful request all of the upcoming endpoints should include this
+header.
 {% endhint %}
 
 ## Transformations
@@ -51,7 +54,9 @@ To make a successful request all of the upcoming endpoints should include this h
 RudderStack transformations are responsible for converting the received event data into a suitable destination-specific format. All the transformation codes are written in JavaScript.
 
 {% hint style="success" %}
-We also support [user-specific transformations](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack) for real-time operations, such as aggregation and sampling.
+We also support [user-specific
+transformations](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack)
+for real-time operations, such as aggregation and sampling.
 {% endhint %}
 
 Transformations help you to create a user-defined code that allow you to route your events in a manner that is suitable for your destinations.
@@ -191,7 +196,8 @@ Creating a transformation can be done in one of the two ways:
 **`publish: false` -** In this case, we only create revisions for the transformation, which means you cannot connect any destinations to it. It cannot be used for any incoming event traffic. However, if you wish to publish some revisions of transformations you can do so using our **Publish API.**
 
 {% hint style="success" %}
-We will be using these two terms **Published** and **Revisions** for transformations and libraries throughout our docs**.**
+We will be using these two terms **Published** and **Revisions** for
+transformations and libraries throughout our docs**.**
 {% endhint %}
 
 An example is as shown:
@@ -915,6 +921,7 @@ Code of the library.
 
 {% hint style="warning" %}
 Updating a library with publish has same flow as for transformations.
+
 {% endhint %}
 
 A sample request is as shown:
@@ -1239,6 +1246,7 @@ A few things to note:
 Whenever you call the `publish` API , we run tests in our server to make sure you won't save any transformation/libraries code that can lead to any exceptions.
 
 In case if your publish is failing, make sure to check your transformation code and the libraries that it is referring to.
+
 {% endhint %}
 
 ## Contact Us

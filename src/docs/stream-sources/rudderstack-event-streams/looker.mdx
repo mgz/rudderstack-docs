@@ -16,10 +16,12 @@ After creating your views in Looker, you need to set-up [Looker actions](https:/
 
 {% hint style="warning" %}
 While RudderStack supports teams and individual workspaces in its **Enterprise edition** - Looker does not allow for individual Action Hub configurations for different members of the same organization.
+
 {% endhint %}
 
 {% hint style="info" %}
 If you want to send the output of different Looks to different RudderStack sources, you will need to host custom instances of Looker Action Hub. Looker themselves provide direction for doing this - please refer to their [documentation](https://docs.looker.com/sharing-and-publishing/action-hub#setting_up_a_local_action_hub_server).
+
 {% endhint %}
 
 One can enable [RudderStack Actions](https://github.com/rudderlabs/actions) on Looker as below:
@@ -30,6 +32,7 @@ RudderStack hosts a Looker [Action Hub Server](https://docs.looker.com/sharing-a
 
 {% hint style="info" %}
 The RudderStack Action Hub Server can be found at [https://looker-action-hub.rudderstack.com](https://looker-action-hub.rudderstack.com)
+
 {% endhint %}
 
 {% hint style="info" %}
@@ -37,6 +40,7 @@ The RudderStack Action Hub Server can be found at [https://looker-action-hub.rud
 #### **The authorization token to be used is:**
 
 `75805209b45a55494d0c27d4eb91fbf6bc7fb1a63dfcd9260fe65daee584737b/ea4e074e71c1af9c07bf71f69c1addf7b9a30d458bd7aea4b4e60d6a6a122277b59210186edb7cf21a5ff53a29c68fb89ff5aaf5019570c8a5131484a11e2e3e`
+
 {% endhint %}
 
 ![RudderStack-hosted Action Hub](../../.gitbook/assets/image%20%2828%29.png)
@@ -59,10 +63,12 @@ When defining your columns for the Looker models attached to the look that you w
 
 {% hint style="info" %}
 In **some** specific cases - e.g. Redis - the `user_id` field always needs to be present, even if the `email` field is present.
+
 {% endhint %}
 
 {% hint style="info" %}
 The other user and activity columns will be sent as traits or properties along with the payload that is being sent to RudderStack by the above three actions.
+
 {% endhint %}
 
 A sample `track` payload from the look's row data sent by the **RudderStack Track** action is as below:
@@ -108,6 +114,7 @@ A sample `track` payload from the look's row data sent by the **RudderStack Trac
 
 {% hint style="info" %}
 The column names in your looks are transformed as `<Looker view name>.<column name>` in the payload sent to RudderStack by the RudderStack actions. If you want to change the names to your end destination needs, you can use our User-Transformer feature to transform them.
+
 {% endhint %}
 
 ## Contact Us

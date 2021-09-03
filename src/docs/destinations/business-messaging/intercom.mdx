@@ -12,10 +12,13 @@ RudderStack allows you to send your event data from a variety of sources to Inte
 
 {% hint style="warning" %}
 **Please note that this documentation is written for Intercom v1.4.**
+
 {% endhint %}
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/intercom)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/intercom)**.**
 {% endhint %}
 
 ## Getting Started
@@ -29,6 +32,7 @@ To enable sending events to Intercom, you will first need to add it as a destina
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have ascertained that the source platform is supported by Intercom, please follow these steps:
@@ -37,6 +41,7 @@ Once you have ascertained that the source platform is supported by Intercom, ple
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination, and click on **Next**. You should then see the following screen:
@@ -125,6 +130,7 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 
 {% hint style="info" %}
 Users will be prompted for the permission to access the photo library only when they tap the button to upload their image/s.
+
 {% endhint %}
 {% endtab %}
 {% endtabs %}
@@ -155,6 +161,7 @@ The `identify` call can be used to :
 
 {% hint style="info" %}
 The **Last Seen** feature of the `identify` call has not been implemented yet. Please stay tuned!
+
 {% endhint %}
 
 The following RudderStack properties are matched to Intercom's properties -
@@ -192,6 +199,7 @@ rudderanalytics.track("Product bought", {
 
 {% hint style="info" %}
 All the traits provided in the `track` call will be converted as per [Intercom's API](https://developers.intercom.com/intercom-api-reference/reference#event-metadata-types).
+
 {% endhint %}
 
 ## Page

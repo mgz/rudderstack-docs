@@ -8,7 +8,7 @@ module.exports = {
     author: `@gatsbyjs`,
     siteUrl: "https://rudderstack.com",
   },
-  pathPrefix: 'src/docs',
+ //pathPrefix: '/src/docs',
   plugins: [
     `gatsby-plugin-postcss`,
     {
@@ -266,7 +266,7 @@ module.exports = {
     //     name: 'allItemImages',
     //   },
     // },
-    {
+    /* {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,

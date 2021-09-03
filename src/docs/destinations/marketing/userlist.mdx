@@ -11,11 +11,14 @@ description: Step-by-step guide to send your event data from RudderStack to User
 RudderStack supports sending your events to Userlist from the cloud mode S2S \(Server to Server\) by calling the relevant RudderStack APIs.
 
 {% hint style="success" %}
-This destination is supported by the Userlist team. Feel free to contact Userlist via [support@userlist.com](mailto:support@userlist.com).
+This destination is supported by the Userlist team. Feel free to contact
+Userlist via [support@userlist.com](mailto:support@userlist.com).
 {% endhint %}
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/userlist)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/userlist)**.**
 {% endhint %}
 
 ## Getting Started
@@ -29,6 +32,7 @@ Before configuring your source and destination on the RudderStack app, please ch
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Userlist, perform the steps below:
@@ -37,6 +41,7 @@ Once you have confirmed that the platform supports sending events to Userlist, p
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Name your destination, and click on **Next**. You should be able to see the following screen:
@@ -48,6 +53,7 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 {% hint style="warning" %}
 Userlist does not support tracking of anonymous users. So, make sure you call `identify` before calling `track`.
+
 {% endhint %}
 
 ## Identify
@@ -58,6 +64,7 @@ If the `userId` is already known, Userlist will update the user record. Otherwis
 
 {% hint style="warning" %}
 Userlist will only process messages with a `userId`. Messages with only an `anonymousId` will be ignored.
+
 {% endhint %}
 
 The following code snippet is an example of an `identify` call in RudderStack:
@@ -87,6 +94,7 @@ rudderanalytics.group("test-group-id", {
 
 {% hint style="info" %}
 Userlist supports adding properties to the relationship between user and group. As this isn't officially supported by RudderStack's message format, you can specify the relationship properties by providing additional data for Userlist specifically.
+
 {% endhint %}
 
 The following example will associate the currently identified user with the given group \(company\) and set their `role` for that particular group \(company\) to `owner`.
@@ -126,6 +134,7 @@ rudderanalytics.track("Project created", {
 Note that every `track` call will be sent to Userlist as a new event. You may send additional properties to describe the event in more detail.
 
 Both the event name and additional properties will be stored with the event and normalized to snake case \(`project_created` and `project_name`\) automatically within Userlist.
+
 {% endhint %}
 
 To track an event in the context of a group \(company\), you need to specify the `groupId` in the `context`, as shown:

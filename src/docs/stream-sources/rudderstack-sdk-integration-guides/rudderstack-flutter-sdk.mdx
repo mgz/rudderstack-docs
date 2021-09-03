@@ -31,6 +31,7 @@ To set up the RudderStack Flutter SDK, there are a few prerequisites as mentione
 
 {% hint style="info" %}
 **We have migrated RudderStack Flutter SDK to Null Safety starting from version 1.0.2**
+
 {% endhint %}
 
 ## Installing the RudderStack Flutter SDK
@@ -115,6 +116,7 @@ We automatically track the following optional events:
 4. `Application Backgrounded`
 
 You can disable these events by calling `withTrackLifeCycleEvents(false)` on `RudderConfigBuilder` object while initializing the `RudderClient`. However, it is highly recommended to keep them enabled.
+
 {% endhint %}
 
 ## Identify
@@ -125,10 +127,12 @@ Once you set the `identify` information to the user, it will also be passed to t
 
 {% hint style="info" %}
 On the Android devices, the `deviceId` is assigned during the first boot. It remains consistent across the applications and installs. It changes only after factory reset.
+
 {% endhint %}
 
 {% hint style="info" %}
 On the iOS devices, According to the Apple [documentation](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor), if the device has multiple apps from the same vendors, all those apps will be assigned the same `deviceId`. If all the applications from a vendor are uninstalled, then on next install the app will be assigned a new `deviceId`.
+
 {% endhint %}
 
 An example `identify` event is as shown:
@@ -210,6 +214,7 @@ The `group` method has the following signature:
 
 {% hint style="info" %}
 RudderStack doesn't persist the traits for the group across the sessions.
+
 {% endhint %}
 
 ## Alias
@@ -255,10 +260,12 @@ options.putIntegrationWithFactory(Appcenter(), true);
 
 {% hint style="info" %}
 The keyword `All` in the above snippet represents all the destinations to which the source is connected. Its value is set to `true` by default.
+
 {% endhint %}
 
 {% hint style="info" %}
 Make sure the destination names that you pass while specifying the destinations should exactly match the names as listed [here](https://app.rudderstack.com/directory).
+
 {% endhint %}
 
 You can pass the destination\(s\) specified in the above snippet to the SDK in two ways:
@@ -284,6 +291,7 @@ RudderClient.track("test_track_event", properties: property, options: options);
 
 {% hint style="info" %}
 If you specify the destinations both while initializing the SDK as well as while making an event call, then the destinations specified at the event level only will be considered.
+
 {% endhint %}
 
 ## External ID
@@ -302,6 +310,7 @@ We use the `deviceId` as `anonymousId` by default. You can use the following met
 
 {% hint style="warning" %}
 You need to call `setAnonymousId` method before calling `getInstance`
+
 {% endhint %}
 
 An example of setting the `anonymousId` is as below
@@ -318,6 +327,7 @@ You can use the `setAdvertisingId` method to pass your Android and iOS AAID and 
 
 {% hint style="warning" %}
 On `Android` device you need to call `setAdvertisingId` method before calling `getInstance`
+
 {% endhint %}
 
 An example of how to use `setAdvertisingId` is as shown:
@@ -328,6 +338,7 @@ RudderClient.setAdvertisingId(<ADVERTISING_ID>);
 
 {% hint style="info" %}
 The `id` parameter you pass to the above method is assigned as `AAID` if you are on `android` device and as `IDFA` if you are on a `iOS` device.
+
 {% endhint %}
 
 ## Setting Device Token
@@ -361,6 +372,7 @@ If you are using a device mode destination like Adjust, Firebase, etc., the Flut
 
 {% hint style="warning" %}
 You shouldn't pass the `controlPlaneUrl` parameter during SDK initialization if you are using the dashboard from [https://app.rudderstack.com](https://app.rudderstack.com). This parameter is supported only if you are using our open-source [RudderStack Config Generator](https://docs.rudderstack.com/how-to-guides/rudderstack-config-generator).
+
 {% endhint %}
 
 ## Debugging

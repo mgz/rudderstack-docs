@@ -126,6 +126,7 @@ We automatically track the following optional events:
 4. `Application Backgrounded`
 
 You can disable these events by passing `trackLifecycleEvents` as false in the configuration object. But it is highly recommended to keep them enabled.
+
 {% endhint %}
 
 ## Identify
@@ -176,6 +177,7 @@ Alternatively, you can use the following method signature:
 {% hint style="info" %}
 You can also enable automatic recording of screen views by passing `recordScreenViews` as `true` while initializing the `rudderClient`.  
 The default value for `recordScreenViews` is `false`.
+
 {% endhint %}
 
 ## Reset
@@ -227,10 +229,12 @@ const options = {
 
 {% hint style="info" %}
 The keyword `All` in the above snippet represents all the destinations the source is connected to. Its value is set to `true` by default.
+
 {% endhint %}
 
 {% hint style="info" %}
 Make sure the destination names that you pass while specifying the destinations should exactly match the names listed [here](https://app.rudderstack.com/directory).
+
 {% endhint %}
 
 There are two methods in which you can pass the destinations specified in the above snippet to the SDK:
@@ -259,6 +263,7 @@ rudderClient.track(
 
 {% hint style="info" %}
 If you specify the destinations both while initializing the SDK as well as while making an event call, then the destinations specified at the event level only will be considered.
+
 {% endhint %}
 
 ## External ID

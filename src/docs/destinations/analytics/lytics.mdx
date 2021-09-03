@@ -11,7 +11,9 @@ description: Step-by-step guide to send your event data from RudderStack to Lyti
 RudderStack supports Lytics as a destination to which you can send your event data in real-time.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/lytics)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/lytics)**.**
 {% endhint %}
 
 ## Getting Started
@@ -27,6 +29,7 @@ Before configuring your source and destination on the RudderStack, verify if the
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Lytics, perform the steps below:
@@ -35,6 +38,7 @@ Once you have confirmed that the platform supports sending events to Lytics, per
 
 {% hint style="info" %}
 Follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
@@ -48,6 +52,7 @@ The connection settings are explained in more detail as follows:
 
 {% hint style="info" %}
 To get the API Key, go to your Lytics dashboard, and navigate to **Account** - **Manage Accounts** - **Account Settings** - **API Token**. You can create an API token here and use this information to configure Lytics as a destination.
+
 {% endhint %}
 
 - **Stream**: Assign a name for the stream where you want to send your data.
@@ -60,6 +65,7 @@ With the `page` method, RudderStack makes a call to Lytics to record a page view
 
 {% hint style="info" %}
 For more information on the `page` method, refer to our guide on [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec).
+
 {% endhint %}
 
 A sample `page` call is as shown:
@@ -75,10 +81,12 @@ Similarly, we can also make `screen` calls. However, this is supported only in t
 
 {% hint style="info" %}
 To know more about how the `screen` call works, refer to our guide on [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification#9-screen).
+
 {% endhint %}
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 A sample screen call is as shown:
@@ -93,6 +101,7 @@ With the `track` API, RudderStack makes a call to Lytics to track user actions a
 
 {% hint style="info" %}
 For more information on the `track` method, refer to our guide on [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec).
+
 {% endhint %}
 
 A sample `track` call is as shown:
@@ -114,6 +123,7 @@ The `identify` call captures the relevant details about the visiting user.
 
 {% hint style="info" %}
 For more information on the `identify` method, refer to our guide on [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec).
+
 {% endhint %}
 
 A sample `identify` payload is as shown in the snippet below:

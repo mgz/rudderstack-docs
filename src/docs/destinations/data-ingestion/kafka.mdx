@@ -11,7 +11,9 @@ Apache Kafka is a popular distributed streaming platform. It allows you to handl
 RudderStack allows you to configure Apache Kafka as a destination to which you can send your event data seamlessly.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kafka)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kafka)**.**
 {% endhint %}
 
 ## Getting Started
@@ -27,6 +29,7 @@ Before configuring your source and destination on the [dashboard](https://app.ru
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Kafka, perform the steps below:
@@ -35,6 +38,7 @@ Once you have confirmed that the platform supports sending events to Kafka, perf
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Select the destination as **Kafka** to your source. Give your destination a name and then click on **Next**.
@@ -53,6 +57,7 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 {% hint style="warning" %}
 You need to enable SSL to use SASL authentication.
+
 {% endhint %}
 
 ![SASL Connection Settings](../../.gitbook/assets/kafka-sasl.png)
@@ -65,6 +70,7 @@ RudderStack currently supports the following SASL types:
 
 {% hint style="info" %}
 For more information on the Apache Kafka SASL authentication, visit the [official documentation](https://kafka.apache.org/documentation/#security_sasl).
+
 {% endhint %}
 
 ## Partition Key
@@ -73,6 +79,7 @@ We use `userId` as the partition key of message.
 
 {% hint style="info" %}
 If `userId` is not present in payload, then `anonymousId` is used instead.
+
 {% endhint %}
 
 So, if you have a multi-partitioned topic, then the records of the same `userId` \(or `anonymousId` in absence of `userId`\) will always go to the same partition.

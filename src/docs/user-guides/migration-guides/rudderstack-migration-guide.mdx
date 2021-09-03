@@ -16,6 +16,7 @@ Start with creating an account on the RudderStack [dashboard](https://app.rudder
 
 {% hint style="info" %}
 You can also check our guide on how to [add sources and destinations in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack).
+
 {% endhint %}
 
 ## Setting up the RudderStack Data Plane
@@ -94,6 +95,7 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc]init];
 
 {% hint style="info" %}
 The instance of the `RudderClient` is available at `[RudderClient sharedInstance]` whereas Segment Instance is available at `[Analytics sharedAnalytics]`
+
 {% endhint %}
 
 - Update the imports from `Analytics.h` to `Rudder.h` wherever necessary
@@ -141,6 +143,7 @@ You can use the rest of your code as is, as RudderStack SDK is API compatible wi
 
 {% hint style="info" %}
 For the minified version of the above script please refer to the [RudderStack JavaScript SDK](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk) guide.
+
 {% endhint %}
 
 - Update the object. We use `rudderanalytics` as the global object library in comparison to Segment's `analytics` object
@@ -253,6 +256,7 @@ A code snippet for loading the SDKs in parallel is shown below:
 
 {% hint style="info" %}
 Note that you will need to enter your `SEGMENT_WRITE_KEY`, `RUDDERSTACK_WRITE_KEY`, and `RUDDERSTACK_DATAPLANE_URL` in the above example.
+
 {% endhint %}
 
 ## Contact Us

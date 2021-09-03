@@ -11,7 +11,9 @@ description: Step-by-step guide to send your event data from RudderStack to Cust
 RudderStack supports sending your events to CustomerIO from the cloud mode S2S \(Server to Server\) and native web SDKs by calling the relevant RudderStack APIs.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/customerio)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/customerio)**.**
 {% endhint %}
 
 ## Getting Started
@@ -25,6 +27,7 @@ Before configuring your source and destination on the RudderStack app, please ch
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Customer.io, perform the steps below:
@@ -33,6 +36,7 @@ Once you have confirmed that the platform supports sending events to Customer.io
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Fill the required fields such as API Key and Site ID as shown in the screenshot below:
@@ -41,12 +45,14 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 {% hint style="info" %}
 In case your account based in the EU region, you must enable the option **Account based in the EU data center?**. For more information read the [Customer.io Documentation](https://customer.io/docs/api/?region=eu#section/Overview).
+
 {% endhint %}
 
 Once the destination is enabled, events from our SDK will start to flow to Customer.io.
 
 {% hint style="info" %}
 We primarily need the properties API Key and Site ID to start sending events to Customer.io. You may enable the **Use native SDK to send events** option to send events through Customer.io's native JavaScript SDK.
+
 {% endhint %}
 
 ## Identify
@@ -118,6 +124,7 @@ rudderanalytics.track("Track me", {
 
 {% hint style="info" %}
 For anonymous users, customer.io does not allow an event name more than the size of 100 bytes. That is why the event names bigger than the above size get trimmed from our end.
+
 {% endhint %}
 
 ## Device Token Registration

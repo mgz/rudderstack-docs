@@ -11,7 +11,9 @@ description: Step-by-step guide to send event data from RudderStack to HubSpot
 RudderStack supports HubSpot as a destination to send your event data through our APIs.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/hs)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/hs)**.**
 {% endhint %}
 
 ## Getting Started
@@ -25,6 +27,7 @@ Before configuring your source and destination in RudderStack, please check whet
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to HubSpot, perform the steps below:
@@ -35,6 +38,7 @@ Once you have confirmed that the platform supports sending events to HubSpot, pe
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
@@ -45,20 +49,24 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 {% hint style="warning" %}
 API Key is mandatory if you need to send data to Hubspot using `cloud-mode`
+
 {% endhint %}
 
 - Provide your preference to flow the data to HubSpot through native SDK or through the RudderStack backend. Click on **Next** to finish the configuration.
 
 {% hint style="info" %}
 The setting to enable / disable native SDK to send events can be changed later. However, for that to reflect in your website, you will need to refresh the web page.
+
 {% endhint %}
 
 ## Page
 
 {% tabs %}
 {% tab title="Cloud Mode" %}
+
 {% hint style="warning" %}
 The `page` call is not supported in cloud mode for HubSpot.
+
 {% endhint %}
 {% endtab %}
 

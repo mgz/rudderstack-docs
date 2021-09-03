@@ -10,10 +10,12 @@ The `track` call lets you record the customer events, i.e. the actions that they
 
 {% hint style="info" %}
 Each user action is called an event. Every event has a name associated with it, e.g. **Product Reviewed**. This event might also have some properties associated with it, like `review_id` and `rating`.
+
 {% endhint %}
 
 {% hint style="success" %}
-For E-Commerce specific events, refer to our [**E-Commerce Events Specification**](../rudderstack-ecommerce-events-specification/) guide.
+For E-Commerce specific events, refer to our [**E-Commerce Events
+Specification**](../rudderstack-ecommerce-events-specification/) guide.
 {% endhint %}
 
 ## Sample Payload
@@ -115,7 +117,11 @@ RudderStack has reserved some standard properties listed in the table below and 
 </table>
 
 {% hint style="success" %}
-Different destinations recognize some of the above traits differently. For example, Mixpanel has a `track_charges` method for tracking revenue. With RudderStack, you don't have to worry about these inconsistencies. In this case, you can pass the `revenue` property and RudderStack will handle the conversion automatically.
+Different destinations recognize some of the above traits differently. For
+example, Mixpanel has a `track_charges` method for tracking revenue. With
+RudderStack, you don't have to worry about these inconsistencies. In this
+case, you can pass the `revenue` property and RudderStack will handle the
+conversion automatically.
 {% endhint %}
 
 ## Contact Us

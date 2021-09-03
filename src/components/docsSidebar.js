@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSidebar} from '@rocketseat/gatsby-theme-docs-core';
 import Link from "gatsby-link";
-import Accordion from "./accordion"
+import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 
 
 const DocsSidebar = () => {

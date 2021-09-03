@@ -1,5 +1,5 @@
 import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
 import { StaticImage } from "gatsby-plugin-image"
 import Link from "gatsby-link"

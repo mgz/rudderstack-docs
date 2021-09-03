@@ -12,10 +12,13 @@ RudderStack allows you to configure Snowflake as a destination to dump your even
 
 {% hint style="info" %}
 Please check our [Warehouse Schemas](https://docs.rudderstack.com/data-warehouse-integration-guides/warehouse-schemas) guide to know how events are mapped to the tables in Snowflake.
+
 {% endhint %}
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/snowflake)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/snowflake)**.**
 {% endhint %}
 
 ## Snowflake User Setup
@@ -32,6 +35,7 @@ Create a `X-Small warehouse`by following the wizard on Snowflake's website as sh
 
 {% hint style="info" %}
 You can set your data warehouse size as per your future data volume.
+
 {% endhint %}
 
 Alternatively, you can also use SQL to create a warehouse, as shown:
@@ -46,12 +50,14 @@ CREATE WAREHOUSE "RUDDER_WAREHOUSE"
 
 {% hint style="info" %}
 It is recommended that you set `AUTO_SUSPEND` to ~10 mins, and enable `AUTO_RESUME` to avoid any extra costs.
+
 {% endhint %}
 
 ### Creating a Database
 
 {% hint style="warning" %}
 Please create a new database to avoid conflicts with your existing data, as RudderStack creates its own tables.
+
 {% endhint %}
 
 The following screenshot demonstrates the **Create Database** option in Snowflake.
@@ -114,6 +120,7 @@ To do so, please follow these steps:
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
+
 {% endhint %}
 
 - After choosing a source, select **Snowflake** from the list of destinations.
@@ -390,6 +397,7 @@ You will need to whitelist the RudderStack IPs to enable network access to it.
 
 {% hint style="info" %}
 **The IPs to be whitelisted are : `3.216.35.97`, `34.198.90.241` , `54.147.40.62`** , **`23.20.96.9`,** and **`18.214.35.254`**.
+
 {% endhint %}
 
 ## Contact Us

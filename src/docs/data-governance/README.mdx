@@ -22,6 +22,7 @@ RudderStack's [**Data Governance API**](https://docs.rudderstack.com/rudderstack
 
 {% hint style="info" %}
 **Refer to the** [**RudderStack Data Governance API**](rudderstack-data-governance-api.md) **reference for the detailed technical documentation.**
+
 {% endhint %}
 
 By leveraging the Data Governance API, the data engineering team can narrow down the specific nature and source of any event data inconsistencies. With these insights, they update the instrumentation or leverage [**RudderStack Transformations**](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack) to clean the incoming events.
@@ -40,13 +41,17 @@ At a high level, you can take the following steps to investigate and troubleshoo
 4. Identify the differences in the schema versions for a single event model using [`schemas/event-versions`](https://docs.rudderstack.com/rudderstack-api-spec/rudderstack-data-governance-api#schemas-event-versions).
 
 {% hint style="success" %}
-The RudderStack Data Governance API also lets you gather other useful diagnostics related to both the events as well as the versions of individual event schemas. You can leverage this information to find and fix issues in your events.
+The RudderStack Data Governance API also lets you gather other useful
+diagnostics related to both the events as well as the versions of individual
+event schemas. You can leverage this information to find and fix issues in
+your events.
 {% endhint %}
 
 Once you have identified the inconsistencies, you can implement specific processes and set alerts for your data governance workflows. For instance, you can create alerts for notifying any missing keys in your events, or use RudderStack transformations to validate your event schemas and transform the faulty incoming event payloads.
 
 {% hint style="info" %}
 A detailed, step-by-step explanation of using the RudderStack Data Governance API can be found in our [technical blog](https://rudderstack.com/blog/rudderstacks-data-governance-api).
+
 {% endhint %}
 
 ## Contact Us

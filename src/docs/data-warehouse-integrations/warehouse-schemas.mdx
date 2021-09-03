@@ -27,74 +27,119 @@ The following is a list of tables created for each RudderStack source that is co
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><code>&lt;test_source_name&gt;.tracks</code>
-      </td>
-      <td style="text-align:left">Every <code>track</code> call sent to RudderStack is stored in this table.
-        <br
-        />
-        <br />It <b>does not include</b> the custom properties sent under the <code>properties</code> key
-        in the event but has some standard properties (listed in the <a href="https://docs.rudderstack.com/data-warehouse-integration-guides/warehouse-schemas#standard-rudderstack-properties"><b>Standard Properties</b></a> section
-        below) such as <code>received_at</code>, <code>anonymous_id</code>, <code>context_device_info</code>,
-        etc.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>&lt;test_source_name&gt;.&lt;track_event_name&gt;</code>
-      </td>
-      <td style="text-align:left">All the standard properties, along with the custom properties for a <code>track</code> call,
-        are stored in this table.
-        <br />
-        <br />The table name is the event name specified in the <code>track</code> call.
-        For example: <code>Added to Cart</code>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>&lt;test_source_name&gt;.identifies</code>
+      <td style="text-align:left">
+        <code>&lt;test_source_name&gt;.tracks</code>
       </td>
       <td style="text-align:left">
-        <p>Every <code>identify</code> call sent to RudderStack is stored in this table.</p>
-        <p></p>
-        <p>It also includes all the properties passed as <code>traits</code> in the <code>identify</code> call.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>&lt;test_source_name&gt;.users</code>
-      </td>
-      <td style="text-align:left">RudderStack stores all the unique users in this table.
+        Every <code>track</code> call sent to RudderStack is stored in this
+        table.
         <br />
-        <br />Only the latest properties used to identify a user are stored in it, including
-        the latest <code>anonymousId</code>.</td>
+        <br />
+        It <b>does not include</b> the custom properties sent under the <code>
+          properties
+        </code> key in the event but has some standard properties (listed in the{" "}
+        <a href="https://docs.rudderstack.com/data-warehouse-integration-guides/warehouse-schemas#standard-rudderstack-properties">
+          <b>Standard Properties</b>
+        </a> section below) such as <code>received_at</code>, <code>
+          anonymous_id
+        </code>, <code>context_device_info</code>, etc.
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>&lt;test_source_name&gt;.pages</code>
+      <td style="text-align:left">
+        <code>&lt;test_source_name&gt;.&lt;track_event_name&gt;</code>
       </td>
-      <td style="text-align:left">Every <code>page</code> call sent to RudderStack is stored in this table.
-        <br
-        />
-        <br />This includes all the <code>properties</code> sent in the <code>page</code> event.</td>
+      <td style="text-align:left">
+        All the standard properties, along with the custom properties for a{" "}
+        <code>track</code> call, are stored in this table.
+        <br />
+        <br />
+        The table name is the event name specified in the <code>
+          track
+        </code> call. For example: <code>Added to Cart</code>
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>&lt;test_source_name&gt;.screens</code>
+      <td style="text-align:left">
+        <code>&lt;test_source_name&gt;.identifies</code>
       </td>
-      <td style="text-align:left">Every <code>screen</code> call sent to RudderStack is stored in this table.
-        <br
-        />
-        <br />This includes all the <code>properties</code> sent in the <code>screen</code> event.</td>
+      <td style="text-align:left">
+        <p>
+          Every <code>identify</code> call sent to RudderStack is stored in this
+          table.
+        </p>
+        <p></p>
+        <p>
+          It also includes all the properties passed as <code>traits</code> in
+          the <code>identify</code> call.
+        </p>
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>&lt;test_source_name&gt;.groups</code>
+      <td style="text-align:left">
+        <code>&lt;test_source_name&gt;.users</code>
       </td>
-      <td style="text-align:left">Every <code>group</code> call sent to RudderStack is stored in this table.
-        <br
-        />
-        <br />This includes all the <code>properties</code> sent in the <code>group</code> event.</td>
+      <td style="text-align:left">
+        RudderStack stores all the unique users in this table.
+        <br />
+        <br />
+        Only the latest properties used to identify a user are stored in it, including
+        the latest <code>anonymousId</code>.
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>&lt;test_source_name&gt;.aliases</code>
+      <td style="text-align:left">
+        <code>&lt;test_source_name&gt;.pages</code>
       </td>
-      <td style="text-align:left">Every <code>alias</code> call sent to RudderStack is stored in this table.
-        <br
-        />
-        <br />This includes all the properties sent in the <code>alias</code> event.</td>
+      <td style="text-align:left">
+        Every <code>page</code> call sent to RudderStack is stored in this
+        table.
+        <br />
+        <br />
+        This includes all the <code>properties</code> sent in the <code>
+          page
+        </code> event.
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <code>&lt;test_source_name&gt;.screens</code>
+      </td>
+      <td style="text-align:left">
+        Every <code>screen</code> call sent to RudderStack is stored in this
+        table.
+        <br />
+        <br />
+        This includes all the <code>properties</code> sent in the <code>
+          screen
+        </code> event.
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <code>&lt;test_source_name&gt;.groups</code>
+      </td>
+      <td style="text-align:left">
+        Every <code>group</code> call sent to RudderStack is stored in this
+        table.
+        <br />
+        <br />
+        This includes all the <code>properties</code> sent in the <code>
+          group
+        </code> event.
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <code>&lt;test_source_name&gt;.aliases</code>
+      </td>
+      <td style="text-align:left">
+        Every <code>alias</code> call sent to RudderStack is stored in this
+        table.
+        <br />
+        <br />
+        This includes all the properties sent in the <code>alias</code> event.
+      </td>
     </tr>
   </tbody>
 </table>
@@ -105,6 +150,7 @@ All the properties in the event are stored as top-level columns in the correspon
 **`{ product: { name: iPhone, version: 11 }`**
 
 will results in the columns **`product_name`** and **`product_version`**`.`
+
 {% endhint %}
 
 ## Standard RudderStack Properties
@@ -120,63 +166,93 @@ RudderStack sets the following standard properties on all the above mentioned ta
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><code>anonymous_id</code>
+      <td style="text-align:left">
+        <code>anonymous_id</code>
       </td>
       <td style="text-align:left">The anonymous ID of the user.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>context_&lt;prop&gt;</code>
+      <td style="text-align:left">
+        <code>context_&lt;prop&gt;</code>
       </td>
       <td style="text-align:left">Context properties set in the event.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>id</code>
+      <td style="text-align:left">
+        <code>id</code>
       </td>
       <td style="text-align:left">
-        <p>The unique message ID of the event, except for the <code>users</code> table.</p>
+        <p>
+          The unique message ID of the event, except for the <code>users</code>{" "}
+          table.
+        </p>
         <p></p>
-        <p>The field will be the user ID in case of <code>users</code> table.</p>
+        <p>
+          The field will be the user ID in case of <code>users</code> table.
+        </p>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>sent_at</code>
+      <td style="text-align:left">
+        <code>sent_at</code>
       </td>
-      <td style="text-align:left">Timestamp set by the RudderStack SDK when the event was sent from the
-        client to RudderStack.</td>
+      <td style="text-align:left">
+        Timestamp set by the RudderStack SDK when the event was sent from the
+        client to RudderStack.
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>received_at</code>
+      <td style="text-align:left">
+        <code>received_at</code>
       </td>
-      <td style="text-align:left">Timestamp registered by RudderStack when the event was ingested (received).</td>
+      <td style="text-align:left">
+        Timestamp registered by RudderStack when the event was ingested
+        (received).
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>original_timestamp</code>
+      <td style="text-align:left">
+        <code>original_timestamp</code>
       </td>
-      <td style="text-align:left">Timestamp registered by the RudderStack SDK when the event call was invoked
-        (event was emitted in the SDK).</td>
+      <td style="text-align:left">
+        Timestamp registered by the RudderStack SDK when the event call was
+        invoked (event was emitted in the SDK).
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>timestamp</code>
+      <td style="text-align:left">
+        <code>timestamp</code>
       </td>
-      <td style="text-align:left">This is calculated by RudderStack to account for the <b>client clock skew</b>.
-        The formula used is: <code>timestamp</code> = <code>receivedAt</code> - (<code>sentAt</code> - <code>originalTimestamp</code>).</td>
+      <td style="text-align:left">
+        This is calculated by RudderStack to account for the{" "}
+        <b>client clock skew</b>. The formula used is: <code>timestamp</code> ={" "}
+        <code>receivedAt</code> - (<code>sentAt</code> -{" "}
+        <code>originalTimestamp</code>).
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>event_text</code>
+      <td style="text-align:left">
+        <code>event_text</code>
       </td>
-      <td style="text-align:left">Name of the event mapped from the <code>event</code> key in the payload
-        for the <code>track</code> events.</td>
+      <td style="text-align:left">
+        Name of the event mapped from the <code>event</code> key in the payload
+        for the <code>track</code> events.
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>event</code>
+      <td style="text-align:left">
+        <code>event</code>
       </td>
-      <td style="text-align:left">The name of the event table for the <code>track</code> calls.</td>
+      <td style="text-align:left">
+        The name of the event table for the <code>track</code> calls.
+      </td>
     </tr>
   </tbody>
 </table>
 
 {% hint style="warning" %}
 RudderStack reserves the above-mentioned standard properties. In the case of any conflict, RudderStack automatically discards the properties set by the user.
+
 {% endhint %}
 
 ### Clock Skew Considerations
@@ -185,6 +261,7 @@ RudderStack considers the time at its end to be absolute and assumes any differe
 
 {% hint style="info" %}
 `sentAt` &gt; `original_timestamp` is **always true**. However, `timestamp` can be more or less than the `original_timestamp`. Refer to the examples below for more details.
+
 {% endhint %}
 
 Here's an example of `original_timestamp` &lt; `received_at`\(The client-side time is less than the server-side time\):
@@ -192,27 +269,38 @@ Here's an example of `original_timestamp` &lt; `received_at`\(The client-side ti
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><code>original_timestamp</code>
-      </th>
-      <th style="text-align:left"><code>sent_at</code>
-      </th>
-      <th style="text-align:left"><code>received_at</code>
+      <th style="text-align:left">
+        <code>original_timestamp</code>
       </th>
       <th style="text-align:left">
-        <p><code>timestamp</code>= <code>received_at </code>-</p>
-        <p>(<code>sent_at</code> - <code>original_timestamp</code>)</p>
+        <code>sent_at</code>
+      </th>
+      <th style="text-align:left">
+        <code>received_at</code>
+      </th>
+      <th style="text-align:left">
+        <p>
+          <code>timestamp</code>= <code>received_at </code>-
+        </p>
+        <p>
+          (<code>sent_at</code> - <code>original_timestamp</code>)
+        </p>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><code>2020-04-26 07:00:43.400</code>
+      <td style="text-align:left">
+        <code>2020-04-26 07:00:43.400</code>
       </td>
-      <td style="text-align:left"><code>2020-04-26 07:00:45.124</code>
+      <td style="text-align:left">
+        <code>2020-04-26 07:00:45.124</code>
       </td>
-      <td style="text-align:left"><code>2020-04-26 07:00:45.558</code>
+      <td style="text-align:left">
+        <code>2020-04-26 07:00:45.558</code>
       </td>
-      <td style="text-align:left"><code>2020-04-26 07:00:44.834</code>
+      <td style="text-align:left">
+        <code>2020-04-26 07:00:44.834</code>
       </td>
     </tr>
   </tbody>
@@ -225,27 +313,38 @@ Here's an example of `original_timestamp` &gt; `received_at` \(The client-side t
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><code>original_timestamp</code>
-      </th>
-      <th style="text-align:left"><code>sent_at</code>
-      </th>
-      <th style="text-align:left"><code>received_at</code>
+      <th style="text-align:left">
+        <code>original_timestamp</code>
       </th>
       <th style="text-align:left">
-        <p><code>timestamp</code>= <code>received_at </code>-</p>
-        <p>(<code>sent_at</code> - <code>original_timestamp</code>)</p>
+        <code>sent_at</code>
+      </th>
+      <th style="text-align:left">
+        <code>received_at</code>
+      </th>
+      <th style="text-align:left">
+        <p>
+          <code>timestamp</code>= <code>received_at </code>-
+        </p>
+        <p>
+          (<code>sent_at</code> - <code>original_timestamp</code>)
+        </p>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><code>2020-04-26 07:00:45.558</code>
+      <td style="text-align:left">
+        <code>2020-04-26 07:00:45.558</code>
       </td>
-      <td style="text-align:left"><code>2020-04-26 07:00:46.124</code>
+      <td style="text-align:left">
+        <code>2020-04-26 07:00:46.124</code>
       </td>
-      <td style="text-align:left"><code>2020-04-26 07:00:43.400</code>
+      <td style="text-align:left">
+        <code>2020-04-26 07:00:43.400</code>
       </td>
-      <td style="text-align:left"><code>2020-04-26 07:00:43.9650</code>
+      <td style="text-align:left">
+        <code>2020-04-26 07:00:43.9650</code>
       </td>
     </tr>
   </tbody>
@@ -322,6 +421,7 @@ The corresponding schemas created for the `tracks` and `add_to_cart` tables is a
 
 {% hint style="info" %}
 The event table `add_to_cart` has all the columns as the `tracks` table. It also has the properties set by the user inside the key `properties.`
+
 {% endhint %}
 
 ### Identify
@@ -329,7 +429,10 @@ The event table `add_to_cart` has all the columns as the `tracks` table. It also
 RudderStack creates a record in the `identifies` table and upserts the records in the `users` table for every `identify` call, based on the `userId`.
 
 {% hint style="success" %}
-In case of Google BigQuery, you can use the views created over the tables to query for unique users in the dataset. Refer to the [**BigQuery documentation**](https://docs.rudderstack.com/data-warehouse-integrations/google-bigquery#schema-partitioned-tables-and-views) \*\*\*\*for more details.
+In case of Google BigQuery, you can use the views created over the tables to
+query for unique users in the dataset. Refer to the [**BigQuery
+documentation**](https://docs.rudderstack.com/data-warehouse-integrations/google-bigquery#schema-partitioned-tables-and-views)
+\*\*\*\*for more details.
 {% endhint %}
 
 A sample `identify` event made from the JavaScript SDK is as shown below:
@@ -389,10 +492,12 @@ The corresponding schemas created for the `identifies` and `users` tables is as 
 
 {% hint style="info" %}
 The `users` table has the properties from the latest `identify` call made for an user. It only has the `id` column \(same as `user_id` in `identifies` table\) and does not have the `anonymous_id` column.
+
 {% endhint %}
 
 {% hint style="success" %}
-To get at a user’s `anonymous_id`, you can query the `identifies` table by grouping on the `user_id` column.
+To get at a user’s `anonymous_id`, you can query the `identifies` table by
+grouping on the `user_id` column.
 {% endhint %}
 
 ### Page & Screen
@@ -494,6 +599,7 @@ RudderStack only recognizes a subset of the ISO 8601 timestamp formats as a time
 
 {% hint style="warning" %}
 RudderStack **does not recognize** any other timestamp format apart from the formats mentioned above.
+
 {% endhint %}
 
 ## Reserved Keywords
@@ -516,6 +622,7 @@ Once RudderStack recognizes and sets a data type for a table column, it will not
 
 {% hint style="warning" %}
 The values which cannot be cast are set as `NULL` in the table and stored in the `rudder_discards` table.
+
 {% endhint %}
 
 The schema of the `rudder_discards table` is as shown below:
@@ -529,35 +636,50 @@ The schema of the `rudder_discards table` is as shown below:
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><code>row_id</code>
+      <td style="text-align:left">
+        <code>row_id</code>
       </td>
       <td style="text-align:left">
         <p>Unique Identifier (ID) associated with each record in the table.</p>
-        <p>This corresponds to the unique <code>messageId</code> for all the tables
-          except for <code>users</code> table, where it is <code>userId</code>.</p>
+        <p>
+          This corresponds to the unique <code>messageId</code> for all the
+          tables except for <code>users</code> table, where it is{" "}
+          <code>userId</code>.
+        </p>
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>table_name</code>
+      <td style="text-align:left">
+        <code>table_name</code>
       </td>
-      <td style="text-align:left">The table name where the full record is inserted, like <code>tracks</code>, <code>add_to_cart</code>, <code>identifies</code> ,
-        etc.</td>
+      <td style="text-align:left">
+        The table name where the full record is inserted, like{" "}
+        <code>tracks</code>, <code>add_to_cart</code>, <code>identifies</code> ,
+        etc.
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>column_name</code>
+      <td style="text-align:left">
+        <code>column_name</code>
       </td>
-      <td style="text-align:left">The column name corresponding to the property to be added.</td>
+      <td style="text-align:left">
+        The column name corresponding to the property to be added.
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left"><code>column_value</code>
+      <td style="text-align:left">
+        <code>column_value</code>
       </td>
-      <td style="text-align:left">The column value which caused the data type mismatch and is discarded.</td>
+      <td style="text-align:left">
+        The column value which caused the data type mismatch and is discarded.
+      </td>
     </tr>
   </tbody>
 </table>
 
 {% hint style="info" %}
 The `row_id` is the column which users can use to join with original table and update it as required. It is set to `messageId` for all tables except the `users` table, where it corresponds to `userId`.
+
 {% endhint %}
 
 Shown below is a sample event whose properties are discarded due to a mismatch in the data type of the previous events:

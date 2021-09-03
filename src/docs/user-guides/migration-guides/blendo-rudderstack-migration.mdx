@@ -18,16 +18,19 @@ Users are likely to encounter the following scenarios when migrating from Blendo
 
 {% hint style="info" %}
 The sync checkpoints will not be automatically migrated from Blendo to RudderStack.
+
 {% endhint %}
 
 {% hint style="success" %}
-In case you don't want to sync all the historical data and start from a checkpoint instead, please [contact us](mailto:%20contact@rudderstack.com).
+In case you don't want to sync all the historical data and start from a
+checkpoint instead, please [contact us](mailto:%20contact@rudderstack.com).
 {% endhint %}
 
 - The process of setting up a data pipeline in is slightly different in RudderStack. You will have to add a source, a destination and then explicitly link the two. This approach will give you more flexibility and the ability to connect a single source to multiple destination platforms.
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack).
+
 {% endhint %}
 
 ## Source Functionalities
@@ -38,6 +41,7 @@ In terms of functionality of the sources, you are likely to encounter the follow
 
 {% hint style="info" %}
 Any export error will not stop the sources from fetching new data.
+
 {% endhint %}
 
 ## Data Structure Differences
@@ -48,6 +52,7 @@ The following differences are observed in the data structure of the sources in R
 
 {% hint style="warning" %}
 Further processing might be necessary on a query level for the existing views or dashboards to work.
+
 {% endhint %}
 
 - The special columns **`blendo_imported_at`**, **`blendo_exported_at`** will no longer be populated at the destination. The context fields will be included in each event to provide the segmentation of data. The list of context fields introduced in RudderStack are:

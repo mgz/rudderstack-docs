@@ -11,7 +11,9 @@ description: Step-by-step guide to send event data from RudderStack to Keen.
 RudderStack supports S2S \(Server to Server\) cloud mode and Web Native SDK for integration with Keen. You can thus send event data attached to Keen collections using RudderStack APIs.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/keen)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/keen)**.**
 {% endhint %}
 
 ## Getting Started
@@ -27,6 +29,7 @@ Before configuring your source and destination on the RudderStack, please verify
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Keen, perform the steps below:
@@ -35,6 +38,7 @@ Once you have confirmed that the platform supports sending events to Keen, perfo
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
@@ -57,6 +61,7 @@ If enabled, RudderStack attaches the following Keen add-ons to the events, which
 
 {% hint style="info" %}
 Note: We only pass the IP, page and referrer add-ons to Keen if the event contains a valid `ip`, `page`, `URL` and `referrer` property.
+
 {% endhint %}
 
 ![Keen add-ons settings in RudderStack](../../.gitbook/assets/image%20%2838%29.png)

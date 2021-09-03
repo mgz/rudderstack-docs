@@ -11,7 +11,9 @@ description: Step-by-step guide to set up Autopilot as a destination in RudderSt
 RudderStack allows you to configure Autopilot as a destination to which you can send your event data seamlessly.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/autopilot)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/autopilot)**.**
 {% endhint %}
 
 ## Getting Started
@@ -25,6 +27,7 @@ To enable sending data to Autopilot, you will first need to add it as a destinat
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Autopilot, perform the steps below:
@@ -33,6 +36,7 @@ Once you have confirmed that the platform supports sending events to Autopilot, 
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - Give a name to the destination and click on **Next**. You should then see the following screen.
@@ -47,6 +51,7 @@ The `identify` call captures the relevant details about the visiting user.
 
 {% hint style="info" %}
 For more information on the `identify` method, please refer to our guide on [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec).
+
 {% endhint %}
 
 A sample `identify` payload is as shown in the snippet below:
@@ -62,6 +67,7 @@ The `track` call captures the information related to the actions performed by th
 
 {% hint style="info" %}
 For more information on the `track` method, please refer to our guide on [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec).
+
 {% endhint %}
 
 A sample `track` payload is as shown in the snippet below:

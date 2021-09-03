@@ -10,6 +10,7 @@ The `identify` call lets you identify a visiting user and associate them to thei
 
 {% hint style="info" %}
 As a best practice, make sure `identify` is called at the start of every session or page load for logged-in users, if possible. This will ensure all their latest traits are captured.
+
 {% endhint %}
 
 ## When Should I Call `identify`?
@@ -64,10 +65,14 @@ A user ID \(`userId`\) uniquely identifies your user present in your database. I
 
 {% hint style="info" %}
 For `identify` calls, you should include a `userId` as often as possible to identify the most up to date traits of the customer.
+
 {% endhint %}
 
 {% hint style="success" %}
-We strongly recommend using a database ID as the `userId` instead of usernames or email addresses. This is because the user may update their username or email address at any point in the future. Instead, you can pass them as **traits**.
+We strongly recommend using a database ID as the `userId` instead of usernames
+or email addresses. This is because the user may update their username or
+email address at any point in the future. Instead, you can pass them as
+**traits**.
 {% endhint %}
 
 ### Anonymous ID
@@ -76,10 +81,15 @@ There are instances where you may get a visitor on your website/app who may or m
 
 {% hint style="info" %}
 An anonymousId can be any identifier. For instance, you can use a session ID corresponding to the visitor's session. If you don't have a readily available identifier, we recommend generating a **UUID**.
+
 {% endhint %}
 
 {% hint style="success" %}
-RudderStack's web and mobile [**SDKs**](../../stream-sources/rudderstack-sdk-integration-guides/) automatically use anonymous IDs to track unknown users on your website or mobile apps, so you don't have to worry about including an `anonymousId` explicitly.
+RudderStack's web and mobile
+[**SDKs**](../../stream-sources/rudderstack-sdk-integration-guides/)
+automatically use anonymous IDs to track unknown users on your website or
+mobile apps, so you don't have to worry about including an `anonymousId`
+explicitly.
 {% endhint %}
 
 ## Identify Traits
@@ -300,6 +310,7 @@ RudderStack has some reserved traits that it handles in special ways. These are 
 Different destinations recognize some of the above traits differently. For example, Mixpanel recognizes `createdAt` as `$created`, while Intercom recognizes it as `created_at`.
 
 With RudderStack, you don't have to worry about these inconsistencies at all, as it handles these destination-specific conversions automatically.
+
 {% endhint %}
 
 ## Passing Traits to an `identify` Call

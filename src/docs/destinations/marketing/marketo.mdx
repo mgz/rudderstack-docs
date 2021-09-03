@@ -11,7 +11,9 @@ description: Step-by-step guide to send event data from RudderStack to Marketo.
 RudderStack allows you to seamlessly configure Marketo as a destination to which you can send your event data seamlessly.
 
 {% hint style="success" %}
-**Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/marketo)**.**
+**Find the open-source transformer code for this destination in our**
+[**GitHub
+repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/marketo)**.**
 {% endhint %}
 
 ## Getting Started
@@ -27,6 +29,7 @@ Before configuring your source and destination on the RudderStack, please verify
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending events to Marketo, please perform the steps below:
@@ -35,6 +38,7 @@ Once you have confirmed that the platform supports sending events to Marketo, pl
 
 {% hint style="info" %}
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
+
 {% endhint %}
 
 - Select the destination as **Marketo** to your source. Give your destination a name and then click on **Next**.
@@ -52,6 +56,7 @@ The following are the settings to be configured:
 
 {% hint style="info" %}
 You need to create two fields in Marketo with API names exactly as `userId` and `anonymousId`. We lookup the Lead objects using these properties. Without these two fields all the events will fail.
+
 {% endhint %}
 
 For configuring the **Custom Activity Settings**, see the instructions below in the Track section.

@@ -9,7 +9,10 @@ description: General glossary of the RudderStack-related terminology.
 This guide lists the definitions of the RudderStack-related terms that you are likely to encounter throughout our documentation and while using RudderStack.
 
 {% hint style="success" %}
-If you come across any term that is not listed here, you can [**contact us**](mailto:%20docs@rudderstack.com) \***\*or start a conversation on our [**Slack\*\*](https://resources.rudderstack.com/join-rudderstack-slack) channel.
+If you come across any term that is not listed here, you can [**contact
+us**](mailto:%20docs@rudderstack.com) \***\*or start a conversation on our
+[**Slack\*\*](https://resources.rudderstack.com/join-rudderstack-slack)
+channel.
 {% endhint %}
 
 ## General
@@ -27,7 +30,10 @@ The ETL process can be defined as:
 - **Load**: Pushing the data into a consolidated data store \(for e.g., data warehouse\)
 
 {% hint style="success" %}
-Check out our [**blog**](https://rudderstack.com/blog/rudderstack-cloud-extract-makes-cloud-to-warehouse-pipelines-easy) to read more about ETL and how RudderStack facilitates it via its [**Cloud Extract**](cloud-extract-sources/) feature.
+Check out our
+[**blog**](https://rudderstack.com/blog/rudderstack-cloud-extract-makes-cloud-to-warehouse-pipelines-easy)
+to read more about ETL and how RudderStack facilitates it via its [**Cloud
+Extract**](cloud-extract-sources/) feature.
 {% endhint %}
 
 ### Reverse-ETL
@@ -35,7 +41,10 @@ Check out our [**blog**](https://rudderstack.com/blog/rudderstack-cloud-extract-
 Reverse ETL is the process of routing the enriched data from your data warehouse to various downstream tools within your customer data stack. This includes various SaaS marketing, analytics, sales, and customer support tools.
 
 {% hint style="success" %}
-Check out our [**blog**](https://rudderstack.com/blog/reverse-etl-is-just-another-data-pipeline) to read more about Reverse ETL and how RudderStack facilitates it via its [**Warehouse Actions**](warehouse-actions/) feature.
+Check out our
+[**blog**](https://rudderstack.com/blog/reverse-etl-is-just-another-data-pipeline)
+to read more about Reverse ETL and how RudderStack facilitates it via its
+[**Warehouse Actions**](warehouse-actions/) feature.
 {% endhint %}
 
 ## Core Product
@@ -46,6 +55,7 @@ The Control Plane manages the configuration of your sources and destinations. Th
 
 {% hint style="info" %}
 For more information on the Data Plane and Control Plane, refer to RudderStack's [**architecture**](get-started/rudderstack-architecture.md).
+
 {% endhint %}
 
 ### Data Plane
@@ -72,6 +82,7 @@ If you want to self-host these configurations, you can use the open-source **Con
 
 {% hint style="info" %}
 For information on the Config Generator and how to use it, refer to the [**docs**](https://docs.rudderstack.com/get-started/config-generator).
+
 {% endhint %}
 
 ## **Features**
@@ -82,6 +93,7 @@ RudderStack's [**Event Stream**](stream-sources/) \*\*\*\*feature lets you colle
 
 {% hint style="info" %}
 For more information on the various Event Stream sources supported by RudderStack, check out the [**docs**](https://docs.rudderstack.com/stream-sources).
+
 {% endhint %}
 
 ### Cloud Extract
@@ -90,6 +102,7 @@ For more information on the various Event Stream sources supported by RudderStac
 
 {% hint style="info" %}
 For more information on the various Cloud Extract sources and how to set them up in RudderStack, check out the [**docs**](https://docs.rudderstack.com/cloud-extract-sources).
+
 {% endhint %}
 
 ### Warehouse Actions
@@ -98,6 +111,7 @@ For more information on the various Cloud Extract sources and how to set them up
 
 {% hint style="info" %}
 For more information on the various Warehouse Actions sources and how to set them up in RudderStack, check out the [**docs**](https://docs.rudderstack.com/warehouse-actions).
+
 {% endhint %}
 
 ### Transformations
@@ -120,10 +134,12 @@ RudderStack applies the User Transformations \(if any\) to the incoming events b
 In the absence of a user transformation, the flow is as follows:
 
 **Incoming events** -- **RudderStack Transformer** -- **Routed to the specified destination/s**
+
 {% endhint %}
 
 {% hint style="info" %}
 For more details on this feature and how to use it, check out our [**Transformations**](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack) \*\*\*\*docs.
+
 {% endhint %}
 
 ### Live Events
@@ -137,6 +153,7 @@ Broadly speaking, this feature can be further classified into two categories:
 
 {% hint style="info" %}
 For more information on this feature, check out our [**docs**](https://docs.rudderstack.com/get-started/live-events).
+
 {% endhint %}
 
 ### Data Governance
@@ -145,6 +162,7 @@ RudderStack's [**Data Governance**](data-governance/) \*\*\*\*feature gives you 
 
 {% hint style="info" %}
 Refer to the [**RudderStack Data Governance API**](data-governance/rudderstack-data-governance-api.md) reference for the detailed technical documentation.
+
 {% endhint %}
 
 ### User Suppression
@@ -153,6 +171,7 @@ Refer to the [**RudderStack Data Governance API**](data-governance/rudderstack-d
 
 {% hint style="info" %}
 Refer to the [**RudderStack User Suppression API**](rudderstack-api/user-suppression.md) reference for more information.
+
 {% endhint %}
 
 ## Integrations
@@ -163,6 +182,7 @@ A connection is a one-to-one directional flow of events between a RudderStack so
 
 {% hint style="info" %}
 For more information on sources and destinations in RudderStack, check our [**Connections**](connections/) guide.
+
 {% endhint %}
 
 You can set up different types of connections in RudderStack to send your events, based on the type of source:
@@ -173,6 +193,7 @@ You can set up different types of connections in RudderStack to send your events
 
 {% hint style="info" %}
 Setting up a connection involves [**adding a source and destination**](connections/adding-source-and-destination-rudderstack.md) in RudderStack.
+
 {% endhint %}
 
 ### Connection Modes \(Cloud Mode & Device Mode\)
@@ -186,6 +207,7 @@ These two modes are commonly referred to as **RudderStack Connection Modes**.
 
 {% hint style="info" %}
 For more information on these modes, check the [**RudderStack Connection Modes**](connections/rudderstack-connection-modes.md) guide.
+
 {% endhint %}
 
 ### Source
@@ -194,6 +216,7 @@ A **source** is a platform or an application \(web, mobile, server-side, or a th
 
 {% hint style="info" %}
 For more information on RudderStack sources, check out our [**documentation**](https://docs.rudderstack.com/connections#sources).
+
 {% endhint %}
 
 ### Destination
@@ -204,6 +227,7 @@ A destination is a tool or application where you want to send the data via Rudde
 RudderStack currently supports over 80 destinations. These include [**data warehouses**](https://docs.rudderstack.com/data-warehouse-integrations), [**analytics**](https://docs.rudderstack.com/destinations/analytics) platforms, [**CRMs**](https://docs.rudderstack.com/destinations/crm), [**marketing**](https://docs.rudderstack.com/destinations/marketing) platforms, and more.
 
 Check out the [**Destinations**](destinations/) guide for the complete list of supported destinations.
+
 {% endhint %}
 
 ### Warehouse Destination
@@ -214,6 +238,7 @@ Currently, RudderStack supports integration with all the leading data warehouses
 
 {% hint style="info" %}
 For more information on how to use these warehouse destinations, check out our [**Data Warehouse Integration**](https://docs.rudderstack.com/data-warehouse-integrations) guides.
+
 {% endhint %}
 
 ## Other Terminology
@@ -224,6 +249,7 @@ The **RudderStack API Spec** helps you plan your event data and provides various
 
 {% hint style="info" %}
 For more information on the RudderStack API Specification, refer to our [**docs**](rudderstack-api/api-specification/rudderstack-spec/).
+
 {% endhint %}
 
 ### SDK
@@ -234,6 +260,7 @@ You can also track your event data from your Flutter app via the [**Flutter SDK*
 
 {% hint style="info" %}
 Refer to the [**SDK documentation**](stream-sources/rudderstack-sdk-integration-guides/) for more details.
+
 {% endhint %}
 
 ### Warehouse Schema
@@ -242,6 +269,7 @@ When sending your events to a data warehouse via RudderStack, you need not defin
 
 {% hint style="info" %}
 Refer to the [**Warehouse Schema documentation**](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-schemas) for more details.
+
 {% endhint %}
 
 ### Workspace Token

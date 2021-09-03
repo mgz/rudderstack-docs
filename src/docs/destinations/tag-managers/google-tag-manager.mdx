@@ -23,10 +23,12 @@ To enable sending data to Google Tag Manager, you will first need to add it as a
 
 {% hint style="info" %}
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+
 {% endhint %}
 
 {% hint style="warning" %}
 Google Tag Manager is available only for the RudderStack JavaScript SDK. You should enable the Native SDK flag for the same.
+
 {% endhint %}
 
 Once you have confirmed that the platform supports sending data to Google Tag Manager, please perform the steps below:
@@ -35,6 +37,7 @@ Once you have confirmed that the platform supports sending data to Google Tag Ma
 
 {% hint style="info" %}
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+
 {% endhint %}
 
 - In the configuration settings, please add the **Container ID** which you can find in the Admin section of your [GTM dashboard](https://tagmanager.google.com/#/admin/).
@@ -45,6 +48,7 @@ That's it! Google Tag Manager will now load on any page where the RudderStack sn
 
 {% hint style="info" %}
 You can use the RudderStack track events to populate the Google Tag Manager `dataLayer` once you have enabled GTM through RudderStack.
+
 {% endhint %}
 
 It is also possible to load RudderStack as a custom tag in Google Tag Manager. However, we recommend that you load Google Tag Manager through RudderStack by following the steps described above.
@@ -59,6 +63,7 @@ The `page` call allows you to record whenever a user visits a page of your websi
 
 {% hint style="info" %}
 In `rudderanalytics.js` , a `page` call is included by default, just after `rudderanalytics.load` is executed. This is because this call must be executed **at least once** per page load.
+
 {% endhint %}
 
 A sample `page` call looks like the following:
@@ -87,6 +92,7 @@ The above call will populate Google Tag Manager with the below properties along 
 
 {% hint style="info" %}
 Making a call to the `page` API will send out an object to the **GTM dataLayer** containing your page related properties and an event name with its associated value.
+
 {% endhint %}
 
 ## Track

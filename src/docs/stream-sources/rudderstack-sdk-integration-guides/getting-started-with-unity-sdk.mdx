@@ -15,7 +15,9 @@ The RudderStack Unity SDK is a wrapper for the RudderStack [**Android SDK**](htt
 After integrating this SDK with your game, you will be able to track and send the game event data to any analytics destination of your choice.
 
 {% hint style="success" %}
-Check the [**Unity SDK codebase on GitHub**](https://github.com/rudderlabs/rudder-sdk-unity) \*\*\*\*to get a more hands-on understanding of how it works.
+Check the [**Unity SDK codebase on
+GitHub**](https://github.com/rudderlabs/rudder-sdk-unity) \*\*\*\*to get a
+more hands-on understanding of how it works.
 {% endhint %}
 
 ## Prerequisites
@@ -30,6 +32,7 @@ To get the **Data Plane URL**:
 
 - If you're using the **open-source** version of RudderStack, you are required to set up your own data plane by [**installing and setting up RudderStack**](https://docs.rudderstack.com/installing-and-setting-up-rudderstack) in your preferred dev environment.
 - If you're using the **enterprise** version of RudderStack, contact us for the data plane URL with the email ID used to sign up for RudderStack.
+
   {% endhint %}
 
 - Finally, you will need the [**Unity development kit**](https://store.unity.com/download).
@@ -79,6 +82,7 @@ RudderClient rudderClient = RudderClient.GetInstance(
 
 {% hint style="warning" %}
 If you are building an iOS project, `RudderClient.SerializeSqlite()` is important to handle races with SQLite.
+
 {% endhint %}
 
 ## Track

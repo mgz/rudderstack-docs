@@ -9,7 +9,10 @@ description: Detailed technical description of the Page API call.
 The `page` call lets you record your website's page views with any additional relevant information about the viewed page. Many destinations require the `page` events to be called at least once every page load.
 
 {% hint style="success" %}
-The [**RudderStack JavaScript SDK**](../../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/) includes a `page` call in its snippet just after the `rudderanalytics.load` method.
+The [**RudderStack JavaScript
+SDK**](../../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/)
+includes a `page` call in its snippet just after the `rudderanalytics.load`
+method.
 {% endhint %}
 
 ## Sample Payload
@@ -34,7 +37,8 @@ rudderanalytics.page("Home")
 ```
 
 {% hint style="success" %}
-The SDK automatically gathers the page `name` and `url` and passes them into the event payload.
+The SDK automatically gathers the page `name` and `url` and passes them into
+the event payload.
 {% endhint %}
 
 ## Page Fields

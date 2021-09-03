@@ -100,10 +100,12 @@ All tests are done using db.m4.xlarge Amazon RDS instance for hosting the postgr
 
 {% hint style="info" %}
 Backend migrates and drops tables that have a threshold of jobs processed. Gateway tables are backed up to object storage \(S3, MinIO etc.\) if configured by user. Dangling tables indicate tables are ready for drop at a rate greater than the rate at which tables are backed up to object storage. Concurrent uploads to object storage is in the roadmap for upcoming versions of Backend.
+
 {% endhint %}
 
 {% hint style="info" %}
 Load is an approximation since it depends on the maching configuration where the [genload.go script](https://github.com/rudderlabs/rudder-server/blob/master/tests/load/genload.go) is run from. We ran it on a m5ad.xLarge machine with the approxiamtion that input of 50 users \(50 go routines\) gives a input load of 2.5K/s
+
 {% endhint %}
 
 ### Transformer
@@ -161,6 +163,7 @@ Load is an approximation since it depends on the maching configuration where the
 
 {% hint style="warning" %}
 Transformer is a NodeJS/Koa server launced as cluster of node processes, processses count equal to the number of cores of the machine. Choosingan instance with lower number of core the number of cores in instance processor might reduce the throughput of transformer
+
 {% endhint %}
 
 ### Batch Router - S3 Destination
@@ -262,6 +265,7 @@ Event data and tables are ephemeral. In a happy path, we would have only a few m
 We recommend at least 10 hours worth of event storage computed above to gracefully handle destinations going down for a few hours.
 
 If you want to prepare for a destination going for down for days, accommodate them into your storage capacity.
+
 {% endhint %}
 
 ### Estimating Connections
@@ -290,4 +294,5 @@ Memory required in the above example would be 840 MB.
 
 {% hint style="info" %}
 The memory estimate does not include the default RAM required for running the OS and the required processes.
+
 {% endhint %}
