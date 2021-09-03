@@ -52,8 +52,8 @@ const serializers = {
     //       BlockContent.defaultSerializers.types.block(props),
     large_quoted_text: LargeQuotedText,
     authorReference: AuthorReference,
-    mainImage: ({ node }) => <MainImage mainImage={node} />,
-    image: ({ node }) => <MainImage mainImage={node} />,
+    mainImage: ({ node }) => <MainImage mainImage={node} alt="" />,
+    image: ({ node }) => <MainImage mainImage={node} alt="" />,
     table_with_header: ({ node }) => <TableContent data={node} />,
     youtube: ({ node }) => {
       // console.log('you tube',node)

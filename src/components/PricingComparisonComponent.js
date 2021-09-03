@@ -6,7 +6,7 @@ import Link from "gatsby-link"
 const PricingComparisonComponent = props => {
   const [sticky, setSticky] = useState(true)
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, {passive: true})
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -252,7 +252,7 @@ const PricingComparisonComponent = props => {
                     <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-midnight">
                       {oo.title}
                     </h3>
-                    <div class="text-grayColor-lighter text-sm leading-6 text-sm py-2">
+                    <div class="text-grayColor-lighter leading-6 text-sm py-2">
                       {oo.subtitle}
                     </div>
                     {(() => {

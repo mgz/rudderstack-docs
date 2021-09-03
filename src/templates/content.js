@@ -19,7 +19,7 @@ import Image from "../components/image"
 import Subscription from "../components/Subscription"
 import MiddleBanner from "../components/middle-banner"
 import SignupV1 from "../components/signup_v1"
-
+import clientConfig from "../../client-config"
 // const Layout = loadable(() =>  import("../components/layout"))
 // const Herobanner = loadable(() =>  import("../components/herobanner"))
 // const PortableText = loadable(() =>  import("../components/portableText"))
@@ -43,9 +43,10 @@ const Singleblog = ({ data, location, ...props }) => {
     author_names += (author_names.length > 0 ? ", " : "") + row.author_name
   })
 
-  const lv_middlebannersection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "middlebannersection")
+  const lv_middlebannersection = data.section_get_started.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
+
 
   // console.log("data", data)
   return (
@@ -191,7 +192,7 @@ const Singleblog = ({ data, location, ...props }) => {
         <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
       </div>
       <section id="footer_section_for_demo">
-        <MiddleBanner {...lv_middlebannersection[0]} />
+        <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
       </section>
       {/*Subscription Component*/}
     </Layout>
@@ -200,8 +201,14 @@ const Singleblog = ({ data, location, ...props }) => {
 
 export const query = graphql`
   query GetSingleBlog($slug: String) {
-    sanityFrontpageblock {
-      _rawPagebuildersectionarray
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
     }
     blog: sanityBlog(slug: { current: { eq: $slug } }) {
       id

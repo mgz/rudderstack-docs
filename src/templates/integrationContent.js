@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import "../lib/font-awesome"
 
-import loadable from "@loadable/component"
+//import loadable from "@loadable/component"
 
 import Layout from "../components/layout"
 import IntegrationHero from "../components/integrationHero"
@@ -14,6 +14,7 @@ import IntegrationSimilar from "../components/IntegrationSimilar"
 import MiddleBanner from "../components/middle-banner"
 import Faq from "../components/faq"
 import Testimonial from "../components/testimonial"
+import clientConfig from "../../client-config"
 
 // const Layout = loadable(() => import("../components/layout"))
 // const IntegrationHero = loadable(() => import("../components/integrationHero"))
@@ -35,13 +36,13 @@ import Testimonial from "../components/testimonial"
 
 const Singleintegration = ({ data }) => {
   // console.log("integration-data", data)
-  const lv_testimonialsection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "testimonialsection")
+  const lv_testimonialsection = data.section_testimonials.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
+  )
 
-  const lv_middlebannersection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "middlebannersection")
+  const lv_middlebannersection = data.section_get_started.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
 
   const [faqData, setFaqData] = React.useState()
   useEffect(() => {
@@ -119,10 +120,13 @@ const Singleintegration = ({ data }) => {
         )}
 
         <section id="testimonials">
-          <Testimonial {...lv_testimonialsection[0]} isForDemoPage={true} />
+          <Testimonial
+            {...lv_testimonialsection[0].node._rawTestimonials}
+            isForDemoPage={true}
+          />
         </section>
         <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0]} />
+          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
     </Layout>
@@ -173,8 +177,23 @@ export const query = graphql`
         totalCount
       }
     }
-    sanityFrontpageblock(_id: {eq: "frontpageblock"}) {
-      _rawPagebuildersectionarray
+    section_testimonials: allSanitySectionTestimonials {
+      edges {
+        node {
+          _id
+          section_name
+          _rawTestimonials
+        }
+      }
+    }
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
     }
   }
 `

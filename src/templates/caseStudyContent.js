@@ -151,11 +151,7 @@ export const query = graphql`
       category
       _rawPagebuildersectionarray
     }
-
-    sanityFrontpageblock {
-      _rawPagebuildersectionarray
-    }
-
+ 
     section_get_started: allSanitySectionGetStarted {
       edges {
         node {

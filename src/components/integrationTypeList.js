@@ -5,9 +5,12 @@ import {
   connectRefinementList,
 } from "react-instantsearch-dom"
 //import { graphql } from "gatsby"
+import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCheckSquare } from "@fortawesome/free-solid-svg-icons"
-import { faSquare } from "@fortawesome/free-regular-svg-icons"
+import { faCheckSquare } from "@fortawesome/free-solid-svg-icons/faCheckSquare"
+import { faSquare } from "@fortawesome/free-regular-svg-icons/faSquare"
+
+library.add(faCheckSquare, faSquare);
 
 const CustomIntegrationTypeList = ({
   items,

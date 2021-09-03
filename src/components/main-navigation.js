@@ -50,13 +50,14 @@ const MainNavigation = props => {
   return (
     <>
       <nav
+        name={"header-container"}
         className={`gradient-${
           props.diableGradient ? "disable" : "enable"
         } sticky top-0 z-50`}
       >
         <div className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 lg:pb-0 flex-wrap ">
           <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
-            <Link to="/" className="pl-4 sm:pl-0" rel="noopener noreferrer">
+            <Link to="/" className="pl-4 sm:pl-0 pb-0 md:pb-3" rel="noopener noreferrer">
               <StaticImage
                 // src={"../images/rudderstack-logo-v2.svg"}
                 src={"../images/rudderstack-logo-header-v2.png"}
@@ -111,9 +112,10 @@ const MainNavigation = props => {
             </button>
           </div>
           <div
+            id="main-nav-menu"
             className={`menu lg:flex ${
               isExpanded ? `block` : `hidden`
-            } py-4 pl-4 lg:pl-16 pr-4 justify-center items-center lg:items-center lg:w-auto w-full mt-2 lg:mt-0 lg:flex-1 bg-blueNew-midnight lg:bg-transparent text-white lg:text-black-custom`}
+            } py-4 pl-4 lg:pl-16 pr-4 justify-center items-center lg:items-center lg:w-auto w-full mt-2 lg:mt-0 lg:flex-1  lg:bg-transparent  lg:text-black-custom`}
           >
             <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
               {mainmenu.map((link, i) => (

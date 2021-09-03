@@ -6,7 +6,7 @@ import Image from "./image"
 const SegmentComparisonComponent = props => {
   const [sticky, setSticky] = useState(true)
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, {passive: true})
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
