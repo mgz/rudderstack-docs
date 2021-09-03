@@ -1,5 +1,5 @@
 ---
-slug: "/docs/adding-a-new-user-transformation-in-rudderstack/access-token"
+slug: "/docs/adding-a-new-user-transformation-in-rudderstack/api-access-token"
 title: "API Access Token - RudderStack"
 description: >-
   Detailed description on managing your access token required to use the
@@ -14,9 +14,9 @@ To consume the RudderStack Transformation API you need access to it. This guide 
 
 In order to use the Transformation API, you will need an Access Token associated with your account. You can create your own Access Token by following steps below:
 
-{% hint style="success" %}
-You can use Postman, Fiddler or any other API client to make your request.
-{% endhint %}
+<div class="successBlock">
+  You can use Postman, Fiddler or any other API client to make your request.
+</div>
 
 Use HTTP Basic authentication and pass the workspace token as the user name and empty string as password.
 
@@ -108,9 +108,11 @@ You can get the workspace token by logging into your RudderStack dashboard, as s
 - Workspace Token **- abcd1234**
 - Headers **- Basic {Base64Encoded\(abcd1234:\)}**
 
-{% hint style="danger" %}
-Copy your access token and keep it safely with you. You won't be able to get it back once lost. Your AccessToken carry many privileges, so be sure to keep them secret.
-{% endhint %}
+<div class="dangerBlock">
+  Copy your access token and keep it safely with you. You won't be able to get
+  it back once lost. Your AccessToken carry many privileges, so be sure to keep
+  them secret.
+</div>
 
 {% api-method method="get" host="https://api.rudderstack.com" path="/accessTokens" %}
 {% api-method-summary %}
@@ -156,9 +158,10 @@ Base64encoded **workspace token.**
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% hint style="info" %}
-Here you will get a list of objects. Note that RudderStack does not send your access token.
-{% endhint %}
+<div class="infoBlock">
+  Here you will get a list of objects. Note that RudderStack does not send your
+  access token.
+</div>
 
 {% tabs %}
 {% tab title="Curl" %}

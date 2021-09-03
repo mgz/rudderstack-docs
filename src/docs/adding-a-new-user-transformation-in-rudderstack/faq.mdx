@@ -16,9 +16,14 @@ RudderStack's Transformations feature lets you transform the events collected fr
 - You can implement specific use-cases depending on your business requirements using this feature. Some examples include PII masking, event filtering based on specific criteria, aggregating and enriching events, and so on.
 - They're easier to build and manage, and can be reused as well.
 
-{% hint style="success" %}
-Read more about why your data pipeline needs to have an efficient event transformations capability in our [blog](https://rudderstack.com/blog/the-future-of-data-pipeline-tools-must-include-better-transformations-than-etl-ever-had).
-{% endhint %}
+<div class="successBlock">
+  Read more about why your data pipeline needs to have an efficient event
+  transformations capability in our{" "}
+  <a href="https://rudderstack.com/blog/the-future-of-data-pipeline-tools-must-include-better-transformations-than-etl-ever-had">
+    blog
+  </a>
+  .
+</div>
 
 ## I used to write transformations like `function transform(events) {}`. Why am I not able to create new transformations this way?
 
@@ -32,9 +37,10 @@ You can. Simply define your transformation in the following manner:
 
 `export function transformBatch(event, metadata) {}` .
 
-{% hint style="warning" %}
-This can cause a loss of the event metadata that RudderStack uses internally to maintain event ordering for you.
-{% endhint %}
+<div class="warningBlock">
+  This can cause a loss of the event metadata that RudderStack uses internally
+  to maintain event ordering for you.
+</div>
 
 ## I cannot import libraries into my existing transformations. What do I do?
 

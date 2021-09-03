@@ -1,5 +1,5 @@
 ---
-slug: "/docs/adding-a-new-user-transformation-in-rudderstack"
+#slug: "/docs/adding-a-new-user-transformation-in-rudderstack"
 title: "Transformations - RudderStack"
 description: Detailed technical documentation on RudderStack's Transformations feature.
 ---
@@ -14,27 +14,40 @@ Transformations is one of RudderStack's key features. It gives you the ability t
 - Data masking or removing sensitive PII information in the events to ensure data privacy.
 - Implementing external actions on the events using an API.
 
-{% hint style="success" %}
-Transformations can be used across your [**Event Stream**](../stream-sources/), [**Warehouse Actions**](../warehouse-actions/), and [**Cloud Extract**](../cloud-extract-sources/) pipelines.
-{% endhint %}
+<div class="successBlock">
+  Transformations can be used across your{" "}
+  <a href="../stream-sources/">Event Stream</a>,{" "}
+  <a href="../warehouse-actions/">Warehouse Actions</a> and{" "}
+  <a href="../cloud-extract-sources/">Cloud Extract</a> pipelines.
+</div>
 
 Here's a quick 2-minute walkthrough of this feature:
 
 https://www.youtube.com/watch?v=-1F4YeJCXU8
 
-{% hint style="info" %}
-For details on how to add a transformation in RudderStack, check the [**Adding a New Transformation**](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack#adding-a-transformation) section below.
-{% endhint %}
+<div class="infoBlock">
+  For details on how to add a transformation in RudderStack, check the{" "}
+  <a href="https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack#adding-a-transformation">
+    Adding a New Transformation
+  </a>{" "}
+  section below.
+</div>
 
-{% hint style="success" %}
-You can refer to our [**Transformations**](https://github.com/rudderlabs/sample-user-transformers) GitHub repository for some useful templates that you can use to create your own user transformations.
-{% endhint %}
+<div class="successBlock">
+  You can refer to our{" "}
+  <a href="https://github.com/rudderlabs/sample-user-transformers">
+    Transformations
+  </a>{" "}
+  GitHub repository for some useful templates that you can use to create your
+  own user transformations.
+</div>
 
-{% hint style="warning" %}
-**Transformations only work for the Cloud mode destinations.**
+<div class="warningBlock">
+<strong>Transformations only work for the Cloud mode destinations.</strong>
 
-To know more about the Cloud mode in RudderStack, check out the [**RudderStack Connection Modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
-{% endhint %}
+To know more about the Cloud mode in RudderStack, check out the <a href="../get-started/rudderstack-connection-modes">RudderStack Connection Modes</a> guide.
+
+</div>
 
 ## Adding a Transformation
 
@@ -55,15 +68,18 @@ To know more about the Cloud mode in RudderStack, check out the [**RudderStack C
 
 ![](../.gitbook/assets/image%20%2899%29.png)
 
-{% hint style="info" %}
-Our [**Transformations**](https://github.com/rudderlabs/sample-user-transformers) GitHub repository contains some useful templates that you can use to create your own transformations.
+<div class="infoBlock">
+Our <a href="https://github.com/rudderlabs/sample-user-transformers">Transformations</a> GitHub repository contains some useful templates that you can use to create your own transformations.
 
-You can copy-paste the entire code of any of the functions present in this repository into the **Transformation** window.
-{% endhint %}
+You can copy-paste the entire code of any of the functions present in this repository into the <strong>Transformation</strong> window.
 
-{% hint style="warning" %}
-Remember to delete the pre-populated `transformEvent` function in such cases, before pasting your code.
-{% endhint %}
+</div>
+
+<div class="warningBlock">
+  Remember to delete the pre-populated{" "}
+  <code class="inline-code">transformEvent</code> function in such cases, before
+  pasting your code.
+</div>
 
 - RudderStack also gives you the ability to test your transformation function with the **Run Test** option as shown:
 
@@ -85,15 +101,16 @@ export function transformBatch(events, metadata) {
 }
 ```
 
-{% hint style="danger" %}
-**Disclaimer for using `transformBatch`**
+<div class="dangerBlock"> 
+<strong>Disclaimer for using <code class="inline-code">transformBatch</code></strong>
 
-Make sure you pass on the `messageID` from the input event onto the output event. If the `messageID` is passed on, the order of delivery of events is preserved. **Without it, this order may not be maintained**.
+Make sure you pass on the <code class="inline-code">messageID</code> from the input event onto the output event. If the <code class="inline-code">messageID</code> is passed on, the order of delivery of events is preserved. <strong>Without it, this order may not be maintained</strong>.
 
-It is highly recommended to use `transformEvent` in every possible case as it ensures event ordering in all cases.
+It is highly recommended to use <code class="inline-code">transformEvent</code> in every possible case as it ensures event ordering in all cases.
 
-In case a `transformBatch` is required and event ordering is important, make sure to pass on the `messageID`.
-{% endhint %}
+In case a <code class="inline-code">transformBatch</code> is required and event ordering is important, make sure to pass on the <code class="inline-code">messageID</code>.
+
+</div>
 
 ## Libraries
 
@@ -113,11 +130,12 @@ To create a library, follow these steps:
 
 ![](../.gitbook/assets/image%20%2895%29.png)
 
-{% hint style="warning" %}
-**RudderStack does not support the deletion of libraries as of now.**
+<div class="warningBlock">
+<strong>RudderStack does not support the deletion of libraries as of now.</strong>
 
 This is to ensure that you don't break any existing transformations that use the library that you might be trying to delete.
-{% endhint %}
+
+</div>
 
 ## Using Libraries in Transformations
 
@@ -182,9 +200,10 @@ import {
 
 RudderStack injects a function `metadata(event)` into your transformations as an argument. This allows you to access the event metadata variables that help you customize your transformations.
 
-{% hint style="info" %}
-`metadata()` takes the event as input and returns the metadata of the event.
-{% endhint %}
+<div class="infoBlock">
+  <code class="inline-code">metadata()</code> takes the event as input and
+  returns the metadata of the event.
+</div>
 
 The following properties, if available, are present in the metadata response:
 
@@ -269,9 +288,13 @@ export async function transformEvent(event) {
 {% endtab %}
 {% endtabs %}
 
-{% hint style="success" %}
-To see how this feature is used in more detail, check out the [**Clearbit enrichment example**](https://github.com/rudderlabs/sample-user-transformers/blob/sampleTransformationV1/EnrichWithClearbit.js) which uses the `fetch` function.
-{% endhint %}
+<div class="successBlock">
+  To see how this feature is used in more detail, check out the{" "}
+  <a href="https://github.com/rudderlabs/sample-user-transformers/blob/sampleTransformationV1/EnrichWithClearbit.js">
+    Clearbit enrichment example
+  </a>{" "}
+  which uses the <code class="inline-code">fetch</code> function.
+</div>
 
 {% hint style="info" %}
 For improved performance, we recommend using `batch` API requests instead of a separate API request for each event whenever possible.
@@ -297,9 +320,10 @@ On running a test on the above code, you can see the logs in the **Logs** sectio
 
 ![](../.gitbook/assets/image%20%28103%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
-{% hint style="info" %}
-Arguments to the `log` function can be a String, Number or Object.
-{% endhint %}
+<div class="infoBlock">
+  Arguments to the <code class="inline-code">log</code> function can be a
+  String, Number or Object.
+</div>
 
 ## Limits
 
@@ -310,9 +334,9 @@ You should take into account the memory and time limits when adding a new transf
 | Memory Limit | 8 MB      |
 | Time Limit   | 4 seconds |
 
-{% hint style="warning" %}
-The user transformation fails if these limits are exceeded.
-{% endhint %}
+<div class="warningBlock">
+  The user transformation fails if these limits are exceeded.
+</div>
 
 ## Contact Us
 

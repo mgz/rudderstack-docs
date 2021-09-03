@@ -805,60 +805,6 @@ top: -60px;
   @apply border-grayColor-lighter;
 }
 
-@media only screen and (min-width: 1023px) {
-  .menu li.has-submenu:hover a:after {
-    transform: rotate(225deg);
-    top: 0px;
-  }
-}
-
-@media only screen and (max-width: 1023px) {
-  .about-us-banner {
-    background-position: right 10px;
-  }
-  .menu {
-    background-color: #fff !important;
-    @apply w-full !important;
-  }
-  .sub-menu:after {
-    display: none;
-  }
-  .menu li.has-submenu {
-    position: relative;
-  }
-  .menu li.has-submenu a:after {
-    position: absolute;
-    top: 20px;
-  }
-  /*Integration Page Css*/
-  .integration-banner::before {
-    right: -190px;
-    background-position: right 20px;
-    background-size: 50% auto;
-  }
-  .integration-banner::after {
-    background-position: -30px 0px;
-    background-size: 25% auto;
-    top: 8px;
-  }
-}
-@media only screen and (max-width: 1120px) {
-  .demo-submit-background {
-    background-image: url("../images/form-submit-header-right.png");
-    background-position: bottom right;
-    background-size: 350px auto;
-
-    background-repeat: no-repeat;
-  }
-
-  .demo-header-bg {
-    background-image: none;
-    background-position: bottom right;
-    background-size: 640px auto;
-    background-repeat: no-repeat;
-  }
-}
-
 /*=== Docs styles ===*/
 .sidebar-nav {
   width: 300px;
@@ -904,6 +850,11 @@ top: -60px;
   @apply my-4;
   @apply border-l-2;
   @apply border-primary;
+}
+
+.docs-main-content strong,
+.docs-main-content a strong {
+  @apply font-bold;
 }
 
 .docs-main-content a {
@@ -968,6 +919,19 @@ top: -60px;
   border-radius: 0px 5px 5px 0px;
 }
 
+.successBlock {
+  @apply text-secondary;
+  @apply px-5;
+  @apply py-2;
+  @apply pl-12;
+  @apply bg-green-successBg;
+  @apply border-l-2;
+  @apply border-green-successBorder;
+  @apply relative;
+  @apply mb-3;
+  border-radius: 0px 5px 5px 0px;
+}
+
 .infoBlock:before {
   content: url("../images/info-icon.svg");
   width: 1em;
@@ -994,6 +958,69 @@ top: -60px;
   @apply top-1/2;
   transform: translateY(-50%);
   @apply left-3;
+}
+.successBlock:before {
+  content: url("../images/success-icon.svg");
+  width: 1em;
+  height: 1em;
+  @apply absolute;
+  @apply top-1/2;
+  transform: translateY(-50%);
+  @apply left-3;
+}
+
+@media only screen and (min-width: 1023px) {
+  .menu li.has-submenu:hover a:after {
+    transform: rotate(225deg);
+    top: 0px;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .about-us-banner {
+    background-position: right 10px;
+  }
+  .menu {
+    background-color: #fff !important;
+    @apply w-full !important;
+  }
+  .sub-menu:after {
+    display: none;
+  }
+  .menu li.has-submenu {
+    position: relative;
+  }
+  .menu li.has-submenu a:after {
+    position: absolute;
+    top: 20px;
+  }
+  /*Integration Page Css*/
+  .integration-banner::before {
+    right: -190px;
+    background-position: right 20px;
+    background-size: 50% auto;
+  }
+  .integration-banner::after {
+    background-position: -30px 0px;
+    background-size: 25% auto;
+    top: 8px;
+  }
+}
+@media only screen and (max-width: 1120px) {
+  .demo-submit-background {
+    background-image: url("../images/form-submit-header-right.png");
+    background-position: bottom right;
+    background-size: 350px auto;
+
+    background-repeat: no-repeat;
+  }
+
+  .demo-header-bg {
+    background-image: none;
+    background-position: bottom right;
+    background-size: 640px auto;
+    background-repeat: no-repeat;
+  }
 }
 
 @media (max-width: 992px) {

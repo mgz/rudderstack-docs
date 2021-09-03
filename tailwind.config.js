@@ -48,6 +48,10 @@ module.exports = {
         warningBorder: "#f77d05",
         warningBg: "#f1be8d"
       },
+      green: {
+        successBg: "#c1ead7",
+        successBorder: "#26cb7c"
+      }
     },
     extend: {
       padding: {
