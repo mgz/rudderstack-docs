@@ -60,7 +60,7 @@ const MainNavigationMenuLink = props => {
                               {menuGroup.group_icon && (
                                 <Image
                                   props={menuGroup.group_icon.asset._ref}
-                                  classes="w-10 object-cover"
+                                  classes="h-8 w-auto object-cover"
                                 />
                               )}
                             </div>
