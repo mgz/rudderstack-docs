@@ -261,8 +261,8 @@ Variables
 }
 
 #guides-container .calltoaction,
-.darkbackground,
-.lightbackground {
+#guides-container .darkbackground,
+#guides-container .lightbackground {
   background-image: url("../images/blue_gradiant.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -272,8 +272,15 @@ Variables
 }
 
 #guides-container .darkbackground,
-.lightbackground {
+#guides-container .lightbackground {
   text-align: left;
+}
+
+#guides-container .lightbackground li{
+  padding-left: 24px;
+  color: #4e4e4e;
+  font-size: 18px;
+  margin-bottom: 6px;
 }
 
 #guides-container .lightbackground {
@@ -285,8 +292,8 @@ Variables
 }
 
 #guides-container .calltoaction h3,
-.darkbackground h3,
-.lightbackground h3 {
+#guides-container .darkbackground h3,
+#guides-container .lightbackground h3 {
   margin-bottom: 30px;
   color: #fff;
 }
@@ -296,7 +303,7 @@ Variables
 }
 
 #guides-container .calltoaction .block-description p,
-.darkbackground .block-description p {
+#guides-container .darkbackground .block-description p {
   color: #fff;
 }
 

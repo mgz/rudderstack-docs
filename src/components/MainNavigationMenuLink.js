@@ -56,7 +56,7 @@ const MainNavigationMenuLink = props => {
                           } `}
                         >
                           <div className="flex flex-row lg:flex-col text-blueNew-midnight ">
-                            <div className="mb-4 px-4 lg:px-8 w-18">
+                            <div className="mb-4 px-4 lg:px-12 w-18">
                               {menuGroup.group_icon && (
                                 <Image
                                   props={menuGroup.group_icon.asset._ref}
@@ -65,7 +65,7 @@ const MainNavigationMenuLink = props => {
                               )}
                             </div>
                             <div>
-                              <div className="font-bold text-lg pb-2 lg:pb-4 leading-6 px-4 lg:px-8">
+                              <div className="font-bold text-lg pb-2 lg:pb-4 leading-6 px-4 lg:px-12">
                                 {menuGroup.group_title}
                               </div>
 
@@ -77,7 +77,7 @@ const MainNavigationMenuLink = props => {
                                       return (
                                         <li
                                           key={j}
-                                          className="text-xs font-custom py-1 lg:py-2 font-bold hover:bg-blueNew-lighter px-4 lg:px-8"
+                                          className="text-xs font-custom py-1 lg:py-2 font-bold hover:bg-blueNew-lighter px-4 lg:px-12"
                                         >
                                           <a
                                             className={`border-b border-solid border-transparent`}
