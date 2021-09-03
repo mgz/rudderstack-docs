@@ -9,6 +9,7 @@ const ImageWithAddons = props => {
       <Image
         props={props.data.imgboximage.asset._ref}
         alt={props.data.alt_attribute}
+        classes={"mx-auto"}
       />
 
       <h3 className="absolute bottom-6 text-center w-full">{props.data.image_caption}</h3>

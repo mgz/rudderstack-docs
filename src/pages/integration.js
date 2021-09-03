@@ -12,6 +12,7 @@ import IntegrationHits from "../components/integrationHits"
 import IntegrationsHelpBox from "../components/Integrations-help"
 import ScrollUpButton from "react-scroll-up-button"
 import MiddleBanner from "../components/middle-banner"
+import clientConfig from "../../client-config"
 
 const Integration = props => {
   const searchClient = algoliasearch(
@@ -19,10 +20,9 @@ const Integration = props => {
     process.env.GATSBY_ALGOLIA_SEARCH_APIKEY
   )
   
-  const lv_middlebannersection = (
-    props.data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "middlebannersection")
-
+  const lv_middlebannersection = props.data.section_get_started.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
 
   const { data } = props
   const [searchedText, setSerchedText] = React.useState("")
@@ -134,7 +134,7 @@ const Integration = props => {
         </div>
       </div>
       <section id="footer_section_for_demo">
-        <MiddleBanner {...lv_middlebannersection[0]} />
+        <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
       </section>
 
     </Layout>
@@ -145,8 +145,14 @@ export default Integration
 
 export const pageQuery = graphql`
   query {
-    sanityFrontpageblock {
-      _rawPagebuildersectionarray
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
     }
     allSanityIntegration {
       pageInfo {

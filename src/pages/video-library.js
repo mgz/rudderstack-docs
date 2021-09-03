@@ -10,18 +10,20 @@ import CustomHits from "../components/customHits"
 import CustomVideoLibraryHits from "../components/customHitsVideoLibrary"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import "../lib/font-awesome"
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
+/* import "../lib/font-awesome" */
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp"
 import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
 import SingleRowContentVideoLibrary from "../components/singleRowContentVideoLibrary"
 import { useQueryParam, StringParam } from "use-query-params"
+import clientConfig from "../../client-config"
 
 const VideoLibraryPage = ({ data }) => {
-  const lv_middlebannersection = (
-    data.sanityFrontpageblock._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "middlebannersection")
+  const lv_middlebannersection = data.section_get_started.edges.filter(
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
+
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_APIKEY
@@ -111,7 +113,7 @@ const VideoLibraryPage = ({ data }) => {
           </InstantSearch>
         </div>
         <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0]} />
+          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
     </Layout>
@@ -122,8 +124,14 @@ export default VideoLibraryPage
 
 export const pageQuery = graphql`
   query {
-    sanityFrontpageblock {
-      _rawPagebuildersectionarray
+    section_get_started: allSanitySectionGetStarted {
+      edges {
+        node {
+          _id
+          section_name
+          _rawGetStarted
+        }
+      }
     }
     videolibrary: allSanityVideolibrary(
       sort: { fields: webinar_dttm, order: ASC }

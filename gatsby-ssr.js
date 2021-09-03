@@ -17,18 +17,22 @@
 
 // You can delete this file if you're not using it
 import React from "react"
+import { isMobile, isBrowser } from "react-device-detect"
 
-export const onRenderBody = ({
+/* export const onRenderBody = ({
   setPostBodyComponents,
   setPreBodyComponents,
 }) => {
-  setPreBodyComponents([
-    <script key="hero-banner-animation-first" src={"/script.js"} defer />,
-  ])
+  if(isMobile){
+    setPostBodyComponents([
+      <script key="hero-banner-animation-first" src={"/script.js"} defer />,
+    ])
+  }
+  
   // setPostBodyComponents([
   //   <script key="hero-banner-animation-first" src={"/script2.js"} defer />,
   // ])
-}
+} */
 
 export const onPreRenderHTML = ({
   pathname,

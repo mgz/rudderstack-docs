@@ -10,6 +10,9 @@ import MiddleBanner from "../components/middle-banner"
 import RightSideHiglightedContent from "../components/rightSideHiglightedContent"
 import FreeText from "../components/freeText"
 import GraphQLErrorList from "../components/graphql-error-list"
+import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
+import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
+
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
@@ -55,6 +58,7 @@ const Page = props => {
     )
   }
 
+  let l_section_info
   const page = data.page || data.route.page
   const content = (page._rawPagebuildersectionarray || [])
     .filter(c => !c.disabled)
@@ -73,12 +77,19 @@ const Page = props => {
         case "ourlogoblock":
           el = <OurLogo key={c._key} {...c} />
           break
+        case "ref_section_ourlogos":
+          l_section_info = data.section_our_logos.edges.find(
+            kl => kl.node._id === c._ref
+          )
+
+          el = <OurLogo key={c._key} {...l_section_info.node._rawOurLogos} />
+          break
         case "tabsection":
           el = <Tabs key={c._key} {...c} />
           break
         case "leftrightcontentimagesection":
           el = (
-            <div className="bg-gradiantsecondary 100%" key={c._key}>
+            <div className="bg-blueNew-midnight_v2 100% pt-32" key={c._key}>
               <LeftRightImgCnt applyGradientColorTheme={true} {...c} />{" "}
             </div>
           )
@@ -89,9 +100,40 @@ const Page = props => {
         case "middlebannersection":
           el = <MiddleBanner key={c._key} {...c} />
           break
+        case "ref_section_get_started":
+          l_section_info = data.section_get_started.edges.find(
+            kl => kl.node._id === c._ref
+          )
+
+          el = (
+            <MiddleBanner
+              key={c._key}
+              {...l_section_info.node._rawGetStarted}
+            />
+          )
+          break
         case "testimonialsection":
           el = (
             <Testimonial key={c._key} applyGradientColorTheme={true} {...c} />
+          )
+          break
+        case "three_card_with_title":
+          el = <ThreeCardsWithTitleLeftAligned key={c._key} {...c} />
+          break
+        case "centered_aligned_title_with_youtube":
+          el = <CenteredAlignedTitleWithYoutube key={c._key} {...c} />
+          break
+        case "ref_section_testimonials":
+          l_section_info = data.section_testimonials.edges.find(
+            kl => kl.node._id === c._ref
+          )
+
+          el = (
+            <Testimonial
+              key={c._key}
+              applyGradientColorTheme={false}
+              {...l_section_info.node._rawTestimonials}
+            />
           )
           break
         case "righthighlightedsection":
@@ -140,10 +182,7 @@ const Page = props => {
         />
         <meta name="description" content={data.page.meta_desc} />
         <meta property="og:description" content={data.page.meta_desc} />
-        <meta
-          property="twitter:description"
-          content={data.page.meta_desc}
-        />
+        <meta property="twitter:description" content={data.page.meta_desc} />
         {/* <meta property="og:type" content="article" /> */}
       </Helmet>
 
@@ -154,7 +193,7 @@ const Page = props => {
           class: "leading-normal tracking-normal text-white gradient",
         }}
       /> */}
-      <div className="pt-10 font-custom">{content}</div>
+      <div className="pt-0 font-custom">{content}</div>
     </Layout>
   )
 }

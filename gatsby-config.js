@@ -64,6 +64,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: "mwovquhr",
+        dataset: "production",
+        token:
+          "skPnMsc9RbXpzOjYtOaEx8VjMdXJXurNLsTWpHN7rYl3XCNFpBgeeR8BjpZfiaxLgna1Fb1hPJdfVfx9erLWbWW3vmCazYhMhy0xXZr551SQ6cCJv8nnm91kG5xyhhSztyuZJoaZXg2vrlOkzQxephrO52ujahJq4Y7Zv56rpp5hhkHsqg69",
+        graphqlTag: "default",
+      },
+    },
+    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -159,7 +169,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-     {
+   {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
@@ -168,8 +178,8 @@ module.exports = {
         loadType:'defer',
         trackPage: true,
         // loadAsync: true,
-        // delayLoad: true,
-        // delayLoadTime: 200,
+         //delayLoad: true,
+         //delayLoadTime: 500,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
     },
@@ -195,8 +205,14 @@ module.exports = {
                 return Object.assign({}, edge.node, {
                   description: edge.node.meta_desc,
                   date: edge.node._createdAt,
-                  url: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug.current,
-                  guid: site.siteMetadata.siteUrl + "/blog/" + edge.node.slug.current,
+                  url:
+                    site.siteMetadata.siteUrl +
+                    "/blog/" +
+                    edge.node.slug.current,
+                  guid:
+                    site.siteMetadata.siteUrl +
+                    "/blog/" +
+                    edge.node.slug.current,
                   //  custom_elements: [{ "content:encoded": edge.node._rawDescription }],
                 })
               })
@@ -222,23 +238,25 @@ module.exports = {
         ],
       },
     },
-  //  {
-  //   resolve: `gatsby-plugin-purgecss`,
-  //     options: {
-  //       printRejected: true, // Print removed selectors and processed file names
-  //       // develop: true, // Enable while using `gatsby develop`
-  //       tailwind: true, // Enable tailwindcss support
-  //       // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-  //       purgeOnly : ['/'], // Purge only these files/folders
-  //       purgeCSSOptions: {
-  //         // https://purgecss.com/configuration.html#options
-  //          safelist: ['gradient-enable'], // Don't remove this selector
-  //       },
-  //     },
-  //  },
+    // {
+    //   resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+    //   options: {
+    //     devMode: true,
+    //   },
+    // },
     "gatsby-plugin-use-query-params",
+    // {
+    //   resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+    //   options: {
+    //     analyzerMode: "server",
+    //     analyzerPort: "8888",
+    //     devMode: true,
+    //   },
+    // },
     "gatsby-source-sanity-transform-images",
-    `gatsby-plugin-meta-redirect`, // make sure to put last in the array
+    `gatsby-plugin-meta-redirect`, 
+    "gatsby-plugin-preload-fonts",
+    // make sure to put last in the array
     // {
     //   resolve: `gatsby-plugin-remote-images`,
     //   options: {
