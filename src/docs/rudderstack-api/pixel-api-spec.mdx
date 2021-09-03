@@ -1,5 +1,5 @@
 ---
-slug: "/docs/rudderstack-api/pixel-api-spec"
+#slug: "/docs/rudderstack-api/pixel-api-spec"
 title: "Pixel API - RudderStack"
 description: >-
   Detailed technical description of the RudderStack Pixel API to track and
@@ -46,24 +46,18 @@ This API is very useful in scenarios where making a POST request is not possible
       <td style="text-align:left">Required</td>
       <td style="text-align:left">
         <p></p>
-        <p>
-          <code>writeKey=${writeKey}</code>
-        </p>
-        <p>
-          <code>anonymousId=${anonymousId}</code>
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: "writeKey=${writeKey}" }}></p>
+        <p
+          dangerouslySetInnerHTML={{ __html: "anonymousId=${anonymousId}" }}
+        ></p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">Optional</td>
       <td style="text-align:left">
         <p></p>
-        <p>
-          <code>userId=${userId}</code>
-        </p>
-        <p>
-          <code>name=${page_name}</code>
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: "userId=${userId}" }}></p>
+        <p dangerouslySetInnerHTML={{ __html: "name=${page_name}" }}></p>
         <p>
           <code>context.library.name</code>
         </p>
@@ -98,10 +92,18 @@ This API is very useful in scenarios where making a POST request is not possible
           <code>context.page.title</code>
         </p>
         <p>
-          <code>properties.&lt;*key1*&gt;=${value}</code>
+          <code
+            dangerouslySetInnerHTML={{
+              __html: "properties.&lt;*key1*&gt;=${value}",
+            }}
+          ></code>
         </p>
         <p>
-          <code>properties.&lt;*key2*&gt;=${value}</code>
+          <code
+            dangerouslySetInnerHTML={{
+              __html: "properties.&lt;*key2*&gt;=${value}",
+            }}
+          ></code>
         </p>
         <p>
           <code>properties. ...</code>
@@ -193,23 +195,17 @@ Note that for this endpoint, RudderStack does not currently support overriding t
       <td style="text-align:left">Required</td>
       <td style="text-align:left">
         <p></p>
-        <p>
-          <code>writeKey=${writeKey}</code>
-        </p>
-        <p>
-          <code>anonymousId=${anonymousId}</code>
-        </p>
-        <p>
-          <code>event=${event_name}</code>
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: "writeKey=${writeKey}" }}></p>
+        <p
+          dangerouslySetInnerHTML={{ __html: "anonymousId=${anonymousId}" }}
+        ></p>
+        <p dangerouslySetInnerHTML={{ __html: "event=${event_name}" }}></p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">Optional</td>
       <td style="text-align:left">
-        <p>
-          <code>userId=${userId}</code>
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: "userId=${userId}" }}></p>
         <p>
           <code>context.library.name</code>
         </p>
@@ -244,10 +240,18 @@ Note that for this endpoint, RudderStack does not currently support overriding t
           <code>context.page.title</code>
         </p>
         <p>
-          <code>properties.&lt;*key1*&gt;=${value}</code>
+          <code
+            dangerouslySetInnerHTML={{
+              __html: "properties.&lt;*key1*&gt;=${value}",
+            }}
+          ></code>
         </p>
         <p>
-          <code>properties.&lt;*key2*&gt;=${value}</code>
+          <code
+            dangerouslySetInnerHTML={{
+              __html: "properties.&lt;*key2*&gt;=${value}",
+            }}
+          ></code>
         </p>
         <p>
           <code>properties. ...</code>
