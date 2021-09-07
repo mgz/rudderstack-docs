@@ -40,7 +40,9 @@ const Sidebar = () => {
             <Accordion key={i.node.id} allowZeroExpanded={true}>
               <AccordionItem>
                 <AccordionItemHeading>
-                  <AccordionItemButton>{i.node.label}</AccordionItemButton>
+                  <AccordionItemButton>
+                    <Link to={i.node.link}>{i.node.label}</Link>
+                  </AccordionItemButton>
                 </AccordionItemHeading>
                 {generateAccordion(
                   sidebarData,

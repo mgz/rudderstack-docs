@@ -19,7 +19,7 @@
   elId: 5
   parentId: 0
 - label: Warehouse Actions Sources
-  link: "/warehouse-actions-sources"
+  link: "/warehouse-actions"
   elId: 6
   parentId: 0
 - label: Destinations
@@ -35,7 +35,7 @@
   elId: 9
   parentId: 0
 - label: Transformations
-  link: "/transformations"
+  link: "/adding-a-new-user-transformation-in-rudderstack"
   elId: 10
   parentId: 0
 - label: RudderStack API
@@ -51,7 +51,7 @@
   elId: 13
   parentId: 0
 - label: FAQs
-  link: "/faq"
+  link: "/faqs"
   elId: 14
   parentId: 0
 - label: Install and Set Up RudderStack
