@@ -864,7 +864,10 @@ top: -60px;
 .sidebar-nav {
   width: 300px;
 }
-
+.sidebar-nav-content {
+  @apply border-r;
+  @apply border-grayColor-lightBorder;
+}
 .sidebar-nav-content a {
   @apply block;
   @apply p-1;
