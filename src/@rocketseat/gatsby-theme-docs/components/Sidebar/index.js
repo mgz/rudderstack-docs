@@ -1,5 +1,6 @@
 import React from 'react';
 import {useSidebar} from '../../../gatsby-theme-docs-core/hooks/useSidebar';
+import { resolveLink } from '@rocketseat/gatsby-theme-docs-core/util/url';
 import Link from "gatsby-link";
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 
@@ -7,13 +8,14 @@ import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, Ac
 const Sidebar = () => {
     const sidebarData = useSidebar();
     console.log('Sidebar Data', sidebarData);
+    const basePath = '/docs';
 
     return(
-        <div className="sidebar-nav-content sticky top-5">
+        <div className="sidebar-nav-content sticky pt-16 top-0 max-h-screen">
             {sidebarData.map((accordionItem, i) => {
                 if(accordionItem.node.items == null){
                     return(
-                        <Link to={accordionItem.node.link} key={accordionItem.node.label}>{accordionItem.node.label}</Link>
+                        <Link to={resolveLink(accordionItem.node.link, basePath)} key={accordionItem.node.label}>{accordionItem.node.label}</Link>
                     )
                 }else{
                      /* return (<div>
@@ -32,7 +34,7 @@ const Sidebar = () => {
                                         <AccordionItem key={i.label}>
                                             <AccordionItemHeading>
                                                 <AccordionItemButton>
-                                                    <Link to={i.link}>{i.label}</Link>
+                                                    <Link to={resolveLink(i.link, basePath)}>{i.label}</Link>
                                                 </AccordionItemButton>
                                             </AccordionItemHeading>
                                             <AccordionItemPanel>

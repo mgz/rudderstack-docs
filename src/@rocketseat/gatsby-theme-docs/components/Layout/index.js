@@ -8,6 +8,7 @@ import Sidebar from '../Sidebar';
 import Header from '../Header';
 import Overlay from '@rocketseat/gatsby-theme-docs/src/components/Overlay';
 import { Container, Main, Children } from './styles';
+import DocsNavigation from '../../../../components/DocsNavigation';
 
 export default function Layout({
   children,
@@ -28,10 +29,11 @@ export default function Layout({
   return (
     <Fragment>
       <Overlay isMenuOpen={isMenuOpen} onClick={handleMenuOpen} />
+      <DocsNavigation /> 
       <Container>
         <Sidebar isMenuOpen={isMenuOpen} />
         <Main>
-          <Header handleMenuOpen={handleMenuOpen} />
+          {/* <Header handleMenuOpen={handleMenuOpen} /> */}
           {title && (
             <h1
               css={css`

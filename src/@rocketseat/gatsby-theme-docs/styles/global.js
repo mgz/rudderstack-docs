@@ -28,6 +28,7 @@ export default function GlobalStyle() {
           color: ${theme.colors.title};
           font-weight: bold;
           padding-bottom: 24px;
+          margin-bottom: 30px;
           border-bottom: 1px solid #DEE2E7;
         }
         h2 {
@@ -75,7 +76,7 @@ export default function GlobalStyle() {
         }
         a {
           color: ${theme.colors.text};
-          font-weight: bold;
+          font-weight: semibold;
           text-decoration: none;
           &:hover {
             text-decoration: underline;

@@ -861,6 +861,60 @@ top: -60px;
   background-color: #eef5f5;
 }
 /*=== Docs styles ===*/
+.headerNav {
+  height: 94px;
+  @apply border-b;
+  @apply border-grayColor-lightBorder;
+  @apply shadow-md;
+  @apply relative;
+  @apply z-10;
+}
+.headerContainer {
+  max-width: 1440px;
+  @apply px-6;
+  @apply mx-auto;
+  @apply grid;
+  grid-template-columns: 280px calc(100% - 620px) 280px;
+  @apply grid-flow-row;
+  @apply gap-10;
+}
+.docsSearch {
+  @apply border-l;
+  @apply border-grayColor-lightBorder;
+  @apply flex;
+  @apply items-center;
+  @apply pl-5;
+}
+.docsSearchIcon {
+  @apply mr-3;
+}
+.docsSearchbar {
+  @apply border-0;
+  @apply text-base;
+  @apply p-1;
+  @apply border-transparent;
+}
+.docsNavList {
+  @apply flex;
+  height: 94px;
+  @apply items-center;
+  @apply mb-0;
+}
+
+.docsNavList li {
+  @apply mr-6;
+}
+
+.docsNavList li a {
+  @apply text-primary;
+  @apply text-base;
+  @apply border-b-2;
+  @apply border-transparent;
+  @apply hover:border-blueNew-midnight;
+  @apply no-underline;
+  @apply font-semibold;
+}
+
 .sidebar-nav {
   width: 300px;
 }

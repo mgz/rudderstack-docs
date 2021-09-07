@@ -300,5 +300,13 @@ module.exports = {
         configPath: `src/docsconfig`,
       }
     },
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/docs/docsassets`,
+      },
+    },
   ],
 }
