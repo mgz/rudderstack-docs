@@ -1,5 +1,5 @@
 import React from 'react';
-import {useSidebar} from '@rocketseat/gatsby-theme-docs-core';
+import {useSidebar} from '../@rocketseat/gatsby-theme-docs-core/hooks/useSidebar';
 import Link from "gatsby-link";
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 

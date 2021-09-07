@@ -7,6 +7,7 @@ module.exports = {
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
     author: `@gatsbyjs`,
     siteUrl: "https://rudderstack.com",
+    siteTitle: 'RudderStack'
   },
  //pathPrefix: '/src/docs',
   plugins: [

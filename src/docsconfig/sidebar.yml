@@ -1,15 +1,9 @@
-# Home
-- label: "Home"
-  link: "/"
-- label: "Get Started"
-  link: "/get-started"
-- label: "Installing and Setting up RudderStack"
-  link: "/get-started/installing-and-setting-up-rudderstack"
-- label: "Docker"
-  link: "/get-started/installing-and-setting-up-rudderstack/docker"
-- label: "Kubernetes"
-  link: "/get-started/installing-and-setting-up-rudderstack/kubernetes"
-- label: "Developer Machine Setup"
-  link: "/get-started/installing-and-setting-up-rudderstack/developer-machine-setup"
-- label: "Sending Test Events"
-  link: "/get-started/installing-and-setting-up-rudderstack/sending-test-events"
+---
+label: Get Started
+link: "/get-started"
+items:
+  - label: Installing and Setting up RudderStack
+    link: "/get-started/installing-and-setting-up-rudderstack"
+    items:
+      - label: Docker
+        link: "/get-started/installing-and-setting-up-rudderstack/docker"

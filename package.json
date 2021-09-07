@@ -53,6 +53,7 @@
     "gatsby-source-sanity-transform-images": "0.0.7",
     "gatsby-transformer-sharp": "^3.2.0",
     "get-youtube-id": "^1.0.1",
+    "lodash-es": "^4.17.21",
     "lottie-web": "^5.7.11",
     "owl.carousel": "^2.3.4",
     "postcss": "^8.2.9",
