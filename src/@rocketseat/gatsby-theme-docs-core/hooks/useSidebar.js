@@ -7,19 +7,13 @@ export function useSidebar() {
     {
       allSidebarItems {
         edges {
-            node {
-              label
-              link
-              items {
-                label
-                link
-                items {
-                  link
-                  label
-                }
-              }
+          node {            
+            parentId
+            elId
+            label
+            link
             id
-            }
+          }
         }
       }
       site {
@@ -38,22 +32,14 @@ export function useSidebar() {
 
   if (basePath) {
     const normalizedSidebar = edges.map(
-      ({ node: { label, link, items, id } }) => {
-        let nestedLabel = '', nestedLink = '', nestedItems = [];
-        if(isArray(items)){
-           items.map((item, key) => ({
-             nestedItems: includes(item, "items") && isArray(get(item, "items")) ? get(item, "items") : [],
-             label: item.label,
-             link: resolveLink(item.link, basePath),
-             nestedLabel: get(item, "items").map((i,k) => (i.label)),
-             nestedLink: get(item, "items").map((i,k) => (resolveLink(i.link, basePath)))
-           }));
-        }
+      ({ node: { label, link, elId, parentId, id } }) => {
+        
 
         /* if (Array.isArray(items)) {
           items = items.map((item) => ({
             label: item.label,
             link: resolveLink(item.link, basePath),
+
           }));
         } */
 
@@ -61,11 +47,9 @@ export function useSidebar() {
           node: {
             id,
             label,
-            nestedLabel,
-            items,
-            nestedItems,
             link: resolveLink(link, basePath),
-            nestedLink: resolveLink(nestedLink, basePath)
+            elId,
+            parentId
           },
         };
       },

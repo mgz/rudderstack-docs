@@ -1,9 +1,63 @@
----
-label: Get Started
-link: "/get-started"
-items:
-  - label: Installing and Setting up RudderStack
-    link: "/get-started/installing-and-setting-up-rudderstack"
-    items:
-      - label: Docker
-        link: "/get-started/installing-and-setting-up-rudderstack/docker"
+- label: Home
+  link: "/"
+  elId: 1
+  parentId: 0
+- label: Get Started
+  link: "/get-started"
+  elId: 2
+  parentId: 0
+- label: Connections
+  link: "/connections"
+  elId: 3
+  parentId: 0
+- label: Event Stream Sources
+  link: "/even-stream-sources"
+  elId: 4
+  parentId: 0
+- label: Cloud Extract Sources
+  link: "/cloud-extract-sources"
+  elId: 5
+  parentId: 0
+- label: Warehouse Actions Sources
+  link: "/warehouse-actions-sources"
+  elId: 6
+  parentId: 0
+- label: Destinations
+  link: "/destinations"
+  elId: 7
+  parentId: 0
+- label: Warehouse Destinations
+  link: "/warehouse-destinations"
+  elId: 8
+  parentId: 0
+- label: Data Governance
+  link: "/data-governance"
+  elId: 9
+  parentId: 0
+- label: Transformations
+  link: "/transformations"
+  elId: 10
+  parentId: 0
+- label: RudderStack API
+  link: "/rudderstack-api"
+  elId: 11
+  parentId: 0
+- label: User Guides
+  link: "/user-guides"
+  elId: 12
+  parentId: 0
+- label: Glossary
+  link: "/glossary"
+  elId: 13
+  parentId: 0
+- label: FAQs
+  link: "/faq"
+  elId: 14
+  parentId: 0
+- label: Install and Set Up RudderStack
+  link: "/get-started/installing-and-setting-up-rudderstack"
+  elId: 2.1
+  parentId: 2
+- label: Docker
+  link: "/get-started/installing-and-setting-up-rudderstack/docker"
+  parentId: 2.1
