@@ -785,4 +785,31 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  
+  const integration_connections = await graphql(`
+    {
+      allIntegrationConnectionsV3Csv {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+  if (integration_connections.errors) {
+    throw integration_connections.errors;
+  }
+
+  const int_conn_pages = integration_connections.data.allIntegrationConnectionsV3Csv.edges || [];
+  int_conn_pages.forEach((edge, index) => {
+    const path = `${edge.node.slug}`;
+    createPage({
+      path,
+      component: require.resolve("./src/templates/contentIntegrationConnection.js"),
+      context: { slug: edge.node.slug },
+    });
+  });
+
 }

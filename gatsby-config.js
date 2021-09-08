@@ -169,17 +169,17 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-   {
+    {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //host: `https://rudderstack-dataplane.rudderstack.com`,
-        loadType:'defer',
+        loadType: "defer",
         trackPage: true,
         // loadAsync: true,
-         //delayLoad: true,
-         //delayLoadTime: 500,
+        //delayLoad: true,
+        //delayLoadTime: 500,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
     },
@@ -238,6 +238,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
+      },
+    },
+    `gatsby-transformer-csv`,
+
     // {
     //   resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
     //   options: {
@@ -254,7 +263,7 @@ module.exports = {
     //   },
     // },
     "gatsby-source-sanity-transform-images",
-    `gatsby-plugin-meta-redirect`, 
+    `gatsby-plugin-meta-redirect`,
     "gatsby-plugin-preload-fonts",
     // make sure to put last in the array
     // {

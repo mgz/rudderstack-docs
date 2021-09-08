@@ -45,6 +45,7 @@
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-source-sanity": "^7.0.4",
     "gatsby-source-sanity-transform-images": "0.0.7",
+    "gatsby-transformer-csv": "^3.13.0",
     "gatsby-transformer-sharp": "^3.2.0",
     "get-youtube-id": "^1.0.1",
     "lottie-web": "^5.7.11",
