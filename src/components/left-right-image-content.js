@@ -2,6 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
+import { StaticImage } from "gatsby-plugin-image"
 
 const LeftRightImgCnt = props => {
   const maintitle = props.leftrightcontentmaintitle
@@ -17,7 +18,11 @@ const LeftRightImgCnt = props => {
       <section className="left-right-section md:px-0 pb-6 md:pb-12">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           {(smalltitle !== "" || maintitle !== "") && (
-            <div className={`flex flex-col w-full justify-center items-start md:text-${props.header_alignment !== "" ? props.header_alignment : 'left'} mx-auto max-w-screen-md`}>
+            <div
+              className={`flex flex-col w-full justify-center items-start md:text-${
+                props.header_alignment !== "" ? props.header_alignment : "left"
+              } mx-auto max-w-screen-md`}
+            >
               {smalltitle !== "" && (
                 <p
                   className={`mt-20 mb-2 ${
@@ -40,7 +45,7 @@ const LeftRightImgCnt = props => {
           )}
           {contents.map((content, i) =>
             (() => {
-              // console.log("ccc", content)
+              console.log("ccc", content)
               if (content.condition === "right") {
                 const imgcondition = content.imageVideoConditionBlock.condition
                 const portabletext = content.content
@@ -152,6 +157,33 @@ const LeftRightImgCnt = props => {
                           }`}
                         >
                           <PortableText blocks={portabletext} />
+                        </div>
+                        <div
+                          className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
+                        >
+                          {content.pointer_contents &&
+                            content.pointer_contents.map(row => {
+                              return (
+                                <div
+                                  key={row}
+                                  // className={`${
+                                  //   content.pointer_content_cols === "2"
+                                  //     ? "w-1/2"
+                                  //     : "w-full"
+                                  // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+                                  className={`my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+                                >
+                                  <div className="w-10 h-10 pt-1 px-2">
+                                    <StaticImage
+                                      src="../images/check-icon.svg"
+                                      alt="Check"
+                                      placeholder="tracedSVG"
+                                    />
+                                  </div>
+                                  <p className="w-full">{row}</p>
+                                </div>
+                              )
+                            })}
                         </div>
                         <div className="mt-4 flex items-center">
                           {(() => {
@@ -295,6 +327,33 @@ const LeftRightImgCnt = props => {
                         }`}
                       >
                         <PortableText blocks={portabletext} />
+                      </div>
+                      <div
+                        className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
+                      >
+                        {content.pointer_contents &&
+                          content.pointer_contents.map(row => {
+                            return (
+                              <div
+                                key={row}
+                                // className={`${
+                                //   content.pointer_content_cols === "2"
+                                //     ? "w-1/2"
+                                //     : "w-full"
+                                // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+                                className={`my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+                              >
+                                <div className="w-10 h-10 pt-1 px-2">
+                                  <StaticImage
+                                    src="../images/check-icon.svg"
+                                    alt="Check"
+                                    placeholder="tracedSVG"
+                                  />
+                                </div>
+                                <p className="w-full">{row}</p>
+                              </div>
+                            )
+                          })}
                       </div>
                       <div className="mt-4 flex items-center">
                         {(() => {

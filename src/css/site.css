@@ -105,6 +105,23 @@ body {
   height: 100%;
   background-position: top right;
 } */
+/* 
+.paragraph-check {
+  position: relative;
+}
+.paragraph-check p {
+  padding-left: 32px;
+}
+.paragraph-check p::before {
+  position: absolute;
+  content: "";
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgcj0iMTAiIGZpbGw9IiM0OTNEOEQiLz4KPHBhdGggZD0iTTguODU2OTUgMTMuNzEzOUw1IDkuODU2OTVMNi4yODU2NSA4LjU3MTNMOC44NTY5NSAxMS4xNDI2TDEzLjk5OTUgNkwxNS4yODUyIDcuMjg1NjVMOC44NTY5NSAxMy43MTM5WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
+  background-position: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  left : 8px
+} */
+
 .gradient-enable {
   background-image: url("../images/banner-gradiant.jpg");
   background-repeat: no-repeat;
