@@ -17,7 +17,7 @@ function OurLogo(props) {
           props.title_alignment === "left" ? "" : "max-w-2xl mx-auto"
         }`}
       >
-        <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10 text-center normal-case md:mx-0 mx-auto">
+        <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10 text-center normal-case md:mx-0 mx-auto md:pl-6">
           {maintitle}
         </h3>
       </div>
