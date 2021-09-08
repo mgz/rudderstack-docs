@@ -3,29 +3,39 @@ import { useSidebar } from "../../../gatsby-theme-docs-core/hooks/useSidebar"
 import { resolveLink } from "@rocketseat/gatsby-theme-docs-core/util/url"
 import { get, find } from "lodash"
 import Link from "gatsby-link"
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemHeading,
-  AccordionItemButton,
-  AccordionItemPanel,
-} from "react-accessible-accordion"
+import { jsonData } from "../../../../docsconfig/sidebar"
+import { Accordion, Icon } from "semantic-ui-react"
+import sidebarArrow from "../../../../images/sidebarArrow.svg"
 
-const generateAccordion = (data, parentId, label, link) => {
-  return parentId === find(data, "elId") ? (
-    <AccordionItemPanel>
-      <Accordion>
-        <AccordionItem>
-          <AccordionItemHeading>
-            <AccordionItemButton>{label}</AccordionItemButton>
-          </AccordionItemHeading>
-        </AccordionItem>
-      </Accordion>
-    </AccordionItemPanel>
-  ) : (
-    generateAccordion()
-  )
+function accordify(jsonData) {
+  if (jsonData.length === 0) {
+    return
+  } else {
+    for (let i = 0; i < jsonData.length; i++) {
+      accordify(jsonData[i]["content"])
+
+      if (jsonData[i]["content"].length !== 0) {
+        jsonData[i]["content"] = {
+          content: (
+            <div>
+              <Accordion.Accordion panels={jsonData[i]["content"]} />
+            </div>
+          ),
+        }
+      } else {
+        jsonData[i]["content"] = {
+          content: (
+            <div>
+              <Accordion.Title icon={sidebarArrow} />
+            </div>
+          ),
+        }
+      }
+    }
+  }
 }
+
+accordify(jsonData)
 
 const Sidebar = () => {
   const sidebarData = useSidebar()
@@ -33,45 +43,7 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar-nav-content sticky pt-16 top-0 max-h-screen">
-      {sidebarData
-        .filter(ff => ff.node.parentId === 0)
-        .map((i, k) => {
-          return (
-            <Accordion key={i.node.id} allowZeroExpanded={true}>
-              <AccordionItem>
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    <Link to={i.node.link}>{i.node.label}</Link>
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-                {generateAccordion(
-                  sidebarData,
-                  i.node.parentId,
-                  i.node.label,
-                  i.node.link
-                )}
-                {/* {sidebarData
-                  .filter(row => row.node.parentId === i.node.elId)
-                  .map((iRow, idx) => {
-                    return (
-                      <AccordionItemPanel key={idx}>
-                        {generateAccordion(
-                          iRow.parentId,
-                          iRow.elId,
-                          iRow.label,
-                          iRow.link
-                        )}
-                      </AccordionItemPanel>
-                    )
-                  })} */}
-
-                {/* {i.node.elId !== null && (<AccordionItemPanel>
-                                    {console.log('Parent Obj', find(sidebarData, (o) => o.elId == i.node.parentId))}
-                                </AccordionItemPanel>)} */}
-              </AccordionItem>
-            </Accordion>
-          )
-        })}
+      <Accordion panels={jsonData} styled />
     </div>
   )
 }

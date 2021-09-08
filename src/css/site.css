@@ -922,6 +922,35 @@ top: -60px;
   @apply border-r;
   @apply border-grayColor-lightBorder;
 }
+
+.sidebar-nav-content .accordion {
+  @apply block;
+  @apply border;
+  @apply border-grayColor-lightBorder;
+}
+
+.sidebar-nav-content .accordion .content {
+  @apply m-0;
+  @apply px-3 py-0.5;
+}
+
+.sidebar-nav-content .accordion .content button {
+  @apply hidden;
+}
+
+.sidebar-nav-content .accordion .title {
+  @apply py-1;
+}
+
+.sidebar-nav-content .accordion .title ~ .content {
+  @apply hidden;
+}
+
+.sidebar-nav-content .accordion .active.content {
+  @apply block;
+  @apply border-l border-grayColor-lightBorder;
+}
+
 .sidebar-nav-content a {
   @apply block;
   @apply p-1;

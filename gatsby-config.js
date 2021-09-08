@@ -7,11 +7,11 @@ module.exports = {
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
     author: `@gatsbyjs`,
     siteUrl: "https://rudderstack.com",
-    siteTitle: 'RudderStack',
-    defaultTitle: 'Documentation - RudderStack',
-    siteTitleShort: 'RudderStack'
+    siteTitle: "RudderStack",
+    defaultTitle: "Documentation - RudderStack",
+    siteTitleShort: "RudderStack",
   },
- //pathPrefix: '/src/docs',
+  pathPrefix: "/docs",
   plugins: [
     `gatsby-plugin-postcss`,
     {
@@ -156,6 +156,17 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs",
+        queries: require("./src/utils/docs-algolia"),
+        enablePartialUpdates: true,
+        matchFields: ["slug", "headings"],
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -173,17 +184,17 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-   {
+    {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //host: `https://rudderstack-dataplane.rudderstack.com`,
-        loadType:'defer',
+        loadType: "defer",
         trackPage: true,
         // loadAsync: true,
-         //delayLoad: true,
-         //delayLoadTime: 500,
+        //delayLoad: true,
+        //delayLoadTime: 500,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
     },
@@ -258,7 +269,7 @@ module.exports = {
     //   },
     // },
     "gatsby-source-sanity-transform-images",
-    `gatsby-plugin-meta-redirect`, 
+    `gatsby-plugin-meta-redirect`,
     "gatsby-plugin-preload-fonts",
     // make sure to put last in the array
     // {
@@ -298,15 +309,23 @@ module.exports = {
         basePath: `/docs`,
         docsPath: `src/docs`,
         configPath: `src/docsconfig`,
-      }
-    },
-    `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/docs/docsassets`,
+        withMdx: true,
       },
     },
+    /* `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
+          },
+        ],
+      },
+    }, */
   ],
 }
