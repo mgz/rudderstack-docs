@@ -241,6 +241,28 @@ body {
 .yt-video {
   z-index: 20;
 }
+
+.int-conn-left-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 54px;
+  top: 104px;
+  height: 118px;
+  width: 118px;
+}
+
+.int-conn-right-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 54px;
+  top: 104px;
+  height: 118px;
+  width: 118px;
+}
 .menu li.has-submenu a:after {
   display: inline-block;
   position: relative;
@@ -277,6 +299,7 @@ body {
     border-bottom: 2px solid rgba(255, 255, 255);
   }
 }
+
 .menu li.has-submenu a.active:after {
   transform: rotate(225deg);
 }

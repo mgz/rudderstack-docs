@@ -6,6 +6,7 @@ module.exports = {
     letterSpacing: {
       "tight-2": "-.04em",
     },
+    
     colors: {
       transparent: "transparent",
       current: "currentColor",

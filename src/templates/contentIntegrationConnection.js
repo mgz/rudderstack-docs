@@ -11,24 +11,63 @@ const SingleIntegrationConnectionContent = ({ data }) => {
   return (
     <Layout>
       <HeroBannerIntegrationConnection />
-      <section className=" px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative bg-whiteColor-custom banner-section">
+      <section className=" px-4 md:px-3 py-32 mx-auto relative bg-whiteColor-custom banner-section">
         <div className="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
           <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-            <h1 className="text-primary mb-8 md:my-4 text-5xl font-bold leading-tight">
-              Integrate your iOS app with Hubspot
-            </h1>
-            Don’t go through the pain of direct integration. RudderStack’s iOS
-            SDK makes it easy to send data from your iOS app to Hubspot ...and
-            all of your other cloud tools.
+            <h2 className="text-primary mb-8 md:my-4 text-2xl-2 font-bold leading-tight">
+              Easy iOS SDK to Hubspot Integration with RudderStack
+            </h2>
+            <div className="py-4">
+              <p className="text-lg text-grayColor-custom font-normal">
+                RudderStack’s open source iOS SDK allows you to integrate
+                RudderStack with your iOS app to track event data and
+                automatically send it to Hubspot.
+                <br />
+                <br />
+                With the RudderStack iOS SDK, you do not have to worry about
+                having to learn, test, implement or deal with changes in a new
+                API and multiple endpoints every time someone asks for a new
+                integration.
+              </p>
+            </div>
+            <Link to={"/"}>
+              <span
+                className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
+              >
+                Read HubSpot Docs
+              </span>
+            </Link>
           </div>
           <div className="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
             <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
               <div className="w-full">
                 <StaticImage
-                  src="../images/RubberStack_MAIN-3D_1-1_active_00000.png"
+                  src="../images/int-conn-s2.png"
                   alt="RudderStack animation"
                   placeholder="tracedSVG"
                 />
+
+                <div className="int-conn-left-logo">
+                  <img
+                    src={
+                      "https://cdn.sanity.io/images/97bpcflt/production/4ab57efc057de15f519feaf0e4bfe939ef42e71b-452x452.png"
+                    }
+                    className="h-8 m-auto"
+                    alt="RudderStack animation"
+                    placeholder="tracedSVG"
+                  />
+                </div>
+
+                <div className="int-conn-right-logo">
+                  <img
+                    src={
+                      "https://rudderstack.com/static/a7a7db9a5f9fbeb5e102a6e939009c50/b63b5a7265b78c98a3f3f54f9567dbd61a0aa5da-137x56.png"
+                    }
+                    className="h-8 m-auto"
+                    alt="RudderStack animation"
+                    placeholder="tracedSVG"
+                  />
+                </div>
               </div>
             </div>
           </div>

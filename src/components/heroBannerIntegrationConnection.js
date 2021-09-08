@@ -11,9 +11,16 @@ function HeroBannerIntegrationConnection(props) {
           <h1 className="text-primary mb-8 md:my-4 text-5xl font-bold leading-tight">
             Integrate your iOS app with Hubspot
           </h1>
-          Don’t go through the pain of direct integration. RudderStack’s iOS SDK
-          makes it easy to send data from your iOS app to Hubspot ...and all of
-          your other cloud tools.
+          <p className="text-lg text-grayColor-custom font-normal mb-4">
+            Don’t go through the pain of direct integration. RudderStack’s iOS
+            SDK makes it easy to send data from your iOS app to Hubspot ...and
+            all of your other cloud tools.
+          </p>
+          <Link to={"/"}>
+            <span className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}>
+              Read HubSpot Docs
+            </span>
+          </Link>
         </div>
         <div className="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
           <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
@@ -23,15 +30,17 @@ function HeroBannerIntegrationConnection(props) {
                 alt="Header image"
                 placeholder="tracedSVG"
               />
-              <div className="w-36 h-24 bg-whiteColor-custom rounded-xl absolute right-16 top-48 ">
-                <img
-                  src={
-                    "https://rudderstack.com/static/a7a7db9a5f9fbeb5e102a6e939009c50/b63b5a7265b78c98a3f3f54f9567dbd61a0aa5da-137x56.png"
-                  }
-                  className="mx-4 my-auto"
-                  alt="RudderStack animation"
-                  placeholder="tracedSVG"
-                />
+              <div className="w-36 h-24 bg-whiteColor-custom rounded-xl absolute left-80 top-48 ">
+                <div className="flex justify-center align-center h-full">
+                  <img
+                    src={
+                      "https://rudderstack.com/static/a7a7db9a5f9fbeb5e102a6e939009c50/b63b5a7265b78c98a3f3f54f9567dbd61a0aa5da-137x56.png"
+                    }
+                    className="h-12 m-auto"
+                    alt="RudderStack animation"
+                    placeholder="tracedSVG"
+                  />
+                </div>
               </div>
             </div>
           </div>
