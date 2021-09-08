@@ -45,7 +45,6 @@ const LeftRightImgCnt = props => {
           )}
           {contents.map((content, i) =>
             (() => {
-              console.log("ccc", content)
               if (content.condition === "right") {
                 const imgcondition = content.imageVideoConditionBlock.condition
                 const portabletext = content.content
