@@ -514,6 +514,11 @@ exports.createPages = async ({ graphql, actions }) => {
       "/video-library/how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions",
     isPermanent: true,
   })
+  createRedirect({
+    fromPath: "/blog/open-source-analytics/",
+    toPath: "/blog/open-source-analytics-stack-bringing-control-flexibility-and-data-privacy-to-your-analytics",
+    isPermanent: true,
+  })
 
   const result = await graphql(`
     {
