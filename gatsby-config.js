@@ -164,7 +164,7 @@ module.exports = {
         indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs",
         queries: require("./src/utils/docs-algolia"),
         enablePartialUpdates: true,
-        matchFields: ["slug", "headings"],
+        matchFields: ["slug", "section", "title"],
       },
     },
     `gatsby-plugin-styled-components`,

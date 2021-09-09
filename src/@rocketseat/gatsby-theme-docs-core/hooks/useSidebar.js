@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby';
+/* import { graphql, useStaticQuery } from 'gatsby';
 import { resolveLink } from '@rocketseat/gatsby-theme-docs-core/util/url';
 import {includes, isArray, get} from "lodash-es";
 
@@ -35,14 +35,6 @@ export function useSidebar() {
       ({ node: { label, link, elId, parentId, id } }) => {
         
 
-        /* if (Array.isArray(items)) {
-          items = items.map((item) => ({
-            label: item.label,
-            link: resolveLink(item.link, basePath),
-
-          }));
-        } */
-
         return {
           node: {
             id,
@@ -60,3 +52,4 @@ export function useSidebar() {
 
   return edges;
 }
+ */

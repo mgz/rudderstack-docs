@@ -951,79 +951,56 @@ top: -60px;
   @apply border-l border-grayColor-lightBorder;
 }
 
-.sidebar-nav-content a {
-  @apply block;
-  @apply p-1;
-}
-
-.docs-wrapper {
-  max-width: 1440px;
-}
-
-.docs-main-content {
-  width: calc(100% - 500px);
-}
-
-.docs-main-content p {
-  @apply text-grayColor-custom;
-}
-
-.docs-main-content h1 {
-  @apply text-4xl;
-  @apply pb-6;
-  @apply mb-6;
-  @apply border-b;
-  @apply border-grayColor-lightBorder;
-  @apply text-grayColor-docsText;
-}
-
-.docs-main-content h2 {
-  @apply mt-10;
-  @apply mb-3;
-  @apply text-3xl;
-  @apply text-grayColor-docsText;
-  @apply font-semibold;
-}
-
-.docs-main-content blockquote {
-  @apply px-5;
-  @apply py-3;
-  @apply my-4;
-  @apply border-l-2;
-  @apply border-primary;
-}
-
-.docs-main-content a {
-  @apply text-primary;
-  @apply hover:underline;
-}
-
-.docs-main-content blockquote strong {
-  @apply font-semibold;
-}
-
-.docs-main-content blockquote a {
-  @apply font-bold;
-}
-
-.docs-main-content ul {
-  @apply ml-5;
-  @apply list-disc;
-  @apply text-grayColor-custom;
-}
-
-.docs-main-content ul li {
-  @apply mb-3;
-}
-
-/*=== Docs styles ===*/
 .sidebar-nav {
   width: 300px;
 }
 
 .sidebar-nav-content a {
-  @apply block;
+  @apply inline-block;
   @apply p-1;
+}
+
+.nestedAccordion .accordion__panel {
+  @apply border-l border-grayColor-lightBorder;
+}
+
+.nestedAccordion .accordion__button {
+  @apply bg-white;
+  @apply relative;
+  @apply pr-4 pl-2;
+}
+
+.nestedAccordion .accordion__button.accActive {
+  @apply bg-grayColor-lightBorder;
+}
+
+.nestedAccordion .accordion__button.accActive a {
+  @apply text-blueNew-custom;
+}
+
+.nestedAccordion .accordion__button:before {
+  position: absolute;
+  content: "";
+  right: 5px;
+  top: 12px;
+  height: 10px;
+  width: 10px;
+  margin-right: 12px;
+  @apply border-b-2 border-r-2 border-grayColor-lightBorder;
+  transform: rotate(-45deg);
+}
+
+.nestedAccordion .accordion__button.accActive:before {
+  @apply border-grayColor-lighter;
+}
+
+.nestedAccordion .accordion__button[aria-expanded="true"]::before,
+.nestedAccordion .accordion__button[aria-selected="true"]::before {
+  transform: rotate(45deg);
+}
+
+.nestedAccordion .zeroContent .accordion__button:before {
+  @apply hidden;
 }
 
 .docs-wrapper {
@@ -1089,6 +1066,36 @@ top: -60px;
 
 .docs-main-content ul li {
   @apply mb-3;
+}
+
+.docs-main-content h1 {
+  @apply text-4xl;
+  @apply pb-6;
+  @apply mb-6;
+  @apply border-b;
+  @apply border-grayColor-lightBorder;
+  @apply text-grayColor-docsText;
+}
+
+.docs-main-content h2 {
+  @apply mt-10;
+  @apply mb-3;
+  @apply text-3xl;
+  @apply text-grayColor-docsText;
+  @apply font-semibold;
+}
+
+.docs-main-content blockquote {
+  @apply px-5;
+  @apply py-3;
+  @apply my-4;
+  @apply border-l-2;
+  @apply border-primary;
+}
+
+.docs-main-content a {
+  @apply text-primary;
+  @apply hover:underline;
 }
 
 .infoBlock {

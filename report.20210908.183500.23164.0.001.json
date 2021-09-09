@@ -1,0 +1,570 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20210908.183500.23164.0.001.json",
+    "dumpEventTime": "2021-09-08T18:35:00Z",
+    "dumpEventTimeStamp": "1631106300104",
+    "processId": 23164,
+    "cwd": "D:\\xampp\\htdocs\\rudderstack-gatsby",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "D:\\xampp\\htdocs\\rudderstack-gatsby\\.cache\\tmp-9852-MndroW2W2rKU"
+    ],
+    "nodejsVersion": "v12.14.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.14.1",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.14.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.19042",
+    "osVersion": "Windows 10 Enterprise",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 19143312,
+        "nice": 0,
+        "sys": 16591843,
+        "idle": 387175984,
+        "irq": 2944031
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 12355609,
+        "nice": 0,
+        "sys": 3981125,
+        "idle": 406574406,
+        "irq": 156000
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 33623203,
+        "nice": 0,
+        "sys": 9740750,
+        "idle": 379547187,
+        "irq": 135656
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 12773781,
+        "nice": 0,
+        "sys": 3002515,
+        "idle": 407134718,
+        "irq": 73562
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 22497890,
+        "nice": 0,
+        "sys": 7245468,
+        "idle": 393167656,
+        "irq": 111000
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 12024625,
+        "nice": 0,
+        "sys": 4320187,
+        "idle": 406566203,
+        "irq": 77015
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 20349062,
+        "nice": 0,
+        "sys": 5723500,
+        "idle": 396838453,
+        "irq": 97843
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 12943937,
+        "nice": 0,
+        "sys": 3748281,
+        "idle": 406218796,
+        "irq": 77171
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 21045968,
+        "nice": 0,
+        "sys": 7348562,
+        "idle": 394516484,
+        "irq": 109718
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 14379734,
+        "nice": 0,
+        "sys": 3259015,
+        "idle": 405272265,
+        "irq": 72093
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 34343328,
+        "nice": 0,
+        "sys": 8500062,
+        "idle": 380067625,
+        "irq": 112203
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 13698515,
+        "nice": 0,
+        "sys": 2721921,
+        "idle": 406490578,
+        "irq": 67031
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 23635062,
+        "nice": 0,
+        "sys": 7337046,
+        "idle": 391938906,
+        "irq": 444000
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 13032703,
+        "nice": 0,
+        "sys": 3034328,
+        "idle": 406843984,
+        "irq": 85843
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 20924359,
+        "nice": 0,
+        "sys": 6312062,
+        "idle": 395674593,
+        "irq": 117859
+      },
+      {
+        "model": "AMD Ryzen 7 2700X Eight-Core Processor         ",
+        "speed": 3693,
+        "user": 16443468,
+        "nice": 0,
+        "sys": 6581140,
+        "idle": 399886406,
+        "irq": 105968
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:36:33:bc",
+        "address": "fe80::80e7:f14e:d98:fcc7",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 11
+      },
+      {
+        "name": "vEthernet (Default Switch)",
+        "internal": false,
+        "mac": "00:15:5d:36:33:bc",
+        "address": "172.27.240.1",
+        "netmask": "255.255.240.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:1a:0c:50",
+        "address": "fe80::28f2:c44f:a6de:2560",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 14
+      },
+      {
+        "name": "vEthernet (WSL)",
+        "internal": false,
+        "mac": "00:15:5d:1a:0c:50",
+        "address": "192.168.16.1",
+        "netmask": "255.255.240.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "VirtualBox Host-Only Network",
+        "internal": false,
+        "mac": "0a:00:27:00:00:08",
+        "address": "fe80::415:f9f4:fe08:213d",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 8
+      },
+      {
+        "name": "VirtualBox Host-Only Network",
+        "internal": false,
+        "mac": "0a:00:27:00:00:08",
+        "address": "192.168.56.1",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "0c:9d:92:16:90:0a",
+        "address": "fe80::719a:75d8:461:5d6a",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 4
+      },
+      {
+        "name": "Ethernet",
+        "internal": false,
+        "mac": "0c:9d:92:16:90:0a",
+        "address": "192.168.0.106",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "DESKTOP-AIFRK19"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff6bd271759",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff6bd275b7c",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28316"
+    },
+    {
+      "pc": "0x00007ff6bd274b38",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+24152"
+    },
+    {
+      "pc": "0x00007ff6bd36433b",
+      "symbol": "v8::base::CPU::has_sse+37723"
+    },
+    {
+      "pc": "0x00007ff6bdb68c5e",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff6bdb50ca1",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff6bda1e56c",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff6bda29910",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff6bda26444",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff6bda1bcd3",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff6bda1a4a4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2356"
+    },
+    {
+      "pc": "0x00007ff6bda3b775",
+      "symbol": "v8::internal::Factory::NewFillerObject+53"
+    },
+    {
+      "pc": "0x00007ff6bd7a78d7",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+3687"
+    },
+    {
+      "pc": "0x00007ff6bdf9463d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+567949"
+    },
+    {
+      "pc": "0x00000002e8ce232a",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2197434368,
+    "totalCommittedMemory": 2197434368,
+    "usedMemory": 2122000456,
+    "availableMemory": 42901032,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 32505856,
+        "committedMemory": 32505856,
+        "capacity": 16236064,
+        "used": 565728,
+        "available": 15670336
+      },
+      "old_space": {
+        "memorySize": 1905635328,
+        "committedMemory": 1905635328,
+        "capacity": 1889912880,
+        "used": 1879528752,
+        "available": 10384128
+      },
+      "code_space": {
+        "memorySize": 6455296,
+        "committedMemory": 6455296,
+        "capacity": 5730784,
+        "used": 5730784,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 46927872,
+        "committedMemory": 46927872,
+        "capacity": 31156560,
+        "used": 31156560,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 204369920,
+        "committedMemory": 204369920,
+        "capacity": 203808384,
+        "used": 203808384,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 1277952,
+        "committedMemory": 1277952,
+        "capacity": 1177952,
+        "used": 1177952,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 16236064,
+        "used": 0,
+        "available": 16236064
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 357.89,
+    "kernelCpuSeconds": 100.14,
+    "cpuConsumptionPercent": 43.1697,
+    "maxRss": 3774119936,
+    "pageFaults": {
+      "IORequired": 2438373,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 84159,
+      "writes": 87801
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\User\\AppData\\Roaming",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "132645441989034425",
+    "CHROME_CRASHPAD_PIPE_NAME": "\\\\.\\pipe\\crashpad_38860_CRCDOHIATZDQYCBS",
+    "COLORTERM": "truecolor",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-AIFRK19",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "DOCKER_TOOLBOX_INSTALL_PATH": "C:\\Program Files\\Docker Toolbox",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "GATSBY_ALGOLIA_APP_ID": "4K4TPPS0OQ",
+    "GATSBY_ALGOLIA_INDEX_PREFIX": "dev",
+    "GATSBY_ALGOLIA_SEARCH_APIKEY": "0a5e12672bfb6f5c1076f7266bfed56d",
+    "GATSBY_BUILD_STAGE": "develop",
+    "gatsby_executing_command": "develop",
+    "GATSBY_EXPERIMENTAL_DEV_WEBPACK_CACHE": "true",
+    "GATSBY_EXPERIMENTAL_FUNCTIONS": "true",
+    "GATSBY_EXPERIMENTAL_LAZY_IMAGES": "true",
+    "GATSBY_EXPERIMENTAL_PRESERVE_WEBPACK_CACHE": "true",
+    "GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND": "true",
+    "GATSBY_LOGGER": "ink",
+    "gatsby_log_level": "normal",
+    "GATSBY_PREVIEW_INDICATOR_ENABLED": "false",
+    "GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR": "true",
+    "GATSBY_SANITY_DATASET": "production",
+    "GATSBY_SANITY_PROJECTID": "97bpcflt",
+    "GATSBY_SANITY_TOKEN": "skoSfz1i62D7DEEO0es1q457F6XhfTNBNh7qEazGbcCqKwcbecbGtLGDmmL9bNH4tGUO8xiu81WsPWPloO2X6YIB4nvV8v4sNpGnmgYTGXY00MnAEbqhhE1yvB1YE7W0VNThFzYBou5D8KJ8gTVm7H1DwrT2IgGJeG7Ri2WTYDOVRT1t1zZx",
+    "GIT_ASKPASS": "c:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass.sh",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\User",
+    "INTEL_DEV_REDIST": "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\",
+    "INTERNAL_GATSBY_TELEMETRY_SESSION_ID": "4e6e1bfe-e06a-48fc-a3c4-31b5ff80692e",
+    "JAVA_HOME": "C:\\Program Files\\OpenJDK\\openjdk-8u292-b10",
+    "LANG": "en_US.UTF-8",
+    "LOCALAPPDATA": "C:\\Users\\User\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-AIFRK19",
+    "MIC_LD_LIBRARY_PATH": "C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\compiler\\lib\\mic",
+    "NODE_ENV": "development",
+    "NUMBER_OF_PROCESSORS": "16",
+    "OneDrive": "C:\\Users\\User\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\User\\OneDrive",
+    "ORIGINAL_XDG_CURRENT_DESKTOP": "undefined",
+    "OS": "Windows_NT",
+    "Path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\Common Files\\Intel\\Shared Libraries\\redist\\intel64\\compiler;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Git\\cmd;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Program Files\\nodejs\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files\\OpenJDK\\openjdk-8u292-b10\\bin;;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\User\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;D:\\MongoDB\\Server\\4.2\\bin;C:\\Users\\User\\AppData\\Local\\Yarn\\bin;C:\\Users\\User\\AppData\\Roaming\\npm;;C:\\Program Files\\Docker Toolbox",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD",
+    "PROCESSOR_LEVEL": "23",
+    "PROCESSOR_REVISION": "0802",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PSModulePath": "C:\\Users\\User\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "RS_GATSBY_ALGOLIA_APIKEY": "fd45ebcb56b1207a4f326d6c28866b19",
+    "RS_PRODUCTION_WRITE_KEY": "1pzVfDB9gw7TG2NtfqzQ55H10Ef",
+    "RS_SITE_URL": "https://localhost:8000/",
+    "SESSIONNAME": "Console",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\User\\AppData\\Local\\Temp",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.60.0",
+    "TMP": "C:\\Users\\User\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DESKTOP-AIFRK19",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-AIFRK19",
+    "USERNAME": "User",
+    "USERPROFILE": "C:\\Users\\User",
+    "VBOX_HWVIRTEX_IGNORE_SVM_IN_USE": "1",
+    "VBOX_MSI_INSTALL_PATH": "C:\\Program Files\\Oracle\\VirtualBox\\",
+    "VIPSHOME": "\\\\?\\D:\\xampp\\htdocs\\rudderstack-gatsby\\node_modules\\sharp\\build\\Release",
+    "VIPS_MIN_STACK_SIZE": "2m",
+    "VSCODE_GIT_ASKPASS_MAIN": "c:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\resources\\app\\extensions\\git\\dist\\askpass-main.js",
+    "VSCODE_GIT_ASKPASS_NODE": "C:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe",
+    "VSCODE_GIT_IPC_HANDLE": "\\\\.\\pipe\\vscode-git-5c17c52ef4-sock",
+    "windir": "C:\\WINDOWS"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\powrprof.dll",
+    "C:\\WINDOWS\\SYSTEM32\\UMPDC.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll",
+    "C:\\WINDOWS\\System32\\bcryptprimitives.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+    "\\\\?\\D:\\xampp\\htdocs\\rudderstack-gatsby\\node_modules\\sharp\\build\\Release\\sharp-win32-x64.node",
+    "\\\\?\\D:\\xampp\\htdocs\\rudderstack-gatsby\\node_modules\\sharp\\build\\Release\\libvips-cpp.dll",
+    "\\\\?\\D:\\xampp\\htdocs\\rudderstack-gatsby\\node_modules\\sharp\\build\\Release\\libgobject-2.0-0.dll",
+    "\\\\?\\D:\\xampp\\htdocs\\rudderstack-gatsby\\node_modules\\sharp\\build\\Release\\libglib-2.0-0.dll",
+    "\\\\?\\D:\\xampp\\htdocs\\rudderstack-gatsby\\node_modules\\sharp\\build\\Release\\libvips-42.dll",
+    "C:\\WINDOWS\\System32\\SHELL32.dll",
+    "C:\\WINDOWS\\System32\\SHLWAPI.dll",
+    "C:\\WINDOWS\\System32\\ole32.dll",
+    "C:\\WINDOWS\\SYSTEM32\\ntmarta.dll",
+    "C:\\WINDOWS\\system32\\winhttp.dll"
+  ]
+}

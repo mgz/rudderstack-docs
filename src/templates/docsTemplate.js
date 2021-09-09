@@ -1,23 +1,21 @@
-import React, { useRef } from "react";
-import { graphql } from "gatsby";
+import React, { useRef } from "react"
+import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import GraphQLErrorList from "../components/graphql-error-list"
-import DocsSidebar from "../components/docsSidebar";
-import { MDXProvider } from '@mdx-js/react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import TableOfContents from '@rocketseat/gatsby-theme-docs/src/components/Docs/TOC/index';
-
+import DocsSidebar from "../components/docsSidebar"
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import TableOfContents from "@rocketseat/gatsby-theme-docs/src/components/Docs/TOC/index"
 
 const Docs = props => {
-  const { data, errors } = props;
+  const { data, errors } = props
 
   //console.log('Docs data', props);
 
   const pageContent = data.mdx.body || "",
-        pageHeadings = data.mdx.headings || [],
-        contentRef = useRef(null);
-
+    pageHeadings = data.mdx.headings || [],
+    contentRef = useRef(null)
 
   if (errors) {
     return (
@@ -27,26 +25,22 @@ const Docs = props => {
     )
   }
 
-
   return (
     <div>
       <Helmet>
         <title>{data.mdx.frontmatter.title}</title>
-        <meta
-          property="og:title"
-          content={data.mdx.frontmatter.title}
-        />
-        <meta
-          property="twitter:title"
-          content={data.mdx.frontmatter.title}
-        />
+        <meta property="og:title" content={data.mdx.frontmatter.title} />
+        <meta property="twitter:title" content={data.mdx.frontmatter.title} />
         <meta name="description" content={data.mdx.frontmatter.description} />
-        <meta property="og:description" content={data.mdx.frontmatter.description} />
+        <meta
+          property="og:description"
+          content={data.mdx.frontmatter.description}
+        />
         <meta
           property="twitter:description"
           content={data.mdx.frontmatter.description}
         />
-        <meta property="og:type" content="article" /> 
+        <meta property="og:type" content="article" />
       </Helmet>
 
       <div className="flex min-h-screen font-custom mx-auto docs-wrapper">
@@ -55,22 +49,25 @@ const Docs = props => {
         </aside>
         <main className="docs-main-content p-8" ref={contentRef}>
           <MDXProvider>
-            <MDXRenderer frontmatter={data.mdx.frontmatter}>{pageContent}</MDXRenderer>
+            <MDXRenderer>{pageContent}</MDXRenderer>
           </MDXProvider>
         </main>
         <aside className="toc">
-          <TableOfContents headings={pageHeadings} contentRef={contentRef} disableTOC={false} />
+          <TableOfContents
+            headings={pageHeadings}
+            contentRef={contentRef}
+            disableTOC={false}
+          />
         </aside>
       </div>
     </div>
-)
+  )
 }
 
 export const query = graphql`
-  query DocsTemplateQuery($slug: String){
-    mdx(frontmatter: {slug: {eq: $slug}}) {
+  query DocsTemplateQuery {
+    mdx {
       frontmatter {
-        slug
         title
         description
       }
@@ -83,4 +80,4 @@ export const query = graphql`
   }
 `
 
-export default Docs;
+export default Docs

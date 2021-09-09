@@ -1,60 +1,60 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import PropTypes from 'prop-types';
-import { useTheme } from '@emotion/react';
-import useWindowScroll from 'react-use/lib/useWindowScroll';
-import useWindowSize from 'react-use/lib/useWindowSize';
+import React, { useState, useEffect, useMemo } from "react"
+import PropTypes from "prop-types"
+import { useTheme } from "@emotion/react"
+import useWindowScroll from "react-use/lib/useWindowScroll"
+import useWindowSize from "react-use/lib/useWindowSize"
 
-import slug from '@rocketseat/gatsby-theme-docs/src/util/slug';
+import slug from "@rocketseat/gatsby-theme-docs/src/util/slug"
 
-import { Wrapper, Container } from './styles';
-import tailwindConfig from '../../../../../../tailwind.config';
+import { Wrapper, Container } from "./styles"
+import tailwindConfig from "../../../../../../tailwind.config"
 
 export default function TableOfContents({ headings, disableTOC, contentRef }) {
-  const { y } = useWindowScroll();
+  const { y } = useWindowScroll()
   //const theme = useTheme();
-  const { width, height } = useWindowSize();
-  const [offsets, setOffsets] = useState([]);
+  const { width, height } = useWindowSize()
+  const [offsets, setOffsets] = useState([])
 
-  const isMobile = width <= 1200;
+  const isMobile = width <= 1200
 
   useEffect(() => {
     if (!isMobile || disableTOC) {
-      const allHeadings = contentRef.current?.querySelectorAll(`h2, h3`);
+      const allHeadings = contentRef.current?.querySelectorAll(`h2, h3`)
 
       setOffsets(
         allHeadings &&
           Array.from(allHeadings)
-            .map((heading) => {
-              const anchor = heading.querySelector(`a`);
-              if (!anchor) return {};
+            .map(heading => {
+              const anchor = heading.querySelector(`a`)
+              if (!anchor) return {}
 
               return {
                 id: heading.id,
                 offset: heading.offsetTop + anchor.offsetTop,
-              };
+              }
             })
-            .filter(Boolean),
-      );
+            .filter(Boolean)
+      )
     }
-  }, [width, height, contentRef, isMobile, disableTOC]);
+  }, [width, height, contentRef, isMobile, disableTOC])
 
   const activeHeading = useMemo(() => {
     if (!isMobile || disableTOC) {
-      const windowOffset = height / 2;
-      const scrollTop = y + windowOffset;
+      const windowOffset = height / 2
+      const scrollTop = y + windowOffset
 
       if (offsets) {
         for (let i = offsets.length - 1; i >= 0; i -= 1) {
-          const { id, offset } = offsets[i];
+          const { id, offset } = offsets[i]
           if (scrollTop >= offset) {
-            return id;
+            return id
           }
         }
       }
     }
 
-    return null;
-  }, [offsets, height, y, isMobile, disableTOC]);
+    return null
+  }, [offsets, height, y, isMobile, disableTOC])
 
   if (!disableTOC) {
     return (
@@ -64,9 +64,9 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
           <nav>
             <ul>
               {headings
-                .filter((heading) => heading.depth === 2 || heading.depth === 3)
-                .map((heading) => {
-                  const headingSlug = slug(heading.value);
+                .filter(heading => heading.depth === 2 || heading.depth === 3)
+                .map(heading => {
+                  const headingSlug = slug(heading.value)
 
                   return (
                     <li
@@ -87,24 +87,24 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
                         {heading.value}
                       </a>
                     </li>
-                  );
+                  )
                 })}
             </ul>
           </nav>
         </Container>
       </Wrapper>
-    );
+    )
   }
 
-  return <Wrapper />;
+  return <Wrapper />
 }
 
 TableOfContents.propTypes = {
   headings: PropTypes.array,
   disableTOC: PropTypes.bool.isRequired,
   contentRef: PropTypes.shape({ current: PropTypes.object }).isRequired,
-};
+}
 
 TableOfContents.defaultProps = {
   headings: null,
-};
+}

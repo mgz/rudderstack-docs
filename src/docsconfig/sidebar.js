@@ -107,7 +107,7 @@ export const jsonData = [
         link: "/stream-sources/rudderstack-sdk-integration-guides",
         content: [
           {
-            key: "javascript",
+            key: "rudderstack-javascript-sdk",
             title: "JavaScript",
             link:
               "/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk",
@@ -120,6 +120,63 @@ export const jsonData = [
                 content: [],
               },
             ],
+          },
+          {
+            key: "rudderstack-android-sdk",
+            title: "Android",
+            link:
+              "/stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk",
+            content: [
+              {
+                key: "add-an-application-class-to-you-android-application",
+                title: "How to Add an Application Class to Your Android App",
+                link:
+                  "/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/add-an-application-class-to-you-android-application",
+                content: [],
+              },
+            ],
+          },
+          {
+            key: "rudderstack-ios-sdk",
+            title: "iOS",
+            link:
+              "/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk",
+            content: [],
+          },
+          {
+            key: "getting-started-with-unity-sdk",
+            title: "Unity",
+            link:
+              "/stream-sources/rudderstack-sdk-integration-guides/getting-started-with-unity-sdk",
+            content: [],
+          },
+          {
+            key: "rudderstack-react-native-sdk",
+            title: "React Native",
+            link:
+              "/stream-sources/rudderstack-sdk-integration-guides/rudderstack-react-native-sdk",
+            content: [],
+          },
+          {
+            key: "rudderstack-flutter-sdk",
+            title: "Flutter",
+            link:
+              "/stream-sources/rudderstack-sdk-integration-guides/rudderstack-flutter-sdk",
+            content: [],
+          },
+          {
+            key: "amp-analytics",
+            title: "AMP Analytics",
+            link:
+              "/stream-sources/rudderstack-sdk-integration-guides/amp-analytics",
+            content: [],
+          },
+          {
+            key: "rudderstack-java-sdk",
+            title: "Java",
+            link:
+              "/stream-sources/rudderstack-sdk-integration-guides/amp-analytics",
+            content: [],
           },
         ],
       },

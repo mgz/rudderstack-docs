@@ -3,19 +3,51 @@ import RsLogo from "../images/rudderstack-logo-v2.svg"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
 import DocsSearchBox from "./docsSearchBox"
-import { graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
+import { TempButton } from "./tempDataCheck"
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
   process.env.GATSBY_ALGOLIA_SEARCH_APIKEY
 )
 
-const DocsNavigation = ({ data }) => {
-  console.log("Page Data", data)
+const DocsNavigation = () => {
+  /* let { data } = useStaticQuery(
+    graphql`
+      query {
+        allMdx {
+          edges {
+            node {
+              slug
+              tableOfContents
+            }
+          }
+        }
+      }
+    `
+  ) */
+
   const [currentRefineText, setCurrentRefineText] = useState("")
 
   return (
     <div className="headerNav">
+      <StaticQuery
+        query={graphql`
+          query {
+            allMdx {
+              edges {
+                node {
+                  slug
+                  tableOfContents
+                }
+              }
+            }
+          }
+        `}
+        render={data => {
+          console.log("Page Data 2", data)
+        }}
+      />
       <div className="headerContainer">
         <div className="docsLogo flex items-center">
           <a href="/">
@@ -38,6 +70,9 @@ const DocsNavigation = ({ data }) => {
                 Try for Free
               </a>
             </li>
+            {/* <li>
+              <TempButton />
+            </li> */}
           </ul>
         </nav>
         <div className="docsSearch">
@@ -82,18 +117,3 @@ const DocsNavigation = ({ data }) => {
 }
 
 export default DocsNavigation
-
-export const pageQuery = graphql`
-  query {
-    allMdx(sort: { fields: slug, order: ASC }) {
-      edges {
-        node {
-          slug
-          headings(depth: h2) {
-            value
-          }
-        }
-      }
-    }
-  }
-`
