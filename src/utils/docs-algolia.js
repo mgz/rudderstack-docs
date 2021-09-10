@@ -1,4 +1,4 @@
-const docsSearchQuery = `{
+/* const docsSearchQuery = `{
     docsSearchGp: allMdx {
       edges {
         node {
@@ -18,7 +18,7 @@ function docsToAlgoliaRecord({ node: { slug, tableOfContents } }) {
   }
 }
 
-/* function getSearchData(data) {
+ function getSearchData(data) {
   let tempArr = [] //final data to be passed to Algolia
   let tempJson = {}
   if (data.items.length === 0) {
@@ -32,7 +32,7 @@ function docsToAlgoliaRecord({ node: { slug, tableOfContents } }) {
     })
   }
   return tempArr
-} */
+}
 
 //console.log("on map ", getSearchData(tempJsonData))
 
@@ -48,3 +48,4 @@ const queries = [
   },
 ]
 module.exports = queries
+ */

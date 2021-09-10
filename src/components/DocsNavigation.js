@@ -45,7 +45,7 @@ const DocsNavigation = () => {
           }
         `}
         render={data => {
-          console.log("Page Data 2", data)
+          /* console.log("Page Data 2", data) */
         }}
       />
       <div className="headerContainer">
