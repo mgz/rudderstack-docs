@@ -6,7 +6,7 @@ import {
   Accordion,
   AccordionItemPanel,
 } from "react-accessible-accordion"
-import { jsonData } from "../docsconfig/sidebar"
+import { jsonData } from "../../../docsconfig/sidebar"
 
 const NestedAccordion = props => {
   const [loading, setLoading] = useState(true)

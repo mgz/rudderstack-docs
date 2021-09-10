@@ -1,22 +1,21 @@
 import React from "react"
 
-function getSearchData(data) {
+/* function getSearchData(data) {
+  console.log("Data", data)
   let tempArr = [] //final data to be passed to Algolia
   let tempJson = {}
-  data.map((i, k) => {
-    if (i.node.tableOfContents.items == undefined) {
-      tempJson["title"] = i.title
-      tempJson["section"] = i.slug + i.url
-      tempArr.push(tempJson)
-    } else {
-      i.node.tableOfContents.items.map((item, k) => {
-        let childTempJson = getSearchData(item)
-        tempArr.push(childTempJson)
-      })
-    }
-  })
+  if (i.items == undefined) {
+    tempJson["title"] = i.title
+    tempJson["section"] = i.slug + i.url
+    tempArr.push(tempJson)
+  } else {
+    i.items.map((item, k) => {
+      let childTempJson = getSearchData(item)
+      tempArr.push(childTempJson)
+    })
+  }
   return tempArr
-}
+} */
 
 const tempJsonData = [
   {
@@ -195,7 +194,16 @@ const tempJsonData = [
 
 export const TempButton = () => {
   return (
-    <button onClick={() => console.log("on map ", getSearchData(tempJsonData))}>
+    <button
+      onClick={() =>
+        console.log(
+          "on map ",
+          tempJsonData.map((i, k) => {
+            //let menuItem = getSearchData(i.node.tableOfContents)
+          })
+        )
+      }
+    >
       Click Here
     </button>
   )

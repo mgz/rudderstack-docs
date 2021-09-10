@@ -1,5 +1,5 @@
 import React from "react"
-import NestedAccordion from "../../../../components/NestedAccordion"
+import NestedAccordion from "../NestedAccordion"
 
 const Sidebar = () => {
   return (
