@@ -3,7 +3,8 @@ import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import GraphQLErrorList from "../components/graphql-error-list"
-import DocsSidebar from "../components/docsSidebar"
+/* import DocsSidebar from "../components/docsSidebar" */
+import Sidebar from "../@rocketseat/gatsby-theme-docs/components/Sidebar/index"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import TableOfContents from "@rocketseat/gatsby-theme-docs/src/components/Docs/TOC/index"
@@ -45,7 +46,8 @@ const Docs = props => {
 
       <div className="flex min-h-screen font-custom mx-auto docs-wrapper">
         <aside className="sidebar-nav border-r border-grayColor-lightBorder py-5">
-          <DocsSidebar />
+          {/* <DocsSidebar /> */}
+          <Sidebar />
         </aside>
         <main className="docs-main-content p-8" ref={contentRef}>
           <MDXProvider>

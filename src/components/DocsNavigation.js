@@ -57,7 +57,7 @@ const DocsNavigation = () => {
         <nav className="docsNav">
           <ul className="docsNavList">
             <li>
-              <a href="/docs">Home</a>
+              <a href="/docs/home">Home</a>
             </li>
             <li>
               <a href="https://github.com/rudderlabs/rudder-server">Github</a>

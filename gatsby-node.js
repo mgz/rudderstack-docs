@@ -515,6 +515,13 @@ exports.createPages = async ({ graphql, actions }) => {
     isPermanent: true,
   })
 
+  /* Docs redirect */
+  createRedirect({
+    fromPath: "/docs",
+    toPath: "/docs/home",
+    isPermanent: true,
+  })
+
   const result = await graphql(`
     {
       allSanityBlog {
@@ -769,22 +776,22 @@ exports.createPages = async ({ graphql, actions }) => {
     {
       allMdx {
         nodes {
-          frontmatter {
-            slug
-          }
+          slug
         }
       }
     }
   `)
   const docPages = docPages_query.data.allMdx.nodes || []
   docPages.forEach((edge, index) => {
-    const path = `${edge.frontmatter.slug}`
+    const path = edge.slug == "" ? "/docs" : `${edge.slug}`
     //console.log('docsPath', edge.frontmatter.slug);
 
     createPage({
       path,
-      component: require.resolve("./src/templates/docsTemplate.js"),
-      context: { slug: edge.frontmatter.slug },
+      component: require.resolve(
+        "./src/@rocketseat/gatsby-theme-docs/components/Layout/index.js"
+      ),
+      context: { slug: edge.slug },
     })
   })
 
