@@ -1,24 +1,54 @@
-/* const docsSearchQuery = `{
-    docsSearchGp: allMdx {
+const docsSearchQuery = `{
+    docsSearch: allMdx {
       edges {
         node {
           slug
-          tableOfContents
+          headings(depth: h2) {
+            value
+          }
+          frontmatter {
+            title
+          }
         }
       }
     }
   }
 `
 
-function docsToAlgoliaRecord({ node: { slug, tableOfContents } }) {
+function docsToAlgoliaRecord({ node: { slug, title } }) {
   return {
     slug: slug,
-    section: tableOfContents.items.url,
-    title: tableOfContents.items.title,
+    title: title,
   }
 }
 
- function getSearchData(data) {
+function makeSectionUrl(str) {
+  str = str.toLowerCase()
+  str =
+    "#" +
+    str
+      .replace("/", "")
+      .replace("?", "")
+      .replace(".", "")
+      .replace(" ", "-")
+      .replace("  ", "--")
+  return str
+}
+
+let tempArr = [] //final data to be passed to Algolia
+function getSearchData(data) {
+  let elSlug = data.node.slug
+  data.node.headings.map((i, k) => {
+    let tempJson = {}
+    tempJson["slug"] = elSlug + makeSectionUrl(i.value)
+    tempJson["title"] = i.value
+    tempArr.push(tempJson)
+    //console.log("Temp Json", tempArr)
+    return tempArr
+  })
+}
+
+/* function getSearchData(data) {
   let tempArr = [] //final data to be passed to Algolia
   let tempJson = {}
   if (data.items.length === 0) {
@@ -32,7 +62,7 @@ function docsToAlgoliaRecord({ node: { slug, tableOfContents } }) {
     })
   }
   return tempArr
-}
+} */
 
 //console.log("on map ", getSearchData(tempJsonData))
 
@@ -40,12 +70,11 @@ const queries = [
   {
     query: docsSearchQuery,
     transformer: ({ data }) => {
-      //
-      //return getSearchData(data).map(docsToAlgoliaRecord)
+      console.log("Temp Json", data)
+      return data.docsSearch.edges.map(node => getSearchData(node))
     },
     indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs",
     settings: {},
   },
 ]
 module.exports = queries
- */

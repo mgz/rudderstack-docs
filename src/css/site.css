@@ -1015,23 +1015,6 @@ top: -60px;
   @apply text-grayColor-custom;
 }
 
-.docs-main-content h1 {
-  @apply text-4xl;
-  @apply pb-6;
-  @apply mb-6;
-  @apply border-b;
-  @apply border-grayColor-lightBorder;
-  @apply text-grayColor-docsText;
-}
-
-.docs-main-content h2 {
-  @apply mt-10;
-  @apply mb-3;
-  @apply text-3xl;
-  @apply text-grayColor-docsText;
-  @apply font-semibold;
-}
-
 .docs-main-content blockquote {
   @apply px-5;
   @apply py-3;
@@ -1071,8 +1054,9 @@ top: -60px;
 .docs-main-content h1 {
   @apply text-4xl;
   @apply pb-6;
-  @apply mb-6;
+  @apply mb-7;
   @apply border-b;
+  @apply font-bold;
   @apply border-grayColor-lightBorder;
   @apply text-grayColor-docsText;
 }

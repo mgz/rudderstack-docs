@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled"
 
 export const Container = styled.div`
   width: 100%;
@@ -16,7 +16,7 @@ export const Container = styled.div`
     padding: 24px;
     grid-template-columns: 100%;
   }
-`;
+`
 
 export const Main = styled.main`
   height: 100%;
@@ -34,7 +34,7 @@ export const Main = styled.main`
   @media (max-width: 780px) {
     padding-top: 0;
   }
-`;
+`
 
 export const Children = styled.div`
   width: 100%;
@@ -47,6 +47,12 @@ export const Children = styled.div`
     order: 3;
   }
 
+  h1 {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #dee2e7;
+    color: #3d3d4d;
+  }
+
   h1,
   h2,
   h3,
@@ -54,5 +60,37 @@ export const Children = styled.div`
   h5,
   h6 {
     overflow-wrap: break-word;
+    margin: 24px 0 16px 0;
   }
-`;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #3d3d4d;
+  }
+  a {
+    font-weight: semibold;
+    text-decoration: none;
+    color: #6c6c80;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  ul,
+  ol {
+    color: #6c6c80;
+    padding-left: 15px;
+    margin-bottom: 16px;
+    li {
+      line-height: 28px;
+    }
+  }
+  li ul,
+  li ol {
+    margin-bottom: 0;
+  }
+  p {
+    color: #6c6c80;
+  }
+`

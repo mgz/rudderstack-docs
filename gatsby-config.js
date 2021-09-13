@@ -156,7 +156,7 @@ module.exports = {
         ],
       },
     },
-    /* {
+    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -166,7 +166,7 @@ module.exports = {
         enablePartialUpdates: true,
         matchFields: ["slug", "section", "title"],
       },
-    }, */
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
