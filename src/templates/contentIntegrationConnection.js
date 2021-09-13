@@ -16,22 +16,22 @@ const SingleIntegrationConnectionContent = ({ data }) => {
         <div className="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
           <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
             <h2 className="text-primary mb-8 md:my-4 text-2xl-2 font-bold leading-tight">
-              Easy {data.integration_connection.source_context} to{" "}
-              {data.integration_connection.destination_context} Integration with
+              Easy {data.integration_connection.source_integration_context} to{" "}
+              {data.integration_connection.destination_integration_context} Integration with
               RudderStack
             </h2>
             <div className="py-4">
               <p className="text-lg text-grayColor-custom font-normal">
                 RudderStack’s open source{" "}
-                {data.integration_connection.source_context} allows you to
+                {data.integration_connection.source_integration_context} allows you to
                 integrate RudderStack with your{" "}
-                {data.integration_connection.source_context} to track event data
+                {data.integration_connection.source_integration_context} to track event data
                 and automatically send it to{" "}
-                {data.integration_connection.destination_context}.
+                {data.integration_connection.destination_integration_context}.
                 <br />
                 <br />
                 With the RudderStack{" "}
-                {data.integration_connection.source_context}, you do not have to
+                {data.integration_connection.source_integration_context}, you do not have to
                 worry about having to learn, test, implement or deal with
                 changes in a new API and multiple endpoints every time someone
                 asks for a new integration.
@@ -42,16 +42,17 @@ const SingleIntegrationConnectionContent = ({ data }) => {
               className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
               href={data.integration_connection.source_docs_url}
             >
-              Read {data.integration_connection.source_context} Docs
+              Read {data.integration_connection.source_integration_context} Docs
             </a>
           </div>
           <div className="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
             <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
-              <div className="w-full">
+              <div className="">
                 <StaticImage
                   src="../images/int-conn-s2.png"
                   alt="RudderStack animation"
                   placeholder="tracedSVG"
+                  className="w-auto"
                 />
 
                 <div className="int-conn-left-logo">
@@ -79,8 +80,8 @@ const SingleIntegrationConnectionContent = ({ data }) => {
 
       <section className="max-w-6xl mx-auto mb-12">
         <div className=" flex flex-col w-full pb-12 md:pb-0 px-2">
-          <h3 className="mt-20 mb-0 md:mb-6 text-4xl md:text-5xl font-bold leading-tight text-left max-w-5xl text-blueNew-midnight">
-            Popular {data.integration_connection.destination_context} use cases
+          <h3 className="mt-20 mb-0 md:mb-6 text-4xl md:text-5xl font-bold leading-tight text-left  max-w-5xl text-blueNew-midnight">
+            Popular {data.integration_connection.destination_integration_context} use cases
           </h3>
         </div>
         <div className="px-0 mx-auto">
@@ -158,7 +159,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
       <section className="max-w-6xl mx-auto mb-12">
         <div className=" flex flex-col w-full pb-12 md:pb-0 px-2">
           <h3 className="mt-20 mb-0 md:mb-6 text-4xl md:text-3xl font-bold leading-tight text-left max-w-5xl text-blueNew-midnight">
-            Use the {data.integration_connection.source_context} with other
+            Use the {data.integration_connection.source_integration_context} with other
             popular destinations
           </h3>
         </div>
@@ -294,7 +295,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
             <div className="h-8 mb-2">
               <img
                 src={
-                  "https://cdn.sanity.io/images/97bpcflt/production/4ab57efc057de15f519feaf0e4bfe939ef42e71b-452x452.png"
+                  data.integration_connection.destination_logo_img_url
                 }
                 className="h-8 m-auto"
                 alt="RudderStack animation"
@@ -302,16 +303,10 @@ const SingleIntegrationConnectionContent = ({ data }) => {
               />
             </div>
             <div class="text-5xl font-bold mb-6 mt-2  text-blueNew-midnight">
-              About Hubspot
+              About  {data.integration_connection.destination_integration}
             </div>
             <div class="text-grayColor-custom text-lg mb-8">
-              Hubspot is a leading CRM platform that specializes in inbound
-              marketing, lead tracking, as well as customer service. It offers
-              cutting-edge tools and support for building and maintaining
-              healthy relationships with your leads and customers. From
-              automating marketing activities and emails to tracking your leads,
-              HubSpot has you covered for every aspect of your marketing
-              strategy.
+              {data.integration_connection.destination_description}
             </div>
           </div>
         </div>
@@ -325,7 +320,8 @@ export const query = graphql`
     integration_connection: integrationConnectionsV3Csv(slug: { eq: $slug }) {
       source_slug
       destination_category
-      destination_context
+      destination_integration
+      destination_integration_context
       destination_description
       destination_docs_url
       destination_logo_img_url
@@ -348,7 +344,8 @@ export const query = graphql`
       relevant_integration_url_3
       relevant_integration_url_4
       source_category
-      source_context
+      source_integration
+      source_integration_context
       source_description
       source_docs_url
       source_logo_img_url
@@ -362,6 +359,8 @@ export const query = graphql`
       slug
       source_id
       destination_id
+      image_header_source
+      image_header_name
     }
   }
 `

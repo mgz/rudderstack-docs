@@ -106,15 +106,24 @@ const Layout = ({ location, showExplicitGradient, children }) => {
       id="main-container"
       className={`gradient-${diableGradient ? "disable" : "enable"}`}
     >
+      <Helmet>
+        <script
+          src={"https://cdn.rudderlabs.com/v3/rudder-analytics.min.js"}
+          type="text/javascript"
+        />
+      </Helmet>
       {/* <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" />
       </Helmet> */}
       <CookiesConsent />
-      <MainNavigation diableGradient={diableGradient}  />
+      <MainNavigation diableGradient={diableGradient} />
       <main>{children}</main>
 
-      <footer className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0" name={"footer-container"}>
+      <footer
+        className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0"
+        name={"footer-container"}
+      >
         <div className="max-w-6xl mx-auto footer-menus-wrap">
           <div className="w-full py-6 font-custom inline-block">
             {footermenus.map((menu, i) => (

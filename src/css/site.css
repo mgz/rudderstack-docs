@@ -186,6 +186,22 @@ body {
   height: 100%;
 }
 
+.integration-connection-hero-logo-desktop {
+  position: absolute;
+  width: 144px;
+  height: 96px;
+  top: 52px;
+  left: 320px;
+}
+
+.integration-connection-hero-logo-mobile {
+  position: absolute;
+  width: 144px;
+  height: 96px;
+  top: 200px;
+  left: 376px;
+}
+
 .homepage-middle-bg-gradiant {
   background: linear-gradient(226.32deg, #6b96c3 -50.9%, #111168 108.01%);
 }
@@ -284,6 +300,13 @@ body {
   border-bottom: 2px solid #17176e;
   font-weight: 700 !important;
 }
+
+@media (max-width: 1023px) and (min-width: 640px) {
+  .class {
+    font-size: 15px;
+  }
+}
+
 @media only screen and (max-width: 1023px) {
   .menu li.has-submenu a:after {
     display: inline-block;
@@ -297,6 +320,16 @@ body {
     transform: rotate(45deg);
     border-right: 2px solid rgba(255, 255, 255);
     border-bottom: 2px solid rgba(255, 255, 255);
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .integration-connection-hero-logo-desktop {
+    position: absolute;
+    width: 84px;
+    height: 52px;
+    top: 34px;
+    left: 206px;
   }
 }
 
