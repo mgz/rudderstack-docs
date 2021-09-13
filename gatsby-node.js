@@ -514,6 +514,12 @@ exports.createPages = async ({ graphql, actions }) => {
       "/video-library/how-pachyderm-streamlines-lead-qualification-with-rudderstack-warehouse-actions",
     isPermanent: true,
   })
+  createRedirect({
+    fromPath: "/blog/open-source-analytics/",
+    toPath:
+      "/blog/open-source-analytics-stack-bringing-control-flexibility-and-data-privacy-to-your-analytics",
+    isPermanent: true,
+  })
 
   /* Docs redirect */
   /* createRedirect({
@@ -819,6 +825,40 @@ exports.createPages = async ({ graphql, actions }) => {
       path,
       component: require.resolve("./src/templates/contentGuides.js"),
       context: { slug: edge.node.slug },
+    })
+  })
+
+  //vertical pages
+  const l_VertialPages = await graphql(`
+    {
+      allSanityVerticalLandingPage {
+        edges {
+          node {
+            title
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (l_VertialPages.errors) {
+    throw l_VertialPages.errors
+  }
+
+  const verticalPages =
+    l_VertialPages.data.allSanityVerticalLandingPage.edges || []
+  verticalPages.forEach((edge, index) => {
+    const path = `/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve(
+        "./src/templates/verticalLandingPageContent.js"
+      ),
+      context: { slug: edge.node.slug.current },
     })
   })
 }
