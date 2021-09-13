@@ -194,13 +194,21 @@ body {
   left: 320px;
 }
 
+.integration-connection-hero-logo-primary-desktop {
+  width: 320px;
+}
+
 .integration-connection-hero-logo-mobile {
   position: absolute;
   width: 144px;
   height: 96px;
-  top: 200px;
-  left: 376px;
+  top: 130px;
+  left: 270px;
 }
+
+.integration-connection-hero-logo-primary-mobile {
+  width: 270px;
+} 
 
 .homepage-middle-bg-gradiant {
   background: linear-gradient(226.32deg, #6b96c3 -50.9%, #111168 108.01%);
@@ -302,8 +310,40 @@ body {
 }
 
 @media (max-width: 1023px) and (min-width: 640px) {
-  .class {
-    font-size: 15px;
+  .integration-connection-hero-logo-primary-dektop {
+    width: 390px;
+  }
+
+  .integration-connection-hero-logo-desktop {
+    position: absolute;
+    width: 144px;
+    height: 96px;
+    top: 54px;
+    left: 320px;
+  }
+
+  .integration-connection-hero-container-desktop {
+    width: 520px;
+    margin: auto;
+    position: relative;
+  }
+
+  .integration-connection-hero-logo-primary-mobile {
+    width: 340px;
+  }
+
+  .integration-connection-hero-logo-mobile {
+    position: absolute;
+    width: 144px;
+    height: 96px;
+    top: 176px;
+    left: 336px;
+  }
+
+  .integration-connection-hero-container-mobile {
+    width: 520px;
+    margin: auto;
+    position: relative;
   }
 }
 
@@ -330,6 +370,34 @@ body {
     height: 52px;
     top: 34px;
     left: 206px;
+  }
+
+  .integration-connection-hero-logo-primary-desktop {
+    width: 208px;
+  }
+
+  .integration-connection-hero-container-desktop {
+    width: 300px;
+    margin: auto;
+    position: relative;
+  }
+
+  .integration-connection-hero-logo-mobile {
+    position: absolute;
+    width: 84px;
+    height: 52px;
+    top: 110px;
+    left: 206px;
+  }
+
+  .integration-connection-hero-logo-primary-mobile {
+    width: 208px;
+  }
+
+  .integration-connection-hero-container-mobile {
+    width: 300px;
+    margin: auto;
+    position: relative;
   }
 }
 

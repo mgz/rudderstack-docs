@@ -12,10 +12,10 @@ const SingleIntegrationConnectionContent = ({ data }) => {
   return (
     <Layout>
       <HeroBannerIntegrationConnection {...data} />
-      <section className=" px-4 md:px-3 py-32 mx-auto relative bg-whiteColor-custom banner-section">
+      <section className=" px-4 md:px-3 py-12 md:py-32 mx-auto relative bg-whiteColor-custom banner-section">
         <div className="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
           <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-            <h2 className="text-primary mb-8 md:my-4 text-2xl-2 font-bold leading-tight">
+            <h2 className="text-primary mb-0 md:mb-8 md:my-4 text-2xl-2 font-bold leading-tight">
               Easy {data.integration_connection.source_integration_context} to{" "}
               {data.integration_connection.destination_integration_context} Integration with
               RudderStack
@@ -87,7 +87,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
         <div className="px-0 mx-auto">
           {/*Data WorkFlow*/}
           <div className="flex flex-wrap flex-row mb-12">
-            <div className={`w-full md:w-1/3 sm:px-2 mt-5 `}>
+            <div className={`w-full md:w-1/3 sm:px-2 mt-5 mx-2 md:mx-0`}>
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-8 bg-blueNew-cardBackground rounded-2xl">
                 <div className="h-8 mb-10">
                   <img
@@ -106,7 +106,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
               </div>
             </div>
 
-            <div className={`w-full md:w-1/3 sm:px-2 mt-5 `}>
+            <div className={`w-full md:w-1/3 sm:px-2 mt-5 mx-2 md:mx-0`}>
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-8 bg-blueNew-cardBackground rounded-2xl">
                 <div className="h-8 mb-10">
                   <img
@@ -125,7 +125,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
               </div>
             </div>
 
-            <div className={`w-full md:w-1/3 sm:px-2 mt-5 `}>
+            <div className={`w-full md:w-1/3 sm:px-2 mt-5 mx-2 md:mx-0`}>
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-8 bg-blueNew-cardBackground rounded-2xl">
                 <div className="h-8 mb-10">
                   <img
@@ -158,7 +158,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
 
       <section className="max-w-6xl mx-auto mb-12">
         <div className=" flex flex-col w-full pb-12 md:pb-0 px-2">
-          <h3 className="mt-20 mb-0 md:mb-6 text-4xl md:text-3xl font-bold leading-tight text-left max-w-5xl text-blueNew-midnight">
+          <h3 className="mt-8 md:mt-20 mb-0 md:mb-6 text-4xl md:text-3xl font-bold leading-tight text-left max-w-5xl text-blueNew-midnight">
             Use the {data.integration_connection.source_integration_context} with other
             popular destinations
           </h3>
@@ -166,7 +166,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
         <div className="px-0 mx-auto">
           {/*Data WorkFlow*/}
           <div className="flex flex-wrap flex-row mb-12">
-            <div className={`w-full md:w-1/4 sm:px-2 mt-5 `}>
+            <div className={`w-full md:w-1/4 sm:px-2 mt-5 mx-2 md:mx-0`}>
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
@@ -196,7 +196,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
               </div>
             </div>
 
-            <div className={`w-full md:w-1/4 sm:px-2 mt-5 `}>
+            <div className={`w-full md:w-1/4 sm:px-2 mt-5 mx-2 md:mx-0`}>
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
@@ -226,7 +226,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
               </div>
             </div>
 
-            <div className={`w-full md:w-1/4 sm:px-2 mt-5 `}>
+            <div className={`w-full md:w-1/4 sm:px-2 mt-5 mx-2 md:mx-0`}>
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
@@ -256,7 +256,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
               </div>
             </div>
 
-            <div className={`w-full md:w-1/4 sm:px-2 mt-5 `}>
+            <div className={`w-full md:w-1/4 sm:px-2 mt-5 mx-2 md:mx-0`}>
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
@@ -302,7 +302,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
                 placeholder="tracedSVG"
               />
             </div>
-            <div class="text-5xl font-bold mb-6 mt-2  text-blueNew-midnight">
+            <div class="text-4xl md:text-5xl font-bold mb-6 mt-2  text-blueNew-midnight">
               About  {data.integration_connection.destination_integration}
             </div>
             <div class="text-grayColor-custom text-lg mb-8">

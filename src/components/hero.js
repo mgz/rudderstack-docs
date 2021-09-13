@@ -145,12 +145,6 @@ function Hero(props) {
           </div>
         </div>
       </div>
-      <Helmet>
-        <script
-          src={"https://cdn.rudderlabs.com/v3/rudder-analytics.min.js"}
-          type="text/javascript"
-        />
-      </Helmet>
     </section>
   )
 }
