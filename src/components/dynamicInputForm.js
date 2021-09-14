@@ -243,7 +243,7 @@ const DynamicInputForm = ({
     }
   }
 
-  console.log("hari temp", formDefinition)
+  //console.log("hari temp", formDefinition)
   return (
     <form
       id={form_id}
@@ -329,7 +329,9 @@ const DynamicInputForm = ({
                     })
                   }}
                 >
-                  <option value={""}  disabled selected hidden>{field.field_placeholder}</option>
+                  <option value={""} disabled selected hidden>
+                    {field.field_placeholder}
+                  </option>
                   {field.field_dropdown_values.map(rr => (
                     <option key={rr} value={rr}>
                       {rr}
