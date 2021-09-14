@@ -1,22 +1,24 @@
 import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
+import { useLocation } from "@reach/router"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import PortableText from "../components/portableText"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
+
 // const Layout = loadable(() => import("../components/layout"))
 // const PortableText = loadable(() => import("../components/PortableText"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const TrankYou = ({ data, htmlId }) => {
+  const location = useLocation()
   const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
-
 
   return (
     <Layout>
@@ -77,12 +79,18 @@ const TrankYou = ({ data, htmlId }) => {
               <PortableText blocks={lv_thankyoucontent[0].thankyou_content} />
             </div>
           </div>
+          {location.pathname.startsWith("/privacy-policy") && (
+            <div id="grnhse_app"></div>
+          )}
         </section>
 
         <section id="footer_section_for_demo">
-        <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
+          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
+      {/* <Helmet>
+        <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack" />
+      </Helmet> */}
     </Layout>
   )
 }
