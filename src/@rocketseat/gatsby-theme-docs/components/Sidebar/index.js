@@ -1,9 +1,9 @@
 import React from "react"
 import NestedAccordion from "../NestedAccordion"
 
-const Sidebar = () => {
+const Sidebar = ({ isMenuOpen }) => {
   return (
-    <div className="sidebar-nav-content sticky pt-16 top-0 max-h-screen">
+    <div className={`sidebar-nav-content pt-16 ${isMenuOpen ? "active" : ""}`}>
       <NestedAccordion />
     </div>
   )

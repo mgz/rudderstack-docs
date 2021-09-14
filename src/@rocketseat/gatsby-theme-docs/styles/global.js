@@ -235,6 +235,15 @@ export default function GlobalStyle() {
           content: "flow";
           background: #e8bd36;
         }
+
+        @media only screen and (max-width: 640px) {
+          h1 {
+            font-size: 28px;
+          }
+          h2 {
+            font-size: 22px;
+          }
+        }
       `}
     />
   )

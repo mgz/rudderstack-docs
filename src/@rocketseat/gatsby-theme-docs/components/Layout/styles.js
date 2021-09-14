@@ -12,9 +12,18 @@ export const Container = styled.div`
   grid-gap: 40px;
   background: #ffffff;
 
-  @media (max-width: 780px) {
-    padding: 24px;
+  @media (max-width: 1023px) {
     grid-template-columns: 100%;
+    grid-gap: 0px;
+  }
+
+  @media only screen and (max-width: 780px) {
+    padding: 0px 24px;
+    grid-template-columns: 100%;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 0px 12px;
   }
 `
 
@@ -44,7 +53,6 @@ export const Children = styled.div`
   @media (max-width: 1200px) {
     max-width: 100%;
     padding-right: 0;
-    order: 3;
   }
 
   h1 {
@@ -92,5 +100,9 @@ export const Children = styled.div`
   }
   p {
     color: #6c6c80;
+    margin: 12px 0px;
+  }
+  strong {
+    font-weight: bold;
   }
 `

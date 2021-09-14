@@ -1,9 +1,8 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled"
 
 export const Wrapper = styled.div`
   position: sticky;
   top: 0;
-  order: 2;
 
   padding-top: 72px;
   max-height: calc(100vh - 72px);
@@ -20,7 +19,7 @@ export const Wrapper = styled.div`
     margin-left: 0;
     padding-top: 0;
   }
-`;
+`
 
 export const Container = styled.div`
   h2 {
@@ -56,9 +55,9 @@ export const Container = styled.div`
     }
   }
 
-  @media (max-width: 1200px) {
+  /* @media (max-width: 1200px) {
     margin: 0 0 24px 0;
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(120, 117, 122, 0.2);
-  }
-`;
+  } */
+`
