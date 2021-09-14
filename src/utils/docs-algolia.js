@@ -1,4 +1,4 @@
-const docsSearchQuery = `{
+/* const docsSearchQuery = `{
     docsSearch: allMdx {
       edges {
         node {
@@ -62,7 +62,7 @@ function getSearchData(data) {
     })
   }
   return tempArr
-} */
+} 
 
 //console.log("on map ", getSearchData(tempJsonData))
 
@@ -70,7 +70,7 @@ const queries = [
   {
     query: docsSearchQuery,
     transformer: ({ data }) => {
-      console.log("Temp Json", data)
+      //console.log("Temp Json", data)
       return data.docsSearch.edges.map(node => getSearchData(node))
     },
     indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs",
@@ -78,3 +78,4 @@ const queries = [
   },
 ]
 module.exports = queries
+ */

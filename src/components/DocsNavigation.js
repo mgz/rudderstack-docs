@@ -45,9 +45,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen }) => {
             }
           }
         `}
-        render={data => {
-          /* console.log("Page Data 2", data) */
-        }}
+        render={data => {}}
       />
       <div className="headerContainer">
         <div
@@ -113,8 +111,8 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen }) => {
               </g>
             </svg>
           </span>
-          {/* <input type="text" placeholder="Search.." className="docsSearchbar" /> */}
-          <InstantSearch
+          <input type="text" placeholder="Search.." className="docsSearchbar" />
+          {/* <InstantSearch
             searchClient={searchClient}
             indexName={process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs"}
           >
@@ -126,7 +124,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen }) => {
                 }}
               />
             </div>
-          </InstantSearch>
+          </InstantSearch> */}
         </div>
       </div>
     </div>

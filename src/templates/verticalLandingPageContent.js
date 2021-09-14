@@ -11,7 +11,7 @@ const OurLogo = loadable(() => import("../components/ourlogo"))
 const Testimonial = loadable(() => import("../components/testimonial"))
 
 const VerticalLandingPageContent = ({ data, location }) => {
-  console.log("VerticalLandingPageContent", data)
+  //console.log("VerticalLandingPageContent", data)
   return (
     <Layout location={location}>
       <Helmet>
@@ -73,7 +73,11 @@ const VerticalLandingPageContent = ({ data, location }) => {
 
             return (
               <section key={section._key} id="our_logos">
-                <OurLogo key={section._key} {...l_ourLogo_info.node._rawOurLogos} removeSectionVerticalMargin={true} />
+                <OurLogo
+                  key={section._key}
+                  {...l_ourLogo_info.node._rawOurLogos}
+                  removeSectionVerticalMargin={true}
+                />
               </section>
             )
           }

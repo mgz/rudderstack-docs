@@ -41,7 +41,7 @@ function getSearchData(data) {
     tempJson["slug"] = elSlug + makeSectionUrl(i.value)
     tempJson["title"] = i.value
     tempArr.push(tempJson)
-    console.log("Temp Json", tempArr)
+    //console.log("Temp Json", tempArr)
     return tempArr
   })
 }
@@ -117,15 +117,15 @@ const tempJsonData = [
 export const TempButton = () => {
   return (
     <button
-      onClick={() =>
-        console.log(
+      onClick={() => {
+        /* console.log(
           "on map ",
           tempJsonData.map((i, k) => {
             let menuItem = getSearchData(i)
             return menuItem
           })
-        )
-      }
+        ) */
+      }}
     >
       Click Here
     </button>

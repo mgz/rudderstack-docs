@@ -122,20 +122,20 @@ See the following guides to learn more about these features:
 | Sources      | Yes  | No  | No     | No     |
 | Destinations | Yes  | No  | No     | No     |
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Users with this role can view the settings of all the destinations. However, secrets like access keys are hidden from them.
 
-{% endhint %}
+</div>
 
 | Option          | View | Add | Modify | Delete |
 | :-------------- | :--- | :-- | :----- | :----- |
 | Connections     | Yes  | No  | No     | No     |
 | Transformations | Yes  | No  | No     | No     |
 
-{% hint style="warning" %}
+<div class="warningBlock">
 View-only users can run tests on existing transformations but they cannot add, modify, or delete transformations. They can also view any secrets, like API keys in the transformation code.
 
-{% endhint %}
+</div>
 
 Other permissions for this role include:
 
@@ -143,10 +143,10 @@ Other permissions for this role include:
 
 - Can view live events at both the source and destination level.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 View-only users can look at events that might contain sensitive information, like the PII of users. In some cases, they can also view the API keys and other API secrets of the destinations.
 
-{% endhint %}
+</div>
 
 #### Syncs
 
@@ -175,12 +175,12 @@ A user with the read-write role has all the permissions associated with a view-o
 | Connections     | Yes  | Yes | Yes    | Yes    |
 | Transformations | Yes  | Yes | Yes    | Yes    |
 
-{% hint style="success" %}
+<div class="successBlock">
 See the following guides for more information on these options:
 
-- \*\*\*\*[**Connections**](../../connections/)\*\*\*\*
-- \*\*\*\*[**Transformations**](../../adding-a-new-user-transformation-in-rudderstack/)\*\*\*\*
-  {% endhint %}
+<a href="../../connections/">Connections</a>
+<a href="../../adding-a-new-user-transformation-in-rudderstack/">Transformations</a>
+  </div>
 
 Other permissions for this role include:
 
@@ -202,10 +202,10 @@ Other permissions for this role include:
 - Can view all the members of the team and their roles.
 - Cannot invite new users to the team or change the role/permissions of any existing user.
 
-{% hint style="info" %}
-The user with the read-write role has all the permissions as an admin, except the team management options. Refer to the **Admin** section below to know more about these features.
+<div class="infoBlock">
+The user with the read-write role has all the permissions as an admin, except the team management options. Refer to the <strong>Admin</strong> section below to know more about these features.
 
-{% endhint %}
+</div>
 
 ### Admin
 
@@ -222,12 +222,12 @@ The permissions for this role are as listed below:
 | Connections     | Yes  | Yes | Yes    | Yes    |
 | Transformations | Yes  | Yes | Yes    | Yes    |
 
-{% hint style="success" %}
+<div class="success">
 See the following guides for more information on these options:
 
-- \*\*\*\*[**Connections**](../../connections/)\*\*\*\*
-- \*\*\*\*[**Transformations**](../../adding-a-new-user-transformation-in-rudderstack/)\*\*\*\*
-  {% endhint %}
+<a href="../../connections/">Connections</a>
+<a href="../../adding-a-new-user-transformation-in-rudderstack/">Transformations</a>
+</div>
 
 #### Live Events
 
