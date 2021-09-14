@@ -10,6 +10,30 @@ import { propTypes } from "@sanity/block-content-to-react"
 const SingleIntegrationConnectionContent = ({ data }) => {
   return (
     <Layout>
+      <Helmet>
+        <title>{data.integration_connection.meta_title}</title>
+        <meta
+          property="og:title"
+          content={data.integration_connection.meta_title}
+        />
+        <meta
+          property="twitter:title"
+          content={data.integration_connection.meta_title}
+        />
+        <meta
+          name="description"
+          content={data.integration_connection.meta_desc}
+        />
+        <meta
+          property="og:description"
+          content={data.integration_connection.meta_desc}
+        />
+        <meta
+          property="twitter:description"
+          content={data.integration_connection.meta_desc}
+        />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <HeroBannerIntegrationConnection {...data} />
       <section className=" px-4 md:px-3 py-12 md:py-24 mx-auto relative bg-whiteColor-custom banner-section">
         <div className="flex flex-col items-center md:gap-6 xl:gap-12 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
@@ -81,7 +105,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
 
       <section className=" bg-whiteColor-custom">
         <div className="max-w-6xl mx-auto mb-12">
-          <div className=" flex flex-col w-full pb-4 md:pb-0 px-2">
+          <div className=" flex flex-col w-full pb-4 md:pb-0 px-4">
             <h3 className="mt-8 md:mt-24 mb-0 md:mb-6 text-4xl md:text-5xl font-bold leading-tight text-left  max-w-5xl text-blueNew-midnight">
               Popular {data.integration_connection.destination_integration} use
               cases
@@ -149,19 +173,19 @@ const SingleIntegrationConnectionContent = ({ data }) => {
             </div>
           </div>
           <div className="w-60 m-auto">
-            <Link to={"/"}>
+            <a href={"https://app.rudderstack.com/signup?type=freetrial"}>
               <span
                 className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
               >
                 Sign Up free
               </span>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
 
       <section className="max-w-6xl mx-auto mb-12">
-        <div className=" flex flex-col w-full pb-4 md:pb-0 px-2">
+        <div className=" flex flex-col w-full pb-4 md:pb-0 px-4">
           <h3 className="mt-8 md:mt-20 mb-0 md:mb-6 text-4xl md:text-3xl font-bold leading-tight text-left max-w-5xl text-blueNew-midnight">
             Use the {data.integration_connection.source_integration} with other
             popular destinations
@@ -189,7 +213,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
 
                 <a
                   href={data.integration_connection.relevant_integration_url_1}
-                  className="absolute bottom-6 w-full pr-10 pl-6 "
+                  className="absolute bottom-6 w-full pr-6 pl-2 lg:pr-10 lg:pl-6"
                 >
                   <span
                     className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
@@ -219,7 +243,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
 
                 <a
                   href={data.integration_connection.relevant_integration_url_2}
-                  className="absolute bottom-6 w-full pr-10 pl-6 "
+                  className="absolute bottom-6 w-full pr-6 pl-2 lg:pr-10 lg:pl-6"
                 >
                   <span
                     className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
@@ -249,7 +273,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
 
                 <a
                   href={data.integration_connection.relevant_integration_url_3}
-                  className="absolute bottom-6 w-full pr-10 pl-6 "
+                  className="absolute bottom-6 w-full pr-6 pl-2 lg:pr-10 lg:pl-6"
                 >
                   <span
                     className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
@@ -279,7 +303,7 @@ const SingleIntegrationConnectionContent = ({ data }) => {
 
                 <a
                   href={data.integration_connection.relevant_integration_url_4}
-                  className="absolute bottom-6 w-full pr-10 pl-6 "
+                  className="absolute bottom-6 w-full pr-6 pl-2 lg:pr-10 lg:pl-6"
                 >
                   <span
                     className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
