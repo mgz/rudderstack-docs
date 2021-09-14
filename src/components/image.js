@@ -7,10 +7,10 @@ function renderImage(image, classes, alt) {
       <img
         loading="lazy"
         //src={image.node.localFile.publicURL}
-         src={image.node.url}
+        src={image.node.url}
         alt={alt ? alt : image.node._id}
         className={classes}
-      />  
+      />
     )
   })()
   return imgh

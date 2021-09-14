@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
 import { navigate, useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheckSquare } from "@fortawesome/free-solid-svg-icons/faCheckSquare"
 import { faSquare } from "@fortawesome/free-regular-svg-icons/faSquare"
 
-library.add(faCheckSquare, faSquare);
+library.add(faCheckSquare, faSquare)
 
 const DynamicInputForm = ({
   form_id,
@@ -243,6 +243,7 @@ const DynamicInputForm = ({
     }
   }
 
+  console.log("hari temp", formDefinition)
   return (
     <form
       id={form_id}
@@ -311,6 +312,30 @@ const DynamicInputForm = ({
                     })
                   }}
                 />
+              )}
+
+              {field.field_type === "dropdown" && (
+                <select
+                  selected={false}
+                  type="text"
+                  name={field.field_name}
+                  className="font-sm text-base resize-none"
+                  value={formData[field.field_name]}
+                  onBlur={e => onBlur(field.field_name, e.target.value)}
+                  onChange={e => {
+                    setFormData({
+                      ...formData,
+                      [field.field_name]: e.target.value,
+                    })
+                  }}
+                >
+                  <option value={""}  disabled selected hidden>{field.field_placeholder}</option>
+                  {field.field_dropdown_values.map(rr => (
+                    <option key={rr} value={rr}>
+                      {rr}
+                    </option>
+                  ))}
+                </select>
               )}
 
               {field.field_type === "checkbox" && (
