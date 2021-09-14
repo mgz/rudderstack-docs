@@ -599,6 +599,24 @@ body {
   /* margin-bottom: 24px; */
   padding: 9px 16px;
 }
+
+.demo_form select {
+  height: 40px;
+  color: #4e4e4e;
+  background: #ffffff;
+  border: 1px solid #a7a7a7;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  /* margin-bottom: 24px; */
+  padding: 9px 16px;
+}
+
+.demo_form option:first {
+  color: #a7a7a7;
+  font-size: 14px;
+}
+
 .demo_form textarea {
   /* height: 40px; */
   color: #4e4e4e;

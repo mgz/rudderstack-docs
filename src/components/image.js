@@ -10,7 +10,7 @@ function renderImage(image, classes, alt) {
         // src={image.node.url} //Development code
         alt={alt ? alt : image.node._id}
         className={classes}
-      />  
+      />
     )
   })()
   return imgh
@@ -31,8 +31,8 @@ const Image = props => {
       //       }
       //     }
       //   }
-      // `}  
-      
+      // `}
+
       /* Production query below */
       query={graphql`
         query {
