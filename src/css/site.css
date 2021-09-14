@@ -188,8 +188,8 @@ body {
 
 .integration-connection-hero-logo-desktop {
   position: absolute;
-  width: 144px;
-  height: 96px;
+  width: 122px;
+  height: 92px;
   top: 52px;
   left: 320px;
 }
@@ -200,15 +200,43 @@ body {
 
 .integration-connection-hero-logo-mobile {
   position: absolute;
-  width: 144px;
-  height: 96px;
+  width: 122px;
+  height: 92px;
   top: 130px;
   left: 270px;
 }
 
 .integration-connection-hero-logo-primary-mobile {
   width: 270px;
-} 
+}
+
+.ic-middle-container {
+  width: 568px;
+  margin: auto;
+  position: relative;
+}
+
+.int-conn-left-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 70px;
+  top: 122px;
+  height: 96px;
+  width: 96px;
+}
+
+.int-conn-right-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 70px;
+  top: 122px;
+  height: 96px;
+  width: 96px;
+}
 
 .homepage-middle-bg-gradiant {
   background: linear-gradient(226.32deg, #6b96c3 -50.9%, #111168 108.01%);
@@ -266,27 +294,6 @@ body {
   z-index: 20;
 }
 
-.int-conn-left-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 54px;
-  top: 104px;
-  height: 118px;
-  width: 118px;
-}
-
-.int-conn-right-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 54px;
-  top: 104px;
-  height: 118px;
-  width: 118px;
-}
 .menu li.has-submenu a:after {
   display: inline-block;
   position: relative;
@@ -316,8 +323,8 @@ body {
 
   .integration-connection-hero-logo-desktop {
     position: absolute;
-    width: 144px;
-    height: 96px;
+    width: 122px;
+    height: 92px;
     top: 54px;
     left: 320px;
   }
@@ -334,8 +341,8 @@ body {
 
   .integration-connection-hero-logo-mobile {
     position: absolute;
-    width: 144px;
-    height: 96px;
+    width: 122px;
+    height: 92px;
     top: 176px;
     left: 336px;
   }
@@ -399,6 +406,35 @@ body {
     margin: auto;
     position: relative;
   }
+
+  .ic-middle-container {
+    width: 300px;
+    margin: auto;
+    position: relative;
+  }
+
+  .int-conn-left-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 36px;
+    top: 64px;
+    height: 52px;
+    width: 52px;
+  }
+  
+  .int-conn-right-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 36px;
+    top: 64px;
+    height: 52px;
+    width: 52px;
+  }
+  
 }
 
 .menu li.has-submenu a.active:after {

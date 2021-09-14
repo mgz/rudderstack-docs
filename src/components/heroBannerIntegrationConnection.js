@@ -4,28 +4,29 @@ import Link from "gatsby-link"
 import { StaticImage } from "gatsby-plugin-image"
 
 const HeroBannerIntegrationConnection = props => {
-  console.log("HeroBannerIntegrationConnection", props)
   return (
-    <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative gradiant-layer banner-section pb-12 md:pb-0">
-      <div className="flex flex-col items-center md:gap-2  justify-center mx-auto lg:flex-row lg:p-0">
+    <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-24 mx-auto relative gradiant-layer banner-section pb-12 md:pb-0">
+      <div className="flex flex-col items-center md:gap-8  justify-center mx-auto lg:flex-row lg:p-0">
         <div className="relative z-20 flex flex-col w-full pb-1 pr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
           <h1 className="text-primary mb-8 md:my-4 text-4xl md:text-5xl font-bold leading-tight">
             Integrate your{" "}
-            {props.integration_connection.source_integration_context} app with
-            {props.integration_connection.destination_integration_context}
+            {props.integration_connection.source_integration_context} app with{" "}
+            {props.integration_connection.destination_integration}
           </h1>
           <p className="text-lg text-grayColor-custom font-normal mb-4">
-            Don’t go through the pain of direct integration. RudderStack’s iOS
-            SDK makes it easy to send data from your iOS app to Hubspot ...and
-            all of your other cloud tools.
+            Don’t go through the pain of direct integration. RudderStack’s{" "}
+            {props.integration_connection.source_integration} makes it easy to
+            send data from your{" "}
+            {props.integration_connection.source_integration_context} to{" "}
+            {props.integration_connection.destination_integration} ...and all of
+            your other cloud tools.
           </p>
 
           <a
             className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
             href={props.integration_connection.destination_docs_url}
           >
-            Read {props.integration_connection.destination_integration_context}{" "}
-            Docs
+            Read {props.integration_connection.destination_integration} Docs
           </a>
         </div>
 
