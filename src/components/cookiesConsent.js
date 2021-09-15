@@ -162,7 +162,7 @@ const CookiesConsent = () => {
       <div
         className={`${
           !showConsent ? "hidden" : ""
-        } bg-background pl-4 pr-4 sm:pr-20 py-4 fixed bottom-0 w-full text-center flex flex-col md:flex-row justify-center z-50 md:text-left`}
+        } bg-background pl-4 pr-4 sm:pr-20 py-4 fixed bottom-0 w-full text-center flex flex-col md:flex-row justify-center z-40 md:text-left`}
       >
         <div className="flex flex-row w-full md:w-auto">
           <h4 className="self-center text-lg mr-4">
