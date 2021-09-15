@@ -60,6 +60,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
             socailmenublock {
               _rawSocialWidgetSection
             }
+            _rawWebsiteBannerSection
           }
         }
       }
@@ -105,7 +106,19 @@ const Layout = ({ location, showExplicitGradient, children }) => {
   // }
   return (
     <>
-      <WebisteBanner />
+      {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection.banner_contents.map(
+        banner => {
+          
+          return (
+            <WebisteBanner
+              key={banner._key}
+              currentSlug={location ? location.pathname : ""}
+              {...banner}
+            />
+          )
+        }
+      )}
+
       <div
         id="main-container"
         className={`gradient-${diableGradient ? "disable" : "enable"}`}
