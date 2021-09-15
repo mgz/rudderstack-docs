@@ -10,30 +10,30 @@ description: >-
 
 RudderStack lets you send your event data to Drip via the Device mode, i.e. using the native web SDK.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on sending events via the Device mode, refer to the [**RudderStack connection modes**](https://docs.rudderstack.com/connections/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-**Find the open-source JavaScript SDK code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-sdk-js/tree/production/integrations/Drip)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source JavaScript SDK code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-sdk-js/tree/production/integrations/Drip)**.**
+</div>
 
 ## Identify
 
 The `identify` method pushes the subscriber data to Drip. If the subscriber is not present in your account, RudderStack will create a new record for them. Otherwise, RudderStack updates the user records with the latest information.
 
-{% hint style="info" %}
+<div class="infoBlock">
 To update a subscriber's email address, use the `new_email` property.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `identify` call, check out the [**RudderStack API spec**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/identify).
 
-{% endhint %}
+</div>
 
 A sample `identify` call is as shown:
 
@@ -68,10 +68,10 @@ The following table lists the properties that RudderStack transforms and maps to
 | `euConsent`                   | `eu_consent`               |
 | `euConsentMessage`            | `eu_consent_message`       |
 
-{% hint style="info" %}
+<div class="infoBlock">
 All other fields in `context.traits` will be passed as custom fields.
 
-{% endhint %}
+</div>
 
 You can subscribe a user to a [**Email Series Campaign**](https://www.drip.com/learn/docs/guides/overview-of-drip) by providing the associated **Campaign ID**. Doing so will add the subscriber directly to that email series campaign.
 
@@ -85,10 +85,10 @@ If you want to add a subscriber to your account without subscribing them to an e
 
 When you call the `track` API, RudderStack sends the event to Drip along with its name and all of the specified properties. If you include `revenue` as a property, it will get passed to Drip as the conversion value of the event.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `track` call, check out the [**RudderStack API spec**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/track).
 
-{% endhint %}
+</div>
 
 A sample `track` call is as shown:
 

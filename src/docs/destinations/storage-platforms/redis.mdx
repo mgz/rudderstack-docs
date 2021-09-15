@@ -10,28 +10,28 @@ Redis is an open-source, in-memory data structure store, which can be used as a 
 
 RudderStack stores all the traits of your user as a [Redis hash](https://redis.io/commands/hset), allowing you to access user profiles in real-time.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Redis destination only processes **`identify`** API calls. Other event types are ignored.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 It is highly recommended that you keep your Redis instance inside a private network and make it accessible to RudderStack.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/redis)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/redis)**.**
+</div>
 
 ## Getting Started
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Select the destination as **Redis** to your source. Give your destination a name and then click on **Next**.
 - Next, in the **Connection Settings**, \***\*fill all the fields with the relevant information and click on **Next\*\*.
@@ -57,10 +57,10 @@ Certificate which needs to be verified while establishing a secure connection. S
 
 The **`identify`** call lets you associate the actions to a user and record their traits like name, email, etc.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the **`identify`** method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 RudderStack stores the user traits in the configured Redis instance. You can access the latest user traits by querying Redis for the key `user:<user_id>`.
 
@@ -135,10 +135,10 @@ redis> HGETALL rudderstack:user:user-3
 
 One way to enable a TLS endpoint for accessing redis is to run a `redis-stunnel` container with a link to the `redis` container and exposing the TLS port. More instructions can be found [here](https://hub.docker.com/r/runnable/redis-stunnel/)
 
-{% hint style="info" %}
+<div class="infoBlock">
 Set Common Name to `localhost` while generating CA certificate and server certificates
 
-{% endhint %}
+</div>
 
 Set the TLS endpoint of the `redis-stunnel` container as the address in the RudderStack Redis destination settings. Eg. `127.0.0.1:6380` while running containers locally with defaults. Set the `ca.pem` file generated above as the CA certificate in the settings
 

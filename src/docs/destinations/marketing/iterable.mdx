@@ -21,19 +21,19 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Device mode**     | **-**         | -             | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Iterable, please perform the steps below:
 
 - Choose a source to which you would like to add Iterable as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
 
-{% endhint %}
+</div>
 
 - Select the destination as **Iterable** to your source. Give your destination a name and then click on **Next**.
 - On the **Connection Settings** page, fill all the fields with the relevant information and click **Next.**
@@ -56,10 +56,10 @@ The following are the settings to be configured:
 
 When an `identify` call is made, RudderStack calls the [Update User](https://api.iterable.com/api/docs#users_updateUser) API of Iterable and sends the data accordingly.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 A user is identified by `emailId` or `userId`. If none of these is passed in the call, the sending of event fails.
 
-{% endhint %}
+</div>
 
 A sample `identify` call is as shown:
 
@@ -78,10 +78,10 @@ If the `deviceToken` for Push Notification is present in `context` of the payloa
 
 We use [mobile device registration](https://api.iterable.com/api/docs#users_registerDeviceToken) API for sending the token information from a device. We set the `platform` parameter as `APNS` and `GCM` for iOS and Android devices respectively. Similarly, we use the [browser token registration](https://api.iterable.com/api/docs#users_registerBrowserToken) API for Web platform.
 
-{% hint style="info" %}
+<div class="infoBlock">
 To understand more about Push Notification registration check the Iterable guides for [Android](https://support.iterable.com/hc/en-us/articles/115000331943#_2-create-a-mobile-app-in-iterable) and [iOS](https://support.iterable.com/hc/en-us/articles/115000315806#_4-create-a-mobile-app-in-iterable).
 
-{% endhint %}
+</div>
 
 ## Page
 
@@ -89,17 +89,17 @@ When the `page` method is called, the RudderStack server sends a track event to 
 
 If the user does not already exist in Iterable, RudderStack will add the user to the system as long as `email` is present in the call. If email is not present, Iterable will reject the event.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Iterable requires that you pass `email` the first time you call `page` for a user. Subsequent calls can use the `userId` identifier.
 
-{% endhint %}
+</div>
 
 If the name of the page is **Application Home** the event name in iterable will be **Application Home Page.**
 
-{% hint style="info" %}
+<div class="infoBlock">
 Note that the above case will differ according to the settings set by the user in RudderStack dashboard. Refer to the configurable settings in the Getting Started section above for more information.
 
-{% endhint %}
+</div>
 
 A sample `page` call is as shown:
 
@@ -117,10 +117,10 @@ rudderanalytics.page({
 
 The `screen` call is the mobile equivalent of the `page`. When called, it sends a `track` event to Iterable with `userId`,`emailId`, and `eventName` . In this case, the email ID will be checked if present and will create a new user if not. If the name of the page is **Main Activity**, the event name will set as **Main Activity Screen**.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Note that the above case will differ according to the settings set by the user in RudderStack dashboard. Refer to the configurable settings in the Getting Started section above for more information.
 
-{% endhint %}
+</div>
 
 A sample `screen` call is as shown:
 
@@ -142,10 +142,10 @@ A sample`track` call is as shown:
 }];
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 If a user does not exist in Iterable, the `track` call for the user event will add the user in Iterable.
 
-{% endhint %}
+</div>
 
 ## E-Commerce
 
@@ -223,10 +223,10 @@ rudderanalytics.track("Product Added", {
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For this event, the user properties and item properties are compulsory.
 
-{% endhint %}
+</div>
 
 ## FAQs
 

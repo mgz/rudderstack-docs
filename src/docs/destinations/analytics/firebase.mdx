@@ -19,17 +19,17 @@ To get started, please check whether the platform you are working with is suppor
 | **Device mode**     | -       | **Supported** | -          |
 | **Cloud mode**      | -       | -             | -          |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Then, from your [RudderStack dashboard](https://app.rudderlabs.com/) you can easily add **Firebase** as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 Depending on your platform of integration follow the steps below to enable Firebase in your project:
 
@@ -125,10 +125,10 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [RSClient getInstance:WRITE_KEY config:[builder build]];
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 RudderStack will bundle the `Firebase/Core` and `FirebaseAnalytics` by default with `Rudder-Firebase` pod.
 
-{% endhint %}
+</div>
 {% endtab %}
 
 {% tab title="Unity" %}

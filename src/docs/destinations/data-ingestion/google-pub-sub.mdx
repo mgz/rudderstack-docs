@@ -10,11 +10,11 @@ description: Step-by-step guide to send event data from RudderStack to Google Pu
 
 RudderStack allows you to configure Google Pub/Sub as a destination and send your event data to it directly.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/googlepubsub)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/googlepubsub)**.**
+</div>
 
 ## Getting Started
 
@@ -25,19 +25,19 @@ To enable sending data to Google Pub/Sub, you will first need to add it as a des
 | Device mode         | **-**         | **-**         | **-**         |
 | Cloud mode          | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Google Pub/Sub, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Google Pub/Sub.**
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
 
@@ -55,7 +55,7 @@ Please follow our [Adding a Source and Destination](https://docs.rudderstack.com
 
 ![Google Pub/Sub Topic ID and Name](../../.gitbook/assets/image%20%2848%29.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can send an event `type` like `page,` `identify,` `track`.  
 For the `track` events you can specify the event name based on the `event` name in the payload.
 
@@ -63,17 +63,17 @@ For example:
 
 - If the event name is **`page`** it will send all the calls with the `type` page.
 - If the event name is **`product added`** , it will send all the track events with the **`event`** as **`product added`**.
-  {% endhint %}
+  </div>
 
-{% hint style="success" %}
-If you want to send all the events to a particular stream irrespective of the
-type or name, you can use **`*`** as the event name.
-{% endhint %}
+<div class="successBlock">
+  If you want to send all the events to a particular stream irrespective of the
+  type or name, you can use **`*`** as the event name.
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 The **topic ID** is **case-sensitive** and has to be exactly as seen in Google Pub/Sub. On the other hand, the **event name** is **case insensitive**, and thus `Page` or `page` will both be considered as valid.
 
-{% endhint %}
+</div>
 
 - Finally, click on **Next** to complete the configuration. Pub/Sub should now be added and enabled as a destination in RudderStack.
 
@@ -89,10 +89,10 @@ The following are some examples:
 - If multiple mappings are provided for **`Product Viewed`**, all such key-value pairs from the message body will be added to attributes' metadata object.
 - If the event name is **`page`** it will send all the calls with the `type` page.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 For the `key` fields provided in the attributes map, the `key` is searched in the message body in **`root`**, **`properties`**, **`traits`** and **`context.traits`** - in that specific order.
 
-{% endhint %}
+</div>
 
 **Note: You can also specify the key path in the payload using the dot notation.**
 
@@ -127,10 +127,10 @@ This will create the below attribute metadata object:
 
 The `page` call contains information related to the page, such as the URL of the web page visited by the user.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `page` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 A sample `page` payload is as shown in the snippet below:
 
@@ -148,10 +148,10 @@ rudderanalytics.page({
 
 The `identify` call captures the relevant details about the visiting user.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `identify` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 A sample `identify` payload is as shown in the snippet below:
 
@@ -166,10 +166,10 @@ rudderanalytics.identify("abc123", {
 
 The `track` call captures the information related to the actions performed by the user, along with their properties, or traits.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `track` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 A sample `track` payload is as shown in the snippet below:
 
@@ -188,11 +188,11 @@ rudderanalytics.track("Track me", {
 - If there is no topic ID set for an event, it will not be sent.
 - If an event is set with a topic id, the payload will be sent to Pub/Sub to that particular topic id.
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you have set all event type, event and \* for mapping the priority will be given to `event` ,  
 then `type` , followed by \*.
 
-{% endhint %}
+</div>
 
 For example, let the type of event be `track`, the event name be `product added`. The mapping is done as:
 

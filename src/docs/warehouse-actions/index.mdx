@@ -12,31 +12,31 @@ description: >-
 
 Sources are the tools or platforms from which you can send event data to RudderStack. These events can then be routed \(with or without transformation\) into your data warehouse or third-party destinations for analytics and other activation use-cases.
 
-{% hint style="success" %}
-For more information on sources in RudderStack, check out the [**Connections
-guide**](https://docs.rudderstack.com/connections).
-{% endhint %}
+<div class="successBlock">
+  For more information on sources in RudderStack, check out the [**Connections
+  guide**](https://docs.rudderstack.com/connections).
+</div>
 
 ## RudderStack Warehouse Actions
 
 With RudderStack **Warehouse Actions**, you can leverage the already processed customer data residing in your data warehouse and route this enriched information to your desired destinations.
 
-{% hint style="success" %}
-**With this feature, you can configure your data warehouse as a source on
-the** [**RudderStack
-dashboard**](https://app.rudderlabs.com/signup?type=freetrial)**, select the
-right data and then sync this data to all the supported destinations.**
-{% endhint %}
+<div class="successBlock">
+  **With this feature, you can configure your data warehouse as a source on
+  the** [**RudderStack
+  dashboard**](https://app.rudderlabs.com/signup?type=freetrial)**, select the
+  right data and then sync this data to all the supported destinations.**
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can connect only one destination to a Warehouse Actions source. If you want to send data to multiple destinations, we recommend creating a source with the same settings for each destination.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You cannot connect a Warehouse Actions source to a warehouse destination in RudderStack.
 
-{% endhint %}
+</div>
 
 Here's a detailed walkthrough of the Warehouse Actions feature:
 
@@ -58,19 +58,19 @@ To configure your data warehouse as a source on the RudderStack dashboard, follo
 
 ![](../.gitbook/assets/2%20%281%29%20%281%29.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you have previously configured your data warehouse as a source on the RudderStack dashboard, you can simply use the existing credentials and proceed.
 
-{% endhint %}
+</div>
 
 - Next, enter the connection credentials to configure your data warehouse connection with RudderStack, as shown:
 
 ![](../.gitbook/assets/screen-shot-2020-12-08-at-9.37.06-pm.png)
 
-{% hint style="warning" %}
+<div class="warningBlock">
 RudderStack currently supports **Google BigQuery**, **PostgreSQL**, **ClickHouse**, **Amazon Redshift**, and **Snowflake** as sources. The connection settings will vary according to each warehouse.
 
-{% endhint %}
+</div>
 
 ### Specifying Warehouse Schema and Table
 
@@ -78,14 +78,14 @@ RudderStack currently supports **Google BigQuery**, **PostgreSQL**, **ClickHouse
 
 ![](../.gitbook/assets/4%20%287%29.png)
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Please note that your source table must include at least one of the following columns for it to be considered a valid source:
 
 - **`email`**
 - **`user_id`**
 - **`anonymous_id`**
 
-  {% endhint %}
+  </div>
 
 - If the table is valid, you can then preview a snippet of the data, as shown:
 
@@ -109,10 +109,10 @@ That's it! Your data warehouse is now configured and added as a RudderStack sour
 
 ![](../.gitbook/assets/9.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 Currently all events sent to RudderStack via warehouse as a source will be `identify()` events
 
-{% endhint %}
+</div>
 
 Now you can connect this source to any RudderStack destination of your choice. RudderStack will collect the enriched customer data from the specified table columns in your warehouse source and send it to the destination for your activation use-cases.
 

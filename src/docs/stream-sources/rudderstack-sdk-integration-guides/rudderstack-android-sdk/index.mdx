@@ -27,22 +27,33 @@ To set up the RudderStack Android SDK, there are a few prerequisites as mentione
 
 - You will also need your Data Plane URL. Simply put, the Data Plane URL is used to connect to the RudderStack backend for processing and routing your events.
 
-{% hint style="info" %}
-To get the **Data Plane URL**:
-
-- If you're using the **open-source** version of RudderStack, you are required to set up your own data plane by [installing and setting up RudderStack](https://docs.rudderstack.com/installing-and-setting-up-rudderstack) in your preferred dev environment.
-- If you're using the **enterprise** version of RudderStack, please contact us for the data plane URL with the email ID used to sign up for RudderStack.
-
-  {% endhint %}
+<div class="infoBlock">
+  To get the **Data Plane URL**:
+  <ul>
+    <li>
+      {" "}
+      If you're using the **open-source** version of RudderStack, you are
+      required to set up your own data plane by [installing and setting up
+      RudderStack](https://docs.rudderstack.com/installing-and-setting-up-rudderstack)
+      in your preferred dev environment.
+    </li>
+    <li>
+      {" "}
+      If you're using the **enterprise** version of RudderStack, please contact
+      us for the data plane URL with the email ID used to sign up for
+      RudderStack.
+    </li>
+  </ul>
+</div>
 
 - You will also need to install [Android Studio](https://developer.android.com/studio) on your system.
 
 ## Installing the SDK
 
-{% hint style="info" %}
+<div class="infoBlock">
 **As Bintray has a sunset from 1st may, we're moving our SDK to Maven Central". All the versions, 1.0.10 onwards are available in Maven Central only.**
 
-{% endhint %}
+</div>
 
 We distribute our Android SDK through [Maven Central](https://search.maven.org). The recommended and easiest way to add the SDK to your project is through the Android Gradle build system.
 
@@ -71,10 +82,10 @@ implementation 'com.rudderstack.android.sdk:core:1+'
 implementation 'com.google.code.gson:gson:2+'
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 It is recommended to use the Core Android SDK without any `device-mode` destination SDKs as you will have a better view on the captured data from the SDK.
 
-{% endhint %}
+</div>
 
 ## Setting Android Permission
 
@@ -96,10 +107,10 @@ import com.rudderstack.android.sdk.core.*;
 
 Add the following code to the `onCreate` method in your `Application` class:
 
-{% hint style="info" %}
+<div class="infoBlock">
 Don't have an `Application` class? Follow our guide on [Adding an Application Class to Your Android Application](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-android-sdk/add-an-application-class-to-you-android-application) to add one.
 
-{% endhint %}
+</div>
 
 {% tabs %}
 {% tab title="Kotlin" %}
@@ -135,7 +146,7 @@ RudderClient rudderClient = RudderClient.getInstance(
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+<div class="infoBlock">
 We automatically track the following optional events:
 
 1. `Application Installed`
@@ -145,7 +156,7 @@ We automatically track the following optional events:
 
 You can disable these events using the `withTrackLifecycleEvents` method and passing `false`. But it is highly recommended to keep them enabled.
 
-{% endhint %}
+</div>
 
 ## Track
 
@@ -191,10 +202,10 @@ Follow the method signature as below:
 
 We capture `deviceId` and use that as `anonymousId` for identifying the user. It helps to track the users across the application installation. To attach more information to the user, you can use the `identify` method. Once you set the `identify` information to the user, those will be passed to the successive `track` or `screen` calls. To reset the user identification, you can use the `reset` method.
 
-{% hint style="info" %}
+<div class="infoBlock">
 On the Android devices, the `deviceId` is assigned during the first boot. It remains consistent across the applications and installs. It changes only after factory reset.
 
-{% endhint %}
+</div>
 
 An example `identify` event is as shown:
 
@@ -429,10 +440,10 @@ You can configure your client based on the following parameters using `RudderCon
 
 If you are using a device mode destination like Adjust, Firebase, etc., the Android SDK needs to fetch the required configuration from the Control Plane. If you are using the RudderStack Config Generator to host your own Control Plane, then follow [this guide](https://docs.rudderstack.com/how-to-guides/rudderstack-config-generator#what-is-the-control-plane-url) and specify `controlPlaneUrl` in your`RudderConfig.Builder` that points to your hosted source configuration file.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You shouldn't pass the `controlPlaneUrl` parameter during SDK initialization if you are using the dashboard from [https://app.rudderstack.com](https://app.rudderstack.com). This parameter is supported only if you are using our open-source [RudderStack Config Generator](https://docs.rudderstack.com/how-to-guides/rudderstack-config-generator).
 
-{% endhint %}
+</div>
 
 ## Setting Android Device Token
 
@@ -464,10 +475,10 @@ We collect the `advertisementId` if it is enabled by the user and the App has th
 
 Apart from it, if you want to set the `advertisingId` by yourself, you can do so using the `updateWithAdvertisingId` method and passing the `advertisingId`.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You need to call `updateWithAdvertisingId` method before calling `getInstance`
 
-{% endhint %}
+</div>
 
 An example of setting the `advertisingId` is as below
 
@@ -479,10 +490,10 @@ RudderClient.updateWithAdvertisingId(<ADVERTISING_ID>);
 
 We use the `deviceId` as `anonymousId` by default. You can use the following method to override and use your own `anonymousId` with the SDK.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You need to call `setAnonymousId` method before calling `getInstance`
 
-{% endhint %}
+</div>
 
 An example of setting the `anonymousId` is as below
 
@@ -496,10 +507,10 @@ To retrieve the `anonymousId` you can use the following method:
 RudderClient.getAnonymousId();
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The method `getAnonymousId` is available from v1.0.11 onwards.
 
-{% endhint %}
+</div>
 
 ## Enabling / Disabling Events for Specific Destinations
 
@@ -539,15 +550,15 @@ option.putIntegration(<RudderIntegration.FACTORY>,<boolean>);
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+<div class="infoBlock">
 The keyword `All` in the above snippet represents all the destinations the source is connected to. Its value is set to `true` by default.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 Make sure the `destination display name` that you pass while specifying the destinations should exactly match the destination name as shown [here](https://app.rudderstack.com/directory).
 
-{% endhint %}
+</div>
 
 You can pass the destination\(s\) specified in the above snippet to the SDK in two ways:
 
@@ -622,10 +633,10 @@ rudderClient.track(
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you specify the destinations both while initializing the SDK as well as while making an event call, then the destinations specified at the event level only will be considered.
 
-{% endhint %}
+</div>
 
 ## External ID
 
@@ -678,10 +689,10 @@ RudderClient rudderClient = RudderClient.getInstance(
 
 ## Can I develop a Device Mode destination if RudderStack doesn't support it already?
 
-{% hint style="info" %}
+<div class="infoBlock">
 More information on the RudderStack Device Mode can be found in the [**RudderStack Connection Modes**](https://docs.rudderstack.com/connections/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Yes, you can develop a Device Mode destination by following these steps:
 

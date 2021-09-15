@@ -10,11 +10,11 @@ description: Step-by-step guide to send your event data from RudderStack to Adju
 
 RudderStack allows you to configure your mobile devices with our SDKs to send your customer event data to Adjust - without any hassle. You can check the code for Adjust destination on our GitHub for [Android](https://github.com/rudderlabs/rudder-integration-adjust-android) and [iOS](https://github.com/rudderlabs/rudder-integration-adjust-ios).
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/adj)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/adj)**.**
+</div>
 
 ## Getting Started
 
@@ -25,24 +25,24 @@ Before configuring your source and destination on the RudderStack app, please ch
 | **Device mode**     | -             | **Supported** | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Adjust, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Adjust as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Do not add native Adjust SDK to your project as it will prevent you from successful integration. Please refer to the screenshot below for more details:
 
-{% endhint %}
+</div>
 
 ![Configuration Settings for Adjust](../../.gitbook/assets/adjust.png)
 
@@ -122,17 +122,17 @@ To enable Adjust to track your game event data through RudderStack, please follo
 
 - First, you will need to add RudderStack's Unity SDK to your project.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Follow our guide on [Getting Started with Unity SDK](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/getting-started-with-unity-sdk) to know how to do this.
 
-{% endhint %}
+</div>
 
 - Once you have added the SDK to your project, simply download the [Adjust SDK extension package](https://github.com/rudderlabs/rudder-sdk-unity/tree/master/Integrations/Adjust/RudderAdjust) from GitHub and import it to your project.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 The package comes with Adjust Unity SDK embedded in it along with the required `jar` files for Android Install Referrer. We **don't recommend** adding the Adjust SDK separately.
 
-{% endhint %}
+</div>
 
 - After importing the `rudder-unity-extension-adjust.unitypackage` to your project, attach the `RudderPreferbs.prefab` file from `RudderUnityPlugin` to your main `GameObject`
 - Finally change the initialization of the SDK using the following code:
@@ -168,10 +168,10 @@ Here is an example:
 
 When you make the `track` call, RudderStack maps the `eventName` with the pre-defined list of custom events from Adjust.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You **must** define the map of Adjust `eventToken` to `eventName` in the dashboard. If you don't define the mapping Adjust will not accept the event.
 
-{% endhint %}
+</div>
 
 We add all the properties as `callbackParameter` in the Adjust event.
 
@@ -201,10 +201,10 @@ if you call `reset` method, RudderStack will call [`resetSessionCallbackParamete
 
 Adjust's native SDK handles install attribution out of the box with RudderStack. For testing Install Attribution as well as troubleshooting tips, please follow [this guide](https://help.adjust.com/resources/testing-console).
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Install Attribution is not supported in `cloud-mode`
 
-{% endhint %}
+</div>
 
 ## Environment and Logging
 

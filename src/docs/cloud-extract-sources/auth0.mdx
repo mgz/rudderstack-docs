@@ -42,10 +42,10 @@ An example webhook URL is as follows:
 https://hosted.rudderlabs.com/v1/webhook?writeKey=1bCenS7ynqHh8ETX8s5Crjh22J
 ```
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Make sure to add the `writeKey` as query parameter to the URL. This is required to prevent the webhook from failing for the lack of a valid write key.
 
-{% endhint %}
+</div>
 
 - Keep the authorization section as blank.
 - You can disable **SEND_AS_BATCH** setting to receive the events in separate requests, but we recommend to keep it **Enabled**.

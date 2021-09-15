@@ -8,10 +8,10 @@ description: Detailed technical description of the Identify API call.
 
 The `identify` call lets you identify a visiting user and associate them to their actions. It also lets you record the traits about them like their name, email address, etc.
 
-{% hint style="info" %}
+<div class="infoBlock">
 As a best practice, make sure `identify` is called at the start of every session or page load for logged-in users, if possible. This will ensure all their latest traits are captured.
 
-{% endhint %}
+</div>
 
 ## When Should I Call `identify`?
 
@@ -63,34 +63,34 @@ RudderStack requires every `identify` call to have either a `userId` or an `anon
 
 A user ID \(`userId`\) uniquely identifies your user present in your database. It is a permanent identifier of your customer which never changes - like a database ID.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For `identify` calls, you should include a `userId` as often as possible to identify the most up to date traits of the customer.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-We strongly recommend using a database ID as the `userId` instead of usernames
-or email addresses. This is because the user may update their username or
-email address at any point in the future. Instead, you can pass them as
-**traits**.
-{% endhint %}
+<div class="successBlock">
+  We strongly recommend using a database ID as the `userId` instead of usernames
+  or email addresses. This is because the user may update their username or
+  email address at any point in the future. Instead, you can pass them as
+  **traits**.
+</div>
 
 ### Anonymous ID
 
 There are instances where you may get a visitor on your website/app who may or may not be your customer. Nonetheless, you still want to track their actions and tie them to various events, page views, and traits. In such cases, you should use an Anonymous ID \(`anonymousId`\) to identify this user.
 
-{% hint style="info" %}
+<div class="infoBlock">
 An anonymousId can be any identifier. For instance, you can use a session ID corresponding to the visitor's session. If you don't have a readily available identifier, we recommend generating a **UUID**.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-RudderStack's web and mobile
-[**SDKs**](../../../stream-sources/rudderstack-sdk-integration-guides/)
-automatically use anonymous IDs to track unknown users on your website or
-mobile apps, so you don't have to worry about including an `anonymousId`
-explicitly.
-{% endhint %}
+<div class="successBlock">
+  RudderStack's web and mobile
+  [**SDKs**](../../../stream-sources/rudderstack-sdk-integration-guides/)
+  automatically use anonymous IDs to track unknown users on your website or
+  mobile apps, so you don't have to worry about including an `anonymousId`
+  explicitly.
+</div>
 
 ## Identify Traits
 
@@ -306,12 +306,12 @@ RudderStack has some reserved traits that it handles in special ways. These are 
   </tbody>
 </table>
 
-{% hint style="success" %}
+<div class="successBlock">
 Different destinations recognize some of the above traits differently. For example, Mixpanel recognizes `createdAt` as `$created`, while Intercom recognizes it as `created_at`.
 
 With RudderStack, you don't have to worry about these inconsistencies at all, as it handles these destination-specific conversions automatically.
 
-{% endhint %}
+</div>
 
 ## Passing Traits to an `identify` Call
 

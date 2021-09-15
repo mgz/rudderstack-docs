@@ -10,11 +10,11 @@ description: Step-by-step guide to set up MinIO as a destination in RudderStack.
 
 RudderStack allows you to configure MinIO as a destination to which you can dump your event data seamlessly.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/minio)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/minio)**.**
+</div>
 
 ## Setting up MinIO
 
@@ -24,10 +24,10 @@ Please follow these steps to set up MinIO before adding it as a destination in R
 - Create a new bucket. Alternatively, you can also use an already existing bucket.
 - You will need to provide `access key ID` and `secret access key` to authorize RudderStack to write to your bucket.
 
-{% hint style="info" %}
+<div class="infoBlock">
 `access key ID` is the user ID that uniquely identifies your MinIO account, and `secret access key` is the password to your account.
 
-{% endhint %}
+</div>
 
 - Make a note of both the `access key ID` and `secret access key` as these will be required while configuring MinIO as a destination.
 
@@ -39,10 +39,10 @@ To do so, please follow these steps:
 
 - Choose a source to which you would like to add MinIO as a destination. You can also simply create a destination and connect it to a source later.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Select the destination as **MinIO** to your source. Give your destination a name and then click on **Next**.
 - Next, in the **Connection Settings**, \***\*fill all the fields with the relevant information \(please refer to the [Setting up MinIO](https://docs.rudderstack.com/destinations/minio#setting-up-minio) section above\) and click on **Next\*\*.

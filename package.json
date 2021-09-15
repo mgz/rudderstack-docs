@@ -50,6 +50,7 @@
     "gatsby-plugin-styled-components": "^4.2.0",
     "gatsby-plugin-use-query-params": "^1.0.1",
     "gatsby-remark-images": "^5.10.0",
+    "gatsby-remark-images-medium-zoom": "^1.7.0",
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-source-sanity": "^7.0.4",
     "gatsby-source-sanity-transform-images": "0.0.7",

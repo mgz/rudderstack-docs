@@ -31,16 +31,16 @@ rudderanalytics.identify(
 )
 ```
 
-{% hint style="success" %}
-**NOTE**: Unless explicitly defined otherwise, `'All'` is always set to
-`true`. This means that sending events to all destinations is enabled by
-default.
-{% endhint %}
+<div class="successBlock">
+  **NOTE**: Unless explicitly defined otherwise, `'All'` is always set to
+  `true`. This means that sending events to all destinations is enabled by
+  default.
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 The line **`All: false`** instructs RudderStack **not** to send the event data to any destinations **by default,** unless they are explicitly listed as **`true`** in the subsequent lines.
 
-{% endhint %}
+</div>
 
 You can also disable sending event data to certain destinations. In this case, the event data is sent to **all the other destinations** except the specified ones. An example of this is as shown from the JavaScript SDK:
 
@@ -60,19 +60,19 @@ rudderanalytics.identify(
 )
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 As seen in the above code snippet, RudderStack will send the event data to all the destinations except `Google Analytics` and `Intercom`.
 
-{% endhint %}
+</div>
 
 ## Examples
 
 The following are examples for the same `track()` call from a variety of SDK's.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please Note: Some of the SDK's follow their own convention that is different than the examples below. The notable SDK's with different convention are IOS and Android. Please read the respective `SDK Integration Guide` section for your given SDK to find the correct format to filter selective destinations.
 
-{% endhint %}
+</div>
 
 ### JavaScript SDK
 
@@ -112,19 +112,19 @@ rudder_analytics.track(
 )
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 In these examples above, the track events will only be sent to `Amazon S3` and `Heap.io` destinations.
 
-{% endhint %}
+</div>
 
 ## Destination Naming Convention
 
 By default, for the destination name please use the `displayed destination name` on the [RudderStack directory in your control plane](https://app.rudderstack.com/directory).
 
-{% hint style="info" %}
+<div class="infoBlock">
 These destination names are case sensitive!
 
-{% endhint %}
+</div>
 
 ## Contact Us
 

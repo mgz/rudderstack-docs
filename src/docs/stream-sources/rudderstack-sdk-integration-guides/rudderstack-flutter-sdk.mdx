@@ -29,10 +29,10 @@ To set up the RudderStack Flutter SDK, there are a few prerequisites as mentione
 
 - It would also help if you have the [Flutter Development Environment](https://flutter.dev/docs/get-started/install) set up on your system.
 
-{% hint style="info" %}
+<div class="infoBlock">
 **We have migrated RudderStack Flutter SDK to Null Safety starting from version 1.0.2**
 
-{% endhint %}
+</div>
 
 ## Installing the RudderStack Flutter SDK
 
@@ -107,7 +107,7 @@ The `track` method has the following signature:
 | `properties` | `RudderProperty` | No       | Contains the extra data properties you want to send along with the event |
 | `options`    | `RudderOption`   | No       | Contains the extra event options                                         |
 
-{% hint style="info" %}
+<div class="infoBlock">
 We automatically track the following optional events:
 
 1. `Application Installed`
@@ -117,7 +117,7 @@ We automatically track the following optional events:
 
 You can disable these events by calling `withTrackLifeCycleEvents(false)` on `RudderConfigBuilder` object while initializing the `RudderClient`. However, it is highly recommended to keep them enabled.
 
-{% endhint %}
+</div>
 
 ## Identify
 
@@ -125,15 +125,15 @@ We capture `deviceId` and use that as the `anonymousId` for identifying the user
 
 Once you set the `identify` information to the user, it will also be passed to the successive `track` or `screen` calls. To reset the user identification, you can use the `reset` method.
 
-{% hint style="info" %}
+<div class="infoBlock">
 On the Android devices, the `deviceId` is assigned during the first boot. It remains consistent across the applications and installs. It changes only after factory reset.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 On the iOS devices, According to the Apple [documentation](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor), if the device has multiple apps from the same vendors, all those apps will be assigned the same `deviceId`. If all the applications from a vendor are uninstalled, then on next install the app will be assigned a new `deviceId`.
 
-{% endhint %}
+</div>
 
 An example `identify` event is as shown:
 
@@ -212,10 +212,10 @@ The `group` method has the following signature:
 | `groupTraits` | `RudderTraits` | No       | Any other traits of the organization you want to pass along with the `group` call. |
 | `options`     | `RudderOption` | No       | Extra options to be passed along with `group` event.                               |
 
-{% hint style="info" %}
+<div class="infoBlock">
 RudderStack doesn't persist the traits for the group across the sessions.
 
-{% endhint %}
+</div>
 
 ## Alias
 
@@ -258,15 +258,15 @@ options.putIntegration("Mixpanel", false);
 options.putIntegrationWithFactory(Appcenter(), true);
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The keyword `All` in the above snippet represents all the destinations to which the source is connected. Its value is set to `true` by default.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 Make sure the destination names that you pass while specifying the destinations should exactly match the names as listed [here](https://app.rudderstack.com/directory).
 
-{% endhint %}
+</div>
 
 You can pass the destination\(s\) specified in the above snippet to the SDK in two ways:
 
@@ -289,10 +289,10 @@ property.put("test_key_1", "test_key_1");
 RudderClient.track("test_track_event", properties: property, options: options);
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you specify the destinations both while initializing the SDK as well as while making an event call, then the destinations specified at the event level only will be considered.
 
-{% endhint %}
+</div>
 
 ## External ID
 
@@ -308,10 +308,10 @@ RudderClient.identify("testUserId", options: option);
 
 We use the `deviceId` as `anonymousId` by default. You can use the following method to override and use your own `anonymousId` with the SDK.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You need to call `setAnonymousId` method before calling `getInstance`
 
-{% endhint %}
+</div>
 
 An example of setting the `anonymousId` is as below
 
@@ -325,10 +325,10 @@ You can use the `setAdvertisingId` method to pass your Android and iOS AAID and 
 
 - `id` : Your Android `advertisingId` \(AAID\) \(or\) Your iOS `advertisingId` \(IDFA\)
 
-{% hint style="warning" %}
+<div class="warningBlock">
 On `Android` device you need to call `setAdvertisingId` method before calling `getInstance`
 
-{% endhint %}
+</div>
 
 An example of how to use `setAdvertisingId` is as shown:
 
@@ -336,10 +336,10 @@ An example of how to use `setAdvertisingId` is as shown:
 RudderClient.setAdvertisingId(<ADVERTISING_ID>);
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The `id` parameter you pass to the above method is assigned as `AAID` if you are on `android` device and as `IDFA` if you are on a `iOS` device.
 
-{% endhint %}
+</div>
 
 ## Setting Device Token
 
@@ -370,10 +370,10 @@ You can configure your client based on the following parameters by passing them 
 
 If you are using a device mode destination like Adjust, Firebase, etc., the Flutter SDK needs to fetch the required configuration from the Control Plane. If you are using the RudderStack Config Generator to host your own Control Plane, then follow [this guide](https://docs.rudderstack.com/how-to-guides/rudderstack-config-generator#what-is-the-control-plane-url) and specify `controlPlaneUrl` in your`RudderConfig.Builder` that points to your hosted source configuration file.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You shouldn't pass the `controlPlaneUrl` parameter during SDK initialization if you are using the dashboard from [https://app.rudderstack.com](https://app.rudderstack.com). This parameter is supported only if you are using our open-source [RudderStack Config Generator](https://docs.rudderstack.com/how-to-guides/rudderstack-config-generator).
 
-{% endhint %}
+</div>
 
 ## Debugging
 

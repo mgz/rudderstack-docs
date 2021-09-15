@@ -12,13 +12,13 @@ This guide clarifies the two main connection modes in RudderStack - Cloud mode a
 
 RudderStack's workflow is quite simple - it receives the event data from a variety of **Sources**, and routes this data to the **Destinations**.
 
-{% hint style="success" %}
-RudderStack currently supports over 80 destinations to which you can send your
-event data. You can find the complete list in our
-[**Destinations**](../destinations/) guides. You can also check our
-[**Sources**](../stream-sources/) guides to get a list of the sources through
-which you can send your event data to RudderStack.
-{% endhint %}
+<div class="successBlock">
+  RudderStack currently supports over 80 destinations to which you can send your
+  event data. You can find the complete list in our{" "}
+  <a href="../destinations">Destinations</a> guides. You can also check our{" "}
+  <a href="../stream-sources">Sources</a> guides to get a list of the sources
+  through which you can send your event data to RudderStack.
+</div>
 
 ## Connection Modes in RudderStack
 
@@ -29,11 +29,11 @@ There are two modes through which you can send your event data from your website
 
 ## Cloud Mode
 
-In this mode, the SDK sends the event data directly to RudderStack. RudderStack then transforms this data and routes it to the desired destination. This transformation is done in the RudderStack backend, using RudderStack's \***\*[**Transformer\*\*](https://github.com/rudderlabs/rudder-transformer) module.
+In this mode, the SDK sends the event data directly to RudderStack. RudderStack then transforms this data and routes it to the desired destination. This transformation is done in the RudderStack backend, using RudderStack's [**Transformer**](https://github.com/rudderlabs/rudder-transformer) module.
 
 ### How It Works
 
-Suppose you want to analyze your website users' event data using Amplitude. To do so, you've decided to use RudderStack's [**JavaScript**](../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/) \*\*\*\*SDK.
+Suppose you want to analyze your website users' event data using Amplitude. To do so, you've decided to use RudderStack's [**JavaScript**](../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/) SDK.
 
 RudderStack defines a fixed event structure. If you track your events in this format, RudderStack will take care of transforming the events as required by Amplitude. You can start by [**adding a source and an Amplitude destination**](adding-source-and-destination-rudderstack.md) in the RudderStack dashboard.
 
@@ -41,27 +41,30 @@ Then, [**add the RudderStack JavaScript SDK snippet**](https://docs.rudderstack.
 
 The SDK automatically tracks and sends the user events to RudderStack. These events are then transformed by RudderStack and then routed to Amplitude.
 
-{% hint style="info" %}
-The above example uses the JavaScript SDK; the other [**RudderStack SDKs**](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides) also work in the same way.
-
-{% endhint %}
+<div class="infoBlock">
+  The above example uses the JavaScript SDK; the other{" "}
+  <a href="../stream-sources/rudderstack-sdk-integration-guides">
+    RudderStack SDKs
+  </a>
+  also work in the same way.
+</div>
 
 ![RudderStack Cloud Mode](../.gitbook/assets/image%20%289%29.png)
 
-{% hint style="success" %}
-In the Cloud Mode, you get the flexibility to use transformations to enrich
-the events, or filter selective events to forward to destinations.
-{% endhint %}
+<div class="successBlock">
+  In the Cloud Mode, you get the flexibility to use transformations to enrich
+  the events, or filter selective events to forward to destinations.
+</div>
 
-{% hint style="warning" %}
-Our [**Data Warehouse Destinations**](https://docs.rudderstack.com/data-warehouse-integrations) support only cloud mode.
+<div class="warningBlock">
+Our <a href="../data-warehouse-integrations">Data Warehouse Destinations</a> support only cloud mode.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
-All the RudderStack server-side SDKs \([**Java**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-java-sdk), [**Python**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-python-sdk), [**Node.js**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-node-sdk), [**Go**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-go-sdk), [**Ruby**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-ruby-sdk)\) support only Cloud Mode. This is because the server-side SDKs operate in the RudderStack backend and cannot load any additional destination-specific SDKs.
+<div class="warningBlock">
+All the RudderStack server-side SDKs (<a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-java-sdk">Java</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides//rudderstack-python-sdk">Python</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk">Node.js</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-go-sdk">Go</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-ruby-sdk">Ruby</a>) support only Cloud Mode. This is because the server-side SDKs operate in the RudderStack backend and cannot load any additional destination-specific SDKs.
 
-{% endhint %}
+</div>
 
 ## Device Mode
 
@@ -79,15 +82,15 @@ In some cases, you can also use the RudderStack web SDK \([**JavaScript**](../st
 
 ![](../.gitbook/assets/screen-shot-2021-06-07-at-4.17.14-pm.png)
 
-{% hint style="success" %}
-Device mode integrations will send data to the destinations directly from your
-client \(browser or mobile application\).
-{% endhint %}
+<div class="successBlock">
+  Device mode integrations will send data to the destinations directly from your
+  client (browser or mobile application).
+</div>
 
-{% hint style="warning" %}
-Device mode does not support the RudderStack [**Transformations**](../adding-a-new-user-transformation-in-rudderstack/) feature.
+<div class="warningBlock">
+Device mode does not support the RudderStack <a href="../adding-a-new-user-transformation-in-rudderstack">Transformations</a> feature.
 
-{% endhint %}
+</div>
 
 ## Which Connection Mode Should I Choose?
 

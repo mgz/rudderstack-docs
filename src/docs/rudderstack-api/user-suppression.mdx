@@ -14,10 +14,10 @@ This guide covers the user suppression feature in detail.
 
 ![](https://img.shields.io/static/v1?label=PLAN&message=ENTERPRISE&color=blueviolet&style=for-the-badge)
 
-{% hint style="info" %}
+<div class="infoBlock">
 For all the requests mentioned in this guide, we use the basic HTTP authorization.
 
-{% endhint %}
+</div>
 
 ## What is User Suppression?
 
@@ -25,20 +25,20 @@ RudderStack is completely GDPR and CCPA compliant. We respect the users' privacy
 
 When a user is suppressed, RudderStack will drop the events from that user. Those events will not be shown in any of the debuggers, will not be forwarded to any destinations and will not be backed up.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Please note that once suppressed, replaying of these events will not be possible.
 
-{% endhint %}
+</div>
 
 ## HTTP Authorization
 
 RudderStack uses Basic Authentication for authenticating all the HTTP requests as mentioned below. HTTP Basic Authentication requires a user name and password.
 
-{% hint style="success" %}
+<div class="successBlock">
 
 - `workspaceToken`is the user name
 - `""` is the password \(empty string\)
-  {% endhint %}
+  </div>
 
 All the popular HTTP clients \(e.g. CURL, Postman, HTTPie\) have default support for Basic Authentication.
 
@@ -95,10 +95,10 @@ https://api.rudderlabs.com/workspaces/regulations < suppress.json
 
 To get a regulation, you can send a `GET` request as shown:
 
-{% hint style="info" %}
+<div class="infoBlock">
 Pass `regulation_id` in the URL. The `regulation_id` is received in the response when a regulation is created.
 
-{% endhint %}
+</div>
 
 {% tabs %}
 {% tab title="curl" %}
@@ -148,10 +148,10 @@ https://api.rudderlabs.com/workspaces/regulations?start=0&limit=10
 
 To delete a regulation, you can send a `DELETE` request as shown below:
 
-{% hint style="info" %}
+<div class="infoBlock">
 Pass the `regulation_id` in the URL. The `regulation_id` is received in the response when a regulation is created.
 
-{% endhint %}
+</div>
 
 {% tabs %}
 {% tab title="curl" %}
@@ -177,10 +177,10 @@ https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
 
 You can suppress a user's data on a particular source too. A sample payload is as shown in the snippet below:
 
-{% hint style="info" %}
+<div class="infoBlock">
 You need to pass `source_id` in the URL. You can provide a list of user ids in the `values` array.
 
-{% endhint %}
+</div>
 
 #### Payload
 

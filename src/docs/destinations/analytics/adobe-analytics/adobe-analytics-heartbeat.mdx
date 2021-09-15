@@ -12,15 +12,15 @@ description: >-
 
 Adobe Analytics uses “heartbeats” to collect different metrics related to the video during playback. These heartbeats are sent to the Adobe heartbeat tracking server every ten seconds to measure the time the video is played.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For sending the heartbeat events to Adobe Analytics, you will need the Heartbeat Tracking Server URL. To get this URL, contact your Adobe representative. Also, you will need to map your RudderStack events with the type of Adobe heartbeat event you want to send.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 The [**RudderStack dashboard settings**](setting-up-adobe-analytics-in-rudderstack.md) also has a toggle for SSL which, if enabled, will send the Heartbeat Tracking URL in the HTTPS mode.
 
-{% endhint %}
+</div>
 
 ## Playback Head
 
@@ -56,10 +56,10 @@ RudderStack sends the Adobe heartbeat events as per the following categories:
 | `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
 | `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Video Start
 
@@ -85,10 +85,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `length`             | Sent for creating `createChapterObject`.                                              | 6000              |
 | `start_time`         | Sent for creating `createChapterObject`.                                              | 0                 |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Video Paused
 
@@ -110,10 +110,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
 | `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Video Complete
 
@@ -135,10 +135,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
 | `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Session End
 
@@ -160,10 +160,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
 | `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Ad Started
 
@@ -182,10 +182,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `start_time`         | Sent for creating `AdBreakObject`.                 | 0             |
 | `content`            | Sent for `trackEvent`.                             | empty JSON    |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Ad Completed
 
@@ -203,10 +203,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `type`               | Sent for creating `AdBreakObject`.                 | "unknown"     |
 | `content`            | Sent for `trackEvent`.                             | empty JSON    |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Ad Skipped
 
@@ -224,10 +224,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `type`               | Sent for creating `AdBreakObject`.                 | "unknown"     |
 | `content`            | Sent for `trackEvent`.                             | empty JSON    |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Seek Started
 
@@ -249,10 +249,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
 | `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Seek Completed
 
@@ -274,10 +274,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
 | `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Buffer Started
 
@@ -299,10 +299,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
 | `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Buffer Completed
 
@@ -324,10 +324,10 @@ The properties mapped in the **Standard Video Metadata** section below will also
 | `asset_id`           | Sent for creating `MediaObject`.                                                      | "default ad"  |
 | `total_length`       | Sent for creating `MediaObject`.                                                      | 0             |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The properties mapped in the **Standard Video Metadata** section below will also be set.
 
-{% endhint %}
+</div>
 
 ## Heartbeat Quality Updated
 

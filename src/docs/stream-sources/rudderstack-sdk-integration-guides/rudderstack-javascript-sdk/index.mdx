@@ -14,10 +14,10 @@ RudderStack's JavaScript SDK leverages the `rudder-analytics.js` library to trac
 
 ## **2. Installing the** RudderStack **JavaScript SDK**
 
-{% hint style="info" %}
+<div class="infoBlock">
 **NOTE:** To quickly get up and running with setting up and using the RudderStack JavaScript SDK, please go through our [quick start guide](https://github.com/rudderlabs/rudder-sdk-js#how-to-use-the-rudderstack-javascript-sdk).
 
-{% endhint %}
+</div>
 
 To integrate the RudderStack JavaScript SDK with your website, place either the minified or non-minified version of the code snippet in the `<head>` section of your website.
 
@@ -31,10 +31,10 @@ rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track"
 <script src="https://cdn.rudderlabs.com/v1/rudder-analytics.min.js"></script>
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 **You can find your source write key and the data plane URL on your RudderStack dashboard.**
 
-{% endhint %}
+</div>
 
 ![Source write key and Data Plane URL](../../../.gitbook/assets/workspace-token%20%284%29%20%283%29%20%284%29%20%284%29%20%284%29%20%284%29%20%282%29%20%281%29%20%284%29.png)
 
@@ -74,12 +74,12 @@ rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track"
 <script src="https://cdn.rudderlabs.com/v1/rudder-analytics.min.js"></script>
 ```
 
-{% hint style="success" %}
+<div class="successBlock">
 **NOTE**: The above code snippet will load `rudder-analytics.js` on to your page synchronously. To load the SDK asynchronously to keep your page load time unaffected, use the following instead:
 
-**`<script async src="https://cdn.rudderlabs.com/v1/rudder-analytics.min.js"></script>`**
+**`&lt;script async src="https://cdn.rudderlabs.com/v1/rudder-analytics.min.js"&gt;&lt;/script&gt;`**
 
-{% endhint %}
+</div>
 
 Combining the initialization and the above async script together, we get:
 
@@ -116,15 +116,15 @@ To install, run the following command:
 npm install rudder-sdk-js --save
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 This NPM module is only meant to be used for a browser installation. If you want to integrate RudderStack with your Node.js applications, please refer to [the RudderStack Node.js repository](https://github.com/rudderlabs/rudder-sdk-node).
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 **Important**: Since the module exports the related APIs on an already-defined object combined with the Node.js module caching, you should run the below code snippet **only once** and use the exported object throughout your project.
 
-{% endhint %}
+</div>
 
 ```jsx
 import * as rudderanalytics from "rudder-sdk-js"
@@ -148,20 +148,41 @@ Please refer to the following projects for a detailed walk-through of the above 
 - [Sample Angular project](https://github.com/rudderlabs/rudder-analytics-angular)
 - [Sample React project](https://github.com/rudderlabs/rudder-analytics-react)
 
-{% hint style="info" %}
-The related APIs exported by the module are:
-
-- `load`
-- `ready`
-- `identify`
-- `alias`
-- `page`
-- `track`
-- `group`
-- `reset`
-- `getAnonymousId`
-- `setAnonymousId`
-  {% endhint %}
+<div class="infoBlock">
+  The related APIs exported by the module are:
+  <ul>
+    <li>
+      <code class="inline-code">load</code>
+    </li>
+    <li>
+      <code class="inline-code">ready</code>
+    </li>
+    <li>
+      <code class="inline-code">identify</code>
+    </li>
+    <li>
+      <code class="inline-code">alias</code>
+    </li>
+    <li>
+      <code class="inline-code">page</code>
+    </li>
+    <li>
+      <code class="inline-code">track</code>
+    </li>
+    <li>
+      <code class="inline-code">group</code>
+    </li>
+    <li>
+      <code class="inline-code">reset</code>
+    </li>
+    <li>
+      <code class="inline-code">getAnonymousId</code>
+    </li>
+    <li>
+      <code class="inline-code">setAnonymousId</code>
+    </li>
+  </ul>
+</div>
 
 ### 2.4 Supported Browser Versions
 
@@ -221,10 +242,10 @@ The related APIs exported by the module are:
   </tbody>
 </table>
 
-{% hint style="info" %}
+<div class="infoBlock">
 If the SDK doesn't work on the versions you are targeting, verify if adding the browser polyfills to your application solves the issue.
 
-{% endhint %}
+</div>
 
 ## 3. JavaScript SDK APIs
 
@@ -240,10 +261,10 @@ The `load()`method is defined as follows:
 
 `rudderanalytics.load(<YOUR_WRITE_KEY>, <DATA_PLANE_URL>, options);`
 
-{% hint style="info" %}
-**NOTE**: You need to replace `<YOUR_WRITE_KEY>` with the write key in the RudderStack Control Plane and `<DATA_PLANE_URL>` with the URL of the RudderStack Server.
+<div class="infoBlock">
+**NOTE**: You need to replace `&lt;YOUR_WRITE_KEY&gt;` with the write key in the RudderStack Control Plane and `&lt;DATA_PLANE_URL&gt;` with the URL of the RudderStack Server.
 
-{% endhint %}
+</div>
 
 ### 3.1.1. Load Options
 
@@ -285,13 +306,21 @@ IntegrationOpts {
 | **`All`**           | Boolean | Corresponds to all the destinations to which the event has to be sent. Default is set to **`true`**. **`All: false`** instructs RudderStack not to send the event data to any destinations by default. |
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
-{% hint style="info" %}
-More information on the Load **`IntegrationOpts`** option can be found here:
-
-- [Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
-- [Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
-
-  {% endhint %}
+<div class="infoBlock">
+  More information on the Load **`IntegrationOpts`** option can be found here:
+  <ul>
+    <li>
+      {" "}
+      [Specifying Selective Destinations in the `load`
+      Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+    </li>
+    <li>
+      {" "}
+      [Common Destination Names for sending events through the `load`
+      method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+    </li>
+  </ul>
+</div>
 
 - The structure of **`QueueOpts`** looks like the following:
 
@@ -411,31 +440,40 @@ IntegrationOpts {
 | **`All`**           | Boolean | Corresponds to all the destinations to which the event has to be sent. Default is set to **`true`**. **`All: false`** instructs RudderStack not to send the event data to any destinations by default. |
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
-{% hint style="info" %}
-More information on the **`IntegrationOpts`** option can be found here:
+<div class="infoBlock">
+  More information on the **`IntegrationOpts`** option can be found here:
+  <ul>
+    <li>
+      {" "}
+      [Specifying Selective Destinations in the `load`
+      Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+    </li>
+    <li>
+      {" "}
+      [Common Destination Names for sending events through the `load`
+      method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+    </li>
+  </ul>
+</div>
 
-- [Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
-- [Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
-  {% endhint %}
-
-{% hint style="info" %}
+<div class="infoBlock">
 **NOTE**: The `anonymousId` is a **UUID** **\(Universally Unique Identifier\)** generated to uniquely identify the user. Also, if it is provided by the user using the `setAnonymousId` method, the user-specified `anonymousId` overrides the SDK-generated one.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-There is no need to call`identify()`for anonymous visitors to your website.
-Such visitors are automatically assigned an `anonymousId`
-{% endhint %}
+<div class="successBlock">
+  There is no need to call`identify()`for anonymous visitors to your website.
+  Such visitors are automatically assigned an `anonymousId`
+</div>
 
 ### 3.2.2. `identify` Options
 
 The JavaScript SDK generates one unique `anonymousId` , stores it in a cookie named `rl_anonymous_id` in the top-level domain, and attaches to every subsequent event. This helps in identifying the users from other sites that are hosted under a sub-domain.
 
-{% hint style="info" %}
+<div class="infoBlock">
 As an example, if you include the RudderStack JavaScript SDK in both **admin.samplewebsite.com** and **app.samplewebsite.com**, the SDK will store the cookie in the top-level domain **samplewebsite.com**.
 
-{% endhint %}
+</div>
 
 If you identify a user with your application's unique identifier like email, database ID etc. RudderStack stores this ID in a cookie named `rl_user_id` and attaches to every event.
 
@@ -445,10 +483,10 @@ There are two options that you can use to identify users when using the JavaScri
 
 There can be scenarios where you may want to provide your own `anonymousID` instead of an auto-generated ID by the SDK. To do so, you can provide the `anonymousId` in the `options` parameter of the `identify` call, as mentioned above. This will send the value provided by you in the `anonymousId` key of the event.
 
-{% hint style="info" %}
+<div class="infoBlock">
 All other events will have`anonymousId` from the one persisted in the cookie, except this event where you override the options.
 
-{% endhint %}
+</div>
 
 An example of this approach is as shown in the code snippet below:
 
@@ -498,10 +536,10 @@ Calling the above method will parse the Linker ID and set the **`anonymousId`** 
 
 If you would like to set the `userid` to be empty, pass an empty string or `""`. A common use case for this is if an anonymous user was identified with a `userid` and then logs out of their account. You can then `identify("", {isLoggedIn: false})` and the user will continue to be identified by their `anonymousId` for future events.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Do **not** identify with `null`, as this will not allow you to pass a traits object and it will keep the current `userid`.
 
-{% endhint %}
+</div>
 
 ### 3.2.6. Identifying New Users
 
@@ -509,10 +547,10 @@ To identify new users in scenarios like a new login, you can take one of the fol
 
 - Call the `identify` API with a new `userid`. RudderStack will reset all cookies related to the user for `userid` and `user-traits` and update them with the new values provided by you.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The `anonymousId` will remain unchanged in this case. It will be the value that you set explicitly using `setAnonymousId` , or the auto-generated value set by the SDK while loading.
 
-{% endhint %}
+</div>
 
 - Explicitly call `rudderanalytics.reset()` and then call `identify`. It has the same effect as described above.
 
@@ -608,12 +646,21 @@ IntegrationOpts {
 | **`All`**           | Boolean | Corresponds to all the destinations to which the event has to be sent. Default is set to **`true`**. **`All: false`** instructs RudderStack not to send the event data to any destinations by default. |
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
-{% hint style="info" %}
-More information on the **`IntegrationOpts`** option can be found here:
-
-- [Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
-- [Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
-  {% endhint %}
+<div class="infoBlock">
+  More information on the **`IntegrationOpts`** option can be found here:
+  <ul>
+    <li>
+      {" "}
+      [Specifying Selective Destinations in the `load`
+      Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+    </li>
+    <li>
+      {" "}
+      [Common Destination Names for sending events through the `load`
+      method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+    </li>
+  </ul>
+</div>
 
 ## 3.4. Track
 
@@ -686,20 +733,29 @@ IntegrationOpts {
 | **`All`**           | Boolean | Corresponds to all the destinations to which the event has to be sent. Default is set to **`true`**. **`All: false`** instructs RudderStack not to send the event data to any destinations by default. |
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
-{% hint style="info" %}
-More information on the **`IntegrationOpts`** option can be found here:
-
-- [Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
-- [Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
-  {% endhint %}
+<div class="infoBlock">
+  More information on the **`IntegrationOpts`** option can be found here:
+  <ul>
+    <li>
+      {" "}
+      [Specifying Selective Destinations in the `load`
+      Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+    </li>
+    <li>
+      {" "}
+      [Common Destination Names for sending events through the `load`
+      method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+    </li>
+  </ul>
+</div>
 
 ## 3.5. Alias
 
 Many destination platforms need an explicit `alias` call for mapping the already identified users to a new identifier that you may want to use, to track the users in the future. The RudderStack `alias` API allows you to implement this functionality.
 
-{% hint style="success" %}
-Simply put, the `alias` call associates the user with a new identification.
-{% endhint %}
+<div class="successBlock">
+  Simply put, the `alias` call associates the user with a new identification.
+</div>
 
 The format of an `alias` call is as shown:
 
@@ -752,12 +808,21 @@ IntegrationOpts {
 | **`All`**           | Boolean | Corresponds to all the destinations to which the event has to be sent. Default is set to **`true`**. **`All: false`** instructs RudderStack not to send the event data to any destinations by default. |
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
-{% hint style="info" %}
-More information on the **`IntegrationOpts`** option can be found here:
-
-- [Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
-- [Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
-  {% endhint %}
+<div class="infoBlock">
+  More information on the **`IntegrationOpts`** option can be found here:
+  <ul>
+    <li>
+      {" "}
+      [Specifying Selective Destinations in the `load`
+      Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+    </li>
+    <li>
+      {" "}
+      [Common Destination Names for sending events through the `load`
+      method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+    </li>
+  </ul>
+</div>
 
 A sample example of how to use the `alias()` method is as shown:
 
@@ -820,12 +885,14 @@ IntegrationOpts {
 | **`All`**           | Boolean | Corresponds to all the destinations to which the event has to be sent. Default is set to **`true`**. **`All: false`** instructs RudderStack not to send the event data to any destinations by default. |
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
-{% hint style="info" %}
+<div class="infoBlock">
 More information on the **`IntegrationOpts`** option can be found here:
 
-- [Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
-- [Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
-  {% endhint %}
+<ul>
+<li> [Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)</li>
+<li> [Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)</li>
+</ul>
+  </div>
 
 An example of how to use the `group` call is as shown below:
 
@@ -846,10 +913,10 @@ The `reset()` method can be used as shown:
 rudderanalytics.reset()
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 **NOTE**: The `reset()`method only clears the cookies and local storage set by RudderStack, and not the information stored by the integrated destinations. To completely clear the user session, please refer to the documentation provided by those respective tools.
 
-{% endhint %}
+</div>
 
 ## 4. How to Filter Selective Destinations to Send Event Data
 
@@ -914,10 +981,10 @@ Below shows some of the supported names that RudderStack can intake for each des
 | AWS Personalize      | `AWS Personalize`          |
 | Amazon Kinesis       | `Amazon Kinesis`           |
 
-{% hint style="info" %}
+<div class="infoBlock">
 **NOTE:** You can also refer to [this section](https://docs.rudderstack.com/user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention) for more information on the naming convention of the `destinations names`.
 
-{% endhint %}
+</div>
 
 ### 4.2. Specifying Selective Destinations in the `load` Method
 
@@ -933,10 +1000,10 @@ rudderanalytics.load(WRITE_KEY, DATA_PLANE_URL, {
 
 Where `<destination_name>` is the name of the destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please refer to the section above for the common destinations names or refer to [this section](https://docs.rudderstack.com/user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention) for destination naming convention.
 
-{% endhint %}
+</div>
 
 An example of the `load` method is as shown:
 
@@ -962,10 +1029,10 @@ In this section, we cover two specific dictionaries, within the `options` argume
 
 A context is a dictionary of additional information about a particular data, such as a user’s IP address.
 
-{% hint style="info" %}
+<div class="infoBlock">
 **NOTE**: A context is a complete and specific piece of information. Any other information provided outside of this specification is ignored.
 
-{% endhint %}
+</div>
 
 ### 5.2. Trait
 
@@ -1043,10 +1110,10 @@ Some of the properties in the snippet above are:
 
 - `sendAdblockPage`: Enables the JavaScript SDK to make a call to load the Google AdSense library. If RudderStack fails to load this library, it concludes that an ad blocker is enabled on the page.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Since most ad blockers block the request to the Google AdSense servers, this is assumed as a good measure to detect ad-blocked pages.
 
-{% endhint %}
+</div>
 
 - `sendAdblockPageOptions`: The RudderStack SDK will make an implicit `page` call about the ad-blocked pages if `sendAdblockPage` is set to `true`. With `sendAdblockPageOptions`, you can provide the destinations to which you want to forward this `page` call.
 
@@ -1068,12 +1135,22 @@ This section provides solutions to some of the commonly faced issues while using
 
 Simply put, the **Data Plane URL** is used to connect to the RudderStack backend for processing and routing your events.
 
-{% hint style="info" %}
-To get the **Data Plane URL**: _\*\*_
-
-- If you're using the **open-source** version of RudderStack, you are required to set up your own data plane by [installing and setting up RudderStack](https://docs.rudderstack.com/installing-and-setting-up-rudderstack) in your preferred dev environment.
-- If you're using the **enterprise** version of RudderStack, please contact us for the data plane URL with the email ID used to sign up for RudderStack.
-  {% endhint %}
+<div class="infoBlock">
+  To get the **Data Plane URL**: _\*\*_
+  <ul>
+    <li>
+      If you're using the **open-source** version of RudderStack, you are
+      required to set up your own data plane by [installing and setting up
+      RudderStack](https://docs.rudderstack.com/installing-and-setting-up-rudderstack)
+      in your preferred dev environment.
+    </li>
+    <li>
+      If you're using the **enterprise** version of RudderStack, please contact
+      us for the data plane URL with the email ID used to sign up for
+      RudderStack.
+    </li>
+  </ul>
+</div>
 
 ### How to load `analytics.js` correctly?
 
@@ -1110,10 +1187,10 @@ To check if data is being transmitted to the specified destinations, go to the `
 
 ![track call as seen in the Network tab](https://lh5.googleusercontent.com/0Mw5GDmeE0C8pugsTHXn4Ss6bmF05UseoSAsi2z2S1QIhw6rBGlBROUVICHZxef3KNUOvt9o6uNE-czGxRU09huZV2SF6J24S_nLTywyKKPRsNjCCD9hAyGX3BzChcF3RbchKYQf)
 
-{% hint style="info" %}
+<div class="infoBlock">
 **NOTE**: If the outbound request is not being shown, check if you have installed and set up the RudderStack JavaScript SDK correctly, or if ad-blockers are enabled on your browser.
 
-{% endhint %}
+</div>
 
 ### **What is the size limit on the requests?**
 
@@ -1133,10 +1210,10 @@ To retrieve the anonymous ID of any visitor, simply call the following:
 rudderanalytics.getAnonymousId()
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 **NOTE:** In case the `anonymousId` value is null, calling the above function will lead to automatically setting a new `anonymousId`.
 
-{% endhint %}
+</div>
 
 ### What is the `Reserved Keyword` error?
 

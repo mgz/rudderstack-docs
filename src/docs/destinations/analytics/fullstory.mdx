@@ -19,19 +19,19 @@ Before configuring your source and destination on the RudderStack, please check 
 | **Device mode**     | **Supported** | -          | -          |
 | **Cloud mode**      | -             | -          | -          |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to FullStory, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **FullStory** from the list of destinations.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Name your destination, and click on **Next**. You should be able to see the following screen:
 
@@ -41,10 +41,10 @@ Enter the relevant details and click on **Next**. To get the **FS ORG** field, p
 
 - In this example **FS ORG** would be `fullstory_org_id`
 
-{% hint style="info" %}
+<div class="infoBlock">
 To enable FullStory debugging, you can enable the **FS debug mode** option.
 
-{% endhint %}
+</div>
 
 ## Identify
 
@@ -64,10 +64,10 @@ The above call is translated to a FullStory `identify` call as follows:
 - `userId` is sent as the `uid` .
 - The remaining traits are passed on as is.
 
-{% hint style="info" %}
+<div class="infoBlock">
 If the `userId` is not explicitly provided, the `anonymousId` of the user is sent as the `uid` instead.
 
-{% endhint %}
+</div>
 
 ### `displayName` and `email`
 
@@ -83,10 +83,10 @@ rudderanalytics.identify("1234", {
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `displayName` and `email` traits, please refer to the [FullStory documentation](https://help.fullstory.com/hc/en-us/articles/360020828113).
 
-{% endhint %}
+</div>
 
 ## Track
 

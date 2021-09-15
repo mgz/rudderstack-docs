@@ -10,11 +10,11 @@ description: Step-by-step guide to set up Mixpanel as a destination in RudderSta
 
 RudderStack supports Mixpanel as a destination to which you can seamlessly send your event data.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/mp)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/mp)**.**
+</div>
 
 ## Getting Started
 
@@ -25,19 +25,19 @@ Before configuring your source and destination on the RudderStack, verify if the
 | **Device mode**     | **Supported** | -             | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the source supports sending events to Mixpanel, perform the steps below:
 
 - From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Mixpanel**.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
 
@@ -57,10 +57,10 @@ Follow our guide on [**How to Add a Source and Destination in RudderStack**](htt
 
 To configure Mixpanel as a destination, you need to provide your Mixpanel **API Token** in the **Connection Settings**.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Choose **EU** in **Data Residency** settings to send your event data to the Mixpanel EU server.
 
-{% endhint %}
+</div>
 
 The following settings are applicable if you are using this destination via the web Device mode:
 
@@ -91,10 +91,10 @@ For Device mode, RudderStack offers the following three options for `page` calls
 - RudderStack tracks the categorized pages to Mixpanel. If you enable the **Track Categorized Pages to Mixpanel** option, RudderStack sends a `Viewed [category] Page` event. If the page name is also present in the event, then `Viewed [category page_name] Page` event is sent.
 - RudderStack tracks the named pages to Mixpanel. If you enable the **Track Named Pages to Mixpanel** option, RudderStack will send a `Viewed [page_name] Page` event. Note that this option has the least precedence and comes to effect only if the above two options are disabled in the RudderStack dashboard.
 
-{% hint style="info" %}
+<div class="infoBlock">
 RudderStack expects atleast one of the three options listed above to be enabled for sending the `page` events to Mixpanel using device mode.
 
-{% endhint %}
+</div>
 
 ## Identify
 
@@ -127,10 +127,10 @@ Mixpanel has some reserved properties:
 - `$phone`
 - `$avatar`
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You can create custom properties. However, note that you should not create properties that begin with a `$` sign.
 
-{% endhint %}
+</div>
 
 ### Mixpanel People
 
@@ -145,10 +145,10 @@ rudderanalytics.identify({
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Currently, RudderStack supports this feature only for the native web device mode.
 
-{% endhint %}
+</div>
 
 ## Track
 
@@ -192,10 +192,10 @@ analytics.alias('userId', `previousId`);
 
 The `group` call allows you to link an identified user with a group, such as a company, organization, or an account. It also lets you record any custom traits associated with that group like the name of the company, the number of employees, etc.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on how the `group` call works in Mixpanel, check out Mixpanel's [**Group Analytics documentation**](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics).
 
-{% endhint %}
+</div>
 
 RudderStack allows you to record the custom traits associated with a user group and send this information to Mixpanel.
 
@@ -225,10 +225,10 @@ RudderStack sends the `group` calls to Mixpanel only if one or more group keys a
 
 ![Mixpanel Group Key Settings](../../.gitbook/assets/1%20%2812%29.png)
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You should also have created the group key/s of the same name in Mixpanel's [**project settings**](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation). To administer the group keys, navigate to your project settings and click on **Add Group Key** under the **Group Keys** section.
 
-{% endhint %}
+</div>
 
 ## **Sending Historic Events**
 
@@ -238,10 +238,10 @@ Mixpanel supports historical event data import. However, note that the timestamp
 
 RudderStack maps the following properties to the Mixpanel properties before sending them over Mixpanel's HTTP API.
 
-{% hint style="info" %}
+<div class="infoBlock">
 RudderStack maps these fields only in the `identify` requests.
 
-{% endhint %}
+</div>
 
 | Mixpanel Property Name | RudderStack Property Name |
 | :--------------------- | :------------------------ |
@@ -266,17 +266,17 @@ You can set all of your traits as both **Super Properties** and **People Propert
 
 You can choose to filter your reports by both People Properties and Super Properties. This gives you better control over what traits you can set as a Super Property or People Property. To do this, disable the **Automatically set all Traits as Super Properties and People Properties** option in the dashboard and add the traits that you want to send to Mixpanel as Super Properties or People Properties in the specified fields, as shown below.
 
-{% hint style="info" %}
+<div class="infoBlock">
 RudderStack will send all the Mixpanel's special traits as People Properties. Hence, you only need to add the properties that are not in this list.
 
-{% endhint %}
+</div>
 
 ![Mixpanel Super Properties and People Properties](../../.gitbook/assets/mixpanle-super-people.png)
 
-{% hint style="warning" %}
+<div class="warningBlock">
 This feature is available in the native web Device mode only.
 
-{% endhint %}
+</div>
 
 ### Mixpanel Special Traits
 
@@ -297,17 +297,17 @@ The following table lists all the properties that RudderStack sends to Mixpanel 
 
 If you're tracking known users, you dont need to add any extra code to increment event counts for Mixpanel People. Just add the events you want to increment and RudderStack will take care of the rest.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 This feature is available in the native web Device mode only.
 
-{% endhint %}
+</div>
 
 For each event name added, RudderStack automatically calls Mixpanel and sets a user trait as `Last + <event_name>`. For example, if you add `Logged In` to the list of increment events, RudderStack will increment a user trait called `Logged In` and set a trait called `Last Logged In` with the current date and time.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Increment works for known users only. So, if your `track` call is being made on the server-side, you will need to pass a `userId`. If your `track` call is being made on the client-side, you will need to identify your user first.
 
-{% endhint %}
+</div>
 
 ### Incrementing Properties
 
@@ -315,10 +315,10 @@ To increment properties, you can specify which properties you want RudderStack t
 
 ![Mixpanel Event Increment ](../../.gitbook/assets/mixpanle-increment.png)
 
-{% hint style="warning" %}
+<div class="warningBlock">
 This feature is available in the native web Device mode only.
 
-{% endhint %}
+</div>
 
 ## Cross Subdomain Cookies
 

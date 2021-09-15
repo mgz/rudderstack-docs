@@ -10,25 +10,25 @@ description: Step-by-step guide to send your event data from RudderStack to Gain
 
 RudderStack lets you send your event data from a variety of sources to Gainsight CS.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 **This integration is developed for the Gainsight CS NXT Edition.**
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/dest-gainsight)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/dest-gainsight)**.**
+</div>
 
 ## Getting Started
 
 To send your events to Gainsight CS via RudderStack, you will first need to add it as a destination in the RudderStack dashboard.
 
-{% hint style="info" %}
+<div class="infoBlock">
 See our [Connections](https://docs.rudderstack.com/connections) guide to learn more about sources and destinations in RudderStack.
 
-{% endhint %}
+</div>
 
 Please check if the source platform is supported by Gainsight CS by referring to the table below:
 
@@ -37,19 +37,19 @@ Please check if the source platform is supported by Gainsight CS by referring to
 | **Device mode**     | -             | -             | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you've confirmed that the source platform supports sending events to RudderStack, follow these steps:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **Gainsight** from the list of supported destinations.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source in RudderStack.
 
-{% endhint %}
+</div>
 
 - Assign a name to this destination, and click on **Next**. You should then see the following screen:
 
@@ -59,25 +59,25 @@ You will need to enter the following settings under **Connection Settings**:
 
 - **Access Key**: This key is required for the `identify` and `group` calls. To generate the access key in Gainsight, go to **Administration** - **Connectors 2.0** - **Connectors** tab and click on **Gainsight API**.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on generating the Gainsight Access Key, refer to their [support page](https://support.gainsight.com/SFDC_Edition/Connectors/04API_Integration/Generate_API_Access_Key).
 
-{% endhint %}
+</div>
 
 - **Domain or Subdomain Name**: Subdomain or custom domain is a required field to work with the Gainsight API. required to work with the Gainsight API.
 
-{% hint style="info" %}
+<div class="infoBlock">
 More information on setting up a Gainsight custom domain can be found in their [support page](https://support.gainsight.com/Gainsight_NXT/06Surveys/02Admin_Guides/Setup_a_Gainsight_Domain).
 
-{% endhint %}
+</div>
 
 - **Gainsight Event Settings**: This setting is related to the Gainsight Events Framework.
 
-{% hint style="success" %}
-Refer to the
-[**Track**](https://docs.rudderstack.com/destinations/marketing/gainsight#track)
-section of this documentation for more details.
-{% endhint %}
+<div class="successBlock">
+  Refer to the
+  [**Track**](https://docs.rudderstack.com/destinations/marketing/gainsight#track)
+  section of this documentation for more details.
+</div>
 
 ## Identify
 
@@ -119,10 +119,10 @@ rudderanalytics.identify(
 )
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Custom fields are supported for `identify`. Refer to the section below for details.
 
-{% endhint %}
+</div>
 
 ### Custom Fields
 
@@ -134,19 +134,19 @@ Then, you can add the RudderStack trait name for the Gainsight custom field mapp
 
 ![gainsightcs-field-map-person](../../.gitbook/assets/gainsightcs-person-map.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 When you add custom fields in the Gainsight schema, `__gc` is automatically suffixed at the end. Therefore, you need to provide the field name including the `__gc` suffix in the RudderStack dashboard as shown above.
 
-{% endhint %}
+</div>
 
 ## Group
 
 The `group` call associates a person with a group. RudderStack's `group` call creates a `Company` object if it is not present or updated with the provided traits. The `Name` field in is used as the unique identifier.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For making a `group` call, `email` is a mandatory field in `context.traits` of the RudderStack event payload.
 
-{% endhint %}
+</div>
 
 The mapping of the RudderStack traits to the Gainsight `Company` object fields is as shown:
 
@@ -188,10 +188,10 @@ rudderanalytics.group(
 )
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Custom Fields are supported for the `group` call. For details, refer to the section below.
 
-{% endhint %}
+</div>
 
 ### Custom Fields
 
@@ -203,10 +203,10 @@ Then, you can add the RudderStack trait name for the Gainsight custom field mapp
 
 ![gainsightcs-field-map-company](../../.gitbook/assets/gainsightcs-company-map.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 When you add custom fields in the Gainsight schema, `__gc` is automatically suffixed at the end. Therefore, you need to provide the field name including the `__gc` suffix in the RudderStack dashboard as shown above.
 
-{% endhint %}
+</div>
 
 ## Track
 
@@ -216,10 +216,10 @@ Gainsight events are identified with `Event Name` and `Event Version`. The event
 
 To start sending events, you will first need to register as a Publisher in Gainsight by going to **Administration** - **Events** and clicking on **Register as Publisher**. This generates a unique shared secret required for working with Gainsight Events Framework.
 
-{% hint style="info" %}
+<div class="infoBlock">
 More information on the Gainsight Events Framework can be found in their [support page](https://support.gainsight.com/Gainsight_NXT/Journey_Orchestrator_and_Email_Templates/Programs/Events_Framework#Event_API_Contract).
 
-{% endhint %}
+</div>
 
 Provide the required event settings in the RudderStack dashboard as shown:
 
@@ -257,10 +257,10 @@ rudderanalytics.track(
 
 ### Using RudderStack's `track` call with Gainsight Events
 
-{% hint style="info" %}
+<div class="infoBlock">
 Both the event `name` and `version` are needed to use `track` with Gainsight Events.
 
-{% endhint %}
+</div>
 
 First, create a new event under a particular topic in Gainsight, as shown:
 
@@ -285,10 +285,10 @@ rudderanalytics.track(
 )
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 To send Gainsight Events to more than one topic, we recommend creating new Gainsight destinations in the RudderStack dashboard for each topic.
 
-{% endhint %}
+</div>
 
 ## Contact Us
 

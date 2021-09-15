@@ -10,11 +10,11 @@ description: Step-by-step guide to send event data from RudderStack to PostHog.
 
 RudderStack allows you to seamlessly configure PostHog as a destination to which you can send your event data seamlessly.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/posthog)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/posthog)**.**
+</div>
 
 ## Getting Started
 
@@ -27,19 +27,19 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Device Mode**     | **Supported** | **-**         | **-**         |
 | **Cloud Mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to PostHog, please perform the steps below:
 
 - Choose a source to which you would like to add PostHog as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to add a source in RudderStack.
 
-{% endhint %}
+</div>
 
 - Select the destination as **PostHog** to your source. Give your destination a name and then click on **Next**.
 - On the **Connection Settings** page, fill all the fields with the relevant information and click **Next**.
@@ -48,10 +48,10 @@ Please follow our [Adding a Source and Destination](https://docs.rudderstack.com
 
 In the **Connection Settings**, please enter your **Team API Key** and **Your-Instance** URL as shown above.
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you’re hosting your own PostHog instance, add the URL of your instance without the trailing slash in the **PostHog instance** setting. So, the URL will look something like**`https://[your-instance].com`**`.`
 
-{% endhint %}
+</div>
 
 ## Web Settings
 
@@ -68,10 +68,10 @@ If you’re hosting your own PostHog instance, add the URL of your instance with
 
 To identify a user to PostHog, you need to call the `identify` API.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For information on the `identify` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 A sample `identify` call is as shown below:
 
@@ -101,10 +101,10 @@ rudderanalytics.page({
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For the `page` call, we send `$pageview` as an event to PostHog according to the [PostHog Page API](https://posthog.com/docs/api/post-only-endpoints#page).
 
-{% endhint %}
+</div>
 
 In the above sample, we capture information related to the page being viewed such as the category of the page \(`Category`\), as well as the name of the page \(`Sample`\) along with the unique user ID.
 
@@ -112,10 +112,10 @@ In the above sample, we capture information related to the page being viewed suc
 
 The `screen` method allows you to record whenever a user sees the mobile screen, along with any associated optional properties.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The `screen` call is similar to the `page` call, but it is exclusive to your mobile device.
 
-{% endhint %}
+</div>
 
 A sample `screen` call using RudderStack's iOS SDK is as shown:
 
@@ -124,10 +124,10 @@ A sample `screen` call using RudderStack's iOS SDK is as shown:
             properties:@{@"prop_key" : @"prop_value"}];
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For screen call we send `$screen` as an event to PostHog according to [PostHog Screen API](https://posthog.com/docs/api/post-only-endpoints#screen).
 
-{% endhint %}
+</div>
 
 In the above snippet, we capture information related to the screen being viewed, such as the name and category.
 
@@ -167,10 +167,10 @@ rudderanalytics.track("Order Completed", {
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 PostHog support`track` call as type`capture.` It sends the user behavior/action as an event. This information is sent to PostHog according to the [PostHog Capture API](https://posthog.com/docs/api/post-only-endpoints#capture).
 
-{% endhint %}
+</div>
 
 ## Alias
 
@@ -182,24 +182,24 @@ The following code snippet shows a sample `alias` call in RudderStack:
 rudderanalytics.alias("newUserId")
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For alias call, we send $create_alias as an event to PostHog according to [PostHog Alias API](https://posthog.com/docs/api/post-only-endpoints#alias).
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 Here, `previousUserId` gets mapped to _distinct id_ and `newUserId` to _alias_ in PostHog.
 
-{% endhint %}
+</div>
 
 ## Group
 
 The `group` call lets you associate a particular identified user with a group, such as a company, organization, or an account.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The group call sends `$group` as an event to PostHog according to the [PostHog Group API](https://posthog.com/docs/api/post-only-endpoints#group).
 
-{% endhint %}
+</div>
 
 ```javascript
 rudderanalytics.group("sample_group_id", {
@@ -254,10 +254,10 @@ rudderanalytics.track("event", {prop: "value"}, {
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Super properties related info can be passed to any of `track`, `page` and `identify` calls to the RudderStack JavaScript SDK.
 
-{% endhint %}
+</div>
 
 ## Property Mapping
 
@@ -293,10 +293,10 @@ RudderStack maps the following `properties` sent to Posthog standard contextual 
 | `context.app.namespace`         | `$app_namespace`       |
 | `context.app.build`             | `$app_build`           |
 
-{% hint style="warning" %}
+<div class="warningBlock">
 **Note**: Posthog has a property **$insert_id** which is auto generated by posthog sdk when using device-mode. But when using RudderStack cloud-mode we do not map any value to this property.
 
-{% endhint %}
+</div>
 
 ## FAQs
 

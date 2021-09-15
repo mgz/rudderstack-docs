@@ -10,10 +10,10 @@ description: Step-by-step guide to ingest your Google Analytics data into Rudder
 
 This document guides you in setting up Google Analytics as a source in RudderStack. Once configured, RudderStack automatically ingests your specified Google Analytics data, which can then be routed to your data warehouse destination supported by RudderStack.
 
-{% hint style="info" %}
-**All the Cloud Extract sources support sending data only to a data warehouse destination.**
+<div class="infoBlock">
+<strong>All the Cloud Extract sources support sending data only to a data warehouse destination.</strong>
 
-{% endhint %}
+</div>
 
 ## Getting Started
 
@@ -38,10 +38,10 @@ To add Google Analytics as a source in RudderStack, follow these steps:
 
 ![](../.gitbook/assets/4%20%285%29.png)
 
-{% hint style="info" %}
-If you have already connected RudderStack to your Google Analytics account, your credentials should appear automatically under **Use existing credentials**.
+<div class="infoBlock">
+If you have already connected RudderStack to your Google Analytics account, your credentials should appear automatically under <strong>Use existing credentials</strong>.
 
-{% endhint %}
+</div>
 
 ### Specifying the Data to Import
 
@@ -53,20 +53,20 @@ If you have already connected RudderStack to your Google Analytics account, your
 
 ![](../.gitbook/assets/screen-shot-2020-12-15-at-4.07.31-pm.png)
 
-{% hint style="warning" %}
-Not all **Dimensions** and **Metrics** can be queried together. Only those dimensions and metrics combinations that follow Google’s compatibility rules can be used for querying. Read the [Valid Dimensions and Metrics](https://docs.rudderstack.com/sources/google-analytics#valid-dimensions-and-metrics-combinations) section below for more information.
+<div class="warningBlock">
+Not all <strong>Dimensions</strong> and <strong>Metrics</strong> can be queried together. Only those dimensions and metrics combinations that follow Google’s compatibility rules can be used for querying. Read the <a href="../cloud-extract-sources/google-analytics#valid-dimensions-and-metrics-combinations">Valid Dimensions and Metrics</a> section below for more information.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
-The **Dimensions** and **Metrics** combination cannot be changed after the source is created and saved. The primary key that RudderStack creates depends on your choices during the source configuration.
+<div class="warningBlock">
+The <strong>Dimensions</strong> and <strong>Metrics</strong> combination cannot be changed after the source is created and saved. The primary key that RudderStack creates depends on your choices during the source configuration.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
-If a combination of **Dimensions** and **Metrics** chosen by you is invalid, RudderStack will notify you.
+<div class="infoBlock">
+If a combination of <strong>Dimensions</strong> and <strong>Metrics</strong> chosen by you is invalid, RudderStack will notify you.
 
-{% endhint %}
+</div>
 
 ### Setting the Data Update Schedule
 
@@ -80,29 +80,33 @@ RudderStack will start importing data from Google Analytics as per the specified
 
 ![](../.gitbook/assets/screen-shot-2020-12-15-at-4.26.30-pm.png)
 
-{% hint style="success" %}
-Use the **Connect Destinations** option if you have already configured a data
-warehouse destination in RudderStack. To configure a data warehouse
-destination from scratch, click on the **Add Destination** button.
-{% endhint %}
+<div class="successBlock">
+  Use the <strong>Connect Destinations</strong> option if you have already
+  configured a data warehouse destination in RudderStack. To configure a data
+  warehouse destination from scratch, click on the{" "}
+  <strong>Add Destination</strong> button.
+</div>
 
 ## Valid Dimensions and Metrics Combinations
 
 Not all the dimensions and metrics can be queried together in Google Analytics. Only those dimensions-metrics combinations that follow Google's compatibility rules can be used together for querying.
 
-{% hint style="success" %}
-Check out the valid combinations in the [Google Dimensions & Metrics
-Explorer](https://ga-dev-tools.appspot.com/dimensions-metrics-explorer/).
-{% endhint %}
+<div class="successBlock">
+  Check out the valid combinations in the{" "}
+  <a href="https://ga-dev-tools.appspot.com/dimensions-metrics-explorer/">
+    Google Dimensions & Metrics Explorer
+  </a>
+  .
+</div>
 
 ### Definition Limits
 
 Google also has a limit on the number of dimensions and metrics that you can define.
 
-{% hint style="info" %}
-Read more about these limits in Google's [Core Reporting API](https://developers.google.com/analytics/devguides/reporting/core/v3/reference#metrics) documentation.
+<div class="infoBlock">
+Read more about these limits in Google's <a href="https://developers.google.com/analytics/devguides/reporting/core/v3/reference#metrics">Core Reporting API</a> documentation.
 
-{% endhint %}
+</div>
 
 ## FAQs
 

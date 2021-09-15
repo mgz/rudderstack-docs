@@ -19,19 +19,19 @@ To enable sending events to Chartbeat, you will first need to add it as a destin
 | **Device mode**     | **Supported** | -          | -          |
 | **Cloud mode**      | -             | -          | -          |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have ascertained that the platform is supported by Chartbeat, please follow these steps:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Chartbeat as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - In the Connection Settings page, please enter the relevant information in the fields shown in the following screen:
 
@@ -43,10 +43,10 @@ Each field is as explained below:
 - **UID -** Enter your Chartbeat UID here. You can find the UID on the Chartbeat [Adding The Code](https://chartbeat.com/docs/adding_the_code/) page.
 - **Send Name and Category as Title** - Enable this setting if you want the RudderStack `page` API to send the page title as visible in Chartbeat dashboard as `page category` + `page name` .
 
-{% hint style="info" %}
+<div class="infoBlock">
 If this setting is enabled and the category is not set, RudderStack only sends the name as the page title.
 
-{% endhint %}
+</div>
 
 - **Use Chartbeat video script** - Enable this setting if you want the RudderStack SDK to download `chartbeat_video.js` . This file is provided by Chartbeat to track and capture video interactions. Once the setting is enabled, the script will start capturing the play and pause events of mainly the HTML5 videos from the `<video ... </video>` tag.
 

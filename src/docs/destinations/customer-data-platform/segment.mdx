@@ -21,19 +21,19 @@ Before configuring Segment in RudderStack, verify if the source platform support
 | **Device Mode**     | **-**         | **-**         | **-**         |
 | **Cloud Mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Then, perform the steps below:
 
 - Configure the data source in RudderStack.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Follow the guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more details.
 
-{% endhint %}
+</div>
 
 - From the list of destinations, select **Segment**.
 
@@ -63,10 +63,10 @@ Follow the guide on [How to Add a Source and Destination in RudderStack](https:/
 
 The `identify` call lets you associate a visiting user to their actions as well as record their traits.
 
-{% hint style="info" %}
+<div class="infoBlock">
 As a best practice, please make sure that the `identify`call is made at the start of every session or page load for logged-in users, if possible. This will ensure all the latest traits are captured.
 
-{% endhint %}
+</div>
 
 A sample `identify` call is as shown:
 
@@ -82,10 +82,10 @@ rudderanalytics.identify("userid", {
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `identify` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
 
-{% endhint %}
+</div>
 
 ## Track
 
@@ -99,10 +99,10 @@ rudderanalytics.track("Event Name", {
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `track` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
 
-{% endhint %}
+</div>
 
 ## Page
 
@@ -120,10 +120,10 @@ rudderanalytics.page("Cart", "Cart Viewed", {
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `page` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
 
-{% endhint %}
+</div>
 
 ## Group
 
@@ -142,10 +142,10 @@ rudderanalytics.group(
   );
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `group` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
 
-{% endhint %}
+</div>
 
 ## Alias
 
@@ -166,10 +166,10 @@ The above `alias` call has the following parameters:
 | **`options`**  | Optional     | This dictionary provides additional context to the event payload.                                                                                                                                        |
 | **`callback`** | Optional     | This function gets executed after successful execution of the **`alias()`** method.                                                                                                                      |
 
-{% hint style="info" %}
+<div class="infoBlock">
 For more information on the `alias` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
 
-{% endhint %}
+</div>
 
 ## FAQs
 

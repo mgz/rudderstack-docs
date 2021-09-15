@@ -21,19 +21,19 @@ Before configuring your source and destination on the RudderStack, verify if the
 | **Device mode**     | **Supported** | **-**      | **-**      |
 | **Cloud mode**      | **-**         | **-**      | **-**      |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to TVSquared, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select TVSquared**.**
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
 
@@ -91,10 +91,10 @@ By default, TVSquared can take the following parameters:
 - `action id (order_id)`
 - `promo (promotion_id)`
 
-{% hint style="info" %}
+<div class="infoBlock">
 All the mentioned parameters are optional. There is no requirement to add these to measure the uplift from TV. However, this data can be used for more detailed analysis as required. If there is no value to pass an empty string will be set by RudderStack.
 
-{% endhint %}
+</div>
 
 A sample `track` call is as shown:
 

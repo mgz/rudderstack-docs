@@ -11,24 +11,24 @@ description: >-
 
 Sources are the tools or platforms from which you can send event data to RudderStack. These events can then be routed \(with or without transformation\) into your data warehouse or third-party destinations for analytics and other activation use-cases.
 
-{% hint style="success" %}
-For more information on sources in RudderStack, check out the [**Connections
-guide**](https://docs.rudderstack.com/connections).
-{% endhint %}
+<div class="successBlock">
+  For more information on sources in RudderStack, check out the{" "}
+  <a href="../connections">Connections guide</a>.
+</div>
 
 ## RudderStack Cloud Extract
 
 With RudderStack Cloud Extract, you can collect your raw events and data from different cloud tools such as [**Facebook Ads**](https://www.facebook.com/business/ads), [**Google Analytics**](https://analytics.google.com/), [**Marketo**](https://www.marketo.com/), [**HubSpot**](https://www.hubspot.com/), [**Stripe**](stripe.md), and more. You can then build efficient ELT pipelines from these cloud apps to your data warehouse.
 
-{% hint style="info" %}
-**All the Cloud Extract sources support sending data only to a data warehouse destination.**
+<div class="infoBlock">
+<strong>All the Cloud Extract sources support sending data only to a data warehouse destination.</strong>
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
-We highly recommend connecting **only one** warehouse destination to a Cloud Extract source. To send data to multiple data warehouses from the same source, we recommend creating individual sources with the same settings for each warehouse destination.
+<div class="warningBlock">
+We highly recommend connecting <strong>only one</strong> warehouse destination to a Cloud Extract source. To send data to multiple data warehouses from the same source, we recommend creating individual sources with the same settings for each warehouse destination.
 
-{% endhint %}
+</div>
 
 Here's a quick 1-minute walkthrough of the Cloud Extract feature:
 
@@ -60,11 +60,13 @@ We have implemented a feature wherein RudderStack associates a table prefix for 
 
 {% page-ref page="google-analytics.md" %}
 
-{% hint style="success" %}
-If you wish to contribute to developing more Cloud Extract integrations for
-RudderStack, please refer to the contributing guide
-[**here**](../user-guides/how-to-guides/how-to-submit-an-integration-pull-request.md).
-{% endhint %}
+<div class="successBlock">
+  If you wish to contribute to developing more Cloud Extract integrations for
+  RudderStack, please refer to the contributing guide
+  <a href="../user-guides/how-to-guides/how-to-submit-an-integration-pull-request">
+    here
+  </a>.
+</div>
 
 ## Contact Us
 

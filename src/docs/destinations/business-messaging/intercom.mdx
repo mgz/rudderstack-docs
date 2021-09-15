@@ -10,16 +10,16 @@ description: Step-by-step guide to send your event data from RudderStack to Inte
 
 RudderStack allows you to send your event data from a variety of sources to Intercom through S2S and native SDKs by calling the relevant APIs.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 **Please note that this documentation is written for Intercom v1.4.**
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/intercom)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/intercom)**.**
+</div>
 
 ## Getting Started
 
@@ -30,19 +30,19 @@ To enable sending events to Intercom, you will first need to add it as a destina
 | **Device mode**     | **Supported** | **Supported** | -          |
 | **Cloud mode**      | **Supported** | -             | -          |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have ascertained that the source platform is supported by Intercom, please follow these steps:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **Intercom** from the list of supported destinations.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Give a name to the destination, and click on **Next**. You should then see the following screen:
 
@@ -128,10 +128,10 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 
 - Add a **Privacy - Photo Library Usage Description** entry to your `Info.plist`. \*\*\*\*This is [required by Apple](https://developer.apple.com/library/content/qa/qa1937/_index.html) for applications that can access the photo library.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Users will be prompted for the permission to access the photo library only when they tap the button to upload their image/s.
 
-{% endhint %}
+</div>
 {% endtab %}
 {% endtabs %}
 
@@ -159,10 +159,10 @@ The `identify` call can be used to :
 - **Remove users from a company** : To remove users from a company, you must pass `remove: true` inside the company object.
 - **Unsubscribe users** : To unsubscribe users from emails, `unsubscribedFromEmails: true` must be passed inside `context` object.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The **Last Seen** feature of the `identify` call has not been implemented yet. Please stay tuned!
 
-{% endhint %}
+</div>
 
 The following RudderStack properties are matched to Intercom's properties -
 
@@ -197,10 +197,10 @@ rudderanalytics.track("Product bought", {
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 All the traits provided in the `track` call will be converted as per [Intercom's API](https://developers.intercom.com/intercom-api-reference/reference#event-metadata-types).
 
-{% endhint %}
+</div>
 
 ## Page
 

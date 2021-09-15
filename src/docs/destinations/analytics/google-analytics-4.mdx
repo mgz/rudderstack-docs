@@ -21,19 +21,19 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Device Mode**     | **Supported** | **-**  | **-**  |
 | **Cloud Mode**      | **-**         | **-**  | **-**  |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Google Analytics 4, please perform the steps below:
 
 - Choose a source to which you would like to add Google Analytics 4 as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to add a source in RudderStack.
 
-{% endhint %}
+</div>
 
 - Select the destination as **Google Analytics 4** to your source. Give your destination a name and then click on **Next**.
 - On the **Connection Settings** page, fill all the fields with the relevant information and click **Next**.
@@ -106,15 +106,15 @@ rudderanalytics.track("Track me")
 
 RudderStack's SDK will send the track event name and any properties as custom properties to Google Analytics 4.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For properties that are nested and not a standard Google Analytics 4 property, RudderStack SDK will flatten them before sending to Google Analytics.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 There are limits on the number of custom properties per event that can be sent to Google Analytics 4. RudderStack SDK `doesn't drop` the payload based on these limits. If the events are not showing up in **debug view or reports on Google Analytics dashboard**, please refer [this](https://support.google.com/analytics/answer/9237506?hl=en) for collection limits.
 
-{% endhint %}
+</div>
 
 ## eCommerce
 
@@ -134,10 +134,10 @@ Below are some examples of the track event names that are passed to Google Analy
 | Checkout Started          | `begin_checkout`              |
 | Order Completed           | `purchase`                    |
 
-{% hint style="info" %}
+<div class="infoBlock">
 For each product in the order, there must be an `id` and `name` associated. More info on Google Analytics 4 e-commerce event and corresponding properties can be found [here](https://developers.google.com/gtagjs/reference/ga4-events#view_item_list).
 
-{% endhint %}
+</div>
 
 ## FAQs
 

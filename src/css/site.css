@@ -933,6 +933,7 @@ top: -60px;
   @apply text-base;
   @apply p-1;
   @apply border-transparent;
+  max-width: 85%;
 }
 .docsNav {
   @apply flex;
@@ -1237,6 +1238,12 @@ top: -60px;
 .childrenWrapper h1 {
   @apply pr-7;
 }
+.childrenWrapper ul {
+  list-style: initial;
+}
+.childrenWrapper ol {
+  list-style: decimal;
+}
 .tocMob {
   @apply absolute;
   @apply right-0;
@@ -1493,7 +1500,8 @@ a.pageRef:hover .rightRefArrow {
   .docsSearch {
     @apply border-transparent;
   }
-  .docsSearchWrapper {
+  .docsSearchWrapper,
+  .docsSearchbar {
     @apply hidden;
   }
   .docsLogo {

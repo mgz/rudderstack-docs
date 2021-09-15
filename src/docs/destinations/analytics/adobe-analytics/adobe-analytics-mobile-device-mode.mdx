@@ -10,12 +10,12 @@ description: >-
 
 This document covers the necessary settings and configurations to send events to Adobe Analytics via your mobile device mode.
 
-{% hint style="success" %}
-Mobile [**device
-mode**](https://docs.rudderstack.com/connections/rudderstack-connection-modes#device-mode)
-refers to using the Android or iOS SDK to send your events directly to Adobe
-Analytics.
-{% endhint %}
+<div class="successBlock">
+  Mobile [**device
+  mode**](https://docs.rudderstack.com/connections/rudderstack-connection-modes#device-mode)
+  refers to using the Android or iOS SDK to send your events directly to Adobe
+  Analytics.
+</div>
 
 To configure Adobe Analytics via the mobile device mode, follow these steps:
 
@@ -131,10 +131,10 @@ Map all the events defined in the [**Adobe Mobile Services**](https://mobilemark
 
 Map all the properties defined at the [**Adobe Mobile Services**](https://mobilemarketing.adobe.com/) dashboard in the **Map Rudder Context data to Adobe Context Data** settings in the Rudderstack dashboard.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 For mobile device mode, RudderStack currently does not support the [**Initialize Heartbeat**](https://docs.rudderstack.com/destinations/analytics/adobe-analytics/adobe-analytics-heartbeat#initialize-heartbeat) and [**Heartbeat Playhead Update**](https://docs.rudderstack.com/destinations/analytics/adobe-analytics/adobe-analytics-heartbeat#heartbeat-playhead-update) video events.
 
-{% endhint %}
+</div>
 
 ## Identify
 
@@ -233,10 +233,10 @@ MainApplication.rudderClient.screen("Home Screen",
 
 Calling `reset` sets the user’s Adobe `visitorId` to `null`.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The default value of Adobe's `visitorId` is `null` until you explicitly set it \(by calling `identify`\).
 
-{% endhint %}
+</div>
 
 A sample `reset` call is as shown:
 
@@ -268,10 +268,10 @@ A sample `flush` call is as follows:
 MainApplication.rudderClient.flush()
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The `flush` call is supported only in Android.
 
-{% endhint %}
+</div>
 
 ## Contact Us
 

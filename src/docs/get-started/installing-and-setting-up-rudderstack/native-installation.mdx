@@ -6,10 +6,10 @@ description: Step-by-step instructions on setting up a native RudderStack instal
 
 # Native Installation
 
-{% hint style="warning" %}
+<div class="warningBlock">
 This is **not** the easiest way of installing RudderStack. Use this method only if you want to know more about the RudderStack internals.
 
-{% endhint %}
+</div>
 
 ## Prerequisites
 
@@ -34,14 +34,14 @@ psql "jobsdb" -c "grant all privileges on database jobsdb to rudder";
 
 ![](../../.gitbook/assets/screen-shot-2021-07-01-at-5.36.15-pm%20%283%29%20%283%29%20%282%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%281%29.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 **Why do I need to sign up on RudderStack?**
 
 RudderStack's dashboard \([**Control Plane**](https://docs.rudderstack.com/get-started/rudderstack-architecture#control-plane)\) lets you set up your data pipelines by configuring event data sources and destinations. This dashboard is hosted by RudderStack and is free for open-source users.
 
 If you don't wish to sign up for RudderStack, you can also set up your own control plane using the open-source [**RudderStack Config Generator**](../../user-guides/how-to-guides/rudderstack-config-generator.md). However, note that the control plane set up using the RudderStack Config Generator lacks certain features like [**Transformations**](../../adding-a-new-user-transformation-in-rudderstack/) and [**Live Events Debugger**](../../user-guides/how-to-guides/live-destination-event-debugger.md).
 
-{% endhint %}
+</div>
 
 - Create a directory for the RudderStack server using the following command:
 

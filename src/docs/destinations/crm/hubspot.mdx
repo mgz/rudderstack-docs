@@ -10,11 +10,11 @@ description: Step-by-step guide to send event data from RudderStack to HubSpot
 
 RudderStack supports HubSpot as a destination to send your event data through our APIs.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/hs)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/hs)**.**
+</div>
 
 ## Getting Started
 
@@ -25,10 +25,10 @@ Before configuring your source and destination in RudderStack, please check whet
 | **Device mode**     | **Supported** | -             | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to HubSpot, perform the steps below:
 
@@ -36,10 +36,10 @@ Once you have confirmed that the platform supports sending events to HubSpot, pe
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **HubSpot** as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Give a name to the destination and click on **Next**. You should then see the following screen:
 
@@ -47,27 +47,27 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 - Provide your HubSpot **API key** and **Hub ID** in the required fields. Please find [**API Key**](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key) and [**Hub ID**](https://knowledge.hubspot.com/account/manage-multiple-hubspot-accounts#identify-the-current-account-s-hub-id) in your Hubspot Account.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 API Key is mandatory if you need to send data to Hubspot using `cloud-mode`
 
-{% endhint %}
+</div>
 
 - Provide your preference to flow the data to HubSpot through native SDK or through the RudderStack backend. Click on **Next** to finish the configuration.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The setting to enable / disable native SDK to send events can be changed later. However, for that to reflect in your website, you will need to refresh the web page.
 
-{% endhint %}
+</div>
 
 ## Page
 
 {% tabs %}
 {% tab title="Cloud Mode" %}
 
-{% hint style="warning" %}
+<div class="warningBlock">
 The `page` call is not supported in cloud mode for HubSpot.
 
-{% endhint %}
+</div>
 {% endtab %}
 
 {% tab title="Device Mode" %}
@@ -131,11 +131,11 @@ HubSpot supports the following traits as special fields:
 
 Hubspot also supports custom properties. You can update values of the `contact` property that you have created in HubSpot.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 
 - Note that when you provide any custom property, it automatically converts to lower case and any space will be replaced with an underscore. HubSpot does not accept properties in upper case and spaces.
 - HubSpot discards any property which doesn't exists and returns `400 Bad Request`.
-  {% endhint %}
+  </div>
 
 ### Dates
 

@@ -81,9 +81,9 @@ await rudderClient.setup(WRITE_KEY, {
 })
 ```
 
-{% hint style="success" %}
-It is highly recommended to use the `await` keyword with the setup call.
-{% endhint %}
+<div class="successBlock">
+  It is highly recommended to use the `await` keyword with the setup call.
+</div>
 
 The `setup` method has the following signature:
 
@@ -117,7 +117,7 @@ The `track` method has the following signature:
 | `property` | `JSON Object` | No       | Extra data properties you want to send along with the event |
 | `options`  | `JSON Object` | No       | Extra event options                                         |
 
-{% hint style="info" %}
+<div class="infoBlock">
 We automatically track the following optional events:
 
 1. `Application Installed`
@@ -127,7 +127,7 @@ We automatically track the following optional events:
 
 You can disable these events by passing `trackLifecycleEvents` as false in the configuration object. But it is highly recommended to keep them enabled.
 
-{% endhint %}
+</div>
 
 ## Identify
 
@@ -174,11 +174,11 @@ Alternatively, you can use the following method signature:
 | `property`   | `JSON Object` | No       | Extra property object that you want to pass along with the `screen` call. |
 | `option`     | `JSON Object` | No       | Extra options to be passed along with `screen` event.                     |
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can also enable automatic recording of screen views by passing `recordScreenViews` as `true` while initializing the `rudderClient`.  
 The default value for `recordScreenViews` is `false`.
 
-{% endhint %}
+</div>
 
 ## Reset
 
@@ -188,9 +188,9 @@ You can use the `reset` method to clear the persisted `traits` for the `identify
 await rudderClient.reset()
 ```
 
-{% hint style="success" %}
-It is highly recommended to use the `await` keyword with the reset call.
-{% endhint %}
+<div class="successBlock">
+  It is highly recommended to use the `await` keyword with the reset call.
+</div>
 
 ## Registering Callbacks:
 
@@ -227,15 +227,15 @@ const options = {
 }
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The keyword `All` in the above snippet represents all the destinations the source is connected to. Its value is set to `true` by default.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 Make sure the destination names that you pass while specifying the destinations should exactly match the names listed [here](https://app.rudderstack.com/directory).
 
-{% endhint %}
+</div>
 
 There are two methods in which you can pass the destinations specified in the above snippet to the SDK:
 
@@ -261,10 +261,10 @@ rudderClient.track(
 )
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you specify the destinations both while initializing the SDK as well as while making an event call, then the destinations specified at the event level only will be considered.
 
-{% endhint %}
+</div>
 
 ## External ID
 

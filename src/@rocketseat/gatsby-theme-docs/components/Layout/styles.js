@@ -78,7 +78,7 @@ export const Children = styled.div`
     color: #3d3d4d;
   }
   a {
-    font-weight: semibold;
+    font-weight: bold;
     text-decoration: none;
     color: #6c6c80;
     &:hover {

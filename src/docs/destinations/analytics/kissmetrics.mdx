@@ -10,11 +10,11 @@ description: Step-by-step guide to send event data from RudderStack to Kissmetri
 
 RudderStack supports sending your events from cloud mode S2S \(Server to Server\) and Web Native SDKs by calling our APIs.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kissmetrics)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kissmetrics)**.**
+</div>
 
 ## Getting Started
 
@@ -27,19 +27,19 @@ Before configuring Kissmetrics as a destination in RudderStack, please make sure
 | **Device mode**     | **Supported** | -             | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that Kissmetrics supports the source type, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **Kissmetrics** as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Give a name to your destination, and then click on **Next**. You should see the following screen:
 
@@ -51,10 +51,10 @@ Please follow our guide on [How to Add a Source and Destination in RudderStack](
 
 Enabling this setting will add the event name to all the properties of the event. This works for `page` \***\*and `track` \*\***properties**.**
 
-{% hint style="info" %}
+<div class="infoBlock">
 You will need to enable this setting while building reports in Kissmetrics.
 
-{% endhint %}
+</div>
 
 - Once you have finalized the settings, click on **Next** to complete the configuration and add Kissmetrics as a destination in RudderStack.
 
@@ -89,10 +89,10 @@ will pass the following to the `_kmq kissmetrics` object.
   ]
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Nested objects are flattened as `a.b.c` \***\*for input data \*\***`{a:{b:c}}` before sending the data to Kissmetrics, as it is unable to parse nested objects.
 
-{% endhint %}
+</div>
 
 ## Page
 
@@ -123,10 +123,10 @@ The above snippet will pass the following to the `_kmq kissmetrics` object:
 }]
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Automatically-tracked Kissmetrics events such as **Visited a site**, etc. will function as and when integrated with RudderStack. Stay tuned!
 
-{% endhint %}
+</div>
 
 ## Track
 
@@ -156,12 +156,12 @@ will pass the following to the `_kmq kissmetrics` object.
 
 An event sent to RudderStack with a property called `revenue` , is passed on to Kissmetrics as `Billing amount` as well as `revenue`.
 
-{% hint style="info" %}
+<div class="infoBlock">
 In order to send eCommerce events that have a product array as one of their `track` properties, RudderStack sends each product property to the `/s` endpoint from the cloud mode, or pushes it as `['set', {id:, sku: ...}]` from the native SDK.
 
 Please check the [Kissmetrics eCommerce documentation](http://support.kissmetrics.com/article/show/ecommerce-essentials) for more details.
 
-{% endhint %}
+</div>
 
 ## Alias
 

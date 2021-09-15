@@ -10,11 +10,11 @@ description: Step-by-step guide to send event data from RudderStack to Kinesis F
 
 RudderStack allows you to configure Kinesis Firehose as a destination and send your event data to it directly.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/firehose)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/firehose)**.**
+</div>
 
 ## Getting Started
 
@@ -25,19 +25,19 @@ To enable sending data to Firehose, you will first need to add it as a destinati
 | **Device mode**     | -             | -             | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Firehose, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Firehose.**
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Give a name to the destination and click on **Next**. You should then see the following screen.
 - Fill up the details and click on **Next** to complete the configuration. Firehose should now be added and enabled as a destination in RudderStack.
@@ -50,15 +50,15 @@ Please follow our [Adding a Source and Destination](https://docs.rudderstack.com
   - **AWS Region**: Enter the AWS region here.
   - The **AWS Access Key ID** and **AWS Secret Access Key** are required \*\*\*\*to authorize RudderStack to write to your stream.
 
-{% hint style="success" %}
-Please note that if the AWS credentials are **already configured** on your
-machine where the RudderStack server is set up, you will **not** need the
-security credentials.
-{% endhint %}
+<div class="successBlock">
+  Please note that if the AWS credentials are **already configured** on your
+  machine where the RudderStack server is set up, you will **not** need the
+  security credentials.
+</div>
 
 - Enter the **Event Name** as well as the corresponding **Delivery Stream**.
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can send an event `type` like `page,` `identify,` `track`.  
 For `track` events you can specify the event name based on the `event` name in the payload.
 
@@ -66,17 +66,17 @@ For example:
 
 - If the event name is **`page`** it will send all the calls with `type` page.
 - If event name is **`product added`** , it will send all the track events with the **`event`** product added.
-  {% endhint %}
+  </div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you want to send all the events to a particular stream irrespective of the type or name, you can use **`*`** as the event name.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 The **delivery stream** name is **case sensitive** and has to be exactly as named in AWS. On the other hand, the **event name** is **case insensitive**, and thus Page or page both will be considered.
 
-{% endhint %}
+</div>
 
 The following snippet shows an example of a permissions policy that allows a user to put event data into Firehose:
 

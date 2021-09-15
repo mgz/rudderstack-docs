@@ -10,16 +10,27 @@ description: >-
 
 RudderStack is an independent, stand-alone system with dependency only on the database \(**PostgreSQL**\). Its backend is written in Go, with a rich UI written in React.js.
 
-{% hint style="success" %}
-**Start building a better, warehouse-first CDP that delivers complete, unified
-data to every part of your marketing and analytics stack.** [**Sign
-up**](https://app.rudderlabs.com/signup?type=freetrial) **for** [**RudderStack
-Cloud Free**](https://app.rudderlabs.com/signup?type=freetrial) **today.**
-{% endhint %}
+<div class="successBlock">
+  <strong>
+    Start building a better, warehouse-first CDP that delivers complete, unified
+    data to every part of your marketing and analytics stack.{" "}
+    <a href="https://app.rudderlabs.com/signup?type=freetrial">
+      Sign up for RudderStack Cloud Free
+    </a>{" "}
+    today
+  </strong>
+  .
+</div>
 
 A high-level view of RudderStack’s architecture is as shown:
 
-![RudderStack Architecture](../.gitbook/assets/rudderstack-architecture.png)
+<!-- ![RudderStack Architecture](../.gitbook/assets/rudderstack-architecture.png) -->
+
+<img
+  src="../../images/assets/rudderstack-architecture.png"
+  alt="RudderStack Architecture"
+/>
+<span class="imageTitle">RudderStack Architecture</span>
 
 RudderStack's architecture consists of 2 major components, namely the **Control Plane** and **Data Plane**.
 
@@ -32,16 +43,16 @@ The Control Plane offers an intuitive UI to configure your event data sources an
 
 ## **Data Plane**
 
-The Data Plane is RudderStack's \*\*\*\*core engine responsible for:
+The Data Plane is RudderStack's core engine responsible for:
 
 - Receiving and buffering the event data
 - Transforming the events in the required destination format
 - Relaying the events to the destination
 
-{% hint style="info" %}
-The RudderStack Data Plane uses PostgreSQL as a streaming database for the event data. Refer to the **Data Plane Architecture** section below for more information.
+<div class="infoBlock">
+The RudderStack Data Plane uses PostgreSQL as a streaming database for the event data. Refer to the <strong>Data Plane Architecture</strong> section below for more information.
 
-{% endhint %}
+</div>
 
 ## **Transformation**
 
@@ -49,11 +60,13 @@ RudderStack's Transformations module transforms the received event data into a s
 
 RudderStack also supports user-specific transformations for real-time operations, such as aggregation, filtering, and sampling.
 
-{% hint style="success" %}
-Refer to the [**RudderStack
-Transformations**](../adding-a-new-user-transformation-in-rudderstack/) guide
-for more information on this feature.
-{% endhint %}
+<div class="successBlock">
+  Refer to the{" "}
+  <a href="../adding-a-new-user-transformation-in-rudderstack">
+    RudderStack Transformations
+  </a>{" "}
+  guide for more information on this feature.
+</div>
 
 ## **Data Plane Architecture**
 
@@ -93,12 +106,12 @@ The Router sends the processed and transformed event data from the Processor to 
 
 The Transformation module takes the event data from the Processor and converts the event data into the required destination format. It then sends this transformed data back to the Processor. The Processor then forwards the data to the Router, which then routes it to the desired destination.
 
-{% hint style="success" %}
+<div class="successBlock">
 RudderStack supports user-defined transformations where event data can be transformed using custom JavaScript functions. Some common use-cases include modifying the events, performing event aggregation, sampling, etc.
 
-Check out the [**GitHub repository**](https://github.com/rudderlabs/sample-user-transformers) for more information related to these functions.
+Check out the <a href="https://github.com/rudderlabs/sample-user-transformers">GitHub repository</a> for more information related to these functions.
 
-{% endhint %}
+</div>
 
 ## **Data Plane Workflow**
 
@@ -122,7 +135,13 @@ The RudderStack backend workflow is detailed in the following steps:
 
 7. Once the transformed data reaches the destination, the event data from the Router database is deleted by the Router.
 
-![RudderStack Backend Workflow](../.gitbook/assets/screen-shot-2021-06-07-at-1.25.57-pm.png)
+<!-- ![RudderStack Backend Workflow](../.gitbook/assets/screen-shot-2021-06-07-at-1.25.57-pm.png) -->
+
+<img
+  src="../../images/assets/screen-shot-2021-06-07-at-1.25.57-pm.png"
+  alt="RudderStack Backend Workflow"
+/>
+<span class="imageTitle">RudderStack Backend Workflow</span>
 
 ## **Notes**
 
@@ -130,10 +149,10 @@ The RudderStack backend can be customized with a variety of configuration option
 
 Although the default configuration works just fine for most use-cases, RudderStack gives you the flexibility to customize it by tweaking the [**`config.yaml`**](https://github.com/rudderlabs/rudder-server/blob/master/config/config.yaml) file to suit your application's needs.
 
-{% hint style="info" %}
-Refer to the [**Configuration Parameters**](../user-guides/administrators-guide/config-parameters.md) guide for more information on these configuration options.
+<div class="infoBlock">
+Refer to the <a href="../../user-guides/administrators-guide/config-parameters">Configuration Parameters</a> guide for more information on these configuration options.
 
-{% endhint %}
+</div>
 
 ## Contact Us
 

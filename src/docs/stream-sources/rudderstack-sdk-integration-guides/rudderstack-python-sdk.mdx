@@ -45,10 +45,10 @@ rudder_analytics.track('developer_user_id', 'Simple Track Event', {
 
 The `identify` call lets you associate a user to their actions as well as captures the relevant traits or properties related to that user.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For a detailed explanation of the `identify` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 An example `identify` call is as shown:
 
@@ -75,10 +75,10 @@ The `identify` method parameters are as described below:
 
 The `track` call lets you record the users' actions along with their associated properties. Each triggered action is called as an 'event'.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For a detailed explanation of the `track` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 An example `track` call is as shown:
 
@@ -106,10 +106,10 @@ The `track` method parameters are as described below:
 
 The `page` call allows you to record the page views on your website. It also records the other relevant information about the page that is being viewed.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For a detailed explanation of the `page` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 An example `page` call is as shown:
 
@@ -135,10 +135,10 @@ The `page` method parameters are as described below:
 
 The `screen` call is the mobile equivalent of the page call. It allows you to record the screen views on your mobile app along with the other relevant information about the app screen.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For a detailed explanation of the `screen` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 An example `screen` call is as shown:
 
@@ -164,10 +164,10 @@ The `screen` method parameters are as described below:
 
 The `group` call allows you to associate an identified user to a group - either a company, project or a team. You can also record custom traits or properties associated with that group.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For a detailed explanation of the `group` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 An example `group` call is as shown:
 
@@ -194,10 +194,10 @@ The `group` method parameters are as follows:
 
 The `alias` call allows you to associate one identity with another.
 
-{% hint style="info" %}
+<div class="infoBlock">
 `alias` is an advanced method. However, it is required when managing user identities in some destinations.
 
-{% endhint %}
+</div>
 
 An example `alias` call is as shown:
 
@@ -216,10 +216,10 @@ The `alias` method parameters are as mentioned below:
 | `traits`       | Object   | Optional                                  | Dictionary of the properties or traits associated with the group, such as `email` or `name`.                          |
 | `timestamp`    | Date     | Optional                                  | The timestamp of the message's arrival.                                                                               |
 
-{% hint style="info" %}
+<div class="infoBlock">
 For a detailed explanation of the `alias` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% endhint %}
+</div>
 
 ## Error Handling
 
@@ -232,10 +232,10 @@ def on_error(error, events):
 rudder_analytics.on_error = on_error
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 **Note:** this will only return errors that may occur with the HTTP request to the Gateway. Any errors that occur downstream will not be returned via this callback.
 
-{% endhint %}
+</div>
 
 Common request responses from the Gateway are as follows
 

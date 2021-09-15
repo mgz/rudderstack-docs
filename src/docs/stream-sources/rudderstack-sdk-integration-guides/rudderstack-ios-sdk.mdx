@@ -12,11 +12,11 @@ description: >-
 
 The RudderStack iOS SDK allows you to integrate RudderStack to your iOS application in order to track event data from your app. After integrating this SDK, you will also be able to send this data to your preferred analytics destination/s such as Google Analytics, Amplitude, and more.
 
-{% hint style="success" %}
-You can check the [codebase on
-GitHub](https://github.com/rudderlabs/rudder-sdk-ios) if you want to get more
-hands-on information or are keen to know the SDK architecture.
-{% endhint %}
+<div class="successBlock">
+  You can check the [codebase on
+  GitHub](https://github.com/rudderlabs/rudder-sdk-ios) if you want to get more
+  hands-on information or are keen to know the SDK architecture.
+</div>
 
 [![Version](https://img.shields.io/cocoapods/v/Rudder.svg?style=flat)](https://cocoapods.org/pods/Rudder)
 
@@ -31,13 +31,25 @@ To set up the RudderStack iOS SDK, there are a few prerequisites as mentioned be
 
 - You will also need your Data Plane URL. Simply put, the Data Plane URL is used to connect to the RudderStack backend for processing and routing your events.
 
-{% hint style="info" %}
+<div class="infoBlock">
 To get the **Data Plane URL**:
 
-- If you're using the **open-source** version of RudderStack, you are required to set up your own data plane by [installing and setting up RudderStack](https://docs.rudderstack.com/installing-and-setting-up-rudderstack) in your preferred dev environment.
-- If you're using the **enterprise** version of RudderStack, please contact us for the data plane URL with the email ID used to sign up for RudderStack.
+<ul>
+  <li>
+    {" "}
+    If you're using the **open-source** version of RudderStack, you are required
+    to set up your own data plane by [installing and setting up
+    RudderStack](https://docs.rudderstack.com/installing-and-setting-up-rudderstack)
+    in your preferred dev environment.
+  </li>
+  <li>
+    {" "}
+    If you're using the **enterprise** version of RudderStack, please contact us
+    for the data plane URL with the email ID used to sign up for RudderStack.
+  </li>
+</ul>
 
-  {% endhint %}
+  </div>
 
 - You will also need a Mac with the latest version of [Xcode](https://developer.apple.com/xcode/).
 
@@ -79,10 +91,10 @@ carthage update
 {% endtab %}
 {% endtabs %}
 
-{% hint style="warning" %}
+<div class="warningBlock">
 **Important**: Remember to include the following code in all `.m` and `.h` files or your `.swift` files where you want to refer to or use RudderStack SDK classes.
 
-{% endhint %}
+</div>
 
 {% tabs %}
 {% tab title="Objective-C" %}
@@ -102,10 +114,10 @@ import Rudder
 {% endtab %}
 {% endtabs %}
 
-{% hint style="danger" %}
+<div class="dangerBlock">
 We use SQLite to save the events to local database before sending it to RudderStack data-plane. Making calls like `SQLite.shutdown()` which is not thread-safe might lead to unexpected crash.
 
-{% endhint %}
+</div>
 
 ## Initializing the RudderStack Client
 
@@ -135,7 +147,7 @@ A shared instance of `RSClient` is accesible after the initialization by `RSClie
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+<div class="infoBlock">
 We automatically track the following optional events:
 
 1. `Application Installed`
@@ -145,7 +157,7 @@ We automatically track the following optional events:
 
 You can disable these events using the`withTrackLifecycleEvents` method of `RSConfigBuilder` and passing `false`. However, it is highly recommended to keep them enabled.
 
-{% endhint %}
+</div>
 
 RudderStack supports all the major API calls across all iOS devices via the SDK. These include the `track`, `identify`, and `screen` calls.
 
@@ -191,10 +203,10 @@ The `track` method accepts the following parameters:
 
 We capture `deviceId` and use that as `anonymousId` for identifying the user. To attach more information to the user, you can use the `identify` method. Once you set the `identify` information to the user, those will be passed to the successive `track` or `screen` calls. To reset the user identification, you can use the `reset` method.
 
-{% hint style="info" %}
+<div class="infoBlock">
 According to the Apple [documentation](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor), if the device has multiple apps from the same vendors, all those apps will be assigned the same `deviceId`. If all the applications from a vendor are uninstalled, then on next install the app will be assigned a new `deviceId`.
 
-{% endhint %}
+</div>
 
 An example `identify` event is as shown:
 
@@ -379,10 +391,10 @@ You can configure your client based on the following parameters using `RudderCon
 
 If you are using a device mode destination like Adjust, Firebase, etc., the iOS SDK needs to fetch the required configuration from the Control Plane. If you are using the **RudderStack Config Generator** to host your own Control Plane, then follow [this guide](https://docs.rudderstack.com/how-to-guides/rudderstack-config-generator#what-is-the-control-plane-url) and specify `controlPlaneUrl` in `RudderConfigBuilder` that points to your hosted source configuration file.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You shouldn't pass the `controlPlaneUrl` parameter during SDK initialization if you are using [**RudderStack Cloud**](https://app.rudderstack.com). This parameter is supported only if you are using our open-source [**RudderStack Config Generator**](https://docs.rudderstack.com/how-to-guides/rudderstack-config-generator).
 
-{% endhint %}
+</div>
 
 ## Setting Device Token
 
@@ -451,10 +463,10 @@ Following are the available options you can pass to the `putAppTrackingConsent` 
 
 We use the `deviceId` as `anonymousId` by default. You can use the following method to override and use your own `anonymousId` with the SDK.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 You need to call `setAnonymousId` method before calling `getInstance`
 
-{% endhint %}
+</div>
 
 An example of setting the `anonymousId` is as below
 
@@ -500,15 +512,15 @@ option.putIntegration(with: <RudderIntegrationFactory>.instance(), isEnabled:<BO
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+<div class="infoBlock">
 The keyword `All` in the above snippet represents all the destinations the source is connected to. Its value is set to `true` by default.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 Make sure the `destination display name` you pass while specifying the custom destinations should exactly match the destination name as shown [here](https://app.rudderstack.com/directory).
 
-{% endhint %}
+</div>
 
 You can pass the destination\(s\) specified in the above snippet to the SDK in two ways:
 
@@ -573,10 +585,10 @@ rudder?.track("track_with_props", properties: [
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you specify the destinations both while initializing the SDK as well as making an event call, then the destinations specified at the event level only will be considered.
 
-{% endhint %}
+</div>
 
 ## External ID
 
@@ -620,10 +632,10 @@ RSClient.getInstance(<WRITE_KEY>, config: builder.build())
 
 ## Can I develop a Device Mode destination if RudderStack doesn't support it already?
 
-{% hint style="info" %}
+<div class="infoBlock">
 More information on the RudderStack Device Mode can be found in the [**RudderStack Connection Modes**](https://docs.rudderstack.com/connections/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Yes, you can develop a Device Mode destination by following these steps:
 

@@ -10,11 +10,11 @@ description: Step-by-step guide to send your event data from RudderStack to Acti
 
 You can now send your event data directly to ActiveCampaign through RudderStack.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/active_campaign)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/active_campaign)**.**
+</div>
 
 ## Getting Started
 
@@ -25,19 +25,19 @@ Before configuring your source and destination on the RudderStack, please check 
 | **Device mode**     | -             | -             | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to ActiveCampaign, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and ActiveCampaign as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 ![Configuration Settings for ActiveCampaign](../../.gitbook/assets/Active_Campaign.png)
 
@@ -70,10 +70,10 @@ rudderanalytics.page("home", {
 
 In the above sample, RudderStack captures the information related to the page being viewed, the URL `property` is used to whiltelist the website in the destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 A `page` call will only work if **Site Tracking** is enabled. You can enable this by visiting the **Tracking** tab in the settings page of your ActiveCampaign account.
 
-{% endhint %}
+</div>
 
 ## Screen
 
@@ -101,10 +101,10 @@ rudderanalytics.track("Product Purchased", {
 
 In the above snippet, RudderStack captures the information related to the `Product Purchased` event, along with any additional info about that event - in this case the name of the product.
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you want to set a value for the `screen` and `track` type event, you need to pass the `name` property in the event properties, as shown in the above example.
 
-{% endhint %}
+</div>
 
 ## Identify
 
@@ -126,10 +126,10 @@ rudderanalytics.identify({
 
 In the above snippet, RudderStack captures relevant information about the user such as the `userId` as well as the associated traits such as `email`, `phone`, and `name` of that user.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The `email` trait is a mandatory trait for mapping a user to ActiveCampaign. If a user already exists, the new values will be updated for that user.
 
-{% endhint %}
+</div>
 
 ### Custom tags
 
@@ -148,10 +148,10 @@ rudderanalytics.identify({
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The `tags` property should contain an array of tags which you want to associate with the user. If any tag is already created in the destination previously, RudderStack will automatically skip the creation of that tag.
 
-{% endhint %}
+</div>
 
 ### Custom Fields
 
@@ -177,15 +177,15 @@ rudderanalytics.identify({
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The `fieldInfo` property contains the value of the field information that you want to store for that contact. For using this feature, you have to create the fields from your ActiveCampaign dashboard \(For example - `Interest, Country`\) before passing in the values for the given user.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 To send in multichoice field values for fields having a checkbox, or list values as input, you need to send the values as an array. For example: `"Hobbies": ["Cricket","Tennis"]`. Note that for date field, the date format should be `YYYY-MM-DD`. Also, the values for the date-time field should be in a ISO Date-Time format, such as `yyyy-MM-dd'T'HH:mm:ss. SSSXXX`.
 
-{% endhint %}
+</div>
 
 ### List
 
@@ -219,10 +219,10 @@ rudderanalytics.identify({
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For associating a contact to any field, you need to create the list from ActiveCampaign and use the `id` parameter for mapping that contact.
 
-{% endhint %}
+</div>
 
 ## Contact Us
 

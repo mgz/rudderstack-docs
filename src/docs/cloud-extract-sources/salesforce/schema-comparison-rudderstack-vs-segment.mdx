@@ -8,10 +8,10 @@ description: >-
 
 # Schema Comparison: RudderStack vs. Segment
 
-{% hint style="success" %}
-This guide is useful if you want to migrate your Salesforce source from
-Segment to RudderStack.
-{% endhint %}
+<div class="successBlock">
+  This guide is useful if you want to migrate your Salesforce source from
+  Segment to RudderStack.
+</div>
 
 ## Schema Comparison
 
@@ -72,16 +72,16 @@ In this guide, we compare the schemas of the `opportunity` table synced by Rudde
 | **`context_sources_task_run_id`**    | -                           |
 | **`is_closed`**                      | `is_closed`                 |
 
-{% hint style="info" %}
+<div class="infoBlock">
 A blank value indicates that the column was not sent to the platform.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-Since the column names are identical for the Salesforce source in both
-RudderStack and Segment, the migration **should not require** any additional
-coding or modification to the tables.
-{% endhint %}
+<div class="successBlock">
+  Since the column names are identical for the Salesforce source in both
+  RudderStack and Segment, the migration **should not require** any additional
+  coding or modification to the tables.
+</div>
 
 Here's a high-level summary of the number of columns synced to RudderStack, as compared to Segment:
 

@@ -10,11 +10,11 @@ description: Step-by-step guide to send your event data from RudderStack to Ampl
 
 RudderStack supports sending events from the RudderStack SDKs to Amplitude through our data plane and Web connection mode.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/am)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/am)**.**
+</div>
 
 ## Getting started
 
@@ -25,19 +25,19 @@ Before configuring your source and destination on the RudderStack app, please ch
 | **Device mode**     | **Supported** | **Supported** | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Amplitude, perform the steps below:
 
 - To enable sending data to Amplitude, you will need to add it to the source you send the event data.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Once the destination is enabled, events from our servers will start flowing to Amplitude as shown in the following screenshot:
 
@@ -59,27 +59,27 @@ To successfully configure Amplitude as a destination, you will need to configure
   - **Track Named pages:** If this setting is on and the `name` is present in a `page` call, then an event named `Viewed {name} page` will be sent to Amplitude.
   - If this setting is on and the `name` is present in a `screen` call, then an event named `Viewed {name} Screen` will be sent to Amplitude but if `name` is absent then an event named `Loaded a Screen` will be sent to Amplitude.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 **Note**: If multiple settings are enabled, then multiple events may be sent for a single`page/screen` call. For example, if both `Track categorized page` and `Track named page`settings are enabled, for a single `page/screen` call one `Viewed {name} page/Viewed {name} Screen`and one `Viewed {category} page/Viewed {category} Screen` events will be generated.
 
-{% endhint %}
+</div>
 
 - **Traits Settings:** This setting is for configuring the traits to Amplitude in `identify` call.
   - **Traits to increment:** If this setting is enabled, the value of the corresponding trait will be incremented at Amplitude, with the value provided against the trait in an `identify` call.
   - **Traits to Set Once:** If this setting is enabled, the value of the corresponding trait will be set once at Amplitude with the value provided against the trait in an `identify` call.
   - **Traits to Append:** If this setting is enabled, the value of the corresponding trait will be appended to the corresponding trait array at Amplitude. **If the corresponding trait does not have a value set yet, it will be initialized to an empty list before the new values are appended. If the corresponding trait has an existing value and it is not a list, it will be converted into a list with the new value appended.**
 
-{% hint style="info" %}
+<div class="infoBlock">
 This feature is not applicable for RudderStack web device mode integrations.
 
-{% endhint %}
+</div>
 
 - **Traits to Prepend:** If this setting is enabled, the value of the corresponding trait will be prepended to the corresponding trait array at Amplitude. **If the corresponding trait does not have a value set yet, it will be initialized to an empty list before the new values are prepended. If the corresponding trait has an existing value and it is not a list, it will be converted into a list with the new value prepended.**
 
-{% hint style="info" %}
+<div class="infoBlock">
 This feature is not applicable for RudderStack web device mode integrations.
 
-{% endhint %}
+</div>
 
 - **Track Products once:** If this setting is on, and if the event payload contains an array of products, the event is tracked with the original event name and all the products as its property, else each product is tracked with event `Product purchase` .
 - **Track Revenue per product:** If this setting is on, and if the event payload contains multiple products, each product's revenue is tracked individually.
@@ -135,10 +135,10 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 
 - Add the below logic just after initializing `RudderClient` in `AppDelegate.m` if you would like to send `IDFA` of iOS device as `device id` to Amplitude
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Make sure that you enable `use IDFA as device id` under `iOS SDK settings` on dashboard.
 
-{% endhint %}
+</div>
 
 ```javascript
 // for using IDFA as device id only
@@ -203,10 +203,10 @@ val rudderClient = RudderClient.getInstance(
 
 - If you would like to send `Google Advertising Id` of the device as `device id` to the Amplitude then add the below code in the `AndroidManifest.xml` of your app under `<application>` tag:
 
-{% hint style="info" %}
+<div class="infoBlock">
 Make sure that you enable `Use Advertising ID for Device ID` under `Android SDK settings` on the [dashboard](https://app.rudderstack.com)
 
-{% endhint %}
+</div>
 
 ```javascript
 <meta-data
@@ -264,10 +264,10 @@ rudderanalytics.track("Track me")
 
 Amplitude allows for tracking of revenue events.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 To track a revenue event, you must include a `revenue` key in the event. This key is required to have the event counted as a revenue event to send data through the RudderStack cloud mode.
 
-{% endhint %}
+</div>
 
 Additionally, if you send `price` and `quantity` with the revenue key, the revenue will be calculated in Amplitude as `price * quantity`
 
@@ -282,10 +282,10 @@ rudderanalytics.track("Item Purchased", {
 })
 ```
 
-{% hint style="warning" %}
+<div class="warningBlock">
 To track revenue event in web device mode, we use Amplitude's `logRevenueV2()` api and also for an eCommerce event, we expect `revenue` as a top level attribute in properties. If `products` array is present in event payload, then to track product individually, at each product level `price` or `revenue`must be present, or else we will not track the revenue. As `logRevenueV2` uses both `price` and `quantity` to calculate the `revenue`, if no `quantity` is present, we will take default as `1`.
 
-{% endhint %}
+</div>
 
 A sample eCommerce event \(`Order Completed`\) is as following:
 
@@ -317,15 +317,15 @@ rudderanalytics.track("Order Completed", {
 
 The above call will generate one `Order Completed` event, 2 individual `Product purchased` events and 2 revenue events \(one with `$price` as `15` and `$quantity` as `2` and the other one with `$price` as `20` and `$quantity` as `1` \) at Amplitude, provided that in the destination settings dashboard: `Track revenue per product settings` is enabled. The two separate revenue events are generated for device mode. For cloud mode, revenue will be tracked along with the 2 `Product purchased` events.
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 **\(Mobile Only\)** If _\*\*_ a property with the name`optOutOfSession`and value`true`then this track call will be opted out of the current session if it exists or does not start a new session if there isn't any active session.
 
-{% endhint %}
+</div>
 
 ## Identify
 
@@ -351,22 +351,22 @@ A sample dashboard after making the above `identify`, `page`, and `track` calls 
 
 ![User properties dashboard](../../.gitbook/assets/screenshot-2020-02-17-at-5.49.05-pm.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 **\(Mobile Only\)** If _\*\*_ a trait with the name `optOutOfSession` and value `true` then this `identify` call will be opted out of the current session if it exists or does not start a new session if there isn't any active session.
 
-{% endhint %}
+</div>
 
 ## Group
 
-{% hint style="info" %}
+<div class="infoBlock">
 This feature is currently available as part of RudderStack Web SDK only.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Groups are an enterprise-only feature in Amplitude and you need to purchase the Accounts add-on to use them.
 
-{% endhint %}
+</div>
 
 The `group` call lets you associate a particular identified user with a group, such as a company, organization, or an account.
 
@@ -378,10 +378,10 @@ Let' say you had defined `Group name trait` as `company_id` and `Group value tra
 
 ## Alias
 
-{% hint style="info" %}
+<div class="infoBlock">
 This feature is currently only available as part of RudderStack Web SDK in Cloud Mode.
 
-{% endhint %}
+</div>
 
 RudderStack supports the `alias` call from the Web SDK in Cloud Mode. Refer to [these docs](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#3-5-alias) for information and examples on how to call the `alias` event.
 
@@ -409,19 +409,19 @@ rudderanalytics.alias("user_id_to_unmapped", {
 
 In the snippet above, `user_to_be_unmapped`, will be unmapped or unlinked from the `global_user_id` it is currently linked to.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For the **unmapping** call, it is not necessary to provide a `global_user_id` in the `to` parameter of the `alias` call. If it is included, RudderStack will dismiss it.
 
-{% endhint %}
+</div>
 
 For more information on how the `alias` call works for Amplitude, visit [this link](https://help.amplitude.com/hc/en-us/articles/360002750712-Portfolio-Cross-Project-Analysis#h_76557c8b-54cd-4e28-8c82-2f6778f65cd4).
 
 ## Reset
 
-{% hint style="info" %}
+<div class="infoBlock">
 This feature is currently available as a part of RudderStack Mobile SDK's only
 
-{% endhint %}
+</div>
 
 The reset method resets the previously identified user and related information. For more information, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 

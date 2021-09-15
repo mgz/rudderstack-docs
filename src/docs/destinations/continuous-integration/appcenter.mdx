@@ -21,19 +21,19 @@ Before configuring your source and destination on the RudderStack, please check 
 | **Device mode**     | -       | **Supported** | -          |
 | **Cloud mode**      | -       | -             | -          |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to App Center, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and select **App Center** from the list of destinations.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Name your destination, and click on **Next**. You should be able to see the following screen:
 
@@ -107,10 +107,10 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [RSClient getInstance:<YOUR_WRITE_KEY> config:[builder build]];
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The following requirements must be met to use App Center: Your iOS project is set up in Xcode 11 or later on macOS version 10.14.4 or later. You're targeting devices running on iOS 9.0 or later.
 
-{% endhint %}
+</div>
 {% endtab %}
 
 {% tab title="React Native" %}
@@ -124,10 +124,10 @@ npm install @rudderstack/rudder-integration-appcenter-react-native
 yarn add @rudderstack/rudder-integration-appcenter-react-native
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Make sure the `minSdkVersion` of your `build.gradle` in the root of `android` directory is atleast `21`
 
-{% endhint %}
+</div>
 
 Run `pod install` inside the `ios` directory of your project adding `@rudderstack/rudder-integration-appcenter-react-native` to your project.
 
@@ -178,10 +178,10 @@ RudderClient.getInstance(WRITE_KEY,
     config: builder.build());
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Make sure the `minSdkVersion` of your `build.gradle` in the root of `android` directory is atleast `21`.
 
-{% endhint %}
+</div>
 {% endtab %}
 {% endtabs %}
 
@@ -198,10 +198,10 @@ A sample `track` call looks like the following:
 }];
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The above track call is directly passed on to App Center via its `trackEvent` api in both the RudderStack `Android` & `iOS` SDKs.
 
-{% endhint %}
+</div>
 
 The `eventProperties` object should only contain the values of type `String` and `Number`- the other property types will be simply ignored, if sent.
 
@@ -241,10 +241,10 @@ A sample `screen` call using the RudderStack Android SDK looks like the followin
 
 In the above snippet, RudderStack captures the information related to the screen being viewed, such as screen's name and category.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The above `screen` call is directly passed on to App Center as a `track` event via its `trackEvent` API, with event name as `Viewed {screen name} screen` along with the its properties. The above example will be sent as a `track` event with name `Viewed MainActivity screen` along with its properties.
 
-{% endhint %}
+</div>
 
 ## Opt-in & Opt-out
 

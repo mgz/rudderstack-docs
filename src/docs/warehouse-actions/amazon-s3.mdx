@@ -29,10 +29,10 @@ To set up Amazon S3 as a source in RudderStack, follow these steps:
 
 ![](../.gitbook/assets/screen-shot-2021-01-12-at-12.23.37-pm.png)
 
-{% hint style="success" %}
-If you've already configured S3 as a source before, your existing credentials
-will automatically appear under **Use Existing Credentials**.
-{% endhint %}
+<div class="successBlock">
+  If you've already configured S3 as a source before, your existing credentials
+  will automatically appear under <strong>Use existing credentials</strong>.
+</div>
 
 - Next, enter the relevant connection details in the **Connection Credentials** as shown below:
 
@@ -51,12 +51,12 @@ will automatically appear under **Use Existing Credentials**.
             ],
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 To get the **AWS Access Key ID** and the **Secret Access Key**, you can sign into your AWS Management Console as [the root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/console.html#root-user-sign-in-page). Then, in the navigation bar on the upper right corner, choose your account name and select **My Security Credentials**.
 
 For more information on understanding and getting these AWS credentials, refer to their [guide](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html).
 
-{% endhint %}
+</div>
 
 ### Specifying the Data to Import
 
@@ -64,15 +64,15 @@ For more information on understanding and getting these AWS credentials, refer t
 
 ![](../.gitbook/assets/screen-shot-2021-01-13-at-10.58.18-am.png)
 
-{% hint style="warning" %}
+<div class="warningBlock">
 The files in your bucket should consists of Apache Parquet files only. As of now, Rudderstack can only extract Parquet files.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Your table must include one of the following columns - `email`, `user_id`, or `anonymous_id`.
 
-{% endhint %}
+</div>
 
 - Once you specify the table containing the required columns, you will be able to preview a snippet of your data, as shown below:
 
@@ -94,10 +94,10 @@ RudderStack will start importing data from your S3 bucket as per the specified f
 
 ![](../.gitbook/assets/screen-shot-2021-01-13-at-11.06.08-am.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you have already configured a destination on the RudderStack platform, choose the **Connect Destinations** option. To add a new destination from scratch, you can select the **Add Destination** option.
 
-{% endhint %}
+</div>
 
 ## FAQs
 

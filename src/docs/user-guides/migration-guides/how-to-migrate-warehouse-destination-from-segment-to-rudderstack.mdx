@@ -20,10 +20,10 @@ Since we can predictably and reliably upgrade all the backend services, switchin
 
 Create a new warehouse destination and set the namespace to be the same as the schema that Segment is writing to. RudderStack will then write to the same set of tables as Segment.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to know how to add a destination in RudderStack.
 
-{% endhint %}
+</div>
 
 ### **Step 2: Route new events to RudderStack**
 
@@ -33,10 +33,10 @@ Follow these steps:
 2. Any events that are pending at Segment will be routed into your warehouse
 3. RudderStack will then start routing new events into your warehouse
 
-{% hint style="info" %}
+<div class="infoBlock">
 If both Segment and RudderStack try to write to the same tables at the same time, it could result in Serializable isolation errors in some warehouses like Redshift. This is an intermittent issue, and would succeed on retrying.
 
-{% endhint %}
+</div>
 
 ## Migrating Client-side Sources
 
@@ -61,10 +61,10 @@ Follow the below steps to easily migrate to RudderStack and storing the event da
 - Configure the webhook URL in the webhook settings.
 - Once the sync intervals are configured, as mentioned in the **Step 4** below, the webhook destination should be enabled.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to know how to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 ### **Step 4:** **Configure Warehouse Sync Interval in RudderStack**
 
@@ -73,10 +73,10 @@ Some important points to note here:
 - We want to capture all events in RudderStack and load them **after the final switchover**.
 - Configure RudderStack's warehouse destination such that it will start syncing your data **after** Segment's warehouse load completes. For example, if Segment is going to finish loading the latest batch at 10 PM, then RudderStack's warehouse loading should start after that. \(10.30 PM, or 11 PM, and so on\).
 
-{% hint style="info" %}
+<div class="infoBlock">
 If both Segment and RudderStack try to write to the same tables at the same time, it could result in Serializable isolation errors in some warehouses like Redshift. This is an intermittent issue, and should succeed after retrying.
 
-{% endhint %}
+</div>
 
 ### **Step 5: Disable Warehouse Destination in Segment**
 

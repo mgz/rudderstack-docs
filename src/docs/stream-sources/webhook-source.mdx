@@ -14,10 +14,10 @@ When you create a webhook source in the RudderStack dashboard, you get a write k
 
 You can then add this webhook URL to any source. RudderStack receives the data according to the settings made in the source, creates the payload, and routes it to your specified destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 You must also add [**User Transformations**](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack) \*\*\*\*to transform the event data into a destination-specific format.
 
-{% endhint %}
+</div>
 
 ## Adding a Webhook Source
 
@@ -36,35 +36,35 @@ This section details the steps involved in setting up a webhook source. As an ex
 
 ![](https://user-images.githubusercontent.com/59817155/127983406-76fcf748-bd1b-4f18-9840-b19a71aaf601.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more details.
 
-{% endhint %}
+</div>
 
 - Next, add the webhook URL to your desired source platform. **Remember that you can configure webhook sources only for the source platforms that support webhooks**. The following image shows the webhook URL added in Mailchimp:
 
 ![](https://user-images.githubusercontent.com/59817155/127986131-3740dbfe-7d55-4328-abe1-63fb8ac70de2.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 Remember to add and test your webhook URL.
 
-{% endhint %}
+</div>
 
 - When the users perform any of the actions configured in the source, the platform will send the generated events to the webhook URL.
 
 In this example, Mailchimp sends the updates under **What type of updates should we send?** \(seen in the image above\) as user events to the webhook URL with the content type `application/x-www-form-urlencoded`.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The content type can vary in case of other webhook sources.
 
-{% endhint %}
+</div>
 
 - RudderStack then takes the data, creates the payload and sends it to Google Analytics.
 
-{% hint style="info" %}
+<div class="infoBlock">
 You must also add [**User Transformations**](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack) \***\*to transform the payload into a destination-specific format before sending it to the destination. Refer to the [**Payload Creation and Transformation\*\*](https://docs.rudderstack.com/stream-sources/webhook-source#payload-creation-and-transformation) section for more details.
 
-{% endhint %}
+</div>
 
 ## Payload Creation and Transformation
 

@@ -10,10 +10,10 @@ description: Step-by-step guide to set up Trengo as a destination in RudderStack
 
 RudderStack allows you to configure Trengo as a destination to which you can send your event data.
 
-{% hint style="success" %}
-Find the open-source transformer code for this destination in our[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/trengo).
-{% endhint %}
+<div class="successBlock">
+  Find the open-source transformer code for this destination in our[**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/trengo).
+</div>
 
 ## Getting Started
 
@@ -24,19 +24,19 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Device mode**     | -             | -             | -             |
 | **Cloud** **mode**  | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Trengo, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. Then, select **Trengo** from the list of destinations.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for details on adding a source in the RudderStack dashboard.
 
-{% endhint %}
+</div>
 
 - Assign a name to the destination and click on **Next**. You should then see the following screen:
 
@@ -52,15 +52,15 @@ In the **Connection Settings**, you will see the following options:
 - **Enable deduplication for Contacts:** By default, Rudderstack will _Deduplicate_ contacts generated from your `identify` events. You can disable this option if you want to create duplicate contacts with same identifier.
 - **Map events with template:** To send `track` events to Trengo, you need to add the `event` to the _Event Name_ field. If you wish to customize the subject for the event, you can do so by adding a _template_.
 
-{% hint style="info" %}
+<div class="infoBlock">
 For a particular event the **Channel ID** can be overriden using `externalId`, For example: `(context.externalId: [{type:trengoChannelId, id:channelId}])`.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 When using an `externalId` to override _channelId_ , make sure that the **Channel Identifier** of that specific channel matches with the **Channel Identifier** you have selected in Rudderstack dashboard.
 
-{% endhint %}
+</div>
 
 ### Effects on the Identify events
 
@@ -92,10 +92,10 @@ rudderanalytics.identify("userid", {
 })
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 **Note:** If you already have Trengo `contactId` you can pass it in `externalId`, `(example context.externalId: [{type:trengoContactId, id:channelId}])`, in that case will we avoid searching for `contactId` using `identifier(email/phone)` before updating.
 
-{% endhint %}
+</div>
 
 ## Track
 
@@ -126,10 +126,10 @@ A few things to note while using this option:
 - For particular **Event Name**, the **Event Template** is optional. If left blank, the subject will not generated using the Template. \(Note: Subjects are generally used for creating tickets in the channels where the channel identifier is `email`.\)
 - For `track` calls, the `contact identifier` is mandatory. For example, for tracking events to an `email` channel, `email` is a mandatory event field. Similarly, for tracking events to a `phone` channel, `phone` is a mandatory event field.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 For lodging your `track` events to Trengo, it is mandatory to add the `event` name in **Event Name** field. If the **Event Name** is not present, the particular `track` events will not flow through.
 
-{% endhint %}
+</div>
 
 ## Contact Us
 

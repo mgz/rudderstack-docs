@@ -10,16 +10,16 @@ description: Step-by-step guide to set up SQL Server as a destination in RudderS
 
 RudderStack allows you to configure SQL Server as a destination to which you can send your event data seamlessly.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please check our [Warehouse Schemas](https://docs.rudderstack.com/data-warehouse-integration-guides/warehouse-schemas) guide to know how events are mapped to the tables in PostgreSQL.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/mssql)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/mssql)**.**
+</div>
 
 ## Setting Up a Microsoft SQL Server User
 
@@ -65,11 +65,11 @@ To configure SQL Server as a destination, please follow these steps:
 
 - Configure your data source on RudderStack if you haven't already. You can also simply create a destination and connect it to a source later.
 
-{% hint style="success" %}
-Please follow our [Adding a Source and
-Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack)
-guide to know how to add a source in RudderStack.
-{% endhint %}
+<div class="successBlock">
+  Please follow our [Adding a Source and
+  Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack)
+  guide to know how to add a source in RudderStack.
+</div>
 
 - After choosing a source, click on the **Add Destination** button and select **SQL Server** from the list of destinations.
 - Assign a name to your destination and then click on **Next**. You should then see the following screen:
@@ -85,12 +85,12 @@ guide to know how to add a source in RudderStack.
   - **SSL Mode** - Enter the SSL modes for connecting to your SQL Server instance.
   - **Bucket Provider** - Select the intermediate storage for storing the staging files. RudderStack currently supports Amazon S3, MinIO, Google Cloud Storage, and Azure Blob Storage.
 
-{% hint style="success" %}
-You can also set the **Sync Frequency** to set the frequency of the data
-import into your SQL Server database. Optionally, you can also specify the
-time when you want this synchronization to start, by choosing the time under
-the **Sync Starting At** option.
-{% endhint %}
+<div class="successBlock">
+  You can also set the **Sync Frequency** to set the frequency of the data
+  import into your SQL Server database. Optionally, you can also specify the
+  time when you want this synchronization to start, by choosing the time under
+  the **Sync Starting At** option.
+</div>
 
 ## FAQs
 

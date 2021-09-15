@@ -10,11 +10,11 @@ description: Step-by-step guide to set up Confluent Cloud as a destination in Ru
 
 RudderStack allows you to seamlessly configure Confluent Cloud as a destination to send your event data.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/confluent_cloud)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/confluent_cloud)**.**
+</div>
 
 ## Configuring Confluent Cloud in RudderStack
 
@@ -27,19 +27,19 @@ Before configuring your source and destination on [RudderStack](https://app.rudd
 | **Device Mode**     | -             | -             | -             |
 | **Cloud Mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Confluent Cloud, perform the steps mentioned below:
 
 - Choose a source to which you would like to add Confluent Cloud as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Select the destination as **Confluent Cloud**. Give your destination a name, and then click on **Next**.
 - In the **Connection Settings**, \***\*fill the required fields with the relevant information and click **Next.\*\*
@@ -57,10 +57,10 @@ The required fields are as follows:
 
 RudderStack uses `userId` as the partition key of a given message.
 
-{% hint style="info" %}
+<div class="infoBlock">
 If `userId` is not present in the payload, then `anonymousId` is used.
 
-{% endhint %}
+</div>
 
 If you have a multi-partitioned topic, then the records of the same `userId` \(or `anonymousId` in the absence of `userId`\) will always go to the same partition.
 

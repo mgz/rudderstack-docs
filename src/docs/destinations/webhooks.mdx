@@ -12,11 +12,11 @@ Webhooks allow you to send the events generated via the RudderStack SDK to your 
 
 Once webhooks are enabled as a destination in your dashboard, RudderStack forwards the SDK events to your configured webhook endpoint.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/webhook)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/webhook)**.**
+</div>
 
 ## Getting Started
 
@@ -29,19 +29,19 @@ Before configuring your source and destination on the [**RudderStack dashboard**
 | **Device mode**     | -             | -             | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that your platform supports sending events to webhooks, perform the steps below:
 
 - Choose a source to which you would like to add your webhook endpoint as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Select the destination as **Webhook** to your source. Give your destination a name and then click on **Next**.
 - Next, in the **Connection Settings** page, enter the relevant connection information and click on **Next**
@@ -59,15 +59,15 @@ The settings are:
 | `User-Agent`   | `RudderLabs`       |
 | `Content-Type` | `application/json` |
 
-{% hint style="info" %}
+<div class="infoBlock">
 RudderStack also supports adding a dynamic header for your events through user transformation. For more information, refer to our [**user transformer code**](https://github.com/rudderlabs/sample-user-transformers/blob/master/AddDynamicHeader.js) in our GitHub repo.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can also add a dynamic path to your base URL. For more information on how to do this, refer to our [**user transformer code**](https://github.com/rudderlabs/sample-user-transformers/blob/master/DynamicPathtoBaseURL.js) in our GitHub repo.
 
-{% endhint %}
+</div>
 
 ## Identify
 

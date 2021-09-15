@@ -10,16 +10,16 @@ PostgreSQL is an enterprise-grade, open source database management system. It su
 
 RudderStack allows you to configure PostgreSQL as a destination to which you can dump your event data seamlessly.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please check our [Warehouse Schemas](https://docs.rudderstack.com/data-warehouse-integration-guides/warehouse-schemas) guide to know how events are mapped to the tables in PostgreSQL.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/postgres)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/postgres)**.**
+</div>
 
 ## Setting PostgreSQL User Permissions
 
@@ -34,19 +34,19 @@ CREATE USER <user name> WITH PASSWORD '<enter password here>';
 GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO <user name>;
 ```
 
-{% hint style="warning" %}
+<div class="warningBlock">
 If you don't grant the `CREATE, TEMPORARY` privileges the events don't get exported to PostgreSQL.
 
-{% endhint %}
+</div>
 
 ## Setting Up the Network Access
 
 You will need to whitelist the RudderStack IPs to enable network access to it.
 
-{% hint style="info" %}
+<div class="infoBlock">
 **The IPs to be whitelisted are : `3.216.35.97`, `34.198.90.241` , `54.147.40.62`** , **`23.20.96.9`,** and **`18.214.35.254`**.
 
-{% endhint %}
+</div>
 
 ## Configuring PostgreSQL in RudderStack
 
@@ -56,10 +56,10 @@ To configure PostgreSQL as a destination, please follow these steps:
 
 - Choose a source to which you would like to add PostgreSQL as a destination. You can also simply create a destination and connect it to a source later.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
 
-{% endhint %}
+</div>
 
 - After choosing a source, select **PostgreSQL** from the list of destinations.
 - Give your destination a name and then click on **Next**. You should then see the following screen:

@@ -29,33 +29,33 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Device Mode**     | **Supported** | **-**      | **-**      |
 | **Cloud Mode**      | **-**         | **-**      | **-**      |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have ascertained that the platform is supported by Pendo, please follow these steps:
 
 - Choose a source to which you would like to add Pendo as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) in RudderStack to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Select the destination as **Pendo** to your source. Give your destination a name and then click on **Next**.
 - On the **Connection Settings** page, fill all the fields with the relevant information and click **Next**.
 
 ![Pendo Connection Settings in RudderStack](../../.gitbook/assets/screenshot-2020-11-27-at-2.29.18-pm.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 To get the Pendo **API Key**, follow these steps:
 
 - Login to Pendo dashboard.
 - Go to the **Settings** on the left sidebar and click on **Subscription Settings.**
 - You will see an option called **Apps** and under that hover on the square box and click on **view app details**.
 - Here you will find your **API Key** in **App Details** section.
-  {% endhint %}
+  </div>
 
 ## Identify
 
@@ -77,10 +77,10 @@ rudderanalytics.identify("name123", {
 
 You can use the `group` call to create or update an account in Pendo. When you send a Group call, RudderStack sends the `groupId` to Pendo as account ID. The group traits are mapped to account metadata in Pendo.
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you are using your Pendo account data, the group calls \(with fields `groupId` & `traits`\) are required.
 
-{% endhint %}
+</div>
 
 Here is a sample `group` call:
 

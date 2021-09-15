@@ -14,10 +14,10 @@ This document explains the step-by-step process of migrating from [Segment](http
 
 Start with creating an account on the RudderStack [dashboard](https://app.rudderlabs.com/signup?type=freetrial). Similar to Segment, you will need to create sources and destinations in the dashboard. This will help you create the necessary connections for the event data to flow from your sources to the destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can also check our guide on how to [add sources and destinations in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack).
 
-{% endhint %}
+</div>
 
 ## Setting up the RudderStack Data Plane
 
@@ -72,9 +72,9 @@ RudderClient rudderClient = RudderClient.getInstance(
 | `Traits`    | `RudderTraits`   |
 | `Property`  | `RudderProperty` |
 
-{% hint style="success" %}
+<div class="successBlock">
 You can use the rest of your code as is, as RudderStack SDK is API-compatible with Segment.
-{% endhint %}
+</div>
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -93,10 +93,10 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc]init];
 [RudderClient getInstance:<WRITE_KEY> config:[builder build]];
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 The instance of the `RudderClient` is available at `[RudderClient sharedInstance]` whereas Segment Instance is available at `[Analytics sharedAnalytics]`
 
-{% endhint %}
+</div>
 
 - Update the imports from `Analytics.h` to `Rudder.h` wherever necessary
 - Update the use of the classes according to the table below:
@@ -107,9 +107,9 @@ The instance of the `RudderClient` is available at `[RudderClient sharedInstance
 | `Traits`    | `RudderTraits`   |
 | `Property`  | `RudderProperty` |
 
-{% hint style="success" %}
+<div class="successBlock">
 You can use the rest of your code as is, as RudderStack SDK is API compatible with Segment
-{% endhint %}
+</div>
 {% endtab %}
 
 {% tab title="JavaScript" %}
@@ -141,16 +141,16 @@ You can use the rest of your code as is, as RudderStack SDK is API compatible wi
 <script src="https://cdn.rudderlabs.com/rudder-analytics.min.js"></script>
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 For the minified version of the above script please refer to the [RudderStack JavaScript SDK](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk) guide.
 
-{% endhint %}
+</div>
 
 - Update the object. We use `rudderanalytics` as the global object library in comparison to Segment's `analytics` object
 
-{% hint style="success" %}
+<div class="successBlock">
 You can use the rest of your code as is, as the RudderStack SDK is fully API-compatible with Segment
-{% endhint %}
+</div>
 {% endtab %}
 {% endtabs %}
 
@@ -254,10 +254,10 @@ A code snippet for loading the SDKs in parallel is shown below:
       </script>
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Note that you will need to enter your `SEGMENT_WRITE_KEY`, `RUDDERSTACK_WRITE_KEY`, and `RUDDERSTACK_DATAPLANE_URL` in the above example.
 
-{% endhint %}
+</div>
 
 ## Contact Us
 

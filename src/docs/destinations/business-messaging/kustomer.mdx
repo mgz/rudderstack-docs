@@ -10,11 +10,11 @@ description: Step-by-step guide to send your event data from RudderStack to Kust
 
 You can now send your event data directly to Kustomer via RudderStack.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kustomer)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kustomer)**.**
+</div>
 
 ## Getting Started
 
@@ -25,19 +25,19 @@ Before configuring your source and destination on the RudderStack, verify if the
 | **Device mode**     | -             | -             | -             |
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Kustomer, perform the steps below:
 
 - From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source and Kustomer as a destination.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 ![Configuration Settings for Kustomer](../../.gitbook/assets/kustomer-v3-config.png)
 
@@ -52,15 +52,15 @@ To successfully configure Kustomer as a destination, you will need to configure 
 - **Enable generic title for Page events:** Enable this option to track all the `page` events with a generic name `Web-Page-Viewed`.
 - **Enable generic title for Screen events:** Enable this option to track all the `screen` events with a generic name `Screen-Viewed`.
 
-{% hint style="info" %}
+<div class="infoBlock">
 The relevant `roles` \(`org.permission.customer.create`, `org.permission.customer.read`, `org.permission.customer.update`, `org.tracking`\) are required for an **API Key** to successfully access the Kustomer endpoints. Check the [**Kustomer docs**](https://support.kustomer.com/api-keys-SJs5YTIWX) for more information on how to do this.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 All server-side destination requests require either a `anonymousId` or a `userId` in the payload.
 
-{% endhint %}
+</div>
 
 ## Kustomer Payload Restrictions
 
@@ -112,20 +112,20 @@ For key-value pairs where the value has a type of `number`, the key must end wit
 
 The values for all keys in the `meta` object must be **flat**, meaning they cannot be nested objects or arrays.
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you are using an advanced transformation, RudderStack will handle the nested objects, arrays, and Boolean and parse them to strings for compatibility with Kustomer.
 
-{% endhint %}
+</div>
 
 | Value Example                                    | Result |
 | :----------------------------------------------- | :----- |
 | `{ items: { price: 32, name: 'dinner plate' } }` | Error  |
 | `{ items: [ 'dinner plate', 'fork', 'spoon' ] }` | Error  |
 
-{% hint style="info" %}
+<div class="infoBlock">
 For `track`, `page` and `screen` events, Kustomer supports only `number, string,`and `string` with `date-time (ISO)` format for custom event properties. Please refer to the [**official Kustomer Documentation**](https://apidocs.kustomer.com/#fe1b29a6-7f3c-40a7-8f54-973ecd0335e8) for more information on this.
 
-{% endhint %}
+</div>
 
 ## Advanced Kustomer Transformations
 
@@ -139,10 +139,10 @@ The following behaviour is expected:
 | `OrderCompleted`  | `OrderCompleted`                     | No           |
 | `Order-Completed` | `Order-Completed`                    | No           |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The event names with whitespaces will be replaced with `-`.
 
-{% endhint %}
+</div>
 
 | Event Property | Value | With Advanced Transformation Enabled | Transformed? |
 | :------------- | :---- | :----------------------------------- | :----------- |
@@ -151,10 +151,10 @@ The event names with whitespaces will be replaced with `-`.
 | `income-Num`   | `500` | `income-Num`                         | No           |
 | `income_Num`   | `500` | `income_Num`                         | No           |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The event properties with numeric values will be appended with `Num` if not already present, while the whitespaces will be replaced with `-`.
 
-{% endhint %}
+</div>
 
 | Event Property | Value                        | With Advanced Transformation Enabled | Transformed? |
 | :------------- | :--------------------------- | :----------------------------------- | :----------- |
@@ -163,10 +163,10 @@ The event properties with numeric values will be appended with `Num` if not alre
 | `created-At`   | `'2020-02-02T00:23:09.544Z'` | `created-At`                         | No           |
 | `created_At`   | `'2020-02-02T00:23:09.544Z'` | `created_At`                         | No           |
 
-{% hint style="info" %}
+<div class="infoBlock">
 The event properties with the date-time string values will be appended with `At` if not already present, while the whitespaces will be replaced with a `-`.
 
-{% endhint %}
+</div>
 
 | Event Name  | Value       | With Advanced Transformation Enabled | Transformed? |
 | :---------- | :---------- | :----------------------------------- | :----------- |
@@ -174,10 +174,10 @@ The event properties with the date-time string values will be appended with `At`
 | `CartName`  | `Test Cart` | `CartName`                           | No           |
 | `Cart-Name` | `Test Cart` | `Cart-Name`                          | No           |
 
-{% hint style="info" %}
+<div class="infoBlock">
 For the event properties with `string` values, the whitespaces will be replaced with `-`.
 
-{% endhint %}
+</div>
 
 ## Page
 
@@ -199,10 +199,10 @@ rudderanalytics.page("Cart", "Cart-Viewed", {
 })
 ```
 
-{% hint style="warning" %}
+<div class="warningBlock">
 The `event name` must not include any spaces or the event will fail.
 
-{% endhint %}
+</div>
 
 If the `kustomerSessionId` or `kustomerTrackingId` is included in `properties`, RudderStack will map it as `sessionId` and `trackingId` for that `page` event as per the [**Kustomer Tracking Event Reference**](https://apidocs.kustomer.com/#fe1b29a6-7f3c-40a7-8f54-973ecd0335e8).
 
@@ -218,10 +218,10 @@ A sample `screen` call looks like the following code snippet:
 [[RSClient sharedInstance] screen:@"Sample-Screen-Name" properties:@{@"prop_key" : @"prop_value"}];
 ```
 
-{% hint style="warning" %}
+<div class="warningBlock">
 The `event name` must not include any spaces or the event will fail.
 
-{% endhint %}
+</div>
 
 If the `kustomerSessionId` or `kustomerTrackingId` is included in `properties`, RudderStack will map it as `sessionId` and `trackingId` for the `page` event as per the [**Kustomer Tracking Event Reference**](https://apidocs.kustomer.com/#fe1b29a6-7f3c-40a7-8f54-973ecd0335e8).
 
@@ -239,19 +239,19 @@ rudderanalytics.track("Checked-Out", {
 })
 ```
 
-{% hint style="warning" %}
+<div class="warningBlock">
 The `event name` must not include any spaces or the event will fail.
 
-{% endhint %}
+</div>
 
 In the above snippet, RudderStack captures the information related to the `Checked Out` event along with any additional information about that event; in this case, the details of the `Checked out` event.
 
 If the `kustomerSessionId` or `kustomerTrackingId` is included in `properties`, RudderStack will map it as `sessionId` and `trackingId` for the `page` event as per the [**Kustomer Tracking Event Reference**](https://apidocs.kustomer.com/#fe1b29a6-7f3c-40a7-8f54-973ecd0335e8).
 
-{% hint style="info" %}
+<div class="infoBlock">
 For `track`, `page` and `screen` events, Kustomer supports only `number, string,`and `string` with `date-time` format for custom event properties. Refer to the [**official Kustomer Documentation**](https://apidocs.kustomer.com/#fe1b29a6-7f3c-40a7-8f54-973ecd0335e8) for more information on this.
 
-{% endhint %}
+</div>
 
 ## Identify
 
@@ -360,15 +360,15 @@ rudderanalytics.identify("userId", {
 });
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 If a customer already exists, the new values will be updated for that user. RudderStack automatically maps the `userId` \(or `anoymousId`\) to the customer's `externalId` in Kustomer.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 If you choose to send Customer's `id` in `context.externalId` \(example `context.externalId: [{type:kustomerId, id:uniqueId}]`\) RudderStack will skip looking-up the customer using `email`/`userId`/`anonymousId`and directly update the user information for that`id` with the new attributes.
 
-{% endhint %}
+</div>
 
 ## Contact Us
 

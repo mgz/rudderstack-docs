@@ -10,11 +10,11 @@ description: Step-by-step guide to send event data from RudderStack to Kochava.
 
 RudderStack allows you to send relevant events to Kochava through a S2S \(Server-to-Server\) integration with the platform.
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kochava)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kochava)**.**
+</div>
 
 ## Getting Started
 
@@ -25,19 +25,19 @@ Before configuring your source and destination on the RudderStack app, please ch
 | **Device mode**     | -       | **Supported** | -          |
 | **Cloud mode**      | -       | **Supported** | -          |
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
 
-{% endhint %}
+</div>
 
 Once you have confirmed that the platform supports sending events to Kochava, perform the steps below:
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source from which you want to send the event data.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
 
-{% endhint %}
+</div>
 
 - Once you have added the source, select Kochava from the list of destinations.
 - In the **Connection Settings** page, please enter the relevant information in the fields shown in the following screen:
@@ -54,10 +54,10 @@ To successfully configure Kochava as a destination, you will need to configure t
 
 - **Enable AppTrackingTransparency \(ATT\):** Enable this setting if you want to enable the `AppTrackingTransparency` feature provided by the Kochava iOS SDK.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Make sure you include the key `NSUserTrackingUsageDescription` in your `info.plist` along with a string value explaining why you are requesting authorization to track.
 
-{% endhint %}
+</div>
 
 - **Enable skAdNetwork:** Enable this setting if you want to enable the `skAdNetwork` feature provided by the Kochava iOS SDK.
 
@@ -157,15 +157,15 @@ RudderStack transforms the following events to Kochava's Standard Events, as sho
 | `Product Reviewed`          | `Rating`               |
 | `Products Searched`         | `Search`               |
 
-{% hint style="info" %}
+<div class="infoBlock">
 Rest of the events are sent to Kochava as custom events.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can send an event with the name same as that of an Kochava's standard event to get perceived as `Standard Event` in Kochava.
 
-{% endhint %}
+</div>
 
 A sample `track` event for sending event data to Kochava looks like the following code snippet:
 
@@ -193,10 +193,10 @@ MainApplication.rudderClient.screen("Sample Screen Name",
 
 In the above snippet, RudderStack captures all the information related to the viewed screen, along with any additional info associated with that event. In Kochava, the above `screen` call will be shown as - **"screen view `Sample Screen Name` "** along with the properties.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Note that `screen` call will be sent to Kochava as a custom event.
 
-{% endhint %}
+</div>
 
 ## Configuring Push Notifications
 

@@ -149,20 +149,20 @@ A sample call is as shown below:
 https://hosted.rudderlabs.com/pixel/v1/page?writeKey=${writeKey}&context.library.name=Rudderstack AMP SDK&context.library.version=1.0.0&context.platform=AMP&anonymousId=${anonymousId}&context.locale=${browserLanguage}&context.userAgent=${userAgent}&context.page.path=${canonicalPath}&context.page.url=${canonicalUrl}&context.page.referrer=${documentReferrer}&context.page.title=${title}&context.screen.width=${screenWidth}&context.screen.height=${screenHeight}&properties.path=${canonicalPath}&properties.url=${canonicalUrl}&properties.referrer=${documentReferrer}&properties.title=${title}&name=${pageName}
 ```
 
-{% hint style="warning" %}
+<div class="warningBlock">
 For this endpoint, RudderStack expects that the basic page view properties like `path`, `url`, `referrer`, `title` be passed either with `context.page.<page_basic_properties>` or with `properties.<page_basic_properties>`.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 The dot \*\*\*\*\(`.`\) separated query parameters are mapped by RudderStack to a familiar [`page`](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification#8-1-page-payload) payload before sending them to the destinations.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Note that for this endpoint, RudderStack does not currently support overriding the `integration` key for sending data to selective destinations.
 
-{% endhint %}
+</div>
 
 ## Sending a `track` call to RudderStack
 
@@ -300,20 +300,20 @@ A sample call is as shown below:
 https://hosted.rudderlabs.com/pixel/v1/track?writeKey=${writeKey}&context.library.name=Rudderstack AMP SDK&context.library.version=1.0.0&context.platform=AMP&anonymousId=${anonymousId}&context.locale=${browserLanguage}&context.userAgent=${userAgent}&context.page.path=${canonicalPath}&context.page.url=${canonicalUrl}&context.page.referrer=${documentReferrer}&context.page.title=${title}&context.screen.width=${screenWidth}&context.screen.height=${screenHeight}&event=${eventName}&properties.key1=value1&properties.key2=value2
 ```
 
-{% hint style="warning" %}
+<div class="warningBlock">
 For this endpoint, RudderStack expects the basic `page` view properties like `path`, `url`, `referrer`, and `title` to be passed with `context.page.<page_basic_properties>`. The event-related properties should be sent as `properties.<*key1*>=${value}`.
 
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 The dot \(`.`\) separated query parameters are mapped by RudderStack to a familiar [`track`](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification#7-2-track-usage) payload before being sent to destinations.
 
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Note that for this endpoint, RudderStack currently does not support overriding the `integration` key for sending the data to selective destination.
 
-{% endhint %}
+</div>
 
 ## Contact Us
 

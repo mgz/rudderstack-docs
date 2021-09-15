@@ -8,18 +8,18 @@ description: Detailed technical description of the Alias API call.
 
 The `alias` call lets you merge different identities of a known user.
 
-{% hint style="info" %}
+<div class="infoBlock">
 `alias` is an advanced method that lets you change the tracked user's ID explicitly. This method is useful when managing identities for some of the downstream destinations.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
+<div class="successBlock">
 The following destinations support the `alias` call:
 
 - \*\*\*\*[**MoEngage**](../../destinations/marketing/moengage.md)\*\*\*\*
 - \*\*\*\*[**Kissmetrics**](../../destinations/analytics/kissmetrics.md)\*\*\*\*
 - \*\*\*\*[**Amplitude**](../../destinations/analytics/amplitude.md) \***\*\(only supported by the [**JavaScript SDK**](../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/) via [**Cloud Mode\*\*](https://docs.rudderstack.com/connections/rudderstack-connection-modes#cloud-mode)\)
-  {% endhint %}
+  </div>
 
 ## Sample Payload
 
@@ -39,15 +39,15 @@ The corresponding event that generates the above payload via the [**JavaScript S
 rudderanalytics.alias("12345")
 ```
 
-{% hint style="success" %}
-The RudderStack SDK automatically passes the user's `anonymousId` as
-`previousId` in the payload, as seen above.
-{% endhint %}
+<div class="successBlock">
+  The RudderStack SDK automatically passes the user's `anonymousId` as
+  `previousId` in the payload, as seen above.
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 When instrumenting a website with the JavaScript SDK, making the `alias` call via the client-side is important as the `anonymousId` is generated via the browser. Similarly, if you're using a server-side SDK, the `alias`call must be made from the server-side as the session ID is set as the `anonymousId`.
 
-{% endhint %}
+</div>
 
 ## Page Fields
 

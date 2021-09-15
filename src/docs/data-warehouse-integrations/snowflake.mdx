@@ -10,16 +10,16 @@ Snowflake is a cloud-based data warehouse provided as Software-as-a-Service \(Sa
 
 RudderStack allows you to configure Snowflake as a destination to dump your event data seamlessly.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please check our [Warehouse Schemas](https://docs.rudderstack.com/data-warehouse-integration-guides/warehouse-schemas) guide to know how events are mapped to the tables in Snowflake.
 
-{% endhint %}
+</div>
 
-{% hint style="success" %}
-**Find the open-source transformer code for this destination in our**
-[**GitHub
-repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/snowflake)**.**
-{% endhint %}
+<div class="successBlock">
+  **Find the open-source transformer code for this destination in our**
+  [**GitHub
+  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/snowflake)**.**
+</div>
 
 ## Snowflake User Setup
 
@@ -33,10 +33,10 @@ Create a `X-Small warehouse`by following the wizard on Snowflake's website as sh
 
 ![creating x-small warehouse screenshot](../.gitbook/assets/screenshot-2020-03-31-at-11.56.32-am.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can set your data warehouse size as per your future data volume.
 
-{% endhint %}
+</div>
 
 Alternatively, you can also use SQL to create a warehouse, as shown:
 
@@ -48,17 +48,17 @@ CREATE WAREHOUSE "RUDDER_WAREHOUSE"
     AUTO_RESUME = TRUE;
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 It is recommended that you set `AUTO_SUSPEND` to ~10 mins, and enable `AUTO_RESUME` to avoid any extra costs.
 
-{% endhint %}
+</div>
 
 ### Creating a Database
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Please create a new database to avoid conflicts with your existing data, as RudderStack creates its own tables.
 
-{% endhint %}
+</div>
 
 The following screenshot demonstrates the **Create Database** option in Snowflake.
 
@@ -118,10 +118,10 @@ To do so, please follow these steps:
 
 - Choose a source to which you would like to add Snowflake as a destination. You can also simply create a destination and connect it to a source later.
 
-{% hint style="info" %}
+<div class="infoBlock">
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
 
-{% endhint %}
+</div>
 
 - After choosing a source, select **Snowflake** from the list of destinations.
 - Give your destination a name and then click on **Next**. You should then see the following screen:
@@ -383,22 +383,22 @@ Detailed instructions can be found [here](https://docs.snowflake.com/en/user-gui
 GRANT USAGE ON INTEGRATION <integration_name> TO ROLE "RUDDER";
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 
 - `"RUDDER"` is the name of the role that you created above [here](https://docs.rudderstack.com/data-warehouse-integrations/snowflake#creating-a-role-for-rudderstack)
 - `<integration_name>` is the name of the integration that you set above in step 1
-  {% endhint %}
-  {% endtab %}
-  {% endtabs %}
+  </div>
+{% endtab %}
+{% endtabs %}
 
 ## Setting Up the Network Access
 
 You will need to whitelist the RudderStack IPs to enable network access to it.
 
-{% hint style="info" %}
+<div class="infoBlock">
 **The IPs to be whitelisted are : `3.216.35.97`, `34.198.90.241` , `54.147.40.62`** , **`23.20.96.9`,** and **`18.214.35.254`**.
 
-{% endhint %}
+</div>
 
 ## Contact Us
 
