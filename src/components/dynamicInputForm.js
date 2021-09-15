@@ -5,6 +5,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheckSquare } from "@fortawesome/free-solid-svg-icons/faCheckSquare"
 import { faSquare } from "@fortawesome/free-regular-svg-icons/faSquare"
+import Select from "react-select"
 
 library.add(faCheckSquare, faSquare)
 
@@ -314,28 +315,33 @@ const DynamicInputForm = ({
                 />
               )}
 
-              {field.field_type === "dropdown" && (
-                <select
-                  selected={false}
-                  type="text"
-                  name={field.field_name}
-                  className="font-sm text-base resize-none"
-                  value={formData[field.field_name]}
-                  onBlur={e => onBlur(field.field_name, e.target.value)}
+              {(field.field_type === "dropdown" ||
+                field.field_type === "multidropdown") && (
+                <Select
+                  isMulti={field.field_type === "multidropdown"}
+                  name="colors"
+                  options={field.field_dropdown_values.map(ii => ({
+                    value: ii,
+                    label: ii,
+                  }))}
+                  placeholder={field.field_placeholder}
                   onChange={e => {
+                    let tmp = ""
+                    if (Array.isArray(e)) {
+                      e.map(rrrr => {
+                        tmp += (tmp === "" ? "" : ", ") + rrrr.value
+                      })
+                    } else {
+                      tmp = e.value
+                    }
                     setFormData({
                       ...formData,
-                      [field.field_name]: e.target.value,
+                      [field.field_name]: tmp,
                     })
                   }}
-                >
-                  <option value={""}  disabled selected hidden>{field.field_placeholder}</option>
-                  {field.field_dropdown_values.map(rr => (
-                    <option key={rr} value={rr}>
-                      {rr}
-                    </option>
-                  ))}
-                </select>
+                  className="custom-select-style"
+                  classNamePrefix="custom-select-style-inner"
+                />
               )}
 
               {field.field_type === "checkbox" && (
