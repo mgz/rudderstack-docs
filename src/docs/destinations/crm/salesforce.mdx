@@ -13,8 +13,10 @@ RudderStack lets you identify your leads in Salesforce without having to use the
 <div class="successBlock">
   <strong>
     Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/salesforce).
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/salesforce">
+      GitHub repo
+    </a>
+    .
   </strong>
 </div>
 
@@ -49,17 +51,17 @@ Follow our guide on <a href="../../connections/adding-source-and-destination-rud
 - If you are using a Sandbox environment for integration, enable the **Sandbox Mode** option. Then, click on **Next**. Salesforce will now be enabled as a destination in RudderStack.
 
 <div class="infoBlock">
-To know more about Salesforce Sandbox, click [**here**](https://help.salesforce.com/articleView?id=sf.deploy_sandboxes_parent.htm&type=5).
+To know more about Salesforce Sandbox, click <a href="https://help.salesforce.com/articleView?id=sf.deploy_sandboxes_parent.htm&type=5">here</a>.
 
 </div>
 
 <div class="infoBlock">
-We **recommend** that you create a new Salesforce account to use it with RudderStack. This will protect any confidential information present in your existing Salesforce account. However, this is **entirely optional**. You can also use your existing Salesforce account.
+We <strong>recommend</strong> that you create a new Salesforce account to use it with RudderStack. This will protect any confidential information present in your existing Salesforce account. However, this is <strong>entirely optional</strong>. You can also use your existing Salesforce account.
 
 </div>
 
 <div class="infoBlock">
-To create a new account, go to **Setup** - **Administration Setup** - **Users** - **New User** and create a **System Administrator** profile. This should give RudderStack the required permissions to access the API.
+To create a new account, go to <strong>Setup</strong> - <strong>Administration Setup</strong> - <strong>Users</strong> - <strong>New User</strong> and create a <strong>System Administrator</strong> profile. This should give RudderStack the required permissions to access the API.
 
 </div>
 
@@ -101,14 +103,14 @@ This snippet identifies a unique user based on the `userid` and the associated t
 When the `identify` method is called, RudderStack checks if the lead already exists using the `email` property. If yes, the lead is updated with the traits passed in the `identify` call. If no lead exists, a new lead is created in Salesforce.
 
 <div class="warningBlock">
-It is mandatory to include `'Salesforce':true` in every Salesforce integration object. As Salesforce has strict API limits, this is required in order to prevent the users from hitting their limits. By default, RudderStack does not send `identify` calls to Salesforce. Hence, any `identify` call that does not include `'Salesforce':true` in its payload will be ignored.
+It is mandatory to include <code class="inline-code">'Salesforce':true</code> in every Salesforce integration object. As Salesforce has strict API limits, this is required in order to prevent the users from hitting their limits. By default, RudderStack does not send <code class="inline-code">identify</code> calls to Salesforce. Hence, any <code class="inline-code">identify</code> call that does not include <code class="inline-code">'Salesforce':true</code> in its payload will be ignored.
 
 </div>
 
 ### Updating Custom Fields in Salesforce
 
 <div class="infoBlock">
-If you wish to update custom fields in Salesforce using RudderStack, make sure that you first create those lead fields in Salesforce before sending the data through RudderStack. For more information on how to do this, check out the [**Salesforce docs**](https://help.salesforce.com/articleView?id=sf.adding_fields.htm&type=5).
+If you wish to update custom fields in Salesforce using RudderStack, make sure that you first create those lead fields in Salesforce before sending the data through RudderStack. For more information on how to do this, check out the <a href="https://help.salesforce.com/articleView?id=sf.adding_fields.htm&type=5">Salesforce docs</a>.
 
 </div>
 
@@ -117,7 +119,7 @@ As `lastName` and `company` are needed by the [**Salesforce Leads API**](https:/
 For example, if you wish to collect a custom trait in RudderStack named `newProp`, create a field label named `newProp`. This will generate an API name as `newProp__c`. RudderStack automatically appends the `__c` to any custom trait.
 
 <div class="infoBlock">
-**Make sure you are consistent with your casing**. If the custom fields are created in camelCase, make sure sure that you send the traits to RudderStack in camelCase. If you're creating custom fields in snake_case, make sure you send the traits in the same format.
+<strong>Make sure you are consistent with your casing</strong>. If the custom fields are created in camelCase, make sure sure that you send the traits to RudderStack in camelCase. If you're creating custom fields in snake_case, make sure you send the traits in the same format.
 
 </div>
 
@@ -151,7 +153,7 @@ client.identify({
 In the example above, RudderStack updates the `Contact` object in Salesforce with `id` as `sf-contact-id` and send the `traits` object to Salesforce.
 
 <div class="infoBlock">
-By default, RudderStack creates a `Lead` object in Salesforce and maps the `traits` to it, as mentioned above. For other objects, RudderStack does not modify the `traits`; they are sent to Salesforce as it is.
+By default, RudderStack creates a <code class="inline-code">Lead</code> object in Salesforce and maps the <code class="inline-code">traits</code> to it, as mentioned above. For other objects, RudderStack does not modify the <code class="inline-code">traits</code>; they are sent to Salesforce as it is.
 
 </div>
 

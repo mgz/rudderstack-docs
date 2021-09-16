@@ -36,8 +36,12 @@ RudderStack uses Basic Authentication for authenticating all the HTTP requests a
 
 <div class="successBlock">
   <ul>
-    <li>`workspaceToken`is the user name</li>
-    <li>`""` is the password \(empty string\)</li>
+    <li>
+      <code class="inline-code">workspaceToken</code>is the user name
+    </li>
+    <li>
+      <code class="inline-code">""</code> is the password (empty string)
+    </li>
   </ul>
 </div>
 
@@ -97,7 +101,7 @@ https://api.rudderlabs.com/workspaces/regulations < suppress.json
 To get a regulation, you can send a `GET` request as shown:
 
 <div class="infoBlock">
-Pass `regulation_id` in the URL. The `regulation_id` is received in the response when a regulation is created.
+Pass <code class="inline-code">regulation_id</code> in the URL. The <code class="inline-code">regulation_id</code> is received in the response when a regulation is created.
 
 </div>
 
@@ -150,7 +154,7 @@ https://api.rudderlabs.com/workspaces/regulations?start=0&limit=10
 To delete a regulation, you can send a `DELETE` request as shown below:
 
 <div class="infoBlock">
-Pass the `regulation_id` in the URL. The `regulation_id` is received in the response when a regulation is created.
+Pass the <code class="inline-code">regulation_id</code> in the URL. The <code class="inline-code">regulation_id</code> is received in the response when a regulation is created.
 
 </div>
 
@@ -179,7 +183,7 @@ https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
 You can suppress a user's data on a particular source too. A sample payload is as shown in the snippet below:
 
 <div class="infoBlock">
-You need to pass `source_id` in the URL. You can provide a list of user ids in the `values` array.
+You need to pass <code class="inline-code">source_id</code> in the URL. You can provide a list of user ids in the <code class="inline-code">values</code> array.
 
 </div>
 

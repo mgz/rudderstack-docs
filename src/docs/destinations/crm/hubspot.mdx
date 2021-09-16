@@ -52,7 +52,7 @@ Please follow our guide on <a href="../connections/adding-source-and-destination
 - Provide your HubSpot **API key** and **Hub ID** in the required fields. Please find [**API Key**](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key) and [**Hub ID**](https://knowledge.hubspot.com/account/manage-multiple-hubspot-accounts#identify-the-current-account-s-hub-id) in your Hubspot Account.
 
 <div class="warningBlock">
-API Key is mandatory if you need to send data to Hubspot using `cloud-mode`
+API Key is mandatory if you need to send data to Hubspot using <code class="inline-code">cloud-mode</code>
 
 </div>
 
@@ -69,7 +69,7 @@ The setting to enable / disable native SDK to send events can be changed later. 
 {% tab title="Cloud Mode" %}
 
 <div class="warningBlock">
-The `page` call is not supported in cloud mode for HubSpot.
+The <code class="inline-code">page</code> call is not supported in cloud mode for HubSpot.
 
 </div>
 
@@ -144,8 +144,8 @@ Hubspot also supports custom properties. You can update values of the `contact` 
       does not accept properties in upper case and spaces.
     </li>
     <li>
-      HubSpot discards any property which doesn't exists and returns `400 Bad
-      Request`.
+      HubSpot discards any property which doesn't exists and returns{" "}
+      <code class="inline-code">400 Bad Request</code>.
     </li>
   </ul>
 </div>

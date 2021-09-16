@@ -13,8 +13,10 @@ RudderStack supports Delighted as a destination to which you can seamlessly send
 <div class="successBlock">
   <strong>
     Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/delighted).
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/delighted">
+      GitHub repo
+    </a>
+    .
   </strong>
 </div>
 
@@ -48,7 +50,7 @@ Follow our guide on <a href="../../connections/adding-source-and-destination-rud
 - Enter your Delighted **API Key**.
 
 <div class="infoBlock">
-For more information on how to get your Delighted API key, refer to the Delighted [**docs**](https://app.delighted.com/docs/api).
+For more information on how to get your Delighted API key, refer to the Delighted <a href="https://app.delighted.com/docs/api">docs</a>.
 
 </div>
 
@@ -57,7 +59,7 @@ For more information on how to get your Delighted API key, refer to the Delighte
 - To make a `track` call, enter the **Event Names** for which `track` call will be triggered.
 
 <div class="warningBlock">
-If the RudderStack dashboard does not contain the **Event** for which the `track` call is triggered, RudderStack will throw an error.
+If the RudderStack dashboard does not contain the <strong>Event</strong> for which the <code class="inline-code">track</code> call is triggered, RudderStack will throw an error.
 
 </div>
 
@@ -70,7 +72,7 @@ The `identify` call lets you to add a user to your **People** [**List**](https:/
 - The `userId` provided during the call must match the **Channel** type. The channel type can be either set from Rudderstack dashboard or you can send it via the `identify` call with the parameter `DelightedChannelType`.
 
 <div class="infoBlock">
-The channel type set via the `identify` call will get a higher precedence.
+The channel type set via the <code class="inline-code">identify</code> call will get a higher precedence.
 
 </div>
 
@@ -78,9 +80,9 @@ The channel type set via the `identify` call will get a higher precedence.
 - You can also send the `last_sent_at` value with the call. Refer to the example below for more details.
 
 <div class="infoBlock">
-`Last sent at` \(in UNIX timestamp\) is used to manually set the time a person was most recently sent a survey. This value will be used in the Delighted **Survey throttling** system, which ensures that same person won’t be surveyed more than once per month.
+<code class="inline-code">Last sent at</code> (in UNIX timestamp) is used to manually set the time a person was most recently sent a survey. This value will be used in the Delighted <strong>Survey throttling</strong> system, which ensures that same person won’t be surveyed more than once per month.
 
-To change its value manually, go the Delighted [**dashboard**](https://app.delighted.com/dashboard), select your **Project** from top left corner and click on the settings icon beside **Project Name**.
+To change its value manually, go the Delighted <a href="https://app.delighted.com/dashboard">dashboard</a>, select your <strong>Project</strong> from top left corner and click on the settings icon beside <strong>Project Name</strong>.
 
 </div>
 
@@ -103,7 +105,7 @@ rudderanalytics.identify("name@surname.com", {
 In this example, since the `userId` is already an email, you can provide the user's `phone_number` as well. Also, the `delightedChannelType` will override the **Channel Type** set in the RudderStack dashboard.
 
 <div class="infoBlock">
-Except `userId`, all the other fields in the call are optional.
+Except <code class="inline-code">userId</code>, all the other fields in the call are optional.
 
 </div>
 
@@ -112,12 +114,12 @@ Except `userId`, all the other fields in the call are optional.
 The `track` call lets you send the survey to the user added to the **People** [**List**](https://app.delighted.com/people) in your account. In addition to name, phone number/email,channel, and the 'Last sent at' timestamp, you can also add as many custom properties as you need.
 
 <div class="warningBlock">
-If the user does not exist, you cannot make a `track` call. You need to first add the user in the People list via the `identify` call.
+If the user does not exist, you cannot make a <code class="inline-code">track</code> call. You need to first add the user in the People list via the <code class="inline-code">identify</code> call.
 
 </div>
 
 <div class="infoBlock">
-The **Delay** value from the dashboard will override the value sent via the `track` call.
+The <strong>Delay</strong> value from the dashboard will override the value sent via the <code class="inline-code">track</code> call.
 
 </div>
 
@@ -140,7 +142,7 @@ rudderanalytics.track("Test", {
 In the above example, `Test` is the event name. Except the event name, all other fields are optional.
 
 <div class="warningBlock">
-If you do not enter the **Event** name in the dashboard for which the `track` call is triggered, RudderStack will throw an error.
+If you do not enter the <strong>Event</strong> name in the dashboard for which the <code class="inline-code">track</code> call is triggered, RudderStack will throw an error.
 
 </div>
 
@@ -163,7 +165,7 @@ In the example shown above, `customProperty` is the custom property field that y
 The `alias` call allows you to update the user's email or phone number. You need to set `previousId` as the current value and `userId` as the updated value.
 
 <div class="infoBlock">
-The `previousId` and `userId` must be of the same type, i.e., either email or phone number.
+The <code class="inline-code">previousId</code> and <code class="inline-code">userId</code> must be of the same type, i.e., either email or phone number.
 
 </div>
 
@@ -174,7 +176,7 @@ rudderanalytics.alias("new@email.com", "old@email.com")
 ```
 
 <div class="infoBlock">
-Both `previousId` and `userId` are required.
+Both <code class="inline-code">previousId</code> and <code class="inline-code">userId</code> are required.
 
 </div>
 

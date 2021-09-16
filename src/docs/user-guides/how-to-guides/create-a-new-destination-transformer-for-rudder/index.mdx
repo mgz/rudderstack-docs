@@ -8,7 +8,7 @@ description: >-
 
 # How to Create a New Destination Transformation for RudderStack
 
-## What are destination transformers? <a id="what-are-destination-transformers"></a>
+## What are destination transformers?
 
 The core promise of platforms like RudderStack is **generate-once-analyse-anywhere**.
 
@@ -30,7 +30,7 @@ Destination Transformers are REST services developed using Node.js that
 - Map the inputs from the canonical object model to the fields of the payload intelligible to the destination
 - Emit an enriched payload as described in points a\), b\) and c\) above
 
-## How data flows to the destination transformer <a id="how-data-flows-to-the-destination-transformer"></a>
+## How data flows to the destination transformer
 
 The **processor** component of the RudderStack server routes individual messages to the transformation ecosystem. Essentially, the processor would make POST request with a JSON payload to endpoints like **http\(s\)://&lt;IP&gt;:9090/v0/ga.** Here, **v0** signifies version of the transformer to be used and **ga** represents the destination.
 
@@ -96,7 +96,7 @@ function process(jsonQobj) {
 exports.process = process
 ```
 
-## How do destination transformers work? <a id="how-do-destination-transformers-work"></a>
+## How do destination transformers work?
 
 Before we continue on the program flow starting with the **processSingleMessage**, let us take a pause and look at the various business event messages that a transformer needs to be able to handle.
 

@@ -9,13 +9,16 @@ description: Detailed technical description of the Track API call.
 The `track` call lets you record the customer events, i.e. the actions that they perform, along with any properties associated with them.
 
 <div class="infoBlock">
-Each user action is called an event. Every event has a name associated with it, e.g. **Product Reviewed**. This event might also have some properties associated with it, like `review_id` and `rating`.
+Each user action is called an event. Every event has a name associated with it, e.g. <strong>Product Reviewed</strong>. This event might also have some properties associated with it, like <code class="inline-code">review_id</code> and <code class="inline-code">rating</code>.
 
 </div>
 
 <div class="successBlock">
-  For E-Commerce specific events, refer to our [**E-Commerce Events
-  Specification**](../rudderstack-ecommerce-events-specification/) guide.
+  For E-Commerce specific events, refer to our{" "}
+  <a href="../rudderstack-ecommerce-events-specification">
+    E-Commerce Events Specification
+  </a>{" "}
+  guide.
 </div>
 
 ## Sample Payload
@@ -118,10 +121,11 @@ RudderStack has reserved some standard properties listed in the table below and 
 
 <div class="successBlock">
   Different destinations recognize some of the above traits differently. For
-  example, Mixpanel has a `track_charges` method for tracking revenue. With
-  RudderStack, you don't have to worry about these inconsistencies. In this
-  case, you can pass the `revenue` property and RudderStack will handle the
-  conversion automatically.
+  example, Mixpanel has a <code class="inline-code">track_charges</code> method
+  for tracking revenue. With RudderStack, you don't have to worry about these
+  inconsistencies. In this case, you can pass the{" "}
+  <code class="inline-code">revenue</code> property and RudderStack will handle
+  the conversion automatically.
 </div>
 
 ## Contact Us

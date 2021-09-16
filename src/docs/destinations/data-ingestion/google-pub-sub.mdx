@@ -134,7 +134,7 @@ This will create the below attribute metadata object:
 The `page` call contains information related to the page, such as the URL of the web page visited by the user.
 
 <div class="infoBlock">
-For more information on the `page` method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
+For more information on the <code class="inline-code">page</code> method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -155,7 +155,7 @@ rudderanalytics.page({
 The `identify` call captures the relevant details about the visiting user.
 
 <div class="infoBlock">
-For more information on the `identify` method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
+For more information on the <code class="inline-code">identify</code> method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -173,7 +173,7 @@ rudderanalytics.identify("abc123", {
 The `track` call captures the information related to the actions performed by the user, along with their properties, or traits.
 
 <div class="infoBlock">
-For more information on the `track` method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
+For more information on the <code class="inline-code">track</code> method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -187,16 +187,16 @@ rudderanalytics.track("Track me", {
 })
 ```
 
-## FAQs <a id="faqs"></a>
+## FAQs
 
-### How does event mapping work with the topic ID? <a id="how-does-event-mapping-work-with-the-delivery-stream"></a>
+### How does event mapping work with the topic ID?
 
 - If there is no topic ID set for an event, it will not be sent.
 - If an event is set with a topic id, the payload will be sent to Pub/Sub to that particular topic id.
 
 <div class="infoBlock">
-If you have set all event type, event and \* for mapping the priority will be given to `event` ,  
-then `type` , followed by \*.
+If you have set all event type, event and * for mapping the priority will be given to <code class="inline-code">event</code> ,  
+then <code class="inline-code">type</code> , followed by *.
 
 </div>
 
@@ -206,7 +206,7 @@ For example, let the type of event be `track`, the event name be `product added`
 
 Now all the events should go to the topic mapped with **`product added`**.
 
-### How do I provide multiple Attribute mapping for a particular event? <a id="how-do-I-provide-multiple-attribute-mapping"></a>
+### How do I provide multiple Attribute mapping for a particular event?
 
 In order to send multiple attribute keys for a particular event, enter the required mappings in the RudderStack dashboard as seen below:
 

@@ -10,7 +10,7 @@ The [**Variance**](https://www.variance.com) customer growth platform makes your
 
 RudderStack lets you add Variance as a destination to which you can seamlessly send your event data.
 
-## Getting Started <a id="getting-started"></a>
+## Getting Started
 
 To enable sending data to Variance, you will first need to add it as a destination in the RudderStack dashboard. Once the destination is configured and enabled, events from RudderStack will start flowing to Variance.
 
@@ -54,7 +54,7 @@ That's it! Your Variance destination is now configured and enabled.
 The `identify` call lets you associate a visiting user to their actions as well as record their traits.
 
 <div class="infoBlock">
-As a best practice, make sure that the `identify` call is made at the start of every session or page load for logged-in users, if possible. This will ensure all their latest traits are captured.
+As a best practice, make sure that the <code class="inline-code">identify</code> call is made at the start of every session or page load for logged-in users, if possible. This will ensure all their latest traits are captured.
 
 </div>
 
@@ -72,7 +72,7 @@ rudderanalytics.identify("userid", {
 ```
 
 <div class="infoBlock">
-For more information on the `identify` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+For more information on the <code>identify</code> call, refer to the <a href="../../rudderstack-api/http-api-specification">RudderStack HTTP API Specification</a> guide.
 
 </div>
 
@@ -89,7 +89,7 @@ rudderanalytics.track("Event Name", {
 ```
 
 <div class="infoBlock">
-For more information on the `track` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+For more information on the <code class="inline-code">track</code> call, refer to the <a href="../../rudderstack-api/http-api-specification">RudderStack HTTP API Specification</a> guide.
 
 </div>
 
@@ -110,7 +110,7 @@ rudderanalytics.page("Cart", "Cart Viewed", {
 ```
 
 <div class="infoBlock">
-For more information on the `page` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+For more information on the <code class="inline-code">page</code> call, refer to the <a href="../../rudderstack-api/http-api-specification">RudderStack HTTP API Specification</a> guide.
 
 </div>
 
@@ -129,7 +129,7 @@ rudderanalytics.group("sample-group-id", {
 ```
 
 <div class="infoBlock">
-For more information on the `group` call, refer to the [**RudderStack HTTP API Specification**](https://docs.rudderstack.com/rudderstack-api-spec/http-api-specification) guide.
+For more information on the <code class="inline-code">group</code> call, refer to the <a href="../../rudderstack-api/http-api-specification">RudderStack HTTP API Specification</a> guide.
 
 </div>
 
@@ -152,7 +152,7 @@ For instance, if you pass something like `{'company':{'id':1,'name':'Awesome Inc
 If you don't use either of the methods above, Variance can extract the domain from the `email` trait and use that as the Account name.
 
 <div class="infoBlock">
-If none of these methods work for your setup, [**reach out to Variance support**](mailto:support@variance.com) \*\*\*\*to discuss alternatives.
+If none of these methods work for your setup, <a href="mailto:support@variance.com">reach out to Variance support</a> to discuss alternatives.
 
 </div>
 
