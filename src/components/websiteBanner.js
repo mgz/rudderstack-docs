@@ -47,18 +47,22 @@ const WebisteBanner = props => {
           {props.banner_button.cmnlinktext} &#x2192;
         </a>
       </div>
-      <span
-        onClick={() => {
-          setShowBanner(!showBanner)
-          cookies.set(`viewed_website_banner-${props._key}`, "yes", {
-            path: "/",
-            expires: date,
-          })
-        }}
-        className="cursor-pointer font-bold"
-      >
-        X
-      </span>
+      {props.show_banner_close ? (
+        <span
+          onClick={() => {
+            setShowBanner(!showBanner)
+            cookies.set(`viewed_website_banner-${props._key}`, "yes", {
+              path: "/",
+              expires: date,
+            })
+          }}
+          className="cursor-pointer font-bold"
+        >
+          X
+        </span>
+      ) : (
+        <span />
+      )}
     </div>
   ) : null
 }
