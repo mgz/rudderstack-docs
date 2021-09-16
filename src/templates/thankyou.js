@@ -13,9 +13,9 @@ import clientConfig from "../../client-config"
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const TrankYou = ({ data, htmlId }) => {
-  console.log('path debug 1', location.pathname.startsWith("/careers"))
-  console.log('path debug 2', location.pathname.startsWith("careers"))
-  console.log('path debug 3', location.pathname)
+  console.log('path debug 1', location && location.pathname.startsWith("/careers"))
+  console.log('path debug 2', location && location.pathname.startsWith("careers"))
+  console.log('path debug 3', location && location.pathname)
   const location = useLocation()
   const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
@@ -84,7 +84,7 @@ const TrankYou = ({ data, htmlId }) => {
               </div>
             </div>
           )}
-          {location.pathname.startsWith("/careers") && (
+          {location && location.pathname.startsWith("/careers") && (
             <div className="max-w-6xl mx-auto" id="grnhse_app"></div>
           )}
         </section>
