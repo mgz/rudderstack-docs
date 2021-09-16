@@ -13,8 +13,8 @@ description: >-
 Sources are the tools or platforms from which you can send event data to RudderStack. These events can then be routed \(with or without transformation\) into your data warehouse or third-party destinations for analytics and other activation use-cases.
 
 <div class="successBlock">
-  For more information on sources in RudderStack, check out the [**Connections
-  guide**](https://docs.rudderstack.com/connections).
+  For more information on sources in RudderStack, check out the{" "}
+  <a href="../connections">Connections guide</a>.
 </div>
 
 ## RudderStack Warehouse Actions
@@ -22,10 +22,14 @@ Sources are the tools or platforms from which you can send event data to RudderS
 With RudderStack **Warehouse Actions**, you can leverage the already processed customer data residing in your data warehouse and route this enriched information to your desired destinations.
 
 <div class="successBlock">
-  **With this feature, you can configure your data warehouse as a source on
-  the** [**RudderStack
-  dashboard**](https://app.rudderlabs.com/signup?type=freetrial)**, select the
-  right data and then sync this data to all the supported destinations.**
+  <strong>
+    With this feature, you can configure your data warehouse as a source on the{" "}
+    <a href="https://app.rudderlabs.com/signup?type=freetrial">
+      RudderStack dashboard
+    </a>
+    , select the right data and then sync this data to all the supported
+    destinations.
+  </strong>
 </div>
 
 <div class="infoBlock">
@@ -68,7 +72,7 @@ If you have previously configured your data warehouse as a source on the RudderS
 ![](../.gitbook/assets/screen-shot-2020-12-08-at-9.37.06-pm.png)
 
 <div class="warningBlock">
-RudderStack currently supports **Google BigQuery**, **PostgreSQL**, **ClickHouse**, **Amazon Redshift**, and **Snowflake** as sources. The connection settings will vary according to each warehouse.
+RudderStack currently supports <strong>Google BigQuery</strong>, <strong>PostgreSQL</strong>, <strong>ClickHouse</strong>, <strong>Amazon Redshift</strong>, and <strong>Snowflake</strong> as sources. The connection settings will vary according to each warehouse.
 
 </div>
 
@@ -79,13 +83,26 @@ RudderStack currently supports **Google BigQuery**, **PostgreSQL**, **ClickHouse
 ![](../.gitbook/assets/4%20%287%29.png)
 
 <div class="warningBlock">
-Please note that your source table must include at least one of the following columns for it to be considered a valid source:
-
-- **`email`**
-- **`user_id`**
-- **`anonymous_id`**
-
-  </div>
+  Please note that your source table must include at least one of the following
+  columns for it to be considered a valid source:
+  <ul>
+    <li>
+      <strong>
+        <code class="inline-code">email</code>
+      </strong>
+    </li>
+    <li>
+      <strong>
+        <code class="inline-code">user_id</code>
+      </strong>
+    </li>
+    <li>
+      <strong>
+        <code class="inline-code">anonymous_id</code>
+      </strong>
+    </li>
+  </ul>
+</div>
 
 - If the table is valid, you can then preview a snippet of the data, as shown:
 
@@ -110,7 +127,7 @@ That's it! Your data warehouse is now configured and added as a RudderStack sour
 ![](../.gitbook/assets/9.png)
 
 <div class="infoBlock">
-Currently all events sent to RudderStack via warehouse as a source will be `identify()` events
+Currently all events sent to RudderStack via warehouse as a source will be <code class="inline-code">identify()</code> events
 
 </div>
 

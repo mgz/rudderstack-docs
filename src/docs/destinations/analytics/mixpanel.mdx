@@ -37,7 +37,7 @@ Once you have confirmed that the source supports sending events to Mixpanel, per
 - From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Mixpanel**.
 
 <div class="infoBlock">
-Follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+Follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
 
@@ -60,7 +60,7 @@ Follow our guide on [**How to Add a Source and Destination in RudderStack**](htt
 To configure Mixpanel as a destination, you need to provide your Mixpanel **API Token** in the **Connection Settings**.
 
 <div class="infoBlock">
-Choose **EU** in **Data Residency** settings to send your event data to the Mixpanel EU server.
+Choose <strong>EU</strong> in <strong>Data Residency</strong> settings to send your event data to the Mixpanel EU server.
 
 </div>
 
@@ -94,7 +94,7 @@ For Device mode, RudderStack offers the following three options for `page` calls
 - RudderStack tracks the named pages to Mixpanel. If you enable the **Track Named Pages to Mixpanel** option, RudderStack will send a `Viewed [page_name] Page` event. Note that this option has the least precedence and comes to effect only if the above two options are disabled in the RudderStack dashboard.
 
 <div class="infoBlock">
-RudderStack expects atleast one of the three options listed above to be enabled for sending the `page` events to Mixpanel using device mode.
+RudderStack expects atleast one of the three options listed above to be enabled for sending the <code class="inline-code">page</code> events to Mixpanel using device mode.
 
 </div>
 
@@ -130,7 +130,7 @@ Mixpanel has some reserved properties:
 - `$avatar`
 
 <div class="warningBlock">
-You can create custom properties. However, note that you should not create properties that begin with a `$` sign.
+You can create custom properties. However, note that you should not create properties that begin with a <code class="inline-code">$</code> sign.
 
 </div>
 
@@ -195,7 +195,7 @@ analytics.alias('userId', `previousId`);
 The `group` call allows you to link an identified user with a group, such as a company, organization, or an account. It also lets you record any custom traits associated with that group like the name of the company, the number of employees, etc.
 
 <div class="infoBlock">
-For more information on how the `group` call works in Mixpanel, check out Mixpanel's [**Group Analytics documentation**](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics).
+For more information on how the <code class="inline-code">group</code> call works in Mixpanel, check out Mixpanel's <a href="https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics">Group Analytics documentation</a>.
 
 </div>
 
@@ -228,7 +228,7 @@ RudderStack sends the `group` calls to Mixpanel only if one or more group keys a
 ![Mixpanel Group Key Settings](../../.gitbook/assets/1%20%2812%29.png)
 
 <div class="warningBlock">
-You should also have created the group key/s of the same name in Mixpanel's [**project settings**](https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation). To administer the group keys, navigate to your project settings and click on **Add Group Key** under the **Group Keys** section.
+You should also have created the group key/s of the same name in Mixpanel's <a href="https://help.mixpanel.com/hc/en-us/articles/360025333632-Group-Analytics#implementation">project settings</a>. To administer the group keys, navigate to your project settings and click on <strong>Add Group Key</strong> under the <strong>Group Keys</strong> section.
 
 </div>
 
@@ -241,7 +241,7 @@ Mixpanel supports historical event data import. However, note that the timestamp
 RudderStack maps the following properties to the Mixpanel properties before sending them over Mixpanel's HTTP API.
 
 <div class="infoBlock">
-RudderStack maps these fields only in the `identify` requests.
+RudderStack maps these fields only in the <code class="inline-code">identify</code> requests.
 
 </div>
 
@@ -307,7 +307,7 @@ This feature is available in the native web Device mode only.
 For each event name added, RudderStack automatically calls Mixpanel and sets a user trait as `Last + <event_name>`. For example, if you add `Logged In` to the list of increment events, RudderStack will increment a user trait called `Logged In` and set a trait called `Last Logged In` with the current date and time.
 
 <div class="infoBlock">
-Increment works for known users only. So, if your `track` call is being made on the server-side, you will need to pass a `userId`. If your `track` call is being made on the client-side, you will need to identify your user first.
+Increment works for known users only. So, if your <code class="inline-code">track</code> call is being made on the server-side, you will need to pass a <code class="inline-code">userId</code>. If your <code class="inline-code">track</code> call is being made on the client-side, you will need to identify your user first.
 
 </div>
 

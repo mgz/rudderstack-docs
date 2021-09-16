@@ -102,7 +102,8 @@ val rudderClient = RudderClient.getInstance(
 )
 ```
 
-<div class="warningBlock">
+<!-- Check required here <div class="warningBlock">-->
+
 If your Lotame URLs follow the HTTP protocol, you need to allow <strong><code class="inline-code">ClearTextTraffic</code></strong> for your app. To do so, add <strong><code class="inline-code">android:usesCleartextTraffic="true"</code></strong> in the <strong><code class="inline-code">&lt;application&gt;</code></strong> tag of your app's <code class="inline-code">Android Manifest</code> file. After adding this, the file should look like the following:
 
 ```markup
@@ -116,7 +117,8 @@ If your Lotame URLs follow the HTTP protocol, you need to allow <strong><code cl
 </application>
 ```
 
-</div>
+<!--</div> -->
+
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -199,7 +201,7 @@ To get a track of every sync Pixel call \(once in every 7 days\), you may regist
 
 {% tabs %}
 {% tab title="Web" %}
-Use the web SDK [`ready` A](https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state)[PI](https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state) to register the callback. We execute the function provided in `LOTAME_SYNCH_CALLBACK` \*\*\*\*window object after calling the sync pixels.
+Use the web SDK [`ready` A](https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state)[PI](https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state) to register the callback. We execute the function provided in `LOTAME_SYNCH_CALLBACK` window object after calling the sync pixels.
 
 An example of the above is as shown:
 
