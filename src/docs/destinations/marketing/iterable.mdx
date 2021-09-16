@@ -57,7 +57,7 @@ The following are the settings to be configured:
 When an `identify` call is made, RudderStack calls the [Update User](https://api.iterable.com/api/docs#users_updateUser) API of Iterable and sends the data accordingly.
 
 <div class="warningBlock">
-A user is identified by `emailId` or `userId`. If none of these is passed in the call, the sending of event fails.
+A user is identified by <code class="inline-code">emailId</code> or <code class="inline-code">userId</code>. If none of these is passed in the call, the sending of event fails.
 
 </div>
 
@@ -79,7 +79,7 @@ If the `deviceToken` for Push Notification is present in `context` of the payloa
 We use [mobile device registration](https://api.iterable.com/api/docs#users_registerDeviceToken) API for sending the token information from a device. We set the `platform` parameter as `APNS` and `GCM` for iOS and Android devices respectively. Similarly, we use the [browser token registration](https://api.iterable.com/api/docs#users_registerBrowserToken) API for Web platform.
 
 <div class="infoBlock">
-To understand more about Push Notification registration check the Iterable guides for [Android](https://support.iterable.com/hc/en-us/articles/115000331943#_2-create-a-mobile-app-in-iterable) and [iOS](https://support.iterable.com/hc/en-us/articles/115000315806#_4-create-a-mobile-app-in-iterable).
+To understand more about Push Notification registration check the Iterable guides for <a href="https://support.iterable.com/hc/en-us/articles/115000331943#_2-create-a-mobile-app-in-iterable">Android</a> and <a href="https://support.iterable.com/hc/en-us/articles/115000315806#_4-create-a-mobile-app-in-iterable">iOS</a>.
 
 </div>
 
@@ -90,7 +90,7 @@ When the `page` method is called, the RudderStack server sends a track event to 
 If the user does not already exist in Iterable, RudderStack will add the user to the system as long as `email` is present in the call. If email is not present, Iterable will reject the event.
 
 <div class="infoBlock">
-Iterable requires that you pass `email` the first time you call `page` for a user. Subsequent calls can use the `userId` identifier.
+Iterable requires that you pass <code class="inline-code">email</code> the first time you call <code class="inline-code">page</code> for a user. Subsequent calls can use the <code class="inline-code">userId</code> identifier.
 
 </div>
 
@@ -143,7 +143,7 @@ A sample`track` call is as shown:
 ```
 
 <div class="infoBlock">
-If a user does not exist in Iterable, the `track` call for the user event will add the user in Iterable.
+If a user does not exist in Iterable, the <code class="inline-code">track</code> call for the user event will add the user in Iterable.
 
 </div>
 
