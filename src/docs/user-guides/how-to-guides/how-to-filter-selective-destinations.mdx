@@ -32,13 +32,14 @@ rudderanalytics.identify(
 ```
 
 <div class="successBlock">
-  **NOTE**: Unless explicitly defined otherwise, `'All'` is always set to
-  `true`. This means that sending events to all destinations is enabled by
-  default.
+  <strong>NOTE</strong>: Unless explicitly defined otherwise,{" "}
+  <code class="inline-code">'All'</code> is always set to
+  <code class="inline-code">true</code>. This means that sending events to all destinations
+  is enabled by default.
 </div>
 
 <div class="infoBlock">
-The line **`All: false`** instructs RudderStack **not** to send the event data to any destinations **by default,** unless they are explicitly listed as **`true`** in the subsequent lines.
+The line <strong><code class="inline-code">All: false</code></strong> instructs RudderStack <strong>not</strong> to send the event data to any destinations <strong>by default,</strong> unless they are explicitly listed as <strong><code class="inline-code">true</code></strong> in the subsequent lines.
 
 </div>
 
@@ -61,7 +62,7 @@ rudderanalytics.identify(
 ```
 
 <div class="infoBlock">
-As seen in the above code snippet, RudderStack will send the event data to all the destinations except `Google Analytics` and `Intercom`.
+As seen in the above code snippet, RudderStack will send the event data to all the destinations except <code class="inline-code">Google Analytics</code> and <code class="inline-code">Intercom</code>.
 
 </div>
 
@@ -70,7 +71,7 @@ As seen in the above code snippet, RudderStack will send the event data to all t
 The following are examples for the same `track()` call from a variety of SDK's.
 
 <div class="infoBlock">
-Please Note: Some of the SDK's follow their own convention that is different than the examples below. The notable SDK's with different convention are IOS and Android. Please read the respective `SDK Integration Guide` section for your given SDK to find the correct format to filter selective destinations.
+Please Note: Some of the SDK's follow their own convention that is different than the examples below. The notable SDK's with different convention are IOS and Android. Please read the respective <code class="inline-code">SDK Integration Guide</code> section for your given SDK to find the correct format to filter selective destinations.
 
 </div>
 
@@ -113,7 +114,7 @@ rudder_analytics.track(
 ```
 
 <div class="infoBlock">
-In these examples above, the track events will only be sent to `Amazon S3` and `Heap.io` destinations.
+In these examples above, the track events will only be sent to <code class="inline-code">Amazon S3</code> and <code class="inline-code">Heap.io</code> destinations.
 
 </div>
 

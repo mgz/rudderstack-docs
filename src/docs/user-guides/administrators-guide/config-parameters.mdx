@@ -11,14 +11,16 @@ description: >-
 This document describes the various configuration parameters for the [**`config.yaml`**](https://github.com/rudderlabs/rudder-server/blob/master/config/config.yaml) file. You can fine-tune them to suit your application's needs.
 
 <div class="infoBlock">
-These configuration parameters are also applicable for the **`config.toml`** file, in case you have an older RudderStack deployment.
+These configuration parameters are also applicable for the <strong><code class="inline-code">config.toml</code></strong> file, in case you have an older RudderStack deployment.
 
 </div>
 
 <div class="successBlock">
   To best understand some of the terms covered in this guide, we recommend going
-  through the [**RudderStack
-  architecture**](https://docs.rudderstack.com/get-started/rudderstack-architecture)
+  through the{" "}
+  <a href="../../get-started/rudderstack-architecture">
+    RudderStack architecture
+  </a>
   first.
 </div>
 
@@ -34,7 +36,7 @@ These configuration parameters are also applicable for the **`config.toml`** fil
 | `enableStats`       | Boolean | This variable enables or disables stats.                                                                                                                                                                                                 |    `true`     |
 
 <div class="infoBlock">
-For more information on the Processor, Gateway, and Router modules of the RudderStack backend, refer to the [**Architecture**](../../get-started/rudderstack-architecture.md).
+For more information on the Processor, Gateway, and Router modules of the RudderStack backend, refer to the <a href="../../get-started/rudderstack-architecture">Architecture</a>.
 
 </div>
 
@@ -244,7 +246,7 @@ For more information on the Processor, Gateway, and Router modules of the Rudder
 ## \[Warehouse\]
 
 <div class="infoBlock">
-You can ignore these settings if you don't have any [**warehouse destinations**](../../data-warehouse-integrations/) configured in RudderStack.
+You can ignore these settings if you don't have any <a href="../../data-warehouse-integrations">warehouse destinations</a> configured in RudderStack.
 
 </div>
 
@@ -261,20 +263,20 @@ You can ignore these settings if you don't have any [**warehouse destinations**]
 
 ## \[Processor\]
 
-| Variable name            | Type    | Description                                                                                                                                                                                             | Default value |
-| :----------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :-----------: |
-| `loopSleep`              | String  | In case the length of the user jobs process queue is 0 or the unprocessed and retry list is empty, RudderStack sleeps for this specified time.                                                          |    `10ms`     |
-| `maxLoopSleep`           | String  | Maximum loop sleep time for the Processor.                                                                                                                                                              |   `5000ms`    |
-| `dbReadBatchSize`        | Int     | The total number of events to get as a batch from the database.                                                                                                                                         |    `10000`    |
-| `transformBatchSize`     | Int     | Batch size of the events added to the request queue before sending them for transformation.                                                                                                             |     `100`     |
-| `userTransformBatchSize` | Int     | Batch size of the events added to request queue before sending them to the custom transformation server. **Note**: This is used only when a user transformation function is connected to a destination. |     `200`     |
-| `sessionThresholdEvents` | Int     | The minimum number of events needed to be process further.                                                                                                                                              |     `20`      |
-| `sessionThreshold`       | String  | The minimum time needed before a new session is created.                                                                                                                                                |     `10s`     |
-| `maxChanSize`            | Int     | The maximum channel size for the request and response queue in the transformer.                                                                                                                         |    `2048`     |
-| `processSessions`        | Boolean | If set to `true`, the status of the job in the database is updated.                                                                                                                                     |    `false`    |
-| `numTransformWorker`     | Int     | Specifies the number of Go transform workers.                                                                                                                                                           |      `8`      |
-| `maxRetry`               | Int     | The maximum number of times a transformer retries hitting the API in case of an error.                                                                                                                  |     `30`      |
-| `retrySleep`             | String  | The sleep time in case of a transformer error while hitting the API, before retrying.                                                                                                                   |    `100ms`    |
+| Variable name            | Type    | Description                                                                                                                                                                                                          | Default value |
+| :----------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-----------: |
+| `loopSleep`              | String  | In case the length of the user jobs process queue is 0 or the unprocessed and retry list is empty, RudderStack sleeps for this specified time.                                                                       |    `10ms`     |
+| `maxLoopSleep`           | String  | Maximum loop sleep time for the Processor.                                                                                                                                                                           |   `5000ms`    |
+| `dbReadBatchSize`        | Int     | The total number of events to get as a batch from the database.                                                                                                                                                      |    `10000`    |
+| `transformBatchSize`     | Int     | Batch size of the events added to the request queue before sending them for transformation.                                                                                                                          |     `100`     |
+| `userTransformBatchSize` | Int     | Batch size of the events added to request queue before sending them to the custom transformation server. <strong>NOTE</strong>: This is used only when a user transformation function is connected to a destination. |     `200`     |
+| `sessionThresholdEvents` | Int     | The minimum number of events needed to be process further.                                                                                                                                                           |     `20`      |
+| `sessionThreshold`       | String  | The minimum time needed before a new session is created.                                                                                                                                                             |     `10s`     |
+| `maxChanSize`            | Int     | The maximum channel size for the request and response queue in the transformer.                                                                                                                                      |    `2048`     |
+| `processSessions`        | Boolean | If set to `true`, the status of the job in the database is updated.                                                                                                                                                  |    `false`    |
+| `numTransformWorker`     | Int     | Specifies the number of Go transform workers.                                                                                                                                                                        |      `8`      |
+| `maxRetry`               | Int     | The maximum number of times a transformer retries hitting the API in case of an error.                                                                                                                               |     `30`      |
+| `retrySleep`             | String  | The sleep time in case of a transformer error while hitting the API, before retrying.                                                                                                                                |    `100ms`    |
 
 ## \[BackendConfig\]
 

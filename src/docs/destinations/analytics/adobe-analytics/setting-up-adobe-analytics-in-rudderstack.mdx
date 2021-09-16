@@ -25,7 +25,10 @@ Once you've confirmed that the source platform supports sending data to Adobe An
 - Choose a source for which you would like to add Adobe Analytics as a destination.
 
 <div class="infoBlock">
-Follow the guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more details.
+Follow the guide on <div class="infoBlock">
+Follow the guide on <a href="../../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> for more details.
+
+</div> for more details.
 
 </div>
 
@@ -41,19 +44,19 @@ This section lists all the relevant connection settings to successfully set up A
 - **Tracking Server URL**: The `trackingServer` variable determines the location an image request is sent. Eg: If url is [`http://abc.a.b`](http://abc.a.b) ,the tracking server URL will be `abc.a.b`.
 
 <div class="warningBlock">
-**If this variable is defined incorrectly, your implementation may experience data loss.**
+<strong>If this variable is defined incorrectly, your implementation may experience data loss.</strong>
 
 </div>
 
 <div class="infoBlock">
-For more information on this setting, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html?lang=en).
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
 - **Tracking Server Secure URL**: The `trackingServerSecure` variable determines the location an image request is sent over HTTPS. If this variable is not defined correctly, your implementation can experience data loss.
 
 <div class="infoBlock">
-For more information on this setting, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserversecure.html?lang=en).
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserversecure.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -62,7 +65,7 @@ For more information on this setting, refer to the [**Adobe Analytics documentat
 - **Heartbeat Tracking Server URL**: If assigned, this will be used as tracking server URL instead of the URL assigned in the **Tracking Server URL** field. RudderStack will set all heartbeat configurations if this URL is present.
 
 <div class="infoBlock">
-For more information on this setting, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/media-analytics/using/sdk-implement/setup/setup-overview.html?lang=en).
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/media-analytics/using/sdk-implement/setup/setup-overview.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -77,7 +80,7 @@ For more information on this setting, refer to the [**Adobe Analytics documentat
 - **Drop Visitor ID**: If enabled, RudderStack does not assign the `userId` to `visitorID`.
 
 <div class="infoBlock">
-For more information on this setting, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-analytics.html?lang=en#section-6053a6b7c16c466a9f9fdbf9cb9db3df).
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-analytics.html?lang=en#section-6053a6b7c16c466a9f9fdbf9cb9db3df">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -86,22 +89,34 @@ For more information on this setting, refer to the [**Adobe Analytics documentat
 - **Timestamp Option**: Adobe Analytics has Report Suites that accepts timestamped, non-timestamped or hybrid data. Note that `window.s.timestamp` will be affected. Also depending on this value, `visitorID` will be set if the drop visitor id is off.
 
 <div class="infoBlock">
-
-- If the timestamp option is disabled, then `visitorID` will be set.
-- If timestamp option is set to hybrid and the Prefer Visitor ID setting is on, then `visitorID` will be set.
-- For all other cases, RudderStack does not set a `visitorID`.
-
-Also note the following regarding timestamps:
-
-- If the timestamp option is enabled, then timestamp will be set.
-- If the timestamp option is hybrid and Prefer Visitor ID is off, then timestamp will be set.
-
-  </div>
+  <ul>
+    <li>
+      If the timestamp option is disabled, then{" "}
+      <code class="inline-code">visitorID</code> will be set.
+    </li>
+    <li>
+      If timestamp option is set to hybrid and the Prefer Visitor ID setting is
+      on, then <code class="inline-code">visitorID</code> will be set.
+    </li>
+    <li>
+      For all other cases, RudderStack does not set a{" "}
+      <code class="inline-code">visitorID</code>.
+    </li>
+  </ul>
+  Also note the following regarding timestamps:
+  <ul>
+    <li>If the timestamp option is enabled, then timestamp will be set.</li>
+    <li>
+      If the timestamp option is hybrid and Prefer Visitor ID is off, then
+      timestamp will be set.
+    </li>
+  </ul>
+</div>
 
 - **Prefer Visitor ID**: Adobe does not allow sending both `visitorID` and timestamp. Hence, this option is used when the timestamp option is set as hybrid. Also, note that if this option is enabled, `visitorID` will be set. If disabled, the timestamp value will be set.
 
 <div class="infoBlock">
-For more information on this setting, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/timestamp.html?lang=en).
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/timestamp.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -130,7 +145,7 @@ If you want to set `prop1` to Adobe's context data `property1`, then map with `c
 If you want to send top level properties `anonymousId`, `messageId`, `event` then simply enter the key.
 
 <div class="infoBlock">
-For more information on this setting, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=en).
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -145,7 +160,7 @@ Only enter the index number of the eVar you want to set.
 </div>
 
 <div class="infoBlock">
-For more information on this setting, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html?lang=en).
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -161,7 +176,7 @@ Only enter the index number of the hierarchy variable that you want to set.
 </div>
 
 <div class="infoBlock">
-For more information on this setting, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html?lang=en).
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -172,7 +187,7 @@ This setting lets you map any RudderStack property with the list you want.
 <div class="infoBlock">
 Enter only the index number of the list you want to set to. The list properties should be an array/string separated by commas. Otherwise, they will be dropped.
 
-For more information, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html?lang=en)
+For more information, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -185,7 +200,7 @@ For more information, refer to the [**Adobe Analytics documentation**](https://e
 <div class="infoBlock">
 Enter only the index number of the prop you want to set.
 
-For more information, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html?lang=en)
+For more information, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -197,7 +212,7 @@ For more information, refer to the [**Adobe Analytics documentation**](https://e
 - **Increment or Currency Properties to add to merchandise events at event level**: The RudderStack property that has a currency/counter value should be added here. This will then be used to create the event string like `purchase,event5=19.9`. RudderStack automatically sets the `currencyCode` value. \(The default value is USD\).
 
 <div class="infoBlock">
-For more information, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/events-overview.html?lang=en)
+For more information, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/events-overview.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 
@@ -213,9 +228,9 @@ For more information, refer to the [**Adobe Analytics documentation**](https://e
 - **Map Rudder Properties to eVars at product level**: Lets you map the RudderStack properties you want to set to eVars.
 
 <div class="infoBlock">
-Set only the index. The eVars will be appended with `|` and sent along with the product string.
+Set only the index. The eVars will be appended with <code class="inline-code">|</code> and sent along with the product string.
 
-For more information, refer to the [**Adobe Analytics documentation**](https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en)
+For more information, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en">Adobe Analytics documentation</a>.
 
 </div>
 

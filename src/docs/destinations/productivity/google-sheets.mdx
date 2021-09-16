@@ -77,7 +77,11 @@ The **Sheet Name** is **case-sensitive** and has to be exactly as seen in Google
 
 - Next, enter the **Event Properties** corresponding to **Column Name** under the **Map Event to Google Sheets section**.
 
-**Note**: For mapping `attributes` from `traits` or `properties`, you can directly enter the `attribute` name \(for e.g. `productName`, `firstName`, or `address.city`\) and map it to desired **Column**. For other contextual attributes, you will need to enter the absolute path to the `attribute` using dot notation. \(for e.g. `context.app.build`\)
+<strong>NOTE</strong>: For mapping `attributes` from `traits` or `properties`,
+you can directly enter the `attribute` name \(for e.g. `productName`,
+`firstName`, or `address.city`\) and map it to desired **Column**. For other
+contextual attributes, you will need to enter the absolute path to the
+`attribute` using dot notation. \(for e.g. `context.app.build`\)
 
 <div class="warningBlock">
 If you have **Nested Attributes** inside `properties` or `traits`, please use the **dot notation** for mapping to respective **Column** \(For e.g.: `address.zip`, `address.city`..\)
@@ -87,7 +91,9 @@ If you have **Nested Attributes** inside `properties` or `traits`, please use th
 <div class="infoBlock">
 For mapping `attributes` from event `properties` or `traits`/`context.traits`, RudderStack also supports absolute mapping. For example: adding `context.traits.firstName` will map the same value as adding `firstName`.
 
-**Note**: We advise you to map with absolute path as it resolves the ambiguity when you have same `attribute` name in `traits`, `context.traits` or `properties`.
+<strong>NOTE</strong>: We advise you to map with absolute path as it resolves
+the ambiguity when you have same `attribute` name in `traits`, `context.traits`
+or `properties`.
 
 </div>
 
@@ -100,7 +106,7 @@ Google Sheets should now be added and enabled as a destination in RudderStack.
 The `page` call contains information related to the page, such as the URL of the web page visited by the user.
 
 <div class="infoBlock">
-For more information on the `page` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+For more information on the `page` method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -121,7 +127,7 @@ rudderanalytics.page({
 The `identify` call captures the relevant details about the visiting user.
 
 <div class="infoBlock">
-For more information on the `identify` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+For more information on the `identify` method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -140,7 +146,7 @@ rudderanalytics.identify("userId", {
 The `track` call captures the information related to the actions performed by the user along with their properties or traits.
 
 <div class="infoBlock">
-For more information on the `track` method, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+For more information on the `track` method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
 

@@ -39,7 +39,7 @@ const client = new Analytics(WRITE_KEY, DATA_PLANE_URL / v1 / batch)
 The `identify` call lets you associate a user to their actions as well as captures the relevant traits or properties related to that user.
 
 <div class="infoBlock">
-For a detailed explanation of the `identify` call, refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/identify) guide.
+For a detailed explanation of the <code class="inline-code">identify</code> call, refer to our <a href="../../rudderstack-api/rudderstack-spec/identify">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -73,7 +73,7 @@ The `identify` parameters are as described below:
 The `track` call lets you record the users' actions along with their associated properties. Each user action is called an 'event'.
 
 <div class="infoBlock">
-For a detailed explanation of the `track` call, please refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/track) guide.
+For a detailed explanation of the <code class="inline-code">track</code> call, please refer to our <a href="../../rudderstack-api/rudderstack-spec/track">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -107,7 +107,7 @@ The `track` method parameters are as described below:
 The `page` call allows you to record the page views on your website. It also records the other relevant information about the page that is being viewed.
 
 <div class="infoBlock">
-For a detailed explanation of the `page` call, please refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/page) guide.
+For a detailed explanation of the <code class="inline-code">page</code> call, please refer to our <a href="../../rudderstack-api/rudderstack-spec/page">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -143,7 +143,7 @@ The `page` method parameters are as described below:
 The `group` call allows you to link an identified user with a group, such as a company, organization, or an account. It also lets you record any custom traits associated with that group, such as the name of the company, the number of employees, etc.
 
 <div class="infoBlock">
-For a detailed explanation of the `group` call, refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/group) guide.
+For a detailed explanation of the <code class="inline-code">group</code> call, refer to our <a href="../../rudderstack-api/rudderstack-spec/group">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -177,12 +177,12 @@ The `group` method parameters are as follows:
 The `alias` call lets you merge different identities of a known user.
 
 <div class="infoBlock">
-`alias` is an advanced method that lets you change the tracked user's ID explicitly. This method is useful when managing identities for some of the downstream destinations.
+<code class="inline-code">alias</code> is an advanced method that lets you change the tracked user's ID explicitly. This method is useful when managing identities for some of the downstream destinations.
 
 </div>
 
 <div class="infoBlock">
-For a detailed explanation of the `alias` call, refer to our [**RudderStack API Specification**](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/alias) guide.
+For a detailed explanation of the <code class="inline-code">alias</code> call, refer to our <a href="../../rudderstack-api/rudderstack-spec/alias">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -209,7 +209,7 @@ The `alias` method parameters are as mentioned below:
 ## Node.js SDK Data Persistence
 
 <div class="infoBlock">
-This feature is still in beta. Contact us on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel in case you face any issues.
+This feature is still in beta. Contact us on our <a href="https://resources.rudderstack.com/join-rudderstack-slack">Slack</a> channel in case you face any issues.
 
 </div>
 
@@ -220,7 +220,7 @@ To prevent data loss from the SDK to RudderStack while it is not ready to accept
 You will need to host a Redis server and use it as the intermediary data storage queue to use this feature.
 
 <div class="infoBlock">
-We use [**Bull**](https://github.com/OptimalBits/bull) as the interface layer between the Node.js SDK and Redis.
+We use <a href="https://github.com/OptimalBits/bull">Bull</a> as the interface layer between the Node.js SDK and Redis.
 
 </div>
 
@@ -258,7 +258,7 @@ QueueOpts {
 ```
 
 <div class="infoBlock">
-More information on this parameter can be found in the [**Bull docs**](https://github.com/OptimalBits/bull/blob/develop/REFERENCE.md#queue).
+More information on this parameter can be found in the <a href="https://github.com/OptimalBits/bull/blob/develop/REFERENCE.md#queue">Bull docs</a>.
 
 </div>
 
@@ -287,12 +287,12 @@ callback: function(error) || function()
 Calling the `createPersistenceQueue` method will initialize a Redis list by calling [**Bull's**](https://github.com/OptimalBits/bull) utility methods. It will also add a **single** job processor for the processing \(making requests to RudderStack\) jobs that are pushed into the list. Any error encountered while doing this leads to calling `callback` with the error.
 
 <div class="infoBlock">
-It is recommended to retry calling `createPersistenceQueue` with a backoff, if the callback returns with an error.
+It is recommended to retry calling <code class="inline-code">createPersistenceQueue</code> with a backoff, if the callback returns with an error.
 
 </div>
 
 <div class="warningBlock">
-If the `createPersistenceQueue` method is not called after initializing the SDK, the SDK will work without any persistence.
+If the <code class="inline-code">createPersistenceQueue</code> method is not called after initializing the SDK, the SDK will work without any persistence.
 
 </div>
 
@@ -313,7 +313,7 @@ client.flush(function (err, batch) {
 - **`isMultiProcessor`** - Determines whether to handle previously active jobs. If set to `false`, the previously active job will be picked up first by the processor. Otherwise, Bull moves this job to the back of the Redis queue to be picked up after the already pushed event.
 
 <div class="warningBlock">
-If the same queue \(RudderStack SDK initialized with the same queue name\) is used in multiple servers, set this value to `true`as event ordering is not present in this case.
+If the same queue (RudderStack SDK initialized with the same queue name) is used in multiple servers, set this value to <code class="inline-code">true</code> as event ordering is not present in this case.
 
 </div>
 

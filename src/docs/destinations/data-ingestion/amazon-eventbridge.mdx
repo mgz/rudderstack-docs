@@ -15,8 +15,10 @@ RudderStack allows you to configure Amazon EventBridge as a destination to which
 <div class="successBlock">
   <strong>
     Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/eventbridge).
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/eventbridge">
+      GitHub repo
+    </a>
+    .
   </strong>
 </div>
 
@@ -53,14 +55,14 @@ Please follow our <a href="../../connections/adding-source-and-destination-rudde
   - The **AWS Access Key ID** and **AWS Secret Access Key** are required \*\*\*\*to authorize RudderStack in order to write to the configured event bus.
 
 <div class="infoBlock">
-To authorize RudderStack, you will need to create an IAM policy that provides the required permission to write to your event bus. Please refer to the [Using Identity-Based Policies \(IAM Policies\) for EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html) guide to know the applicable policies.
+To authorize RudderStack, you will need to create an IAM policy that provides the required permission to write to your event bus. Please refer to the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-identity-based-access-control-eventbridge.html">Using Identity-Based Policies (IAM Policies) for EventBridge</a> guide to know the applicable policies.
 
 </div>
 
 <div class="successBlock">
-  Please note that if the AWS credentials are **already configured** on your
-  machine where the RudderStack server is set up, you will **not** need the
-  security credentials.
+  Please note that if the AWS credentials are{" "}
+  <strong>already configured</strong> on your machine where the RudderStack
+  server is set up, you will <strong>not</strong> need the security credentials.
 </div>
 
 The following snippet shows an example of a permissions policy that allows a user to put event data into Kinesis:

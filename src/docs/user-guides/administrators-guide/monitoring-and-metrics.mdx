@@ -13,7 +13,7 @@ The backend uses [statsd](https://github.com/statsd/statsd) client to log stats.
 Note that the collection of stats can be disabled using `enableStats` in [`config.yaml`](https://docs.rudderstack.com/administrators-guide/config-parameters).
 
 <div class="infoBlock">
-Every metric has a dimension called **`instanceName`** that can be used to filter metrics. This can be helpful in case of multi-node deployments.
+Every metric has a dimension called <strong><code class="inline-code">instanceName</code></strong> that can be used to filter metrics. This can be helpful in case of multi-node deployments.
 
 </div>
 
@@ -119,14 +119,19 @@ These are the backend's implementation-specific metrics that can be used to anal
 | `jobsdb.brt_tables_count` | `Gauge` | Number of batch router tables in JobsDB |
 
 <div class="infoBlock">
-Ideally, the above tables count should not be ever growing. Ever growing tables:
-
-- Indicate events not getting processed and delivered in time.
-
-Or
-
-- Indicate the load exceeded what current setup can handle and it is time to scale.
-  </div>
+  Ideally, the above tables count should not be ever growing. Ever growing
+  tables:
+  <ul>
+    <li>Indicate events not getting processed and delivered in time.</li>
+  </ul>
+  Or
+  <ul>
+    <li>
+      Indicate the load exceeded what current setup can handle and it is time to
+      scale.
+    </li>
+  </ul>
+</div>
 
 ### JobsDB - Table Dump specific
 

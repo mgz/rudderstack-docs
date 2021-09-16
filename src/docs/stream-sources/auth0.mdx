@@ -71,20 +71,20 @@ The webhook event from Auth0 is ingested into RudderStack after converting it in
 
 The following table lists the properties populated from the Auth0 event payload directly to the RudderStack event:
 
-| **Auth0 Property**        | **RudderStack Property**                                                       |
-| :------------------------ | :----------------------------------------------------------------------------- |
-| `client_id`               | `properties.client_id`                                                         |
-| `client_name`             | `properties.client_name`                                                       |
-| `details`                 | `properties.details` **Note**: These are the unmodified details sent by Auth0. |
-| `auth0_client`            | `properties.auth0_client`                                                      |
-| `log_id`                  | `properties.log_id`                                                            |
-| `isMobile`                | `properties.is_mobile`                                                         |
-| `description`             | `properties.description`                                                       |
-| `ip`                      | `context.request_ip`                                                           |
-| `details.auth.user.email` | `context.traits.email`                                                         |
-| `details.auth.user.name`  | `context.traits.name`                                                          |
-| `user_name`               | `context.traits.user_name`                                                     |
-| `user_agent`              | `context.userAgent`                                                            |
+| **Auth0 Property**        | **RudderStack Property**                                                                    |
+| :------------------------ | :------------------------------------------------------------------------------------------ |
+| `client_id`               | `properties.client_id`                                                                      |
+| `client_name`             | `properties.client_name`                                                                    |
+| `details`                 | `properties.details` <strong>NOTE</strong>: These are the unmodified details sent by Auth0. |
+| `auth0_client`            | `properties.auth0_client`                                                                   |
+| `log_id`                  | `properties.log_id`                                                                         |
+| `isMobile`                | `properties.is_mobile`                                                                      |
+| `description`             | `properties.description`                                                                    |
+| `ip`                      | `context.request_ip`                                                                        |
+| `details.auth.user.email` | `context.traits.email`                                                                      |
+| `details.auth.user.name`  | `context.traits.name`                                                                       |
+| `user_name`               | `context.traits.user_name`                                                                  |
+| `user_agent`              | `context.userAgent`                                                                         |
 
 ## How to Debug
 

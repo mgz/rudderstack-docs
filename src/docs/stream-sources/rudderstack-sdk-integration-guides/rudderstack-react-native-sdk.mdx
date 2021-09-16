@@ -82,7 +82,8 @@ await rudderClient.setup(WRITE_KEY, {
 ```
 
 <div class="successBlock">
-  It is highly recommended to use the `await` keyword with the setup call.
+  It is highly recommended to use the <code class="inline-code">await</code>{" "}
+  keyword with the setup call.
 </div>
 
 The `setup` method has the following signature:
@@ -119,13 +120,13 @@ The `track` method has the following signature:
 
 <div class="infoBlock">
 We automatically track the following optional events:
-
-1. `Application Installed`
-2. `Application Updated`
-3. `Application Opened`
-4. `Application Backgrounded`
-
-You can disable these events by passing `trackLifecycleEvents` as false in the configuration object. But it is highly recommended to keep them enabled.
+<ol>
+<li><code class="inline-code">Application Installed</code></li>
+<li><code class="inline-code">Application Updated</code></li>
+<li><code class="inline-code">Application Opened</code></li>
+<li><code class="inline-code">Application Backgrounded</code></li>
+</ol>
+You can disable these events by passing <code class="inline-code">trackLifecycleEvents</code> as false in the configuration object. But it is highly recommended to keep them enabled.
 
 </div>
 
@@ -175,8 +176,8 @@ Alternatively, you can use the following method signature:
 | `option`     | `JSON Object` | No       | Extra options to be passed along with `screen` event.                     |
 
 <div class="infoBlock">
-You can also enable automatic recording of screen views by passing `recordScreenViews` as `true` while initializing the `rudderClient`.  
-The default value for `recordScreenViews` is `false`.
+You can also enable automatic recording of screen views by passing <code class="inline-code">recordScreenViews</code> as <code class="inline-code">true</code> while initializing the <code class="inline-code">rudderClient</code>.  
+The default value for <code class="inline-code">recordScreenViews</code> is <code class="inline-code">false</code>.
 
 </div>
 
@@ -189,7 +190,8 @@ await rudderClient.reset()
 ```
 
 <div class="successBlock">
-  It is highly recommended to use the `await` keyword with the reset call.
+  It is highly recommended to use the <code class="inline-code">await</code>{" "}
+  keyword with the reset call.
 </div>
 
 ## Registering Callbacks:
@@ -228,12 +230,12 @@ const options = {
 ```
 
 <div class="infoBlock">
-The keyword `All` in the above snippet represents all the destinations the source is connected to. Its value is set to `true` by default.
+The keyword <code class="inline-code">All</code> in the above snippet represents all the destinations the source is connected to. Its value is set to <code class="inline-code">true</code> by default.
 
 </div>
 
 <div class="infoBlock">
-Make sure the destination names that you pass while specifying the destinations should exactly match the names listed [here](https://app.rudderstack.com/directory).
+Make sure the destination names that you pass while specifying the destinations should exactly match the names listed <a href="https://app.rudderstack.com/directory">here</a>.
 
 </div>
 

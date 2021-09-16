@@ -99,12 +99,12 @@ All tests are done using db.m4.xlarge Amazon RDS instance for hosting the postgr
 </table>
 
 <div class="infoBlock">
-Backend migrates and drops tables that have a threshold of jobs processed. Gateway tables are backed up to object storage \(S3, MinIO etc.\) if configured by user. Dangling tables indicate tables are ready for drop at a rate greater than the rate at which tables are backed up to object storage. Concurrent uploads to object storage is in the roadmap for upcoming versions of Backend.
+Backend migrates and drops tables that have a threshold of jobs processed. Gateway tables are backed up to object storage (S3, MinIO etc.) if configured by user. Dangling tables indicate tables are ready for drop at a rate greater than the rate at which tables are backed up to object storage. Concurrent uploads to object storage is in the roadmap for upcoming versions of Backend.
 
 </div>
 
 <div class="infoBlock">
-Load is an approximation since it depends on the maching configuration where the [genload.go script](https://github.com/rudderlabs/rudder-server/blob/master/tests/load/genload.go) is run from. We ran it on a m5ad.xLarge machine with the approxiamtion that input of 50 users \(50 go routines\) gives a input load of 2.5K/s
+Load is an approximation since it depends on the maching configuration where the <a href="https://github.com/rudderlabs/rudder-server/blob/master/tests/load/genload.go">genload.go script</a> is run from. We ran it on a m5ad.xLarge machine with the approxiamtion that input of 50 users (50 go routines) gives a input load of 2.5K/s
 
 </div>
 
@@ -162,8 +162,10 @@ Load is an approximation since it depends on the maching configuration where the
 </table>
 
 <div class="warningBlock">
-Transformer is a NodeJS/Koa server launced as cluster of node processes, processses count equal to the number of cores of the machine. Choosingan instance with lower number of core the number of cores in instance processor might reduce the throughput of transformer
-
+  Transformer is a NodeJS/Koa server launced as cluster of node processes,
+  processses count equal to the number of cores of the machine. Choosing an
+  instance with lower number of core the number of cores in instance processor
+  might reduce the throughput of transformer.
 </div>
 
 ### Batch Router - S3 Destination

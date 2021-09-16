@@ -269,7 +269,7 @@ rudderanalytics.track("Track me")
 Amplitude allows for tracking of revenue events.
 
 <div class="warningBlock">
-To track a revenue event, you must include a `revenue` key in the event. This key is required to have the event counted as a revenue event to send data through the RudderStack cloud mode.
+To track a revenue event, you must include a <code class="inline-code">revenue</code> key in the event. This key is required to have the event counted as a revenue event to send data through the RudderStack cloud mode.
 
 </div>
 
@@ -287,7 +287,7 @@ rudderanalytics.track("Item Purchased", {
 ```
 
 <div class="warningBlock">
-To track revenue event in web device mode, we use Amplitude's `logRevenueV2()` api and also for an eCommerce event, we expect `revenue` as a top level attribute in properties. If `products` array is present in event payload, then to track product individually, at each product level `price` or `revenue`must be present, or else we will not track the revenue. As `logRevenueV2` uses both `price` and `quantity` to calculate the `revenue`, if no `quantity` is present, we will take default as `1`.
+To track revenue event in web device mode, we use Amplitude's <code class="inline-code">logRevenueV2()</code> api and also for an eCommerce event, we expect <code class="inline-code">revenue</code> as a top level attribute in properties. If <code class="inline-code">products</code> array is present in event payload, then to track product individually, at each product level <code class="inline-code">price</code> or <code class="inline-code">revenue</code>must be present, or else we will not track the revenue. As <code class="inline-code">logRevenueV2</code> uses both <code class="inline-code">price</code> and <code class="inline-code">quantity</code> to calculate the <code class="inline-code">revenue</code>, if no <code class="inline-code">quantity</code> is present, we will take default as <code class="inline-code">1</code>.
 
 </div>
 
@@ -327,7 +327,7 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 </div>
 
 <div class="infoBlock">
-**\(Mobile Only\)** If _\*\*_ a property with the name`optOutOfSession`and value`true`then this track call will be opted out of the current session if it exists or does not start a new session if there isn't any active session.
+<strong>(Mobile Only)</strong> If a property with the name <code class="inline-code">optOutOfSession</code> and value <code class="inline-code">true</code>then this track call will be opted out of the current session if it exists or does not start a new session if there isn't any active session.
 
 </div>
 

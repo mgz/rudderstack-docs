@@ -83,7 +83,7 @@ In this section, the events are stored to the gateway \(PostgreSQL\) and acknowl
 The RudderStack Processor module picks events from gateway for further processing. If `Input Requests` &gt; `Output Requests` then the inflow is higher than what the processor can handle.
 
 <div class="infoBlock">
-This usually happens during a sudden surge in the traffic, but syncs over a period of time. If this is consistently high, **consider adding an extra RudderStack node**.
+This usually happens during a sudden surge in the traffic, but syncs over a period of time. If this is consistently high, <strong>consider adding an extra RudderStack node</strong>.
 
 </div>
 
@@ -180,12 +180,12 @@ This graph corresponds to the number of events delivered to the warehouse destin
 ![Synced Rows and Events Sync Lag Time](../../.gitbook/assets/8%20%282%29.png)
 
 <div class="infoBlock">
-A `user_logged_in` event of `track` type will be synced to `tracks` and `user_logged_in` tables. Check out our [RudderStack Warehouse Schema](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-schemas) for more details. Similarly, the `identify` events are synced to the `identifies` and `users` tables. Since each event is being synced to two tables, number of synced rows is generally twice the number of events.
+A <code class="inline-code">user_logged_in</code> event of <code class="inline-code">track</code> type will be synced to <code class="inline-code">tracks</code> and <code class="inline-code">user_logged_in</code> tables. Check out our <a href="../../data-warehouse-integrations/warehouse-schemas">RudderStack Warehouse Schema</a> for more details. Similarly, the <code class="inline-code">identify</code> events are synced to the <code class="inline-code">identifies</code> and <code class="inline-code">users</code> tables. Since each event is being synced to two tables, number of synced rows is generally twice the number of events.
 
 </div>
 
 <div class="infoBlock">
-If an event property does not match the data type in the corresponding table of warehouse, that column is not synced into the actual table but moved into `rudder_discards` table. Check [this guide](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-schemas#data-type-mismatch-handling) on how RudderStack handles data type mismatch, for more details.
+If an event property does not match the data type in the corresponding table of warehouse, that column is not synced into the actual table but moved into <code class="inline-code">rudder_discards</code> table. Check <a href="../../data-warehouse-integrations/warehouse-schemas#data-type-mismatch-handling">this guide</a> on how RudderStack handles data type mismatch, for more details.
 
 </div>
 
@@ -194,7 +194,7 @@ If an event property does not match the data type in the corresponding table of 
 Corresponds to the number of new rows created in the `grouped by` table during warehouse uploads. In the example above, if there are different event names \(eg. `user_logged_in`, `user_signed_up` \) they all are grouped under **`others`** in the metrics.
 
 <div class="warningBlock">
-If there are a lot of synced rows in `rudder_discards`, this implies that the data types are not consistent from your sources. It is recommended to check such entries and fix the issue.
+If there are a lot of synced rows in <code class="inline-code">rudder_discards</code>, this implies that the data types are not consistent from your sources. It is recommended to check such entries and fix the issue.
 
 </div>
 
