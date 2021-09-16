@@ -13,6 +13,9 @@ import clientConfig from "../../client-config"
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const TrankYou = ({ data, htmlId }) => {
+  console.log('path debug 1', location.pathname.startsWith("/careers"))
+  console.log('path debug 2', location.pathname.startsWith("careers"))
+  console.log('path debug 3', location.pathname)
   const location = useLocation()
   const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
