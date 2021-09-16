@@ -11,14 +11,18 @@ Snowflake is a cloud-based data warehouse provided as Software-as-a-Service \(Sa
 RudderStack allows you to configure Snowflake as a destination to dump your event data seamlessly.
 
 <div class="infoBlock">
-Please check our [Warehouse Schemas](https://docs.rudderstack.com/data-warehouse-integration-guides/warehouse-schemas) guide to know how events are mapped to the tables in Snowflake.
+Please check our <a href="../data-warehouse-integrations/warehouse-schemas">Warehouse Schemas</a> guide to know how events are mapped to the tables in Snowflake.
 
 </div>
 
 <div class="successBlock">
-  **Find the open-source transformer code for this destination in our**
-  [**GitHub
-  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/snowflake)**.**
+  <strong>
+    Find the open-source transformer code for this destination in our{" "}
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/snowflake">
+      GitHub repo
+    </a>
+    .
+  </strong>
 </div>
 
 ## Snowflake User Setup
@@ -49,7 +53,7 @@ CREATE WAREHOUSE "RUDDER_WAREHOUSE"
 ```
 
 <div class="infoBlock">
-It is recommended that you set `AUTO_SUSPEND` to ~10 mins, and enable `AUTO_RESUME` to avoid any extra costs.
+It is recommended that you set <code class="inline-code">AUTO_SUSPEND</code> to ~10 mins, and enable <code class="inline-code">AUTO_RESUME</code> to avoid any extra costs.
 
 </div>
 
@@ -119,7 +123,7 @@ To do so, please follow these steps:
 - Choose a source to which you would like to add Snowflake as a destination. You can also simply create a destination and connect it to a source later.
 
 <div class="infoBlock">
-Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
+Please follow our <a href="../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to know how to add a source in RudderStack.
 
 </div>
 
@@ -384,9 +388,10 @@ GRANT USAGE ON INTEGRATION <integration_name> TO ROLE "RUDDER";
 ```
 
 <div class="infoBlock">
-
-- `"RUDDER"` is the name of the role that you created above [here](https://docs.rudderstack.com/data-warehouse-integrations/snowflake#creating-a-role-for-rudderstack)
-- `<integration_name>` is the name of the integration that you set above in step 1
+<ul>
+<li><code class="inline-code">"RUDDER"</code> is the name of the role that you created above <a href="../data-warehouse-integrations/snowflake#creating-a-role-for-rudderstack">here</a>
+<li><code class="inline-code">&lt;integration_name&gt;</code> is the name of the integration that you set above in step 1
+</ul>
   </div>
 {% endtab %}
 {% endtabs %}
@@ -396,7 +401,7 @@ GRANT USAGE ON INTEGRATION <integration_name> TO ROLE "RUDDER";
 You will need to whitelist the RudderStack IPs to enable network access to it.
 
 <div class="infoBlock">
-**The IPs to be whitelisted are : `3.216.35.97`, `34.198.90.241` , `54.147.40.62`** , **`23.20.96.9`,** and **`18.214.35.254`**.
+<strong>The IPs to be whitelisted are : <code class="inline-code">3.216.35.97</code>, <code class="inline-code">34.198.90.241</code> , <code class="inline-code">54.147.40.62</code> , <code class="inline-code">23.20.96.9</code>, and <code class="inline-code">18.214.35.254</code>.</strong>
 
 </div>
 

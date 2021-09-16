@@ -11,9 +11,11 @@ description: Step-by-step guide to send event data from RudderStack to Facebook 
 You can now send your event data directly to Facebook Pixel through RudderStack.
 
 <div class="successBlock">
-  **Find the open-source transformer code for this destination in our**
-  [**GitHub
-  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/facebook_pixel)**.**
+  <strong>
+    Find the open-source transformer code for this destination in our{" "}
+    <a href="">GitHub repo</a>
+    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/facebook_pixel).
+  </strong>
 </div>
 
 ## Getting Started
@@ -28,7 +30,7 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -37,7 +39,7 @@ Once you have confirmed that the platform supports sending events to Facebook, p
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Facebook Pixel**.
 
 <div class="infoBlock">
-Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
 
@@ -86,8 +88,6 @@ More information on how to find your Facebook Pixel ID and Business Access Token
   - **Standard Events Custom Properties**: For the standard events, some predefined properties are taken by Facebook. If you want to send more properties for your events, those properties should be mentioned in this setting.
   - **Use as Test Destination:** If you will be using this destination for testing purposes, toggle this switch on. Then, enter the `Test Event Code` below. This code can be found on your Facebook Pixel dashboard and is required if the Test Destination flag is turned on.
 
-  \*\*\*\*
-
   - **Limited Data Usage**: If enabled, RudderStack will take the data processing information from the payload and send it to Facebook. The data in the RudderStack payload should be as follows:
 
 ```javascript
@@ -128,8 +128,16 @@ More information on how to find your Facebook Pixel ID and Business Access Token
 ```
 
 <div class="infoBlock">
-The `context.dataProcessingOptions` will be mapped to **`data_processing_options`** in Facebook as is mentioned in the [Facebook developer docs](https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event#data-processing-options).
-
+  The <code class="inline-code">context.dataProcessingOptions</code> will be
+  mapped to{" "}
+  <strong>
+    <code class="inline-code">data_processing_options</code>
+  </strong>{" "}
+  in Facebook as is mentioned in the{" "}
+  <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/parameters/server-event#data-processing-options">
+    Facebook developer docs
+  </a>
+  .
 </div>
 
 - Finally, click on **Next** to complete the configuration.
@@ -199,7 +207,7 @@ rudderanalytics.track(
 In the dashboard, you have the option to **map your events to standard Facebook events**. RudderStack maps the events in the code and sends them to Facebook pixel as the standard event as specified. All the properties will be sent as the event properties.
 
 <div class="infoBlock">
-Please go through our guide on [E-Commerce Event Specifications](https://docs.rudderstack.com/rudderstack-api-spec/rudderstack-ecommerce-events-specification) for more information
+Please go through our guide on <a href="../../rudderstack-api/rudderstack-ecommerce-events-specification">E-Commerce Event Specifications</a> for more information
 
 </div>
 
@@ -234,7 +242,7 @@ Custom events are used to send any event that does not appear in any of the mapp
 Facebook Pixel allows you to send events via your web browser and your server via the Conversion API. Depending on how you send your events, with this duel set-up, redundant events may be received by Facebook. Therefore, to help get accurate representation of your data, Facebook tries to deduplicate events coming in.
 
 <div class="infoBlock">
-For more information on Facebook Deduplication, you can refer to [this article.](https://www.facebook.com/business/help/823677331451951?id=1205376682832142)
+For more information on Facebook Deduplication, you can refer to <a href="https://www.facebook.com/business/help/823677331451951?id=1205376682832142">this article</a>.
 
 </div>
 
@@ -252,7 +260,7 @@ Facebook's \(and RudderStack's\) recommended form of deduplication is to leverag
 To set the `event_id`, simply include the `event_id` key-value pair either in the `context.traits` object or the `properties` object. The `event_name` will be whatever the name of the event is.
 
 <div class="infoBlock">
-For more information regarding the logic behind the `event_id` deduplication, read [this article](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#event-id-and-event-name---recommended).
+For more information regarding the logic behind the <code class="inline-code">event_id</code> deduplication, read <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#event-id-and-event-name---recommended">this article</a>.
 
 </div>
 
@@ -267,7 +275,7 @@ For this approach, it is necessary to send an event, first from the browser, the
 RudderStack maps the `event_name` from whatever the name of the event that is being sent is. The `fbp` parameter is taken from the `context.fbp` key-value pair. Finally, the `external_id` will just be the `userId` or `anonymousId` \(if `userId` is not present\).
 
 <div class="infoBlock">
-For more information regarding the logic behind the `fbp` and `external_id` deduplication, read [this article](https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id).
+For more information regarding the logic behind the <code class="inline-code">fbp</code> and <code class="inline-code">external_id</code> deduplication, read <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/deduplicate-pixel-and-server-events/#fbp-or-external-id">this article</a>.
 
 </div>
 
@@ -301,7 +309,7 @@ In order to use the Facebook Conversions API, you need to generate an access tok
 ![](../../.gitbook/assets/screen-shot-2021-03-03-at-1.44.33-pm.png)
 
 <div class="infoBlock">
-For more information on how to use this access token, or to generate your access token via your own app, check out Facebook's [developer documentation](https://developers.facebook.com/docs/marketing-api/conversions-api/get-started/#via-events-manager).
+For more information on how to use this access token, or to generate your access token via your own app, check out Facebook's <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/get-started/#via-events-manager">developer documentation</a>.
 
 </div>
 

@@ -11,10 +11,22 @@ description: Step-by-step guide to set up Lotame as a destination in RudderStack
 RudderStack supports syncing Lotame's **BCP Pixel** and **DSP Pixel** through our `page` and `identify` call.
 
 <div class="infoBlock">
-
-- **BCP:** The BCP, or **Behavior Collection Point**, is a JavaScript snippet that is placed on a web page. It is responsible for capturing the relevant user activity.
-- **DSP:** The DSP, or **Demand-Side Platform**, allows digital advertising inventory buyers to manage their ad exchange as well as data exchange accounts through a single interface.
-  </div>
+  <ul>
+    <li>
+      {" "}
+      <strong>BCP:</strong> The BCP, or <strong>
+        Behavior Collection Point
+      </strong>, is a JavaScript snippet that is placed on a web page. It is responsible
+      for capturing the relevant user activity.
+    </li>
+    <li>
+      {" "}
+      <strong>DSP:</strong> The DSP, or <strong>Demand-Side Platform</strong>, allows
+      digital advertising inventory buyers to manage their ad exchange as well as
+      data exchange accounts through a single interface.
+    </li>
+  </ul>
+</div>
 
 ## Getting Started
 
@@ -28,7 +40,7 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Cloud mode**      | -             | -             | -          |
 
 <div class="infoBlock">
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -37,7 +49,7 @@ Once you have confirmed that the platform supports sending events to Lotame, per
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), select Lotame as a destination.
 
 <div class="infoBlock">
-Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
 
@@ -52,7 +64,7 @@ https://bcp.crwdcntrl.net/1/c={{clientId}}/b={{behavioralId}}
 ```
 
 <div class="infoBlock">
-RudderStack supports simple Handlebar expressions for the URLs. It uses the values provided by you in the **Map all the fields** section to replace the expressions, and the final URL as `src`.
+RudderStack supports simple Handlebar expressions for the URLs. It uses the values provided by you in the <strong>Map all the fields</strong> section to replace the expressions, and the final URL as <code class="inline-code">src</code>.
 
 </div>
 
@@ -91,7 +103,7 @@ val rudderClient = RudderClient.getInstance(
 ```
 
 <div class="warningBlock">
-If your Lotame URLs follow the HTTP protocol, you need to allow **`ClearTextTraffic`** for your app. To do so, add **`android:usesCleartextTraffic="true"`** in the **`<application>`** tag of your app's `Android Manifest` file. After adding this, the file should look like the following:
+If your Lotame URLs follow the HTTP protocol, you need to allow <strong><code class="inline-code">ClearTextTraffic</code></strong> for your app. To do so, add <strong><code class="inline-code">android:usesCleartextTraffic="true"</code></strong> in the <strong><code class="inline-code">&lt;application&gt;</code></strong> tag of your app's <code class="inline-code">Android Manifest</code> file. After adding this, the file should look like the following:
 
 ```markup
 <application

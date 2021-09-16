@@ -11,14 +11,18 @@ description: Step-by-step guide to set up ClickHouse as a destination in RudderS
 You can now integrate RudderStack with ClickHouse seamlessly and store your customer event data into it, from the source of your choice.
 
 <div class="infoBlock">
-Please check our [Warehouse Schemas](https://docs.rudderstack.com/data-warehouse-integration-guides/warehouse-schemas) guide to know how events are mapped to the tables in ClickHouse.
+Please check our <a href="../data-warehouse-integrations/warehouse-schemas">Warehouse Schemas</a> guide to know how events are mapped to the tables in ClickHouse.
 
 </div>
 
 <div class="successBlock">
-  **Find the open-source transformer code for this destination in our**
-  [**GitHub
-  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/clickhouse)**.**
+  <strong>
+    Find the open-source transformer code for this destination in our{" "}
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/clickhouse">
+      GitHub repo
+    </a>
+    .
+  </strong>
 </div>
 
 ## Setting ClickHouse Permissions
@@ -30,17 +34,17 @@ set date_time_input_format = 'best_effort';
 ```
 
 <div class="infoBlock">
-We use `UInt8` datatype to set Boolean values and map `UInt8`to Boolean internally. So when we fetch schema from ClickHouse, we treat `UInt8`as Boolean.
+We use <code class="inline-code">UInt8</code> datatype to set Boolean values and map <code class="inline-code">UInt8</code>to Boolean internally. So when we fetch schema from ClickHouse, we treat <code class="inline-code">UInt8</code> as Boolean.
 
 </div>
 
 <div class="infoBlock">
-Make sure your ClickHouse User has read access to `system.columns` table for fetching table schema's
+Make sure your ClickHouse User has read access to <code class="inline-code">system.columns</code> table for fetching table schema's
 
 </div>
 
 <div class="warningBlock">
-If you are creating tables in the same database where RudderStack loads, we highly recommend not using `UInt8`as a datatype except for boolean values \(0,1\).
+If you are creating tables in the same database where RudderStack loads, we highly recommend not using <code class="inline-code">UInt8</code>as a datatype except for boolean values (0,1).
 
 </div>
 
@@ -49,7 +53,7 @@ If you are creating tables in the same database where RudderStack loads, we high
 You will need to whitelist the RudderStack IPs to enable network access to it.
 
 <div class="infoBlock">
-**The IPs to be whitelisted are : `3.216.35.97`, `34.198.90.241` , `54.147.40.62`** , **`23.20.96.9`,** and **`18.214.35.254`**.
+<strong>The IPs to be whitelisted are : <code class="inline-code">3.216.35.97</code>, <code class="inline-code">34.198.90.241</code> , <code class="inline-code">54.147.40.62</code> , <code class="inline-code">23.20.96.9</code>, and <code class="inline-code">18.214.35.254</code></strong>.
 
 </div>
 
@@ -62,7 +66,7 @@ To configure ClickHouse as a destination, please follow these steps:
 - Choose a source to which you would like to add ClickHouse as a destination. You can also simply create a destination and connect it to a source later.
 
 <div class="infoBlock">
-Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
+Please follow our <a href="../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to know how to add a source in RudderStack.
 
 </div>
 

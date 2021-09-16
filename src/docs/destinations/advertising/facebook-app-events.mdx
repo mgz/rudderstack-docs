@@ -13,9 +13,11 @@ description: >-
 RudderStack supports Facebook App Events as a destination to which you can send your event data seamlessly.
 
 <div class="successBlock">
-  **Find the open-source transformer code for this destination in our**
-  [**GitHub
-  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb)**.**
+  <strong>
+    Find the open-source transformer code for this destination in our{" "}
+    <a href="">GitHub repo</a>
+    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb).
+  </strong>
 </div>
 
 ## Getting Started
@@ -30,7 +32,7 @@ Before configuring App Events as a destination, verify if Facebook supports the 
 | **Cloud mode**      | **Supported** | **Supported** | -          |
 
 <div class="infoBlock">
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -39,7 +41,7 @@ Once you have confirmed that the source supports sending events to Facebook App 
 - From your [**RudderStack dashboard**](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Facebook App Events**.
 
 <div class="infoBlock">
-Please follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more information.
+Please follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> for more information.
 
 </div>
 
@@ -54,8 +56,10 @@ The following options are applicable if you are using the Device mode to send yo
 - **Limited Data Use**: If this option is enabled, you can send the country and state of the end-user so that Facebook processes the user data according to the data regulations set for that region.
 
 <div class="successBlock">
-  For more information on this option, refer to the [**Limited Data
-  Use**](https://docs.rudderstack.com/destinations/advertising/facebook-app-events#limited-data-use)
+  For more information on this option, refer to the{" "}
+  <a href="../../destinations/advertising/facebook-app-events#limited-data-use">
+    Limited Data Use
+  </a>{" "}
   section below.
 </div>
 
@@ -125,7 +129,7 @@ pod 'Rudder-Facebook'
 ```
 
 <div class="infoBlock">
-Make sure you replace `fbAPP-ID` , `APP-ID`, `CLIENT-TOKEN`, `APP-NAME` with the app-specific details from the [**Facebook for Developers platform**](https://developers.facebook.com/).
+Make sure you replace <code class="inline-code">fbAPP-ID</code> , <code class="inline-code">APP-ID</code>, <code class="inline-code">CLIENT-TOKEN</code>, <code class="inline-code">APP-NAME</code> with the app-specific details from the <a href="https://developers.facebook.com/">Facebook for Developers platform</a>.
 
 </div>
 
@@ -237,9 +241,9 @@ A sample `track` call for an iOS application is as shown:.
 ```
 
 <div class="infoBlock">
-When `revenue` and `currency` are present in the event properties of any `track` call, RudderStack makes a `Purchase` call to Facebook using its `logPurchase` API along with the normal `track` call using the `logEvent` API.
+When <code class="inline-code">revenue</code> and <code class="inline-code">currency</code> are present in the event properties of any <code class="inline-code">track</code> call, RudderStack makes a <code class="inline-code">Purchase</code> call to Facebook using its <code class="inline-code">logPurchase</code> API along with the normal <code class="inline-code">track</code> call using the <code class="inline-code">logEvent</code> API.
 
-If `currency` is absent in the event properties RudderStack sets the default value to `USD`.
+If <code class="inline-code">currency</code> is absent in the event properties RudderStack sets the default value to <code class="inline-code">USD</code>.
 
 </div>
 
@@ -258,7 +262,7 @@ A sample `screen` call using the RudderStack Android SDK is as shown:
 In the above snippet, RudderStack captures the information related to the viewed screen, such as screen name and `category`.
 
 <div class="infoBlock">
-The above `screen` call is directly passed on to Facebook as a `track` event via its `logEvent` API, with the event name as `Viewed {screen name} screen` along with the the associated properties. The above example will be sent as a `track` event with name `Viewed Home screen` along with its properties.
+The above <code class="inline-code">screen</code> call is directly passed on to Facebook as a <code class="inline-code">track</code> event via its <code class="inline-code">logEvent</code> API, with the event name as <code class="inline-code">Viewed &#123;screen name&#125; screen</code> along with the the associated properties. The above example will be sent as a <code class="inline-code">track</code> event with name <code class="inline-code">Viewed Home screen</code> along with its properties.
 
 </div>
 

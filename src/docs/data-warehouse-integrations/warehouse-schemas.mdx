@@ -147,9 +147,9 @@ The following is a list of tables created for each RudderStack source that is co
 <div class="infoBlock">
 All the properties in the event are stored as top-level columns in the corresponding table. Nested properties will be prefixed with the parent key. For example, an event with properties as shown:
 
-**`{ product: { name: iPhone, version: 11 }`**
+<strong><code class="inline-code">{ product: { name: iPhone, version: 11 }}</code></strong>
 
-will results in the columns **`product_name`** and **`product_version`**`.`
+will results in the columns <strong><code class="inline-code">product_name</code></strong> and <strong><code class="inline-code">product_version</code></strong>`.`
 
 </div>
 
@@ -260,7 +260,7 @@ RudderStack reserves the above-mentioned standard properties. In the case of any
 RudderStack considers the time at its end to be absolute and assumes any difference on the client-side. Thus, the client clock skew is relative.
 
 <div class="infoBlock">
-`sentAt` &gt; `original_timestamp` is **always true**. However, `timestamp` can be more or less than the `original_timestamp`. Refer to the examples below for more details.
+<code class="inline-code">sentAt</code> &gt; <code class="inline-code">original_timestamp</code> is <strong>always true</strong>. However, <code class="inline-code">timestamp</code> can be more or less than the <code class="inline-code">original_timestamp</code>. Refer to the examples below for more details.
 
 </div>
 
@@ -430,9 +430,11 @@ RudderStack creates a record in the `identifies` table and upserts the records i
 
 <div class="successBlock">
   In case of Google BigQuery, you can use the views created over the tables to
-  query for unique users in the dataset. Refer to the [**BigQuery
-  documentation**](https://docs.rudderstack.com/data-warehouse-integrations/google-bigquery#schema-partitioned-tables-and-views)
-  \*\*\*\*for more details.
+  query for unique users in the dataset. Refer to the{" "}
+  <a href="../data-warehouse-integrations/google-bigquery#schema-partitioned-tables-and-views">
+    BigQuery documentation
+  </a>{" "}
+  for more details.
 </div>
 
 A sample `identify` event made from the JavaScript SDK is as shown below:
@@ -496,8 +498,9 @@ The `users` table has the properties from the latest `identify` call made for an
 </div>
 
 <div class="successBlock">
-  To get at a user’s `anonymous_id`, you can query the `identifies` table by
-  grouping on the `user_id` column.
+  To get at a user’s <code class="inline-block">anonymous_id</code>, you can
+  query the <code class="inline-block">identifies</code> table by grouping on
+  the <code class="inline-block">user_id</code> column.
 </div>
 
 ### Page & Screen
@@ -598,7 +601,7 @@ RudderStack only recognizes a subset of the ISO 8601 timestamp formats as a time
 - `2019-09-26T06:30:12.984+05:30`
 
 <div class="warningBlock">
-RudderStack **does not recognize** any other timestamp format apart from the formats mentioned above.
+RudderStack <strong>does not recognize</strong> any other timestamp format apart from the formats mentioned above.
 
 </div>
 
@@ -621,7 +624,7 @@ Find more details about the list of reserved keywords in the following warehouse
 Once RudderStack recognizes and sets a data type for a table column, it will not accept any values for the column that cannot be cast to the specified data type.
 
 <div class="warningBlock">
-The values which cannot be cast are set as `NULL` in the table and stored in the `rudder_discards` table.
+The values which cannot be cast are set as <code class="inline-block">NULL</code> in the table and stored in the <code class="inline-block">rudder_discards</code> table.
 
 </div>
 
@@ -678,7 +681,7 @@ The schema of the `rudder_discards table` is as shown below:
 </table>
 
 <div class="infoBlock">
-The `row_id` is the column which users can use to join with original table and update it as required. It is set to `messageId` for all tables except the `users` table, where it corresponds to `userId`.
+The <code class="inline-code">row_id</code> is the column which users can use to join with original table and update it as required. It is set to <code class="inline-code">messageId</code> for all tables except the <code class="inline-code">users</code> table, where it corresponds to <code class="inline-code">userId</code>.
 
 </div>
 

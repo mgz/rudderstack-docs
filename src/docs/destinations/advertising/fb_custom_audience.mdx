@@ -15,14 +15,18 @@ RudderStack lets you send your customer events for creating custom audiences by 
 You can now send your customer events data list directly for adding them to already created Facebook Custom Audience through RudderStack.
 
 <div class="infoBlock">
-The user information in your events may include email, phone number, gender, etc. For more information on the supported fields, refer the documentation [**here**](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#hash).
+The user information in your events may include email, phone number, gender, etc. For more information on the supported fields, refer the documentation <a href="https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#hash">here</a>.
 
 </div>
 
 <div class="successBlock">
-  **Find the open-source transformer code for this destination in our**
-  [**GitHub
-  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb_custom_audience)**.**
+  <strong>
+    Find the open-source transformer code for this destination in our{" "}
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb_custom_audience">
+      GitHub repo
+    </a>
+    .
+  </strong>
 </div>
 
 ## Getting Started
@@ -37,7 +41,7 @@ Before configuring Facebook Custom Audience as a destination, verify if the sour
 | **Cloud mode**      | -       | -          | **Supported** |
 
 <div class="infoBlock">
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -46,7 +50,7 @@ Once you have confirmed that the platform supports sending events to Custom Audi
 - From your [**RudderStack dashboard**](https://app.rudderlabs.com/), add the source. Then, select **Facebook Custom Audience** from the list of destinations.
 
 <div class="infoBlock">
-Please follow our guide on [**How to Add a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+Please follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
 
@@ -61,7 +65,7 @@ To add Custom Audience as a destination in RudderStack, you will need to configu
 - **Access Token** Enter the access token of your business application set up for accessing the Facebook Marketing API.
 
 <div class="infoBlock">
-Check the **FAQ** section for more information on how to find your User Access Token.
+Check the <strong>FAQ</strong> section for more information on how to find your User Access Token.
 
 </div>
 
@@ -75,12 +79,12 @@ RudderStack will ignore any user information which does not adhere to the specif
 - **Map Specific Events To Audience ID**: Enter the **Event Name\(s\)** you are going to use to send your user data to Rudderstack \(for e.g.`uploadingCustomAudience`,`trimmingCustomAudience` etc.\). Also, specify the corresponding **Custom Audience ID\(s\)** to which the audiences will be added to/removed from.
 
 <div class="infoBlock">
-Check the **FAQ** section for more information on how to find your Audience ID.
+Check the <strong>FAQ</strong> section for more information on how to find your Audience ID.
 
 </div>
 
 <div class="infoBlock">
-You can only send `track` events with the event names specified in the dashboard.
+You can only send <code class="inline-code">track</code> events with the event names specified in the dashboard.
 
 </div>
 
@@ -91,7 +95,7 @@ You can only send `track` events with the event names specified in the dashboard
 ## The `track` Event Structure to Send User Data to Custom Audience
 
 <div class="warningBlock">
-**The Facebook Custom Audience destination supports only `track` calls.**
+<strong>The Facebook Custom Audience destination supports only <code class="inline-code">track</code> calls.</strong>
 
 </div>
 
@@ -111,12 +115,12 @@ A detailed description of the session fields as prescribed in the [**Facebook do
 | `estimated_num_total`,`estimatedNumTotal` | `estimated_num_total`        | `int64`       | Refers to the estimated total number of users to be uploaded in a particular session.                                                                                 |
 
 <div class="warningBlock">
-You cannot add or remove users from a custom audience using the same value for `sessionIdAdd` and `sessionIdDelete`.
+You cannot add or remove users from a custom audience using the same value for <code class="inline-code">sessionIdAdd</code> and <code class="inline-code">sessionIdDelete</code>.
 
 </div>
 
 <div class="infoBlock">
-For adding the session information to any user addition/deletion operation, the Facebook Marketing API expects the `session_id`, `batch_seq`, `last_batch_flag` fields to be present. **However, note that the data addition and deletion operations are possible without explicitly specifying the session information.**
+For adding the session information to any user addition/deletion operation, the Facebook Marketing API expects the <code class="inline-code">session_id</code>, <code class="inline-code">batch_seq</code>, <code class="inline-code">last_batch_flag</code> fields to be present. <strong>However, note that the data addition and deletion operations are possible without explicitly specifying the session information.</strong>
 
 </div>
 
@@ -219,9 +223,9 @@ rudder_analytics.track('USER-ID', 'EVENT-NAME', {
 | Not using both `sessionIdAdd` and `sessionIdDelete` | Yes \( Rudderstack will not explicitly create sessions for both the delete and add operations.\) |
 
 <div class="infoBlock">
-`sessionIdAdd` and `sessionIdDelete` helps you track and use a particular session ID while adding or removing users. This is useful when you are sending data in chunks. If you do not include these fields, Facebook creates a session ID itself.
+<code class="inline-code">sessionIdAdd</code> and <code class="inline-code">sessionIdDelete</code> helps you track and use a particular session ID while adding or removing users. This is useful when you are sending data in chunks. If you do not include these fields, Facebook creates a session ID itself.
 
-Refer to the [**Facebook documentation**](https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#step-2--specify-a-list-of-users) for more information on this.
+Refer to the <a href="https://developers.facebook.com/docs/marketing-api/audiences/guides/custom-audiences#step-2--specify-a-list-of-users">Facebook documentation</a> for more information on this.
 
 </div>
 
@@ -249,18 +253,18 @@ rudder_analytics.track('USER-ID', 'EVENT-NAME', {
 As the `sessionIdAdd` field is absent, the above example does not create a session explicitly but successfully adds users to Facebook Custom Audience.
 
 <div class="infoBlock">
-Similarly, you can use `userListDelete` in order to remove users from a particular custom audience without creating a session.
+Similarly, you can use <code class="inline-code">userListDelete</code> in order to remove users from a particular custom audience without creating a session.
 
 </div>
 
 <div class="warningBlock">
-The event payload must include `userListAdd` or `userListDelete` . Otherwise, the user data won’t be transformed and sent to Custom Audience.
+The event payload must include <code class="inline-code">userListAdd</code> or <code class="inline-code">userListDelete</code> . Otherwise, the user data won’t be transformed and sent to Custom Audience.
 
 </div>
 
 ### FAQs
 
-### Where can I find the Custom Audience ID?\*\*
+### Where can I find the Custom Audience ID?
 
 - To get your Custom Audience ID, go to your Facebook Ads Manager account. On the left navigation bar, select **Audiences** and choose the Ad account you have created the custom audience for.
 
@@ -297,7 +301,7 @@ To use the Facebook Marketing API, you need to generate a user access token. Fol
 ![](https://user-images.githubusercontent.com/59817155/123802258-c00d6080-d908-11eb-8edf-72211dd39cfd.png)
 
 <div class="infoBlock">
-For more information on using this access token or generating the access token via your app, check out Facebook's [**developer documentation**](https://developers.facebook.com/docs/marketing-apis/overview/authentication).
+For more information on using this access token or generating the access token via your app, check out Facebook's <a href="https://developers.facebook.com/docs/marketing-apis/overview/authentication">developer documentation</a>.
 
 </div>
 

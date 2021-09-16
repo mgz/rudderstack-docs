@@ -11,14 +11,18 @@ Amazon Redshift is the world's fastest cloud data warehouse. It allows you to ha
 You can integrate RudderStack with Redshift seamlessly and store your customer event data into it, from the source of your choice.
 
 <div class="infoBlock">
-Please check our [Warehouse Schemas](https://docs.rudderstack.com/data-warehouse-integration-guides/warehouse-schemas) guide to know how events are mapped to the tables in Redshift.
+Please check our <a href="../data-warehouse-integrations/warehouse-schemas">Warehouse Schemas</a> guide to know how events are mapped to the tables in Redshift.
 
 </div>
 
 <div class="successBlock">
-  **Find the open-source transformer code for this destination in our**
-  [**GitHub
-  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/rs)**.**
+  <strong>
+    Find the open-source transformer code for this destination in our{" "}
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/rs">
+      GitHub repo
+    </a>
+    .
+  </strong>
 </div>
 
 ## Setting Up a Redshift Cluster
@@ -33,7 +37,7 @@ Amazon Redshift provides two types of clusters: **Dense Compute** and **Dense St
 - **Dense Storage** clusters maximize storage for customers with hundreds of millions of rows of data. However, there is a trade-off in the CPU usage, resulting in a lower query performance.
 
 <div class="infoBlock">
-Please refer to [this article](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#working-with-clusters-overview) to read more about the cluster and node types in Amazon Redshift.
+Please refer to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#working-with-clusters-overview">this article</a> to read more about the cluster and node types in Amazon Redshift.
 
 </div>
 
@@ -69,7 +73,7 @@ For security purposes, we recommend that you choose a strong password.
 - Finish creating the cluster by allowing the default options for **Additional Configurations**.
 
 <div class="infoBlock">
-As a part of this setup, we will also have to edit the VPC network and configure the security settings. We will cover these aspects in the [Connecting RudderStack to Redshift](https://docs.rudderstack.com/destinations/amazon-redshift#connecting-rudderstack-to-redshift) section.
+As a part of this setup, we will also have to edit the VPC network and configure the security settings. We will cover these aspects in the <a href="../data-warehouse-integrations/amazon-redshift">Connecting RudderStack to Redshift</a> section.
 
 </div>
 
@@ -112,12 +116,12 @@ The newly created user credentials should be used while configuring Redshift as 
 The Redshift cluster needs to whitelist the RudderStack IPs to enable network access to it. This section explains how to add a security group and assign it to Redshift.
 
 <div class="infoBlock">
-This procedure works for **EC2-VPC**. However, **EC2-Classic** works similarly.
+This procedure works for <strong>EC2-VPC</strong>. However, <strong>EC2-Classic</strong> works similarly.
 
 </div>
 
 <div class="infoBlock">
-**The IPs to be whitelisted are : `3.216.35.97`, `34.198.90.241` , `54.147.40.62`** , **`23.20.96.9`,** and **`18.214.35.254`**.
+<strong>The IPs to be whitelisted are : <code class="inline-code">3.216.35.97</code>, <code class="inline-code">34.198.90.241</code> , <code class="inline-code">54.147.40.62</code> , <code class="inline-code">23.20.96.9</code>, and <code class="inline-code">18.214.35.254</code></strong>.
 
 </div>
 
@@ -158,7 +162,7 @@ To do so, please follow these steps:
 - Choose a source to which you would like to add Redshift as a destination. You can also simply create the destination and connect it to a source later.
 
 <div class="infoBlock">
-Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) guide to know how to add a source in RudderStack.
+Please follow our <a href="../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</strong> guide to know how to add a source in RudderStack.
 
 </div>
 
@@ -170,7 +174,7 @@ Please follow our [Adding a Source and Destination](https://docs.rudderstack.com
 - You will also need to enter the AWS Access Key ID and AWS Secret Access Key. you can avoid this by setting up permission for your S3 bucket by following [this guide](https://docs.rudderstack.com/data-warehouse-integration-guides/amazon-redshift#s3-permissions).
 
 <div class="infoBlock">
-You can read more about creating a S3 bucket in [this article](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).
+You can read more about creating a S3 bucket in <a href="https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">this article</a>.
 
 </div>
 

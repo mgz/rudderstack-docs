@@ -11,9 +11,11 @@ description: Step-by-step guide to send your event data from RudderStack to Ampl
 RudderStack supports sending events from the RudderStack SDKs to Amplitude through our data plane and Web connection mode.
 
 <div class="successBlock">
-  **Find the open-source transformer code for this destination in our**
-  [**GitHub
-  repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/am)**.**
+  <strong>
+    Find the open-source transformer code for this destination in our{" "}
+    <a href="">GitHub repo</a>
+    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/am).
+  </strong>
 </div>
 
 ## Getting started
@@ -26,7 +28,7 @@ Before configuring your source and destination on the RudderStack app, please ch
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -35,7 +37,7 @@ Once you have confirmed that the platform supports sending events to Amplitude, 
 - To enable sending data to Amplitude, you will need to add it to the source you send the event data.
 
 <div class="infoBlock">
-Please follow our guide on [How to Add a Source and Destination in RudderStack](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) to add a source and destination in RudderStack.
+Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
 
@@ -318,7 +320,7 @@ rudderanalytics.track("Order Completed", {
 The above call will generate one `Order Completed` event, 2 individual `Product purchased` events and 2 revenue events \(one with `$price` as `15` and `$quantity` as `2` and the other one with `$price` as `20` and `$quantity` as `1` \) at Amplitude, provided that in the destination settings dashboard: `Track revenue per product settings` is enabled. The two separate revenue events are generated for device mode. For cloud mode, revenue will be tracked along with the 2 `Product purchased` events.
 
 <div class="infoBlock">
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the [RudderStack connection modes](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
 
