@@ -20,9 +20,9 @@ const TrankYou = ({ data, htmlId }) => {
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
-  console.log('path debug 1', location && location.pathname.startsWith("/careers"))
-  console.log('path debug 2', location && location.pathname.startsWith("careers"))
-  console.log('path debug 3', location && location.pathname)
+  // console.log('path debug 1', location && location.pathname.startsWith("/careers"))
+  // console.log('path debug 2', location && location.pathname.startsWith("careers"))
+  // console.log('path debug 3', location && location.pathname)
   return (
     <Layout>
       <Helmet>
