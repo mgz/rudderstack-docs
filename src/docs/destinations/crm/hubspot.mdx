@@ -13,8 +13,10 @@ RudderStack supports HubSpot as a destination to send your event data through ou
 <div class="successBlock">
   <strong>
     Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/hs).
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/hs">
+      GitHub repo
+    </a>
+    .
   </strong>
 </div>
 
@@ -70,6 +72,7 @@ The setting to enable / disable native SDK to send events can be changed later. 
 The `page` call is not supported in cloud mode for HubSpot.
 
 </div>
+
 {% endtab %}
 
 {% tab title="Device Mode" %}
@@ -134,10 +137,18 @@ HubSpot supports the following traits as special fields:
 Hubspot also supports custom properties. You can update values of the `contact` property that you have created in HubSpot.
 
 <div class="warningBlock">
-
-- Note that when you provide any custom property, it automatically converts to lower case and any space will be replaced with an underscore. HubSpot does not accept properties in upper case and spaces.
-- HubSpot discards any property which doesn't exists and returns `400 Bad Request`.
-  </div>
+  <ul>
+    <li>
+      Note that when you provide any custom property, it automatically converts
+      to lower case and any space will be replaced with an underscore. HubSpot
+      does not accept properties in upper case and spaces.
+    </li>
+    <li>
+      HubSpot discards any property which doesn't exists and returns `400 Bad
+      Request`.
+    </li>
+  </ul>
+</div>
 
 ### Dates
 
