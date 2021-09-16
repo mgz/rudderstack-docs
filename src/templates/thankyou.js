@@ -13,16 +13,16 @@ import clientConfig from "../../client-config"
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const TrankYou = ({ data, htmlId }) => {
-  console.log('path debug 1', location && location.pathname.startsWith("/careers"))
-  console.log('path debug 2', location && location.pathname.startsWith("careers"))
-  console.log('path debug 3', location && location.pathname)
+  
   const location = useLocation()
   const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
-
+  console.log('path debug 1', location && location.pathname.startsWith("/careers"))
+  console.log('path debug 2', location && location.pathname.startsWith("careers"))
+  console.log('path debug 3', location && location.pathname)
   return (
     <Layout>
       <Helmet>
