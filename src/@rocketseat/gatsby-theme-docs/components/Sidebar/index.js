@@ -3,7 +3,7 @@ import NestedAccordion from "../NestedAccordion"
 
 const Sidebar = ({ isMenuOpen }) => {
   return (
-    <div className={`sidebar-nav-content pt-16 ${isMenuOpen ? "active" : ""}`}>
+    <div className={`sidebar-nav-content py-16 ${isMenuOpen ? "active" : ""}`}>
       <NestedAccordion />
     </div>
   )

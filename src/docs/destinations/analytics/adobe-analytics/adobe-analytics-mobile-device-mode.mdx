@@ -11,10 +11,11 @@ description: >-
 This document covers the necessary settings and configurations to send events to Adobe Analytics via your mobile device mode.
 
 <div class="successBlock">
-  Mobile [**device
-  mode**](https://docs.rudderstack.com/connections/rudderstack-connection-modes#device-mode)
-  refers to using the Android or iOS SDK to send your events directly to Adobe
-  Analytics.
+  Mobile{" "}
+  <a href="../../../connections/rudderstack-connection-modes#device-mode">
+    device mode
+  </a>
+  refers to using the Android or iOS SDK to send your events directly to Adobe Analytics.
 </div>
 
 To configure Adobe Analytics via the mobile device mode, follow these steps:
@@ -132,7 +133,7 @@ Map all the events defined in the [**Adobe Mobile Services**](https://mobilemark
 Map all the properties defined at the [**Adobe Mobile Services**](https://mobilemarketing.adobe.com/) dashboard in the **Map Rudder Context data to Adobe Context Data** settings in the Rudderstack dashboard.
 
 <div class="warningBlock">
-For mobile device mode, RudderStack currently does not support the [**Initialize Heartbeat**](https://docs.rudderstack.com/destinations/analytics/adobe-analytics/adobe-analytics-heartbeat#initialize-heartbeat) and [**Heartbeat Playhead Update**](https://docs.rudderstack.com/destinations/analytics/adobe-analytics/adobe-analytics-heartbeat#heartbeat-playhead-update) video events.
+For mobile device mode, RudderStack currently does not support the <a href="../../../destinations/analytics/adobe-analytics/adobe-analytics-heartbeat#initialize-heartbeat">Initialize Heartbeat</a> and <a href="../../../destinations/analytics/adobe-analytics/adobe-analytics-heartbeat#heartbeat-playhead-update">Heartbeat Playhead Update</a> video events.
 
 </div>
 
@@ -234,7 +235,7 @@ MainApplication.rudderClient.screen("Home Screen",
 Calling `reset` sets the user’s Adobe `visitorId` to `null`.
 
 <div class="infoBlock">
-The default value of Adobe's `visitorId` is `null` until you explicitly set it \(by calling `identify`\).
+The default value of Adobe's <code class="inline-code">visitorId</code> is <code class="inline-code">null</code> until you explicitly set it (by calling <code class="inline-code">identify</code>).
 
 </div>
 
@@ -269,7 +270,7 @@ MainApplication.rudderClient.flush()
 ```
 
 <div class="infoBlock">
-The `flush` call is supported only in Android.
+The <code class="inline-code">flush</code> call is supported only in Android.
 
 </div>
 

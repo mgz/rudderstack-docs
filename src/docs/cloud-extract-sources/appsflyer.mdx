@@ -16,15 +16,26 @@ In order to add AppsFlyer as a source in RudderStack, please follow these steps:
 
 - From your [RudderStack dashboard](https://app.rudderstack.com/), click on **Add Source**. From the list of sources, select **AppsFlyer**, as shown:
 
-![Choose AppsFlyer as a source](../.gitbook/assets/AF_choose_src.png)
+<!-- ![Choose AppsFlyer as a source](../.gitbook/assets/AF_choose_src.png)-->
+
+<img
+  src="../../images/assets/AF_choose_src.png"
+  alt="Choose AppsFlyer as a source"
+/>
+<span class="imageTitle">Choose AppsFlyer as a source</span>
 
 - Enter the name of your source, and click on **Next**.
 
-![Provide source name](../.gitbook/assets/AF_src_name.png)
+<!--![Provide source name](../.gitbook/assets/AF_src_name.png)-->
+
+<img src="../../images/assets/AF_src_name.png" alt="Provide source name" />
+<span class="imageTitle">Provide source name</span>
 
 - Head over to your AppsFlyer account and navigate to the **API Access** section under **Integration** from the sidebar. Look for the **Push API** section, as shown:
 
-![](../.gitbook/assets/AF_Dashboard.png)
+<!--![](../.gitbook/assets/AF_Dashboard.png)-->
+
+<img src="../../images/assets/AF_Dashboard.png" alt="AF Dashboard" />
 
 - Under the **Endpoint Configuration**, add an endpoint URL pointing to RudderStack in the following format:`<DATA_PLANE_URL>/v1/webhook?writeKey=<your_AppsFlyer_source_write_key>`
 
@@ -44,7 +55,13 @@ You can validate the endpoint using the <strong>Send Test</strong> button.
 
 </div>
 
-![Endpoint Configuration](../.gitbook/assets/AF_src_sendtest.png)
+<!--![Endpoint Configuration](../.gitbook/assets/AF_src_sendtest.png)-->
+
+<img
+  src="../../images/assets/AF_src_sendtest.png"
+  alt="Endpoint Configuration"
+/>
+<span class="imageTitle">Endpoint Configuration</span>
 
 - Finally, save the endpoint.
 

@@ -16,7 +16,12 @@ In order to add Customer.io as a source in RudderStack, please follow these step
 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), click on **Add Source**. From the list of sources, select **Customer.io**, as shown:
 
-![](../.gitbook/assets/image%20%2820%29%20%281%29.png)
+<!--![](../.gitbook/assets/image%20%2820%29%20%281%29.png)-->
+
+<img
+  src="../../images/assets/image (20) (1).png"
+  alt="Add Source and select Customer.io"
+/>
 
 - Enter the name of your source.
 
@@ -27,11 +32,18 @@ If you wish to connect this source to our warehouse destinations, the source nam
 
 - Once you have entered the name of your source, click on **Next** and save the source.
 
-![](../.gitbook/assets/image%20%2861%29.png)
+<!-- ![](../.gitbook/assets/image%20%2861%29.png)-->
+
+<img src="../../images/assets/image (61).png" alt="Next and save the source" />
 
 - Head over to your Customer.io account and navigate to the **Integrations** page from the sidebar. Look for the integration **Reporting Webhooks**, as shown:
 
-![](../.gitbook/assets/image%20%2862%29.png)
+<!--![](../.gitbook/assets/image%20%2862%29.png)-->
+
+<img
+  src="../../images/assets/image (62).png"
+  alt="Integrations - Reporting Webhooks"
+/>
 
 - Click on **Add Webhook** and add a webhook pointing to the URL in the following format:`<your_dataplane_url>/v1/webhook?writeKey=<your_customer_io_source_write_key>`
 
@@ -42,13 +54,16 @@ https://hosted.rudderlabs.com/v1/webhook?writeKey=1bCenS7ynqHh8ETX8s5Crjh22J
 ```
 
 <div class="warningBlock">
-Make sure to add the `writeKey` as query parameter to the URL. This is required to prevent the webhook from failing for the lack of a valid write key.
+Make sure to add the <code class="inline-code">writeKey</code> as query parameter to the URL. This is required to prevent the webhook from failing for the lack of a valid write key.
 
 </div>
 
 A sample figure highlighting this step is as shown:
 
-![Webhook Settings](../.gitbook/assets/image%20%2830%29.png)
+<!--![Webhook Settings](../.gitbook/assets/image%20%2830%29.png)-->
+
+<img src="../../images/assets/image (30).png" alt="Webhook Settings" />
+<span class="imageTitle">Webhook Settings</span>
 
 - Finally, save the webhook.
 

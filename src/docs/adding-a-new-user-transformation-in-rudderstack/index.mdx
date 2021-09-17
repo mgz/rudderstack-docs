@@ -54,19 +54,34 @@ To know more about the Cloud mode in RudderStack, check out the <a href="../get-
 - Log into your [**RudderStack dashboard**](https://app.rudderstack.com/).
 - Click on the [**Transformations**](https://app.rudderstack.com/transformations) link from the left panel in the dashboard, as shown:
 
-![](../.gitbook/assets/image%20%2890%29.png)
+<!--![](../.gitbook/assets/image%20%2890%29.png)-->
+
+<img src="../../images/assets/image (90).png" alt="Adding a Transformation" />
+<span class="imageTitle"></span>
 
 - Click on the **Create New** option as shown:
 
-![](../.gitbook/assets/image%20%2892%29.png)
+<!--![](../.gitbook/assets/image%20%2892%29.png)-->
+
+<img src="../../images/assets/image (92).png" alt="Create New Transformation" />
+<span class="imageTitle"></span>
 
 - Next, assign a name for this new transformation. Enter the transformation function's code in the **Transformation** window, as shown:
 
-![](../.gitbook/assets/image%20%28100%29.png)
+<!--![](../.gitbook/assets/image%20%28100%29.png)-->
+
+<img
+  src="../../images/assets/image (100).png"
+  alt="Assign a transformation name"
+/>
+<span class="imageTitle"></span>
 
 - Add your transformation code within the `transformEvent` function in the **Transformation** window. You can also add other functions and call them from within `transformEvent`.
 
-![](../.gitbook/assets/image%20%2899%29.png)
+<!--![](../.gitbook/assets/image%20%2899%29.png)-->
+
+<img src="../../images/assets/image (99).png" alt="transformEvent function" />
+<span class="imageTitle"></span>
 
 <div class="infoBlock">
 Our <a href="https://github.com/rudderlabs/sample-user-transformers">Transformations</a> GitHub repository contains some useful templates that you can use to create your own transformations.
@@ -83,7 +98,10 @@ You can copy-paste the entire code of any of the functions present in this repos
 
 - RudderStack also gives you the ability to test your transformation function with the **Run Test** option as shown:
 
-![](../.gitbook/assets/image%20%2897%29.png)
+<!--![](../.gitbook/assets/image%20%2897%29.png)-->
+
+<img src="../../images/assets/image (97).png" alt="Run Test" />
+<span class="imageTitle"></span>
 
 - In case you want to perform any aggregation/roll-up operation on a micro batch of events, use the `transformBatch` feature, as shown:
 
@@ -120,15 +138,27 @@ To create a library, follow these steps:
 
 - Click on the [**Transformations**](https://app.rudderstack.com/transformations) link in the left nav bar and go to the **Libraries** section. Click on the **Create New** option to add new libraries, as shown:
 
-![](../.gitbook/assets/image%20%2889%29.png)
+<!--![](../.gitbook/assets/image%20%2889%29.png)-->
+
+<img src="../../images/assets/image (89).png" alt="Create new library" />
 
 - Add the library's **Name**, an optional **Description**, and include the custom functions that you need to reuse across all other transformations.
 
-![](../.gitbook/assets/image%20%2891%29.png)
+<!--![](../.gitbook/assets/image%20%2891%29.png)-->
+
+<img
+  src="../../images/assets/image (91).png"
+  alt="Add library name and description"
+/>
 
 - You can add more functions under a single library, as shown:
 
-![](../.gitbook/assets/image%20%2895%29.png)
+<!--![](../.gitbook/assets/image%20%2895%29.png)-->
+
+<img
+  src="../../images/assets/image (95).png"
+  alt="Add more functions under a single library"
+/>
 
 <div class="warningBlock">
 <strong>RudderStack does not support the deletion of libraries as of now.</strong>
@@ -143,7 +173,12 @@ To use the libraries in your existing transformation, simply take the name of yo
 
 For example, if your library name is **`is rudder email`**, then the library handle would be **`isRudderEmail`**.
 
-![](../.gitbook/assets/image%20%28101%29.png)
+<!--![](../.gitbook/assets/image%20%28101%29.png)-->
+
+<img
+  src="../../images/assets/image (101).png"
+  alt="Using libraries in transformations"
+/>
 
 Let's say you want to import a function called **`rudderEmail`**, which returns `true` for the emails from a specific domain \(e.g. RudderStack\) and `false` otherwise, from the **`is rudder email`** library. Also, you want to use this function to filter the events that don't have the email address of the specified domain.
 
@@ -162,7 +197,12 @@ export function transformEvent(event) {
 
 On running a test, an example event not having the specified email domain is filtered out, as shown:
 
-![](../.gitbook/assets/image%20%2886%29.png)
+<!--![](../.gitbook/assets/image%20%2886%29.png)-->
+
+<img
+  src="../../images/assets/image (86).png"
+  alt="Event filtered out without specifying email domain"
+/>
 
 ### Importing Multiple Functions From Single Library
 
@@ -214,9 +254,14 @@ The following properties, if available, are present in the metadata response:
 | `messageId`     | Corresponds to the unique ID for each event.                                                                                                                                   |
 | `sessionId`     | If sessions are enabled, this corresponds to the value of the session ID.                                                                                                      |
 
-![Source ID](../.gitbook/assets/image%20%2898%29.png)
+<!--![Source ID](../.gitbook/assets/image%20%2898%29.png)-->
 
-![](../.gitbook/assets/image%20%28120%29%20%281%29%20%281%29.png)
+<img src="../../images/assets/image (98).png" alt="Source ID" />
+<span class="imageTitle">Source ID</span>
+
+<!--![](../.gitbook/assets/image%20%28120%29%20%281%29%20%281%29.png)-->
+
+<img src="../../images/assets/image (120) (1) (1).png" alt="Source ID" />
 
 Since you may not need the metadata in every transformation, you can optionally access it by including it in your function signature as an argument wherever required.
 
@@ -319,7 +364,12 @@ export function transformEvent(event, metadata) {
 
 On running a test on the above code, you can see the logs in the **Logs** section of the dashboard, as shown:
 
-![](../.gitbook/assets/image%20%28103%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
+<!--![](../.gitbook/assets/image%20%28103%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)-->
+
+<img
+  src="../../images/assets/image (103) (2) (2) (2) (2) (2) (1) (2) (2) (2) (2) (1).png"
+  alt="Adding a Transformation"
+/>
 
 <div class="infoBlock">
   Arguments to the <code class="inline-code">log</code> function can be a

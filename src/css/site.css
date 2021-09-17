@@ -979,6 +979,7 @@ top: -60px;
   @apply h-screen;
   @apply max-h-screen;
   width: 280px;
+  @apply overflow-y-auto;
 }
 
 .sidebar-nav-content .accordion {

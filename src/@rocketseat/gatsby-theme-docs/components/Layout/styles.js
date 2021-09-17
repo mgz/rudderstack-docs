@@ -89,7 +89,7 @@ export const Children = styled.div`
   ol {
     color: #6c6c80;
     padding-left: 15px;
-    margin-bottom: 16px;
+    margin: 16px 0px;
     li {
       line-height: 28px;
     }

@@ -217,6 +217,92 @@ export const jsonData = [
         link: "/cloud-extract-sources/freshdesk",
         content: [],
       },
+      {
+        key: "google-adwords",
+        title: "Google AdWords",
+        link: "/cloud-extract-sources/google-adwords",
+        content: [],
+      },
+      {
+        key: "google-analytics",
+        title: "Google Analytics",
+        link: "/cloud-extract-sources/google-analytics",
+        content: [],
+      },
+      {
+        key: "google-search-console",
+        title: "Google Search Console",
+        link: "/cloud-extract-sources/google-search-console",
+        content: [],
+      },
+      {
+        key: "google-sheets",
+        title: "Google Sheets",
+        link: "/cloud-extract-sources/google-sheets",
+        content: [],
+      },
+      {
+        key: "hubspot",
+        title: "HubSpot",
+        link: "/cloud-extract-sources/hubspot",
+        content: [],
+      },
+      {
+        key: "intercom",
+        title: "Intercom",
+        link: "/cloud-extract-sources/intercom",
+        content: [],
+      },
+      {
+        key: "mailchimp",
+        title: "Mailchimp",
+        link: "/cloud-extract-sources/mailchimp",
+        content: [],
+      },
+      {
+        key: "mixpanel",
+        title: "Mixpanel",
+        link: "/cloud-extract-sources/mixpanel",
+        content: [],
+      },
+      {
+        key: "marketo",
+        title: "Marketo",
+        link: "/cloud-extract-sources/marketo",
+        content: [],
+      },
+      {
+        key: "netsuite",
+        title: "Netsuite",
+        link: "/cloud-extract-sources/netsuite",
+        content: [],
+      },
+      {
+        key: "pipedrive",
+        title: "Pipedrive",
+        link: "/cloud-extract-sources/pipedrive",
+        content: [],
+      },
+      {
+        key: "quickbooks",
+        title: "QuickBooks",
+        link: "/cloud-extract-sources/quickbooks",
+        content: [],
+      },
+      {
+        key: "salesforce",
+        title: "Salesforce",
+        link: "/cloud-extract-sources/salesforce",
+        content: [
+          {
+            key: "schema-comparison-rudderstack-vs-segment",
+            title: "Schema Comparison Rudderstack Vs Segment",
+            link:
+              "/cloud-extract-sources/salesforce/schema-comparison-rudderstack-vs-segment",
+            content: [],
+          },
+        ],
+      },
     ],
   },
   {
@@ -362,5 +448,56 @@ export const jsonData = [
         content: [],
       },
     ],
+  },
+  {
+    key: "rudderstack-api",
+    title: "RudderStack API",
+    link: "/rudderstack-api",
+    content: [
+      {
+        key: "api-specification",
+        title: "API Specification",
+        link: "/rudderstack-api/api-specification",
+        content: [
+          {
+            key: "rudderstack-events-specification",
+            title: "RudderStack Events Specification",
+            link:
+              "/rudderstack-api/api-specification/rudderstack-events-specification",
+            content: [],
+          },
+        ],
+      },
+      {
+        key: "http-api-specification",
+        title: "HTTP API",
+        link: "/rudderstack-api/http-api-specification",
+        content: [],
+      },
+      {
+        key: "pixel-api",
+        title: "Pixel API",
+        link: "/rudderstack-api/pixel-api",
+        content: [],
+      },
+    ],
+  },
+  {
+    key: "user-guides",
+    title: "User Guides",
+    link: "/user-guides",
+    content: [],
+  },
+  {
+    key: "glossary",
+    title: "Glossary",
+    link: "/glossary",
+    content: [],
+  },
+  {
+    key: "faqs",
+    title: "FAQs",
+    link: "/faqs",
+    content: [],
   },
 ]
