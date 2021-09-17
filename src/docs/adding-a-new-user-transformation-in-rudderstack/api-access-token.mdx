@@ -66,7 +66,8 @@ Name of access token
 
 A sample request is as shown:
 
-{% tabs %}
+<!--{% tabs %}
+
 {% tab title="Curl" %}
 
 ```text
@@ -91,7 +92,29 @@ curl --location -X POST 'https://api.rudderstack.com/accessTokens' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+    <TabPanels>
+      <TabPanel>
+        ```text curl --location -X POST
+        'https://api.rudderstack.com/accessTokens' \ -H 'Authorization: Basic
+        Base64Enc(workspacetoken:)' \ -H 'Content-Type: application/json' \ -d
+        '&#123; "name": "some-test-access-token", "description":
+        "some-description" &#125;' ```
+      </TabPanel>
+      <TabPanel>
+        ```text http POST 'https://api.rudderstack.com/accessTokens' \
+        name=some-test-access-token description=some-description \
+        Authorization:'Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
+        Content-Type:'application/json' ```
+      </TabPanel>
+    </TabPanels>
+  </TabList>
+</Tabs>
 
 We use Basic Auth consisting of three parts:
 

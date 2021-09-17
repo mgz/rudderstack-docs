@@ -912,6 +912,27 @@ top: -60px;
   background-color: #eef5f5;
 }
 /*=== Docs styles ===*/
+.childrenWrapper [data-reach-tab-list]{
+  background: transparent;
+}
+.childrenWrapper [data-reach-tab]{
+  @apply py-2 px-4;
+  background: rgb(245, 247, 249);
+  color: rgb(157, 170, 182);
+  border: 1px solid rgb(230, 236, 241);
+  @apply border-b-2 border-transparent;
+  transition: all 0.5s ease;
+}
+.childrenWrapper [data-reach-tab][data-selected]{
+  @apply bg-whiteColor-custom;
+  border-color: rgb(230, 236, 241) rgb(230, 236, 241) rgb(0, 102, 255) rgb(230, 236, 241);
+  color: rgb(36, 42, 49);
+}
+.childrenWrapper [data-reach-tab-panels]{
+  @apply p-4;
+  @apply bg-whiteColor-custom;
+  border: 1px solid rgb(230, 236, 241);
+}
 #zoom-container {
   @apply z-20;
 }

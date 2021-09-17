@@ -282,7 +282,7 @@ You can make any number of external API requests in your transformation function
 
 An example of how to use the `fetch` function in transformations is shown below:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Basic" %}
 
 ```text
@@ -331,7 +331,50 @@ export async function transformEvent(event) {
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Basic</Tab>
+    <Tab>POST</Tab>
+    <Tab>Headers</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      ```text
+        curl --location -X POST
+      'https://api.rudderstack.com/accessTokens' \ -H 'Authorization: Basic
+      Base64Enc(workspacetoken:)' \ -H 'Content-Type: application/json' \ -d
+      '&#123; "name": "some-test-access-token", "description":
+      "some-description" &#125;' 
+      ```
+    </TabPanel>
+    <TabPanel> 
+      ```text 
+      http POST 'https://api.rudderstack.com/accessTokens' \
+      name=some-test-access-token description=some-description \
+      Authorization:'Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
+      Content-Type:'application/json' 
+      ``` 
+    </TabPanel>
+    <TabPanel> 
+      ```text
+        export async function transformEvent(event) &#123;
+            const res = await fetch("post_url", &#123;
+                method: "POST", // POST, PUT, DELETE, GET, etc.
+                headers: &#123;
+                "Content-Type": "application/json;charset=UTF-8",
+                "Authorization": "Bearer &lt;your_authorization_token&gt;"
+                &#125;,
+                body: JSON.stringify(event),
+            &#125;);
+            event.response = JSON.stringify(res);
+            return event;
+        &#125;
+        ```
+    </TabPanel>
+  </TabPanels>
+</Tabs>
 
 <div class="successBlock">
   To see how this feature is used in more detail, check out the{" "}

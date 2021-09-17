@@ -1,11 +1,12 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { MDXProvider } from "@mdx-js/react"
-/* import Zoom from "react-medium-image-zoom"
-import "react-medium-image-zoom/dist/styles.css" */
+import { MDXProvider} from "@mdx-js/react"
+import {preToCodeBlock} from 'mdx-utils'
+import Code from '../Code'
 import mediumZoom from "medium-zoom"
-
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs"
+import "@reach/tabs/styles.css"
 import Layout from "../Layout"
 import SEO from "@rocketseat/gatsby-theme-docs/src/components/SEO"
 import PostNav from "@rocketseat/gatsby-theme-docs/src/components/Docs/PostNav"
@@ -16,6 +17,23 @@ export default function Docs({ mdx, pageContext }) {
   const { title, description, image, disableTableOfContents } = mdx.frontmatter
   const { headings, body } = mdx
   const { slug } = mdx.fields
+
+  const shortCodes = {
+     Tabs,
+     TabList,
+     Tab,
+     TabPanels,
+     TabPanel,
+     pre: (preProps) => {
+      const props = preToCodeBlock(preProps);
+  
+      if (props) {
+        return <Code {...props} />;
+      }
+  
+      return <pre {...preProps} />;
+    }
+    }
 
   useEffect(() => {
     const zoom = mediumZoom(document.querySelectorAll("img"))
@@ -34,7 +52,7 @@ export default function Docs({ mdx, pageContext }) {
         headings={headings}
       >
         <div id="zoom-container"></div>
-        <MDXProvider>
+        <MDXProvider components={shortCodes}>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
         <EditGithub
