@@ -896,6 +896,15 @@ top: -60px;
   background-color: #eef5f5;
 }
 /*=== Docs styles ===*/
+#zoom-container {
+  @apply z-20;
+}
+.medium-zoom-overlay {
+  @apply z-20;
+}
+.medium-zoom-image--opened {
+  z-index: 21;
+}
 .headerNav {
   height: 80px;
   @apply border-b;

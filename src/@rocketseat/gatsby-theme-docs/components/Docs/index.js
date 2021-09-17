@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 /* import Zoom from "react-medium-image-zoom"
 import "react-medium-image-zoom/dist/styles.css" */
+import mediumZoom from "medium-zoom"
 
 import Layout from "../Layout"
 import SEO from "@rocketseat/gatsby-theme-docs/src/components/SEO"
@@ -16,7 +17,13 @@ export default function Docs({ mdx, pageContext }) {
   const { headings, body } = mdx
   const { slug } = mdx.fields
 
-  /* const shortcodes = { Zoom } */
+  useEffect(() => {
+    const zoom = mediumZoom(document.querySelectorAll("img"))
+
+    return () => {
+      zoom.detach()
+    }
+  }, [])
 
   return (
     <>
@@ -26,6 +33,7 @@ export default function Docs({ mdx, pageContext }) {
         title={title}
         headings={headings}
       >
+        <div id="zoom-container"></div>
         <MDXProvider>
           <MDXRenderer>{body}</MDXRenderer>
         </MDXProvider>
