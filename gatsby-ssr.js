@@ -19,20 +19,11 @@
 import React from "react"
 import { isMobile, isBrowser } from "react-device-detect"
 
-/* export const onRenderBody = ({
-  setPostBodyComponents,
-  setPreBodyComponents,
-}) => {
-  if(isMobile){
-    setPostBodyComponents([
-      <script key="hero-banner-animation-first" src={"/script.js"} defer />,
-    ])
-  }
-  
-  // setPostBodyComponents([
-  //   <script key="hero-banner-animation-first" src={"/script2.js"} defer />,
-  // ])
-} */
+export const onRenderBody = ({ setPostBodyComponents }) => {
+  setPostBodyComponents([
+    <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
+  ])
+}
 
 export const onPreRenderHTML = ({
   pathname,

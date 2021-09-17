@@ -617,6 +617,22 @@ body {
   font-size: 14px;
 }
 
+.css-1wa3eu0-placeholder {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #a7a7a7 !important;
+  padding-left: 6px !important;
+}
+
+.css-yk16xz-control {
+  border-radius: 8px !important;
+  border-color: #a7a7a7 !important;
+}
+.css-b8ldur-Input {
+  margin: 0px !important;
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
 .demo_form textarea {
   /* height: 40px; */
   color: #4e4e4e;

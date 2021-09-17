@@ -1,23 +1,28 @@
 import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
+import { useLocation } from "@reach/router"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import PortableText from "../components/portableText"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
+
 // const Layout = loadable(() => import("../components/layout"))
 // const PortableText = loadable(() => import("../components/PortableText"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const TrankYou = ({ data, htmlId }) => {
+  
+  const location = useLocation()
   const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
-
-
+  // console.log('path debug 1', location && location.pathname.startsWith("/careers"))
+  // console.log('path debug 2', location && location.pathname.startsWith("careers"))
+  // console.log('path debug 3', location && location.pathname)
   return (
     <Layout>
       <Helmet>
@@ -60,29 +65,37 @@ const TrankYou = ({ data, htmlId }) => {
               </h1>
             </div>
           </div>
-          <div
-            className={`${
-              lv_thankyoucontent[0].content_type === "agreement"
-                ? "max-w-6xl"
-                : "max-w-3xl"
-            } pb-32 sm:pb-44 m-auto px-4`}
-          >
+          {lv_thankyoucontent[0].thankyou_content&& (
             <div
-              className={`text-grayColor-custom text-xl-2 ${
+              className={`${
                 lv_thankyoucontent[0].content_type === "agreement"
-                  ? "agreement-description"
-                  : ""
-              } `}
+                  ? "max-w-6xl"
+                  : "max-w-3xl"
+              } pb-32 sm:pb-44 m-auto px-4`}
             >
-              <PortableText blocks={lv_thankyoucontent[0].thankyou_content} />
+              <div
+                className={`text-grayColor-custom text-xl-2 ${
+                  lv_thankyoucontent[0].content_type === "agreement"
+                    ? "agreement-description"
+                    : ""
+                } `}
+              >
+                <PortableText blocks={lv_thankyoucontent[0].thankyou_content} />
+              </div>
             </div>
-          </div>
+          )}
+          {location && location.pathname.startsWith("/careers") && (
+            <div className="max-w-6xl mx-auto" id="grnhse_app"></div>
+          )}
         </section>
 
         <section id="footer_section_for_demo">
-        <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
+          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
+      {/* <Helmet>
+        <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack" />
+      </Helmet> */}
     </Layout>
   )
 }
