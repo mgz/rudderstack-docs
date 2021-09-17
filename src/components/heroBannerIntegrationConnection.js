@@ -10,7 +10,7 @@ const HeroBannerIntegrationConnection = props => {
         <div className="relative z-20 flex flex-col w-full pb-1 pr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
           <h1 className="text-primary mb-8 md:my-4 text-4xl md:text-5xl font-bold leading-tight">
             Integrate your{" "}
-            {props.integration_connection.source_integration_context} app with{" "}
+            {props.integration_connection.source_integration_context} {props.integration_connection.source_integration_context.includes("app") ? '' :'app'}  with{" "}
             {props.integration_connection.destination_integration}
           </h1>
           <p className="text-lg text-grayColor-custom font-normal mb-4">
