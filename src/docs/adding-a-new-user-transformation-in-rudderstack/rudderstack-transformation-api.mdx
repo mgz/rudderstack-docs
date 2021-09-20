@@ -204,7 +204,7 @@ Creating a transformation can be done in one of the two ways:
 
 An example is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -230,7 +230,36 @@ curl --location -X POST 'https://api.rudderstack.com/transformations' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+          curl --location -X POST 'https://api.rudderstack.com/transformations' \
+          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+          -H 'Content-Type: application/json' \
+          -d '&#123;
+              "name": "Create Transformation Tested-4",
+              "code": "function transformEvent(events) &#123; return events; &#125; ",
+              "description": "Descriptrion 1"
+          &#125;'
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+          http POST 'https://api.rudderstack.com/transformations' \
+          name='Create Transformation Tested-4' code='function transformEvent(events) &#123; return events; &#125;' description='Descriptrion 1' \
+          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+          Content-Type:'application/json'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="get" host="https://api.rudderstack.com" path="/transformations" %}
 {% api-method-summary %}
@@ -284,7 +313,7 @@ This will give an array of published transformations.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -302,7 +331,28 @@ curl --location -X GET 'https://api.rudderstack.com/transformations' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+          curl --location -X GET 'https://api.rudderstack.com/transformations' \
+          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```
+          http GET 'https://api.rudderstack.com/transformations' \
+          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="get" host="https://api.rudderstack.com" path="/transformations/{id}" %}
 {% api-method-summary %}
@@ -341,7 +391,7 @@ This will give a transformation object on basis of the ID.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -359,7 +409,28 @@ Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+          curl --location -X GET 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+          http GET 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="post" host="https://api.rudderstack.com" path="/transformations/{id}" %}
 {% api-method-summary %}
@@ -419,7 +490,7 @@ This will update transformation object on basis of id.
 
 An example request is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -443,7 +514,34 @@ curl --location -X POST 'https://api.rudderstack.com/transformations/1pSvMXr651E
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+          curl --location -X POST 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+          -H 'Content-Type: application/json' \
+          -d  '&#123;
+              "name": "name updated"
+          &#125;'
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+            http POST 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+            name='name updated'
+            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+            Content-Type:'application/json'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="delete" host="https://api.rudderstack.com" path="/transformations/{id}" %}
 {% api-method-summary %}
@@ -474,7 +572,7 @@ Delete a **published** transformations by ID. Note that RudderStack never delete
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -492,7 +590,28 @@ Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+          curl --location -X DELETE 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+          http DELETE 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="get" host="https://api.rudderstack.com" path="/transformations/{id}/versions" %}
 {% api-method-summary %}
@@ -556,7 +675,7 @@ This gets an array of transformations revisions.
 
 An example request is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -574,7 +693,28 @@ Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+            curl --location -X GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions' \
+            -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+          http GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions' \
+          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="get" host="https://api.rudderstack.com" path="/transformations/{id}/versions/{versionId}" %}
 {% api-method-summary %}
@@ -612,7 +752,7 @@ This gets a single transformation version.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -630,7 +770,28 @@ Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+          curl --location --request GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions/1pIhxFXd7NR7XDA914rLAn5f7wq' \
+          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+            http GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions/1pIhxFXd7NR7XDA914rLAn5f7wq' \
+            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Libraries
 
@@ -711,7 +872,7 @@ Description of the library goes here
   The `publish` flag for a library works in the same way as for destinations.
 </div>
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -737,7 +898,36 @@ curl --location -X POST 'https://api.rudderstack.com/libraries' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+          curl --location -X POST 'https://api.rudderstack.com/libraries' \
+          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+          -H 'Content-Type: application/json' \
+          -d '&#123;
+              "name": "User Defined Library",
+              "description": "Get User context",
+              "code": "export default function cube(x) &#123; return x * x * x; &#125;"
+          &#125;'
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+            http POST 'https://api.rudderstack.com/libraries' \
+            name='User Defined Library' description='Get User context' code='export default function cube(x) &#123; return x * x * x; &#125;' \
+            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+            Content-Type:'application/json'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="get" host="https://api.rudderstack.com" path="/libraries" %}
 {% api-method-summary %}
@@ -789,7 +979,7 @@ Get all the **published** libraries.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -809,7 +999,30 @@ Content-Type:'application/json'
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+            curl --location -X GET 'https://api.rudderstack.com/libraries' \
+            -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+            -H 'Content-Type: application/json' \
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+            http GET 'https://api.rudderstack.com/libraries' \
+            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+            Content-Type:'application/json'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="get" host="https://api.rudderstack.com" path="/libraries/{id}" %}
 {% api-method-summary %}
@@ -847,7 +1060,7 @@ Get a single **published** library by ID.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -867,7 +1080,30 @@ Content-Type:'application/json'
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+            curl --location -X GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
+            -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+            -H 'Content-Type: application/json' \
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+            http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
+            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+            Content-Type:'application/json'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="post" host="https://api.rudderstack.com" path="/libraries/{id}" %}
 {% api-method-summary %}
@@ -928,7 +1164,7 @@ Updating a library with publish has same flow as for transformations.
 
 A sample request is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -953,7 +1189,35 @@ Content-Type:'application/json'
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+          curl --location -X POST 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
+          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+          -H 'Content-Type: application/json' \
+          -d '&#123;
+              "description": "Get Divisible by 2",
+              "code": "export default function cube(x) &#123; return 2 * x; &#125;"
+          &#125;'
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+            description='Get Divisible by 2' code='export default function cube(x) &#123; return 2 * x; &#125;'
+            http POST 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
+            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+            Content-Type:'application/json'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="get" host="https://api.rudderstack.com" path="/libraries/{id}/versions" %}
 {% api-method-summary %}
@@ -1015,7 +1279,7 @@ You can pass it either as **ASC** to get an ascending order or **DESC** for desc
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -1035,7 +1299,30 @@ Content-Type:'application/json'
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+            curl --location --request GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions' \
+            -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+            -H 'Content-Type: application/json' \
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+          http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions' \
+          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+          Content-Type:'application/json'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="get" host="https://api.rudderstack.com" path="/libraries/{id}/versions/{versionId}" %}
 {% api-method-summary %}
@@ -1073,7 +1360,7 @@ Get a single library revision.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -1093,7 +1380,30 @@ curl --location -X GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+        curl --location -X GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions/1pT8KDAD66mQxnaUQxJpNs9qLFn' \
+        -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+        -H 'Content-Type: application/json' \
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+        http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions/1pT8KDAD66mQxnaUQxJpNs9qLFn' \
+        Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+        Content-Type:'application/json'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Publish the API
 
@@ -1189,7 +1499,7 @@ Request Payload ::
 }
 ```
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```markup
@@ -1234,7 +1544,55 @@ Content-Type:'application/json'
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```markup
+        curl --location -X POST 'https://api.rudderstack.com/transformations/libraries/publish' \
+        -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+        -H 'Content-Type: application/json' \
+        -d '&#123;
+          transformations: [
+            &#123;
+              versionId: publishTransformerVersionId,
+              testInput:
+                '[
+                  &#123;
+                    "anonymousId":"8d872292709c6fbe",
+                    "channel":"mobile"
+                  &#125;,
+                  &#123;
+                    "anonymousId":"8d872292709c6fbe",
+                    "channel":"mobile"
+                  &#125;
+                ],
+          libraries: [
+            &#123;
+              versionId: publishLibraryVersionId1,
+            &#125;,
+            &#123;
+              versionId: publishLibraryVersionId1,
+            &#125;
+          ]
+        &#125;'
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```markup
+        http POST 'https://api.rudderstack.com/transformations/libraries/publish' \
+        transformations='[&#123;versionId: publishTransformerVersionId, testInput:'[&#123;"anonymousId":"8d872292709c6fbe","channel":"mobile"&#125;,&#123;"anonymousId":"8d872292709c6fbe","channel":"mobile"&#125;] libraries='[&#123;versionId: publishLibraryVersionId1,&#125;,&#123;versionId: publishLibraryVersionId1&#125;]' \
+        Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+        Content-Type:'application/json'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <div class="infoBlock">
   A few things to note:

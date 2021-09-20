@@ -111,7 +111,7 @@ Don't have an <code class="inline-code">Application</code> class? Follow our gui
 
 </div>
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -143,7 +143,42 @@ RudderClient rudderClient = RudderClient.getInstance(
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        <pre>```kotlin
+        val rudderClient = RudderClient.getInstance(
+            this,
+            WRITE_KEY,
+            RudderConfig.Builder()
+                .withDataPlaneUrl(DATA_PLANE_URL)
+                .withTrackLifecycleEvents(true)
+                .withRecordScreenViews(true)
+                .build()
+        )
+        ```</pre>
+      </TabPanel>
+      <TabPanel>
+        ```java
+        RudderClient rudderClient = RudderClient.getInstance(
+                this,
+                WRITE_KEY,
+                new RudderConfig.Builder()
+                        .withDataPlaneUrl(DATA_PLANE_URL)
+                        .withTrackLifecycleEvents(true)
+                        .withRecordScreenViews(true)
+                        .build()
+        );
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <div class="infoBlock">
 We automatically track the following optional events:
@@ -163,7 +198,7 @@ You can record the users' activity through the `track` method. Every action perf
 
 An example of the `track` event is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -187,7 +222,34 @@ rudderClient.track(
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```kotlin
+        rudderClient.track(
+            "Product Added",
+            RudderProperty()
+                .putValue("product_id", "product_001")
+        )
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```java
+        rudderClient.track(
+                "Product Added",
+                new RudderProperty()
+                        .putValue("product_id", "product_001")
+        );
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 Follow the method signature as below:
 
@@ -208,7 +270,7 @@ On the Android devices, the <code class="inline-code">deviceId</code> is assigne
 
 An example `identify` event is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -264,7 +326,60 @@ rudderClient.identify("test_user_id", traits, null;
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```kotlin
+        val traits = RudderTraits()
+        traits.putBirthday(Date())
+        traits.putEmail("abc@123.com")
+        traits.putFirstName("First")
+        traits.putLastName("Last")
+        traits.putGender("m")
+        traits.putPhone("5555555555")
+        val address = RudderTraits.Address()
+        address.putCity("City")
+        address.putCountry("USA")
+        traits.putAddress(address)
+        traits.put("boolean", Boolean.TRUE)
+        traits.put("integer", 50)
+        traits.put("float", 120.4f)
+        traits.put("long", 1234L)
+        traits.put("string", "hello")
+        traits.put("date", Date(System.currentTimeMillis()))
+        rudderClient.identify("test_user_id", traits, null)
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```java
+        RudderTraits traits = new RudderTraits();
+        traits.putBirthday(new Date());
+        traits.putEmail("abc@123.com");
+        traits.putFirstName("First");
+        traits.putLastName("Last");
+        traits.putGender("m");
+        traits.putPhone("5555555555");
+        RudderTraits.Address address = new RudderTraits.Address();
+        address.putCity("City");
+        address.putCountry("USA");
+        traits.putAddress(address);
+        traits.put("boolean", Boolean.TRUE);
+        traits.put("integer", 50);
+        traits.put("float", 120.4f);
+        traits.put("long", 1234L);
+        traits.put("string", "hello");
+        traits.put("date", new Date(System.currentTimeMillis()));
+        rudderClient.identify("test_user_id", traits, null;
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 Follow the method signatures below:
 
@@ -287,7 +402,7 @@ You can use the `screen` call to record whenever the user sees a screen on the m
 
 An example of the `screen` event is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -313,7 +428,36 @@ rudderClient.screen(
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```kotlin
+        rudderClient.screen(
+            "MainActivity",
+            "HomeScreen",
+            RudderProperty().putValue("foo", "bar"),
+            null
+        )
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```java
+        rudderClient.screen(
+            "MainActivity",
+            "HomeScreen",
+            new RudderProperty().putValue("foo", "bar"),
+            null
+        );
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 Follow the method signature below:
 
@@ -851,7 +995,7 @@ adb logcat -s RudderSDK:V \
 
 You can get the user traits after making an `identify` call as shown in the following snippet:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -867,7 +1011,26 @@ Map<String,Object> traitsObj = rudderClient.getRudderContext().getTraits();
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```kotlin
+            val traits = rudderClient!!.getRudderContext().getTraits()
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```java
+            Map&lt;String , Object&gt; traitsObj = rudderClient.getRudderContext().getTraits();
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ### How does the SDK handle different client/server errors?
 

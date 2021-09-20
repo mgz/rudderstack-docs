@@ -19,20 +19,21 @@ export default function Docs({ mdx, pageContext }) {
   const { slug } = mdx.fields
 
   const shortCodes = {
-     Tabs,
-     TabList,
-     Tab,
-     TabPanels,
-     TabPanel,
-     pre: (preProps) => {
+    pre: (preProps) => {
       const props = preToCodeBlock(preProps);
+      console.log('Pre props', props);
   
       if (props) {
         return <Code {...props} />;
       }
   
       return <pre {...preProps} />;
-    }
+    },
+     Tabs,
+     TabList,
+     Tab,
+     TabPanels,
+     TabPanel,     
     }
 
   useEffect(() => {

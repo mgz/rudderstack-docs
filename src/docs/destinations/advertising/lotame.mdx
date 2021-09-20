@@ -70,7 +70,7 @@ RudderStack supports simple Handlebar expressions for the URLs. It uses the valu
 
 ## Adding Lotame to your mobile project
 
-{% tabs %}
+<!-- {% tabs %}
 {% tab title="Android" %}
 Please follow the steps below to add Lotame to your Android Project:
 
@@ -102,7 +102,7 @@ val rudderClient = RudderClient.getInstance(
 )
 ```
 
-<!-- Check required here <div class="warningBlock">-->
+<!-- Check required here <div class="warningBlock">
 
 If your Lotame URLs follow the HTTP protocol, you need to allow <strong><code class="inline-code">ClearTextTraffic</code></strong> for your app. To do so, add <strong><code class="inline-code">android:usesCleartextTraffic="true"</code></strong> in the <strong><code class="inline-code">&lt;application&gt;</code></strong> tag of your app's <code class="inline-code">Android Manifest</code> file. After adding this, the file should look like the following:
 
@@ -117,7 +117,7 @@ If your Lotame URLs follow the HTTP protocol, you need to allow <strong><code cl
 </application>
 ```
 
-<!--</div> -->
+</div>
 
 {% endtab %}
 
@@ -146,7 +146,93 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Android</Tab>
+    <Tab>iOS</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        Please follow the steps below to add Lotame to your Android Project:
+<ul>
+<li>Add the following <code class="inline-code">repository</code> to your <code class="inline-code">app/build.gradle</code> file.
+
+```groovy
+repositories {
+    mavenCentral()
+}
+```
+</li>
+<li>Then, add the following <code class="inline-code">dependencies</code> in the same file:
+
+```groovy
+implementation 'com.rudderstack.android.sdk:core:1.+'
+implementation 'com.rudderstack.android.integration:lotame:1.+'
+```
+</li>
+<li>Finally, change the initialization of your <code class="inline-code">RudderClient</code> in your <code class="inline-code">Application</code> class, as shown in the snippet below:
+
+```kotlin
+val rudderClient = RudderClient.getInstance(
+    this,
+    WRITE_KEY,
+    RudderConfig.Builder()
+        .withDataPlaneUrl(DATA_PLANE_URL)
+        .withFactory(LotameIntegrationFactory.FACTORY)
+        .build()
+)
+```
+</li>
+<li>
+<div class="warningBlock">
+
+If your Lotame URLs follow the HTTP protocol, you need to allow <strong><code class="inline-code">ClearTextTraffic</code></strong> for your app. To do so, add <strong><code class="inline-code">android:usesCleartextTraffic="true"</code></strong> in the <strong><code class="inline-code">&lt;application&gt;</code></strong> tag of your app's <code class="inline-code">Android Manifest</code> file. After adding this, the file should look like the following:
+
+```markup
+<application
+  ...
+  android:usesCleartextTraffic="true"
+  ...>
+    <activity>
+      ...
+    </activity>
+</application>
+```
+</div>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        <ul>
+        <li>Open the <code class="inline-code">Podfile</code> of your project and add the following line
+
+```ruby
+pod 'Rudder-Lotame'
+```
+
+followed by
+
+```text
+$ pod install
+```
+</li>
+<li>Finally change the SDK initialization with the following
+
+```objectivec
+RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+[builder withDataPlaneUrl:DATA_PLANE_URL];
+[builder withFactory:[RudderLotameFactory instance]];
+[builder withLoglevel:RSLogLevelDebug];
+[RSClient getInstance:WRITE_KEY config:[builder build]];
+```
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
 
 ## Identify
 
@@ -249,7 +335,62 @@ Register your callback to get notified when the pixel has been synced
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} 
+
+<!--<Tabs>
+  <TabList>
+    <Tab>Web</Tab>
+    <Tab>Android</Tab>
+    <Tab>iOS</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        Use the web SDK <a href="https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state"><code class="inline-code">ready</code> A</a> <a href="https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state">PI</a> to register the callback. We execute the function provided in <code class="inline-code">LOTAME_SYNCH_CALLBACK</code> window object after calling the sync pixels.
+An example of the above is as shown:
+
+```javascript
+rudderanalytics.ready(() => {
+  window.LOTAME_SYNCH_CALLBACK = () => {
+    rudderanalytics.track(
+      "synch lotame",
+      {},
+      {
+        integrations: { All: false, S3: true },
+      }
+    )
+  }
+})
+```
+The above callback triggers a call to RudderStack SDK's <a href="../../rudderstack-api/rudderstack-spec#track-payload"><code class="inline-code">track</code> </a>API which dumps the <code class="inline-code">track</code> call payload to a configured S3 destination in your RudderStack dashboard, each time the syncing of the DSP Pixels happens.
+      </TabPanel>
+      <TabPanel>
+        Use the <code class="inline-code">onIntegrationReady</code> method to register the <code class="inline-code">onSync</code> callback (which will be called every time the DSP URLs are synced).
+        You'll get notified for all the sync pixels through this callback. You'll receive the type of the pixel and the final compiled URL through the callback.
+
+```kotlin
+rudderClient!!.onIntegrationReady("Lotame Mobile") {
+    (it as LotameIntegration).registerCallback { urlType, url ->
+        // urlType => "bcp", "dsp"
+        // url => complete url with all values replaced
+        println("LotameSync: $urlType : $url")
+    }
+}
+```
+
+      </TabPanel>
+      <TabPanel>
+        Register your callback to get notified when the pixel has been synced
+
+```objectivec
+[LotameIntegration registerCallback:^{
+    // your custom code
+}];
+```
+
+      </TabPanel>
+    </TabPanels>
+</Tabs> -->
+
 
 ## FAQ
 
