@@ -47,23 +47,23 @@ Please follow the steps below in order to create a new Redshift cluster:
 
 - Open the Redshift Console as shown:
 
-![Redshift Console](../.gitbook/assets/1%20%283%29.png)
+<img src="../../images/assets/1 (3).png" /><span class="imageTitle">Redshift Console</span>
 
 - Click on the **Create Cluster** option as shown:
 
-![](../.gitbook/assets/2%20%285%29.png)
+<img src="../../images/assets/2 (5).png" />
 
 - Enter the cluster details**.** First, fill in the **Cluster identifier** and choose the instance type as shown:
 
-![Redshift cluster configuration settings](../.gitbook/assets/3%20%284%29%20%281%29%20%281%29.png)
+<img src="../../images/assets/3 (4) (1) (1).png" /><span class="imageTitle">Redshift cluster configuration settings</span>
 
 - Enter the number of nodes for your cluster. This will primarily depend on the amount of data you expect to work with.
 
-![](../.gitbook/assets/4%20%281%29%20%281%29.png)
+<img src="../../images/assets/4 (1) (1).png" />
 
 - Enter the database name, and create the admin user with the name of your choice.
 
-![](../.gitbook/assets/5%20%287%29.png)
+<img src="../../images/assets/5 (7).png" />
 
 <div class="warningBlock">
 For security purposes, we recommend that you choose a strong password.
@@ -92,7 +92,7 @@ The username and password we provided earlier while creating the Redshift cluste
 
 - Click on the **Editor** option visible in the left pane. You can run the queries to create a new user to access the Redshift cluster in the **Query editor**, as shown in the image below:
 
-![](../.gitbook/assets/6%20%281%29.png)
+<img src="../../images/assets/6 (1).png" />
 
 - The queries to create a new user are:
 
@@ -127,31 +127,31 @@ This procedure works for <strong>EC2-VPC</strong>. However, <strong>EC2-Classic<
 
 - Go to EC2 from the services on AWS console, as shown:
 
-![](../.gitbook/assets/7%20%283%29.png)
+<img src="../../images/assets/7 (3).png" />
 
 - Go to **Security Groups** under **Network & Security** and click on **Create Security Group**.
 
-![](../.gitbook/assets/8%20%281%29%20%281%29.png)
+<img src="../../images/assets/8 (1) (1).png" />
 
 - Enter the details of the security group. The **Security group name** will be used to select the group later.
 
-![](../.gitbook/assets/9%20%281%29.png)
+<img src="../../images/assets/9 (1).png" />
 
 - Add an **Inbound rule** with IPs listed above, and enter the Redshift port as `5439` in the **Port range** field, as shown:
 
-![](../.gitbook/assets/10.png)
+<img src="../../images/assets/10.png" />
 
 - Next, go to the Redshift cluster and select **Properties**, where you can modify the network and security rules of the cluster.
 
-![](../.gitbook/assets/11.png)
+<img src="../../images/assets/11.png" />
 
 - Edit the **Network and security** option, and choose the VPC security group you selected earlier.
 
-![](../.gitbook/assets/12.png)
+<img src="../../images/assets/12.png" />
 
 - Click on **Modify cluster** to finish the **Network and Security** setup.
 
-![](../.gitbook/assets/13.png)
+<img src="../../images/assets/13.png" />
 
 ### Configuring Redshift as a destination in RudderStack
 
@@ -168,7 +168,7 @@ Please follow our <a href="../connections/adding-source-and-destination-rudderst
 
 - Once you have set up the source, select **Redshift** from the list of destinations. Give your destination a name, and then click on **Next**. You will then see the following **Connection Credentials** screen:
 
-![Connection Settings for adding Redshift as a destination in RudderStack](../.gitbook/assets/14.png)
+<img src="../../images/assets/14.png" /><span class="imageTitle">Connection Settings for adding Redshift as a destination in RudderStack</span>
 
 - Enter the details of the cluster you have created in the [Setting Up a Redshift Cluster](https://docs.rudderstack.com/destinations/amazon-redshift#setting-up-a-redshift-cluster) section. You will also need to create a S3 bucket to which the data will be dumped.
 - You will also need to enter the AWS Access Key ID and AWS Secret Access Key. you can avoid this by setting up permission for your S3 bucket by following [this guide](https://docs.rudderstack.com/data-warehouse-integration-guides/amazon-redshift#s3-permissions).

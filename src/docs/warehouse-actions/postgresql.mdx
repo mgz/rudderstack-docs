@@ -28,17 +28,17 @@ To set up PostgreSQL as a source in RudderStack, follow these steps:
 - Log into your [RudderStack dashboard](https://app.rudderlabs.com/signup?type=freetrial).
 - From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
 
-![](../.gitbook/assets/image%20%2897%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%283%29%20%281%29.png)
+<img src="../../images/assets/image (97) (1) (1) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (3) (1).png" />
 
 - Scroll down to the **Warehouse Sources** and select **PostgreSQL**. Then, click on **Next**.
 
-![](../.gitbook/assets/screen-shot-2021-01-05-at-3.18.17-pm%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%281%29.png)
+<img src="../../images/assets/screen-shot-2021-01-05-at-3.18.17-pm (1) (1) (1) (2) (2) (3) (3) (3) (3) (3) (3) (3) (3) (2) (3) (3) (3) (3) (3) (1).png" />
 
 ### Setting Up the Connection
 
 - Assign a name to your source, and enter the **Connection Credentials**, as mentioned below. Then, click on **Next**.
 
-![](../.gitbook/assets/screen-shot-2021-01-05-at-3.19.33-pm.png)
+<img src="../../images/assets/screen-shot-2021-01-05-at-3.19.33-pm.png" />
 
 <div class="successBlock">
   If you've already configured PostgreSQL as a source before, your existing
@@ -57,7 +57,7 @@ To set up PostgreSQL as a source in RudderStack, follow these steps:
 
 - Next, select the **Schema** and the **Table** from which you want RudderStack to import the data.
 
-![](../.gitbook/assets/screen-shot-2021-01-05-at-3.21.18-pm.png)
+<img src="../../images/assets/screen-shot-2021-01-05-at-3.21.18-pm.png" />
 
 <div class="warningBlock">
 Your table must include one of the following columns - <code class="inline-code">email</code>, <code class="inline-code">user_id</code>, or <code class="inline-code">anonymous_id</code>.
@@ -66,23 +66,23 @@ Your table must include one of the following columns - <code class="inline-code"
 
 - Once you specify the table containing the required columns, you will be able to preview a snippet of your data, as shown below:
 
-![](../.gitbook/assets/screen-shot-2021-01-05-at-3.21.38-pm.png)
+<img src="../../images/assets/screen-shot-2021-01-05-at-3.21.38-pm.png" />
 
 - Here, you can select all or only a few specific columns of your choice, search the columns by a keyword, and also edit the **JSON Trait Key**, as shown below. You can also preview the resultant JSON on the right. Once you've select the required table columns to import the data from, click on **Next**.
 
-![](../.gitbook/assets/screen-shot-2021-01-05-at-3.22.09-pm.png)
+<img src="../../images/assets/screen-shot-2021-01-05-at-3.22.09-pm.png" />
 
 ### Setting the Data Update Schedule
 
 - Next, you will be required to set the **Run Frequency** to schedule the data import from your PostgreSQL database to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option. Then, click on **Next**.
 
-![](../.gitbook/assets/screen-shot-2021-01-05-at-3.22.52-pm.png)
+<img src="../../images/assets/screen-shot-2021-01-05-at-3.22.52-pm.png" />
 
 That's it! PostgreSQL is now successfully configured as a source on your RudderStack dashboard.
 
 RudderStack will start importing data from your PostgreSQL database as per the specified frequency. You can further connect this source to your preferred destinations by clicking on **Connect Destinations** or **Add Destinations**, as shown:
 
-![](../.gitbook/assets/screen-shot-2021-01-05-at-3.23.18-pm.png)
+<img src="../../images/assets/screen-shot-2021-01-05-at-3.23.18-pm.png" />
 
 <div class="infoBlock">
 If you have already configured a destination on the RudderStack platform, choose the <strong>Connect Destinations</strong> option. To add a new destination from scratch, you can select the <strong>Add Destination</strong> option.

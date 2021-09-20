@@ -14,27 +14,31 @@ This document lists the steps to follow in order to configure and enable SSO for
 
 - Navigate to your OneLogin administration page after logging in:
 
-![OneLogin Administration Page](../../.gitbook/assets/1%20%2811%29.png)
+<img src="../../../images/assets/1 (11).png" />
+<span class="imageTitle">OneLogin Administration Page</span>
 
 - From the top menu, choose **Applications** - **Applications**, as shown:
 
-![Application Tab in OneLogin](../../.gitbook/assets/2%20%286%29.png)
+<img src="../../../images/assets/2 (6).png" />
+<span class="imageTitle">Application Tab in OneLogin</span>
 
 - Click the **Add App** button in the top-right hand corner, as shown:
 
-![Add App Option in OneLogin](../../.gitbook/assets/3%20%282%29%20%281%29.png)
+<img src="../../../images/assets/3 (2) (1).png" />
+<span class="imageTitle">Add App Option in OneLogin</span>
 
 - Search and select **RudderStack**.
 
-![](../../.gitbook/assets/image%20%2858%29.png)
+<img src="../../../images/assets/image (58).png" />
 
 - Then, click the **Save** button in the top-right corner, as shown:
 
-![](../../.gitbook/assets/4%20%284%29.png)
+<img src="../../../images/assets/4 (4).png" />
 
 - Choose **Configuration** from the menu on the left, as shown:
 
-![Configuration Menu](../../.gitbook/assets/image%20%2832%29.png)
+<img src="../../../images/assets/image (32).png" />
+<span class="imageTitle">Configuration Menu</span>
 
 - Provide a login URL in the following format:**`https://auth.rudderstack.com/v1/start_sso?domain=example.com`** . Here, replace **`example.com`** with the domain you use for your employee email addresses. For example, if your employee email address is **`john@mywebsite.com`**, enter **`mywebsite.com`**.
 - Click on **Save** in the top right corner as shown above.
@@ -50,11 +54,12 @@ This document lists the steps to follow in order to configure and enable SSO for
   - **SAML 2.0 Endpoint \(HTTP\)**
 - Now, look for the field **X.509 Certificate** and click on **View Details** underneath, as shown:
 
-![X.509 Certificate Option](../../.gitbook/assets/image%20%2835%29.png)
+<img src="../../../images/assets/image (35).png" />
+<span class="imageTitle">X.509 Certificate Option</span>
 
 - Retrieve the certificate by clicking on **Download**. It should start with **`-----BEGIN CERTIFICATE-----`** and end with **`-----END CERTIFICATE-----`** , as shown:
 
-![](../../.gitbook/assets/5%20%288%29%20%281%29%20%281%29.png)
+<img src="../../../images/assets/5 (8) (1) (1).png" />
 
 - Please share the **Issuer URL**, **SAML 2.0 Endpoint \(HTTP\)** and **X.509 Certificate** with us. We will then enable SSO for your organization and get back to you.
 

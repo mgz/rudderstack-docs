@@ -67,9 +67,11 @@ For instance, in the above call `rudderanalytics.requireIntegration("GA")`, the 
 
 The following workflow sums up the flow of the event payload while using the JavaScript SDK:
 
-![JavaScript SDK Workflow](../../../.gitbook/assets/js-sdk-workflow.png)
+<img src="../../../../images/assets/js-sdk-workflow.png" />
+<span class="imageTitle">JavaScript SDK Workflow</span>
 
 ### `requireIntegration` Call Definition
+
 
 - The first parameter is a **string** or an **array of strings** containing the destination names. You can also pass `rudderanalytics.requireIntegration(“All”)`. This will fetch all the plugins for the native destinations that are connected to the source in your RudderStack dashboard.
 - The second parameter is a **callback** that accepts an object containing the names of the destinations that were successfully or unsuccessfully loaded on the page.

@@ -40,20 +40,20 @@ For RudderStack to backup events to cloud provider buckets, we need the followin
 
 - Create a role with the following permissions : 1. Storage.objects.create 2. storage.objects.get You might be required to add each permission one by one.
 
-![](../../.gitbook/assets/screenshot-2020-08-05-at-11.38.37-am.png)
+<img src="../../../images/assets/screenshot-2020-08-05-at-11.38.37-am.png" />
 
 - Create a service account as follows :- 1. Give a name to this service account 2. Add the role created above. 3. Create key with key type json and save the file locally.
 
-![](../../.gitbook/assets/screenshot-2020-08-05-at-11.40.12-am%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%281%29.png)
+<img src="../../../images/assets/screenshot-2020-08-05-at-11.40.12-am (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (2) (1).png" />
 
-![](../../.gitbook/assets/screenshot-2020-08-05-at-11.41.24-am.png)
+<img src="../../../images/assets/screenshot-2020-08-05-at-11.41.24-am.png" />
 
-![](../../.gitbook/assets/screenshot-2020-08-05-at-11.49.10-am.png)
+<img src="../../../images/assets/screenshot-2020-08-05-at-11.49.10-am.png" />
 
 - Create a bucket with uniform bucket access control. Once, the bucket is created. Add permissions : - Go to “Permissions” tab - Add member with the above created service account - Add role with the above created role.
 
-![](../../.gitbook/assets/screenshot-2020-08-05-at-11.52.07-am.png)
+<img src="../../../images/assets/screenshot-2020-08-05-at-11.52.07-am.png" />
 
-![](../../.gitbook/assets/screenshot-2020-08-05-at-11.53.34-am.png)
+<img src="../../../images/assets/screenshot-2020-08-05-at-11.53.34-am.png" />
 
 - Send the downloaded json file to the rudder team. We will inject these service account json file to the rudder-server which is required for authenticating the rudder-server to send events dump to gcs.

@@ -36,7 +36,7 @@ Next, you’ll enable token-based authentication for your NetSuite account. This
 2. Check the **Token-based Authentication** box. Your settings should look like this when finished
 3. Scroll to the bottom of the page and click **Save**.
 
-![](../.gitbook/assets/5.-consumer-key-secret.png)
+<img src="../../images/assets/5.-consumer-key-secret.png" />
 
 ### Create an Integration
 
@@ -59,7 +59,7 @@ To create a Netsuite Token ID and Token Secret, you first need to create a **Rol
 2. On the Role page, enter a name for the role in the **Name** field \(e.g. RudderStack\).
 3. Select **Two-factor Authentication Required** to **Not Required**.
 
-![](../.gitbook/assets/role.png)
+<img src="../../images/assets/role.png" />
 
 Then, under the **Permissions** section, go to **Setup** and assign the following permissions:
 
@@ -76,7 +76,7 @@ Assign **View** permissions for the following:
 - Custom Body Fields
 - Perform Search \(you can find this under the **Lists** section next to **Setup**\)
 
-![](../.gitbook/assets/role-permissions.png)
+<img src="../../images/assets/role-permissions.png" />
 
 <div class="infoBlock">
 For each pipeline resource that you want RudderStack to sync, you should give the relevant permissions for it to the Role. These resources are divided among these sections - <strong>Transactions</strong>, <strong>Reports</strong>, <strong>Lists</strong>, and <strong>Custom Records</strong>. Note that each permission should have <strong>View</strong> permissions.
@@ -92,7 +92,7 @@ It is extremely important that you have assigned the permissions for every resou
 
 To create an employee, navigate to **Lists - Employees - Employees - New**. Then, enter the name and email ID of the employee. Under the **Access** section, select **Give Access**, and **Manually assign or change password**. Proceed to add a password. Finally, add the **Role** which you have created in the previous step. Click on **Save** to save the settings.
 
-![](../.gitbook/assets/employee.png)
+<img src="../../images/assets/employee.png" />
 
 #### Step 3: Create an Access Token
 
@@ -105,7 +105,7 @@ In this step, you’ll generate access tokens for the integration record \(appli
 5. **Copy the Token ID and Secret somewhere handy**. You’ll need these credentials to complete the setup.
 6. You can now mark the Role as a **Web Services Only Role** by selecting the checkbox in the **Manage Roles** page.
 
-![](../.gitbook/assets/8%20%283%29.png)
+<img src="../../images/assets/8 (3).png" />
 
 ### Locate your NetSuite Account ID
 
@@ -122,21 +122,21 @@ To set up Netsuite as a source on the RudderStack dashboard, follow these steps:
 - Log into your [RudderStack dashboard](https://app.rudderlabs.com/signup?type=freetrial).
 - From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
 
-![](../.gitbook/assets/1%20%284%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%283%29%20%282%29%20%281%29.png)
+<img src="../../images/assets/1 (4) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (3) (2) (1).png" />
 
 - Next, select **Netsuite** from the list of **Cloud Sources**, and click on **Next**.
 
-![](../.gitbook/assets/2%20%2815%29.png)
+<img src="../../images/assets/2 (15).png" />
 
 - Assign a name to your source, and click on **Next**.
 
-![](../.gitbook/assets/3%20%2811%29.png)
+<img src="../../images/assets/3 (11).png" />
 
 ### Specifying Connection Credentials
 
 - Next, enter the relevant connection credentials required to set up your Netsuite source, as shown:
 
-![](../.gitbook/assets/4%20%2812%29.png)
+<img src="../../images/assets/4 (12).png" />
 
 - The connection settings are as follows:
   - **Account Name** : Enter your Netsuite account name here. You can get it from your Netsuite dashboard
@@ -161,13 +161,13 @@ If you've already configured Netsuite as a source before, you can choose the acc
 
 - Next, you will be required to set the **Run Frequency** to schedule the data import from your Netsuite account to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option.
 
-![](../.gitbook/assets/screenshot-2021-02-23-at-11.24.06-am.png)
+<img src="../../images/assets/screenshot-2021-02-23-at-11.24.06-am.png" />
 
 ### Setting the Historical Sync Date
 
 - Set the **Historical sync start date** from when you want RudderStack all your historical Netsuite data. Also specify the **RudderStack Restlet URL**, and click **Next**.
 
-![](../.gitbook/assets/screenshot-2021-02-23-at-11.23.47-am.png)
+<img src="../../images/assets/screenshot-2021-02-23-at-11.23.47-am.png" />
 
 <div class="warningBlock">
 To get the RudderStack Restlet URL, you need to first install <a href="https://js.blendo.co/netsuite/v1/restlet.js">this script</a> in your Netsuite account, and paste the generated Restlet URL in the RudderStack Restlet URL field. Refer to the <strong>FAQs section</strong> to know more about how to add the script in your Netsuite account.
@@ -183,11 +183,11 @@ Note that none of the resources are selected by default, so you will have to do 
 
 </div>
 
-![](../.gitbook/assets/screenshot-2021-02-23-at-11.24.17-am.png)
+<img src="../../images/assets/screenshot-2021-02-23-at-11.24.17-am.png" />
 
 - RudderStack also supports two special types of resources that you can ingest from Netsuite - **custom records** and **saved searches**. To import these resources, click on **Add Resource** on the top right, as shown above. You will see the following window:
 
-![](../.gitbook/assets/screenshot-2021-02-23-at-11.25.45-am.png)
+<img src="../../images/assets/screenshot-2021-02-23-at-11.25.45-am.png" />
 
 - If you have already configured a Netsuite resource before, you can choose the **Clone from** option to use the values of that resource as is.
 - Alternatively, select the appropriate **Resource type** you want to import:
@@ -199,7 +199,7 @@ That's it! Netsuite is now successfully configured as a source on your RudderSta
 
 RudderStack will start ingesting data from Netsuite as per the specified frequency. You can further connect this source to your data warehouse by clicking on **Connect Destinations** or **Add Destination**, as shown:
 
-![](../.gitbook/assets/image%20%2875%29.png)
+<img src="../../images/assets/image (75).png" />
 
 <div class="successBlock">
   Use the <strong>Connect Destinations</strong> option if you have already
@@ -219,19 +219,19 @@ To get the RudderStack Restlet URL, you need to first install [this script](http
 
 To create a new **Script** in your Netsuite account, navigate to **Customization** - **Scripting** - **Scripts** - **New**. Then, click on the **+** icon to create a new script. A new window will then pop up, asking you to select the downloaded [script](https://js.blendo.co/netsuite/v1/restlet.js). Once you have attached it, click on **Save**, and then click **Create Script Record**.
 
-![](../.gitbook/assets/11.-new-script.png)
+<img src="../../images/assets/11.-new-script.png" />
 
 Then add the **Name** of the script and the **Owner**, that is the **Employee** that you have created before \(in **Step 2** of the FAQ **How can I get the Netsuite Token ID and Token Secret?**\). Then click on **Save**.
 
-![](../.gitbook/assets/12.-save-script.png)
+<img src="../../images/assets/12.-save-script.png" />
 
 Then, you need to deploy the script. In order to do so, click on **Deployments**, add the script **Title** and click on **Add**. After the script is deployed, click on **Save**.
 
-![](../.gitbook/assets/13.-script-deployment.png)
+<img src="../../images/assets/13.-script-deployment.png" />
 
 Finally, click on the title of your deployed script, and you should be able to see the **External URL**, which is the **RudderStack Restlet URL** that you need to use in the Netsuite source configuration.
 
-![](../.gitbook/assets/14.-external-url.png)
+<img src="../../images/assets/14.-external-url.png" />
 
 ### Is it possible to have multiple Cloud Extract sources writing to the same schema?
 
