@@ -98,6 +98,7 @@ curl --location -X POST 'https://api.rudderstack.com/accessTokens' \
   <TabList>
     <Tab>Curl</Tab>
     <Tab>Httpie</Tab>
+  </TabList>
     <TabPanels>
       <TabPanel>
         ```text curl --location -X POST
@@ -113,7 +114,6 @@ curl --location -X POST 'https://api.rudderstack.com/accessTokens' \
         Content-Type:'application/json' ```
       </TabPanel>
     </TabPanels>
-  </TabList>
 </Tabs>
 
 We use Basic Auth consisting of three parts:
@@ -188,7 +188,7 @@ Base64encoded **workspace token.**
   access token.
 </div>
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```text
@@ -206,7 +206,28 @@ http GET 'https://api.rudderstack.com/accessTokens' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```text
+          curl --location -X GET 'https://api.rudderstack.com/accessTokens' \
+          -H 'Authorization: Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
+          ```
+      </TabPanel>
+      <TabPanel>
+        ```text
+          http GET 'https://api.rudderstack.com/accessTokens' \
+          'Authorization: Basic Base64Enc(workspacetoken:)'
+          ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 {% api-method method="delete" host="https://api.rudderstack.com" path="/accessTokens" %}
 {% api-method-summary %}
@@ -249,7 +270,7 @@ All access token will be deleted with given name.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Curl" %}
 
 ```text
@@ -267,7 +288,28 @@ http DELETE 'http://api.rudderstack.com/accessTokens?name=sdc' \
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```text
+          curl --location -X DELETE 'https://api.rudderstack.com/accessTokens?name=some-test-access-token' \
+          -H 'Authorization: Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
+          ```
+      </TabPanel>
+      <TabPanel>
+        ```text
+            http DELETE 'http://api.rudderstack.com/accessTokens?name=sdc' \
+            'Authorization: Basic Base64Enc(workspacetoken:)'
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Errors
 
