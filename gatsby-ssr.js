@@ -19,10 +19,14 @@
 import React from "react"
 import { isMobile, isBrowser } from "react-device-detect"
 
-export const onRenderBody = ({ setPostBodyComponents }) => {
-  setPostBodyComponents([
-    <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
-  ])
+  
+  export const onRenderBody = ({pathname ,setPostBodyComponents }) => {
+  if(pathname.includes("careers")){
+    setPostBodyComponents([
+      <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
+    ])
+  }
+    
 }
 
 export const onPreRenderHTML = ({
