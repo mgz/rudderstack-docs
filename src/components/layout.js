@@ -106,18 +106,18 @@ const Layout = ({ location, showExplicitGradient, children }) => {
   // }
   return (
     <>
-      {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection.banner_contents.map(
-        banner => {
-          
-          return (
-            <WebisteBanner
-              key={banner._key}
-              currentSlug={location ? location.pathname : ""}
-              {...banner}
-            />
-          )
-        }
-      )}
+      {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection &&
+        data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection.banner_contents.map(
+          banner => {
+            return (
+              <WebisteBanner
+                key={banner._key}
+                currentSlug={location ? location.pathname : ""}
+                {...banner}
+              />
+            )
+          }
+        )}
 
       <div
         id="main-container"

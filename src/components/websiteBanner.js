@@ -24,7 +24,7 @@ const WebisteBanner = props => {
 
   let date = new Date()
   date.setDate(
-    date.getDate() + props.banner_visibility === "every_visit" ? 1 : 365
+    date.getDate() + props.banner_visibility === "every_visit" ? 1 : 7
   )
 
   return props._type && props._type === "website_banner_top_sticky" ? (
