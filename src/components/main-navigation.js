@@ -53,7 +53,7 @@ const MainNavigation = props => {
         name={"header-container"}
         className={`gradient-${
           props.diableGradient ? "disable" : "enable"
-        } sticky top-0 z-50`}
+        } sticky top-0 z-40`}
       >
         <div className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 lg:pb-0 flex-wrap ">
           <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
