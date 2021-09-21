@@ -925,6 +925,7 @@ top: -60px;
 }
 .childrenWrapper [data-reach-tab][data-selected]{
   @apply bg-whiteColor-custom;
+  @apply font-semibold;
   border-color: rgb(230, 236, 241) rgb(230, 236, 241) rgb(0, 102, 255) rgb(230, 236, 241);
   color: rgb(36, 42, 49);
 }

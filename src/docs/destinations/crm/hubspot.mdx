@@ -65,7 +65,7 @@ The setting to enable / disable native SDK to send events can be changed later. 
 
 ## Page
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Cloud Mode" %}
 
 <div class="warningBlock">
@@ -85,7 +85,32 @@ rudderanalytics.page()
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Cloud Mode</Tab>
+    <Tab>Device Mode</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        <div class="warningBlock">
+        The <code class="inline-code">page</code> call is not supported in cloud mode for HubSpot.
+        </div>
+      </TabPanel>
+      <TabPanel>
+        <ul>
+        <li>To send the data to HubSpot, an initial <code class="inline-code">page</code> call is required. For more information on the <code class="inline-code">page</code> call, please refer to our <a href="../../rudderstack-api/rudderstack-spec">RudderStack API Specification</a> documentation.
+        The following snippet is an example of a <code class="inline-code">page</code> call:
+</li>
+</ul>
+<code class="inline-code">
+  rudderanalytics.page()
+</code>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
 
 ## Identify
 
@@ -93,7 +118,7 @@ The `identify` call is used to create or update a contact in HubSpot.
 
 You need to provide an email id of that user under the `traits` of the `identify` call.
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Cloud Mode" %}
 In cloud mode, the `identify` call will create or update a contact in HubSpot. You are not required to call `page` or `track` after to create the contact.
 {% endtab %}
@@ -101,7 +126,22 @@ In cloud mode, the `identify` call will create or update a contact in HubSpot. Y
 {% tab title="Device Mode" %}
 In Device mode, you must call either `page` or `track` after the identify call to create a contact. Previous `page` and `track` calls will also become associated with that contact once identified.
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Cloud Mode</Tab>
+    <Tab>Device Mode</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        In cloud mode, the <code class="inline-code">identify</code> call will create or update a contact in HubSpot. You are not required to call <code class="inline-code">page</code> or <code class="inline-code">track</code> after to create the contact.
+      </TabPanel>
+      <TabPanel>
+        In Device mode, you must call either <code class="inline-code">page</code> or <code class="inline-code">track</code> after the identify call to create a contact. Previous <code class="inline-code">page</code> and <code class="inline-code">track</code> calls will also become associated with that contact once identified.
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 Here is an example `identify` call:
 

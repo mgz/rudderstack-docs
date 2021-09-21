@@ -61,7 +61,7 @@ If you choose to keep the **Use in Development Environment** flag as on, then pl
 
 Depending on your platform of integration, follow these steps below to add Leanplum to your project:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Android" %}
 Please follow the steps below to add Leanplum to your Android Project:
 
@@ -121,18 +121,99 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Android</Tab>
+    <Tab>iOS</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        Please follow the steps below to add Leanplum to your Android Project:
+<ul>
+<li>Add the following <code class="inline-code">repository</code> to your <code class="inline-code">app/build.gradle</code> file.
+<span>
+
+```groovy
+repositories {
+    mavenCentral()
+}
+```
+</span>
+</li>
+<li>After that, add the following <code class="inline-code">dependencies</code> in the same file:
+<span>
+
+```groovy
+implementation 'com.rudderstack.android.sdk:core:1.+'
+implementation 'com.rudderstack.android.integration:leanplum:1.+'
+implementation 'com.leanplum:leanplum-core:5+'
+```
+</span>
+</li>
+<li>Finally, change the initialization of your <code class="inline-code">RudderClient</code> in your <code class="inline-code">Application</code> class.
+<span>
+
+```kotlin
+val rudderClient = RudderClient.getInstance(
+    this,
+    WRITE_KEY,
+    RudderConfig.Builder()
+        .withDataPlaneUrl(DATA_PLANE_URL)
+        .withFactory(LeanplumIntegrationFactory.FACTORY)
+        .build()
+)
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        Follow these steps to add Leanplum to your iOS project:
+<ul>
+<li>Go your <code class="inline-code">Podfile</code> and add the <code class="inline-code">Rudder-Leanplum</code> extension:
+<span>
+
+```ruby
+pod 'Rudder-Leanplum'
+```
+</span>
+</li>
+<li>After adding the dependency followed by <code class="inline-code">pod install</code> , you can add the imports to your <code class="inline-code">AppDelegate.m</code> file as shown:
+<span>
+
+```objectivec
+#import "RudderLeanplumFactory.h"
+```
+</span>
+</li>
+<li>Finally, change the initialization of your <code class="inline-code">RudderClient</code> as shown:
+<span>
+
+```objectivec
+RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
+[builder withEndPointUrl:DATA_PLANE_URL];
+[builder withFactory:[RudderLeanplumFactory instance]];
+[RudderClient getInstance:WRITE_KEY config:[builder build]];
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <div class="infoBlock">
-The RudderStack SDKs store the `traits` information from the `identify` call in `SharedPreference` and `NSUserDefaults` for Android and iOS respectively. If RudderStack detects the `userId` in the persisted traits information, it starts the native SDK along with the `userId` . On the other hand, if it can't find the `userId` , it starts the SDK normally without it. This activity helps to build a better session.
+The RudderStack SDKs store the <code class="inline-code">traits</code> information from the <code class="inline-code">identify</code> call in <code class="inline-code">SharedPreference</code> and <code class="inline-code">NSUserDefaults</code> for Android and iOS respectively. If RudderStack detects the <code class="inline-code">userId</code> in the persisted traits information, it starts the native SDK along with the <code class="inline-code">userId</code> . On the other hand, if it can't find the <code class="inline-code">userId</code> , it starts the SDK normally without it. This activity helps to build a better session.
 
 The code for Android is the same as below:
 
-`Leanplum.start(applicationContext, userId)` for a persisted `userId` and `Leanplum.start(applicationContext)` if it is not present.
+<code class="inline-code">Leanplum.start(applicationContext, userId)</code> for a persisted <code class="inline-code">userId</code> and <code class="inline-code">Leanplum.start(applicationContext)</code> if it is not present.
 
 RudderStack follows a similar pattern for iOS as well.
 
-While searching for `userId` in the persisted traits, RudderStack looks for either of these fields: `userId` and `id`.
+While searching for <code class="inline-code">userId</code> in the persisted traits, RudderStack looks for either of these fields: <code class="inline-code">userId</code> and <code class="inline-code">id</code>.
 
 </div>
 

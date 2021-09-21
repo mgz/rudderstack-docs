@@ -158,21 +158,26 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
         Please follow the steps below to add Lotame to your Android Project:
 <ul>
 <li>Add the following <code class="inline-code">repository</code> to your <code class="inline-code">app/build.gradle</code> file.
+<span>
 
 ```groovy
 repositories {
     mavenCentral()
 }
 ```
+</span>
 </li>
 <li>Then, add the following <code class="inline-code">dependencies</code> in the same file:
 
+<span>
 ```groovy
 implementation 'com.rudderstack.android.sdk:core:1.+'
 implementation 'com.rudderstack.android.integration:lotame:1.+'
 ```
+</span>
 </li>
 <li>Finally, change the initialization of your <code class="inline-code">RudderClient</code> in your <code class="inline-code">Application</code> class, as shown in the snippet below:
+<span>
 
 ```kotlin
 val rudderClient = RudderClient.getInstance(
@@ -184,11 +189,14 @@ val rudderClient = RudderClient.getInstance(
         .build()
 )
 ```
+</span>
 </li>
 <li>
 <div class="warningBlock">
 
 If your Lotame URLs follow the HTTP protocol, you need to allow <strong><code class="inline-code">ClearTextTraffic</code></strong> for your app. To do so, add <strong><code class="inline-code">android:usesCleartextTraffic="true"</code></strong> in the <strong><code class="inline-code">&lt;application&gt;</code></strong> tag of your app's <code class="inline-code">Android Manifest</code> file. After adding this, the file should look like the following:
+
+<span>
 
 ```markup
 <application
@@ -200,6 +208,7 @@ If your Lotame URLs follow the HTTP protocol, you need to allow <strong><code cl
     </activity>
 </application>
 ```
+</span>
 </div>
 </li>
 </ul>
@@ -207,18 +216,23 @@ If your Lotame URLs follow the HTTP protocol, you need to allow <strong><code cl
       <TabPanel>
         <ul>
         <li>Open the <code class="inline-code">Podfile</code> of your project and add the following line
+<span>
 
 ```ruby
 pod 'Rudder-Lotame'
 ```
+</span>
 
 followed by
+<span>
 
 ```text
 $ pod install
 ```
+</span>
 </li>
 <li>Finally change the SDK initialization with the following
+<span>
 
 ```objectivec
 RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
@@ -227,6 +241,7 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [builder withLoglevel:RSLogLevelDebug];
 [RSClient getInstance:WRITE_KEY config:[builder build]];
 ```
+</span>
 </li>
 </ul>
       </TabPanel>
@@ -248,7 +263,7 @@ rudderanalytics.identify("12345", {
 })
 ```
 
-The above identify call will sync the \*\*\*\*DSP Pixel, modify the template to place the `userId` in the source URL where required, and use it as `{{userId}}` in the template, as shown:
+The above identify call will sync the DSP Pixel, modify the template to place the `userId` in the source URL where required, and use it as `{{userId}}` in the template, as shown:
 
 ```text
 http://ab.cdef.com/getapi?http://sync.crwdcntrl.net/map/c={{clientId}}/rand={{random}}/tpid={{userId}}/tp={{clientIdSpace}}
@@ -285,7 +300,7 @@ A sample `screen` call is as shown:
 
 To get a track of every sync Pixel call \(once in every 7 days\), you may register a function that will be executed when the syncing of DSP Pixels takes place from the SDK.
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Web" %}
 Use the web SDK [`ready` A](https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state)[PI](https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state) to register the callback. We execute the function provided in `LOTAME_SYNCH_CALLBACK` window object after calling the sync pixels.
 
@@ -335,9 +350,9 @@ Register your callback to get notified when the pixel has been synced
 ```
 
 {% endtab %}
-{% endtabs %} 
+{% endtabs %}-->
 
-<!--<Tabs>
+<Tabs>
   <TabList>
     <Tab>Web</Tab>
     <Tab>Android</Tab>
@@ -346,7 +361,9 @@ Register your callback to get notified when the pixel has been synced
     <TabPanels>
       <TabPanel>
         Use the web SDK <a href="https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state"><code class="inline-code">ready</code> A</a> <a href="https://github.com/rudderlabs/rudder-sdk-js#step-4-check-ready-state">PI</a> to register the callback. We execute the function provided in <code class="inline-code">LOTAME_SYNCH_CALLBACK</code> window object after calling the sync pixels.
-An example of the above is as shown:
+<ul>
+<li>An example of the above is as shown:
+<span>
 
 ```javascript
 rudderanalytics.ready(() => {
@@ -361,11 +378,17 @@ rudderanalytics.ready(() => {
   }
 })
 ```
-The above callback triggers a call to RudderStack SDK's <a href="../../rudderstack-api/rudderstack-spec#track-payload"><code class="inline-code">track</code> </a>API which dumps the <code class="inline-code">track</code> call payload to a configured S3 destination in your RudderStack dashboard, each time the syncing of the DSP Pixels happens.
+</span>
+</li>
+<li>The above callback triggers a call to RudderStack SDK's <a href="../../rudderstack-api/rudderstack-spec#track-payload"><code class="inline-code">track</code> </a>API which dumps the <code class="inline-code">track</code> call payload to a configured S3 destination in your RudderStack dashboard, each time the syncing of the DSP Pixels happens.
+</li>
+</ul>
       </TabPanel>
       <TabPanel>
-        Use the <code class="inline-code">onIntegrationReady</code> method to register the <code class="inline-code">onSync</code> callback (which will be called every time the DSP URLs are synced).
+        <ul>
+        <li>Use the <code class="inline-code">onIntegrationReady</code> method to register the <code class="inline-code">onSync</code> callback (which will be called every time the DSP URLs are synced).
         You'll get notified for all the sync pixels through this callback. You'll receive the type of the pixel and the final compiled URL through the callback.
+<span>
 
 ```kotlin
 rudderClient!!.onIntegrationReady("Lotame Mobile") {
@@ -376,20 +399,25 @@ rudderClient!!.onIntegrationReady("Lotame Mobile") {
     }
 }
 ```
-
-      </TabPanel>
-      <TabPanel>
-        Register your callback to get notified when the pixel has been synced
+</span>
+</li>
+</ul>
+</TabPanel>
+<TabPanel>
+<ul>
+<li>Register your callback to get notified when the pixel has been synced</li>
+<span>
 
 ```objectivec
 [LotameIntegration registerCallback:^{
     // your custom code
 }];
 ```
-
+</span>
+</ul>
       </TabPanel>
     </TabPanels>
-</Tabs> -->
+</Tabs>
 
 
 ## FAQ

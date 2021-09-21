@@ -55,9 +55,8 @@ A sample payload looks like the following snippet. You can provide a list of use
 
 #### Payload
 
-{% code title="suppress.json" %}
 
-```javascript
+```javascript title="suppress.json"
 {
     "regulation_type": "Suppress",
     "attributes": {
@@ -70,11 +69,9 @@ A sample payload looks like the following snippet. You can provide a list of use
 }
 ```
 
-{% endcode %}
-
 #### Usage
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="curl" %}
 
 ```bash
@@ -94,7 +91,38 @@ https://api.rudderlabs.com/workspaces/regulations < suppress.json
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span> 
+
+```bash
+curl -u <your_workspace_token>: \
+-X POST https://api.rudderlabs.com/workspaces/regulations \
+-d @suppress.json \
+--header "Content-Type: application/json"
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+        <ul>
+<li>
+
+```bash
+http -a <your_workspace_token>: \
+https://api.rudderlabs.com/workspaces/regulations < suppress.json
+```
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Get a Regulation
 
@@ -105,7 +133,7 @@ Pass <code class="inline-code">regulation_id</code> in the URL. The <code class=
 
 </div>
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="curl" %}
 
 ```bash
@@ -123,7 +151,35 @@ https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>  
+
+```bash
+curl -u <your_workspace_token>: \
+https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span> 
+
+```
+http -a <your_workspace_token>: \
+https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
 
 ## List All Regulations
 

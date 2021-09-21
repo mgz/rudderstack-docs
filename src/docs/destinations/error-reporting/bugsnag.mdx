@@ -42,7 +42,7 @@ Please follow our guide on <a href="../connections/adding-source-and-destination
 
 ## Adding Bugsnag to your Mobile project
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Android" %}
 Please follow the steps below to add Bugsnag to your Android Project:
 
@@ -101,7 +101,87 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Android</Tab>
+    <Tab>iOS</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        Please follow the steps below to add Bugsnag to your Android Project:
+<ul>
+<li>Add the following <code class="inline-code">repository</code> to your <code class="inline-code">app/build.gradle</code> file.
+<span>
+
+```text
+repositories {
+    mavenCentral()
+}
+```
+</span>
+</li>
+<li>After that, add the following <code class="inline-code">dependencies</code> in the same file:
+<span>
+
+```text
+implementation 'com.rudderstack.android.sdk:core:1.0.1-beta.1'
+implementation 'com.rudderstack.android.integration:bugsnag:0.1.0-beta.1'
+```
+</span>
+</li>
+<li>Finally, change the initialization of your <code class="inline-code">RudderClient</code> in your <code class="inline-code">Application</code> class
+<span>
+
+```text
+val rudderClient = RudderClient.getInstance(
+    this,
+    <YOUT_WRITE_KEY>,
+    RudderConfig.Builder()
+        .withDataPlaneUrl(<YOUR_DATA_PLANE_URL>)
+        .withFactory(BugsnagIntegrationFactory.FACTORY)
+        .build()
+)
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        Follow these steps to add Bugsnag to your iOS project:
+<ul>
+<li>Go your <code class="inline-code">Podfile</code> and add the <code class="inline-code">Rudder-Bugsnag</code> extension
+<span>
+
+```text
+pod 'Rudder-Bugsnag', '0.1.0-beta.1'
+```
+</span>
+</li>
+<li>After adding the dependency followed by <code class="inline-code">pod install</code> , you can add the imports to your <code class="inline-code">AppDelegate.m</code> file as shown:
+<span>
+
+```text
+#import "RudderBugsnagFactory.h"
+```
+</span>
+</li>
+<li>Finally, change the initialization of your <code class="inline-code">RudderClient</code> as shown:
+<span>
+
+```text
+RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
+[builder withDataPlaneUrl:<YOUR_DATA_PLANE_URL>];
+[builder withFactory:[RudderBugsnagFactory instance]];
+[RudderClient getInstance:<YOUR_WRITE_KEY> config:[builder build]];
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Identify
 

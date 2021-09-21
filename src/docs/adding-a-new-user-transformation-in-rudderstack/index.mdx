@@ -341,37 +341,46 @@ export async function transformEvent(event) {
   </TabList>
   <TabPanels>
     <TabPanel>
-      ```text
-        curl --location -X POST
-      'https://api.rudderstack.com/accessTokens' \ -H 'Authorization: Basic
-      Base64Enc(workspacetoken:)' \ -H 'Content-Type: application/json' \ -d
-      '&#123; "name": "some-test-access-token", "description":
-      "some-description" &#125;' 
-      ```
+<span>
+
+```text
+curl --location -X POST
+'https://api.rudderstack.com/accessTokens' \ -H 'Authorization: Basic
+Base64Enc(workspacetoken:)' \ -H 'Content-Type: application/json' \ -d
+'{ "name": "some-test-access-token", "description":
+"some-description" }' 
+```
+</span>
+    </TabPanel>
+    <TabPanel>
+<span>
+
+```text 
+http POST 'https://api.rudderstack.com/accessTokens' \
+name=some-test-access-token description=some-description \
+Authorization:'Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
+Content-Type:'application/json' 
+```
+</span>
     </TabPanel>
     <TabPanel> 
-      ```text 
-      http POST 'https://api.rudderstack.com/accessTokens' \
-      name=some-test-access-token description=some-description \
-      Authorization:'Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
-      Content-Type:'application/json' 
-      ``` 
-    </TabPanel>
-    <TabPanel> 
-      ```text
-        export async function transformEvent(event) &#123;
-            const res = await fetch("post_url", &#123;
-                method: "POST", // POST, PUT, DELETE, GET, etc.
-                headers: &#123;
-                "Content-Type": "application/json;charset=UTF-8",
-                "Authorization": "Bearer &lt;your_authorization_token&gt;"
-                &#125;,
-                body: JSON.stringify(event),
-            &#125;);
-            event.response = JSON.stringify(res);
-            return event;
-        &#125;
-        ```
+<span>
+
+```text
+export async function transformEvent(event) {
+  const res = await fetch("post_url", {
+    method: "POST", // POST, PUT, DELETE, GET, etc.
+    headers: {
+    "Content-Type": "application/json;charset=UTF-8",
+    "Authorization": "Bearer <your_authorization_token>"
+    },
+    body: JSON.stringify(event),
+  });
+  event.response = JSON.stringify(res);
+  return event;
+}
+```
+</span>
     </TabPanel>
   </TabPanels>
 </Tabs>

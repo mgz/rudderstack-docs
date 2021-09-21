@@ -33,7 +33,7 @@ Please follow our guide on <a href="../connections/adding-source-and-destination
 
 Depending on your platform of integration follow the steps below to enable Firebase in your project:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Android" %}
 Follow these steps to add Firebase to your Android project:
 
@@ -223,7 +223,228 @@ Follow these steps to add Firebase to your ReactNative project:
   - Install all required pods using `pod install`
   - Add the `GoogleServices-Info.plist`file to the root of your XCode project.
     {% endtab %}
-    {% endtabs %}
+    {% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Android</Tab>
+    <Tab>iOS</Tab>
+    <Tab>Unity</Tab>
+    <Tab>React Native</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        Follow these steps to add Firebase to your Android project:
+<ul>
+<li>Register your mobile application in the <a href="https://console.firebase.google.com/">Firebase console</a>.</li>
+<li>Once you have successfully created the application in Firebase console, you will be prompted to download the <code class="inline-code">google-services.json</code> file.</li>
+<li>Copy this file in your <code class="inline-code">app</code> folder of your project. The file contains all the necessary information about the project and the integration.</li>
+<li>Add the <code class="inline-code">classpath</code> under <code class="inline-code">dependencies</code> to your project level <code class="inline-code">build.gradle</code>
+<span>
+
+```text
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        // add this line
+        classpath 'com.google.gms:google-services:4.3.3'
+    }
+}
+```
+</span>
+</li>
+<li>Once you have completed the steps above, you can add the <code class="inline-code">plugins</code> and <code class="inline-code">dependencies</code> to your <code class="inline-code">app/build.gradle</code> file as shown:
+<span>
+
+```text
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+```
+</span>
+</li>
+<li>Then, add the repository as shown:
+
+```text
+repositories {
+    mavenCentral()
+}
+```
+</li>
+<li>Add the RudderStack-Firebase SDK extension along with <code class="inline-code">core</code> SDK under <code class="inline-code">dependencies</code>:
+<span>
+
+```text
+implementation 'com.rudderstack.android.sdk:core:1.+'
+implementation 'com.rudderstack.android.integration:firebase:1.+'
+```
+</span>
+</li>
+<li>Then, add the necessary <code class="inline-code">permissions</code> under <code class="inline-code">AndroidManifest.xml</code>
+<span>
+
+```text
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+</span>
+</li>
+<li>Finally change the initialization of your <code class="inline-code">RudderClient</code> in your <code class="inline-code">Application</code> class.
+<span>
+
+```text
+val rudderClient = RudderClient.getInstance(
+    this,
+    <YOUT_WRITE_KEY>,
+    RudderConfig.Builder()
+        .withDataPlaneUrl(<YOUR_DATA_PLANE_URL>)
+        .withFactory(FirebaseIntegrationFactory.FACTORY)
+        .build()
+)
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        Follow these steps to add Firebase to your iOS project:
+<ul>
+<li>Register your app to <a href="https://console.firebase.google.com">Firebase Console</a>. It will then prompt you to download the <code class="inline-code">GoogleServices-Info.plist</code> file.</li>
+<li>Add the file to the root of your XCode project.</li>
+<li>Go your <code class="inline-code">Podfile</code> and add the <code class="inline-code">Rudder-Firebase</code> extension along with <code class="inline-code">Core</code> SDK using the following code:
+<span>
+
+```text
+pod 'Rudder-Firebase'
+```
+</span>
+</li>
+<li>After adding the dependency followed by <code class="inline-code">pod install</code> ,you can add the imports to your <code class="inline-code">AppDelegate.m</code> file as shown:
+<span>
+
+```text
+#import "RudderFirebaseFactory.h"
+```
+</span>
+</li>
+<li>Finally change the intialization of your `RudderClient` as shown:
+<span>
+
+```text
+RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+[builder withDataPlaneUrl:DATA_PLANE_URL];
+[builder withFactory:[RudderFirebaseFactory instance]];
+[builder withLoglevel:RSLogLevelDebug];
+[RSClient getInstance:WRITE_KEY config:[builder build]];
+```
+</span>
+</li>
+</ul>
+<div class="infoBlock">
+RudderStack will bundle the <code class="inline-code">Firebase/Core</code> and <code class="inline-code">FirebaseAnalytics</code> by default with <code class="inline-code">Rudder-Firebase</code> pod.
+
+</div>
+    </TabPanel>
+    <TabPanel>
+        Follow these steps to add Firebase to your Unity project:
+<ul>
+<li>Register your project in <a href="https://console.firebase.google.com">Firebase Console</a>. We support only <code class="inline-code">Android</code> and <code class="inline-code">iOS</code> for Unity.</li>
+<li>After adding the project, Firebase will prompt you to download the <code class="inline-code">google-services.json</code> for Android and <code class="inline-code">GoogleServices-Info.plist</code> for iOS.</li>
+<li>Add those two files to your <code class="inline-code">Assets</code> folder.</li>
+<li>Integrate the RudderStack <code class="inline-code">core</code> SDK with your project. To know more, please refer to our <a href="../../stream-sources/rudderstack-sdk-integration-guides/getting-started-with-unity-sdk">Getting Started with Unity SDK</a> guide.</li>
+<li>Download and import the Firebase Unity SDK and follow these instructions on <a href="https://firebase.google.com/docs/unity/setup">adding Firebase SDK to your project</a>. Specifically <code class="inline-code">FirebaseAnalytics.unitypackage</code>.</li>
+<li>Download <a href="https://github.com/rudderlabs/rudder-sdk-unity/raw/master/Integrations/Firebase/rudder-integration-firebase-unity.unitypackage">Firebase Extension for RudderStack</a> from our GitHub page and import into your project.</li>
+<li>Attach <code class="inline-code">RudderPreferbs.prefab</code> file from <code class="inline-code">Rudder</code> to your Main <code class="inline-code">GameObject</code></li>
+<li>Finally, change the SDK initialization using the following code snippet:
+
+```text
+// Build your config
+RudderConfigBuilder configBuilder = new RudderConfigBuilder()
+    .WithEndPointUrl(<YOUR_DATA_PLANE_URL>)
+    .WithFactory(RudderFirebaseIntegrationFactory.GetFactory());
+
+// get instance for RudderClient
+RudderClient rudderClient = RudderClient.GetInstance(
+    <YOUR_WRITE_KEY>,
+    configBuilder.Build()
+);
+```
+</li>
+</ul>
+    </TabPanel>
+    <TabPanel>
+        Follow these steps to add Firebase to your ReactNative project:
+<ul>
+<li>Register your Android and iOS applications in the <a href="https://console.firebase.google.com/">Firebase console</a>.</li>
+<li>Once you have successfully created the applications in the Firebase console, you will be prompted to download the <code class="inline-code">google-services.json</code> and <code class="inline-code">GoogleServices-Info.plist</code> files.</li>
+<li>Add the RudderStack react native SDK to your app - refer <a href="../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-react-native-sdk">Getting Started with the ReactNative SDK</a>.</li>
+<li>Add the RudderStack-Firebase react native module to your app using :
+
+  ```text
+  npm install @rudderstack/rudder-integration-firebase-react-native
+  // OR //
+  yarn add @rudderstack/rudder-integration-firebase-react-native
+  ```
+</li>
+<li>Import the module you added above and add it to your SDK initialization code in the following manner:
+
+  ```text
+  import rudderClient from '@rudderstack/rudder-sdk-react-native';
+  import firebase from "@rudderstack/rudder-integration-firebase-react-native";
+
+  const config = &#123;
+      dataPlaneUrl: <DATAPLANE_URL>,
+      trackAppLifecycleEvents: true,
+      withFactories: [firebase]
+  &#125;;
+
+  rudderClient.setup(<WRITE_KEY>, config);
+  ```
+</li>
+<li>Navigate to your app's <code class="inline-code">android</code> folder and follow the following steps:
+    <ul>
+  <li>Copy the <code class="inline-code">google-services.json</code> file in the <code class="inline-code">app</code> folder of your android project. The file contains all the necessary information about the project and the integration.</li>
+  <li>Add the <code class="inline-code">classpath</code> under <code class="inline-code">dependencies</code> to your project level <code class="inline-code">build.gradle</code>
+
+  ```text
+  buildscript {
+      repositories {
+          google()
+      }
+      dependencies {
+          // add this line
+          classpath 'com.google.gms:google-services:4.3.3'
+      }
+  }
+  ```
+</li>
+<li>Once you have completed the steps above, you can add the <code class="inline-code">plugins</code> and <code class="inline-code">dependencies</code> to your <code class="inline-code">app/build.gradle</code> file as shown:
+
+  ```text
+  apply plugin: 'com.android.application'
+  apply plugin: 'com.google.gms.google-services'
+  ```
+</li>
+<li>Then, add the necessary <code class="inline-code">permissions</code> under <code class="inline-code">AndroidManifest.xml</code>
+
+  ```text
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  ```
+</li>
+</ul>
+</li>
+<li>Navigate to your app's <code class="inline-code">iOS</code> folder and follow the following steps:
+    <ul>
+  <li>Install all required pods using <code class="inline-code">pod install</code></li>
+  <li>Add the <code class="inline-code">GoogleServices-Info.plist</code> file to the root of your XCode project.</li>
+  </ul>
+</li>
+</ul>
+    </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Identify
 

@@ -143,7 +143,7 @@ To use this feature, you've to turn on the feature `trackApplicationLifecycleEve
 
 Example for registering `deviceToken` is as follows:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 
 ```text
@@ -159,7 +159,32 @@ rudderClient!!.rudderContext.putDeviceToken(getDeviceToken())
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```text
+[[[RudderClient sharedInstance] getContext] putDeviceToken:[self getDeviceToken]];
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```text
+rudderClient!!.rudderContext.putDeviceToken(getDeviceToken())
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## FAQs
 

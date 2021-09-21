@@ -13,8 +13,8 @@ With RudderStack's SDK for mobile and web platforms, you can send your in-app ev
 <div class="successBlock">
   <strong>
     Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/braze).
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/braze">GitHub repo</a>
+    .
   </strong>
 </div>
 
@@ -44,7 +44,7 @@ Please follow these steps once you have added a source in the RudderStack app:
 ![RudderStack connection settings for adding Braze as a destination](../../.gitbook/assets/braze.png)
 
 <div class="infoBlock">
-When creating a new Braze Rest API Key for your app, you will only need to select the **users.track**, **users.identify**, and **users.alias.new** endpoints under the **User Data** permissions
+When creating a new Braze Rest API Key for your app, you will only need to select the <strong>users.track</strong>, <strong>users.identify</strong>, and <strong>users.alias.new</strong> endpoints under the <strong>User Data</strong> permissions
 
 </div>
 
@@ -66,7 +66,7 @@ When creating a new Braze Rest API Key for your app, you will only need to selec
 
 Depending on your platform of integration, follow the steps below to add Braze to your project:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 Please follow these steps to add Braze to your iOS project:
 
@@ -130,7 +130,91 @@ To add Braze to your Android project, please follow these steps:
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        Please follow these steps to add Braze to your iOS project:
+<ul>
+<li>Open the <code class="inline-code">Podfile</code> of your project and add the following line:
+<span>
+
+```text
+pod 'Rudder-Braze'
+```
+</span>
+  followed by the command as shown:
+<span>
+
+```text
+$ pod install
+```
+</span>
+</li>
+<li>Finally change the SDK initialization to the following snippet:
+<span>
+
+```text
+RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
+[builder withDataPlaneUrl:&lt;YOUR_DATA_PLANE_URL&gt;];
+[builder withFactory:[RudderBrazeFactory instance]];
+[RudderClient getInstance:&lt;YOUR_WRITE_KEY&gt; config:[builder build]];
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        To add Braze to your Android project, please follow these steps:
+<ul>
+<li>Open your <code class="inline-code">app/build.gradle</code> (Module: app) file, and add the following:
+<span>
+
+```text
+repositories {
+  mavenCentral()
+  maven { url "https://appboy.github.io/appboy-android-sdk/sdk" }
+}
+```
+</span>
+</li>
+<li>Add the following under <code class="inline-code">dependencies</code> section:
+<span>
+
+```javascript
+  implementation 'com.rudderstack.android.sdk:core:1.0.1'
+  implementation 'com.rudderstack.android.integration:braze:1.0.2'
+  implementation 'com.appboy:android-sdk-ui:6.0.+'
+  // if you haven't included Gson already
+  implementation 'com.google.code.gson:gson:2.8.6'
+```
+</span>
+</li>
+<li>Finally, change the SDK initialization to the following:
+<span>
+
+```text
+  val rudderClient: RudderClient = RudderClient.getInstance(
+      this,
+      <WRITE_KEY>,
+      RudderConfig.Builder()
+          .withDataPlaneUrl(<DATA_PLANE_URL>)
+          .withLogLevel(RudderLogger.RudderLogLevel.DEBUG)
+          .withFactory(BrazeIntegrationFactory.FACTORY)
+          .build()
+  )
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Identify
 

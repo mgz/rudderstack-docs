@@ -425,11 +425,13 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
 <li>Create a policy in AWS:</li>
 
 Replace <code class="inline-code">&lt;bucket&gt;</code> and <code class="inline-code">&lt;prefix&gt;</code> with your values in the JSON below. And create the policy with a name of your choice.
+<span>
+
 ```text
-&#123;
+{
     "Version": "2012-10-17",
     "Statement": [
-        &#123;
+        {
             "Effect": "Allow",
             "Action": [
               "s3:PutObject",
@@ -438,23 +440,24 @@ Replace <code class="inline-code">&lt;bucket&gt;</code> and <code class="inline-
               "s3:DeleteObject",
               "s3:DeleteObjectVersion"
             ],
-            "Resource": "arn:aws:s3:::&lt;bucket&gt;/&lt;prefix&gt;/*"
-        &#125;,
-        &#123;
+            "Resource": "arn:aws:s3:::<bucket>/<prefix>/*"
+        },
+        {
             "Effect": "Allow",
             "Action": "s3:ListBucket",
-            "Resource": "arn:aws:s3:::&lt;bucket&gt;",
-            "Condition": &#123;
-                "StringLike": &#123;
+            "Resource": "arn:aws:s3:::<bucket>",
+            "Condition": {
+                "StringLike": {
                     "s3:prefix": [
-                        "&lt;prefix&gt;/*"
+                        "<prefix>/*"
                     ]
-                &#125;
-            &#125;
-        &#125;
+                }
+            }
+        }
     ]
-&#125;
+}
 ```
+</span>
 <li>
   {" "}
   Create a role and attach the above policy in AWS: - Create role of type <strong>
@@ -484,10 +487,12 @@ previous step.
 Record the values: <code class="inline-code">&lt;integration_name&gt;</code>.
 
 <li> Retrieve the AWS IAM user for your Snowflake account as shown:</li>
+<span>
 
 ```text
-DESC INTEGRATION &lt;integration_name&gt;;
+DESC INTEGRATION <integration_name>;
 ```
+</span>
 <code class="inline-code">&lt;integration_name&gt;</code> - The integration name
 used in the previous step.
 
@@ -496,27 +501,29 @@ Record the values - <code class="inline-code">STORAGE_AWS_ROLE_ARN</code> and <c
 <li> Grant IAM user permission to access bucket objects in AWS </li>
 Choose the role created in Step 2 and edit the trust relationship with the following
 JSON.
+<span>
 
 ```text
-&#123;
+{
   "Version": "2012-10-17",
   "Statement": [
-    &#123;
+    {
       "Sid": "",
       "Effect": "Allow",
-      "Principal": &#123;
-        "AWS": "&lt;snowflake_user_arn&gt;"
-      &#125;,
+      "Principal": {
+        "AWS": "<snowflake_user_arn>"
+      },
       "Action": "sts:AssumeRole",
-      "Condition": &#123;
-        "StringEquals": &#123;
-          "sts:ExternalId": "&lt;snowflake_external_id&gt;"
-        &#125;
-      &#125;
-    &#125;
+      "Condition": {
+        "StringEquals": {
+          "sts:ExternalId": "<snowflake_external_id>"
+        }
+      }
+    }
   ]
-&#125;
+}
 ```
+</span>
 <code class="inline-code">&lt;snowflake_user_arn&gt;</code> is the <code class="inline-code">
   STORAGE_AWS_ROLE_ARN
 </code> in the previous step.
@@ -525,10 +532,12 @@ JSON.
 </code> in the previous step.
 
 <li> Grant integration access to role in Snowflake:</li>
+<span>
 
 ```text
-grant usage on integration &lt;integration_name&gt; to role &lt;sf_role&gt;
+grant usage on integration <integration_name> to role <sf_role>
 ```
+</span>
   <code class="inline-code">&lt;integration_name&gt;</code> is the integration created in the Step 3.  
   <code class="inline-code">&lt;sf_role&gt;</code> is the role in Snowflake you want to grant access to.
 </ol>
@@ -586,10 +595,12 @@ And record the values <code class="inline-code">AZURE_CONSENT_URL</code> and <co
   4.
 </li>
 <li>Grant integration access to role in Snowflake:</li>
+<span>
 
 ```text
-  grant usage on integration &lt;integration_name&gt; to role &lt;sf_role&gt;;
+  grant usage on integration <integration_name> to role <sf_role>;
 ```
+</span>
   <code class="inline-code">&lt;integration_name&gt;</code> is the integration created in the Step 4.  
   <code class="inline-code">&lt;sf_role&gt;</code> is the role in Snowflake you want to grant access to.  
 </ol>
@@ -603,6 +614,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
 
 <ol>
 <li>Create a Cloud Storage integration in Snowflake.</li>
+<span>
 
 ```text
  CREATE STORAGE INTEGRATION <integration_name>
@@ -611,6 +623,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
    ENABLED = TRUE
    STORAGE_ALLOWED_LOCATIONS = ('gcs://<bucket>/<path>/', 'gcs://<bucket>/<path>/')
 ```
+</span>
 <ul>
   <li>
     <code class="inline-code">&lt;integration_name&gt;</code> is the name of the
@@ -634,10 +647,12 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
   ID for the Cloud Storage service account that was created for your Snowflake
   account.
 </li>
+<span>
 
 ```text
  DESC STORAGE INTEGRATION <integration_name>;
 ```
+</span>
 <ul>
   <li>
     Where <code class="inline-code">&lt;integration_name&gt;</code> is the name
@@ -662,7 +677,8 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
     Create a custom IAM role that has the permissions required to access the
     bucket and get objects.
   </li>
-</ul>{" "}
+</ul>
+
      1. Log into the Google Cloud Platform Console as a project editor
      2. From the home dashboard, choose IAM & admin » Roles.
      3. Click Create Role.
@@ -690,10 +706,12 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
   </ul>
   
   <li> Grant usage to an external (i.e. Cloud Storage) stage that references the integration you created.
+<span>
 
 ```text
 GRANT USAGE ON INTEGRATION <integration_name> TO ROLE "RUDDER";
 ```
+</span>
 </li>
 </ol>
         <div class="infoBlock">
