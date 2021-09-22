@@ -4,6 +4,8 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import { useStaticQuery, graphql } from "gatsby"
 import MainNavigationMenuLink from "./MainNavigationMenuLink"
+import { rudderslabTrackOnClick } from "../utils/common"
+
 // import Logo from "../images/logo.png"
 
 const MainNavigation = props => {
@@ -57,7 +59,11 @@ const MainNavigation = props => {
       >
         <div className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 lg:pb-0 flex-wrap ">
           <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
-            <Link to="/" className="pl-4 sm:pl-0 pb-0 md:pb-3" rel="noopener noreferrer">
+            <Link
+              to="/"
+              className="pl-4 sm:pl-0 pb-0 md:pb-3"
+              rel="noopener noreferrer"
+            >
               <StaticImage
                 // src={"../images/rudderstack-logo-v2.svg"}
                 src={"../images/rudderstack-logo-header-v2.png"}
@@ -70,7 +76,16 @@ const MainNavigation = props => {
             {(() => {
               if (trybtn.btnexternallink === true) {
                 return (
-                  <a href={trybtn.btnlink}>
+                  <a
+                    href={trybtn.btnlink}
+                    onClick={e =>
+                      rudderslabTrackOnClick(
+                        "navigation",
+                        "header navigation",
+                        e
+                      )
+                    }
+                  >
                     <span className="btn-primary-sm inline-block px-3 sm:px-6">
                       {trybtn.btntext}
                     </span>
@@ -78,7 +93,16 @@ const MainNavigation = props => {
                 )
               } else {
                 return (
-                  <Link to={trybtn.btnlink}>
+                  <Link
+                    to={trybtn.btnlink}
+                    onClick={e =>
+                      rudderslabTrackOnClick(
+                        "navigation",
+                        "header navigation",
+                        e
+                      )
+                    }
+                  >
                     <span className="btn-primary-sm inline-block p-4">
                       {trybtn.btntext}
                     </span>
@@ -123,7 +147,12 @@ const MainNavigation = props => {
               ))}
             </ul>
             <div className="flex lg:pb-4">
-              <a href="https://app.rudderstack.com/login">
+              <a
+                href="https://app.rudderstack.com/login"
+                onClick={e =>
+                  rudderslabTrackOnClick("navigation", "header navigation", e)
+                }
+              >
                 <span className="inline-block lg:p-2 lg:py-1.5 mt-6 lg:mt-0 font-custom font-bold mr-2">
                   Log in
                 </span>
@@ -131,7 +160,16 @@ const MainNavigation = props => {
               {(() => {
                 if (trybtn.btnexternallink === true) {
                   return (
-                    <a href={trybtn.btnlink}>
+                    <a
+                      href={trybtn.btnlink}
+                      onClick={e =>
+                        rudderslabTrackOnClick(
+                          "navigation",
+                          "header navigation",
+                          e
+                        )
+                      }
+                    >
                       <span className="border-transparent inline-block text-white  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg ">
                         {trybtn.btntext}
                       </span>
@@ -139,7 +177,16 @@ const MainNavigation = props => {
                   )
                 } else {
                   return (
-                    <Link to={trybtn.btnlink}>
+                    <Link
+                      to={trybtn.btnlink}
+                      onClick={e =>
+                        rudderslabTrackOnClick(
+                          "navigation",
+                          "header navigation",
+                          e
+                        )
+                      }
+                    >
                       <span className="border-transparent inline-block text-white  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg ">
                         {trybtn.btntext}
                       </span>

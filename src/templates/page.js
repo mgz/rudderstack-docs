@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useEffect} from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import { Helmet } from "react-helmet"
@@ -57,6 +57,19 @@ const Page = props => {
       </Layout>
     )
   }
+
+  // useEffect(() => {
+  //   function handleClick(status) {
+  //     setIsOnline(status.isOnline);
+  //   }
+  //   document.
+
+
+  //   // Specify how to clean up after this effect:
+  //   return function cleanup() {
+      
+  //   };
+  // })
 
   let l_section_info
   const page = data.page || data.route.page

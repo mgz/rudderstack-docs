@@ -2,6 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const ThreeCardsWithTitleLeftAligned = props => {
   return (
@@ -44,7 +45,7 @@ const ThreeCardsWithTitleLeftAligned = props => {
         </div>
       </div>
       <div className="w-full max-w-5xl m-auto text-center">
-      <p className="mt-16 md:mt-16 flex justify-center mb-6 md:mb-16">
+        <p className="mt-16 md:mt-16 flex justify-center mb-6 md:mb-16">
           {(() => {
             if (props.button.btnexternallink === true) {
               return (
@@ -56,13 +57,22 @@ const ThreeCardsWithTitleLeftAligned = props => {
                       : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
                   }
                   href={props.button.btnlink}
+                  onClick={e =>
+                    rudderslabTrackOnClick("button", props.title, e)
+                  }
                 >
                   {props.button.btntext}
                 </a>
               )
             } else {
               return (
-                <Link key={props.button._key} to={props.button.btnlink}>
+                <Link
+                  key={props.button._key}
+                  to={props.button.btnlink}
+                  onClick={e =>
+                    rudderslabTrackOnClick("button", props.title, e)
+                  }
+                >
                   <span
                     className={
                       (props.button.btnhiglight === true

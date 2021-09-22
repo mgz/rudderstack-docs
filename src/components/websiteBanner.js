@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import PortableText from "./portableText"
 import Cookies from "universal-cookie"
+import { rudderslabTrackOnClick } from "../utils/common"
+
 
 const WebisteBanner = props => {
   const cookies = new Cookies()
@@ -43,6 +45,7 @@ const WebisteBanner = props => {
         <a
           href={props.banner_button.cmnlink}
           className="font-bold underline pl-2 m-auto"
+          onClick={(e) => rudderslabTrackOnClick("banner", "website banner", e)}
         >
           {props.banner_button.cmnlinktext} &#x2192;
         </a>

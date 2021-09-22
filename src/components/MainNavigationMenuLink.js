@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Image from "./image"
 import SanityLink from "./SanityLink"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const MainNavigationMenuLink = props => {
   const [onClickEvent, setOnClickEvent] = useState(false)
@@ -87,6 +88,13 @@ const MainNavigationMenuLink = props => {
                                               submenu.menu_target_link
                                                 ? "_blank"
                                                 : "_self"
+                                            }
+                                            onClick={e =>
+                                              rudderslabTrackOnClick(
+                                                "navigation",
+                                                menuGroup.group_title,
+                                                e
+                                              )
                                             }
                                           >
                                             {submenu.sub_menu_item_title}

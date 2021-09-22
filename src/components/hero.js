@@ -10,8 +10,10 @@ import { StaticImage } from "gatsby-plugin-image"
 //import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
 //import loadable from "@loadable/component";
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
-
-const LottieAnim = React.lazy(() => import("../animations/homepage-animation-v2"));
+import { rudderslabTrackOnClick } from "../utils/common"
+const LottieAnim = React.lazy(() =>
+  import("../animations/homepage-animation-v2")
+)
 
 function Hero(props) {
   // const myHTML = `<h1>John Doe</h1>`;
@@ -45,7 +47,6 @@ function Hero(props) {
 
   useEffect(() => {
     if (showAnimation) {
-      
     }
   }, [showAnimation])
 
@@ -68,6 +69,7 @@ function Hero(props) {
                   if (btn.btnexternallink === true) {
                     return (
                       <a
+                        onClick={(e) => rudderslabTrackOnClick("button", props.herobannertitle, e)}
                         key={btn._key}
                         className={
                           (btn.btnhiglight === true
@@ -81,7 +83,11 @@ function Hero(props) {
                     )
                   } else {
                     return (
-                      <Link key={btn._key} to={btn.btnlink}>
+                      <Link
+                        key={btn._key}
+                        to={btn.btnlink}
+                        onClick={(e) => rudderslabTrackOnClick("button", props.herobannertitle, e)}
+                      >
                         <span
                           className={
                             (btn.btnhiglight === true
@@ -127,9 +133,11 @@ function Hero(props) {
             </div>
             <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
               {/* <div id="lottie" /> */}
-              {showAnimation && !isMobile && (<Suspense fallback={<div></div>}>
-                <LottieAnim />
-              </Suspense>)}
+              {showAnimation && !isMobile && (
+                <Suspense fallback={<div></div>}>
+                  <LottieAnim />
+                </Suspense>
+              )}
             </div>
             {/*
             <div className={`${showAnimation ? "hidden" : "block"} w-full`}>

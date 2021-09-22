@@ -5,6 +5,8 @@ import "owl.carousel" */
 import Image from "./image"
 import Link from "gatsby-link"
 import {Carousel} from 'react-responsive-carousel';
+import { rudderslabTrackOnClick } from "../utils/common"
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Testimonial = props => {
@@ -120,6 +122,7 @@ const Testimonial = props => {
                                                   : "btn-secondary-large"
                                               } inline-block`}
                                               href={testimonial.button.btnlink}
+                                              onClick={(e) => rudderslabTrackOnClick("button", testimonial.clientname, e)}
                                             >
                                               {testimonial.button.btntext}
                                             </a>
@@ -129,6 +132,7 @@ const Testimonial = props => {
                                             
                                               <Link
                                                 to={testimonial.button.btnlink}
+                                                onClick={(e) => rudderslabTrackOnClick("button", testimonial.clientname, e)}
                                               >
                                                 <span
                                               className={
