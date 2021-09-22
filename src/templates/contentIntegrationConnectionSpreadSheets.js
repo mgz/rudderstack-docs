@@ -35,228 +35,234 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
         />
         <meta property="og:type" content="article" />
       </Helmet>
-      
-      
-      <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-24 mx-auto relative gradiant-layer banner-section pb-12 md:pb-0">
-      <div className="flex flex-col items-center md:gap-8  justify-center mx-auto lg:flex-row lg:p-0">
-        <div className="relative z-20 flex flex-col w-full pb-1 pr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-          <h1 className="text-primary mb-8 md:my-4 text-4xl md:text-5xl font-bold leading-tight">
-            Integrate your{" "}
-            {data.integration_connection.sourceIntegrationContext} {data.integration_connection.sourceIntegrationContext.includes("app") ? '' :'app'}  with{" "}
-            {data.integration_connection.destinationIntegration}
-          </h1>
-          <p className="text-lg text-grayColor-custom font-normal mb-4">
-            Don’t go through the pain of direct integration. RudderStack’s{" "}
-            {data.integration_connection.sourceIntegration} makes it easy to
-            send data from your{" "}
-            {data.integration_connection.sourceIntegrationContext} to{" "}
-            {data.integration_connection.destinationIntegration} ...and all of
-            your other cloud tools.
-          </p>
 
+      <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-24 mx-auto relative gradiant-layer banner-section pb-12 md:pb-0">
+        <div className="flex flex-col items-center md:gap-8  justify-center mx-auto lg:flex-row lg:p-0">
+          <div className="relative z-20 flex flex-col w-full pb-1 pr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
+            <h1 className="text-primary mb-8 md:my-4 text-4xl md:text-5xl font-bold leading-tight">
+              Integrate your{" "}
+              {data.integration_connection.sourceIntegrationContext}{" "}
+              {data.integration_connection.sourceIntegrationContext.includes(
+                "app"
+              )
+                ? ""
+                : "app"}{" "}
+              with {data.integration_connection.destinationIntegration}
+            </h1>
+            <p className="text-lg text-grayColor-custom font-normal mb-4">
+              Don’t go through the pain of direct integration. RudderStack’s{" "}
+              {data.integration_connection.sourceIntegration} makes it easy to
+              send data from your{" "}
+              {data.integration_connection.sourceIntegrationContext} to{" "}
+              {data.integration_connection.destinationIntegration} ...and all of
+              your other cloud tools.
+            </p>
+
+            <a href={"https://app.rudderstack.com/signup?type=freetrial"}>
+              <span
+                className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
+              >
+                Sign Up free
+              </span>
+            </a>
+            {/* 
           <a
             className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
             href={data.integration_connection.destinationDocsUrl}
           >
             Read {data.integration_connection.destinationIntegration} Docs
-          </a>
-        </div>
+          </a> */}
+          </div>
 
-        <div
-          className={` relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0`}
-        >
           <div
-            className={`integration-connection-hero-container-${data.integration_connection.imageHeaderSource}`}
+            className={` relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0`}
           >
-            <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
-              <div className="">
-                {data.integration_connection.imageHeaderSource ===
-                  "mobile" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_mobile_ios" && (
-                    <StaticImage
-                      src="../images/ic_mobile_ios.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+            <div
+              className={`integration-connection-hero-container-${data.integration_connection.imageHeaderSource}`}
+            >
+              <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
+                <div className="">
+                  {data.integration_connection.imageHeaderSource === "mobile" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_mobile_ios" && (
+                      <StaticImage
+                        src="../images/ic_mobile_ios.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "mobile" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_mobile_android" && (
-                    <StaticImage
-                      src="../images/ic_mobile_android.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource === "mobile" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_mobile_android" && (
+                      <StaticImage
+                        src="../images/ic_mobile_android.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "mobile" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_mobile_react-native" && (
-                    <StaticImage
-                      src="../images/ic_mobile_react-native.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource === "mobile" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_mobile_react-native" && (
+                      <StaticImage
+                        src="../images/ic_mobile_react-native.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "mobile" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_mobile_flutter" && (
-                    <StaticImage
-                      src="../images/ic_mobile_flutter.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource === "mobile" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_mobile_flutter" && (
+                      <StaticImage
+                        src="../images/ic_mobile_flutter.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_javascript" && (
-                    <StaticImage
-                      src="../images/ic_desktop_javascript.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_javascript" && (
+                      <StaticImage
+                        src="../images/ic_desktop_javascript.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_unity" && (
-                    <StaticImage
-                      src="../images/ic_desktop_unity.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_unity" && (
+                      <StaticImage
+                        src="../images/ic_desktop_unity.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_unity" && (
-                    <StaticImage
-                      src="../images/ic_desktop_unity.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_unity" && (
+                      <StaticImage
+                        src="../images/ic_desktop_unity.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_java" && (
-                    <StaticImage
-                      src="../images/ic_desktop_java.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_java" && (
+                      <StaticImage
+                        src="../images/ic_desktop_java.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_python" && (
-                    <StaticImage
-                      src="../images/ic_desktop_python.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_python" && (
+                      <StaticImage
+                        src="../images/ic_desktop_python.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_node-js" && (
-                    <StaticImage
-                      src="../images/ic_desktop_node-js.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_node-js" && (
+                      <StaticImage
+                        src="../images/ic_desktop_node-js.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_go" && (
-                    <StaticImage
-                      src="../images/ic_desktop_go.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_go" && (
+                      <StaticImage
+                        src="../images/ic_desktop_go.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_ruby" && (
-                    <StaticImage
-                      src="../images/ic_desktop_ruby.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_ruby" && (
+                      <StaticImage
+                        src="../images/ic_desktop_ruby.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_net" && (
-                    <StaticImage
-                      src="../images/ic_desktop_net.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_net" && (
+                      <StaticImage
+                        src="../images/ic_desktop_net.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
 
-                {data.integration_connection.imageHeaderSource ===
-                  "desktop" &&
-                  data.integration_connection.imageHeaderName ===
-                    "ic_desktop_php" && (
-                    <StaticImage
-                      src="../images/ic_desktop_php.png"
-                      alt="Header image"
-                      placeholder="tracedSVG"
-                      className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                    />
-                  )}
-                <div
-                  className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-${data.integration_connection.imageHeaderSource}`}
-                >
-                  <div className="flex justify-center align-center h-full">
-                    <img
-                      src={
-                        data.integration_connection.destinationLogoImgUrl
-                      }
-                      className="h-5 sm:h-10 m-auto"
-                      alt="RudderStack animation"
-                      placeholder="tracedSVG"
-                    />
+                  {data.integration_connection.imageHeaderSource ===
+                    "desktop" &&
+                    data.integration_connection.imageHeaderName ===
+                      "ic_desktop_php" && (
+                      <StaticImage
+                        src="../images/ic_desktop_php.png"
+                        alt="Header image"
+                        placeholder="tracedSVG"
+                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                      />
+                    )}
+                  <div
+                    className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-${data.integration_connection.imageHeaderSource}`}
+                  >
+                    <div className="flex justify-center align-center h-full">
+                      <img
+                        src={data.integration_connection.destinationLogoImgUrl}
+                        className="h-5 sm:h-10 m-auto"
+                        alt="RudderStack animation"
+                        placeholder="tracedSVG"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <section className=" px-4 md:px-3 py-12 md:py-24 mx-auto relative bg-whiteColor-custom banner-section">
         <div className="flex flex-col items-center md:gap-6 xl:gap-12 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
@@ -271,16 +277,16 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 RudderStack’s open source{" "}
                 {data.integration_connection.sourceIntegration} allows you to
                 integrate RudderStack with your{" "}
-                {data.integration_connection.sourceIntegrationContext} to
-                track event data and automatically send it to{" "}
+                {data.integration_connection.sourceIntegrationContext} to track
+                event data and automatically send it to{" "}
                 {data.integration_connection.destinationIntegration}.
                 <br />
                 <br />
                 With the RudderStack{" "}
-                {data.integration_connection.sourceIntegration}, you do not
-                have to worry about having to learn, test, implement or deal
-                with changes in a new API and multiple endpoints every time
-                someone asks for a new integration.
+                {data.integration_connection.sourceIntegration}, you do not have
+                to worry about having to learn, test, implement or deal with
+                changes in a new API and multiple endpoints every time someone
+                asks for a new integration.
               </p>
             </div>
 
@@ -395,14 +401,21 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
               </div>
             </div>
           </div>
-          <div className="w-60 m-auto">
+          <div className="w-full sm:w-96 px-4 m-auto">
+            <a
+              className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
+              href={data.integration_connection.destinationDocsUrl}
+            >
+              Read {data.integration_connection.destinationIntegration} Docs
+            </a>
+            {/*           
             <a href={"https://app.rudderstack.com/signup?type=freetrial"}>
               <span
                 className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
               >
                 Sign Up free
               </span>
-            </a>
+            </a> */}
           </div>
         </div>
       </section>
@@ -422,8 +435,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 <div className="h-8 mb-2 pl-6">
                   <img
                     src={
-                      data.integration_connection
-                        .relevantIntegrationLogoUrl1
+                      data.integration_connection.relevantIntegrationLogoUrl1
                     }
                     className="h-8 m-auto"
                     alt="RudderStack animation"
@@ -452,8 +464,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 <div className="h-8 mb-2 pl-6">
                   <img
                     src={
-                      data.integration_connection
-                        .relevantIntegrationLogoUrl2
+                      data.integration_connection.relevantIntegrationLogoUrl2
                     }
                     className="h-8 m-auto"
                     alt="RudderStack animation"
@@ -482,8 +493,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 <div className="h-8 mb-2 pl-6">
                   <img
                     src={
-                      data.integration_connection
-                        .relevantIntegrationLogoUrl3
+                      data.integration_connection.relevantIntegrationLogoUrl3
                     }
                     className="h-8 m-auto"
                     alt="RudderStack animation"
@@ -512,8 +522,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 <div className="h-8 mb-2 pl-6">
                   <img
                     src={
-                      data.integration_connection
-                        .relevantIntegrationLogoUrl4
+                      data.integration_connection.relevantIntegrationLogoUrl4
                     }
                     className="h-8 m-auto"
                     alt="RudderStack animation"
@@ -566,48 +575,50 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
 
 export const query = graphql`
   query GetSingleIntegrationConnectionGoogleSpresdSheet($slug: String) {
-    integration_connection: googleSpreadsheetR1RedRudderstackIcData(slug: { eq: $slug }) {
-        destinationCategory
-        destinationDescription
-        destinationDocsUrl
-        destinationId
-        destinationIntegration
-        destinationIntegrationContext
-        destinationLogoImgUrl
-        destinationSlug
-        googleSpreadsheetId
-        id
-        imageHeaderName
-        imageHeaderSource
-        metaDesc
-        metaTitle
-        relevantIntegrationDesc1
-        relevantIntegrationDesc2
-        relevantIntegrationDesc3
-        relevantIntegrationDesc4
-        relevantIntegrationLogoUrl1
-        relevantIntegrationLogoUrl3
-        relevantIntegrationLogoUrl2
-        relevantIntegrationLogoUrl4
-        relevantIntegrationUrl1
-        relevantIntegrationUrl2
-        relevantIntegrationUrl3
-        relevantIntegrationUrl4
-        slug
-        sourceCategory
-        sourceDescription
-        sourceDocsUrl
-        sourceId
-        sourceIntegration
-        sourceIntegrationContext
-        sourceLogoImgUrl
-        useCaseDesc1
-        sourceSlug
-        useCaseDesc2
-        useCaseDesc3
-        useCaseHeader1
-        useCaseHeader2
-        useCaseHeader3
+    integration_connection: googleSpreadsheetR1RedRudderstackIcData(
+      slug: { eq: $slug }
+    ) {
+      destinationCategory
+      destinationDescription
+      destinationDocsUrl
+      destinationId
+      destinationIntegration
+      destinationIntegrationContext
+      destinationLogoImgUrl
+      destinationSlug
+      googleSpreadsheetId
+      id
+      imageHeaderName
+      imageHeaderSource
+      metaDesc
+      metaTitle
+      relevantIntegrationDesc1
+      relevantIntegrationDesc2
+      relevantIntegrationDesc3
+      relevantIntegrationDesc4
+      relevantIntegrationLogoUrl1
+      relevantIntegrationLogoUrl3
+      relevantIntegrationLogoUrl2
+      relevantIntegrationLogoUrl4
+      relevantIntegrationUrl1
+      relevantIntegrationUrl2
+      relevantIntegrationUrl3
+      relevantIntegrationUrl4
+      slug
+      sourceCategory
+      sourceDescription
+      sourceDocsUrl
+      sourceId
+      sourceIntegration
+      sourceIntegrationContext
+      sourceLogoImgUrl
+      useCaseDesc1
+      sourceSlug
+      useCaseDesc2
+      useCaseDesc3
+      useCaseHeader1
+      useCaseHeader2
+      useCaseHeader3
     }
   }
 `
