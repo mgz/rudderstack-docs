@@ -58,20 +58,23 @@ const CookiesConsent = () => {
                         toggleShowMore ? "" : "cli-collapsed"
                       } `}
                     >
-                      <h4>Privacy Overview</h4>
+                      <p>Privacy Overview</p>
                       <div className="cli-privacy-content">
                         <div className="cli-privacy-content-text">
-                          This website uses cookies to improve your experience
-                          while you navigate through the website. Out of these
-                          cookies, the cookies that are categorized as necessary
-                          are stored on your browser as they are as essential
-                          for the working of basic functionalities of the
-                          website. We also use third-party cookies that help us
-                          analyze and understand how you use this website. These
-                          cookies will be stored in your browser only with your
-                          consent. You also have the option to opt-out of these
-                          cookies. But opting out of some of these cookies may
-                          have an effect on your browsing experience.
+                          <p>
+                            This website uses cookies to improve your experience
+                            while you navigate through the website. Out of these
+                            cookies, the cookies that are categorized as
+                            necessary are stored on your browser as they are as
+                            essential for the working of basic functionalities
+                            of the website. We also use third-party cookies that
+                            help us analyze and understand how you use this
+                            website. These cookies will be stored in your
+                            browser only with your consent. You also have the
+                            option to opt-out of these cookies. But opting out
+                            of some of these cookies may have an effect on your
+                            browsing experience.
+                          </p>
                         </div>
                       </div>
                       <a
@@ -88,7 +91,10 @@ const CookiesConsent = () => {
                   <div className="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
                     <div className="cli-tab-section cli-privacy-tab">
                       <div className="cli-tab-header">
-                        <a className="cli-nav-link cli-settings-mobile" href="#">
+                        <a
+                          className="cli-nav-link cli-settings-mobile"
+                          href="#"
+                        >
                           Privacy Overview
                         </a>
                       </div>
