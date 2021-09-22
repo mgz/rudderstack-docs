@@ -239,24 +239,30 @@ curl --location -X POST 'https://api.rudderstack.com/transformations' \
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-          curl --location -X POST 'https://api.rudderstack.com/transformations' \
-          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-          -H 'Content-Type: application/json' \
-          -d '&#123;
-              "name": "Create Transformation Tested-4",
-              "code": "function transformEvent(events) &#123; return events; &#125; ",
-              "description": "Descriptrion 1"
-          &#125;'
-        ```
+<span>
+
+```markup
+  curl --location -X POST 'https://api.rudderstack.com/transformations' \
+  -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "Create Transformation Tested-4",
+      "code": "function transformEvent(events) { return events; } ",
+      "description": "Descriptrion 1"
+  }'
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-          http POST 'https://api.rudderstack.com/transformations' \
-          name='Create Transformation Tested-4' code='function transformEvent(events) &#123; return events; &#125;' description='Descriptrion 1' \
-          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-          Content-Type:'application/json'
-        ```
+<span>
+
+```markup
+  http POST 'https://api.rudderstack.com/transformations' \
+  name='Create Transformation Tested-4' code='function transformEvent(events) { return events; }' description='Descriptrion 1' \
+  Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+  Content-Type:'application/json'
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -340,16 +346,22 @@ curl --location -X GET 'https://api.rudderstack.com/transformations' \
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-          curl --location -X GET 'https://api.rudderstack.com/transformations' \
-          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-        ```
+<span>
+
+```markup
+  curl --location -X GET 'https://api.rudderstack.com/transformations' \
+  -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```
-          http GET 'https://api.rudderstack.com/transformations' \
-          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-        ```
+<span>
+
+```
+  http GET 'https://api.rudderstack.com/transformations' \
+  Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -418,16 +430,22 @@ Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-          curl --location -X GET 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
-          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-        ```
+<span>
+
+```markup
+  curl --location -X GET 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+  -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-          http GET 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
-          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-        ```
+<span>
+
+```markup
+  http GET 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+  Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -523,22 +541,28 @@ curl --location -X POST 'https://api.rudderstack.com/transformations/1pSvMXr651E
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-          curl --location -X POST 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
-          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-          -H 'Content-Type: application/json' \
-          -d  '&#123;
-              "name": "name updated"
-          &#125;'
-        ```
+<span>
+
+```markup
+  curl --location -X POST 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+  -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+  -H 'Content-Type: application/json' \
+  -d  '{
+      "name": "name updated"
+  }'
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-            http POST 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
-            name='name updated'
-            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-            Content-Type:'application/json'
-        ```
+<span>
+
+```markup
+    http POST 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+    name='name updated'
+    Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+    Content-Type:'application/json'
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -599,16 +623,22 @@ Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-          curl --location -X DELETE 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
-          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-        ```
+<span>
+
+```markup
+  curl --location -X DELETE 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+  -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-          http DELETE 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
-          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-        ```
+<span>
+
+```markup
+  http DELETE 'https://api.rudderstack.com/transformations/1pSvMXr651E1gWeErQNQlSQU5Bg' \
+  Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -702,16 +732,22 @@ Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-            curl --location -X GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions' \
-            -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-        ```
+<span>
+
+```markup
+    curl --location -X GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions' \
+    -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-          http GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions' \
-          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-        ```
+<span>
+
+```markup
+  http GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions' \
+  Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -779,16 +815,22 @@ Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-          curl --location --request GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions/1pIhxFXd7NR7XDA914rLAn5f7wq' \
-          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-        ```
+<span>
+
+```markup
+  curl --location --request GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions/1pIhxFXd7NR7XDA914rLAn5f7wq' \
+  -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-            http GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions/1pIhxFXd7NR7XDA914rLAn5f7wq' \
-            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-        ```
+<span>
+
+```markup
+    http GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions/1pIhxFXd7NR7XDA914rLAn5f7wq' \
+    Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -869,7 +911,7 @@ Description of the library goes here
 {% endapi-method %}
 
 <div class="successBlock">
-  The `publish` flag for a library works in the same way as for destinations.
+  The <code class="inline-code">publish</code> flag for a library works in the same way as for destinations.
 </div>
 
 <!--{% tabs %}
@@ -907,24 +949,30 @@ curl --location -X POST 'https://api.rudderstack.com/libraries' \
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-          curl --location -X POST 'https://api.rudderstack.com/libraries' \
-          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-          -H 'Content-Type: application/json' \
-          -d '&#123;
-              "name": "User Defined Library",
-              "description": "Get User context",
-              "code": "export default function cube(x) &#123; return x * x * x; &#125;"
-          &#125;'
-        ```
+<span>
+
+```markup
+  curl --location -X POST 'https://api.rudderstack.com/libraries' \
+  -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "name": "User Defined Library",
+      "description": "Get User context",
+      "code": "export default function cube(x) { return x * x * x; }"
+  }'
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-            http POST 'https://api.rudderstack.com/libraries' \
-            name='User Defined Library' description='Get User context' code='export default function cube(x) &#123; return x * x * x; &#125;' \
-            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-            Content-Type:'application/json'
-        ```
+<span>
+
+```markup
+    http POST 'https://api.rudderstack.com/libraries' \
+    name='User Defined Library' description='Get User context' code='export default function cube(x) { return x * x * x; }' \
+    Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+    Content-Type:'application/json'
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -1008,18 +1056,24 @@ Content-Type:'application/json'
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-            curl --location -X GET 'https://api.rudderstack.com/libraries' \
-            -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-            -H 'Content-Type: application/json' \
-        ```
+<span>
+
+```markup
+    curl --location -X GET 'https://api.rudderstack.com/libraries' \
+    -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+    -H 'Content-Type: application/json' \
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-            http GET 'https://api.rudderstack.com/libraries' \
-            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-            Content-Type:'application/json'
-        ```
+<span>
+
+```markup
+    http GET 'https://api.rudderstack.com/libraries' \
+    Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+    Content-Type:'application/json'
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -1089,18 +1143,24 @@ Content-Type:'application/json'
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-            curl --location -X GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
-            -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-            -H 'Content-Type: application/json' \
-        ```
+<span>
+
+```markup
+    curl --location -X GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
+    -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+    -H 'Content-Type: application/json' \
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-            http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
-            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-            Content-Type:'application/json'
-        ```
+<span>
+
+```markup
+    http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
+    Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+    Content-Type:'application/json'
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -1198,23 +1258,29 @@ Content-Type:'application/json'
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-          curl --location -X POST 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
-          -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-          -H 'Content-Type: application/json' \
-          -d '&#123;
-              "description": "Get Divisible by 2",
-              "code": "export default function cube(x) &#123; return 2 * x; &#125;"
-          &#125;'
-        ```
+<span>
+
+```markup
+  curl --location -X POST 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
+  -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+  -H 'Content-Type: application/json' \
+  -d '{
+      "description": "Get Divisible by 2",
+      "code": "export default function cube(x) { return 2 * x; }"
+  }'
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-            description='Get Divisible by 2' code='export default function cube(x) &#123; return 2 * x; &#125;'
-            http POST 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
-            Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-            Content-Type:'application/json'
-        ```
+<span>
+
+```markup
+    description='Get Divisible by 2' code='export default function cube(x) { return 2 * x; }'
+    http POST 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
+    Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+    Content-Type:'application/json'
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -1308,18 +1374,24 @@ Content-Type:'application/json'
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-            curl --location --request GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions' \
-            -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-            -H 'Content-Type: application/json' \
-        ```
+<span>
+
+```markup
+    curl --location --request GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions' \
+    -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+    -H 'Content-Type: application/json' \
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-          http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions' \
-          Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-          Content-Type:'application/json'
-        ```
+<span>
+
+```markup
+  http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions' \
+  Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+  Content-Type:'application/json'
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -1389,18 +1461,24 @@ curl --location -X GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-        curl --location -X GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions/1pT8KDAD66mQxnaUQxJpNs9qLFn' \
-        -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-        -H 'Content-Type: application/json' \
-        ```
+<span>
+
+```markup
+curl --location -X GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions/1pT8KDAD66mQxnaUQxJpNs9qLFn' \
+-H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+-H 'Content-Type: application/json' \
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-        http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions/1pT8KDAD66mQxnaUQxJpNs9qLFn' \
-        Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-        Content-Type:'application/json'
-        ```
+<span>
+
+```markup
+http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1/versions/1pT8KDAD66mQxnaUQxJpNs9qLFn' \
+Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+Content-Type:'application/json'
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -1553,43 +1631,49 @@ Content-Type:'application/json'
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```markup
-        curl --location -X POST 'https://api.rudderstack.com/transformations/libraries/publish' \
-        -H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
-        -H 'Content-Type: application/json' \
-        -d '&#123;
-          transformations: [
-            &#123;
-              versionId: publishTransformerVersionId,
-              testInput:
-                '[
-                  &#123;
-                    "anonymousId":"8d872292709c6fbe",
-                    "channel":"mobile"
-                  &#125;,
-                  &#123;
-                    "anonymousId":"8d872292709c6fbe",
-                    "channel":"mobile"
-                  &#125;
-                ],
-          libraries: [
-            &#123;
-              versionId: publishLibraryVersionId1,
-            &#125;,
-            &#123;
-              versionId: publishLibraryVersionId1,
-            &#125;
-          ]
-        &#125;'
-        ```
+<span>
+
+```markup
+curl --location -X POST 'https://api.rudderstack.com/transformations/libraries/publish' \
+-H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
+-H 'Content-Type: application/json' \
+-d '{
+  transformations: [
+    {
+      versionId: publishTransformerVersionId,
+      testInput:
+        '[
+          {
+            "anonymousId":"8d872292709c6fbe",
+            "channel":"mobile"
+          },
+          {
+            "anonymousId":"8d872292709c6fbe",
+            "channel":"mobile"
+          }
+        ],
+  libraries: [
+    {
+      versionId: publishLibraryVersionId1,
+    },
+    {
+      versionId: publishLibraryVersionId1,
+    }
+  ]
+}'
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```markup
-        http POST 'https://api.rudderstack.com/transformations/libraries/publish' \
-        transformations='[&#123;versionId: publishTransformerVersionId, testInput:'[&#123;"anonymousId":"8d872292709c6fbe","channel":"mobile"&#125;,&#123;"anonymousId":"8d872292709c6fbe","channel":"mobile"&#125;] libraries='[&#123;versionId: publishLibraryVersionId1,&#125;,&#123;versionId: publishLibraryVersionId1&#125;]' \
-        Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-        Content-Type:'application/json'
-        ```
+<span>
+
+```markup
+  http POST 'https://api.rudderstack.com/transformations/libraries/publish' \
+  transformations='[{versionId: publishTransformerVersionId, testInput:'[{"anonymousId":"8d872292709c6fbe","channel":"mobile"},{"anonymousId":"8d872292709c6fbe","channel":"mobile"}] libraries='[{versionId: publishLibraryVersionId1,},{versionId: publishLibraryVersionId1}]' \
+  Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+  Content-Type:'application/json'
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>

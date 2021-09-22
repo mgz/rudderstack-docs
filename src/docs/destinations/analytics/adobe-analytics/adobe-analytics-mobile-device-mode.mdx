@@ -49,7 +49,7 @@ Then, follow the instructions in the [**Adobe documentation**](https://experienc
 
 ## Adding Device Mode Integration
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 Follow these steps to add Adobe Analytics to your iOS project:
 
@@ -113,7 +113,90 @@ val rudderClient = RudderClient.getInstance(
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        Follow these steps to add Adobe Analytics to your iOS project:
+<ul>
+<li>In your <code class="inline-code">Podfile</code>, add the <code class="inline-code">Rudder-Adobe</code> extension:
+<span>
+
+```ruby
+pod 'Rudder-Adobe'
+```
+</span>
+</li>
+<li>After adding the dependency followed by <code class="inline-code">pod install</code> , add the imports to your <code class="inline-code">AppDelegate.m</code> file as shown:
+<span>
+
+```objectivec
+#import <Rudder/Rudder.h>
+#import <RudderAdobeFactory.h>
+```
+</span>
+</li>
+<li>Then, add the initialization of your <code class="inline-code">RSClient</code> as shown:
+<span>
+
+```objectivec
+RSConfigBuilder *configBuilder = [[RSConfigBuilder alloc] init];
+[configBuilder withDataPlaneUrl:DATA_PLANE_URL];
+[configBuilder withFactory:[RudderAdobeFactory instance]];
+[RSClient getInstance:<YOUR_WRITE_KEY> config:[configBuilder build]];
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        To add Adobe Analytics to your Android project, follow these steps :
+<ul>
+<li>Open your <code class="inline-code">app/build.gradle</code> file and add the following under the <code class="inline-code">dependencies</code> section :
+
+```groovy
+implementation 'com.rudderstack.android.sdk:core:1.+'
+implementation 'com.google.code.gson:gson:2.8.6'
+implementation 'com.rudderstack.android.integration:adobe:1.0.0'
+
+// Adobe Analytics
+implementation 'com.adobe.mobile:adobeMobileLibrary:4.18.2'
+```
+</li>
+<li>Initialize the RudderStack SDK in the <code class="inline-code">Application</code> class' <code class="inline-code">onCreate()</code> method as shown:
+<span>
+
+```kotlin
+// initializing Rudder SDK
+val rudderClient = RudderClient.getInstance(
+    this,
+    WRITE_KEY,
+    RudderConfig.Builder()
+        .withDataPlaneUrl(DATA_PLANE_URL)
+        .withFactory(AdobeIntegrationFactory.FACTORY)
+        .build()
+)
+```
+</span>
+</li>
+<li>For Android, make sure you add these permissions to your <code class="inline-code">AndroidManifest.xml</code>:
+<span>
+
+```groovy
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Dashboard Settings to Send Events via the Mobile Device Mode
 
@@ -143,7 +226,7 @@ When you make an `identify` call, RudderStack sets the Adobe `visitorId` to the 
 
 A sample `identify` call looks like the following:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 
 ```objectivec
@@ -159,7 +242,32 @@ MainApplication.rudderClient.identify("AdobeUser");
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```objectivec
+[[RSClient sharedInstance] identify:@"Adobe_iOS_user"];
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+MainApplication.rudderClient.identify("AdobeUser");
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Track
 
@@ -167,7 +275,7 @@ When you make a `track` call, RudderStack sends an Adobe `trackAction` event and
 
 A sample `track` call is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 
 ```objectivec
@@ -198,7 +306,47 @@ MainApplication.rudderClient.track("Order Completed",
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```objectivec
+[[RSClient sharedInstance] track:@"Order Completed" properties:@{
+    @"orderId" : @2002,
+    @"category" : @"Cloths",
+    @"productId" : @"2200013",
+    @"name": @"Shirt",
+    @"price" : @10001,
+    @"quantity" : @12
+}];
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+MainApplication.rudderClient.track("Order Completed",
+  RudderProperty()
+    .putValue("orderId", "12345")
+    .putValue("category", "category")
+    .putValue("revenue", 99.9)
+    .putValue("shipping", 13.99)
+    .putValue("tax", 20.99)
+    .putValue("promotion_id", "PROMO_1234")
+  );
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Screen
 
@@ -206,7 +354,7 @@ When you make a `screen` call, RudderStack sends an Adobe `trackState` event and
 
 A sample `screen` call looks like the following:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 
 ```objectivec
@@ -228,7 +376,38 @@ MainApplication.rudderClient.screen("Home Screen",
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```objectivec
+[[RSClient sharedInstance] track:@"Home Screen"
+  properties:@{
+      @"Width" : @"13"
+  }];
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+MainApplication.rudderClient.screen("Home Screen",
+      RudderProperty()
+          .putValue("Width",12)
+  )
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Reset
 
@@ -241,7 +420,7 @@ The default value of Adobe's <code class="inline-code">visitorId</code> is <code
 
 A sample `reset` call is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 
 ```objectivec
@@ -257,7 +436,32 @@ MainApplication.rudderClient.reset()
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```objectivec
+[[RSClient sharedInstance] reset];
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+MainApplication.rudderClient.reset()
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Flush
 

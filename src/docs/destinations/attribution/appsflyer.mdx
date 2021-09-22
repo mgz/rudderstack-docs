@@ -13,8 +13,8 @@ RudderStack allows you to configure AppsFlyer as a destination and send your eve
 <div class="successBlock">
   <strong>
     Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/af).
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/af">GitHub repo</a>
+    .
   </strong>
 </div>
 
@@ -61,7 +61,7 @@ AppsFlyer should now be added and enabled as a destination in RudderStack.
 
 Depending on your platform of integration, follow these steps below to add AppsFlyer to your project:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 To add AppsFlyer to your iOS project:
 
@@ -153,7 +153,124 @@ rudderClient.setup(WRITE_KEY, config)
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+    <Tab>ReactNative</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        To add AppsFlyer to your iOS project:
+<ul>
+<li>Add the following line to your <a href="https://cocoapods.org/">CocoaPods</a> <code class="inline-code">Podfile</code>
+<span>
+
+```text
+pod 'Rudder-Appsflyer'
+```
+</span>
+</li>
+<li>After adding the dependency, you must register the <code class="inline-code">RudderAppsflyerFactory</code> with your <code class="inline-code">RudderClient</code> initialization as a <code class="inline-code">factory</code> of <code class="inline-code">RudderConfig</code>. To do this, run the following command to import the <code class="inline-code">RudderAppsflyerFactory.h</code> file in your <code class="inline-code">AppDelegate.m</code> file.
+<span>
+
+```text
+#import <Rudder-Appsflyer/RudderAppsflyerFactory.h>
+```
+</span>
+</li>
+<li>Then, change the SDK initialization to the following:
+<span>
+
+```text
+RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+[builder withDataPlaneUrl:DATA_PLANE_URL];
+[builder withTrackLifecycleEvens:YES];
+[builder withRecordScreenViews:YES];
+[builder withFactory:[RudderAppsflyerFactory instance]];
+[builder withLoglevel:RSLogLevelDebug];
+[RSClient getInstance:WRITE_KEY config:[builder build]];
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        To add AppsFlyer to your Android project:
+<ul>
+<li>Add the repository as shown:
+<span>
+
+```groovy
+repositories {
+    mavenCentral()
+}
+```
+</span>
+</li>
+<li>Add the following line to your <code class="inline-code">app/build.gradle</code> file under <code class="inline-code">dependencies</code> section:
+<span>
+
+```groovy
+implementation 'com.rudderstack.android.sdk:core:1.+'
+implementation 'com.rudderstack.android.integration:appsflyer:1.+'
+
+implementation 'com.appsflyer:af-android-sdk:6.+'
+implementation 'com.android.installreferrer:installreferrer:2.+'
+```
+</span>
+</li>
+<li>Finally, change the initialization of your <code class="inline-code">RudderClient</code> in your <code class="inline-code">Application</code> class.
+<span>
+
+```kotlin
+val rudderClient: RudderClient = RudderClient.getInstance(
+    this,
+    WRITE_KEY,
+    RudderConfig.Builder()
+        .withDataPlaneUrl(DATA_PLANE_URL)
+        .withFactory(AppsFlyerIntegrationFactory.FACTORY)
+        .build()
+)
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        To add AppsFlyer to your ReactNative project:
+<ul>
+<li>Add the RudderStack-AppsFlyer module to your app using :
+<span>
+
+```bash
+npm install @rudderstack/rudder-integration-appsflyer-react-native
+// OR //
+yarn add @rudderstack/rudder-integration-appsflyer-react-native
+```
+</span>
+</li>
+<li>Import the module you added above and add it to your SDK initialization code in the following manner:
+<span>
+
+```typescript
+import rudderClient from "@rudderstack/rudder-sdk-react-native"
+import appsflyer from "@rudderstack/rudder-integration-appsflyer-react-native"
+const config = {
+  dataPlaneUrl: DATA_PLANE_URL,
+  trackAppLifecycleEvents: true,
+  withFactories: [appsflyer],
+}
+rudderClient.setup(WRITE_KEY, config)
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Cloud Mode
 
@@ -282,7 +399,7 @@ pod 'Rudder-Appsflyer',' 1.0.0'
 
 Depending on your platform of integration, include the following code snippet to get the `AppsFlyerId`:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 
 ```objectivec
@@ -312,10 +429,47 @@ const appsFlyerId = await AppsFlyerIntegrationFactory.getAppsFlyerId()
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+    <Tab>ReactNative</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```objectivec
+#import <AppsFlyerLib/AppsFlyerLib.h>
+NSString *appsflyerId = [AppsFlyerLib shared].getAppsFlyerUID;
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+import com.appsflyer.AppsFlyerLib;
+String appsFlyerId = AppsFlyerLib.getInstance().getAppsFlyerUID(this);
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```javascript
+import AppsFlyerIntegrationFactory from "@rudderstack/rudder-integration-appsflyer-react-native/src/bridge"
+const appsFlyerId = await AppsFlyerIntegrationFactory.getAppsFlyerId()
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs> 
 
 <div class="infoBlock">
-This works only if your source has a [**device mode connection**](https://docs.rudderstack.com/connections/rudderstack-connection-modes) with AppsFlyer i.e the AppsFlyer native SDK is loaded through RudderStack.
+This works only if your source has a <a href="../../connections/rudderstack-connection-modes">device mode connection</a> with AppsFlyer i.e the AppsFlyer native SDK is loaded through RudderStack.
 
 </div>
 

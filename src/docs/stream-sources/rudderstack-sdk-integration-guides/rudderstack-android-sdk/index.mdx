@@ -472,7 +472,7 @@ Follow the method signature below:
 
 The `group` call associates a user to a specific organization. A sample `group` call for the API is below:
 
-{% tabs %}
+<!-- {% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -498,7 +498,43 @@ rudderClient.group(
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```kotlin
+rudderClient.group(
+    "sample_group_id",
+    RudderTraits().putAge("24")
+        .putName("Test Group Name")
+        .putPhone("1234567891")
+)
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+    rudderClient.group(
+        "sample_group_id",
+        new RudderTraits().putAge("24")
+            .putName("Test Group Name")
+            .putPhone("1234567891")
+    );
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
 
 Follow the method signatures below:
 
@@ -910,7 +946,7 @@ Some pointers to keep in mind:
 - The SDK also triggers the `reset()` method of the `CustomFactory` class on every `reset()` call made via the SDK. You can use this to handle the destination-specific reset.
 - RudderStack's Android SDK also triggers the `flush()` method of the `CustomFactory` class on every `flush()` call made via the SDK which you can use to handle the destination-specific reset logic. You can make a `flush` call using the SDK as shown below:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -926,7 +962,33 @@ rudderClient.flush();
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```kotlin
+rudderClient.flush()
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+rudderClient.flush();
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
 
 - Make sure you return a valid value from `getUnderlyingInstance()` as it is used by the Android SDK to validate `CustomFactory`.
 - Make sure you do not duplicate the value of `FACTORY_KEY` across multiple `CustomFactory` that you develop.

@@ -10,7 +10,7 @@ We recommend using a global [Application](https://developer.android.com/referenc
 
 - Create a class that extends `Application`.
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -43,7 +43,45 @@ public class MainApplication extends Application {
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span> 
+
+```kotlin
+        import android.app.Application
+        class MainApplication : Application() {
+            override fun onCreate() {
+                super.onCreate()
+                // initialize Rudder SDK here
+            }
+        }
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+import android.app.Application;
+public class MainApplication extends Application {
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // initialize Rudder SDK here
+    }
+}
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 - Open `AndroidManifest.xml` file of your app and locate `<application>` tag.
 - Add an attribute `android:name` and set it to your new application class.

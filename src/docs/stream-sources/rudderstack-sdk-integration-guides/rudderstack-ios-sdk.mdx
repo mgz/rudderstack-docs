@@ -13,8 +13,8 @@ description: >-
 The RudderStack iOS SDK allows you to integrate RudderStack to your iOS application in order to track event data from your app. After integrating this SDK, you will also be able to send this data to your preferred analytics destination/s such as Google Analytics, Amplitude, and more.
 
 <div class="successBlock">
-  You can check the [codebase on
-  GitHub](https://github.com/rudderlabs/rudder-sdk-ios) if you want to get more
+  You can check the <a href="https://github.com/rudderlabs/rudder-sdk-ios">codebase on
+  GitHub</a> if you want to get more
   hands-on information or are keen to know the SDK architecture.
 </div>
 
@@ -59,7 +59,7 @@ To get the <strong>Data Plane URL</strong>:
 
 We distribute our iOS SDK through [Cocoapods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage). The recommended and easiest way to add the SDK to your project is through `Podfile`. Follow these steps:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="CocoaPods" %}
 
 - Add the RudderStack SDK to your `Podfile`, as shown:
@@ -91,14 +91,51 @@ carthage update
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>CocoaPods</Tab>
+    <Tab>Carthage</Tab>
+  </TabList>
+  <TabPanels>
+    <TabPanel>
+      <ul>
+      <li>Add the RudderStack SDK to your <code class="inline-code">Podfile</code>, as shown:
+      ```ruby
+      github "rudderlabs/rudder-sdk-ios"
+      ```
+      </li>
+      <li>Then, run the following command:
+      ```bash
+      pod install
+      ```
+      </li>
+      </ul>
+    </TabPanel>
+    <TabPanel>
+      <ul>
+      <li>Add the RudderStack SDK to your <code class="inline-code">Cartfile</code>, as shown:
+      ```ruby
+      pod 'Rudder'
+      ```
+      </li>
+      <li>Then, run the following command:
+      ```bash
+      carthage update
+      ```
+      </li>
+      </ul>
+    </TabPanel>
+  </TabPanels>
+</Tabs>
 
 <div class="warningBlock">
 <strong>Important</strong>: Remember to include the following code in all <code class="inline-code">.m</code> and <code class="inline-code">.h</code> files or your <code class="inline-code">.swift</code> files where you want to refer to or use RudderStack SDK classes.
 
 </div>
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -114,10 +151,29 @@ import Rudder
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```objectivec
+        #import &lt;Rudder/Rudder.h&gt;
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```swift
+        import Rudder
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <div class="dangerBlock">
-We use SQLite to save the events to local database before sending it to RudderStack data-plane. Making calls like `SQLite.shutdown()` which is not thread-safe might lead to unexpected crash.
+We use SQLite to save the events to local database before sending it to RudderStack data-plane. Making calls like <code class="inline-code">SQLite.shutdown()</code> which is not thread-safe might lead to unexpected crash.
 
 </div>
 
@@ -125,7 +181,7 @@ We use SQLite to save the events to local database before sending it to RudderSt
 
 Put this code in your `AppDelegate.m` file under the method `didFinishLaunchingWithOptions` :
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -147,17 +203,44 @@ RSClient.getInstance(WRITE_KEY, config: builder.build())
 
 A shared instance of `RSClient` is accesible after the initialization by `RSClient.sharedInstance()`
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```objectivec
+RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+[builder withDataPlaneUrl:DATA_PLANE_URL];
+[RSClient getInstance:WRITE_KEY config:[builder build]];
+```
+A shared instance of <code class="inline-code">RSClient</code> is accessible after the initialization by <code class="inline-code">[RSClient sharedInstance]</code>.
+      </TabPanel>
+      <TabPanel>
+        ```swift
+let builder: RSConfigBuilder = RSConfigBuilder()
+    .withDataPlaneUrl(DATA_PLANE_URL)
+RSClient.getInstance(WRITE_KEY, config: builder.build())
+```
+A shared instance of <code class="inline-code">RSClient</code> is accesible after the initialization by <code class="inline-code">RSClient.sharedInstance()</code>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
 
 <div class="infoBlock">
 We automatically track the following optional events:
-
-1. `Application Installed`
-2. `Application Updated`
-3. `Application Opened`
-4. `Application Backgrounded`
-
-You can disable these events using the`withTrackLifecycleEvents` method of `RSConfigBuilder` and passing `false`. However, it is highly recommended to keep them enabled.
+<ol>
+<li><code class="inline-code">Application Installed</code></li>
+<li><code class="inline-code">Application Updated</code></li>
+<li><code class="inline-code">Application Opened</code></li>
+<li><code class="inline-code">Application Backgrounded</code></li>
+</ol>
+You can disable these events using the <code class="inline-code">withTrackLifecycleEvents</code> method of <code class="inline-code">RSConfigBuilder</code> and passing <code class="inline-code">false</code>. However, it is highly recommended to keep them enabled.
 
 </div>
 
@@ -169,7 +252,7 @@ You can record the users' activity through the `track` method. Every action perf
 
 An example `track` event is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -191,7 +274,32 @@ RSClient.sharedInstance()?.track("test_user_id", properties: [
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ````objectivec
+        [[RSClient sharedInstance] track:@"simple_track_with_props" properties:@&#123;
+            @"key_1" : @"value_1",
+            @"key_2" : @"value_2"
+        &#125;];
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```swift
+RSClient.sharedInstance()?.track("test_user_id", properties: [
+    "key_1": "value_1",
+    "key_2": "value_2"
+])
+```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 The `track` method accepts the following parameters:
 
@@ -212,7 +320,7 @@ According to the Apple [documentation](https://developer.apple.com/documentation
 
 An example `identify` event is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -239,7 +347,37 @@ RSClient.sharedInstance()?.identify("test_user_id", traits: [
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```objectivec
+[[RSClient sharedInstance] identify:@"test_user_id"
+                             traits:@&#123;@"foo": @"bar",
+                                      @"foo1": @"bar1",
+                                      @"email": @"test@gmail.com",
+                                      @"key_1" : @"value_1",
+                                      @"key_2" : @"value_2"
+                             &#125;
+];
+```
+      </TabPanel>
+      <TabPanel>
+        ```swift
+RSClient.sharedInstance()?.identify("test_user_id", traits: [
+    "key_1": "value_1",
+    "key_2": "value_2",
+    "email": "test@gmail.com"
+])
+```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 The `identify` method accepts the following parameters:
 
@@ -255,7 +393,7 @@ You can use the `screen` call to record whenever the user sees a screen on the m
 
 An example of the `screen` event is as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -271,7 +409,26 @@ RSClient.sharedInstance()?.screen("ViewController")
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```objectivec
+[[RSClient sharedInstance] screen:@"ViewController"];
+```
+      </TabPanel>
+      <TabPanel>
+        ```swift
+RSClient.sharedInstance()?.screen("ViewController")
+```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 The `screen` method accepts the following parameters:
 
@@ -285,7 +442,7 @@ The `screen` method accepts the following parameters:
 
 The `group` call associates a user to a specific organization. A sample `group` call for the API is below:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```kotlin
@@ -308,7 +465,33 @@ RSClient.sharedInstance()?.group("test_group_id", traits: [
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```kotlin
+[[RSClient sharedInstance] group:@"sample_group_id"
+                              traits:@&#123;@"foo": @"bar",
+                                       @"foo1": @"bar1",
+                                       @"email": @"ruchira@gmail.com"&#125;
+];
+```
+      </TabPanel>
+      <TabPanel>
+        ```java
+RSClient.sharedInstance()?.group("test_group_id", traits: [
+    "key_1": "value_1",
+    "key_2": "value_2"
+])
+```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 Alternatively, you can use the following method signature
 
@@ -324,7 +507,7 @@ We don't persist the traits for the group across the sessions.
 
 The `alias` call associates the user with a new identification. A sample `alias` call for the API is below:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```kotlin
@@ -340,7 +523,26 @@ RSClient.sharedInstance()?.alias("new_user_id")
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```kotlin
+[[RSClient sharedInstance] alias:@"new_user_id"];
+```
+      </TabPanel>
+      <TabPanel>
+        ```java
+RSClient.sharedInstance()?.alias("new_user_id")
+```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 Alternatively, you can use the following method signature
 
@@ -355,7 +557,7 @@ We replace the old `userId` with the `newUserId` and we persist that identificat
 
 You can use the `reset` method to clear the persisted `traits` for the `identify` call. This is required for the `Logout` operations.
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -371,7 +573,26 @@ RSClient.sharedInstance()?.reset()
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```objectivec
+[[RSClient sharedInstance] reset];
+```
+      </TabPanel>
+      <TabPanel>
+        ```swift
+RSClient.sharedInstance()?.reset()
+```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Configuring the RudderStack Client
 
@@ -466,7 +687,7 @@ Following are the available options you can pass to the `putAppTrackingConsent` 
 We use the `deviceId` as `anonymousId` by default. You can use the following method to override and use your own `anonymousId` with the SDK.
 
 <div class="warningBlock">
-You need to call `setAnonymousId` method before calling `getInstance`
+You need to call <code class="inline-code">setAnonymousId</code> method before calling <code class="inline-code">getInstance</code>
 
 </div>
 
@@ -480,7 +701,7 @@ An example of setting the `anonymousId` is as below
 
 The RudderStack iOS SDK allows you to enable or disable event flow to a specific destination or all the destinations to which the source is connected. You can specify these destinations by creating a `RSOption` object as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -512,16 +733,49 @@ option.putIntegration(with: <RudderIntegrationFactory>.instance(), isEnabled:<BO
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```objectivec
+        RSOption *option = [[RSOption alloc]init];
+        //default value for `All` is true
+        [option putIntegration:@"All" isEnabled:YES];
+        // specifying destination by its display name
+        [option putIntegration:@"Amplitude" isEnabled:YES];
+        [option putIntegration:@"&lt;destination display name&gt;" isEnabled:&lt;BOOL&gt;];
+        // specifying destination by its Factory instance
+        [option putIntegrationWithFactory:[RudderMoengageFactory instance] isEnabled:NO];
+        [option putIntegrationWithFactory:[&lt;RudderIntegrationFactory&gt; instance] isEnabled:&lt;BOOL&gt;];
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```swift
+        let option:RSOption = RSOption();
+        //default value for `All` is true
+        option.putIntegration("All", isEnabled:true)
+        // specifying destination by its display name
+        option.putIntegration("Amplitude", isEnabled:true)
+        option.putIntegration(&lt;DESTINATION DISPLAY NAME&gt;, isEnabled:&lt;BOOL&gt;)
+        // specifying destination by its Factory instance
+        option.putIntegration(with: RudderMoengageFactory.instance(), isEnabled: true);
+        option.putIntegration(with: &lt;RudderIntegrationFactory&gt;.instance(), isEnabled:&lt;BOOL&gt;);
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <div class="infoBlock">
-The keyword `All` in the above snippet represents all the destinations the source is connected to. Its value is set to `true` by default.
-
+The keyword <code class="inline-code">All</code> in the above snippet represents all the destinations the source is connected to. Its value is set to <code class="inline-code">true</code> by default.
 </div>
 
 <div class="infoBlock">
-Make sure the `destination display name` you pass while specifying the custom destinations should exactly match the destination name as shown [here](https://app.rudderstack.com/directory).
-
+Make sure the <code class="inline-code">destination display name</code> you pass while specifying the custom destinations should exactly match the destination name as shown <a href="https://app.rudderstack.com/directory">here</a>.
 </div>
 
 You can pass the destination\(s\) specified in the above snippet to the SDK in two ways:
@@ -530,7 +784,7 @@ You can pass the destination\(s\) specified in the above snippet to the SDK in t
 
 This is helpful when you want to enable/disable sending the events across all the event calls made using the SDK to the specified destination\(s\).
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -556,13 +810,42 @@ RSClient.getInstance(WRITE_KEY, config: builder.build(),options: option)// passi
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```objectivec
+RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+[builder withDataPlaneURL:[[NSURL alloc] initWithString:DATA_PLANE_URL]];
+[builder withLoglevel:RSLogLevelDebug];
+[builder withTrackLifecycleEvens:YES];
+[builder withRecordScreenViews:YES;
+[RSClient getInstance:WRITE_KEY config:[builder build] options:option]; // passing the rudderoption object containing the list of destination(s) you specified
+```
+      </TabPanel>
+      <TabPanel>
+        ```swift
+let builder: RSConfigBuilder = RSConfigBuilder()
+            .withLoglevel(RSLogLevelDebug)
+            .withDataPlaneUrl(DATA_PLANE_URL)
+            .withTrackLifecycleEvens(true)
+            .withRecordScreenViews(true)
+RSClient.getInstance(WRITE_KEY, config: builder.build(),options: option)// passing the rudderoption object containing the list of destination(s) you specified
+```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ### 2. Passing the destinations while making any event call:
 
 This approach is helpful when you want to enable/disable sending only a particular event to the specified destination\(s\) or if you want to override the specified destinations passed with the SDK initialization for a particular event.
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -585,7 +868,33 @@ rudder?.track("track_with_props", properties: [
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```objectivec
+[[RSClient sharedInstance] track:@"simple_track_with_props" properties:@&#123;
+        @"key_1" : @"value_1",
+        @"key_2" : @"value_2"
+    &#125; options:option]; // passing the rudderoption object containing the list of destination(s) you specified
+```
+      </TabPanel>
+      <TabPanel>
+        ```swift
+let rudder: RSClient? = RSClient.sharedInstance()
+rudder?.track("track_with_props", properties: [
+            "key_1": "value_1",
+            "key_2": "value_2",
+        ],options:option) // passing the rudderoption object containing the list of destination(s) you specified
+```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <div class="infoBlock">
 If you specify the destinations both while initializing the SDK as well as making an event call, then the destinations specified at the event level only will be considered.
@@ -608,7 +917,7 @@ RSOption *identifyOptions = [[RSOption alloc] init];
 
 If you run into any issues regarding the RudderStack iOS SDK, you can turn on the `VERBOSE` or `DEBUG` logging to find out what the issue is. To turn on the logging, change your `RudderClient` initialization to the following:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Objective-C" %}
 
 ```objectivec
@@ -630,13 +939,37 @@ RSClient.getInstance(<WRITE_KEY>, config: builder.build())
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```objectivec
+        RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+        [builder withDataPlaneUrl:DATA_PLANE_URL];
+        [builder withLoglevel:RudderLogLevelDebug];
+        [RSClient getInstance:WRITE_KEY config:[builder build]];
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```swift
+        let builder: RSConfigBuilder = RSConfigBuilder()
+        builder.withDataPlaneUrl(&lt;DATA_PLANE_URL&gt;)
+        builder.withLoglevel(RudderLogLevelDebug)
+        RSClient.getInstance(&lt;WRITE_KEY&gt;, config: builder.build())
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Can I develop a Device Mode destination if RudderStack doesn't support it already?
 
 <div class="infoBlock">
 More information on the RudderStack Device Mode can be found in the <a href="../../connections/rudderstack-connection-modes.mdx">RudderStack Connection Modes</a> guide.
-
 </div>
 
 Yes, you can develop a Device Mode destination by following these steps:
@@ -847,7 +1180,7 @@ Update the usage of the following classes as per the table below:
 
 You can get the user traits after making an `identify` call in the following way:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Swift" %}
 
 ```swift
@@ -863,7 +1196,26 @@ You can get the user traits after making an `identify` call in the following way
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Swift</Tab>
+    <Tab>Objective-C</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        ```swift
+        let traits = RSClient.sharedInstance()?.getContext().traits
+        ```
+      </TabPanel>
+      <TabPanel>
+        ```
+        NSDictionary* traits = [[RSClient sharedInstance] getContext].traits;
+        ```
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ### How does the SDK handle different client/server errors?
 

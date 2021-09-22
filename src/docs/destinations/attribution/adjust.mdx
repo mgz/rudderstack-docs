@@ -52,7 +52,7 @@ Do not add native Adjust SDK to your project as it will prevent you from success
 
 Depending on your platform of integration, follow the steps below to add Adjust to your project.
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 To add Adjust to your iOS project, please follow these steps:
 
@@ -153,7 +153,135 @@ RudderClient rudderClient = RudderClient.GetInstance(
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>iOS</Tab>
+    <Tab>Android</Tab>
+    <Tab>Unity</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        To add Adjust to your iOS project, please follow these steps:
+<ul>
+<li>Add the following line to your <a href="https://cocoapods.org">CocoaPods</a> <code class="inline-code">Podfile</code>
+<span>
+
+```ruby
+pod 'Rudder-Adjust'
+```
+</span>
+</li>
+<li>After adding the dependency, you must register the <code class="inline-code">RudderAdjustFactory</code> with your <code class="inline-code">RudderClient</code> initialization as a <code class="inline-code">factory</code> of <code class="inline-code">RudderConfig</code>. To do this, run the following command to import the <code class="inline-code">RudderAdjustFactory.h</code> file in your <code class="inline-code">AppDelegate.m</code> file.
+<span>
+
+```objectivec
+#import <Rudder-Adjust/RudderAdjustFactory.h>
+```
+</span>
+</li>
+<li>Then, change the SDK initialization to the following:
+<span>
+
+```objectivec
+RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
+[builder withDataPlaneUrl:DATA_PLANE_URL];
+[builder withFactory:[RudderAdjustFactory instance]];
+[RudderClient getInstance:WRITE_KEY config:[builder build]];
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        To add Adjust to your Android project, please follow these steps:
+<ul>
+<li>Add this <code class="inline-code">url</code> to the <code class="inline-code">repositories</code> section of your <code class="inline-code">app/build.gradle</code> file.
+<span>
+
+```groovy
+repositories {
+  mavenCentral()
+}
+```
+</span>
+</li>
+<li>Add the following line to your <code class="inline-code">app/build.gradle</code> file under <code class="inline-code">dependencies</code> section:
+<span>
+
+```groovy
+implementation 'com.rudderstack.android.sdk:core:1.+'
+implementation 'com.rudderstack.android.integration:adjust:s+'
+implementation 'com.adjust.sdk:adjust-android:4.+'
+```
+</span>
+</li>
+<li>After adding the dependency you must register the <code class="inline-code">RudderAdjustFactory</code> with your <code class="inline-code">RudderClient</code> initialization as a <code class="inline-code">factory</code> of <code class="inline-code">RudderConfig</code> . To do this, import this in your <code class="inline-code">Application</code> class as shown:
+<span>
+
+```java
+import com.rudderstack.android.integration.adjust.AdjustIntegrationFactory;
+```
+</span>
+</li>
+<li>Finally, change the SDK initialization to the following:
+<span>
+
+```kotlin
+val rudderClient: RudderClient = RudderClient.getInstance(
+    this,
+    WRITE_KEY,
+    RudderConfig.Builder()
+        .withDataPlaneUrl(DATA_PLANE_URL)
+        .withFactory(AdjustIntegrationFactory.FACTORY)
+        .build()
+)
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        To enable Adjust to track your game event data through RudderStack, please follow these steps:
+<ul>
+<li>First, you will need to add RudderStack's Unity SDK to your project.
+
+<div class="infoBlock">
+Follow our guide on <a href="../../stream-sources/rudderstack-sdk-integration-guides/getting-started-with-unity-sdk">Getting Started with Unity SDK</a> to know how to do this.
+
+</div>
+</li>
+<li>Once you have added the SDK to your project, simply download the <a href="https://github.com/rudderlabs/rudder-sdk-unity/tree/master/Integrations/Adjust/RudderAdjust">Adjust SDK extension package</a> from GitHub and import it to your project.
+
+<div class="warningBlock">
+The package comes with Adjust Unity SDK embedded in it along with the required <code class="inline-code">jar</code> files for Android Install Referrer. We <strong>don't recommend</strong> adding the Adjust SDK separately.
+
+</div>
+</li>
+<li>After importing the <code class="inline-code">rudder-unity-extension-adjust.unitypackage</code> to your project, attach the <code class="inline-code">RudderPreferbs.prefab</code> file from <code class="inline-code">RudderUnityPlugin</code> to your main <code class="inline-code">GameObject</code>
+</li>
+<li>Finally change the initialization of the SDK using the following code:
+<span>
+
+```csharp
+// Build your config
+RudderConfigBuilder configBuilder = new RudderConfigBuilder()
+    .WithEndPointUrl(DATA_PLANE_URL)
+    .WithFactory(RudderAdjustIntegrationFactory.GetFactory());
+
+// Get instance for RudderClient
+RudderClient rudderClient = RudderClient.GetInstance(
+    WRITE_KEY,
+    configBuilder.Build()
+);
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Identify
 
@@ -171,7 +299,7 @@ Here is an example:
 When you make the `track` call, RudderStack maps the `eventName` with the pre-defined list of custom events from Adjust.
 
 <div class="warningBlock">
-You **must** define the map of Adjust `eventToken` to `eventName` in the dashboard. If you don't define the mapping Adjust will not accept the event.
+You <strong>must</strong> define the map of Adjust <code class="inline-code">eventToken</code> to <code class="inline-code">eventName</code> in the dashboard. If you don't define the mapping Adjust will not accept the event.
 
 </div>
 

@@ -13,8 +13,8 @@ RudderStack allows you to send relevant events to Kochava through a S2S \(Server
 <div class="successBlock">
   <strong>
     Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kochava).
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kochava">GitHub repo</a>
+    .
   </strong>
 </div>
 
@@ -66,7 +66,7 @@ Make sure you include the key `NSUserTrackingUsageDescription` in your `info.pli
 
 ## Adding Device Mode Integration
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Android" %}
 To add Kochava to your Android project and enable functionalities like push notifications, follow these steps :
 
@@ -143,7 +143,105 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
+
+<Tabs>
+  <TabList>
+    <Tab>Android</Tab>
+    <Tab>iOS</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        To add Kochava to your Android project and enable functionalities like push notifications, follow these steps :
+<ul>
+<li>Open your project level <code class="inline-code">build.gradle</code> file, and add the following:
+<span>
+
+```groovy
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+```
+</span>
+</li>
+<li>Also, add the following under the <code class="inline-code">dependencies</code> section:
+<span>
+
+```kotlin
+// ruddder core sdk
+implementation 'com.rudderstack.android.sdk:core:1.+'
+// rudder-kochava integration
+implementation 'com.rudderstack.android.integration:kochava:1.0.0'
+// Kochava native sdk
+implementation 'com.kochava.base:tracker:3.10.0'
+// if you don't have Gson included already
+implementation 'com.google.code.gson:gson:2.8.6'
+```
+</span>
+</li>
+<li>Initialize the RudderStack SDK in the <code class="inline-code">Application</code> class' <code class="inline-code">onCreate()</code> method as shown:
+<span>
+
+```kotlin
+import com.rudderstack.android.integrations.kochava.KochavaIntegrationFactory
+import com.rudderstack.android.sdk.core.RudderClient
+import com.rudderstack.android.sdk.core.RudderConfig
+
+// initializing Rudder SDK
+val rudderClient = RudderClient.getInstance(
+    this,
+    WRITE_KEY,
+    RudderConfig.Builder()
+        .withDataPlaneUrl(DATA_PLANE_URL)
+        .withFactory(kochavaIntegration.FACTORY)
+        .build()
+)
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+        Follow these steps to add Kochava to your iOS project:
+<ul>
+<li>Go your <code class="inline-code">Podfile</code> and add the <code class="inline-code">Rudder-Kochava</code> extension as shown below:
+<span>
+
+```objectivec
+pod 'Rudder-Kochava'
+```
+</span>
+</li>
+<li>After adding the dependency followed by <code class="inline-code">pod install</code> , you can add the imports to your <code class="inline-code">AppDelegate.m</code> file as shown:
+<span>
+
+```objectivec
+#import "RudderKochavaFactory.h"
+```
+</span>
+</li>
+<li>Finally, change the initialization of your <code class="inline-code">RudderClient</code> as shown:
+<span>
+
+```objectivec
+RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
+[builder withDataPlaneUrl:DATA_PLANE_URL];
+[builder withFactory:[RudderKochavaFactory instance]];
+[RudderClient getInstance:WRITE_KEY config:[builder build]];
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Track
 
@@ -197,7 +295,7 @@ MainApplication.rudderClient.screen("Sample Screen Name",
 In the above snippet, RudderStack captures all the information related to the viewed screen, along with any additional info associated with that event. In Kochava, the above `screen` call will be shown as - **"screen view `Sample Screen Name` "** along with the properties.
 
 <div class="infoBlock">
-Note that `screen` call will be sent to Kochava as a custom event.
+Note that <code class="inline-code">screen</code> call will be sent to Kochava as a custom event.
 
 </div>
 
@@ -205,7 +303,7 @@ Note that `screen` call will be sent to Kochava as a custom event.
 
 Follow these steps to configure push notifications for Kochava for the platform of your choice:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Android" %}
 
 - Register push notifications for your Android device in the Kochava dashboard.
@@ -293,7 +391,113 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Android</Tab>
+    <Tab>iOS</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<ul>
+<li>Register push notifications for your Android device in the Kochava dashboard.</li>
+<li>Add the following dependency in your project level <code class="inline-code">build.gradle</code> file inside the <code class="inline-code">buildscript</code>:
+<span>
+
+```groovy
+dependencies {
+        classpath 'com.google.gms:google-services:4.3.5'
+ }
+```
+</span>
+</li>
+<li>Next, add the following dependencies and plugin to your app level <code class="inline-code">build.gradle</code> file:
+
+```groovy
+dependencies {
+// for push notifications
+    implementation 'com.google.firebase:firebase-messaging:21.1.0'
+}
+apply plugin: 'com.google.gms.google-services'
+```
+</li>
+<li>Place the <code class="inline-code">google-services.json</code> downloaded from the <code class="inline-code">Firebase console</code> into the root folder of your <code class="inline-code">app</code>.</li>
+<li>Passing the new Push Token received from FCM to the Kochava SDK. For more information, look into the <strong>sample-kotlin</strong> app.
+<span>
+
+```text
+import com.google.firebase.messaging.FirebaseMessagingService
+import com.rudderstack.android.integrations.kochava.KochavaIntegrationFactory.registeredForPushNotificationsWithFCMToken
+
+// Extending FirebaseMessagingService class
+class MyFirebaseMessagingService : FirebaseMessagingService() {
+
+    // The onNewToken callback fires whenever a new token is generated.
+    override fun onNewToken(token: String) {
+        super.onNewToken(token)
+
+        // Method to pass the push token to the Kochava native sdk
+        registeredForPushNotificationsWithFCMToken(token)
+    }
+}
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+      <TabPanel>
+          <ul>
+        <li>Add Push Notification as a capability by navigating to <strong>Target</strong> - <strong>Signing & Capabilities</strong> of your app when opened in Xcode.</li>
+<li>Enable <strong>Background Modes/Remote notifications</strong> by navigating to <strong>Targets</strong> - <strong>Your App</strong> - <strong>Capabilities</strong> - <strong>Background Modes</strong> and then check <code class="inline-code">Remote notifications</code></li>
+<li>Register the push notifications for the iOS devices in your Kochava dashboard.</li>
+<li>Then, add the following code in your app just after initializing RudderStack's iOS SDK to register the push notifications.
+<span>
+
+```objectivec
+#import <UserNotifications/UserNotifications.h>
+// register for push notifications
+    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self;
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge)
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (granted) {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            });
+        }
+    }];
+```
+</span>
+</li>
+<li>Finally, add the below handlers to handle the tokens and push notifications accordingly:
+<span>
+
+```objectivec
+#import <RudderKochavaIntegration.h>
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [[RudderKochavaIntegration alloc] registeredForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
+{
+    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler
+{
+    [[RudderKochavaIntegration alloc] receivedRemoteNotification:response.notification.request.content.userInfo withActionString:response.actionIdentifier];
+}
+```
+</span>
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
 
 ## FAQs
 
