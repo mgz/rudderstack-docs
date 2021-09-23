@@ -57,7 +57,7 @@ const MainNavigation = props => {
       >
         <div className="max-w-6xl mx-auto sm:px-4 md:px-3 flex items-center justify-between py-2 sm:py-2 lg:pb-0 flex-wrap ">
           <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
-            <Link to="/" className="pl-4 sm:pl-0 pb-0 md:pb-3" rel="noopener noreferrer">
+            <Link to="/" className="pl-4 sm:pl-0 pb-0 md:py-3" rel="noopener noreferrer">
               <StaticImage
                 // src={"../images/rudderstack-logo-v2.svg"}
                 src={"../images/rudderstack-logo-header-v2.png"}
@@ -122,7 +122,7 @@ const MainNavigation = props => {
                 <MainNavigationMenuLink link={link} i={i} />
               ))}
             </ul>
-            <div className="flex lg:pb-4">
+            <div className="flex lg:pb-4 lg:mt-3">
               <a href="https://app.rudderstack.com/login">
                 <span className="inline-block lg:p-2 lg:py-1.5 mt-6 lg:mt-0 font-custom font-bold mr-2">
                   Log in

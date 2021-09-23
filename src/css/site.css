@@ -203,6 +203,58 @@ body {
   height: 100%;
 }
 
+.integration-connection-hero-logo-desktop {
+  position: absolute;
+  width: 122px;
+  height: 92px;
+  top: 104px;
+  left: 474px;
+}
+
+.integration-connection-hero-logo-primary-desktop {
+  width: 488px;
+}
+
+.integration-connection-hero-logo-mobile {
+  position: absolute;
+  width: 122px;
+  height: 92px;
+  top: 170px;
+  left: 326px;
+}
+
+.integration-connection-hero-logo-primary-mobile {
+  width: 327px;
+}
+
+.ic-middle-container {
+  width: 568px;
+  margin: auto;
+  position: relative;
+}
+
+.int-conn-left-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 70px;
+  top: 122px;
+  height: 96px;
+  width: 96px;
+}
+
+.int-conn-right-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 70px;
+  top: 122px;
+  height: 96px;
+  width: 96px;
+}
+
 .homepage-middle-bg-gradiant {
   background: linear-gradient(226.32deg, #6b96c3 -50.9%, #111168 108.01%);
 }
@@ -258,6 +310,7 @@ body {
 .yt-video {
   z-index: 20;
 }
+
 .menu li.has-submenu a:after {
   display: inline-block;
   position: relative;
@@ -279,6 +332,45 @@ body {
   border-bottom: 2px solid #17176e;
   font-weight: 700 !important;
 }
+
+@media (max-width: 1023px) and (min-width: 640px) {
+  .integration-connection-hero-logo-primary-desktop {
+    width: 490px;
+  }
+
+  .integration-connection-hero-logo-desktop {
+    position: absolute;
+    width: 122px;
+    height: 92px;
+    top: 104px;
+    left: 474px;
+  }
+
+  .integration-connection-hero-container-desktop {
+    width: 520px;
+    margin: auto;
+    position: relative;
+  }
+
+  .integration-connection-hero-logo-primary-mobile {
+    width: 340px;
+  }
+
+  .integration-connection-hero-logo-mobile {
+    position: absolute;
+    width: 122px;
+    height: 92px;
+    top: 170px;
+    left: 326px;
+  }
+
+  .integration-connection-hero-container-mobile {
+    width: 520px;
+    margin: auto;
+    position: relative;
+  }
+}
+
 @media only screen and (max-width: 1023px) {
   .menu li.has-submenu a:after {
     display: inline-block;
@@ -294,6 +386,86 @@ body {
     border-bottom: 2px solid rgba(255, 255, 255);
   }
 }
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .integration-connection-hero-logo-primary-desktop {
+    width: 290px;
+  }
+  .integration-connection-hero-logo-desktop {
+    position: absolute;
+    width: 122px;
+    height: 92px;
+    top: 42px;
+    left: 280px;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .integration-connection-hero-logo-desktop {
+    position: absolute;
+    width: 84px;
+    height: 52px;
+    top: 30px;
+    left: 172px;
+  }
+
+  .integration-connection-hero-logo-primary-desktop {
+    width: 180px;
+  }
+
+  .integration-connection-hero-container-desktop {
+    width: 300px;
+    margin: auto;
+    position: relative;
+  }
+
+  .integration-connection-hero-logo-mobile {
+    position: absolute;
+    width: 84px;
+    height: 52px;
+    top: 110px;
+    left: 206px;
+  }
+
+  .integration-connection-hero-logo-primary-mobile {
+    width: 208px;
+  }
+
+  .integration-connection-hero-container-mobile {
+    width: 300px;
+    margin: auto;
+    position: relative;
+  }
+
+  .ic-middle-container {
+    width: 300px;
+    margin: auto;
+    position: relative;
+  }
+
+  .int-conn-left-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 36px;
+    top: 64px;
+    height: 52px;
+    width: 52px;
+  }
+
+  .int-conn-right-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 36px;
+    top: 64px;
+    height: 52px;
+    width: 52px;
+  }
+}
+
 .menu li.has-submenu a.active:after {
   transform: rotate(225deg);
 }

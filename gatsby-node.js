@@ -516,7 +516,8 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   createRedirect({
     fromPath: "/blog/open-source-analytics/",
-    toPath: "/blog/open-source-analytics-stack-bringing-control-flexibility-and-data-privacy-to-your-analytics",
+    toPath:
+      "/blog/open-source-analytics-stack-bringing-control-flexibility-and-data-privacy-to-your-analytics",
     isPermanent: true,
   })
 
@@ -828,6 +829,36 @@ exports.createPages = async ({ graphql, actions }) => {
         "./src/templates/verticalLandingPageContent.js"
       ),
       context: { slug: edge.node.slug.current },
+    })
+  })
+
+  const integration_connections = await graphql(`
+    {
+      allGoogleSpreadsheetR1RedRudderstackIcData {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  if (integration_connections.errors) {
+    throw integration_connections.errors
+  }
+
+  const int_conn_pages =
+    integration_connections.data.allGoogleSpreadsheetR1RedRudderstackIcData
+      .edges || []
+  int_conn_pages.forEach((edge, index) => {
+    const path = `${edge.node.slug}`
+    createPage({
+      path,
+      component: require.resolve(
+        "./src/templates/contentIntegrationConnectionSpreadSheets.js"
+      ),
+      context: { slug: edge.node.slug },
     })
   })
 }

@@ -4,14 +4,16 @@ import PortableText from "./portableText"
 import Link from "gatsby-link"
 //import lottie from "lottie-web"
 //import heroAnimation from "../animations/Homepage-Hero-Image2.json"
-/* import { Helmet } from "react-helmet"
-import { withPrefix } from "gatsby" */
+import { Helmet } from "react-helmet"
+/* import { withPrefix } from "gatsby" */
 import { StaticImage } from "gatsby-plugin-image"
 //import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
 //import loadable from "@loadable/component";
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
 
-const LottieAnim = React.lazy(() => import("../animations/homepage-animation-v2"));
+const LottieAnim = React.lazy(() =>
+  import("../animations/homepage-animation-v2")
+)
 
 function Hero(props) {
   // const myHTML = `<h1>John Doe</h1>`;
@@ -45,7 +47,6 @@ function Hero(props) {
 
   useEffect(() => {
     if (showAnimation) {
-      
     }
   }, [showAnimation])
 
@@ -127,9 +128,11 @@ function Hero(props) {
             </div>
             <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
               {/* <div id="lottie" /> */}
-              {showAnimation && !isMobile && (<Suspense fallback={<div></div>}>
-                <LottieAnim />
-              </Suspense>)}
+              {showAnimation && !isMobile && (
+                <Suspense fallback={<div></div>}>
+                  <LottieAnim />
+                </Suspense>
+              )}
             </div>
             {/*
             <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
@@ -142,10 +145,6 @@ function Hero(props) {
           </div>
         </div>
       </div>
-      {/* <Helmet>
-        <script src={withPrefix("script.js")} type="text/javascript" />
-        <script src={withPrefix("script2.js")} type="text/javascript" />
-      </Helmet> */}
     </section>
   )
 }
