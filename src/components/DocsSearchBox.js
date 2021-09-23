@@ -1,6 +1,7 @@
 import React from "react"
 import { connectSearchBox } from "react-instantsearch-dom"
 
+// SearchBox Implementation.
 const SearchBox = ({
   currentRefinement,
   isSearchStalled,
