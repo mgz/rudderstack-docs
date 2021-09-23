@@ -92,7 +92,9 @@ export const rudderslabTrackOnClick = (
   if (!window.rudderanalytics) {
     return
   }
-  if (isSeekSectionName === true) {
+  if (sectionName !== "") {
+    sectionName = sectionName
+  } else {
     sectionName = el
   }
   window.rudderanalytics.track("click", {
