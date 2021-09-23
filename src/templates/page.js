@@ -184,6 +184,8 @@ const Page = props => {
   return (
     <Layout location={props.location}>
       <Helmet>
+        <meta name="description" content={data.page.meta_desc} />
+
         <title>{data.page.meta_title || data.page.title}</title>
         <meta
           property="og:title"
@@ -193,8 +195,8 @@ const Page = props => {
           property="twitter:title"
           content={data.page.meta_title || data.page.title}
         />
-        <meta name="description" content={data.page.meta_desc} />
         <meta property="og:description" content={data.page.meta_desc} />
+
         <meta property="twitter:description" content={data.page.meta_desc} />
         {/* <meta property="og:type" content="article" /> */}
       </Helmet>

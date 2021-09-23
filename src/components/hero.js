@@ -4,13 +4,12 @@ import PortableText from "./portableText"
 import Link from "gatsby-link"
 //import lottie from "lottie-web"
 //import heroAnimation from "../animations/Homepage-Hero-Image2.json"
-/* import { Helmet } from "react-helmet"
-import { withPrefix } from "gatsby" */
+import { Helmet } from "react-helmet"
+/* import { withPrefix } from "gatsby" */
 import { StaticImage } from "gatsby-plugin-image"
 //import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
 //import loadable from "@loadable/component";
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
-import { rudderslabTrackOnClick } from "../utils/common"
 const LottieAnim = React.lazy(() =>
   import("../animations/homepage-animation-v2")
 )
@@ -150,10 +149,6 @@ function Hero(props) {
           </div>
         </div>
       </div>
-      {/* <Helmet>
-        <script src={withPrefix("script.js")} type="text/javascript" />
-        <script src={withPrefix("script2.js")} type="text/javascript" />
-      </Helmet> */}
     </section>
   )
 }

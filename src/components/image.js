@@ -20,7 +20,20 @@ const Image = props => {
   return (
     <StaticQuery
       /* Development query below */
-        query={graphql`
+      // query={graphql`
+      //   query {
+      //     sanityimages: allSanityImageAsset {
+      //       edges {
+      //         node {
+      //           url
+      //           _id
+      //         }
+      //       }
+      //     }
+      //   }
+      // `}
+      /* Production query below */
+      query={graphql`
         query {
           sanityimages: allSanityImageAsset {
             edges {
