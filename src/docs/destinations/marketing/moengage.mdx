@@ -59,7 +59,7 @@ By turning on the native SDK switch under Android SDK Settings on the RudderStac
 
 ## Adding Device Mode Integration
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 Follow these steps to add MoEngage to your iOS project:
 
@@ -162,9 +162,9 @@ MoEngage.initialise(moEngage)
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %}-->
 
-<!--<Tabs>
+<Tabs>
   <TabList>
     <Tab>iOS</Tab>
     <Tab>Android</Tab>
@@ -204,7 +204,6 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
       </TabPanel>
       <TabPanel>
         <h2>Adding Dependencies</h2>
-
 To add MoEngage to your Android Project and enable its full functionality like push notifications, please follow these steps :
 <ul>
 <li>Open your <code class="inline-code">app/build.gradle</code> (Module: app) file, and add the following:
@@ -291,7 +290,7 @@ MoEngage.initialise(moEngage)
 </ul>
       </TabPanel>
     </TabPanels>
-</Tabs> -->
+</Tabs> 
 
 
 ## Identify
@@ -414,7 +413,7 @@ Alias call can be done only through mobile sdks.
 
 For more information, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 Run the following command to implement the `alias` method in your iOS project:
 
@@ -432,9 +431,10 @@ rudderClient.alias("newId")
 ```
 
 {% endtab %}
-{% endtabs %} 
+{% endtabs %} -->
 
-<!--<Tabs>
+
+<Tabs>
   <TabList>
     <Tab>iOS</Tab>
     <Tab>Android</Tab>
@@ -453,16 +453,16 @@ rudderClient.alias("newId")
 </ul>
       </TabPanel>
       <TabPanel>
+Run the following command to implement the `alias` method in your Android project:
 <span>
 
-```markup
-    http GET 'https://api.rudderstack.com/transformations/1pIYoILGZTNYZP4YYkeyNIKlitl/versions/1pIhxFXd7NR7XDA914rLAn5f7wq' \
-    Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
+```javascript
+rudderClient.alias("newId")
 ```
 </span>
       </TabPanel>
     </TabPanels>
-</Tabs>-->
+</Tabs>
 
 
 ## Reset
@@ -505,7 +505,7 @@ rudderClient.reset()
 </span>
       </TabPanel>
       <TabPanel>
-        Run the following command to implement the `reset`method in your Android project:
+        Run the following command to implement the <code class="inline-code">reset</code> method in your Android project:
 <span>
 
 ```javascript
@@ -524,7 +524,7 @@ rudderClient.reset()
 
 ## Configuring Push Notifications
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="iOS" %}
 
 - To send push notifications in iOS an APNS certificate needs to be created and has to be converted to `.pem` file.
@@ -650,9 +650,10 @@ importScripts(
 
 For more details please follow the [guidelines from MoEngage](https://docs.moengage.com/docs/setting-up-chrome-push).
 {% endtab %}
-{% endtabs %} 
+{% endtabs %} -->
 
-<!--<Tabs>
+
+<Tabs>
   <TabList>
     <Tab>iOS</Tab>
     <Tab>Android</Tab>
@@ -661,31 +662,26 @@ For more details please follow the [guidelines from MoEngage](https://docs.moeng
     <TabPanels>
       <TabPanel>
         <ul>
-        <li>To send push notifications in iOS an APNS certificate needs to be created and has to be converted to <code class="inline-code">.pem</code> file.</li>
-<li>This <code class="inline-code">.pem</code> file needs to be uploaded in the MoEngage dashboard.</li>
-<li>In the target app turn on App Groups and enable one of the App group ids, in case if you don't have an App Group ID then create one. The name of your app group should be <code class="inline-code">group.&#123;bundle id&#125;.MoEngage</code>.</li>
-<li>Turn on Background mode and set/enable Remote Notification.</li>
-<li>Turn on push notification capabilities in your app.</li>
-<li>Before initializing add <code class="inline-code">[MoEngage setAppGroupID:&lt;your app group id&gt;];</code></li>
-<li>In case if you would like to keep the notifications even after the App Launch then : <code class="inline-code">[MoEngage sharedInstance].disableBadgeReset = true;</code></li>
-</ul>
-<div class="infoBlock">
-For more detailed steps please follow <a href="https://docs.moengage.com/docs/push-notification-implementation">MoEngage guidelines here</a>.
-</div>
-
-<h3>In-App messaging</h3>
-
-In-app messaging is a type of mobile messaging where the notification is displayed within the app. Some examples include popups, yes/no prompts, interstitials, and more. To implement this please follow this guide: <a href="https://docs.moengage.com/docs/in-app-nativ">InApp NATIV</a>.
+          <li>To send push notifications in iOS an APNS certificate needs to be created and has to be converted to <code class="inline-code">.pem</code> file.</li>
+          <li>This <code class="inline-code">.pem</code> file needs to be uploaded in the MoEngage dashboard.</li>
+          <li>In the target app turn on App Groups and enable one of the App group ids, in case if you don't have an App Group ID then create one. The name of your app group should be <code class="inline-code">group.&#123;bundle id&#125;.MoEngage</code>.</li>
+          <li>Turn on Background mode and set/enable Remote Notification.</li>
+          <li>Turn on push notification capabilities in your app.</li>
+          <li>Before initializing add <code class="inline-code">[MoEngage setAppGroupID:&lt;your app group id&gt;];</code></li>
+          <li>In case if you would like to keep the notifications even after the App Launch then : <code class="inline-code">[MoEngage sharedInstance].disableBadgeReset = true;</code></li>
+        </ul>
+        <div class="infoBlock">
+        For more detailed steps please follow <a href="https://docs.moengage.com/docs/push-notification-implementation">MoEngage guidelines here</a>.
+        </div>
+      <h3>In-App messaging</h3>
+      In-app messaging is a type of mobile messaging where the notification is displayed within the app. Some examples include popups, yes/no prompts, interstitials, and more. To implement this please follow this guide: <a href="https://docs.moengage.com/docs/in-app-nativ">InApp NATIV</a>.
       </TabPanel>
       <TabPanel>
 Copy the Server Key from the FCM console and add it to the MoEngage Dashboard(Not sure where to find the Server Key refer to <a href="https://docs.moengage.com/docs/getting-fcmgcm-server-key">Getting FCM Server Key</a>. To upload it, go to the <a href="https://app.moengage.com/v3/#/settings/push/mobile">Settings Page</a> and add the Server Key and package name.  
 <strong>Please make sure you add the keys both in the Test and Live environment.</strong>
-
 Before configuring MoEngage SDK for receiving push notifications please make you have configured Firebase in your application, if not done already refer to the <a href="https://firebase.google.com/docs/android/setup">documentation</a> and complete setup.  
 Also, make sure you have added the Firebase Messaging dependency in your application <code class="inline-code">build.gradle</code> file.
-
 <h3>Adding meta for push notification</h3>
-
 To show push notifications you need to add the notification small icon and large icon along with the AppId to the <code class="inline-code">MoEngage.Builder</code>
 <span>
 
@@ -722,7 +718,6 @@ MoEngage.initialise(moEngage)
 ```
 </span>
 <h4>Pass the Push Token To MoEngage SDK</h4>
-
 The Application would need to pass the Push Token received from FCM to the MoEngage SDK for the MoEngage platform to send out push notifications to the device. Use the below API to pass the push token to the MoEngage SDK.
 <span>
 
@@ -731,9 +726,7 @@ MoEFireBaseHelper.getInstance().passPushToken(applicationContext, token)
 ```
 </span>
 _Note:_ Please make sure token is passed to MoEngage SDK whenever push token is refreshed and on application update. Passing token on application update is important for migration to the MoEngage Platform.
-
 <h4>Passing the Push payload to the MoEngage SDK</h4>
-
 To pass the push payload to the MoEngage SDK call the MoEngage API from the `onMessageReceived()` from the Firebase receiver.  
 Before passing the payload to the MoEngage SDK you should check if the payload is from the MoEngage platform using the helper API provided by the SDK.
 <span>
@@ -750,7 +743,6 @@ if (MoEPushHelper.getInstance().isFromMoEngagePlatform(remoteMessage.data)) {
 ```
 </span>
 <h4>Push Registration and Receiving handled by SDK</h4>
-
 Add the below code in your manifest file within the application tag
 <span>
 
@@ -762,16 +754,34 @@ Add the below code in your manifest file within the application tag
 </service>
 ```
 </span>
-
 When MoEngage SDK handles push registration it optionally provides a callback to the Application whenever a new token is registered or token is refreshed.  
 An application can get this callback by implementing <code class="inline-code">FirebaseEventListener</code> and registering for a callback in the Application class' <code class="inline-code">onCreate()</code>using <code class="inline-code">MoEFireBaseHelper.getInstance().setEventListener()</code>
-
 <h3>In-App messaging:</h3>
-
 In-app messaging is a type of mobile messaging where the notification is displayed within the app. Examples include popups, yes/no prompts, interstitials, and more. To implement this please follow: <a href="https://docs.moengage.com/docs/configuring-in-app-nativ">InApp NATIV</a>
       </TabPanel>
+      <TabPanel>
+        <ul>
+        <li>Go to <a href="http://app.moengage.com/v3/#/settings/4/0">Web Push Settings</a>.</li>
+<li>Under Web fill in the details as required.</li>
+<li>For HTTPS Web Push to work, you need to host two files in the <code class="inline-code">root</code> directory of your web server.</li>
+<li>After clicking <strong>SAVE</strong>, please proceed to download <code class="inline-code">serviceworker.js</code> file. Under <a href="http://app.moengage.com/v3/#/settings/4/0">Web Push Settings</a>.</li>
+<li>In case you already have your own serviceworker.js add :
+<span>
+
+```javascript
+importScripts(
+  "https://cdn.moengage.com/webpush/releases/serviceworker_cdn.min.latest.js"
+)
+```
+</span>
+</li>
+<li>HTTP : Select a sub-domain.
+For more details please follow the <a href="https://docs.moengage.com/docs/setting-up-chrome-push">guidelines from MoEngage</a>.
+</li>
+</ul>
+      </TabPanel>
     </TabPanels>
-</Tabs>-->
+</Tabs>
 
 
 ## Debugging in Web SDK
@@ -828,7 +838,7 @@ Example payload:
 MoEngage accepts user creation time for its [user endpoint](https://docs.moengage.com/docs/data-import-apis#user-api). This is reflected as `first_Seen` in their dashboard.
 
 <div class="infoBlock">
-The RudderStack transformer maps the _**created_time**_ from the _**createdAt**_ spec'd traits in our payload. The value should be in the **ISO 8601** format.  
+The RudderStack transformer maps the _<strong>created_time</strong>_ from the _<strong>createdAt</strong>_ spec'd traits in our payload. The value should be in the <strong>ISO 8601</strong> format.  
 If the value is not in proper format or not present, MoEngage will put in the value by itself.
 
 </div>

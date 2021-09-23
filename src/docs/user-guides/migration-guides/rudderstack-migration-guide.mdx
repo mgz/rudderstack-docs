@@ -31,7 +31,7 @@ If you need more support or you want us to manage your hosting, please feel free
 
 Depending on the platform, please follow these steps to move your existing SDK implementation to RudderStack:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Android" %}
 
 - Change the dependencies in your `app/build.gradle` file add the following:
@@ -158,7 +158,114 @@ For the minified version of the above script please refer to the <a href="../../
 </div>
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Android</Tab>
+    <Tab>iOS</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+      <ul>
+      <li>Change the dependencies in your <code class="inline-code">app/build.gradle</code> file add the following:
+<span>
+
+```groovy
+repositories {
+    mavenCentral()
+}
+```
+</span>
+</li>
+<li>Under dependencies, add the following:
+<span>
+
+```groovy
+implementation 'com.rudderstack.android.sdk:core:1.0.1'
+implementation 'com.google.code.gson:gson:2.8.6'
+```
+</span>
+</li>
+<li>Update your SDK initialization to the following:
+<span>
+
+```java
+RudderClient rudderClient = RudderClient.getInstance(
+        this,
+        <YOUR_WRITE_KEY>,
+        new RudderConfig.Builder()
+                .withDataPlaneUrl(<DATA_PLANE_URL>)
+                .withLogLevel(RudderLogger.RudderLogLevel.DEBUG)
+                .withTrackLifecycleEvents(true)
+                .withRecordScreenViews(true)
+                .build()
+);
+```
+</span>
+</li>
+<li>Update the use of the classes according to the table below:
+<span>
+
+| Segment     | RudderStack      |
+| :---------- | :--------------- |
+| `Analytics` | `RudderClient`   |
+| `Traits`    | `RudderTraits`   |
+| `Property`  | `RudderProperty` |
+</span>
+</li>
+</ul>
+<div class="successBlock">
+  You can use the rest of your code as is, as RudderStack SDK is API-compatible
+  with Segment.
+</div>
+      </TabPanel>
+      <TabPanel>
+<ul>
+<li>Add the SDK to your web application:
+<span>
+
+```markup
+<script>
+	rudderanalytics = window.rudderanalytics = [];
+
+	var methods = [
+		"load",
+		"page",
+		"track",
+		"identify",
+		"reset"
+	];
+	for (var i=0; i<methods.length; i++) {
+		var method = methods[i];
+		rudderanalytics[method] = function(methodName) {
+			return function() {
+				rudderanalytics.push([methodName, ...arguments]);
+			}
+		} (method)
+	}
+	rudderanalytics.load(<YOUR_WRITE_KEY>, <DATA_PLANE_URI>);
+	rudderanalytics.page();
+</script>
+<script src="https://cdn.rudderlabs.com/rudder-analytics.min.js"></script>
+```
+</span>
+<div class="infoBlock">
+For the minified version of the above script please refer to the <a href="../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk">RudderStack JavaScript SDK</a> guide.
+
+</div>
+</li>
+<li>Update the object. We use <code class="inline-code">rudderanalytics</code> as the global object library in comparison to Segment's <code class="inline-code">analytics</code> object
+
+<div class="successBlock">
+  You can use the rest of your code as is, as the RudderStack SDK is fully
+  API-compatible with Segment
+</div>
+</li>
+</ul>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Backfilling Segment AnonymousIds
 

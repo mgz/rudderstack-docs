@@ -185,7 +185,7 @@ https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
 
 To get all the regulations, you can send a `GET` request as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="curl" %}
 
 ```bash
@@ -203,7 +203,34 @@ https://api.rudderlabs.com/workspaces/regulations?start=0&limit=10
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```bash
+curl -u <your_workspace_token>: \
+https://api.rudderlabs.com/workspaces/regulations?start=0&limit=10
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```
+http -a <your_workspace_token>: \
+https://api.rudderlabs.com/workspaces/regulations?start=0&limit=10
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Delete a Regulation
 
@@ -214,7 +241,7 @@ Pass the <code class="inline-code">regulation_id</code> in the URL. The <code cl
 
 </div>
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="curl" %}
 
 ```bash
@@ -232,7 +259,34 @@ https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```bash
+curl -u <your_workspace_token>: \
+-X DELETE https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```
+http -a <your_workspace_token>: DELETE \
+https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Create a Suppress Regulation on a Source
 
@@ -245,9 +299,8 @@ You need to pass <code class="inline-code">source_id</code> in the URL. You can 
 
 #### Payload
 
-{% code title="suppress.json" %}
 
-```javascript
+```javascript title="suppress.json"
 {
     "regulation_type": "Suppress",
     "attributes": {
@@ -260,11 +313,10 @@ You need to pass <code class="inline-code">source_id</code> in the URL. You can 
 }
 ```
 
-{% endcode %}
 
 #### Usage
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="curl" %}
 
 ```bash
@@ -284,7 +336,36 @@ https://api.rudderlabs.com/workspaces/sources/<source_id>/regulations < suppress
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```bash
+curl -u <your_workspace_token>: \
+-X POST https://api.rudderlabs.com/workspaces/sources/<source_id>/regulations \
+-d @suppress.json \
+--header "Content-Type: application/json"
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```bash
+http -a <your_workspace_token>: \
+https://api.rudderlabs.com/workspaces/sources/<source_id>/regulations < suppress.json
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Contact Us
 
