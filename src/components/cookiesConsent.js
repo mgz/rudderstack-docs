@@ -62,7 +62,7 @@ const CookiesConsent = () => {
                       <div className="cli-privacy-content">
                         <div className="cli-privacy-content-text">
                           <p>
-                            This website uses cookies to improve your experience
+                            This site uses cookies to improve your experience
                             while you navigate through the website. Out of these
                             cookies, the cookies that are categorized as
                             necessary are stored on your browser as they are as
@@ -171,8 +171,8 @@ const CookiesConsent = () => {
         } bg-background pl-4 pr-4 sm:pr-20 py-4 fixed bottom-0 w-full text-center flex flex-col md:flex-row justify-center z-40 md:text-left`}
       >
         <div className="flex flex-row w-full md:w-auto">
-          <h4 className="self-center text-lg mr-4">
-            This website uses cookies to improve your experience. We'll assume
+          <p className="self-center text-lg mr-4">
+            This site uses cookies to improve your experience. We'll assume
             you're ok with this, but you can opt-out if you wish.
             <a
               // className="bg-white text-primary btn-secondary-lg font-bold leading-tight border-white cursor-pointer mr-0 sm:mr-4 mb-2 sm:mb-0 w-full self-center"
@@ -184,7 +184,7 @@ const CookiesConsent = () => {
             >
               Cookie&nbsp;Settings
             </a>
-          </h4>
+          </p>
         </div>
 
         <div className="flex flex-col justify-center my-4 sm:my-0 w-full md:w-72">

@@ -127,10 +127,10 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" />
       </Helmet> */}
-        <CookiesConsent />
+        
         <MainNavigation diableGradient={diableGradient} />
         <main>{children}</main>
-
+        <CookiesConsent />
         <footer
           className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0"
           name={"footer-container"}
