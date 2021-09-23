@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet"
 import { StaticImage } from "gatsby-plugin-image"
 //import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
 //import loadable from "@loadable/component";
+import {rudderslabTrackOnClick} from '../utils/common'
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
 const LottieAnim = React.lazy(() =>
   import("../animations/homepage-animation-v2")

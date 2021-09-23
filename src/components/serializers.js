@@ -10,6 +10,8 @@ import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
 import TableContent from "./tableContent"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { rudderslabTrackOnClick } from "../utils/common"
+
 import Image from "./image"
 
 // import BlockContent from "@sanity/block-content-to-react"
@@ -95,13 +97,15 @@ const serializers = {
         {children}
       </a>
     ),
-    link: ({ children, mark }) => {
+    link: ({ children, mark, _key }) => {
       // console.log(children, mark, "block contain")
       //added by Hari on 2021-04-30
       return (
         <a
-          className="underline text-purpleNew-gigas hover:text-blueNew-midnight"
+          id={_key}
+          className={` underline text-purpleNew-gigas hover:text-blueNew-midnight`}
           href={mark.href}
+          onClick={e => rudderslabTrackOnClick("link", null, e, true)}
         >
           {children}
         </a>
