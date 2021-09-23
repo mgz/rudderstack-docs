@@ -7,7 +7,8 @@ const SearchBox = ({
   refine,
   onRefineTextChange,
   pleaceholderText,
-  isSearchOpen
+  isSearchOpen,
+  setSearchOpen
 }) => (
   <>
     <div className="docsSearch">
@@ -47,6 +48,14 @@ const SearchBox = ({
           onRefineTextChange(event.currentTarget.value)
         }}
       />
+      <span className={`searchTextClearIcon ${currentRefinement !== '' ? 'active' : ''}`} onClick={() => {refine('');onRefineTextChange('')}}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1.7em" height="1.7em">
+          <path d="M216,43.99963H68.5293a12.05811,12.05811,0,0,0-10.28907,5.82715L12.57031,125.942a3.99551,3.99551,0,0,0,0,4.11523l45.669,76.11621a12.05879,12.05879,0,0,0,10.29,5.82617H216a12.01312,12.01312,0,0,0,12-12v-144A12.01312,12.01312,0,0,0,216,43.99963Zm4,156a4.004,4.004,0,0,1-4,4H68.5293a4.017,4.017,0,0,1-3.42871-1.9414h-.001L20.665,127.99963,65.10059,53.942a4.017,4.017,0,0,1,3.42871-1.94239H216a4.004,4.004,0,0,1,4,4Zm-57.17188-93.17187-21.17187,21.17187,21.17187,21.17188a3.99957,3.99957,0,1,1-5.65625,5.65625L136,133.65588l-21.17188,21.17188a3.99957,3.99957,0,0,1-5.65625-5.65625l21.17188-21.17188-21.17188-21.17187a3.99957,3.99957,0,0,1,5.65625-5.65625L136,122.34338l21.17187-21.17187a3.99957,3.99957,0,0,1,5.65625,5.65625Z"/>
+        </svg>
+      </span>
+      <span className="searchToggleIcon" onClick={() => setSearchOpen(false)}>
+        <svg preserveAspectRatio="xMidYMid meet" width="1.5em" height="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor"><g><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></g></svg>
+      </span>
     </div>
   </>
 )

@@ -1468,8 +1468,8 @@ top: -60px;
   @apply absolute;
   @apply right-0;
   @apply top-4;
-  @apply z-10;
   @apply cursor-pointer;
+  z-index: 1;
 }
 
 .mobTocMenu {
@@ -1537,8 +1537,8 @@ a.pageRef:hover .rightRefArrow {
   @apply bg-whiteColor-custom;
   @apply border-l border-grayColor-lightBorder;
   z-index: 31;
-  width: 290px;
-  transform: translateX(290px);
+  width: 320px;
+  transform: translateX(320px);
   transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 .instantSearchWrapper.active{
@@ -1548,11 +1548,25 @@ a.pageRef:hover .rightRefArrow {
   @apply flex;
   @apply justify-center;
   @apply items-center;
-  height: calc(100vh - 112px);
+  height: calc(100vh - 80px);
 }
 .searchResultsWrapper{
   @apply overflow-y-auto;
   max-height: calc(100vh - 80px);
+}
+.searchTextClearIcon{
+  @apply opacity-0;
+  @apply cursor-pointer;
+  @apply inline-block;
+  @apply pr-2;
+  transition: all 0.5s ease;
+}
+.searchTextClearIcon.active{
+  @apply opacity-100;
+}
+.searchToggleIcon{
+  @apply inline-block;
+  @apply cursor-pointer;
 }
 .searchResultsWrapper .sectionTitle{
   @apply font-semibold;
@@ -1561,6 +1575,7 @@ a.pageRef:hover .rightRefArrow {
 }
 .searchResultsWrapper .description{
   @apply text-xs;
+  @apply mb-0;
   color: #6c6c80;
   line-height: 1.6em;
 }
@@ -1569,8 +1584,9 @@ a.pageRef:hover .rightRefArrow {
   @apply text-whiteColor-custom;
   @apply not-italic;
 }
-.searchBlock{
+.searchBlock a{
   @apply border-b border-grayColor-lightBorder;
+  @apply block;
   @apply py-3 px-4;
   @apply hover:bg-grayColor-lightBorder;
 }
@@ -1585,6 +1601,7 @@ a.pageRef:hover .rightRefArrow {
   @apply flex;
   @apply items-center;
   @apply border-b border-grayColor-lightBorder;
+  @apply bg-whiteColor-custom;
   height: 80px;
 }
 
@@ -1654,6 +1671,7 @@ a.pageRef:hover .rightRefArrow {
     @apply bottom-0;
     @apply left-0;
     @apply bg-whiteColor-custom;
+    @apply z-10;
     transform: translateX(-280px);
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
@@ -1795,7 +1813,6 @@ a.pageRef:hover .rightRefArrow {
   .docsSearch {
     @apply border-transparent;
   }
-  .docsSearchWrapper,
   .docsSearchbar {
     @apply hidden;
   }

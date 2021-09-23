@@ -15,6 +15,7 @@ To consume the RudderStack Transformation API you need access to it. This guide 
 In order to use the Transformation API, you will need an Access Token associated with your account. You can create your own Access Token by following steps below:
 
 <div class="successBlock">
+
   You can use Postman, Fiddler or any other API client to make your request.
 </div>
 
@@ -66,33 +67,6 @@ Name of access token
 
 A sample request is as shown:
 
-<!--{% tabs %}
-
-{% tab title="Curl" %}
-
-```text
-curl --location -X POST 'https://api.rudderstack.com/accessTokens' \
--H 'Authorization: Basic Base64Enc(workspacetoken:)' \
--H 'Content-Type: application/json' \
--d '{
-    "name": "some-test-access-token",
-    "description": "some-description"
-}'
-```
-
-{% endtab %}
-
-{% tab title="Httpie" %}
-
-```text
- http POST 'https://api.rudderstack.com/accessTokens' \
- name=some-test-access-token description=some-description \
- Authorization:'Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
- Content-Type:'application/json'
-```
-
-{% endtab %}
-{% endtabs %} -->
 
 <Tabs>
   <TabList>
@@ -143,6 +117,7 @@ You can get the workspace token by logging into your RudderStack dashboard, as s
 - Headers **- Basic {Base64Encoded\(abcd1234:\)}**
 
 <div class="dangerBlock">
+
   Copy your access token and keep it safely with you. You won't be able to get
   it back once lost. Your AccessToken carry many privileges, so be sure to keep
   them secret.
@@ -193,29 +168,10 @@ Base64encoded **workspace token.**
 {% endapi-method %}
 
 <div class="infoBlock">
+
   Here you will get a list of objects. Note that RudderStack does not send your
   access token.
 </div>
-
-<!--{% tabs %}
-{% tab title="Curl" %}
-
-```text
-curl --location -X GET 'https://api.rudderstack.com/accessTokens' \
--H 'Authorization: Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
-```
-
-{% endtab %}
-
-{% tab title="Httpie" %}
-
-```text
-http GET 'https://api.rudderstack.com/accessTokens' \
-'Authorization: Basic Base64Enc(workspacetoken:)'
-```
-
-{% endtab %}
-{% endtabs %} -->
 
 <Tabs>
   <TabList>
@@ -285,25 +241,6 @@ All access token will be deleted with given name.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-<!--{% tabs %}
-{% tab title="Curl" %}
-
-```text
-curl --location -X DELETE 'https://api.rudderstack.com/accessTokens?name=some-test-access-token' \
--H 'Authorization: Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
-```
-
-{% endtab %}
-
-{% tab title="Httpie" %}
-
-```text
-http DELETE 'http://api.rudderstack.com/accessTokens?name=sdc' \
-'Authorization: Basic Base64Enc(workspacetoken:)'
-```
-
-{% endtab %}
-{% endtabs %}-->
 
 <Tabs>
   <TabList>

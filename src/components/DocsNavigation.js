@@ -64,7 +64,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
             </li> */}
           </ul>
         </nav>
-        <div className="docsSearch">
+        <div className="docsSearch" onClickCapture={() => setSearchOpen(true)}>
           <span className="docsSearchIcon">
             <svg
               preserveAspectRatio="xMidYMid meet"
@@ -103,6 +103,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
                     }}
                     isSearchOpen={isSearchOpen}
                     currentSearchText={currentSearchText}
+                    setSearchOpen={setSearchOpen}
                   />
                 </div>
                 <div id="docsSearchHitsContainer">

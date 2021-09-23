@@ -6,7 +6,6 @@
  */
 
  import React from "react"
- import { Link } from "gatsby"
  import NoResultImage from '../images/assets/noresultsearch.svg'
 
  const replaceStr = (str) => {
@@ -22,8 +21,10 @@
 
 const truncateStr = (str) => {
   let hitIndex = str.indexOf("<em>");
-  if(hitIndex == 0){
-    str = str.substring(hitIndex - 10, hitIndex + 100) + '...';
+  if(hitIndex === 0){
+    str = str.substring(0, hitIndex + 100) + '...';
+  }else if(str.trim() === ''){
+    str = '';
   }else{
     str = '...' + str.substring(hitIndex - 10, hitIndex + 100) + '...';
   }
@@ -34,28 +35,23 @@ const truncateStr = (str) => {
 
    return (
     <div className="searchResultsWrapper">
-        {hits.length == 0 || currentSearchText == '' ? (
+        {hits.length === 0 || currentSearchText === '' ? (
           <div className="searchResultsEmpty">
-            <img src={NoResultImage} />
+            <img src={NoResultImage} alt="No Result" />
           </div>  
         ) : (
           <div className="searchResults">
             {
               hits.map((item, index) => {                
                 let basePath = window.location.origin + '/docs/';
-                if(index >= 0 && currentSearchText !== ""){
-                  let pageTitle = item.SectionTitle ? replaceStr(item._highlightResult.SectionTitle.value) : replaceStr(item._highlightResult.pageTitle.value);
-                  let sectionContent = truncateStr(replaceStr(item._highlightResult.sectionContent.value));
-                  
-                  return (
-                  <div key={item.pageSlug + index} className="searchBlock">
+                let pageTitle = item.SectionTitle ? replaceStr(item._highlightResult.SectionTitle.value) : replaceStr(item._highlightResult.pageTitle.value);
+                let sectionContent = item._highlightResult.sectionContent.value.trim() !== ""  ? truncateStr(replaceStr(item._highlightResult.sectionContent.value)) : '';
+                  return (<div key={item.pageSlug + index} className="searchBlock">
                     <a href={item.sectionId !== "" ? basePath + item.pageSlug + '#' + item.sectionId : basePath + item.pageSlug}>
                       <p className="sectionTitle" dangerouslySetInnerHTML={{ __html: pageTitle }}></p>
                       <p className="description" dangerouslySetInnerHTML={{ __html: sectionContent}}></p>
                     </a>
-                  </div>
-                  )
-                }
+                  </div>)
               })
             }
           </div>

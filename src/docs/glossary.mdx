@@ -54,6 +54,7 @@ Reverse ETL is the process of routing the enriched data from your data warehouse
 The Control Plane manages the configuration of your sources and destinations. The interface for the control plane is the [**RudderStack web app**](https://app.rudderstack.com/).
 
 <div class="infoBlock">
+
   For more information on the Data Plane and Control Plane, refer to
   RudderStack's{" "}
   <a href="./get-started/rudderstack-architecture">architecture</a>.
@@ -71,7 +72,7 @@ The Data Plane is RudderStack's core engine responsible for:
 The Data Plane is intentionally separated from the Control Plane to give you complete ownership of your data. Depending on how RudderStack is deployed, you can set up your Control Plane and Data Plane via one of the following approaches:
 
 <ul>
-<li> <strong>RudderStack-hosted</strong>: \*\*\*\*RudderStack hosts both Control Plane and Data Plane</li>
+<li> <strong>RudderStack-hosted</strong>: RudderStack hosts both Control Plane and Data Plane</li>
 <li> <strong>Hybrid</strong>: RudderStack hosts the Control Plane and the user hosts the Data Plane</li>
 <li> <strong>Customer</strong>: User hosts both the Control Plane and Data Plane via open-source.</li>
 </ul>
@@ -84,8 +85,8 @@ RudderStack's **Control Plane** offers an intuitive UI to configure your event d
 If you want to self-host these configurations, you can use the open-source **Config Generator** to set up your Control Plane. You can then manage the source and destination configurations locally by exporting to or importing them from a JSON file.
 
 <div class="infoBlock">
-For information on the Config Generator and how to use it, refer to the <a href="./get-started/config-generator">docs</a>.
 
+For information on the Config Generator and how to use it, refer to the <a href="./get-started/config-generator">docs</a>.
 </div>
 
 ## **Features**
@@ -95,6 +96,7 @@ For information on the Config Generator and how to use it, refer to the <a href=
 RudderStack's [**Event Stream**](stream-sources/) feature lets you collect your event data from all of your web and mobile apps and route it to a wide array of customer tools and data warehouses via RudderStack.
 
 <div class="infoBlock">
+
   For more information on the various Event Stream sources supported by
   RudderStack, check out the <a href="./stream-sources">docs</a>.
 </div>
@@ -104,8 +106,8 @@ RudderStack's [**Event Stream**](stream-sources/) feature lets you collect your 
 [**Cloud Extract**](cloud-extract-sources/) is RudderStack's ETL feature that lets you collect your raw events and data from various third-party cloud platforms such as Google Analytics, Marketo, Facebook Ads, Stripe, etc. and send it to your data warehouse with a user-specified frequency.
 
 <div class="infoBlock">
-For more information on the various Cloud Extract sources and how to set them up in RudderStack, check out the <a href="./cloud-extract-sources">docs</a>.
 
+For more information on the various Cloud Extract sources and how to set them up in RudderStack, check out the <a href="./cloud-extract-sources">docs</a>.
 </div>
 
 ### Warehouse Actions
@@ -113,8 +115,8 @@ For more information on the various Cloud Extract sources and how to set them up
 [**Warehouse Actions**](warehouse-actions/) is RudderStack's Reverse-ETL feature. It allows you to leverage the already processed customer data residing in your data warehouse and route this enriched information to your desired destinations, including SaaS marketing, analytics, sales, and customer support tools.
 
 <div class="infoBlock">
-For more information on the various Warehouse Actions sources and how to set them up in RudderStack, check out the <a href="./warehouse-actions">docs</a>.
 
+For more information on the various Warehouse Actions sources and how to set them up in RudderStack, check out the <a href="./warehouse-actions">docs</a>.
 </div>
 
 ### Transformations
@@ -130,6 +132,7 @@ There are two key aspects of this feature:
   - Removing any sensitive PII information from your customer events, and a lot more.
 
 <div class="successBlock">
+
 RudderStack applies the User Transformations (if any) to the incoming events before sending them to the Transformer. So the flow looks like the following:
 
 <strong>Incoming events</strong> -- <strong>User Transformation</strong> -- <strong>
@@ -145,8 +148,8 @@ In the absence of a user transformation, the flow is as follows:
 </div>
 
 <div class="infoBlock">
-For more details on this feature and how to use it, check out our <a href="./adding-a-new-user-transformation-in-rudderstack">Transformations</a> docs.
 
+For more details on this feature and how to use it, check out our <a href="./adding-a-new-user-transformation-in-rudderstack">Transformations</a> docs.
 </div>
 
 ### Live Events
@@ -159,8 +162,8 @@ Broadly speaking, this feature can be further classified into two categories:
 - [**Destination Live Events**](https://docs.rudderstack.com/get-started/live-events#destination-live-events): When routing events to a destination, sometimes events don't show up in your destination. This feature gives you real-time visibility into the destination's responses and helps you troubleshoot the problem.
 
 <div class="infoBlock">
-For more information on this feature, check out our <a href="./get-started/live-events">docs</a>.
 
+For more information on this feature, check out our <a href="./get-started/live-events">docs</a>.
 </div>
 
 ### Data Governance
@@ -168,8 +171,8 @@ For more information on this feature, check out our <a href="./get-started/live-
 RudderStack's [**Data Governance**](data-governance/) feature gives you the ability to access all your events and their metadata programmatically and identify any inconsistencies in them. This includes vital information related to the event schema, event payload versions, data types, and more.
 
 <div class="infoBlock">
-Refer to the <a href="./data-governance/rudderstack-data-governance-api">RudderStack Data Governance API</a> reference for the detailed technical documentation.
 
+Refer to the <a href="./data-governance/rudderstack-data-governance-api">RudderStack Data Governance API</a> reference for the detailed technical documentation.
 </div>
 
 ### User Suppression
@@ -177,8 +180,8 @@ Refer to the <a href="./data-governance/rudderstack-data-governance-api">RudderS
 [**User Suppression**](rudderstack-api/user-suppression.md) is RudderStack's enterprise feature that lets you programmatically suppress user data identified by a user ID. With this feature, you can block all the user data for all the sources and destinations in RudderStack.
 
 <div class="infoBlock">
-Refer to the <a href="./rudderstack-api/user-suppression">RudderStack User Suppression API</a> reference for more information.
 
+Refer to the <a href="./rudderstack-api/user-suppression">RudderStack User Suppression API</a> reference for more information.
 </div>
 
 ## Integrations
@@ -188,6 +191,7 @@ Refer to the <a href="./rudderstack-api/user-suppression">RudderStack User Suppr
 A connection is a one-to-one directional flow of events between a RudderStack source and a destination.
 
 <div class="infoBlock">
+
   For more information on sources and destinations in RudderStack, check our{" "}
   <a href="./connections">Connections</a> guide.
 </div>
@@ -199,8 +203,8 @@ You can set up different types of connections in RudderStack to send your events
 - **Warehouse Action**: One warehouse source to one downstream destination \(mainly due to the mappings required when setting up the connection\).
 
 <div class="infoBlock">
-Setting up a connection involves <a href="./connections/adding-source-and-destination-rudderstack">adding a source and destination</a> in RudderStack.
 
+Setting up a connection involves <a href="./connections/adding-source-and-destination-rudderstack">adding a source and destination</a> in RudderStack.
 </div>
 
 ### Connection Modes \(Cloud Mode & Device Mode\)
@@ -213,8 +217,8 @@ You can send the event data from your website/mobile app to your desired destina
 These two modes are commonly referred to as **RudderStack Connection Modes**.
 
 <div class="infoBlock">
-For more information on these modes, check the <a href="./connections/rudderstack-connection-modes">RudderStack Connection Modes</a> guide.
 
+For more information on these modes, check the <a href="./connections/rudderstack-connection-modes">RudderStack Connection Modes</a> guide.
 </div>
 
 ### Source
@@ -222,8 +226,8 @@ For more information on these modes, check the <a href="./connections/rudderstac
 A **source** is a platform or an application \(web, mobile, server-side, or a third-party cloud app\) from where RudderStack tracks and collects your event data. We highly recommend creating a source for every unique data source that you want to track.
 
 <div class="infoBlock">
-For more information on RudderStack sources, check out our <a href="./connections#sources">documentation</a>.
 
+For more information on RudderStack sources, check out our <a href="./connections#sources">documentation</a>.
 </div>
 
 ### Destination
@@ -231,10 +235,10 @@ For more information on RudderStack sources, check out our <a href="./connection
 A destination is a tool or application where you want to send the data via RudderStack.
 
 <div class="successBlock">
+
 RudderStack currently supports over 80 destinations. These include <a href="./data-warehouse-integrations">data warehouses</a>, <a href="./destinations/analytics">analytics</a> platforms, <a href="./destinations/crm">CRMs</a>, <a href="./destinations/marketing">marketing</a> platforms, and more.
 
 Check out the <a href="./destinations">Destinations</a> guide for the complete list of supported destinations.
-
 </div>
 
 ### Warehouse Destination
@@ -244,8 +248,8 @@ RudderStack supports sending events to your data warehouse. These are called the
 Currently, RudderStack supports integration with all the leading data warehouses like Amazon Redshift, Azure Synapse, Google BigQuery, Snowflake, PostgreSQL, ClickHouse, and Microsoft SQL Server.
 
 <div class="infoBlock">
-For more information on how to use these warehouse destinations, check out our <a href="./data-warehouse-integrations">Data Warehouse Integration</a> guides.
 
+For more information on how to use these warehouse destinations, check out our <a href="./data-warehouse-integrations">Data Warehouse Integration</a> guides.
 </div>
 
 ## Other Terminology
@@ -255,6 +259,7 @@ For more information on how to use these warehouse destinations, check out our <
 The **RudderStack API Spec** helps you plan your event data and provides various options for tracking your events across all the RudderStack SDKs and APIs. As RudderStack has a unified event semantic for different destination platforms, you can easily translate your event data to different downstream tools by following this spec.
 
 <div class="infoBlock">
+
   For more information on the RudderStack API Specification, refer to our{" "}
   <a href="./rudderstack-api/api-specification/rudderstack-spec">docs</a>.
 </div>
@@ -265,7 +270,8 @@ RudderStack offers client-side SDK support for web \([**JavaScript**](stream-sou
 
 You can also track your event data from your Flutter app via the [**Flutter SDK**](stream-sources/rudderstack-sdk-integration-guides/rudderstack-flutter-sdk.md) or from your AMP page via the [**RudderStack AMP Component**](stream-sources/rudderstack-sdk-integration-guides/amp-analytics.md).
 
-<div class="infoBlock"> 
+<div class="infoBlock">
+ 
   Refer to the{" "}
   <a href="./stream-sources/rudderstack-sdk-integration-guides">
     SDK documentation
@@ -278,8 +284,8 @@ You can also track your event data from your Flutter app via the [**Flutter SDK*
 When sending your events to a data warehouse via RudderStack, you need not define a schema for the event data before sending it from your source. Instead, RudderStack automatically does that for you by following a predefined warehouse schema. This schema defines the different tables and columns created based on different events.
 
 <div class="infoBlock">
-Refer to the <a href="./data-warehouse-integrations/warehouse-schemas">Warehouse Schema documentation</a> for more details.
 
+Refer to the <a href="./data-warehouse-integrations/warehouse-schemas">Warehouse Schema documentation</a> for more details.
 </div>
 
 ### Workspace Token
