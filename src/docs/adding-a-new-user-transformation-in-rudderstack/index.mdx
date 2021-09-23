@@ -26,6 +26,7 @@ Here's a quick 2-minute walkthrough of this feature:
 https://www.youtube.com/watch?v=-1F4YeJCXU8
 
 <div class="infoBlock">
+
   For details on how to add a transformation in RudderStack, check the{" "}
   <a href="https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack#adding-a-transformation">
     Adding a New Transformation
@@ -34,6 +35,7 @@ https://www.youtube.com/watch?v=-1F4YeJCXU8
 </div>
 
 <div class="successBlock">
+
   You can refer to our{" "}
   <a href="https://github.com/rudderlabs/sample-user-transformers">
     Transformations
@@ -43,6 +45,7 @@ https://www.youtube.com/watch?v=-1F4YeJCXU8
 </div>
 
 <div class="warningBlock">
+
 <strong>Transformations only work for the Cloud mode destinations.</strong>
 
 To know more about the Cloud mode in RudderStack, check out the <a href="../get-started/rudderstack-connection-modes">RudderStack Connection Modes</a> guide.
@@ -84,6 +87,7 @@ To know more about the Cloud mode in RudderStack, check out the <a href="../get-
 <span class="imageTitle"></span>
 
 <div class="infoBlock">
+
 Our <a href="https://github.com/rudderlabs/sample-user-transformers">Transformations</a> GitHub repository contains some useful templates that you can use to create your own transformations.
 
 You can copy-paste the entire code of any of the functions present in this repository into the <strong>Transformation</strong> window.
@@ -91,6 +95,7 @@ You can copy-paste the entire code of any of the functions present in this repos
 </div>
 
 <div class="warningBlock">
+
   Remember to delete the pre-populated{" "}
   <code class="inline-code">transformEvent</code> function in such cases, before
   pasting your code.
@@ -120,6 +125,7 @@ export function transformBatch(events, metadata) {
 ```
 
 <div class="dangerBlock"> 
+
 <strong>Disclaimer for using <code class="inline-code">transformBatch</code></strong>
 
 Make sure you pass on the <code class="inline-code">messageID</code> from the input event onto the output event. If the <code class="inline-code">messageID</code> is passed on, the order of delivery of events is preserved. <strong>Without it, this order may not be maintained</strong>.
@@ -127,7 +133,6 @@ Make sure you pass on the <code class="inline-code">messageID</code> from the in
 It is highly recommended to use <code class="inline-code">transformEvent</code> in every possible case as it ensures event ordering in all cases.
 
 In case a <code class="inline-code">transformBatch</code> is required and event ordering is important, make sure to pass on the <code class="inline-code">messageID</code>.
-
 </div>
 
 ## Libraries
@@ -161,10 +166,10 @@ To create a library, follow these steps:
 />
 
 <div class="warningBlock">
+
 <strong>RudderStack does not support the deletion of libraries as of now.</strong>
 
 This is to ensure that you don't break any existing transformations that use the library that you might be trying to delete.
-
 </div>
 
 ## Using Libraries in Transformations
@@ -241,6 +246,7 @@ import {
 RudderStack injects a function `metadata(event)` into your transformations as an argument. This allows you to access the event metadata variables that help you customize your transformations.
 
 <div class="infoBlock">
+
   <code class="inline-code">metadata()</code> takes the event as input and
   returns the metadata of the event.
 </div>
@@ -282,56 +288,6 @@ You can make any number of external API requests in your transformation function
 
 An example of how to use the `fetch` function in transformations is shown below:
 
-<!--{% tabs %}
-{% tab title="Basic" %}
-
-```text
-export async function transformEvent(event) {
-    const res = await fetch("any_api_endpoint");
-    event.response = JSON.stringify(res);
-    return event;
-}
-```
-
-{% endtab %}
-
-{% tab title="POST" %}
-
-```text
-export async function transformEvent(event) {
-    const res = await fetch("post_url", {
-        method: "POST", // POST, PUT, DELETE, GET, etc.
-        body: JSON.stringify(event),
-        headers: {
-         "Content-Type": "application/json;charset=UTF-8",
-        },
-    });
-    event.response = JSON.stringify(res);
-    return event;
-}
-```
-
-{% endtab %}
-
-{% tab title="Headers" %}
-
-```text
-export async function transformEvent(event) {
-    const res = await fetch("post_url", {
-        method: "POST", // POST, PUT, DELETE, GET, etc.
-        headers: {
-         "Content-Type": "application/json;charset=UTF-8",
-         "Authorization": "Bearer <your_authorization_token>"
-        },
-        body: JSON.stringify(event),
-    });
-    event.response = JSON.stringify(res);
-    return event;
-}
-```
-
-{% endtab %}
-{% endtabs %}-->
 
 <Tabs>
   <TabList>
@@ -386,6 +342,7 @@ export async function transformEvent(event) {
 </Tabs>
 
 <div class="successBlock">
+
   To see how this feature is used in more detail, check out the{" "}
   <a href="https://github.com/rudderlabs/sample-user-transformers/blob/sampleTransformationV1/EnrichWithClearbit.js">
     Clearbit enrichment example
@@ -394,8 +351,8 @@ export async function transformEvent(event) {
 </div>
 
 <div class="infoBlock">
-For improved performance, we recommend using `batch` API requests instead of a separate API request for each event whenever possible.
 
+For improved performance, we recommend using `batch` API requests instead of a separate API request for each event whenever possible.
 </div>
 
 ## Debugging with Logs
@@ -424,6 +381,7 @@ On running a test on the above code, you can see the logs in the **Logs** sectio
 />
 
 <div class="infoBlock">
+
   Arguments to the <code class="inline-code">log</code> function can be a
   String, Number or Object.
 </div>
@@ -438,6 +396,7 @@ You should take into account the memory and time limits when adding a new transf
 | Time Limit   | 4 seconds |
 
 <div class="warningBlock">
+
   The user transformation fails if these limits are exceeded.
 </div>
 

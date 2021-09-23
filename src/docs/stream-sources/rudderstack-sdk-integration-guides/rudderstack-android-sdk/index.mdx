@@ -34,7 +34,7 @@ To set up the RudderStack Android SDK, there are a few prerequisites as mentione
     <li>
       {" "}
       If you're using the <strong>open-source</strong> version of RudderStack, you
-      are required to set up your own data plane by [installing and setting up RudderStack](https://docs.rudderstack.com/installing-and-setting-up-rudderstack)
+      are required to set up your own data plane by <a href="../../../get-started/installing-and-setting-up-rudderstack">installing and setting up RudderStack</a>
       in your preferred dev environment.
     </li>
     <li>
@@ -152,30 +152,36 @@ RudderClient rudderClient = RudderClient.getInstance(
   </TabList>
     <TabPanels>
       <TabPanel>
-        <pre>```kotlin
-        val rudderClient = RudderClient.getInstance(
-            this,
-            WRITE_KEY,
-            RudderConfig.Builder()
+<span>
+
+```kotlin
+val rudderClient = RudderClient.getInstance(
+    this,
+    WRITE_KEY,
+    RudderConfig.Builder()
+        .withDataPlaneUrl(DATA_PLANE_URL)
+        .withTrackLifecycleEvents(true)
+        .withRecordScreenViews(true)
+        .build()
+)
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+RudderClient rudderClient = RudderClient.getInstance(
+        this,
+        WRITE_KEY,
+        new RudderConfig.Builder()
                 .withDataPlaneUrl(DATA_PLANE_URL)
                 .withTrackLifecycleEvents(true)
                 .withRecordScreenViews(true)
                 .build()
-        )
-        ```</pre>
-      </TabPanel>
-      <TabPanel>
-        ```java
-        RudderClient rudderClient = RudderClient.getInstance(
-                this,
-                WRITE_KEY,
-                new RudderConfig.Builder()
-                        .withDataPlaneUrl(DATA_PLANE_URL)
-                        .withTrackLifecycleEvents(true)
-                        .withRecordScreenViews(true)
-                        .build()
-        );
-        ```
+);
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -231,22 +237,28 @@ rudderClient.track(
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```kotlin
-        rudderClient.track(
-            "Product Added",
-            RudderProperty()
-                .putValue("product_id", "product_001")
-        )
-        ```
+<span>
+
+```kotlin
+rudderClient.track(
+    "Product Added",
+    RudderProperty()
+        .putValue("product_id", "product_001")
+)
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```java
-        rudderClient.track(
-                "Product Added",
-                new RudderProperty()
-                        .putValue("product_id", "product_001")
-        );
-        ```
+<span>
+
+```java
+rudderClient.track(
+        "Product Added",
+        new RudderProperty()
+                .putValue("product_id", "product_001")
+);
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -335,48 +347,54 @@ rudderClient.identify("test_user_id", traits, null;
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```kotlin
-        val traits = RudderTraits()
-        traits.putBirthday(Date())
-        traits.putEmail("abc@123.com")
-        traits.putFirstName("First")
-        traits.putLastName("Last")
-        traits.putGender("m")
-        traits.putPhone("5555555555")
-        val address = RudderTraits.Address()
-        address.putCity("City")
-        address.putCountry("USA")
-        traits.putAddress(address)
-        traits.put("boolean", Boolean.TRUE)
-        traits.put("integer", 50)
-        traits.put("float", 120.4f)
-        traits.put("long", 1234L)
-        traits.put("string", "hello")
-        traits.put("date", Date(System.currentTimeMillis()))
-        rudderClient.identify("test_user_id", traits, null)
-        ```
+<span>
+
+```kotlin
+val traits = RudderTraits()
+traits.putBirthday(Date())
+traits.putEmail("abc@123.com")
+traits.putFirstName("First")
+traits.putLastName("Last")
+traits.putGender("m")
+traits.putPhone("5555555555")
+val address = RudderTraits.Address()
+address.putCity("City")
+address.putCountry("USA")
+traits.putAddress(address)
+traits.put("boolean", Boolean.TRUE)
+traits.put("integer", 50)
+traits.put("float", 120.4f)
+traits.put("long", 1234L)
+traits.put("string", "hello")
+traits.put("date", Date(System.currentTimeMillis()))
+rudderClient.identify("test_user_id", traits, null)
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```java
-        RudderTraits traits = new RudderTraits();
-        traits.putBirthday(new Date());
-        traits.putEmail("abc@123.com");
-        traits.putFirstName("First");
-        traits.putLastName("Last");
-        traits.putGender("m");
-        traits.putPhone("5555555555");
-        RudderTraits.Address address = new RudderTraits.Address();
-        address.putCity("City");
-        address.putCountry("USA");
-        traits.putAddress(address);
-        traits.put("boolean", Boolean.TRUE);
-        traits.put("integer", 50);
-        traits.put("float", 120.4f);
-        traits.put("long", 1234L);
-        traits.put("string", "hello");
-        traits.put("date", new Date(System.currentTimeMillis()));
-        rudderClient.identify("test_user_id", traits, null;
-        ```
+<span>
+
+```java
+RudderTraits traits = new RudderTraits();
+traits.putBirthday(new Date());
+traits.putEmail("abc@123.com");
+traits.putFirstName("First");
+traits.putLastName("Last");
+traits.putGender("m");
+traits.putPhone("5555555555");
+RudderTraits.Address address = new RudderTraits.Address();
+address.putCity("City");
+address.putCountry("USA");
+traits.putAddress(address);
+traits.put("boolean", Boolean.TRUE);
+traits.put("integer", 50);
+traits.put("float", 120.4f);
+traits.put("long", 1234L);
+traits.put("string", "hello");
+traits.put("date", new Date(System.currentTimeMillis()));
+rudderClient.identify("test_user_id", traits, null;
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -437,24 +455,30 @@ rudderClient.screen(
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```kotlin
-        rudderClient.screen(
-            "MainActivity",
-            "HomeScreen",
-            RudderProperty().putValue("foo", "bar"),
-            null
-        )
-        ```
+<span>
+
+```kotlin
+rudderClient.screen(
+    "MainActivity",
+    "HomeScreen",
+    RudderProperty().putValue("foo", "bar"),
+    null
+)
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```java
-        rudderClient.screen(
-            "MainActivity",
-            "HomeScreen",
-            new RudderProperty().putValue("foo", "bar"),
-            null
-        );
-        ```
+<span>
+
+```java
+rudderClient.screen(
+    "MainActivity",
+    "HomeScreen",
+    new RudderProperty().putValue("foo", "bar"),
+    null
+);
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -550,7 +574,7 @@ We don't persist the traits for the group across the sessions
 
 The `alias` call associates the user with a new identification. A sample `alias` call for the API is below:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -566,7 +590,32 @@ rudderClient.alias("test_new_id");
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```kotlin
+rudderClient.alias("test_new_id")
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+rudderClient.alias("test_new_id");
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 Alternatively, you can use the following method signature
 
@@ -581,7 +630,7 @@ We replace the old `userId` with the `newUserId` and we persist that identificat
 
 You can use the `reset` method to clear the persisted `traits` for the `identify` call. This is required for `Logout` operations.
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -597,7 +646,32 @@ rudderClient.reset();
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Curl</Tab>
+    <Tab>Httpie</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```kotlin
+rudderClient.reset()
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+rudderClient.reset();
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Configuring your RudderStack Client
 
@@ -630,7 +704,7 @@ You can set your `device-token` for push notification to be sent to the destinat
 
 Follow the code snippets below:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```bash
@@ -646,7 +720,32 @@ rudderClient.putDeviceToken("your_device_token");
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>JAVA</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```bash
+rudderClient.putDeviceToken("your_device_token")
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```bash
+rudderClient.putDeviceToken("your_device_token");
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Advertisement ID
 
@@ -655,7 +754,7 @@ We collect the `advertisementId` if it is enabled by the user and the App has th
 Apart from it, if you want to set the `advertisingId` by yourself, you can do so using the `updateWithAdvertisingId` method and passing the `advertisingId`.
 
 <div class="warningBlock">
-You need to call `updateWithAdvertisingId` method before calling `getInstance`
+You need to call <code class="inline-code">updateWithAdvertisingId</code> method before calling <code class="inline-code">getInstance</code>
 
 </div>
 
@@ -695,7 +794,7 @@ The method <code class="inline-code">getAnonymousId</code> is available from v1.
 
 The RudderStack Android SDK allows you to enable or disable event flow to a specific destination or all the destinations to which the source is connected. You can specify these destinations by creating a `RudderOption` object as shown:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -727,7 +826,48 @@ option.putIntegration(<RudderIntegration.FACTORY>,<boolean>);
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>Java</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```kotlin
+val option = RudderOption()
+//default value for `All` is true
+option.putIntegration("All", false)
+// specifying destination by its display name
+option.putIntegration("Google Analytics", true)
+option.putIntegration(<DESTINATION DISPLAY NAME>, <boolean>)
+// specifying destination by its Factory object
+option.putIntegration(AppcenterIntegrationFactory.FACTORY,true);
+option.putIntegration(<RudderIntegration.FACTORY>,<boolean>);
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+RudderOption option = new RudderOption();
+// default value for `All` is true
+option.putIntegration("All", false);
+// specifying destination by its display name
+option.putIntegration("Google Analytics", true);
+option.putIntegration(<DESTINATION DISPLAY NAME>, <boolean>);
+// specifying destination by its Factory object
+option.putIntegration(AppcenterIntegrationFactory.FACTORY,true);
+option.putIntegration(<RudderIntegration.FACTORY>,<boolean>);
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <div class="infoBlock">
 The keyword <code class="inline-code">All</code> in the above snippet represents all the destinations the source is connected to. Its value is set to <code class="inline-code">true</code> by default.
@@ -745,7 +885,7 @@ You can pass the destination\(s\) specified in the above snippet to the SDK in t
 
 This is helpful when you want to enable/disable sending the events across all the event calls made using the SDK to the specified destination\(s\).
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -778,13 +918,55 @@ RudderClient client = RudderClient.getInstance(
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>Java</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```kotlin
+var rudderClient = RudderClient.getInstance(
+            this,
+            <WRITE_KEY>,
+            RudderConfig.Builder()
+                .withDataPlaneUrl(<DATA_PLANE_URL>)
+                .withLogLevel(RudderLogger.RudderLogLevel.DEBUG)
+                .withTrackLifecycleEvents(false)
+                .withRecordScreenViews(false)
+                .build(),
+            option // passing the rudderoption object containing the list of destination(s) you specified
+        )
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+RudderClient client = RudderClient.getInstance(
+                this,
+                <WRITE_KEY>,
+                new RudderConfig.Builder()
+                        .withEndPointUri(<END_POINT_URL>)
+                        .build(),
+                option // passing the rudderoption object containing the list of destination(s) you specified
+        );
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ### 2. Passing the destinations while making any event call:
 
 This approach is helpful when you want to enable/disable sending only a particular event to the specified destination\(s\) or if you want to override the specified destinations passed with the SDK initialization for a particular event.
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -810,7 +992,42 @@ rudderClient.track(
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>Java</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```kotlin
+rudderClient.track(
+                    "Product Added",
+                    RudderProperty()
+                            .putValue("product_id", "product_001"),
+                    option // passing the rudderoption object containing the list of destination you specified
+            )
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+rudderClient.track(
+                "Product Added",
+                new RudderProperty()
+                        .putValue("product_id", "product_001"),
+                option // passing the rudderoption object containing the list of destination(s) you specified
+        );
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <div class="infoBlock">
 If you specify the destinations both while initializing the SDK as well as while making an event call, then the destinations specified at the event level only will be considered.
@@ -834,7 +1051,7 @@ rudderClient.identify(
 
 If you run into any issues regarding the RudderStack Android SDK, you can turn on the `VERBOSE` or `DEBUG` logging to find out what the issue is. To turn on the logging, change your `RudderClient` initialization to the following:
 
-{% tabs %}
+<!--{% tabs %}
 {% tab title="Kotlin" %}
 
 ```kotlin
@@ -864,7 +1081,46 @@ RudderClient rudderClient = RudderClient.getInstance(
 ```
 
 {% endtab %}
-{% endtabs %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Kotlin</Tab>
+    <Tab>Java</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```kotlin
+val rudderClient: RudderClient = RudderClient.getInstance(
+this,
+YOUR_WRITE_KEY,
+RudderConfig.Builder()
+.withDataPlaneUrl(DATA_PLANE_URL)
+.withLogLevel(RudderLogger.RudderLogLevel.DEBUG)
+.build()
+)
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```java
+RudderClient rudderClient = RudderClient.getInstance(
+    this,
+    YOUR_WRITE_KEY,
+    new RudderConfig.Builder()
+        .withDataPlaneUrl(DATA_PLANE_URL)
+        .withLogLevel(RudderLogger.RudderLogLevel.DEBUG)
+        .build()
+);
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 ## Can I develop a Device Mode destination if RudderStack doesn't support it already?
 
@@ -1082,14 +1338,20 @@ Map<String,Object> traitsObj = rudderClient.getRudderContext().getTraits();
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```kotlin
-            val traits = rudderClient!!.getRudderContext().getTraits()
-        ```
+<span>
+
+```kotlin
+    val traits = rudderClient!!.getRudderContext().getTraits()
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```java
-            Map&lt;String , Object&gt; traitsObj = rudderClient.getRudderContext().getTraits();
-        ```
+<span>
+
+```java
+    Map<String , Object> traitsObj = rudderClient.getRudderContext().getTraits();
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>

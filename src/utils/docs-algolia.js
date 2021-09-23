@@ -1,81 +1,90 @@
-/* const docsSearchQuery = `{
-    docsSearch: allMdx {
-      edges {
-        node {
-          slug
-          headings(depth: h2) {
-            value
-          }
-          frontmatter {
-            title
-          }
+const docsQuery = `{
+  docs:  allMdx {
+    edges {
+      node {
+        slug
+        headings(depth: h2) {
+          value
         }
+        tableOfContents
+        excerpt(pruneLength: 50000)
       }
     }
   }
-`
+}`
 
-function docsToAlgoliaRecord({ node: { slug, title } }) {
-  return {
-    slug: slug,
-    title: title,
-  }
+function convertToSlug(pData) {
+  return pData
+    .toLowerCase()
+    .replace(" ", "-")
+    .replace(/ /g, "-")
+    .replace(".", "-")
+    .replace("?", "")
+    .replace(/[^\w-]+/g, "")
 }
-
-function makeSectionUrl(str) {
-  str = str.toLowerCase()
-  str =
-    "#" +
-    str
-      .replace("/", "")
-      .replace("?", "")
-      .replace(".", "")
-      .replace(" ", "-")
-      .replace("  ", "--")
-  return str
-}
-
-let tempArr = [] //final data to be passed to Algolia
-function getSearchData(data) {
-  let elSlug = data.node.slug
-  data.node.headings.map((i, k) => {
-    let tempJson = {}
-    tempJson["slug"] = elSlug + makeSectionUrl(i.value)
-    tempJson["title"] = i.value
-    tempArr.push(tempJson)
-    //console.log("Temp Json", tempArr)
-    return tempArr
-  })
-}
-
-/* function getSearchData(data) {
-  let tempArr = [] //final data to be passed to Algolia
-  let tempJson = {}
-  if (data.items.length === 0) {
-    tempJson["title"] = data.title
-    tempJson["section"] = data.slug + data.url
-    tempArr.push(tempJson)
-  } else {
-    data.items.map((item, i) => {
-      let childTempJson = getSearchData(item)
-      tempArr.push(childTempJson)
-    })
-  }
-  return tempArr
-} 
-
-//console.log("on map ", getSearchData(tempJsonData))
+ 
 
 const queries = [
   {
-    query: docsSearchQuery,
+    query: docsQuery,
     transformer: ({ data }) => {
-      //console.log("Temp Json", data)
-      return data.docsSearch.edges.map(node => getSearchData(node))
+      let tmpData = []
+      data.docs.edges.map(row => {
+        let tmpString = row.node.excerpt
+
+        //extract header paragraph
+        let strPos = tmpString.indexOf(row.node.tableOfContents.items[0].title)
+        let endPos = tmpString.indexOf(
+          row.node.headings.length > 0 ? row.node.headings[0].value : ""
+        )
+
+        let content = tmpString.substring(strPos, endPos - 1)
+
+        tmpString = tmpString.replace(content, "")
+        tmpData.push({
+          objectID:
+            row.node.slug +
+            "-" +
+            convertToSlug(row.node.tableOfContents.items[0].title),
+          pageSlug: row.node.slug.charAt(row.node.slug.length - 1) == '/' ? row.node.slug.replace(row.node.slug.charAt(row.node.slug.length - 1), '') : row.node.slug,
+          //pageSlug: row.node.slug,
+          pageTitle: row.node.tableOfContents.items[0].title,
+          sectionId: convertToSlug(row.node.tableOfContents.items[0].title),
+          SectionTitle: row.node.tableOfContents.items[0].title,
+          sectionContent: content,
+        })
+
+        for (var i = 0; i <= row.node.headings.length - 1; i += 1) {
+          strPos = 0
+          endPos = 0
+          content = ""
+
+          strPos = tmpString.indexOf(row.node.headings[i].value)
+
+          endPos =
+            i === row.node.headings.length - 1
+              ? tmpString.length
+              : tmpString.indexOf(row.node.headings[i + 1].value)
+
+          content = tmpString.substring(strPos, endPos - 1)
+          tmpString = tmpString.replace(content, "")
+
+          tmpData.push({
+            objectID: row.node.slug + "-" + convertToSlug(row.node.headings[i].value),
+            pageSlug: row.node.slug.charAt(row.node.slug.length - 1) == '/' ? row.node.slug.replace(row.node.slug.charAt(row.node.slug.length - 1), '') : row.node.slug,
+            //pageSlug: row.node.slug,
+            pageTitle: row.node.tableOfContents.items[0].title,
+            sectionId: convertToSlug(row.node.headings[i].value),
+            SectionTitle: row.node.headings[i].value,
+            sectionContent: content,
+          })
+        }
+      })
+      return tmpData 
     },
     indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs",
     settings: {},
   },
 ]
+
 module.exports = queries
- */

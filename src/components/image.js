@@ -19,6 +19,7 @@ function renderImage(image, classes, alt) {
 const Image = props => {
   return (
     <StaticQuery
+      /* Development query below */
       query={graphql`
         query {
           sanityimages: allSanityImageAsset {
@@ -31,6 +32,7 @@ const Image = props => {
           }
         }
       `}
+      /* Production query below */
       /* query={graphql`
         query {
           sanityimages: allSanityImageAsset {

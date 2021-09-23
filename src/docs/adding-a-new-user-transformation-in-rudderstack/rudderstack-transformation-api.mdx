@@ -17,8 +17,8 @@ The Transformations API is authenticated via HTTP Basic Authentication.
 You can authenticate your account when using the API by including your **email address** in the username field and the secret **access token** in the password field in Authorization, if you're using POSTMAN.
 
 <div class="warningBlock">
-It is mandatory to generate your access token before you make any API calls. If you have not generated your access token visit our [**Access Token**](api-access-token.md) page.
 
+It is mandatory to generate your access token before you make any API calls. If you have not generated your access token visit our <a href="api-access-token">Access Token</a> page.
 </div>
 
 <div class="dangerBlock">
@@ -45,6 +45,7 @@ Some examples are as shown:
 - Headers **- `Basic {Base64Encoded(myemailaddressis@gmail.com:1pHxUIA3jmxS2ip01zY696F80j7)}`**
 
 <div class="successBlock">
+
   To make a successful request all of the upcoming endpoints should include this
   header.
 </div>
@@ -197,6 +198,7 @@ Creating a transformation can be done in one of the two ways:
 **`publish: false` -** In this case, we only create revisions for the transformation, which means you cannot connect any destinations to it. It cannot be used for any incoming event traffic. However, if you wish to publish some revisions of transformations you can do so using our **Publish API.**
 
 <div class="successBlock">
+
   We will be using these two terms <strong>Published</strong> and{" "}
   <strong>Revisions</strong> for transformations and libraries throughout our
   docs.
@@ -911,6 +913,7 @@ Description of the library goes here
 {% endapi-method %}
 
 <div class="successBlock">
+
   The <code class="inline-code">publish</code> flag for a library works in the same way as for destinations.
 </div>
 
@@ -1113,28 +1116,6 @@ Get a single **published** library by ID.
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
-
-<!--{% tabs %}
-{% tab title="Curl" %}
-
-```markup
-curl --location -X GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
--H 'Authorization: Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN) \
--H 'Content-Type: application/json' \
-```
-
-{% endtab %}
-
-{% tab title="Httpie" %}
-
-```markup
-http GET 'https://api.rudderstack.com/libraries/1pT7933tHRBPlEMIZt5Zi3VIht1' \
-Authorization: 'Basic Base64Enc(EMAIL_ADDRESS:ACCESS_TOKEN)' \
-Content-Type:'application/json'
-```
-
-{% endtab %}
-{% endtabs %}-->
 
 <Tabs>
   <TabList>
@@ -1679,6 +1660,7 @@ curl --location -X POST 'https://api.rudderstack.com/transformations/libraries/p
 </Tabs>
 
 <div class="infoBlock">
+
   A few things to note:
   <ul>
     <li>
@@ -1694,10 +1676,9 @@ curl --location -X POST 'https://api.rudderstack.com/transformations/libraries/p
 </div>
 
 <div class="warningBlock">
-Whenever you call the <code class="inline-code">publish</code> API , we run tests in our server to make sure you won't save any transformation/libraries code that can lead to any exceptions.
 
+Whenever you call the `publish` API , we run tests in our server to make sure you won't save any transformation/libraries code that can lead to any exceptions.
 In case if your publish is failing, make sure to check your transformation code and the libraries that it is referring to.
-
 </div>
 
 ## Contact Us

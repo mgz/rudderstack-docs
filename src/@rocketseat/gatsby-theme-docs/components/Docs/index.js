@@ -21,7 +21,6 @@ export default function Docs({ mdx, pageContext }) {
   const shortCodes = {
     pre: (preProps) => {
       const props = preToCodeBlock(preProps);
-      console.log('Pre props', props);
   
       if (props) {
         return <Code {...props} />;

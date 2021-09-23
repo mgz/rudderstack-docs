@@ -6,6 +6,7 @@ module.exports = {
     letterSpacing: {
       "tight-2": "-.04em",
     },
+    
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -22,6 +23,7 @@ module.exports = {
         eastbay: "#3F3C7F",
         magenta: "#6e6ea4",
         midnight_sub: "#2e2e7c",
+        cardBackground:"#f5f9f9"
       },
       purpleNew: {
         custom: "#6e6ea4",

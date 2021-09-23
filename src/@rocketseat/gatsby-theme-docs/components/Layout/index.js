@@ -1,5 +1,5 @@
 /* @jsx jsx */
-import { useState, useRef, Fragment } from "react"
+import { useState, useRef, Fragment, useEffect } from "react"
 import { jsx, css } from "@emotion/react"
 import PropTypes from "prop-types"
 
@@ -24,13 +24,20 @@ export default function Layout({
   const disableTOC =
     disableTableOfContents === true || !headings || headings.length === 0
 
+  useEffect(() => {
+
+  }, [])
+
   function handleMenuOpen() {
     setMenuOpen(!isMenuOpen)
   }
 
   return (
     <Fragment>
-      <DocsNavigation handleMenuOpen={handleMenuOpen} isMenuOpen={isMenuOpen} />
+      <DocsNavigation
+       handleMenuOpen={handleMenuOpen}
+       isMenuOpen={isMenuOpen}
+      />
       <Container>
         <div className="sidebarWrapper">
           <div

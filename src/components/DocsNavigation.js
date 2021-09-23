@@ -2,51 +2,25 @@ import React, { useEffect, useState } from "react"
 import RsLogo from "../images/rudderstack-logo-v2.svg"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
-import DocsSearchBox from "./docsSearchBox"
+import DocsSearchBox from "./DocsSearchBox"
 import { graphql, StaticQuery } from "gatsby"
 import { TempButton } from "./tempDataCheck"
 import tailwindConfig from "../../tailwind.config"
+import DocSearchContentWrapper from "./DocSearchContentWrapper"
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
   process.env.GATSBY_ALGOLIA_SEARCH_APIKEY
 )
 
-const DocsNavigation = ({ isMenuOpen, handleMenuOpen }) => {
-  /* let { data } = useStaticQuery(
-    graphql`
-      query {
-        allMdx {
-          edges {
-            node {
-              slug
-              tableOfContents
-            }
-          }
-        }
-      }
-    `
-  ) */
 
-  const [currentRefineText, setCurrentRefineText] = useState("")
+const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
+  const [isSearchOpen, setSearchOpen] = useState(false)
+  const [currentSearchText, setCurrentSearchText] = useState("")
+  const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
 
   return (
     <div className="headerNav">
-      <StaticQuery
-        query={graphql`
-          query {
-            allMdx {
-              edges {
-                node {
-                  slug
-                  tableOfContents
-                }
-              }
-            }
-          }
-        `}
-        render={data => {}}
-      />
       <div className="headerContainer">
         <div
           className={`mobNavIconWrapper ${isMenuOpen ? "active" : ""}`}
@@ -90,7 +64,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen }) => {
             </li> */}
           </ul>
         </nav>
-        <div className="docsSearch">
+        <div className="docsSearch" onClickCapture={() => setSearchOpen(true)}>
           <span className="docsSearchIcon">
             <svg
               preserveAspectRatio="xMidYMid meet"
@@ -111,20 +85,38 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen }) => {
               </g>
             </svg>
           </span>
-          <input type="text" placeholder="Search.." className="docsSearchbar" />
-          {/* <InstantSearch
-            searchClient={searchClient}
-            indexName={process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs"}
-          >
-            <Configure hitsPerPage={10} />
-            <div className="docsSearchWrapper">
-              <DocsSearchBox
-                onRefineTextChange={val => {
-                  setCurrentRefineText(val)
-                }}
-              />
+          <input type="text" placeholder="Search.." className="docsSearchbar" onClickCapture={() => setSearchOpen(true)} />
+        </div>
+        
+        <div className="searchWrapper">
+          <div className={`searchOverlay ${isSearchOpen ? 'active' : ''}`} onClick={() => setSearchOpen(false)}></div>
+          <div className={`instantSearchWrapper ${isSearchOpen ? 'active' : ''}`}>
+              <InstantSearch
+                searchClient={searchClient}
+                indexName={process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs"}
+              >
+                <Configure hitsPerPage={10} />
+                <div className="docsSearchWrapper">
+                  <DocsSearchBox
+                    onRefineTextChange={val => {
+                      setCurrentSearchText(val);
+                    }}
+                    isSearchOpen={isSearchOpen}
+                    currentSearchText={currentSearchText}
+                    setSearchOpen={setSearchOpen}
+                  />
+                </div>
+                <div id="docsSearchHitsContainer">
+                  <div data-reactroot>
+                    <DocSearchContentWrapper
+                      isSearchOpen={isSearchOpen}
+                      onRefineHitsCountChange={setCurrentRefineHitsCount}
+                      currentSearchText={currentSearchText}
+                    />
+                  </div>
+                </div>
+              </InstantSearch>
             </div>
-          </InstantSearch> */}
         </div>
       </div>
     </div>
