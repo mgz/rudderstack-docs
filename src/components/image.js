@@ -19,7 +19,8 @@ function renderImage(image, classes, alt) {
 const Image = props => {
   return (
     <StaticQuery
-      query={graphql`
+      /* Development query below */
+      /* query={graphql`
         query {
           sanityimages: allSanityImageAsset {
             edges {
@@ -30,8 +31,9 @@ const Image = props => {
             }
           }
         }
-      `}
-      /* query={graphql`
+      `} */
+      /* Production query below */
+      query={graphql`
         query {
           sanityimages: allSanityImageAsset {
             edges {
@@ -45,7 +47,7 @@ const Image = props => {
             }
           }
         }
-      `} */
+      `}
       render={data => {
         const imgdata = data.sanityimages.edges.find(
           imgdata => imgdata.node._id === props.props

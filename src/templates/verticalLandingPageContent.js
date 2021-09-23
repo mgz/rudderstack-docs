@@ -11,7 +11,7 @@ const OurLogo = loadable(() => import("../components/ourlogo"))
 const Testimonial = loadable(() => import("../components/testimonial"))
 
 const VerticalLandingPageContent = ({ data, location }) => {
-  //console.log("VerticalLandingPageContent", data)
+  // console.log("VerticalLandingPageContent", data)
   return (
     <Layout location={location}>
       <Helmet>
