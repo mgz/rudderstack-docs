@@ -6,7 +6,7 @@ const docsQuery = `{
         headings(depth: h2) {
           value
         }
-        tableOfContents
+        tableOfContents(maxDepth: 1)
         excerpt(pruneLength: 50000)
       }
     }

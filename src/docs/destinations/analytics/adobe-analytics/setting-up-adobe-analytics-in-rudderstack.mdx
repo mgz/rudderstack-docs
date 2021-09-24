@@ -16,8 +16,8 @@ Before configuring Adobe Analytics as a destination, verify if the source platfo
 | **Cloud Mode**      | **-**         | **-**      | **-**      |
 
 <div class="infoBlock">
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 </div>
 
 Once you've confirmed that the source platform supports sending data to Adobe Analytics, follow these steps:
@@ -25,11 +25,8 @@ Once you've confirmed that the source platform supports sending data to Adobe An
 - Choose a source for which you would like to add Adobe Analytics as a destination.
 
 <div class="infoBlock">
-Follow the guide on <div class="infoBlock">
+
 Follow the guide on <a href="../../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> for more details.
-
-</div> for more details.
-
 </div>
 
 - From the list of destinations, select **Adobe Analytics**. Assign a name to the destination and click on **Next**.
@@ -44,20 +41,20 @@ This section lists all the relevant connection settings to successfully set up A
 - **Tracking Server URL**: The `trackingServer` variable determines the location an image request is sent. Eg: If url is [`http://abc.a.b`](http://abc.a.b) ,the tracking server URL will be `abc.a.b`.
 
 <div class="warningBlock">
-<strong>If this variable is defined incorrectly, your implementation may experience data loss.</strong>
 
+<strong>If this variable is defined incorrectly, your implementation may experience data loss.</strong>
 </div>
 
 <div class="infoBlock">
-For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html?lang=en">Adobe Analytics documentation</a>.
 
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserver.html?lang=en">Adobe Analytics documentation</a>.
 </div>
 
 - **Tracking Server Secure URL**: The `trackingServerSecure` variable determines the location an image request is sent over HTTPS. If this variable is not defined correctly, your implementation can experience data loss.
 
 <div class="infoBlock">
-For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserversecure.html?lang=en">Adobe Analytics documentation</a>.
 
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/config-vars/trackingserversecure.html?lang=en">Adobe Analytics documentation</a>.
 </div>
 
 - **Report Suite ID**\(s\): The Report Suite ID can be found in your Adobe Analytics Settings page. Multiple IDs can be separated by commas. For example: `ab.cd`,`ef.gh`,`ij.kl`.
@@ -65,8 +62,8 @@ For more information on this setting, refer to the <a href="https://experiencele
 - **Heartbeat Tracking Server URL**: If assigned, this will be used as tracking server URL instead of the URL assigned in the **Tracking Server URL** field. RudderStack will set all heartbeat configurations if this URL is present.
 
 <div class="infoBlock">
-For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/media-analytics/using/sdk-implement/setup/setup-overview.html?lang=en">Adobe Analytics documentation</a>.
 
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/media-analytics/using/sdk-implement/setup/setup-overview.html?lang=en">Adobe Analytics documentation</a>.
 </div>
 
 - **Adobe Heartbeat Settings**: This setting is used to map your RudderStack video events to Adobe Heartbeat Events. Find more information on how this mapping is done in the [**Adobe Analytics Heartbeat Measurement**](adobe-analytics-heartbeat.md) page.
@@ -80,8 +77,8 @@ For more information on this setting, refer to the <a href="https://experiencele
 - **Drop Visitor ID**: If enabled, RudderStack does not assign the `userId` to `visitorID`.
 
 <div class="infoBlock">
-For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-analytics.html?lang=en#section-6053a6b7c16c466a9f9fdbf9cb9db3df">Adobe Analytics documentation</a>.
 
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/id-service/using/implementation/setup-analytics.html?lang=en#section-6053a6b7c16c466a9f9fdbf9cb9db3df">Adobe Analytics documentation</a>.
 </div>
 
 ### Timestamps
@@ -116,8 +113,8 @@ For more information on this setting, refer to the <a href="https://experiencele
 - **Prefer Visitor ID**: Adobe does not allow sending both `visitorID` and timestamp. Hence, this option is used when the timestamp option is set as hybrid. Also, note that if this option is enabled, `visitorID` will be set. If disabled, the timestamp value will be set.
 
 <div class="infoBlock">
-For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/timestamp.html?lang=en">Adobe Analytics documentation</a>.
 
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/timestamp.html?lang=en">Adobe Analytics documentation</a>.
 </div>
 
 - **Enable pageName for Track Events**: When enabled, RudderStack only tracks events by sending a `pageName`.
@@ -145,8 +142,8 @@ If you want to set `prop1` to Adobe's context data `property1`, then map with `c
 If you want to send top level properties `anonymousId`, `messageId`, `event` then simply enter the key.
 
 <div class="infoBlock">
-For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=en">Adobe Analytics documentation</a>.
 
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/contextdata.html?lang=en">Adobe Analytics documentation</a>.
 </div>
 
 - **Add Prefix for Context Data**: If you would like to prefix your RudderStack properties before sending them as `contextData`, you can enter a prefix here which will be automatically appended.
@@ -155,13 +152,13 @@ For more information on this setting, refer to the <a href="https://experiencele
 This setting lets you map any RudderStack property with the eVar you want.
 
 <div class="infoBlock">
-Only enter the index number of the eVar you want to set.
 
+Only enter the index number of the eVar you want to set.
 </div>
 
 <div class="infoBlock">
-For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html?lang=en">Adobe Analytics documentation</a>.
 
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar.html?lang=en">Adobe Analytics documentation</a>.
 </div>
 
 <img src="../../../../images/assets/image (108).png" />
@@ -171,13 +168,13 @@ For more information on this setting, refer to the <a href="https://experiencele
 This setting lets you map any RudderStack property with the hierarchy variable you want.
 
 <div class="infoBlock">
-Only enter the index number of the hierarchy variable that you want to set.
 
+Only enter the index number of the hierarchy variable that you want to set.
 </div>
 
 <div class="infoBlock">
-For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html?lang=en">Adobe Analytics documentation</a>.
 
+For more information on this setting, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/hier.html?lang=en">Adobe Analytics documentation</a>.
 </div>
 
 - **Map Rudder Properties to Adobe list properties**: List variables are custom variables that you can use as per your requirement. They work similarly to eVars, except they can contain multiple values. Also, list variables do not have a character limit.
@@ -185,10 +182,10 @@ For more information on this setting, refer to the <a href="https://experiencele
 This setting lets you map any RudderStack property with the list you want.
 
 <div class="infoBlock">
+
 Enter only the index number of the list you want to set to. The list properties should be an array/string separated by commas. Otherwise, they will be dropped.
 
 For more information, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/list.html?lang=en">Adobe Analytics documentation</a>.
-
 </div>
 
 - **Map Rudder Property with Delimiters for list properties**: The list variables need to be sent as a string. So if there is a list of properties, it needs to be delimited. RudderStack lets you set any of the delimiters from `, ; / : |`.
@@ -198,10 +195,10 @@ For more information, refer to the <a href="https://experienceleague.adobe.com/d
 - **Map Rudder Properties to Adobe Custom properties**: Props are custom variables that you can use as per your requirement. This setting lets you map any RudderStack property with the prop you want to set it to.
 
 <div class="infoBlock">
+
 Enter only the index number of the prop you want to set.
 
 For more information, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/prop.html?lang=en">Adobe Analytics documentation</a>.
-
 </div>
 
 - **Map Rudder Property with Delimiters for Adobe Custom properties**: The property variables need to be sent as a string. So if there is a list of properties, it needs to be delimited. RudderStack lets you set any of the delimiters from `, ; / : |`.
@@ -212,8 +209,8 @@ For more information, refer to the <a href="https://experienceleague.adobe.com/d
 - **Increment or Currency Properties to add to merchandise events at event level**: The RudderStack property that has a currency/counter value should be added here. This will then be used to create the event string like `purchase,event5=19.9`. RudderStack automatically sets the `currencyCode` value. \(The default value is USD\).
 
 <div class="infoBlock">
-For more information, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/events-overview.html?lang=en">Adobe Analytics documentation</a>.
 
+For more information, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/events/events-overview.html?lang=en">Adobe Analytics documentation</a>.
 </div>
 
 ### Merchandise Product Level Settings
@@ -228,14 +225,14 @@ For more information, refer to the <a href="https://experienceleague.adobe.com/d
 - **Map Rudder Properties to eVars at product level**: Lets you map the RudderStack properties you want to set to eVars.
 
 <div class="infoBlock">
+
 Set only the index. The eVars will be appended with <code class="inline-code">|</code> and sent along with the product string.
 
 For more information, refer to the <a href="https://experienceleague.adobe.com/docs/analytics/implementation/vars/page-vars/evar-merchandising.html?lang=en">Adobe Analytics documentation</a>.
-
 </div>
 
 - **Product Identifier**: Adobe Analytics accepts only a single product identifier. This setting lets you choose from a SKU/ID/Name of the product.
 
 ## Contact Us
 
-For more information on any of the sections covered in this guide, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) \_\*\*\_channel.
+For more information on any of the sections covered in this guide, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.

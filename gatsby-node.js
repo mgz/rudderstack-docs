@@ -862,7 +862,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const integration_connections = await graphql(`
+  /* const integration_connections = await graphql(`
     {
       allGoogleSpreadsheetR1RedRudderstackIcData {
         edges {
@@ -890,5 +890,5 @@ exports.createPages = async ({ graphql, actions }) => {
       ),
       context: { slug: edge.node.slug },
     })
-  })
+  }) */
 }
