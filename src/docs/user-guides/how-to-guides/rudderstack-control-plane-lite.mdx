@@ -96,9 +96,9 @@ Your `rudder-docker.yml` should look like the following:
 $ helm install my-release ./ --set backend.controlPlaneJSON=true
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
 Refer to the [**Configuration**](https://docs.rudderstack.com/get-started/installing-and-setting-up-rudderstack/kubernetes#configuration) section for information on the parameters that can be configured during deployment.
-{% endhint %}
+</div>
 
 * Once you have completed these steps above successfully, [**send test events**](https://docs.rudderstack.com/get-started/installing-and-setting-up-rudderstack/sending-test-events) to verify the installation.
 
@@ -147,15 +147,15 @@ cp config/sample.env .env
 
 ## Using Hosted Control Plane for Device Mode Destinations <a id="using-hosted-control-plane-for-device-mode-destinations"></a>
 
-{% hint style="info" %}
+<div class="infoBlock">
 To know more about the difference between **Cloud mode** and **Device mode** in RudderStack, read the ****[**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
-{% endhint %}
+</div>
 
 RudderStack's [**web**](https://app.gitbook.com/@rudderlabs/s/rudderlabs-1/~/drafts/-MJRY7Fz5shtM06WXlym/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk), [**Android**](https://app.gitbook.com/@rudderlabs/s/rudderlabs-1/~/drafts/-MJRY7Fz5shtM06WXlym/rudderstack-sdk-integration-guides/rudderstack-android-sdk) and [**iOS**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-ios-sdk) ****SDKs expect the source configurations and the associated device mode destination configurations for initialization. If you are self-hosting the Control Plane, you will need to host these configurations on your own server such that the source configuration is available at  `<CONTROL_PLANE_URL>/sourceConfig`.
 
-{% hint style="success" %}
+<div class="successBlock">
 For RudderStack Cloud, the SDKs fetch this source configuration from [**https://api.rudderlabs.com/sourceConfig**](https://api.rudderlabs.com/sourceConfig).
-{% endhint %}
+</div>
 
 ### What is the Control Plane URL? <a id="what-is-the-control-plane-url"></a>
 
@@ -201,4 +201,4 @@ This solution assumes that you have already [**set up RudderStack**](https://doc
 
 ## Contact Us <a id="contact-us"></a>
 
-In case you come across any issues while setting up your self-hosted Control Plane using Control Plane Lite, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
+In case you come across any issues while setting up your self-hosted Control Plane using Control Plane Lite, feel free to [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.

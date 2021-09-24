@@ -7,13 +7,15 @@ description: >-
 
 # Cloud Mode
 
-{% hint style="info" %}
-For more information on sending events via the RudderStack Cloud mode, refer to the [**RudderStack Connection Modes**](https://docs.rudderstack.com/connections/rudderstack-connection-modes) guide.
-{% endhint %}
+<div class="infoBlock">
 
-{% hint style="success" %}
+For more information on sending events via the RudderStack Cloud mode, refer to the [**RudderStack Connection Modes**](https://docs.rudderstack.com/connections/rudderstack-connection-modes) guide.
+</div>
+
+<div class="successBlock">
+
 **Find the open-source transformer code for this destination in our** [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/profitwell).
-{% endhint %}
+</div>
 
 ## Getting Started
 
@@ -30,9 +32,10 @@ Once you have confirmed that the source platform supports sending events to Prof
 
 * From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **ProfitWell**.
 
-{% hint style="info" %}
+<div class="infoBlock">
+
 Follow our guide on [**Adding a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more information.
-{% endhint %}
+</div>
 
 * Assign a name to the destination, and click on **Next**. You will then see the following **Connection Settings** window:
 
@@ -46,9 +49,10 @@ To successfully configure ProfitWell as a Cloud Mode destination, enter the foll
 
 ![](https://user-images.githubusercontent.com/59817155/132687515-dd2246e4-2239-4971-994d-167513fa3c96.png)
 
-{% hint style="info" %}
+<div class="infoBlock">
+
 To send events to ProfitWell via the Cloud Mode, you don't need to enter the **Public API Key**.
-{% endhint %}
+</div>
 
 * Finally, click on **Next** to complete the setup. ProfitWell should now be configured and enabled as a destination in RudderStack.
 
@@ -56,9 +60,10 @@ To send events to ProfitWell via the Cloud Mode, you don't need to enter the **P
 
 The `identify` call lets you create or update a subscription for a particular user.
 
-{% hint style="info" %}
+<div class="infoBlock">
+
 For more information on the `identify` call, refer to the [**RudderStack Events Specification**](https://docs.rudderstack.com/rudderstack-api/api-specification/rudderstack-spec/identify) guide.
-{% endhint %}
+</div>
 
 A sample `identify` call is as shown:
 
@@ -86,16 +91,18 @@ A sample `identify` call is as shown:
   );
 ```
 
-{% hint style="info" %}
+<div class="infoBlock">
+
 RudderStack passes the fields `profitwellUserId` and `profitwellSubscriptionId` as `externalId`.
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 Note that:
-
-* The `externalId` of type `profitwellUserId` is mapped to ProfitWell's `user_id` field. 
-* The `externalId` of type `profitwellSubscriptionId` is mapped to ProfitWell's `subscription_id` field. 
-{% endhint %}
+<ul>
+    <li>The <code class="inline-code">externalId</code> of type <code class="inline-code">profitwellUserId</code> is mapped to ProfitWell's <code class="inline-code">user_id</code> field. </li>
+    <li>The <code class="inline-code">externalId</code> of type <code class="inline-code">profitwellSubscriptionId</code> is mapped to ProfitWell's <code class="inline-code">subscription_id</code> field. </li>
+</ul>
+</div>
 
 ### Identify Mapping
 
@@ -125,22 +132,25 @@ The following table lists all the supported fields for **`Updating Subscriptions
 | `status` | `status` |
 | `effectiveDate` | `effective_date` |
 
-{% hint style="info" %}
-While creating a subscription, if `effectiveDate` is not provided in the `identify` call, then RudderStack takes the date from the event call's `originalTimestamp`.
-{% endhint %}
+<div class="infoBlock">
 
-{% hint style="info" %}
+While creating a subscription, if `effectiveDate` is not provided in the `identify` call, then RudderStack takes the date from the event call's `originalTimestamp`.
+</div>
+
+<div class="infoBlock">
+
 For more information on using these fields, refer to the [**ProfitWell documentation**](https://profitwellapiv2.docs.apiary.io/#).
-{% endhint %}
+</div>
 
 RudderStack discards the `identify` event in the following two scenarios:
 
 * For a given `profitwellUserId`, a user account is not found in ProfitWell.
 * For a given `profitWellUserId`, a `profitwellSubscriptionId` is not found.
 
-{% hint style="info" %}
+<div class="infoBlock">
+
 If you provide a `userId`\(mapped to `user_alias` in ProfitWell\) or a `subscriptionAlias` \(mapped to `subscription_alias`\) in the `identify` call, a new user subscription is created if it is not already present.
-{% endhint %}
+</div>
 
 ## FAQs
 
@@ -152,4 +162,4 @@ To obtain your ProfitWell **Private API Key**, log into your ProfitWell dashboar
 
 ## Contact Us
 
-In case of any issues while configuring or using ProfitWell with RudderStack, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
+In case of any issues while configuring or using ProfitWell with RudderStack, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.

@@ -11,9 +11,9 @@ RudderStack stores the following two types of events into its cloud-specific buc
 * All the raw events ingested by RudderStack are stored.
 * In case of delivery failures, the final event payload along with the error is stored.
 
-{% hint style="success" %}
-The events are deleted from the bucket upon successful delivery of the events. **RudderStack does not persist any of the customer data**.
-{% endhint %}
+<div class="successBlock">
+The events are deleted from the bucket upon successful delivery of the events. <strong>RudderStack does not persist any of the customer data</strong>.
+</div>
 
 Follow the steps in this guide if you want RudderStack to back up the events in your **own** cloud-specific bucket.
 
@@ -40,17 +40,17 @@ Then follow these steps:
 * Specify your S3 bucket name for the variable `JOBS_BACKUP_BUCKET`.
 * Add the specific AWS IAM keys by following the [**Permissions for Amazon S3**](https://docs.rudderstack.com/user-guides/administrators-guide/bucket-configuration-settings#permissions-for-amazon-s3) section below.
 
-{% hint style="info" %}
-The `<prefix>` value for the **`JOBS_BACKUP_PREFIX`** variable refers to the path under the bucket in which RudderStack dumps the data. 
+<div class="infoBlock">
 
-For example, if **`JOBS_BACKUP_PREFIX`**is set to **`prefix`**, then RudderStack dumps the data in the location **`<your_s3_bucket>/prefix`**.
-{% endhint %}
+The <code class="inline-code">&lt;prefix&gt;</code> value for the <strong><code class="inline-code">JOBS_BACKUP_PREFIX</code></strong> variable refers to the path under the bucket in which RudderStack dumps the data. 
+For example, if <strong><code class="inline-code">JOBS_BACKUP_PREFIX</code></strong> s set to <strong><code class="inline-code">prefix</code></strong>  then RudderStack dumps the data in the location <strong><code class="inline-code">&lt;your_s3_bucket&gt;/prefix</code></strong> 
+</div>
 
-{% hint style="success" %}
-**If you're a RudderStack Pro/Enterprise user, you can share the Access Key ID and Secret Access Key with the RudderStack team by** [**contacting us**](https://resources.rudderstack.com/join-rudderstack-slack)**.**
+<div class="successBlock">
+<strong>If you're a RudderStack Pro/Enterprise user, you can share the Access Key ID and Secret Access Key with the RudderStack team by <a href="https://rudderstack.com/join-rudderstack-slack-community">contacting us</a>.</strong>
 
 The RudderStack team will then use the above credentials to authenticate RudderStack and enable it to back up events into your S3 bucket.
-{% endhint %}
+</div>
 
 #### Dumping events into your GCS bucket
 
@@ -68,11 +68,11 @@ Then, follow these steps:
 * Specify your GCS bucket name for the variable `JOBS_BACKUP_BUCKET`.
 * Specify the location of the downloaded JSON file containing the required permissions for the variable `GOOGLE_APPLICATION_CREDENTIALS`. You can obtain this JSON file by referring to the [**Permissions for GCS**](https://docs.rudderstack.com/user-guides/administrators-guide/bucket-configuration-settings#permissions-for-gcs) section below.
 
-{% hint style="success" %}
-**If you're a RudderStack Pro/Enterprise user, you can share the downloaded JSON containing the required permissions with the RudderStack team by** [**contacting us**](https://resources.rudderstack.com/join-rudderstack-slack)**.**
+<div class="successBlock">
+<strong>If you're a RudderStack Pro/Enterprise user, you can share the downloaded JSON containing the required permissions with the RudderStack team by <a href="https://rudderstack.com/join-rudderstack-slack-community">contacting us</a></strong>.
 
 The RudderStack team will then use this service account JSON file to authenticate RudderStack and dump the events into your GCS bucket.
-{% endhint %}
+</div>
 
 ### Kubernetes Setup
 
@@ -113,9 +113,9 @@ To use your own GCS bucket for RudderStack to dump the events, you need to perfo
   * **storage.objects.create**
   * **storage.objects.get**
 
-{% hint style="info" %}
+<div class="infoBlock">
 We recommend adding each permission one after the other.
-{% endhint %}
+</div>
 
 ![](../../.gitbook/assets/screenshot-2020-08-05-at-11.38.37-am.png)
 
@@ -153,4 +153,4 @@ Once the bucket is created, add the required permissions to it by following the 
 
 ## Contact Us
 
-For more information on any of the sections covered in this guide, you can you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
+For more information on any of the sections covered in this guide, you can you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.

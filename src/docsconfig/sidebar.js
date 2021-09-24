@@ -148,7 +148,7 @@ export const jsonData = [
                     {
                        "key":"add-an-application-class-to-you-android-application",
                        "title":"How to Add an Application Class to Your Android App",
-                       "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/add-an-application-class-to-you-android-application",
+                       "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk/add-an-application-class-to-you-android-application",
                        "content":[
                           
                        ]
