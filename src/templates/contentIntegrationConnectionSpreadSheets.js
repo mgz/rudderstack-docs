@@ -72,189 +72,225 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
           <div
             className={` relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0`}
           >
-            <div
-              className={`integration-connection-hero-container-${data.integration_connection.imageHeaderSource}`}
-            >
-              <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
-                <div className="">
-                  {data.integration_connection.imageHeaderSource === "mobile" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_mobile_ios" && (
-                      <StaticImage
-                        src="../images/ic_mobile_ios.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+            {data.integration_connection.imageHeaderSource === "warehouse" && (
+              <div
+                className={`integration-connection-hero-container-${data.integration_connection.imageHeaderSource}`}
+              >
+                <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
+                  <StaticImage
+                    src="../images/ic_warehouse.png"
+                    alt="Header image"
+                    placeholder="tracedSVG"
+                    className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                  />
+                </div>
 
-                  {data.integration_connection.imageHeaderSource === "mobile" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_mobile_android" && (
-                      <StaticImage
-                        src="../images/ic_mobile_android.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                <div
+                  className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-${data.integration_connection.imageHeaderSource}`}
+                >
+                  <div className="flex justify-center align-center h-full">
+                    <img
+                      src={data.integration_connection.destinationLogoImgUrl}
+                      className="h-5 sm:h-10 m-auto"
+                      alt="RudderStack animation"
+                      placeholder="tracedSVG"
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
+            {(data.integration_connection.imageHeaderSource === "mobile" ||
+              data.integration_connection.imageHeaderSource === "desktop") && (
+              <div
+                className={`integration-connection-hero-container-${data.integration_connection.imageHeaderSource}`}
+              >
+                <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
+                  <div className="">
+                    {data.integration_connection.imageHeaderSource ===
+                      "mobile" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_mobile_ios" && (
+                        <StaticImage
+                          src="../images/ic_mobile_ios.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource === "mobile" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_mobile_react-native" && (
-                      <StaticImage
-                        src="../images/ic_mobile_react-native.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "mobile" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_mobile_android" && (
+                        <StaticImage
+                          src="../images/ic_mobile_android.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource === "mobile" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_mobile_flutter" && (
-                      <StaticImage
-                        src="../images/ic_mobile_flutter.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "mobile" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_mobile_react-native" && (
+                        <StaticImage
+                          src="../images/ic_mobile_react-native.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_javascript" && (
-                      <StaticImage
-                        src="../images/ic_desktop_javascript.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "mobile" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_mobile_flutter" && (
+                        <StaticImage
+                          src="../images/ic_mobile_flutter.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_unity" && (
-                      <StaticImage
-                        src="../images/ic_desktop_unity.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_javascript" && (
+                        <StaticImage
+                          src="../images/ic_desktop_javascript.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_unity" && (
-                      <StaticImage
-                        src="../images/ic_desktop_unity.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_unity" && (
+                        <StaticImage
+                          src="../images/ic_desktop_unity.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_java" && (
-                      <StaticImage
-                        src="../images/ic_desktop_java.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_unity" && (
+                        <StaticImage
+                          src="../images/ic_desktop_unity.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_python" && (
-                      <StaticImage
-                        src="../images/ic_desktop_python.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_java" && (
+                        <StaticImage
+                          src="../images/ic_desktop_java.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_node-js" && (
-                      <StaticImage
-                        src="../images/ic_desktop_node-js.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_python" && (
+                        <StaticImage
+                          src="../images/ic_desktop_python.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_go" && (
-                      <StaticImage
-                        src="../images/ic_desktop_go.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_node-js" && (
+                        <StaticImage
+                          src="../images/ic_desktop_node-js.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_ruby" && (
-                      <StaticImage
-                        src="../images/ic_desktop_ruby.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_go" && (
+                        <StaticImage
+                          src="../images/ic_desktop_go.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_net" && (
-                      <StaticImage
-                        src="../images/ic_desktop_net.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_ruby" && (
+                        <StaticImage
+                          src="../images/ic_desktop_ruby.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
 
-                  {data.integration_connection.imageHeaderSource ===
-                    "desktop" &&
-                    data.integration_connection.imageHeaderName ===
-                      "ic_desktop_php" && (
-                      <StaticImage
-                        src="../images/ic_desktop_php.png"
-                        alt="Header image"
-                        placeholder="tracedSVG"
-                        className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
-                      />
-                    )}
-                  <div
-                    className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-${data.integration_connection.imageHeaderSource}`}
-                  >
-                    <div className="flex justify-center align-center h-full">
-                      <img
-                        src={data.integration_connection.destinationLogoImgUrl}
-                        className="h-5 sm:h-10 m-auto"
-                        alt="RudderStack animation"
-                        placeholder="tracedSVG"
-                      />
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_net" && (
+                        <StaticImage
+                          src="../images/ic_desktop_net.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
+
+                    {data.integration_connection.imageHeaderSource ===
+                      "desktop" &&
+                      data.integration_connection.imageHeaderName ===
+                        "ic_desktop_php" && (
+                        <StaticImage
+                          src="../images/ic_desktop_php.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
+                        />
+                      )}
+                    <div
+                      className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-${data.integration_connection.imageHeaderSource}`}
+                    >
+                      <div className="flex justify-center align-center h-full">
+                        <img
+                          src={
+                            data.integration_connection.destinationLogoImgUrl
+                          }
+                          className="h-5 sm:h-10 m-auto"
+                          alt="RudderStack animation"
+                          placeholder="tracedSVG"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

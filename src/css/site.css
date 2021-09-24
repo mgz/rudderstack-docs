@@ -352,6 +352,12 @@ body {
     position: relative;
   }
 
+  .integration-connection-hero-container-warehouse {
+    width: 490px;
+    margin: auto;
+    position: relative;
+  }
+
   .integration-connection-hero-logo-primary-mobile {
     width: 340px;
   }
