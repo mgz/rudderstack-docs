@@ -1604,9 +1604,48 @@ a.pageRef:hover .rightRefArrow {
   @apply bg-whiteColor-custom;
   height: 80px;
 }
-
 .docsSearch input[type="text"]{
   outline: none;
+}
+.apiCallType{
+  @apply text-whiteColor-custom;
+  @apply text-xs;
+  @apply px-2 py-1;
+  @apply mr-1;
+  @apply inline-block;
+  @apply align-middle;
+}
+.apiCallType.post{
+  @apply bg-green-successBorder;
+}
+.apiCallTitle{
+  @apply inline-block;
+  @apply align-middle;
+}
+.parameterTitle{
+  @apply text-lg;
+  color: #6c6c80;
+}
+.hostPath{
+  @apply px-3 py-2;
+  @apply rounded;
+  @apply mb-4;
+  background: #F2F2FA;
+}
+.apiSummary{
+  @apply block;
+  @apply mb-2;
+}
+.parameterBody{
+  @apply border border-grayColor-lightBorder;
+  @apply mb-5;
+}
+.parameterRow{
+  @apply grid;
+}
+
+.parameterBodyLeft, .parameterBodyCenter, .parameterBodyRight{
+  @apply block;
 }
 
 @media only screen and (min-width: 1023px) {

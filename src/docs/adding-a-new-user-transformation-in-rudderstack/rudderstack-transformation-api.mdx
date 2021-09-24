@@ -55,6 +55,7 @@ Some examples are as shown:
 RudderStack transformations are responsible for converting the received event data into a suitable destination-specific format. All the transformation codes are written in JavaScript.
 
 <div class="successBlock">
+
   We also support [user-specific
   transformations](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack)
   for real-time operations, such as aggregation and sampling.
@@ -160,12 +161,166 @@ publish = false ::
 {% endapi-method %} -->
 
 <h2>
-  <span class="apiCallType">POST</span>
+  <span class="apiCallType post">POST</span>
   <span class="apiCallTitle">Create a transformation</span>
 </h2>
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations</strong></span>
 </div>
+<span class="apiSummary">Creates a transformation and get its object as response.</span>
+
+
+<Tabs>
+  <TabList>
+    <Tab>Request</Tab>
+    <Tab>Response</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        <div class="parameterWrapper">
+          <div class="parameterBlock">
+            <span class="parameterTitle">Query Parameters</span>
+            <div class="parameterBody">
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">publish</span>
+                  <span class="parameterReq">optional</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType">boolean</span>
+                </div>
+                <div class="parameterBodyRight">
+<span class="parameterDescription">
+
+By default this flag is `false`. It publishes your transformer to the latest version if set to `true` and its code is made live for incoming traffic.
+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="parameterBlock">
+            <span class="parameterTitle">Body Parameters</span>
+            <div class="parameterBody">
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">events</span>
+                  <span class="parameterReq">optional</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType">object</span>
+                </div>
+                <div class="parameterBodyRight">
+                  <span class="parameterDescription">
+                  Pass a set of JSON events to be tested for your code. This should be an array of JSON data.
+                  </span>
+                </div>
+              </div>
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">destinationIds</span>
+                  <span class="parameterReq">optional</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType">array</span>
+                </div>
+                <div class="parameterBodyRight">
+<span class="parameterDescription">
+
+Pass an array of `destinationIds` that you wish to connect with this transformation. You can connect only if publish is set to `true`.
+</span>
+                </div>
+              </div>
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">name</span>
+                  <span class="parameterReq req">required</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType">string</span>
+                </div>
+                <div class="parameterBodyRight">
+                  <span class="parameterDescription">
+                  Name of transformer that you wish to create.
+                  </span>
+                </div>
+              </div>
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">description</span>
+                  <span class="parameterReq">optional</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType">string</span>
+                </div>
+                <div class="parameterBodyRight">
+                  <span class="parameterDescription">
+                  Description of transformer goes here.
+                  </span>
+                </div>
+              </div>
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">code</span>
+                  <span class="parameterReq req">required</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType">string</span>
+                </div>
+                <div class="parameterBodyRight">
+                  <span class="parameterDescription">
+                  Code of transformer goes here.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+      <TabPanel>
+        <div class="responseWrapper">
+          <div class="resStatus">
+            <span class="resSuccess"></span>
+            <span class="resStatusText">200: OK</span>
+          </div>
+          <span class="resDescription">When publish is false we create a transformation revisions and you cannot connect a destination.</span>
+<span>
+
+```
+publish = true ::
+{
+  "id": "1puvbvMW2mxWvfFFnPIv5TTv4wL",
+  "versionId": "1puvbyk8adHTxWHYre4GwZbrMGL",
+  "name": "Create Transformation Tested-4",
+  "description": "Descriptrion 1",
+  "code": "function transform(events) {return events;}",
+  "codeVersion": "1",
+  "createdAt": "2021-03-04T04:48:27.288Z",
+  "updatedAt": "2021-03-04T04:48:27.288Z",
+  "destinations": [
+    {
+      "id": "xdcfvgbvfcdvfgbhgvf",
+      "name": "Destination 1",
+      "enabled": true,
+    }
+  ]
+}
+
+publish = false ::
+{
+    "id": "1puu7XFWgbwObDY4nbJdF0cgeTC",
+    "versionId": "1puu7e4DXYMPJrLglIICgFK75fD",
+    "name": "new Transformation 3",
+    "description": "Some Description",
+    "code": "function transformEvent(events) { return events.context; } ",
+    "createdAt": "2021-03-04T04:48:27.288Z",
+    "updatedAt": "2021-03-04T04:48:27.288Z",
+}
+```
+</span>
+        </div>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <!-- Check required here <div class="infoBlock">-->
 
