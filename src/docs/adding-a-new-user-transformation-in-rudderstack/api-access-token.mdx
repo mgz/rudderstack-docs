@@ -21,7 +21,7 @@ In order to use the Transformation API, you will need an Access Token associated
 
 Use HTTP Basic authentication and pass the workspace token as the user name and empty string as password.
 
-{% api-method method="post" host="https://api.rudderstack.com" path="/accessTokens" %}
+<!--{% api-method method="post" host="https://api.rudderstack.com" path="/accessTokens" %}
 {% api-method-summary %}
 Generate Access Token
 {% endapi-method-summary %}
@@ -63,7 +63,87 @@ Name of access token
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
-{% endapi-method %}
+{% endapi-method %} -->
+
+<h2>
+  <span class="apiCallType post">POST</span>
+  <span class="apiCallTitle">Generate Access Token</span>
+</h2>
+<div class="hostPath">
+  <span class="pathName">https://api.rudderstack.com<strong>/accessTokens</strong></span>
+</div>
+<span class="apiSummary">Generates a new access token.</span>
+
+<Tabs>
+  <TabList>
+    <Tab>Request</Tab>
+    <Tab>Response</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        <div class="parameterWrapper">
+          <div class="parameterBlock">
+            <span class="parameterTitle">Headers</span>
+            <div class="parameterBody">
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">Authorisation</span>
+                  <span class="parameterReq req">required</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType"><code class="inline-code">string</code></span>
+                </div>
+                <div class="parameterBodyRight">
+                  <span class="parameterDescription">
+                  Base64encoded <strong>workspace token</strong> to generate your access token.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="parameterBlock">
+            <span class="parameterTitle">Body Parameters</span>
+            <div class="parameterBody">
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">name</span>
+                  <span class="parameterReq req">required</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType"><code class="inline-code">string</code></span>
+                </div>
+                <div class="parameterBodyRight">
+                  <span class="parameterDescription">
+                  Name of access token
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+      <TabPanel>
+        <div class="responseWrapper">
+          <div class="resStatus">
+            <span class="resSuccess"></span>
+            <span class="resStatusText">200: OK</span>
+          </div>
+          <span class="resDescription">This gets an array of transformations revisions.</span>
+<span>
+
+```
+{
+  "success": true,
+  "data": {
+    "token": "1pHxUIA3jmxS2ip01zY696F80j7"
+  }
+}
+```
+</span>
+        </div>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 A sample request is as shown:
 
@@ -123,7 +203,7 @@ You can get the workspace token by logging into your RudderStack dashboard, as s
   them secret.
 </div>
 
-{% api-method method="get" host="https://api.rudderstack.com" path="/accessTokens" %}
+<!--{% api-method method="get" host="https://api.rudderstack.com" path="/accessTokens" %}
 {% api-method-summary %}
 List all Access Tokens
 {% endapi-method-summary %}
@@ -165,7 +245,74 @@ Base64encoded **workspace token.**
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
-{% endapi-method %}
+{% endapi-method %} -->
+
+<h2>
+  <span class="apiCallType get">GET</span>
+  <span class="apiCallTitle">List all Access Tokens</span>
+</h2>
+<div class="hostPath">
+  <span class="pathName">https://api.rudderstack.com<strong>/accessTokens</strong></span>
+</div>
+<span class="apiSummary">Get all access tokens associated with a workspace.</span>
+
+<Tabs>
+  <TabList>
+    <Tab>Request</Tab>
+    <Tab>Response</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        <div class="parameterWrapper">
+          <div class="parameterBlock">
+            <span class="parameterTitle">Headers</span>
+            <div class="parameterBody">
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">Authorization</span>
+                  <span class="parameterReq req">required</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType"><code class="inline-code">string</code></span>
+                </div>
+                <div class="parameterBodyRight">
+                  <span class="parameterDescription">
+                  Base64encoded <strong>workspace token</strong>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+      <TabPanel>
+        <div class="responseWrapper">
+          <div class="resStatus">
+            <span class="resSuccess"></span>
+            <span class="resStatusText">200: OK</span>
+          </div>
+          <span class="resDescription">This gets an array of transformations revisions.</span>
+<span>
+
+```
+[
+    {
+        "name": "Access Token 1",
+        "description": "",
+        "userId": "1pTjNPbjnUy6nlWZH78FtcTtBtD"
+    },
+    {
+        "name": "Access Token 2",
+        "description": "number 2",
+        "userId": "1pTjNPbjnUy6nlWZH78FtcTtBtD"
+    },
+]
+```
+</span>
+        </div>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
 
 <div class="infoBlock">
 
@@ -200,7 +347,7 @@ http GET 'https://api.rudderstack.com/accessTokens' \
     </TabPanels>
 </Tabs>
 
-{% api-method method="delete" host="https://api.rudderstack.com" path="/accessTokens" %}
+<!--{% api-method method="delete" host="https://api.rudderstack.com" path="/accessTokens" %}
 {% api-method-summary %}
 Delete access token
 {% endapi-method-summary %}
@@ -239,8 +386,86 @@ All access token will be deleted with given name.
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
-{% endapi-method %}
+{% endapi-method %} -->
 
+
+<h2>
+  <span class="apiCallType delete">DELETE</span>
+  <span class="apiCallTitle">Delete access token</span>
+</h2>
+<div class="hostPath">
+  <span class="pathName">https://api.rudderstack.com<strong>/accessTokens</strong></span>
+</div>
+<span class="apiSummary">Delete an access token by name.</span>
+
+<Tabs>
+  <TabList>
+    <Tab>Request</Tab>
+    <Tab>Response</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+        <div class="parameterWrapper">
+          <div class="parameterBlock">
+            <span class="parameterTitle">Headers</span>
+            <div class="parameterBody">
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">Authorisation</span>
+                  <span class="parameterReq req">required</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType"><code class="inline-code">string</code></span>
+                </div>
+                <div class="parameterBodyRight">
+                  <span class="parameterDescription">
+                  Base64encoded <strong>workspace token</strong>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="parameterBlock">
+            <span class="parameterTitle">Query Parameters</span>
+            <div class="parameterBody">
+              <div class="parameterRow">
+                <div class="parameterBodyLeft">
+                  <span class="parameterName">name</span>
+                  <span class="parameterReq req">required</span>
+                </div>
+                <div class="parameterBodyCenter">
+                  <span class="parameterType"><code class="inline-code">string</code></span>
+                </div>
+                <div class="parameterBodyRight">
+                  <span class="parameterDescription">
+                  Name of the access token to delete
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </TabPanel>
+      <TabPanel>
+        <div class="responseWrapper">
+          <div class="resStatus">
+            <span class="resSuccess"></span>
+            <span class="resStatusText">200: OK</span>
+          </div>
+<span>
+
+```
+{
+    success: true
+}
+```
+</span>
+        </div>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
+<div class="mb-6"></div>
 
 <Tabs>
   <TabList>

@@ -1614,9 +1614,16 @@ a.pageRef:hover .rightRefArrow {
   @apply mr-1;
   @apply inline-block;
   @apply align-middle;
+  @apply rounded-md;
 }
 .apiCallType.post{
   @apply bg-green-successBorder;
+}
+.apiCallType.get{
+  @apply bg-blueNew-custom;
+}
+.apiCallType.delete{
+  @apply bg-red-dangerBorder;
 }
 .apiCallTitle{
   @apply inline-block;
@@ -1641,11 +1648,43 @@ a.pageRef:hover .rightRefArrow {
   @apply mb-5;
 }
 .parameterRow{
-  @apply grid;
+  @apply flex;
+  @apply p-4;
 }
 
-.parameterBodyLeft, .parameterBodyCenter, .parameterBodyRight{
+.parameterBodyLeft{
+  width: 25%;
+}
+.parameterBodyCenter{
+  width: 20%;
+}
+.parameterBodyRight{
+  width: 55%;
+}
+.parameterName{
   @apply block;
+}
+.parameterReq{
+  font-size: 10px;
+  @apply uppercase;
+  @apply text-grayColor-lighter;
+}
+.parameterReq.req{
+  @apply text-red-dangerBorder;
+}
+.resStatus{
+  @apply mb-4;
+}
+.resSuccess{
+  @apply inline-block;
+  width: 10px;
+  height: 10px;
+  @apply bg-green-successBorder;
+  @apply rounded-full;
+  @apply mr-2;
+}
+.inline-code, .pathName{
+  word-break: break-all;
 }
 
 @media only screen and (min-width: 1023px) {
@@ -1786,6 +1825,15 @@ a.pageRef:hover .rightRefArrow {
   .integration-banner::before {
     right: -160px;
     background-position: right 25px;
+  }
+  .parameterRow{
+    @apply flex-col;
+  }
+  .parameterBodyLeft, .parameterBodyCenter{
+    @apply mb-4;
+  }
+  .parameterBodyLeft, .parameterBodyCenter, .parameterBodyRight{
+    @apply w-full;
   }
 }
 
