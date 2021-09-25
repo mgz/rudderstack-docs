@@ -11,6 +11,7 @@ import Layout from "../Layout"
 import SEO from "@rocketseat/gatsby-theme-docs/src/components/SEO"
 import PostNav from "@rocketseat/gatsby-theme-docs/src/components/Docs/PostNav"
 import EditGithub from "@rocketseat/gatsby-theme-docs/src/components/Docs/EditGithub"
+import { forEach } from "lodash"
 
 export default function Docs({ mdx, pageContext }) {
   const { prev, next, repositoryEditUrl, repositoryProvider } = pageContext
@@ -36,11 +37,18 @@ export default function Docs({ mdx, pageContext }) {
     }
 
   useEffect(() => {
-    const zoom = mediumZoom(document.querySelectorAll("img"))
+    (function(){
+      const zoom = mediumZoom(document.querySelectorAll("img"))
 
-    return () => {
-      zoom.detach()
-    }
+      return () => {
+        zoom.detach()
+      }
+    })()
+
+    let descriptionSpan = `<span>${description}</span>`;
+    let h1Tags = document.querySelectorAll("h1");
+    forEach(h1Tags, (o) => o.innerHTML = title + descriptionSpan);
+    h1Tags.innerHTML = descriptionSpan;
   }, [])
 
   return (

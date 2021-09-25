@@ -1084,6 +1084,13 @@ top: -60px;
   background-color: #eef5f5;
 }
 /*=== Docs styles ===*/
+.childrenWrapper h1>span{
+  @apply block;
+  @apply text-base;
+  @apply font-normal;
+  @apply text-grayColor-lighter;
+  @apply mt-4;
+}
 .childrenWrapper [data-reach-tab-list]{
   background: transparent;
 }
