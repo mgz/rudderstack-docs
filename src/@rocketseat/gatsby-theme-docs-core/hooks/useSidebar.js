@@ -1,55 +1,40 @@
-/* import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import { resolveLink } from '@rocketseat/gatsby-theme-docs-core/util/url';
-import {includes, isArray, get} from "lodash-es";
+import { jsonData } from "../../../docsconfig/sidebar"
+import { useEffect } from 'react';
 
 export function useSidebar() {
-  const data = useStaticQuery(graphql`
-    {
-      allSidebarItems {
-        edges {
-          node {            
-            parentId
-            elId
-            label
-            link
-            id
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          basePath
-        }
-      }
+
+let finalData;
+const returnMenuItem = (item, i) => {
+  let menuItem
+
+  if (item.content.length === 0) {
+    menuItem = {
+      "label": item.title,
+      "link": item.link
     }
-  `);
-
-  const { basePath } = data.site.siteMetadata;
-
-  const {
-    allSidebarItems: { edges },
-  } = data;
-
-  if (basePath) {
-    const normalizedSidebar = edges.map(
-      ({ node: { label, link, elId, parentId, id } }) => {
-        
-
-        return {
-          node: {
-            id,
-            label,
-            link: resolveLink(link, basePath),
-            elId,
-            parentId
-          },
-        };
-      },
-    );
-
-    return normalizedSidebar;
+  } else {
+    let menuItem = {
+      "label": item.title,
+      "link": item.link
+    };
+    let menuItemChildren = item.content.map((item, i) => {
+      let menuItem = returnMenuItem(item, i)
+      return menuItem
+    })
+    let combinedMenuItem = [{...menuItem}, menuItemChildren];
+    return combinedMenuItem
   }
 
-  return edges;
+  return menuItem
 }
- */
+
+
+finalData = jsonData.map((item, i) => {
+  let menuItem = returnMenuItem(item, i)
+  return menuItem
+})
+
+return finalData;
+}

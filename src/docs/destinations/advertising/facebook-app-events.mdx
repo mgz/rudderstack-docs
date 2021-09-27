@@ -749,7 +749,7 @@ FBSDKSettings.setAdvertiserIDCollectionEnabled(false)
       <TabPanel>
         <ul>
         <li>To disable collection of <code class="inline-code">advertiser-id</code>, add the following code to your <code class="inline-code">AndroidManifest.xml</code> file:
-{/* <span>
+<span>
 
 ```markup
 <application>
@@ -759,7 +759,7 @@ FBSDKSettings.setAdvertiserIDCollectionEnabled(false)
   ...
 </application>
 ```
-</span> */}
+</span>
 </li>
 <li>In some cases, you can delay the collection of <code class="inline-code">advertiser_id</code> to obtain user consent or fulfill any legal obligations instead of disabling it entirely. To do so, call the <code class="inline-code">setAdvertiserIDCollectionEnabled()</code> method of the <code class="inline-code">FacebookSDK</code> class and set it to <code class="inline-code">true</code> . This re-enables the collection of <code class="inline-code">advertiser_id</code> after the end-user provides the required consent, as shown:
 <span>
@@ -813,18 +813,19 @@ FacebookSdk.fullyInitialize()
   </TabList>
   <TabPanels>
     <TabPanel>
-        To disable automatic SDK initialization in case of the Android SDK, add the following to your <code class="inline-code">AndroidManifest.xml</code> file:
-{/* <span>
-        
+        To disable automatic SDK initialization in case of the Android SDK, add the following to your <code class="inline-code">AndroidManifest.xml</code> file: {" "}
+
+<span>
+ 
 ```markup
 <application>
   ...
-  <meta-data android:name="com.facebook.sdk.AutoInitEnabled"
-          android:value="false"/>
+  <meta-data androidName="com.facebook.sdk.AutoInitEnabled"
+          androidValue="false"/>
   ...
 </application>
 ```
-</span> */}
+</span>
 In some cases, you can delay the SDK initialization to obtain user consent or fulfill any legal obligations instead of disabling it entirely. To do so, call the class method <code class="inline-code">setAutoInitEnabled</code> and set it to <code class="inline-code">true</code> to manually initialize the SDK after the end-user provides the required consent.
 <span>
 

@@ -166,6 +166,10 @@ export default function GlobalStyle() {
           content: "js";
           background: #f7df1e;
         }
+        pre[class~="language-python"]::before{
+          content: "python";
+          background: #f7df1e;
+        }
         pre[class~="language-jsx"]::before {
           content: "jsx";
           background: #61dafb;
@@ -193,6 +197,16 @@ export default function GlobalStyle() {
         }
         pre[class~="language-css"]::before {
           content: "css";
+          background: #ff9800;
+          color: #fff;
+        }
+        pre[class~="language-java"]::before {
+          content: "java";
+          background: #ff9800;
+          color: #fff;
+        }
+        pre[class~="language-ruby"]::before {
+          content: "ruby";
           background: #ff9800;
           color: #fff;
         }
@@ -234,6 +248,41 @@ export default function GlobalStyle() {
         pre[class~="language-flow"]::before {
           content: "flow";
           background: #e8bd36;
+        }
+        pre[class~="language-go"]::before {
+          content: "go";
+          background: #e8bd36;
+        }
+        pre[class~="language-markup"]::before {
+          content: "markup";
+          background: #e8bd36;
+        }
+        pre[class~="language-kotlin"]::before {
+          content: "kotlin";
+          background: #005a9c;
+          color: #fff;
+        }
+        pre[class~="language-groovy"]::before {
+          content: "groovy";
+          background: #e8bd36;
+        }
+        pre[class~="language-objectivec"]::before {
+          content: "objectivec";
+          background: #e8bd36;
+        }
+        pre[class~="language-dart"]::before {
+          content: "dart";
+          background: #005a9c;
+          color: #fff;
+        }
+        pre[class~="language-swift"]::before {
+          content: "swift";
+          background: #005a9c;
+          color: #fff;
+        }
+        pre[class~="language-csharp"]::before {
+          content: "c#";
+          background: #e6ffed;
         }
 
         @media only screen and (max-width: 640px) {
