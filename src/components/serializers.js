@@ -100,6 +100,7 @@ const serializers = {
     link: ({ children, mark, _key }) => {
       // console.log(children, mark, "block contain")
       //added by Hari on 2021-04-30
+      // console.log('portable text tracker render',trackSectionHeader)
       return (
         <a
           id={_key}
