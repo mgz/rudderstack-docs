@@ -1,6 +1,7 @@
 import React from "react"
 import PortableText from "./portableText"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const CentredContentWithButton = props => {
   return (
@@ -18,6 +19,9 @@ const CentredContentWithButton = props => {
             if (props.button.btnexternallink === true) {
               return (
                 <a
+                  onClick={e =>
+                    rudderslabTrackOnClick("button", props.title, e)
+                  }
                   key={props.button._key}
                   className={
                     (props.button.btnhiglight === true
@@ -31,7 +35,13 @@ const CentredContentWithButton = props => {
               )
             } else {
               return (
-                <Link key={props.button._key} to={props.button.btnlink}>
+                <Link
+                  onClick={e =>
+                    rudderslabTrackOnClick("button", props.title, e)
+                  }
+                  key={props.button._key}
+                  to={props.button.btnlink}
+                >
                   <span
                     className={
                       (props.button.btnhiglight === true

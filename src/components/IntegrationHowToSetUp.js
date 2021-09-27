@@ -3,6 +3,7 @@ import PortableText from "./portableText"
 import { StaticImage } from "gatsby-plugin-image"
 import Image from "./image"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
   // console.log("howtosetup", integrationLogo)
@@ -14,14 +15,23 @@ const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
     data.freetextctc.btntext !== ""
   ) {
     renderButton = (
-      <a href={data.freetextctc.btnlink} className="btn-primary-lg text-white">
+      <a
+        onClick={e => rudderslabTrackOnClick("button", data.freetexttitle, e)}
+        href={data.freetextctc.btnlink}
+        className="btn-primary-lg text-white"
+      >
         {data.freetextctc.btntext}
       </a>
     )
   } else if (data.freetextctc && data.freetextctc.btntext !== "") {
     renderButton = (
       <span className="btn-primary-lg text-white">
-        <Link to={data.freetextctc.btnlink}>{data.freetextctc.btntext}</Link>
+        <Link
+          onClick={e => rudderslabTrackOnClick("button", data.freetexttitle, e)}
+          to={data.freetextctc.btnlink}
+        >
+          {data.freetextctc.btntext}
+        </Link>
       </span>
     )
   }

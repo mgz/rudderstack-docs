@@ -1,6 +1,7 @@
 import React from "react"
 import PortableText from "./portableText"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const TwoCardsLeftAligned = props => {
   return (
@@ -34,6 +35,13 @@ const TwoCardsLeftAligned = props => {
                           return (
                             <a
                               href={linkurl}
+                              onClick={e =>
+                                rudderslabTrackOnClick(
+                                  link_display_as_button ? "button" : "link",
+                                  item.title,
+                                  e
+                                )
+                              }
                               className={`font-bold leading-normal text-sm md:absolute md:bottom-16 ${
                                 link_display_as_button ? "btn-primary-lg" : ""
                               } ${
@@ -60,7 +68,13 @@ const TwoCardsLeftAligned = props => {
                                   : ""
                               }`}
                             >
-                              <Link to={linkurl}>{linktext}</Link>
+                              <Link onClick={e =>
+                                rudderslabTrackOnClick(
+                                  link_display_as_button ? "button" : "link",
+                                  item.title,
+                                  e
+                                )
+                              } to={linkurl}>{linktext}</Link>
                             </span>
                           )
                         }

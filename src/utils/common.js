@@ -78,25 +78,28 @@ export const rudderslabTrackOnClick = (
   isSeekSectionName
 ) => {
   let el
-  try {
-    el = checkPrevSibbling(document.getElementById(e.target.id).parentElement)
-      .innerHTML
-  } catch {
-    el = document.getElementsByTagName("h1")[0].innerHTML
-  }
+  if (isSeekSectionName) {
+    try {
+      el = checkPrevSibbling(document.getElementById(e.target.id).parentElement)
+        .innerHTML
+    } catch {
+      el = document.getElementsByTagName("h1")[0].innerHTML
+    }
 
-  if (!el) {
-    el = document.getElementsByTagName("h1")
+    if (!el) {
+      el = document.getElementsByTagName("h1")
+    }
   }
 
   if (!window.rudderanalytics) {
     return
   }
-  if (sectionName !== "") {
-    sectionName = sectionName
-  } else {
-    sectionName = el
-  }
+  // if (sectionName !== "") {
+  //   sectionName = sectionName
+  // } else {
+  //   sectionName = el
+  // }
+  // console.log('track.log',e)
   window.rudderanalytics.track("click", {
     // not quite sure how to get link text, so the below is an example to get the text of the link
     link_text: e.target.innerText,
@@ -111,6 +114,9 @@ export const rudderslabTrackOnClick = (
 }
 
 export const rudderslabTrackOnSearch = searchText => {
+  if (searchText === "") {
+    return
+  }
   if (!window.rudderanalytics) {
     return
   }

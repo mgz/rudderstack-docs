@@ -1,6 +1,7 @@
 import React from "react"
 import PortableText from "./portableText"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const HeroBanner404 = props => {
   return (
@@ -25,6 +26,13 @@ const HeroBanner404 = props => {
                     return (
                       <a
                         key={btn._key}
+                        onClick={e =>
+                          rudderslabTrackOnClick(
+                            "button",
+                            props.herobannertitle,
+                            e
+                          )
+                        }
                         className={
                           (btn.btnhiglight === true
                             ? "btn-primary-lg"
@@ -38,7 +46,17 @@ const HeroBanner404 = props => {
                     )
                   } else {
                     return (
-                      <Link key={btn._key} to={btn.btnlink}>
+                      <Link
+                        onClick={e =>
+                          rudderslabTrackOnClick(
+                            "button",
+                            props.herobannertitle,
+                            e
+                          )
+                        }
+                        key={btn._key}
+                        to={btn.btnlink}
+                      >
                         <span
                           className={
                             (btn.btnhiglight === true

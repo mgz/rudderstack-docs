@@ -174,7 +174,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             rel="noreferrer"
                             // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                             className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                            onClick={(e) => rudderslabTrackOnClick("button", "nav-footer", e)}
+                            onClick={(e) => rudderslabTrackOnClick("footer-navigation", "Footer Navigation Section", e)}
 
                           >
                             {/* <img
@@ -197,7 +197,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             rel="noreferrer"
                             // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                             className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                            onClick={(e) => rudderslabTrackOnClick("button", "nav-footer", e)}
+                            onClick={(e) => rudderslabTrackOnClick("footer-navigation", "Footer Navigation Section", e)}
 
                           >
                             Go to docs
@@ -224,7 +224,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           rel="noreferrer noopener"
                           aria-label="This is an external link "
                           href={socialitem.social_item_link}
-                          onClick={(e) => rudderslabTrackOnClick("button", "nav-footer", e)}
+                          onClick={(e) => rudderslabTrackOnClick("footer-navigation", "Footer Navigation Section", e)}
                         >
                           <FontAwesomeIcon icon={socialitem.social_item_icon} />
                         </a>
@@ -237,7 +237,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           rel="noreferrer noopener"
                           aria-label="This is an external link "
                           href={socialitem.social_item_link}
-                          onClick={(e) => rudderslabTrackOnClick("button", "nav-footer", e)}
+                          onClick={(e) => rudderslabTrackOnClick("footer-navigation", "Footer Navigation Section", e)}
 
                         >
                           <FontAwesomeIcon

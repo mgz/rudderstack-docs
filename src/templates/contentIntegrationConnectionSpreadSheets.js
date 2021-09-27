@@ -4,9 +4,8 @@ import { Helmet } from "react-helmet"
 // import PortableText from "./portableText"
 import Link from "gatsby-link"
 import Layout from "../components/layout"
-import HeroBannerIntegrationConnection from "../components/heroBannerIntegrationConnection"
+import { rudderslabTrackOnClick } from "../utils/common"
 import { StaticImage } from "gatsby-plugin-image"
-import { propTypes } from "@sanity/block-content-to-react"
 
 const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
   return (
@@ -53,7 +52,16 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
               your other cloud tools.
             </p>
 
-            <a href={"https://app.rudderstack.com/signup?type=freetrial"}>
+            <a
+              onClick={e =>
+                rudderslabTrackOnClick(
+                  "button",
+                  `Integrate your ${data.integration_connection.sourceIntegrationContext} with ${data.integration_connection.destinationIntegration}`,
+                  e
+                )
+              }
+              href={"https://app.rudderstack.com/signup?type=freetrial"}
+            >
               <span
                 className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
               >
@@ -288,6 +296,13 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
             <a
               className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
               href={data.integration_connection.sourceDocsUrl}
+              onClick={e =>
+                rudderslabTrackOnClick(
+                  "button",
+                  `Easy ${data.integration_connection.sourceIntegration} to ${data.integration_connection.destinationIntegration} Integration with RudderStack`,
+                  e
+                )
+              }
             >
               Read {data.integration_connection.sourceIntegration} Docs
             </a>
@@ -400,6 +415,13 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
             <a
               className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
               href={data.integration_connection.destinationDocsUrl}
+              onClick={e =>
+                rudderslabTrackOnClick(
+                  "button",
+                  `Popular ${data.integration_connection.destinationIntegration} use cases`,
+                  e
+                )
+              }
             >
               Read {data.integration_connection.destinationIntegration} Docs
             </a>
@@ -444,6 +466,13 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 <a
                   href={data.integration_connection.relevantIntegrationUrl1}
                   className="absolute bottom-6 w-full pr-6 pl-2 lg:pr-10 lg:pl-6"
+                  onClick={e =>
+                    rudderslabTrackOnClick(
+                      "button",
+                      data.integration_connection.relevantIntegrationDesc1,
+                      e
+                    )
+                  }
                 >
                   <span
                     className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
@@ -473,6 +502,13 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 <a
                   href={data.integration_connection.relevantIntegrationUrl2}
                   className="absolute bottom-6 w-full pr-6 pl-2 lg:pr-10 lg:pl-6"
+                  onClick={e =>
+                    rudderslabTrackOnClick(
+                      "button",
+                      data.integration_connection.relevantIntegrationDesc2,
+                      e
+                    )
+                  }
                 >
                   <span
                     className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
@@ -502,6 +538,13 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 <a
                   href={data.integration_connection.relevantIntegrationUrl3}
                   className="absolute bottom-6 w-full pr-6 pl-2 lg:pr-10 lg:pl-6"
+                  onClick={e =>
+                    rudderslabTrackOnClick(
+                      "button",
+                      data.integration_connection.relevantIntegrationDesc3,
+                      e
+                    )
+                  }
                 >
                   <span
                     className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
@@ -531,6 +574,13 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 <a
                   href={data.integration_connection.relevantIntegrationUrl4}
                   className="absolute bottom-6 w-full pr-6 pl-2 lg:pr-10 lg:pl-6"
+                  onClick={e =>
+                    rudderslabTrackOnClick(
+                      "button",
+                      data.integration_connection.relevantIntegrationDesc4,
+                      e
+                    )
+                  }
                 >
                   <span
                     className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}

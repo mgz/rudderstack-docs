@@ -2,6 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const LeftRightImgCntWithCentedHeading = props => {
   const maintitle = props.leftrightcontentmaintitle
@@ -151,6 +152,9 @@ const LeftRightImgCntWithCentedHeading = props => {
                               return (
                                 <a
                                   href={linkurl}
+                                  onClick={e =>
+                                    rudderslabTrackOnClick("link", title, e)
+                                  }
                                   className={`font-bold leading-normal text-sm ${
                                     link_display_as_button
                                       ? "btn-primary-lg"
@@ -181,7 +185,14 @@ const LeftRightImgCntWithCentedHeading = props => {
                                       : ""
                                   }`}
                                 >
-                                  <Link to={linkurl}>{linktext}</Link>
+                                  <Link
+                                    onClick={e =>
+                                      rudderslabTrackOnClick("link", title, e)
+                                    }
+                                    to={linkurl}
+                                  >
+                                    {linktext}
+                                  </Link>
                                 </span>
                               )
                             }
@@ -282,6 +293,9 @@ const LeftRightImgCntWithCentedHeading = props => {
                             return (
                               <a
                                 href={linkurl}
+                                onClick={e =>
+                                  rudderslabTrackOnClick("link", title, e)
+                                }
                                 className={`font-bold leading-normal text-sm ${
                                   link_display_as_button ? "btn-primary-lg" : ""
                                 } relative sm:inline-block ${
@@ -308,7 +322,14 @@ const LeftRightImgCntWithCentedHeading = props => {
                                     : ""
                                 }`}
                               >
-                                <Link to={linkurl}>{linktext}</Link>
+                                <Link
+                                  onClick={e =>
+                                    rudderslabTrackOnClick("link", title, e)
+                                  }
+                                  to={linkurl}
+                                >
+                                  {linktext}
+                                </Link>
                               </span>
                             )
                           }

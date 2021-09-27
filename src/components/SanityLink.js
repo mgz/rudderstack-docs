@@ -19,8 +19,8 @@ const SanityLink = props => {
           onClick={onclick}
           onClick={e =>
             rudderslabTrackOnClick(
-              "navigation",
-              "nav bar",
+              "footer-navigation",
+              "Footer Navigation Section",
               e
             )
           }
@@ -39,8 +39,8 @@ const SanityLink = props => {
           onClick={onclick}
           onClick={e =>
             rudderslabTrackOnClick(
-              "navigation",
-              "nav bar",
+              "footer-navigation",
+              "Footer Navigation Section",
               e
             )
           }

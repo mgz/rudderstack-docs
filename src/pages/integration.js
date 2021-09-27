@@ -25,11 +25,9 @@ const Integration = props => {
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
 
-  
   const { data } = props
   const [searchedText, setSerchedText] = React.useState("")
   const [resultCount, setResultCount] = React.useState(0)
-
 
   React.useEffect(() => {
     rudderslabTrackOnSearch(searchedText)

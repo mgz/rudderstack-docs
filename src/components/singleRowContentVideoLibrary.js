@@ -8,10 +8,11 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { library } from "@fortawesome/fontawesome-svg-core"
 import { faClock } from "@fortawesome/free-solid-svg-icons/faClock"
+import { rudderslabTrackOnClick } from "../utils/common"
 
-library.add(faClock);
+library.add(faClock)
 
 const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
   //check the top future webinar from now
@@ -77,6 +78,9 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
               <a
                 class="btn-primary-lg md:mr-4 md:mb-0 mb-4"
                 href={webinarObj.node.slug.current}
+                onClick={e =>
+                  rudderslabTrackOnClick("button", webinarObj.node.title, e)
+                }
               >
                 {category === "Live" ? "Register Now" : "Watch Now"}
               </a>
@@ -89,7 +93,7 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
         </div>
 
         <div className="flex-shrink-1 sm:flex-shrink-1">
-          <Link to={webinarObj.node.slug.current}>
+          <Link  to={webinarObj.node.slug.current}>
             <img
               src={webinarObj.node.listing_image.asset.url}
               alt={webinarObj.node.title}
