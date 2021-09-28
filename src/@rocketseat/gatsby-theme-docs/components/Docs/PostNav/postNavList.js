@@ -432,9 +432,9 @@ export const postNavList = [
     "content":[]
  },
  {
-    "key":"google-analytics",
+    "key":"google-analytics-ga",
     "title":"Google Analytics",
-    "link":"/destinations/analytics/google-analytics",
+    "link":"/destinations/analytics/google-analytics-ga",
     "content":[]
  },
  {
@@ -507,12 +507,6 @@ export const postNavList = [
     "key":"fullstory",
     "title":"FullStory",
     "link":"/destinations/analytics/fullstory",
-    "content":[]
- },
- {
-    "key":"mixpanel",
-    "title":"Mixpanel",
-    "link":"/destinations/analytics/mixpanel",
     "content":[]
  },
  {
@@ -600,17 +594,215 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"salesforce",
+   "title":"Salesforce",
+   "link":"/destinations/crm/salesforce/",
+   "content":[]
+},
+{
+   "key":"hubspot",
+   "title":"HubSpot",
+   "link":"/destinations/crm/hubspot/",
+   "content":[]
+},
+{
+   "key":"variance",
+   "title":"Variance",
+   "link":"/destinations/crm/variance/",
+   "content":[]
+},
+{
+   "key":"zendesk",
+   "title":"Zendesk",
+   "link":"/destinations/crm/zendesk/",
+   "content":[]
+},
+{
+   "key":"delighted",
+   "title":"Delighted",
+   "link":"/destinations/crm/delighted/",
+   "content":[]
+},
+ {
     "key":"marketing",
     "title":"Marketing",
     "link":"/destinations/marketing",
     "content":[]
  },
  {
+   "key":"marketo",
+   "title":"Marketo",
+   "link":"/destinations/marketing/marketo/",
+   "content":[]
+},
+{
+   "key":"marketo-lead-import",
+   "title":"Marketo Lead Import",
+   "link":"/destinations/marketing/marketo-lead-import/",
+   "content":[]
+},
+{
+   "key":"drip",
+   "title":"Drip",
+   "link":"/destinations/marketing/drip/",
+   "content":[]
+},
+{
+   "key":"setting-up-drip-in-rudderstack",
+   "title":"Setting Up Drip in RudderStack",
+   "link":"/destinations/marketing/drip/setting-up-drip-in-rudderstack",
+   "content":[]
+},
+{
+   "key":"cloud-mode",
+   "title":"Cloud Mode",
+   "link":"/destinations/marketing/drip/drip-cloud-mode",
+   "content":[]
+},
+{
+   "key":"device-mode",
+   "title":"Device Mode",
+   "link":"/destinations/marketing/drip/drip-web-device-mode",
+   "content":[]
+},
+{
+   "key":"qualtrics",
+   "title":"Qualtrics",
+   "link":"/destinations/marketing/qualtrics/",
+   "content":[]
+},
+{
+   "key":"sfmc",
+   "title":"Salesforce Marketing Cloud",
+   "link":"/destinations/marketing/sfmc/",
+   "content":[]
+},
+{
+   "key":"ometria",
+   "title":"Ometria",
+   "link":"/destinations/marketing/ometria/",
+   "content":[]
+},
+{
+   "key":"clevertap",
+   "title":"Clevertap",
+   "link":"/destinations/marketing/clevertap/",
+   "content":[]
+},
+{
+   "key":"braze",
+   "title":"Braze",
+   "link":"/destinations/marketing/braze/",
+   "content":[]
+},
+{
+   "key":"customer.io",
+   "title":"Customer.io",
+   "link":"/destinations/marketing/customer.io/",
+   "content":[]
+},
+{
+   "key":"mailchimp",
+   "title":"Mailchimp",
+   "link":"/destinations/marketing/mailchimp/",
+   "content":[]
+},
+{
+   "key":"moengage",
+   "title":"MoEngage",
+   "link":"/destinations/marketing/moengage/",
+   "content":[]
+},
+{
+   "key":"autopilot",
+   "title":"Autopilot",
+   "link":"/destinations/marketing/autopilot/",
+   "content":[]
+},
+{
+   "key":"gainsight",
+   "title":"Gainsight",
+   "link":"/destinations/marketing/gainsight/",
+   "content":[]
+},
+{
+   "key":"gainsight-px",
+   "title":"Gainsight PX",
+   "link":"/destinations/marketing/gainsight-px/",
+   "content":[]
+},
+{
+   "key":"leanplum",
+   "title":"Leanplum",
+   "link":"/destinations/marketing/leanplum/",
+   "content":[]
+},
+{
+   "key":"iterable",
+   "title":"Iterable",
+   "link":"/destinations/marketing/iterable/",
+   "content":[]
+},
+{
+   "key":"appcues",
+   "title":"Appcues",
+   "link":"/destinations/marketing/appcues/",
+   "content":[]
+},
+{
+   "key":"userlist",
+   "title":"Userlist",
+   "link":"/destinations/marketing/userlist/",
+   "content":[]
+},
+{
+   "key":"activeCampaign",
+   "title":"ActiveCampaign",
+   "link":"/destinations/marketing/activeCampaign/",
+   "content":[]
+},
+{
+   "key":"klaviyo",
+   "title":"klaviyo",
+   "link":"/destinations/marketing/klaviyo/",
+   "content":[]
+},
+ {
     "key":"attribution",
     "title":"Attribution",
     "link":"/destinations/attribution",
     "content":[]
  },
+ {
+   "key":"adjust",
+   "title":"Adjust",
+   "link":"/destinations/attribution/adjust/",
+   "content":[]
+},
+{
+   "key":"branchio",
+   "title":"Branch",
+   "link":"/destinations/attribution/branchio/",
+   "content":[]
+},
+{
+   "key":"kochava",
+   "title":"Kochava",
+   "link":"/destinations/attribution/kochava/",
+   "content":[]
+},
+{
+   "key":"tvsquared",
+   "title":"TVSquared",
+   "link":"/destinations/attribution/tvsquared/",
+   "content":[]
+},
+{
+   "key":"appsflyer",
+   "title":"AppsFlyer",
+   "link":"/destinations/attribution/appsflyer/",
+   "content":[]
+},
  {
     "key":"webhooks",
     "title":"Webhooks",
@@ -624,11 +816,101 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"intercom",
+   "title":"Intercom",
+   "link":"/destinations/business-messaging/intercom/",
+   "content":[]
+},
+{
+   "key":"slack",
+   "title":"Slack",
+   "link":"/destinations/business-messaging/slack/",
+   "content":[]
+},
+{
+   "key":"kustomer",
+   "title":"Kustomer",
+   "link":"/destinations/business-messaging/kustomer/",
+   "content":[]
+},
+{
+   "key":"trengo",
+   "title":"Trengo",
+   "link":"/destinations/business-messaging/trengo/",
+   "content":[]
+},
+ {
     "key":"advertising",
     "title":"Advertising",
     "link":"/destinations/advertising",
     "content":[]
  },
+ {
+   "key":"google-ads",
+   "title":"Google Ads",
+   "link":"/destinations/advertising/google-ads/",
+   "content":[]
+},
+{
+   "key":"facebook-app-events",
+   "title":"Facebook App Events",
+   "link":"/destinations/advertising/facebook-app-events/",
+   "content":[]
+},
+{
+   "key":"linkedin-insight-tag",
+   "title":"LinkedIn Insight Tag",
+   "link":"/destinations/advertising/linkedin-insight-tag/",
+   "content":[]
+},
+{
+   "key":"reddit-pixel",
+   "title":"Reddit Pixel",
+   "link":"/destinations/advertising/reddit-pixel/",
+   "content":[]
+},
+{
+   "key":"fb-pixel",
+   "title":"Facebook Pixel",
+   "link":"/destinations/advertising/fb-pixel/",
+   "content":[]
+},
+{
+   "key":"snap-pixel",
+   "title":"Snap Pixel",
+   "link":"/destinations/advertising/snap-pixel/",
+   "content":[]
+},
+{
+   "key":"facebook-custom-audience",
+   "title":"Facebook Custom Audience",
+   "link":"/destinations/advertising/facebook-custom-audience/",
+   "content":[]
+},
+{
+   "key":"lotame",
+   "title":"Lotame",
+   "link":"/destinations/advertising/lotame/",
+   "content":[]
+},
+{
+   "key":"bingads",
+   "title":"Bing Ads",
+   "link":"/destinations/advertising/bingads/",
+   "content":[]
+},
+{
+   "key":"pinterest-ads",
+   "title":"Pinterest Tag",
+   "link":"/destinations/advertising/pinterest-ads/",
+   "content":[]
+},
+{
+   "key":"criteo",
+   "title":"Criteo",
+   "link":"/destinations/advertising/criteo/",
+   "content":[]
+},
  {
     "key":"customer-data-platform",
     "title":"Customer Data Platform",
@@ -636,11 +918,59 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"segment",
+   "title":"Segment",
+   "link":"/destinations/customer-data-platform/segment/",
+   "content":[]
+},
+ {
     "key":"data-ingestion",
     "title":"Data Ingestion",
     "link":"/destinations/data-ingestion",
     "content":[]
  },
+ {
+   "key":"kafka",
+   "title":"Apache Kafka",
+   "link":"/destinations/data-ingestion/kafka/",
+   "content":[]
+},
+{
+   "key":"amazon-eventbridge",
+   "title":"Amazon EventBridge",
+   "link":"/destinations/data-ingestion/amazon-eventbridge/",
+   "content":[]
+},
+{
+   "key":"amazon-kinesis",
+   "title":"Amazon Kinesis",
+   "link":"/destinations/data-ingestion/amazon-kinesis/",
+   "content":[]
+},
+{
+   "key":"amazon-kinesis-firehose",
+   "title":"Amazon Firehose",
+   "link":"/destinations/data-ingestion/amazon-kinesis-firehose/",
+   "content":[]
+},
+{
+   "key":"azure-event-hubs",
+   "title":"Azure Event Hubs",
+   "link":"/destinations/data-ingestion/azure-event-hubs/",
+   "content":[]
+},
+{
+   "key":"confluent-cloud",
+   "title":"Confluent Cloud",
+   "link":"/destinations/data-ingestion/confluent-cloud/",
+   "content":[]
+},
+{
+   "key":"google-pub-sub",
+   "title":"Google Pub/Sub",
+   "link":"/destinations/data-ingestion/google-pub-sub/",
+   "content":[]
+},
  {
     "key":"storage-platforms",
     "title":"Storage Platforms",
@@ -648,11 +978,53 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"amazon-s3",
+   "title":"Amazon S3",
+   "link":"/destinations/storage-platforms/amazon-s3/",
+   "content":[]
+},
+{
+   "key":"minio",
+   "title":"MinIO",
+   "link":"/destinations/storage-platforms/minio/",
+   "content":[]
+},
+{
+   "key":"redis",
+   "title":"Redis",
+   "link":"/destinations/storage-platforms/redis/",
+   "content":[]
+},
+{
+   "key":"google-cloud-storage",
+   "title":"Google Cloud Storage",
+   "link":"/destinations/storage-platforms/google-cloud-storage/",
+   "content":[]
+},
+{
+   "key":"digitalocean-spaces",
+   "title":"DigitalOcean Spaces",
+   "link":"/destinations/storage-platforms/digitalocean-spaces/",
+   "content":[]
+},
+{
+   "key":"azure-blob-storage",
+   "title":"Azure Blob Storage",
+   "link":"/destinations/storage-platforms/azure-blob-storage/",
+   "content":[]
+},
+ {
     "key":"tag-managers",
     "title":"Tag Managers",
     "link":"/destinations/tag-managers",
     "content":[]
  },
+ {
+   "key":"google-tag-managers",
+   "title":"Google Tag Managers",
+   "link":"/destinations/tag-managers/google-tag-managers/",
+   "content":[]
+},
  {
     "key":"testing-and-personalization",
     "title":"A/B Testing & Personalization",
@@ -660,11 +1032,53 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"splitio",
+   "title":"Split.io",
+   "link":"/destinations/testing-and-personalization/splitio/",
+   "content":[]
+},
+{
+   "key":"algolia-insights",
+   "title":"Algolia Insights",
+   "link":"/destinations/testing-and-personalization/algolia-insights/",
+   "content":[]
+},
+{
+   "key":"monetate",
+   "title":"Monetate",
+   "link":"/destinations/testing-and-personalization/monetate/",
+   "content":[]
+},
+{
+   "key":"vwo-beta-visual-optimizer",
+   "title":"VWO (Visual Website Optimizer",
+   "link":"/destinations/testing-and-personalization/vwo-beta-visual-optimizer/",
+   "content":[]
+},
+{
+   "key":"optimizely-web",
+   "title":"Optimizely Web",
+   "link":"/destinations/testing-and-personalization/optimizely-web/",
+   "content":[]
+},
+{
+   "key":"optimizely-full-stack",
+   "title":"Optimizely Full Stack",
+   "link":"/destinations/testing-and-personalization/optimizely-full-stack/",
+   "content":[]
+},
+ {
     "key":"productivity",
     "title":"Productivity",
     "link":"/destinations/productivity",
     "content":[]
  },
+ {
+   "key":"google-sheets",
+   "title":"Google Sheets",
+   "link":"/destinations/productivity/google-sheets/",
+   "content":[]
+},
  {
     "key":"error-reporting",
     "title":"Error Reporting",
@@ -672,11 +1086,29 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"bugsnag",
+   "title":"Bugsnag",
+   "link":"/destinations/error-reporting/bugsnag/",
+   "content":[]
+},
+{
+   "key":"sentry",
+   "title":"Sentry",
+   "link":"/destinations/error-reporting/sentry/",
+   "content":[]
+},
+ {
     "key":"continuous-integration",
     "title":"Continuous Integration",
     "link":"/destinations/continuous-integration",
     "content":[]
  },
+ {
+   "key":"appcenter",
+   "title":"Visual Studio App Center",
+   "link":"/destinations/continuous-integration/appcenter/",
+   "content":[]
+},
  {
     "key":"data-warehouse-integrations",
     "title":"Warehouse Destinations",

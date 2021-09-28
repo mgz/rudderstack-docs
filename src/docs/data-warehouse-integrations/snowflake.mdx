@@ -230,6 +230,7 @@ Replace <code class="inline-code">&lt;bucket&gt;</code> and <code class="inline-
   keep the role ARN handy for the next step.{" "}
 </li>
 <li> Create cloud storage integration in Snowflake </li>
+<span>
 
 ```text
 CREATE STORAGE INTEGRATION <integration_name>
@@ -240,6 +241,7 @@ CREATE STORAGE INTEGRATION <integration_name>
   STORAGE_ALLOWED_LOCATIONS = ('s3://<bucket>/<path>/', 's3://<bucket>/<path>/')
   [ STORAGE_BLOCKED_LOCATIONS = ('s3://<bucket>/<path>/', 's3://<bucket>/<path>/') ]
 ```
+</span>
 <code class="inline-code">&lt;integration_name&gt;</code> with an integration
 name of your choice.
 <code class="inline-code">&lt;iam_role&gt;</code> with the role ARN from the
@@ -312,6 +314,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
 <li>Create a storage account in Azure.</li>
 <li>Create a container in the storage account created above by navigating to <strong>&lt;storage_account&gt;</strong> - <strong>Storage Explorer</strong> - <strong>Blob Containers</strong> - <strong>Create a Blob Container</strong>.</li>
 <li>Create cloud storage integration in Snowflake:
+<span>
 
 ```text
   CREATE STORAGE INTEGRATION <integration_name>
@@ -322,6 +325,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
   STORAGE_ALLOWED_LOCATIONS = ('azure://<account>.blob.core.windows.net/<container>/<path>/', 'azure://<account>.blob.core.windows.net/<container>/<path>/')
   [ STORAGE_BLOCKED_LOCATIONS = ('azure://<account>.blob.core.windows.net/<container>/<path>/', 'azure://<account>.blob.core.windows.net/<container>/<path>/') ]
 ```
+</span>
 <code class="inline-code">&lt;tenant_id&gt;</code> - Get your tenant id by
 navigating to <strong>Azure Active Directory</strong> - <strong>
   Properties.
@@ -333,9 +337,12 @@ navigating to <strong>Azure Active Directory</strong> - <strong>
 <li> Grant Snowflake access to the storage locations </li>
 
 Replace <code class="inline-code">&lt;integration_name&gt;</code> with the integration name created in the previous step.
+<span>
+
 ```text
 DESC INTEGRATION <integration_name>;
 ```
+</span>
 And record the values <code class="inline-code">AZURE_CONSENT_URL</code> and <code class="inline-code">AZURE_MULTI_TENANT_APP_NAME</code> .
 <li>
   {" "}
