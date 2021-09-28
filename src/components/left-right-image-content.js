@@ -372,9 +372,10 @@ const LeftRightImgCnt = props => {
                               return (
                                 <a
                                   href={linkurl}
-                                  onClick={e =>
+                                  onClick={e => {
+                                    
                                     rudderslabTrackOnClick("link", title, e)
-                                  }
+                                  }}
                                   className={`font-bold leading-normal text-sm ${
                                     link_display_as_button
                                       ? "btn-primary-lg"

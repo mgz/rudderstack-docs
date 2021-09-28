@@ -17,13 +17,13 @@ const SanityLink = props => {
           href={link.menu_item_link}
           target={link.menu_target_link ? "_blank" : "_self"}
           onClick={onclick}
-          onClick={e =>
-            rudderslabTrackOnClick(
-              "footer-navigation",
-              "Footer Navigation Section",
-              e
-            )
-          }
+          // onClick={e =>
+          //   rudderslabTrackOnClick(
+          //     "footer-navigation",
+          //     "Footer Navigation Section",
+          //     e
+          //   )
+          // }
         >
           {link.menu_item_title}
         </a>
@@ -37,13 +37,13 @@ const SanityLink = props => {
           to={link.menu_item_link}
           target={link.menu_target_link ? "_blank" : "_self"}
           onClick={onclick}
-          onClick={e =>
-            rudderslabTrackOnClick(
-              "footer-navigation",
-              "Footer Navigation Section",
-              e
-            )
-          }
+          // onClick={e =>
+          //   rudderslabTrackOnClick(
+          //     "footer-navigation",
+          //     "Footer Navigation Section",
+          //     e
+          //   )
+          // }
         >
           {link.menu_item_title}
         </Link>

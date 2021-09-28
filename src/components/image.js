@@ -48,22 +48,6 @@ const Image = props => {
           }
         }
       `}
-      /* Production query below */
-      // query={graphql`
-      //   query {
-      //     sanityimages: allSanityImageAsset {
-      //       edges {
-      //         node {
-      //           url
-      //           _id
-      //           localFile {
-      //             publicURL
-      //           }
-      //         }
-      //       }
-      //     }
-      //   }
-      // `}
       render={data => {
         const imgdata = data.sanityimages.edges.find(
           imgdata => imgdata.node._id === props.props
