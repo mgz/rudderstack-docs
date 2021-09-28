@@ -86,13 +86,26 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 </div>
 
                 <div
-                  className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-${data.integration_connection.imageHeaderSource}`}
+                  className={`integration-connection-hero-logo-left-${data.integration_connection.imageHeaderSource}`}
+                >
+                  <div className="flex justify-center align-center h-full">
+                    <img
+                      src={data.integration_connection.sourceLogoImgUrl}
+                      className="h-5 sm:h-12 m-auto"
+                      alt="Source Image"
+                      placeholder="tracedSVG"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-right-${data.integration_connection.imageHeaderSource}`}
                 >
                   <div className="flex justify-center align-center h-full">
                     <img
                       src={data.integration_connection.destinationLogoImgUrl}
-                      className="h-5 sm:h-10 m-auto"
-                      alt="RudderStack animation"
+                      className="h-5 sm:h-12 m-auto"
+                      alt="Destination Image"
                       placeholder="tracedSVG"
                     />
                   </div>
