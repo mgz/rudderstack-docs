@@ -101,28 +101,40 @@ carthage update
     <TabPanel>
       <ul>
       <li>Add the RudderStack SDK to your <code class="inline-code">Podfile</code>, as shown:
-      ```ruby
-      github "rudderlabs/rudder-sdk-ios"
-      ```
+<span>
+
+```ruby
+github "rudderlabs/rudder-sdk-ios"
+```
+</span>
       </li>
       <li>Then, run the following command:
-      ```bash
-      pod install
-      ```
+<span>
+
+```bash
+pod install
+```
+</span>
       </li>
       </ul>
     </TabPanel>
     <TabPanel>
       <ul>
       <li>Add the RudderStack SDK to your <code class="inline-code">Cartfile</code>, as shown:
-      ```ruby
-      pod 'Rudder'
-      ```
+<span>
+
+```ruby
+pod 'Rudder'
+```
+</span>
       </li>
       <li>Then, run the following command:
-      ```bash
-      carthage update
-      ```
+<span>
+
+```bash
+carthage update
+```
+</span>
       </li>
       </ul>
     </TabPanel>
@@ -159,14 +171,20 @@ import Rudder
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```objectivec
-        #import &lt;Rudder/Rudder.h&gt;
-        ```
+<span>
+
+```objectivec
+#import <Rudder/Rudder.h>
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```swift
-        import Rudder
-        ```
+<span>
+
+```swift
+import Rudder
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -202,7 +220,7 @@ RSClient.getInstance(WRITE_KEY, config: builder.build())
 
 A shared instance of `RSClient` is accesible after the initialization by `RSClient.sharedInstance()`
 {% endtab %}
-{% endtabs %} -->
+{% endtabs %} 
 
 
 <Tabs>
@@ -212,23 +230,29 @@ A shared instance of `RSClient` is accesible after the initialization by `RSClie
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```objectivec
+<span>
+
+```objectivec
 RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [builder withDataPlaneUrl:DATA_PLANE_URL];
 [RSClient getInstance:WRITE_KEY config:[builder build]];
 ```
+</span>
 A shared instance of <code class="inline-code">RSClient</code> is accessible after the initialization by <code class="inline-code">[RSClient sharedInstance]</code>.
       </TabPanel>
       <TabPanel>
-        ```swift
+<span>
+
+```swift
 let builder: RSConfigBuilder = RSConfigBuilder()
     .withDataPlaneUrl(DATA_PLANE_URL)
 RSClient.getInstance(WRITE_KEY, config: builder.build())
 ```
+</span>
 A shared instance of <code class="inline-code">RSClient</code> is accesible after the initialization by <code class="inline-code">RSClient.sharedInstance()</code>
       </TabPanel>
     </TabPanels>
-</Tabs>
+</Tabs>-->
 
 
 <div class="infoBlock">
@@ -273,7 +297,7 @@ RSClient.sharedInstance()?.track("test_user_id", properties: [
 ```
 
 {% endtab %}
-{% endtabs %}-->
+{% endtabs %}
 
 <Tabs>
   <TabList>
@@ -282,23 +306,29 @@ RSClient.sharedInstance()?.track("test_user_id", properties: [
   </TabList>
     <TabPanels>
       <TabPanel>
-        ````objectivec
-        [[RSClient sharedInstance] track:@"simple_track_with_props" properties:@&#123;
-            @"key_1" : @"value_1",
-            @"key_2" : @"value_2"
-        &#125;];
-        ```
+<span>
+
+````objectivec
+[[RSClient sharedInstance] track:@"simple_track_with_props" properties:@&#123;
+    @"key_1" : @"value_1",
+    @"key_2" : @"value_2"
+&#125;];
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```swift
+<span>
+
+```swift
 RSClient.sharedInstance()?.track("test_user_id", properties: [
     "key_1": "value_1",
     "key_2": "value_2"
 ])
 ```
+</span>
       </TabPanel>
     </TabPanels>
-</Tabs>
+</Tabs>-->
 
 The `track` method accepts the following parameters:
 
@@ -313,7 +343,7 @@ The `track` method accepts the following parameters:
 We capture `deviceId` and use that as `anonymousId` for identifying the user. To attach more information to the user, you can use the `identify` method. Once you set the `identify` information to the user, those will be passed to the successive `track` or `screen` calls. To reset the user identification, you can use the `reset` method.
 
 <div class="infoBlock">
-According to the Apple [documentation](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor), if the device has multiple apps from the same vendors, all those apps will be assigned the same `deviceId`. If all the applications from a vendor are uninstalled, then on next install the app will be assigned a new `deviceId`.
+According to the Apple <a href="https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor">documentation</a>, if the device has multiple apps from the same vendors, all those apps will be assigned the same <code class="inline-code">deviceId</code>. If all the applications from a vendor are uninstalled, then on next install the app will be assigned a new <code class="inline-code">deviceId</code>.
 
 </div>
 
@@ -346,7 +376,7 @@ RSClient.sharedInstance()?.identify("test_user_id", traits: [
 ```
 
 {% endtab %}
-{% endtabs %} -->
+{% endtabs %} 
 
 <Tabs>
   <TabList>
@@ -355,28 +385,34 @@ RSClient.sharedInstance()?.identify("test_user_id", traits: [
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```objectivec
+<span>
+
+```objectivec
 [[RSClient sharedInstance] identify:@"test_user_id"
-                             traits:@&#123;@"foo": @"bar",
-                                      @"foo1": @"bar1",
-                                      @"email": @"test@gmail.com",
-                                      @"key_1" : @"value_1",
-                                      @"key_2" : @"value_2"
-                             &#125;
+traits:@&#123;@"foo": @"bar",
+        @"foo1": @"bar1",
+        @"email": @"test@gmail.com",
+        @"key_1" : @"value_1",
+        @"key_2" : @"value_2"
+&#125;
 ];
 ```
+</span>
       </TabPanel>
       <TabPanel>
-        ```swift
+<span>
+
+```swift
 RSClient.sharedInstance()?.identify("test_user_id", traits: [
     "key_1": "value_1",
     "key_2": "value_2",
     "email": "test@gmail.com"
 ])
 ```
+</span>
       </TabPanel>
     </TabPanels>
-</Tabs>
+</Tabs> -->
 
 The `identify` method accepts the following parameters:
 
@@ -408,7 +444,7 @@ RSClient.sharedInstance()?.screen("ViewController")
 ```
 
 {% endtab %}
-{% endtabs %} -->
+{% endtabs %} 
 
 <Tabs>
   <TabList>
@@ -417,17 +453,23 @@ RSClient.sharedInstance()?.screen("ViewController")
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```objectivec
+<span>
+
+```objectivec
 [[RSClient sharedInstance] screen:@"ViewController"];
 ```
+</span>
       </TabPanel>
       <TabPanel>
-        ```swift
+<span>
+
+```swift
 RSClient.sharedInstance()?.screen("ViewController")
 ```
+</span>
       </TabPanel>
     </TabPanels>
-</Tabs>
+</Tabs>-->
 
 The `screen` method accepts the following parameters:
 
@@ -473,21 +515,27 @@ RSClient.sharedInstance()?.group("test_group_id", traits: [
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```kotlin
+<span>
+
+```objectivec
 [[RSClient sharedInstance] group:@"sample_group_id"
-                              traits:@&#123;@"foo": @"bar",
-                                       @"foo1": @"bar1",
-                                       @"email": @"ruchira@gmail.com"&#125;
+  traits:@{@"foo": @"bar",
+            @"foo1": @"bar1",
+            @"email": @"ruchira@gmail.com"}
 ];
 ```
+</span>
       </TabPanel>
       <TabPanel>
-        ```java
+<span>
+
+```swift
 RSClient.sharedInstance()?.group("test_group_id", traits: [
     "key_1": "value_1",
     "key_2": "value_2"
 ])
 ```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -531,14 +579,20 @@ RSClient.sharedInstance()?.alias("new_user_id")
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```kotlin
+<span>
+
+```objectivec
 [[RSClient sharedInstance] alias:@"new_user_id"];
 ```
+</span>
       </TabPanel>
       <TabPanel>
-        ```java
+<span>
+
+```swift
 RSClient.sharedInstance()?.alias("new_user_id")
 ```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -581,14 +635,20 @@ RSClient.sharedInstance()?.reset()
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```objectivec
+<span>
+
+```objectivec
 [[RSClient sharedInstance] reset];
 ```
+</span>
       </TabPanel>
       <TabPanel>
-        ```swift
+<span>
+
+```swift
 RSClient.sharedInstance()?.reset()
 ```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -600,21 +660,21 @@ You can configure your client based on the following parameters using `RudderCon
 | Parameter               | Type      | Description                                                                                                                                                                                                                                                    | Default Value                                                              |
 | :---------------------- | :-------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------- |
 | `logLevel`              | `int`     | Controls how much of the log you want to see from the SDK.                                                                                                                                                                                                     | `RSLogLevelNone`                                                           |
-| `dataPlaneUrl`          | `string`  | Your Data Plane URL.                                                                                                                                                                                                                                           | [**https://hosted.rudderlabs.com**](https://hosted.rudderlabs.com)\*\*\*\* |
+| `dataPlaneUrl`          | `string`  | Your Data Plane URL.                                                                                                                                                                                                                                           | [**https://hosted.rudderlabs.com**](https://hosted.rudderlabs.com) |
 | `flushQueueSize`        | `int`     | Number of events in a batch request sent to the server.                                                                                                                                                                                                        | `30`                                                                       |
 | `dbThresholdCount`      | `int`     | Number of events to be saved in the `SQLite` database. Once the limit is reached, older events are deleted from the DB.                                                                                                                                        | `10000`                                                                    |
 | `sleepTimeout`          | `int`     | Minimum waiting time to flush the events to the server .                                                                                                                                                                                                       | `10 seconds`                                                               |
 | `configRefreshInterval` | `int`     | Fetches the config from `dashboard` after the specified time \(in hours\).                                                                                                                                                                                     | `2`                                                                        |
 | `trackLifecycleEvents`  | `boolean` | Specify whether the SDK will capture application life cycle events automatically.                                                                                                                                                                              | `true`                                                                     |
 | `recordScreenViews`     | `boolean` | Specify whether the SDK will capture screen view events automatically.                                                                                                                                                                                         | `false`                                                                    |
-| `controlPlaneUrl`       | `string`  | This parameter should be changed **only if** you are self-hosting the Control Plane. Check the section **Self-Hosted Control Plane** below for more information. The iOS SDK will add `/sourceConfig` along with this URL to fetch the required configuration. | [**https://api.rudderlabs.com**](https://api.rudderlabs.com)\*\*\*\*       |
+| `controlPlaneUrl`       | `string`  | This parameter should be changed **only if** you are self-hosting the Control Plane. Check the section **Self-Hosted Control Plane** below for more information. The iOS SDK will add `/sourceConfig` along with this URL to fetch the required configuration. | [**https://api.rudderlabs.com**](https://api.rudderlabs.com)       |
 
 ### Self-Hosted Control Plane
 
 If you are using a device mode destination like Adjust, Firebase, etc., the iOS SDK needs to fetch the required configuration from the Control Plane. If you are using the **RudderStack Config Generator** to host your own Control Plane, then follow [this guide](https://docs.rudderstack.com/how-to-guides/rudderstack-config-generator#what-is-the-control-plane-url) and specify `controlPlaneUrl` in `RudderConfigBuilder` that points to your hosted source configuration file.
 
 <div class="warningBlock">
-You shouldn't pass the `controlPlaneUrl` parameter during SDK initialization if you are using [**RudderStack Cloud**](https://app.rudderstack.com). This parameter is supported only if you are using our open-source [**RudderStack Config Generator**](https://docs.rudderstack.com/how-to-guides/rudderstack-config-generator).
+You shouldn't pass the <code class="inline-code">controlPlaneUrl</code> parameter during SDK initialization if you are using <a href="https://app.rudderstack.com">RudderStack Cloud</a>. This parameter is supported only if you are using our open-source <a href="../../user-guides/how-to-guides/rudderstack-config-generator">RudderStack Config Generator</a>.
 
 </div>
 
@@ -741,30 +801,36 @@ option.putIntegration(with: <RudderIntegrationFactory>.instance(), isEnabled:<BO
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```objectivec
-        RSOption *option = [[RSOption alloc]init];
-        //default value for `All` is true
-        [option putIntegration:@"All" isEnabled:YES];
-        // specifying destination by its display name
-        [option putIntegration:@"Amplitude" isEnabled:YES];
-        [option putIntegration:@"&lt;destination display name&gt;" isEnabled:&lt;BOOL&gt;];
-        // specifying destination by its Factory instance
-        [option putIntegrationWithFactory:[RudderMoengageFactory instance] isEnabled:NO];
-        [option putIntegrationWithFactory:[&lt;RudderIntegrationFactory&gt; instance] isEnabled:&lt;BOOL&gt;];
-        ```
+<span>
+
+```objectivec
+RSOption *option = [[RSOption alloc]init];
+//default value for `All` is true
+[option putIntegration:@"All" isEnabled:YES];
+// specifying destination by its display name
+[option putIntegration:@"Amplitude" isEnabled:YES];
+[option putIntegration:@"&lt;destination display name&gt;" isEnabled:&lt;BOOL&gt;];
+// specifying destination by its Factory instance
+[option putIntegrationWithFactory:[RudderMoengageFactory instance] isEnabled:NO];
+[option putIntegrationWithFactory:[&lt;RudderIntegrationFactory&gt; instance] isEnabled:&lt;BOOL&gt;];
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```swift
-        let option:RSOption = RSOption();
-        //default value for `All` is true
-        option.putIntegration("All", isEnabled:true)
-        // specifying destination by its display name
-        option.putIntegration("Amplitude", isEnabled:true)
-        option.putIntegration(&lt;DESTINATION DISPLAY NAME&gt;, isEnabled:&lt;BOOL&gt;)
-        // specifying destination by its Factory instance
-        option.putIntegration(with: RudderMoengageFactory.instance(), isEnabled: true);
-        option.putIntegration(with: &lt;RudderIntegrationFactory&gt;.instance(), isEnabled:&lt;BOOL&gt;);
-        ```
+<span>
+
+```swift
+let option:RSOption = RSOption();
+//default value for `All` is true
+option.putIntegration("All", isEnabled:true)
+// specifying destination by its display name
+option.putIntegration("Amplitude", isEnabled:true)
+option.putIntegration(&lt;DESTINATION DISPLAY NAME&gt;, isEnabled:&lt;BOOL&gt;)
+// specifying destination by its Factory instance
+option.putIntegration(with: RudderMoengageFactory.instance(), isEnabled: true);
+option.putIntegration(with: &lt;RudderIntegrationFactory&gt;.instance(), isEnabled:&lt;BOOL&gt;);
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -818,7 +884,9 @@ RSClient.getInstance(WRITE_KEY, config: builder.build(),options: option)// passi
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```objectivec
+<span>
+
+```objectivec
 RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [builder withDataPlaneURL:[[NSURL alloc] initWithString:DATA_PLANE_URL]];
 [builder withLoglevel:RSLogLevelDebug];
@@ -826,9 +894,12 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [builder withRecordScreenViews:YES;
 [RSClient getInstance:WRITE_KEY config:[builder build] options:option]; // passing the rudderoption object containing the list of destination(s) you specified
 ```
+</span>
       </TabPanel>
       <TabPanel>
-        ```swift
+<span>
+
+```swift
 let builder: RSConfigBuilder = RSConfigBuilder()
             .withLoglevel(RSLogLevelDebug)
             .withDataPlaneUrl(DATA_PLANE_URL)
@@ -836,6 +907,7 @@ let builder: RSConfigBuilder = RSConfigBuilder()
             .withRecordScreenViews(true)
 RSClient.getInstance(WRITE_KEY, config: builder.build(),options: option)// passing the rudderoption object containing the list of destination(s) you specified
 ```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -876,21 +948,27 @@ rudder?.track("track_with_props", properties: [
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```objectivec
+<span>
+
+```objectivec
 [[RSClient sharedInstance] track:@"simple_track_with_props" properties:@&#123;
         @"key_1" : @"value_1",
         @"key_2" : @"value_2"
     &#125; options:option]; // passing the rudderoption object containing the list of destination(s) you specified
 ```
+</span>
       </TabPanel>
       <TabPanel>
-        ```swift
+<span>
+
+```swift
 let rudder: RSClient? = RSClient.sharedInstance()
 rudder?.track("track_with_props", properties: [
             "key_1": "value_1",
             "key_2": "value_2",
         ],options:option) // passing the rudderoption object containing the list of destination(s) you specified
 ```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -947,20 +1025,26 @@ RSClient.getInstance(<WRITE_KEY>, config: builder.build())
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```objectivec
-        RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
-        [builder withDataPlaneUrl:DATA_PLANE_URL];
-        [builder withLoglevel:RudderLogLevelDebug];
-        [RSClient getInstance:WRITE_KEY config:[builder build]];
-        ```
+<span>
+
+```objectivec
+RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
+[builder withDataPlaneUrl:DATA_PLANE_URL];
+[builder withLoglevel:RudderLogLevelDebug];
+[RSClient getInstance:WRITE_KEY config:[builder build]];
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```swift
-        let builder: RSConfigBuilder = RSConfigBuilder()
-        builder.withDataPlaneUrl(&lt;DATA_PLANE_URL&gt;)
-        builder.withLoglevel(RudderLogLevelDebug)
-        RSClient.getInstance(&lt;WRITE_KEY&gt;, config: builder.build())
-        ```
+<span>
+
+```swift
+let builder: RSConfigBuilder = RSConfigBuilder()
+builder.withDataPlaneUrl(&lt;DATA_PLANE_URL&gt;)
+builder.withLoglevel(RudderLogLevelDebug)
+RSClient.getInstance(&lt;WRITE_KEY&gt;, config: builder.build())
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -1204,14 +1288,20 @@ You can get the user traits after making an `identify` call in the following way
   </TabList>
     <TabPanels>
       <TabPanel>
-        ```swift
-        let traits = RSClient.sharedInstance()?.getContext().traits
-        ```
+<span>
+
+```swift
+let traits = RSClient.sharedInstance()?.getContext().traits
+```
+</span>
       </TabPanel>
       <TabPanel>
-        ```
-        NSDictionary* traits = [[RSClient sharedInstance] getContext].traits;
-        ```
+<span>
+
+```
+NSDictionary* traits = [[RSClient sharedInstance] getContext].traits;
+```
+</span>
       </TabPanel>
     </TabPanels>
 </Tabs>

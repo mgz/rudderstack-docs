@@ -74,6 +74,7 @@
     "react-h5-audio-player": "^3.7.0",
     "react-helmet": "^6.1.0",
     "react-instantsearch-dom": "^6.10.3",
+    "react-katex": "^2.0.2",
     "react-lazily": "^0.9.0",
     "react-medium-image-zoom": "^4.3.5",
     "react-rangeslider": "^2.2.0",

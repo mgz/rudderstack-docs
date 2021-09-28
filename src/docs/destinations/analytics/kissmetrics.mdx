@@ -64,7 +64,7 @@ You will need to enable this setting while building reports in Kissmetrics.
 
 ## Identify
 
-Calling `rudderanalytics.identify()` \***\*pushes an `identify` call with the `userId` \*\***and \***\*`set` \_\*\***\_ \*\*\*\*with the `user-traits` to the Kissmetrics queue object while using the the Native SDK. For more information on the `identify` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) documentation.
+Calling `rudderanalytics.identify()` \***\*pushes an `identify` call with the `userId` \*\***and \***\*`set` \_\*\***\_ with the `user-traits` to the Kissmetrics queue object while using the the Native SDK. For more information on the `identify` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) documentation.
 
 For sending data through the API's cloud mode, we call the [http://trk.kissmetrics.com/s](https://trk.kissmetrics.com/s) end-point for registering users and their traits.
 
@@ -100,7 +100,7 @@ Nested objects are flattened as <code class="inline-code">a.b.c</code> for input
 
 ## Page
 
-Calling `rudderanalytics.page()` \*\*\*\*will record the page properties for event `Viewed <category> <name> page`. For more information on the `page` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) documentation.
+Calling `rudderanalytics.page()` will record the page properties for event `Viewed <category> <name> page`. For more information on the `page` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) documentation.
 
 A sample page event is as shown:
 
@@ -134,7 +134,7 @@ Automatically-tracked Kissmetrics events such as <strong>Visited a site</strong>
 
 ## Track
 
-Calling `rudderanalytics.track()` pushes a record with the event name and the associated properties \_\*\*\*\*\_when using the native SDK integration. For more information on the `track` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) documentation.
+Calling `rudderanalytics.track()` pushes a record with the event name and the associated properties \_\_when using the native SDK integration. For more information on the `track` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) documentation.
 
 For sending data through the API's cloud mode, we call the [http://trk.kissmetrics.com/e](http://trk.kissmetrics.com/e) end-point for registering the event and its associated properties.
 

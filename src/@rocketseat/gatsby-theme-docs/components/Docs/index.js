@@ -13,7 +13,8 @@ import PostNav from "./PostNav"
 import EditGithub from "@rocketseat/gatsby-theme-docs/src/components/Docs/EditGithub"
 import { forEach, find, findIndex } from "lodash"
 import { postNavList } from "./PostNav/postNavList"
-import { useSidebar } from "../../../gatsby-theme-docs-core/hooks/useSidebar"
+import {BlockMath, InlineMath} from 'react-katex';
+import 'katex/dist/katex.min.css';
 
 export default function Docs({ mdx, pageContext }) {
   const { prev, next, repositoryEditUrl, repositoryProvider } = pageContext
@@ -42,7 +43,9 @@ export default function Docs({ mdx, pageContext }) {
      TabList,
      Tab,
      TabPanels,
-     TabPanel,     
+     TabPanel,
+     BlockMath,
+     InlineMath    
     }
 
   useEffect(() => {
@@ -57,9 +60,7 @@ export default function Docs({ mdx, pageContext }) {
     let descriptionSpan = `<span>${description === null ? '' : description}</span>`;
     let h1Tags = document.querySelectorAll("h1");
     forEach(h1Tags, (o) => o.innerHTML = title + descriptionSpan);
-    h1Tags.innerHTML = descriptionSpan;
-
-    
+    h1Tags.innerHTML = descriptionSpan;    
   }, [])
 
   return (

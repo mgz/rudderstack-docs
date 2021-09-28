@@ -73,7 +73,7 @@ const NestedAccordion = props => {
         let menuItem = returnMenuItem(item, i)
         return menuItem
       })
-      setItems(menuItems)
+      setItems(menuItems);
     }
     if (loading) {
       load()

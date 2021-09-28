@@ -267,7 +267,7 @@ The `load()`method is defined as follows:
 `rudderanalytics.load(<YOUR_WRITE_KEY>, <DATA_PLANE_URL>, options);`
 
 <div class="infoBlock">
-<strong>NOTE</strong>: You need to replace `&lt;YOUR_WRITE_KEY&gt;` with the write key in the RudderStack Control Plane and `&lt;DATA_PLANE_URL&gt;` with the URL of the RudderStack Server.
+<strong>NOTE</strong>: You need to replace <code class="inline-code">&lt;YOUR_WRITE_KEY&gt;</code> with the write key in the RudderStack Control Plane and <code class="inline-code">&lt;DATA_PLANE_URL&gt;</code> with the URL of the RudderStack Server.
 
 </div>
 
@@ -561,7 +561,7 @@ Calling the above method will parse the Linker ID and set the **`anonymousId`** 
 If you would like to set the `userid` to be empty, pass an empty string or `""`. A common use case for this is if an anonymous user was identified with a `userid` and then logs out of their account. You can then `identify("", {isLoggedIn: false})` and the user will continue to be identified by their `anonymousId` for future events.
 
 <div class="warningBlock">
-Do **not** identify with `null`, as this will not allow you to pass a traits object and it will keep the current `userid`.
+Do <strong>not</strong> identify with <code class="inline-code">null</code>, as this will not allow you to pass a traits object and it will keep the current <code class="inline-code">userid</code>.
 
 </div>
 
