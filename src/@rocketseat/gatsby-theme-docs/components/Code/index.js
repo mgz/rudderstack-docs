@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import rangeParser from 'parse-numeric-range';
 import theme from 'prism-react-renderer/themes/dracula';
+import Prism from "prism-react-renderer/prism";
 import { LiveProvider, LiveEditor } from 'react-live';
-
 import { copyToClipboard } from '@rocketseat/gatsby-theme-docs/src/util/copy-to-clipboard';
 import scope from './LiveCodeScope';
 import {
@@ -17,6 +17,14 @@ import {
   LiveError,
   StyledEditor,
 } from './styles';
+(typeof global !== "undefined" ? global : window).Prism = Prism;
+require("prismjs/components/prism-kotlin");
+require("prismjs/components/prism-csharp");
+require("prismjs/components/prism-ruby");
+require("prismjs/components/prism-groovy");
+require("prismjs/components/prism-swift");
+require("prismjs/components/prism-java");
+require("prismjs/components/prism-dart");
 
 const calculateLinesToHighlight = (meta) => {
   const RE = /{([\d,-]+)}/;
@@ -52,6 +60,7 @@ export default function CodeHighlight({
     }, 4000);
   };
 
+
   if (live) {
     return (
       <LiveProvider
@@ -60,6 +69,7 @@ export default function CodeHighlight({
         theme={theme}
         transformCode={(code) => `/** @jsx mdx */${code}`}
         scope={scope}
+        Prism={Prism}
       >
         <LiveWrapper>
           <LivePreview />
@@ -141,6 +151,7 @@ CodeHighlight.propTypes = {
   live: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   title: PropTypes.string,
   lineNumbers: PropTypes.string,
+  language: PropTypes.string
 };
 
 CodeHighlight.defaultProps = {

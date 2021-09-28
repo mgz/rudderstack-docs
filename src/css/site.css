@@ -1248,7 +1248,7 @@ top: -60px;
 .nestedAccordion .accordion__button {
   @apply bg-white;
   @apply relative;
-  @apply pr-4 pl-2;
+  @apply pr-5 pl-2;
   @apply outline-none;
 }
 
@@ -1690,7 +1690,7 @@ a.pageRef:hover .rightRefArrow {
   @apply rounded-full;
   @apply mr-2;
 }
-.inline-code, .pathName{
+.pathName{
   word-break: break-all;
 }
 

@@ -9,9 +9,12 @@ import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs"
 import "@reach/tabs/styles.css"
 import Layout from "../Layout"
 import SEO from "@rocketseat/gatsby-theme-docs/src/components/SEO"
-import PostNav from "@rocketseat/gatsby-theme-docs/src/components/Docs/PostNav"
+import PostNav from "./PostNav"
 import EditGithub from "@rocketseat/gatsby-theme-docs/src/components/Docs/EditGithub"
-import { forEach } from "lodash"
+import { forEach, find, findIndex } from "lodash"
+import { postNavList } from "./PostNav/postNavList"
+import {BlockMath, InlineMath} from 'react-katex';
+import 'katex/dist/katex.min.css';
 
 export default function Docs({ mdx, pageContext }) {
   const { prev, next, repositoryEditUrl, repositoryProvider } = pageContext
@@ -19,6 +22,13 @@ export default function Docs({ mdx, pageContext }) {
   const { headings, body } = mdx
   const { slug } = mdx.fields
 
+  let docsBasePath = '/docs';
+  let currentPageIndex = findIndex(postNavList, o => slug === docsBasePath + o.link + '/');
+  let nextPageIndex = currentPageIndex + 1 === postNavList.length ? 0 : currentPageIndex + 1;
+  let nextPageItem =  postNavList[nextPageIndex];
+  let prevPageIndex = currentPageIndex - 1 < 0 ? postNavList.length - 1 : currentPageIndex - 1;
+  let prevPageItem =  postNavList[prevPageIndex];
+  
   const shortCodes = {
     pre: (preProps) => {
       const props = preToCodeBlock(preProps);
@@ -33,7 +43,9 @@ export default function Docs({ mdx, pageContext }) {
      TabList,
      Tab,
      TabPanels,
-     TabPanel,     
+     TabPanel,
+     BlockMath,
+     InlineMath    
     }
 
   useEffect(() => {
@@ -45,10 +57,10 @@ export default function Docs({ mdx, pageContext }) {
       }
     })()
 
-    let descriptionSpan = `<span>${description}</span>`;
+    let descriptionSpan = `<span>${description === null ? '' : description}</span>`;
     let h1Tags = document.querySelectorAll("h1");
     forEach(h1Tags, (o) => o.innerHTML = title + descriptionSpan);
-    h1Tags.innerHTML = descriptionSpan;
+    h1Tags.innerHTML = descriptionSpan;    
   }, [])
 
   return (
@@ -67,7 +79,7 @@ export default function Docs({ mdx, pageContext }) {
           repositoryEditUrl={repositoryEditUrl}
           repositoryProvider={repositoryProvider}
         />
-        <PostNav prev={prev} next={next} />
+        <PostNav prev={prevPageItem} next={nextPageItem} />
       </Layout>
     </>
   )

@@ -81,7 +81,7 @@ The current mapping is as follows:
 | `userId`         | `external_id`     |
 
 <div class="infoBlock">
-The `organization_id` is Zendesk organization id and they create it.
+The <code class="inline-code">organization_id</code> is Zendesk organization id and they create it.
 
 </div>
 
@@ -127,13 +127,13 @@ rudderanalytics.track("Track me", {
 ```
 
 <div class="infoBlock">
-  **IMPORTANT:** We use [Zendesk Sunshine Events
-  API](https://developer.zendesk.com/rest_api/docs/sunshine/events_api) for
-  `track` call. You need to meet the following criteria to make the `track`
+  <strong>IMPORTANT:</strong> We use <a href="https://developer.zendesk.com/rest_api/docs/sunshine/events_api">Zendesk Sunshine Events
+  API</a> for
+  <code class="inline-code">track</code> call. You need to meet the following criteria to make the <code class="inline-code">track</code>
   events successful.
   <ul>
     <li>You've signed up for the Events API early access program</li>
-    <li>A `userId` is passed along with the `track` call</li>
+    <li>A <code class="inline-code">userId</code> is passed along with the <code class="inline-code">track</code> call</li>
   </ul>
 </div>
 

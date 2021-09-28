@@ -25,7 +25,7 @@ export default function Layout({
     disableTableOfContents === true || !headings || headings.length === 0
 
   useEffect(() => {
-
+    
   }, [])
 
   function handleMenuOpen() {

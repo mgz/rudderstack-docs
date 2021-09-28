@@ -11,8 +11,8 @@ description: >-
 RudderStack’s Node.js SDK lets you track your customer event data from your Node.js app and route them to your specified destination platforms.
 
 <div class="successBlock">
-  Find the code for this SDK in our [**GitHub
-  repository**](https://github.com/rudderlabs/rudder-sdk-node).
+  Find the code for this SDK in our <a href="https://github.com/rudderlabs/rudder-sdk-node">GitHub
+  repository</a>.
 </div>
 
 ## Installing the RudderStack Node.js SDK
@@ -66,7 +66,7 @@ The `identify` parameters are as described below:
 | `context`                                                                                                  | Object   | Optional                                  | The dictionary of information that provides context about a message. Note that it is not directly related to the API call. |
 | `integrations`                                                                                             | Object   | Optional                                  | The dictionary of destinations to be either enabled or disabled.                                                           |
 | `timestamp`                                                                                                | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
-| \`\`[`traits`](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/identify#identify-traits)\`\` | Object   | Optional                                  | The dictionary of the traits associated with the user, such as `name`or `email.`                                           |
+| [`traits`](https://docs.rudderstack.com/rudderstack-api/rudderstack-spec/identify#identify-traits) | Object   | Optional                                  | The dictionary of the traits associated with the user, such as `name`or `email.`                                           |
 
 ## Track
 
@@ -320,7 +320,7 @@ If the same queue (RudderStack SDK initialized with the same queue name) is used
 ### **Flow**
 
 - Calling the SDK methods like `track`, `page`, `identify`, etc. pushes the events to an in-memory array.
-- The events from the array are flushed as a `batch` to the Redis persistence based on the `flushAt` and `flushInterval` settings. The in-memory array has a maximum size of `maxInternalQueueSize`. **Once this size limit is reached,** _\*\*\*\*_**the events won't be accepted if not drained to the other side \(cases where Redis connection is slow or the Redis server is not reachable\).**
+- The events from the array are flushed as a `batch` to the Redis persistence based on the `flushAt` and `flushInterval` settings. The in-memory array has a maximum size of `maxInternalQueueSize`. **Once this size limit is reached,** __**the events won't be accepted if not drained to the other side \(cases where Redis connection is slow or the Redis server is not reachable\).**
 - The processor will take the batch from the Redis list and make a request to RudderStack. In case of an error, the processor will retry sending the data again if the error can be retried \(errors with status code `5xx and 429`\). **The retry will go up to `JobOpts.maxAttempts` with an** **exponential backoff of power 2 with max backoff of 30 seconds**.
 - If the job fails even after `JobOpts.maxAttempts`, it will not be retried again and pushed to a `failed queue`. **You can retry them later manually using Bull’s utility methods** [**listed here**](https://github.com/OptimalBits/bull/blob/develop/REFERENCE.md#queuegetfailed) **or get them from Redis directly**.
 - There might be a scenario where the node process dies with the jobs still in active state \(not completed nor failed but in the process of sending/retrying\). Since the RudderStack SDK has only **1 processor for sending events** \(this count should always be **1**\), the next time the SDK is initialized and `createPersistenceQueue` is called, **the jobs will be picked up first by the processor to get processed to maintain event ordering based on the value of `QueueOpts.isMultiProcessor`**.

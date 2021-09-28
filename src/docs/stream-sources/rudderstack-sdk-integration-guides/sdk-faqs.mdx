@@ -127,11 +127,11 @@ When the dataplane gets disconnected from the SDK and events are no longer able 
 
 This SDK can be configured to match your requirements for retry and backoff logic. By default, if the dataplane goes down and the JS SDK cannot send events to the Rudder Server, up to 100 events will be stored. While still disconnected from the dataplane, the JS SDK will try to resend the stored events to the Rudder Server. However, for each retry, the delay duration will grow. The equation to get the duration of delay is as follows
 
-$$
-dt = md * (F^n)
-$$
 
-Where, $$dt$$ is the delay time in ms, $$md$$ is the `minRetryDelay` \(configurable; default is 1000 ms\), $$F$$ is the `backoffFactor` \(configurable; default is 2\), and $$n$$ is the current retry attempt. The SDK will retry until the attempts surpass the `maxAttempts` value. This is by default set to 10 attempts but is configurable. Each retry attempt, the delay time grows exponentially. However, it will max out at whatever the `maxRetryDelay` is. By default, this value is set at 360000 ms, but it is configurable.
+<BlockMath>dt = md * (F^n)</BlockMath>
+
+
+Where, <InlineMath>dt</InlineMath> is the delay time in ms, <InlineMath>md</InlineMath> is the `minRetryDelay` \(configurable; default is 1000 ms\), <InlineMath>F</InlineMath> is the `backoffFactor` \(configurable; default is 2\), and <InlineMath>n</InlineMath> is the current retry attempt. The SDK will retry until the attempts surpass the `maxAttempts` value. This is by default set to 10 attempts but is configurable. Each retry attempt, the delay time grows exponentially. However, it will max out at whatever the `maxRetryDelay` is. By default, this value is set at 360000 ms, but it is configurable.
 
 #### iOS SDK and Android SDK
 
@@ -141,11 +141,9 @@ Both the iOS and Android SDKs share similar retry and backoff logic for when the
 
 Currently the Node SDK is the only server-side SDK that supports event retry and backoff logic. The logic is quite similar to the JavaScript SDK. If the connection fails, up to 20,000 events will be stored. However, this is in-memory storage and can result in data loss. The SDK will retry a maximum of 10 times, by default. For each retry the delay duration between retries will grow and can be calculated using the following equation.
 
-$$
-dt = 1000 * (2^n)
-$$
+<BlockMath>dt = 1000 * (2^n)</BlockMath>
 
-Where, $$dt$$ is the delay time in ms and $$n$$ is the current retry attempt. The SDK will retry until the attempts surpass the `maxAttempts` value which is set to 10 attempts. With each retry attempt, the delay time will grow exponentially. However, it will never be greater than the maximum delay duration which is 30 seconds.
+Where, <InlineMath>dt</InlineMath> is the delay time in ms and <InlineMath>n</InlineMath> is the current retry attempt. The SDK will retry until the attempts surpass the `maxAttempts` value which is set to 10 attempts. With each retry attempt, the delay time will grow exponentially. However, it will never be greater than the maximum delay duration which is 30 seconds.
 
 <div class="infoBlock">
 The Node SDK does have a feature to persist the event data in Redis for more event storage and better guarantees of failed event delivery. Instructions on how to configure the Redis solution can be found <a href="../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk#data-persistence-in-node-js-sdk">here</a>.

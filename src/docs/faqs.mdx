@@ -34,16 +34,16 @@ Simply put, the Data Plane URL is used to connect to the RudderStack backend for
 
 <div class="infoBlock">
 
-  To get the **Data Plane URL**:
+  To get the <strong>Data Plane URL</strong>:
   <ul>
     <li>
-      If you're using the **open-source** version of RudderStack, you are
-      required to set up your own data plane by [**installing and setting up
-      RudderStack**](get-started/installing-and-setting-up-rudderstack/) in your
+      If you're using the <strong>open-source</strong> version of RudderStack, you are
+      required to set up your own data plane by <a href="get-started/installing-and-setting-up-rudderstack/">installing and setting up
+      RudderStack</a> in your
       preferred environment.
     </li>
     <li>
-      If you're using the **enterprise** version of RudderStack, please contact
+      If you're using the <strong>enterprise</strong> version of RudderStack, please contact
       us for the data plane URL with the email ID used to sign up for
       RudderStack.
     </li>
@@ -156,7 +156,7 @@ For self-hosting the UI, you can use the [**RudderStack Config Generator**](http
 Note that the open-source config-generator will only generate the source-destination configurations which are required by RudderStack.
 
 <div class="warningBlock">
-The self-hosted control plane \(UI\) does not support features like **Transformations** and **Live Events Debugger**, which are included for free in the [**RudderStack-hosted control plane**](https://app.rudderstack.com).
+The self-hosted control plane (UI) does not support features like <strong>Transformations</strong> and <strong>Live Events Debugger</strong>, which are included for free in the <a href="https://app.rudderstack.com">RudderStack-hosted control plane</a>.
 
 </div>
 
@@ -270,7 +270,7 @@ You can override the UI set sync frequency by setting `warehouseSyncFreqIgnore` 
 
 #### 2. I am using Rudderstack to mirror my source tables to PostgreSQL. I have all of the data in the S3 staging folders. But RudderStack doesn't create the corresponding PostgreSQL tables when I press on 'sync'. What do I do?
 
-- Firstly, make sure you have set up the [**required user permissions**](https://docs.rudderstack.com/data-warehouse-integrations/postgresql#setting-postgresql-user-permissions) \*\*\*\*for PostgreSQL.
+- Firstly, make sure you have set up the [**required user permissions**](https://docs.rudderstack.com/data-warehouse-integrations/postgresql#setting-postgresql-user-permissions) for PostgreSQL.
 - Then, check the status of the sync in the [**RudderStack dashboard**](https://app.rudderstack.com/syncs).
 - Check if the database is accessible by whitelisting all the RudderStack IPs listed [**here**](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-faqs#which-ips-should-be-whitelisted).
 - Ensure that all the security group policies for S3 are set as specified [**here**](https://docs.rudderstack.com/destinations/storage-platforms/amazon-s3#permissions).
@@ -360,7 +360,7 @@ maxFailedCountForJob = 8
 ```
 
 <div class="warningBlock">
-Note that if a user event fails, the other events are not sent until the failed event is successfully sent or aborted \(as per above behavior\). This is to ensure event ordering for all events of a single user.
+Note that if a user event fails, the other events are not sent until the failed event is successfully sent or aborted (as per above behavior). This is to ensure event ordering for all events of a single user.
 
 </div>
 
@@ -373,7 +373,7 @@ Some downstream destinations have limits on the number of events they accept at 
 Some examples are:
 
 - [**Customer.io**](https://customer.io/docs/api/#api-documentationlimits):
-- \*\*\*\*[**Amplitude Upload Limit** ](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2#upload-limit)
+- [**Amplitude Upload Limit** ](https://help.amplitude.com/hc/en-us/articles/360032842391-HTTP-API-V2#upload-limit)
 
 These limits can also be configured using config variables in [**`config.yaml`**](https://github.com/rudderlabs/rudder-server/blob/master/config/config.yaml) or using environment variables as described in comments [**here**](https://github.com/rudderlabs/rudder-server/blob/master/config/config.yaml#L1-L32).
 

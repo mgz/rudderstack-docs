@@ -78,6 +78,26 @@ const NestedAccordion = props => {
     if (loading) {
       load()
     }
+      
+      function expandAcc(el){
+        if(el !== undefined){
+          let parentButton, parentPanel;
+          if(el.closest('.accordion__panel') === (undefined || null)){
+            if(el.hasAttribute('aria-expanded') && el.parentNode.parentNode.querySelector('accordion__panel') !== null){
+              el.setAttribute('aria-expanded', true);
+            } 
+          }else{
+            parentButton = el.closest('.accordion__panel').parentNode.childNodes[0].childNodes[0];
+            parentPanel = el.closest('.accordion__panel').parentNode.childNodes[1];
+            parentButton.setAttribute('aria-expanded', true);
+            parentPanel.removeAttribute('hidden');
+            expandAcc(parentButton);
+          }
+          //parentButton.setAttribute('aria-expanded', true);
+        }
+      }
+      let activeItem = document.getElementsByClassName('accordion__button accActive')[0];
+      expandAcc(activeItem);
   }, [loading])
 
   return <div className="nestedAccordion">{items}</div>
