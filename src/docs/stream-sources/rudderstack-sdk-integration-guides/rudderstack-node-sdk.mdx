@@ -39,7 +39,7 @@ const client = new Analytics(WRITE_KEY, DATA_PLANE_URL / v1 / batch)
 The `identify` call lets you associate a user to their actions as well as captures the relevant traits or properties related to that user.
 
 <div class="infoBlock">
-For a detailed explanation of the <code class="inline-code">identify</code> call, refer to our <a href="../../rudderstack-api/rudderstack-spec/identify">RudderStack API Specification</a> guide.
+For a detailed explanation of the <code class="inline-code">identify</code> call, refer to our <a href="../../../rudderstack-api/rudderstack-spec/identify/">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -66,14 +66,14 @@ The `identify` parameters are as described below:
 | `context`                                                                                                  | Object   | Optional                                  | The dictionary of information that provides context about a message. Note that it is not directly related to the API call. |
 | `integrations`                                                                                             | Object   | Optional                                  | The dictionary of destinations to be either enabled or disabled.                                                           |
 | `timestamp`                                                                                                | Date     | Optional                                  | The timestamp of the message's arrival.                                                                                    |
-| [`traits`](https://rudderstack.com/docs/rudderstack-api/rudderstack-spec/identify#identify-traits) | Object   | Optional                                  | The dictionary of the traits associated with the user, such as `name`or `email.`                                           |
+| [`traits`](https://rudderstack.com/docs/rudderstack-api/rudderstack-spec/identify/#identify-traits) | Object   | Optional                                  | The dictionary of the traits associated with the user, such as `name`or `email.`                                           |
 
 ## Track
 
 The `track` call lets you record the users' actions along with their associated properties. Each user action is called an 'event'.
 
 <div class="infoBlock">
-For a detailed explanation of the <code class="inline-code">track</code> call, please refer to our <a href="../../rudderstack-api/rudderstack-spec/track">RudderStack API Specification</a> guide.
+For a detailed explanation of the <code class="inline-code">track</code> call, please refer to our <a href="../../../rudderstack-api/rudderstack-spec/track/">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -107,7 +107,7 @@ The `track` method parameters are as described below:
 The `page` call allows you to record the page views on your website. It also records the other relevant information about the page that is being viewed.
 
 <div class="infoBlock">
-For a detailed explanation of the <code class="inline-code">page</code> call, please refer to our <a href="../../rudderstack-api/rudderstack-spec/page">RudderStack API Specification</a> guide.
+For a detailed explanation of the <code class="inline-code">page</code> call, please refer to our <a href="../../../rudderstack-api/rudderstack-spec/page/">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -143,7 +143,7 @@ The `page` method parameters are as described below:
 The `group` call allows you to link an identified user with a group, such as a company, organization, or an account. It also lets you record any custom traits associated with that group, such as the name of the company, the number of employees, etc.
 
 <div class="infoBlock">
-For a detailed explanation of the <code class="inline-code">group</code> call, refer to our <a href="../../rudderstack-api/rudderstack-spec/group">RudderStack API Specification</a> guide.
+For a detailed explanation of the <code class="inline-code">group</code> call, refer to our <a href="../../../rudderstack-api/rudderstack-spec/group/">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -182,7 +182,7 @@ The `alias` call lets you merge different identities of a known user.
 </div>
 
 <div class="infoBlock">
-For a detailed explanation of the <code class="inline-code">alias</code> call, refer to our <a href="../../rudderstack-api/rudderstack-spec/alias">RudderStack API Specification</a> guide.
+For a detailed explanation of the <code class="inline-code">alias</code> call, refer to our <a href="../../../rudderstack-api/rudderstack-spec/alias/">RudderStack API Specification</a> guide.
 
 </div>
 

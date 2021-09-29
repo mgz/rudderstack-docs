@@ -46,8 +46,8 @@ const queries = [
             row.node.slug +
             "-" +
             convertToSlug(row.node.tableOfContents.items[0].title),
-          pageSlug: row.node.slug.charAt(row.node.slug.length - 1) == '/' ? row.node.slug.replace(row.node.slug.charAt(row.node.slug.length - 1), '') : row.node.slug,
-          //pageSlug: row.node.slug,
+          //pageSlug: row.node.slug.charAt(row.node.slug.length - 1) == '/' ? row.node.slug.replace(row.node.slug.charAt(row.node.slug.length - 1), '') : row.node.slug,
+          pageSlug: row.node.slug,
           pageTitle: row.node.tableOfContents.items[0].title,
           sectionId: convertToSlug(row.node.tableOfContents.items[0].title),
           SectionTitle: row.node.tableOfContents.items[0].title,
@@ -71,8 +71,8 @@ const queries = [
 
           tmpData.push({
             objectID: row.node.slug + "-" + convertToSlug(row.node.headings[i].value),
-            pageSlug: row.node.slug.charAt(row.node.slug.length - 1) == '/' ? row.node.slug.replace(row.node.slug.charAt(row.node.slug.length - 1), '') : row.node.slug,
-            //pageSlug: row.node.slug,
+            //pageSlug: row.node.slug.charAt(row.node.slug.length - 1) == '/' ? row.node.slug.replace(row.node.slug.charAt(row.node.slug.length - 1), '') : row.node.slug,
+            pageSlug: row.node.slug,
             pageTitle: row.node.tableOfContents.items[0].title,
             sectionId: convertToSlug(row.node.headings[i].value),
             SectionTitle: row.node.headings[i].value,

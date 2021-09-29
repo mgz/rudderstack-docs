@@ -15,7 +15,7 @@ When you create a webhook source in the RudderStack dashboard, you get a write k
 You can then add this webhook URL to any source. RudderStack receives the data according to the settings made in the source, creates the payload, and routes it to your specified destination.
 
 <div class="infoBlock">
-You must also add <a href="../adding-a-new-user-transformation-in-rudderstack">User Transformations</a> to transform the event data into a destination-specific format.
+You must also add <a href="../../adding-a-new-user-transformation-in-rudderstack/">User Transformations</a> to transform the event data into a destination-specific format.
 
 </div>
 
@@ -32,16 +32,12 @@ This section details the steps involved in setting up a webhook source. As an ex
 
 ![](https://user-images.githubusercontent.com/59817155/128315856-0d71db9a-fbc3-4f71-8692-f2a0faa4c5b3.png)
 
-- Then, add a destination in RudderStack and connect it to this webhook source. In this example, we will configure [**Google Analytics**](https://rudderstack.com/docs/destinations/analytics/google-analytics-ga) as a destination, as shown:
+- Then, add a destination in RudderStack and connect it to this webhook source. In this example, we will configure [**Google Analytics**](https://rudderstack.com/docs/destinations/analytics/google-analytics-ga/) as a destination, as shown:
 
 ![](https://user-images.githubusercontent.com/59817155/127983406-76fcf748-bd1b-4f18-9840-b19a71aaf601.png)
 
 <div class="infoBlock">
-Follow our guide on <div class="infoBlock">
-Follow the guide on <a href="../../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> for more details.
-
-</div> for more details.
-
+Follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack/">How to Add a Source and Destination in RudderStack</a> for more details.
 </div>
 
 - Next, add the webhook URL to your desired source platform. **Remember that you can configure webhook sources only for the source platforms that support webhooks**. The following image shows the webhook URL added in Mailchimp:
@@ -65,7 +61,7 @@ The content type can vary in case of other webhook sources.
 - RudderStack then takes the data, creates the payload and sends it to Google Analytics.
 
 <div class="infoBlock">
-You must also add <a href="../adding-a-new-user-transformation-in-rudderstack">User Transformations</a> to transform the payload into a destination-specific format before sending it to the destination. Refer to the <a href="../stream-sources/webhook-source#payload-creation-and-transformation">Payload Creation and Transformation</a> section for more details.
+You must also add <a href="../../adding-a-new-user-transformation-in-rudderstack/">User Transformations</a> to transform the payload into a destination-specific format before sending it to the destination. Refer to the <a href="#payload-creation-and-transformation">Payload Creation and Transformation</a> section for more details.
 
 </div>
 
