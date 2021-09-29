@@ -3,6 +3,7 @@ import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
 import { StaticImage } from "gatsby-plugin-image"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const LeftRightImgCnt = props => {
   const maintitle = props.leftrightcontentmaintitle
@@ -155,7 +156,7 @@ const LeftRightImgCnt = props => {
                               : ""
                           }`}
                         >
-                          <PortableText blocks={portabletext} />
+                          <PortableText blocks={portabletext} trackSectionHeader={title} />
                         </div>
                         <div
                           className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
@@ -190,6 +191,9 @@ const LeftRightImgCnt = props => {
                               if (extralink === true) {
                                 return (
                                   <a
+                                    onClick={e =>
+                                      rudderslabTrackOnClick("link", title, e)
+                                    }
                                     href={linkurl}
                                     className={`font-bold leading-normal text-sm ${
                                       link_display_as_button
@@ -221,7 +225,14 @@ const LeftRightImgCnt = props => {
                                         : ""
                                     }`}
                                   >
-                                    <Link to={linkurl}>{linktext}</Link>
+                                    <Link
+                                      onClick={e =>
+                                        rudderslabTrackOnClick("link", title, e)
+                                      }
+                                      to={linkurl}
+                                    >
+                                      {linktext}
+                                    </Link>
                                   </span>
                                 )
                               }
@@ -325,7 +336,7 @@ const LeftRightImgCnt = props => {
                             : ""
                         }`}
                       >
-                        <PortableText blocks={portabletext} />
+                        <PortableText blocks={portabletext} trackSectionHeader={title} />
                       </div>
                       <div
                         className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
@@ -361,6 +372,10 @@ const LeftRightImgCnt = props => {
                               return (
                                 <a
                                   href={linkurl}
+                                  onClick={e => {
+                                    
+                                    rudderslabTrackOnClick("link", title, e)
+                                  }}
                                   className={`font-bold leading-normal text-sm ${
                                     link_display_as_button
                                       ? "btn-primary-lg"
@@ -391,7 +406,14 @@ const LeftRightImgCnt = props => {
                                       : ""
                                   }`}
                                 >
-                                  <Link to={linkurl}>{linktext}</Link>
+                                  <Link
+                                    onClick={e =>
+                                      rudderslabTrackOnClick("link", title, e)
+                                    }
+                                    to={linkurl}
+                                  >
+                                    {linktext}
+                                  </Link>
                                 </span>
                               )
                             }

@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { library } from "@fortawesome/fontawesome-svg-core"
 import { faClock } from "@fortawesome/free-solid-svg-icons"
+import { rudderslabTrackOnClick } from "../utils/common"
 
-library.add(faClock);
+library.add(faClock)
 const ThreeRowContentVideoLibrary = ({ hits }) => {
   return (
     <div className="mt-4">
@@ -40,11 +41,20 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                       </h2>
                     </Link>
                   </div>
-                  <Link to={hit.slug}>
+                  <Link
+                    to={hit.slug}
+                    onClick={e => rudderslabTrackOnClick("link", hit.title, e)}
+                  >
                     <div className="z-20 mt-4 w-10/12 text-sm absolute bottom-6 left-6 flex justify-between items-center">
                       <div>
                         <p className="relative text-black font-bold text-sm leading-normal hover:text-blueNew-eastbay">
-                          <a className="lr-icon">
+                          <a
+                            className="lr-icon"
+                            href={hit.slug}
+                            onClick={e =>
+                              rudderslabTrackOnClick("link", hit.title, e)
+                            }
+                          >
                             {hit.category === "Live"
                               ? "Register Now"
                               : "Watch Now"}

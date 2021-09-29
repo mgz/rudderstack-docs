@@ -1,8 +1,8 @@
 import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
 import { StaticImage } from "gatsby-plugin-image"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const MiddleBanner = props => {
   const smalldescription = props.smalldescription
@@ -30,41 +30,51 @@ const MiddleBanner = props => {
               <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom">
                 <p>{smalldescription}</p>
                 <div className="block md:flex pt-8 md:pt-5">
-                  {btns && btns.map((btn, i) =>
-                    (() => {
-                      if (btn.btnexternallink === true) {
-                        return (
-                          <a
-                            key={btn._key}
-                            className={
-                              (btn.btnhiglight === true
-                                ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay hover:text-white"
-                                : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
-                              ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
-                            }
-                            href={btn.btnlink}
-                          >
-                            {btn.btntext}
-                          </a>
-                        )
-                      } else {
-                        return (
-                          <Link to={btn.btnlink} key={btn._key}>
-                            <span
+                  {btns &&
+                    btns.map((btn, i) =>
+                      (() => {
+                        if (btn.btnexternallink === true) {
+                          return (
+                            <a
+                              key={btn._key}
                               className={
                                 (btn.btnhiglight === true
-                                  ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
+                                  ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay hover:text-white"
                                   : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
                                 ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
                               }
+                              href={btn.btnlink}
+                              onClick={e =>
+                                rudderslabTrackOnClick("button", title, e)
+                              }
                             >
                               {btn.btntext}
-                            </span>
-                          </Link>
-                        )
-                      }
-                    })()
-                  )}
+                            </a>
+                          )
+                        } else {
+                          return (
+                            <Link
+                              to={btn.btnlink}
+                              key={btn._key}
+                              onClick={e =>
+                                rudderslabTrackOnClick("button", title, e)
+                              }
+                            >
+                              <span
+                                className={
+                                  (btn.btnhiglight === true
+                                    ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
+                                    : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
+                                  ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
+                                }
+                              >
+                                {btn.btntext}
+                              </span>
+                            </Link>
+                          )
+                        }
+                      })()
+                    )}
                 </div>
               </div>
             </div>

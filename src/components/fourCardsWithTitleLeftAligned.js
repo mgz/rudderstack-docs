@@ -2,6 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const FourCardsWithTitleLeftAligned = props => {
   return (
@@ -34,16 +35,13 @@ const FourCardsWithTitleLeftAligned = props => {
               <div key={item._key} className="md:w-1/2 mb-16 md:mb-16">
                 <div className="lg:pr-36">
                   <div className="w-16 h-16 inline-flex items-center justify-center">
-                    <Image
-                      props={item.card_image.asset._ref}
-                      classes=""
-                    />
+                    <Image props={item.card_image.asset._ref} classes="" />
                   </div>
 
                   <h2 className="text-2xl-2 font-bold mb-2">{item.title}</h2>
 
                   <div class="leading-relaxed text-sm sm:text-lg  text-grayColor-custom">
-                    <PortableText blocks={item.content} />
+                    <PortableText blocks={item.content} trackSectionHeader={item.title} />
                   </div>
 
                   {linktext !== "" && (
@@ -54,6 +52,13 @@ const FourCardsWithTitleLeftAligned = props => {
                             return (
                               <a
                                 href={linkurl}
+                                onClick={e =>
+                                  rudderslabTrackOnClick(
+                                    link_display_as_button ? "button" : "link",
+                                    item.title,
+                                    e
+                                  )
+                                }
                                 className={`font-bold leading-normal text-sm ${
                                   link_display_as_button ? "btn-primary-lg" : ""
                                 } ${
@@ -80,7 +85,20 @@ const FourCardsWithTitleLeftAligned = props => {
                                     : ""
                                 }`}
                               >
-                                <Link to={linkurl}>{linktext}</Link>
+                                <Link
+                                  onClick={e =>
+                                    rudderslabTrackOnClick(
+                                      link_display_as_button
+                                        ? "button"
+                                        : "link",
+                                      item.title,
+                                      e
+                                    )
+                                  }
+                                  to={linkurl}
+                                >
+                                  {linktext}
+                                </Link>
                               </span>
                             )
                           }

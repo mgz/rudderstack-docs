@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const SignupV1 = props => {
   return (
@@ -22,6 +23,9 @@ const SignupV1 = props => {
           <a
             className="btn-primary-lg cursor-pointer w-full sm:w-44"
             href={"https://app.rudderstack.com/signup"}
+            onClick={e =>
+              rudderslabTrackOnClick("button", "Explore RudderStack Today", e)
+            }
           >
             Sign up free
           </a>
