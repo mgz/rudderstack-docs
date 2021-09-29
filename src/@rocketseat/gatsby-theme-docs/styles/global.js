@@ -75,9 +75,9 @@ export default function GlobalStyle() {
           margin-bottom: 16px;
           width: 100%;
           p {
-            padding: 1rem;
-            border-radius: 5px;
-            background: ${theme.colors.components.blockquote.background};
+            padding: 0.5rem;
+            background: #FFFFFF;
+            border-left-width: 4px;
             color: ${theme.colors.components.blockquote.text};
             margin: 0;
             a {
@@ -284,7 +284,18 @@ export default function GlobalStyle() {
           content: "c#";
           background: #e6ffed;
         }
-
+        .successBlock {
+          background-color:#F5F7F9;
+          padding-top: 1.5rem;
+          padding-bottom: 1.5rem;
+          border-left-width: 4px;
+        }
+        .infoBlock{
+          border-left-width: 4px;
+        }
+        .css-dl1tix-Children a {
+          text-decoration: none;
+        }
         @media only screen and (max-width: 640px) {
           h1 {
             font-size: 28px;
