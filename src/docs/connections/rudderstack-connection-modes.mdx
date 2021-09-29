@@ -16,8 +16,8 @@ RudderStack's workflow is quite simple - it receives the event data from a varie
 
   RudderStack currently supports over 80 destinations to which you can send your
   event data. You can find the complete list in our{" "}
-  <a href="../destinations">Destinations</a> guides. You can also check our{" "}
-  <a href="../stream-sources">Sources</a> guides to get a list of the sources
+  <a href="../../destinations/">Destinations</a> guides. You can also check our{" "}
+  <a href="../../stream-sources/">Sources</a> guides to get a list of the sources
   through which you can send your event data to RudderStack.
 </div>
 
@@ -34,18 +34,18 @@ In this mode, the SDK sends the event data directly to RudderStack. RudderStack 
 
 ### How It Works
 
-Suppose you want to analyze your website users' event data using Amplitude. To do so, you've decided to use RudderStack's [**JavaScript**](../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/) SDK.
+Suppose you want to analyze your website users' event data using Amplitude. To do so, you've decided to use RudderStack's [**JavaScript**](../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/) SDK.
 
-RudderStack defines a fixed event structure. If you track your events in this format, RudderStack will take care of transforming the events as required by Amplitude. You can start by [**adding a source and an Amplitude destination**](adding-source-and-destination-rudderstack.md) in the RudderStack dashboard.
+RudderStack defines a fixed event structure. If you track your events in this format, RudderStack will take care of transforming the events as required by Amplitude. You can start by [**adding a source and an Amplitude destination**](../../adding-source-and-destination-rudderstack/) in the RudderStack dashboard.
 
-Then, [**add the RudderStack JavaScript SDK snippet**](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#2-installing-the-rudderstack-javascript-sdk) into the web page which you wish to track.
+Then, [**add the RudderStack JavaScript SDK snippet**](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#2-installing-the-rudderstack-javascript-sdk) into the web page which you wish to track.
 
 The SDK automatically tracks and sends the user events to RudderStack. These events are then transformed by RudderStack and then routed to Amplitude.
 
 <div class="infoBlock">
 
   The above example uses the JavaScript SDK; the other{" "}
-  <a href="../stream-sources/rudderstack-sdk-integration-guides">
+  <a href="../../stream-sources/rudderstack-sdk-integration-guides/">
     RudderStack SDKs
   </a> also work in the same way.
 </div>
@@ -60,13 +60,13 @@ The SDK automatically tracks and sends the user events to RudderStack. These eve
 
 <div class="warningBlock">
 
-Our <a href="../data-warehouse-integrations">Data Warehouse Destinations</a> support only cloud mode.
+Our <a href="../../data-warehouse-integrations/">Data Warehouse Destinations</a> support only cloud mode.
 
 </div>
 
 <div class="warningBlock">
 
-All the RudderStack server-side SDKs (<a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-java-sdk">Java</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides//rudderstack-python-sdk">Python</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk">Node.js</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-go-sdk">Go</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-ruby-sdk">Ruby</a>) support only Cloud Mode. This is because the server-side SDKs operate in the RudderStack backend and cannot load any additional destination-specific SDKs.
+All the RudderStack server-side SDKs (<a href="../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-java-sdk/">Java</a>, <a href="../../stream-sources/rudderstack-sdk-integration-guides//rudderstack-python-sdk/">Python</a>, <a href="../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk/">Node.js</a>, <a href="../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-go-sdk/">Go</a>, <a href="../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-ruby-sdk/">Ruby</a>) support only Cloud Mode. This is because the server-side SDKs operate in the RudderStack backend and cannot load any additional destination-specific SDKs.
 
 </div>
 
@@ -76,13 +76,13 @@ This mode lets you send your events to the preferred destinations using the clie
 
 ### How It Works
 
-Suppose you want to send your event data from your source mobile apps to Firebase through RudderStack's mobile SDK \([**Android**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-android-sdk), [**iOS**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-ios-sdk), or [**Unity**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/getting-started-with-unity-sdk)**,** depending on your requirement\). You can start by [**adding a source and a Firebase destination**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) in the RudderStack dashboard.
+Suppose you want to send your event data from your source mobile apps to Firebase through RudderStack's mobile SDK \([**Android**](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-android-sdk), [**iOS**](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-ios-sdk), or [**Unity**](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/getting-started-with-unity-sdk)**,** depending on your requirement\). You can start by [**adding a source and a Firebase destination**](https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack) in the RudderStack dashboard.
 
 The RudderStack SDK will download the Firebase SDK, transform the events and will send them to Firebase for analytics.
 
 <img src="../../images/assets/image (29).png" /><span class="imageTitle">RudderStack Device Mode</span>
 
-In some cases, you can also use the RudderStack web SDK \([**JavaScript**](../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/)\) to send the events to the destination through the device mode. To do so, enable the **Use native SDK to send events** option on the RudderStack dashboard as shown:
+In some cases, you can also use the RudderStack web SDK \([**JavaScript**](../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/)\) to send the events to the destination through the device mode. To do so, enable the **Use native SDK to send events** option on the RudderStack dashboard as shown:
 
 <img src="../../images/assets/screen-shot-2021-06-07-at-4.17.14-pm.png" />
 
@@ -94,7 +94,7 @@ In some cases, you can also use the RudderStack web SDK \([**JavaScript**](../st
 
 <div class="warningBlock">
 
-Device mode does not support the RudderStack <a href="../adding-a-new-user-transformation-in-rudderstack">Transformations</a> feature.
+Device mode does not support the RudderStack <a href="../../adding-a-new-user-transformation-in-rudderstack/">Transformations</a> feature.
 
 </div>
 
@@ -105,7 +105,7 @@ Device mode does not support the RudderStack <a href="../adding-a-new-user-trans
 
 ## How to Check If a Destination Supports Cloud Mode or Device Mode, or Both?
 
-The easiest way to check the connection mode supported by the destination is to go refer to the individual destination's [**documentation**](../destinations/).
+The easiest way to check the connection mode supported by the destination is to go refer to the individual destination's [**documentation**](../../destinations/).
 
 We explicitly mention the supported connection modes for every destination in the **Getting Started** section of each guide. A sample example is as shown:
 
@@ -113,7 +113,7 @@ We explicitly mention the supported connection modes for every destination in th
 
 ## Cloud + Device Mode Support
 
-Some of our destinations support both Cloud and Device Modes. Some examples are [**Google Analytics**](https://docs.rudderstack.com/destinations/google-analytics-ga), [**HubSpot**](https://docs.rudderstack.com/destinations/hubspot), [**Intercom**](https://docs.rudderstack.com/destinations/intercom), [**Kissmetrics**](https://docs.rudderstack.com/destinations/kissmetrics), [**Branch**](https://docs.rudderstack.com/destinations/branchio), [**Braze**](https://docs.rudderstack.com/destinations/braze), [**Customer.io**](https://docs.rudderstack.com/destinations/customer.io), and [**Facebook App Events**](https://docs.rudderstack.com/destinations/facebook-app-events).
+Some of our destinations support both Cloud and Device Modes. Some examples are [**Google Analytics**](https://rudderstack.com/docs/destinations/google-analytics-ga), [**HubSpot**](https://rudderstack.com/docs/destinations/hubspot), [**Intercom**](https://rudderstack.com/docs/destinations/intercom), [**Kissmetrics**](https://rudderstack.com/docs/destinations/kissmetrics), [**Branch**](https://rudderstack.com/docs/destinations/branchio), [**Braze**](https://rudderstack.com/docs/destinations/braze), [**Customer.io**](https://rudderstack.com/docs/destinations/customer.io), and [**Facebook App Events**](https://rudderstack.com/docs/destinations/facebook-app-events).
 
 You can choose to integrate these destinations with RudderStack via cloud mode or device mode, depending on your requirement.
 

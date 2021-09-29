@@ -37,7 +37,7 @@ Then, follow the sections below to send events to test your RudderStack installa
 
 #### **Option 1: If you have signed up for** [**RudderStack Cloud**](https://app.rudderstack.com/)**, follow these steps to get your source write key:**
 
-- Set up a source and a destination in RudderStack by following this [**guide**](../../connections/adding-source-and-destination-rudderstack.md).
+- Set up a source and a destination in RudderStack by following this [**guide**](../../../connections/adding-source-and-destination-rudderstack/).
 - You can find the write key in the dashboard, as shown:
 
 <img src="../../../images/assets/screen-shot-2021-07-01-at-5.27.53-pm.png" />
@@ -53,9 +53,9 @@ The <strong>write key</strong> is different from your <strong>workspace token</s
 
 <img src="../../../images/assets/screen-shot-2021-07-01-at-5.29.03-pm.png" />
 
-#### **Option 2: If you are self-hosting RudderStack and have set up the control plane using the** [**RudderStack Config Generator**](../config-generator.md)**, you can find the source write key by following these steps:**
+#### **Option 2: If you are self-hosting RudderStack and have set up the control plane using the** [**RudderStack Config Generator**](../../config-generator/)**, you can find the source write key by following these steps:**
 
-- Set up a source and a destination by following this [**guide**](../../connections/adding-source-and-destination-rudderstack.md).
+- Set up a source and a destination by following this [**guide**](../../../connections/adding-source-and-destination-rudderstack/).
 - You can find the write key associated with the source in the dashboard as shown:
 
 <!-- <img src="../../../images/assets/writekey.jpg)-->
@@ -73,7 +73,7 @@ The <strong>write key</strong> is different from your <strong>workspace token</s
 ./scripts/generate-event <YOUR_WRITE_KEY> https://hosted.rudderlabs.com/v1/batch
 ```
 
-- You can then check your destination to verify that events are delivered. You can also view the live events via RudderStack's [**Live Events**](../../user-guides/how-to-guides/live-destination-event-debugger.md) tab.
+- You can then check your destination to verify that events are delivered. You can also view the live events via RudderStack's [**Live Events**](../../../user-guides/how-to-guides/live-destination-event-debugger/) tab.
 
 #### Option 2: If you have set up open-source RudderStack in your environment, follow these steps:
 
@@ -93,8 +93,12 @@ An example is as shown:
 - You can then check your destination to verify that the events are delivered.
 
 <div class="infoBlock">
+<<<<<<< HEAD
 
 Note that unlike RudderStack Cloud, the Control Plane set up using the open-source <a href="../config-generator">Config Generator</a> does not let you view live events.
+=======
+Note that unlike RudderStack Cloud, the Control Plane set up using the open-source <a href="../../config-generator/">Config Generator</a> does not let you view live events.
+>>>>>>> origin/docs_migrate_gp
 
 </div>
 
@@ -115,7 +119,7 @@ If you supply an invalid source write key or Data Plane URL, you will get the fo
 
 #### **If you have signed up for** [**RudderStack Cloud**](https://app.rudderstack.com/)**, follow these steps to get your source write key:**
 
-- Set up a source in RudderStack by following this [**guide**](../../connections/adding-source-and-destination-rudderstack.md).
+- Set up a source in RudderStack by following this [**guide**](../../../connections/adding-source-and-destination-rudderstack/).
 - You can find the write key in the dashboard, as shown:
 
 <img src="../../../images/assets/screen-shot-2021-07-01-at-5.27.53-pm.png" />
@@ -130,9 +134,9 @@ The <strong>write key</strong> is different from your <strong>workspace token</s
 
 <img src="../../../images/assets/screen-shot-2021-07-01-at-5.29.03-pm.png" />
 
-#### **If you are self-hosting RudderStack and have set up the control plane using the** [**RudderStack Config Generator**](../config-generator.md)**, you can find the source write key by following these steps:**
+#### **If you are self-hosting RudderStack and have set up the control plane using the** [**RudderStack Config Generator**](../../config-generator/)**, you can find the source write key by following these steps:**
 
-- Set up a source by following this [**guide**](../../connections/adding-source-and-destination-rudderstack.md).
+- Set up a source by following this [**guide**](../../../connections/adding-source-and-destination-rudderstack/).
 - You can find the write key associated with the source in the dashboard as shown:
 
 <img src="../../../images/assets/writekey.jpg" />
@@ -140,6 +144,7 @@ The <strong>write key</strong> is different from your <strong>workspace token</s
 ### Getting the Data Plane URL
 
 <div class="infoBlock">
+<<<<<<< HEAD
 
 Follow <a href="../installing-and-setting-up-rudderstack#what-is-a-data-plane-url-where-do-i-get-it">this section</a> for details on how to get your Data Plane URL.
 
@@ -147,6 +152,13 @@ Follow <a href="../installing-and-setting-up-rudderstack#what-is-a-data-plane-ur
 <div class="successBlock">
 
 Refer to the <a href="../../rudderstack-api/http-api-specification">HTTP API
+=======
+Follow <a href="../../installing-and-setting-up-rudderstack/#what-is-a-data-plane-url-where-do-i-get-it">this section</a> for details on how to get your Data Plane URL.
+
+</div>
+<div class="successBlock">
+Refer to the <a href="../../../rudderstack-api/http-api-specification/">HTTP API
+>>>>>>> origin/docs_migrate_gp
 guide</a> for more information on the supported calls.
 </div>
 

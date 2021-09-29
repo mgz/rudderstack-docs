@@ -18,17 +18,17 @@ Before configuring Algolia Insights as a destination in RudderStack, verify if t
 | **Device mode** | - | - | - |
 | **Cloud mode** | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
-{% endhint %}
+<div class="infoBlock">
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://rudderstack.com/docs/get-started/rudderstack-connection-modes) guide.
+</div>
 
 Once you have confirmed that your source platform supports sending events to Algolia, follow these steps:
 
 * From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Algolia**.
 
-{% hint style="info" %}
-Follow our guide on [**Adding a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more information.
-{% endhint %}
+<div class="infoBlock">
+Follow our guide on [**Adding a Source and Destination in RudderStack**](https://rudderstack.com/docs/how-to-guides/adding-source-and-destination-rudderstack) for more information.
+</div>
 
 * Assign a name to the destination and click on **Next**. You should then see the following screen:
 
@@ -40,19 +40,19 @@ This section details the connection settings required to configure Algolia as a 
 
 * Enter your Algolia **API Key** and **Application ID**.
 
-{% hint style="info" %}
+<div class="infoBlock">
 To get the Algolia API key and Application ID, go to your [**Algolia dashboard**](https://www.algolia.com/apps/). Under the **API Keys** menu, copy the values under **Application ID** and **Search-Only API Key**.
-{% endhint %}
+</div>
 
 * Under **Event Settings**, you can add the **Event Name** and its corresponding **Event Type**. These are optional fields and can also be passed via the `track` call. 
 
-{% hint style="info" %}
+<div class="infoBlock">
 The `event`-`eventType` mapping passed via the `track` call **will get a higher precedence** over the mapping specified in the dashboard.
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 If the **Event** - **Event Type** mapping is not specified in the dashboard and these fields are not passed in the `track` call as well, then the event will be discarded.
-{% endhint %}
+</div>
 
 * Finally, click on **Next**. Algolia will now be enabled as a destination in RudderStack.
 
@@ -62,13 +62,13 @@ The `track` call lets you send events related to your customers' product usage. 
 
 Note that the **Event Name** \(`event`\) and **Event Type** \(`eventType`\) can be mapped in the dashboard while configuring the destination. Note that the `eventType` value set in `properties` in the `track` call will have a higher precedence over the dashboard mapping.
 
-{% hint style="info" %}
+<div class="infoBlock">
 In case you have already specified the mapping in the dashboard, you don't need to send the same `eventType` in the `track` call.
-{% endhint %}
+</div>
 
-{% hint style="warning" %}
+<div class="warningBlock">
 To send a new `event` via `track` which is not specified in the dashboard, make sure you include the `eventType` inside the `properties` of the call. Otherwise, the event will be **discarded**.
-{% endhint %}
+</div>
 
 The following table includes all `track` fields with their relative mapping to the Algolia fields:
 
@@ -82,9 +82,9 @@ The following table includes all `track` fields with their relative mapping to t
 | `objectIds` | `objectIDs` |
 | `positions` | `positions` |
 
-{% hint style="info" %}
+<div class="infoBlock">
 RudderStack looks for these fields within the `properties` field of the event payload. `userId` or `anonymousId` is mapped to `userToken` in Algolia.
-{% endhint %}
+</div>
 
 A sample `track` call is as shown:
 
@@ -110,19 +110,19 @@ To successfully send events to Algolia, the following criteria must be met:
 | `objectIds` | Must be an array of strings. **If it has more than 20 strings, only the first 20 values will be passed**. |
 | `positions` | Must be an array of integers. **It must be passed for only `click` type events. Only the first 20 values will be passed**. |
 
-{% hint style="info" %}
+<div class="infoBlock">
 For all the event types \(`eventType`\), either `filters` or `objectIds` must be passed and **not both**. If both or none of the fields are passed, the event will be discarded.
-{% endhint %}
+</div>
 
-{% hint style="info" %}
+<div class="infoBlock">
 For the `click` event type, if you pass `objectIds`, then you must pass either **both** or **none** of the `positions` and `queryId` fields. If only either of the fields are present, the event will be discarded.
 
 Also, the length of `objectIds` and `positions` arrays should be equal. Otherwise, the event will be discarded.
-{% endhint %}
+</div>
 
 ### E-Commerce Events
 
-For Algolia Insights, RudderStack supports the `products` array for two E-Commerce events [**`product list viewed`**](https://docs.rudderstack.com/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/browsing#product-list-viewed) and [**`order completed`**](https://docs.rudderstack.com/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/ordering#order-completed).
+For Algolia Insights, RudderStack supports the `products` array for two E-Commerce events [**`product list viewed`**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/browsing#product-list-viewed) and [**`order completed`**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/ordering#order-completed).
 
 An example is shown below:
 

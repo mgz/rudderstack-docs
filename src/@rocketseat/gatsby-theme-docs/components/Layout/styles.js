@@ -79,10 +79,11 @@ export const Children = styled.div`
   }
   a {
     font-weight: bold;
-    text-decoration: none;
-    color: #6c6c80;
+    text-decoration: underline;
+    color: rgb(78,59,151);
     &:hover {
-      text-decoration: underline;
+      color: rgb(23,23,110);
+      text-decoration: none;
     }
   }
   ul,

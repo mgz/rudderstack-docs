@@ -67,9 +67,9 @@ export const jsonData = [
            ]
         },
         {
-           "key":"config-generator",
-           "title":"Config Generator",
-           "link":"/get-started/config-generator/",
+           "key":"control-plane-lite",
+           "title":"Control Plane Lite",
+           "link":"/get-started/control-plane-lite/",
            "content":[
               
            ]

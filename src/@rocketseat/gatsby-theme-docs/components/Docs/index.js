@@ -23,7 +23,7 @@ export default function Docs({ mdx, pageContext }) {
   const { slug } = mdx.fields
 
   let docsBasePath = '/docs';
-  let currentPageIndex = findIndex(postNavList, o => slug === docsBasePath + o.link + '/');
+  let currentPageIndex = findIndex(postNavList, o => slug === docsBasePath + o.link);
   let nextPageIndex = currentPageIndex + 1 === postNavList.length ? 0 : currentPageIndex + 1;
   let nextPageItem =  postNavList[nextPageIndex];
   let prevPageIndex = currentPageIndex - 1 < 0 ? postNavList.length - 1 : currentPageIndex - 1;

@@ -10,12 +10,12 @@ The `screen` call lets you record whenever your user views their mobile screen w
 
 <div class="successBlock">
 
-  The `screen` call is the mobile equivalent of the `page` call.
+  The <code class="inline-code">screen</code> call is the mobile equivalent of the <code class="inline-code">page</code> call.
 </div>
 
 ## Sample Payload
 
-A sample payload of a `screen` call with most of the [**Common Fields**](common-fields.md) removed is as shown:
+A sample payload of a `screen` call with most of the [**Common Fields**](../common-fields/) removed is as shown:
 
 ```javascript
 {
@@ -27,7 +27,7 @@ A sample payload of a `screen` call with most of the [**Common Fields**](common-
 }
 ```
 
-The corresponding event that generates the above payload via the [**iOS SDK**](../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk.md) is as shown:
+The corresponding event that generates the above payload via the [**iOS SDK**](../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk/) is as shown:
 
 ```javascript
 [[RSClient sharedInstance] screen:@"Main"
@@ -36,7 +36,7 @@ The corresponding event that generates the above payload via the [**iOS SDK**](.
 
 ## Screen Fields
 
-Apart from the [**Common Fields**](common-fields.md), the `screen` call accepts the following fields:
+Apart from the [**Common Fields**](../common-fields/), the `screen` call accepts the following fields:
 
 | **Field**    | **Type** | **Presence** | **Description**                                                                                                                              |
 | :----------- | :------- | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------- |

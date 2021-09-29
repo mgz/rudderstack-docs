@@ -34,11 +34,15 @@ Simply put, the Data Plane URL is used to connect to the RudderStack backend for
 
 <div class="infoBlock">
 
-  To get the <strong>Data Plane URL</strong>:
+  To get the 
+<strong>
+    
+Data Plane URL
+</strong>:
   <ul>
     <li>
       If you're using the <strong>open-source</strong> version of RudderStack, you are
-      required to set up your own data plane by <a href="get-started/installing-and-setting-up-rudderstack/">installing and setting up
+      required to set up your own data plane by <a href="../get-started/installing-and-setting-up-rudderstack/">installing and setting up
       RudderStack</a> in your
       preferred environment.
     </li>
@@ -56,7 +60,7 @@ The workspace token allows you to use the RudderStack-hosted control plane. It i
 
 #### 4. Can I self-host RudderStack?
 
-Yes, you can use the [**RudderStack Config Generator**](get-started/config-generator.md) to self-host the control plane and configure your sources and destinations. Refer to the Config Generator section below for more information/FAQs.
+Yes, you can use the [**RudderStack Config Generator**](../get-started/config-generator/) to self-host the control plane and configure your sources and destinations. Refer to the Config Generator section below for more information/FAQs.
 
 #### 5. While running `git submodule update`, I get the following error:
 
@@ -171,7 +175,7 @@ This issue can occur when you have some old data left in your browser's local st
 
 #### 1. How do I add custom user transformations in RudderStack?
 
-RudderStack lets you implement your own custom transformation functions that leverage the event data to implement specific use-cases based on your business requirements. To add custom transformations in RudderStack, follow this [**guide**](adding-a-new-user-transformation-in-rudderstack/).
+RudderStack lets you implement your own custom transformation functions that leverage the event data to implement specific use-cases based on your business requirements. To add custom transformations in RudderStack, follow this [**guide**](../adding-a-new-user-transformation-in-rudderstack/).
 
 #### 2. How do transformations handle batching? The transformation functions are given a list of events, but the events are also pushed out in real-time. What's the logic behind that?
 
@@ -193,7 +197,7 @@ The number of user events that are batched together can be configured with `sess
 
 #### 5. Can I apply a transformation on a source configured in RudderStack?
 
-Currently, transformations can only be configured and used for destinations. If you want to write some custom logic specific to the source, you can get the source ID in the transformation function and use it to include the logic. For more information, refer to this [**doc**](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack#accessing-metadata).
+Currently, transformations can only be configured and used for destinations. If you want to write some custom logic specific to the source, you can get the source ID in the transformation function and use it to include the logic. For more information, refer to this [**doc**](https://rudderstack.com/docs/adding-a-new-user-transformation-in-rudderstack/#accessing-metadata).
 
 ## RudderStack Cloud
 
@@ -217,7 +221,7 @@ Switching between open-source RudderStack and RudderStack Cloud is quite straigh
 
 #### 5. Does RudderStack have any settings for consent management?
 
-Currently, we do not have any solutions for consent management. We are in the process of implementing some key GDPR features. In the meantime, you can filter your events using our [**Transformations**](adding-a-new-user-transformation-in-rudderstack/) feature or stop sending events to the users who do not give their consent.
+Currently, we do not have any solutions for consent management. We are in the process of implementing some key GDPR features. In the meantime, you can filter your events using our [**Transformations**](../adding-a-new-user-transformation-in-rudderstack/) feature or stop sending events to the users who do not give their consent.
 
 ## Integrations
 
@@ -225,7 +229,7 @@ Currently, we do not have any solutions for consent management. We are in the pr
 
 #### 1. I want to use the RudderStack JavaScript SDK to track impressions in an eCommerce site, such as product impression. How can I send the impression data in batches? I could not find the `batch` method in the SDK.
 
-You should use the `track` method in the SDK instead. For JavaScript SDK's `track` method parameters specific to eCommerce, you can refer our Google Analytics [**Enhanced eCommerce**](https://docs.rudderstack.com/destinations/google-analytics-ga#enhanced-e-commerce) guide.
+You should use the `track` method in the SDK instead. For JavaScript SDK's `track` method parameters specific to eCommerce, you can refer our Google Analytics [**Enhanced eCommerce**](https://rudderstack.com/docs/destinations/analytics/google-analytics-ga/#enhanced-e-commerce) guide.
 
 #### 2. Is Shopify compatible as a data source for Rudderstack?
 
@@ -257,11 +261,11 @@ To view the data or events that are sent to your destination, you can use the **
 
 #### 3. I would like to send events to Mixpanel via RudderStack. However, I would like to set a filtering condition on the source events before routing them to Mixpanel. How do I go about doing this?
 
-You can use [**RudderStack Transformations**](adding-a-new-user-transformation-in-rudderstack/) to set custom logic on your events before sending them to Mixpanel.
+You can use [**RudderStack Transformations**](../adding-a-new-user-transformation-in-rudderstack/) to set custom logic on your events before sending them to Mixpanel.
 
 #### 4. I am seeing a `Message type not supported` error. What does this mean?
 
-This error is being returned from the RudderStack Transformer. It means that for a particular destination, the event type that is trying to be sent, is not supported. For example, Salesforce only supports `identify` events. Therefore, if a `track` call is sent to Salesforce, the `Message type not supported` error will be returned. This error does not affect any other events and is harmless. However, a simple user transformation can be written to filter out these events so you will no longer see this error. Read [these docs](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack) on how to create a user transformation for a destination.
+This error is being returned from the RudderStack Transformer. It means that for a particular destination, the event type that is trying to be sent, is not supported. For example, Salesforce only supports `identify` events. Therefore, if a `track` call is sent to Salesforce, the `Message type not supported` error will be returned. This error does not affect any other events and is harmless. However, a simple user transformation can be written to filter out these events so you will no longer see this error. Read [these docs](https://rudderstack.com/docs/adding-a-new-user-transformation-in-rudderstack/) on how to create a user transformation for a destination.
 
 ### Warehouse Destinations
 
@@ -271,10 +275,10 @@ You can override the UI set sync frequency by setting `warehouseSyncFreqIgnore` 
 
 #### 2. I am using Rudderstack to mirror my source tables to PostgreSQL. I have all of the data in the S3 staging folders. But RudderStack doesn't create the corresponding PostgreSQL tables when I press on 'sync'. What do I do?
 
-- Firstly, make sure you have set up the [**required user permissions**](https://docs.rudderstack.com/data-warehouse-integrations/postgresql#setting-postgresql-user-permissions) for PostgreSQL.
+- Firstly, make sure you have set up the [**required user permissions**](https://rudderstack.com/docs/data-warehouse-integrations/postgresql#setting-postgresql-user-permissions) for PostgreSQL.
 - Then, check the status of the sync in the [**RudderStack dashboard**](https://app.rudderstack.com/syncs).
-- Check if the database is accessible by whitelisting all the RudderStack IPs listed [**here**](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-faqs#which-ips-should-be-whitelisted).
-- Ensure that all the security group policies for S3 are set as specified [**here**](https://docs.rudderstack.com/destinations/storage-platforms/amazon-s3#permissions).
+- Check if the database is accessible by whitelisting all the RudderStack IPs listed [**here**](https://rudderstack.com/docs/data-warehouse-integrations/warehouse-faqs#which-ips-should-be-whitelisted).
+- Ensure that all the security group policies for S3 are set as specified [**here**](https://rudderstack.com/docs/destinations/storage-platforms/amazon-s3#permissions).
 
 #### 3. When sending data into a data warehouse, how can I change the table where this data is sent?
 
@@ -293,7 +297,7 @@ You can do so by setting this value via the following ENV variables:
 
 #### 5. I'm looking to send data to my data warehouse through RudderStack and I'm trying to understand what data is populated in each column. How do I go about this?
 
-You can refer to the [**RudderStack Warehouse Schema**](data-warehouse-integrations/warehouse-schemas.md) documentation for details on how RudderStack generates the schema in the warehouse.
+You can refer to the [**RudderStack Warehouse Schema**](../data-warehouse-integrations/warehouse-schemas) documentation for details on how RudderStack generates the schema in the warehouse.
 
 #### 6. I am trying to load data into my BigQuery destination and I get this error:
 

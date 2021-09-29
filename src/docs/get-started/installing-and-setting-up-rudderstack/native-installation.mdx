@@ -41,7 +41,7 @@ psql "jobsdb" -c "grant all privileges on database jobsdb to rudder";
 
 RudderStack's dashboard (<a href="../../get-started/rudderstack-architecture#control-plane">Control Plane</a> lets you set up your data pipelines by configuring event data sources and destinations. This dashboard is hosted by RudderStack and is free for open-source users.
 
-If you don't wish to sign up for RudderStack, you can also set up your own control plane using the open-source <a href="../../user-guides/how-to-guides/rudderstack-config-generator">RudderStack Config Generator</a>. However, note that the control plane set up using the RudderStack Config Generator lacks certain features like <a href="../../adding-a-new-user-transformation-in-rudderstack">Transformations</a> and <a href="../../user-guides/how-to-guides/live-destination-event-debugger">Live Events Debugger</a>.
+If you don't wish to sign up for RudderStack, you can also set up your own control plane using the open-source <a href="../../user-guides/how-to-guides/rudderstack-control-plane-lite">RudderStack Config Generator</a>. However, note that the control plane set up using the RudderStack Config Generator lacks certain features like <a href="../../adding-a-new-user-transformation-in-rudderstack">Transformations</a> and <a href="../../user-guides/how-to-guides/live-destination-event-debugger">Live Events Debugger</a>.
 
 </div>
 
@@ -81,7 +81,7 @@ node destTransformer.js
 ./rudder-server
 ```
 
-Once you have completed these steps above successfully, [**send test events**](https://docs.rudderstack.com/get-started/installing-and-setting-up-rudderstack#sending-test-events-to-verify-the-installation) to verify the installation.
+Once you have completed these steps above successfully, [**send test events**](https://rudderstack.com/docs/get-started/installing-and-setting-up-rudderstack#sending-test-events-to-verify-the-installation) to verify the installation.
 
 ## Contact Us
 

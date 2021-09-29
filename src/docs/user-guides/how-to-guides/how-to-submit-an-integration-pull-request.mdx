@@ -1,4 +1,5 @@
 ---
+title: "How to Submit an Integration Pull Request"
 description: >-
   Step-by-step guide on the different repositories that you need to submit a PR
   to, when creating a new integration.
@@ -32,7 +33,7 @@ For your integration to be reviewed and considered, there are three repositories
       </td>
       <td style="text-align:left">
         <p></p>
-        <p><a href="https://github.com/rudderlabs/rudder-transformer"><b>GitHub Repo</b></a>&lt;b&gt;&lt;/b&gt;</p>
+        <p><a href="https://github.com/rudderlabs/rudder-transformer">GitHub Repo</a></p>
       </td>
       <td style="text-align:left">Responsible for transforming the standard RudderStack payload from the
         source into the required payload format needed for a given downstream destination.</td>
@@ -46,7 +47,7 @@ For your integration to be reviewed and considered, there are three repositories
       </td>
       <td style="text-align:left">
         <p></p>
-        <p><a href="https://github.com/rudderlabs/config-generator"><b>GitHub Repo</b></a>&lt;b&gt;&lt;/b&gt;</p>
+        <p><a href="https://github.com/rudderlabs/config-generator">GitHub Repo</a></p>
       </td>
       <td style="text-align:left">Responsible for gathering the required configuration details that will
         be specific to each user, i.e. API keys, event mappings, metrics, etc.</td>
@@ -60,7 +61,7 @@ For your integration to be reviewed and considered, there are three repositories
       </td>
       <td style="text-align:left">
         <p></p>
-        <p>&lt;b&gt;&lt;/b&gt;<a href="https://github.com/rudderlabs/rudderstack-docs"><b>GitHub Repo</b></a>&lt;b&gt;&lt;/b&gt;</p>
+        <p><a href="https://github.com/rudderlabs/rudderstack-docs">GitHub Repo</a></p>
       </td>
       <td style="text-align:left">Includes the relevant instructions on setting up, configuring, and using
         the integration you have created.</td>
@@ -82,15 +83,23 @@ When you are ready to create a pull request, follow the steps below:
 6. Finally, click on **Create pull request**.
 
 <div class="successBlock">
+<<<<<<< HEAD
 
 Repeat the steps above for each of the repositories - **`rudder-transformer`**, **`config-generator`**, and **`rudderstack-docs`**`.`
+=======
+Repeat the steps above for each of the repositories - <strong><code class="inline-code">rudder-transformer</code></strong>, <strong><code class="inline-code">config-generator</code></strong>, and <strong><code class="inline-code">rudderstack-docs</code></strong>.
+>>>>>>> origin/docs_migrate_gp
 </div>
 
 ## RudderStack Contributor Agreement
 
 <div class="warningBlock">
+<<<<<<< HEAD
 
 To contribute to this project, we need you to sign to [**Contributor License Agreement \(“CLA”\)**](https://rudderlabs.wufoo.com/forms/rudderlabs-contributor-license-agreement) for the first commit you make. By agreeing to the [**CLA**](https://rudderlabs.wufoo.com/forms/rudderlabs-contributor-license-agreement), ****we can add you to list of approved contributors and review the changes proposed by you.
+=======
+To contribute to this project, we need you to sign to <a href="https://rudderlabs.wufoo.com/forms/rudderlabs-contributor-license-agreement">Contributor License Agreement (“CLA”)</a> for the first commit you make. By agreeing to the <a href="https://rudderlabs.wufoo.com/forms/rudderlabs-contributor-license-agreement">CLA</a>, we can add you to list of approved contributors and review the changes proposed by you.
+>>>>>>> origin/docs_migrate_gp
 </div>
 
 ## RudderStack Transformer
@@ -99,7 +108,7 @@ To contribute to this project, we need you to sign to [**Contributor License Agr
 
 The `rudder-transformer` repository is responsible for transforming __the source payload into the required payload for the downstream destination. This is where the bulk of the code will need to be written. Therefore, the following should be considered when contributing to this repository.
 
-* There is a big emphasis on formatting the code to match current project structure. If there are any questions or issues regarding this, reach out to our team; see [**Contact Us**](https://docs.rudderstack.com/user-guides/how-to-guides/how-to-submit-an-integration-pull-request#contact-us) section below.
+* There is a big emphasis on formatting the code to match current project structure. If there are any questions or issues regarding this, reach out to our team; see [**Contact Us**](https://rudderstack.com/docs/user-guides/how-to-guides/how-to-submit-an-integration-pull-request#contact-us) section below.
 * Include any `eslint` logic in the top of the file.
 * Include test cases that cover around 80% code coverage.
 

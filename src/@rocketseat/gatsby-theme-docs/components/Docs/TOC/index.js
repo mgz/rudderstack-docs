@@ -80,8 +80,9 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
                         style={{
                           color:
                             activeHeading === headingSlug
-                              ? tailwindConfig.theme.colors.blueNew.custom
+                              ? tailwindConfig.theme.colors.purpleNew.gigas
                               : tailwindConfig.theme.colors.grayColor.docsText,
+                          fontWeight: activeHeading === headingSlug ? 600 : 'normal'
                         }}
                       >
                         {heading.value}

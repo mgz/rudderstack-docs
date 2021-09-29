@@ -1239,6 +1239,8 @@ top: -60px;
 .sidebar-nav-content a {
   @apply inline-block;
   @apply p-1;
+  @apply font-medium;
+  color: #6c6c80;
 }
 
 .nestedAccordion .accordion__panel {
@@ -1257,7 +1259,8 @@ top: -60px;
 }
 
 .nestedAccordion .accordion__button.accActive a {
-  @apply text-blueNew-custom;
+  @apply text-purpleNew-gigas;
+  @apply font-bold;
 }
 
 .nestedAccordion .accordion__button:before {

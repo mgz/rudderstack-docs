@@ -24,8 +24,12 @@ Installing and setting up RudderStack involves two key steps:
 - Data Plane setup
 
 <div class="infoBlock">
+<<<<<<< HEAD
 
 Refer to the <a href="../rudderstack-architecture">RudderStack Architecture</a> to know more about the RudderStack Control Plane and Data Plane.
+=======
+Refer to the <a href="../../rudderstack-architecture">RudderStack Architecture</a> to know more about the RudderStack Control Plane and Data Plane.
+>>>>>>> origin/docs_migrate_gp
 
 </div>
 
@@ -41,7 +45,7 @@ There are two ways you can set up the Control Plane. This section lists the step
 
 <strong>Why do I need to sign up for RudderStack?</strong>
 
-RudderStack's dashboard lets you easily set up your data pipelines by configuring your sources and destinations. It is fully hosted by RudderStack and is free for open-source users. You also get access to some important features like <a href="../../adding-a-new-user-transformation-in-rudderstack/">Transformations</a> and a <a href="../../user-guides/how-to-guides/live-destination-event-debugger">Live Events</a> tab.
+RudderStack's dashboard lets you easily set up your data pipelines by configuring your sources and destinations. It is fully hosted by RudderStack and is free for open-source users. You also get access to some important features like <a href="../../../adding-a-new-user-transformation-in-rudderstack/">Transformations</a> and a <a href="../../../user-guides/how-to-guides/live-destination-event-debugger">Live Events</a> tab.
 
 </div>
 
@@ -64,11 +68,15 @@ Use this option if you don't wish to sign up for RudderStack.
 
 </div>
 
-You can self-host your own Control Plane using the open-source [**RudderStack Config Generator**](../../user-guides/how-to-guides/rudderstack-config-generator.md).
+You can self-host your own Control Plane using the open-source [**RudderStack Config Generator**](../../../user-guides/how-to-guides/rudderstack-control-plane-lite.md).
 
 <div class="dangerBlock">
+<<<<<<< HEAD
 
 Note that the Control Plane set up using the RudderStack Config Generator lacks certain features like <a href="../../adding-a-new-user-transformation-in-rudderstack/">Transformations</a> and <a href="../../user-guides/how-to-guides/live-destination-event-debugger">Live Events</a> tab.
+=======
+Note that the Control Plane set up using the RudderStack Config Generator lacks certain features like <a href="../../../adding-a-new-user-transformation-in-rudderstack/">Transformations</a> and <a href="../../../user-guides/how-to-guides/live-destination-event-debugger">Live Events</a> tab.
+>>>>>>> origin/docs_migrate_gp
 
 </div>
 
@@ -86,13 +94,13 @@ To set up the RudderStack Data Plane in your Docker environment, follow these st
 docker-compose -f rudder-docker.yml up
 ```
 
-- Once you have successfully followed the steps above, [**send test events**](sending-test-events.md) to verify the installation.
+- Once you have successfully followed the steps above, [**send test events**](../sending-test-events/) to verify the installation.
 
 ### For **Self-Hosted Control Plane**
 
-If you have self-hosted the Control Plane using the open-source Config Generator, follow [**these**](https://docs.rudderstack.com/get-started/config-generator#docker) instructions to set up the RudderStack Data Plane on Docker.
+If you have self-hosted the Control Plane using the open-source Config Generator, follow [**these**](https://rudderstack.com/docs/get-started/config-generator#docker) instructions to set up the RudderStack Data Plane on Docker.
 
-Once you have successfully followed the steps above, [**send test events**](sending-test-events.md) to verify the installation.
+Once you have successfully followed the steps above, [**send test events**](../sending-test-events/) to verify the installation.
 
 ## Contact Us
 
