@@ -143,7 +143,10 @@ const LeftRightImgCntWithCentedHeading = props => {
                             : ""
                         }`}
                       >
-                        <PortableText blocks={portabletext} />
+                        <PortableText
+                          blocks={portabletext}
+                          trackSectionHeader={title}
+                        />
                       </div>
                       <div className="mt-4 flex items-center">
                         {(() => {
@@ -284,7 +287,7 @@ const LeftRightImgCntWithCentedHeading = props => {
                           : ""
                       }`}
                     >
-                      <PortableText blocks={portabletext} />
+                      <PortableText blocks={portabletext} trackSectionHeader={title} />
                     </div>
                     <div className="mt-4 flex items-center">
                       {(() => {

@@ -41,7 +41,7 @@ const FourCardsWithTitleLeftAligned = props => {
                   <h2 className="text-2xl-2 font-bold mb-2">{item.title}</h2>
 
                   <div class="leading-relaxed text-sm sm:text-lg  text-grayColor-custom">
-                    <PortableText blocks={item.content} />
+                    <PortableText blocks={item.content} trackSectionHeader={item.title} />
                   </div>
 
                   {linktext !== "" && (

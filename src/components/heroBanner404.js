@@ -15,7 +15,7 @@ const HeroBanner404 = props => {
             {props.herobannertitle}
           </h1>
           <div className="text-3xl frtxt-contnt md:-mt-28 text-center">
-            <PortableText blocks={props.herobannercontent} />
+            <PortableText blocks={props.herobannercontent} trackSectionHeader={props.herobannertitle} />
           </div>
 
           <div className="block sm:flex justify-center items-center -mt-4">

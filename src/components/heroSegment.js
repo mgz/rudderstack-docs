@@ -9,7 +9,7 @@ const HeroSegment = props => {
           {props.herobannertitle}
         </h1>
         <div className="pt-6 text-lg self-center text-center lg:self-start lg:text-left">
-          <PortableText blocks={props.herobannercontent} />
+          <PortableText blocks={props.herobannercontent} trackSectionHeader={props.herobannertitle} />
         </div>
       </div>
     </div>

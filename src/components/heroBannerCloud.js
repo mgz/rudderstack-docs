@@ -17,7 +17,7 @@ const HeroBannerCloud = props => {
               {props.herobannersmalltitle}
             </h3>
             <div className=" text-lg leading-6 lg:pr-36 frtxt-contnt">
-              <PortableText blocks={props.herobannercontent} />
+              <PortableText blocks={props.herobannercontent} trackSectionHeader={props.herobannertitle} />
             </div>
 
             <div className="block sm:flex justify-center items-center mt-12">

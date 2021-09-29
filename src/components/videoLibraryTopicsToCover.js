@@ -23,7 +23,7 @@ const VideoLibraryTopicsToCover = props => {
                         key={ii._key}
                         className="relative w-full what-can-do text-lg pl-11 sm:mt-8 mb-7 sm:mb-0"
                       >
-                        <PortableText blocks={ii.leftrightcontent} />
+                        <PortableText blocks={ii.leftrightcontent} trackSectionHeader={props.data.title} />
                       </li>
                     )
                   })}
@@ -54,7 +54,7 @@ const VideoLibraryTopicsToCover = props => {
                         key={ii._key}
                         className="relative w-full what-can-do text-lg pl-11 sm:mt-8 mb-7 sm:mb-0"
                       >
-                        <PortableText blocks={ii.leftrightcontent} />
+                        <PortableText blocks={ii.leftrightcontent} trackSectionHeader={props.data.title}/>
                       </li>
                     )
                   })}

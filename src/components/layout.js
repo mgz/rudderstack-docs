@@ -166,7 +166,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                         {item.widget_desc_section_title}
                       </p>
                       <div className="text-footer">
-                        <PortableText blocks={item.widget_section_desc} />
+                        <PortableText blocks={item.widget_section_desc} trackSectionHeader={"Footer Navigation"} />
                         {i === 0 ? (
                           <a
                             href="https://resources.rudderstack.com/join-rudderstack-slack"

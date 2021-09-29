@@ -13,7 +13,7 @@ function HeroBannerVerticalLanding(props) {
           <h1 className="text-primary mb-8 md:my-4 text-5xl font-bold leading-tight">
             {props.herobannertitle}
           </h1>
-          <PortableText blocks={props.herobannercontent} />
+          <PortableText blocks={props.herobannercontent} trackSectionHeader={props.herobannertitle} />
           <div className="relative block sm:flex mt-12">
             {herobannerbutton.map((btn, i) => ( 
               <>

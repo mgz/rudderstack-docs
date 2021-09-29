@@ -24,7 +24,7 @@ const TwoCardsLeftAligned = props => {
               >
                 <h4 className="text-3xl font-bold  mb-6 ">{item.title}</h4>
                 <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt">
-                  <PortableText blocks={item.content} />
+                  <PortableText blocks={item.content} trackSectionHeader={item.title} />
                 </div>
 
                 {linktext !== "" && (

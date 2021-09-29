@@ -29,9 +29,9 @@ const Integration = props => {
   const [searchedText, setSerchedText] = React.useState("")
   const [resultCount, setResultCount] = React.useState(0)
 
-  React.useEffect(() => {
-    rudderslabTrackOnSearch(searchedText)
-  }, [searchedText])
+  // React.useEffect(() => {
+  //   rudderslabTrackOnSearch(searchedText)
+  // }, [searchedText])
   return (
     <Layout>
       <Helmet>

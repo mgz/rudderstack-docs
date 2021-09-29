@@ -48,7 +48,7 @@ const FourCardsWithTitle = props => {
                     {item.title}
                   </div>
                   <div class="text-grayColor-custom text-lg">
-                    <PortableText blocks={item.content} />
+                    <PortableText blocks={item.content} trackSectionHeader={item.title} />
                   </div>
                   {linktext !== "" && (
                     <div class="flex items-center mt-8">

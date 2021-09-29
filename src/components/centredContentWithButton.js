@@ -11,7 +11,7 @@ const CentredContentWithButton = props => {
           {props.title}
         </h2>
         <div className="text-xl-2 text-grayColor-custom mt-4 mb-8">
-          <PortableText blocks={props.content} />
+          <PortableText blocks={props.content} trackSectionHeader={props.title} />
         </div>
 
         <p className="mt-16 md:mt-16 flex justify-center">

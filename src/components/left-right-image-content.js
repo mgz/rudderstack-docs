@@ -156,7 +156,7 @@ const LeftRightImgCnt = props => {
                               : ""
                           }`}
                         >
-                          <PortableText blocks={portabletext} />
+                          <PortableText blocks={portabletext} trackSectionHeader={title} />
                         </div>
                         <div
                           className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
@@ -336,7 +336,7 @@ const LeftRightImgCnt = props => {
                             : ""
                         }`}
                       >
-                        <PortableText blocks={portabletext} />
+                        <PortableText blocks={portabletext} trackSectionHeader={title} />
                       </div>
                       <div
                         className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}

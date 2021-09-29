@@ -53,7 +53,7 @@ const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
           <div className="flex flex-col items-center justify-center mx-auto sm:flex-row">
             <div className="sm:w-1/2 pt-10 sm:p-6 sm:pt-11 sm:pl-0">
               <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items">
-                <PortableText blocks={data.freetextdescritpion} />
+                <PortableText blocks={data.freetextdescritpion} trackSectionHeader={data.freetexttitle} />
               </div>
               <div className="relative block sm:flex mt-14">{renderButton}</div>
             </div>

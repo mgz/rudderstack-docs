@@ -44,7 +44,7 @@ const IntegrationGetMoreOutOf = ({ data }) => {
           </div>
           <div className="sm:w-1/2 sm:p-6 sm:pl-0 sm:pt-0 sm:mt-6 md:pr-0">
             <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items">
-              <PortableText blocks={data.freetextdescritpion} />
+              <PortableText blocks={data.freetextdescritpion} trackSectionHeader={data.freetexttitle} />
             </div>
 
             <div className="relative block sm:flex sm:mt-14 mt-16">

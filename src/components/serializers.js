@@ -42,6 +42,12 @@ const AuthorReference = ({ node }) => {
   return <></>
 }
 
+const customSerializer = ({trackSectionHeader}) => {
+  let tmp = serializers
+  
+  return {...serializers, trackSectionHeader}
+}
+
 const serializers = {
   types: {
     // block: props =>
@@ -97,7 +103,7 @@ const serializers = {
         {children}
       </a>
     ),
-    link: ({ children, mark, _key }) => {
+    link: ({ children, mark, _key}) => {
       // console.log(children, mark, "block contain")
       //added by Hari on 2021-04-30
       // console.log('portable text tracker render',trackSectionHeader)
@@ -115,4 +121,4 @@ const serializers = {
   },
 }
 
-export default serializers
+export default customSerializer
