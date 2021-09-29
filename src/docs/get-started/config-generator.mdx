@@ -11,12 +11,8 @@ description: >-
 RudderStack's Control Plane manages the configuration of your sources and destinations.
 
 <div class="infoBlock">
-<<<<<<< HEAD
 
-For more information on the Control Plane, refer to RudderStack's <a href="./rudderstack-architecture">architecture</a>.
-=======
 For more information on the Control Plane, refer to RudderStack's <a href="./rudderstack-architecture/">architecture</a>.
->>>>>>> origin/docs_migrate_gp
 
 </div>
 
@@ -51,12 +47,8 @@ Make sure you have <a href="https://nodejs.org/en/download/">Node.js</a> install
 After adding the required sources and destinations in the dashboard, you can export your workspace configuration by simply clicking the **EXPORT** button. The configuration is then exported and saved as a JSON file. This workspace configuration is required to start the RudderStack server.
 
 <div class="infoBlock">
-<<<<<<< HEAD
 
-For more information on adding sources and destinations in RudderStack, refer to the <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> guide.
-=======
 For more information on adding sources and destinations in RudderStack, refer to the <a href="../../connections/adding-source-and-destination-rudderstack/">How to Add a Source and Destination in RudderStack</a> guide.
->>>>>>> origin/docs_migrate_gp
 
 </div>
 
@@ -130,12 +122,8 @@ $ helm install my-release ./ --set backend.controlPlaneJSON=true
 ```
 
 <div class="infoBlock">
-<<<<<<< HEAD
 
-Refer to the <a href="./installing-and-setting-up-rudderstack/kubernetes#configuration">Configuration</a> section for information on the parameters that can be configured during deployment.
-=======
 Refer to the <a href="../installing-and-setting-up-rudderstack/kubernetes/#configuration">Configuration</a> section for information on the parameters that can be configured during deployment.
->>>>>>> origin/docs_migrate_gp
 
 </div>
 
@@ -192,14 +180,9 @@ cp config/sample.env .env
 ## Using Hosted Control Plane for Device Mode Destinations
 
 <div class="infoBlock">
-<<<<<<< HEAD
 
-To know more about the difference between <strong>Cloud mode</strong> and <strong>Device mode</strong> in RudderStack, read the <a href="../rudderstack-connection-modes">RudderStack connection modes</a> guide.
-
-=======
 To know more about the difference between <strong>Cloud mode</strong> and <strong>Device mode</strong> in RudderStack, read the <a href="../../connections/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 .
->>>>>>> origin/docs_migrate_gp
 </div>
 
 RudderStack's [**web**](https://app.gitbook.com/@rudderlabs/s/rudderlabs-1/~/drafts/-MJRY7Fz5shtM06WXlym/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk), [**Android**](https://app.gitbook.com/@rudderlabs/s/rudderlabs-1/~/drafts/-MJRY7Fz5shtM06WXlym/rudderstack-sdk-integration-guides/rudderstack-android-sdk) and [**iOS**](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-ios-sdk) SDKs expect the source configurations and the associated device mode destination configurations for initialization. If you are self-hosting the Control Plane, you will need to host these configurations on your own server such that the source configuration is available at `<CONTROL_PLANE_URL>/sourceConfig`.
