@@ -21,6 +21,7 @@ Since we can predictably and reliably upgrade all the backend services, switchin
 Create a new warehouse destination and set the namespace to be the same as the schema that Segment is writing to. RudderStack will then write to the same set of tables as Segment.
 
 <div class="infoBlock">
+
 Please follow our <a href="../../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to know how to add a destination in RudderStack.
 
 </div>
@@ -34,6 +35,7 @@ Follow these steps:
 3. RudderStack will then start routing new events into your warehouse
 
 <div class="infoBlock">
+
 If both Segment and RudderStack try to write to the same tables at the same time, it could result in Serializable isolation errors in some warehouses like Redshift. This is an intermittent issue, and would succeed on retrying.
 
 </div>
@@ -63,6 +65,7 @@ Follow the below steps to easily migrate to RudderStack and storing the event da
 - Once the sync intervals are configured, as mentioned in the **Step 4** below, the webhook destination should be enabled.
 
 <div class="infoBlock">
+
 Please follow our <a href="../../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to know how to add a destination in RudderStack.
 
 </div>
@@ -75,6 +78,7 @@ Some important points to note here:
 - Configure RudderStack's warehouse destination such that it will start syncing your data **after** Segment's warehouse load completes. For example, if Segment is going to finish loading the latest batch at 10 PM, then RudderStack's warehouse loading should start after that. \(10.30 PM, or 11 PM, and so on\).
 
 <div class="infoBlock">
+
 If both Segment and RudderStack try to write to the same tables at the same time, it could result in Serializable isolation errors in some warehouses like Redshift. This is an intermittent issue, and should succeed after retrying.
 
 </div>

@@ -11,6 +11,7 @@ description: Step-by-step guide to send your event data from RudderStack to Heap
 RudderStack supports Heap.io as a destination to which you can send your event data in real-time.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/heap">
@@ -32,6 +33,7 @@ Before configuring your source and destination on the RudderStack, verify if the
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -41,6 +43,7 @@ Once you have confirmed that the platform supports sending events to Heap.io, pe
 - From your [RudderStack dashboard](https://app.rudderstack.com/signup?type=freetrial), add the source. Then, from the list of destinations, select Heap.io**.**
 
 <div class="infoBlock">
+
 Follow our <a href="../../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to add a source and destination in RudderStack.
 
 </div>
@@ -54,6 +57,7 @@ To configure Heap.io as a destination, you need the Heap App ID. To get the App 
 - Once you've entered the Heap App ID, click on **Next**. Heap.io should now be configured as a destination on your RudderStack dashboard.
 
 <div class="infoBlock">
+
 The Heap destination currently supports only <strong><code class="inline-code">track</code></strong> and <strong><code class="inline-code">identify</code></strong> calls.
 
 </div>
@@ -63,6 +67,7 @@ The Heap destination currently supports only <strong><code class="inline-code">t
 RudderStack's `identify` method captures the relevant details about the visiting user.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">identify</code> call, refer to our guide on <a href="../../rudderstack-api">RudderStack API Specification</a>.
 
 </div>
@@ -81,6 +86,7 @@ rudderanalytics.identify("user123", {
 With the `track` API, RudderStack makes a call to Heap.io to track your user actions as well as their associated properties.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">track</code> method, refer to our guide on <a href="../../rudderstack-api">RudderStack API Specification</a>.
 
 </div>

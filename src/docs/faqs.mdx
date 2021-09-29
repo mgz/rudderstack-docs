@@ -156,6 +156,7 @@ For self-hosting the UI, you can use the [**RudderStack Config Generator**](http
 Note that the open-source config-generator will only generate the source-destination configurations which are required by RudderStack.
 
 <div class="warningBlock">
+
 The self-hosted control plane (UI) does not support features like <strong>Transformations</strong> and <strong>Live Events Debugger</strong>, which are included for free in the <a href="https://app.rudderstack.com">RudderStack-hosted control plane</a>.
 
 </div>
@@ -360,6 +361,7 @@ maxFailedCountForJob = 8
 ```
 
 <div class="warningBlock">
+
 Note that if a user event fails, the other events are not sent until the failed event is successfully sent or aborted (as per above behavior). This is to ensure event ordering for all events of a single user.
 
 </div>

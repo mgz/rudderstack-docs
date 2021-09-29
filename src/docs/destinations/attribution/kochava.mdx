@@ -11,6 +11,7 @@ description: Step-by-step guide to send event data from RudderStack to Kochava.
 RudderStack allows you to send relevant events to Kochava through a S2S \(Server-to-Server\) integration with the platform.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kochava">GitHub repo</a>
@@ -28,6 +29,7 @@ Before configuring your source and destination on the RudderStack app, please ch
 | **Cloud mode**      | -       | **Supported** | -          |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -37,6 +39,7 @@ Once you have confirmed that the platform supports sending events to Kochava, pe
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source from which you want to send the event data.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -58,6 +61,7 @@ Mode` only:
 - **Enable AppTrackingTransparency \(ATT\):** Enable this setting if you want to enable the `AppTrackingTransparency` feature provided by the Kochava iOS SDK.
 
 <div class="infoBlock">
+
 Make sure you include the key `NSUserTrackingUsageDescription` in your `info.plist` along with a string value explaining why you are requesting authorization to track.
 
 </div>
@@ -259,11 +263,13 @@ RudderStack transforms the following events to Kochava's Standard Events, as sho
 | `Products Searched`         | `Search`               |
 
 <div class="infoBlock">
+
 Rest of the events are sent to Kochava as custom events.
 
 </div>
 
 <div class="infoBlock">
+
 You can send an event with the name same as that of an Kochava's standard event to get perceived as `Standard Event` in Kochava.
 
 </div>
@@ -295,6 +301,7 @@ MainApplication.rudderClient.screen("Sample Screen Name",
 In the above snippet, RudderStack captures all the information related to the viewed screen, along with any additional info associated with that event. In Kochava, the above `screen` call will be shown as - **"screen view `Sample Screen Name` "** along with the properties.
 
 <div class="infoBlock">
+
 Note that <code class="inline-code">screen</code> call will be sent to Kochava as a custom event.
 
 </div>

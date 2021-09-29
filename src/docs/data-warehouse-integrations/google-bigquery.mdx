@@ -11,11 +11,13 @@ description: Step-by-step guide to set up Google BigQuery as a destination in Ru
 RudderStack lets you add Google BigQuery as a destination where you can send your customer event data from the data source of your choice.
 
 <div class="infoBlock">
+
 Please check our <a href="../data-warehouse-integrations/warehouse-schemas">Warehouse Schemas</a> guide to know how events are mapped to the tables in BigQuery.
 
 </div>
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/bq">
@@ -36,11 +38,13 @@ Follow these steps to set up your BigQuery project before adding it as a destina
 <img src="../../images/assets/screenshot-2020-04-08-at-11.36.30-am.png" /><span class="imageTitle">Project ID (highlighted) </span>
 
 <div class="successBlock">
+
   You will require this project ID while configuring BigQuery as a destination
   in RudderStack.
 </div>
 
 <div class="infoBlock">
+
 Ensure that <a href="https://cloud.google.com/billing/docs/how-to/modify-project">billing</a> is enabled for the project to enable RudderStack to load data into the BigQuery cluster.
 
 </div>
@@ -48,6 +52,7 @@ Ensure that <a href="https://cloud.google.com/billing/docs/how-to/modify-project
 - Create a new Google Cloud Storage \(**GCS**\) bucket or provide an existing one to store files before loading data into your BigQuery.
 
 <div class="warningBlock">
+
 To ensure loading data from cloud storage to BigQuery, make sure to co-locate your GCS storage bucket with BigQuery. More information can be found <a href="https://cloud.google.com/bigquery/docs/loading-data-cloud-storage#data-locations">here</a>.
 
 </div>
@@ -60,6 +65,7 @@ To ensure loading data from cloud storage to BigQuery, make sure to co-locate yo
   - Add the `BigQuery Job User` and `BigQuery Data Owner` roles to the account.
 
 <div class="successBlock">
+
   If a dataset with the name (configurable by the setting:{" "}
   <strong>Namespace</strong> in the RudderStack destination settings) already
   exists, the role of{" "}
@@ -82,6 +88,7 @@ To ensure loading data from cloud storage to BigQuery, make sure to co-locate yo
 <img src="../../images/assets/screenshot-2020-04-08-at-12.09.32-pm (1).png" /><span class="imageTitle">JSON key required for the RudderStack UI</span>
 
 <div class="warningBlock">
+
 Make sure that you create the service account in the same project as BigQuery.
 
 </div>
@@ -91,6 +98,7 @@ Make sure that you create the service account in the same project as BigQuery.
 If necessary, you can whitelist the RudderStack IPs to enable network access to it.
 
 <div class="infoBlock">
+
 <strong>The IPs to be whitelisted are : <code class="inline-code">3.216.35.97</code>, <code class="inline-code">34.198.90.241</code> , <code class="inline-code">54.147.40.62</code> , <code class="inline-code">23.20.96.9</code>, and <code class="inline-code">18.214.35.254</code></strong>.
 
 </div>
@@ -104,6 +112,7 @@ To do so, please follow these steps:
 - Choose a source to which you would like to add Google BigQuery as a destination.
 
 <div class="infoBlock">
+
 Please follow our <a href="../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to know how to add a source in RudderStack.
 
 </div>
@@ -121,6 +130,7 @@ That's it! You have successfully added Google BigQuery as a destination in Rudde
 RudderStack uses the source name \(written in snake case, e.g. `source_name`\) to create a dataset in BigQuery.
 
 <div class="infoBlock">
+
 More details about the tables and columns created by RudderStack can be found <a href="../data-warehouse-integrations/warehouse-schemas">here</a>.
 
 </div>
@@ -128,6 +138,7 @@ More details about the tables and columns created by RudderStack can be found <a
 RudderStack creates ingestion-time partition tables based on the load date, so you can take advantage of it to query a subset of data.
 
 <div class="infoBlock">
+
 More details about the BigQuery partitioned tables <a href="https://cloud.google.com/bigquery/docs/partitioned-tables">here</a>. Information on RudderStack creates these tables on load can be found <a href="https://cloud.google.com/bigquery/docs/creating-partitioned-tables#creating_an_ingestion-time_partitioned_table_when_loading_data">here</a>.
 
 </div>
@@ -135,6 +146,7 @@ More details about the BigQuery partitioned tables <a href="https://cloud.google
 In addition to tables, a **view** \(`<table_name>_view`\) is created for every table for de-duplication purposes.
 
 <div class="infoBlock">
+
 More information on views can be found in this <a href="https://cloud.google.com/bigquery/docs/views-intro">guide</a>.
 
 </div>
@@ -142,6 +154,7 @@ More information on views can be found in this <a href="https://cloud.google.com
 We recommend that you use the corresponding view \(which contains the events from the last 60 days\) to avoid duplicate events in your query results. Since BigQuery [**views**](https://cloud.google.com/bigquery/docs/views-intro#view_pricing) are merely logical views and are not cached, you can create a native table from it to save money by avoiding running the query that defines the view every time.
 
 <div class="successBlock">
+
   Users can modify the view query to change the time window of the view. The
   default value is set to <strong>60 days</strong>.
 </div>

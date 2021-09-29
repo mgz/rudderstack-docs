@@ -15,6 +15,7 @@ This guide covers the user suppression feature in detail.
 <img src="https://img.shields.io/static/v1?label=PLAN&message=ENTERPRISE&color=blueviolet&style=for-the-badge" />
 
 <div class="infoBlock">
+
 For all the requests mentioned in this guide, we use the basic HTTP authorization.
 
 </div>
@@ -26,6 +27,7 @@ RudderStack is completely GDPR and CCPA compliant. We respect the users' privacy
 When a user is suppressed, RudderStack will drop the events from that user. Those events will not be shown in any of the debuggers, will not be forwarded to any destinations and will not be backed up.
 
 <div class="warningBlock">
+
 Please note that once suppressed, replaying of these events will not be possible.
 
 </div>
@@ -35,6 +37,7 @@ Please note that once suppressed, replaying of these events will not be possible
 RudderStack uses Basic Authentication for authenticating all the HTTP requests as mentioned below. HTTP Basic Authentication requires a user name and password.
 
 <div class="successBlock">
+
   <ul>
     <li>
       <code class="inline-code">workspaceToken</code>is the user name
@@ -129,6 +132,7 @@ https://api.rudderlabs.com/workspaces/regulations < suppress.json
 To get a regulation, you can send a `GET` request as shown:
 
 <div class="infoBlock">
+
 Pass <code class="inline-code">regulation_id</code> in the URL. The <code class="inline-code">regulation_id</code> is received in the response when a regulation is created.
 
 </div>
@@ -237,6 +241,7 @@ https://api.rudderlabs.com/workspaces/regulations?start=0&limit=10
 To delete a regulation, you can send a `DELETE` request as shown below:
 
 <div class="infoBlock">
+
 Pass the <code class="inline-code">regulation_id</code> in the URL. The <code class="inline-code">regulation_id</code> is received in the response when a regulation is created.
 
 </div>
@@ -293,6 +298,7 @@ https://api.rudderlabs.com/workspaces/regulations/<regulation_id>
 You can suppress a user's data on a particular source too. A sample payload is as shown in the snippet below:
 
 <div class="infoBlock">
+
 You need to pass <code class="inline-code">source_id</code> in the URL. You can provide a list of user ids in the <code class="inline-code">values</code> array.
 
 </div>

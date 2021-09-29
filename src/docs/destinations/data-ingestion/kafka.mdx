@@ -11,6 +11,7 @@ Apache Kafka is a popular distributed streaming platform. It allows you to handl
 RudderStack allows you to configure Apache Kafka as a destination to which you can send your event data seamlessly.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kafka">GitHub repo</a>
@@ -30,6 +31,7 @@ Before configuring your source and destination on the [dashboard](https://app.ru
 | **Cloud** **mode**  | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -39,6 +41,7 @@ Once you have confirmed that the platform supports sending events to Kafka, perf
 - Choose a source to which you would like to add Kafka as a destination.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -58,6 +61,7 @@ Please follow our guide on <a href="../connections/adding-source-and-destination
 - **Password**: Provide the password as configured in Kafka for authenticating clients with SASL.
 
 <div class="warningBlock">
+
 You need to enable SSL to use SASL authentication.
 
 </div>
@@ -71,6 +75,7 @@ RudderStack currently supports the following SASL types:
 - **SCRAM SHA-512**
 
 <div class="infoBlock">
+
 For more information on the Apache Kafka SASL authentication, visit the [official documentation](https://kafka.apache.org/documentation/#security_sasl).
 
 </div>
@@ -80,6 +85,7 @@ For more information on the Apache Kafka SASL authentication, visit the [officia
 We use `userId` as the partition key of message.
 
 <div class="infoBlock">
+
 If `userId` is not present in payload, then `anonymousId` is used instead.
 
 </div>

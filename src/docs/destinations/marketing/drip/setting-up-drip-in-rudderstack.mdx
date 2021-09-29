@@ -16,6 +16,7 @@ Before configuring Drip as a destination, verify if Drip supports the source pla
 | **Cloud** **mode**  | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -25,6 +26,7 @@ Once you have confirmed that the source supports sending events to Drip, follow 
 - From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Drip**.
 
 <div class="infoBlock">
+
 Follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> for more information.
 
 </div>
@@ -42,6 +44,7 @@ Follow our guide on <a href="../../connections/adding-source-and-destination-rud
 <img src="https://user-images.githubusercontent.com/59817155/128698438-9e37b1ca-eb3b-4217-9deb-53a47ded5119.png" />
 
 <div class="infoBlock">
+
 The <strong>API token</strong> is required when using the Cloud mode to send your data.
 
 </div>
@@ -49,11 +52,13 @@ The <strong>API token</strong> is required when using the Cloud mode to send you
 - Enter your **Campaign ID**. To get your campaign ID, go to **Campaigns** - **Email Series** and choose the relevant campaign. The last part of the URL is the campaign ID, e.g. `https://www.getdrip.com/account_id/campaigns/campaign_id`.
 
 <div class="infoBlock">
+
 If the <strong>Campaign ID</strong> is provided, RudderStack will try to subscribe the users by default.
 
 </div>
 
 <div class="successBlock">
+
   You can also send your Campaign ID via the <code class="inline-code">identify</code> call, which takes a
   higher precedence.
 </div>

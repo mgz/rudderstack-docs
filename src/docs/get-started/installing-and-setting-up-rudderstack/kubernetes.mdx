@@ -11,6 +11,7 @@ You can deploy RudderStack on your Kubernetes cluster using the [**Helm**](https
 The repository for this Helm chart can be found [**here**](https://github.com/rudderlabs/rudderstack-helm).
 
 <div class="infoBlock">
+
   If you are planning to use RudderStack in production, we strongly recommend
   using the Kubernetes Helm charts.
 </div>
@@ -18,6 +19,7 @@ The repository for this Helm chart can be found [**here**](https://github.com/ru
 ## Quick Overview
 
 <div class="infoBlock">
+
   <code class="inline-code">helm install</code> deploys RudderStack on the
   Kubernetes cluster configured with <code class="inline-code">kubectl</code>.
 </div>
@@ -45,6 +47,7 @@ Installing and setting up RudderStack involves two key steps:
 - Data Plane setup
 
 <div class="infoBlock">
+
   Refer to the{" "}
   <a href="../rudderstack-architecture">RudderStack Architecture</a> to know
   more about the RudderStack Control Plane and Data Plane.
@@ -59,6 +62,7 @@ There are two ways you can set up the Control Plane. This section lists the step
 - Sign up and log into the [**RudderStack dashboard**](https://app.rudderlabs.com/signup).
 
 <div class="infoBlock">
+
 <strong>Why do I need to sign up for RudderStack?</strong>
 
 RudderStack's dashboard lets you easily set up your data pipelines by configuring your sources and destinations. It is fully hosted by RudderStack and is free for open-source users. You also get access to some important features like <a href="../../adding-a-new-user-transformation-in-rudderstack">Transformations</a> and a <a href="../../user-guides/how-to-guides/live-destination-event-debugger">Live Events</a> tab.
@@ -75,12 +79,14 @@ RudderStack's dashboard lets you easily set up your data pipelines by configurin
 ### Self-Host the Control Plane
 
 <div class="warningBlock">
+
   Use this option if you don't wish to sign up for RudderStack.
 </div>
 
 You can self-host your own Control Plane using the open-source [**RudderStack Config Generator**](../../user-guides/how-to-guides/rudderstack-config-generator).
 
 <div class="dangerBlock">
+
   Note that the Control Plane set up using the RudderStack Config Generator
   lacks certain features like{" "}
   <a href="../../get-started/installing-and-setting-up-rudderstack/adding-a-new-user-transformation-in-rudderstack/">
@@ -125,6 +131,7 @@ $ helm install my-release ./ --set rudderWorkspaceToken="<your_workspace_token>"
 The above command deploys RudderStack on your default Kubernetes cluster configured with `kubectl`.
 
 <div class="infoBlock">
+
   Refer to the{" "}
   <a href="../../get-started/installing-and-setting-up-rudderstack/kubernetes#configuration">
     Configuration
@@ -196,6 +203,7 @@ $ helm install --name my-release \
 ```
 
 <div class="infoBlock">
+
   Note that:
   <ul>
     <li>

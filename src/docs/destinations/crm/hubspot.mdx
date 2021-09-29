@@ -11,6 +11,7 @@ description: Step-by-step guide to send event data from RudderStack to HubSpot
 RudderStack supports HubSpot as a destination to send your event data through our APIs.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/hs">
@@ -30,6 +31,7 @@ Before configuring your source and destination in RudderStack, please check whet
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -41,6 +43,7 @@ Once you have confirmed that the platform supports sending events to HubSpot, pe
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **HubSpot** as a destination.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -52,6 +55,7 @@ Please follow our guide on <a href="../connections/adding-source-and-destination
 - Provide your HubSpot **API key** and **Hub ID** in the required fields. Please find [**API Key**](https://knowledge.hubspot.com/integrations/how-do-i-get-my-hubspot-api-key) and [**Hub ID**](https://knowledge.hubspot.com/account/manage-multiple-hubspot-accounts#identify-the-current-account-s-hub-id) in your Hubspot Account.
 
 <div class="warningBlock">
+
 API Key is mandatory if you need to send data to Hubspot using <code class="inline-code">cloud-mode</code>
 
 </div>
@@ -59,6 +63,7 @@ API Key is mandatory if you need to send data to Hubspot using <code class="inli
 - Provide your preference to flow the data to HubSpot through native SDK or through the RudderStack backend. Click on **Next** to finish the configuration.
 
 <div class="infoBlock">
+
 The setting to enable / disable native SDK to send events can be changed later. However, for that to reflect in your website, you will need to refresh the web page.
 
 </div>
@@ -69,6 +74,7 @@ The setting to enable / disable native SDK to send events can be changed later. 
 {% tab title="Cloud Mode" %}
 
 <div class="warningBlock">
+
 The <code class="inline-code">page</code> call is not supported in cloud mode for HubSpot.
 
 </div>
@@ -95,6 +101,7 @@ rudderanalytics.page()
     <TabPanels>
       <TabPanel>
         <div class="warningBlock">
+        
         The <code class="inline-code">page</code> call is not supported in cloud mode for HubSpot.
         </div>
       </TabPanel>
@@ -102,11 +109,11 @@ rudderanalytics.page()
         <ul>
         <li>To send the data to HubSpot, an initial <code class="inline-code">page</code> call is required. For more information on the <code class="inline-code">page</code> call, please refer to our <a href="../../rudderstack-api/rudderstack-spec">RudderStack API Specification</a> documentation.
         The following snippet is an example of a <code class="inline-code">page</code> call:
-</li>
-</ul>
-<code class="inline-code">
-  rudderanalytics.page()
-</code>
+        </li>
+        </ul>
+        <code class="inline-code">
+          rudderanalytics.page()
+        </code>
       </TabPanel>
     </TabPanels>
 </Tabs>
@@ -177,6 +184,7 @@ HubSpot supports the following traits as special fields:
 Hubspot also supports custom properties. You can update values of the `contact` property that you have created in HubSpot.
 
 <div class="warningBlock">
+
   <ul>
     <li>
       Note that when you provide any custom property, it automatically converts

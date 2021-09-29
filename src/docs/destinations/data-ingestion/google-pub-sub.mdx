@@ -11,6 +11,7 @@ description: Step-by-step guide to send event data from RudderStack to Google Pu
 RudderStack allows you to configure Google Pub/Sub as a destination and send your event data to it directly.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/googlepubsub">
@@ -30,6 +31,7 @@ To enable sending data to Google Pub/Sub, you will first need to add it as a des
 | Cloud mode          | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -39,6 +41,7 @@ Once you have confirmed that the platform supports sending events to Google Pub/
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Google Pub/Sub.**
 
 <div class="infoBlock">
+
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 
 </div>
@@ -60,6 +63,7 @@ Please follow our [Adding a Source and Destination](https://docs.rudderstack.com
 <img src="../../../images/assets/image (48).png" /><span class="imageTitle">Google Pub/Sub Topic ID and Name</span>
 
 <div class="infoBlock">
+
 You can send an event `type` like `page,` `identify,` `track`.  
 For the `track` events you can specify the event name based on the `event` name in the payload.
 
@@ -72,11 +76,13 @@ For example:
   </div>
 
 <div class="successBlock">
+
   If you want to send all the events to a particular stream irrespective of the
   type or name, you can use **`*`** as the event name.
 </div>
 
 <div class="warningBlock">
+
 The **topic ID** is **case-sensitive** and has to be exactly as seen in Google Pub/Sub. On the other hand, the **event name** is **case insensitive**, and thus `Page` or `page` will both be considered as valid.
 
 </div>
@@ -96,6 +102,7 @@ The following are some examples:
 - If the event name is **`page`** it will send all the calls with the `type` page.
 
 <div class="warningBlock">
+
 For the `key` fields provided in the attributes map, the `key` is searched in the message body in **`root`**, **`properties`**, **`traits`** and **`context.traits`** - in that specific order.
 
 </div>
@@ -134,6 +141,7 @@ This will create the below attribute metadata object:
 The `page` call contains information related to the page, such as the URL of the web page visited by the user.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">page</code> method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
@@ -155,6 +163,7 @@ rudderanalytics.page({
 The `identify` call captures the relevant details about the visiting user.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">identify</code> method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
@@ -173,6 +182,7 @@ rudderanalytics.identify("abc123", {
 The `track` call captures the information related to the actions performed by the user, along with their properties, or traits.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">track</code> method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
@@ -195,6 +205,7 @@ rudderanalytics.track("Track me", {
 - If an event is set with a topic id, the payload will be sent to Pub/Sub to that particular topic id.
 
 <div class="infoBlock">
+
 If you have set all event type, event and * for mapping the priority will be given to <code class="inline-code">event</code> ,  
 then <code class="inline-code">type</code> , followed by *.
 

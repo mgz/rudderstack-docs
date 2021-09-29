@@ -26,6 +26,7 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Cloud mode**      | **-**   | **-**         | **-**      |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -35,6 +36,7 @@ Once you have confirmed that the platform supports sending events to Optimizely 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select Optimizely Full Stack**.**
 
 <div class="infoBlock">
+
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 
 </div>
@@ -57,6 +59,7 @@ Configure the settings according to your requirements and click on **Next** to c
 Unlike other destinations, Optimizely Full Stack for the mobile integration works a little differently. You will have to implement some Optimizely functions natively to make sure the experiment logic runs correctly.
 
 <div class="infoBlock">
+
 RudderStack maps the `track` calls with Optimizely's `track` calls. You need to implement all the Optimizely's decision-based methods like `activate` and `isFeatureEnabled` natively.
 
 For more details please checkout [Easy Event Tracking](https://blog.optimizely.com/2019/02/26/introducing-easy-event-tracking-the-easier-way-to-understand-and-optimize-the-customer-journey/) and the [Optimizely SDK reference Guide](https://docs.developers.optimizely.com/full-stack/docs/sdk-reference-guides#section-ios-and-tvos).
@@ -87,6 +90,7 @@ implementation 'com.optimizely.ab:android-sdk:3.0.0'
 3. Initialize the Optimizely Manager:
 
 <div class="successBlock">
+
 Optimizely recommends initializing their SDK as soon as possible. You need to initialize the Optimizely Manager before proceeding to the next step \(Step 4\) .
 
 Please refer to the Optimizely [Initializing the SDK](https://docs.developers.optimizely.com/full-stack/docs/initialize-sdk-android) guide for more information.
@@ -113,6 +117,7 @@ val rudderClient = RudderClient.getInstance(
 ```
 
 <div class="warningBlock">
+
 Make sure you pass the Optimizely manager instance you created (in Step 3) to the factory as shown in the snippet above.
 
 </div>
@@ -185,6 +190,7 @@ implementation 'com.optimizely.ab:android-sdk:3.0.0'
 <li>Initialize the Optimizely Manager:
 
 <div class="successBlock">
+
 Optimizely recommends initializing their SDK as soon as possible. You need to initialize the Optimizely Manager before proceeding to the next step (Step 4) .
 
 Please refer to the Optimizely <a href="https://docs.developers.optimizely.com/full-stack/docs/initialize-sdk-android">Initializing the SDK</a> guide for more information.
@@ -215,6 +221,7 @@ val rudderClient = RudderClient.getInstance(
 </span>
 
 <div class="warningBlock">
+
 Make sure you pass the Optimizely manager instance you created (in Step 3) to the factory as shown in the snippet above.
 
 </div>

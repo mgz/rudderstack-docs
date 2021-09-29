@@ -11,6 +11,7 @@ description: >-
 RudderStack is an independent, stand-alone system with dependency only on the database \(**PostgreSQL**\). Its backend is written in Go, with a rich UI written in React.js.
 
 <div class="successBlock">
+
   <strong>
     Start building a better, warehouse-first CDP that delivers complete, unified
     data to every part of your marketing and analytics stack.{" "}
@@ -50,6 +51,7 @@ The Data Plane is RudderStack's core engine responsible for:
 - Relaying the events to the destination
 
 <div class="infoBlock">
+
 The RudderStack Data Plane uses PostgreSQL as a streaming database for the event data. Refer to the <strong>Data Plane Architecture</strong> section below for more information.
 
 </div>
@@ -61,6 +63,7 @@ RudderStack's Transformations module transforms the received event data into a s
 RudderStack also supports user-specific transformations for real-time operations, such as aggregation, filtering, and sampling.
 
 <div class="successBlock">
+
   Refer to the{" "}
   <a href="../adding-a-new-user-transformation-in-rudderstack">
     RudderStack Transformations
@@ -107,6 +110,7 @@ The Router sends the processed and transformed event data from the Processor to 
 The Transformation module takes the event data from the Processor and converts the event data into the required destination format. It then sends this transformed data back to the Processor. The Processor then forwards the data to the Router, which then routes it to the desired destination.
 
 <div class="successBlock">
+
 RudderStack supports user-defined transformations where event data can be transformed using custom JavaScript functions. Some common use-cases include modifying the events, performing event aggregation, sampling, etc.
 
 Check out the <a href="https://github.com/rudderlabs/sample-user-transformers">GitHub repository</a> for more information related to these functions.
@@ -150,6 +154,7 @@ The RudderStack backend can be customized with a variety of configuration option
 Although the default configuration works just fine for most use-cases, RudderStack gives you the flexibility to customize it by tweaking the [**`config.yaml`**](https://github.com/rudderlabs/rudder-server/blob/master/config/config.yaml) file to suit your application's needs.
 
 <div class="infoBlock">
+
 Refer to the <a href="../../user-guides/administrators-guide/config-parameters">Configuration Parameters</a> guide for more information on these configuration options.
 
 </div>

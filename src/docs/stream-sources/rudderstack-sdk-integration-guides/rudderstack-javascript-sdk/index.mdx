@@ -15,6 +15,7 @@ RudderStack's JavaScript SDK leverages the `rudder-analytics.js` library to trac
 ## **2. Installing the** RudderStack **JavaScript SDK**
 
 <div class="infoBlock">
+
 <strong>NOTE:</strong> To quickly get up and running with setting up and using the RudderStack JavaScript SDK, please go through our <a href="https://github.com/rudderlabs/rudder-sdk-js#how-to-use-the-rudderstack-javascript-sdk">quick start guide</a>.
 
 </div>
@@ -32,6 +33,7 @@ rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track"
 ```
 
 <div class="infoBlock">
+
 <strong>You can find your source write key and the data plane URL on your RudderStack dashboard.</strong>
 
 </div>
@@ -76,6 +78,7 @@ rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track"
 ```
 
 <div class="successBlock">
+
 <strong>NOTE</strong>: The above code snippet will load <code class="inline-code">rudder-analytics.js</code> on to your page synchronously. To load the SDK asynchronously to keep your page load time unaffected, use the following instead:
 
 <strong>
@@ -123,11 +126,13 @@ npm install rudder-sdk-js --save
 ```
 
 <div class="infoBlock">
+
 This NPM module is only meant to be used for a browser installation. If you want to integrate RudderStack with your Node.js applications, please refer to <a href="https://github.com/rudderlabs/rudder-sdk-node">the RudderStack Node.js repository</a>.
 
 </div>
 
 <div class="warningBlock">
+
 <strong>Important</strong>: Since the module exports the related APIs on an already-defined object combined with the Node.js module caching, you should run the below code snippet <strong>only once</strong> and use the exported object throughout your project.
 
 </div>
@@ -155,6 +160,7 @@ Please refer to the following projects for a detailed walk-through of the above 
 - [Sample React project](https://github.com/rudderlabs/rudder-analytics-react)
 
 <div class="infoBlock">
+
   The related APIs exported by the module are:
   <ul>
     <li>
@@ -249,6 +255,7 @@ Please refer to the following projects for a detailed walk-through of the above 
 </table>
 
 <div class="infoBlock">
+
 If the SDK doesn't work on the versions you are targeting, verify if adding the browser polyfills to your application solves the issue.
 
 </div>
@@ -268,6 +275,7 @@ The `load()`method is defined as follows:
 `rudderanalytics.load(<YOUR_WRITE_KEY>, <DATA_PLANE_URL>, options);`
 
 <div class="infoBlock">
+
 <strong>NOTE</strong>: You need to replace <code class="inline-code">&lt;YOUR_WRITE_KEY&gt;</code> with the write key in the RudderStack Control Plane and <code class="inline-code">&lt;DATA_PLANE_URL&gt;</code> with the URL of the RudderStack Server.
 
 </div>
@@ -313,6 +321,7 @@ IntegrationOpts {
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
 <div class="infoBlock">
+
   More information on the Load{" "}
   <strong>
     <code class="inline-code">IntegrationOpts</code>
@@ -456,6 +465,7 @@ IntegrationOpts {
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
 <div class="infoBlock">
+
   More information on the Load{" "}
   <strong>
     <code class="inline-code">IntegrationOpts</code>
@@ -481,11 +491,13 @@ IntegrationOpts {
 </div>
 
 <div class="infoBlock">
+
 <strong>NOTE</strong>: The <code class="inline-code">anonymousId</code> is a <strong>UUID (Universally Unique Identifier)</strong> generated to uniquely identify the user. Also, if it is provided by the user using the <code class="inline-code">setAnonymousId</code> method, the user-specified <code class="inline-code">anonymousId</code> overrides the SDK-generated one.
 
 </div>
 
 <div class="successBlock">
+
   There is no need to call <code class="inline-code">identify()</code>for
   anonymous visitors to your website. Such visitors are automatically assigned
   an <code class="inline-code">anonymousId</code>
@@ -496,6 +508,7 @@ IntegrationOpts {
 The JavaScript SDK generates one unique `anonymousId` , stores it in a cookie named `rl_anonymous_id` in the top-level domain, and attaches to every subsequent event. This helps in identifying the users from other sites that are hosted under a sub-domain.
 
 <div class="infoBlock">
+
 As an example, if you include the RudderStack JavaScript SDK in both <strong>admin.samplewebsite.com</strong> and <strong>app.samplewebsite.com</strong>, the SDK will store the cookie in the top-level domain <strong>samplewebsite.com</strong>.
 
 </div>
@@ -509,6 +522,7 @@ There are two options that you can use to identify users when using the JavaScri
 There can be scenarios where you may want to provide your own `anonymousID` instead of an auto-generated ID by the SDK. To do so, you can provide the `anonymousId` in the `options` parameter of the `identify` call, as mentioned above. This will send the value provided by you in the `anonymousId` key of the event.
 
 <div class="infoBlock">
+
 All other events will have <code class="inline-code">anonymousId</code> from the one persisted in the cookie, except this event where you override the options.
 
 </div>
@@ -562,6 +576,7 @@ Calling the above method will parse the Linker ID and set the **`anonymousId`** 
 If you would like to set the `userid` to be empty, pass an empty string or `""`. A common use case for this is if an anonymous user was identified with a `userid` and then logs out of their account. You can then `identify("", {isLoggedIn: false})` and the user will continue to be identified by their `anonymousId` for future events.
 
 <div class="warningBlock">
+
 Do <strong>not</strong> identify with <code class="inline-code">null</code>, as this will not allow you to pass a traits object and it will keep the current <code class="inline-code">userid</code>.
 
 </div>
@@ -573,6 +588,7 @@ To identify new users in scenarios like a new login, you can take one of the fol
 - Call the `identify` API with a new `userid`. RudderStack will reset all cookies related to the user for `userid` and `user-traits` and update them with the new values provided by you.
 
 <div class="infoBlock">
+
 The <code class="inline-code">anonymousId</code> will remain unchanged in this case. It will be the value that you set explicitly using <code class="inline-code">setAnonymousId</code> , or the auto-generated value set by the SDK while loading.
 
 </div>
@@ -672,6 +688,7 @@ IntegrationOpts {
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
 <div class="infoBlock">
+
   More information on the Load{" "}
   <strong>
     <code class="inline-code">IntegrationOpts</code>
@@ -768,6 +785,7 @@ IntegrationOpts {
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
 <div class="infoBlock">
+
   More information on the Load{" "}
   <strong>
     <code class="inline-code">IntegrationOpts</code>
@@ -797,6 +815,7 @@ IntegrationOpts {
 Many destination platforms need an explicit `alias` call for mapping the already identified users to a new identifier that you may want to use, to track the users in the future. The RudderStack `alias` API allows you to implement this functionality.
 
 <div class="successBlock">
+
   Simply put, the <code class="inline-code">alias</code> call associates the
   user with a new identification.
 </div>
@@ -853,6 +872,7 @@ IntegrationOpts {
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
 <div class="infoBlock">
+
   More information on the Load{" "}
   <strong>
     <code class="inline-code">IntegrationOpts</code>
@@ -939,6 +959,7 @@ IntegrationOpts {
 | **`<Destination>`** | Boolean | Specific destination to which the event is to be sent or not sent, depending on the boolean value assigned to it.                                                                                      |
 
 <div class="infoBlock">
+
   More information on the Load{" "}
   <strong>
     <code class="inline-code">IntegrationOpts</code>
@@ -983,6 +1004,7 @@ rudderanalytics.reset()
 ```
 
 <div class="infoBlock">
+
 <strong>NOTE</strong>: The <code class="inline-code">reset()</code>method only clears the cookies and local storage set by RudderStack, and not the information stored by the integrated destinations. To completely clear the user session, please refer to the documentation provided by those respective tools.
 
 </div>
@@ -1051,6 +1073,7 @@ Below shows some of the supported names that RudderStack can intake for each des
 | Amazon Kinesis       | `Amazon Kinesis`           |
 
 <div class="infoBlock">
+
 <strong>NOTE:</strong> You can also refer to <a href="../../../user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention">this section</a> for more information on the naming convention of the <code class="inline-code">destinations names</code>.
 
 </div>
@@ -1070,6 +1093,7 @@ rudderanalytics.load(WRITE_KEY, DATA_PLANE_URL, {
 Where `<destination_name>` is the name of the destination.
 
 <div class="infoBlock">
+
 Please refer to the section above for the common destinations names or refer to <a href="../../../user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention">this section</a> for destination naming convention.
 
 </div>
@@ -1099,6 +1123,7 @@ In this section, we cover two specific dictionaries, within the `options` argume
 A context is a dictionary of additional information about a particular data, such as a user’s IP address.
 
 <div class="infoBlock">
+
 <strong>NOTE</strong>: A context is a complete and specific piece of information. Any other information provided outside of this specification is ignored.
 
 </div>
@@ -1180,6 +1205,7 @@ Some of the properties in the snippet above are:
 - `sendAdblockPage`: Enables the JavaScript SDK to make a call to load the Google AdSense library. If RudderStack fails to load this library, it concludes that an ad blocker is enabled on the page.
 
 <div class="infoBlock">
+
 Since most ad blockers block the request to the Google AdSense servers, this is assumed as a good measure to detect ad-blocked pages.
 
 </div>
@@ -1205,6 +1231,7 @@ This section provides solutions to some of the commonly faced issues while using
 Simply put, the **Data Plane URL** is used to connect to the RudderStack backend for processing and routing your events.
 
 <div class="infoBlock">
+
   To get the <strong>Data Plane URL</strong>:
   <ul>
     <li>
@@ -1259,6 +1286,7 @@ To check if data is being transmitted to the specified destinations, go to the `
 <img src="https://lh5.googleusercontent.com/0Mw5GDmeE0C8pugsTHXn4Ss6bmF05UseoSAsi2z2S1QIhw6rBGlBROUVICHZxef3KNUOvt9o6uNE-czGxRU09huZV2SF6J24S_nLTywyKKPRsNjCCD9hAyGX3BzChcF3RbchKYQf" /><span class="imageTitle">track call as seen in the Network tab</span>
 
 <div class="infoBlock">
+
 <strong>NOTE</strong>: If the outbound request is not being shown, check if you have installed and set up the RudderStack JavaScript SDK correctly, or if ad-blockers are enabled on your browser.
 
 </div>
@@ -1282,6 +1310,7 @@ rudderanalytics.getAnonymousId()
 ```
 
 <div class="infoBlock">
+
 <strong>NOTE:</strong> In case the <code class="inline-code">anonymousId</code> value is null, calling the above function will lead to automatically setting a new <code class="inline-code">anonymousId</code>.
 
 </div>

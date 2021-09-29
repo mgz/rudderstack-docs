@@ -15,6 +15,7 @@ RudderStack makes it easier for you to add more nodes to your Kubernetes cluster
 Each RudderStack node consists of a backend pod and a PostgreSQL pod. In case a RudderStack cluster is not able to process the events, it is advisable to add more more nodes to it. By changing the **`backendReplicaCount`** in the [Helm configuration](https://github.com/rudderlabs/rudderstack-helm/blob/master/values.yaml), you can trigger horizontal scale up/down. If you set this value to any positive number, helm charts will create as many RudderStack nodes.
 
 <div class="successBlock">
+
   The <code class="inline-code">values.yaml</code> file can be found
   <a href="https://github.com/rudderlabs/rudderstack-helm/blob/master/values.yaml">
     here
@@ -38,6 +39,7 @@ If you scale down, all the pending events in the terminated node will not be del
 <span class="imageTitle">Scaling Down from 2 Nodes to 1 Node</span>
 
 <div class="infoBlock">
+
 To understand how RudderStack handles hardware failures and guarantees High Availability, please go through our <a href="../administrators-guide/high-availability">
 High Availability guide</a>.
 

@@ -9,11 +9,13 @@ description: Detailed technical description of the Alias API call.
 The `alias` call lets you merge different identities of a known user.
 
 <div class="infoBlock">
+
 <code class="inline-code">alias</code> is an advanced method that lets you change the tracked user's ID explicitly. This method is useful when managing identities for some of the downstream destinations.
 
 </div>
 
 <div class="successBlock">
+
   The following destinations support the <code class="inline-code">alias</code>{" "}
   call:
   <ul>
@@ -55,12 +57,14 @@ rudderanalytics.alias("12345")
 ```
 
 <div class="successBlock">
+
   The RudderStack SDK automatically passes the user's{" "}
   <code class="inline-code">anonymousId</code> as
   <code class="inline-code">previousId</code> in the payload, as seen above.
 </div>
 
 <div class="warningBlock">
+
 When instrumenting a website with the JavaScript SDK, making the <code class="inline-code">alias</code> call via the client-side is important as the <code class="inline-code">anonymousId</code> is generated via the browser. Similarly, if you're using a server-side SDK, the <code class="inline-code">alias</code>call must be made from the server-side as the session ID is set as the <code class="inline-code">anonymousId</code>.
 
 </div>

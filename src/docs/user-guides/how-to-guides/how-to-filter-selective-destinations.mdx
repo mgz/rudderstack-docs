@@ -32,6 +32,7 @@ rudderanalytics.identify(
 ```
 
 <div class="successBlock">
+
   <strong>NOTE</strong>: Unless explicitly defined otherwise,{" "}
   <code class="inline-code">'All'</code> is always set to
   <code class="inline-code">true</code>. This means that sending events to all destinations
@@ -39,6 +40,7 @@ rudderanalytics.identify(
 </div>
 
 <div class="infoBlock">
+
 The line <strong><code class="inline-code">All: false</code></strong> instructs RudderStack <strong>not</strong> to send the event data to any destinations <strong>by default,</strong> unless they are explicitly listed as <strong><code class="inline-code">true</code></strong> in the subsequent lines.
 
 </div>
@@ -62,6 +64,7 @@ rudderanalytics.identify(
 ```
 
 <div class="infoBlock">
+
 As seen in the above code snippet, RudderStack will send the event data to all the destinations except <code class="inline-code">Google Analytics</code> and <code class="inline-code">Intercom</code>.
 
 </div>
@@ -71,6 +74,7 @@ As seen in the above code snippet, RudderStack will send the event data to all t
 The following are examples for the same `track()` call from a variety of SDK's.
 
 <div class="infoBlock">
+
 Please Note: Some of the SDK's follow their own convention that is different than the examples below. The notable SDK's with different convention are IOS and Android. Please read the respective <code class="inline-code">SDK Integration Guide</code> section for your given SDK to find the correct format to filter selective destinations.
 
 </div>
@@ -114,6 +118,7 @@ rudder_analytics.track(
 ```
 
 <div class="infoBlock">
+
 In these examples above, the track events will only be sent to <code class="inline-code">Amazon S3</code> and <code class="inline-code">Heap.io</code> destinations.
 
 </div>
@@ -123,6 +128,7 @@ In these examples above, the track events will only be sent to <code class="inli
 By default, for the destination name please use the `displayed destination name` on the [RudderStack directory in your control plane](https://app.rudderstack.com/directory).
 
 <div class="infoBlock">
+
 These destination names are case sensitive!
 
 </div>

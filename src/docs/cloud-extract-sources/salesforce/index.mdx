@@ -11,6 +11,7 @@ description: Step-by-step guide to ingest event data from Salesforce into Rudder
 This guide is aimed at helping you set up Salesforce as a source in RudderStack in the easiest possible way. With this integration, you can send your Salesforce data to RudderStack as events, which can then be further routed to your preferred data warehouse destination supported by RudderStack.
 
 <div class="infoBlock">
+
 <strong>All the Cloud Extract sources support sending data only to a data warehouse destination.</strong>
 
 </div>
@@ -39,6 +40,7 @@ To set up Salesforce as a source on the RudderStack dashboard, follow these step
 <img src="../../../images/assets/3 (5).png" alt="Connect with Salesforce" />
 
 <div class="successBlock">
+
   If you have already logged into your Salesforce account previously, clicking
   on the <strong>Connect with Salesforce</strong> option will automatically
   connect that account to RudderStack. To connect RudderStack to a different
@@ -52,11 +54,13 @@ To set up Salesforce as a source on the RudderStack dashboard, follow these step
 <img src="../../../images/assets/4 (6).png" alt="Sources" />
 
 <div class="infoBlock">
+
 Please note that loading to your data warehouse could take a little bit longer than the specified frequency.
 
 </div>
 
 <div class="warningBlock">
+
 Salesforce’s API strictly enforces a limit on its usage. A high <strong>Run Frequency</strong> may exceed your Salesforce’s API. This may cause a failure when RudderStack tries to sync your data.
 
 </div>
@@ -74,6 +78,7 @@ That's it! Salesforce is now successfully configured as a source on your RudderS
 <img src="../../../images/assets/6 (4).png" alt="Successfully configured" />
 
 <div class="successBlock">
+
   Use the <strong>Connect Destinations</strong> option if you have already
   configured a data warehouse destination in RudderStack. To configure a data
   warehouse destination from scratch, click on the{" "}
@@ -97,6 +102,7 @@ RudderStack synchronizes with your Salesforce data source based on the schedule 
 The first time RudderStack syncs with your Salesforce data, it performs a full replication - as mentioned above. After that, your Salesforce data is replicated incrementally. This means that RudderStack will replicate only the new and updated rows to your destination.
 
 <div class="infoBlock">
+
 <strong>Note that RudderStack will only read your data</strong>.
 
 </div>
@@ -106,11 +112,13 @@ The first time RudderStack syncs with your Salesforce data, it performs a full r
 Salesforce imposes a strict API quota that regulates its API usage. This quota corresponds to the total number of API requests that can be made over a period of time.
 
 <div class="infoBlock">
+
 <strong>The Salesforce API usage includes RudderStack and any other apps you may use.</strong>
 
 </div>
 
 <div class="warningBlock">
+
 Because of Salesforce's API quotas and the data volume to be synchronized, the initial data sync could take some time.
 
 </div>
@@ -121,6 +129,7 @@ Here's how RudderStack handles these API quotas:
 - If more than 80% of your daily API quota has been utilized \(by RudderStack or any other apps\), the replication will stop. The process will resume once the API limit is lifted.
 
 <div class="infoBlock">
+
 Refer to <a href="https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm">this</a> article by Salesforce to calculate and increase your total API calls.
 
 </div>
@@ -146,6 +155,7 @@ To connect to your sandbox environment, follow these steps:
 - Use your sandbox account credentials to log in and continue with the rest of the setup.
 
 <div class="warningBlock">
+
 Make sure you use a relevant table prefix in your setup in order to avoid creating conflicting tables in your database with your Salesforce production pipeline (if one is already set up).
 
 </div>

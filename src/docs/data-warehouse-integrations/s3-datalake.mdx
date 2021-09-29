@@ -17,6 +17,7 @@ Follow these steps to configure S3 data lake as a destination in RudderStack:
 * From your [**RudderStack dashboard**](https://app.rudderstack.com/), configure the data source. Then, from the list of destinations, select **S3 Data Lake**.
 
 <div class="infoBlock">
+
 Refer to the <a href="../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination in RudderStack</a> guide for more information.
 </div>
 
@@ -32,6 +33,7 @@ Add the following credentials in the **Connection Settings**:
 * **Register schema on AWS Glue**: If you enable this option, RudderStack will register the schema of your incoming data on AWS Glue's data catalog.
 
 <div class="infoBlock">
+
 For more information on registering your schema in AWS Glue, refer to the AWS Glue <a href="https://docs.aws.amazon.com/glue/latest/dg/schema-registry.html">documentation</a>.
 </div>
 
@@ -40,6 +42,7 @@ For more information on registering your schema in AWS Glue, refer to the AWS Gl
 * **Namespace**: If specified, all the data for the destination will be pushed to `s3://<bucketName>/<prefix>/rudder-datalake/<namespace>`. If AWS Glue is enabled, all the table definitions are created in a database with the name set to this namespace.
 
 <div class="infoBlock">
+
 If you don't specify a namespace in the settings, it is set to the source name by default.
 </div>
 
@@ -47,6 +50,7 @@ If you don't specify a namespace in the settings, it is set to the source name b
 * **AWS Secret Access Key**: Enter your AWS secret access key.
 
 <div class="warningBlock">
+
 Make sure the above credentials (<strong>Access Key ID</strong> and <strong>Secret Access Key</strong>) should have permissions to read and write into the configured bucket.
 </div>
 
@@ -79,12 +83,14 @@ RudderStack will convert these events into Parquet files and dump them into the 
 | `Cart Viewed` | `s3://<bucketName>/<prefix>/rudder-datalake/<namespace>/cart_viewed/2019/11/12/09` |
 
 <div class="infoBlock">
+
 If AWS Glue is enabled, all the table definitions are created in a database with the name set to the namespace (as specified in the destination settings).
 </div>
 
 ## Creating a Crawler
 
 <div class="warningBlock">
+
 Refer to this section <strong>only</strong> if you haven't enabled the <strong>Register Schema on AWS Glue</strong> setting while configuring the S3 data lake destination in RudderStack.
 </div>
 
@@ -109,11 +115,13 @@ In the absence of AWS Glue, you can create a crawler to go through your data and
 * In the **Include path** setting, enter the S3 URI of your configured bucket followed by the suffix `/<prefix>/rudder-datalake/<namespace>/`.
 
 <div class="infoBlock">
+
 For example, if your S3 bucket name is <code class="inline-code">testBucket</code> and the configured prefix and namespace are <code class="inline-code">testPrefix</code> and <code class="inline-code">testNameSpace</code> respectively, then your path should be:
 <code class="inline-code">s3://testBucket/testPrefix/rudder-datalake/testNameSpace/</code>
 </div>
 
 <div class="warningBlock">
+
 If you have not configured any prefix while setting up the S3 data lake destination in RudderStack, omit the prefix. Your URI would then be:
 <code class="inline-code">s3://testBucket/rudder-datalake/testNameSpace/</code>.
 </div>
@@ -137,10 +145,12 @@ If you have not configured any prefix while setting up the S3 data lake destinat
 * Specify the **Table level** as **5** or **4** \(refer to the tips below\). This value indicates the absolute level of the table location in the bucket.
 
 <div class="infoBlock">
+
 The level for the top-level folder is <strong>1</strong>. For example, for the path <code class="inline-code">mydataset/a/b</code>, if the level is set to 3, the table will be created at the location <code class="inline-code">mydataset/a/b</code>. Similarly, if the level is set to 2, the table will be created at the location <code class="inline-code">mydataset/a</code>.
 </div>
 
 <div class="warningBlock">
+
 Since all tables are created in the URI <code class="inline-code">s3://testBucket/&lt;prefix&gt;/rudder-datalake/&lt;namespace&gt;/</code>, make sure the table level should be set to:
 <ul>
 <li><strong>5</strong> if a prefix is configured</li>
@@ -160,6 +170,7 @@ Since all tables are created in the URI <code class="inline-code">s3://testBucke
 You can query your S3 data using a tool like [**AWS Athena**](https://aws.amazon.com/athena/), which lets you run SQL queries on S3.
 
 <div class="warningBlock">
+
 Before querying your data on S3, make sure that you have sent some data to S3, and that the sync has been completed.
 </div>
 
@@ -175,6 +186,7 @@ Follow these steps to start querying your data on s3 -
 ![](../.gitbook/assets/database.png)
 
 <div class="infoBlock">
+
 By default, the namespace is set to your source name if you did not specify it in the destination settings.
 </div>
 

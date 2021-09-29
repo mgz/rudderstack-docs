@@ -21,6 +21,7 @@ In reality, however, as multiple stakeholders define and implement the event spe
 RudderStack's [**Data Governance API**](https://docs.rudderstack.com/rudderstack-api-spec/rudderstack-data-governance-api) gives you the ability to access all your events and their metadata programmatically. This includes vital information related to the event schema, event payload versions, data types, and more.
 
 <div class="infoBlock">
+
 <strong>Refer to the <a href="./rudderstack-data-governance-api">RudderStack Data Governance API</a> reference for the detailed technical documentation.</strong>
 
 </div>
@@ -41,6 +42,7 @@ At a high level, you can take the following steps to investigate and troubleshoo
 4. Identify the differences in the schema versions for a single event model using [`schemas/event-versions`](https://docs.rudderstack.com/rudderstack-api-spec/rudderstack-data-governance-api#schemas-event-versions).
 
 <div class="successBlock">
+
   The RudderStack Data Governance API also lets you gather other useful
   diagnostics related to both the events as well as the versions of individual
   event schemas. You can leverage this information to find and fix issues in
@@ -50,6 +52,7 @@ At a high level, you can take the following steps to investigate and troubleshoo
 Once you have identified the inconsistencies, you can implement specific processes and set alerts for your data governance workflows. For instance, you can create alerts for notifying any missing keys in your events, or use RudderStack transformations to validate your event schemas and transform the faulty incoming event payloads.
 
 <div class="infoBlock">
+
 A detailed, step-by-step explanation of using the RudderStack Data Governance API can be found in our <a href="https://rudderstack.com/blog/rudderstacks-data-governance-api">technical blog</a>.
 
 </div>

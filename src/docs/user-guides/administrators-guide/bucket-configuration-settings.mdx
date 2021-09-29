@@ -13,6 +13,7 @@ RudderStack stores the following two types of events into its cloud-specific buc
 * In case of delivery failures, the final event payload along with the error is stored.
 
 <div class="successBlock">
+
 The events are deleted from the bucket upon successful delivery of the events. <strong>RudderStack does not persist any of the customer data</strong>.
 </div>
 
@@ -48,6 +49,7 @@ For example, if <strong><code class="inline-code">JOBS_BACKUP_PREFIX</code></str
 </div>
 
 <div class="successBlock">
+
 <strong>If you're a RudderStack Pro/Enterprise user, you can share the Access Key ID and Secret Access Key with the RudderStack team by <a href="https://rudderstack.com/join-rudderstack-slack-community">contacting us</a>.</strong>
 
 The RudderStack team will then use the above credentials to authenticate RudderStack and enable it to back up events into your S3 bucket.
@@ -70,6 +72,7 @@ Then, follow these steps:
 * Specify the location of the downloaded JSON file containing the required permissions for the variable `GOOGLE_APPLICATION_CREDENTIALS`. You can obtain this JSON file by referring to the [**Permissions for GCS**](https://docs.rudderstack.com/user-guides/administrators-guide/bucket-configuration-settings#permissions-for-gcs) section below.
 
 <div class="successBlock">
+
 <strong>If you're a RudderStack Pro/Enterprise user, you can share the downloaded JSON containing the required permissions with the RudderStack team by <a href="https://rudderstack.com/join-rudderstack-slack-community">contacting us</a></strong>.
 
 The RudderStack team will then use this service account JSON file to authenticate RudderStack and dump the events into your GCS bucket.
@@ -115,6 +118,7 @@ To use your own GCS bucket for RudderStack to dump the events, you need to perfo
   * **storage.objects.get**
 
 <div class="infoBlock">
+
 We recommend adding each permission one after the other.
 </div>
 

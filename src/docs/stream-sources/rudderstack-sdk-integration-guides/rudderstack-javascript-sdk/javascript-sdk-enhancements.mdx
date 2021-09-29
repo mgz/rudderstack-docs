@@ -25,6 +25,7 @@ There are 2 key advantages of using the navigator.sendBeacon utility to send you
 - The Beacon requests are optimized in the sense that browser waits until the CPU load is lower, or until the network is free before making the actual requests. This can lead to better website performance.
 
 <div class="infoBlock">
+
 You can find the <code class="inline-code">sendBeacon</code> version of the RudderStack JavaScript SDK located at <a href="https://cdn.rudderlabs.com/v2/rudder-analytics.min.js?transport=beacon">https://cdn.rudderlabs.com/v2/rudder-analytics.min.js?transport=beacon</a>. For using its XMLHTTP version, please use <a href="https://cdn.rudderlabs.com/v2/rudder-analytics.min.js">https://cdn.rudderlabs.com/v2/rudder-analytics.min.js</a>.
 
 </div>
@@ -36,6 +37,7 @@ A couple of important pointers to note before you opt to use `sendBeacon` for se
 - The Beacon requests sent from the SDK using `Navigator.sendBeacon()` only push the events to browser’s Beacon queue. As it depends on the browser's engine to send these events from the queue, RudderStack **cannot guarantee** the events getting discarded due to 5xx errors and other network-related errors \(request timed out, end resource unavailable, etc.\).
 
 <div class="warningBlock">
+
 If this is indeed a requirement for your site, we suggest you use the XHR version of the JavaScript SDK, where RudderStack retries event delivery based on status codes and other errors.
 
 </div>
@@ -57,6 +59,7 @@ The core SDK maintains a call queue, and the API calls to it are processed one a
 For instance, in the above call `rudderanalytics.requireIntegration("GA")`, the subsequent calls to the SDK \(such as `page`, `track`, `alias`, `group`, etc.\) will get enqueued until the `GAPlugin.js` and Google Analytics' `analytics.js` is loaded on the web page. Once the plugin and the end destination snippet is loaded, the subsequent calls in the call queue will be processed, and the corresponding calls to `analytics.js` will start flowing.
 
 <div class="successBlock">
+
   For this example, Google Analytics'{" "}
   <code class="inline-code">trackingId</code> and other configuration settings
   are fetched from the RudderStack dashboard as noted earlier and
@@ -88,11 +91,13 @@ rudderanalytics.requireIntegration(
 ```
 
 <div class="infoBlock">
+
 We support a few canonical names for destinations. You can find more information regarding these canonical names in the <a href="../rudderstack-javascript-sdk#4-2-common-destination-names">common destination names</a> section of our JavaScript SDK guide.
 
 </div>
 
 <div class="warningBlock">
+
 Currently, we only support plugins for <strong>Google Analytics</strong>, <strong>Hotjar</strong> and <strong>Hubspot</strong>. We are working on adding support for more destinations very soon, so stay tuned!
 
 </div>

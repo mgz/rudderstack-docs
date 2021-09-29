@@ -13,6 +13,7 @@ The backend uses [statsd](https://github.com/statsd/statsd) client to log stats.
 Note that the collection of stats can be disabled using `enableStats` in [`config.yaml`](https://docs.rudderstack.com/administrators-guide/config-parameters).
 
 <div class="infoBlock">
+
 Every metric has a dimension called <strong><code class="inline-code">instanceName</code></strong> that can be used to filter metrics. This can be helpful in case of multi-node deployments.
 
 </div>
@@ -24,6 +25,7 @@ Every metric has a dimension called <strong><code class="inline-code">instanceNa
 The backend usually runs in normal mode. If backend crashes and restarts multiple times in a short span, it is started in either **degraded** or **maintenance** mode. In degraded mode, events are collected and stored by the backend gateway, but are not sent to destinations. In maintenance mode, existing database is set aside for further inspection and a new database is used. So, it is important that recovery mode is monitored and appropriate action is taken when backend enters either degraded or maintenance mode.
 
 <div class="warningBlock">
+
 This is the most important metric to monitor as it directly indicates the health of the application.
 
 </div>
@@ -119,6 +121,7 @@ These are the backend's implementation-specific metrics that can be used to anal
 | `jobsdb.brt_tables_count` | `Gauge` | Number of batch router tables in JobsDB |
 
 <div class="infoBlock">
+
   Ideally, the above tables count should not be ever growing. Ever growing
   tables:
   <ul>

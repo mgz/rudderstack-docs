@@ -11,6 +11,7 @@ description: Step-by-step guide to send your event data from RudderStack to Ampl
 RudderStack supports sending events from the RudderStack SDKs to Amplitude through our data plane and Web connection mode.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/am">
@@ -30,6 +31,7 @@ Before configuring your source and destination on the RudderStack app, please ch
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -39,6 +41,7 @@ Once you have confirmed that the platform supports sending events to Amplitude, 
 - To enable sending data to Amplitude, you will need to add it to the source you send the event data.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -64,6 +67,7 @@ To successfully configure Amplitude as a destination, you will need to configure
   - If this setting is on and the `name` is present in a `screen` call, then an event named `Viewed {name} Screen` will be sent to Amplitude but if `name` is absent then an event named `Loaded a Screen` will be sent to Amplitude.
 
 <div class="warningBlock">
+
 <strong>Note</strong>: If multiple settings are enabled, then multiple events may be sent for a single <code class="inline-code">page/screen</code> call. For example, if both <code class="inline-code">Track categorized page</code> and <code class="inline-code">Track named page</code>settings are enabled, for a single <code class="inline-code">page/screen</code> call one <code class="inline-code">Viewed &#123;name&#125; page/Viewed &#123;name&#125; Screen</code>and one <code class="inline-code">Viewed &#123;category&#125; page/Viewed &#123;category&#125; Screen</code> events will be generated.
 
 </div>
@@ -74,6 +78,7 @@ To successfully configure Amplitude as a destination, you will need to configure
   - **Traits to Append:** If this setting is enabled, the value of the corresponding trait will be appended to the corresponding trait array at Amplitude. **If the corresponding trait does not have a value set yet, it will be initialized to an empty list before the new values are appended. If the corresponding trait has an existing value and it is not a list, it will be converted into a list with the new value appended.**
 
 <div class="infoBlock">
+
 This feature is not applicable for RudderStack web device mode integrations.
 
 </div>
@@ -81,6 +86,7 @@ This feature is not applicable for RudderStack web device mode integrations.
 - **Traits to Prepend:** If this setting is enabled, the value of the corresponding trait will be prepended to the corresponding trait array at Amplitude. **If the corresponding trait does not have a value set yet, it will be initialized to an empty list before the new values are prepended. If the corresponding trait has an existing value and it is not a list, it will be converted into a list with the new value prepended.**
 
 <div class="infoBlock">
+
 This feature is not applicable for RudderStack web device mode integrations.
 
 </div>
@@ -140,6 +146,7 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 - Add the below logic just after initializing `RudderClient` in `AppDelegate.m` if you would like to send `IDFA` of iOS device as `device id` to Amplitude
 
 <div class="warningBlock">
+
 Make sure that you enable <code class="inline-code">use IDFA as device id</code> under <code class="inline-code">iOS SDK settings</code> on dashboard.
 
 </div>
@@ -208,6 +215,7 @@ val rudderClient = RudderClient.getInstance(
 - If you would like to send `Google Advertising Id` of the device as `device id` to the Amplitude then add the below code in the `AndroidManifest.xml` of your app under `<application>` tag:
 
 <div class="infoBlock">
+
 Make sure that you enable <code class="inline-code">Use Advertising ID for Device ID</code> under <code class="inline-code">Android SDK settings</code> on the <a href="https://app.rudderstack.com">dashboard</a>
 
 </div>
@@ -267,6 +275,7 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 <li>Add the below logic just after initializing <code class="inline-code">RudderClient</code> in <code class="inline-code">AppDelegate.m</code> if you would like to send <code class="inline-code">IDFA</code> of iOS device as <code class="inline-code">device id</code> to Amplitude
 
 <div class="warningBlock">
+
 Make sure that you enable <code class="inline-code">use IDFA as device id</code> under <code class="inline-code">iOS SDK settings</code> on dashboard.
 </div>
 <span>
@@ -344,6 +353,7 @@ val rudderClient = RudderClient.getInstance(
 <li>If you would like to send <code class="inline-code">Google Advertising Id</code> of the device as <code class="inline-code">device id</code> to the Amplitude then add the below code in the <code class="inline-code">AndroidManifest.xml</code> of your app under <code class="inline-code">&lt;application&gt;</code> tag:
 
 <div class="infoBlock">
+
 Make sure that you enable <code class="inline-code">Use Advertising ID for Device ID</code> under <code class="inline-code">Android SDK settings</code> on the <a href="https://app.rudderstack.com">dashboard</a>
 </div>
 
@@ -410,6 +420,7 @@ rudderanalytics.track("Track me")
 Amplitude allows for tracking of revenue events.
 
 <div class="warningBlock">
+
 To track a revenue event, you must include a <code class="inline-code">revenue</code> key in the event. This key is required to have the event counted as a revenue event to send data through the RudderStack cloud mode.
 
 </div>
@@ -428,6 +439,7 @@ rudderanalytics.track("Item Purchased", {
 ```
 
 <div class="warningBlock">
+
 To track revenue event in web device mode, we use Amplitude's <code class="inline-code">logRevenueV2()</code> api and also for an eCommerce event, we expect <code class="inline-code">revenue</code> as a top level attribute in properties. If <code class="inline-code">products</code> array is present in event payload, then to track product individually, at each product level <code class="inline-code">price</code> or <code class="inline-code">revenue</code>must be present, or else we will not track the revenue. As <code class="inline-code">logRevenueV2</code> uses both <code class="inline-code">price</code> and <code class="inline-code">quantity</code> to calculate the <code class="inline-code">revenue</code>, if no <code class="inline-code">quantity</code> is present, we will take default as <code class="inline-code">1</code>.
 
 </div>
@@ -463,11 +475,13 @@ rudderanalytics.track("Order Completed", {
 The above call will generate one `Order Completed` event, 2 individual `Product purchased` events and 2 revenue events \(one with `$price` as `15` and `$quantity` as `2` and the other one with `$price` as `20` and `$quantity` as `1` \) at Amplitude, provided that in the destination settings dashboard: `Track revenue per product settings` is enabled. The two separate revenue events are generated for device mode. For cloud mode, revenue will be tracked along with the 2 `Product purchased` events.
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
 
 <div class="infoBlock">
+
 <strong>(Mobile Only)</strong> If a property with the name <code class="inline-code">optOutOfSession</code> and value <code class="inline-code">true</code>then this track call will be opted out of the current session if it exists or does not start a new session if there isn't any active session.
 
 </div>
@@ -497,6 +511,7 @@ A sample dashboard after making the above `identify`, `page`, and `track` calls 
 <img src="../../../images/assets/screenshot-2020-02-17-at-5.49.05-pm.png" /><span class="imageTitle">User properties dashboard</span>
 
 <div class="infoBlock">
+
 <strong>(Mobile Only)</strong> If a trait with the name <code class="inline-code">optOutOfSession</code> and value <code class="inline-code">true</code> then this <code class="inline-code">identify</code> call will be opted out of the current session if it exists or does not start a new session if there isn't any active session.
 
 </div>
@@ -504,11 +519,13 @@ A sample dashboard after making the above `identify`, `page`, and `track` calls 
 ## Group
 
 <div class="infoBlock">
+
 This feature is currently available as part of RudderStack Web SDK only.
 
 </div>
 
 <div class="warningBlock">
+
 Groups are an enterprise-only feature in Amplitude and you need to purchase the Accounts add-on to use them.
 
 </div>
@@ -524,6 +541,7 @@ Let' say you had defined `Group name trait` as `company_id` and `Group value tra
 ## Alias
 
 <div class="infoBlock">
+
 This feature is currently only available as part of RudderStack Web SDK in Cloud Mode.
 
 </div>
@@ -555,6 +573,7 @@ rudderanalytics.alias("user_id_to_unmapped", {
 In the snippet above, `user_to_be_unmapped`, will be unmapped or unlinked from the `global_user_id` it is currently linked to.
 
 <div class="infoBlock">
+
 For the <strong>unmapping</strong> call, it is not necessary to provide a <code class="inline-code">global_user_id</code> in the <code class="inline-code">to</code> parameter of the <code class="inline-code">alias</code> call. If it is included, RudderStack will dismiss it.
 
 </div>
@@ -564,6 +583,7 @@ For more information on how the `alias` call works for Amplitude, visit [this li
 ## Reset
 
 <div class="infoBlock">
+
 This feature is currently available as a part of RudderStack Mobile SDK's only
 
 </div>

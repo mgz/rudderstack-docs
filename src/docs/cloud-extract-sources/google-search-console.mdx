@@ -11,6 +11,7 @@ description: Step-by-step guide to ingest your Google Search Console data into R
 This document guides you in setting up Google Search Console as a source in RudderStack. Once configured, RudderStack automatically ingests your specified Search Console data, which can then be routed to your data warehouse destination supported by RudderStack.
 
 <div class="infoBlock">
+
 <strong>All the Cloud Extract sources support sending data only to a data warehouse destination.</strong>
 
 </div>
@@ -59,6 +60,7 @@ To add Google Search Console as a source in RudderStack, follow these steps:
 />
 
 <div class="infoBlock">
+
 If you have already connected RudderStack to your Google Search Console account, your credentials should appear automatically under <strong>Use existing credentials</strong>.
 
 </div>
@@ -81,11 +83,13 @@ In the **Site URL**, make sure to use the **exact URL** of the website as specif
 <img src="../../images/assets/image (13) (1).png" alt="Site URL" />
 
 <div class="successBlock">
+
   The available dimensions that you can query are <strong>country</strong>,{" "}
   <strong>device</strong>, and <strong>page</strong>.
 </div>
 
 <div class="infoBlock">
+
 Please note that this <strong>Start from date</strong> is valid only for the first (historical) sync.
 
 </div>
@@ -113,6 +117,7 @@ RudderStack will start importing data from Google Search Console as per the spec
 />
 
 <div class="successBlock">
+
   Use the <strong>Connect Destinations</strong> option if you have already
   configured a data warehouse destination in RudderStack. To configure a data
   warehouse destination from scratch, click on the{" "}
@@ -126,6 +131,7 @@ After have added Google Search Console as a source, RudderStack will schedule an
 After that, your Google Search Console data will be fetched as per the specified sync schedule.
 
 <div class="infoBlock">
+
 The synchronization also depends on your destination's sync schedule.
 
 </div>

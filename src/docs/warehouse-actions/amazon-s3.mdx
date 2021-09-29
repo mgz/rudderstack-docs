@@ -30,6 +30,7 @@ To set up Amazon S3 as a source in RudderStack, follow these steps:
 <img src="../../images/assets/screen-shot-2021-01-12-at-12.23.37-pm.png" />
 
 <div class="successBlock">
+
   If you've already configured S3 as a source before, your existing credentials
   will automatically appear under <strong>Use existing credentials</strong>.
 </div>
@@ -52,6 +53,7 @@ To set up Amazon S3 as a source in RudderStack, follow these steps:
 ```
 
 <div class="infoBlock">
+
 To get the <strong>AWS Access Key ID</strong> and the <strong>Secret Access Key</strong>, you can sign into your AWS Management Console as <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console.html#root-user-sign-in-page">the root user</a>. Then, in the navigation bar on the upper right corner, choose your account name and select <strong>My Security Credentials</strong>.
 
 For more information on understanding and getting these AWS credentials, refer to their <a href="https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html">guide</a>.
@@ -65,11 +67,13 @@ For more information on understanding and getting these AWS credentials, refer t
 <img src="../../images/assets/screen-shot-2021-01-13-at-10.58.18-am.png" />
 
 <div class="warningBlock">
+
 The files in your bucket should consists of Apache Parquet files only. As of now, Rudderstack can only extract Parquet files.
 
 </div>
 
 <div class="warningBlock">
+
 Your table must include one of the following columns - <code class="inline-code">email</code>, <code class="inline-code">user_id</code>, or <code class="inline-code">anonymous_id</code>.
 
 </div>
@@ -95,6 +99,7 @@ RudderStack will start importing data from your S3 bucket as per the specified f
 <img src="../../images/assets/screen-shot-2021-01-13-at-11.06.08-am.png" />
 
 <div class="infoBlock">
+
 If you have already configured a destination on the RudderStack platform, choose the <strong>Connect Destinations</strong> option. To add a new destination from scratch, you can select the <strong>Add Destination</strong> option.
 
 </div>

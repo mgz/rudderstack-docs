@@ -10,6 +10,7 @@ description: Step-by-step guide to ingest data from Netsuite into RudderStack.
 This document guides you in setting up Netsuite as a source in RudderStack. Once configured, RudderStack automatically ingests your specified Netsuite data, which can then be routed to your data warehouse destination supported by RudderStack.
 
 <div class="infoBlock">
+
 <strong>All the Cloud Extract sources support sending data only to a data warehouse destination.</strong>
 
 </div>
@@ -80,11 +81,13 @@ Assign **View** permissions for the following:
 <img src="../../images/assets/role-permissions.png" />
 
 <div class="infoBlock">
+
 For each pipeline resource that you want RudderStack to sync, you should give the relevant permissions for it to the Role. These resources are divided among these sections - <strong>Transactions</strong>, <strong>Reports</strong>, <strong>Lists</strong>, and <strong>Custom Records</strong>. Note that each permission should have <strong>View</strong> permissions.
 
 </div>
 
 <div class="warningBlock">
+
 It is extremely important that you have assigned the permissions for every resource, saved search or custom record that you want RudderStack to sync. This is required so that you don't encounter any RudderStack sync failures with permission-related issues.
 
 </div>
@@ -148,11 +151,13 @@ To set up Netsuite as a source on the RudderStack dashboard, follow these steps:
   - **Token Secret** : Your Netsuite token secret needs to be entered here.
 
 <div class="successBlock">
+
   Refer to the <strong>FAQs section</strong> to know more about how to procure your Netsuite <strong>Consumer Key</strong>, <strong>Consumer Secret</strong>, <strong>Token ID</strong>, and <strong>Token
   Secret</strong>.
 </div>
 
 <div class="infoBlock">
+
 If you've already configured Netsuite as a source before, you can choose the account visible under the <strong>Use existing credentials</strong> tab.
 
 </div>
@@ -170,6 +175,7 @@ If you've already configured Netsuite as a source before, you can choose the acc
 <img src="../../images/assets/screenshot-2021-02-23-at-11.23.47-am.png" />
 
 <div class="warningBlock">
+
 To get the RudderStack Restlet URL, you need to first install <a href="https://js.blendo.co/netsuite/v1/restlet.js">this script</a> in your Netsuite account, and paste the generated Restlet URL in the RudderStack Restlet URL field. Refer to the <strong>FAQs section</strong> to know more about how to add the script in your Netsuite account.
 
 </div>
@@ -179,6 +185,7 @@ To get the RudderStack Restlet URL, you need to first install <a href="https://j
 - Finally, choose the Netsuite data that you wish to ingest via RudderStack. You can either select all the data, or choose specific Netsuite data attributes, as per your requirement.
 
 <div class="warningBlock">
+
 Note that none of the resources are selected by default, so you will have to do the selection manually.
 
 </div>
@@ -202,6 +209,7 @@ RudderStack will start ingesting data from Netsuite as per the specified frequen
 <img src="../../images/assets/image (75).png" />
 
 <div class="successBlock">
+
   Use the <strong>Connect Destinations</strong> option if you have already
   configured a data warehouse destination in RudderStack. To configure a data
   warehouse destination from scratch, click on the{" "}
@@ -213,6 +221,7 @@ RudderStack will start ingesting data from Netsuite as per the specified frequen
 ### How can I get the RudderStack Restlet URL?
 
 <div class="warningBlock">
+
 To get the RudderStack Restlet URL, you need to first install <a href="https://js.blendo.co/netsuite/v1/restlet.js">this script</a> in your Netsuite account, and paste the generated Restlet URL in the RudderStack Restlet URL field.
 
 </div>

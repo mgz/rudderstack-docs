@@ -11,6 +11,7 @@ description: Step-by-step guide to send event data from RudderStack to Google Sh
 RudderStack allows you to configure Google Sheets as a destination and send your event data to it directly.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="">GitHub repo</a>
@@ -28,6 +29,7 @@ To enable sending data to Google Sheets, you will first need to add it as a dest
 | Cloud mode          | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -37,6 +39,7 @@ Once you have confirmed that the platform supports sending events to Google Shee
 - From your [RudderStack dashboard](https://app.rudderstack.com/), add the source. From the list of destinations, select **Google Sheets.**
 
 <div class="infoBlock">
+
 Please follow our [Adding a Source and Destination](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 
 </div>
@@ -59,6 +62,7 @@ Before you add Google Sheets as a destination in RudderStack, follow these steps
 <img src="../../../images/assets/image (83).png" />
 
 <div class="warningBlock">
+
 Once you have completed the connection, make sure you have enabled [Google-Sheets-API](https://console.cloud.google.com/apis/library/sheets.googleapis.com?q=sheets&id=739c20c5-5641-41e8-a938-e55ddc082ad1&project=rudder-integration&supportedpurview=project) in the project of your service account.
 
 </div>
@@ -72,6 +76,7 @@ Then, enter the following details under **Connection Settings** in the RudderSta
 <img src="../../../images/assets/image (85).png" />
 
 <div class="warningBlock">
+
 The **Sheet Name** is **case-sensitive** and has to be exactly as seen in Google Sheets.
 
 </div>
@@ -85,11 +90,13 @@ contextual attributes, you will need to enter the absolute path to the
 `attribute` using dot notation. \(for e.g. `context.app.build`\)
 
 <div class="warningBlock">
+
 If you have **Nested Attributes** inside `properties` or `traits`, please use the **dot notation** for mapping to respective **Column** \(For e.g.: `address.zip`, `address.city`..\)
 
 </div>
 
 <div class="infoBlock">
+
 For mapping `attributes` from event `properties` or `traits`/`context.traits`, RudderStack also supports absolute mapping. For example: adding `context.traits.firstName` will map the same value as adding `firstName`.
 
 <strong>NOTE</strong>: We advise you to map with absolute path as it resolves
@@ -107,6 +114,7 @@ Google Sheets should now be added and enabled as a destination in RudderStack.
 The `page` call contains information related to the page, such as the URL of the web page visited by the user.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">page</code> method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
@@ -128,6 +136,7 @@ rudderanalytics.page({
 The `identify` call captures the relevant details about the visiting user.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">identify</code> method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
@@ -147,6 +156,7 @@ rudderanalytics.identify("userId", {
 The `track` call captures the information related to the actions performed by the user along with their properties or traits.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">track</code> method, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>

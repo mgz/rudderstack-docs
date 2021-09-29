@@ -145,6 +145,7 @@ The following is a list of tables created for each RudderStack source that is co
 </table>
 
 <div class="infoBlock">
+
 All the properties in the event are stored as top-level columns in the corresponding table. Nested properties will be prefixed with the parent key. For example, an event with properties as shown:
 
 <strong>
@@ -255,6 +256,7 @@ RudderStack sets the following standard properties on all the above mentioned ta
 </table>
 
 <div class="warningBlock">
+
 RudderStack reserves the above-mentioned standard properties. In the case of any conflict, RudderStack automatically discards the properties set by the user.
 
 </div>
@@ -264,6 +266,7 @@ RudderStack reserves the above-mentioned standard properties. In the case of any
 RudderStack considers the time at its end to be absolute and assumes any difference on the client-side. Thus, the client clock skew is relative.
 
 <div class="infoBlock">
+
 <code class="inline-code">sentAt</code> &gt; <code class="inline-code">original_timestamp</code> is <strong>always true</strong>. However, <code class="inline-code">timestamp</code> can be more or less than the <code class="inline-code">original_timestamp</code>. Refer to the examples below for more details.
 
 </div>
@@ -424,6 +427,7 @@ The corresponding schemas created for the `tracks` and `add_to_cart` tables is a
 | `uuid_ts`            | Timestamp   | e.g. `2020-04-26 07:31:54:735`                               | Added by RudderStack for debugging purposes. Can be ignored for analytics purposes |
 
 <div class="infoBlock">
+
 The event table <code class="inline-code">add_to_cart</code> has all the columns as the <code class="inline-code">tracks</code> table. It also has the properties set by the user inside the key <code class="inline-code">properties</code>.
 
 </div>
@@ -433,6 +437,7 @@ The event table <code class="inline-code">add_to_cart</code> has all the columns
 RudderStack creates a record in the `identifies` table and upserts the records in the `users` table for every `identify` call, based on the `userId`.
 
 <div class="successBlock">
+
   In case of Google BigQuery, you can use the views created over the tables to
   query for unique users in the dataset. Refer to the{" "}
   <a href="../data-warehouse-integrations/google-bigquery#schema-partitioned-tables-and-views">
@@ -497,11 +502,13 @@ The corresponding schemas created for the `identifies` and `users` tables is as 
 | `uuid_ts`        | Timestamp        | e.g. `2020-04-26 07:31:54:735`                                 | Added by RudderStack for debugging purposes. Can be ignored for analytics purposes |
 
 <div class="infoBlock">
+
 The <code class="inline-code">users</code> table has the properties from the latest <code class="inline-code">identify</code> call made for an user. It only has the <code class="inline-code">id</code> column (same as <code class="inline-code">user_id</code> in <code class="inline-code">identifies</code> table) and does not have the <code class="inline-code">anonymous_id</code> column.
 
 </div>
 
 <div class="successBlock">
+
   To get at a user’s <code class="inline-block">anonymous_id</code>, you can
   query the <code class="inline-block">identifies</code> table by grouping on
   the <code class="inline-block">user_id</code> column.
@@ -605,6 +612,7 @@ RudderStack only recognizes a subset of the ISO 8601 timestamp formats as a time
 - `2019-09-26T06:30:12.984+05:30`
 
 <div class="warningBlock">
+
 RudderStack <strong>does not recognize</strong> any other timestamp format apart from the formats mentioned above.
 
 </div>
@@ -628,6 +636,7 @@ Find more details about the list of reserved keywords in the following warehouse
 Once RudderStack recognizes and sets a data type for a table column, it will not accept any values for the column that cannot be cast to the specified data type.
 
 <div class="warningBlock">
+
 The values which cannot be cast are set as <code class="inline-block">NULL</code> in the table and stored in the <code class="inline-block">rudder_discards</code> table.
 
 </div>
@@ -685,6 +694,7 @@ The schema of the `rudder_discards table` is as shown below:
 </table>
 
 <div class="infoBlock">
+
 The <code class="inline-code">row_id</code> is the column which users can use to join with original table and update it as required. It is set to <code class="inline-code">messageId</code> for all tables except the <code class="inline-code">users</code> table, where it corresponds to <code class="inline-code">userId</code>.
 
 </div>

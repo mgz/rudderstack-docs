@@ -22,11 +22,13 @@ To enable sending data to Google Tag Manager, you will first need to add it as a
 | **Cloud mode**      | -             | -          | -          |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
 
 <div class="warningBlock">
+
 Google Tag Manager is available only for the RudderStack JavaScript SDK. You should enable the Native SDK flag for the same.
 
 </div>
@@ -36,6 +38,7 @@ Once you have confirmed that the platform supports sending data to Google Tag Ma
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and Google Tag Manager as a destination.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -47,6 +50,7 @@ Please follow our guide on <a href="../connections/adding-source-and-destination
 That's it! Google Tag Manager will now load on any page where the RudderStack snippet is initialized, and `rudderanalytics.page` is called on the client-side.
 
 <div class="infoBlock">
+
 You can use the RudderStack track events to populate the Google Tag Manager `dataLayer` once you have enabled GTM through RudderStack.
 
 </div>
@@ -63,6 +67,7 @@ The following screenshot shows how to add RudderStack as a custom HTML tag which
 The `page` call allows you to record whenever a user visits a page of your website, along with the properties associated with that page. The `page` call must be made for Google Tag Manager to load.
 
 <div class="infoBlock">
+
 In `rudderanalytics.js` , a `page` call is included by default, just after `rudderanalytics.load` is executed. This is because this call must be executed **at least once** per page load.
 
 </div>
@@ -92,6 +97,7 @@ The above call will populate Google Tag Manager with the below properties along 
 - `referrer`
 
 <div class="infoBlock">
+
 Making a call to the `page` API will send out an object to the **GTM dataLayer** containing your page related properties and an event name with its associated value.
 
 </div>

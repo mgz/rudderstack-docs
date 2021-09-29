@@ -13,6 +13,7 @@ description: >-
 The underlying principle is quite simple - RudderStack receives the event data from a variety of **Sources**, and routes this data to the **Destinations**.
 
 <div class="successBlock">
+
   RudderStack currently supports over 70 destinations. You can find them in our
   <a href="../destinations">Destinations Guides</a>. You can also check our <a href="../stream-sources">
     Sources Guides
@@ -38,6 +39,7 @@ Let's assume you want to analyze your website users' event data using Amplitude,
 RudderStack defines a fixed event structure. If you track your events in this format, RudderStack will take care of transforming the events as required by Amplitude. You can start by [adding a source and an Amplitude destination](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) in the RudderStack dashboard. Then, add the RudderStack JavaScript SDK snippet into the web page which you wish to track. And that's all you have to do! The SDK automatically sends the events to RudderStack. These events are then transformed by RudderStack and then routed to Amplitude.
 
 <div class="infoBlock">
+
 While the above example uses the JavaScript SDK, our <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk">Android</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk">iOS</a> and <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk">server-side SDKs</a> also work in the same way.
 
 </div>
@@ -45,6 +47,7 @@ While the above example uses the JavaScript SDK, our <a href="../stream-sources/
 <img src="../../images/assets/image (9).png" /><span class="imageTitle">How Cloud Mode Works</span>
 
 <div class="successBlock">
+
   In the Cloud Mode, you get the flexibility to use transformations to enrich
   the events, or filter selective events to forward to destinations.
 </div>
@@ -52,6 +55,7 @@ While the above example uses the JavaScript SDK, our <a href="../stream-sources/
 Some of the other destinations that currently support only cloud mode are [Amplitude](https://docs.rudderstack.com/destinations/amplitude), [Kochava](https://docs.rudderstack.com/destinations/kochava), [Mailchimp](https://docs.rudderstack.com/destinations/mailchimp), [Mixpanel](https://docs.rudderstack.com/destinations/mixpanel), [Salesforce](https://docs.rudderstack.com/destinations/salesforce), and [Zendesk](https://docs.rudderstack.com/destinations/zendesk). Our [Data Warehouse Integrations](https://docs.rudderstack.com/data-warehouse-integrations) also support only cloud mode.
 
 <div class="warningBlock">
+
 Please note that all our server-side SDKs (<a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-java-sdk">Java</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-python-sdk">Python</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk">Node.js</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-go-sdk">Go</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-ruby-sdk">Ruby</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/php">PHP</a>) support only <strong>Cloud Mode</strong>. This is because our server-side SDKs operate in the RudderStack backend, and cannot load any additional destination-specific SDKs.
 
 </div>
@@ -69,6 +73,7 @@ If you enable the `Native SDK` option on the RudderStack dashboard, the RudderSt
 <img src="../../images/assets/image (29).png" /><span class="imageTitle">How Device Mode Works</span>
 
 <div class="successBlock">
+
   Device mode integrations will send data to the destinations directly from your
   client (browser or mobile application).
 </div>

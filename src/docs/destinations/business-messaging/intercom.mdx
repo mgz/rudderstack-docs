@@ -11,11 +11,13 @@ description: Step-by-step guide to send your event data from RudderStack to Inte
 RudderStack allows you to send your event data from a variety of sources to Intercom through S2S and native SDKs by calling the relevant APIs.
 
 <div class="warningBlock">
+
 <strong>Please note that this documentation is written for Intercom v1.4.</strong>
 
 </div>
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/intercom">
@@ -35,6 +37,7 @@ To enable sending events to Intercom, you will first need to add it as a destina
 | **Cloud mode**      | **Supported** | -             | -          |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -44,6 +47,7 @@ Once you have ascertained that the source platform is supported by Intercom, ple
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **Intercom** from the list of supported destinations.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -133,6 +137,7 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 - Add a **Privacy - Photo Library Usage Description** entry to your `Info.plist`. This is [required by Apple](https://developer.apple.com/library/content/qa/qa1937/_index.html) for applications that can access the photo library.
 
 <div class="infoBlock">
+
   Users will be prompted for the permission to access the photo library only
   when they tap the button to upload their image/s.
 </div>
@@ -226,6 +231,7 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 <li>Add a <strong>Privacy - Photo Library Usage Description</strong> entry to your <code class="inline-code">Info.plist</code>. This is <a href="https://developer.apple.com/library/content/qa/qa1937/_index.html">required by Apple</a> for applications that can access the photo library.
 
 <div class="infoBlock">
+
   Users will be prompted for the permission to access the photo library only
   when they tap the button to upload their image/s.
 </div>
@@ -261,6 +267,7 @@ The `identify` call can be used to :
 - **Unsubscribe users** : To unsubscribe users from emails, `unsubscribedFromEmails: true` must be passed inside `context` object.
 
 <div class="infoBlock">
+
 The <strong>Last Seen</strong> feature of the <code class="inline-code">identify</code> call has not been implemented yet. Please stay tuned!
 
 </div>
@@ -299,6 +306,7 @@ rudderanalytics.track("Product bought", {
 ```
 
 <div class="infoBlock">
+
 All the traits provided in the <code class="">track</code> call will be converted as per <a href="https://developers.intercom.com/intercom-api-reference/reference#event-metadata-types">Intercom's API</a>.
 
 </div>

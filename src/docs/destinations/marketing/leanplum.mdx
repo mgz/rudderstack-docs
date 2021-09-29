@@ -11,6 +11,7 @@ description: Step-by-step guide to send event data from RudderStack to Leanplum.
 RudderStack allows you to configure Leanplum as a destination and send your event data to it directly.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="">GitHub repo</a>
@@ -30,6 +31,7 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Cloud mode**      | **-**   | **-**         | **-**      |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -39,6 +41,7 @@ Once you have confirmed that the platform supports sending events to Leanplum, p
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Leanplum**.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -53,6 +56,7 @@ Please follow our guide on <a href="../connections/adding-source-and-destination
 Leanplum should now be added and enabled as a destination in RudderStack.
 
 <div class="warningBlock">
+
 If you choose to keep the **Use in Development Environment** flag as on, then please put your `developmentKey` in the `Client Key` field. Failing to do so will result to faulty initialization of the SDK and events will not be passed.
 
 </div>
@@ -205,6 +209,7 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 </Tabs>
 
 <div class="infoBlock">
+
 The RudderStack SDKs store the <code class="inline-code">traits</code> information from the <code class="inline-code">identify</code> call in <code class="inline-code">SharedPreference</code> and <code class="inline-code">NSUserDefaults</code> for Android and iOS respectively. If RudderStack detects the <code class="inline-code">userId</code> in the persisted traits information, it starts the native SDK along with the <code class="inline-code">userId</code> . On the other hand, if it can't find the <code class="inline-code">userId</code> , it starts the SDK normally without it. This activity helps to build a better session.
 
 The code for Android is the same as below:

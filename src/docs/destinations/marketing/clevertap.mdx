@@ -11,6 +11,7 @@ description: Step-by-step guide to send your event data from RudderStack to Clev
 You can now send your event data directly to CleverTap through RudderStack.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/clevertap">
@@ -30,6 +31,7 @@ Before configuring your source and destination on the RudderStack, please check 
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -39,6 +41,7 @@ Once you have confirmed that the platform supports sending events to CleverTap, 
 - From your [RudderStack dashboard](https://app.rudderstack.com/), add the source and CleverTap as a destination.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -56,6 +59,7 @@ To successfully configure CleverTap as a destination, you will need to configure
 - **Use Native SDK to send Events:** Enable this option if you want to send events using device mode.
 
 <div class="infoBlock">
+
 Note: All server-side destination requests require either a <code class="inline-code">anonymousId</code> or a <code class="inline-code">userId</code> in the payload.
 
 </div>
@@ -367,6 +371,7 @@ CleverTapAPI.createNotificationChannel(
 ```
 
 <div class="infoBlock">
+
 For the Push Notification and In-App messages function correctly, CleverTap needs to know the <code class="inline-code">Application</code> status as early as possible. You can either set the <code class="inline-code">android:name</code> in your <code class="inline-code">AndroidManifest.xml</code> tag to <code class="inline-code">com.clevertap.android.sdk.Application</code>. Or, if you have a custom Application class, call <code class="inline-code">ActivityLifecycleCallback.register(this);</code> before <code class="inline-code">super.onCreate()</code> in your Application class.
 
 To know more on this you can check the <a href="https://github.com/CleverTap/clevertap-android-sdk#setup-the-lifecycle-callback---important">CleverTap documentation on push notifications</a>.
@@ -502,6 +507,7 @@ CleverTapAPI.createNotificationChannel(
 </li>
 </ul>
 <div class="infoBlock">
+
 For the Push Notification and In-App messages function correctly, CleverTap needs to know the <code class="inline-code">Application</code> status as early as possible. You can either set the <code class="inline-code">android:name</code> in your <code class="inline-code">AndroidManifest.xml</code> tag to <code class="inline-code">com.clevertap.android.sdk.Application</code>. Or, if you have a custom Application class, call <code class="inline-code">ActivityLifecycleCallback.register(this);</code> before <code class="inline-code">super.onCreate()</code> in your Application class.
 
 To know more on this you can check the <a href="https://github.com/CleverTap/clevertap-android-sdk#setup-the-lifecycle-callback---important">CleverTap documentation on push notifications</a>.
@@ -602,6 +608,7 @@ A sample `screen` call looks like the following code snippet:
 In the above snippet, RudderStack captures all the information related to the screen being viewed, along with any additional info associated with that screen view event. In CleverTap, the above `screen` call will be shown as - **"Screen Viewed: `Sample Screen Name` "** along with the properties.
 
 <div class="infoBlock">
+
 Note that <strong><code class="inline-code">screen</code> calls are only supported in the RudderStack cloud mode</strong> integration. To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -623,11 +630,13 @@ rudderanalytics.track("Checked Out", {
 In the above snippet, RudderStack captures the information related to the `Checked Out` event, along with any additional info about that event - in this case the details of the `Checked out` event.
 
 <div class="infoBlock">
+
 To set a specific value to the <code class="inline-code">screen</code> or <code class="inline-code">track</code> type event, you need to pass the <code class="inline-code">event</code> related property in the <code class="inline-code">properties</code> field.
 
 </div>
 
 <div class="infoBlock">
+
 Note: For <code class="inline-code">track</code>, <code class="inline-code">page</code> and <code class="inline-code">screen</code> events CleverTap does not support arrays or nested objects for custom event properties.
 
 </div>
@@ -692,6 +701,7 @@ rudderanalytics.track("Order Completed", {
 ```
 
 <div class="infoBlock">
+
 The <code class="inline-code">Order Completed</code> E-Commerce event is free flowing event, if you are setting extra fields for example: <code class="inline-code">discount</code>, <code class="inline-code">coupon</code> <code class="inline-code">currency</code> etc these will be automatically set to <code class="inline-code">Charged</code> event properties.
 
 </div>
@@ -742,16 +752,19 @@ rudderanalytics.identify("userid", {
 In the above snippet, RudderStack captures relevant information about the user such as the `email`, `phone` as well as the associated traits of that user.
 
 <div class="infoBlock">
+
 If a user already exists, the new values will be updated for that user. Rudderstack automatically maps the <code class="inline-code">userId</code> (or <code class="inline-code">anoymousId</code>) to CleverTap user's <code class="inline-code">identity</code>.
 
 </div>
 
 <div class="infoBlock">
+
 Note: For <code class="inline-code">identify</code> events CleverTap does not support nested objects for user's <code class="inline-code">traits</code>.
 
 </div>
 
 <div class="infoBlock">
+
 Profile properties <code class="inline-code">MSG-email</code>, <code class="inline-code">MSG-push</code>, <code class="inline-code">MSG-sms</code> and <code class="inline-code">MSG-whatsapp</code> are used to set the Do-Not-Disturb status for the user. Unless these are explicitly set to <code class="inline-code">false</code>, they are always <code class="inline-code">true</code>.
 
 Example: To disable push notifications for a user, set <code class="inline-code">MSG-push</code> to <code class="inline-code">false</code>

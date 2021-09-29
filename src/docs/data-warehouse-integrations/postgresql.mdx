@@ -11,11 +11,13 @@ PostgreSQL is an enterprise-grade, open source database management system. It su
 RudderStack allows you to configure PostgreSQL as a destination to which you can dump your event data seamlessly.
 
 <div class="infoBlock">
+
 Please check our <a href="../data-warehouse-integrations/warehouse-schemas">Warehouse Schemas</a> guide to know how events are mapped to the tables in PostgreSQL.
 
 </div>
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/postgres">
@@ -39,6 +41,7 @@ GRANT CREATE, TEMPORARY ON DATABASE <enter database name here> TO <user name>;
 ```
 
 <div class="warningBlock">
+
 If you don't grant the <code class="inline-code">CREATE, TEMPORARY</code> privileges the events don't get exported to PostgreSQL.
 
 </div>
@@ -48,6 +51,7 @@ If you don't grant the <code class="inline-code">CREATE, TEMPORARY</code> privil
 You will need to whitelist the RudderStack IPs to enable network access to it.
 
 <div class="infoBlock">
+
 <strong>The IPs to be whitelisted are : <code class="inline-code">3.216.35.97</code>, <code class="inline-code">34.198.90.241</code> , <code class="inline-code">54.147.40.62</code> , <code class="inline-code">23.20.96.9</code>, and <code class="inline-code">18.214.35.254</code>.</strong>
 
 </div>
@@ -61,6 +65,7 @@ To configure PostgreSQL as a destination, please follow these steps:
 - Choose a source to which you would like to add PostgreSQL as a destination. You can also simply create a destination and connect it to a source later.
 
 <div class="infoBlock">
+
 Please follow our <a href="../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to know how to add a source in RudderStack.
 
 </div>

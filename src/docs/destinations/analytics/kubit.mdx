@@ -9,6 +9,7 @@ description: Step-by-step guide to send your event data from RudderStack to Kubi
 [Kubit](https://www.kubit.ai/) is a self-service product analytics platform with no-code integration that facilitates efficient data discovery. With Kubit, you can better understand your users' behavior and use the insights to drive customer retention and your product growth.
 
 <div class="successBlock">
+
 Kubit can also consume data from your cloud data warehouse directly, so you don't have to configure it as a destination in RudderStack separately.
 
 For more information, check out their <a href="https://www.kubit.ai/doc">docs</a>.
@@ -18,6 +19,7 @@ For more information, check out their <a href="https://www.kubit.ai/doc">docs</a
 <img src="../../../images/assets/image (104).png" />
 
 <div class="infoBlock">
+
 Follow our <a href="../../connections/adding-source-and-destination-rudderstack">guide</a> to add a source and a warehouse destination in RudderStack.
 
 </div>
@@ -31,6 +33,7 @@ Kubit currently supports only `identify` and `track` calls.
 The `identify` call lets you capture the actions of a visiting user. It also lets you record any traits associated with them such as their name, email address, etc.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">identify</code> call, refer to the <a href="../../rudderstack-api/http-api-specification">HTTP API Specification</a> guide.
 
 </div>
@@ -49,6 +52,7 @@ rudderanalytics.identify("userId", {
 The `track` call allows you to capture any user action along with the properties associated with that action.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">track</code> call, refer to the <a href="../../rudderstack-api/http-api-specification">HTTP API Specification</a> guide.
 
 </div>

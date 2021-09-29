@@ -13,6 +13,7 @@ Monetate is a unique, all-in-one personalization solution aimed especially at ma
 RudderStack allows you to send your event data from your client-side or server-side components to Monetate. This guide will help you set up, configure, and use Monetate for your project.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/monetate">GitHub repo</a>
@@ -30,6 +31,7 @@ To get started, check whether the platform you are working with is supported by 
 | Cloud mode          | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -39,6 +41,7 @@ Once you have confirmed that the platform supports sending events to Monetate, p
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **Monetate** from the list of destinations.
 
 <div class="infoBlock">
+
 Follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -60,6 +63,7 @@ For each `track` call you make, we send the data to Monetate using Monetate's En
 The table below summarizes the various Monetate events and properties sent by RudderStack:
 
 <div class="infoBlock">
+
 The Monetate event is sent only if the corresponding RudderStack key is present.
 
 </div>
@@ -73,6 +77,7 @@ The Monetate event is sent only if the corresponding RudderStack key is present.
 | `context.userAgent`                     | `monetate:context:UserAgent`  | `userAgent` : `context.userAgent`                                                                                |
 
 <div class="successBlock">
+
   RudderStack also sends `monetateId` along with the events if you send
   `monetateId` in the event's properties.
 </div>
@@ -105,6 +110,7 @@ For each `screen` call, RudderStack sends the following events to Monetate:
 | `context.screen` | `monetate:context:ScreenSize` | `height`: `context.screen.height`, `width`: `context.screen.width` |
 
 <div class="infoBlock">
+
 Note that RudderStack sends the Monetate event only if the corresponding RudderStack key is present.
 
 </div>
@@ -126,6 +132,7 @@ For each `page` call, RudderStack sends the following events to Monetate:
 | `context.referrer.url`                  | `monetate:context:Referrer` | `referrer`: `context.referrer.url`                                                                               |
 
 <div class="infoBlock">
+
 Note that RudderStack sends the Monetate event only if the corresponding RudderStack key is present.
 
 </div>

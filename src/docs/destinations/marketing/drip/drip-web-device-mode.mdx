@@ -11,11 +11,13 @@ description: >-
 RudderStack lets you send your event data to Drip via the Device mode, i.e. using the native web SDK.
 
 <div class="infoBlock">
+
 For more information on sending events via the Device mode, refer to the <a href="../../../connections/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 
 </div>
 
 <div class="successBlock">
+
   <strong>
     Find the open-source JavaScript SDK code for this destination in our
     <a href="https://github.com/rudderlabs/rudder-sdk-js/tree/production/integrations/Drip">
@@ -29,11 +31,13 @@ For more information on sending events via the Device mode, refer to the <a href
 The `identify` method pushes the subscriber data to Drip. If the subscriber is not present in your account, RudderStack will create a new record for them. Otherwise, RudderStack updates the user records with the latest information.
 
 <div class="infoBlock">
+
 To update a subscriber's email address, use the <code class="inline-code">new_email</code> property.
 
 </div>
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">identify</code> call, check out the <a href="../../../rudderstack-api/rudderstack-spec/identify/">RudderStack API spec</a>.
 
 </div>
@@ -72,6 +76,7 @@ The following table lists the properties that RudderStack transforms and maps to
 | `euConsentMessage`            | `eu_consent_message`       |
 
 <div class="infoBlock">
+
 All other fields in <code class="inline-code">context.traits</code> will be passed as custom fields.
 
 </div>
@@ -89,6 +94,7 @@ If you want to add a subscriber to your account without subscribing them to an e
 When you call the `track` API, RudderStack sends the event to Drip along with its name and all of the specified properties. If you include `revenue` as a property, it will get passed to Drip as the conversion value of the event.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">track</code> call, check out the <a href="../../../rudderstack-api/rudderstack-spec/track/">RudderStack API spec</a>.
 
 </div>

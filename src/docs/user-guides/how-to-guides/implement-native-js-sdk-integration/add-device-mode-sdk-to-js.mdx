@@ -20,6 +20,7 @@ There are two main modes of routing your event data to the required destinations
 Before adding a **Device mode** destination libraries to RudderStack JS, the corresponding destination should be added via the Control Plane.
 
 <div class="infoBlock">
+
 Check if the destination is already available in RudderStack destinations. If not, add a new destination by following our <a href="../../../connections/adding-source-and-destination-rudderstack">Adding a New Destination Definition</a> tutorial.
 
 </div>
@@ -77,6 +78,7 @@ export { SampleIntegration }
 2. Import the above integration in [https://github.com/rudderlabs/rudder-sdk-js/blob/master/integrations/GA/index.js](https://github.com/rudderlabs/rudder-sdk-js/blob/master/integrations/GA/index.js) and add it to the exported list to be picked up by the base RudderStack SDK.
 
 <div class="warningBlock">
+
 The exported integration object must be under the <strong>key name that matches the config-plane destination name.</strong>
 
 </div>
@@ -201,6 +203,7 @@ export default process.browser ? GA : GANode
 ```
 
 <div class="infoBlock">
+
 You can ignore the Node counterpart as it's legacy. We have a separate <a href="../../../stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk">Node.js SDK</a> for sending events to RudderStack (in the server-side connection mode)
 
 </div>
@@ -241,6 +244,7 @@ The native integrations should have the following methods for initializing the d
 | `track`       | This method is called to pass the `track` event data.                                                                                                                                                                              |
 
 <div class="infoBlock">
+
 RudderStack JavaScript SDK makes a call to the config plane to fetch all native SDK-enabled destinations, before constructing and initializing the integration object with the fetched configuration. The <strong><code class="inline-code">isLoaded</code></strong> method should return true when the destination is ready to accept events.
 
 </div>

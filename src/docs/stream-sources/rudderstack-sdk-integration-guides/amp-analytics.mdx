@@ -11,6 +11,7 @@ description: >-
 The RudderStack AMP component makes it easy to send the event data from your AMP page to numerous destinations through RudderStack. Now you don't need to implement or test multiple components for different destinations for your event data. This component collects the default properties and sends a `page` event to RudderStack.
 
 <div class="infoBlock">
+
 Since the AMP source sends the data directly to the RudderStack data plane, we support only <code class="inline-code">cloud-mode</code> destinations for AMP projects.
 
 </div>
@@ -18,6 +19,7 @@ Since the AMP source sends the data directly to the RudderStack data plane, we s
 ## Getting Started
 
 <div class="infoBlock">
+
 You can learn more about the AMP project from their <a href="https://amp.dev/">official website</a> if you are new to this domain. To get started and set up your AMP project, you might want to check out their <a href="https://amp.dev/documentation/guides-and-tutorials/start/create/">Quick Start guide</a>.
 
 </div>
@@ -27,6 +29,7 @@ Once you are done with the initial setup of your AMP project, follow the steps b
 - Start with adding an AMP source to your RudderStack [dashboard](https://app.rudderstack.com).
 
 <div class="infoBlock">
+
 Please follow our <a href="../../get-started/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> tutorial guide to learn how to add a source in RudderStack.
 
 </div>
@@ -62,6 +65,7 @@ You can record the page views on your website using the `page` request. You can 
 RudderStack's AMP analytics component includes an automatic page view. You can set the name of the automatic page view through the `pageName` var.
 
 <div class="warningBlock">
+
 If you fail to provide the value for the <code class="inline-code">pageName</code> variable, RudderStack automatically sets the page name to <code class="inline-code">Unknown Page</code>
 
 </div>
@@ -119,6 +123,7 @@ Track - Click <a href="#" id="clickTrigger">here</a> to send
 You can send extra properties for your `page` or `track` event to add more information along with the request. Once you mention the properties as `extraUrlParams` to the `amp-analytics` tag of your implementation, it will be passed to RudderStack for further processing.
 
 <div class="warningBlock">
+
 Prepend <code class="inline-code">properties.</code> with the <code class="inline-code">extraUrlParams</code> so that it can be parsed as the property value in RudderStack
 
 </div>

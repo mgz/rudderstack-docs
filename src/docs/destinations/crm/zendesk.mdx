@@ -13,6 +13,7 @@ RudderStack supports integration with Zendesk and allows you to send your custom
 This document lays out the steps to follow for sending your event data to Zendesk.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/zendesk">
@@ -34,6 +35,7 @@ Before configuring your source and destination on RudderStack, please verify if 
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -43,6 +45,7 @@ Once you have verified that the platform supports forwarding events to Zendesk, 
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select Zendesk.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -81,6 +84,7 @@ The current mapping is as follows:
 | `userId`         | `external_id`     |
 
 <div class="infoBlock">
+
 The <code class="inline-code">organization_id</code> is Zendesk organization id and they create it.
 
 </div>
@@ -127,6 +131,7 @@ rudderanalytics.track("Track me", {
 ```
 
 <div class="infoBlock">
+
   <strong>IMPORTANT:</strong> We use <a href="https://developer.zendesk.com/rest_api/docs/sunshine/events_api">Zendesk Sunshine Events
   API</a> for
   <code class="inline-code">track</code> call. You need to meet the following criteria to make the <code class="inline-code">track</code>

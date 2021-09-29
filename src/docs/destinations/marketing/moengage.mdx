@@ -13,6 +13,7 @@ With MoEngage, you can effectively deliver personalized communication to your cu
 RudderStack now supports MoEngage as a destination to seamlessly send your event data in real-time.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/moengage">GitHub repo</a>
@@ -30,6 +31,7 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Cloud Mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -39,6 +41,7 @@ Once you have confirmed that the platform supports sending events to MoEngage, p
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **MoEngage**.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -52,6 +55,7 @@ In the Connection Settings on the RudderStack dashboard, please enter the MoEnga
 By turning on the native SDK switch under Android SDK Settings on the RudderStack dashboard you can enable Rudder Stack Device Mode for **Android** Sources. Similarly for **Web** Under Web SDK Settings and **IOS** under iOS SDK Settings.
 
 <div class="successBlock">
+
   Choose `EU` in the `Region` field to send your event data to the MoEngage
   Europe server. To send your event data to the MoEngage India server, choose
   `IND`.
@@ -298,6 +302,7 @@ MoEngage.initialise(moEngage)
 To identify a user to MoEngage, you need to call the `identify` API.
 
 <div class="infoBlock">
+
 For information on the <code class="inline-code">identify</code> call, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
@@ -319,6 +324,7 @@ rudderanalytics.identify("name123", {
 ```
 
 <div class="infoBlock">
+
 Identify api will be used to **Login** the user into MoEngage in **Device** Mode
 
 </div>
@@ -339,6 +345,7 @@ The following property names are reserved by MoEngage:
 - `moe_unsubscribe`
 
 <div class="warningBlock">
+
 You may create custom properties but you should not create properties with the following names `"`**`id`**`"`, `"`**`_id`**`"`, or `""` .
 
 </div>
@@ -369,6 +376,7 @@ rudderanalytics.identify("name123", {
 To track your users' actions, you can use the RudderStack `track` API. You can call `track` with `eventname` and the associated properties.
 
 <div class="infoBlock">
+
 For information on the `track` call, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
 
 </div>
@@ -518,6 +526,7 @@ rudderClient.reset()
 
 
 <div class="warningBlock">
+
 <strong>RESET</strong> api is applicable only for <strong>Device</strong> Mode Connections
 
 </div>
@@ -536,6 +545,7 @@ rudderClient.reset()
 - In case if you would like to keep the notifications even after the App Launch then : `[MoEngage sharedInstance].disableBadgeReset = true;`
 
 <div class="infoBlock">
+
 For more detailed steps please follow [MoEngage guidelines here](https://docs.moengage.com/docs/push-notification-implementation).
 
 </div>
@@ -671,6 +681,7 @@ For more details please follow the [guidelines from MoEngage](https://docs.moeng
           <li>In case if you would like to keep the notifications even after the App Launch then : <code class="inline-code">[MoEngage sharedInstance].disableBadgeReset = true;</code></li>
         </ul>
         <div class="infoBlock">
+        
         For more detailed steps please follow <a href="https://docs.moengage.com/docs/push-notification-implementation">MoEngage guidelines here</a>.
         </div>
       <h3>In-App messaging</h3>
@@ -795,12 +806,14 @@ From the RudderStack [dashboard](htps://app.rudderstack.com), turn on the debug 
 MoEngage allows sending the t[ime at which the event occurred](https://docs.moengage.com/docs/data-import-apis#event-api) and calculates the user local time by taking two parameters. `current_time` and `user_timezone_offset` where the `current_time` is **UTC** Time at which the event happened, and `user_timezone_offset` is the difference in seconds between the **user local time and UTC.**
 
 <div class="infoBlock">
+
 The RudderStack transformer maps the _<strong>current_time</strong> to <strong>timestamp or originalTimestamp</strong>_  
 value from the event payload sent to Rudder server. This value should be passed in <strong>UTC.</strong>
 
 </div>
 
 <div class="infoBlock">
+
 The _<strong>user_timezone_offset</strong>_ is mapped to _<strong>timezone</strong>_ field present under the _<strong>context</strong>_ object of the event payload. This value should be passed as <strong>tz</strong> string.  
 Rudder mobile SDKs populate the timezone field by itself. But for other sources like server like SDKs, HTTP api, the timezone needs to be set explicitly in every request.
 
@@ -838,6 +851,7 @@ Example payload:
 MoEngage accepts user creation time for its [user endpoint](https://docs.moengage.com/docs/data-import-apis#user-api). This is reflected as `first_Seen` in their dashboard.
 
 <div class="infoBlock">
+
 The RudderStack transformer maps the _<strong>created_time</strong>_ from the _<strong>createdAt</strong>_ spec'd traits in our payload. The value should be in the <strong>ISO 8601</strong> format.  
 If the value is not in proper format or not present, MoEngage will put in the value by itself.
 

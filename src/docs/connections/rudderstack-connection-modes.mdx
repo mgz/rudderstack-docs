@@ -13,6 +13,7 @@ This guide clarifies the two main connection modes in RudderStack - Cloud mode a
 RudderStack's workflow is quite simple - it receives the event data from a variety of **Sources**, and routes this data to the **Destinations**.
 
 <div class="successBlock">
+
   RudderStack currently supports over 80 destinations to which you can send your
   event data. You can find the complete list in our{" "}
   <a href="../destinations">Destinations</a> guides. You can also check our{" "}
@@ -42,6 +43,7 @@ Then, [**add the RudderStack JavaScript SDK snippet**](https://docs.rudderstack.
 The SDK automatically tracks and sends the user events to RudderStack. These events are then transformed by RudderStack and then routed to Amplitude.
 
 <div class="infoBlock">
+
   The above example uses the JavaScript SDK; the other{" "}
   <a href="../stream-sources/rudderstack-sdk-integration-guides">
     RudderStack SDKs
@@ -51,16 +53,19 @@ The SDK automatically tracks and sends the user events to RudderStack. These eve
 <img src="../../images/assets/image (9).png" /><span class="imageTitle">RudderStack Cloud Mode</span>
 
 <div class="successBlock">
+
   In the Cloud Mode, you get the flexibility to use transformations to enrich
   the events, or filter selective events to forward to destinations.
 </div>
 
 <div class="warningBlock">
+
 Our <a href="../data-warehouse-integrations">Data Warehouse Destinations</a> support only cloud mode.
 
 </div>
 
 <div class="warningBlock">
+
 All the RudderStack server-side SDKs (<a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-java-sdk">Java</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides//rudderstack-python-sdk">Python</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk">Node.js</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-go-sdk">Go</a>, <a href="../stream-sources/rudderstack-sdk-integration-guides/rudderstack-ruby-sdk">Ruby</a>) support only Cloud Mode. This is because the server-side SDKs operate in the RudderStack backend and cannot load any additional destination-specific SDKs.
 
 </div>
@@ -82,11 +87,13 @@ In some cases, you can also use the RudderStack web SDK \([**JavaScript**](../st
 <img src="../../images/assets/screen-shot-2021-06-07-at-4.17.14-pm.png" />
 
 <div class="successBlock">
+
   Device mode integrations will send data to the destinations directly from your
   client (browser or mobile application).
 </div>
 
 <div class="warningBlock">
+
 Device mode does not support the RudderStack <a href="../adding-a-new-user-transformation-in-rudderstack">Transformations</a> feature.
 
 </div>

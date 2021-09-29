@@ -9,6 +9,7 @@ description: >-
 # Schema Comparison: RudderStack vs. Segment
 
 <div class="successBlock">
+
   This guide is useful if you want to migrate your Salesforce source from
   Segment to RudderStack.
 </div>
@@ -73,11 +74,13 @@ In this guide, we compare the schemas of the `opportunity` table synced by Rudde
 | **`is_closed`**                      | `is_closed`                 |
 
 <div class="infoBlock">
+
 A blank value indicates that the column was not sent to the platform.
 
 </div>
 
 <div class="successBlock">
+
   Since the column names are identical for the Salesforce source in both
   RudderStack and Segment, the migration <strong>should not require</strong> any
   additional coding or modification to the tables.

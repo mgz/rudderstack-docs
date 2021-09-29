@@ -22,6 +22,7 @@ Before configuring your source and destination on the RudderStack, please verify
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -31,6 +32,7 @@ Once you have confirmed that the platform supports sending events to Iterable, p
 - Choose a source to which you would like to add Iterable as a destination.
 
 <div class="infoBlock">
+
 Please follow our <a href="../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to know how to add a source in RudderStack.
 
 </div>
@@ -57,6 +59,7 @@ The following are the settings to be configured:
 When an `identify` call is made, RudderStack calls the [Update User](https://api.iterable.com/api/docs#users_updateUser) API of Iterable and sends the data accordingly.
 
 <div class="warningBlock">
+
 A user is identified by <code class="inline-code">emailId</code> or <code class="inline-code">userId</code>. If none of these is passed in the call, the sending of event fails.
 
 </div>
@@ -79,6 +82,7 @@ If the `deviceToken` for Push Notification is present in `context` of the payloa
 We use [mobile device registration](https://api.iterable.com/api/docs#users_registerDeviceToken) API for sending the token information from a device. We set the `platform` parameter as `APNS` and `GCM` for iOS and Android devices respectively. Similarly, we use the [browser token registration](https://api.iterable.com/api/docs#users_registerBrowserToken) API for Web platform.
 
 <div class="infoBlock">
+
 To understand more about Push Notification registration check the Iterable guides for <a href="https://support.iterable.com/hc/en-us/articles/115000331943#_2-create-a-mobile-app-in-iterable">Android</a> and <a href="https://support.iterable.com/hc/en-us/articles/115000315806#_4-create-a-mobile-app-in-iterable">iOS</a>.
 
 </div>
@@ -90,6 +94,7 @@ When the `page` method is called, the RudderStack server sends a track event to 
 If the user does not already exist in Iterable, RudderStack will add the user to the system as long as `email` is present in the call. If email is not present, Iterable will reject the event.
 
 <div class="infoBlock">
+
 Iterable requires that you pass <code class="inline-code">email</code> the first time you call <code class="inline-code">page</code> for a user. Subsequent calls can use the <code class="inline-code">userId</code> identifier.
 
 </div>
@@ -97,6 +102,7 @@ Iterable requires that you pass <code class="inline-code">email</code> the first
 If the name of the page is **Application Home** the event name in iterable will be **Application Home Page.**
 
 <div class="infoBlock">
+
 Note that the above case will differ according to the settings set by the user in RudderStack dashboard. Refer to the configurable settings in the Getting Started section above for more information.
 
 </div>
@@ -118,6 +124,7 @@ rudderanalytics.page({
 The `screen` call is the mobile equivalent of the `page`. When called, it sends a `track` event to Iterable with `userId`,`emailId`, and `eventName` . In this case, the email ID will be checked if present and will create a new user if not. If the name of the page is **Main Activity**, the event name will set as **Main Activity Screen**.
 
 <div class="infoBlock">
+
 Note that the above case will differ according to the settings set by the user in RudderStack dashboard. Refer to the configurable settings in the Getting Started section above for more information.
 
 </div>
@@ -143,6 +150,7 @@ A sample`track` call is as shown:
 ```
 
 <div class="infoBlock">
+
 If a user does not exist in Iterable, the <code class="inline-code">track</code> call for the user event will add the user in Iterable.
 
 </div>
@@ -224,6 +232,7 @@ rudderanalytics.track("Product Added", {
 ```
 
 <div class="infoBlock">
+
 For this event, the user properties and item properties are compulsory.
 
 </div>

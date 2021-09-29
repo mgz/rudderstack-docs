@@ -11,6 +11,7 @@ description: Step-by-step guide to send your event data from RudderStack to Bran
 RudderStack supports sending events from RudderStack SDKs to Branch through our data plane via the S2S \(Server to Server\) connection mode. You can also opt for the device mode as well for Android and iOS. Branch SDK is wrapped inside Rudder SDK in case of device mode.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="">GitHub repo</a>
@@ -28,6 +29,7 @@ Before getting started, please determine whether the platform you are sending yo
 | **Cloud mode**      | -       | **Supported** | -          |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -35,6 +37,7 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 In order to start sending data to Branch, you will first need to add it as a destination to the source from which you are sending the event data.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -48,6 +51,7 @@ Please follow these steps once you have added a source in the RudderStack app:
 <img src="../../../images/assets/screenshot-2020-02-23-at-3.25.23-pm.png" /><span class="imageTitle">BranchIO Dashboard Settings</span>
 
 <div class="warningBlock">
+
 Please note that RudderStack does not support sending data to Branch on both device or cloud mode for the web.
 
 </div>
@@ -224,6 +228,7 @@ A sample identify call captured from the RudderStack iOS SDK would look like the
 ```
 
 <div class="infoBlock">
+
 Ideally, this call is made when the user registers to the app for the first time, or after the user logs into the app or updates their information.
 
 </div>
@@ -286,6 +291,7 @@ The following table lists the mapping between the accepted names of the Commerce
 | `Spend Credits`             | `SPEND_CREDITS`     |
 
 <div class="infoBlock">
+
 RudderStack also maps the `Spend Credits` event to Branch's `SPEND_CREDITS`, although it is not directly a part of the Commerce Events.
 
 </div>
@@ -301,6 +307,7 @@ The following table lists the mapping between the accepted names of the Content 
 | `Product Shared`      | `SHARE`      |
 
 <div class="infoBlock">
+
 The above mentioned events are a part of the RudderStack Commerce events, but are mapped to Branch's Content Events.
 
 </div>

@@ -110,6 +110,7 @@ await rudderClient.setup(WRITE_KEY, {
 ```
 
 <div class="successBlock">
+
   It is highly recommended to use the <code class="inline-code">await</code>{" "}
   keyword with the setup call.
 </div>
@@ -147,6 +148,7 @@ The `track` method has the following signature:
 | `options`  | `JSON Object` | No       | Extra event options                                         |
 
 <div class="infoBlock">
+
 We automatically track the following optional events:
 <ol>
 <li><code class="inline-code">Application Installed</code></li>
@@ -204,6 +206,7 @@ Alternatively, you can use the following method signature:
 | `option`     | `JSON Object` | No       | Extra options to be passed along with `screen` event.                     |
 
 <div class="infoBlock">
+
 You can also enable automatic recording of screen views by passing <code class="inline-code">recordScreenViews</code> as <code class="inline-code">true</code> while initializing the <code class="inline-code">rudderClient</code>.  
 The default value for <code class="inline-code">recordScreenViews</code> is <code class="inline-code">false</code>.
 
@@ -218,6 +221,7 @@ await rudderClient.reset()
 ```
 
 <div class="successBlock">
+
   It is highly recommended to use the <code class="inline-code">await</code>{" "}
   keyword with the reset call.
 </div>
@@ -258,11 +262,13 @@ const options = {
 ```
 
 <div class="infoBlock">
+
 The keyword <code class="inline-code">All</code> in the above snippet represents all the destinations the source is connected to. Its value is set to <code class="inline-code">true</code> by default.
 
 </div>
 
 <div class="infoBlock">
+
 Make sure the destination names that you pass while specifying the destinations should exactly match the names listed <a href="https://app.rudderstack.com/directory">here</a>.
 
 </div>
@@ -292,6 +298,7 @@ rudderClient.track(
 ```
 
 <div class="infoBlock">
+
 If you specify the destinations both while initializing the SDK as well as while making an event call, then the destinations specified at the event level only will be considered.
 
 </div>

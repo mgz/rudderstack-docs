@@ -11,6 +11,7 @@ Braze is an industry-leading customer engagement platform. It allows you to bett
 With RudderStack's SDK for mobile and web platforms, you can send your in-app event data to Braze directly for contextual analysis.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/braze">GitHub repo</a>
@@ -28,6 +29,7 @@ Before getting started, please determine whether the platform you are sending yo
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -35,6 +37,7 @@ To know more about the difference between Cloud mode and Device mode in RudderSt
 In order to start sending data to Braze, you will first need to add it as a destination to the source from which you are sending the event data.
 
 <div class="infoBlock">
+
 Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
@@ -44,6 +47,7 @@ Please follow these steps once you have added a source in the RudderStack app:
 <img src="../../../images/assets/braze.png" /><span class="imageTitle">RudderStack connection settings for adding Braze as a destination</span>
 
 <div class="infoBlock">
+
 When creating a new Braze Rest API Key for your app, you will only need to select the <strong>users.track</strong>, <strong>users.identify</strong>, and <strong>users.alias.new</strong> endpoints under the <strong>User Data</strong> permissions
 
 </div>
@@ -240,6 +244,7 @@ rudderanalytics.identify("userid", {
 ```
 
 <div class="infoBlock">
+
 Ideally, the `identify` method is called when the user registers to the app for the first time. It can also be called after the user logs into the app, or updates their information.
 
 </div>

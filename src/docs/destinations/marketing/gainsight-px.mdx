@@ -11,6 +11,7 @@ description: Step-by-step guide to send your event data from RudderStack to Gain
 RudderStack supports Gainsight PX as a destination to which you can send your event data seamlessly.
 
 <div class="successBlock">
+
   <strong>
     Find the open-source transformer code for this destination in our{" "}
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/dest-gainsight-px">
@@ -25,6 +26,7 @@ RudderStack supports Gainsight PX as a destination to which you can send your ev
 To send your events to Gainsight PX via RudderStack, you will first need to add it as a destination in the RudderStack dashboard.
 
 <div class="infoBlock">
+
 See our <a href="../../connections">Connections</a> guide to learn more about sources and destinations in RudderStack.
 
 </div>
@@ -37,6 +39,7 @@ Before you get started, check if the source platform is supported by Gainsight P
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -46,11 +49,8 @@ Once you've confirmed that the source platform supports sending events to Rudder
 - From your [**RudderStack dashboard**](https://app.rudderlabs.com/), add the source and select **Gainsight PX** from the list of supported destinations.
 
 <div class="infoBlock">
-To add a source, follow our guide on <div class="infoBlock">
-Follow the guide on <a href="../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> for more details.
 
-</div>.
-
+To add a source, follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> for more details.
 </div>
 
 - Assign a name to this destination and click on **Next**. You should then see the following **Connection Settings** screen:
@@ -63,6 +63,7 @@ You will need to enter the following settings under **Connection Settings**:
 - **API Key**: Enter the API key required for using the Gainsight PX REST API. To generate the API Key, go to your Gainsight dashboard and navigate to **Administration** - **Integrations** - **Rest API**.
 
 <div class="infoBlock">
+
 More information on the Gainsight PX Rest API can be found <a href="https://support.gainsight.com/PX/API_for_Developers/02Usage_of_Different_APIs/Work_with_the_Gainsight_PX_REST_API">here</a>.
 
 </div>
@@ -90,6 +91,7 @@ You can then provide these mappings in the RudderStack dashboard as shown:
 RudderStack creates a **`User`** object in Gainsight PX for the `identify` call. Gainsight uses the `identifyId` field as the unique identifier for this object. RudderStack will then map the `userId` from the message to this `identifyId`.
 
 <div class="infoBlock">
+
 If <code class="inline-code">userId</code> is not present, <code class="inline-code">anonymousId</code> will be used instead.
 
 </div>
@@ -99,6 +101,7 @@ RudderStack supports all the default attributes for the **`User`** object. For t
 <span class="imageTitle">User Custom Attribute Mapping</span>
 
 <div class="warningBlock">
+
 RudderStack will drop the custom attributes that are not defined in the mapping and send the rest of the attributes to Gainsight PX.
 
 </div>
@@ -202,6 +205,7 @@ You can also set the **Global Context** metadata for the custom events. The key-
 <span class="imageTitle">Global Context Mapping</span>
 
 <div class="infoBlock">
+
 <strong>For more information on the Global Context feature and how to use it, refer to the <a href="https://support.gainsight.com/PX/Engagements/02Engagement_Configuration/Use_Global_Context">Gainsight PX documentation</a>.</strong>
 
 </div>
@@ -219,11 +223,13 @@ rudderanalytics.track("Track User", {
 ```
 
 <div class="infoBlock">
+
 In case the Global Context metadata is provided in the RudderStack dashboard (under <strong>Global Context Mapping</strong>) as well as the payload, the payload will take a higher precedence.
 
 </div>
 
 <div class="infoBlock">
+
 For <code class="inline-code">identify</code>, <code class="inline-code">group</code> and <code class="inline-code">track</code> calls, <code class="inline-code">userId</code> is required. If <code class="inline-code">userId</code> is not present, <code class="inline-code">anonymousId</code> will be used instead.
 
 </div>

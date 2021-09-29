@@ -10,6 +10,7 @@ description: Step-by-step guide to send your leads data from RudderStack to Mark
 RudderStack supports **Marketo Lead Import** as a destination to which you can send your leads seamlessly.
 
 <div class="successBlock">
+
 <strong>Find the open-source transformer code for this destination in our <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/marketo_bulk_upload">GitHub repo</a></strong>.
 </div>
 
@@ -18,6 +19,7 @@ RudderStack supports **Marketo Lead Import** as a destination to which you can s
 To enable sending your leads data to **Marketo Lead Import**, you will need to add it as a destination in RudderStack.
 
 <div class="successBlock">
+
 The most common source can be a <a href="../../warehouse-actions/">Warehouse Actions</a> source, as RudderStack only accepts <code class="inline-code">identify</code> events for this destination.
 </div>
 
@@ -29,6 +31,7 @@ Before configuring your source and destination on the RudderStack, verify if Mar
 | **Cloud mode** | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 </div>
 
@@ -37,6 +40,7 @@ Once you have confirmed that the platform supports sending events to Marketo Lea
 * Choose a source to which you would like to add Marketo Lead Import as a destination.
 
 <div class="infoBlock">
+
 Follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack/">Adding a Source and Destination in RudderStack</a> for more information.
 </div>
 
@@ -52,12 +56,14 @@ The settings to configure Marketo Lead Import as a destination are listed below:
 * **Munchkin Account ID**: Enter your Munchkin ID. To get your Munchkin Account ID, log into your Marketo instance and navigate to the **Admin** section. Then, in the left menu, under **Integration**, click on the **Munchkin** option. Your Munchkin Account ID will be listed in the **Tracking Code** section on the main screen.
 
 <div class="infoBlock">
+
 For more information on finding your Munchkin Account ID, refer to the <a href="https://nation.marketo.com/t5/knowledgebase/how-to-find-your-munchkin-id-for-a-marketo-instance/ta-p/248432">Marketo knowledge base</a>.
 </div>
 
 * **Client ID**: To get your **Client ID**, go to the the **Admin** section as mentioned above. Then, in the left menu, under **Integration**, click on **LaunchPoint**. Finally, select the API service and click on **View Details** to get your client ID.
 
 <div class="infoBlock">
+
 For more information on finding your Client ID, refer to the <a href="https://developers.marketo.com/rest-api/authentication/">Marketo knowledge base</a>.
 </div>
 
@@ -76,12 +82,14 @@ For instance, if you want to send data from the event traits set as `firstName`,
 ## Identify
 
 <div class="infoBlock">
+
 RudderStack supports only <code class="inline-code">identify</code> event type for this destination.
 </div>
 
 The `identify` call lets you identify a visiting user and associate them to their actions. It also lets you record the traits about them like their name, email address, etc.
 
 <div class="infoBlock">
+
 For more information on the <code class="inline-code">identify</code> call, refer to the <a href="../../rudderstack-api/api-specification/rudderstack-spec/identify/">RudderStack Events Specification</a> guide.
 </div>
 
