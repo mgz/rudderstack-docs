@@ -30,6 +30,7 @@ RudderStack lets you send your event data from a variety of sources to Gainsight
 To send your events to Gainsight CS via RudderStack, you will first need to add it as a destination in the RudderStack dashboard.
 
 <div class="infoBlock">
+
 See our <a href="../../connections">Connections</a> guide to learn more about sources and destinations in RudderStack.
 
 </div>
@@ -42,6 +43,7 @@ Please check if the source platform is supported by Gainsight CS by referring to
 | **Cloud mode**      | **Supported** | **Supported** | **Supported** |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 
 </div>
@@ -51,6 +53,7 @@ Once you've confirmed that the source platform supports sending events to Rudder
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source and select **Gainsight** from the list of supported destinations.
 
 <div class="infoBlock">
+
 Follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source in RudderStack.
 
 </div>
@@ -64,6 +67,7 @@ You will need to enter the following settings under **Connection Settings**:
 - **Access Key**: This key is required for the `identify` and `group` calls. To generate the access key in Gainsight, go to **Administration** - **Connectors 2.0** - **Connectors** tab and click on **Gainsight API**.
 
 <div class="infoBlock">
+
 For more information on generating the Gainsight Access Key, refer to their <a href="https://support.gainsight.com/SFDC_Edition/Connectors/04API_Integration/Generate_API_Access_Key">support page</a>.
 
 </div>
@@ -71,6 +75,7 @@ For more information on generating the Gainsight Access Key, refer to their <a h
 - **Domain or Subdomain Name**: Subdomain or custom domain is a required field to work with the Gainsight API. required to work with the Gainsight API.
 
 <div class="infoBlock">
+
 More information on setting up a Gainsight custom domain can be found in their <a href="https://support.gainsight.com/Gainsight_NXT/06Surveys/02Admin_Guides/Setup_a_Gainsight_Domain">support page</a>.
 
 </div>
@@ -78,6 +83,7 @@ More information on setting up a Gainsight custom domain can be found in their <
 - **Gainsight Event Settings**: This setting is related to the Gainsight Events Framework.
 
 <div class="successBlock">
+
   Refer to the
   <a href="../../destinations/marketing/gainsight#track">Track</a>
   section of this documentation for more details.
@@ -221,6 +227,7 @@ Gainsight events are identified with `Event Name` and `Event Version`. The event
 To start sending events, you will first need to register as a Publisher in Gainsight by going to **Administration** - **Events** and clicking on **Register as Publisher**. This generates a unique shared secret required for working with Gainsight Events Framework.
 
 <div class="infoBlock">
+
 More information on the Gainsight Events Framework can be found in their <a href="https://support.gainsight.com/Gainsight_NXT/Journey_Orchestrator_and_Email_Templates/Programs/Events_Framework#Event_API_Contract">support page</a>.
 
 </div>
@@ -290,6 +297,7 @@ rudderanalytics.track(
 ```
 
 <div class="infoBlock">
+
 To send Gainsight Events to more than one topic, we recommend creating new Gainsight destinations in the RudderStack dashboard for each topic.
 
 </div>
