@@ -244,18 +244,18 @@ Following variables should be considered to come with a right storage size for y
 | avgRtEventSize  | The payload size that needs to be sent by the router to the destination after applying transformations | 1.2 KB                 |
 | rtEventOverhead | Size of extra metadata that Rudder stores to process the event                                         | 300 B                  |
 
-$$
+<BlockMath>
 gatewayStorage = numEventsPerSec * (avgGwEventSize + gwEventOverhead)
-$$
+</BlockMath>
 
-$$
+<BlockMath>
 routerStorage = numEventsPerSec * numDests
  * (avgRtEventSize + rtEventOverhead)
-$$
+</BlockMath>
 
-$$
+<BlockMath>
 totalStoragePerHour = 3600 * \sum_{firstSource}^{lastSource} (gatewayStorage + routerStorage)
-$$
+</BlockMath>
 
 In the above production example, after substituting the values, _totalStoragePerHour_ adds up to _**120 GB**_
 
@@ -288,9 +288,9 @@ Rudder caches active user events by default to form configurable user sessions s
 | `avgGwEventSize`        | Event size that is captured at the gateway by Rudder                                    | 2.1 KB      |
 | `userEventsInThreshold` | Number of user events in the given threshold i.e., 40 user events in 2 min              | 40          |
 
-$$
+<BlockMath>
 memoryNeeded = numActiveUsers * userEventsInThreshold * avgGwEventSize
-$$
+</BlockMath>
 
 Memory required in the above example would be 840 MB.
 

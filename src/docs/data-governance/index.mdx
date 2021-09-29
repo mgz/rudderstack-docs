@@ -18,14 +18,14 @@ In reality, however, as multiple stakeholders define and implement the event spe
 
 ## **Data Governance with RudderStack**
 
-RudderStack's [**Data Governance API**](https://docs.rudderstack.com/rudderstack-api-spec/rudderstack-data-governance-api) gives you the ability to access all your events and their metadata programmatically. This includes vital information related to the event schema, event payload versions, data types, and more.
+RudderStack's [**Data Governance API**](https://rudderstack.com/docs/rudderstack-api-spec/rudderstack-data-governance-api) gives you the ability to access all your events and their metadata programmatically. This includes vital information related to the event schema, event payload versions, data types, and more.
 
 <div class="infoBlock">
 <strong>Refer to the <a href="./rudderstack-data-governance-api">RudderStack Data Governance API</a> reference for the detailed technical documentation.</strong>
 
 </div>
 
-By leveraging the Data Governance API, the data engineering team can narrow down the specific nature and source of any event data inconsistencies. With these insights, they update the instrumentation or leverage [**RudderStack Transformations**](https://docs.rudderstack.com/adding-a-new-user-transformation-in-rudderstack) to clean the incoming events.
+By leveraging the Data Governance API, the data engineering team can narrow down the specific nature and source of any event data inconsistencies. With these insights, they update the instrumentation or leverage [**RudderStack Transformations**](https://rudderstack.com/docs/adding-a-new-user-transformation-in-rudderstack) to clean the incoming events.
 
 Here's a video that explains the features of the Data Governance API in detail:
 
@@ -35,10 +35,10 @@ https://www.youtube.com/watch?v=fs3Nkzm-NqY&t=18s&ab_channel=RudderStack
 
 At a high level, you can take the following steps to investigate and troubleshoot any event data inconsistencies:
 
-1. Get all the event models into RudderStack using [`schemas/event-models`](https://docs.rudderstack.com/rudderstack-api-spec/rudderstack-data-governance-api#schemas-event-models).
+1. Get all the event models into RudderStack using [`schemas/event-models`](https://rudderstack.com/docs/rudderstack-api-spec/rudderstack-data-governance-api#schemas-event-models).
 2. Identify the source of the event models.
 3. Count the event models to determine the number for each event type.
-4. Identify the differences in the schema versions for a single event model using [`schemas/event-versions`](https://docs.rudderstack.com/rudderstack-api-spec/rudderstack-data-governance-api#schemas-event-versions).
+4. Identify the differences in the schema versions for a single event model using [`schemas/event-versions`](https://rudderstack.com/docs/rudderstack-api-spec/rudderstack-data-governance-api#schemas-event-versions).
 
 <div class="successBlock">
   The RudderStack Data Governance API also lets you gather other useful

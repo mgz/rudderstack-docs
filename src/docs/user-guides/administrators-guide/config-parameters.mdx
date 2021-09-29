@@ -31,8 +31,8 @@ These configuration parameters are also applicable for the <strong><code class="
 | `maxProcess`        | Int     | Number of parallel threads used in server. Should be set to number of cores.                                                                                                                                                             |     `12`      |
 | `gwDBRetention`     | String  | The time for which the events are stored in the Gateway database after they have been processed. Examples: `1h`, `30m`, `35s`, etc.                                                                                                      |     `0h`      |
 | `routerDBRetention` | String  | The time for which the events are stored in the Router database after they have been processed. Examples: `1h`, `30m`, `45s`, etc.                                                                                                       |     `0h`      |
-| `enableProcessor`   | Boolean | This variable enables or disables the Processor module. It will be set to `false` when running in [**Degraded mode**](https://docs.rudderstack.com/user-guides/administrators-guide/high-availability#rudderstack-server-running-modes). |    `true`     |
-| `enableRouter`      | Boolean | This variable enables or disables the Router module. Will be set to `false` when running in [**Degraded mode**](https://docs.rudderstack.com/user-guides/administrators-guide/high-availability#rudderstack-server-running-modes).       |    `true`     |
+| `enableProcessor`   | Boolean | This variable enables or disables the Processor module. It will be set to `false` when running in [**Degraded mode**](https://rudderstack.com/docs/user-guides/administrators-guide/high-availability#rudderstack-server-running-modes). |    `true`     |
+| `enableRouter`      | Boolean | This variable enables or disables the Router module. Will be set to `false` when running in [**Degraded mode**](https://rudderstack.com/docs/user-guides/administrators-guide/high-availability#rudderstack-server-running-modes).       |    `true`     |
 | `enableStats`       | Boolean | This variable enables or disables stats.                                                                                                                                                                                                 |    `true`     |
 
 <div class="infoBlock">
@@ -203,7 +203,7 @@ For more information on the Processor, Gateway, and Router modules of the Rudder
       <td style="text-align:left">Boolean</td>
       <td style="text-align:left">
         Enables or disables the backup. This is set to <code>false</code> in the
-        <a href="https://docs.rudderstack.com/user-guides/administrators-guide/high-availability#rudderstack-server-running-modes">
+        <a href="https://rudderstack.com/docs/user-guides/administrators-guide/high-availability#rudderstack-server-running-modes">
           <b>Degraded</b>
         </a>mode.
       </td>

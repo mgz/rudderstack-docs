@@ -76,7 +76,7 @@ The <code class="inline-code">page</code> call is not supported in cloud mode fo
 {% endtab %}
 
 {% tab title="Device Mode" %}
-To send the data to HubSpot, an initial `page` call is required. For more information on the `page` call, please refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) documentation.
+To send the data to HubSpot, an initial `page` call is required. For more information on the `page` call, please refer to our [RudderStack API Specification](https://rudderstack.com/docs/rudderstack-api-spec) documentation.
 
 The following snippet is an example of a `page` call:
 
@@ -196,7 +196,7 @@ For sending properties of type `date` send the date as the epoch time, or as a `
 
 ## Track
 
-A `track` call is used to record any action the user performs. For more information on the `track` call, refer to our [RudderStack API Specification](https://docs.rudderstack.com/rudderstack-api-spec) guide.
+A `track` call is used to record any action the user performs. For more information on the `track` call, refer to our [RudderStack API Specification](https://rudderstack.com/docs/rudderstack-api-spec) guide.
 
 To associate a `track` call with a user, you need to specify the user's `email` under `traits` under `context` . Additionally, we associate the `track` events called after an `identify` request with the same contact.
 
@@ -228,7 +228,7 @@ For revenue events, a `value` or `revenue` key should be included in the propert
 
 ## Screen
 
-The `screen` call records the screen views of the user in your App. If you have turned on the screen views in your App implementation from the [iOS](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-ios-sdk) or [Android](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-android-sdk) SDK it will register in your dashboard. We forward the `properties` you've passed along with the `screen` call as it is.
+The `screen` call records the screen views of the user in your App. If you have turned on the screen views in your App implementation from the [iOS](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-ios-sdk) or [Android](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-android-sdk) SDK it will register in your dashboard. We forward the `properties` you've passed along with the `screen` call as it is.
 
 Here is a sample `screen` call in using RudderStack iOS SDK:
 

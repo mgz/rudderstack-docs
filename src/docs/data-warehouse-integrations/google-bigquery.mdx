@@ -112,7 +112,7 @@ Please follow our <a href="../connections/adding-source-and-destination-rudderst
 
 ![Google BigQuery Configuration Settings in RudderStack](../.gitbook/assets/image%20%2852%29.png)
 
-- Add your **Project ID, Location** \(optional\) and the **Staging GCS Storage Bucket Name**, as specified in the [**Setting up Google BigQuery Project**](https://docs.rudderstack.com/destinations/google-bigquery#setting-up-google-bigquery) section.
+- Add your **Project ID, Location** \(optional\) and the **Staging GCS Storage Bucket Name**, as specified in the [**Setting up Google BigQuery Project**](https://rudderstack.com/docs/destinations/google-bigquery#setting-up-google-bigquery) section.
 - Copy the contents of the credentials JSON file you created and stored, in the section above.
 
 That's it! You have successfully added Google BigQuery as a destination in RudderStack.
@@ -190,7 +190,7 @@ The near-realtime BigQuery syncing feature is currently under development and is
 
 If you're using open-source RudderStack, the minimum sync frequency is 30 minutes. If you're self-hosting the data plane or using RudderStack Cloud Pro / Enterprise, you can tweak the config to set `uploadFreqInS` in **`config.yaml`**to 0 and determine the best possible value for near real-time sync.
 
-For more information, please refer to this [**guide**](https://docs.rudderstack.com/data-warehouse-integrations/warehouse-faqs#is-there-a-way-to-force-my-data-load-into-the-warehouses).
+For more information, please refer to this [**guide**](https://rudderstack.com/docs/data-warehouse-integrations/warehouse-faqs#is-there-a-way-to-force-my-data-load-into-the-warehouses).
 
 ### Do I need to stop the running pipeline to change my sync frequency? Or will the new change be effective even without stopping the pipeline?
 
@@ -198,7 +198,7 @@ To change the sync frequency, you need not stop the pipeline.
 
 ### When configuring the BigQuery destination, where does Google use the credentials JSON from?
 
-BigQuery uses the credentials JSON from the configuration settings when setting up the destination. For more information, refer to [**this section**](https://docs.rudderstack.com/data-warehouse-integrations/google-bigquery#setting-up-the-service-account-for-rudderstack).
+BigQuery uses the credentials JSON from the configuration settings when setting up the destination. For more information, refer to [**this section**](https://rudderstack.com/docs/data-warehouse-integrations/google-bigquery#setting-up-the-service-account-for-rudderstack).
 
 ### When configuring the BigQuery destination, should the user permissions be set for the specific dataset or the whole project?
 
@@ -206,7 +206,7 @@ You need to set project-wide user permissions. Otherwise you may encounter permi
 
 ### How long are the failed syncs retried before being aborted?
 
-RudderStack retries the failed syncs for up to 3 hours before aborting them. For more information, refer to this FAQ [**guide**](https://docs.rudderstack.com/faqs#1-how-does-rudderstack-handle-retries-for-failed-events-in-case-of-destination-failure).
+RudderStack retries the failed syncs for up to 3 hours before aborting them. For more information, refer to this FAQ [**guide**](https://rudderstack.com/docs/faqs#1-how-does-rudderstack-handle-retries-for-failed-events-in-case-of-destination-failure).
 
 ## Contact Us
 

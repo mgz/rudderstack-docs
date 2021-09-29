@@ -46,7 +46,7 @@ Installing and setting up RudderStack involves two key steps:
 
 <div class="infoBlock">
   Refer to the{" "}
-  <a href="../rudderstack-architecture">RudderStack Architecture</a> to know
+  <a href="../../rudderstack-architecture/">RudderStack Architecture</a> to know
   more about the RudderStack Control Plane and Data Plane.
 </div>
 
@@ -61,7 +61,7 @@ There are two ways you can set up the Control Plane. This section lists the step
 <div class="infoBlock">
 <strong>Why do I need to sign up for RudderStack?</strong>
 
-RudderStack's dashboard lets you easily set up your data pipelines by configuring your sources and destinations. It is fully hosted by RudderStack and is free for open-source users. You also get access to some important features like <a href="../../adding-a-new-user-transformation-in-rudderstack">Transformations</a> and a <a href="../../user-guides/how-to-guides/live-destination-event-debugger">Live Events</a> tab.
+RudderStack's dashboard lets you easily set up your data pipelines by configuring your sources and destinations. It is fully hosted by RudderStack and is free for open-source users. You also get access to some important features like <a href="../../../adding-a-new-user-transformation-in-rudderstack/">Transformations</a> and a <a href="../../../user-guides/how-to-guides/live-destination-event-debugger/">Live Events</a> tab.
 
 </div>
 
@@ -78,16 +78,16 @@ RudderStack's dashboard lets you easily set up your data pipelines by configurin
   Use this option if you don't wish to sign up for RudderStack.
 </div>
 
-You can self-host your own Control Plane using the open-source [**RudderStack Config Generator**](../../user-guides/how-to-guides/rudderstack-config-generator).
+You can self-host your own Control Plane using the open-source [**RudderStack Config Generator**](../../../user-guides/how-to-guides/rudderstack-control-plane-lite/).
 
 <div class="dangerBlock">
   Note that the Control Plane set up using the RudderStack Config Generator
   lacks certain features like{" "}
-  <a href="../../get-started/installing-and-setting-up-rudderstack/adding-a-new-user-transformation-in-rudderstack/">
+  <a href="../../../adding-a-new-user-transformation-in-rudderstack/">
     Transformations
   </a>{" "}
   and{" "}
-  <a href="../../user-guides/how-to-guides/live-destination-event-debugger">
+  <a href="../../../user-guides/how-to-guides/live-destination-event-debugger/">
     Live Events
   </a>{" "}
   tab.
@@ -126,20 +126,20 @@ The above command deploys RudderStack on your default Kubernetes cluster configu
 
 <div class="infoBlock">
   Refer to the{" "}
-  <a href="../../get-started/installing-and-setting-up-rudderstack/kubernetes#configuration">
+  <a href="#configuration">
     Configuration
   </a>{" "}
   section below for information on the parameters that can be configured during
   deployment.
 </div>
 
-- Once you have successfully followed the steps above, [**send test events**](sending-test-events.md) to verify the installation.
+- Once you have successfully followed the steps above, [**send test events**](../sending-test-events/) to verify the installation.
 
 ### For **Self-Hosted Control Plane**
 
-If you have self-hosted the Control Plane using the open-source Config Generator, follow [**these**](../../get-started/config-generator#kubernetes) instructions to set up the RudderStack Data Plane in your Kubernetes cluster.
+If you have self-hosted the Control Plane using the open-source Config Generator, follow [**these**](../../../get-started/config-generator#kubernetes) instructions to set up the RudderStack Data Plane in your Kubernetes cluster.
 
-Once you have successfully followed the steps above, [**send test events**](./sending-test-events) to verify the installation.
+Once you have successfully followed the steps above, [**send test events**](../sending-test-events/) to verify the installation.
 
 ## Upgrading the Chart
 
@@ -217,9 +217,9 @@ $ helm install --name my-release \
 
 Make sure you replace the contents of the file [**rudder-google-application-credentials.json**](https://github.com/rudderlabs/rudderstack-helm/blob/master/rudder-google-application-credentials.json) in the repository with the details of your Google service account if you are using Google Cloud Storage or BigQuery for the following cases:
 
-- [**Google Cloud Storage**](../../destinations/storage-platforms/google-cloud-storage.md) as a destination
+- [**Google Cloud Storage**](../../../destinations/storage-platforms/google-cloud-storage/) as a destination
 - Google Cloud Storage for dumping jobs
-- [**BigQuery**](../../data-warehouse-integrations/google-bigquery.md) as a warehouse destination
+- [**BigQuery**](../../../data-warehouse-integrations/google-bigquery/) as a warehouse destination
 
 ## Components
 

@@ -18,17 +18,17 @@ Before configuring Ometria as a destination in RudderStack, verify if the source
 | **Device mode** | - | - | - |
 | **Cloud** **mode** | **Supported** | **Supported** | **Supported** |
 
-{% hint style="info" %}
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://docs.rudderstack.com/get-started/rudderstack-connection-modes) guide.
-{% endhint %}
+<div class="infoBlock">
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://rudderstack.com/docs/get-started/rudderstack-connection-modes) guide.
+</div>
 
 Once you have confirmed that your source platform supports sending events to Ometria, follow these steps:
 
 * From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Ometria**.
 
-{% hint style="info" %}
-Follow our guide on [**Adding a Source and Destination in RudderStack**](https://docs.rudderstack.com/how-to-guides/adding-source-and-destination-rudderstack) for more information.
-{% endhint %}
+<div class="infoBlock">
+Follow our guide on [**Adding a Source and Destination in RudderStack**](https://rudderstack.com/docs/how-to-guides/adding-source-and-destination-rudderstack) for more information.
+</div>
 
 * Assign a name to the destination and click on **Next**. You should then see the following screen:
 
@@ -40,25 +40,25 @@ This section details the connection settings required to configure Ometria as a 
 
 * Enter your Ometria **API Token**.
 
-{% hint style="info" %}
+<div class="infoBlock">
 To get the Ometria API token, go to your your Ometria dashboard and navigate to **Settings** - **API Keys**. Then, click on **New API Key**.
-{% endhint %}
+</div>
 
 * Under **Contact Settings**, you can choose the **Marketing Optin** status from the dropdown list. By default, it is set to **Explicitly Opted Out**. The different options are:
   * **Explicitly Opted In**: The customer is eligible for marketing
   * **Explicitly Opted Out**: The customer is not eligible for marketing
   * **Not Specified**: No option is specified
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can also pass this value in the `identify` call - refer to the **Identify** section below for more details. Note that the value set via the `identify` call will have a higher precedence.
-{% endhint %}
+</div>
 
 * Under **SMS Channel Settings**, you can enable **Allow Marketing**. This setting determines whether the contact is opted in or out for SMS marketing. By default, it is **disabled**.
 * **Allow Transactional**: Enabling or disabling this setting determines if the contact is opted in or out for transactional SMSes. By default, it is **disabled**.
 
-{% hint style="info" %}
+<div class="infoBlock">
 You can additionally set the values for **Allow Marketing** and **Allow Transactional** via the `identify` call - refer to the **Identify** section below for more details. Note that the value set via the `identify` call will have a higher precedence.
-{% endhint %}
+</div>
 
 * Finally, click on **Next**. Ometria will now be enabled as a destination in RudderStack.
 
@@ -66,13 +66,13 @@ You can additionally set the values for **Allow Marketing** and **Allow Transact
 
 The `identify` call lets you add a new contact or update an already existing contact in Ometria.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Note that `listingId` and `email` fields are the mandatory fields for the `identify` call.
-{% endhint %}
+</div>
 
-{% hint style="info" %}
-For more information on the `identify` call, refer to the [**RudderStack Events Specification**](https://docs.rudderstack.com/rudderstack-api/api-specification/rudderstack-spec/identify) guide.
-{% endhint %}
+<div class="infoBlock">
+For more information on the `identify` call, refer to the [**RudderStack Events Specification**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-spec/identify) guide.
+</div>
 
 You can set the values for the **Marketing Optin**, **Allow Marketing**, and **Allow Transactional** fields from RudderStack dashboard. You can also send these values using an `integrations` object in the `identify` event payload, **which will have higher precedence**. The SMS channel fields `dt_updated_marketing` and `dt_updated_transactional` can also be passed using this object.
 
@@ -141,17 +141,17 @@ The following table includes all `identify` fields with their relative mapping t
 | `forceOptin` | `@force_optin` |
 | `merge` | `@merge` |
 
-{% hint style="info" %}
+<div class="infoBlock">
 In addition to the above fields, the customer name can also be sent using the `name` field. If the name consists of two words, then `firstname` and `lastname` will be automatically set.
-{% endhint %}
+</div>
 
 ## Track
 
 The `track` call lets you send custom events to Ometria. Note that `track` also supports the E-Commerce events and sends them using the **Ometria Order Object**.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Note that `userId` and `email` are the mandatory fields for the `track` call. `event_id` is required for custom events. If not provided, RudderStack will populate the field with `messageId`.
-{% endhint %}
+</div>
 
 A sample `track` call for a custom event is as shown:
 
@@ -191,9 +191,9 @@ The `track` call also lets you record order-related information like `order_id`,
 
 RudderStack will create a `customer` object with `userId`, `email`, `firstname` and `lastname` from `context.traits`.
 
-{% hint style="warning" %}
+<div class="warningBlock">
 Note that `order_id`, `timestamp`, `grand_total` and `currency` are the mandatory fields for the `orders` event, while `userId` and `email` are required for `customer` object. You can pass `email` either via the `identify` call or the `track` call's properties.
-{% endhint %}
+</div>
 
 The supported `order` E-Commerce events are as listed below:
 
@@ -261,9 +261,9 @@ The following table includes all the fields in `track` call for E-Commerce order
 | `custom_fields` | `properties` |
 | **`products`** | `lineitems` |
 
-{% hint style="info" %}
+<div class="infoBlock">
 `shipping_address` and `billing_address` should be an object.
-{% endhint %}
+</div>
 
 Note that **`products`** is an array of objects. Every object in this array can contain the following fields:
 
