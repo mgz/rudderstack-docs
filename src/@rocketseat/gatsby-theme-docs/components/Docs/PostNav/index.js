@@ -5,14 +5,14 @@ import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
 
 import { Container, Post } from './styles';
 
-export default function Docs({ prev, next }) {
+export default function Docs({ prev, next, current }) {
   let docsBasePath = '/docs';
   return (
     <Container>
-      {prev && (
+      {prev && current.title !== "Home" && (
         <Post isLeft>
           <Link to={docsBasePath + prev.link}>
-            <MdKeyboardArrowLeft />
+            <MdKeyboardArrowLeft className="postNavArrow" />
             <div>
               <p>Prev</p>
               <h3>{prev.title}</h3>
@@ -20,14 +20,14 @@ export default function Docs({ prev, next }) {
           </Link>
         </Post>
       )}
-      {next && (
+      {next && current.title !== "FAQs" && (
         <Post>
           <Link to={docsBasePath + next.link}>
             <div>
               <p>Next</p>
               <h3>{next.title}</h3>
             </div>
-            <MdKeyboardArrowRight />
+            <MdKeyboardArrowRight className="postNavArrow" />
           </Link>
         </Post>
       )}

@@ -63,7 +63,11 @@ export const Post = styled.div`
     ${({ isLeft }) => isLeft && 'margin-bottom: 16px'};
 
     a {
-      justify-content: ${({ isLeft }) => (isLeft ? 'flex-start' : 'flex-end')};
+      justify-content: center;
+      text-align: center;
+    }
+    .postNavArrow{
+      display: none;
     }
   }
 `;
