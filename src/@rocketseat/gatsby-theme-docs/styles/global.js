@@ -286,11 +286,26 @@ export default function GlobalStyle() {
         }
         .successBlock {
           background-color:#F5F7F9;
-          padding-top: 1.5rem;
-          padding-bottom: 1.5rem;
+          padding-top: 0.75rem;
+          padding-bottom: 0.75rem;
+          border-left-width: 4px;
+        }
+        .warningBlock {
+          background-color:#F5F7F9;
+          padding-top: 0.75rem;
+          padding-bottom: 0.75rem;
+          border-left-width: 4px;
+        }
+        .dangerBlock {
+          background-color:#F5F7F9;
+          padding-top: 0.75rem;
+          padding-bottom: 0.75rem;
           border-left-width: 4px;
         }
         .infoBlock{
+          background-color:#F5F7F9;
+          padding-top: 0.75rem;
+          padding-bottom: 0.75rem;
           border-left-width: 4px;
         }
         .css-dl1tix-Children a {
