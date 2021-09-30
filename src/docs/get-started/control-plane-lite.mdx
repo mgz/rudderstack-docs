@@ -24,7 +24,7 @@ To set up your self-hosted Control Plane using the Control Plane Lite utility, f
 Make sure you have <a href="https://nodejs.org/en/download/">Node.js</a> installed before setting up your self-hosted Control Plane.
 </div>
 
-* Clone the [**RudderStack Control Plane Lite**](https://github.com/rudderlabs/config-generator) ****repository. 
+* Clone the [**RudderStack Control Plane Lite**](https://github.com/rudderlabs/config-generator) repository. 
 * Next, open your terminal, navigate to the **Config Generator** folder, and run the following commands:  
 
 
@@ -51,7 +51,7 @@ For RudderStack to pick up the exported workspace configuration file, follow the
 
 ### Docker
 
-If you want to set up RudderStack ****on ****Docker, follow these steps:
+If you want to set up RudderStack on Docker, follow these steps:
 
 * Download and open [**`rudder-docker.yml`**](https://raw.githubusercontent.com/rudderlabs/rudder-server/master/rudder-docker.yml).
 * In the `environment` section under `backend` service, uncomment the following lines:
@@ -165,7 +165,8 @@ cp config/sample.env .env
 ## Using Hosted Control Plane for Device Mode Destinations
 
 <div class="infoBlock">
-To know more about the difference between <strong>Cloud mode</strong> and <strong>Device mode</strong> in RudderStack, read the <a href="https://rudderstack.com/docs/get-started/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
+
+To know more about the difference between **Cloud mode** and **Device mode** in RudderStack, read the <a href="https://rudderstack.com/docs/get-started/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 </div>
 
 RudderStack's [**web**](https://app.gitbook.com/@rudderlabs/s/rudderlabs-1/~/drafts/-MJRY7Fz5shtM06WXlym/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk), [**Android**](https://app.gitbook.com/@rudderlabs/s/rudderlabs-1/~/drafts/-MJRY7Fz5shtM06WXlym/rudderstack-sdk-integration-guides/rudderstack-android-sdk) and [**iOS**](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-ios-sdk) ****SDKs expect the source configurations and the associated device mode destination configurations for initialization. If you are self-hosting the Control Plane, you will need to host these configurations on your own server such that the source configuration is available at  `<CONTROL_PLANE_URL>/sourceConfig`.

@@ -14,13 +14,13 @@ RudderStack supports Facebook App Events as a destination to which you can send 
 
 <div class="successBlock">
 
-  <strong>
+  **
     Find the open-source transformer code for this destination in our
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb">
       GitHub repo
     </a>
     .
-  </strong>
+  **
 </div>
 
 ## Getting Started
@@ -237,7 +237,7 @@ pod 'Rudder-Facebook'
 </li>
 <li>Send the user's consent to App Events as shown below:
   <ul>
-  <li>For <strong>Objective-C</strong>:
+  <li>For **Objective-C**:
 <span>
 
 ```objectivec
@@ -248,7 +248,7 @@ pod 'Rudder-Facebook'
 ```
 </span>
   </li>
-  <li>For <strong>Swift</strong>:
+  <li>For **Swift**:
 <span>
 
 ```swift
@@ -330,7 +330,7 @@ implementation 'com.facebook.android:facebook-android-sdk:11.1.0'
 ```
 </span>
 </li>
-<li>Open your <code class="inline-code">/app/res/values/strings.xml</code> file and add the following lines. <strong>Remember to replace <code class="inline-code">[APP_ID]</code> with your actual app ID</strong>.
+<li>Open your <code class="inline-code">/app/res/values/strings.xml</code> file and add the following lines. **Remember to replace <code class="inline-code">[APP_ID]</code> with your actual app ID**.
 <span>
 
 ```markup
@@ -549,7 +549,7 @@ setAutoLogAppEventsEnabled(false);
 </li>
 <li>In some cases, you can delay the collection of automatically logged events to obtain user consent or fulfill legal obligations instead of disabling it entirely. To do so, call the <code class="inline-code">setAutoLogAppEventsEnabled</code> method of the <code class="inline-code">FBSDKSettings</code> class to re-enable auto-logging after the end-user provides the required consent.
   <ul>
-  <li>In <strong>Objective-C</strong>:
+  <li>In **Objective-C**:
 <span>
 
 ```objectivec
@@ -557,7 +557,7 @@ setAutoLogAppEventsEnabled(false);
 ```
 </span>
   </li>
-  <li>In <strong>Swift</strong>:
+  <li>In **Swift**:
 <span>
 
 ```swift
@@ -569,7 +569,7 @@ FBSDKSettings.setAutoLogAppEventsEnabled(true)
 </li>
 <li>To suspend event collection for any reason, set the <code class="inline-code">setAutoLogAppEventsEnabled</code> method to <code class="inline-code">NO</code> for iOS or <code class="inline-code">false</code> for Swift, as shown:
   <ul>
-  <li>In <strong>Objective-C</strong>:
+  <li>In **Objective-C**:
 <span>
 
 ```objectivec
@@ -577,7 +577,7 @@ FBSDKSettings.setAutoLogAppEventsEnabled(true)
 ```
 </span>
   </li>
-  <li>In <strong>Swift</strong>:
+  <li>In **Swift**:
 <span>
 
 ```swift
@@ -714,7 +714,7 @@ setAdvertiserIDCollectionEnabled(false)
 </li>
 <li>In some cases, you can delay the collection of <code class="inline-code">advertiser_id</code> to obtain the user consent or fulfill any legal obligations instead of disabling it entirely. To do so, call the <code class="inline-code">setAdvertiserIDCollectionEnabled</code> method of the <code class="inline-code">FBSDKSettings</code> class and set it to <code class="inline-code">YES</code> for iOS, or <code class="inline-code">true</code> for Swift after the end-user provides consent, as shown:
   <ul>
-  <li>In <strong>Objective-C</strong>:
+  <li>In **Objective-C**:
 <span>
 
 ```objectivec
@@ -723,7 +723,7 @@ setAdvertiserIDCollectionEnabled(false)
 </span>
   </li>  
 
-  <li>In <strong>Swift</strong>:
+  <li>In **Swift**:
 <span>
 
 ```swift
@@ -735,7 +735,7 @@ FBSDKSettings.setAdvertiserIDCollectionEnabled(true);
 </li>
 <li>To suspend collection for any reason, set the <code class="inline-code">setAdvertiserIDCollectionEnabled</code> method to <code class="inline-code">NO</code> for iOS or <code class="inline-code">false</code> for Swift.
   <ul>
-  <li>In <strong>Objective-C</strong>:
+  <li>In **Objective-C**:
 <span>
 
 ```objectivec
@@ -743,7 +743,7 @@ FBSDKSettings.setAdvertiserIDCollectionEnabled(true);
 ```
 </span>
   </li>
-  <li>In <strong>Swift</strong>:
+  <li>In **Swift**:
 <span>
 
 ```swift

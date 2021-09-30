@@ -18,13 +18,13 @@ Please check our <a href="../data-warehouse-integrations/warehouse-schemas">Ware
 
 <div class="successBlock">
 
-  <strong>
+  **
     Find the open-source transformer code for this destination in our
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/snowflake">
       GitHub repo
     </a>
     .
-  </strong>
+  **
 </div>
 
 ## Snowflake User Setup
@@ -185,7 +185,7 @@ Please follow our <a href="../connections/adding-source-and-destination-rudderst
 
 Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-guide/data-load-s3-config.html#option-1-configuring-a-snowflake-storage-integration">here</a>
 
-<strong>Configuring snowflake integration with AWS </strong>
+**Configuring snowflake integration with AWS **
 
 <ol>
 <li>Create a policy in AWS:</li>
@@ -226,11 +226,11 @@ Replace <code class="inline-code">&lt;bucket&gt;</code> and <code class="inline-
 </span>
 <li>
   
-  Create a role and attach the above policy in AWS: - Create role of type <strong>
+  Create a role and attach the above policy in AWS: - Create role of type **
     Another AWS account
-  </strong> - Enter your AWS account ID and enable <strong>
+  ** - Enter your AWS account ID and enable **
     Require External ID
-  </strong> - For external ID enter a dummy ID such as 0000. We will modify this
+  ** - For external ID enter a dummy ID such as 0000. We will modify this
   later on. - And attach the policy created in Step 1. - Give your role a name and
   keep the role ARN handy for the next step.
 </li>
@@ -314,10 +314,10 @@ grant usage on integration <integration_name> to role <sf_role>
         If you have Microsoft Azure as your cloud provider and want to leverage Azure Blob Storage as your object storage, you will need to follow a few more steps to configure your Snowflake destination with a snowflake integration.
 
 Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-guide/data-load-azure-config.html#option-1-configuring-a-snowflake-storage-integration">here</a>.
-<strong>Configuring snowflake integration with Azure </strong>
+**Configuring snowflake integration with Azure **
 <ol>
 <li>Create a storage account in Azure.</li>
-<li>Create a container in the storage account created above by navigating to <strong>&lt;storage_account&gt;</strong> - <strong>Storage Explorer</strong> - <strong>Blob Containers</strong> - <strong>Create a Blob Container</strong>.</li>
+<li>Create a container in the storage account created above by navigating to **&lt;storage_account&gt;** - **Storage Explorer** - **Blob Containers** - **Create a Blob Container**.</li>
 <li>Create cloud storage integration in Snowflake:
 <span>
 
@@ -332,12 +332,12 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
 ```
 </span>
 <code class="inline-code">&lt;tenant_id&gt;</code> - Get your tenant id by
-navigating to <strong>Azure Active Directory</strong> - <strong>
+navigating to **Azure Active Directory** - **
   Properties.
-</strong> The tenant ID is displayed in the <strong>Directory ID</strong> field.
-<strong>&lt;account&gt;</strong> - <strong>&lt;storage_account&gt;</strong> - <strong>
+** The tenant ID is displayed in the **Directory ID** field.
+**&lt;account&gt;** - **&lt;storage_account&gt;** - **
   Access keys
-</strong> - &lt;<code class="inline-code">storageAccountName</code>&gt;
+** - &lt;<code class="inline-code">storageAccountName</code>&gt;
 </li>
 <li> Grant Snowflake access to the storage locations </li>
 
@@ -357,12 +357,12 @@ And record the values <code class="inline-code">AZURE_CONSENT_URL</code> and <co
 </li>
 <li>
   Grant snowflake access to the container created in Step 2: - Navigate to
-  <strong>Azure Services</strong> - <strong>Storage Accounts</strong> and select
+  **Azure Services** - **Storage Accounts** and select
   the storage account created in Step 1. - Add role : Navigate to
-  <strong>Access Control (IAM)</strong> - <strong>Add Role Assignment</strong>
-  and select either <strong>Storage Blob Data Reader(Read Access)</strong> or
-  <strong>Storage Blob Data Contributor (Read and Write Access)</strong> - Add
-  <strong>Assign Access</strong> : Add <strong>Service Principal</strong> as the
+  **Access Control (IAM)** - **Add Role Assignment**
+  and select either **Storage Blob Data Reader(Read Access)** or
+  **Storage Blob Data Contributor (Read and Write Access)** - Add
+  **Assign Access** : Add **Service Principal** as the
   type of security principal to assign the role to. And search for
   <code class="inline-code">AZURE_MULTI_TENANT_APP_NAME</code> obtained in step
   4.
@@ -383,7 +383,7 @@ And record the values <code class="inline-code">AZURE_CONSENT_URL</code> and <co
 
 Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-guide/data-load-gcs-config.html#configuring-an-integration-for-google-cloud-storage">here</a>.
 
-<strong>Configuring Snowflake Integration with Google Cloud Platform </strong>
+**Configuring Snowflake Integration with Google Cloud Platform **
 
 <ol>
 <li>Create a Cloud Storage integration in Snowflake.</li>
@@ -513,7 +513,7 @@ You will need to whitelist the RudderStack IPs to enable network access to it.
 
 <div class="infoBlock">
 
-<strong>The IPs to be whitelisted are : <code class="inline-code">3.216.35.97</code>, <code class="inline-code">34.198.90.241</code> , <code class="inline-code">54.147.40.62</code> , <code class="inline-code">23.20.96.9</code>, and <code class="inline-code">18.214.35.254</code>.</strong>
+**The IPs to be whitelisted are : <code class="inline-code">3.216.35.97</code>, <code class="inline-code">34.198.90.241</code> , <code class="inline-code">54.147.40.62</code> , <code class="inline-code">23.20.96.9</code>, and <code class="inline-code">18.214.35.254</code>.**
 </div>
 
 ## Contact Us

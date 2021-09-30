@@ -51,7 +51,7 @@ If you don't specify a namespace in the settings, it is set to the source name b
 
 <div class="warningBlock">
 
-Make sure the above credentials (<strong>Access Key ID</strong> and <strong>Secret Access Key</strong>) should have permissions to read and write into the configured bucket.
+Make sure the above credentials (**Access Key ID** and **Secret Access Key**) should have permissions to read and write into the configured bucket.
 </div>
 
 ### Finding Your Data in the S3 Data Lake
@@ -91,7 +91,7 @@ If AWS Glue is enabled, all the table definitions are created in a database with
 
 <div class="warningBlock">
 
-Refer to this section <strong>only</strong> if you haven't enabled the <strong>Register Schema on AWS Glue</strong> setting while configuring the S3 data lake destination in RudderStack.
+Refer to this section **only** if you haven't enabled the **Register Schema on AWS Glue** setting while configuring the S3 data lake destination in RudderStack.
 </div>
 
 In the absence of AWS Glue, you can create a crawler to go through your data and create table definitions out of it. Follow these steps to create a crawler:
@@ -146,15 +146,15 @@ If you have not configured any prefix while setting up the S3 data lake destinat
 
 <div class="infoBlock">
 
-The level for the top-level folder is <strong>1</strong>. For example, for the path <code class="inline-code">mydataset/a/b</code>, if the level is set to 3, the table will be created at the location <code class="inline-code">mydataset/a/b</code>. Similarly, if the level is set to 2, the table will be created at the location <code class="inline-code">mydataset/a</code>.
+The level for the top-level folder is **1**. For example, for the path <code class="inline-code">mydataset/a/b</code>, if the level is set to 3, the table will be created at the location <code class="inline-code">mydataset/a/b</code>. Similarly, if the level is set to 2, the table will be created at the location <code class="inline-code">mydataset/a</code>.
 </div>
 
 <div class="warningBlock">
 
 Since all tables are created in the URI <code class="inline-code">s3://testBucket/&lt;prefix&gt;/rudder-datalake/&lt;namespace&gt;/</code>, make sure the table level should be set to:
 <ul>
-<li><strong>5</strong> if a prefix is configured</li>
-<li><strong>4</strong> if a prefix is <strong>not</strong> configured</li>
+<li>**5** if a prefix is configured</li>
+<li>**4** if a prefix is **not** configured</li>
 </ul>
 </div>
 

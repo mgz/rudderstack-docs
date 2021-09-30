@@ -12,7 +12,7 @@ This document describes the various configuration parameters for the [**`config.
 
 <div class="infoBlock">
 
-These configuration parameters are also applicable for the <strong><code class="inline-code">config.toml</code></strong> file, in case you have an older RudderStack deployment.
+These configuration parameters are also applicable for the **<code class="inline-code">config.toml</code>** file, in case you have an older RudderStack deployment.
 
 </div>
 
@@ -273,7 +273,7 @@ You can ignore these settings if you don't have any <a href="../../data-warehous
 | `maxLoopSleep`           | String  | Maximum loop sleep time for the Processor.                                                                                                                                                                           |   `5000ms`    |
 | `dbReadBatchSize`        | Int     | The total number of events to get as a batch from the database.                                                                                                                                                      |    `10000`    |
 | `transformBatchSize`     | Int     | Batch size of the events added to the request queue before sending them for transformation.                                                                                                                          |     `100`     |
-| `userTransformBatchSize` | Int     | Batch size of the events added to request queue before sending them to the custom transformation server. <strong>NOTE</strong>: This is used only when a user transformation function is connected to a destination. |     `200`     |
+| `userTransformBatchSize` | Int     | Batch size of the events added to request queue before sending them to the custom transformation server. **NOTE**: This is used only when a user transformation function is connected to a destination. |     `200`     |
 | `sessionThresholdEvents` | Int     | The minimum number of events needed to be process further.                                                                                                                                                           |     `20`      |
 | `sessionThreshold`       | String  | The minimum time needed before a new session is created.                                                                                                                                                             |     `10s`     |
 | `maxChanSize`            | Int     | The maximum channel size for the request and response queue in the transformer.                                                                                                                                      |    `2048`     |

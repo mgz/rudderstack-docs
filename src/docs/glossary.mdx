@@ -67,9 +67,9 @@ The Data Plane is RudderStack's core engine responsible for:
 The Data Plane is intentionally separated from the Control Plane to give you complete ownership of your data. Depending on how RudderStack is deployed, you can set up your Control Plane and Data Plane via one of the following approaches:
 
 <ul>
-<li> <strong>RudderStack-hosted</strong>: RudderStack hosts both Control Plane and Data Plane</li>
-<li> <strong>Hybrid</strong>: RudderStack hosts the Control Plane and the user hosts the Data Plane</li>
-<li> <strong>Customer</strong>: User hosts both the Control Plane and Data Plane via open-source.</li>
+<li> **RudderStack-hosted**: RudderStack hosts both Control Plane and Data Plane</li>
+<li> **Hybrid**: RudderStack hosts the Control Plane and the user hosts the Data Plane</li>
+<li> **Customer**: User hosts both the Control Plane and Data Plane via open-source.</li>
 </ul>
   </div>
 
@@ -130,15 +130,15 @@ There are two key aspects of this feature:
 
 RudderStack applies the User Transformations (if any) to the incoming events before sending them to the Transformer. So the flow looks like the following:
 
-<strong>Incoming events</strong> -- <strong>User Transformation</strong> -- <strong>
+**Incoming events** -- **User Transformation** -- **
   RudderStack Transformer
-</strong> -- <strong>Routed to the specified destination's</strong>
+** -- **Routed to the specified destination's**
 
 In the absence of a user transformation, the flow is as follows:
 
-<strong>Incoming events</strong> -- <strong>RudderStack Transformer</strong> -- <strong>
+**Incoming events** -- **RudderStack Transformer** -- **
   Routed to the specified destination/s
-</strong>
+**
 
 </div>
 

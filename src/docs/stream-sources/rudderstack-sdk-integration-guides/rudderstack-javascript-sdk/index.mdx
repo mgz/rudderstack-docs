@@ -16,7 +16,7 @@ RudderStack's JavaScript SDK leverages the `rudder-analytics.js` library to trac
 
 <div class="infoBlock">
 
-<strong>NOTE:</strong> To quickly get up and running with setting up and using the RudderStack JavaScript SDK, please go through our <a href="https://github.com/rudderlabs/rudder-sdk-js#how-to-use-the-rudderstack-javascript-sdk">quick start guide</a>.
+**NOTE:** To quickly get up and running with setting up and using the RudderStack JavaScript SDK, please go through our <a href="https://github.com/rudderlabs/rudder-sdk-js#how-to-use-the-rudderstack-javascript-sdk">quick start guide</a>.
 
 </div>
 
@@ -34,7 +34,7 @@ rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track"
 
 <div class="infoBlock">
 
-<strong>You can find your source write key and the data plane URL on your RudderStack dashboard.</strong>
+**You can find your source write key and the data plane URL on your RudderStack dashboard.**
 
 </div>
 
@@ -79,14 +79,14 @@ rudderanalytics=window.rudderanalytics=[];for(var methods=["load","page","track"
 
 <div class="successBlock">
 
-<strong>NOTE</strong>: The above code snippet will load <code class="inline-code">rudder-analytics.js</code> on to your page synchronously. To load the SDK asynchronously to keep your page load time unaffected, use the following instead:
+**NOTE**: The above code snippet will load <code class="inline-code">rudder-analytics.js</code> on to your page synchronously. To load the SDK asynchronously to keep your page load time unaffected, use the following instead:
 
-<strong>
+**
   <code class="inline-code">
     &lt;script async
     src="https://cdn.rudderlabs.com/v1/rudder-analytics.min.js"&gt;&lt;/script&gt;
   </code>
-</strong>
+**
 
 </div>
 
@@ -133,7 +133,7 @@ This NPM module is only meant to be used for a browser installation. If you want
 
 <div class="warningBlock">
 
-<strong>Important</strong>: Since the module exports the related APIs on an already-defined object combined with the Node.js module caching, you should run the below code snippet <strong>only once</strong> and use the exported object throughout your project.
+**Important**: Since the module exports the related APIs on an already-defined object combined with the Node.js module caching, you should run the below code snippet **only once** and use the exported object throughout your project.
 
 </div>
 
@@ -276,7 +276,7 @@ The `load()`method is defined as follows:
 
 <div class="infoBlock">
 
-<strong>NOTE</strong>: You need to replace <code class="inline-code">&lt;YOUR_WRITE_KEY&gt;</code> with the write key in the RudderStack Control Plane and <code class="inline-code">&lt;DATA_PLANE_URL&gt;</code> with the URL of the RudderStack Server.
+**NOTE**: You need to replace <code class="inline-code">&lt;YOUR_WRITE_KEY&gt;</code> with the write key in the RudderStack Control Plane and <code class="inline-code">&lt;DATA_PLANE_URL&gt;</code> with the URL of the RudderStack Server.
 
 </div>
 
@@ -323,9 +323,9 @@ IntegrationOpts {
 <div class="infoBlock">
 
   More information on the Load
-  <strong>
+  **
     <code class="inline-code">IntegrationOpts</code>
-  </strong>
+  **
   option can be found here:
   <ul>
     <li>
@@ -467,9 +467,9 @@ IntegrationOpts {
 <div class="infoBlock">
 
   More information on the Load
-  <strong>
+  **
     <code class="inline-code">IntegrationOpts</code>
-  </strong>
+  **
   option can be found here:
   <ul>
     <li>
@@ -492,7 +492,7 @@ IntegrationOpts {
 
 <div class="infoBlock">
 
-<strong>NOTE</strong>: The <code class="inline-code">anonymousId</code> is a <strong>UUID (Universally Unique Identifier)</strong> generated to uniquely identify the user. Also, if it is provided by the user using the <code class="inline-code">setAnonymousId</code> method, the user-specified <code class="inline-code">anonymousId</code> overrides the SDK-generated one.
+**NOTE**: The <code class="inline-code">anonymousId</code> is a **UUID (Universally Unique Identifier)** generated to uniquely identify the user. Also, if it is provided by the user using the <code class="inline-code">setAnonymousId</code> method, the user-specified <code class="inline-code">anonymousId</code> overrides the SDK-generated one.
 
 </div>
 
@@ -509,7 +509,7 @@ The JavaScript SDK generates one unique `anonymousId` , stores it in a cookie na
 
 <div class="infoBlock">
 
-As an example, if you include the RudderStack JavaScript SDK in both <strong>admin.samplewebsite.com</strong> and <strong>app.samplewebsite.com</strong>, the SDK will store the cookie in the top-level domain <strong>samplewebsite.com</strong>.
+As an example, if you include the RudderStack JavaScript SDK in both **admin.samplewebsite.com** and **app.samplewebsite.com**, the SDK will store the cookie in the top-level domain **samplewebsite.com**.
 
 </div>
 
@@ -577,7 +577,7 @@ If you would like to set the `userid` to be empty, pass an empty string or `""`.
 
 <div class="warningBlock">
 
-Do <strong>not</strong> identify with <code class="inline-code">null</code>, as this will not allow you to pass a traits object and it will keep the current <code class="inline-code">userid</code>.
+Do **not** identify with <code class="inline-code">null</code>, as this will not allow you to pass a traits object and it will keep the current <code class="inline-code">userid</code>.
 
 </div>
 
@@ -690,9 +690,9 @@ IntegrationOpts {
 <div class="infoBlock">
 
   More information on the Load
-  <strong>
+  **
     <code class="inline-code">IntegrationOpts</code>
-  </strong>
+  **
   option can be found here:
   <ul>
     <li>
@@ -787,9 +787,9 @@ IntegrationOpts {
 <div class="infoBlock">
 
   More information on the Load
-  <strong>
+  **
     <code class="inline-code">IntegrationOpts</code>
-  </strong>
+  **
   option can be found here:
   <ul>
     <li>
@@ -874,9 +874,9 @@ IntegrationOpts {
 <div class="infoBlock">
 
   More information on the Load
-  <strong>
+  **
     <code class="inline-code">IntegrationOpts</code>
-  </strong>
+  **
   option can be found here:
   <ul>
     <li>
@@ -961,9 +961,9 @@ IntegrationOpts {
 <div class="infoBlock">
 
   More information on the Load
-  <strong>
+  **
     <code class="inline-code">IntegrationOpts</code>
-  </strong>
+  **
   option can be found here:
   <ul>
     <li>
@@ -1005,7 +1005,7 @@ rudderanalytics.reset()
 
 <div class="infoBlock">
 
-<strong>NOTE</strong>: The <code class="inline-code">reset()</code>method only clears the cookies and local storage set by RudderStack, and not the information stored by the integrated destinations. To completely clear the user session, please refer to the documentation provided by those respective tools.
+**NOTE**: The <code class="inline-code">reset()</code>method only clears the cookies and local storage set by RudderStack, and not the information stored by the integrated destinations. To completely clear the user session, please refer to the documentation provided by those respective tools.
 
 </div>
 
@@ -1074,7 +1074,7 @@ Below shows some of the supported names that RudderStack can intake for each des
 
 <div class="infoBlock">
 
-<strong>NOTE:</strong> You can also refer to <a href="../../../user-guides/how-to-guides/how-to-filter-selective-destinations/#destination-naming-convention">this section</a> for more information on the naming convention of the <code class="inline-code">destinations names</code>.
+**NOTE:** You can also refer to <a href="../../../user-guides/how-to-guides/how-to-filter-selective-destinations/#destination-naming-convention">this section</a> for more information on the naming convention of the <code class="inline-code">destinations names</code>.
 
 </div>
 
@@ -1124,7 +1124,7 @@ A context is a dictionary of additional information about a particular data, suc
 
 <div class="infoBlock">
 
-<strong>NOTE</strong>: A context is a complete and specific piece of information. Any other information provided outside of this specification is ignored.
+**NOTE**: A context is a complete and specific piece of information. Any other information provided outside of this specification is ignored.
 
 </div>
 
@@ -1232,10 +1232,10 @@ Simply put, the **Data Plane URL** is used to connect to the RudderStack backend
 
 <div class="infoBlock">
 
-  To get the <strong>Data Plane URL</strong>:
+  To get the **Data Plane URL**:
   <ul>
     <li>
-      If you're using the <strong>open-source</strong> version of RudderStack,
+      If you're using the **open-source** version of RudderStack,
       you are required to set up your own data plane by
       <a href="../../../get-started/installing-and-setting-up-rudderstack">
         installing and setting up RudderStack
@@ -1243,7 +1243,7 @@ Simply put, the **Data Plane URL** is used to connect to the RudderStack backend
       in your preferred dev environment.
     </li>
     <li>
-      If you're using the <strong>enterprise</strong> version of RudderStack,
+      If you're using the **enterprise** version of RudderStack,
       please contact us for the data plane URL with the email ID used to sign up
       for RudderStack.
     </li>
@@ -1287,7 +1287,7 @@ To check if data is being transmitted to the specified destinations, go to the `
 
 <div class="infoBlock">
 
-<strong>NOTE</strong>: If the outbound request is not being shown, check if you have installed and set up the RudderStack JavaScript SDK correctly, or if ad-blockers are enabled on your browser.
+**NOTE**: If the outbound request is not being shown, check if you have installed and set up the RudderStack JavaScript SDK correctly, or if ad-blockers are enabled on your browser.
 
 </div>
 
@@ -1311,7 +1311,7 @@ rudderanalytics.getAnonymousId()
 
 <div class="infoBlock">
 
-<strong>NOTE:</strong> In case the <code class="inline-code">anonymousId</code> value is null, calling the above function will lead to automatically setting a new <code class="inline-code">anonymousId</code>.
+**NOTE:** In case the <code class="inline-code">anonymousId</code> value is null, calling the above function will lead to automatically setting a new <code class="inline-code">anonymousId</code>.
 
 </div>
 
