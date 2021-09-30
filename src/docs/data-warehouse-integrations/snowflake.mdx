@@ -19,7 +19,7 @@ Please check our <a href="../data-warehouse-integrations/warehouse-schemas">Ware
 <div class="successBlock">
 
   <strong>
-    Find the open-source transformer code for this destination in our{" "}
+    Find the open-source transformer code for this destination in our
     <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/snowflake">
       GitHub repo
     </a>
@@ -225,14 +225,14 @@ Replace <code class="inline-code">&lt;bucket&gt;</code> and <code class="inline-
 ```
 </span>
 <li>
-  {" "}
+  
   Create a role and attach the above policy in AWS: - Create role of type <strong>
     Another AWS account
   </strong> - Enter your AWS account ID and enable <strong>
     Require External ID
   </strong> - For external ID enter a dummy ID such as 0000. We will modify this
   later on. - And attach the policy created in Step 1. - Give your role a name and
-  keep the role ARN handy for the next step.{" "}
+  keep the role ARN handy for the next step.
 </li>
 <li> Create cloud storage integration in Snowflake </li>
 <span>
@@ -350,20 +350,20 @@ DESC INTEGRATION <integration_name>;
 </span>
 And record the values <code class="inline-code">AZURE_CONSENT_URL</code> and <code class="inline-code">AZURE_MULTI_TENANT_APP_NAME</code> .
 <li>
-  {" "}
+  
   Navigate to the URL in the <code class="inline-code">
     AZURE_CONSENT_URL
   </code> obtained in the previous step and accept.
 </li>
 <li>
-  Grant snowflake access to the container created in Step 2: - Navigate to{" "}
+  Grant snowflake access to the container created in Step 2: - Navigate to
   <strong>Azure Services</strong> - <strong>Storage Accounts</strong> and select
-  the storage account created in Step 1. - Add role : Navigate to{" "}
-  <strong>Access Control (IAM)</strong> - <strong>Add Role Assignment</strong>{" "}
-  and select either <strong>Storage Blob Data Reader(Read Access)</strong> or{" "}
-  <strong>Storage Blob Data Contributor (Read and Write Access)</strong> - Add{" "}
+  the storage account created in Step 1. - Add role : Navigate to
+  <strong>Access Control (IAM)</strong> - <strong>Add Role Assignment</strong>
+  and select either <strong>Storage Blob Data Reader(Read Access)</strong> or
+  <strong>Storage Blob Data Contributor (Read and Write Access)</strong> - Add
   <strong>Assign Access</strong> : Add <strong>Service Principal</strong> as the
-  type of security principal to assign the role to. And search for{" "}
+  type of security principal to assign the role to. And search for
   <code class="inline-code">AZURE_MULTI_TENANT_APP_NAME</code> obtained in step
   4.
 </li>
@@ -404,7 +404,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
   </li>
   <li>
     <code class="inline-code">&lt;bucket&gt;</code> is the name of the Cloud
-    Storage bucket that you created{" "}
+    Storage bucket that you created
     <a href="../data-warehouse-integrations/snowflake#configuring-snowflake-in-rudderstack">
       above
     </a>
@@ -432,12 +432,12 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
     of the integration you specified above in step 1.
   </li>
   <li>
-    The output will be a table that has a property called{" "}
+    The output will be a table that has a property called
     <code class="inline-code">STORAGE_GCP_SERVICE_ACCOUNT</code>. Retrieve that
     property value.
   </li>
   <li>
-    The value that should be retrieved will have the following format:{" "}
+    The value that should be retrieved will have the following format:
     <code class="inline-code">
       service-account-id@&lt;unique_string&gt;.iam.gserviceaccount.com
     </code>
@@ -492,7 +492,7 @@ GRANT USAGE ON INTEGRATION <integration_name> TO ROLE "RUDDER";
         <ul>
             <li>
               <code class="inline-code">"RUDDER"</code> is the name of the role that you
-              created above{" "}
+              created above
               <a href="../data-warehouse-integrations/snowflake#creating-a-role-for-rudderstack">
                 here
               </a>
