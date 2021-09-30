@@ -124,6 +124,7 @@ export default function Layout({
             </div>
           </Children>
           <div
+            className={headings.length < 2 ? "hidden" : ""}
             css={css`
               @media (max-width: 1200px) {
                 display: none;
