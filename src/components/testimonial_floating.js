@@ -7,13 +7,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 const TestimonialFloating = props => {
   const testimonial = props.addtestimonial[0]
   return (
-    <div className=" max-w-6xl mx-4 md:mx-auto">
+    <div className=" max-w-6xl mx-4 xl:mx-auto">
       <div className="item h5 font-weight-normal mx-auto pb-0 w-100 max-w-6xl justify-items-center bg-blueNew-cardBackground rounded-xl">
-        <div className="testimonial pb-12 w-100 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center relative pt-36 ">
+        <div className="testimonial pb-12 w-100 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center relative pt-20 ">
           
           <div className="items-center flex justify-center -top-18 w-full absolute">
-            <div className="usr_img mb-4">
-              <Image props={testimonial.clientimage.asset._ref} />
+            <div className="mb-4">
+              <Image props={testimonial.clientimage.asset._ref} classes="h-36 w-auto" />
             </div>
           </div>
           <p
