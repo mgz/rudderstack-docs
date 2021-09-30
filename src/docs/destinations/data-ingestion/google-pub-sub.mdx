@@ -39,7 +39,8 @@ Once you have confirmed that the platform supports sending events to Google Pub/
 - From your [RudderStack dashboard](https://app.rudderlabs.com/), add the source. From the list of destinations, select **Google Pub/Sub.**
 
 <div class="infoBlock">
-Please follow our [Adding a Source and Destination](https://rudderstack.com/docs/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
+
+Please follow our [Adding a Source and Destination](https://rudderstack.com/docs/get-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
 
 </div>
 
@@ -60,23 +61,32 @@ Please follow our [Adding a Source and Destination](https://rudderstack.com/docs
 ![Google Pub/Sub Topic ID and Name](../../.gitbook/assets/image%20%2848%29.png)
 
 <div class="infoBlock">
+
 You can send an event `type` like `page,` `identify,` `track`.  
 For the `track` events you can specify the event name based on the `event` name in the payload.
 
 For example:
 
 <ul>
-<li>If the event name is **`page`** it will send all the calls with the `type` page.</li>
-<li>If the event name is **`product added`** , it will send all the track events with the **`event`** as **`product added`**.</li>
+<li>
+
+If the event name is **`page`** it will send all the calls with the `type` page.
+</li>
+<li>
+
+If the event name is **`product added`** , it will send all the track events with the **`event`** as **`product added`**.
+</li>
 </ul>
   </div>
 
 <div class="successBlock">
+
   If you want to send all the events to a particular stream irrespective of the
   type or name, you can use **`*`** as the event name.
 </div>
 
 <div class="warningBlock">
+
 The **topic ID** is **case-sensitive** and has to be exactly as seen in Google Pub/Sub. On the other hand, the **event name** is **case insensitive**, and thus `Page` or `page` will both be considered as valid.
 
 </div>
@@ -96,6 +106,7 @@ The following are some examples:
 - If the event name is **`page`** it will send all the calls with the `type` page.
 
 <div class="warningBlock">
+
 For the `key` fields provided in the attributes map, the `key` is searched in the message body in **`root`**, **`properties`**, **`traits`** and **`context.traits`** - in that specific order.
 
 </div>

@@ -12,14 +12,14 @@ RudderStack supports sending your events to Userlist from the cloud mode S2S \(S
 
 <div class="successBlock">
   This destination is supported by the Userlist team. Feel free to contact
-  Userlist via [support@userlist.com](mailto:support@userlist.com).
+  Userlist via <a href="mailto:support@userlist.com">support@userlist.com</a>.
 </div>
 
 <div class="successBlock">
   <strong>
     Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/userlist).
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/userlist">GitHub repo</a>
+    .
   </strong>
 </div>
 
@@ -54,17 +54,18 @@ Please follow our guide on <a href="../connections/adding-source-and-destination
 - Once the destination is enabled, events from the RudderStack SDK will start to flow to Userlist.
 
 <div class="warningBlock">
-Userlist does not support tracking of anonymous users. So, make sure you call `identify` before calling `track`.
 
+Userlist does not support tracking of anonymous users. So, make sure you call `identify` before calling `track`.
 </div>
 
 ## Identify
 
-The `identify` call sends the event data to Userlist along with the properties that you pass as the RudderStack traits. For more information on the `identify` call, please refer our [RudderStack API specification](https://rudderstack.com/docs/getting-started/rudderstack-api-spec) documentation.
+The `identify` call sends the event data to Userlist along with the properties that you pass as the RudderStack traits. For more information on the `identify` call, please refer our [RudderStack API specification](https://rudderstack.com/docs/get-started/rudderstack-api-spec) documentation.
 
 If the `userId` is already known, Userlist will update the user record. Otherwise, it’ll create a new one.
 
 <div class="warningBlock">
+
 Userlist will only process messages with a `userId`. Messages with only an `anonymousId` will be ignored.
 
 </div>
@@ -82,7 +83,7 @@ rudderanalytics.identify("test-user-id", {
 
 ## Group
 
-The `group` call is made to associate the user with a company in Userlist. For more information on the `group` call, please refer our [RudderStack API specification](https://rudderstack.com/docs/getting-started/rudderstack-api-spec) documentation.
+The `group` call is made to associate the user with a company in Userlist. For more information on the `group` call, please refer our [RudderStack API specification](https://rudderstack.com/docs/get-started/rudderstack-api-spec) documentation.
 
 An example of a `group` call is as shown:
 
@@ -122,7 +123,7 @@ rudderanalytics.group("test-group-id", {
 
 ## Track
 
-The `track` call will pass the event properties to Userlist. You may call `rudderanalytics.track()` with or without event properties. For more information on how `track` call works, please refer to our [RudderStack API specification](https://rudderstack.com/docs/getting-started/rudderstack-api-spec) documentation.
+The `track` call will pass the event properties to Userlist. You may call `rudderanalytics.track()` with or without event properties. For more information on how `track` call works, please refer to our [RudderStack API specification](https://rudderstack.com/docs/get-started/rudderstack-api-spec) documentation.
 
 The following code snippet shows how a sample `track` call is made in RudderStack:
 
@@ -133,6 +134,7 @@ rudderanalytics.track("Project created", {
 ```
 
 <div class="infoBlock">
+
 Note that every `track` call will be sent to Userlist as a new event. You may send additional properties to describe the event in more detail.
 
 Both the event name and additional properties will be stored with the event and normalized to snake case \(`project_created` and `project_name`\) automatically within Userlist.

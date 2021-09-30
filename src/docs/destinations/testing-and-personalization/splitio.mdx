@@ -13,8 +13,8 @@ RudderStack allows you to configure Split.io as a destination to which you can s
 <div class="successBlock">
   <strong>
     Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/splitio).
+    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/splitio">GitHub repo</a>
+    .
   </strong>
 </div>
 
@@ -62,6 +62,7 @@ Please follow our <a href="../../connections/adding-source-and-destination-rudde
     - **Traffic Type**: Enter the correct traffic type listed in your account.
 
 <div class="infoBlock">
+
 Each of the calls is sent as an `event` to Split.io.
 
 </div>
@@ -82,6 +83,7 @@ rudderanalytics.identify("userId", {
 ```
 
 <div class="infoBlock">
+
 In the cloud mode, the above `identify` call is sent with the name as `identify`, along with any additional properties passed to it.
 
 </div>
@@ -100,6 +102,7 @@ rudderanalytics.track("Clicked button", {
 ```
 
 <div class="infoBlock">
+
 In the cloud mode, the above `track` call is sent with the name as `Clicked_button`, along with any additional properties passed to it.
 
 </div>
@@ -119,6 +122,7 @@ rudderanalytics.page("homepage", "home", {
 ```
 
 <div class="infoBlock">
+
 In the cloud mode, the above `page` call is sent with the name as `Viewed_home_page`, along with any additional properties passed to it.
 
 </div>
@@ -136,6 +140,7 @@ A sample `screen` call looks like the following code snippet:
 In the above snippet, we capture information related to the screen being viewed, such as screen's name and category.
 
 <div class="infoBlock">
+
 The above call is sent with the name `Viewed_Main_screen`, along with any additional properties passed to it.
 
 </div>
@@ -151,6 +156,7 @@ rudderanalytics.group("groupId", traits, options, callback)
 ```
 
 <div class="infoBlock">
+
 The above call is sent with the name `group`, along with any additional properties passed to it.
 
 </div>

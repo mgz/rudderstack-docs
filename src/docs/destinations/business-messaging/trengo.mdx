@@ -53,11 +53,13 @@ In the **Connection Settings**, you will see the following options:
 - **Map events with template:** To send `track` events to Trengo, you need to add the `event` to the _Event Name_ field. If you wish to customize the subject for the event, you can do so by adding a _template_.
 
 <div class="infoBlock">
+
 For a particular event the **Channel ID** can be overriden using `externalId`, For example: `(context.externalId: [&#123;type:trengoChannelId, id:channelId&#125;])`.
 
 </div>
 
 <div class="warningBlock">
+
 When using an `externalId` to override _channelId_ , make sure that the **Channel Identifier** of that specific channel matches with the **Channel Identifier** you have selected in Rudderstack dashboard.
 
 </div>
@@ -93,7 +95,8 @@ rudderanalytics.identify("userid", {
 ```
 
 <div class="infoBlock">
-<strong>NOTE:</strong> If you already have Trengo `contactId` you can pass it in `externalId`, `(example context.externalId: [&#123;type:trengoContactId, id:channelId&#125;])`, in that case will we avoid searching for `contactId` using `identifier(email/phone)` before updating.
+
+**NOTE:** If you already have Trengo `contactId` you can pass it in `externalId`, `(example context.externalId: [&#123;type:trengoContactId, id:channelId&#125;])`, in that case will we avoid searching for `contactId` using `identifier(email/phone)` before updating.
 
 </div>
 
@@ -127,6 +130,7 @@ A few things to note while using this option:
 - For `track` calls, the `contact identifier` is mandatory. For example, for tracking events to an `email` channel, `email` is a mandatory event field. Similarly, for tracking events to a `phone` channel, `phone` is a mandatory event field.
 
 <div class="warningBlock">
+
 For lodging your `track` events to Trengo, it is mandatory to add the `event` name in **Event Name** field. If the **Event Name** is not present, the particular `track` events will not flow through.
 
 </div>

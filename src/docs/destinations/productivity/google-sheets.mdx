@@ -12,9 +12,8 @@ RudderStack allows you to configure Google Sheets as a destination and send your
 
 <div class="successBlock">
   <strong>
-    Find the open-source transformer code for this destination in our{" "}
-    <a href="">GitHub repo</a>
-    (https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/googlesheets).
+    Find the open-source transformer code for this destination in our <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/googlesheets">GitHub repo</a>
+    .
   </strong>
 </div>
 
@@ -37,7 +36,8 @@ Once you have confirmed that the platform supports sending events to Google Shee
 - From your [RudderStack dashboard](https://app.rudderstack.com/), add the source. From the list of destinations, select **Google Sheets.**
 
 <div class="infoBlock">
-Please follow our [Adding a Source and Destination](https://rudderstack.com/docs/getting-started/adding-source-and-destination-rudderstack) guide to add a source and destination in RudderStack.
+
+Please follow our [Adding a Source and Destination](https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/) guide to add a source and destination in RudderStack.
 
 </div>
 
@@ -58,6 +58,7 @@ Before you add Google Sheets as a destination in RudderStack, follow these steps
 ![](../../.gitbook/assets/image%20%2883%29.png)
 
 <div class="warningBlock">
+
 Once you have completed the connection, make sure you have enabled [Google-Sheets-API](https://console.cloud.google.com/apis/library/sheets.googleapis.com?q=sheets&id=739c20c5-5641-41e8-a938-e55ddc082ad1&project=rudder-integration&supportedpurview=project) in the project of your service account.
 
 </div>
@@ -71,27 +72,30 @@ Then, enter the following details under **Connection Settings** in the RudderSta
 ![](../../.gitbook/assets/image%20%2885%29.png)
 
 <div class="warningBlock">
+
 The **Sheet Name** is **case-sensitive** and has to be exactly as seen in Google Sheets.
 
 </div>
 
 - Next, enter the **Event Properties** corresponding to **Column Name** under the **Map Event to Google Sheets section**.
 
-<strong>NOTE</strong>: For mapping `attributes` from `traits` or `properties`,
+**NOTE**: For mapping `attributes` from `traits` or `properties`,
 you can directly enter the `attribute` name \(for e.g. `productName`,
 `firstName`, or `address.city`\) and map it to desired **Column**. For other
 contextual attributes, you will need to enter the absolute path to the
 `attribute` using dot notation. \(for e.g. `context.app.build`\)
 
 <div class="warningBlock">
+
 If you have **Nested Attributes** inside `properties` or `traits`, please use the **dot notation** for mapping to respective **Column** \(For e.g.: `address.zip`, `address.city`..\)
 
 </div>
 
 <div class="infoBlock">
+
 For mapping `attributes` from event `properties` or `traits`/`context.traits`, RudderStack also supports absolute mapping. For example: adding `context.traits.firstName` will map the same value as adding `firstName`.
 
-<strong>NOTE</strong>: We advise you to map with absolute path as it resolves
+**NOTE**: We advise you to map with absolute path as it resolves
 the ambiguity when you have same `attribute` name in `traits`, `context.traits`
 or `properties`.
 
