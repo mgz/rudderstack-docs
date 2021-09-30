@@ -9,7 +9,7 @@ const TestimonialFloating = props => {
   return (
     <div className=" max-w-6xl mx-4 md:mx-auto">
       <div className="item h5 font-weight-normal mx-auto pb-0 w-100 max-w-6xl justify-items-center bg-blueNew-cardBackground rounded-xl">
-        <div className="testimonial pb-12 w-100 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center relative pt-20 ">
+        <div className="testimonial pb-12 w-100 text-center d-flex flex-direction-column justify-content-center flex-wrap align-items-center relative pt-36 ">
           
           <div className="items-center flex justify-center -top-18 w-full absolute">
             <div className="usr_img mb-4">
