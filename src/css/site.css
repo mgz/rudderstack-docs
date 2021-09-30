@@ -1508,14 +1508,14 @@ a.pageRef {
   @apply block;
   @apply text-xl;
   @apply no-underline hover:no-underline !important;
-  @apply hover:text-blueNew-custom;
+  @apply hover:text-purpleNew-gigas;
   transition: color 0.25s ease;
 }
 .rightRefArrow {
   transition: color 0.25s ease;
 }
 a.pageRef:hover .rightRefArrow {
-  stroke: #0066ff;
+  stroke: rgb(78,59, 151);
 }
 .pageRefInner {
   @apply flex;
@@ -1523,7 +1523,7 @@ a.pageRef:hover .rightRefArrow {
   @apply items-center;
   @apply justify-self-stretch;
   @apply shadow-md;
-  @apply border border-grayColor-lightBorder hover:border-blueNew-custom;
+  @apply border border-grayColor-lightBorder hover:border-purpleNew-gigas;
   @apply rounded;
   transition: border 0.25s ease;
 }

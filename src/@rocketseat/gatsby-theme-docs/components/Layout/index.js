@@ -25,7 +25,7 @@ export default function Layout({
     disableTableOfContents === true || !headings || headings.length === 0
 
   useEffect(() => {
-    
+    /* console.log('Headings', headings); */
   }, [])
 
   function handleMenuOpen() {
@@ -124,7 +124,7 @@ export default function Layout({
             </div>
           </Children>
           <div
-            className={headings.length < 2 ? "hidden" : ""}
+            className={headings !== null && headings.length < 2 ? "hidden" : ""}
             css={css`
               @media (max-width: 1200px) {
                 display: none;
