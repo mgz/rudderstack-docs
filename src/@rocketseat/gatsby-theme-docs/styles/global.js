@@ -289,24 +289,28 @@ export default function GlobalStyle() {
           padding-top: 0.75rem;
           padding-bottom: 0.75rem;
           border-left-width: 4px;
+          line-height: 1.625;
         }
         .warningBlock {
-          background-color:#F5F7F9;
+          background-color:#F5F7F9 !important;
           padding-top: 0.75rem;
           padding-bottom: 0.75rem;
           border-left-width: 4px;
+          line-height: 1.625;
         }
         .dangerBlock {
           background-color:#F5F7F9;
           padding-top: 0.75rem;
           padding-bottom: 0.75rem;
           border-left-width: 4px;
+          line-height: 1.625;
         }
         .infoBlock{
           background-color:#F5F7F9;
           padding-top: 0.75rem;
           padding-bottom: 0.75rem;
           border-left-width: 4px;
+          line-height: 1.625;
         }
         .css-dl1tix-Children a {
           text-decoration: none;
