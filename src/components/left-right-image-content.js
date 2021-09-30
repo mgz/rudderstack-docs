@@ -170,14 +170,30 @@ const LeftRightImgCnt = props => {
                                   //     ? "w-1/2"
                                   //     : "w-full"
                                   // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
-                                  className={`my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+
+                                  //
+                                  className={`my-2  ${
+                                    props.applyGradientColorTheme
+                                      ? "text-white font-normal"
+                                      : "text-grayColor-custom font-bold"
+                                  }  text-xl flex flex-row`}
                                 >
                                   <div className="w-10 h-10 pt-1 px-2">
-                                    <StaticImage
-                                      src="../images/check-icon.svg"
-                                      alt="Check"
-                                      placeholder="tracedSVG"
-                                    />
+                                    {props.applyGradientColorTheme && (
+                                      <StaticImage
+                                        src="../images/check-light-icon.svg"
+                                        alt="Check"
+                                        placeholder="tracedSVG"
+                                      />
+                                    )}
+
+                                    {!props.applyGradientColorTheme && (
+                                      <StaticImage
+                                        src="../images/check-icon.svg"
+                                        alt="Check"
+                                        placeholder="tracedSVG"
+                                      />
+                                    )}
                                   </div>
                                   <p className="w-full">{row}</p>
                                 </div>
@@ -340,14 +356,28 @@ const LeftRightImgCnt = props => {
                                 //     ? "w-1/2"
                                 //     : "w-full"
                                 // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
-                                className={`my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+                                className={`my-2  ${
+                                  props.applyGradientColorTheme
+                                    ? "text-white font-normal"
+                                    : "text-grayColor-custom font-bold"
+                                }  text-xl flex flex-row`}
                               >
                                 <div className="w-10 h-10 pt-1 px-2">
-                                  <StaticImage
-                                    src="../images/check-icon.svg"
-                                    alt="Check"
-                                    placeholder="tracedSVG"
-                                  />
+                                  {props.applyGradientColorTheme && (
+                                    <StaticImage
+                                      src="../images/check-light-icon.svg"
+                                      alt="Check"
+                                      placeholder="tracedSVG"
+                                    />
+                                  )}
+
+                                  {!props.applyGradientColorTheme && (
+                                    <StaticImage
+                                      src="../images/check-icon.svg"
+                                      alt="Check"
+                                      placeholder="tracedSVG"
+                                    />
+                                  )}
                                 </div>
                                 <p className="w-full">{row}</p>
                               </div>
