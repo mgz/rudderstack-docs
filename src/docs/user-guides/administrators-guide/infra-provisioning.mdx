@@ -258,8 +258,7 @@ routerStorage = numEventsPerSec * numDests
 </BlockMath>
 
 <BlockMath>
-
-totalStoragePerHour = 3600 * \sum_{firstSource}^{lastSource} (gatewayStorage + routerStorage)
+totalStoragePerHour = 3600 * \sum_&#123;firstSource&#125;^&#123;lastSource&#125; (gatewayStorage + routerStorage)
 </BlockMath>
 
 In the above production example, after substituting the values, _totalStoragePerHour_ adds up to _**120 GB**_

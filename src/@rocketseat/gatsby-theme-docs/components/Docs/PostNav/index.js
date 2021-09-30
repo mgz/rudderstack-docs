@@ -8,12 +8,12 @@ import { Container, Post } from './styles';
 export default function Docs({ prev, next, current }) {
   let docsBasePath = '/docs';
   return (
-    <Container>
+    <Container className={current.title === "Home" || current.title === "FAQs" ? "single" : ''}>
       {prev && current.title !== "Home" && (
         <Post isLeft>
-          <Link to={docsBasePath + prev.link}>
+          <Link to={docsBasePath + prev.link} className="previous">
             <MdKeyboardArrowLeft className="postNavArrow" />
-            <div>
+            <div className="postNavText">
               <p>Prev</p>
               <h3>{prev.title}</h3>
             </div>
@@ -22,8 +22,8 @@ export default function Docs({ prev, next, current }) {
       )}
       {next && current.title !== "FAQs" && (
         <Post>
-          <Link to={docsBasePath + next.link}>
-            <div>
+          <Link to={docsBasePath + next.link} className="next">
+            <div className="postNavText nextText">
               <p>Next</p>
               <h3>{next.title}</h3>
             </div>
