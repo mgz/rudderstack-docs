@@ -24,6 +24,7 @@ export default function Docs({ mdx, pageContext }) {
 
   let docsBasePath = '/docs';
   let currentPageIndex = findIndex(postNavList, o => slug === docsBasePath + o.link);
+  let currentPageItem =  postNavList[currentPageIndex];
   let nextPageIndex = currentPageIndex + 1 === postNavList.length ? 0 : currentPageIndex + 1;
   let nextPageItem =  postNavList[nextPageIndex];
   let prevPageIndex = currentPageIndex - 1 < 0 ? postNavList.length - 1 : currentPageIndex - 1;
@@ -79,7 +80,7 @@ export default function Docs({ mdx, pageContext }) {
           repositoryEditUrl={repositoryEditUrl}
           repositoryProvider={repositoryProvider}
         />
-        <PostNav prev={prevPageItem} next={nextPageItem} />
+        <PostNav prev={prevPageItem} next={nextPageItem} current={currentPageItem} />
       </Layout>
     </>
   )

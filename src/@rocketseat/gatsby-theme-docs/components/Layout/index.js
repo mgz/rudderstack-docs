@@ -106,12 +106,18 @@ export default function Layout({
                 </svg>
               </span>
               {isTocOpen && (
+                <div class="mobTocWrapper">
+                  <div
+                  className={`tocOverlay ${isTocOpen ? "active" : "hidden"}`}
+                  onClick={() => setTocOpen(false)}
+                ></div>
                 <div className="mobTocMenu">
                   <TableOfContents
                     headings={headings}
                     disableTOC={disableTOC}
                     contentRef={contentRef}
                   />
+                </div>
                 </div>
               )}
               {children}
