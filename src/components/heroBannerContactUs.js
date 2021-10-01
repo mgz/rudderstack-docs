@@ -22,7 +22,7 @@ const HeroBannerContactUs = props => {
               {props.title}
             </h2>
             <div className="max-w-lg text-xl-2 frtxt-contnt text-grayColor-custom">
-              <PortableText blocks={props.content} />
+              <PortableText blocks={props.content} trackSectionHeader={props.title} />
             </div>
           </div>
           <div className=" w-full rounded-lg flex justify-center flex-grow justify-items-end sm:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">

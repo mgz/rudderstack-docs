@@ -9,8 +9,8 @@ import Link from "gatsby-link"
 import { StaticImage } from "gatsby-plugin-image"
 //import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"
 //import loadable from "@loadable/component";
+import {rudderslabTrackOnClick} from '../utils/common'
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
-
 const LottieAnim = React.lazy(() =>
   import("../animations/homepage-animation-v2")
 )
@@ -61,7 +61,7 @@ function Hero(props) {
           <h1 className="text-primary mb-8 md:my-4 text-5xl font-bold leading-tight">
             {props.herobannertitle}
           </h1>
-          <PortableText blocks={props.herobannercontent} />
+          <PortableText blocks={props.herobannercontent} trackSectionHeader={props.herobannertitle} />
           <div className="relative block sm:flex mt-12">
             {herobannerbutton.map((btn, i) => (
               <>
@@ -69,6 +69,7 @@ function Hero(props) {
                   if (btn.btnexternallink === true) {
                     return (
                       <a
+                        onClick={(e) => rudderslabTrackOnClick("button", props.herobannertitle, e)}
                         key={btn._key}
                         className={
                           (btn.btnhiglight === true
@@ -82,7 +83,11 @@ function Hero(props) {
                     )
                   } else {
                     return (
-                      <Link key={btn._key} to={btn.btnlink}>
+                      <Link
+                        key={btn._key}
+                        to={btn.btnlink}
+                        onClick={(e) => rudderslabTrackOnClick("button", props.herobannertitle, e)}
+                      >
                         <span
                           className={
                             (btn.btnhiglight === true

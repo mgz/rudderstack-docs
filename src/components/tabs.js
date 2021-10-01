@@ -56,7 +56,7 @@ const Tabs = props => {
                             className={openTab === i ? "block p-6" : "hidden"}
                             id={`link` + i}
                           >
-                            <PortableText blocks={tab.tabcontent} />
+                            <PortableText blocks={tab.tabcontent} trackSectionHeader={maintitle} />
                           </div>
                         </div>
                       </div>
@@ -78,7 +78,7 @@ const Tabs = props => {
                     id={`link` + i}
                   >
                     <h3>{tab.tabtitle}</h3>
-                    <PortableText blocks={tab.tabcontent} />
+                    <PortableText blocks={tab.tabcontent} trackSectionHeader={maintitle} />
                   </div>
                 ))}
               </div>

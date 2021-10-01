@@ -31,7 +31,7 @@ const RightSideHiglightedContent = (props) => {
                                                     <Image props={imgref} />
                                                     <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-tight">{title}</h3>
                                                     <div className="text-secondary text-sm md:text-lg leading-6	md:leading-7">
-                                                        <PortableText blocks={portabletext} />
+                                                        <PortableText blocks={portabletext} trackSectionHeader={maintitle} />
                                                     </div>
                                                 </div>
                                             </>
@@ -56,7 +56,7 @@ const RightSideHiglightedContent = (props) => {
                                                 <Image props={imgref} />
                                                 <h3 className="mt-8 mb-4 pb-0 text-2xl md:text-3xl text-white font-bold leading-tight">{title}</h3>
                                                 <div className="text-white text-sm md:text-lg leading-6 md:leading-7">
-                                                    <PortableText blocks={portabletext} />
+                                                    <PortableText blocks={portabletext} trackSectionHeader={title} />
                                                 </div>
                                                 <div className="lg:flex block mt-6">
                                                 {

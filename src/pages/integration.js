@@ -13,13 +13,14 @@ import IntegrationsHelpBox from "../components/Integrations-help"
 import ScrollUpButton from "react-scroll-up-button"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
+import { rudderslabTrackOnSearch } from "../utils/common"
 
 const Integration = props => {
   const searchClient = algoliasearch(
     process.env.GATSBY_ALGOLIA_APP_ID,
     process.env.GATSBY_ALGOLIA_SEARCH_APIKEY
   )
-  
+
   const lv_middlebannersection = props.data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
@@ -27,6 +28,10 @@ const Integration = props => {
   // const { data } = props
   const [searchedText, setSerchedText] = React.useState("")
   const [resultCount, setResultCount] = React.useState(0)
+
+  // React.useEffect(() => {
+  //   rudderslabTrackOnSearch(searchedText)
+  // }, [searchedText])
   return (
     <Layout>
       <Helmet>
@@ -68,7 +73,9 @@ const Integration = props => {
         <div className="xl:container px-3 pb-10 md:pb-40 mx-auto flex flex-wrap flex-col md:flex-row items-center">
           <InstantSearch
             searchClient={searchClient}
-            indexName={process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_integration"}
+            indexName={
+              process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_integration"
+            }
           >
             <div className="flex flex-wrap flex-col sm:flex-row w-full">
               <div className="mx-auto w-full lg:w-10/12 lg:px-10 md:px-6 ">
@@ -98,7 +105,11 @@ const Integration = props => {
                     <IntegrationsHelpBox />
                   </div>
                 </div>
-                <div className={`w-full smd:w-2/3 lg:w-3/4  md:px-6 sm:pl-3 pr-0 md:mt-24 ${resultCount === 0 ? 'mt-0' : 'mt-8'}`}>
+                <div
+                  className={`w-full smd:w-2/3 lg:w-3/4  md:px-6 sm:pl-3 pr-0 md:mt-24 ${
+                    resultCount === 0 ? "mt-0" : "mt-8"
+                  }`}
+                >
                   <div id="hits-container">
                     <div data-reactroot>
                       <IntegrationHits
@@ -136,7 +147,6 @@ const Integration = props => {
       <section id="footer_section_for_demo">
         <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
       </section>
-
     </Layout>
   )
 }

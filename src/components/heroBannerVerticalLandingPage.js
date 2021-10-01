@@ -2,6 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 import Link from "gatsby-link"
 import Image from "./image"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 function HeroBannerVerticalLanding(props) {
   const herobannerbutton = props.herobannerbutton
@@ -12,9 +13,9 @@ function HeroBannerVerticalLanding(props) {
           <h1 className="text-primary mb-8 md:my-4 text-5xl font-bold leading-tight">
             {props.herobannertitle}
           </h1>
-          <PortableText blocks={props.herobannercontent} />
+          <PortableText blocks={props.herobannercontent} trackSectionHeader={props.herobannertitle} />
           <div className="relative block sm:flex mt-12">
-            {herobannerbutton.map((btn, i) => (
+            {herobannerbutton.map((btn, i) => ( 
               <>
                 {(() => {
                   if (btn.btnexternallink === true) {
@@ -26,6 +27,13 @@ function HeroBannerVerticalLanding(props) {
                             ? "btn-primary-lg"
                             : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
                         }
+                        onClick={e =>
+                          rudderslabTrackOnClick(
+                            "button",
+                            props.herobannertitle,
+                            e
+                          )
+                        }
                         href={btn.btnlink}
                       >
                         {btn.btntext}
@@ -33,7 +41,17 @@ function HeroBannerVerticalLanding(props) {
                     )
                   } else {
                     return (
-                      <Link key={btn._key} to={btn.btnlink}>
+                      <Link
+                        key={btn._key}
+                        to={btn.btnlink}
+                        onClick={e =>
+                          rudderslabTrackOnClick(
+                            "button",
+                            props.herobannertitle,
+                            e
+                          )
+                        }
+                      >
                         <span
                           className={
                             (btn.btnhiglight === true

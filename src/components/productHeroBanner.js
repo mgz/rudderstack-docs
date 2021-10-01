@@ -1,7 +1,7 @@
 import React from "react"
 // import PortableText from "./portableText"
 import Link from "gatsby-link"
-
+import { rudderslabTrackOnClick } from "../utils/common"
 const ProductHeroBanner = props => {
   return (
     <section className="w-full product-page_banner  lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
@@ -26,6 +26,13 @@ const ProductHeroBanner = props => {
                       return (
                         <a
                           key={btn._key}
+                          onClick={e =>
+                            rudderslabTrackOnClick(
+                              "button",
+                              props.productbannerheader,
+                              e
+                            )
+                          }
                           className={
                             (btn.btnhiglight === true
                               ? "bg-blueNew-midnight text-white btn-primary-lg border-transparent hover:bg-white hover:text-blueNew-midnight"
@@ -48,7 +55,18 @@ const ProductHeroBanner = props => {
                             ` sm:mr-4 md:mb-0 mb-4`
                           }
                         >
-                          <Link to={btn.btnlink}>{btn.btntext}</Link>
+                          <Link
+                            onClick={e =>
+                              rudderslabTrackOnClick(
+                                "button",
+                                props.productbannerheader,
+                                e
+                              )
+                            }
+                            to={btn.btnlink}
+                          >
+                            {btn.btntext}
+                          </Link>
                         </span>
                       )
                     }

@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "./image"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const HeroBannerPricing = props => {
   // console.log("HeroBannerPricing", props)
@@ -75,6 +76,13 @@ const HeroBannerPricing = props => {
                                       : "btn-secondary-sm") +
                                     ` inline-block font-bold`
                                   }
+                                  onClick={e =>
+                                    rudderslabTrackOnClick(
+                                      "button",
+                                      item.title,
+                                      e
+                                    )
+                                  }
                                   href={item.button.btnlink}
                                 >
                                   {item.button.btntext}
@@ -82,7 +90,16 @@ const HeroBannerPricing = props => {
                               )
                             } else {
                               return (
-                                <Link to={item.button.btnlink}>
+                                <Link
+                                  onClick={e =>
+                                    rudderslabTrackOnClick(
+                                      "button",
+                                      item.title,
+                                      e
+                                    )
+                                  }
+                                  to={item.button.btnlink}
+                                >
                                   <span
                                     className={
                                       (item.button.btnhiglight === true
@@ -122,6 +139,13 @@ const HeroBannerPricing = props => {
                 if (extralink === true) {
                   return (
                     <a
+                      onClick={e =>
+                        rudderslabTrackOnClick(
+                          "link",
+                          props.herobannerfootersmalltitle,
+                          e
+                        )
+                      }
                       href={linkurl}
                       className={`font-bold leading-normal mx-auto text-sm ${
                         link_display_as_button ? "btn-primary-lg" : ""
@@ -149,14 +173,23 @@ const HeroBannerPricing = props => {
                           : ""
                       }`}
                     >
-                      <Link to={linkurl}>{linktext}</Link>
+                      <Link
+                        onClick={e =>
+                          rudderslabTrackOnClick(
+                            "link",
+                            props.herobannerfootersmalltitle,
+                            e
+                          )
+                        }
+                        to={linkurl}
+                      >
+                        {linktext}
+                      </Link>
                     </span>
                   )
                 }
               }
             })()}
-
-           
           </div>
         </div>
       </div>
