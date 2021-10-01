@@ -20,6 +20,8 @@ import Subscription from "../components/Subscription"
 import MiddleBanner from "../components/middle-banner"
 import SignupV1 from "../components/signup_v1"
 import clientConfig from "../../client-config"
+import { rudderslabTrackOnClick } from "../utils/common"
+
 // const Layout = loadable(() =>  import("../components/layout"))
 // const Herobanner = loadable(() =>  import("../components/herobanner"))
 // const PortableText = loadable(() =>  import("../components/portableText"))
@@ -46,7 +48,6 @@ const Singleblog = ({ data, location, ...props }) => {
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
-
 
   // console.log("data", data)
   return (
@@ -170,13 +171,32 @@ const Singleblog = ({ data, location, ...props }) => {
             <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center hover:text-blueNew-custom">
               <a
                 href={viewallpostslink}
+                onClick={e => rudderslabTrackOnClick("link", "Recent Posts", e)}
                 className="font-bold leading-normal text-sm lr-icon seeall-icon"
               >
                 {(() => {
                   if (viewexternallink === true) {
-                    return <a href={viewallpostslink}>{viewalltext}</a>
+                    return (
+                      <a
+                        onClick={e =>
+                          rudderslabTrackOnClick("link", "Recent Posts", e)
+                        }
+                        href={viewallpostslink}
+                      >
+                        {viewalltext}
+                      </a>
+                    )
                   } else {
-                    return <Link to={viewallpostslink}>{viewalltext}</Link>
+                    return (
+                      <Link
+                        onClick={e =>
+                          rudderslabTrackOnClick("link", "Recent Posts", e)
+                        }
+                        to={viewallpostslink}
+                      >
+                        {viewalltext}
+                      </Link>
+                    )
                   }
                 })()}
               </a>
@@ -214,7 +234,7 @@ export const query = graphql`
       id
       blog_category
       title
-      slug{
+      slug {
         current
       }
       meta_title

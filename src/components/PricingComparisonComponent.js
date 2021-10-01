@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react"
 import { StaticImage } from "gatsby-plugin-image"
 import Image from "./image"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
+
 
 const PricingComparisonComponent = props => {
   const [sticky, setSticky] = useState(true)
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, {passive: true})
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -224,6 +226,9 @@ const PricingComparisonComponent = props => {
                                 className="text-sm  leading-sm font-bold mt-3 lr-icon mx-auto"
                                 target="_blank"
                                 rel="noreferrer"
+                                onClick={e =>
+                                  rudderslabTrackOnClick("link", group.group, e)
+                                }
                               >
                                 Talk to sales
                               </Link>
@@ -337,6 +342,13 @@ const PricingComparisonComponent = props => {
                                     className="text-sm  leading-sm font-bold mt-3 lr-icon "
                                     target="_blank"
                                     rel="noreferrer"
+                                    onClick={e =>
+                                      rudderslabTrackOnClick(
+                                        "link",
+                                        group.group,
+                                        e
+                                      )
+                                    }
                                   >
                                     Talk to sales
                                   </Link>
