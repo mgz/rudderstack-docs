@@ -20,7 +20,7 @@ Before configuring Ometria as a destination in RudderStack, verify if the source
 
 <div class="infoBlock">
 
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://rudderstack.com/docs/get-started/rudderstack-connection-modes) guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the [**RudderStack connection modes**](https://rudderstack.com/docs/get-started/rudderstack-connection-modes/) guide.
 </div>
 
 Once you have confirmed that your source platform supports sending events to Ometria, follow these steps:
@@ -29,12 +29,15 @@ Once you have confirmed that your source platform supports sending events to Ome
 
 <div class="infoBlock">
 
-Follow our guide on [**Adding a Source and Destination in RudderStack**](https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack) for more information.
+Follow our guide on [**Adding a Source and Destination in RudderStack**](https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/) for more information.
 </div>
 
 * Assign a name to the destination and click on **Next**. You should then see the following screen:
 
-<img src="../../../images/assets/Ometria.png" /><span class="imageTitle">Ometria Connection Settings</span>
+<!--![Ometria Connection Settings](../../.gitbook/assets/Ometria.png)-->
+
+<img src="../../../images/assets/Ometria.png" alt="Ometria" />
+<span class="imageTitle">Ometria</span>
 
 ### Connection Settings
 
@@ -78,7 +81,7 @@ Note that `listingId` and `email` fields are the mandatory fields for the `ident
 
 <div class="infoBlock">
 
-For more information on the `identify` call, refer to the [**RudderStack Events Specification**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-spec/identify) guide.
+For more information on the `identify` call, refer to the [**RudderStack Events Specification**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-spec/identify/) guide.
 </div>
 
 You can set the values for the **Marketing Optin**, **Allow Marketing**, and **Allow Transactional** fields from RudderStack dashboard. You can also send these values using an `integrations` object in the `identify` event payload, **which will have higher precedence**. The SMS channel fields `dt_updated_marketing` and `dt_updated_transactional` can also be passed using this object.
@@ -201,6 +204,7 @@ The `track` call also lets you record order-related information like `order_id`,
 RudderStack will create a `customer` object with `userId`, `email`, `firstname` and `lastname` from `context.traits`.
 
 <div class="warningBlock">
+
 Note that `order_id`, `timestamp`, `grand_total` and `currency` are the mandatory fields for the `orders` event, while `userId` and `email` are required for `customer` object. You can pass `email` either via the `identify` call or the `track` call's properties.
 </div>
 

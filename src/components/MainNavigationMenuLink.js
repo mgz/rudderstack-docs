@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Image from "./image"
 import SanityLink from "./SanityLink"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const MainNavigationMenuLink = props => {
   const [onClickEvent, setOnClickEvent] = useState(false)
@@ -21,11 +22,14 @@ const MainNavigationMenuLink = props => {
         classes={`${
           onClickEvent == 1 ? `active` : ``
         } parent-menu block text-base lg:mr-4 xl:mr-10 font-custom font-normal  p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm`}
-        onclick={() =>
-          link._rawSubMenuSection !== null && window.innerWidth < 1024
+        onclick={(e) => {
+          if (link._rawSubMenuSection === null) {
+            rudderslabTrackOnClick("navigation", "Header Navigation", e)
+          }
+          return link._rawSubMenuSection !== null && window.innerWidth < 1024
             ? setOnClickEvent(!onClickEvent)
             : () => false
-        }
+        }}
       />
       {(() => {
         if (link._rawSubMenuSection !== null) {
@@ -87,6 +91,13 @@ const MainNavigationMenuLink = props => {
                                               submenu.menu_target_link
                                                 ? "_blank"
                                                 : "_self"
+                                            }
+                                            onClick={e =>
+                                              rudderslabTrackOnClick(
+                                                "navigation",
+                                                menuGroup.group_title,
+                                                e
+                                              )
                                             }
                                           >
                                             {submenu.sub_menu_item_title}

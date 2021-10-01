@@ -18,7 +18,7 @@ const CenteredAlignedTitleWithYoutube = props => {
           {props.title}
         </h3>
         <div className="mt-4 text-lg  leading-tight text-center text-grayColor-custom max-w-2xl px-4">
-          <PortableText blocks={props.content} />
+          <PortableText blocks={props.content} trackSectionHeader={props.title} />
         </div>
         <div className="relative w-full rounded-lg flex-grow justify-items-end px-4 md:px-12 py-4 sm:items-center lg:items-start lg:mb-0 max-w-5xl -bottom-20 md:-bottom-16 pr-12">
           <div className="iframe-container">
@@ -58,7 +58,7 @@ const CenteredAlignedTitleWithYoutube = props => {
                         {item.title}
                       </div>
                       <div className=" text-lg">
-                        <PortableText blocks={item.content} />
+                        <PortableText blocks={item.content} trackSectionHeader={props.footer_title} />
                       </div>
                     </div>
                   </div>

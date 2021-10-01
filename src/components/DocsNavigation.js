@@ -3,9 +3,6 @@ import RsLogo from "../images/rudderstack-logo-v2.svg"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
 import DocsSearchBox from "./DocsSearchBox"
-import { graphql, StaticQuery } from "gatsby"
-import { TempButton } from "./tempDataCheck"
-import tailwindConfig from "../../tailwind.config"
 import DocSearchContentWrapper from "./DocSearchContentWrapper"
 
 const searchClient = algoliasearch(
@@ -59,9 +56,6 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
                 Try for Free
               </a>
             </li>
-            {/* <li>
-              <TempButton />
-            </li> */}
           </ul>
         </nav>
         <div className="docsSearch" onClickCapture={() => setSearchOpen(true)}>

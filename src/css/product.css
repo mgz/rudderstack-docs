@@ -101,6 +101,12 @@
   .sm\:bg-hero-pattern {
     background-position: center;
   }
+
+.video-library-banner::before {
+  background-image: none;
+  
+}
+
 }
 @media (max-width: 1024px) {
   .product-video::before {

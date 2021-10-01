@@ -2,6 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 function IntegrationHero({ data }) {
   let renderButton = null
@@ -12,14 +13,23 @@ function IntegrationHero({ data }) {
     data.herocta.btntext !== ""
   ) {
     renderButton = (
-      <a href={data.herocta.btnlink} className="btn-primary-lg text-white">
+      <a
+        href={data.herocta.btnlink}
+        onClick={e => rudderslabTrackOnClick("button", data.herotitle, e)}
+        className="btn-primary-lg text-white"
+      >
         {data.herocta.btntext}
       </a>
     )
   } else if (data.herocta && data.herocta.btntext !== "") {
     renderButton = (
       <span className="btn-primary-lg text-white">
-        <Link to={data.herocta.btnlink}>{data.herocta.btntext}</Link>
+        <Link
+          onClick={e => rudderslabTrackOnClick("button", data.herotitle, e)}
+          to={data.herocta.btnlink}
+        >
+          {data.herocta.btntext}
+        </Link>
       </span>
     )
   }

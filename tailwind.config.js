@@ -6,7 +6,6 @@ module.exports = {
     letterSpacing: {
       "tight-2": "-.04em",
     },
-    
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -23,7 +22,7 @@ module.exports = {
         eastbay: "#3F3C7F",
         magenta: "#6e6ea4",
         midnight_sub: "#2e2e7c",
-        cardBackground:"#f5f9f9"
+        cardBackground: "#f5f9f9",
       },
       purpleNew: {
         custom: "#6e6ea4",
@@ -57,6 +56,10 @@ module.exports = {
       }
     },
     extend: {
+      inset: {
+        18: "4.5rem",
+        "-18": "-4.5rem",
+      },
       padding: {
         15: "3.75rem",
         19: "4.75rem",
@@ -64,9 +67,7 @@ module.exports = {
       width: {
         120: "30rem",
       },
-      // top: {
-      //   22: "88px",
-      // },
+
       colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",

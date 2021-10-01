@@ -2,6 +2,7 @@ import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const IntegrationGetMoreOutOf = ({ data }) => {
   let renderButton = null
@@ -12,14 +13,23 @@ const IntegrationGetMoreOutOf = ({ data }) => {
     data.freetextctc.btntext !== ""
   ) {
     renderButton = (
-      <a href={data.freetextctc.btnlink} className="btn-primary-lg text-white">
+      <a
+        href={data.freetextctc.btnlink}
+        className="btn-primary-lg text-white"
+        onClick={e => rudderslabTrackOnClick("button", data.freetexttitle, e)}
+      >
         {data.freetextctc.btntext}
       </a>
     )
   } else if (data.freetextctc && data.freetextctc.btntext !== "") {
     renderButton = (
       <span className="btn-primary-lg text-white">
-        <Link to={data.freetextctc.btnlink}>{data.freetextctc.btntext}</Link>
+        <Link
+          to={data.freetextctc.btnlink}
+          onClick={e => rudderslabTrackOnClick("button", data.freetexttitle, e)}
+        >
+          {data.freetextctc.btntext}
+        </Link>
       </span>
     )
   }
@@ -34,7 +44,7 @@ const IntegrationGetMoreOutOf = ({ data }) => {
           </div>
           <div className="sm:w-1/2 sm:p-6 sm:pl-0 sm:pt-0 sm:mt-6 md:pr-0">
             <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt arrow-list-items">
-              <PortableText blocks={data.freetextdescritpion} />
+              <PortableText blocks={data.freetextdescritpion} trackSectionHeader={data.freetexttitle} />
             </div>
 
             <div className="relative block sm:flex sm:mt-14 mt-16">
