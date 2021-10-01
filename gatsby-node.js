@@ -861,4 +861,37 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { slug: edge.node.slug },
     })
   })
+
+  //Be A Hero Pages pages
+  const l_BeAHeroPages = await graphql(`
+    {
+      allSanityBeAHeroPage {
+        edges {
+          node {
+            title
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (l_BeAHeroPages.errors) {
+    throw l_BeAHeroPages.errors
+  }
+
+  const beAHeroPages = l_BeAHeroPages.data.allSanityBeAHeroPage.edges || []
+  beAHeroPages.forEach((edge, index) => {
+    const path = `/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve(
+        "./src/templates/beAHeroPageContent.js"
+      ),
+      context: { slug: edge.node.slug.current },
+    })
+  })
 }

@@ -17,7 +17,7 @@ const FreeText = (props) => {
                     <div className="md:w-3/4 p-2 block xl:pr-32">
                         <h3 className="mb-6 text-4xl md:text-5xl text-primary font-bold leading-tight">{maintitle}</h3>
                         <div className="text-secondary text-lg leading-7 frtxt-contnt">
-                            <PortableText blocks={portabletext} />
+                            <PortableText blocks={portabletext} trackSectionHeader={maintitle} />
                         </div>
                         <div className="block md:flex mt-6">
                         {

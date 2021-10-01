@@ -11,10 +11,10 @@ import { connectHits } from "react-instantsearch-dom"
 import Integrationrowcontent from "./integrationrowcontent"
 
 const Hits = ({ hits, searchedText, onRecordCountChange }) => {
+  
   if (!hits.length) {
     return (
       <div
-        onRecordCountChange={onRecordCountChange(0)}
         className={`${
           searchedText !== "" ? "block" : "hidden"
         } bg-white filter-menu rounded-2xl py-8 px-6 justify-center text-xl-2 md:text-2xl-2 font-bold text-center mx-0 md:mx-12`}

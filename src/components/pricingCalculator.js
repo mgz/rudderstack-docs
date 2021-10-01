@@ -2,6 +2,7 @@ import React, { useState, Component } from "react"
 import Slider from "react-rangeslider"
 import Link from "gatsby-link"
 import "react-rangeslider/lib/index.css"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const PricingCalculator = props => {
   const [value, setValue] = useState(25)
@@ -72,12 +73,14 @@ const PricingCalculator = props => {
                     ) {
                       return (
                         <a
+                          onClick={e =>
+                            rudderslabTrackOnClick("button", props.title, e)
+                          }
                           className={
                             (props.less_then_full_range_button.btnhiglight ===
                             true
                               ? "btn-primary-sm"
-                              : "btn-secondary-sm") +
-                            ` inline-block leading-6`
+                              : "btn-secondary-sm") + ` inline-block leading-6`
                           }
                           href={props.less_then_full_range_button.btnlink}
                         >
@@ -86,7 +89,12 @@ const PricingCalculator = props => {
                       )
                     } else {
                       return (
-                        <Link to={props.less_then_full_range_button.btnlink}>
+                        <Link
+                          onClick={e =>
+                            rudderslabTrackOnClick("button", props.title, e)
+                          }
+                          to={props.less_then_full_range_button.btnlink}
+                        >
                           <span
                             className={
                               (props.less_then_full_range_button.btnhiglight ===
@@ -108,11 +116,13 @@ const PricingCalculator = props => {
                     if (props.full_range_button.btnexternallink === true) {
                       return (
                         <a
+                          onClick={e =>
+                            rudderslabTrackOnClick("button", props.title, e)
+                          }
                           className={
                             (props.full_range_button.btnhiglight === true
                               ? "btn-primary-sm"
-                              : "btn-secondary-sm") +
-                            ` inline-block leading-6`
+                              : "btn-secondary-sm") + ` inline-block leading-6`
                           }
                           href={props.full_range_button.btnlink}
                         >
@@ -121,7 +131,12 @@ const PricingCalculator = props => {
                       )
                     } else {
                       return (
-                        <Link to={props.full_range_button.btnlink}>
+                        <Link
+                          onClick={e =>
+                            rudderslabTrackOnClick("button", props.title, e)
+                          }
+                          to={props.full_range_button.btnlink}
+                        >
                           <span
                             className={
                               (props.full_range_button.btnhiglight === true

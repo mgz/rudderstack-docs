@@ -27,7 +27,7 @@ const LeftRightContentWithTitle = props => {
                   : ""
               } `}
             >
-              <PortableText blocks={props.left_content} />
+              <PortableText blocks={props.left_content} trackSectionHeader={props.section_title} />
             </div>
           </div>
           <div className="w-full md:w-1/2 flex flex-col pr-4 md:pr-20 mb-6 md:mb-0">
@@ -43,7 +43,7 @@ const LeftRightContentWithTitle = props => {
                   : ""
               }`}
             >
-              <PortableText blocks={props.right_content} />
+              <PortableText blocks={props.right_content} trackSectionHeader={props.section_title} />
             </div>
           </div>
         </div>

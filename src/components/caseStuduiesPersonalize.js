@@ -23,7 +23,7 @@ const CaseStuduiesPersonalize = props => {
                 >
                   <h4 className="text-3xl font-bold text-center my-6">{row.title}</h4>
                   <div className="text-secondary leading-7 text-sm sm:text-lg frtxt-contnt text-center -mb-8">
-                    <PortableText blocks={row.content} />
+                    <PortableText blocks={row.content} trackSectionHeader={row.title} />
                   </div>
                 </div>
               )
