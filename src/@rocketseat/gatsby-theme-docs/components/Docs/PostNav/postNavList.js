@@ -554,6 +554,12 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"quantummetric",
+   "title":"Quantum Metric",
+   "link":"/destinations/analytics/quantummetric/",
+   "content":[]
+},
+ {
    "key":"firebase",
    "title":"Firebase",
    "link":"/destinations/analytics/firebase/",

@@ -1553,6 +1553,9 @@ top: -60px;
   height: 1em;
   transform: translateY(-50%);
 }
+.successBlock p, .infoBlock p, .dangerBlock p, .warningBlock p{
+  @apply text-secondary !important;
+}
 
 .childrenWrapper {
   @apply relative;
@@ -1592,6 +1595,7 @@ a.pageRef {
   @apply text-xl;
   @apply no-underline hover:no-underline !important;
   @apply hover:text-purpleNew-gigas;
+  @apply font-semibold !important;
   transition: color 0.25s ease;
 }
 .rightRefArrow {

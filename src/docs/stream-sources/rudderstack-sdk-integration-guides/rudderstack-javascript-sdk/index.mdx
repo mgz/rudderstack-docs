@@ -107,7 +107,7 @@ The above code snippet does the following:
 
 ### 2.3. Alternative Installation
 
-Although we recommend using the [minified or non-minified snippet](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#2-1-minified-code) as mentioned above to use RudderStack SDK with your website, you can also use this [NPM module](https://www.npmjs.com/package/rudder-sdk-js) to package RudderStack directly into your project.
+Although we recommend using the [minified or non-minified snippet](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#2-1-minified-code) as mentioned above to use RudderStack SDK with your website, you can also use this [NPM module](https://www.npmjs.com/package/rudder-sdk-js) to package RudderStack directly into your project.
 
 To install, run the following command:
 
@@ -274,11 +274,11 @@ More information on the Load **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
 </li>
 </ul>
 </div>
@@ -321,7 +321,7 @@ rudderanalytics.load(WRITE_KEY, DATA_PLANE_URL, {
 });
 ```
 
-For more information, please check the [How to Filter Selective Destinations](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data) section.
+For more information, please check the [How to Filter Selective Destinations](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data) section.
 
 ## 3.2. Identify
 
@@ -352,7 +352,7 @@ rudderanalytics.identify(
 );
 ```
 
-In the above example, information such as the `userId` and `email` along with the [**contextual information**](https://docs.rudderstack.com/rudderstack-api/api-specification/rudderstack-spec/common-fields#javascript-sdk) is captured.
+In the above example, information such as the `userId` and `email` along with the [**contextual information**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-spec/common-fields#javascript-sdk) is captured.
 
 <div class="warningBlock">
 If you explicitly specify the IP address in the event, RudderStack will use that IP instead of capturing it in the backend. You can use this feature to anonymize your users' IP - e.g., by supplying an anonymous IP address.
@@ -382,7 +382,7 @@ originalTimestamp: ISO 8601 date string,
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
+| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
 | **`anonymousId`** | String | Overrides the current event **`anonymousId`** at the top level |
 | **`originalTimestamp`** | ISO 8601 date string | Overrides the current event **`originalTimestamp`** at the top level |
 | **`<other keys>: <value>`** | - | Merged with the event's contextual information |
@@ -409,11 +409,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
 </li>
 </ul>
 </div>
@@ -489,7 +489,7 @@ You can call the following method to parse the AMP Linker ID and set the **`anon
 setAnonymousId(null, "<version>*<checkSum>*<idName1>*<idValue1>*<idName2>*<idValue2>...")
 ```
 
-Here, the second parameter is the AMP Linker ID format in accordance with the [specified structure](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#format). For the links decorated with the [RudderStack Linker parameter](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/amp-analytics#amp-linker), the **`<idName1>`** value will be **`rs_amp_id`**.
+Here, the second parameter is the AMP Linker ID format in accordance with the [specified structure](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#format). For the links decorated with the [RudderStack Linker parameter](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/amp-analytics#amp-linker), the **`<idName1>`** value will be **`rs_amp_id`**.
 
 Calling the above method will parse the Linker ID and set the **`anonymousId`** as the value of the **`rs_amp_id`** key.
 
@@ -588,7 +588,7 @@ originalTimestamp: ISO 8601 date string,
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
+| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
 | **`anonymousId`** | String | Overrides the current event **`anonymousId`** at the top level |
 | **`originalTimestamp`** | ISO 8601 date string | Overrides the current event **`originalTimestamp`** at the top level |
 | **`<other keys>: <value>`** | - | Merged with the event's contextual information |
@@ -615,11 +615,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
 </li>
 </ul>
 </div>
@@ -672,7 +672,7 @@ originalTimestamp: ISO 8601 date string,
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
+| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
 | **`anonymousId`** | String | Overrides the current event **`anonymousId`** at the top level |
 | **`originalTimestamp`** | ISO 8601 date string | Overrides the current event **`originalTimestamp`** at the top level |
 | **`<other keys>: <value>`** | - | Merged with the event's contextual information |
@@ -699,11 +699,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
 </li>
 </ul>
 </div>
@@ -747,7 +747,7 @@ originalTimestamp: ISO 8601 date string,
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
+| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
 | **`anonymousId`** | String | Overrides the current event **`anonymousId`** at the top level |
 | **`originalTimestamp`** | ISO 8601 date string | Overrides the current event **`originalTimestamp`** at the top level |
 | **`<other keys>: <value>`** | - | Merged with the event's contextual information |
@@ -774,11 +774,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
 </li>
 </ul>
 </div>
@@ -823,7 +823,7 @@ originalTimestamp: ISO 8601 date string,
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
+| **`integrations: IntegrationOpts`** | - | Refer to **`IntegrationOpts`** below. More information can be found [here](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data). |
 | **`anonymousId`** | String | Overrides the current event **`anonymousId`** at the top level |
 | **`originalTimestamp`** | ISO 8601 date string | Overrides the current event **`originalTimestamp`** at the top level |
 | **`<other keys>: <value>`** | - | This info is merged with the event's contextual information |
@@ -850,11 +850,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
 </li>
 </ul>
 </div>
@@ -885,7 +885,7 @@ rudderanalytics.reset();
 
 ## 4. How to Filter Selective Destinations to Send Event Data
 
-RudderStack allows you to send your event data only to a few intended destinations by filtering out the rest. You can do so by passing an integrations object in the **options** parameter of the `identify()`, `page()`, and `track()` methods. Please refer to the [How to Filter Selective Destinations](https://docs.rudderstack.com/user-guides/how-to-guides/how-to-filter-selective-destinations) section.
+RudderStack allows you to send your event data only to a few intended destinations by filtering out the rest. You can do so by passing an integrations object in the **options** parameter of the `identify()`, `page()`, and `track()` methods. Please refer to the [How to Filter Selective Destinations](https://rudderstack.com/docs/user-guides/how-to-guides/how-to-filter-selective-destinations/) section.
 
 ### 4.1. Common Destination Names
 
@@ -948,12 +948,12 @@ Below shows some of the supported names that RudderStack can intake for each des
 
 <div class="infoBlock">
 
-**NOTE:** You can also refer to [this section](https://docs.rudderstack.com/user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention) for more information on the naming convention of the `destinations names`.
+**NOTE:** You can also refer to [this section](https://rudderstack.com/docs/user-guides/how-to-guides/how-to-filter-selective-destinations/#destination-naming-convention) for more information on the naming convention of the `destinations names`.
 </div>
 
 ### 4.2. Specifying Selective Destinations in the `load` Method
 
-You can also choose to load selective destinations by modifying the [`load`](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#3-1-load) method to take a third argument. You can pass an`integrations` object containing the destination names in the format specified [here](https://docs.rudderstack.com/user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention). RudderStack loads only those destinations that are marked as enabled with the boolean value `true` .
+You can also choose to load selective destinations by modifying the [`load`](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#31-load) method to take a third argument. You can pass an`integrations` object containing the destination names in the format specified [here](https://rudderstack.com/docs/user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention). RudderStack loads only those destinations that are marked as enabled with the boolean value `true` .
 
 A sample RudderStack load method with integration names passed as arguments will look like the following snippet:
 
@@ -967,7 +967,7 @@ Where `<destination_name>` is the name of the destination.
 
 <div class="infoBlock">
 
-Please refer to the section above for the common destinations names or refer to [this section](https://docs.rudderstack.com/user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention) for destination naming convention.
+Please refer to the section above for the common destinations names or refer to [this section](https://rudderstack.com/docs/user-guides/how-to-guides/how-to-filter-selective-destinations#destination-naming-convention) for destination naming convention.
 </div>
 
 An example of the `load` method is as shown:
@@ -1098,11 +1098,11 @@ This section provides solutions to some of the commonly faced issues while using
 
 ### Where do I get the Data Plane URL?
 
-For routing and processing the events to the RudderStack backend, a **Data Plane URL** is required. Refer to [**this section**](https://docs.rudderstack.com/get-started/installing-and-setting-up-rudderstack#what-is-a-data-plane-url-where-do-i-get-it) to get the Data Plane URL depending on your choice of setup.
+For routing and processing the events to the RudderStack backend, a **Data Plane URL** is required. Refer to [**this section**](https://rudderstack.com/docs/get-started/installing-and-setting-up-rudderstack/#what-is-a-data-plane-url-where-do-i-get-it) to get the Data Plane URL depending on your choice of setup.
 
 ### How to load `analytics.js` correctly?
 
-In order to load `analytics.js`, simply copy the minified or non-minified version of the code snippet provided in the [Installing the RudderStack JavaScript SDK](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#2-installing-the-rudderstack-javascript-sdk) section.
+In order to load `analytics.js`, simply copy the minified or non-minified version of the code snippet provided in the [Installing the RudderStack JavaScript SDK](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#2-installing-the-rudderstack-javascript-sdk) section.
 
 To check if it has loaded correctly, open the JavaScript console in your browser:
 
@@ -1117,7 +1117,7 @@ In the console, run `rudderanalytics`. If it returns an object as shown in the f
 {Integrations: Object, _integrations: Object, _readied: true, _timeout: 300, _user: n_}
 ```
 
-If it gives you an `undefined` error, you might want to verify if the setting up procedure was correctly followed. [Our Quick Start Guide](https://github.com/rudderlabs/rudder-sdk-js#how-to-use-the-rudderstack-javascript-sdk) may be able to help you get up and running.
+If it gives you an `undefined` error, you might want to verify if the setting up procedure was correctly followed. [Our Quick Start Guide](https://github.com/rudderlabs/rudder-sdk-js/#how-to-use-the-rudderstack-javascript-sdk) may be able to help you get up and running.
 
 ### **Should I disable ad-blockers on my browser?**
 
@@ -1146,7 +1146,7 @@ The size limit on requests is 32 KB per message.
 
 ### **Can I send the event data to specific destinations only?**
 
-Yes, you can. Refer to the [How to Filter Selective Destinations to Send Your Event Data](https://docs.rudderstack.com/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data) section above to see how to do this.
+Yes, you can. Refer to the [How to Filter Selective Destinations to Send Your Event Data](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data) section above to see how to do this.
 
 ### **What is an Anonymous ID and how to retrieve it?**
 
