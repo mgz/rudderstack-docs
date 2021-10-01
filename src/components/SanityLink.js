@@ -13,7 +13,7 @@ const SanityLink = props => {
         <a
           className={classes}
           rel="noopener noreferrer"
-          activeClassName={activeClasses}
+          // activeclassname={activeClasses}
           href={link.menu_item_link}
           target={link.menu_target_link ? "_blank" : "_self"}
           onClick={onclick}

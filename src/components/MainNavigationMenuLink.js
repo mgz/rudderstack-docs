@@ -53,6 +53,7 @@ const MainNavigationMenuLink = props => {
                     submenugroup.map((menuGroup, idx) => {
                       return (
                         <div
+                          key={idx}
                           className={`py-2 lg:py-6 ${
                             submenugroup.length - 1 === idx
                               ? ""

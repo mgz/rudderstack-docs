@@ -32,7 +32,7 @@ const ThreeCardsWithTitleLeftAligned = props => {
                       classes="w-full object-cover"
                     />
                   </div>
-                  <div class="text-3xl font-bold mb-6 mt-2 max-w-lg pr-0 md:pr-8 self-start">
+                  <div className="text-3xl font-bold mb-6 mt-2 max-w-lg pr-0 md:pr-8 self-start">
                     {item.title}
                   </div>
                   <div className=" text-lg">
