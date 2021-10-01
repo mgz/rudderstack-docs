@@ -8,24 +8,15 @@ description: Step-by-step guide to set up Lotame as a destination in RudderStack
 
 [Lotame](https://www.lotame.com/) is a popular data management and enrichment platform, used mainly for digital advertising. Its unique data solutions allow you to find new customers, improve engagement with them, and grow your revenue.
 
-RudderStack supports syncing Lotame's **BCP Pixel** and **DSP Pixel** through our `page` and `identify` call.
+RudderStack supports syncing Lotame's <strong>BCP Pixel</strong> and <strong>DSP Pixel</strong> through our `page` and `identify` call.
 
 <div class="infoBlock">
 
   <ul>
     <li>
-      
-      **BCP:** The BCP, or **
-        Behavior Collection Point
-      **, is a JavaScript snippet that is placed on a web page. It is responsible
-      for capturing the relevant user activity.
+      <strong>BCP:</strong>The BCP, or <strong>Behavior Collection Point</strong>, is a JavaScript snippet that is placed on a web page. It is responsible for capturing the relevant user activity.
     </li>
-    <li>
-      
-      **DSP:** The DSP, or **Demand-Side Platform**, allows
-      digital advertising inventory buyers to manage their ad exchange as well as
-      data exchange accounts through a single interface.
-    </li>
+    <li><strong>DSP:</strong> The DSP, or <strong>Demand-Side Platform</strong>, allows digital advertising inventory buyers to manage their ad exchange as well as data exchange accounts through a single interface.</li>
   </ul>
 </div>
 
@@ -256,7 +247,7 @@ RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 
 ## Identify
 
-For each `identify` call, RudderStack will sync the DSP Pixels provided by you in the **DSP URL Settings**, in the destination configuration settings**.** As DSP Pixels need to be synced for every user only once in 7 days, RudderStack will sync the DSP Pixels in every `identify` call and if the same user remains active after 7 days, it syncs the same DSP Pixels in subsequent `page` calls once in every 7 days.
+For each `identify` call, RudderStack will sync the DSP Pixels provided by you in the <strong>DSP URL Settings</strong>, in the destination configuration settings. As DSP Pixels need to be synced for every user only once in 7 days, RudderStack will sync the DSP Pixels in every `identify` call and if the same user remains active after 7 days, it syncs the same DSP Pixels in subsequent `page` calls once in every 7 days.
 
 A sample `identify` call is as shown in the code snippet below:
 
@@ -283,7 +274,7 @@ RudderStack will replace the `{{userId}}` expression with the `userId` provided 
 
 ## Page
 
-For each `page` call, RudderStack will load the BCP \***\*Pixels. A `page` call with a payload having `userId` triggers the syncing of DSP Pixels once in every **7 days\*\* too. So, a[`page`](https://rudderstack.com/docs/get-started/rudderstack-api-spec#page-payload) call serves the purpose of loading BCP Pixels and syncing DSP Pixels.
+For each `page` call, RudderStack will load the BCP **Pixels**. A `page` call with a payload having `userId` triggers the syncing of DSP Pixels once in every **7 days** too. So, a <a href="https://rudderstack.com/docs/get-started/rudderstack-api-spec#page-payload">page</a> call serves the purpose of loading BCP Pixels and syncing DSP Pixels.
 
 A sample `page` call is as shown:
 
@@ -293,7 +284,7 @@ rudderanalytics.page()
 
 ## Screen
 
-For each `screen` call, RudderStack will send `GET` requests for BCP \***\*Pixels. A `screen` call with a payload having `userId` triggers the syncing of DSP Pixels once in every **7 days\*\* too. So, a[`screen`](https://rudderstack.com/docs/get-started/rudderstack-api-spec#screen-payload) call serves the purpose of sending requests for BCP Pixels and syncing DSP Pixels.
+For each `screen` call, RudderStack will send `GET` requests for BCP Pixels. A `screen` call with a payload having `userId` triggers the syncing of DSP Pixels once in every **7 days** too. So, a[`screen`](https://rudderstack.com/docs/get-started/rudderstack-api-spec#screen-payload) call serves the purpose of sending requests for BCP Pixels and syncing DSP Pixels.
 
 A sample `screen` call is as shown:
 

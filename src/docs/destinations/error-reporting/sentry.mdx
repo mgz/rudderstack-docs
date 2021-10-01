@@ -19,6 +19,7 @@ Before configuring Sentry as a destination in RudderStack, verify if Sentry supp
 | **Cloud mode** | - | - | - |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 </div>
 
@@ -27,12 +28,13 @@ Once you have confirmed that the source platform supports sending events to Sent
 * From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. Then, select **Sentry** from the list of destinations.
 
 <div class="infoBlock">
+
 Follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> for more information.
 </div>
 
 * Assign a name to the destination and click on **Next**. You will then see the following screen:
 
-![Configuration Settings for Sentry](../../.gitbook/assets/sentry.png)
+<img src="../../../images/assets/sentry.png" /><span class="imageTitle">Configuration Settings for Sentry</span>
 
 ### Connection Settings
 
@@ -41,6 +43,7 @@ To successfully configure Sentry as a destination, configure the following setti
 * **Public DSN:** Enter the public DSN of your Sentry project here. **This is a mandatory field**.
 
 <div class="infoBlock">
+
 Refer to the <a href="#faq">FAQ</a> section below for more information on getting your public DSN.
 </div>
 
@@ -54,10 +57,12 @@ If you enter the value for the **Environment** field as a forward slash (<code c
 * **Set Release By Property:** This field helps you dynamically track the application version in Sentry. The property set here will be searched in the global window object. If found, RudderStack will use that particular version. Otherwise, the value set in the **Release** field will be used by default.
 
 <div class="infoBlock">
+
 Suppose you have set the **Set Release By Property** field to the value <code class="inline-code">new_custom_version</code> and RudderStack finds <code class="inline-code">window.new_custom_version=2.4.5</code> in the <code class="inline-code">window</code> object. In this case, RudderStack will send the value <code class="inline-code">2.4.5</code> as the app version to Sentry. Otherwise, it will look for the value input in the **Release** field and send it as the app version.
 </div>
 
 <div class="warningBlock">
+
 Sentry needs the <code class="inline-code">release</code> value for every single session. If neither **Set Release By Property** or **Release fields** are specified in the dashboard while configuring the destination, the particular session will be discarded.
 </div>
 
@@ -79,10 +84,12 @@ A sample configuration looks like the following:
 When an `identify` call is made, RudderStack calls [**`Sentry.setUser`**](https://docs.sentry.io/platforms/javascript/enriching-events/identify-user/) by passing the user traits.
 
 <div class="infoBlock">
+
 RudderStack discards the <code class="inline-code">identify</code> call if none of the <code class="inline-code">userId</code>, <code class="inline-code">userName</code>, <code class="inline-code">email</code>, or <code class="inline-code">ip_address</code> is present. Atleast one of these four fields is needed to capture the user information. For more information, refer to the <a href="https://docs.sentry.io/platforms/javascript/enriching-events/identify-user/">Sentry documentation</a>.
 </div>
 
 <div class="infoBlock">
+
 RudderStack maps <code class="inline-code">userId</code> to <code class="inline-code">id</code> while setting the user in Sentry.
 </div>
 
