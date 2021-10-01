@@ -170,6 +170,7 @@ For the minified version of the above script please refer to the <a href="../../
   <TabList>
     <Tab>Android</Tab>
     <Tab>iOS</Tab>
+    <Tab>JavaScript</Tab>
   </TabList>
     <TabPanels>
       <TabPanel>
@@ -226,6 +227,42 @@ RudderClient rudderClient = RudderClient.getInstance(
   You can use the rest of your code as is, as RudderStack SDK is API-compatible
   with Segment.
 </div>
+      </TabPanel>
+      <TabPanel>
+<ul>
+<li>Change the dependencies in the <code class="inline-code">Podfile</code> of your project:
+
+```ruby
+pod 'Rudder'
+```
+</li>
+<li>Update your SDK initialization to the following:
+
+```objectivec
+RudderConfigBuilder *builder = [[RudderConfigBuilder alloc]init];
+[builder withDataPlaneUrl:<DATA_PLANE_URL>];
+[RudderClient getInstance:<WRITE_KEY> config:[builder build]];
+```
+
+<div class="infoBlock">
+The instance of the <code class="inline-code">RudderClient</code> is available at <code class="inline-code">[RudderClient sharedInstance]</code> whereas Segment Instance is available at <code class="inline-code">[Analytics sharedAnalytics]</code>
+
+</div>
+</li>
+<li>Update the imports from <code class="inline-code">Analytics.h</code> to <code class="inline-code">Rudder.h</code> wherever necessary</li>
+<li>Update the use of the classes according to the table below:
+
+| Segment     | RudderStack      |
+| :---------- | :--------------- |
+| `Analytics` | `RudderClient`   |
+| `Traits`    | `RudderTraits`   |
+| `Property`  | `RudderProperty` |
+</li>
+</ul>
+<div class="successBlock">
+  You can use the rest of your code as is, as RudderStack SDK is API compatible
+  with Segment
+</div>        
       </TabPanel>
       <TabPanel>
 <ul>

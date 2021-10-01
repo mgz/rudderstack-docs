@@ -8,6 +8,7 @@ import slug from "@rocketseat/gatsby-theme-docs/src/util/slug"
 
 import { Wrapper, Container } from "./styles"
 import tailwindConfig, { theme } from "../../../../../../tailwind.config"
+import { find, uniqBy, includes, findIndex } from "lodash-es"
 
 export default function TableOfContents({ headings, disableTOC, contentRef }) {
   const { y } = useWindowScroll()
@@ -16,6 +17,11 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
   const [offsets, setOffsets] = useState([])
 
   const isMobile = width <= 1200
+
+  /* const generateId = (str,i) => {
+    let tempArr = headings.filter(heading => heading.depth === 2 || heading.depth === 3);
+    console.log('Dupe',find(tempArr, o => o.value === str));
+  } */
 
   useEffect(() => {
     if (!isMobile || disableTOC) {
@@ -36,6 +42,9 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
             .filter(Boolean)
       )
     }
+
+    
+
   }, [width, height, contentRef, isMobile, disableTOC])
 
   const activeHeading = useMemo(() => {
@@ -96,8 +105,9 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
             <ul>
               {headings
                 .filter(heading => heading.depth === 2 || heading.depth === 3)
-                .map(heading => {
-                  const headingSlug = slug(heading.value)
+                .map((heading, i) => {
+                  const headingSlug = slug(heading.value);
+                  /* generateId(heading.value); */
 
                   return (
                     <li
