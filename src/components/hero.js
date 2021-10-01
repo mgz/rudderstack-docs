@@ -1,10 +1,10 @@
-import React, { useEffect, createRef, useState, Suspense } from "react"
+import React, { useEffect,  useState, Suspense } from "react"
 import PortableText from "./portableText"
 //import Image from "./image"
 import Link from "gatsby-link"
 //import lottie from "lottie-web"
 //import heroAnimation from "../animations/Homepage-Hero-Image2.json"
-import { Helmet } from "react-helmet"
+
 /* import { withPrefix } from "gatsby" */
 import { StaticImage } from "gatsby-plugin-image"
 //import { HERO_ANIMATION_JSON } from "../animations/homepage-animation-v2"

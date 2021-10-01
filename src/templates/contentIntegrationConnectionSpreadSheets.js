@@ -1,12 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-// import PortableText from "./portableText"
-import Link from "gatsby-link"
 import Layout from "../components/layout"
-import HeroBannerIntegrationConnection from "../components/heroBannerIntegrationConnection"
 import { StaticImage } from "gatsby-plugin-image"
-import { propTypes } from "@sanity/block-content-to-react"
 
 const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
   return (

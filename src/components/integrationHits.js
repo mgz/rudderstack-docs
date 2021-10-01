@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import { propTypes } from "@sanity/block-content-to-react"
+
 import React from "react"
 import { connectHits } from "react-instantsearch-dom"
 import Integrationrowcontent from "./integrationrowcontent"

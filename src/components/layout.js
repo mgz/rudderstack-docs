@@ -13,8 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
 
 import { useStaticQuery, graphql } from "gatsby"
-import { Helmet } from "react-helmet"
-import { withPrefix } from "gatsby"
+// import { Helmet } from "react-helmet"
+// import { withPrefix } from "gatsby"
 
 import MainNavigation from "../components/main-navigation"
 import FooterNav from "../components/footer-nav"

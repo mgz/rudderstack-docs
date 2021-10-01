@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Image from "./image"
 import SanityLink from "./SanityLink"
 
@@ -19,7 +19,7 @@ const MainNavigationMenuLink = props => {
         link={link}
         menuIndex={i}
         classes={`${
-          onClickEvent == 1 ? `active` : ``
+          onClickEvent === 1 ? `active` : ``
         } parent-menu block text-base lg:mr-4 xl:mr-10 font-custom font-normal  p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm`}
         onclick={() =>
           link._rawSubMenuSection !== null && window.innerWidth < 1024
@@ -37,7 +37,7 @@ const MainNavigationMenuLink = props => {
                   i >= 4 ? "lg:left-80 xl:left-96" : ""
                 }
                bg-whiteColor-custom lg:place-items-left ${
-                 onClickEvent == 1 ? `flex` : `flex hidden`
+                 onClickEvent === 1 ? `flex` : `flex hidden`
                }
                overflow-y-auto lg:overflow-hidden h-80 lg:h-64
              `}

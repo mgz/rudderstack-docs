@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import {
   Highlight,
-  connectMenu,
+  
   connectRefinementList,
 } from "react-instantsearch-dom"
 //import { graphql } from "gatsby"

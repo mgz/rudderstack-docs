@@ -1,4 +1,4 @@
-import React, { useEffect, createRef, useState, Suspense } from "react"
+import React from "react"
 import PortableText from "./portableText"
 import Link from "gatsby-link"
 import Image from "./image"

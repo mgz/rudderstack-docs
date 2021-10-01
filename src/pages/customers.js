@@ -8,7 +8,7 @@ import CustomSearchBox from "../components/customSearchBox"
 import CaseStudiesMenu from "../components/caseStudiesCategoryList"
 import SingleRowContentCaseStudy from "../components/singleRowContentCaseStrudy"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
-import CustomHits from "../components/customHits"
+// import CustomHits from "../components/customHits"
 import CustomCaseStudiesHits from "../components/customCaseStudiesHits"
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"

@@ -1,4 +1,3 @@
-import { propTypes } from "@sanity/block-content-to-react"
 import React, { useState } from "react"
 
 const DemoForm = props => {

@@ -6,13 +6,13 @@ import CustomSearchBox from "../components/customSearchBox"
 import VideoLibraryMenu from "../components/videoLibraryCategoryList"
 import { Helmet } from "react-helmet"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
-import CustomHits from "../components/customHits"
+// import CustomHits from "../components/customHits"
 import CustomVideoLibraryHits from "../components/customHitsVideoLibrary"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-/* import "../lib/font-awesome" */
-import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp"
-import Subscription from "../components/Subscription"
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// /* import "../lib/font-awesome" */
+// import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp"
+// import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
 import SingleRowContentVideoLibrary from "../components/singleRowContentVideoLibrary"
@@ -30,7 +30,7 @@ const VideoLibraryPage = ({ data }) => {
   )
   // const { data } = props
   // const pageInfo = data.allSanityBlog.pageInfo
-  const [selectedPageNo, setSelectedPageNo] = useState(1)
+  // const [selectedPageNo, setSelectedPageNo] = useState(1)
   const [currentRefineText, setCurrentRefineText] = useState("")
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
   const [category, setCategory] = useQueryParam("category", StringParam)

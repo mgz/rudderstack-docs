@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React  from "react"
 import { Helmet } from "react-helmet"
-import { graphql, Link, navigate } from "gatsby"
-import loadable from "@loadable/component"
+import { graphql } from "gatsby"
+
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
-import DemoForm from "../components/demoForm"
 import DemoAdvantageItem from "../components/demoAdvantageItem"
 import PortableText from "../components/portableText"
 import OurLogo from "../components/ourlogo"
@@ -102,113 +100,113 @@ const Demo = ({ data, htmlId, location }) => {
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
-  const [isLoading, setIsLoading] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
 
-  const onDemoFormSubmit = data => {
-    // console.log('on demo submit',data)
-    try {
-      if (!window.rudderanalytics) {
-        return
-      }
-      setIsLoading(true)
+  // const onDemoFormSubmit = data => {
+  //   // console.log('on demo submit',data)
+  //   try {
+  //     if (!window.rudderanalytics) {
+  //       return
+  //     }
+  //     setIsLoading(true)
 
-      var params = new URLSearchParams(document.location.search.substring(1))
+  //     var params = new URLSearchParams(document.location.search.substring(1))
 
-      window.rudderanalytics.identify(
-        data.email,
-        {
-          email: data.email,
-          firstName: data.firstName,
-          jobTitle: data.jobTitle,
-          company: data.company,
-          form_id: data.formId,
-          conversion_page: document.title,
-          utm_source: params.get("utm_source"),
-          utm_medium: params.get("utm_medium"),
-          utm_campaign: params.get("utm_campaign"),
-          utm_content: params.get("utm_content"),
-          utm_term: params.get("utm_term"),
-          raid: params.get("raid"),
-          test_user: params.get("test_user"),
-        },
-        {
-          integrations: {
-            Salesforce: true,
-          },
-        }
-      )
-      // console.log("step2")
+  //     window.rudderanalytics.identify(
+  //       data.email,
+  //       {
+  //         email: data.email,
+  //         firstName: data.firstName,
+  //         jobTitle: data.jobTitle,
+  //         company: data.company,
+  //         form_id: data.formId,
+  //         conversion_page: document.title,
+  //         utm_source: params.get("utm_source"),
+  //         utm_medium: params.get("utm_medium"),
+  //         utm_campaign: params.get("utm_campaign"),
+  //         utm_content: params.get("utm_content"),
+  //         utm_term: params.get("utm_term"),
+  //         raid: params.get("raid"),
+  //         test_user: params.get("test_user"),
+  //       },
+  //       {
+  //         integrations: {
+  //           Salesforce: true,
+  //         },
+  //       }
+  //     )
+  //     // console.log("step2")
 
-      window.rudderanalytics.track(
-        "form_submit",
-        {
-          page: document.title,
-          page_URL: window.location.href,
-          form_id: data.formId,
-          label: data.formId,
-          category: data.sectionId,
-          conversion_page: document.title,
-          utm_source: params.get("utm_source"),
-          utm_medium: params.get("utm_medium"),
-          utm_campaign: params.get("utm_campaign"),
-          utm_content: params.get("utm_content"),
-          utm_term: params.get("utm_term"),
-          raid: params.get("raid"),
-          test_user: params.get("test_user"),
-        },
-        {
-          traits: {
-            email: data.email,
-            firstName: data.firstName,
-            jobTitle: data.jobTitle,
-            company: data.company,
-            form_id: data.formId,
-            conversion_page: document.title,
-          },
-        }
-      )
-      // console.log("step3")
-      fetch("https://usebasin.com/f/73ab69b8652a.json", {
-        method: "post",
-        body: JSON.stringify({
-          "First-Name": data.firstName,
-          Email: data.email,
-          Company: data.company,
-          "Job-Title": data.jobTitle,
-          form_id: data.formId,
-          utm_source: params.get("utm_source"),
-          utm_medium: params.get("utm_medium"),
-          utm_campaign: params.get("utm_campaign"),
-          utm_content: params.get("utm_content"),
-          utm_term: params.get("utm_term"),
-          raid: params.get("raid"),
-          test_user: params.get("test_user"),
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then(res => {
-          // console.log('usebasin',res)
-          if (res.ok || res.statusText === "OK") {
-            // console.log("success ", res)
-            // window.ChiliPiper.scheduling(
-            //   "rudderstack",
-            //   "demo-or-quote-request",
-            //   { formId: data.formId }
-            // )
-            // navigate("/request-demo/thank-you")
-          }
-        })
-        .catch(err => {
-          throw err
-        })
-    } catch (err) {
-      console.log("errror exception", err)
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  //     window.rudderanalytics.track(
+  //       "form_submit",
+  //       {
+  //         page: document.title,
+  //         page_URL: window.location.href,
+  //         form_id: data.formId,
+  //         label: data.formId,
+  //         category: data.sectionId,
+  //         conversion_page: document.title,
+  //         utm_source: params.get("utm_source"),
+  //         utm_medium: params.get("utm_medium"),
+  //         utm_campaign: params.get("utm_campaign"),
+  //         utm_content: params.get("utm_content"),
+  //         utm_term: params.get("utm_term"),
+  //         raid: params.get("raid"),
+  //         test_user: params.get("test_user"),
+  //       },
+  //       {
+  //         traits: {
+  //           email: data.email,
+  //           firstName: data.firstName,
+  //           jobTitle: data.jobTitle,
+  //           company: data.company,
+  //           form_id: data.formId,
+  //           conversion_page: document.title,
+  //         },
+  //       }
+  //     )
+  //     // console.log("step3")
+  //     fetch("https://usebasin.com/f/73ab69b8652a.json", {
+  //       method: "post",
+  //       body: JSON.stringify({
+  //         "First-Name": data.firstName,
+  //         Email: data.email,
+  //         Company: data.company,
+  //         "Job-Title": data.jobTitle,
+  //         form_id: data.formId,
+  //         utm_source: params.get("utm_source"),
+  //         utm_medium: params.get("utm_medium"),
+  //         utm_campaign: params.get("utm_campaign"),
+  //         utm_content: params.get("utm_content"),
+  //         utm_term: params.get("utm_term"),
+  //         raid: params.get("raid"),
+  //         test_user: params.get("test_user"),
+  //       }),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     })
+  //       .then(res => {
+  //         // console.log('usebasin',res)
+  //         if (res.ok || res.statusText === "OK") {
+  //           // console.log("success ", res)
+  //           // window.ChiliPiper.scheduling(
+  //           //   "rudderstack",
+  //           //   "demo-or-quote-request",
+  //           //   { formId: data.formId }
+  //           // )
+  //           // navigate("/request-demo/thank-you")
+  //         }
+  //       })
+  //       .catch(err => {
+  //         throw err
+  //       })
+  //   } catch (err) {
+  //     console.log("errror exception", err)
+  //   } finally {
+  //     setIsLoading(false)
+  //   }
+  // }
 
   // console.log("sss", location)
   return (

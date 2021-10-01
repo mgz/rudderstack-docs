@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React  from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Link from "gatsby-link"
-import loadable from "@loadable/component"
+// import loadable from "@loadable/component"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
@@ -32,7 +32,7 @@ import clientConfig from "../../client-config"
 const Singleblog = ({ data, location, ...props }) => {
   const blog = data.blog
   const blogAuthors = data.blog.blog_authors
-  const maintitle = props.maintitle
+  // const maintitle = props.maintitle
   const viewalltext = "See all posts"
   const viewallpostslink = "https://rudderstack.com/blog/"
   const viewexternallink = false

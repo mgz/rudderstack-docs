@@ -1,13 +1,13 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { format } from "date-fns"
+
 import Link from "gatsby-link"
 import { useLocation } from '@reach/router';
 
-const categories = {
-  technical: "Technical",
-  industry_insights: "Industry Insights",
-}
+// const categories = {
+//   technical: "Technical",
+//   industry_insights: "Industry Insights",
+// }
 
 const BlogModule = () => {
   const data = useStaticQuery(graphql`
@@ -38,7 +38,7 @@ const BlogModule = () => {
       }
     }
   `)
-  const location = useLocation();
+  // const location = useLocation();
   const latestblogs = data.allSanityBlog.edges
 
   return (

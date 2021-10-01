@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import PortableText from "./portableText"
-import Image from "./image"
+
 
 const CenteredAlignedTitleWithYoutube = props => {
   useEffect(() => {

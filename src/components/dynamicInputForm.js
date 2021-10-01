@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { navigate, useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import { library } from "@fortawesome/fontawesome-svg-core"
