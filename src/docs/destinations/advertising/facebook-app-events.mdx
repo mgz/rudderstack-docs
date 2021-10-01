@@ -56,11 +56,7 @@ The following options are applicable if you are using the Device mode to send yo
 
 <div class="successBlock">
 
-  For more information on this option, refer to the
-  <a href="../../destinations/advertising/facebook-app-events#limited-data-use">
-    Limited Data Use
-  </a>
-  section below.
+  For more information on this option, refer to the <a href="../../destinations/advertising/facebook-app-events#limited-data-use">Limited Data Use</a> section below.
 </div>
 
 - Click on **Next** to complete the configuration.
@@ -90,7 +86,7 @@ pod 'Rudder-Facebook'
 
 - Send the user's consent to App Events as shown below:
 
-  - For **Objective-C**:
+  - For <strong>Objective-C</strong>:
 
   ```objectivec
   // Set AdvertiserTrackingEnabled to YES if a user provides consent
@@ -99,7 +95,7 @@ pod 'Rudder-Facebook'
   [FBSDKSettings setAdvertiserTrackingEnabled:NO];
   ```
 
-  - For **Swift**:
+  - For <strong>Swift</strong>:
 
   ```swift
   // Set AdvertiserTrackingEnabled to true if a user provides consent
@@ -231,7 +227,7 @@ pod 'Rudder-Facebook'
 </li>
 <li>Send the user's consent to App Events as shown below:
   <ul>
-  <li>For **Objective-C**:
+  <li>For <strong>Objective-C</strong>:
 <span>
 
 ```objectivec
@@ -242,7 +238,7 @@ pod 'Rudder-Facebook'
 ```
 </span>
   </li>
-  <li>For **Swift**:
+  <li>For <strong>Swift</strong>:
 <span>
 
 ```swift
@@ -446,8 +442,7 @@ To use this feature, simply enable the **Limited Data Use** setting on the Rudde
 
 <div class="successBlock">
 
-  Learn more about the different data processing options accepted by Facebook
-  <a href="https://developers.facebook.com/docs/marketing-apis/data-processing-options">here</a>.
+  Learn more about the different data processing options accepted by Facebook <a href="https://developers.facebook.com/docs/marketing-apis/data-processing-options">here</a>.
 </div>
 
 ## Configuring Facebook App Events SDK Based on User Consent
@@ -468,13 +463,13 @@ This section highlights the different consent-based options for configuring the 
 
 - In some cases, you can delay the collection of automatically logged events to obtain user consent or fulfill legal obligations instead of disabling it entirely. To do so, call the `setAutoLogAppEventsEnabled` method of the `FBSDKSettings` class to re-enable auto-logging after the end-user provides the required consent.
 
-  - In **Objective-C**:
+  In <strong>Objective-C</strong>:
 
     ```objectivec
     [FBSDKSettings setAutoLogAppEventsEnabled:YES];
     ```
 
-  - In **Swift**:
+  - In <strong>Swift</strong>:
 
     ```swift
     FBSDKSettings.setAutoLogAppEventsEnabled(true)
@@ -482,13 +477,13 @@ This section highlights the different consent-based options for configuring the 
 
 - To suspend event collection for any reason, set the `setAutoLogAppEventsEnabled` method to `NO` for iOS or `false` for Swift, as shown:
 
-  - In **Objective-C**:
+  - In <strong>Objective-C</strong>:
 
     ```objectivec
     [FBSDKSettings setAutoLogAppEventsEnabled:NO];
     ```
 
-  - In **Swift**:
+  - In <strong>Swift</strong>:
 
         ```swift
         FBSDKSettings.setAutoLogAppEventsEnabled(false)
@@ -543,7 +538,7 @@ setAutoLogAppEventsEnabled(false);
 </li>
 <li>In some cases, you can delay the collection of automatically logged events to obtain user consent or fulfill legal obligations instead of disabling it entirely. To do so, call the <code class="inline-code">setAutoLogAppEventsEnabled</code> method of the <code class="inline-code">FBSDKSettings</code> class to re-enable auto-logging after the end-user provides the required consent.
   <ul>
-  <li>In **Objective-C**:
+  <li>In <strong>Objective-C</strong>:
 <span>
 
 ```objectivec
@@ -551,7 +546,7 @@ setAutoLogAppEventsEnabled(false);
 ```
 </span>
   </li>
-  <li>In **Swift**:
+  <li>In <strong>Swift</strong>:
 <span>
 
 ```swift
@@ -563,7 +558,7 @@ FBSDKSettings.setAutoLogAppEventsEnabled(true)
 </li>
 <li>To suspend event collection for any reason, set the <code class="inline-code">setAutoLogAppEventsEnabled</code> method to <code class="inline-code">NO</code> for iOS or <code class="inline-code">false</code> for Swift, as shown:
   <ul>
-  <li>In **Objective-C**:
+  <li>In <strong>Objective-C</strong>:
 <span>
 
 ```objectivec
@@ -571,7 +566,7 @@ FBSDKSettings.setAutoLogAppEventsEnabled(true)
 ```
 </span>
   </li>
-  <li>In **Swift**:
+  <li>In <strong>Swift</strong>:
 <span>
 
 ```swift
@@ -633,13 +628,13 @@ setAutoLogAppEventsEnabled(false);
 
 - In some cases, you can delay the collection of `advertiser_id` to obtain the user consent or fulfill any legal obligations instead of disabling it entirely. To do so, call the `setAdvertiserIDCollectionEnabled` method of the `FBSDKSettings` class and set it to `YES` for iOS, or `true` for Swift after the end-user provides consent, as shown:
 
-  - In **Objective-C**:
+  - In <strong>Objective-C</strong>:
 
     ```objectivec
     [FBSDKSettings setAdvertiserIDCollectionEnabled:@YES];
     ```
 
-  - In **Swift**:
+  - In <strong>Swift</strong>:
 
     ```swift
     FBSDKSettings.setAdvertiserIDCollectionEnabled(true);
@@ -647,13 +642,13 @@ setAutoLogAppEventsEnabled(false);
 
 - To suspend collection for any reason, set the `setAdvertiserIDCollectionEnabled` method to `NO` for iOS or `false` for Swift.
 
-  - In **Objective-C**:
+  - In <strong>Objective-C</strong>:
 
     ```objectivec
     [FBSDKSettings setAdvertiserIDCollectionEnabled:@NO];
     ```
 
-  - In **Swift**:
+  - In <strong>Swift</strong>:
 
         ```swift
         FBSDKSettings.setAdvertiserIDCollectionEnabled(false)
@@ -708,7 +703,7 @@ setAdvertiserIDCollectionEnabled(false)
 </li>
 <li>In some cases, you can delay the collection of <code class="inline-code">advertiser_id</code> to obtain the user consent or fulfill any legal obligations instead of disabling it entirely. To do so, call the <code class="inline-code">setAdvertiserIDCollectionEnabled</code> method of the <code class="inline-code">FBSDKSettings</code> class and set it to <code class="inline-code">YES</code> for iOS, or <code class="inline-code">true</code> for Swift after the end-user provides consent, as shown:
   <ul>
-  <li>In **Objective-C**:
+  <li>In <strong>Objective-C</strong>:
 <span>
 
 ```objectivec
@@ -717,7 +712,7 @@ setAdvertiserIDCollectionEnabled(false)
 </span>
   </li>  
 
-  <li>In **Swift**:
+  <li>In <strong>Swift</strong>:
 <span>
 
 ```swift
@@ -729,7 +724,7 @@ FBSDKSettings.setAdvertiserIDCollectionEnabled(true);
 </li>
 <li>To suspend collection for any reason, set the <code class="inline-code">setAdvertiserIDCollectionEnabled</code> method to <code class="inline-code">NO</code> for iOS or <code class="inline-code">false</code> for Swift.
   <ul>
-  <li>In **Objective-C**:
+  <li>In <strong>Objective-C</strong>:
 <span>
 
 ```objectivec
@@ -737,7 +732,7 @@ FBSDKSettings.setAdvertiserIDCollectionEnabled(true);
 ```
 </span>
   </li>
-  <li>In **Swift**:
+  <li>In <strong>Swift</strong>:
 <span>
 
 ```swift
