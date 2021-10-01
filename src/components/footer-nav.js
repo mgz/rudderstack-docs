@@ -1,32 +1,39 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import React from "react"
+import { StaticQuery, graphql } from "gatsby"
 import SanityLink from "./SanityLink"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 function renderFooterNav(menu) {
-    const menuitems = menu.node.menu_block
-    const menudata = menuitems.map(
-        (menuitem, i) => (
-            (() => {
-                return (
-                    <>
-                        <li key={i} className="mt-4 block mr-2 md:mr-0">
-                          <SanityLink link={menuitem} classes="no-underline hover:underline text-gray-500" />
-                        </li>
-                    </>
-                );
-            })()
-        )
-    )
-    return (
-        menudata
-    );
-};
-const FooterNav = (props) => {
+  const menuitems = menu.node.menu_block
+  const menudata = menuitems.map((menuitem, i) =>
+    (() => {
+      return (
+        <>
+          <li key={i} className="mt-4 block mr-2 md:mr-0">
+            <SanityLink
+              onclick={e => {
+                rudderslabTrackOnClick(
+                  "footer-navigation",
+                  "Footer Navigation Section",
+                  e
+                )
+              }}
+              link={menuitem}
+              classes="no-underline hover:underline text-gray-500"
+            />
+          </li>
+        </>
+      )
+    })()
+  )
+  return menudata
+}
+const FooterNav = props => {
   return (
     <StaticQuery
-    query = {graphql`
-    query {
-        allSanityNavigation {
+      query={graphql`
+        query {
+          allSanityNavigation {
             edges {
               node {
                 id
@@ -38,15 +45,15 @@ const FooterNav = (props) => {
               }
             }
           }
-      }
-    `}
-    render={(data) => {
+        }
+      `}
+      render={data => {
         const nav = data.allSanityNavigation.edges.find(
-            nav => nav.node.id === props.navRef
+          nav => nav.node.id === props.navRef
         )
-        return(renderFooterNav(nav))
+        return renderFooterNav(nav)
       }}
     />
-  );
-};
-export default FooterNav;
+  )
+}
+export default FooterNav
