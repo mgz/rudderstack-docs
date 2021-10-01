@@ -104,7 +104,7 @@ export default function Layout({
                 </svg>
               </span>
               {isTocOpen && (
-                <div class="mobTocWrapper">
+                <div className="mobTocWrapper">
                   <div
                   className={`tocOverlay ${isTocOpen ? "active" : "hidden"}`}
                   onClick={() => setTocOpen(false)}

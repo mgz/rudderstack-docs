@@ -1099,7 +1099,8 @@ top: -60px;
   background: rgb(245, 247, 249);
   color: rgb(157, 170, 182);
   border: 1px solid rgb(230, 236, 241);
-  @apply border-b-2 border-transparent;
+  @apply border-b-2;
+  border-bottom-color: transparent;
   transition: all 0.5s ease;
 }
 .childrenWrapper [data-reach-tab][data-selected]{
