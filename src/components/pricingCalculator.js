@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react"
+import React, { useState} from "react"
 import Slider from "react-rangeslider"
 import Link from "gatsby-link"
 import "react-rangeslider/lib/index.css"

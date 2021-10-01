@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Link from "gatsby-link"
-import { useLocation } from '@reach/router';
+// import { useLocation } from '@reach/router';
 
 // const categories = {
 //   technical: "Technical",

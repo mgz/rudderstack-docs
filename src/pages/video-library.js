@@ -33,7 +33,7 @@ const VideoLibraryPage = ({ data }) => {
   // const [selectedPageNo, setSelectedPageNo] = useState(1)
   const [currentRefineText, setCurrentRefineText] = useState("")
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
-  const [category, setCategory] = useQueryParam("category", StringParam)
+  const [category] = useQueryParam("category", StringParam)
 
   return (
     <Layout>

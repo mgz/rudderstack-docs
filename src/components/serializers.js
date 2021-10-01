@@ -10,7 +10,7 @@ import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
 import TableContent from "./tableContent"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import Image from "./image"
+// import Image from "./image"
 
 // import BlockContent from "@sanity/block-content-to-react"
 
