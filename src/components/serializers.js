@@ -43,7 +43,7 @@ const AuthorReference = ({ node }) => {
 }
 
 const customSerializer = ({trackSectionHeader}) => {
-  let tmp = serializers
+  // let tmp = serializers
   
   return {...serializers, trackSectionHeader}
 }

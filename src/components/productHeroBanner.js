@@ -82,6 +82,7 @@ const ProductHeroBanner = props => {
               <div className="stack-frame-2"></div>
               <iframe
                 name={props.productbanneryoutubeambed.url}
+                title={props.productbanneryoutubeambed.url}
                 src={props.productbanneryoutubeambed.url}
                 frameborder="0"
                 allowfullscreen

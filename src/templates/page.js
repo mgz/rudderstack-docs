@@ -1,4 +1,4 @@
-import React,{useEffect} from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import { Helmet } from "react-helmet"

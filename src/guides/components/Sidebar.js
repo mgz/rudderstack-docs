@@ -111,7 +111,7 @@ function Sidebar({
   return (
     <aside>
       <div className="side-container ">
-        <span className="selectitem" onClick={handleClickMobile}>
+        <span aria-hidden="true" className="selectitem" onClick={handleClickMobile}>
           {contents[0].section_subtitle}
         </span>
         <ul className="menu mb-10">
@@ -119,7 +119,7 @@ function Sidebar({
             return (
               <li key={section._key}>
                 <Link
-                  to={`#` + `${section._key}`}
+                  // to={`#` + `${section._key}`}
                   onClick={handleClick}
                   data-attr={section._key}
                   className={`${index === 0 ? "active" : ""}`}

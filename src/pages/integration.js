@@ -13,7 +13,7 @@ import IntegrationsHelpBox from "../components/Integrations-help"
 import ScrollUpButton from "react-scroll-up-button"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
-import { rudderslabTrackOnSearch } from "../utils/common"
+// import { rudderslabTrackOnSearch } from "../utils/common"
 
 const Integration = props => {
   const searchClient = algoliasearch(

@@ -11,17 +11,21 @@ const CookiesConsent = () => {
   const current = new Date()
   const nextYear = new Date()
   nextYear.setFullYear(current.getFullYear() + 1)
+  const lv_ShownCookiePolicy = cookies.get("viewed_cookie_policy")
 
   useEffect(() => {
-    const lv_ShownCookiePolicy = cookies.get("viewed_cookie_policy")
-    if (lv_ShownCookiePolicy !== "yes") {
-      setTimeout(async () => {
-        setShowConsent(true)
-      }, 3000)
-    } else {
-      setShowConsent(false)
+    function fnShowConsent() {
+      if (lv_ShownCookiePolicy !== "yes") {
+        setTimeout(async () => {
+          setShowConsent(true)
+        }, 3000)
+      } else {
+        setShowConsent(false)
+      }
     }
-  }, [])
+
+    fnShowConsent()
+  }, [lv_ShownCookiePolicy])
 
   return (
     <>
@@ -77,26 +81,27 @@ const CookiesConsent = () => {
                           </p>
                         </div>
                       </div>
-                      <a
+                      <p
+                        aria-hidden="true"
                         className="cli-privacy-readmore"
                         data-readmore-text="Show more"
                         data-readless-text="Show less"
-                        href="#"
+                        // href="#"
                         onClick={() => {
                           setToggleShowMore(!toggleShowMore)
                         }}
-                      ></a>
+                      ></p>
                     </div>
                   </div>
                   <div className="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
                     <div className="cli-tab-section cli-privacy-tab">
                       <div className="cli-tab-header">
-                        <a
+                        <p
                           className="cli-nav-link cli-settings-mobile"
-                          href="#"
+                          // href="#"
                         >
                           Privacy Overview
-                        </a>
+                        </p>
                       </div>
                       <div className="cli-tab-content">
                         <div className="cli-tab-pane cli-fade">
@@ -124,17 +129,18 @@ const CookiesConsent = () => {
                           toggleNessesory ? "cli-tab-active" : ""
                         }`}
                       >
-                        <a
+                        <p
+                          aria-hidden="true"
                           className="cli-nav-link cli-settings-mobile"
                           data-target="necessary"
                           data-toggle="cli-toggle-tab"
-                          href="#"
+                          // href="#"
                           onClick={() => {
                             setToggleNessesory(!toggleNessesory)
                           }}
                         >
                           Necessary
-                        </a>
+                        </p>
                         <span className="cli-necessary-caption">
                           Always Enabled
                         </span>
@@ -174,23 +180,28 @@ const CookiesConsent = () => {
           <p className="self-center text-lg mr-4">
             This site uses cookies to improve your experience. We'll assume
             you're ok with this, but you can opt-out if you wish.
-            <a
+            <p
+              aria-hidden="true"
               // className="bg-white text-primary btn-secondary-lg font-bold leading-tight border-white cursor-pointer mr-0 sm:mr-4 mb-2 sm:mb-0 w-full self-center"
               className="font-bold cursor-pointer text-blueNew-custom self-center mx-2"
-              href="#"
+              // href="#"
               onClick={() => {
                 setShowCookieSeting(true)
               }}
             >
               Cookie&nbsp;Settings
-            </a>
+            </p>
           </p>
         </div>
 
-        <div className="flex flex-col justify-center my-4 sm:my-0 w-full md:w-72">
-          <a
+        <div
+          aria-hidden="true"
+          className="flex flex-col justify-center my-4 sm:my-0 w-full md:w-72"
+        >
+          <p
+            aria-hidden="true"
             className="btn-primary-lg cursor-pointer self-center w-full"
-            href="#"
+            // href="#"
             onClick={() => {
               setShowConsent(false)
               cookies.set("viewed_cookie_policy", "yes", {
@@ -200,7 +211,7 @@ const CookiesConsent = () => {
             }}
           >
             ACCEPT
-          </a>
+          </p>
         </div>
       </div>
     </>

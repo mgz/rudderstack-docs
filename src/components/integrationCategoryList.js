@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react"
-import {
-  Highlight,
-  
-  connectRefinementList,
-} from "react-instantsearch-dom"
+import { Highlight, connectRefinementList } from "react-instantsearch-dom"
 //import { graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCheckSquare} from "@fortawesome/free-solid-svg-icons/faCheckSquare"
-import {  faClock  } from "@fortawesome/free-solid-svg-icons/faClock"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faCheckSquare } from "@fortawesome/free-solid-svg-icons/faCheckSquare"
+import { faClock } from "@fortawesome/free-solid-svg-icons/faClock"
 import { faSquare } from "@fortawesome/free-regular-svg-icons/faSquare"
 
-library.add(faCheckSquare, faClock, faSquare);
+library.add(faCheckSquare, faClock, faSquare)
 
 const CustomIntegrationCategoryTypeList = ({
   items,
@@ -40,6 +36,7 @@ const CustomIntegrationCategoryTypeList = ({
         name="tabs"
       />
       <label
+        htmlFor="tab-multi-two"
         for="tab-multi-two"
         className="text-xl text-blueNew-eastbay font-bold leading-7"
       >
@@ -47,7 +44,8 @@ const CustomIntegrationCategoryTypeList = ({
       </label>
       <ul className="list-reset block capitalize items-center tab-content overflow-hidden">
         <li className="pt-0">
-          <a
+          <p
+          aria-hidden="true"
             className="leading-5 text-lg flex items-center text-secondary"
             onClick={event => {
               setIsAllSelected(true)
@@ -71,7 +69,7 @@ const CustomIntegrationCategoryTypeList = ({
               className="h-11 far text-blueNew-eastbay rounded-lg pt-2 py-2 mr-2"
             />
             All Categories
-          </a>
+          </p>
         </li>
 
         {items.map(item => (

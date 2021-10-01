@@ -1,7 +1,7 @@
 import React from "react"
 import Image from "./image"
 import Link from "gatsby-link"
-import { Carousel } from "react-responsive-carousel"
+// import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 const TestimonialFloating = props => {

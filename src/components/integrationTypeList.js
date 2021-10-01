@@ -30,6 +30,7 @@ const CustomIntegrationTypeList = ({
           name="tabs"
         />
         <label
+        htmlFor="tyoes"
           for="tab-multi-one"
           className="text-xl text-blueNew-eastbay font-bold leading-7"
         >

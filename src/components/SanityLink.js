@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "gatsby-link"
-import { rudderslabTrackOnClick } from "../utils/common"
+// import { rudderslabTrackOnClick } from "../utils/common"
 
 const SanityLink = props => {
   let link = props.link

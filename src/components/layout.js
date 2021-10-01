@@ -82,7 +82,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
   // console.log("path", location, showExplicitGradient)
   // let diableGradient = false
-  const [diableGradient, setDiableGradient] = React.useState(
+  const [diableGradient] = React.useState(
     location &&
       (location.pathname.startsWith("/404") ||
         location.pathname.startsWith("/blog/"))

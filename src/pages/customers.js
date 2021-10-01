@@ -102,8 +102,9 @@ const CaseStudies = ({ data }) => {
             )}
           </InstantSearch>
           {currentRefineHitsCount > 0 && (
-            <div className="hidden md:flex justify-end">
+            <div className="hidden md:flex justify-end" >
               <div
+              aria-hidden="true"
                 className="text-sm font-bold cursor-pointer -mt-2"
                 onClick={() => {
                   window.scrollTo({
