@@ -11,13 +11,13 @@ import Layout from "../Layout"
 import SEO from "@rocketseat/gatsby-theme-docs/src/components/SEO"
 import PostNav from "./PostNav"
 import EditGithub from "@rocketseat/gatsby-theme-docs/src/components/Docs/EditGithub"
-import { forEach, find, findIndex } from "lodash"
+import { forEach, findIndex } from "lodash"
 import { postNavList } from "./PostNav/postNavList"
 import {BlockMath, InlineMath} from 'react-katex';
 import 'katex/dist/katex.min.css';
 
 export default function Docs({ mdx, pageContext }) {
-  const { prev, next, repositoryEditUrl, repositoryProvider } = pageContext
+  const { repositoryEditUrl, repositoryProvider } = pageContext
   const { title, description, image, disableTableOfContents } = mdx.frontmatter
   const { headings, body } = mdx
   const { slug } = mdx.fields

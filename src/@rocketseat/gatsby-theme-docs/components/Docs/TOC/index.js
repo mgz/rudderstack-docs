@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useMemo } from "react"
 import PropTypes from "prop-types"
-import { useTheme } from "@emotion/react"
 import useWindowScroll from "react-use/lib/useWindowScroll"
 import useWindowSize from "react-use/lib/useWindowSize"
+import { css } from "@emotion/react"
 
 import slug from "@rocketseat/gatsby-theme-docs/src/util/slug"
 
 import { Wrapper, Container } from "./styles"
-import tailwindConfig from "../../../../../../tailwind.config"
+import tailwindConfig, { theme } from "../../../../../../tailwind.config"
 
 export default function TableOfContents({ headings, disableTOC, contentRef }) {
   const { y } = useWindowScroll()
@@ -60,7 +60,38 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
     return (
       <Wrapper>
         <Container>
-          <h2>On this page</h2>
+          <h2>
+            <span
+              className="inline-block pr-2 align-middle"
+              css={css`
+                @media (max-width: 1200px) {
+                  display: none;
+                }
+              `}
+            >
+              <svg
+                preserveAspectRatio="xMidYMid meet"
+                height="1em"
+                width="1em"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                strokeLinecap="round"
+                stroke={theme.colors.grayColor.dark}
+                strokeLinejoin="round"
+                className={`tocIcon`}
+              >
+                <g>
+                  <line x1="21" y1="10" x2="7" y2="10"></line>
+                  <line x1="21" y1="6" x2="3" y2="6"></line>
+                  <line x1="21" y1="14" x2="3" y2="14"></line>
+                  <line x1="21" y1="18" x2="7" y2="18"></line>
+                </g>
+              </svg>
+            </span>
+            <span className="inline-block pr-2 align-middle">Contents</span>
+          </h2>
           <nav>
             <ul>
               {headings

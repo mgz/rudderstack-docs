@@ -5,8 +5,6 @@ import PropTypes from "prop-types"
 
 import TableOfContents from "@rocketseat/gatsby-theme-docs/src/components/Docs/TOC"
 import Sidebar from "../Sidebar"
-import Header from "../Header"
-import Overlay from "@rocketseat/gatsby-theme-docs/src/components/Overlay"
 import { Container, Main, Children } from "./styles"
 import DocsNavigation from "../../../../components/DocsNavigation"
 import tailwindConfig from "../../../../../tailwind.config"

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import rangeParser from 'parse-numeric-range';
