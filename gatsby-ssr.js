@@ -15,7 +15,7 @@
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
 
-// You can delete this file if you're not using it
+// You can delete this file if you're not using it.
 import React from "react"
 import { isMobile, isBrowser } from "react-device-detect"
 
