@@ -23,7 +23,8 @@ import { isMobile, isBrowser } from "react-device-detect"
   export const onRenderBody = ({pathname ,setPostBodyComponents }) => {
   if(pathname.includes("careers")){
     setPostBodyComponents([
-      <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
+      <script src="https://boards.greenhouse.io/embed/job_board?for=rudderstack"></script>,
+      //<script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
     ])
   }
     
