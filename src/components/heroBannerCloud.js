@@ -81,6 +81,7 @@ const HeroBannerCloud = props => {
               <div className="stack-frame-1"></div>
               <div className="stack-frame-2"></div>
               <iframe
+                title={props.herobanneryoutube_url.url}
                 src={props.herobanneryoutube_url.url}
                 frameborder="0"
                 allowfullscreen

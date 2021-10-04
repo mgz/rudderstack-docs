@@ -1,6 +1,6 @@
 import React from "react"
 import PortableText from "./portableText"
-import VideoRequestForm from "./videoRequestForm"
+// import VideoRequestForm from "./videoRequestForm"
 import DynamicInputForm from "../components/dynamicInputForm"
 
 const VideoLibraryTopicsToCover = props => {

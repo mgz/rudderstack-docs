@@ -19,16 +19,16 @@ const Tabs = props => {
         <div className="md:col-span-5">
           <ul
             className="block mb-0 list-none pt-3 md:pt-12 lg:pt-20 pb-4"
-            role="tablist"
+            // role="tablist"
           >
             {tabs.map((tab, i) => {
               return (
                 <li
                   key={i}
                   className="mr-2 last:mr-0 flex-auto md:my-1"
-                  role="tab"
-                  aria-label={tab.tabtitle}
-                  aria-selected={openTab === i}
+                  // role="tab"
+                  // aria-label={tab.tabtitle}
+                  // aria-selected={openTab === i}
                 >
                   <a
                     className={

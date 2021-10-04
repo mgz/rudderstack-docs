@@ -26,7 +26,7 @@ const SearchBox = ({
           placeholder={
             pleaceholderText ? pleaceholderText : "Type your Keyword"
           }
-          role="textbox"
+          // role="textbox"
           spellCheck="false"
           value={currText}
           className="border border-grayColor-lighter bg-white h-12 px-5 pr-16 rounded-lg text-sm focus:outline-none w-full"
@@ -49,6 +49,7 @@ const SearchBox = ({
         />
 
         <div
+          aria-hidden="true"
           onClick={() => {
             refine(currText)
             setCurrText(currText)

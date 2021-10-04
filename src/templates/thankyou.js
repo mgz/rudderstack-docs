@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import loadable from "@loadable/component"
 import { useLocation } from "@reach/router"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"

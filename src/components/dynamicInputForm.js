@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { navigate, useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -65,7 +65,7 @@ const DynamicInputForm = ({
   let scriptObject = ""
 
   formDefinition &&
-    formDefinition._rawFields.map(field => {
+    formDefinition._rawFields.forEach(field => {
       scriptObject +=
         (scriptObject.length === 0 ? "" : ", ") +
         `${[field.field_name]}: document.getElementById("${[
@@ -81,7 +81,7 @@ const DynamicInputForm = ({
 
   const [formData, setFormData] = useState(tmpStructure)
   const [formError, setFormErrors] = useState(tmpStructure)
-  const [formScript, setFormScript] = useState(scriptObject)
+  const [formScript] = useState(scriptObject)
   function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     return re.test(String(email).toLowerCase())
@@ -328,7 +328,7 @@ const DynamicInputForm = ({
                   onChange={e => {
                     let tmp = ""
                     if (Array.isArray(e)) {
-                      e.map(rrrr => {
+                      e.forEach(rrrr => {
                         tmp += (tmp === "" ? "" : ", ") + rrrr.value
                       })
                     } else {
@@ -346,6 +346,7 @@ const DynamicInputForm = ({
 
               {field.field_type === "checkbox" && (
                 <div
+                  aria-hidden="true"
                   className="text-lg text-grayColor-custom mb-0 flex flex-row items-center cursor-pointer"
                   onClick={() =>
                     setFormData({

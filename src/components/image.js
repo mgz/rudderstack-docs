@@ -6,8 +6,13 @@ function renderImage(image, classes, alt) {
     return (
       <img
         loading="lazy"
+<<<<<<< HEAD
         //src={image.node.localFile.publicURL}
         src={image.node.url}
+=======
+        // src={image.node.localFile.publicURL} //Production code
+        src={image.node.url} //Development code
+>>>>>>> origin/unused-vars
         alt={alt ? alt : image.node._id}
         className={classes}
       />

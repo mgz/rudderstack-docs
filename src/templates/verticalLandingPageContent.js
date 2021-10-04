@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
@@ -80,6 +80,8 @@ const VerticalLandingPageContent = ({ data, location }) => {
                 />
               </section>
             )
+          } else {
+            return null
           }
         })}
       </div>

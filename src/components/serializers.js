@@ -12,7 +12,7 @@ import TableContent from "./tableContent"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { rudderslabTrackOnClick } from "../utils/common"
 
-import Image from "./image"
+// import Image from "./image"
 
 // import BlockContent from "@sanity/block-content-to-react"
 
@@ -43,7 +43,7 @@ const AuthorReference = ({ node }) => {
 }
 
 const customSerializer = ({trackSectionHeader}) => {
-  let tmp = serializers
+  // let tmp = serializers
   
   return {...serializers, trackSectionHeader}
 }

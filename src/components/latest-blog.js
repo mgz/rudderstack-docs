@@ -1,6 +1,6 @@
 import React from "react"
 import BlogModule from "./latest-blog-module"
-import { StaticImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 import Link from "gatsby-link"
 
 const LatestBlog = props => {

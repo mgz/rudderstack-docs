@@ -1,7 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
 import DynamicInputForm from "../components/dynamicInputForm"
-
-import VideoRequestForm from "../components/videoRequestForm"
 
 const VideoLibraryContentHeader = ({
   data,
@@ -61,6 +59,7 @@ const VideoLibraryContentHeader = ({
                   <div className="stack-frame-2"></div>
                   <iframe
                     src={url_or_event_dttm}
+                    title={url_or_event_dttm}
                     frameborder="0"
                     allowfullscreen
                     class="video"

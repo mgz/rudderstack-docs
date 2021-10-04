@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-// import PortableText from "./portableText"
-import Link from "gatsby-link"
 import Layout from "../components/layout"
 import { rudderslabTrackOnClick } from "../utils/common"
 import { StaticImage } from "gatsby-plugin-image"
@@ -100,7 +98,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                     <img
                       src={data.integration_connection.sourceLogoImgUrl}
                       className="h-5 sm:h-12 m-auto"
-                      alt="Source Image"
+                      alt={data.integration_connection.sourceIntegration}
                       placeholder="tracedSVG"
                     />
                   </div>
@@ -113,7 +111,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                     <img
                       src={data.integration_connection.destinationLogoImgUrl}
                       className="h-5 sm:h-12 m-auto"
-                      alt="Destination Image"
+                      alt={data.integration_connection.destinationIntegration}
                       placeholder="tracedSVG"
                     />
                   </div>

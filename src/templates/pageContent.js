@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
@@ -24,7 +24,7 @@ import HeroBannerPricing from "../components/heroBannerPricing"
 import HeroBannerContactUs from "../components/heroBannerContactUs"
 import TwoCardsLeftAligned from "../components/twoCardsLeftAligned"
 import HeroBanner404 from "../components/heroBanner404"
-import { node } from "prop-types"
+
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 
@@ -200,7 +200,7 @@ const PageContent = ({ data, location }) => {
                 <CentredContentWithButton {...section} />
               </section>
             )
-          }
+          }else{return null}
         })}
       </div>
     </Layout>

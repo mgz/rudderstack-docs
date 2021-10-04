@@ -143,7 +143,7 @@ const MainNavigation = props => {
           >
             <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
               {mainmenu.map((link, i) => (
-                <MainNavigationMenuLink link={link} i={i} />
+                <MainNavigationMenuLink key={i} link={link} i={i} />
               ))}
             </ul>
             <div className="flex lg:pb-4">
