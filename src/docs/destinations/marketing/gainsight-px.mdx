@@ -12,13 +12,7 @@ RudderStack supports Gainsight PX as a destination to which you can send your ev
 
 <div class="successBlock">
 
-  <strong>
-    Find the open-source transformer code for this destination in our{" "}
-    <a href="https://github.com/rudderlabs/rudder-transformer/tree/dest-gainsight-px">
-      GitHub repo
-    </a>
-    .
-  </strong>
+  **Find the open-source transformer code for this destination in our <a href="https://github.com/rudderlabs/rudder-transformer/tree/dest-gainsight-px">GitHub repo</a>.**
 </div>
 
 ## Getting Started
@@ -95,6 +89,7 @@ RudderStack creates a **`User`** object in Gainsight PX for the `identify` call.
 If <code class="inline-code">userId</code> is not present, <code class="inline-code">anonymousId</code> will be used instead.
 
 </div>
+
 RudderStack supports all the default attributes for the **`User`** object. For the custom attributes, you can map the RudderStack payload attribute to the Gainsight PX attribute in the RudderStack dashboard under the **User Attribute Mapping** section, as shown:
 
 <img src="../../../images/assets/gainsight-px-user-attribute-mapping-1.png" />
@@ -206,7 +201,7 @@ You can also set the **Global Context** metadata for the custom events. The key-
 
 <div class="infoBlock">
 
-<strong>For more information on the Global Context feature and how to use it, refer to the <a href="https://support.gainsight.com/PX/Engagements/02Engagement_Configuration/Use_Global_Context">Gainsight PX documentation</a>.</strong>
+**For more information on the Global Context feature and how to use it, refer to the <a href="https://support.gainsight.com/PX/Engagements/02Engagement_Configuration/Use_Global_Context">Gainsight PX documentation</a>.**
 
 </div>
 
@@ -224,7 +219,7 @@ rudderanalytics.track("Track User", {
 
 <div class="infoBlock">
 
-In case the Global Context metadata is provided in the RudderStack dashboard (under <strong>Global Context Mapping</strong>) as well as the payload, the payload will take a higher precedence.
+In case the Global Context metadata is provided in the RudderStack dashboard (under **Global Context Mapping**) as well as the payload, the payload will take a higher precedence.
 
 </div>
 

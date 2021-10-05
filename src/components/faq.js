@@ -5,44 +5,49 @@ const Faq = ({ title, subTitle, isBlockContent, accordions = [] }) => {
   const [ldJson, setLdJsoin] = useState()
 
   useEffect(() => {
-    let faqArr = []
-    // console.log("sssss", accordions)
-    accordions.forEach(row => {
-      let l_question = row.title
-      let l_answer = ""
-      if (isBlockContent === true) {
-        row.content[0].children.forEach(ee => {
-          if (ee.marks.length > 0) {
-            let linkInfo = row.content[0].markDefs.find(
-              ll => ll._key === ee.marks[0]
-            )
-            if (linkInfo && linkInfo._type === "link") {
-              l_answer += `<a href="${linkInfo.href}" class="text-purpleNew-custom underline hover:text-blueNew-midnight">${ee.text}</a>`
+    function arrangeData() {
+      let faqArr = []
+
+      accordions.forEach(row => {
+        let l_question = row.title
+        let l_answer = ""
+        if (isBlockContent === true) {
+          row.content[0].children.forEach(ee => {
+            if (ee.marks.length > 0) {
+              let linkInfo = row.content[0].markDefs.find(
+                ll => ll._key === ee.marks[0]
+              )
+              if (linkInfo && linkInfo._type === "link") {
+                l_answer += `<a href="${linkInfo.href}" class="text-purpleNew-custom underline hover:text-blueNew-midnight">${ee.text}</a>`
+              } else {
+                l_answer += ee.text
+              }
             } else {
               l_answer += ee.text
             }
-          } else {
-            l_answer += ee.text
-          }
+          })
+        } else {
+          l_answer = row.content
+        }
+        faqArr.push({
+          "@type": "Question",
+          name: l_question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: l_answer,
+          },
         })
-      } else {
-        l_answer = row.content
-      }
-      faqArr.push({
-        "@type": "Question",
-        name: l_question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: l_answer,
-        },
       })
-    })
-    setLdJsoin({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqArr,
-    })
-  }, [])
+      setLdJsoin({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqArr,
+      })
+    }
+
+    arrangeData()
+  }, [accordions, isBlockContent])
+
   return (
     <div className="px-4 mx-auto">
       <Helmet>

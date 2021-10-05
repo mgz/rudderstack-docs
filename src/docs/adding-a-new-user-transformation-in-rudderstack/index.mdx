@@ -33,7 +33,7 @@ https://www.youtube.com/watch?v=-1F4YeJCXU8
 
 <div class="warningBlock">
 
-<strong>Transformations only work for the Cloud mode destinations.</strong>
+**Transformations only work for the Cloud mode destinations.**
 
 To know more about the Cloud mode in RudderStack, check out the <a href="../get-started/rudderstack-connection-modes">RudderStack Connection Modes</a> guide.
 
@@ -77,7 +77,7 @@ To know more about the Cloud mode in RudderStack, check out the <a href="../get-
 
 Our <a href="https://github.com/rudderlabs/sample-user-transformers">Transformations</a> GitHub repository contains some useful templates that you can use to create your own transformations.
 
-You can copy-paste the entire code of any of the functions present in this repository into the <strong>Transformation</strong> window.
+You can copy-paste the entire code of any of the functions present in this repository into the **Transformation** window.
 
 </div>
 
@@ -112,9 +112,9 @@ export function transformBatch(events, metadata) {
 
 <div class="dangerBlock"> 
 
-<strong>Disclaimer for using <code class="inline-code">transformBatch</code></strong>
+**Disclaimer for using <code class="inline-code">transformBatch</code>**
 
-Make sure you pass on the <code class="inline-code">messageID</code> from the input event onto the output event. If the <code class="inline-code">messageID</code> is passed on, the order of delivery of events is preserved. <strong>Without it, this order may not be maintained</strong>.
+Make sure you pass on the <code class="inline-code">messageID</code> from the input event onto the output event. If the <code class="inline-code">messageID</code> is passed on, the order of delivery of events is preserved. **Without it, this order may not be maintained**.
 
 It is highly recommended to use <code class="inline-code">transformEvent</code> in every possible case as it ensures event ordering in all cases.
 
@@ -153,7 +153,7 @@ To create a library, follow these steps:
 
 <div class="warningBlock">
 
-<strong>RudderStack does not support the deletion of libraries as of now.</strong>
+**RudderStack does not support the deletion of libraries as of now.**
 
 This is to ensure that you don't break any existing transformations that use the library that you might be trying to delete.
 </div>

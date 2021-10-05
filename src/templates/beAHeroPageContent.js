@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
@@ -8,7 +8,9 @@ import HeroBannerBeAHeroPage from "../components/heroBannerBeAHeroPage"
 import LeftRightImgCnt from "../components/left-right-image-content"
 
 const OurLogo = loadable(() => import("../components/ourlogo"))
-const TestimonialFloating = loadable(() => import("../components/testimonial_floating"))
+const TestimonialFloating = loadable(() =>
+  import("../components/testimonial_floating")
+)
 
 const BeAHeroPageContent = ({ data, location }) => {
   // console.log("BeAHeroPageContent", data)
@@ -73,9 +75,15 @@ const BeAHeroPageContent = ({ data, location }) => {
 
             return (
               <section key={section._key} id="our_logos">
-                <OurLogo key={section._key} {...l_ourLogo_info.node._rawOurLogos} removeSectionVerticalMargin={true} />
+                <OurLogo
+                  key={section._key}
+                  {...l_ourLogo_info.node._rawOurLogos}
+                  removeSectionVerticalMargin={true}
+                />
               </section>
             )
+          } else {
+            return null
           }
         })}
       </div>

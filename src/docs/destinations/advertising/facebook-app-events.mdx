@@ -14,13 +14,7 @@ RudderStack supports Facebook App Events as a destination to which you can send 
 
 <div class="successBlock">
 
-  <strong>
-    Find the open-source transformer code for this destination in our{" "}
-    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb">
-      GitHub repo
-    </a>
-    .
-  </strong>
+  **Find the open-source transformer code for this destination in our <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/fb">GitHub repo</a>.**
 </div>
 
 ## Getting Started
@@ -62,11 +56,7 @@ The following options are applicable if you are using the Device mode to send yo
 
 <div class="successBlock">
 
-  For more information on this option, refer to the{" "}
-  <a href="../../destinations/advertising/facebook-app-events#limited-data-use">
-    Limited Data Use
-  </a>{" "}
-  section below.
+  For more information on this option, refer to the <a href="../../destinations/advertising/facebook-app-events#limited-data-use">Limited Data Use</a> section below.
 </div>
 
 - Click on **Next** to complete the configuration.
@@ -96,7 +86,7 @@ pod 'Rudder-Facebook'
 
 - Send the user's consent to App Events as shown below:
 
-  - For **Objective-C**:
+  - For <strong>Objective-C</strong>:
 
   ```objectivec
   // Set AdvertiserTrackingEnabled to YES if a user provides consent
@@ -105,7 +95,7 @@ pod 'Rudder-Facebook'
   [FBSDKSettings setAdvertiserTrackingEnabled:NO];
   ```
 
-  - For **Swift**:
+  - For <strong>Swift</strong>:
 
   ```swift
   // Set AdvertiserTrackingEnabled to true if a user provides consent
@@ -330,7 +320,7 @@ implementation 'com.facebook.android:facebook-android-sdk:11.1.0'
 ```
 </span>
 </li>
-<li>Open your <code class="inline-code">/app/res/values/strings.xml</code> file and add the following lines. <strong>Remember to replace <code class="inline-code">[APP_ID]</code> with your actual app ID</strong>.
+<li>Open your <code class="inline-code">/app/res/values/strings.xml</code> file and add the following lines. **Remember to replace <code class="inline-code">[APP_ID]</code> with your actual app ID**.
 <span>
 
 ```markup
@@ -452,8 +442,7 @@ To use this feature, simply enable the **Limited Data Use** setting on the Rudde
 
 <div class="successBlock">
 
-  Learn more about the different data processing options accepted by Facebook
-  <a href="https://developers.facebook.com/docs/marketing-apis/data-processing-options">here</a>.
+  Learn more about the different data processing options accepted by Facebook <a href="https://developers.facebook.com/docs/marketing-apis/data-processing-options">here</a>.
 </div>
 
 ## Configuring Facebook App Events SDK Based on User Consent
@@ -474,13 +463,13 @@ This section highlights the different consent-based options for configuring the 
 
 - In some cases, you can delay the collection of automatically logged events to obtain user consent or fulfill legal obligations instead of disabling it entirely. To do so, call the `setAutoLogAppEventsEnabled` method of the `FBSDKSettings` class to re-enable auto-logging after the end-user provides the required consent.
 
-  - In **Objective-C**:
+  In <strong>Objective-C</strong>:
 
     ```objectivec
     [FBSDKSettings setAutoLogAppEventsEnabled:YES];
     ```
 
-  - In **Swift**:
+  - In <strong>Swift</strong>:
 
     ```swift
     FBSDKSettings.setAutoLogAppEventsEnabled(true)
@@ -488,13 +477,13 @@ This section highlights the different consent-based options for configuring the 
 
 - To suspend event collection for any reason, set the `setAutoLogAppEventsEnabled` method to `NO` for iOS or `false` for Swift, as shown:
 
-  - In **Objective-C**:
+  - In <strong>Objective-C</strong>:
 
     ```objectivec
     [FBSDKSettings setAutoLogAppEventsEnabled:NO];
     ```
 
-  - In **Swift**:
+  - In <strong>Swift</strong>:
 
         ```swift
         FBSDKSettings.setAutoLogAppEventsEnabled(false)
@@ -639,13 +628,13 @@ setAutoLogAppEventsEnabled(false);
 
 - In some cases, you can delay the collection of `advertiser_id` to obtain the user consent or fulfill any legal obligations instead of disabling it entirely. To do so, call the `setAdvertiserIDCollectionEnabled` method of the `FBSDKSettings` class and set it to `YES` for iOS, or `true` for Swift after the end-user provides consent, as shown:
 
-  - In **Objective-C**:
+  - In <strong>Objective-C</strong>:
 
     ```objectivec
     [FBSDKSettings setAdvertiserIDCollectionEnabled:@YES];
     ```
 
-  - In **Swift**:
+  - In <strong>Swift</strong>:
 
     ```swift
     FBSDKSettings.setAdvertiserIDCollectionEnabled(true);
@@ -653,13 +642,13 @@ setAutoLogAppEventsEnabled(false);
 
 - To suspend collection for any reason, set the `setAdvertiserIDCollectionEnabled` method to `NO` for iOS or `false` for Swift.
 
-  - In **Objective-C**:
+  - In <strong>Objective-C</strong>:
 
     ```objectivec
     [FBSDKSettings setAdvertiserIDCollectionEnabled:@NO];
     ```
 
-  - In **Swift**:
+  - In <strong>Swift</strong>:
 
         ```swift
         FBSDKSettings.setAdvertiserIDCollectionEnabled(false)
@@ -822,7 +811,7 @@ FacebookSdk.fullyInitialize()
   </TabList>
   <TabPanels>
     <TabPanel>
-        To disable automatic SDK initialization in case of the Android SDK, add the following to your <code class="inline-code">AndroidManifest.xml</code> file: {" "}
+        To disable automatic SDK initialization in case of the Android SDK, add the following to your <code class="inline-code">AndroidManifest.xml</code> file: 
 
 <span>
  

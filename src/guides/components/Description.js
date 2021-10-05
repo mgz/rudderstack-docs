@@ -1,7 +1,5 @@
 import React from "react"
 import BlockContent from '@sanity/block-content-to-react'
-import Gist from 'super-react-gist'
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import clientConfig from "../../../client-config"
 import serializers from "./serializers"
 

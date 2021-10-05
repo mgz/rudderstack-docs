@@ -1,5 +1,4 @@
 import React from "react"
-import PricingCards from "./Pricingcards"
 import Image from "./image"
 import Link from "gatsby-link"
 import { rudderslabTrackOnClick } from "../utils/common"

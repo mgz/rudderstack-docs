@@ -16,13 +16,21 @@ const WebisteBanner = props => {
       : true
   )
 
+  // useEffect(() => {
+  //   if (props.exclude_paths) {
+  //     setShowBanner(
+  //       props.exclude_paths.find(kk => kk === props.currentSlug) === undefined
+  //     )
+  //   }
+  // }, [])
+
   useEffect(() => {
     if (props.exclude_paths) {
       setShowBanner(
         props.exclude_paths.find(kk => kk === props.currentSlug) === undefined
       )
     }
-  }, [])
+  }, [props.exclude_paths, props.currentSlug])
 
   let date = new Date()
   date.setDate(
@@ -52,6 +60,7 @@ const WebisteBanner = props => {
       </div>
       {props.show_banner_close ? (
         <span
+          aria-hidden="true"
           onClick={() => {
             setShowBanner(!showBanner)
             cookies.set(`viewed_website_banner-${props._key}`, "yes", {

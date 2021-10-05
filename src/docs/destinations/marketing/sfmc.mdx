@@ -14,11 +14,7 @@ RudderStack allows you to integrate your source to Salesforce Marketing Cloud an
 
 <div class="successBlock">
 
-  <strong>
-    Find the open-source transformer code for this destination in our{" "}
-    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/sfmc">GitHub repo</a>
-    .
-  </strong>
+  **Find the open-source transformer code for this destination in our <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/sfmc">GitHub repo</a>.**
 </div>
 
 ## Getting Started
@@ -94,7 +90,7 @@ If you do not map an event to an External Key and it gets sent to SFMC, you may 
 
 <div class="infoBlock">
 
-You can find the external key in the SFMC interface by going to <strong>Data & Analytics</strong>, and navigating to <strong>Contact Builder</strong> - <strong>Data Extensions</strong>. The extension's name can be found in the <strong>External Key</strong> column.
+You can find the external key in the SFMC interface by going to **Data & Analytics**, and navigating to **Contact Builder** - **Data Extensions**. The extension's name can be found in the **External Key** column.
 
 </div>
 
@@ -115,7 +111,7 @@ All attributes in the Data Extension should be created in title case, regardless
 
 <div class="infoBlock">
 
-A Primary Key for the Identify Data Extension called <strong>Contact Key</strong> is required to be created. RudderStack will use this to link the users to SFMC's built-in **Contact Key** key. This field will be populated with <code class="inline-code">userId</code> or <code class="inline-code">email</code> by default during the <code class="inline-code">identify</code> calls.
+A Primary Key for the Identify Data Extension called **Contact Key** is required to be created. RudderStack will use this to link the users to SFMC's built-in **Contact Key** key. This field will be populated with <code class="inline-code">userId</code> or <code class="inline-code">email</code> by default during the <code class="inline-code">identify</code> calls.
 
 </div>
 
@@ -149,7 +145,7 @@ rudderanalytics.identify("userid", {
 
 <div class="infoBlock">
 
-Identify events will create or update the contacts in Salesforce marketing cloud if <strong>Do Not Create or Update Contacts</strong> is turned off. Otherwise, no creation or updating of contacts will occur.
+Identify events will create or update the contacts in Salesforce marketing cloud if **Do Not Create or Update Contacts** is turned off. Otherwise, no creation or updating of contacts will occur.
 
 </div>
 
@@ -161,7 +157,7 @@ Identify events will create or update the contacts in Salesforce marketing cloud
 
 <div class="warningBlock">
 
-Salesforce marketing cloud does not allow colon characters (":") in the <strong>Contact Key</strong> field, so they must be removed from any <code class="inline-code">userId</code> fields. SFMC doesn't handle nested objects.
+Salesforce marketing cloud does not allow colon characters (":") in the **Contact Key** field, so they must be removed from any <code class="inline-code">userId</code> fields. SFMC doesn't handle nested objects.
 
 </div>
 
@@ -229,4 +225,4 @@ Note that camel cases and snake cases will be formatted to title cases.
 
 ## Contact Us
 
-If you come across any issues while configuring Salesforce Marketing Cloud with RudderStack, please feel free to [contact us](mailto:docs@rudderstack.com). You can also start a conversation on our [Slack](https://rudderstack.com/join-rudderstack-slack-community) channel; we will be happy to talk to you!
+If you come across any issues while configuring Salesforce Marketing Cloud with RudderStack, please feel free to [contact us](mailto:docs@rudderstack.com). You can also start a conversation on our [Slack channel](https://rudderstack.com/join-rudderstack-slack-community); we will be happy to talk to you!

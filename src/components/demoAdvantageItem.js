@@ -1,5 +1,4 @@
 import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
 import PortableText from "../components/portableText"
 import Image from "../components/image"
 

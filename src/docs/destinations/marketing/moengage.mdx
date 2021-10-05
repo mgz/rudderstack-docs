@@ -14,11 +14,7 @@ RudderStack now supports MoEngage as a destination to seamlessly send your event
 
 <div class="successBlock">
 
-  <strong>
-    Find the open-source transformer code for this destination in our{" "}
-    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/moengage">GitHub repo</a>
-    .
-  </strong>
+  **Find the open-source transformer code for this destination in our <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/moengage">GitHub repo</a>.**
 </div>
 
 ## Getting Started
@@ -527,7 +523,7 @@ rudderClient.reset()
 
 <div class="warningBlock">
 
-<strong>RESET</strong> api is applicable only for <strong>Device</strong> Mode Connections
+**RESET** api is applicable only for **Device** Mode Connections
 
 </div>
 
@@ -689,7 +685,7 @@ For more details please follow the [guidelines from MoEngage](https://docs.moeng
       </TabPanel>
       <TabPanel>
 Copy the Server Key from the FCM console and add it to the MoEngage Dashboard(Not sure where to find the Server Key refer to <a href="https://docs.moengage.com/docs/getting-fcmgcm-server-key">Getting FCM Server Key</a>. To upload it, go to the <a href="https://app.moengage.com/v3/#/settings/push/mobile">Settings Page</a> and add the Server Key and package name.  
-<strong>Please make sure you add the keys both in the Test and Live environment.</strong>
+**Please make sure you add the keys both in the Test and Live environment.**
 Before configuring MoEngage SDK for receiving push notifications please make you have configured Firebase in your application, if not done already refer to the <a href="https://firebase.google.com/docs/android/setup">documentation</a> and complete setup.  
 Also, make sure you have added the Firebase Messaging dependency in your application <code class="inline-code">build.gradle</code> file.
 <h3>Adding meta for push notification</h3>
@@ -775,7 +771,7 @@ In-app messaging is a type of mobile messaging where the notification is display
         <li>Go to <a href="http://app.moengage.com/v3/#/settings/4/0">Web Push Settings</a>.</li>
 <li>Under Web fill in the details as required.</li>
 <li>For HTTPS Web Push to work, you need to host two files in the <code class="inline-code">root</code> directory of your web server.</li>
-<li>After clicking <strong>SAVE</strong>, please proceed to download <code class="inline-code">serviceworker.js</code> file. Under <a href="http://app.moengage.com/v3/#/settings/4/0">Web Push Settings</a>.</li>
+<li>After clicking **SAVE**, please proceed to download <code class="inline-code">serviceworker.js</code> file. Under <a href="http://app.moengage.com/v3/#/settings/4/0">Web Push Settings</a>.</li>
 <li>In case you already have your own serviceworker.js add :
 <span>
 
@@ -807,14 +803,14 @@ MoEngage allows sending the t[ime at which the event occurred](https://docs.moen
 
 <div class="infoBlock">
 
-The RudderStack transformer maps the _<strong>current_time</strong> to <strong>timestamp or originalTimestamp</strong>_  
-value from the event payload sent to Rudder server. This value should be passed in <strong>UTC.</strong>
+The RudderStack transformer maps the _**current_time** to **timestamp or originalTimestamp**_  
+value from the event payload sent to Rudder server. This value should be passed in **UTC.**
 
 </div>
 
 <div class="infoBlock">
 
-The _<strong>user_timezone_offset</strong>_ is mapped to _<strong>timezone</strong>_ field present under the _<strong>context</strong>_ object of the event payload. This value should be passed as <strong>tz</strong> string.  
+The _**user_timezone_offset**_ is mapped to _**timezone**_ field present under the _**context**_ object of the event payload. This value should be passed as **tz** string.  
 Rudder mobile SDKs populate the timezone field by itself. But for other sources like server like SDKs, HTTP api, the timezone needs to be set explicitly in every request.
 
 </div>
@@ -852,7 +848,7 @@ MoEngage accepts user creation time for its [user endpoint](https://docs.moengag
 
 <div class="infoBlock">
 
-The RudderStack transformer maps the _<strong>created_time</strong>_ from the _<strong>createdAt</strong>_ spec'd traits in our payload. The value should be in the <strong>ISO 8601</strong> format.  
+The RudderStack transformer maps the _**created_time**_ from the _**createdAt**_ spec'd traits in our payload. The value should be in the **ISO 8601** format.  
 If the value is not in proper format or not present, MoEngage will put in the value by itself.
 
 </div>

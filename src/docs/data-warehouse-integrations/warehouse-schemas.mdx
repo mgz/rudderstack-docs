@@ -37,7 +37,7 @@ The following is a list of tables created for each RudderStack source that is co
         <br />
         It <b>does not include</b> the custom properties sent under the <code>
           properties
-        </code> key in the event but has some standard properties (listed in the{" "}
+        </code> key in the event but has some standard properties (listed in the
         <a href="https://rudderstack.com/docs/data-warehouse-integration-guides/warehouse-schemas#standard-rudderstack-properties">
           <b>Standard Properties</b>
         </a> section below) such as <code>received_at</code>, <code>
@@ -50,7 +50,7 @@ The following is a list of tables created for each RudderStack source that is co
         <code>&lt;test_source_name&gt;.&lt;track_event_name&gt;</code>
       </td>
       <td style="text-align:left">
-        All the standard properties, along with the custom properties for a{" "}
+        All the standard properties, along with the custom properties for a
         <code>track</code> call, are stored in this table.
         <br />
         <br />
@@ -147,14 +147,8 @@ The following is a list of tables created for each RudderStack source that is co
 <div class="infoBlock">
 
 All the properties in the event are stored as top-level columns in the corresponding table. Nested properties will be prefixed with the parent key. For example, an event with properties as shown:
-
-<strong>
-  <code class="inline-code">
-    &#123; product: &#123; name: iPhone, version: 11 &#125;&#125;
-  </code>
-</strong>
-
-will results in the columns <strong><code class="inline-code">product_name</code></strong> and <strong><code class="inline-code">product_version</code></strong>.
+**<code class="inline-code">&#123; product: &#123; name: iPhone, version: 11 &#125;&#125;</code>**
+will results in the columns **<code class="inline-code">product_name</code>** and **<code class="inline-code">product_version</code>**.
 
 </div>
 
@@ -188,7 +182,7 @@ RudderStack sets the following standard properties on all the above mentioned ta
       </td>
       <td style="text-align:left">
         <p>
-          The unique message ID of the event, except for the <code>users</code>{" "}
+          The unique message ID of the event, except for the <code>users</code>
           table.
         </p>
         <p></p>
@@ -229,9 +223,9 @@ RudderStack sets the following standard properties on all the above mentioned ta
         <code>timestamp</code>
       </td>
       <td style="text-align:left">
-        This is calculated by RudderStack to account for the{" "}
-        <b>client clock skew</b>. The formula used is: <code>timestamp</code> ={" "}
-        <code>receivedAt</code> - (<code>sentAt</code> -{" "}
+        This is calculated by RudderStack to account for the
+        <b>client clock skew</b>. The formula used is: <code>timestamp</code> =
+        <code>receivedAt</code> - (<code>sentAt</code> -
         <code>originalTimestamp</code>).
       </td>
     </tr>
@@ -267,7 +261,7 @@ RudderStack considers the time at its end to be absolute and assumes any differe
 
 <div class="infoBlock">
 
-<code class="inline-code">sentAt</code> &gt; <code class="inline-code">original_timestamp</code> is <strong>always true</strong>. However, <code class="inline-code">timestamp</code> can be more or less than the <code class="inline-code">original_timestamp</code>. Refer to the examples below for more details.
+<code class="inline-code">sentAt</code> &gt; <code class="inline-code">original_timestamp</code> is **always true**. However, <code class="inline-code">timestamp</code> can be more or less than the <code class="inline-code">original_timestamp</code>. Refer to the examples below for more details.
 
 </div>
 
@@ -439,11 +433,7 @@ RudderStack creates a record in the `identifies` table and upserts the records i
 <div class="successBlock">
 
   In case of Google BigQuery, you can use the views created over the tables to
-  query for unique users in the dataset. Refer to the{" "}
-  <a href="../data-warehouse-integrations/google-bigquery#schema-partitioned-tables-and-views">
-    BigQuery documentation
-  </a>{" "}
-  for more details.
+  query for unique users in the dataset. Refer to the <a href="../data-warehouse-integrations/google-bigquery#schema-partitioned-tables-and-views">BigQuery documentation</a> for more details.
 </div>
 
 A sample `identify` event made from the JavaScript SDK is as shown below:
@@ -613,7 +603,7 @@ RudderStack only recognizes a subset of the ISO 8601 timestamp formats as a time
 
 <div class="warningBlock">
 
-RudderStack <strong>does not recognize</strong> any other timestamp format apart from the formats mentioned above.
+RudderStack **does not recognize** any other timestamp format apart from the formats mentioned above.
 
 </div>
 
@@ -659,7 +649,7 @@ The schema of the `rudder_discards table` is as shown below:
         <p>Unique Identifier (ID) associated with each record in the table.</p>
         <p>
           This corresponds to the unique <code>messageId</code> for all the
-          tables except for <code>users</code> table, where it is{" "}
+          tables except for <code>users</code> table, where it is
           <code>userId</code>.
         </p>
       </td>
@@ -669,7 +659,7 @@ The schema of the `rudder_discards table` is as shown below:
         <code>table_name</code>
       </td>
       <td style="text-align:left">
-        The table name where the full record is inserted, like{" "}
+        The table name where the full record is inserted, like
         <code>tracks</code>, <code>add_to_cart</code>, <code>identifies</code> ,
         etc.
       </td>

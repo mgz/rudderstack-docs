@@ -1,8 +1,8 @@
-import React, { useState } from "react"
+import React  from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Link from "gatsby-link"
-import loadable from "@loadable/component"
+// import loadable from "@loadable/component"
 import { StaticImage } from "gatsby-plugin-image"
 
 import {
@@ -34,7 +34,7 @@ import { rudderslabTrackOnClick } from "../utils/common"
 const Singleblog = ({ data, location, ...props }) => {
   const blog = data.blog
   const blogAuthors = data.blog.blog_authors
-  const maintitle = props.maintitle
+  // const maintitle = props.maintitle
   const viewalltext = "See all posts"
   const viewallpostslink = "https://rudderstack.com/blog/"
   const viewexternallink = false
@@ -97,24 +97,24 @@ const Singleblog = ({ data, location, ...props }) => {
           <FacebookShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
           >
-            <a className="my-3 block" href="#">
+            <p className="my-3 block" >
               <StaticImage
                 src={"../images/blogfb.svg"}
                 placeholder="tracedSVG"
                 alt="Facebook"
               />
-            </a>
+            </p>
           </FacebookShareButton>
           <LinkedinShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
           >
-            <a className="block" href="#">
+            <p className="block" >
               <StaticImage
                 src={"../images/blogIn.svg"}
                 placeholder="tracedSVG"
                 alt="linkdin"
               />
-            </a>
+            </p>
           </LinkedinShareButton>
         </div>
         <PortableText blocks={blog._rawDescription} />

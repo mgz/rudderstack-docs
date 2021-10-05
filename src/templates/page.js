@@ -1,4 +1,4 @@
-import React,{useEffect} from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import { Helmet } from "react-helmet"
@@ -13,7 +13,7 @@ import GraphQLErrorList from "../components/graphql-error-list"
 import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
 import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
 
-import SEO from "../components/seo"
+// import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 // const Hero = loadable(() => import("../components/hero"))
@@ -179,7 +179,7 @@ const Page = props => {
   //   };
 
   //   const menuItems = page.navMenu && (page.navMenu.items || []);
-  const pageTitle = page.title
+  // const pageTitle = page.title
 
   return (
     <Layout location={props.location}>

@@ -58,6 +58,8 @@ const Products = ({ data, location }) => {
                 <LeftRightImgCnt applyGradientColorTheme={false} {...row} />
               </div>
             )
+          } else {
+            return null
           }
         })}
 

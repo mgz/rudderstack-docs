@@ -58,7 +58,7 @@ const Singleintegration = ({ data }) => {
         content: tmp,
       })
     }
-  }, [])
+  }, [data.integration._rawFaqSection])
 
   return (
     <Layout>

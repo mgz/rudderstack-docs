@@ -1,6 +1,4 @@
-import React, { useEffect, createRef, useState, Suspense } from "react"
-import PortableText from "./portableText"
-import Link from "gatsby-link"
+import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
 
 const HeroBannerIntegrationConnection = props => {

@@ -6,7 +6,7 @@ import Image from "./image"
 const SegmentComparisonComponent = props => {
   const [sticky, setSticky] = useState(true)
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, {passive: true})
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -99,9 +99,16 @@ const SegmentComparisonComponent = props => {
             <thead>
               <tr>
                 <th
-                  className={`${sticky ? "sticky" : ""} top-14 lg:top-20 bg-white z-10`}
-                ></th>
-                <th className={`${sticky ? "sticky" : ""} top-14 lg:top-20 bg-white z-10`}>
+                  
+                  className={`${
+                    sticky ? "sticky" : ""
+                  } top-14 lg:top-20 bg-white z-10`}
+                >{""}</th>
+                <th
+                  className={`${
+                    sticky ? "sticky" : ""
+                  } top-14 lg:top-20 bg-white z-10`}
+                >
                   <div className="flex items-center justify-center px-12 py-6">
                     <StaticImage
                       src="../images/rudderstack-logo.svg"
@@ -111,7 +118,11 @@ const SegmentComparisonComponent = props => {
                     />
                   </div>
                 </th>
-                <th className={`${sticky ? "sticky" : ""} top-14 lg:top-20 bg-white z-10`}>
+                <th
+                  className={`${
+                    sticky ? "sticky" : ""
+                  } top-14 lg:top-20 bg-white z-10`}
+                >
                   <div className="flex items-center justify-center px-12 py-6">
                     {props.comparision_logo && (
                       <Image

@@ -19,6 +19,7 @@ Before configuring Qualtrics as a destination in RudderStack, verify if Qualtric
 | **Cloud mode** | - | - | - |
 
 <div class="infoBlock">
+
 To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
 </div>
 
@@ -27,6 +28,7 @@ Once you have confirmed that the source platform supports sending events to Qual
 * From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source and select **Qualtrics** from the list of destinations.
 
 <div class="infoBlock">
+
 Follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack/">How to Add a Source and Destination in RudderStack</a> for more information.
 </div>
 
@@ -40,16 +42,19 @@ To successfully configure Qualtrics as a destination, you will need to configure
 * **Brand ID:** Enter your Qualtrics Brand ID here.
 
 <div class="infoBlock">
-Refer to the <strong>FAQ</strong> section below for steps on how to get your Qualtrics Project ID and Brand ID.
+
+Refer to the **FAQ** section below for steps on how to get your Qualtrics Project ID and Brand ID.
 </div>
 
 * **Enable Generic Page Title:** If this field is enabled, RudderStack sends every `page` call with the name `Viewed a Page`.
 
 <div class="infoBlock">
+
 This field is useful only when using the <code class="inline-code">page</code> call.
 </div>
 
 <div class="infoBlock">
+
 If this option is disabled, RudderStack will search for the category and name of the <code class="inline-code">page</code> call and send the event as <code class="inline-code">Viewed &lt;category_field&gt; &lt;name_field&gt; Page</code>. If any of the two fields is absent, RudderStack sends the <code class="inline-code">page</code> call as <code class="inline-code">Viewed &lt;category_field&gt;/&lt;name_field&gt; Page</code>.
 </div>
 
@@ -171,6 +176,7 @@ Qualtrics.instance().evaluateProject(new MyCallback());
 ```
 
 <div class="infoBlock">
+
 For more information, refer to the [**Qualtrics Android documentation**](https://api.qualtrics.com/sdks/ZG9jOjgwNTgzNjE-getting-started-with-mobile-app-sdk-on-android).
 </div>
 
@@ -319,6 +325,7 @@ Qualtrics.instance().evaluateProject(new MyCallback());
 </li>
 </ul>
 <div class="infoBlock">
+
 For more information, refer to the <a href="https://api.qualtrics.com/sdks/ZG9jOjgwNTgzNjE-getting-started-with-mobile-app-sdk-on-android">Qualtrics Android documentation</a>.
 </div>
       </TabPanel>
@@ -326,6 +333,7 @@ For more information, refer to the <a href="https://api.qualtrics.com/sdks/ZG9jO
 </Tabs>
 
 <div class="infoBlock">
+
 In the iOS Device Mode implementation, even if the user qualifies for multiple intercepts, only one will be shown. Whereas in Android, all the intercepts for the user will be shown.
 </div>
 
@@ -336,6 +344,7 @@ The `page` call lets you record your website's page views with any additional re
 RudderStack passes any tracked events as embedded data to the Qualtrics [**intercept**](https://www.qualtrics.com/support/website-app-feedback/getting-started-with-website-app-feedback/step-4-setting-up-your-intercept/) target. After the `page` call, the Qualtrics survey is loaded.
 
 <div class="successBlock">
+
 You can set the intercepts when a user creates the project or after they have created the project.
 </div>
 
@@ -506,4 +515,4 @@ Yes, you can manually set the logic using Qualtrics `Properties` class `setStrin
 
 ## Contact Us
 
-For questions on any of the sections covered in this guide, feel free to [**contact us**](mailto:docs@rudderstack.com) or start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
+For questions on any of the sections covered in this guide, feel free to [**contact us**](mailto:docs@rudderstack.com) or start a conversation on our [**Slack channel**](https://resources.rudderstack.com/join-rudderstack-slack).

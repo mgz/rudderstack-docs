@@ -12,11 +12,7 @@ RudderStack allows you to send relevant events to Kochava through a S2S \(Server
 
 <div class="successBlock">
 
-  <strong>
-    Find the open-source transformer code for this destination in our{" "}
-    <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kochava">GitHub repo</a>
-    .
-  </strong>
+  **Find the open-source transformer code for this destination in our <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/kochava">GitHub repo</a>.**
 </div>
 
 ## Getting Started
@@ -55,7 +51,7 @@ To successfully configure Kochava as a destination, you will need to configure t
 
 - **App GUID:** Kochava generates a unique ID for your application, called the **App GUID**. You can find this ID by going to your Kochava account and navigating to **Apps & Assets** - **All Apps**. You can then select your app to the view the App GUID.
 
-<strong>NOTE</strong>: The following two settings are applicable for `iOS Device
+**NOTE**: The following two settings are applicable for `iOS Device
 Mode` only:
 
 - **Enable AppTrackingTransparency \(ATT\):** Enable this setting if you want to enable the `AppTrackingTransparency` feature provided by the Kochava iOS SDK.
@@ -430,7 +426,7 @@ apply plugin: 'com.google.gms.google-services'
 ```
 </li>
 <li>Place the <code class="inline-code">google-services.json</code> downloaded from the <code class="inline-code">Firebase console</code> into the root folder of your <code class="inline-code">app</code>.</li>
-<li>Passing the new Push Token received from FCM to the Kochava SDK. For more information, look into the <strong>sample-kotlin</strong> app.
+<li>Passing the new Push Token received from FCM to the Kochava SDK. For more information, look into the **sample-kotlin** app.
 <span>
 
 ```text
@@ -455,8 +451,8 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
       </TabPanel>
       <TabPanel>
           <ul>
-        <li>Add Push Notification as a capability by navigating to <strong>Target</strong> - <strong>Signing & Capabilities</strong> of your app when opened in Xcode.</li>
-<li>Enable <strong>Background Modes/Remote notifications</strong> by navigating to <strong>Targets</strong> - <strong>Your App</strong> - <strong>Capabilities</strong> - <strong>Background Modes</strong> and then check <code class="inline-code">Remote notifications</code></li>
+        <li>Add Push Notification as a capability by navigating to **Target** - **Signing & Capabilities** of your app when opened in Xcode.</li>
+<li>Enable **Background Modes/Remote notifications** by navigating to **Targets** - **Your App** - **Capabilities** - **Background Modes** and then check <code class="inline-code">Remote notifications</code></li>
 <li>Register the push notifications for the iOS devices in your Kochava dashboard.</li>
 <li>Then, add the following code in your app just after initializing RudderStack's iOS SDK to register the push notifications.
 <span>

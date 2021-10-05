@@ -13,7 +13,7 @@ import IntegrationsHelpBox from "../components/Integrations-help"
 import ScrollUpButton from "react-scroll-up-button"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
-import { rudderslabTrackOnSearch } from "../utils/common"
+// import { rudderslabTrackOnSearch } from "../utils/common"
 
 const Integration = props => {
   const searchClient = algoliasearch(
@@ -25,7 +25,7 @@ const Integration = props => {
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
 
-  const { data } = props
+  // const { data } = props
   const [searchedText, setSerchedText] = React.useState("")
   const [resultCount, setResultCount] = React.useState(0)
 

@@ -36,6 +36,8 @@ const Integrationrowcontent = ({ hits }) => {
                 </h2>
               </Link>
             )
+          } else {
+            return null
           }
         })}
       </div>
