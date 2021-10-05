@@ -1296,8 +1296,34 @@ top: -60px;
   @apply top-0;
   @apply h-screen;
   @apply max-h-screen;
-  width: 280px;
+  width: 300px;
   @apply overflow-y-auto;
+}
+.sidebar-nav-content::-webkit-scrollbar-button, .sidebar-nav-content::-webkit-scrollbar-corner, .sidebar-nav-content::-webkit-resizer, .sidebar-nav-content::-webkit-scrollbar-track-piece, .tocWrapper::-webkit-scrollbar-button, .tocWrapper::-webkit-scrollbar-corner, .tocWrapper::-webkit-resizer, .tocWrapper::-webkit-scrollbar-track-piece {
+  display: none;
+}
+.sidebar-nav-content::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+}
+.tocWrapper::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+  display: none;
+}
+.tocWrapper:hover::-webkit-scrollbar{
+  display: initial;
+}
+.sidebar-nav-content::-webkit-scrollbar-thumb, .tocWrapper::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,.16);
+  transition: background 250ms ease;
+  border-radius: 2px;
+  -moz-transition: background 250ms ease;
+  -webkit-transition: background 250ms ease;
+}
+.sidebar-nav-content::-webkit-scrollbar-track, .tocWrapper::-webkit-scrollbar-track{
+  background: none;
+  border-width: 0;
 }
 
 .sidebar-nav-content .accordion {
@@ -1345,7 +1371,12 @@ top: -60px;
   @apply pr-5 pl-2;
   @apply outline-none;
 }
-
+.nestedAccordion .accordion__button:hover{
+  @apply bg-grayColor-lightBorder;
+}
+.nestedAccordion .accordion__button:hover:before{
+  @apply border-grayColor-lighter;
+}
 .nestedAccordion .accordion__button.accActive {
   @apply bg-grayColor-lightBorder;
 }
@@ -1468,7 +1499,7 @@ top: -60px;
   @apply border-l-2;
   @apply border-blueNew-custom;
   @apply relative;
-  @apply my-4;
+  @apply my-8;
   border-radius: 0px 5px 5px 0px;
 }
 .imageTitle {
@@ -1487,7 +1518,7 @@ top: -60px;
   @apply border-l-2;
   @apply border-orange-warningBorder;
   @apply relative;
-  @apply my-4;
+  @apply my-8;
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -1500,7 +1531,7 @@ top: -60px;
   @apply border-l-2;
   @apply border-red-dangerBorder;
   @apply relative;
-  @apply my-4;
+  @apply my-8;
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -1513,7 +1544,7 @@ top: -60px;
   @apply border-l-2;
   @apply border-green-successBorder;
   @apply relative;
-  @apply my-4;
+  @apply my-8;
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -1749,6 +1780,7 @@ a.pageRef:hover .rightRefArrow {
 .apiSummary{
   @apply block;
   @apply mb-2;
+  @apply text-grayColor-lighter;
 }
 .parameterBody{
   @apply border border-grayColor-lightBorder;
@@ -1789,6 +1821,11 @@ a.pageRef:hover .rightRefArrow {
   @apply bg-green-successBorder;
   @apply rounded-full;
   @apply mr-2;
+}
+.resDescription{
+  @apply block;
+  @apply mb-4;
+  @apply text-grayColor-lighter;
 }
 .pathName{
   word-break: break-all;

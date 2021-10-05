@@ -8,9 +8,9 @@ import slug from "@rocketseat/gatsby-theme-docs/src/util/slug"
 
 import { Wrapper, Container } from "./styles"
 import tailwindConfig, { theme } from "../../../../../../tailwind.config"
-import { find, uniqBy, includes, findIndex } from "lodash-es"
+import { filter, includes } from "lodash-es"
 
-export default function TableOfContents({ headings, disableTOC, contentRef }) {
+export default function TableOfContents({ headings = [], disableTOC = false, contentRef }) {
   const { y } = useWindowScroll()
   //const theme = useTheme();
   const { width, height } = useWindowSize()
@@ -18,9 +18,10 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
 
   const isMobile = width <= 1200
 
-  /* const generateId = (str,i) => {
+  /* const generateId = () => {
     let tempArr = headings.filter(heading => heading.depth === 2 || heading.depth === 3);
-    console.log('Dupe',find(tempArr, o => o.value === str));
+    const duplicates = filter(tempArr, (value, index, iteratee) => includes(iteratee, value, index + 1))
+    console.log('Dupes', duplicates);
   } */
 
   useEffect(() => {
@@ -36,38 +37,40 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
 
               return {
                 id: heading.id,
-                offset: heading.offsetTop + anchor.offsetTop,
+                offset: heading.offsetTop /* + anchor.offsetTop */,
               }
             })
             .filter(Boolean)
       )
     }
-
-    
+    //generateId();
 
   }, [width, height, contentRef, isMobile, disableTOC])
 
   const activeHeading = useMemo(() => {
     if (!isMobile || disableTOC) {
       const windowOffset = height / 2
-      const scrollTop = y + windowOffset
+      const scrollTop = y;
 
       if (offsets) {
         for (let i = offsets.length - 1; i >= 0; i -= 1) {
           const { id, offset } = offsets[i]
-          if (scrollTop >= offset) {
+          if (scrollTop >= offset + 50) {
+            /* console.log('Scroll Y', scrollTop);
+            console.log('Current offset', offset); */
             return id
           }
         }
       }
     }
 
+    
     return null
   }, [offsets, height, y, isMobile, disableTOC])
 
   if (!disableTOC) {
     return (
-      <Wrapper>
+      <Wrapper className="tocWrapper">
         <Container>
           <h2>
             <span
@@ -103,7 +106,7 @@ export default function TableOfContents({ headings, disableTOC, contentRef }) {
           </h2>
           <nav>
             <ul>
-              {headings
+              {headings && headings
                 .filter(heading => heading.depth === 2 || heading.depth === 3)
                 .map((heading, i) => {
                   const headingSlug = slug(heading.value);
@@ -148,5 +151,5 @@ TableOfContents.propTypes = {
 }
 
 TableOfContents.defaultProps = {
-  headings: null,
+  headings: [],
 }

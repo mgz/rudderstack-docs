@@ -37,7 +37,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
         </div>
         <div className="docsLogo flex items-center">
           <a href="/">
-            <img src={RsLogo} />
+            <img src={RsLogo} alt="RudderStack" className="mainLogo" />
           </a>
         </div>
         <nav className="docsNav">
@@ -79,7 +79,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
               </g>
             </svg>
           </span>
-          <input type="text" placeholder="Search.." className="docsSearchbar" onClickCapture={() => setSearchOpen(true)} />
+          <input type="text" placeholder="Search..." className="docsSearchbar" onClickCapture={(e) => {setSearchOpen(true); e.target.blur();}} />
         </div>
         
         <div className="searchWrapper">

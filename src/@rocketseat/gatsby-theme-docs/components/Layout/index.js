@@ -11,7 +11,6 @@ import tailwindConfig from "../../../../../tailwind.config"
 
 export default function Layout({
   children,
-  disableTableOfContents,
   title,
   headings,
   description,
@@ -19,8 +18,8 @@ export default function Layout({
   const contentRef = useRef(null)
   const [isMenuOpen, setMenuOpen] = useState(false)
   const [isTocOpen, setTocOpen] = useState(false)
-  const disableTOC =
-    disableTableOfContents === true || !headings || headings.length === 0
+  //const disableTOC = disableTableOfContents === true || !headings || headings.length === 0
+  const disableTOC = false;
 
   useEffect(() => {
     /* console.log('Headings', headings); */

@@ -8,7 +8,7 @@ import mediumZoom from "medium-zoom"
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs"
 import "@reach/tabs/styles.css"
 import Layout from "../Layout"
-import SEO from "@rocketseat/gatsby-theme-docs/src/components/SEO"
+import SEO from "../SEO"
 import PostNav from "./PostNav"
 import EditGithub from "@rocketseat/gatsby-theme-docs/src/components/Docs/EditGithub"
 import { forEach, findIndex } from "lodash"
@@ -51,7 +51,7 @@ export default function Docs({ mdx, pageContext }) {
 
   useEffect(() => {
     (function(){
-      const zoom = mediumZoom(document.querySelectorAll("img"))
+      const zoom = mediumZoom(document.querySelectorAll("img:not(.mainLogo)"))
 
       return () => {
         zoom.detach()

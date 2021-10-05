@@ -284,6 +284,10 @@ export default function GlobalStyle() {
           content: "c#";
           background: #e6ffed;
         }
+        pre[class~="language-php"]::before {
+          content: "php";
+          background: #e6ffed;
+        }
 
         @media only screen and (max-width: 640px) {
           h1 {
