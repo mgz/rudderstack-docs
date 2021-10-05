@@ -227,6 +227,28 @@ body {
   width: 327px;
 }
 
+.integration-connection-hero-container-warehouse {
+  width: 490px;
+  margin: auto;
+  position: relative;
+}
+
+.integration-connection-hero-logo-right-warehouse {
+  position: absolute;
+  width: 169px;
+  height: 128px;
+  top: 60px;
+  left: 430px;
+}
+
+.integration-connection-hero-logo-left-warehouse {
+  position: absolute;
+  width: 156px;
+  height: 235px;
+  top: 8px;
+  left: 4px;
+}
+
 .ic-middle-container {
   width: 568px;
   margin: auto;
@@ -333,6 +355,30 @@ body {
   font-weight: 700 !important;
 }
 
+@media (max-width: 1300px) and (min-width: 1024px) {
+  .integration-connection-hero-container-warehouse {
+    width: 300px;
+    margin: auto;
+    position: relative;
+  }
+
+  .integration-connection-hero-logo-right-warehouse {
+    position: absolute;
+    width: 130px;
+    height: 100px;
+    top: 24px;
+    left: 256px;
+  }
+
+  .integration-connection-hero-logo-left-warehouse {
+    position: absolute;
+    width: 100px;
+    height: 156px;
+    top: 0px;
+    left: 0px;
+  }
+}
+
 @media (max-width: 1023px) and (min-width: 640px) {
   .integration-connection-hero-logo-primary-desktop {
     width: 490px;
@@ -350,6 +396,20 @@ body {
     width: 520px;
     margin: auto;
     position: relative;
+  }
+
+  .integration-connection-hero-container-warehouse {
+    width: 490px;
+    margin: auto;
+    position: relative;
+  }
+
+  .integration-connection-hero-logo-warehouse {
+    position: absolute;
+    width: 169px;
+    height: 128px;
+    top: 170px;
+    left: 326px;
   }
 
   .integration-connection-hero-logo-primary-mobile {
@@ -425,6 +485,28 @@ body {
     height: 52px;
     top: 110px;
     left: 206px;
+  }
+
+  .integration-connection-hero-container-warehouse {
+    width: 200px;
+    margin: auto;
+    position: relative;
+  }
+
+  .integration-connection-hero-logo-right-warehouse {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    top: 20px;
+    left: 170px;
+  }
+
+  .integration-connection-hero-logo-left-warehouse {
+    position: absolute;
+    width: 78px;
+    height: 116px;
+    top: 0px;
+    left: 0px;
   }
 
   .integration-connection-hero-logo-primary-mobile {
@@ -1099,7 +1181,8 @@ top: -60px;
   background: rgb(245, 247, 249);
   color: rgb(157, 170, 182);
   border: 1px solid rgb(230, 236, 241);
-  @apply border-b-2 border-transparent;
+  @apply border-b-2;
+  border-bottom-color: transparent;
   transition: all 0.5s ease;
 }
 .childrenWrapper [data-reach-tab][data-selected]{
@@ -1213,8 +1296,34 @@ top: -60px;
   @apply top-0;
   @apply h-screen;
   @apply max-h-screen;
-  width: 280px;
+  width: 300px;
   @apply overflow-y-auto;
+}
+.sidebar-nav-content::-webkit-scrollbar-button, .sidebar-nav-content::-webkit-scrollbar-corner, .sidebar-nav-content::-webkit-resizer, .sidebar-nav-content::-webkit-scrollbar-track-piece, .tocWrapper::-webkit-scrollbar-button, .tocWrapper::-webkit-scrollbar-corner, .tocWrapper::-webkit-resizer, .tocWrapper::-webkit-scrollbar-track-piece {
+  display: none;
+}
+.sidebar-nav-content::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+}
+.tocWrapper::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+  display: none;
+}
+.tocWrapper:hover::-webkit-scrollbar{
+  display: initial;
+}
+.sidebar-nav-content::-webkit-scrollbar-thumb, .tocWrapper::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,.16);
+  transition: background 250ms ease;
+  border-radius: 2px;
+  -moz-transition: background 250ms ease;
+  -webkit-transition: background 250ms ease;
+}
+.sidebar-nav-content::-webkit-scrollbar-track, .tocWrapper::-webkit-scrollbar-track{
+  background: none;
+  border-width: 0;
 }
 
 .sidebar-nav-content .accordion {
@@ -1262,7 +1371,12 @@ top: -60px;
   @apply pr-5 pl-2;
   @apply outline-none;
 }
-
+.nestedAccordion .accordion__button:hover{
+  @apply bg-grayColor-lightBorder;
+}
+.nestedAccordion .accordion__button:hover:before{
+  @apply border-grayColor-lighter;
+}
 .nestedAccordion .accordion__button.accActive {
   @apply bg-grayColor-lightBorder;
 }
@@ -1385,7 +1499,7 @@ top: -60px;
   @apply border-l-2;
   @apply border-blueNew-custom;
   @apply relative;
-  @apply my-4;
+  @apply my-8;
   border-radius: 0px 5px 5px 0px;
 }
 .imageTitle {
@@ -1404,7 +1518,7 @@ top: -60px;
   @apply border-l-2;
   @apply border-orange-warningBorder;
   @apply relative;
-  @apply my-4;
+  @apply my-8;
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -1417,7 +1531,7 @@ top: -60px;
   @apply border-l-2;
   @apply border-red-dangerBorder;
   @apply relative;
-  @apply my-4;
+  @apply my-8;
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -1430,7 +1544,7 @@ top: -60px;
   @apply border-l-2;
   @apply border-green-successBorder;
   @apply relative;
-  @apply my-4;
+  @apply my-8;
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -1470,6 +1584,9 @@ top: -60px;
   height: 1em;
   transform: translateY(-50%);
 }
+.successBlock p, .infoBlock p, .dangerBlock p, .warningBlock p{
+  @apply text-secondary !important;
+}
 
 .childrenWrapper {
   @apply relative;
@@ -1508,14 +1625,15 @@ a.pageRef {
   @apply block;
   @apply text-xl;
   @apply no-underline hover:no-underline !important;
-  @apply hover:text-blueNew-custom;
+  @apply hover:text-purpleNew-gigas;
+  @apply font-semibold !important;
   transition: color 0.25s ease;
 }
 .rightRefArrow {
   transition: color 0.25s ease;
 }
 a.pageRef:hover .rightRefArrow {
-  stroke: #0066ff;
+  stroke: rgb(78,59, 151);
 }
 .pageRefInner {
   @apply flex;
@@ -1523,7 +1641,7 @@ a.pageRef:hover .rightRefArrow {
   @apply items-center;
   @apply justify-self-stretch;
   @apply shadow-md;
-  @apply border border-grayColor-lightBorder hover:border-blueNew-custom;
+  @apply border border-grayColor-lightBorder hover:border-purpleNew-gigas;
   @apply rounded;
   transition: border 0.25s ease;
 }
@@ -1634,6 +1752,7 @@ a.pageRef:hover .rightRefArrow {
   @apply inline-block;
   @apply align-middle;
   @apply rounded-md;
+  /* margin-top: 10px; */
 }
 .apiCallType.post{
   @apply bg-green-successBorder;
@@ -1661,6 +1780,7 @@ a.pageRef:hover .rightRefArrow {
 .apiSummary{
   @apply block;
   @apply mb-2;
+  @apply text-grayColor-lighter;
 }
 .parameterBody{
   @apply border border-grayColor-lightBorder;
@@ -1702,10 +1822,54 @@ a.pageRef:hover .rightRefArrow {
   @apply rounded-full;
   @apply mr-2;
 }
+.resDescription{
+  @apply block;
+  @apply mb-4;
+  @apply text-grayColor-lighter;
+}
 .pathName{
   word-break: break-all;
 }
-
+.pageRefWrapper{
+  width: 100%;
+  margin: 24px 0px;
+  display: grid;
+  padding: 0px;
+  gap: 24px;
+  justify-content: center;
+  -webkit-box-pack: center;
+  grid-template-rows: auto;
+  grid-template-columns: calc(50% - 8px) calc(50% - 8px);
+}
+.pageRefWrapper a{
+  color: rgb(36, 42, 49);
+  border: 1px solid rgb(230, 236, 241);
+  margin: 0px;
+  display: flex;
+  padding: 0px;
+  position: relative;
+  place-self: stretch;
+  box-shadow: rgb(116 129 141 / 10%) 0px 3px 8px 0px;
+  align-items: center;
+  border-radius: 5px;
+  flex-direction: row;
+  text-decoration: none !important;
+  background-color: rgb(255, 255, 255);
+  -webkit-box-align: center;
+  break-inside: avoid;
+  -webkit-box-orient: horizontal;
+  transition: border 250ms ease 0s;
+  -webkit-box-direction: normal;
+}
+.pageRefWrapper a:hover{
+  @apply border-purpleNew-gigas;
+}
+.pageRefBlock{
+  display: block;
+  flex: 1;
+  padding: 16px;
+  margin: 0px;
+}
 @media only screen and (min-width: 1023px) {
   .menu li.has-submenu:hover a:after {
     transform: rotate(225deg);
@@ -1832,6 +1996,12 @@ a.pageRef:hover .rightRefArrow {
   /*Source Integration Page*/
   .int-img {
     height: 150px;
+  }
+}
+
+@media only screen and (max-width: 780px){
+  .pageRefWrapper{
+    grid-template-columns: 100%;
   }
 }
 

@@ -19,11 +19,9 @@ These configuration parameters are also applicable for the <strong><code class="
 <div class="successBlock">
 
   To best understand some of the terms covered in this guide, we recommend going
-  through the{" "}
-  <a href="../../get-started/rudderstack-architecture">
+  through the <a href="../../get-started/rudderstack-architecture">
     RudderStack architecture
-  </a>
-  first.
+  </a> first.
 </div>
 
 ## Global Parameters
@@ -83,37 +81,37 @@ For more information on the Processor, Gateway, and Router modules of the Rudder
   <tbody>
     <tr>
       <td style="text-align:left">
-        <code>jobDoneMigrateThres</code>
+        <code class="inline-code">jobDoneMigrateThres</code>
       </td>
       <td style="text-align:left">Float64</td>
       <td style="text-align:left">
-        If (<code>deletedJobsCount </code>/ <code>totalJobsCount</code>) &gt;{" "}
-        <code>jobDoneMigrateThres</code>, RudderStack migrates the table of the
+        If (<code class="inline-code">deletedJobsCount </code>/ <code class="inline-code">totalJobsCount</code>) &gt;{" "}
+        <code class="inline-code">jobDoneMigrateThres</code>, RudderStack migrates the table of the
         jobs that have been processed.
       </td>
       <td style="text-align:center">
-        <code>0.8</code>
+        <code class="inline-code">0.8</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>jobStatusMigrateThres</code>
+        <code class="inline-code">jobStatusMigrateThres</code>
       </td>
       <td style="text-align:left">Float64</td>
       <td style="text-align:left">
         <p>
-          If (<code>statusCount </code>/ <code>totalCount</code>) &gt;{" "}
-          <code>jobStatusMigrateThres</code>,
+          If (<code class="inline-code">statusCount </code>/ <code class="inline-code">totalCount</code>) &gt;
+          <code class="inline-code">jobStatusMigrateThres</code>,
         </p>
         <p>RudderStack migrates the table of jobs that have been processed.</p>
       </td>
       <td style="text-align:center">
-        <code>5</code>
+        <code class="inline-code">5</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>maxDSSize</code>
+        <code class="inline-code">maxDSSize</code>
       </td>
       <td style="text-align:left">Int</td>
       <td style="text-align:left">
@@ -121,24 +119,24 @@ For more information on the Processor, Gateway, and Router modules of the Rudder
         migrates all the jobs in that table.
       </td>
       <td style="text-align:center">
-        <code>100000</code>
+        <code class="inline-code">100000</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>maxMigrateOnce</code>
+        <code class="inline-code">maxMigrateOnce</code>
       </td>
       <td style="text-align:left">Int</td>
       <td style="text-align:left">
         The maximum number of tables that can be migrated together.
       </td>
       <td style="text-align:center">
-        <code>10</code>
+        <code class="inline-code">10</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>maxTableSizeInMB</code>
+        <code class="inline-code">maxTableSizeInMB</code>
       </td>
       <td style="text-align:left">Int</td>
       <td style="text-align:left">
@@ -146,12 +144,12 @@ For more information on the Processor, Gateway, and Router modules of the Rudder
         cross this limit.
       </td>
       <td style="text-align:center">
-        <code>300</code>
+        <code class="inline-code">300</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>migrateDSLoopSleepDuration</code>
+        <code class="inline-code">migrateDSLoopSleepDuration</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">
@@ -159,36 +157,36 @@ For more information on the Processor, Gateway, and Router modules of the Rudder
         The time RudderStack waits before migrating the datasets.
       </td>
       <td style="text-align:center">
-        <code>30s</code>
+        <code class="inline-code">30s</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>maxMigrateDSProbe</code>
+        <code class="inline-code">maxMigrateDSProbe</code>
       </td>
       <td style="text-align:left">Int64</td>
       <td style="text-align:left">
         The maximum number of tables probed to find if they can be migrated.
       </td>
       <td style="text-align:center">
-        <code>10</code>
+        <code class="inline-code">10</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>addNewDSLoopSleepDuration</code>
+        <code class="inline-code">addNewDSLoopSleepDuration</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">
         The time RudderStack waits before adding a dataset.
       </td>
       <td style="text-align:center">
-        <code>5s</code>
+        <code class="inline-code">5s</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>backupCheckSleepDuration</code>
+        <code class="inline-code">backupCheckSleepDuration</code>
       </td>
       <td style="text-align:left">String</td>
       <td style="text-align:left">
@@ -196,22 +194,21 @@ For more information on the Processor, Gateway, and Router modules of the Rudder
         needs backing up.
       </td>
       <td style="text-align:center">
-        <code>5s</code>
+        <code class="inline-code">5s</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>enableBackup</code>
+        <code class="inline-code">enableBackup</code>
       </td>
       <td style="text-align:left">Boolean</td>
       <td style="text-align:left">
-        Enables or disables the backup. This is set to <code>false</code> in the
-        <a href="https://rudderstack.com/docs/user-guides/administrators-guide/high-availability#rudderstack-server-running-modes">
-          <b>Degraded</b>
-        </a>mode.
+        Enables or disables the backup. This is set to <code>false</code> in the <a href="https://rudderstack.com/docs/user-guides/administrators-guide/high-availability#rudderstack-server-running-modes">
+          Degraded
+        </a> mode.
       </td>
       <td style="text-align:center">
-        <code>true</code>
+        <code class="inline-code">true</code>
       </td>
     </tr>
   </tbody>

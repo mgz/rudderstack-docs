@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   position: sticky;
   top: 0;
 
-  padding-top: 72px;
+  margin-top: 72px;
   max-height: calc(100vh - 72px);
   overflow-y: auto;
   overflow-x: hidden;
@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
     order: 0;
     max-width: 100%;
     margin-left: 0;
-    padding-top: 0;
+    margin-top: 0;
   }
 `
 

@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { connectSearchBox } from "react-instantsearch-dom"
 
 // SearchBox Implementation.
@@ -10,8 +10,15 @@ const SearchBox = ({
   pleaceholderText,
   isSearchOpen,
   setSearchOpen
-}) => (
-  <>
+}) => {
+
+  const innerSearch = React.createRef();
+
+  useEffect(() => {
+    isSearchOpen && innerSearch.current.focus();
+  })
+
+  return (<>
     <div className="docsSearch">
       <span className="docsSearchIcon">
         <svg
@@ -38,12 +45,12 @@ const SearchBox = ({
         autoCapitalize="off"
         autoComplete="off"
         autoCorrect="off"
-        autoFocus
         placeholder={pleaceholderText ? pleaceholderText : "Search..."}
         role="textbox"
         spellCheck="false"
         value={currentRefinement}
         className="bg-white h-12 pr-5 w-full"
+        ref={innerSearch}
         onChange={event => {
           refine(event.currentTarget.value)
           onRefineTextChange(event.currentTarget.value)
@@ -58,8 +65,8 @@ const SearchBox = ({
         <svg preserveAspectRatio="xMidYMid meet" width="1.5em" height="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor"><g><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></g></svg>
       </span>
     </div>
-  </>
-)
+  </>)
+}
 
 const DocsSearchBox = connectSearchBox(SearchBox)
 

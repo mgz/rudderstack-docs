@@ -21,7 +21,7 @@ function Accordion(props) {
         <div ref={content} className="accordion__content pb-12 pl-4">
           {props.isBlockContent && (
             <div className="accordion__text frtxt-contnt font-medium text-lg">
-              <PortableText blocks={props.content} />
+              <PortableText blocks={props.content} trackSectionHeader={props.title} />
             </div>
           )}
           {!props.isBlockContent && (

@@ -3,8 +3,9 @@ import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
 
-const FourCardsWithTitle = props => {
+import { rudderslabTrackOnClick } from "../utils/common"
 
+const FourCardsWithTitle = props => {
   return (
     <section className="bg-whiteColor-custom pb-8 md:pb-24">
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center">
@@ -47,7 +48,7 @@ const FourCardsWithTitle = props => {
                     {item.title}
                   </div>
                   <div class="text-grayColor-custom text-lg">
-                    <PortableText blocks={item.content} />
+                    <PortableText blocks={item.content} trackSectionHeader={item.title} />
                   </div>
                   {linktext !== "" && (
                     <div class="flex items-center mt-8">
@@ -57,6 +58,13 @@ const FourCardsWithTitle = props => {
                             return (
                               <a
                                 href={linkurl}
+                                onClick={e =>
+                                  rudderslabTrackOnClick(
+                                    link_display_as_button ? "button" : "link",
+                                    props.title,
+                                    e
+                                  )
+                                }
                                 className={`font-bold leading-normal text-sm ${
                                   link_display_as_button ? "btn-primary-lg" : ""
                                 } ${
@@ -83,7 +91,20 @@ const FourCardsWithTitle = props => {
                                     : ""
                                 }`}
                               >
-                                <Link to={linkurl}>{linktext}</Link>
+                                <Link
+                                  onClick={e =>
+                                    rudderslabTrackOnClick(
+                                      link_display_as_button
+                                        ? "button"
+                                        : "link",
+                                      props.title,
+                                      e
+                                    )
+                                  }
+                                  to={linkurl}
+                                >
+                                  {linktext}
+                                </Link>
                               </span>
                             )
                           }

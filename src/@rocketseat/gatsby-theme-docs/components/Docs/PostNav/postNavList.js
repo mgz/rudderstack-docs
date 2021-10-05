@@ -186,9 +186,9 @@ export const postNavList = [
     "content":[]
  },
  {
-    "key":".net",
+    "key":"dotnet",
     "title":".NET",
-    "link":"/stream-sources/rudderstack-sdk-integration-guides/.net/",
+    "link":"/stream-sources/rudderstack-sdk-integration-guides/dotnet/",
     "content":[]
  },
  {
@@ -318,6 +318,14 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"hubspot-data-model-and-schema-information",
+   "title":"HubSpot Data Model and Schema Information",
+   "link":"/cloud-extract-sources/hubspot/hubspot-data-model-and-schema-information/",
+   "content":[
+      
+   ]
+},
+ {
     "key":"intercom",
     "title":"Intercom",
     "link":"/cloud-extract-sources/intercom/",
@@ -371,6 +379,36 @@ export const postNavList = [
     "link":"/cloud-extract-sources/salesforce/schema-comparison-rudderstack-vs-segment/",
     "content":[]
  },
+ {
+   "key":"salesforce-pardot",
+   "title":"Salesforce Pardot",
+   "link":"/cloud-extract-sources/salesforce-pardot/",
+   "content":[]
+   },
+   {
+      "key":"stripe",
+      "title":"Stripe",
+      "link":"/cloud-extract-sources/stripe/",
+      "content":[]
+   },
+   {
+      "key":"xero",
+      "title":"Xero",
+      "link":"/cloud-extract-sources/xero/",
+      "content":[]
+   },
+   {
+      "key":"zendesk",
+      "title":"Zendesk",
+      "link":"/cloud-extract-sources/zendesk/",
+      "content":[]
+   },
+   {
+      "key":"zendesk-chat",
+      "title":"Zendesk Chat",
+      "link":"/cloud-extract-sources/zendesk-chat/",
+      "content":[]
+   },
  {
     "key":"warehouse-actions",
     "title":"Warehouse Actions Sources",
@@ -515,6 +553,18 @@ export const postNavList = [
     "link":"/destinations/analytics/mixpanel/",
     "content":[]
  },
+ {
+   "key":"quantummetric",
+   "title":"Quantum Metric",
+   "link":"/destinations/analytics/quantummetric/",
+   "content":[]
+},
+ {
+   "key":"firebase",
+   "title":"Firebase",
+   "link":"/destinations/analytics/firebase/",
+   "content":[]
+},
  {
     "key":"kissmetrics",
     "title":"Kissmetrics",
@@ -756,14 +806,14 @@ export const postNavList = [
    "content":[]
 },
 {
-   "key":"activeCampaign",
+   "key":"activecampaign",
    "title":"ActiveCampaign",
-   "link":"/destinations/marketing/activeCampaign/",
+   "link":"/destinations/marketing/activecampaign/",
    "content":[]
 },
 {
    "key":"klaviyo",
-   "title":"klaviyo",
+   "title":"Klaviyo",
    "link":"/destinations/marketing/klaviyo/",
    "content":[]
 },
@@ -882,9 +932,9 @@ export const postNavList = [
    "content":[]
 },
 {
-   "key":"facebook-custom-audience",
+   "key":"fb-custom-audience",
    "title":"Facebook Custom Audience",
-   "link":"/destinations/advertising/facebook-custom-audience/",
+   "link":"/destinations/advertising/fb-custom-audience/",
    "content":[]
 },
 {
@@ -1008,9 +1058,9 @@ export const postNavList = [
    "content":[]
 },
 {
-   "key":"azure-blob-storage",
+   "key":"microsoft-azure-blob-storage",
    "title":"Azure Blob Storage",
-   "link":"/destinations/storage-platforms/azure-blob-storage/",
+   "link":"/destinations/storage-platforms/microsoft-azure-blob-storage/",
    "content":[]
 },
  {
@@ -1020,9 +1070,9 @@ export const postNavList = [
     "content":[]
  },
  {
-   "key":"google-tag-managers",
-   "title":"Google Tag Managers",
-   "link":"/destinations/tag-managers/google-tag-managers/",
+   "key":"google-tag-manager",
+   "title":"Google Tag Manager",
+   "link":"/destinations/tag-managers/google-tag-manager/",
    "content":[]
 },
  {
@@ -1050,9 +1100,9 @@ export const postNavList = [
    "content":[]
 },
 {
-   "key":"vwo-beta-visual-optimizer",
-   "title":"VWO (Visual Website Optimizer",
-   "link":"/destinations/testing-and-personalization/vwo-beta-visual-optimizer/",
+   "key":"vwo-beta-visual-website-optimizer",
+   "title":"VWO (Visual Website Optimizer)",
+   "link":"/destinations/testing-and-personalization/vwo-beta-visual-website-optimizer/",
    "content":[]
 },
 {
@@ -1344,9 +1394,9 @@ export const postNavList = [
     "content":[]
  },
  {
-    "key":"pixel-api",
+    "key":"pixel-api-spec",
     "title":"Pixel API",
-    "link":"/rudderstack-api/pixel-api/",
+    "link":"/rudderstack-api/pixel-api-spec/",
     "content":[]
  },
  {

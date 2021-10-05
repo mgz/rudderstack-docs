@@ -1,6 +1,7 @@
 import React from "react"
 import PortableText from "./portableText"
 import Link from "gatsby-link"
+import { rudderslabTrackOnClick } from "../utils/common"
 
 const HeroBannerCloud = props => {
   // console.log("HeroBannerCloud", props)
@@ -16,7 +17,7 @@ const HeroBannerCloud = props => {
               {props.herobannersmalltitle}
             </h3>
             <div className=" text-lg leading-6 lg:pr-36 frtxt-contnt">
-              <PortableText blocks={props.herobannercontent} />
+              <PortableText blocks={props.herobannercontent} trackSectionHeader={props.herobannertitle} />
             </div>
 
             <div className="block sm:flex justify-center items-center mt-12">
@@ -33,6 +34,13 @@ const HeroBannerCloud = props => {
                               : "btn-secondary-lg") +
                             ` sm:mr-4 md:mb-0 mb-6 bg-white text-dark hover:bg-blueNew-midnight hover:text-white`
                           }
+                          onClick={e =>
+                            rudderslabTrackOnClick(
+                              "button",
+                              props.herobannertitle,
+                              e
+                            )
+                          }
                           href={btn.btnlink}
                         >
                           {btn.btntext}
@@ -40,7 +48,17 @@ const HeroBannerCloud = props => {
                       )
                     } else {
                       return (
-                        <Link key={btn._key} to={btn.btnlink}>
+                        <Link
+                          onClick={e =>
+                            rudderslabTrackOnClick(
+                              "button",
+                              props.herobannertitle,
+                              e
+                            )
+                          }
+                          key={btn._key}
+                          to={btn.btnlink}
+                        >
                           <span
                             className={
                               (btn.btnhiglight === true

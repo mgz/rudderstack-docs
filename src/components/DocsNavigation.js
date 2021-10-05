@@ -3,9 +3,6 @@ import RsLogo from "../images/rudderstack-logo-v2.svg"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
 import DocsSearchBox from "./DocsSearchBox"
-import { graphql, StaticQuery } from "gatsby"
-import { TempButton } from "./tempDataCheck"
-import tailwindConfig from "../../tailwind.config"
 import DocSearchContentWrapper from "./DocSearchContentWrapper"
 
 const searchClient = algoliasearch(
@@ -40,7 +37,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
         </div>
         <div className="docsLogo flex items-center">
           <a href="/">
-            <img src={RsLogo} />
+            <img src={RsLogo} alt="RudderStack" className="mainLogo" />
           </a>
         </div>
         <nav className="docsNav">
@@ -59,9 +56,6 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
                 Try for Free
               </a>
             </li>
-            {/* <li>
-              <TempButton />
-            </li> */}
           </ul>
         </nav>
         <div className="docsSearch" onClickCapture={() => setSearchOpen(true)}>
@@ -85,7 +79,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
               </g>
             </svg>
           </span>
-          <input type="text" placeholder="Search.." className="docsSearchbar" onClickCapture={() => setSearchOpen(true)} />
+          <input type="text" placeholder="Search..." className="docsSearchbar" onClickCapture={(e) => {setSearchOpen(true); e.target.blur();}} />
         </div>
         
         <div className="searchWrapper">

@@ -8,16 +8,16 @@ import mediumZoom from "medium-zoom"
 import { Tabs, TabList, Tab, TabPanels, TabPanel } from "@reach/tabs"
 import "@reach/tabs/styles.css"
 import Layout from "../Layout"
-import SEO from "@rocketseat/gatsby-theme-docs/src/components/SEO"
+import SEO from "../SEO"
 import PostNav from "./PostNav"
 import EditGithub from "@rocketseat/gatsby-theme-docs/src/components/Docs/EditGithub"
-import { forEach, find, findIndex } from "lodash"
+import { forEach, findIndex } from "lodash"
 import { postNavList } from "./PostNav/postNavList"
 import {BlockMath, InlineMath} from 'react-katex';
 import 'katex/dist/katex.min.css';
 
 export default function Docs({ mdx, pageContext }) {
-  const { prev, next, repositoryEditUrl, repositoryProvider } = pageContext
+  const { repositoryEditUrl, repositoryProvider } = pageContext
   const { title, description, image, disableTableOfContents } = mdx.frontmatter
   const { headings, body } = mdx
   const { slug } = mdx.fields
@@ -51,7 +51,7 @@ export default function Docs({ mdx, pageContext }) {
 
   useEffect(() => {
     (function(){
-      const zoom = mediumZoom(document.querySelectorAll("img"))
+      const zoom = mediumZoom(document.querySelectorAll("img:not(.mainLogo)"))
 
       return () => {
         zoom.detach()

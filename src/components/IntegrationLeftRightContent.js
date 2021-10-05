@@ -23,14 +23,14 @@ const IntegrationLeftRightContent = ({ data }) => {
                     key={ii._key}
                     className="relative w-full what-can-do text-secondary text-xl leading-8 pl-11 sm:mb-0 arrow-list-items "
                   >
-                    <PortableText blocks={ii.leftrightcontent} />
+                    <PortableText blocks={ii.leftrightcontent} trackSectionHeader={data.wycd_title} />
                   </div>
                 )
               })}
             </div>
           )}
           <div className="relative text-secondary  w-full md:w-1/2 text-xl leading-8 frtxt-contnt arrow-list-items">
-            <PortableText blocks={data.wycd_footer} />
+            <PortableText blocks={data.wycd_footer} trackSectionHeader={data.wycd_title} />
           </div>
         </div>
       )}

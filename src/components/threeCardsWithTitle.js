@@ -30,7 +30,7 @@ const ThreeCardsWithTitle = props => {
                     {item.title}
                   </div>
                   <div class="text-grayColor-custom text-lg">
-                    <PortableText blocks={item.content} />
+                    <PortableText blocks={item.content} trackSectionHeader={props.title} />
                   </div>
                 </div>
               </div>

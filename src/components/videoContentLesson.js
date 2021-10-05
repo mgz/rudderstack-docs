@@ -14,7 +14,7 @@ const VideoContentLesson = ({ data }) => {
             </h3>
 
             <div className="text-secondary leading-7 text-sm sm:text-lg">
-              <PortableText blocks={data.herodescritpion} />
+              <PortableText blocks={data.herodescritpion} trackSectionHeader={data.herotitle} />
             </div>
           </div>
           <div className="w-full sm:w-7/12 pt-6 sm:p-6 sm:pr-0 md:pl-20">

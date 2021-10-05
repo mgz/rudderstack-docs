@@ -5,15 +5,12 @@ import PropTypes from "prop-types"
 
 import TableOfContents from "@rocketseat/gatsby-theme-docs/src/components/Docs/TOC"
 import Sidebar from "../Sidebar"
-import Header from "../Header"
-import Overlay from "@rocketseat/gatsby-theme-docs/src/components/Overlay"
 import { Container, Main, Children } from "./styles"
 import DocsNavigation from "../../../../components/DocsNavigation"
 import tailwindConfig from "../../../../../tailwind.config"
 
 export default function Layout({
   children,
-  disableTableOfContents,
   title,
   headings,
   description,
@@ -21,11 +18,11 @@ export default function Layout({
   const contentRef = useRef(null)
   const [isMenuOpen, setMenuOpen] = useState(false)
   const [isTocOpen, setTocOpen] = useState(false)
-  const disableTOC =
-    disableTableOfContents === true || !headings || headings.length === 0
+  //const disableTOC = disableTableOfContents === true || !headings || headings.length === 0
+  const disableTOC = false;
 
   useEffect(() => {
-    
+    /* console.log('Headings', headings); */
   }, [])
 
   function handleMenuOpen() {
@@ -106,7 +103,7 @@ export default function Layout({
                 </svg>
               </span>
               {isTocOpen && (
-                <div class="mobTocWrapper">
+                <div className="mobTocWrapper">
                   <div
                   className={`tocOverlay ${isTocOpen ? "active" : "hidden"}`}
                   onClick={() => setTocOpen(false)}
@@ -124,6 +121,7 @@ export default function Layout({
             </div>
           </Children>
           <div
+            className={headings !== null && headings.length < 2 ? "hidden" : ""}
             css={css`
               @media (max-width: 1200px) {
                 display: none;

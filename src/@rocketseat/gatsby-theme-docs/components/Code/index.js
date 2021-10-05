@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import rangeParser from 'parse-numeric-range';
@@ -25,6 +25,7 @@ require("prismjs/components/prism-groovy");
 require("prismjs/components/prism-swift");
 require("prismjs/components/prism-java");
 require("prismjs/components/prism-dart");
+require("prismjs/components/prism-php");
 
 const calculateLinesToHighlight = (meta) => {
   const RE = /{([\d,-]+)}/;

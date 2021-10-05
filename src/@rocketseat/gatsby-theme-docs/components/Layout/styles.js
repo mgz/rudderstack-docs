@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding: 0 24px;
 
   display: grid;
-  grid-template-columns: 280px calc(100% - 320px);
+  grid-template-columns: 300px calc(100% - 340px);
   grid-auto-flow: row;
   grid-gap: 40px;
   background: #ffffff;
@@ -101,7 +101,7 @@ export const Children = styled.div`
   }
   p {
     color: #6c6c80;
-    margin: 12px 0px;
+    margin: 16px 0px;
   }
   strong {
     font-weight: bold;

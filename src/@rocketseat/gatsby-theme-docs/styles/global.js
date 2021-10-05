@@ -296,6 +296,11 @@ export default function GlobalStyle() {
         .css-dl1tix-Children a {
           text-decoration: none;
         }
+        pre[class~="language-php"]::before {
+          content: "php";
+          background: #e6ffed;
+        }
+
         @media only screen and (max-width: 640px) {
           h1 {
             font-size: 28px;
