@@ -13,7 +13,10 @@ import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
 import TableContent from "./tableContent"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { rudderslabTrackOnClick } from "../utils/common"
+import {
+  rudderslabTrackOnClick,
+  rudderslabTrackOnYoutubeVideoPlayback,
+} from "../utils/common"
 
 const LargeQuotedText = ({ node }) => {
   return (
@@ -57,7 +60,17 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             const id = getYouTubeId(url)
             return (
               <div class="iframe-container mb-20 md:mb-0">
-                <YouTube key={node._key} className="video" videoId={id} />
+                <YouTube
+                  key={node._key}
+                  className="video"
+                  videoId={id}
+                  onPlay={event =>
+                    rudderslabTrackOnYoutubeVideoPlayback(
+                      trackSectionHeader,
+                      event
+                    )
+                  }
+                />
               </div>
             )
           },

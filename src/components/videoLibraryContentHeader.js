@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import DynamicInputForm from "../components/dynamicInputForm"
 
-import VideoRequestForm from "../components/videoRequestForm"
+import { rudderslabTrackOnYoutubeVideoPlayback } from "../utils/common"
+import YouTube from "react-youtube"
 
 const VideoLibraryContentHeader = ({
   data,
@@ -10,6 +11,11 @@ const VideoLibraryContentHeader = ({
   inputForm,
 }) => {
   // console.log("ssss", data)
+  let tmp_youtube_url_split = url_or_event_dttm.split("?")[0].split("/")
+
+  const _onPlay = event => {
+    return rudderslabTrackOnYoutubeVideoPlayback(data.title, event)
+  }
 
   return (
     <>
@@ -59,12 +65,20 @@ const VideoLibraryContentHeader = ({
                 <div class="iframe-container">
                   <div className="stack-frame-1"></div>
                   <div className="stack-frame-2"></div>
-                  <iframe
+                  <YouTube
+                    videoId={
+                      tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
+                    }
+                    className="video"
+                    onPlay={_onPlay}
+                  />
+
+                  {/* <iframe
                     src={url_or_event_dttm}
                     frameborder="0"
                     allowfullscreen
                     class="video"
-                  ></iframe>
+                  ></iframe> */}
                 </div>
               </div>
             </div>

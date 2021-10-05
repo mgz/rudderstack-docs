@@ -1,9 +1,21 @@
 import React from "react"
 import PortableText from "./portableText"
 import Link from "gatsby-link"
-import { rudderslabTrackOnClick } from "../utils/common"
+import {
+  rudderslabTrackOnClick,
+  rudderslabTrackOnYoutubeVideoPlayback,
+} from "../utils/common"
+import YouTube from "react-youtube"
 
 const HeroBannerCloud = props => {
+  let tmp_youtube_url_split = props.herobanneryoutube_url.url
+    .split("?")[0]
+    .split("/")
+
+  const _onPlay = event => {
+    
+    return rudderslabTrackOnYoutubeVideoPlayback(props.herobannertitle, event)
+  }
   // console.log("HeroBannerCloud", props)
   return (
     <section className="w-full product-page_banner  lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
@@ -17,7 +29,10 @@ const HeroBannerCloud = props => {
               {props.herobannersmalltitle}
             </h3>
             <div className=" text-lg leading-6 lg:pr-36 frtxt-contnt">
-              <PortableText blocks={props.herobannercontent} trackSectionHeader={props.herobannertitle} />
+              <PortableText
+                blocks={props.herobannercontent}
+                trackSectionHeader={props.herobannertitle}
+              />
             </div>
 
             <div className="block sm:flex justify-center items-center mt-12">
@@ -80,12 +95,19 @@ const HeroBannerCloud = props => {
             <div class="iframe-container">
               <div className="stack-frame-1"></div>
               <div className="stack-frame-2"></div>
-              <iframe
+              <YouTube
+                videoId={
+                  tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
+                }
+                className="video"
+                onPlay={_onPlay}
+              />
+              {/* <iframe
                 src={props.herobanneryoutube_url.url}
                 frameborder="0"
                 allowfullscreen
                 class="video"
-              ></iframe>
+              ></iframe> */}
             </div>
           </div>
         </div>

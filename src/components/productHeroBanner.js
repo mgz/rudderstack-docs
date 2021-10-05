@@ -1,8 +1,25 @@
 import React from "react"
 // import PortableText from "./portableText"
 import Link from "gatsby-link"
-import { rudderslabTrackOnClick } from "../utils/common"
+import {
+  rudderslabTrackOnClick,
+  rudderslabTrackOnYoutubeVideoPlayback,
+} from "../utils/common"
+import YouTube from "react-youtube"
+
 const ProductHeroBanner = props => {
+  let tmp_youtube_url_split = props.productbanneryoutubeambed.url
+    .split("?")[0]
+    .split("/")
+
+  const _onPlay = event => {
+    // console.log("play", event)
+    return rudderslabTrackOnYoutubeVideoPlayback(
+      props.productbannerheader,
+      event
+    )
+  }
+
   return (
     <section className="w-full product-page_banner  lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
       <div className="max-w-6xl w-full sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
@@ -80,12 +97,19 @@ const ProductHeroBanner = props => {
             <div class="iframe-container">
               <div className="stack-frame-1"></div>
               <div className="stack-frame-2"></div>
-              <iframe
+              <YouTube
+                videoId={
+                  tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
+                }
+                className="video"
+                onPlay={_onPlay}
+              />
+              {/* <iframe
                 src={props.productbanneryoutubeambed.url}
                 frameborder="0"
                 allowfullscreen
                 class="video"
-              ></iframe>
+              ></iframe> */}
             </div>
           </div>
         </div>

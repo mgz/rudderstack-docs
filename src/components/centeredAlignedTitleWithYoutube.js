@@ -1,6 +1,8 @@
 import React, { useEffect } from "react"
 import PortableText from "./portableText"
 import Image from "./image"
+import { rudderslabTrackOnYoutubeVideoPlayback } from "../utils/common"
+import YouTube from "react-youtube"
 
 const CenteredAlignedTitleWithYoutube = props => {
   useEffect(() => {
@@ -11,6 +13,10 @@ const CenteredAlignedTitleWithYoutube = props => {
   //   "CenteredAlignedTitleWithYoutube",
   //   tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
   // )
+  const _onPlay = event => {
+    return rudderslabTrackOnYoutubeVideoPlayback(props.title, event)
+  }
+
   return (
     <section className="md:mb-10">
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
@@ -18,7 +24,10 @@ const CenteredAlignedTitleWithYoutube = props => {
           {props.title}
         </h3>
         <div className="mt-4 text-lg  leading-tight text-center text-grayColor-custom max-w-2xl px-4">
-          <PortableText blocks={props.content} trackSectionHeader={props.title} />
+          <PortableText
+            blocks={props.content}
+            trackSectionHeader={props.title}
+          />
         </div>
         <div className="relative w-full rounded-lg flex-grow justify-items-end px-4 md:px-12 py-4 sm:items-center lg:items-start lg:mb-0 max-w-5xl -bottom-20 md:-bottom-16 pr-12">
           <div className="iframe-container">
@@ -30,10 +39,17 @@ const CenteredAlignedTitleWithYoutube = props => {
               allowfullscreen
               className="video"
             ></iframe> */}
-            <lite-youtube
+
+            <YouTube
+              videoId={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
+              className="video"
+              onPlay={_onPlay}
+            />
+
+            {/* <lite-youtube
               videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
               class="video"
-            ></lite-youtube>
+            ></lite-youtube> */}
           </div>
         </div>
       </div>
@@ -58,7 +74,10 @@ const CenteredAlignedTitleWithYoutube = props => {
                         {item.title}
                       </div>
                       <div className=" text-lg">
-                        <PortableText blocks={item.content} trackSectionHeader={props.footer_title} />
+                        <PortableText
+                          blocks={item.content}
+                          trackSectionHeader={props.footer_title}
+                        />
                       </div>
                     </div>
                   </div>
