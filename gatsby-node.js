@@ -527,6 +527,12 @@ exports.createPages = async ({ graphql, actions }) => {
     toPath: "/docs/home/",
     isPermanent: true,
   })
+  
+  createRedirect({
+    fromPath: "/video-library/how-to-distribute-grafana-alerts-with-rudderstack",
+    toPath: "/video-library/how-to-monitor-rudderstack-with-grafana-alerts",
+    isPermanent: true
+  })
 
   const result = await graphql(`
     {
