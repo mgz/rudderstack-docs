@@ -1493,7 +1493,7 @@ top: -60px;
 .infoBlock {
   @apply text-secondary;
   @apply px-5;
-  @apply py-2;
+  @apply py-3;
   @apply pl-12;
   @apply bg-blueNew-skyblue;
   @apply border-l-2;
@@ -1512,7 +1512,7 @@ top: -60px;
 .warningBlock {
   @apply text-secondary;
   @apply px-5;
-  @apply py-2;
+  @apply py-3;
   @apply pl-12;
   @apply bg-orange-warningBg;
   @apply border-l-2;
@@ -1525,7 +1525,7 @@ top: -60px;
 .dangerBlock {
   @apply text-secondary;
   @apply px-5;
-  @apply py-2;
+  @apply py-3;
   @apply pl-12;
   @apply bg-red-dangerBg;
   @apply border-l-2;
@@ -1538,7 +1538,7 @@ top: -60px;
 .successBlock {
   @apply text-secondary;
   @apply px-5;
-  @apply py-2;
+  @apply py-3;
   @apply pl-12;
   @apply bg-green-successBg;
   @apply border-l-2;
@@ -1586,6 +1586,7 @@ top: -60px;
 }
 .successBlock p, .infoBlock p, .dangerBlock p, .warningBlock p{
   @apply text-secondary !important;
+  @apply mb-0 !important;
 }
 
 .childrenWrapper {

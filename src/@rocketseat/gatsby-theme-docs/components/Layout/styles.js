@@ -68,7 +68,7 @@ export const Children = styled.div`
   h5,
   h6 {
     overflow-wrap: break-word;
-    margin: 24px 0 16px 0;
+    margin: 55px 0 16px 0;
   }
   h2,
   h3,
@@ -93,6 +93,7 @@ export const Children = styled.div`
     margin: 16px 0px;
     li {
       line-height: 28px;
+      margin: 10px 0px;
     }
   }
   li ul,
@@ -101,7 +102,7 @@ export const Children = styled.div`
   }
   p {
     color: #6c6c80;
-    margin: 16px 0px;
+    margin-bottom: 24px;
   }
   strong {
     font-weight: bold;

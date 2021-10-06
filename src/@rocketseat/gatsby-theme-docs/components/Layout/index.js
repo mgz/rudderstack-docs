@@ -114,6 +114,7 @@ export default function Layout({
                     disableTOC={disableTOC}
                     contentRef={contentRef}
                     setTocOpen={setTocOpen}
+                    isTocOpen={isTocOpen}
                   />
                 </div>
                 </div>

@@ -94,6 +94,7 @@
     "use-query-params": "^1.2.3"
   },
   "devDependencies": {
+    "@netlify/plugin-gatsby": "^1.0.3",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
     "prettier": "2.2.1"
   },

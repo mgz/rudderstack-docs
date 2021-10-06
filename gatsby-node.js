@@ -522,11 +522,11 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 
   /* Docs redirect */
-  /* createRedirect({
+  createRedirect({
     fromPath: "/docs",
-    toPath: "/docs/home",
+    toPath: "/docs/home/",
     isPermanent: true,
-  }) */
+  })
 
   const result = await graphql(`
     {
