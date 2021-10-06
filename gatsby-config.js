@@ -3,7 +3,14 @@ require("dotenv").config({
 })
 module.exports = {
   flags: {
+    PRESERVE_WEBPACK_CACHE: true,
     FAST_DEV: true,
+    DEV_SSR: true,
+    QUERY_ON_DEMAND: true,
+    LAZY_IMAGES: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    FAST_REFRESH: true,
+    PARALLEL_SOURCING: true
   },
   siteMetadata: {
     title: `Rudderstack`,
