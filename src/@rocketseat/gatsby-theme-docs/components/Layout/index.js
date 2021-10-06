@@ -113,6 +113,7 @@ export default function Layout({
                     headings={headings}
                     disableTOC={disableTOC}
                     contentRef={contentRef}
+                    setTocOpen={setTocOpen}
                   />
                 </div>
                 </div>
@@ -132,6 +133,7 @@ export default function Layout({
               headings={headings}
               disableTOC={disableTOC}
               contentRef={contentRef}
+              setTocOpen={setTocOpen}
             />
           </div>
         </Main>

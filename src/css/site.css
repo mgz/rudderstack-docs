@@ -1214,11 +1214,11 @@ top: -60px;
   @apply z-10;
 }
 .headerContainer {
-  /* max-width: 1440px; */
+  max-width: 1400px;
   @apply px-6;
   @apply mx-auto;
   @apply grid;
-  grid-template-columns: 280px calc(100% - 620px) 280px;
+  grid-template-columns: 300px calc(100% - 640px) 280px;
   @apply grid-flow-row;
   @apply gap-10;
   height: 80px;
@@ -1870,6 +1870,31 @@ a.pageRef:hover .rightRefArrow {
   padding: 16px;
   margin: 0px;
 }
+.docsLogo{
+  position: relative;
+}
+.docsLogo:after{
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: rgb(222, 226, 231);
+  position: absolute;
+  right: -0.5px;
+  top: calc(50% - 20px);
+}
+
+@media only screen and (max-width: 1350px){
+  .headerContainer{
+    grid-template-columns: 300px calc(100% - 620px) 260px;
+  }
+}
+
+@media only screen and (max-width: 1250px){
+  .headerContainer{
+    grid-template-columns: 300px calc(100% - 600px) 240px;
+  }
+}
+
 @media only screen and (min-width: 1023px) {
   .menu li.has-submenu:hover a:after {
     transform: rotate(225deg);
@@ -1933,7 +1958,7 @@ a.pageRef:hover .rightRefArrow {
     @apply left-0;
     @apply bg-whiteColor-custom;
     @apply z-10;
-    transform: translateX(-280px);
+    transform: translateX(-300px);
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   .sidebar-nav-content.active {
@@ -1984,6 +2009,9 @@ a.pageRef:hover .rightRefArrow {
     grid-template-columns: 40px calc(100% - 250px) 200px;
     gap: 0px;
     @apply justify-between;
+  }
+  .docsLogo:after{
+    display: none;
   }
 }
 

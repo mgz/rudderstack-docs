@@ -2,14 +2,16 @@ import styled from "@emotion/styled"
 
 export const Wrapper = styled.div`
   position: sticky;
-  top: 0;
+  top: 60px;
 
-  margin-top: 72px;
+  margin-top: 52px;
   max-height: calc(100vh - 72px);
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
   max-width: 200px;
+  padding-left: 20px;
+  border-left: 1px solid rgb(222, 226, 231);
 
   @media (max-width: 1200px) {
     position: relative;
@@ -18,6 +20,8 @@ export const Wrapper = styled.div`
     max-width: 100%;
     margin-left: 0;
     margin-top: 0;
+    padding-left: 0px;
+    border: none;
   }
 `
 

@@ -10,7 +10,7 @@ import { Wrapper, Container } from "./styles"
 import tailwindConfig, { theme } from "../../../../../../tailwind.config"
 import { filter, includes } from "lodash-es"
 
-export default function TableOfContents({ headings = [], disableTOC = false, contentRef }) {
+export default function TableOfContents({ headings = [], disableTOC = false, contentRef, setTocOpen, isTocOpen = false }) {
   const { y } = useWindowScroll()
   //const theme = useTheme();
   const { width, height } = useWindowSize()
@@ -110,7 +110,6 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
                 .filter(heading => heading.depth === 2 || heading.depth === 3)
                 .map((heading, i) => {
                   const headingSlug = slug(heading.value);
-                  /* generateId(heading.value); */
 
                   return (
                     <li
@@ -121,6 +120,7 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
                     >
                       <a
                         href={`#${headingSlug}`}
+                        onClick={() => isMobile && setTocOpen(false)}
                         style={{
                           color:
                             activeHeading === headingSlug
