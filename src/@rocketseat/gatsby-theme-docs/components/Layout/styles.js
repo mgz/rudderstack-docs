@@ -59,22 +59,18 @@ export const Children = styled.div`
     padding-bottom: 24px;
     border-bottom: 1px solid #dee2e7;
     color: #3d3d4d;
+    overflow-wrap: break-word;
+    margin: 24px 0px 16px 0px;
   }
 
-  h1,
-  h2,
-  h3,
+  h2, h3{
+    margin: 55px 0 16px 0;
+  }  
   h4,
   h5,
   h6 {
     overflow-wrap: break-word;
     margin: 55px 0 16px 0;
-  }
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
     color: #3d3d4d;
   }
   a {
@@ -93,7 +89,7 @@ export const Children = styled.div`
     margin: 16px 0px;
     li {
       line-height: 28px;
-      margin: 10px 0px;
+      margin: 4px 0px;
     }
   }
   li ul,

@@ -342,10 +342,10 @@ You can configure your client based on the following parameters by passing them 
   <tbody>
     <tr>
       <td style="text-align:left">
-        <code>logLevel</code>
+        <code class="inline-code">logLevel</code>
       </td>
       <td style="text-align:left">
-        <code>int</code>
+        <code class="inline-code">int</code>
       </td>
       <td style="text-align:left">
         <p>Controls how much of the log you want to see from the SDK.</p>
@@ -354,124 +354,124 @@ You can configure your client based on the following parameters by passing them 
         </p>
       </td>
       <td style="text-align:left">
-        <code>RUDDER_LOG_LEVEL.ERROR</code>
+        <code class="inline-code">RUDDER_LOG_LEVEL.ERROR</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>dataPlaneUrl</code>
+        <code class="inline-code">dataPlaneUrl</code>
       </td>
       <td style="text-align:left">
-        <code>string</code>
+        <code class="inline-code">string</code>
       </td>
       <td style="text-align:left">
-        URL of your <code>data-plane</code>. Please refer above to see how to
+        URL of your <code class="inline-code">data-plane</code>. Please refer above to see how to
         fetch the data plane URL.
       </td>
       <td style="text-align:left">
-        <code>https://hosted.rudderlabs.com</code>
+        <code class="inline-code">https://hosted.rudderlabs.com</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>flushQueueSize</code>
+        <code class="inline-code">flushQueueSize</code>
       </td>
       <td style="text-align:left">
-        <code>int</code>
+        <code class="inline-code">int</code>
       </td>
       <td style="text-align:left">
         Number of events in a batch request to the server.
       </td>
       <td style="text-align:left">
-        <code>30</code>
+        <code class="inline-code">30</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>dbThresholdCount</code>
+        <code class="inline-code">dbThresholdCount</code>
       </td>
       <td style="text-align:left">
-        <code>int</code>
+        <code class="inline-code">int</code>
       </td>
       <td style="text-align:left">
-        The number of events to be saved in the <code>SQLite</code> database.
+        The number of events to be saved in the <code class="inline-code">SQLite</code> database.
         Once the limit is reached, older events are deleted from the DB.
       </td>
       <td style="text-align:left">
-        <code>10000</code>
+        <code class="inline-code">10000</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>sleepTimeout</code>
+        <code class="inline-code">sleepTimeout</code>
       </td>
       <td style="text-align:left">
-        <code>int</code>
+        <code class="inline-code">int</code>
       </td>
       <td style="text-align:left">
         Minimum waiting time to flush the events to the server.
       </td>
       <td style="text-align:left">
-        <code>10 seconds</code>
+        <code class="inline-code">10 seconds</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>configRefreshInterval</code>
+        <code class="inline-code">configRefreshInterval</code>
       </td>
       <td style="text-align:left">
-        <code>int</code>
+        <code class="inline-code">int</code>
       </td>
       <td style="text-align:left">
-        It will fetch the config from <code>dashboard</code> after this many
+        It will fetch the config from <code class="inline-code">dashboard</code> after this many
         hours.
       </td>
       <td style="text-align:left">
-        <code>2</code>
+        <code class="inline-code">2</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>trackLifecycleEvents</code>
+        <code class="inline-code">trackLifecycleEvents</code>
       </td>
       <td style="text-align:left">
-        <code>boolean</code>
+        <code class="inline-code">boolean</code>
       </td>
       <td style="text-align:left">
         Whether SDK will capture application life cycle events automatically.
       </td>
       <td style="text-align:left">
-        <code>true</code>
+        <code class="inline-code">true</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>recordScreenViews</code>
+        <code class="inline-code">recordScreenViews</code>
       </td>
       <td style="text-align:left">
-        <code>boolean</code>
+        <code class="inline-code">boolean</code>
       </td>
       <td style="text-align:left">
         Whether SDK will capture screen view events automatically.
       </td>
       <td style="text-align:left">
-        <code>false</code>
+        <code class="inline-code">false</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>controlPlaneUrl</code>
+        <code class="inline-code">controlPlaneUrl</code>
       </td>
       <td style="text-align:left">
-        <code>string</code>
+        <code class="inline-code">string</code>
       </td>
       <td style="text-align:left">
         If you are using our open-source config generator, use this option to
-        point to your hosted <code>sourceConfig</code>. SDK will add
-        <code>/sourceConfig</code> along with this URL
+        point to your hosted <code class="inline-code">sourceConfig</code>. SDK will add
+        <code class="inline-code">/sourceConfig</code> along with this URL
       </td>
       <td style="text-align:left">
-        <code>https://api.rudderlabs.com</code>
+        <code class="inline-code">https://api.rudderlabs.com</code>
       </td>
     </tr>
   </tbody>

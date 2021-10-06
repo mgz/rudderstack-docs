@@ -8,7 +8,6 @@ import slug from "@rocketseat/gatsby-theme-docs/src/util/slug"
 
 import { Wrapper, Container } from "./styles"
 import tailwindConfig, { theme } from "../../../../../../tailwind.config"
-import { filter, includes } from "lodash-es"
 
 export default function TableOfContents({ headings = [], disableTOC = false, contentRef, setTocOpen, isTocOpen = false }) {
   const { y } = useWindowScroll()
@@ -24,6 +23,17 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
     console.log('Dupes', duplicates);
   } */
 
+  const getOffset = (element) => {
+    var top = 0, left = 0;
+    do {
+        top += element.offsetTop  || 0;
+        left += element.offsetLeft || 0;
+        element = element.offsetParent;
+    } while(element);
+
+    return top;
+};
+
   useEffect(() => {
     if (!isMobile || disableTOC) {
       const allHeadings = document.querySelectorAll(`h2, h3`)
@@ -36,13 +46,21 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
               if (!anchor) return {}
               return {
                 id: heading.id,
-                offset: heading.offsetTop,
+                offset: getOffset(heading),
               }
             })
             .filter(Boolean)
       )
 
-      //console.log(Object.entries(allHeadings));
+
+      /* setOffsets(
+        allHeadings && Object.entries(allHeadings).map((item,k) => {
+          return {
+            id: item[1].id,
+            offset: getOffset(item[1], false)
+          }
+        })
+      ) */
     }
     //generateId();
 
@@ -50,16 +68,11 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
 
   const activeHeading = useMemo(() => {
     if (!isMobile || disableTOC) {
-      const windowOffset = height / 2
       const scrollTop = y;
-      //console.log('Offsets', offsets);
       if (offsets) {
         for (let i = offsets.length - 1; i >= 0; i -= 1) {
           const { id, offset } = offsets[i]
-          if (scrollTop >= offset) {
-            /* console.log('Scroll Y', scrollTop);
-            console.log('Current id', id);
-            console.log('Current offset', offset); */
+          if (scrollTop >= offset - 193) {
             return id
           }
         }

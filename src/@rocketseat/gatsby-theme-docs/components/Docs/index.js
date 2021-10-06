@@ -18,7 +18,7 @@ import 'katex/dist/katex.min.css';
 
 export default function Docs({ mdx, pageContext }) {
   const { repositoryEditUrl, repositoryProvider } = pageContext
-  const { title, description, image, disableTableOfContents } = mdx.frontmatter
+  const { title, description } = mdx.frontmatter
   const { headings, body } = mdx
   const { slug } = mdx.fields
 
@@ -29,6 +29,7 @@ export default function Docs({ mdx, pageContext }) {
   let nextPageItem =  postNavList[nextPageIndex];
   let prevPageIndex = currentPageIndex - 1 < 0 ? postNavList.length - 1 : currentPageIndex - 1;
   let prevPageItem =  postNavList[prevPageIndex];
+  let disableTableOfContents = false;
   
   const shortCodes = {
     pre: (preProps) => {
@@ -66,7 +67,7 @@ export default function Docs({ mdx, pageContext }) {
 
   return (
     <>
-      <SEO title={title} description={description} slug={slug} image={image} />
+      <SEO title={title} description={description} slug={slug} />
       <Layout
         disableTableOfContents={disableTableOfContents}
         title={title}
@@ -93,8 +94,6 @@ Docs.propTypes = {
     frontmatter: PropTypes.shape({
       title: PropTypes.string,
       description: PropTypes.string,
-      image: PropTypes.string,
-      disableTableOfContents: PropTypes.bool,
     }),
     fields: PropTypes.shape({
       slug: PropTypes.string,

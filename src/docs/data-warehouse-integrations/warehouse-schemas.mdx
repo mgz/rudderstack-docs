@@ -28,117 +28,117 @@ The following is a list of tables created for each RudderStack source that is co
   <tbody>
     <tr>
       <td style="text-align:left">
-        <code>&lt;test_source_name&gt;.tracks</code>
+        <code class="inline-code">&lt;test_source_name&gt;.tracks</code>
       </td>
       <td style="text-align:left">
-        Every <code>track</code> call sent to RudderStack is stored in this
+        Every <code class="inline-code">track</code> call sent to RudderStack is stored in this
         table.
         <br />
         <br />
-        It <b>does not include</b> the custom properties sent under the <code>
+        It <b>does not include</b> the custom properties sent under the <code class="inline-code">
           properties
         </code> key in the event but has some standard properties (listed in the
         <a href="https://rudderstack.com/docs/data-warehouse-integration-guides/warehouse-schemas#standard-rudderstack-properties">
           <b>Standard Properties</b>
-        </a> section below) such as <code>received_at</code>, <code>
+        </a> section below) such as <code class="inline-code">received_at</code>, <code class="inline-code">
           anonymous_id
-        </code>, <code>context_device_info</code>, etc.
+        </code>, <code class="inline-code">context_device_info</code>, etc.
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>&lt;test_source_name&gt;.&lt;track_event_name&gt;</code>
+        <code class="inline-code">&lt;test_source_name&gt;.&lt;track_event_name&gt;</code>
       </td>
       <td style="text-align:left">
         All the standard properties, along with the custom properties for a
-        <code>track</code> call, are stored in this table.
+        <code class="inline-code">track</code> call, are stored in this table.
         <br />
         <br />
-        The table name is the event name specified in the <code>
+        The table name is the event name specified in the <code class="inline-code">
           track
-        </code> call. For example: <code>Added to Cart</code>
+        </code> call. For example: <code class="inline-code">Added to Cart</code>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>&lt;test_source_name&gt;.identifies</code>
+        <code class="inline-code">&lt;test_source_name&gt;.identifies</code>
       </td>
       <td style="text-align:left">
         <p>
-          Every <code>identify</code> call sent to RudderStack is stored in this
+          Every <code class="inline-code">identify</code> call sent to RudderStack is stored in this
           table.
         </p>
         <p></p>
         <p>
-          It also includes all the properties passed as <code>traits</code> in
-          the <code>identify</code> call.
+          It also includes all the properties passed as <code class="inline-code">traits</code> in
+          the <code class="inline-code">identify</code> call.
         </p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>&lt;test_source_name&gt;.users</code>
+        <code class="inline-code">&lt;test_source_name&gt;.users</code>
       </td>
       <td style="text-align:left">
         RudderStack stores all the unique users in this table.
         <br />
         <br />
         Only the latest properties used to identify a user are stored in it, including
-        the latest <code>anonymousId</code>.
+        the latest <code class="inline-code">anonymousId</code>.
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>&lt;test_source_name&gt;.pages</code>
+        <code class="inline-code">&lt;test_source_name&gt;.pages</code>
       </td>
       <td style="text-align:left">
-        Every <code>page</code> call sent to RudderStack is stored in this
+        Every <code class="inline-code">page</code> call sent to RudderStack is stored in this
         table.
         <br />
         <br />
-        This includes all the <code>properties</code> sent in the <code>
+        This includes all the <code class="inline-code">properties</code> sent in the <code class="inline-code">
           page
         </code> event.
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>&lt;test_source_name&gt;.screens</code>
+        <code class="inline-code">&lt;test_source_name&gt;.screens</code>
       </td>
       <td style="text-align:left">
-        Every <code>screen</code> call sent to RudderStack is stored in this
+        Every <code class="inline-code">screen</code> call sent to RudderStack is stored in this
         table.
         <br />
         <br />
-        This includes all the <code>properties</code> sent in the <code>
+        This includes all the <code class="inline-code">properties</code> sent in the <code class="inline-code">
           screen
         </code> event.
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>&lt;test_source_name&gt;.groups</code>
+        <code class="inline-code">&lt;test_source_name&gt;.groups</code>
       </td>
       <td style="text-align:left">
-        Every <code>group</code> call sent to RudderStack is stored in this
+        Every <code class="inline-code">group</code> call sent to RudderStack is stored in this
         table.
         <br />
         <br />
-        This includes all the <code>properties</code> sent in the <code>
+        This includes all the <code class="inline-code">properties</code> sent in the <code class="inline-code">
           group
         </code> event.
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>&lt;test_source_name&gt;.aliases</code>
+        <code class="inline-code">&lt;test_source_name&gt;.aliases</code>
       </td>
       <td style="text-align:left">
-        Every <code>alias</code> call sent to RudderStack is stored in this
+        Every <code class="inline-code">alias</code> call sent to RudderStack is stored in this
         table.
         <br />
         <br />
-        This includes all the properties sent in the <code>alias</code> event.
+        This includes all the properties sent in the <code class="inline-code">alias</code> event.
       </td>
     </tr>
   </tbody>
@@ -166,34 +166,34 @@ RudderStack sets the following standard properties on all the above mentioned ta
   <tbody>
     <tr>
       <td style="text-align:left">
-        <code>anonymous_id</code>
+        <code class="inline-code">anonymous_id</code>
       </td>
       <td style="text-align:left">The anonymous ID of the user.</td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>context_&lt;prop&gt;</code>
+        <code class="inline-code">context_&lt;prop&gt;</code>
       </td>
       <td style="text-align:left">Context properties set in the event.</td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>id</code>
+        <code class="inline-code">id</code>
       </td>
       <td style="text-align:left">
         <p>
-          The unique message ID of the event, except for the <code>users</code>
+          The unique message ID of the event, except for the <code class="inline-code">users</code>
           table.
         </p>
         <p></p>
         <p>
-          The field will be the user ID in case of <code>users</code> table.
+          The field will be the user ID in case of <code class="inline-code">users</code> table.
         </p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>sent_at</code>
+        <code class="inline-code">sent_at</code>
       </td>
       <td style="text-align:left">
         Timestamp set by the RudderStack SDK when the event was sent from the
@@ -202,7 +202,7 @@ RudderStack sets the following standard properties on all the above mentioned ta
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>received_at</code>
+        <code class="inline-code">received_at</code>
       </td>
       <td style="text-align:left">
         Timestamp registered by RudderStack when the event was ingested
@@ -211,7 +211,7 @@ RudderStack sets the following standard properties on all the above mentioned ta
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>original_timestamp</code>
+        <code class="inline-code">original_timestamp</code>
       </td>
       <td style="text-align:left">
         Timestamp registered by the RudderStack SDK when the event call was
@@ -220,30 +220,30 @@ RudderStack sets the following standard properties on all the above mentioned ta
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>timestamp</code>
+        <code class="inline-code">timestamp</code>
       </td>
       <td style="text-align:left">
         This is calculated by RudderStack to account for the
-        <b>client clock skew</b>. The formula used is: <code>timestamp</code> =
-        <code>receivedAt</code> - (<code>sentAt</code> -
-        <code>originalTimestamp</code>).
+        <b>client clock skew</b>. The formula used is: <code class="inline-code">timestamp</code> =
+        <code class="inline-code">receivedAt</code> - (<code class="inline-code">sentAt</code> -
+        <code class="inline-code">originalTimestamp</code>).
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>event_text</code>
+        <code class="inline-code">event_text</code>
       </td>
       <td style="text-align:left">
-        Name of the event mapped from the <code>event</code> key in the payload
-        for the <code>track</code> events.
+        Name of the event mapped from the <code class="inline-code">event</code> key in the payload
+        for the <code class="inline-code">track</code> events.
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>event</code>
+        <code class="inline-code">event</code>
       </td>
       <td style="text-align:left">
-        The name of the event table for the <code>track</code> calls.
+        The name of the event table for the <code class="inline-code">track</code> calls.
       </td>
     </tr>
   </tbody>
@@ -271,20 +271,20 @@ Here's an example of `original_timestamp` &lt; `received_at`\(The client-side ti
   <thead>
     <tr>
       <th style="text-align:left">
-        <code>original_timestamp</code>
+        <code class="inline-code">original_timestamp</code>
       </th>
       <th style="text-align:left">
-        <code>sent_at</code>
+        <code class="inline-code">sent_at</code>
       </th>
       <th style="text-align:left">
-        <code>received_at</code>
+        <code class="inline-code">received_at</code>
       </th>
       <th style="text-align:left">
         <p>
-          <code>timestamp</code>= <code>received_at </code>-
+          <code class="inline-code">timestamp</code>= <code class="inline-code">received_at </code>-
         </p>
         <p>
-          (<code>sent_at</code> - <code>original_timestamp</code>)
+          (<code class="inline-code">sent_at</code> - <code class="inline-code">original_timestamp</code>)
         </p>
       </th>
     </tr>
@@ -292,16 +292,16 @@ Here's an example of `original_timestamp` &lt; `received_at`\(The client-side ti
   <tbody>
     <tr>
       <td style="text-align:left">
-        <code>2020-04-26 07:00:43.400</code>
+        <code class="inline-code">2020-04-26 07:00:43.400</code>
       </td>
       <td style="text-align:left">
-        <code>2020-04-26 07:00:45.124</code>
+        <code class="inline-code">2020-04-26 07:00:45.124</code>
       </td>
       <td style="text-align:left">
-        <code>2020-04-26 07:00:45.558</code>
+        <code class="inline-code">2020-04-26 07:00:45.558</code>
       </td>
       <td style="text-align:left">
-        <code>2020-04-26 07:00:44.834</code>
+        <code class="inline-code">2020-04-26 07:00:44.834</code>
       </td>
     </tr>
   </tbody>
@@ -315,20 +315,20 @@ Here's an example of `original_timestamp` &gt; `received_at` \(The client-side t
   <thead>
     <tr>
       <th style="text-align:left">
-        <code>original_timestamp</code>
+        <code class="inline-code">original_timestamp</code>
       </th>
       <th style="text-align:left">
-        <code>sent_at</code>
+        <code class="inline-code">sent_at</code>
       </th>
       <th style="text-align:left">
-        <code>received_at</code>
+        <code class="inline-code">received_at</code>
       </th>
       <th style="text-align:left">
         <p>
-          <code>timestamp</code>= <code>received_at </code>-
+          <code class="inline-code">timestamp</code>= <code class="inline-code">received_at </code>-
         </p>
         <p>
-          (<code>sent_at</code> - <code>original_timestamp</code>)
+          (<code class="inline-code">sent_at</code> - <code class="inline-code">original_timestamp</code>)
         </p>
       </th>
     </tr>
@@ -336,16 +336,16 @@ Here's an example of `original_timestamp` &gt; `received_at` \(The client-side t
   <tbody>
     <tr>
       <td style="text-align:left">
-        <code>2020-04-26 07:00:45.558</code>
+        <code class="inline-code">2020-04-26 07:00:45.558</code>
       </td>
       <td style="text-align:left">
-        <code>2020-04-26 07:00:46.124</code>
+        <code class="inline-code">2020-04-26 07:00:46.124</code>
       </td>
       <td style="text-align:left">
-        <code>2020-04-26 07:00:43.400</code>
+        <code class="inline-code">2020-04-26 07:00:43.400</code>
       </td>
       <td style="text-align:left">
-        <code>2020-04-26 07:00:43.9650</code>
+        <code class="inline-code">2020-04-26 07:00:43.9650</code>
       </td>
     </tr>
   </tbody>
@@ -643,30 +643,30 @@ The schema of the `rudder_discards table` is as shown below:
   <tbody>
     <tr>
       <td style="text-align:left">
-        <code>row_id</code>
+        <code class="inline-code">row_id</code>
       </td>
       <td style="text-align:left">
         <p>Unique Identifier (ID) associated with each record in the table.</p>
         <p>
-          This corresponds to the unique <code>messageId</code> for all the
-          tables except for <code>users</code> table, where it is
-          <code>userId</code>.
+          This corresponds to the unique <code class="inline-code">messageId</code> for all the
+          tables except for <code class="inline-code">users</code> table, where it is
+          <code class="inline-code">userId</code>.
         </p>
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>table_name</code>
+        <code class="inline-code">table_name</code>
       </td>
       <td style="text-align:left">
         The table name where the full record is inserted, like
-        <code>tracks</code>, <code>add_to_cart</code>, <code>identifies</code> ,
+        <code class="inline-code">tracks</code>, <code class="inline-code">add_to_cart</code>, <code class="inline-code">identifies</code> ,
         etc.
       </td>
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>column_name</code>
+        <code class="inline-code">column_name</code>
       </td>
       <td style="text-align:left">
         The column name corresponding to the property to be added.
@@ -674,7 +674,7 @@ The schema of the `rudder_discards table` is as shown below:
     </tr>
     <tr>
       <td style="text-align:left">
-        <code>column_value</code>
+        <code class="inline-code">column_value</code>
       </td>
       <td style="text-align:left">
         The column value which caused the data type mismatch and is discarded.
