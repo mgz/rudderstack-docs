@@ -108,7 +108,7 @@ The above code snippet does the following:
 
 ### 2.3. Alternative Installation
 
-Although we recommend using the [minified or non-minified snippet](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#2-1-minified-code) as mentioned above to use RudderStack SDK with your website, you can also use this [NPM module](https://www.npmjs.com/package/rudder-sdk-js) to package RudderStack directly into your project.
+Although we recommend using the [minified or non-minified snippet](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#21-minified-code) as mentioned above to use RudderStack SDK with your website, you can also use this [NPM module](https://www.npmjs.com/package/rudder-sdk-js) to package RudderStack directly into your project.
 
 To install, run the following command:
 
@@ -275,11 +275,11 @@ More information on the Load **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#42-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#41-common-destination-names)
 </li>
 </ul>
 </div>
@@ -322,7 +322,7 @@ rudderanalytics.load(WRITE_KEY, DATA_PLANE_URL, {
 });
 ```
 
-For more information, please check the [How to Filter Selective Destinations](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-how-to-filter-selective-destinations-to-send-event-data) section.
+For more information, please check the [How to Filter Selective Destinations](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#4-how-to-filter-selective-destinations-to-send-event-data) section.
 
 ## 3.2. Identify
 
@@ -353,7 +353,7 @@ rudderanalytics.identify(
 );
 ```
 
-In the above example, information such as the `userId` and `email` along with the [**contextual information**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-spec/common-fields#javascript-sdk) is captured.
+In the above example, information such as the `userId` and `email` along with the [**contextual information**](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-spec/common-fields/#javascript-sdk) is captured.
 
 <div class="warningBlock">
 If you explicitly specify the IP address in the event, RudderStack will use that IP instead of capturing it in the backend. You can use this feature to anonymize your users' IP - e.g., by supplying an anonymous IP address.
@@ -410,11 +410,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#42-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#41-common-destination-names)
 </li>
 </ul>
 </div>
@@ -616,11 +616,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#42-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#41-common-destination-names)
 </li>
 </ul>
 </div>
@@ -700,11 +700,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#42-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#41-common-destination-names)
 </li>
 </ul>
 </div>
@@ -775,11 +775,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#42-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#41-common-destination-names)
 </li>
 </ul>
 </div>
@@ -851,11 +851,11 @@ More information on the **`IntegrationOpts`** option can be found here:
 <ul>
 <li>
 
-[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-1-specifying-selective-destinations-in-the-load-method)
+[Specifying Selective Destinations in the `load` Method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#42-specifying-selective-destinations-in-the-load-method)
 </li>
 <li>
 
-[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk#4-2-common-destination-names)
+[Common Destination Names for sending events through the `load` method](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/#41-common-destination-names)
 </li>
 </ul>
 </div>
