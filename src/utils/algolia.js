@@ -6,10 +6,17 @@ const pageQuery = `{
     edges {
       node {
         title
+        short_description
         blogdate(formatString: "MM-DD-YYYY")
         blog_authors {
           author_name
           author_desc
+          author_position
+          author_image {
+            asset {
+              url
+            }
+          }
         }
         weight
         slug {
@@ -32,6 +39,7 @@ function pageToAlgoliaRecord({
   node: {
     _id,
     title,
+    short_description,
     blog_image,
     blog_authors,
     weight,
@@ -60,6 +68,7 @@ function pageToAlgoliaRecord({
   return {
     objectID: _id,
     title,
+    short_description,
     blog_authors,
     blogimage,
     weight,
