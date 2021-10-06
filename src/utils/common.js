@@ -125,3 +125,37 @@ export const rudderslabTrackOnSearch = searchText => {
     search_text: searchText,
   })
 }
+
+export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, event) => {
+  // console.log("rudderslabTrackOnYoutubeVideoPlayback",event)
+  // console.log('getVideoData',event.target.getVideoData())
+  // console.log('getPlaybackRate',event.target.getPlaybackRate())
+  // console.log('showVideoInfo',event.target.showVideoInfo())
+  // console.log('getDuration',event.target.getDuration())
+  // console.log('getMediaReferenceTime',event.target.getMediaReferenceTime())
+  
+  if (!window.rudderanalytics) {
+    return
+  }
+  window.rudderanalytics.track("video_playback_started", {
+    page_title: document.title,
+    video_location: sectionName,
+
+    session_id: "",
+    content_asset_ids: [event.target.playerInfo.videoData.video_id],
+    content_pod_ids: [],
+    ad_asset_id: [],
+    ad_pod_id: [],
+    ad_type: [],
+    position: 0,
+    total_length: event.target.playerInfo.duration,
+    bitrate: null,
+    framerate: null,
+    video_player: "youtube",
+    sound: event.target.playerInfo.volume,
+    full_screen: false,
+    ad_enabled: false,
+    quality: event.target.playerInfo.playbackQuality,
+    livestream: false,
+  })
+}
