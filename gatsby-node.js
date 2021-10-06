@@ -42,7 +42,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
-
+  /*
   createRedirect({
     fromPath: "/blog/why-it-needs-to-own-the-cdp",
     toPath: "/blog/why-engineering-and-it-need-to-own-the-cdp",
@@ -67,17 +67,20 @@ exports.createPages = async ({ graphql, actions }) => {
     toPath: "/integration/marketo/",
     isPermanent: true,
   })
+
   createRedirect({
     fromPath:
       "/blog/rudderstack-adds-support-for-google-analytics-4-as-a-destination",
     toPath: "/integration/google-analytics-4/",
     isPermanent: true,
   })
+  
   createRedirect({
     fromPath: "/blog/rudderstack-adds-support-for-posthog-as-a-destination/",
     toPath: "/integration/posthog-analytics",
     isPermanent: true,
   })
+  
   createRedirect({
     fromPath:
       "/blog/rudderstack-adds-zendesk-and-zendesk-chat-as-cloud-extract-sources",
@@ -372,7 +375,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   createRedirect({
     fromPath: "/blog/different-types-of-data-companies-collect-whats-the-catch",
-    toPath: "/guides/different-types-of-data-companies-collect-whats-the-catch",
+    toPath: "/blog/different-types-of-data-companies-collect-whats-the-catch/",
     isPermanent: true,
   })
   createRedirect({
@@ -519,6 +522,35 @@ exports.createPages = async ({ graphql, actions }) => {
     toPath:
       "/blog/open-source-analytics-stack-bringing-control-flexibility-and-data-privacy-to-your-analytics",
     isPermanent: true,
+  })
+*/
+
+  const redirects = await graphql(`
+    {
+      allSanitySiteRedirects {
+        edges {
+          node {
+            _id
+            to_path
+            from_path
+            is_permanenet
+          }
+        }
+      }
+    }
+  `)
+
+  if (redirects.errors) {
+    throw redirects.errors
+  }
+
+  const site_redirects = redirects.data.allSanitySiteRedirects.edges || []
+  site_redirects.forEach(edge => {
+    createRedirect({
+      fromPath: edge.node.from_path,
+      toPath: edge.node.to_path,
+      isPermanent: edge.node.is_permanenet ? edge.node.is_permanenet : true,
+    })
   })
 
   const result = await graphql(`
@@ -888,9 +920,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path,
-      component: require.resolve(
-        "./src/templates/beAHeroPageContent.js"
-      ),
+      component: require.resolve("./src/templates/beAHeroPageContent.js"),
       context: { slug: edge.node.slug.current },
     })
   })
