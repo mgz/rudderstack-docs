@@ -84,7 +84,7 @@ const TrankYou = ({ data, htmlId }) => {
             </div>
           )}
           {location && location.pathname.startsWith("/careers") && (
-            <div id="grnhse_app"></div>
+            <div className="max-w-6xl mx-auto" id="grnhse_app"></div>
           )}
         </section>
 
