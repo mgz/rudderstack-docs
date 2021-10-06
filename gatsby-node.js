@@ -523,11 +523,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
   /* Docs redirect */
   createRedirect({
-    fromPath: "/docs",
+    fromPath: "/docs/",
     toPath: "/docs/home/",
     isPermanent: true,
   })
-  
+
   createRedirect({
     fromPath: "/video-library/how-to-distribute-grafana-alerts-with-rudderstack",
     toPath: "/video-library/how-to-monitor-rudderstack-with-grafana-alerts",

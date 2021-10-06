@@ -490,7 +490,7 @@ You can call the following method to parse the AMP Linker ID and set the **`anon
 setAnonymousId(null, "<version>*<checkSum>*<idName1>*<idValue1>*<idName2>*<idValue2>...")
 ```
 
-Here, the second parameter is the AMP Linker ID format in accordance with the [specified structure](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#format). For the links decorated with the [RudderStack Linker parameter](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/amp-analytics#amp-linker), the **`<idName1>`** value will be **`rs_amp_id`**.
+Here, the second parameter is the AMP Linker ID format in accordance with the [specified structure](https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/linker-id-receiving.md#format). For the links decorated with the [RudderStack Linker parameter](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/amp-analytics/#amp-linker), the **`<idName1>`** value will be **`rs_amp_id`**.
 
 Calling the above method will parse the Linker ID and set the **`anonymousId`** as the value of the **`rs_amp_id`** key.
 
@@ -1132,9 +1132,9 @@ No, it is not possible to load multiple instances of `rudderanalytics.js`, as it
 
 To check if data is being transmitted to the specified destinations, go to the `Network` tab of your JavaScript console on your browser.
 
-<img src="https://lh5.googleusercontent.com/h53eypqI3lWd_2wqzVnP_9KVXl8vHdJ39PP2b2oPLbUpEw5xMioO8wKhvDJHYnoMQLWQkQyMx-GDxzhxtTtgWECDFa0cLP85Mzd80relg6xkptwHoDJPiAixpH3XblrNosGJd4M3" /><span class="imageTitle">page call as seen in the Network tab</span>
+<img src="../../../../images/assets/javascript-1.png" alt="Page call as seen in the network tab" /><span class="imageTitle">page call as seen in the Network tab</span>
 
-<img src="https://lh5.googleusercontent.com/0Mw5GDmeE0C8pugsTHXn4Ss6bmF05UseoSAsi2z2S1QIhw6rBGlBROUVICHZxef3KNUOvt9o6uNE-czGxRU09huZV2SF6J24S_nLTywyKKPRsNjCCD9hAyGX3BzChcF3RbchKYQf" /><span class="imageTitle">track call as seen in the Network tab</span>
+<img src="../../../../images/assets/javascript-2.png" alt="Track call as seen in the network tab" /><span class="imageTitle">track call as seen in the Network tab</span>
 
 <div class="infoBlock">
 
