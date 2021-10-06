@@ -13,8 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
 
 import { useStaticQuery, graphql } from "gatsby"
-import { Helmet } from "react-helmet"
-import { withPrefix } from "gatsby"
+// import { Helmet } from "react-helmet"
+// import { withPrefix } from "gatsby"
 
 import MainNavigation from "../components/main-navigation"
 import FooterNav from "../components/footer-nav"
@@ -82,7 +82,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
   // console.log("path", location, showExplicitGradient)
   // let diableGradient = false
-  const [diableGradient, setDiableGradient] = React.useState(
+  const [diableGradient] = React.useState(
     location &&
       (location.pathname.startsWith("/404") ||
         location.pathname.startsWith("/blog/"))
@@ -106,7 +106,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
   //   // diableGradient = true
   // }
   return (
-    <>
+    <React.Fragment>
       {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection &&
         data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection.banner_contents.map(
           banner => {
@@ -213,7 +213,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
           <div className="max-w-6xl w-full flex mx-auto flex-wrap  px-3">
             <div className="flex">
               {socialitems.map((socialitem, i) => (
-                <>
+                <React.Fragment key={socialitem._key}>
                   {(() => {
                     let rss = /rss/
                     if (rss.test(socialitem.social_item_icon)) {
@@ -247,7 +247,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                       )
                     }
                   })()}
-                </>
+                </React.Fragment>
               ))}
             </div>
           </div>
@@ -264,7 +264,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
           </div>
         </footer>
       </div>
-    </>
+    </React.Fragment>
   )
 }
 

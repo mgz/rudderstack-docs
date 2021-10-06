@@ -1,7 +1,7 @@
 import React from "react"
 import {
   Highlight,
-  connectMenu,
+ 
   connectRefinementList,
 } from "react-instantsearch-dom"
 //import { graphql } from "gatsby"
@@ -30,6 +30,7 @@ const CustomIntegrationTypeList = ({
           name="tabs"
         />
         <label
+        htmlFor="tyoes"
           for="tab-multi-one"
           className="text-xl text-blueNew-eastbay font-bold leading-7"
         >

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import Image from "./image"
 import SanityLink from "./SanityLink"
 import { rudderslabTrackOnClick } from "../utils/common"
@@ -20,7 +20,7 @@ const MainNavigationMenuLink = props => {
         link={link}
         menuIndex={i}
         classes={`${
-          onClickEvent == 1 ? `active` : ``
+          onClickEvent === 1 ? `active` : ``
         } parent-menu block text-base lg:mr-4 xl:mr-10 font-custom font-normal  p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm`}
         onclick={(e) => {
           if (link._rawSubMenuSection === null) {
@@ -41,7 +41,7 @@ const MainNavigationMenuLink = props => {
                   i >= 4 ? "lg:left-80 xl:left-96" : ""
                 }
                bg-whiteColor-custom lg:place-items-left ${
-                 onClickEvent == 1 ? `flex` : `flex hidden`
+                 onClickEvent === 1 ? `flex` : `flex hidden`
                }
                overflow-y-auto lg:overflow-hidden h-80 lg:h-64
              `}
@@ -53,6 +53,7 @@ const MainNavigationMenuLink = props => {
                     submenugroup.map((menuGroup, idx) => {
                       return (
                         <div
+                          key={idx}
                           className={`py-2 lg:py-6 ${
                             submenugroup.length - 1 === idx
                               ? ""

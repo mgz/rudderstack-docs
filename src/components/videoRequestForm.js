@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 
 const VideoRequestForm = props => {
-  const [isLoading, setIsLoading] = useState(false)
+  const [ setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",

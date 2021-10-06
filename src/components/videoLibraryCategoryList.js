@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { Highlight, connectMenu } from "react-instantsearch-dom"
+import React  from "react"
+import {  connectMenu } from "react-instantsearch-dom"
 
 const Menu = ({
   items,

@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import ReactDOMServer from "react-dom/server"
+// import ReactDOMServer from "react-dom/server"
 import Page from "./page"
 import Singleblog from "./content"
 import Product from "./products"
@@ -10,8 +10,8 @@ import VideoContent from "./videoContent"
 import CaseStudyContent from "./caseStudyContent"
 
 const sanityClient = require("@sanity/client")
-const project_id = process.env.GATSBY_SANITY_PROJECTID
-const dataset = process.env.GATSBY_SANITY_DATASET
+// const project_id = process.env.GATSBY_SANITY_PROJECTID
+// const dataset = process.env.GATSBY_SANITY_DATASET
 
 var component = ""
 

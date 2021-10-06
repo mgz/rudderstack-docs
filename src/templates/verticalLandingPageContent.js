@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
@@ -73,9 +73,15 @@ const VerticalLandingPageContent = ({ data, location }) => {
 
             return (
               <section key={section._key} id="our_logos">
-                <OurLogo key={section._key} {...l_ourLogo_info.node._rawOurLogos} removeSectionVerticalMargin={true} />
+                <OurLogo
+                  key={section._key}
+                  {...l_ourLogo_info.node._rawOurLogos}
+                  removeSectionVerticalMargin={true}
+                />
               </section>
             )
+          } else {
+            return null
           }
         })}
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Link } from "gatsby"
 
 const Sidebarctablock = ({block_title, block_button, button_url}) => {

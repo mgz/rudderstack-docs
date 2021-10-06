@@ -55,6 +55,8 @@ const Threerowcontent = ({ hits }) => {
                 </div>
               </section>
             )
+          } else {
+            return null
           }
         })}
       </div>

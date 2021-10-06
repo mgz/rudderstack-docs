@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import CustomHits from "../components/customHits"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { library } from "@fortawesome/fontawesome-svg-core"
 import "../lib/font-awesome"
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp"
 import Subscription from "../components/Subscription"
@@ -17,7 +17,6 @@ import BlogNotFound from "../components/blogNotFound"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
 import { useQueryParam, StringParam } from "use-query-params"
-
 
 library.add(faArrowUp)
 const Blog_new = ({ data, location }) => {
@@ -35,7 +34,7 @@ const Blog_new = ({ data, location }) => {
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
   // console.log("device width", height, width)
 
-  const [category, setCategory] = useQueryParam("category", StringParam)
+  const [category] = useQueryParam("category", StringParam)
   // console.log("category", category)
   return (
     <Layout location={location}>
@@ -126,12 +125,16 @@ const Blog_new = ({ data, location }) => {
           {currentRefineHitsCount > 0 && (
             <div className="hidden md:flex justify-end">
               <div
+                aria-hidden="true"
                 className="text-sm font-bold cursor-pointer -mt-2"
                 onClick={() => {
-                  window.scrollTo({
-                    top: 0,
-                    behavior: "smooth",
-                  }, {passive: true})
+                  window.scrollTo(
+                    {
+                      top: 0,
+                      behavior: "smooth",
+                    },
+                    { passive: true }
+                  )
                 }}
               >
                 Back to top&nbsp;&nbsp;
