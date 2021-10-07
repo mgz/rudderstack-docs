@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-preconnect",
       options: {
-        domains: ["https://rudderstack.com"],
+        domains: ["https://rudderstack.com","https://localhost:8000"],
       },
     },
     {
