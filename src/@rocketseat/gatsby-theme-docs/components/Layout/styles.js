@@ -80,6 +80,7 @@ export const Children = styled.div`
     font-weight: bold;
     text-decoration: underline;
     color: rgb(78,59,151);
+    word-break: break-all;
     &:hover {
       color: rgb(23,23,110);
       text-decoration: none;
