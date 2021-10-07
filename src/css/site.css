@@ -1302,10 +1302,10 @@ top: -60px;
   width: 300px;
   @apply overflow-y-auto;
 }
-.sidebar-nav-content::-webkit-scrollbar-button, .sidebar-nav-content::-webkit-scrollbar-corner, .sidebar-nav-content::-webkit-resizer, .sidebar-nav-content::-webkit-scrollbar-track-piece, .tocWrapper::-webkit-scrollbar-button, .tocWrapper::-webkit-scrollbar-corner, .tocWrapper::-webkit-resizer, .tocWrapper::-webkit-scrollbar-track-piece {
+.sidebar-nav-content::-webkit-scrollbar-button, .sidebar-nav-content::-webkit-scrollbar-corner, .sidebar-nav-content::-webkit-resizer, .sidebar-nav-content::-webkit-scrollbar-track-piece, .tocWrapper::-webkit-scrollbar-button, .tocWrapper::-webkit-scrollbar-corner, .tocWrapper::-webkit-resizer, .tocWrapper::-webkit-scrollbar-track-piece, .searchResultsWrapper::-webkit-scrollbar-button, .searchResultsWrapper::-webkit-scrollbar-corner, .searchResultsWrapper::-webkit-resizer, .searchResultsWrapper::-webkit-scrollbar-track-piece{
   display: none;
 }
-.sidebar-nav-content::-webkit-scrollbar{
+.sidebar-nav-content::-webkit-scrollbar, .searchResultsWrapper::-webkit-scrollbar{
   width: 4px;
   height: 4px;
 }
@@ -1317,14 +1317,14 @@ top: -60px;
 .tocWrapper:hover::-webkit-scrollbar{
   display: initial;
 }
-.sidebar-nav-content::-webkit-scrollbar-thumb, .tocWrapper::-webkit-scrollbar-thumb{
+.sidebar-nav-content::-webkit-scrollbar-thumb, .tocWrapper::-webkit-scrollbar-thumb, .searchResultsWrapper::-webkit-scrollbar-thumb{
   background: rgba(0,0,0,.16);
   transition: background 250ms ease;
   border-radius: 2px;
   -moz-transition: background 250ms ease;
   -webkit-transition: background 250ms ease;
 }
-.sidebar-nav-content::-webkit-scrollbar-track, .tocWrapper::-webkit-scrollbar-track{
+.sidebar-nav-content::-webkit-scrollbar-track, .tocWrapper::-webkit-scrollbar-track, .searchResultsWrapper::-webkit-scrollbar-track{
   background: none;
   border-width: 0;
 }
@@ -1711,8 +1711,9 @@ a.pageRef:hover .rightRefArrow {
 }
 .searchResultsWrapper .sectionTitle{
   @apply font-semibold;
-  @apply text-lg;
   @apply mb-3;
+  @apply leading-6;
+  font-size: 16px;
 }
 .searchResultsWrapper .description{
   @apply text-xs;

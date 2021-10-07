@@ -139,7 +139,7 @@ export default function GlobalStyle() {
             no-historical-ligatures no-contextual;
           position: relative;
           z-index: 0;
-          margin: 0 0 16px 0;
+          margin: 16px 0px;
           overflow: auto;
           .token {
             font-style: normal !important;

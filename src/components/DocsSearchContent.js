@@ -42,7 +42,7 @@ const truncateStr = (str) => {
         ) : (
           <div className="searchResults">
             {
-              hits.map((item, index) => {                
+              hits.reverse().map((item, index) => {                
                 let basePath = window.location.origin + '/docs/';
                 let pageTitle = item.SectionTitle ? replaceStr(item._highlightResult.SectionTitle.value) : replaceStr(item._highlightResult.pageTitle.value);
                 let sectionContent = item._highlightResult.sectionContent.value.trim() !== ""  ? truncateStr(replaceStr(item._highlightResult.sectionContent.value)) : '';

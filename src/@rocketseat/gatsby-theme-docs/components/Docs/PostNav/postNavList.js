@@ -1,3 +1,6 @@
+/* import {jsonData} from '../../../../../docsconfig/sidebar';
+import { flattenDeep } from 'lodash-es'; */
+
 export const postNavList = [
 {
     "key":"home",
@@ -1604,3 +1607,6 @@ export const postNavList = [
     "content":[]
  }
 ]
+
+/* export const postNav = flattenDeep(jsonData);
+console.log('Post nav', postNav); */
