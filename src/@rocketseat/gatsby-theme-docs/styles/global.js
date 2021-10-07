@@ -76,8 +76,10 @@ export default function GlobalStyle() {
           width: 100%;
           p {
             padding: 0.5rem;
+            padding-left: 1rem;
             background: #FFFFFF;
             border-left-width: 4px;
+            border-color: #d9dbdd;
             color: ${theme.colors.components.blockquote.text};
             margin: 0;
             a {

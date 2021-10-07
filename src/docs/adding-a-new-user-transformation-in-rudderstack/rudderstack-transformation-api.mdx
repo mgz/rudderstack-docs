@@ -161,10 +161,10 @@ publish = false ::
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType post">POST</span>
-  <span class="apiCallTitle">Create a transformation</span>
-</h2>
+<span class="apiCallType post">POST</span>
+
+## Create a transformation
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com/transformations</span>
 </div>
@@ -482,14 +482,14 @@ This will give an array of published transformations.
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType get">GET</span>
-  <span class="apiCallTitle">List all the transformations</span>
-</h2>
+<span class="apiCallType get">GET</span>
+
+## List all the transformations
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com/transformations</span>
 </div>
-<span class="apiSummary">Get all **published transformations** for a workspace.</span>
+<span class="apiSummary">Get all <strong>published transformations</strong> for a workspace.</span>
 
 <Tabs>
   <TabList>
@@ -628,14 +628,14 @@ This will give a transformation object on basis of the ID.
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType get">GET</span>
-  <span class="apiCallTitle">Retrieve a single Transformation</span>
-</h2>
+<span class="apiCallType get">GET</span>
+
+## Retrieve a single Transformation
+
 <div class="hostPath">
-  <span class="pathName">https://api.rudderstack.com**/transformations/&#123;id&#125;**</span>
+  <span class="pathName">https://api.rudderstack.com<strong>transformations/&#123;id&#125;</strong></span>
 </div>
-<span class="apiSummary">Retrieve the **published transformations** from an ID.</span>
+<span class="apiSummary">Retrieve the <strong>published transformations</strong> from an ID.</span>
 
 <Tabs>
   <TabList>
@@ -778,10 +778,10 @@ This will update transformation object on basis of id.
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType post">POST</span>
-  <span class="apiCallTitle">Update a transformation</span>
-</h2>
+<span class="apiCallType post">POST</span>
+
+## Update a transformation
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/&#123;id&#125;</strong></span>
 </div>
@@ -981,10 +981,10 @@ Delete a **published** transformations by ID. Note that RudderStack never delete
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType delete">DELETE</span>
-  <span class="apiCallTitle">Delete a transformation</span>
-</h2>
+<span class="apiCallType delete">DELETE</span>
+
+## Delete a transformation
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/&#123;id&#125;</strong></span>
 </div>
@@ -1126,10 +1126,10 @@ This gets an array of transformations revisions.
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType get">GET</span>
-  <span class="apiCallTitle">List all transformation versions</span>
-</h2>
+<span class="apiCallType get">GET</span>
+
+## List all transformation versions
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/&#123;id&#125;/versions</strong></span>
 </div>
@@ -1304,10 +1304,10 @@ This gets a single transformation version.
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType get">GET</span>
-  <span class="apiCallTitle">Retrieve a single transformation version</span>
-</h2>
+<span class="apiCallType get">GET</span>
+
+## Retrieve a single transformation version
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/&#123;id&#125;/versions/&#123;versionId&#125;</strong></span>
 </div>
@@ -1472,10 +1472,10 @@ Description of the library goes here
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType get">GET</span>
-  <span class="apiCallTitle">Create a library</span>
-</h2>
+<span class="apiCallType get">GET</span>
+
+## Create a library
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/libraries</strong></span>
 </div>
@@ -1701,10 +1701,10 @@ Get all the **published** libraries.
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType get">GET</span>
-  <span class="apiCallTitle">List all libraries</span>
-</h2>
+<span class="apiCallType get">GET</span>
+
+## List all libraries
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/libraries</strong></span>
 </div>
@@ -1848,10 +1848,10 @@ Get a single **published** library by ID.
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType get">GET</span>
-  <span class="apiCallTitle">Retrieve a library</span>
-</h2>
+<span class="apiCallType get">GET</span>
+
+## Retrieve a library
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com**/libraries/&#123;id&#125;**</span>
 </div>
@@ -2105,10 +2105,10 @@ You can pass it either as **ASC** to get an ascending order or **DESC** for desc
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType get">GET</span>
-  <span class="apiCallTitle">List all library versions.</span>
-</h2>
+<span class="apiCallType get">GET</span>
+
+## List all library versions.
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/libraries/&#123;id&#125;/versions</strong></span>
 </div>
@@ -2290,10 +2290,10 @@ Get a single library revision.
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType get">GET</span>
-  <span class="apiCallTitle">Retrieve a single library versions</span>
-</h2>
+<span class="apiCallType get">GET</span>
+
+## Retrieve a single library versions
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/libraries/&#123;id&#125;/versions/&#123;versionId&#125;</strong></span>
 </div>
@@ -2450,10 +2450,10 @@ Sends published as true if versions is successfully published.
 {% endapi-method-spec %}
 {% endapi-method %} -->
 
-<h2>
-  <span class="apiCallType post">POST</span>
-  <span class="apiCallTitle">Publish a transformation or library</span>
-</h2>
+<span class="apiCallType post">POST</span>
+
+## Publish a transformation or library
+
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/libraries/publish</strong></span>
 </div>

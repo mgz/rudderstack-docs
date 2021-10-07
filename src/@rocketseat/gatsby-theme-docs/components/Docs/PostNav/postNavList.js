@@ -169,7 +169,7 @@ export const postNavList = [
  },
  {
     "key":"rudderstack-node-sdk",
-    "title":"Node",
+    "title":"Node.js",
     "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk/",
     "content":[]
  },
@@ -351,7 +351,7 @@ export const postNavList = [
  },
  {
     "key":"netsuite",
-    "title":"Netsuite",
+    "title":"NetSuite",
     "link":"/cloud-extract-sources/netsuite/",
     "content":[]
  },
@@ -375,7 +375,7 @@ export const postNavList = [
  },
  {
     "key":"schema-comparison-rudderstack-vs-segment",
-    "title":"Schema Comparison Rudderstack Vs Segment",
+    "title":"Schema Comparison: Rudderstack Vs Segment",
     "link":"/cloud-extract-sources/salesforce/schema-comparison-rudderstack-vs-segment/",
     "content":[]
  },
@@ -735,7 +735,7 @@ export const postNavList = [
 },
 {
    "key":"clevertap",
-   "title":"Clevertap",
+   "title":"CleverTap",
    "link":"/destinations/marketing/clevertap/",
    "content":[]
 },
@@ -1239,7 +1239,7 @@ export const postNavList = [
  },
  {
     "key":"rudder-typer",
-    "title":"Rudder typer",
+    "title":"RudderTyper",
     "link":"/data-governance/rudder-typer/",
     "content":[]
  },
@@ -1479,7 +1479,7 @@ export const postNavList = [
  },
  {
     "key":"bucket-configuration-settings",
-    "title":"Bucket Configuration Settings",
+    "title":"Bucket Configuration Settings for Event Backups",
     "link":"/user-guides/administrators-guide/bucket-configuration-settings/",
     "content":[]
  },

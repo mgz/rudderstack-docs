@@ -1176,6 +1176,9 @@ top: -60px;
 .childrenWrapper [data-reach-tab-list]{
   background: transparent;
 }
+.childrenWrapper [data-reach-tabs]{
+  @apply my-5;
+}
 .childrenWrapper [data-reach-tab]{
   @apply py-2 px-4;
   background: rgb(245, 247, 249);
@@ -1749,7 +1752,7 @@ a.pageRef:hover .rightRefArrow {
   @apply text-whiteColor-custom;
   @apply text-xs;
   @apply px-2 py-1;
-  @apply mr-1;
+  @apply mr-2;
   @apply inline-block;
   @apply align-middle;
   @apply rounded-md;
@@ -1781,11 +1784,12 @@ a.pageRef:hover .rightRefArrow {
 .apiSummary{
   @apply block;
   @apply mb-2;
-  @apply text-grayColor-lighter;
+  color: #6c6c80;
 }
 .parameterBody{
   @apply border border-grayColor-lightBorder;
   @apply mb-5;
+  color: #6c6c80;
 }
 .parameterRow{
   @apply flex;

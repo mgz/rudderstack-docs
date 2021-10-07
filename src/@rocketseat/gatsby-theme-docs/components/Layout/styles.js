@@ -62,7 +62,10 @@ export const Children = styled.div`
     overflow-wrap: break-word;
     margin: 24px 0px 16px 0px;
   }
-
+  h2{
+    position: relative;
+    display: block;
+  }
   h2, h3{
     margin: 55px 0 16px 0;
   }  
