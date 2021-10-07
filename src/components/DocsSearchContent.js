@@ -6,7 +6,7 @@
  */
 
  import React from "react"
- import NoResultImage from '../images/assets/noresultsearch.svg'
+ import NoResultImage from '../images/noresultsearch.svg'
 
  const replaceStr = (str) => {
   let replaceText1 = '<ais-highlight-0000000000>',
