@@ -79,19 +79,50 @@ const NestedAccordion = props => {
       load()
     }
       
-      function expandAcc(el){
+      /* function expandAcc(el){
         if(el !== undefined){
           let parentButton, parentPanel;
           if(el.closest('.accordion__panel') === (undefined || null)){
             if(el.hasAttribute('aria-expanded') && el.parentNode.parentNode.querySelector('accordion__panel') !== null){
               el.setAttribute('aria-expanded', true);
+              console.log('Entered if if');
             } 
           }else{
+            console.log('Entered else');
             parentButton = el.closest('.accordion__panel').parentNode.childNodes[0].childNodes[0];
             parentPanel = el.closest('.accordion__panel').parentNode.childNodes[1];
             parentButton.setAttribute('aria-expanded', true);
             parentPanel.removeAttribute('hidden');
+            console.log('Closest panel', el.closest('.accordion__panel'));
             expandAcc(parentButton);
+          }
+          console.log('Current el', el);
+          //parentButton.setAttribute('aria-expanded', true);
+        }
+      } */
+      function expandAcc(el){
+        if(el !== undefined){
+          let parentButton, parentPanel;
+          let arControls = el.getAttribute('aria-controls');
+          if(el.parentNode.nextSibling !== undefined && el.parentNode.nextSibling !== null){
+            if(el.parentNode.nextSibling.getAttribute('id') === arControls){
+              el.setAttribute('aria-expanded', true);
+              el.parentNode.nextSibling.removeAttribute('hidden');
+            }
+          }
+          if(el.closest('.accordion__panel') === (undefined || null)){
+            if(el.hasAttribute('aria-expanded') && el.parentNode.parentNode.querySelector('accordion__panel') !== null){
+              el.setAttribute('aria-expanded', true);
+            } 
+          }
+          else{
+            if(el.closest('.accordion__panel') !== undefined && el.closest('.accordion__panel') !== null){
+              parentButton = el.closest('.accordion__panel').parentNode.childNodes[0].childNodes[0];
+              parentPanel = el.closest('.accordion__panel').parentNode.childNodes[1];
+              parentButton.setAttribute('aria-expanded', true);
+              parentPanel.removeAttribute('hidden');
+              expandAcc(parentButton);
+            }
           }
           //parentButton.setAttribute('aria-expanded', true);
         }
