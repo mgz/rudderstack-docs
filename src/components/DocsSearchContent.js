@@ -6,7 +6,7 @@
  */
 
  import React from "react"
- import NoResultImage from '../images/assets/noresultsearch.svg'
+ //import NoResultImage from '../images/assets/noresultsearch.svg'
 
  const replaceStr = (str) => {
   let replaceText1 = '<ais-highlight-0000000000>',
@@ -37,7 +37,7 @@ const truncateStr = (str) => {
     <div className="searchResultsWrapper">
         {hits.length === 0 || currentSearchText === '' ? (
           <div className="searchResultsEmpty">
-            <img src={NoResultImage} alt="No Result" />
+            {/* <img src={NoResultImage} alt="No Result" /> */}
           </div>  
         ) : (
           <div className="searchResults">
