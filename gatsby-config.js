@@ -2,6 +2,16 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 module.exports = {
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_DEV: true,
+    DEV_SSR: true,
+    QUERY_ON_DEMAND: true,
+    LAZY_IMAGES: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    FAST_REFRESH: true,
+    PARALLEL_SOURCING: true
+  },
   siteMetadata: {
     title: `Rudderstack`,
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
@@ -17,7 +27,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-preconnect",
       options: {
-        domains: ["https://rudderstack.com", "http://localhost:8000"],
+        domains: ["https://rudderstack.com","https://localhost:8000"],
       },
     },
     {
