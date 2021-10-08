@@ -11,7 +11,7 @@ import PropTypes from "prop-types"
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../lib/font-awesome"
-
+import Link from "gatsby-link"
 import { useStaticQuery, graphql } from "gatsby"
 // import { Helmet } from "react-helmet"
 // import { withPrefix } from "gatsby"
@@ -128,7 +128,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" />
       </Helmet> */}
-        
+
         <MainNavigation diableGradient={diableGradient} />
         <main>{children}</main>
         <CookiesConsent />
@@ -166,7 +166,10 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                         {item.widget_desc_section_title}
                       </p>
                       <div className="text-footer">
-                        <PortableText blocks={item.widget_section_desc} trackSectionHeader={"Footer Navigation"} />
+                        <PortableText
+                          blocks={item.widget_section_desc}
+                          trackSectionHeader={"Footer Navigation"}
+                        />
                         {i === 0 ? (
                           <a
                             href="https://resources.rudderstack.com/join-rudderstack-slack"
@@ -174,8 +177,13 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             rel="noreferrer"
                             // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                             className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                            onClick={(e) => rudderslabTrackOnClick("footer-navigation", "Footer Navigation Section", e)}
-
+                            onClick={e =>
+                              rudderslabTrackOnClick(
+                                "footer-navigation",
+                                "Footer Navigation Section",
+                                e
+                              )
+                            }
                           >
                             {/* <img
                             src={SlackImg}
@@ -191,17 +199,29 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             Join our Slack Community
                           </a>
                         ) : (
-                          <a
-                            href="https://docs.rudderstack.com"
-                            target="_blank"
-                            rel="noreferrer"
-                            // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                            className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                            onClick={(e) => rudderslabTrackOnClick("footer-navigation", "Footer Navigation Section", e)}
-
+                          <Link
+                            to={"/docs/home/"}
+                            onClick={e =>
+                              rudderslabTrackOnClick(
+                                "footer-navigation",
+                                "Footer Navigation Section",
+                                e
+                              )
+                            }
                           >
-                            Go to docs
-                          </a>
+                            <span
+                              className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
+                              onClick={e =>
+                                rudderslabTrackOnClick(
+                                  "footer-navigation",
+                                  "Footer Navigation Section",
+                                  e
+                                )
+                              }
+                            >
+                              Go to docs
+                            </span>
+                          </Link>
                         )}
                       </div>
                     </div>
@@ -224,7 +244,13 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           rel="noreferrer noopener"
                           aria-label="This is an external link "
                           href={socialitem.social_item_link}
-                          onClick={(e) => rudderslabTrackOnClick("footer-navigation", "Footer Navigation Section", e)}
+                          onClick={e =>
+                            rudderslabTrackOnClick(
+                              "footer-navigation",
+                              "Footer Navigation Section",
+                              e
+                            )
+                          }
                         >
                           <FontAwesomeIcon icon={socialitem.social_item_icon} />
                         </a>
@@ -237,8 +263,13 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           rel="noreferrer noopener"
                           aria-label="This is an external link "
                           href={socialitem.social_item_link}
-                          onClick={(e) => rudderslabTrackOnClick("footer-navigation", "Footer Navigation Section", e)}
-
+                          onClick={e =>
+                            rudderslabTrackOnClick(
+                              "footer-navigation",
+                              "Footer Navigation Section",
+                              e
+                            )
+                          }
                         >
                           <FontAwesomeIcon
                             icon={["fab", socialitem.social_item_icon]}
