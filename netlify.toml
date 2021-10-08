@@ -1,7 +1,2 @@
 [[plugins]]
 package = "@netlify/plugin-gatsby"
-
-[[redirects]]
-from = "docs.rudderstack.com/*"
-to = "rudderstack.com/docs/:splat"
-status = 301
