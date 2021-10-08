@@ -22,7 +22,6 @@ function convertToSlug(pData) {
     .replace("?", "")
     .replace(/[^\w-]+/g, "")
 }
- 
 
 const queries = [
   {
@@ -52,6 +51,7 @@ const queries = [
           sectionId: convertToSlug(row.node.tableOfContents.items[0].title),
           SectionTitle: row.node.tableOfContents.items[0].title,
           sectionContent: content,
+          idx: 1,
         })
 
         for (var i = 0; i <= row.node.headings.length - 1; i += 1) {
@@ -70,17 +70,19 @@ const queries = [
           tmpString = tmpString.replace(content, "")
 
           tmpData.push({
-            objectID: row.node.slug + "-" + convertToSlug(row.node.headings[i].value),
+            objectID:
+              row.node.slug + "-" + convertToSlug(row.node.headings[i].value),
             //pageSlug: row.node.slug.charAt(row.node.slug.length - 1) == '/' ? row.node.slug.replace(row.node.slug.charAt(row.node.slug.length - 1), '') : row.node.slug,
             pageSlug: row.node.slug,
             pageTitle: row.node.tableOfContents.items[0].title,
             sectionId: convertToSlug(row.node.headings[i].value),
             SectionTitle: row.node.headings[i].value,
             sectionContent: content,
+            idx: i + 2,
           })
         }
       })
-      return tmpData 
+      return tmpData
     },
     indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs",
     settings: {},

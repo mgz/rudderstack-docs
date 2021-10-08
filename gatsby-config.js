@@ -181,7 +181,8 @@ module.exports = {
           "pageTitle",
           "sectionTitle",
           "sectionId",
-          "sectionContent"
+          "sectionContent",
+          "idx"
         ],
       },
     },
