@@ -1312,11 +1312,10 @@ top: -60px;
 .tocWrapper::-webkit-scrollbar{
   width: 4px;
   height: 4px;
-  display: none;
 }
-.tocWrapper:hover::-webkit-scrollbar{
+/* .tocWrapper:hover::-webkit-scrollbar{
   display: initial;
-}
+} */
 .sidebar-nav-content::-webkit-scrollbar-thumb, .tocWrapper::-webkit-scrollbar-thumb, .searchResultsWrapper::-webkit-scrollbar-thumb{
   background: rgba(0,0,0,.16);
   transition: background 250ms ease;

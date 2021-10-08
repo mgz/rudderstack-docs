@@ -8,6 +8,7 @@ import slug from "@rocketseat/gatsby-theme-docs/src/util/slug"
 
 import { Wrapper, Container } from "./styles"
 import tailwindConfig, { theme } from "../../../../../../tailwind.config"
+import { uniqBy, difference} from "lodash-es"
 
 export default function TableOfContents({ headings = [], disableTOC = false, contentRef, setTocOpen, isTocOpen = false }) {
   const { y } = useWindowScroll()
@@ -19,7 +20,7 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
 
   /* const generateId = () => {
     let tempArr = headings.filter(heading => heading.depth === 2 || heading.depth === 3);
-    const duplicates = filter(tempArr, (value, index, iteratee) => includes(iteratee, value, index + 1))
+    const duplicates = difference(tempArr, )
     console.log('Dupes', duplicates);
   } */
 
@@ -30,29 +31,30 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
         left += element.offsetLeft || 0;
         element = element.offsetParent;
     } while(element);
-
     return top;
 };
 
   useEffect(() => {
+    //generateId();
     if (!isMobile || disableTOC) {
       const allHeadings = document.querySelectorAll(`h2, h3`)
 
-      setOffsets(
-        allHeadings &&
-          Array.from(allHeadings)
-            .map(heading => {
-              const anchor = heading.querySelector(`a`)
-              if (!anchor) return {}
-              return {
-                id: heading.id,
-                offset: getOffset(heading),
-              }
-            })
-            .filter(Boolean)
-      )
-
-
+      let settingOffset = () => setTimeout(() => {
+        setOffsets(
+          allHeadings &&
+            Array.from(allHeadings)
+              .map(heading => {
+                const anchor = heading.querySelector(`a`)
+                if (!anchor) return {}
+                return {
+                  id: heading.id,
+                  offset: getOffset(heading),
+                }
+              })
+              .filter(Boolean)
+        )
+      }, 1000)
+      
       /* setOffsets(
         allHeadings && Object.entries(allHeadings).map((item,k) => {
           return {
@@ -61,8 +63,12 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
           }
         })
       ) */
+        let timeOutId = settingOffset();
+
+      return () => {
+        clearTimeout(timeOutId);
+      }
     }
-    //generateId();
 
   }, [width, height, contentRef, isMobile, disableTOC])
 
@@ -72,7 +78,7 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
       if (offsets) {
         for (let i = offsets.length - 1; i >= 0; i -= 1) {
           const { id, offset } = offsets[i]
-          if (scrollTop >= offset - 193) {
+          if (scrollTop >= offset - 140) {
             return id
           }
         }
