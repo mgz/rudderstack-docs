@@ -59,7 +59,7 @@ const queries = [
   {
     query: integrationQuery,
     transformer: ({ data }) => {
-      // console.log("on map , ", data)
+      //console.log("on map , ", data)
       return data.integrations.edges.map(integrationToAlgoliaRecord)
     },
     indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_integration",

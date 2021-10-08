@@ -28,7 +28,7 @@ const VideoRequestForm = props => {
         ret = true
       }
     })
-    
+
     setFormErrors(errObj)
     return ret
   }
@@ -150,7 +150,7 @@ const VideoRequestForm = props => {
           throw err
         })
     } catch (err) {
-      console.log("errror exception", err)
+      //console.log("errror exception", err)
     } finally {
       setIsLoading(false)
     }

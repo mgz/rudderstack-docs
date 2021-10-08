@@ -2,18 +2,31 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 module.exports = {
+  flags: {
+    PRESERVE_WEBPACK_CACHE: true,
+    FAST_DEV: true,
+    DEV_SSR: true,
+    QUERY_ON_DEMAND: true,
+    LAZY_IMAGES: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+  },
   siteMetadata: {
     title: `Rudderstack`,
     description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
     author: `@gatsbyjs`,
     siteUrl: "https://rudderstack.com",
+    siteTitle: "RudderStack",
+    defaultTitle: "Documentation - RudderStack",
+    siteTitleShort: "RudderStack",
+    siteAuthor: "RudderStack"
   },
+  pathPrefix: "/docs",
   plugins: [
     `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-preconnect",
       options: {
-        domains: ["https://rudderstack.com", "http://localhost:8000"],
+        domains: ["https://rudderstack.com","https://localhost:8000"],
       },
     },
     {
@@ -50,6 +63,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        ignore: [`${__dirname}/src/images/assets`]
       },
     },
     `gatsby-transformer-sharp`,
@@ -152,6 +166,25 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
+        indexName:
+          process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs",
+        queries: require("./src/utils/docs-algolia"),
+        enablePartialUpdates: true,
+        matchFields: [
+          "pageSlug",
+          "pageTitle",
+          "sectionTitle",
+          "sectionId",
+          "sectionContent",
+          "idx"
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -169,17 +202,17 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-   {
+    {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //host: `https://rudderstack-dataplane.rudderstack.com`,
-        loadType:'defer',
+        loadType: "defer",
         trackPage: false,
         // loadAsync: true,
-         //delayLoad: true,
-         //delayLoadTime: 500,
+        //delayLoad: true,
+        //delayLoadTime: 500,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
     },
@@ -334,5 +367,55 @@ module.exports = {
     //     name: 'allItemImages',
     //   },
     // },
+    /* {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/docs`,
+      },
+    },
+    /* {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [".mdx",".md"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-embedder`,
+            options:{
+              services: {
+                'YouTube': "https://www.youtube.com/watch?v=vOaw9pKn6\_M"
+              } 
+            }
+          }
+        ]
+      }
+    }, */
+    {
+      resolve: "@rocketseat/gatsby-theme-docs",
+      options: {
+        basePath: `/docs`,
+        docsPath: `src/docs`,
+        configPath: `src/docsconfig`,
+        withMdx: true,
+      },
+    },
+    /* {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {},
+          },
+        ],
+      },
+    }, */
   ],
 }

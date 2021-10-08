@@ -30,7 +30,7 @@ import { isMobile, isBrowser } from "react-device-detect"
     
 }
 
-export const onPreRenderHTML = ({
+/* export const onPreRenderHTML = ({
   pathname,
   getHeadComponents,
   replaceHeadComponents,
@@ -58,4 +58,4 @@ export const onPreRenderHTML = ({
     }
   })
   // replaceHeadComponents(headComponents)
-}
+} */
