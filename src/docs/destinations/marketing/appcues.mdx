@@ -11,8 +11,7 @@ description: Step-by-step guide to send your event data from RudderStack to Appc
 RudderStack supports sending your event data to Appcues from our native web SDKs, to help you understand your customers better.
 
 <div class="successBlock">
-
-**Find the open-source transformer code for this destination in our [GitHub repo](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/appcues).**
+<strong>Find the open-source transformer code for this destination in our <a href="https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/appcues">GitHub repo</a>.</strong>
 </div>
 
 ## Getting Started
@@ -93,6 +92,7 @@ rudderanalytics.track("Clicked button", {
 ```
 
 <div class="infoBlock">
+
 The above call is directly passed on to Appcues via its `Appcues.track(eventName, [eventProperties])` call.
 
 </div>
@@ -108,11 +108,13 @@ rudderanalytics.page("homepage")
 ```
 
 <div class="infoBlock">
+
 In device mode, the `page` call is directly passed on to Appcues via its `Appcues.page()` call, along with any additional properties passed to it. Appcues will check to see if a user qualifies for an experience every time the page changes. When you first make the `page` call via RudderStack’s `rudderanalytics` object, Appcues checks if there are any current flows associated with the given user and loads them, if necessary.
 
 </div>
 
 <div class="infoBlock">
+
 In the cloud mode, the above `page` call is sent as a `track` event with the name as `Visited a Page`, along with any additional properties passed to it. It also updates the properties associated with the user profile such as `User ID`, `Last Browser Language`, `Updated At`, `User Agent`, `Current Page URL`, `Current Page Title` .
 
 </div>
@@ -120,6 +122,7 @@ In the cloud mode, the above `page` call is sent as a `track` event with the nam
 ## Screen
 
 <div class="infoBlock">
+
 The `screen` call is available only in the RudderStack Cloud mode.
 
 </div>
@@ -135,6 +138,7 @@ A sample `screen` call looks like the following code snippet:
 In the above snippet, we capture information related to the screen being viewed, such as screen's name and category.
 
 <div class="infoBlock">
+
 The above call is sent as a `track` event with the name `Viewed a Screen`, along with any additional properties passed to it.
 
 </div>

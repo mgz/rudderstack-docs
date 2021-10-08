@@ -8,7 +8,7 @@ import slug from "@rocketseat/gatsby-theme-docs/src/util/slug"
 
 import { Wrapper, Container } from "./styles"
 import tailwindConfig, { theme } from "../../../../../../tailwind.config"
-import { uniqBy, difference} from "lodash-es"
+import {entries} from "lodash-es"
 
 export default function TableOfContents({ headings = [], disableTOC = false, contentRef, setTocOpen, isTocOpen = false }) {
   const { y } = useWindowScroll()
@@ -18,11 +18,38 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
 
   const isMobile = width <= 1200
 
-  /* const generateId = () => {
+  const getDuplicates = arr => {
+    let map = {};
+    for(let i = 0; i < arr.length; i++){
+      if(map.hasOwnProperty(slug(arr[i].value))){
+        map[slug(arr[i].value)].push(i);
+      }else{
+        map[slug(arr[i].value)] = [i]
+      }
+    }
+
+    return entries(map);
+  }
+
+  const generateId = () => {
     let tempArr = headings.filter(heading => heading.depth === 2 || heading.depth === 3);
-    const duplicates = difference(tempArr, )
-    console.log('Dupes', duplicates);
-  } */
+    let duplicates = getDuplicates(tempArr);
+    let tempArr1 = {};
+    duplicates.map((item,k) => {
+      if(item[1].length > 1){
+        for(let i = 0; i < item[1].length; i++){ //'xyz', [8,12]
+          if(i === 0){
+            tempArr1[item[1][0]] = slug(tempArr[item[1][i]].value);
+          }else{
+            tempArr1[item[1][i]] = slug(tempArr[item[1][i]].value) + '-' + i;
+          }
+        }
+      }else{
+        tempArr1[item[1]] = item[0];
+      }
+    });
+    return tempArr1;
+  }
 
   const getOffset = (element) => {
     var top = 0, left = 0;
@@ -35,7 +62,7 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
 };
 
   useEffect(() => {
-    //generateId();
+    generateId();
     if (!isMobile || disableTOC) {
       const allHeadings = document.querySelectorAll(`h2, h3`)
 
@@ -130,11 +157,12 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
               {headings && headings
                 .filter(heading => heading.depth === 2 || heading.depth === 3)
                 .map((heading, i) => {
-                  const headingSlug = slug(heading.value);
+                  let idArr = generateId();
+                  const headingSlug = idArr[i];
 
                   return (
                     <li
-                      key={heading.value}
+                      key={headingSlug}
                       style={{
                         marginLeft: heading.depth === 3 ? `8px` : null,
                       }}
