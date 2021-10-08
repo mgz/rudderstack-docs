@@ -20,6 +20,7 @@ module.exports = {
     siteTitle: "RudderStack",
     defaultTitle: "Documentation - RudderStack",
     siteTitleShort: "RudderStack",
+    siteAuthor: "RudderStack"
   },
   pathPrefix: "/docs",
   plugins: [

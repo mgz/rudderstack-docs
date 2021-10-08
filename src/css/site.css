@@ -2084,6 +2084,9 @@ a.pageRef:hover .rightRefArrow {
   .parameterBodyRight {
     @apply w-full;
   }
+  .childrenWrapper a{
+    word-break: break-word;
+  }
 }
 
 @media only screen and (max-width: 639px) {
