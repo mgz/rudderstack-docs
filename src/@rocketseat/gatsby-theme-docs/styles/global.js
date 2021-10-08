@@ -18,8 +18,8 @@ export default function GlobalStyle() {
           //font-size: 16px;
           //font-family: ${theme.fonts.body};
           //background-color: ${theme.colors.background};
-          text-rendering: optimizelegibility;
-          -webkit-font-smoothing: antialiased;
+          //text-rendering: optimizelegibility;
+          //-webkit-font-smoothing: antialiased;
           overflow-y: scroll;
         }
         .successBlock {
