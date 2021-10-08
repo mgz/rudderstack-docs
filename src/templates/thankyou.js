@@ -12,7 +12,6 @@ import clientConfig from "../../client-config"
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 const TrankYou = ({ data, htmlId }) => {
-  
   const location = useLocation()
   const lv_thankyoucontent = data.thankyou._rawPagebuildersectionarray || []
 
@@ -22,6 +21,17 @@ const TrankYou = ({ data, htmlId }) => {
   // console.log('path debug 1', location && location.pathname.startsWith("/careers"))
   // console.log('path debug 2', location && location.pathname.startsWith("careers"))
   // console.log('path debug 3', location && location.pathname)
+
+  function resizeIframe(obj) {
+    // console.log(
+    //   "obj",
+    //   obj.target,
+    //   // obj.target.contentWindow.document.body.scrollHeight + "px"
+    // )
+    // obj.target.style.height = 0
+    // obj.target.style.height = obj.target.contentWindow.document.body.scrollHeight + "px"
+  }
+
   return (
     <Layout>
       <Helmet>
@@ -41,6 +51,7 @@ const TrankYou = ({ data, htmlId }) => {
           content={data.thankyou.meta_desc}
         />
         <meta property="og:type" content="article" />
+        <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>
       </Helmet>
 
       <div className="font-custom">
@@ -64,7 +75,7 @@ const TrankYou = ({ data, htmlId }) => {
               </h1>
             </div>
           </div>
-          {lv_thankyoucontent[0].thankyou_content&& (
+          {lv_thankyoucontent[0].thankyou_content && (
             <div
               className={`${
                 lv_thankyoucontent[0].content_type === "agreement"
@@ -85,6 +96,19 @@ const TrankYou = ({ data, htmlId }) => {
           )}
           {location && location.pathname.startsWith("/careers") && (
             <div className="max-w-6xl mx-auto" id="grnhse_app"></div>
+            // <iframe
+            //   src={
+            //     "https://boards.greenhouse.io/embed/job_board?for=rudderstack"
+            //   }
+            //   width="100%"
+            //   frameborder="0"
+            //   // scrolling="no"
+            //   title="Rudderstack - Greenhouse Job Board"
+            //   scrolling="auto"
+            //   height="1200px"
+            //   // class="iframe-full-height"
+            //   // onLoad={resizeIframe}
+            // ></iframe>
           )}
         </section>
 
