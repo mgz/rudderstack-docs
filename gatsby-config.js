@@ -9,8 +9,6 @@ module.exports = {
     QUERY_ON_DEMAND: true,
     LAZY_IMAGES: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    FAST_REFRESH: true,
-    PARALLEL_SOURCING: true
   },
   siteMetadata: {
     title: `Rudderstack`,
