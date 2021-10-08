@@ -1,2 +1,5 @@
 [[plugins]]
 package = "@netlify/plugin-gatsby"
+
+[[redirects]]
+https://docs.rudderstack.com/* https://www.ruddersatck.com/docs/:splat 301!
