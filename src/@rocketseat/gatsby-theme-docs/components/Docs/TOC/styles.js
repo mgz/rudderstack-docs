@@ -9,8 +9,8 @@ export const Wrapper = styled.div`
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
-  max-width: 200px;
-  padding-left: 20px;
+  max-width: 240px;
+  padding:0px 20px;
   border-left: 1px solid rgb(222, 226, 231);
 
   @media (max-width: 1200px) {

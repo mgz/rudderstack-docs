@@ -220,11 +220,11 @@ Replace <code class="inline-code">&lt;bucket&gt;</code> and <code class="inline-
 </span>
 <li>
   
-  Create a role and attach the above policy in AWS: - Create role of type **
+  Create a role and attach the above policy in AWS: - Create role of type <strong>
     Another AWS account
-  ** - Enter your AWS account ID and enable **
+  </strong> - Enter your AWS account ID and enable <strong>
     Require External ID
-  ** - For external ID enter a dummy ID such as 0000. We will modify this
+  </strong> - For external ID enter a dummy ID such as 0000. We will modify this
   later on. - And attach the policy created in Step 1. - Give your role a name and
   keep the role ARN handy for the next step.
 </li>
@@ -308,10 +308,14 @@ grant usage on integration <integration_name> to role <sf_role>
         If you have Microsoft Azure as your cloud provider and want to leverage Azure Blob Storage as your object storage, you will need to follow a few more steps to configure your Snowflake destination with a snowflake integration.
 
 Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-guide/data-load-azure-config.html#option-1-configuring-a-snowflake-storage-integration">here</a>.
+
 **Configuring snowflake integration with Azure **
 <ol>
 <li>Create a storage account in Azure.</li>
-<li>Create a container in the storage account created above by navigating to **&lt;storage_account&gt;** - **Storage Explorer** - **Blob Containers** - **Create a Blob Container**.</li>
+<li>
+
+Create a container in the storage account created above by navigating to **&lt;storage_account&gt;** - **Storage Explorer** - **Blob Containers** - **Create a Blob Container**.
+</li>
 <li>Create cloud storage integration in Snowflake:
 <span>
 
@@ -326,12 +330,13 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
 ```
 </span>
 <code class="inline-code">&lt;tenant_id&gt;</code> - Get your tenant id by
-navigating to **Azure Active Directory** - **
+navigating to <strong>Azure Active Directory</strong> - <strong>
   Properties.
-** The tenant ID is displayed in the **Directory ID** field.
-**&lt;account&gt;** - **&lt;storage_account&gt;** - **
+</strong> The tenant ID is displayed in the <strong>Directory ID</strong> field.
+<strong>&lt;account&gt;</strong> - <strong>&lt;storage_account&gt;</strong> - <strong>
   Access keys
-** - &lt;<code class="inline-code">storageAccountName</code>&gt;
+</strong> - &lt;<code class="inline-code">storageAccountName</code>&gt;
+
 </li>
 <li> Grant Snowflake access to the storage locations </li>
 
@@ -350,13 +355,14 @@ And record the values <code class="inline-code">AZURE_CONSENT_URL</code> and <co
   </code> obtained in the previous step and accept.
 </li>
 <li>
+
   Grant snowflake access to the container created in Step 2: - Navigate to
-  **Azure Services** - **Storage Accounts** and select
+  <strong>Azure Services</strong> - <strong>Storage Accounts</strong> and select
   the storage account created in Step 1. - Add role : Navigate to
-  **Access Control (IAM)** - **Add Role Assignment**
-  and select either **Storage Blob Data Reader(Read Access)** or
-  **Storage Blob Data Contributor (Read and Write Access)** - Add
-  **Assign Access** : Add **Service Principal** as the
+  <strong>Access Control (IAM)</strong> - <strong>Add Role Assignment</strong>
+  and select either <strong>Storage Blob Data Reader(Read Access)</strong> or
+  <strong>Storage Blob Data Contributor (Read and Write Access)</strong> - Add
+  <strong>Assign Access</strong> : Add <strong>Service Principal</strong> as the
   type of security principal to assign the role to. And search for
   <code class="inline-code">AZURE_MULTI_TENANT_APP_NAME</code> obtained in step
   4.
@@ -486,8 +492,7 @@ GRANT USAGE ON INTEGRATION <integration_name> TO ROLE "RUDDER";
         <ul>
             <li>
               <code class="inline-code">"RUDDER"</code> is the name of the role that you
-              created above
-              <a href="../data-warehouse-integrations/snowflake#creating-a-role-for-rudderstack">
+              created above <a href="../data-warehouse-integrations/snowflake#creating-a-role-for-rudderstack">
                 here
               </a>
             </li>
