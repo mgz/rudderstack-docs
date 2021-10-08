@@ -50,7 +50,6 @@ export default function GlobalStyle() {
           //color: ${theme.colors.text};
           font-size: 16px;
           line-height: 28px;
-          margin-bottom: 16px;
           font-weight: 400;
         }
         code.inline-code {
