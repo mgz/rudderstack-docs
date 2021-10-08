@@ -78,7 +78,7 @@ Calling `extendEvents` adds the user object to all subsequent`recordEvent` calls
 
 A sample `identify` call is as shown in the following code snippet:
 
-```text
+```
 rudderanalytics.identify("my-userID", {
         name: "Tintin",
         city: "Brussels",
@@ -89,7 +89,7 @@ rudderanalytics.identify("my-userID", {
 
 This will pass the below user to every subsequent event data:
 
-```text
+```
 user: {
   userId: "my-userID",
   traits: {
@@ -107,7 +107,7 @@ Calling `rudderanalytics.page()` will pass the `page` properties to the Keen col
 
 A sample `page` call is as shown in the snippet below:
 
-```text
+```
 // "home" is the name of the page.
 rudderanalytics.page("home", {
         path: "path",
@@ -134,7 +134,7 @@ Calling `rudderanalytics.track()` will pass the event properties to Keen on the 
 
 An example `track` call is as shown:
 
-```text
+```
 rudderanalytics.track("Track me", {
         category: "category",
         label: "label",
@@ -156,7 +156,7 @@ The `screen` call records the screen views of the user in your App. If you have 
 
 Here is a sample `screen` call in using RudderStack iOS SDK.
 
-```text
+```
 [[RudderClient sharedInstance] screen:@"Main"
             properties:@{@"prop_key" : @"prop_value"}];
 ```

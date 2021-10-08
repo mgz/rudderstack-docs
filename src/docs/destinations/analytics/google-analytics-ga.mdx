@@ -132,7 +132,7 @@ Google Analytics' universal tracking allows you to set a user ID to the identifi
 
 A sample `identify` call is as shown:
 
-```text
+```
 rudderanalytics.identify("abc123", {
         name: "Ruchira Moitra",
         email: "ruchira@gmail.com"
@@ -160,7 +160,7 @@ Similar activity is to be done for metrics.A
 
 An `identify` call with custom dimensions will be recorded after the next `track` or `page` call.
 
-```text
+```
 rudderanalytics.identify({
 Gender: 'Female'
 });
@@ -174,7 +174,7 @@ We send an `event` hit when a **`track()`** call is made from our SDKs.
 
 A simple `track` call is as shown:
 
-```text
+```
 rudderanalytics.track("Track me")
 ```
 
@@ -193,7 +193,7 @@ We do not populate the <code class="inline-code">Event Category</code> field by 
 
 A more verbose `track` call that you can make is as shown:
 
-```text
+```
 rudderanalytics.track("Track me", {
         category: "category",
         label: "label",
@@ -214,7 +214,7 @@ The following properties are sent to the Google Analytics event:
 
 If the non-interaction setting is enabled in the RudderStack destination settings, `nonInteraction` with value `1` will be sent.
 
-```text
+```
 {
   "action": "track",
   "event": "Track Page",
@@ -261,7 +261,7 @@ The checkout flow can be implemented by calling `track` with **`checkout step vi
 
 An example of this is as shown:
 
-```text
+```
 rudderanalytics.track('checkout step viewed', {
             currency: 'CAD',
             step: 1
@@ -284,7 +284,7 @@ For more information, please check our guide on the <a href="../../../rudderstac
 
 ### Measuring Promotions
 
-```text
+```
 rudderanalytics.track('promotion viewed', {
             currency: 'CAD',
             promotion_id: 'PROMO_1234',
@@ -309,7 +309,7 @@ rudderanalytics.track('promotion clicked', {
 
 You can add the `coupon` property if you want to send coupon data to **`order completed`**.
 
-```text
+```
 rudderanalytics.track('order completed', {
             orderId: 'abc55',
             total: 999.9,
@@ -346,7 +346,7 @@ rudderanalytics.track('order completed', {
 
 Information related to impressions of the users who have viewed or filtered through the product can be collected through Enhanced E-Commerce. The product impressions are mapped to **`product list viewed`** and **`product list filtered`** events.
 
-```text
+```
 window.rudderanalytics.track('product list filtered', {
             category: 'cat 1',
             list_id: '1234',
@@ -406,7 +406,7 @@ window.rudderanalytics.track('Product List Viewed', {
 
 For full refunds :
 
-```text
+```
  rudderanalytics.track('order refunded', {
             order_id: 'abc55',
             testDimension: true,
@@ -416,7 +416,7 @@ For full refunds :
 
 For partial refunds:
 
-```text
+```
 rudderanalytics.track('order refunded', {
             order_id: 'abc55',
             products: [
@@ -440,13 +440,13 @@ rudderanalytics.track('order refunded', {
 
 A Google Analytics universal cookie will look like the following:
 
-```text
+```
 _ga=GA1.2.476220681.159039102;
 ```
 
 The `clientId` is `476220681.159039102` which can be cross-checked by running the following snippet:
 
-```text
+```
 ga(function (tracker) {
     var clientId = tracker.get('clientId');
     console.log('My GA universal client ID is: ' + clientId);
