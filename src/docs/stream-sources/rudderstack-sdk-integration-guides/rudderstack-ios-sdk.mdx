@@ -61,40 +61,6 @@ To get the **Data Plane URL**:
 
 We distribute our iOS SDK through [Cocoapods](https://cocoapods.org) and [Carthage](https://github.com/Carthage/Carthage). The recommended and easiest way to add the SDK to your project is through `Podfile`. Follow these steps:
 
-<!--{% tabs %}
-{% tab title="Carthage" %}
-
-- Add the RudderStack SDK to your `Podfile`, as shown:
-
-```ruby
-pod 'Rudder'
-```
-
-- Then, run the following command:
-
-```bash
-pod install
-```
-
-{% endtab %}
-
-{% tab title="CocoaPods" %}
-
-- Add the RudderStack SDK to your `Cartfile`, as shown:
-
-```ruby
-github "rudderlabs/rudder-sdk-ios"
-```
-
-- Then, run the following command:
-
-```bash
-carthage update
-```
-
-{% endtab %}
-{% endtabs %} -->
-
 <Tabs>
   <TabList>
     <Tab>CocoaPods</Tab>
@@ -107,7 +73,7 @@ carthage update
 <span>
 
 ```ruby
-github "rudderlabs/rudder-sdk-ios"
+pod 'Rudder'
 ```
 </span>
       </li>
@@ -127,7 +93,7 @@ pod install
 <span>
 
 ```ruby
-pod 'Rudder'
+github "rudderlabs/rudder-sdk-ios"
 ```
 </span>
       </li>
@@ -149,24 +115,6 @@ carthage update
 **Important**: Remember to include the following code in all <code class="inline-code">.m</code> and <code class="inline-code">.h</code> files or your <code class="inline-code">.swift</code> files where you want to refer to or use RudderStack SDK classes.
 
 </div>
-
-<!--{% tabs %}
-{% tab title="Objective-C" %}
-
-```objectivec
-#import <Rudder/Rudder.h>
-```
-
-{% endtab %}
-
-{% tab title="Swift" %}
-
-```swift
-import Rudder
-```
-
-{% endtab %}
-{% endtabs %} -->
 
 <Tabs>
   <TabList>
@@ -201,32 +149,7 @@ We use SQLite to save the events to local database before sending it to RudderSt
 
 ## Initializing the RudderStack Client
 
-Put this code in your `AppDelegate.m` file under the method `didFinishLaunchingWithOptions` :
-
-<!--{% tabs %}
-{% tab title="Objective-C" %}
-
-```objectivec
-RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
-[builder withDataPlaneUrl:DATA_PLANE_URL];
-[RSClient getInstance:WRITE_KEY config:[builder build]];
-```
-
-A shared instance of `RSClient` is accessible after the initialization by `[RSClient sharedInstance]`.
-{% endtab %}
-
-{% tab title="Swift" %}
-
-```swift
-let builder: RSConfigBuilder = RSConfigBuilder()
-    .withDataPlaneUrl(DATA_PLANE_URL)
-RSClient.getInstance(WRITE_KEY, config: builder.build())
-```
-
-A shared instance of `RSClient` is accesible after the initialization by `RSClient.sharedInstance()`
-{% endtab %}
-{% endtabs %} 
-
+Put this code in your `AppDelegate.m` file under the method `didFinishLaunchingWithOptions`:
 
 <Tabs>
   <TabList>
@@ -257,7 +180,7 @@ RSClient.getInstance(WRITE_KEY, config: builder.build())
 A shared instance of <code class="inline-code">RSClient</code> is accesible after the initialization by <code class="inline-code">RSClient.sharedInstance()</code>
       </TabPanel>
     </TabPanels>
-</Tabs>-->
+</Tabs>
 
 
 <div class="infoBlock">
@@ -281,30 +204,6 @@ You can record the users' activity through the `track` method. Every action perf
 
 An example `track` event is as shown:
 
-<!--{% tabs %}
-{% tab title="Objective-C" %}
-
-```objectivec
-[[RSClient sharedInstance] track:@"simple_track_with_props" properties:@{
-    @"key_1" : @"value_1",
-    @"key_2" : @"value_2"
-}];
-```
-
-{% endtab %}
-
-{% tab title="Swift" %}
-
-```swift
-RSClient.sharedInstance()?.track("test_user_id", properties: [
-    "key_1": "value_1",
-    "key_2": "value_2"
-])
-```
-
-{% endtab %}
-{% endtabs %}
-
 <Tabs>
   <TabList>
     <Tab>Objective-C</Tab>
@@ -314,11 +213,11 @@ RSClient.sharedInstance()?.track("test_user_id", properties: [
       <TabPanel>
 <span>
 
-````objectivec
-[[RSClient sharedInstance] track:@"simple_track_with_props" properties:@&#123;
+```objectivec
+[[RSClient sharedInstance] track:@"simple_track_with_props" properties:@{
     @"key_1" : @"value_1",
     @"key_2" : @"value_2"
-&#125;];
+}];
 ```
 </span>
       </TabPanel>
@@ -334,7 +233,8 @@ RSClient.sharedInstance()?.track("test_user_id", properties: [
 </span>
       </TabPanel>
     </TabPanels>
-</Tabs>-->
+</Tabs>
+
 
 The `track` method accepts the following parameters:
 
@@ -355,35 +255,6 @@ According to the Apple <a href="https://developer.apple.com/documentation/uikit/
 </div>
 
 An example `identify` event is as shown:
-
-<!--{% tabs %}
-{% tab title="Objective-C" %}
-
-```objectivec
-[[RSClient sharedInstance] identify:@"test_user_id"
-                             traits:@{@"foo": @"bar",
-                                      @"foo1": @"bar1",
-                                      @"email": @"test@gmail.com",
-                                      @"key_1" : @"value_1",
-                                      @"key_2" : @"value_2"
-                             }
-];
-```
-
-{% endtab %}
-
-{% tab title="Swift" %}
-
-```swift
-RSClient.sharedInstance()?.identify("test_user_id", traits: [
-    "key_1": "value_1",
-    "key_2": "value_2",
-    "email": "test@gmail.com"
-])
-```
-
-{% endtab %}
-{% endtabs %} 
 
 <Tabs>
   <TabList>
@@ -419,7 +290,7 @@ RSClient.sharedInstance()?.identify("test_user_id", traits: [
 </span>
       </TabPanel>
     </TabPanels>
-</Tabs> -->
+</Tabs>
 
 The `identify` method accepts the following parameters:
 
@@ -768,40 +639,6 @@ An example of setting the `anonymousId` is as below
 ## Enabling / Disabling Events for Specific Destinations
 
 The RudderStack iOS SDK allows you to enable or disable event flow to a specific destination or all the destinations to which the source is connected. You can specify these destinations by creating a `RSOption` object as shown:
-
-<!--{% tabs %}
-{% tab title="Objective-C" %}
-
-```objectivec
-RSOption *option = [[RSOption alloc]init];
-//default value for `All` is true
-[option putIntegration:@"All" isEnabled:YES];
-// specifying destination by its display name
-[option putIntegration:@"Amplitude" isEnabled:YES];
-[option putIntegration:@"<destination display name>" isEnabled:<BOOL>];
-// specifying destination by its Factory instance
-[option putIntegrationWithFactory:[RudderMoengageFactory instance] isEnabled:NO];
-[option putIntegrationWithFactory:[<RudderIntegrationFactory> instance] isEnabled:<BOOL>];
-```
-
-{% endtab %}
-
-{% tab title="Swift" %}
-
-```swift
-let option:RSOption = RSOption();
-//default value for `All` is true
-option.putIntegration("All", isEnabled:true)
-// specifying destination by its display name
-option.putIntegration("Amplitude", isEnabled:true)
-option.putIntegration(<DESTINATION DISPLAY NAME>, isEnabled:<BOOL>)
-// specifying destination by its Factory instance
-option.putIntegration(with: RudderMoengageFactory.instance(), isEnabled: true);
-option.putIntegration(with: <RudderIntegrationFactory>.instance(), isEnabled:<BOOL>);
-```
-
-{% endtab %}
-{% endtabs %} -->
 
 <Tabs>
   <TabList>
@@ -1330,6 +1167,80 @@ This scenario is most likely caused by the default behavior of iOS apps staying 
 When a user closes an iOS or Android app, events will still continue to be sent from the queue until the app closes in the background as well. Any events still in the queue will remain there until the user reopens the app. Due to this lag, there are some scenarios where there can be significant differences between `timestamp` \(when the event was created\) and `received_at` \(when RudderStack actually receives the events\).
 
 For Android apps, events can be sent from the background after apps close for a longer period of time than iOS apps, therefore, more of the events coming from the Android SDK have closer `timestamp` and `received_at` times.
+
+### Does RudderStack integrate with SKAdNetwork?
+
+RudderStack does not integrate with SKAdNetwork. However, SKAdNetwork can be directly integrated into an iOS application alongside RudderStack.
+
+### Can I disable event tracking until the user gives their consent?
+
+Yes, you can.
+
+RudderStack gives you the ability to disable tracking any user activity until the user gives their consent, by leveraging the `optOut` API. This is required in cases where your app is audience-dependent \(e.g. minors\) or where you're using the app to track the user events \(e.g. EU users\) to meet the data protection and privacy regulations.
+
+The `optOut` API takes `true` / `false` \(in case of Swift\) or `YES` / `NO` \(in case of Objective-C\) as a value to enable or disable tracking user activities. So, to disable user tracking, you can use the `optOut` API as shown:
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```objectivec
+[[RSClient sharedInstance] optOut:YES];
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```swift
+RSClient.sharedInstance()?.optOut(true)
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
+Once the user gives their consent, you can enable user tracking again, as shown:
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```objectivec
+[[RSClient sharedInstance] optOut:NO];
+```
+</span>
+      </TabPanel>
+           <TabPanel>
+<span>
+
+```swift
+RSClient.sharedInstance()?.optOut(false)
+```
+</span>
+      </TabPanel>
+   </TabPanels>
+</Tabs>
+
+<div class="infoBlock">
+
+For more information on the `optOut` API, refer to the [**Enabling/Disabling User Tracking via optOut API \(GDPR Support\)**](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk#enabling-disabling-user-tracking-via-the-optout-api-gdpr-support) section above.
+</div>
+
+<div class="successBlock">
+
+You only need to call the `optOut` API with the required parameter only once, as the information persists within the device even if you reboot it.
+</div>
 
 ## Contact Us
 
