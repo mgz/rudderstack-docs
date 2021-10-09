@@ -1632,14 +1632,14 @@ export const jsonData = [
      ]
   },
   {
-     "key":"adding-a-new-user-transformation-in-rudderstack",
+     "key":"transformations",
      "title":"Transformations",
-     "link":"/adding-a-new-user-transformation-in-rudderstack/",
+     "link":"/transformations/",
      "content":[
         {
            "key":"api-access-token",
            "title":"Access Token",
-           "link":"/adding-a-new-user-transformation-in-rudderstack/api-access-token/",
+           "link":"/transformations/api-access-token/",
            "content":[
               
            ]
@@ -1647,7 +1647,7 @@ export const jsonData = [
         {
            "key":"rudderstack-transformation-api",
            "title":"Transformations API",
-           "link":"/adding-a-new-user-transformation-in-rudderstack/rudderstack-transformation-api/",
+           "link":"/transformations/rudderstack-transformation-api/",
            "content":[
               
            ]
@@ -1655,7 +1655,7 @@ export const jsonData = [
         {
            "key":"faq",
            "title":"FAQ",
-           "link":"/adding-a-new-user-transformation-in-rudderstack/faq/",
+           "link":"/transformations/faq/",
            "content":[
               
            ]

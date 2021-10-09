@@ -38,7 +38,7 @@ The following is a list of tables created for each RudderStack source that is co
         It <b>does not include</b> the custom properties sent under the <code class="inline-code">
           properties
         </code> key in the event but has some standard properties (listed in the
-        <a href="https://rudderstack.com/docs/data-warehouse-integration-guides/warehouse-schemas#standard-rudderstack-properties">
+        <a href="https://rudderstack.com/docs/data-warehouse-integration-guides/warehouse-schemas/#standard-rudderstack-properties">
           <b>Standard Properties</b>
         </a> section below) such as <code class="inline-code">received_at</code>, <code class="inline-code">
           anonymous_id
@@ -261,7 +261,7 @@ RudderStack considers the time at its end to be absolute and assumes any differe
 
 <div class="infoBlock">
 
-<code class="inline-code">sentAt</code> &gt; <code class="inline-code">original_timestamp</code> is **always true**. However, <code class="inline-code">timestamp</code> can be more or less than the <code class="inline-code">original_timestamp</code>. Refer to the examples below for more details.
+<code class="inline-code">sentAt</code> &gt; <code class="inline-code">original_timestamp</code> is <strong>always true</strong>. However, <code class="inline-code">timestamp</code> can be more or less than the <code class="inline-code">original_timestamp</code>. Refer to the examples below for more details.
 
 </div>
 
@@ -433,7 +433,7 @@ RudderStack creates a record in the `identifies` table and upserts the records i
 <div class="successBlock">
 
   In case of Google BigQuery, you can use the views created over the tables to
-  query for unique users in the dataset. Refer to the <a href="../data-warehouse-integrations/google-bigquery#schema-partitioned-tables-and-views">BigQuery documentation</a> for more details.
+  query for unique users in the dataset. Refer to the <a href="../data-warehouse-integrations/google-bigquery/#schema-partitioned-tables-and-views">BigQuery documentation</a> for more details.
 </div>
 
 A sample `identify` event made from the JavaScript SDK is as shown below:
@@ -737,6 +737,12 @@ The subsequent records created in the `rudder_discards` table for the discarded 
 | `1e42b2b3-8b6a-49da-8502-83a8db334375` | `add_to_cart` | `added_at`  | `05/25/2020` |
 
 ## FAQs
+
+### Can I change the namespace \(schema name\) of my data warehouse in RudderStack?
+
+Yes, you can. Although the default namespace will be the source name with some modifications to it, RudderStack also provides an option in the dashboard to explicitly set the namespace of the dataset in the warehouse. 
+
+**Refer to the warehouse-specific destination settings for configuring the namespace in the RudderStack dashboard.**
 
 ## Contact Us
 
