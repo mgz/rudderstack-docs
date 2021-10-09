@@ -17,7 +17,7 @@ Run the SQL queries below in the **exact** order to grant the necessary permissi
 
 * The following command creates a new user `rudder` with password `<strong_unique_password>` in Redshift.
 
-```text
+```
 CREATE USER rudder WITH PASSWORD '<strong_unique_password>';
 ```
 
@@ -38,7 +38,7 @@ For more information on the password rules, refer to the [**Amazon Redshift docu
 
 * The following command creates a dedicated schema `_rudderstack` used by RudderStack for storing the state of each data sync.
 
-```text
+```
 CREATE SCHEMA "_rudderstack";
 ```
 
@@ -49,13 +49,13 @@ The `_rudderstack` schema is used by RudderStack. Its name **should not** be cha
 
 * The following command allows the user `rudder` to have full access to the schema `_rudderstack`.
 
-```text
+```
 GRANT ALL ON SCHEMA "_rudderstack" TO rudder;
 ```
 
 * The following command allows the user `rudder` to have full access to all the objects that exist in the schema `_rudderstack`.
 
-```text
+```
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA "_rudderstack" TO rudder;
 ```
 
@@ -63,19 +63,19 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA "_rudderstack" TO rudder;
 
 * The following command allows the user `rudder` to look up objects within the schema `<YOUR_SCHEMA>`. Replace `<YOUR_SCHEMA>` with the exact name of your Redshift schema.
 
-```text
+```
 GRANT USAGE ON SCHEMA "<YOUR_SCHEMA>" TO rudder;
 ```
 
 * The following command allows the user `rudder` to read the data from specified table `<YOUR_TABLE>`. Replace `<YOUR_SCHEMA>` and `<YOUR_TABLE>` with the exact names of your Redshift schema and table.
 
-```text
+```
 GRANT SELECT ON TABLE "<YOUR_SCHEMA>"."<YOUR_TABLE>" TO rudder;
 ```
 
 * The following **optional** command allows the user `rudder` to view and read the data from all the tables present in the schema `<YOUR_SCHEMA>`:
 
-```text
+```
 GRANT SELECT ON ALL TABLES IN SCHEMA "<YOUR_SCHEMA>" TO rudder;
 ```
 
@@ -86,7 +86,7 @@ Run the above command only if you're okay with RudderStack being able to access 
 
 * The following **optional** command allows the user `rudder` to read the data from all the future tables in the schema `<YOUR_SCHEMA>`:
 
-```text
+```
 ALTER DEFAULT PRIVILEGES IN SCHEMA "<YOUR_SCHEMA>" GRANT SELECT ON TABLES TO rudder;
 ```
 

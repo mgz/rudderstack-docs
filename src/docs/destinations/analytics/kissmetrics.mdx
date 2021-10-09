@@ -68,7 +68,7 @@ For sending data through the API's cloud mode, we call the [http://trk.kissmetri
 
 A sample `identify` call is as shown:
 
-```text
+```
 // a sample identify
 rudderanalytics.identify("my-userID", {
         name: "Tintin",
@@ -80,7 +80,7 @@ rudderanalytics.identify("my-userID", {
 
 will pass the following to the `_kmq kissmetrics` object.
 
-```text
+```
   ['identify', 'my-userID']
   ['set', {
                   name: "Tintin",
@@ -103,7 +103,7 @@ Calling `rudderanalytics.page()` will record the page properties for event `View
 
 A sample page event is as shown:
 
-```text
+```
 // "home" is the name of the page.
 rudderanalytics.page("home", {
         path: "path",
@@ -116,7 +116,7 @@ rudderanalytics.page("home", {
 
 The above snippet will pass the following to the `_kmq kissmetrics` object:
 
-```text
+```
 ['record', 'Viewed home page',  {
         path: "path",
         url: "url",
@@ -140,7 +140,7 @@ For sending data through the API's cloud mode, we call the [http://trk.kissmetri
 
 A sample `track` call is as shown:
 
-```text
+```
 rudderanalytics.track("Track me", {
         category: "category",
         label: "label",
@@ -150,7 +150,7 @@ rudderanalytics.track("Track me", {
 
 will pass the following to the `_kmq kissmetrics` object.
 
-```text
+```
  ['record', "Track me", {
         category: "category",
         label: "label",
@@ -176,14 +176,14 @@ While passing data using the cloud mode, we call the [http://trk.kissmetrics.com
 
 The following code snippet shows a sample `alias` call in RudderStack:
 
-```text
+```
 // assuming the previous set userId was "my-userID"
 rudderanalytics.alias("my-new-userID");
 ```
 
 will pass the following to the `_kmq kissmetrics` object.
 
-```text
+```
 ['alias', "my-new-userID", "userId"]
 ```
 
@@ -193,7 +193,7 @@ The `screen` call records the screen views of the user in your App. If you have 
 
 Here is a sample `screen` call in using RudderStack iOS SDK:
 
-```text
+```
 [[RudderClient sharedInstance] screen:@"Main"
             properties:@{@"prop_key" : @"prop_value"}];
 ```

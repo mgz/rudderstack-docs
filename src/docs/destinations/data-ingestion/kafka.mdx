@@ -102,7 +102,7 @@ Please follow the steps below that make use of Java's **keytool** utility.
 2. **Create your own CA**
    1. Generate a CA that is simply a public-private key pair and certificate, and it is intended to sign other certificates. **You need to put this certificate at the RudderStack Web App as CA certificate**.
 
-```text
+```
   `openssl req -new -x509 -keyout ca-key -out ca-cert -days {validity}`
 ```
 
@@ -184,7 +184,7 @@ Open this address with SSL in addition to that. For that, you need to update `ad
 
 A sample entry is as shown below:
 
-```text
+```
 # Hostname and port the broker will advertise to producers and consumers.
 # here the INTERNAL listerner is your cluster kafka service host for kafka server
 # and the EXTERNAL is public loadbalancer for kafka server

@@ -157,7 +157,7 @@ A sample request is as shown:
       <TabPanel>
 <span>
 
-```text curl --location -X POST
+``` curl --location -X POST
 'https://api.rudderstack.com/accessTokens' \ -H 'Authorization: Basic
 Base64Enc(workspacetoken:)' \ -H 'Content-Type: application/json' \ -d
 '{ "name": "some-test-access-token", "description":
@@ -168,7 +168,7 @@ Base64Enc(workspacetoken:)' \ -H 'Content-Type: application/json' \ -d
       <TabPanel>
 <span>
 
-```text
+```
 http POST 'https://api.rudderstack.com/accessTokens' \
 name=some-test-access-token description=some-description \
 Authorization:'Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
@@ -329,7 +329,7 @@ Base64encoded **workspace token.**
       <TabPanel>
 <span>
 
-```text
+```
 curl --location -X GET 'https://api.rudderstack.com/accessTokens' \
 -H 'Authorization: Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
 ```
@@ -338,7 +338,7 @@ curl --location -X GET 'https://api.rudderstack.com/accessTokens' \
       <TabPanel>
 <span>
 
-```text
+```
 http GET 'https://api.rudderstack.com/accessTokens' \
 'Authorization: Basic Base64Enc(workspacetoken:)'
 ```
@@ -476,7 +476,7 @@ All access token will be deleted with given name.
       <TabPanel>
 <span>
 
-```text
+```
 curl --location -X DELETE 'https://api.rudderstack.com/accessTokens?name=some-test-access-token' \
 -H 'Authorization: Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
 ```
@@ -485,7 +485,7 @@ curl --location -X DELETE 'https://api.rudderstack.com/accessTokens?name=some-te
       <TabPanel>
 <span>
 
-```text
+```
     http DELETE 'http://api.rudderstack.com/accessTokens?name=sdc' \
     'Authorization: Basic Base64Enc(workspacetoken:)'
 ```

@@ -57,7 +57,7 @@ If you want to set up RudderStack on Docker, follow these steps:
 * Download and open [**`rudder-docker.yml`**](https://raw.githubusercontent.com/rudderlabs/rudder-server/master/rudder-docker.yml).
 * In the `environment` section under `backend` service, uncomment the following lines:
 
-```text
+```
 - RSERVER_BACKEND_CONFIG_CONFIG_FROM_FILE=true
 - RSERVER_BACKEND_CONFIG_CONFIG_JSONPATH=<workspace_config_filepath_in_container>
 ```
@@ -65,7 +65,7 @@ If you want to set up RudderStack on Docker, follow these steps:
 * Then, replace `<workspace_config_filepath_in_container>`  in the line above with your preferred container file path. By default, you can set it to `/etc/rudderstack/workspaceConfig.json`. 
 * In the `volumes` section under the `backend` service, uncomment the following line:
 
-```text
+```
 - <absolute_path_to_workspace_config>:<workspace_config_filepath_in_container>
 ```
 
@@ -81,7 +81,7 @@ Your `rudder-docker.yml` should look like the following:
 
 * Finally, navigate to the directory where you want to install RudderStack and run the following command:
 
-  ```text
+  ```
   docker-compose -f rudder-docker.yml up
   ```
 
@@ -107,7 +107,7 @@ Your `rudder-docker.yml` should look like the following:
 * Export the workspace configuration from the dashboard by following the steps in the [**Exporting Workspace Configuration**](https://rudderstack.com/docs/get-started/config-generator/#exporting-workspace-configuration) section above. 
 * Finally, run the following command:
 
-```text
+```
 $ helm install my-release ./ --set backend.controlPlaneJSON=true
 ```
 
@@ -202,7 +202,7 @@ RudderStack SDKs fetch the configuration by appending the <code class="inline-co
 
 A sample exported source config is shown below:
 
-```text
+```
 {
   "source": {
     "config": {},

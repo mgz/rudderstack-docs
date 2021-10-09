@@ -272,7 +272,7 @@ You can send an event with the name same as that of an Kochava's standard event 
 
 A sample `track` event for sending event data to Kochava looks like the following code snippet:
 
-```text
+```
 [[RudderClient sharedInstance] track:@"Product Added" properties:@{
 @"price": @2.0,
 @"product_id": @"product_id_a",
@@ -288,7 +288,7 @@ The `screen` method allows you to record whenever a user sees the mobile screen,
 
 A sample `screen` call looks like the following code snippet:
 
-```text
+```
 MainApplication.rudderClient.screen("Sample Screen Name",
             RudderProperty()
                 .putValue("prop_key","prop_value"));
@@ -331,7 +331,7 @@ apply plugin: 'com.google.gms.google-services'
 - Place the `google-services.json` downloaded from the `Firebase console` into the root folder of your `app`.
 - Passing the new Push Token received from FCM to the Kochava SDK. For more information, look into the **sample-kotlin** app.
 
-```text
+```
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.rudderstack.android.integrations.kochava.KochavaIntegrationFactory.registeredForPushNotificationsWithFCMToken
 
@@ -429,7 +429,7 @@ apply plugin: 'com.google.gms.google-services'
 <li>Passing the new Push Token received from FCM to the Kochava SDK. For more information, look into the **sample-kotlin** app.
 <span>
 
-```text
+```
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.rudderstack.android.integrations.kochava.KochavaIntegrationFactory.registeredForPushNotificationsWithFCMToken
 

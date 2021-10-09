@@ -129,7 +129,7 @@ For more information regarding escaped content for the Slack destination please 
 
 For a template like `Identified {{name}} with {{traits}}` and calling Rudder API as below,
 
-```text
+```
  window.rudderanalytics.identify("12345",{
           name: "my-name",
           email: "name@domain.com",
@@ -146,7 +146,7 @@ you will see the message as below:
 
 For a template like \***\*`{{name}} performed {{event}} with {{properties.key1}} {{properties.key2}}` \*\***and the following track call, after being `identified` as above:
 
-```text
+```
 window.rudderanalytics.track("test_event", {
     "key1": "test_val1",
     "key2": "test_val2",

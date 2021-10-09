@@ -380,7 +380,7 @@ RudderStack sets the following properties \(if available\) using the `setUserDat
 
 A sample `identify` call for an iOS application looks like the following:
 
-```text
+```
 [[RSClient sharedInstance] identify:@"developer_user_id"
                                  traits:@{@"email": @"bar@foo.com"}];
 ```
@@ -391,7 +391,7 @@ The `track` call from RudderStack is logged to Facebook using the `logEvent` met
 
 A sample `track` call for an iOS application is as shown:.
 
-```text
+```
 [[RSClient sharedInstance] track:@"Accepted Terms of Service"
                       properties:@{
                           @"foo": @"bar",
@@ -413,7 +413,7 @@ The `screen` method lets you record whenever the user views their mobile screen 
 
 A sample `screen` call using the RudderStack Android SDK is as shown:
 
-```text
+```
 [[RSClient sharedInstance] screen:@"Home" properties:@{
     @"category" : @"launcher"
 }];

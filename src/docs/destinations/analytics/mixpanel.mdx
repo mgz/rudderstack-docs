@@ -79,7 +79,7 @@ The following settings are applicable if you are using this destination via the 
 
 We pass all the page properties that you provide through our `page` call along with the properties that we auto collect through our SDK to Mixpanel. The event name would be **Page** for `page` call and **Screen** for a `screen` call. A sample `page` call is as shown:
 
-```text
+```
 rudderanalytics.page();
 ```
 
@@ -107,7 +107,7 @@ After making this request, RudderStack merges the `anonymousId` and `userId` as 
 
 A sample `identify` call is as shown:
 
-```text
+```
 rudderanalytics.identify("12345",
   {
     firstname: "Tintin",
@@ -142,7 +142,7 @@ Rudderstack does not send data to Mixpanel People by default, as it usually requ
 
 We recommend identifying the user traits without the `userId` if you wish to add the people properties in Mixpanel before knowing the `userId`. To do this, refer to the following snippet:
 
-```text
+```
 rudderanalytics.identify({
   email: 'hello@example.com',
   name: 'Ian Taylor'
@@ -159,7 +159,7 @@ Currently, RudderStack supports this feature only for the native web device mode
 
 To track user events, use the `track` method with the event name and the associated properties. A sample `track` call is as shown:
 
-```text
+```
 rudderanalytics.track("track event", {
     test_prop1: 50,
     test_prop2: "prop_value"
@@ -174,7 +174,7 @@ Revenue tracking is done with a `distinct_id` \(`userId` that you provide in you
 
 A sample revenue `track` call is as shown:
 
-```text
+```
 rudderanalytics.track("Purchase", {
     revenue: 30,
     currency: "USD"
@@ -189,7 +189,7 @@ If **Use Mixpanel People** is enabled in your RudderStack dashboard and you incl
 
 The `alias` call lets you associate multiple identities of a known user. A sample `alias` call is as shown:
 
-```text
+```
 analytics.alias('userId', `previousId`);
 ```
 
@@ -207,7 +207,7 @@ RudderStack allows you to record the custom traits associated with a user group 
 
 A sample `group` call is as shown:
 
-```text
+```
 {
   "userId": "user123",
   "traits": {

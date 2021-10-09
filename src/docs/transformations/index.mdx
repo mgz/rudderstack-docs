@@ -96,7 +96,7 @@ You can copy-paste the entire code of any of the functions present in this repos
 
 - In case you want to perform any aggregation/roll-up operation on a micro batch of events, use the `transformBatch` feature, as shown:
 
-```text
+```
 /***
 * This function gets executed on a batch of events before it gets pushed to a destination
 * events    => JSON list of events sent to rudder
@@ -175,7 +175,7 @@ Let's say you want to import a function called **`rudderEmail`**, which returns 
 
 The following code snippet demonstrates how we can implement this use-case:
 
-```text
+```
 import { rudderEmail } from 'isRudderEmail'
 export function transformEvent(event) {
     const email = event.context && event.context.traits && event.context.traits.email;
@@ -259,7 +259,7 @@ Since you may not need the metadata in every transformation, you can optionally 
 
 An example of this is as shown below:
 
-```text
+```
 export function transformEvent(event, metadata){
   const meta = metadata(event);
   event.sourceId = meta.sourceId
@@ -285,7 +285,7 @@ An example of how to use the `fetch` function in transformations is shown below:
     <TabPanel>
 <span>
 
-```text
+```
 curl --location -X POST
 'https://api.rudderstack.com/accessTokens' \ -H 'Authorization: Basic
 Base64Enc(workspacetoken:)' \ -H 'Content-Type: application/json' \ -d
@@ -297,7 +297,7 @@ Base64Enc(workspacetoken:)' \ -H 'Content-Type: application/json' \ -d
     <TabPanel>
 <span>
 
-```text 
+``` 
 http POST 'https://api.rudderstack.com/accessTokens' \
 name=some-test-access-token description=some-description \
 Authorization:'Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
@@ -308,7 +308,7 @@ Content-Type:'application/json'
     <TabPanel> 
 <span>
 
-```text
+```
 export async function transformEvent(event) {
   const res = await fetch("post_url", {
     method: "POST", // POST, PUT, DELETE, GET, etc.
