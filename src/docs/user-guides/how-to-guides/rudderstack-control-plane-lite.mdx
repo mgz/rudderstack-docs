@@ -11,7 +11,7 @@ RudderStack's Control Plane manages the configuration of your sources and destin
 
 For more information on the Control Plane, refer to RudderStack's [**architecture**](https://rudderstack.com/docs/get-started/rudderstack-architecture).
 
-The easiest way to manage these configurations is through RudderStack's [**self-hosted web app**](https://app.rudderstack.com/). It is free, requires no setup, and has some advanced features like [**Live Events**](https://rudderstack.com/docs/user-guides/how-to-guides/live-destination-event-debugger) and [**Transformations**](https://rudderstack.com/docs/adding-a-new-user-transformation-in-rudderstack).
+The easiest way to manage these configurations is through RudderStack's [**self-hosted web app**](https://app.rudderstack.com/). It is free, requires no setup, and has some advanced features like [**Live Events**](https://rudderstack.com/docs/user-guides/how-to-guides/live-destination-event-debugger) and [**Transformations**](https://rudderstack.com/docs/transformations).
 
 However, if you don't wish to sign up for RudderStack and want to self-host these configurations instead, you can use the open-source **Control Plane Lite** to set up your own Control Plane. You can then manage the source and destination configurations locally by exporting to or importing from a JSON file.
 
@@ -92,7 +92,7 @@ Your `rudder-docker.yml` should look like the following:
 
 * Open the `values.yaml` file.
 * Set the parameter `controlPlaneJSON` to `true`.
-* Export the workspace configuration from the dashboard by following the steps in the [**Exporting Workspace Configuration**](https://rudderstack.com/docs/get-started/config-generator#exporting-workspace-configuration) section above.
+* Export the workspace configuration from the dashboard by following the steps in the [**Exporting Workspace Configuration**](https://rudderstack.com/docs/get-started/control-plane-lite/#exporting-workspace-configuration) section above.
 * Finally, run the following command:
 
 ```
@@ -153,7 +153,7 @@ cp config/sample.env .env
 
 <div class="infoBlock">
 
-To know more about the difference between **Cloud mode** and **Device mode** in RudderStack, read the [**RudderStack connection modes**](https://rudderstack.com/docs/get-started/rudderstack-connection-modes/) guide.
+To know more about the difference between **Cloud mode** and **Device mode** in RudderStack, read the [**RudderStack connection modes**](https://rudderstack.com/docs/connections/rudderstack-connection-modes/) guide.
 </div>
 
 RudderStack's [**web**](https://app.gitbook.com/@rudderlabs/s/rudderlabs-1/~/drafts/-MJRY7Fz5shtM06WXlym/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk), [**Android**](https://app.gitbook.com/@rudderlabs/s/rudderlabs-1/~/drafts/-MJRY7Fz5shtM06WXlym/rudderstack-sdk-integration-guides/rudderstack-android-sdk) and [**iOS**](https://rudderstack.com/docs/rudderstack-sdk-integration-guides/rudderstack-ios-sdk) SDKs expect the source configurations and the associated device mode destination configurations for initialization. If you are self-hosting the Control Plane, you will need to host these configurations on your own server such that the source configuration is available at  `<CONTROL_PLANE_URL>/sourceConfig`.
@@ -196,7 +196,7 @@ A sample exported source config is shown below:
 
 To use the Control Plane URL to initialize your SDKs, follow these steps:
 
-* **​**[**Set up**](https://rudderstack.com/docs/how-to-guides/rudderstack-control-plane-lite#setting-up-the-rudderstack-config-generator) the Control Plane using the Control Plane Lite utility.
+* **​**[**Set up**](https://rudderstack.com/docs/how-to-guides/rudderstack-control-plane-lite/#setting-up-the-control-plane) the Control Plane using the Control Plane Lite utility.
 * Go to dashboard, configure the source, and export the source configuration by clicking the **EXPORT SOURCE CONFIG** button as shown:
 
 ![](https://gblobscdn.gitbook.com/assets%2F-Lq5Ea6fHVg3dSxMCgyQ%2F-MhNluKAPDk-WL4SN6FG%2F-MhNmWT34fhUQc2Xpzdi%2Fimage.png?alt=media&token=9906987b-32c1-4d98-80e3-f31dfe8d34df)

@@ -85,12 +85,22 @@ Use the **Connect Destinations** option if you have already configured a data wa
 
 ## FAQs
 
+#### How does RudderStack sync the HubSpot data?
+
+* When RudderStack first connects to your HubSpot data source, it pulls all of your historical data. 
+* Then, it syncs the HubSpot data based on the specified on the **Run Frequency** set by you in the RudderStack dashboard. The default setting is set to 30 minutes. 
+* There may be instances where an incremental sync is not possible due to HubSpot's API limitations. In such cases, a full sync is done.
+
+#### How does RudderStack handle custom HubSpot fields?
+
+RudderStack creates a column for any custom HubSpot fields and syncs it to your warehouse destination accordingly.
+
 #### Is it possible to have multiple Cloud Extract sources writing to the same schema?
 
-Yes, it is.
+Yes, it is. 
 
 We have implemented a feature wherein RudderStack associates a table prefix for every Cloud Extract source writing to a warehouse schema. This way, multiple Cloud Extract sources can write to the same schema with different table prefixes.
 
 ## Contact Us
 
-If you come across any issues while configuring HubSpot as a source on the RudderStack dashboard, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://rudderstack.com/join-rudderstack-slack-community) channel; we will be happy to talk to you!
+If you come across any issues while configuring HubSpot as a source, you can [contact us](mailto:%20docs@rudderstack.com) or start a conversation on our [Slack](https://rudderstack.com/join-rudderstack-slack-community) channel.

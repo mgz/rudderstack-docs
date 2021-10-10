@@ -1241,6 +1241,9 @@ top: -60px;
 .childrenWrapper div{
   color: #6c6c80;
 }
+.childrenWrapper img{
+  @apply mb-4;
+}
 .childrenWrapper th,.childrenWrapper td {
   margin: 0;
   color: #6C6C80;
