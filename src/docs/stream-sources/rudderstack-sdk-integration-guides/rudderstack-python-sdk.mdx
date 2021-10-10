@@ -10,7 +10,10 @@ description: >-
 
 RudderStack’s Python SDK allows you to track your customer event data from your Python code. Once enabled, the event requests hit the RudderStack servers. RudderStack then routes the events to the specified destination platforms as configured by you.
 
-You can find this SDK in our [GitHub repository](https://github.com/rudderlabs/rudder-sdk-python).
+<div class="successBlock">
+
+Find this SDK in our [GitHub repository](https://github.com/rudderlabs/rudder-sdk-python).
+</div>
 
 ## Installing the RudderStack Python SDK
 
@@ -30,6 +33,19 @@ import rudder_analytics
 rudder_analytics.write_key = WRITE_KEY
 rudder_analytics.data_plane_url = DATA_PLANE_URL
 ```
+
+<div class="successBlock">
+ <ul>   
+<li>
+
+For more information on how to get the source write key, refer to [**this section**](https://rudderstack.com/docs/get-started/installing-and-setting-up-rudderstack/sending-test-events/#get-the-source-write-key).
+</li>
+<li>
+
+For more information on how to get your data plane URL, refer to [**this section**](https://rudderstack.com/docs/get-started/installing-and-setting-up-rudderstack/#what-is-a-data-plane-url-where-do-i-get-it).
+</li>
+</ul>
+</div>
 
 ## Sending Events from RudderStack
 
