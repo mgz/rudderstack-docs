@@ -153,6 +153,12 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"rudderstack-cordova-sdk",
+   "title":"Cordova",
+   "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-cordova-sdk/",
+   "content":[]
+},
+ {
     "key":"amp-analytics",
     "title":"AMP Analytics",
     "link":"/stream-sources/rudderstack-sdk-integration-guides/amp-analytics/",

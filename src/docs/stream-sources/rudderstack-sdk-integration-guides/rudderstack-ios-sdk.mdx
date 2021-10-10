@@ -198,6 +198,99 @@ You can disable these events using the <code class="inline-code">withTrackLifecy
 
 RudderStack supports all the major API calls across all iOS devices via the SDK. These include the `track`, `identify`, and `screen` calls.
 
+## Enabling/Disabling User Tracking via the optOut API \(GDPR Support\)
+
+RudderStack gives the users \(e.g., an EU user\) the ability to opt out of tracking any user activity until the user gives their consent. You can do this by leveraging RudderStack's `optOut` API.
+
+The `optOut` API takes `YES` or `NO` as a Boolean value to enable or disable tracking user activities. This flag persists across device reboots.
+
+The following snippet highlights the use of the `optOut` API to disable user tracking::
+
+<!--{% tabs %}
+{% tab title="Objective-C" %}
+```objectivec
+[[RSClient sharedInstance] optOut:YES];
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+RSClient.sharedInstance()?.optOut(true)
+```
+{% endtab %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```objectivec
+[[RSClient sharedInstance] optOut:YES];
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```swift
+RSClient.sharedInstance()?.optOut(true)
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
+Once the user grants their consent, you can enable user tracking once again by using the `optOut` API with `NO` or `false` as a parameter sent to it, as shown:
+
+<!--{% tabs %}
+{% tab title="Objective-C" %}
+```objectivec
+[[RSClient sharedInstance] optOut:NO];
+```
+{% endtab %}
+
+{% tab title="Swift" %}
+```swift
+RSClient.sharedInstance()?.optOut(false)
+```
+{% endtab %}
+{% endtabs %} -->
+
+<Tabs>
+  <TabList>
+    <Tab>Objective-C</Tab>
+    <Tab>Swift</Tab>
+  </TabList>
+    <TabPanels>
+      <TabPanel>
+<span>
+
+```objectivec
+[[RSClient sharedInstance] optOut:NO];
+```
+</span>
+      </TabPanel>
+      <TabPanel>
+<span>
+
+```swift
+RSClient.sharedInstance()?.optOut(false)
+```
+</span>
+      </TabPanel>
+    </TabPanels>
+</Tabs>
+
+<div class="infoBlock">
+
+The `optOut` API is available in the RudderStack iOS SDK starting from version `1.0.24`.
+</div>
+
 ## Track
 
 You can record the users' activity through the `track` method. Every action performed by the user is called an `event`.
@@ -902,7 +995,7 @@ RSClient.getInstance(&lt;WRITE_KEY&gt;, config: builder.build())
 
 <div class="infoBlock">
 
-More information on the RudderStack Device Mode can be found in the <a href="../../connections/rudderstack-connection-modes/">RudderStack Connection Modes</a> guide.
+More information on the RudderStack Device Mode can be found in the <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes//">RudderStack Connection Modes</a> guide.
 </div>
 
 Yes, you can develop a Device Mode destination by following these steps:
@@ -1234,7 +1327,7 @@ RSClient.sharedInstance()?.optOut(false)
 
 <div class="infoBlock">
 
-For more information on the `optOut` API, refer to the [**Enabling/Disabling User Tracking via optOut API \(GDPR Support\)**](https://docs.rudderstack.com/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk#enabling-disabling-user-tracking-via-the-optout-api-gdpr-support) section above.
+For more information on the `optOut` API, refer to the [**Enabling/Disabling User Tracking via optOut API \(GDPR Support\)**](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk#enabling-disabling-user-tracking-via-the-optout-api-gdpr-support) section above.
 </div>
 
 <div class="successBlock">

@@ -27,16 +27,16 @@ The repository for this Helm chart can be found [**here**](https://github.com/ru
 The commands are listed below:
 
 ```bash
-$ git clone git@github.com:rudderlabs/rudderstack-helm.git
-$ cd rudderstack-helm/
+git clone git@github.com:rudderlabs/rudderstack-helm.git
+cd rudderstack-helm/
 
 # If you're using the RudderStack-hosted Control Plane:
 
-$ helm install my-release ./ --set rudderWorkspaceToken="<your_workspace_token>"
+helm install my-release ./ --set rudderWorkspaceToken="<your_workspace_token>"
 
 # If you're using the self-hosted Control Plane:
 
-$ helm install my-release ./ --set backend.controlPlaneJSON=true
+helm install my-release ./ --set backend.controlPlaneJSON=true
 ```
 
 ## Introduction
@@ -84,11 +84,11 @@ and a
   Use this option if you don't wish to sign up for RudderStack.
 </div>
 
-You can self-host your own Control Plane using the open-source [**RudderStack Config Generator**](../../../user-guides/how-to-guides/rudderstack-control-plane-lite/).
+You can self-host your own Control Plane using the open-source [**Control Plane Lite**](../../../user-guides/how-to-guides/rudderstack-control-plane-lite/) utility.
 
 <div class="dangerBlock">
 
-  Note that the Control Plane set up using the RudderStack Config Generator lacks certain features like <a href="../../../transformations/"> Transformations </a> and <a href="../../../user-guides/how-to-guides/live-destination-event-debugger/"> Live Events </a> tab.
+  Note that the Control Plane set up using the <a href="../control-plane-lite/">Control Plane Lite</a> utility lacks certain features like <a href="../../../transformations/"> Transformations </a> and <a href="../../../user-guides/how-to-guides/live-destination-event-debugger/"> Live Events </a> tab.
 </div>
 
 ## Data Plane Setup
@@ -105,19 +105,19 @@ This section lists the steps to set up the RudderStack Data Plane in your Kubern
 - Clone the [**repository**](https://github.com/rudderlabs/rudderstack-helm) containing the RudderStack Helm chart by running the following command:
 
   ```bash
-  $ git clone git@github.com:rudderlabs/rudderstack-helm.git
+  git clone git@github.com:rudderlabs/rudderstack-helm.git
   ```
 
 - Navigate to the folder containing the Helm chart.
 
   ```bash
-  $ cd rudderstack-helm/
+  cd rudderstack-helm
   ```
 
 - To install the chart with the release name `my-release`, run the following command after replacing `<your_workspace_token>` with the workspace token copied from the RudderStack dashboard.
 
 ```bash
-$ helm install my-release ./ --set rudderWorkspaceToken="<your_workspace_token>"
+helm install my-release ./ --set rudderWorkspaceToken="<your_workspace_token>"
 ```
 
 The above command deploys RudderStack on your default Kubernetes cluster configured with `kubectl`
@@ -133,7 +133,7 @@ The above command deploys RudderStack on your default Kubernetes cluster configu
 
 ### For **Self-Hosted Control Plane**
 
-If you have self-hosted the Control Plane using the open-source Config Generator, follow [**these**](../../../get-started/config-generator#kubernetes) instructions to set up the RudderStack Data Plane in your Kubernetes cluster.
+If you have self-hosted the Control Plane using the open-source [**Control Plane Lite**](../control-plane-lite/) utility, follow [**these**](../../../get-started/control-plane-lite/#kubernetes) instructions to set up the RudderStack Data Plane in your Kubernetes cluster.
 
 Once you have successfully followed the steps above, [**send test events**](../sending-test-events/) to verify the installation.
 
@@ -144,7 +144,7 @@ Once you have successfully followed the steps above, [**send test events**](../s
 Update the configuration or version of the images and run the following command:
 
 ```bash
-$ helm upgrade my-release ./ --set rudderWorkspaceToken="<your_workspace_token>"
+helm upgrade my-release ./ --set rudderWorkspaceToken="<your_workspace_token>"
 ```
 
 ### For **Self-Hosted Control Plane**
@@ -152,7 +152,7 @@ $ helm upgrade my-release ./ --set rudderWorkspaceToken="<your_workspace_token>"
 Update the configuration or version of the images and run the following command:
 
 ```bash
-$ helm upgrade my-release ./ --set backend.controlPlaneJSON=true
+helm upgrade my-release ./ --set backend.controlPlaneJSON=true
 ```
 
 ## Uninstalling the Chart
@@ -160,7 +160,7 @@ $ helm upgrade my-release ./ --set backend.controlPlaneJSON=true
 To uninstall or delete the `my-release` deployment, run the following command:
 
 ```bash
-$ helm uninstall my-release
+helm uninstall my-release
 ```
 
 This removes all the components created by the chart.
@@ -186,7 +186,7 @@ Each of these parameters can be changed in `values.yaml`. You can also specify e
 For example:
 
 ```bash
-$ helm install --name my-release \
+helm install --name my-release \
   --set backend.image.version=v0.1.6 \
   ./
 ```

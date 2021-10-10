@@ -19,7 +19,7 @@ This option lets you configure and connect different data sources and destinatio
 
 <div class="infoBlock">
 
-  See the <a href="../../connections/">Connections</a> section for more details
+  See the <a href="https://rudderstack.com/docs/connections/">Connections</a> section for more details
   on setting up your data pipelines in RudderStack.
 </div>
 
@@ -33,7 +33,7 @@ This option lists all your configured sources. You can also configure a new sour
 
 <div class="infoBlock">
 
-  See the <a href="../../connections/">Connections</a> section for more details
+  See the <a href="https://rudderstack.com/docs/connections/">Connections</a> section for more details
   on setting up sources in RudderStack.
 </div>
 
@@ -47,7 +47,7 @@ This option lists all the configured destinations where you can send your event 
 
 <div class="infoBlock">
 
-See the <a href="../../connections/">Connections</a> section for more details on destinations and how to set up a new destination in RudderStack.
+See the <a href="https://rudderstack.com/docs/connections/">Connections</a> section for more details on destinations and how to set up a new destination in RudderStack.
 
 </div>
 
@@ -83,7 +83,7 @@ This option lets you invite your teammates to collaborate on the current RudderS
 
 <div class="infoBlock">
 
-See the <a href="./user-management">User Management</a> section for more details on this option.
+See the <a href="/user-management/">User Management</a> section for more details on this option.
 
 </div>
 
@@ -111,12 +111,24 @@ See the <a href="../../rudderstack-api">RudderStack API</a> guide for details on
 
 ## Data Plane URL
 
-This is the URL required for routing and processing your events to RudderStack.
+<div class="infoBlock">
 
-### **Getting the Data Plane URL**
+Refer to the [**RudderStack Architecture**](../rudderstack-architecture/) guide for more information the RudderStack Data Plane.
+</div>
 
-- If you're using the **open-source** version of RudderStack, you are required to set up your own data plane by installing and setting up RudderStack in your preferred development environment.
-- If you're using the **enterprise** version of RudderStack, contact us for the data plane URL with the email ID you used to sign up for RudderStack.
+For routing and processing the events to the RudderStack backend, a **Data Plane URL** is required. 
+
+Here's how to get the Data Plane URL:
+
+* If you're using the **open-source** version of RudderStack, you are required to set up your own Data Plane by [**installing and setting up RudderStack**](../installing-and-setting-up-rudderstack/) in your preferred environment. 
+
+<div class="successBlock">
+
+An open-source Data Plane URL looks like `http:localhost:8080` where `8080` is typically the port where your RudderStack Data Plane is hosted.  
+</div>
+
+* If you're using [**RudderStack Cloud Free**](https://app.rudderlabs.com/signup?type=freetrial), the data plane URL is provided in the dashboard. 
+* If you're using the [**pro or enterprise**](https://rudderstack.com/pricing) version of RudderStack, [**contact us**](https://rudderstack.com/join-rudderstack-slack-community) for the Data Plane URL with the email ID you used to sign up for RudderStack.
 
 ## Contact Us
 
