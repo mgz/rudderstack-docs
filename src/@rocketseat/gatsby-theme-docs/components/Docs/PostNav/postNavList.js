@@ -1397,9 +1397,9 @@ export const postNavList = [
     "content":[]
  },
  {
-    "key":"http-api-specification",
+    "key":"http-api",
     "title":"HTTP API",
-    "link":"/rudderstack-api/http-api-specification/",
+    "link":"/rudderstack-api/http-api/",
     "content":[]
  },
  {

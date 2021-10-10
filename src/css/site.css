@@ -1177,13 +1177,9 @@ top: -60px;
 }
 .childrenWrapper h3 {
   font-size: 18px;
-  @apply inline-block;
-  vertical-align: sub;
 }
 .childrenWrapper h4 {
   font-size: 16px;
-  @apply inline-block;
-  vertical-align: sub;
 }
 .childrenWrapper h2,
 .childrenWrapper h3,
