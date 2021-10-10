@@ -12,6 +12,9 @@ description: >-
 
 Sources are the tools or platforms from which you can send event data to RudderStack. These events can then be routed \(with or without transformation\) into your data warehouse or third-party destinations for analytics and other activation use-cases.
 
+With this feature, you can configure your data warehouse as a source in the [**RudderStack dashboard**](https://app.rudderlabs.com/signup?type=freetrial), select the right data and then sync this data to all the supported destinations.
+
+
 <div class="successBlock">
 
   For more information on sources in RudderStack, check out the
@@ -22,20 +25,22 @@ Sources are the tools or platforms from which you can send event data to RudderS
 
 With RudderStack **Warehouse Actions**, you can leverage the already processed customer data residing in your data warehouse and route this enriched information to your desired destinations.
 
-<div class="successBlock">
+With this feature, you can configure your data warehouse as a source on the <a href="https://app.rudderlabs.com/signup?type=freetrial">RudderStack dashboard</a>, select the right data and then sync this data to all the supported destinations.
 
-**With this feature, you can configure your data warehouse as a source on the <a href="https://app.rudderlabs.com/signup?type=freetrial">RudderStack dashboard</a>, select the right data and then sync this data to all the supported destinations.**
+<div class="warningBlock">
+
+**You can connect only one destination to a Warehouse Actions source**. Also, note that this destination **should not be connected to any other source** \(including [**Event Stream**](https://rudderstack.com/docs/stream-sources/) sources.\)
 </div>
 
 <div class="infoBlock">
 
-You can connect only one destination to a Warehouse Actions source. If you want to send data to multiple destinations, we recommend creating a source with the same settings for each destination.
+If you want to send data from a warehouse source to multiple destinations, we recommend creating multiple copies of the source with the same settings and connect them with each of the destinations.
 
 </div>
 
-<div class="warningBlock">
+<div class="dangerBlock">
 
-You cannot connect a Warehouse Actions source to a warehouse destination in RudderStack.
+**You cannot connect a Warehouse Actions source to a warehouse destination in RudderStack.**
 
 </div>
 
@@ -44,6 +49,17 @@ Here's a detailed walkthrough of the Warehouse Actions feature:
 https://www.youtube.com/watch?v=krFbHHjX-AU
 
 ## Configuring Warehouse Actions on RudderStack
+
+<div class="warningBlock">
+
+**The** **Warehouse Actions** **feature supports only source-driven configuration of your data pipeline**. 
+
+So, you need to configure a Warehouse Actions source in RudderStack first, and then connect it to a new or existing destination \(the existing destination should not be connected to any other source\), as shown below.
+</div>
+
+<!--![](../.gitbook/assets/screenshot-2021-09-02-at-11.03.55-am.png)-->
+
+<img src="../../../images/assets/screenshot-2021-09-02-at-11.03.55-am.png" alt="Existing Destination" />
 
 To configure your data warehouse as a source on the RudderStack dashboard, follow these steps:
 
@@ -149,6 +165,14 @@ Adding a new constant when configuring a Warehouse Actions source is very easy:
 <img src="../../../images/assets/screenshot_2021-03-18_at_3.52.26_pm.png" />
 
 ## FAQs
+
+### I cannot add a Warehouse Actions source to an already configured destination. Why?
+
+Warehouse Actions supports only source-driven configuration of your pipeline. So you need to configure a Warehouse Actions source in RudderStack and then connect it an existing, **free** destination \(this destination should not be connected to any other source\), as shown:
+
+<!--![](../.gitbook/assets/screenshot-2021-09-02-at-11.03.55-am%20%281%29.png)-->
+
+<img src="../../../images/assets/screenshot-2021-09-02-at-11.03.55-am (1).png" alt="Free destination" />
 
 ### Can I connect a Warehouse Actions source to multiple destinations?
 
