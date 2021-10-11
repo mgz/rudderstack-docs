@@ -29,7 +29,7 @@ const NestedAccordion = props => {
               <AccordionItemHeading>
                 <AccordionItemButton
                   className={`accordion__button ${
-                    window.location.pathname === docsBasePath + item.link
+                    window.location.pathname === docsBasePath + item.link || window.location.pathname === docsBasePath + item.link + '/'
                       ? "accActive"
                       : ""
                   }`}
@@ -51,7 +51,7 @@ const NestedAccordion = props => {
               <AccordionItemHeading>
                 <AccordionItemButton
                   className={`accordion__button ${
-                    window.location.pathname === docsBasePath + item.link
+                    window.location.pathname === docsBasePath + item.link || window.location.pathname === docsBasePath + item.link + '/'
                       ? "accActive"
                       : ""
                   }`}
