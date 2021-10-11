@@ -11,6 +11,7 @@ description: Step-by-step guide to set up Zendesk as a destination in RudderStac
 RudderStack supports Zendesk as a destination to which you can seamlessly send your customer data.
 
 <div class="successBlock">
+
 Find the open-source transformer code for this destination in our [**GitHub repo**](https://github.com/rudderlabs/rudder-transformer/tree/master/v0/destinations/zendesk).
 </div>
 
@@ -32,6 +33,7 @@ Once you have verified that the source platform supports sending events to Zende
 * From your [**RudderStack dashboard**](https://app.rudderstack.com/), add the source. From the list of destinations, select **Zendesk**.
 
 <div class="infoBlock">
+
 Follow the [**Adding a Source and Destination in RudderStack**](https://docs.rudderstack.com/getting-started/adding-source-and-destination-rudderstack) guide for more information.
 </div>
 
@@ -131,10 +133,12 @@ rudderanalytics.track("Track me", {
 ```
 
 <div class="infoBlock">
+
 RudderStack uses the [**Zendesk Sunshine Events API**](https://developer.zendesk.com/rest_api/docs/sunshine/events_api) for the `track` calls. To successfully send `track` calls to Zendesk, the following criteria should be met: 
 
 * You need to have signed up for the Events API early access program.
 * A `userId` needs to be passed along with the `track` call.
+
 </div>
 
 ## Group
