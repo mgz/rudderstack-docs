@@ -68,7 +68,7 @@ RudderStack sends the `createdAt` field as `created_at` field to Customer.io to 
 
 The following code snippet is an example of an `identify` call in RudderStack:
 
-```
+```javascript
 // a sample identify
 rudderanalytics.identify("my-userID", {
         name: "Tintin",
@@ -77,8 +77,8 @@ rudderanalytics.identify("my-userID", {
         email: "tintin@herge.com"
 });
 
-// As created at is not present in the above call, we will append it with
-current timestamp value.
+// As created at is not present in the above call,
+// we will append it with current timestamp value.
 ```
 
 ## Page
@@ -87,14 +87,14 @@ If you are using a native SDK, the Customer.io JavaScript snippet is loaded and 
 
 Here is a sample of a `page` call in RudderStack:
 
-```
+```javascript
 // "home" is the name of the page.
 rudderanalytics.page("home", {
-        path: "path",
-        url: "url",
-        title: "title",
-        search: "search",
-        referrer: "referrer"
+  path: "path",
+  url: "url",
+  title: "title",
+  search: "search",
+  referrer: "referrer",
 });
 ```
 
@@ -104,7 +104,7 @@ The `screen` call records the screen views of the user in your App. If you have 
 
 Here is a sample `screen` call in using RudderStack iOS SDK:
 
-```
+```objectivec
 [[RudderClient sharedInstance] screen:@"Main"
             properties:@{@"prop_key" : @"prop_value"}];
 ```
@@ -117,12 +117,12 @@ The `track` call \_\*\*\_will pass the event properties to Customer.io. You may 
 
 The following code snippet shows how a sample `track` call is made in RudderStack:
 
-```
+```javascript
 rudderanalytics.track("Track me", {
-        category: "category",
-        label: "label",
-        value: "value"
- });
+  category: "category",
+  label: "label",
+  value: "value",
+});
 ```
 
 <div class="infoBlock">
@@ -146,7 +146,7 @@ Example for registering `deviceToken` is as follows:
 <!--{% tabs %}
 {% tab title="iOS" %}
 
-```
+```objectivec
 [[[RudderClient sharedInstance] getContext] putDeviceToken:[self getDeviceToken]];
 ```
 
@@ -154,7 +154,7 @@ Example for registering `deviceToken` is as follows:
 
 {% tab title="Android" %}
 
-```
+```kotlin
 rudderClient!!.rudderContext.putDeviceToken(getDeviceToken())
 ```
 
@@ -170,7 +170,7 @@ rudderClient!!.rudderContext.putDeviceToken(getDeviceToken())
       <TabPanel>
 <span>
 
-```
+```objectivec
 [[[RudderClient sharedInstance] getContext] putDeviceToken:[self getDeviceToken]];
 ```
 </span>
@@ -178,7 +178,7 @@ rudderClient!!.rudderContext.putDeviceToken(getDeviceToken())
       <TabPanel>
 <span>
 
-```
+```kotlin
 rudderClient!!.rudderContext.putDeviceToken(getDeviceToken())
 ```
 </span>

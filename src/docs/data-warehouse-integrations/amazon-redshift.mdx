@@ -96,7 +96,7 @@ The username and password we provided earlier while creating the Redshift cluste
 
 - The queries to create a new user are:
 
-```
+```sql
 -- create a user named "rudder" RudderStack can use to access Redshift
 CREATE USER rudder PASSWORD '<password goes here>';
 
@@ -195,25 +195,25 @@ You need to edit your bucket policy to allow RudderStack to write to your bucket
 
 ```jsx
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::422074288268:user/s3-copy"
-            },
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:PutObjectAcl",
-                "s3:ListBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::YOUR_BUCKET_NAME/*",
-                "arn:aws:s3:::YOUR_BUCKET_NAME"
-            ]
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::422074288268:user/s3-copy"
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:PutObjectAcl",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::YOUR_BUCKET_NAME/*",
+        "arn:aws:s3:::YOUR_BUCKET_NAME"
+      ]
+    }
+  ]
 }
 ```
 
@@ -223,14 +223,14 @@ You need to edit your bucket policy to allow RudderStack to write to your bucket
 
 ```javascript
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "*",
-            "Resource": "arn:aws:s3:::*"
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "arn:aws:s3:::*"
+    }
+  ]
 }
 ```
 
@@ -240,25 +240,25 @@ You need to edit your bucket policy to allow RudderStack to write to your bucket
 
 ```javascript
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::ACCOUNT_ID:user/USER_ARN"
-            },
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:PutObjectAcl",
-                "s3:ListBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::YOUR_BUCKET_NAME/*",
-                "arn:aws:s3:::YOUR_BUCKET_NAME"
-            ]
-        }
-    ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::ACCOUNT_ID:user/USER_ARN"
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:PutObjectAcl",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::YOUR_BUCKET_NAME/*",
+        "arn:aws:s3:::YOUR_BUCKET_NAME"
+      ]
+    }
+  ]
 }
 ```
 

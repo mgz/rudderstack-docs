@@ -84,7 +84,7 @@ allprojects {
 - Ensure that `android.useAndroidX` is set to `true` in your `gradle.properties` file.
 - Also, add the following under the `dependencies` section:
 
-```kotlin
+```groovy
 // ruddder core sdk
 implementation 'com.rudderstack.android.sdk:core:1.+'
 // rudder-clevertap integration
@@ -120,7 +120,7 @@ Follow these steps to add CleverTap to your iOS project:
 
 - Go your `Podfile` and add the `Rudder-CleverTap` extension as shown below:
 
-```objectivec
+```ruby
 pod 'Rudder-CleverTap'
 ```
 
@@ -203,7 +203,7 @@ allprojects {
 <li>Also, add the following under the <code class="inline-code">dependencies</code> section:
 <span>
 
-```kotlin
+```groovy
 // ruddder core sdk
 implementation 'com.rudderstack.android.sdk:core:1.+'
 // rudder-clevertap integration
@@ -243,7 +243,7 @@ val rudderClient = RudderClient.getInstance(
 <li>Go your <code class="inline-code">Podfile</code> and add the <code class="inline-code">Rudder-CleverTap</code> extension as shown below:
 <span>
 
-```objectivec
+```ruby
 pod 'Rudder-CleverTap'
 ```
 </span>
@@ -511,6 +511,7 @@ To know more on this you can check the <a href="https://github.com/CleverTap/cle
 </div>
       </TabPanel>
       <TabPanel>
+
       <ul>
 <li>Add Push Notification as a capability by navigating to Target - <code class="inline-code">Signing & Capabilities</code> of your app when opened in Xcode.</li>
 <li>Enable <code class="inline-code">Background Modes/Remote notifications</code> by navigating to <strong>Targets</strong> -&gt; <strong>Your App</strong> -&gt; <strong>Capabilities</strong> -&gt; <strong>Background Modes</strong> and then check <code class="inline-code">Remote notifications</code></li>
@@ -644,7 +645,7 @@ The `screen` method allows you to record whenever a user sees the mobile screen,
 
 A sample `screen` call looks like the following code snippet:
 
-```
+```objectivec
 [[RSClient sharedInstance] screen:@"Sample Screen Name"
         properties:@{@"prop_key" : @"prop_value"}];
 ```

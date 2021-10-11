@@ -74,14 +74,14 @@ In `rudderanalytics.js` , a `page` call is included by default, just after `rudd
 
 A sample `page` call looks like the following:
 
-```
+```javascript
 // "home" is the name of the page.
 rudderanalytics.page("home", {
-        path: "path",
-        url: "url",
-        title: "title",
-        search: "search",
-        referrer: "referrer"
+  path: "path",
+  url: "url",
+  title: "title",
+  search: "search",
+  referrer: "referrer"
 });
 ```
 
@@ -108,12 +108,12 @@ The `track` call allows you to record any actions that the users might perform, 
 
 Calling the RudderStack SDK `track` API with the event and its properties similarly passes the data to GTM as seen in the Page section above.
 
-```
+```javascript
 rudderanalytics.track("Track me", {
-        category: "category",
-        label: "label",
-        value: "value"
- });
+  category: "category",
+  label: "label",
+  value: "value",
+});
 ```
 
 The above call will populate Google Tag Manager with the below properties along with their values:

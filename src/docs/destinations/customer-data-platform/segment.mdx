@@ -137,15 +137,12 @@ The `group` call lets you associate a particular identified user with a group, s
 
 A sample `group` call is as shown:
 
-```
-rudderanalytics.group(
-    "sample-group-id",
-    {
-      name: "Example Company",
-      employees: 1000,
-      industry: "Software"
-    },
-  );
+```javascript
+rudderanalytics.group("sample-group-id", {
+  name: "Example Company",
+  employees: 1000,
+  industry: "Software",
+});
 ```
 
 <div class="infoBlock">

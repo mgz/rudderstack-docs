@@ -49,7 +49,7 @@ Please follow our [Adding a Source and Destination](https://rudderstack.com/docs
   - **Event Whitelist**: You can add the events you want to send to TVSquared in this field. If the list is empty, all the events will be sent. Otherwise, only the events mentioned in this whitelist will be sent.
   - **Custom Metrics**: The **Property Name** values added in this field will be sent to TVSquared for the events containing those event properties, along with the other defined properties of TVSquared. For example, if the property added in the dashboard is `shipping` , then the shipping value will be sent to TVSquared. A sample code snippet for this is as shown:
 
-    ```
+    ```javascript
     rudderanalytics.track('Order Completed',
     {
       order_id: '5d4c7cb5',
@@ -70,7 +70,7 @@ When a `page` call occurs, RudderStack makes a call to TVSquared to record a pag
 
 For more information on the `page` call, please refer to our [RudderStack API Specification](https://rudderstack.com/docs/rudderstack-api-spec) guide.
 
-```
+```javascript
 rudderanalytics.page('new category',
 'page name',
 {
@@ -100,7 +100,7 @@ All the mentioned parameters are optional. There is no requirement to add these 
 
 A sample `track` call is as shown:
 
-```
+```javascript
 rudderanalytics.track('Order Completed',
 {
   order_id: '5d4c7cb5',

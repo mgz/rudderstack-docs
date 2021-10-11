@@ -116,7 +116,7 @@ Please follow the steps below that make use of Java's **keytool** utility.
 
 By following all the steps described above, the script to create the CA and broker and client truststores and keystores is as shown:
 
-```markup
+```bash
 keytool -keystore kafka.server.keystore.jks -alias localhost -keyalg RSA -validity {validity} -genkey
 openssl req -new -x509 -keyout ca-key -out ca-cert -days {validity}
 keytool -keystore kafka.server.truststore.jks -alias CARoot -importcert -file ca-cert
@@ -184,7 +184,7 @@ Open this address with SSL in addition to that. For that, you need to update `ad
 
 A sample entry is as shown below:
 
-```
+```markup
 # Hostname and port the broker will advertise to producers and consumers.
 # here the INTERNAL listerner is your cluster kafka service host for kafka server
 # and the EXTERNAL is public loadbalancer for kafka server

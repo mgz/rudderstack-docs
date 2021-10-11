@@ -58,7 +58,7 @@ For more information on the `identify` method, please refer to our guide on [Rud
 
 A sample `identify` payload is as shown in the snippet below:
 
-```javascript
+```objectivec
 [[RSClient sharedInstance] identify:@"developer_user_id"
                                  traits:@{@"foo": @"bar", @"foo1": @"bar1"}];
 ```
@@ -75,7 +75,7 @@ For more information on the `track` method, please refer to our guide on [Rudder
 
 A sample `track` payload is as shown in the snippet below:
 
-```
+```objectivec
 [[RudderClient sharedInstance] track:@"test_event"
                           properties:@{@"key":@"value", @"foo": @"bar"}]
 ```

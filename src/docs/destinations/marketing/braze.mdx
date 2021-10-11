@@ -72,19 +72,19 @@ Please follow these steps to add Braze to your iOS project:
 
 - Open the `Podfile` of your project and add the following line:
 
-  ```
+  ```ruby
   pod 'Rudder-Braze'
   ```
 
   followed by the command as shown:
 
-  ```
+  ```bash
   $ pod install
   ```
 
 - Finally change the SDK initialization to the following snippet:
 
-  ```
+  ```objectivec
   RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
   [builder withDataPlaneUrl:<YOUR_DATA_PLANE_URL>];
   [builder withFactory:[RudderBrazeFactory instance]];
@@ -98,7 +98,7 @@ To add Braze to your Android project, please follow these steps:
 
 - Open your `app/build.gradle` \(Module: app\) file, and add the following:
 
-  ```
+  ```groovy
   repositories {
     mavenCentral()
     maven { url "https://appboy.github.io/appboy-android-sdk/sdk" }
@@ -107,7 +107,7 @@ To add Braze to your Android project, please follow these steps:
 
 - Add the following under `dependencies` section:
 
-```javascript
+```groovy
   implementation 'com.rudderstack.android.sdk:core:1.0.1'
   implementation 'com.rudderstack.android.integration:braze:1.0.2'
   implementation 'com.appboy:android-sdk-ui:6.0.+'
@@ -117,7 +117,7 @@ To add Braze to your Android project, please follow these steps:
 
 - Finally, change the SDK initialization to the following:
 
-```
+```kotlin
   val rudderClient: RudderClient = RudderClient.getInstance(
       this,
       <WRITE_KEY>,
@@ -144,14 +144,14 @@ To add Braze to your Android project, please follow these steps:
 <li>Open the <code class="inline-code">Podfile</code> of your project and add the following line:
 <span>
 
-```
+```ruby
 pod 'Rudder-Braze'
 ```
 </span>
   followed by the command as shown:
 <span>
 
-```
+```bash
 $ pod install
 ```
 </span>
@@ -159,7 +159,7 @@ $ pod install
 <li>Finally change the SDK initialization to the following snippet:
 <span>
 
-```
+```objectivec
 RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 [builder withDataPlaneUrl:&lt;YOUR_DATA_PLANE_URL&gt;];
 [builder withFactory:[RudderBrazeFactory instance]];
@@ -175,7 +175,7 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 <li>Open your <code class="inline-code">app/build.gradle</code> (Module: app) file, and add the following:
 <span>
 
-```
+```groovy
 repositories {
   mavenCentral()
   maven { url "https://appboy.github.io/appboy-android-sdk/sdk" }
@@ -186,7 +186,7 @@ repositories {
 <li>Add the following under <code class="inline-code">dependencies</code> section:
 <span>
 
-```javascript
+```groovy
   implementation 'com.rudderstack.android.sdk:core:1.0.1'
   implementation 'com.rudderstack.android.integration:braze:1.0.2'
   implementation 'com.appboy:android-sdk-ui:6.0.+'
@@ -198,7 +198,7 @@ repositories {
 <li>Finally, change the SDK initialization to the following:
 <span>
 
-```
+```kotlin
   val rudderClient: RudderClient = RudderClient.getInstance(
       this,
       <WRITE_KEY>,
