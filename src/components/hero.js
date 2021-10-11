@@ -36,7 +36,7 @@ function Hero(props) {
     // console.log("isMobile,isTablet,isBrowser", isMobile, isTablet, isBrowser)
 
     if (isTablet) {
-      setShowAnimation(true)
+      setShowAnimation(false)
     } else if (isBrowser) {
       setShowAnimation(true)
     }
