@@ -64,11 +64,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const site_redirects = redirects.data.allSanitySiteRedirects.edges || []
   site_redirects.forEach(edge => {
-    createRedirect({
-      fromPath: edge.node.from_path,
-      toPath: edge.node.to_path,
-      isPermanent: edge.node.is_permanenet ? edge.node.is_permanenet : true,
-    })
+    if(edge.node.from_path !== "/docs"){
+      createRedirect({
+        fromPath: edge.node.from_path,
+        toPath: edge.node.to_path,
+        isPermanent: edge.node.is_permanenet ? edge.node.is_permanenet : true,
+      })
+    }
   })
 
   
@@ -333,7 +335,7 @@ exports.createPages = async ({ graphql, actions }) => {
   `)
   const docPages = docPages_query.data.allMdx.nodes || []
   docPages.forEach((edge, index) => {
-    const path = edge.slug == "" ? "/docs" : `${edge.slug}`
+    const path = edge.slug == "" ? "/docs/" : `${edge.slug}`
     //console.log('docsPath', edge.frontmatter.slug);
 
     createPage({
