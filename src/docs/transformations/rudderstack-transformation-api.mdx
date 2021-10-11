@@ -64,7 +64,7 @@ RudderStack transformations are responsible for converting the received event da
 
 Transformations help you to create a user-defined code that allow you to route your events in a manner that is suitable for your destinations.
 
-#### Transformer Payload:
+#### Transformer payload
 
 | **Field**      | **Type** | **Presence** | **Description**                                                               |
 | :------------- | :------- | :----------- | :---------------------------------------------------------------------------- |
@@ -484,7 +484,7 @@ This will give an array of published transformations.
 
 <span class="apiCallType get">GET</span>
 
-## List all the transformations
+### List all the transformations
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com/transformations</span>
@@ -630,7 +630,7 @@ This will give a transformation object on basis of the ID.
 
 <span class="apiCallType get">GET</span>
 
-## Retrieve a single Transformation
+### Retrieve a single transformation
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>transformations/&#123;id&#125;</strong></span>
@@ -780,7 +780,7 @@ This will update transformation object on basis of id.
 
 <span class="apiCallType post">POST</span>
 
-## Update a transformation
+### Update a transformation
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/&#123;id&#125;</strong></span>
@@ -983,7 +983,7 @@ Delete a **published** transformations by ID. Note that RudderStack never delete
 
 <span class="apiCallType delete">DELETE</span>
 
-## Delete a transformation
+### Delete a transformation
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/&#123;id&#125;</strong></span>
@@ -1128,7 +1128,7 @@ This gets an array of transformations revisions.
 
 <span class="apiCallType get">GET</span>
 
-## List all transformation versions
+### List all transformation versions
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/&#123;id&#125;/versions</strong></span>
@@ -1306,7 +1306,7 @@ This gets a single transformation version.
 
 <span class="apiCallType get">GET</span>
 
-## Retrieve a single transformation version
+### Retrieve a single transformation version
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/&#123;id&#125;/versions/&#123;versionId&#125;</strong></span>
@@ -1403,7 +1403,7 @@ Libraries are JavaScript codes that you can write and export to be used in your 
 
 Suppose you write an aggregation function. You can easily export them and use it within different transformations just by importing that module by the library name.
 
-#### Libraries Payload:
+#### Libraries payload
 
 | **Field**     | **Type** | **Presence** | **Description**                                                                                        |
 | :------------ | :------- | :----------- | :----------------------------------------------------------------------------------------------------- |
@@ -1474,7 +1474,7 @@ Description of the library goes here
 
 <span class="apiCallType get">GET</span>
 
-## Create a library
+### Create a library
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/libraries</strong></span>
@@ -1703,7 +1703,7 @@ Get all the **published** libraries.
 
 <span class="apiCallType get">GET</span>
 
-## List all libraries
+### List all libraries
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/libraries</strong></span>
@@ -1850,7 +1850,7 @@ Get a single **published** library by ID.
 
 <span class="apiCallType get">GET</span>
 
-## Retrieve a library
+### Retrieve a library
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/libraries/&#123;id&#125;</strong></span>
@@ -2107,7 +2107,7 @@ You can pass it either as **ASC** to get an ascending order or **DESC** for desc
 
 <span class="apiCallType get">GET</span>
 
-## List all library versions.
+### List all library versions
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/libraries/&#123;id&#125;/versions</strong></span>
@@ -2292,7 +2292,7 @@ Get a single library revision.
 
 <span class="apiCallType get">GET</span>
 
-## Retrieve a single library versions
+### Retrieve a single library version
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/libraries/&#123;id&#125;/versions/&#123;versionId&#125;</strong></span>
@@ -2394,7 +2394,7 @@ If you perform some edits on this version of transformer, RudderStack takes your
 
 This is where the RudderStack **Publish API** comes into play.
 
-#### Publish Payload:
+#### Publish payload
 
 | **Field**         | **Type** | **Presence** | **Description**                                                     |
 | :---------------- | :------- | :----------- | :------------------------------------------------------------------ |
@@ -2452,7 +2452,7 @@ Sends published as true if versions is successfully published.
 
 <span class="apiCallType post">POST</span>
 
-## Publish a transformation or library
+### Publish a transformation or library
 
 <div class="hostPath">
   <span class="pathName">https://api.rudderstack.com<strong>/transformations/libraries/publish</strong></span>
@@ -2705,6 +2705,6 @@ Whenever you call the <code class="inline-code">publish</code> API , we run test
 In case if your publish is failing, make sure to check your transformation code and the libraries that it is referring to.
 </div>
 
-## Contact Us
+## Contact us
 
 To know more about the Transformations API, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://rudderstack.com/join-rudderstack-slack-community) channel, and we will be happy to help you.
