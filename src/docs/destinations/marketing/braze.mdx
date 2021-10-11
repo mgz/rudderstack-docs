@@ -26,7 +26,7 @@ Before getting started, please determine whether the platform you are sending yo
 
 <div class="infoBlock">
 
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -34,7 +34,7 @@ In order to start sending data to Braze, you will first need to add it as a dest
 
 <div class="infoBlock">
 
-Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
+Please follow our guide on <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
 
@@ -72,19 +72,19 @@ Please follow these steps to add Braze to your iOS project:
 
 - Open the `Podfile` of your project and add the following line:
 
-  ```text
+  ```
   pod 'Rudder-Braze'
   ```
 
   followed by the command as shown:
 
-  ```text
+  ```
   $ pod install
   ```
 
 - Finally change the SDK initialization to the following snippet:
 
-  ```text
+  ```
   RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
   [builder withDataPlaneUrl:<YOUR_DATA_PLANE_URL>];
   [builder withFactory:[RudderBrazeFactory instance]];
@@ -98,7 +98,7 @@ To add Braze to your Android project, please follow these steps:
 
 - Open your `app/build.gradle` \(Module: app\) file, and add the following:
 
-  ```text
+  ```
   repositories {
     mavenCentral()
     maven { url "https://appboy.github.io/appboy-android-sdk/sdk" }
@@ -117,7 +117,7 @@ To add Braze to your Android project, please follow these steps:
 
 - Finally, change the SDK initialization to the following:
 
-```text
+```
   val rudderClient: RudderClient = RudderClient.getInstance(
       this,
       <WRITE_KEY>,
@@ -144,14 +144,14 @@ To add Braze to your Android project, please follow these steps:
 <li>Open the <code class="inline-code">Podfile</code> of your project and add the following line:
 <span>
 
-```text
+```
 pod 'Rudder-Braze'
 ```
 </span>
   followed by the command as shown:
 <span>
 
-```text
+```
 $ pod install
 ```
 </span>
@@ -159,7 +159,7 @@ $ pod install
 <li>Finally change the SDK initialization to the following snippet:
 <span>
 
-```text
+```
 RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 [builder withDataPlaneUrl:&lt;YOUR_DATA_PLANE_URL&gt;];
 [builder withFactory:[RudderBrazeFactory instance]];
@@ -175,7 +175,7 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 <li>Open your <code class="inline-code">app/build.gradle</code> (Module: app) file, and add the following:
 <span>
 
-```text
+```
 repositories {
   mavenCentral()
   maven { url "https://appboy.github.io/appboy-android-sdk/sdk" }
@@ -198,7 +198,7 @@ repositories {
 <li>Finally, change the SDK initialization to the following:
 <span>
 
-```text
+```
   val rudderClient: RudderClient = RudderClient.getInstance(
       this,
       <WRITE_KEY>,

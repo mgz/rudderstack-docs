@@ -28,7 +28,7 @@ Before configuring your source and destination on the RudderStack, please verify
 
 <div class="infoBlock">
 
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -38,7 +38,7 @@ Once you have confirmed that the platform supports sending events to PostHog, pl
 
 <div class="infoBlock">
 
-Please follow our <a href="../../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to add a source in RudderStack.
+Please follow our <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">Adding a Source and Destination</a> guide to add a source in RudderStack.
 
 </div>
 
@@ -72,7 +72,7 @@ To identify a user to PostHog, you need to call the `identify` API.
 
 <div class="infoBlock">
 
-For information on the <code class="inline-code">identify</code> call, please refer to our <a href="../../rudderstack-api">RudderStack API Specification</a> guide.
+For information on the <code class="inline-code">identify</code> call, please refer to our <a href="https://rudderstack.com/docs/rudderstack-api/">RudderStack API Specification</a> guide.
 
 </div>
 
@@ -222,7 +222,7 @@ rudderanalytics.group("sample_group_id", {
 
 To pass [super properties](https://posthog.com/docs/integrations/js-integration#super-properties) to PostHog JavaScript SDK, pass the key-value pairs as below:
 
-```text
+```
 This will set {superKey1: "value1", superKey2: "value2"} as super properties to PostHog SDK
 rudderanalytics.track("event", {prop: "value"}, {
   integrations: {
@@ -236,7 +236,7 @@ rudderanalytics.track("event", {prop: "value"}, {
 })
 ```
 
-```text
+```
 This will set {superKey3: "value3"} as set once super properties to PostHog SDK
 rudderanalytics.track("event", {prop: "value"}, {
   integrations: {
@@ -249,7 +249,7 @@ rudderanalytics.track("event", {prop: "value"}, {
 })
 ```
 
-```text
+```
 This will unset super properties superKey1, superKey2, superKey3 to PostHog SDK
 rudderanalytics.track("event", {prop: "value"}, {
   integrations: {

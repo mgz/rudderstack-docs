@@ -64,10 +64,9 @@ export const Children = styled.div`
   }
   h2{
     position: relative;
-    display: block;
   }
   h2, h3{
-    margin: 55px 0 16px 0;
+    margin: 45px 0 16px 0;
   }  
   h4,
   h5,

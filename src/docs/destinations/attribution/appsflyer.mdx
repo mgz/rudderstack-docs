@@ -28,7 +28,7 @@ Before configuring your source and destination on the RudderStack, please verify
 
 <div class="infoBlock">
 
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -38,7 +38,7 @@ Once you have confirmed that the platform supports sending events to AppsFlyer, 
 
 <div class="infoBlock">
 
-Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
+Please follow our guide on <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
 
@@ -66,19 +66,19 @@ To add AppsFlyer to your iOS project:
 
 - Add the following line to your [CocoaPods](https://cocoapods.org/) `Podfile`
 
-```text
+```
 pod 'Rudder-Appsflyer'
 ```
 
 - After adding the dependency, you must register the `RudderAppsflyerFactory` with your `RudderClient` initialization as a `factory` of `RudderConfig`. To do this, run the following command to import the `RudderAppsflyerFactory.h` file in your `AppDelegate.m` file.
 
-```text
+```
 #import <Rudder-Appsflyer/RudderAppsflyerFactory.h>
 ```
 
 - Then, change the SDK initialization to the following:
 
-```text
+```
 RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [builder withDataPlaneUrl:DATA_PLANE_URL];
 [builder withTrackLifecycleEvens:YES];
@@ -167,7 +167,7 @@ rudderClient.setup(WRITE_KEY, config)
 <li>Add the following line to your <a href="https://cocoapods.org/">CocoaPods</a> <code class="inline-code">Podfile</code>
 <span>
 
-```text
+```
 pod 'Rudder-Appsflyer'
 ```
 </span>
@@ -175,7 +175,7 @@ pod 'Rudder-Appsflyer'
 <li>After adding the dependency, you must register the <code class="inline-code">RudderAppsflyerFactory</code> with your <code class="inline-code">RudderClient</code> initialization as a <code class="inline-code">factory</code> of <code class="inline-code">RudderConfig</code>. To do this, run the following command to import the <code class="inline-code">RudderAppsflyerFactory.h</code> file in your <code class="inline-code">AppDelegate.m</code> file.
 <span>
 
-```text
+```
 #import <Rudder-Appsflyer/RudderAppsflyerFactory.h>
 ```
 </span>
@@ -183,7 +183,7 @@ pod 'Rudder-Appsflyer'
 <li>Then, change the SDK initialization to the following:
 <span>
 
-```text
+```
 RSConfigBuilder *builder = [[RSConfigBuilder alloc] init];
 [builder withDataPlaneUrl:DATA_PLANE_URL];
 [builder withTrackLifecycleEvens:YES];
@@ -292,7 +292,7 @@ The `identify` call from RudderStack sets the `userId` through the `setCustomerU
 
 RudderStack sets the `email` from `RudderTraits` to AppsFlyer using the `setUserEmails` method from the native SDK.
 
-```text
+```
 [[RSClient sharedInstance] identify:@"developer_user_id"
                                  traits:@{@"email": @"bar@foo.com"}];
 ```
@@ -337,7 +337,7 @@ Along with the above event mapping, the event property mapping is done as well, 
 
 A Sample `track` call for an iOS application will look like the below.
 
-```text
+```
 [[RSClient sharedInstance] track:@"Accepted Terms of Service"
                           properties:@{
                                   @"foo": @"bar",
@@ -357,12 +357,12 @@ RudderStack performs the same task for the automatically recorded `screen` calls
 
 If the advertising ID is set according to the associated docs, RudderStack will utilize them appropriately for the AppsFlyer destination. They should be found in `context.device.advertisementId`
 
-- For iOS: [Advertisement ID Documentation](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk#advertisement-id)
-- For Android: [Advertisment ID Documentation](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk#advertisement-id)
+- For iOS: [Advertisement ID Documentation](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk/#advertisement-id)
+- For Android: [Advertisment ID Documentation](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk/#advertisement-id)
 
 #### ATTrackingManager
 
-If the `ATTrackingManager.trackingAuthorizationStatus` is passed appropriately according to [this documentation](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk#attrackingmanager-authorization-consent), RudderStack will utilize it for the AppsFlyer destination. It should be found in `context.device.attTrackingStatus`
+If the `ATTrackingManager.trackingAuthorizationStatus` is passed appropriately according to [this documentation](https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk/#attrackingmanager-authorization-consent), RudderStack will utilize it for the AppsFlyer destination. It should be found in `context.device.attTrackingStatus`
 
 ## Error Messages
 
@@ -469,7 +469,7 @@ const appsFlyerId = await AppsFlyerIntegrationFactory.getAppsFlyerId()
 
 <div class="infoBlock">
 
-This works only if your source has a <a href="../../connections/rudderstack-connection-modes">device mode connection</a> with AppsFlyer i.e the AppsFlyer native SDK is loaded through RudderStack.
+This works only if your source has a <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes/">device mode connection</a> with AppsFlyer i.e the AppsFlyer native SDK is loaded through RudderStack.
 
 </div>
 

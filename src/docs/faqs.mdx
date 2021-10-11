@@ -18,7 +18,7 @@ This section aims to address the queries and issues you might encounter while us
 
 <div class="infoBlock">
 
-If you come across any issue that is not listed in this guide, feel free to start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
+If you come across any issue that is not listed in this guide, feel free to start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.
 </div>
 
 ## Installation and Setup
@@ -132,7 +132,7 @@ No, you need not change the URL. As long as your self-hosted data plane has the 
 
 #### 7. While trying to start rudder-server, I get the following error:
 
-```text
+```
 backend_1 | 2021/06/09 08:12:14 notifying bugsnag: During db.vlog.open: Value log truncate required to run DB. This might result in data loss 
 backend_1 | 2021/06/09 08:12:14 bugsnag.Notify: bugsnag/payload.deliver: invalid api key: '' 
 backend_1 | 2021/06/09 08:12:14 bugsnag/sessions/publisher.publish invalid API key: '' 
@@ -188,7 +188,7 @@ The number of user events that are batched together can be configured with `sess
 
 #### 5. Can I apply a transformation on a source configured in RudderStack?
 
-Currently, transformations can only be configured and used for destinations. If you want to write some custom logic specific to the source, you can get the source ID in the transformation function and use it to include the logic. For more information, refer to this [**doc**](https://rudderstack.com/docs/adding-a-new-user-transformation-in-rudderstack#accessing-metadata).
+Currently, transformations can only be configured and used for destinations. If you want to write some custom logic specific to the source, you can get the source ID in the transformation function and use it to include the logic. For more information, refer to this [**doc**](https://rudderstack.com/docs/transformations#accessing-metadata).
 
 ## RudderStack Cloud
 
@@ -254,7 +254,7 @@ You can use [**RudderStack Transformations**](transformations/) to set custom lo
 
 #### 4. I am seeing a `Message type not supported` error. What does this mean?
 
-This error is being returned from the RudderStack Transformer. It means that for a particular destination, the event type that is trying to be sent, is not supported. For example, Salesforce only supports `identify` events. Therefore, if a `track` call is sent to Salesforce, the `Message type not supported` error will be returned. This error does not affect any other events and is harmless. However, a simple user transformation can be written to filter out these events so you will no longer see this error. Read [these docs](https://rudderstack.com/docs/adding-a-new-user-transformation-in-rudderstack) on how to create a user transformation for a destination.
+This error is being returned from the RudderStack Transformer. It means that for a particular destination, the event type that is trying to be sent, is not supported. For example, Salesforce only supports `identify` events. Therefore, if a `track` call is sent to Salesforce, the `Message type not supported` error will be returned. This error does not affect any other events and is harmless. However, a simple user transformation can be written to filter out these events so you will no longer see this error. Read [these docs](https://rudderstack.com/docs/transformations) on how to create a user transformation for a destination.
 
 ### Warehouse Destinations
 
@@ -385,4 +385,4 @@ userLevelTimeWindowInS = 1
 
 ## Contact Us
 
-If you come across any issue that is not listed in this guide, feel free to start a conversation on our [**Slack**](https://resources.rudderstack.com/join-rudderstack-slack) channel.
+If you come across any issue that is not listed in this guide, feel free to start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.

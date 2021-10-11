@@ -30,7 +30,7 @@ Before configuring App Events as a destination, verify if Facebook supports the 
 
 <div class="infoBlock">
 
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -40,7 +40,7 @@ Once you have confirmed that the source supports sending events to Facebook App 
 
 <div class="infoBlock">
 
-Please follow our guide on <a href="../../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> for more information.
+Please follow our guide on <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">How to Add a Source and Destination in RudderStack</a> for more information.
 
 </div>
 
@@ -56,7 +56,7 @@ The following options are applicable if you are using the Device mode to send yo
 
 <div class="successBlock">
 
-  For more information on this option, refer to the <a href="../../destinations/advertising/facebook-app-events#limited-data-use">Limited Data Use</a> section below.
+  For more information on this option, refer to the <a href="https://rudderstack.com/docs/destinations/advertising/facebook-app-events/#limited-data-use">Limited Data Use</a> section below.
 </div>
 
 - Click on **Next** to complete the configuration.
@@ -380,7 +380,7 @@ RudderStack sets the following properties \(if available\) using the `setUserDat
 
 A sample `identify` call for an iOS application looks like the following:
 
-```text
+```
 [[RSClient sharedInstance] identify:@"developer_user_id"
                                  traits:@{@"email": @"bar@foo.com"}];
 ```
@@ -391,7 +391,7 @@ The `track` call from RudderStack is logged to Facebook using the `logEvent` met
 
 A sample `track` call for an iOS application is as shown:.
 
-```text
+```
 [[RSClient sharedInstance] track:@"Accepted Terms of Service"
                       properties:@{
                           @"foo": @"bar",
@@ -413,7 +413,7 @@ The `screen` method lets you record whenever the user views their mobile screen 
 
 A sample `screen` call using the RudderStack Android SDK is as shown:
 
-```text
+```
 [[RSClient sharedInstance] screen:@"Home" properties:@{
     @"category" : @"launcher"
 }];

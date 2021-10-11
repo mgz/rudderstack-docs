@@ -12,7 +12,7 @@ The RudderStack Data Governance API gives you full access to all your events' me
 
 This documentation describes all of the available calls in the Data Governance API, as well as the properties of the returned objects as a result.
 
-<img src="../https://img.shields.io/static/v1?label=PLAN&message=ENTERPRISE&color=blueviolet&style=for-the-badge" />
+<img src="https://img.shields.io/static/v1?label=PLAN&message=ENTERPRISE&color=blueviolet&style=for-the-badge" />
 
 ## Getting Started - Obtaining the Credentials
 
@@ -48,13 +48,13 @@ Please note that the base URL for all the API requests will be your RudderStack 
 
 To get all event models for your data plane, run the following command:
 
-```text
+```
 curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/schemas/event-models
 ```
 
 **Example Response**
 
-```text
+```
 [
     {
         "ID": 40,
@@ -113,13 +113,13 @@ curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/sch
 
 To get all event models for a specific source, pass the write key as a query parameter, as shown:
 
-```text
+```
 curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/schemas/event-models?WriteKey=1Xbp2IIhsZcwqENLgSEJusU70GH
 ```
 
 **Example Response**
 
-```text
+```
 [
     {
         "ID": 40,
@@ -193,13 +193,13 @@ curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/sch
 
 To get the schema versions for your event type, run the following command:
 
-```text
+```
 curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/schemas/event-versions?EventID=1b02d5ec-83b9-405e-ba86-7693d0a2b52b
 ```
 
 **Example Response**
 
-```text
+```
 [
     {
         "ID": 39,
@@ -263,13 +263,13 @@ The metadata of given event-model comes with three information points:
 
 To get metadata for your event-model, run the following command:
 
-```text
+```
 curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/schemas/event-model/96f10d53-3a94-47a2-95e7-6cca99daed1e/metadata
 ```
 
 **Example Response**
 
-```text
+```
 {
     "SampledEvents": [
         {
@@ -412,13 +412,13 @@ The metadata of given schema-version comes with three information points:
 
 To get metadata for your schema-versions, run the following command:
 
-```text
+```
 curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/schemas/event-version/96f10d53-3a94-47a2-95e7-6cca99daed1e/metadata
 ```
 
 **Example Response**
 
-```text
+```
 {
     "SampledEvents": [
         {
@@ -530,13 +530,13 @@ curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/sch
 
 To get the key-wise counts for any given event-model, run the following command:
 
-```text
+```
 curl -u <RUDDER_ADMIN_USER>:<DATA_PLANE_URL> https://<your-data-plane-url>/schemas/event-model/ad00285b-f49f-4d4f-88e0-8ec293bbd5c7/key-counts
 ```
 
 **Example Response**
 
-```text
+```
 {
   "anonymousId": 1234,
   "channel": 1372,
@@ -578,13 +578,13 @@ curl -u <RUDDER_ADMIN_USER>:<DATA_PLANE_URL> https://<your-data-plane-url>/schem
 
 To get the missing keys for an event-version, run the following command:
 
-```text
+```
 curl -u <RUDDER_ADMIN_USER>:<RUDDER_ADMIN_PASSWORD> https://<DATA_PLANE_URL>/schemas/ad00285b-f49f-4d4f-88e0-8ec293bbd5c7/missing-keys
 ```
 
 **Example Response**
 
-```text
+```
 [
   "context.app.version",
   "context.app.name",

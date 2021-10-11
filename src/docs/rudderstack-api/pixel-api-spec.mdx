@@ -145,7 +145,7 @@ This API is very useful in scenarios where making a POST request is not possible
 
 A sample call is as shown below:
 
-```text
+```
 https://hosted.rudderlabs.com/pixel/v1/page?writeKey=${writeKey}&context.library.name=Rudderstack AMP SDK&context.library.version=1.0.0&context.platform=AMP&anonymousId=${anonymousId}&context.locale=${browserLanguage}&context.userAgent=${userAgent}&context.page.path=${canonicalPath}&context.page.url=${canonicalUrl}&context.page.referrer=${documentReferrer}&context.page.title=${title}&context.screen.width=${screenWidth}&context.screen.height=${screenHeight}&properties.path=${canonicalPath}&properties.url=${canonicalUrl}&properties.referrer=${documentReferrer}&properties.title=${title}&name=${pageName}
 ```
 
@@ -157,7 +157,7 @@ For this endpoint, RudderStack expects that the basic page view properties like 
 
 <div class="infoBlock">
 
-The dot (<code class="inline-code">.</code>) separated query parameters are mapped by RudderStack to a familiar <a href="../rudderstack-api/http-api-specification#81-page-payload"><code class="inline-code">page</code></a> payload before sending them to the destinations.
+The dot (<code class="inline-code">.</code>) separated query parameters are mapped by RudderStack to a familiar <a href="https://rudderstack.com/docs/rudderstack-api/http-api#81-page-payload"><code class="inline-code">page</code></a> payload before sending them to the destinations.
 
 </div>
 
@@ -299,7 +299,7 @@ Note that for this endpoint, RudderStack does not currently support overriding t
 
 A sample call is as shown below:
 
-```text
+```
 https://hosted.rudderlabs.com/pixel/v1/track?writeKey=${writeKey}&context.library.name=Rudderstack AMP SDK&context.library.version=1.0.0&context.platform=AMP&anonymousId=${anonymousId}&context.locale=${browserLanguage}&context.userAgent=${userAgent}&context.page.path=${canonicalPath}&context.page.url=${canonicalUrl}&context.page.referrer=${documentReferrer}&context.page.title=${title}&context.screen.width=${screenWidth}&context.screen.height=${screenHeight}&event=${eventName}&properties.key1=value1&properties.key2=value2
 ```
 
@@ -311,7 +311,7 @@ For this endpoint, RudderStack expects the basic <code class="inline-code">page<
 
 <div class="infoBlock">
 
-The dot (<code class="inline-code">.</code>) separated query parameters are mapped by RudderStack to a familiar <a href="../rudderstack-api/http-api-specification#72-track-usage"><code class="inline-code">track</code></a> payload before being sent to destinations.
+The dot (<code class="inline-code">.</code>) separated query parameters are mapped by RudderStack to a familiar <a href="https://rudderstack.com/docs/rudderstack-api/http-api#72-track-usage"><code class="inline-code">track</code></a> payload before being sent to destinations.
 
 </div>
 

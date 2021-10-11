@@ -26,7 +26,7 @@ Before configuring Mailchimp as a destination in RudderStack, please make sure t
 
 <div class="infoBlock">
 
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -36,7 +36,7 @@ Once you have confirmed that Mailchimp supports the source type, perform the ste
 
 <div class="infoBlock">
 
-Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
+Please follow our guide on <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
 
@@ -60,7 +60,7 @@ The `identify` call captures the details about the visiting user along with the 
 
 Let us consider a sample `identify` call in RudderStack:
 
-```text
+```
 rudderanalytics.identify("user123", {
   firstName: "John",
   lastName: "Doe",
@@ -99,7 +99,7 @@ If you have multiple lists that your users can subscribe to, you can override th
 
 Consider the following code snippet:
 
-```text
+```
 rudderanalytics.identify(
   "userId123",
   {
@@ -123,7 +123,7 @@ RudderStack gives you the option of manually updating the subscription status of
 
 An example of how to do this is as shown in the code snippet below:
 
-```text
+```
 rudderanalytics.identify(
   "userId123",
   {

@@ -12,7 +12,7 @@ RudderStack allows you to configure SQL Server as a destination to which you can
 
 <div class="infoBlock">
 
-Please check our <a href="../data-warehouse-integrations/warehouse-schemas">Warehouse Schemas</a> guide to know how events are mapped to the tables in PostgreSQL.
+Please check our <a href="https://rudderstack.com/docs/data-warehouse-integrations/warehouse-schemas/">Warehouse Schemas</a> guide to know how events are mapped to the tables in PostgreSQL.
 
 </div>
 
@@ -27,11 +27,11 @@ After setting up your MS SQL Server database, the next step is to create a user 
 
 Run the following commands to create a SQL Server instance on Docker:
 
-```text
+```
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Test@123" -p 1433:1433 --name rudder_mssql -h rudder_mssql -d mcr.microsoft.com/mssql/server:2019-latest
 ```
 
-```text
+```
 docker exec -it rudder_mssql "bash" /opt/mssql-tools/bin/sqlcmd -S localhost -U SA [-P "Test@123"]
 ```
 
@@ -41,7 +41,7 @@ The SQL queries below let you create a user and assign the above-mentioned privi
 
 Below are the SQL queries that let you create a user and grant the above-mentioned privileges \(creating schemas and temporary tables on the database\) to that created user:
 
-```text
+```
 CREATE LOGIN testuser WITH PASSWORD = 'Test@123';
 CREATE USER testuser FOR LOGIN testuser ;
 
@@ -67,7 +67,7 @@ To configure SQL Server as a destination, please follow these steps:
 
 <div class="successBlock">
 
-  Please follow our <a href="../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to know how to add a source in RudderStack.
+  Please follow our <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">Adding a Source and Destination</a> guide to know how to add a source in RudderStack.
 </div>
 
 - After choosing a source, click on the **Add Destination** button and select **SQL Server** from the list of destinations.

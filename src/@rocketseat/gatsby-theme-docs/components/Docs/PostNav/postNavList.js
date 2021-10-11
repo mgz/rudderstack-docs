@@ -153,6 +153,12 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"rudderstack-cordova-sdk",
+   "title":"Cordova",
+   "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-cordova-sdk/",
+   "content":[]
+},
+ {
     "key":"amp-analytics",
     "title":"AMP Analytics",
     "link":"/stream-sources/rudderstack-sdk-integration-guides/amp-analytics/",
@@ -1253,27 +1259,27 @@ export const postNavList = [
     "content":[]
  },
  {
-    "key":"adding-a-new-user-transformation-in-rudderstack",
+    "key":"transformations",
     "title":"Transformations",
-    "link":"/adding-a-new-user-transformation-in-rudderstack/",
+    "link":"/transformations/",
     "content":[]
  },
  {
     "key":"api-access-token",
     "title":"Access Token",
-    "link":"/adding-a-new-user-transformation-in-rudderstack/api-access-token/",
+    "link":"/transformations/api-access-token/",
     "content":[]
  },
  {
     "key":"rudderstack-transformation-api",
     "title":"Transformations API",
-    "link":"/adding-a-new-user-transformation-in-rudderstack/rudderstack-transformation-api/",
+    "link":"/transformations/rudderstack-transformation-api/",
     "content":[]
  },
  {
     "key":"faq",
     "title":"FAQ",
-    "link":"/adding-a-new-user-transformation-in-rudderstack/faq/",
+    "link":"/transformations/faq/",
     "content":[]
  },
  {
@@ -1391,9 +1397,9 @@ export const postNavList = [
     "content":[]
  },
  {
-    "key":"http-api-specification",
+    "key":"http-api",
     "title":"HTTP API",
-    "link":"/rudderstack-api/http-api-specification/",
+    "link":"/rudderstack-api/http-api/",
     "content":[]
  },
  {

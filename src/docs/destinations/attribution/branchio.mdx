@@ -26,7 +26,7 @@ Before getting started, please determine whether the platform you are sending yo
 
 <div class="infoBlock">
 
-To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="../../get-started/rudderstack-connection-modes">RudderStack connection modes</a> guide.
+To know more about the difference between Cloud mode and Device mode in RudderStack, read the <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes/">RudderStack connection modes</a> guide.
 
 </div>
 
@@ -34,7 +34,7 @@ In order to start sending data to Branch, you will first need to add it as a des
 
 <div class="infoBlock">
 
-Please follow our guide on <a href="../connections/adding-source-and-destination-rudderstack">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
+Please follow our guide on <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">How to Add a Source and Destination in RudderStack</a> to add a source and destination in RudderStack.
 
 </div>
 
@@ -61,19 +61,19 @@ Depending on the platform of integration follow the steps below to integrate wit
 
 - Open the `Podfile` of your project and add the following line
 
-```text
+```
 pod 'Rudder-Branch', '0.1.3'
 ```
 
 followed by
 
-```text
+```
 $ pod install
 ```
 
 - Finally change the SDK initialization with the following
 
-```text
+```
 RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 [builder withDataPlaneUrl:<DATA_PLANE_URL>];
 [builder withFactory:[RudderBranchFactory instance]];
@@ -87,7 +87,7 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 
 - Open your `app/build.gradle` \(Module: app\) file, add the following
 
-```text
+```
 repositories {
     mavenCentral()
 }
@@ -95,7 +95,7 @@ repositories {
 
 - Add the following under `dependencies` section
 
-```text
+```
 implementation 'com.rudderstack.android.sdk:core:1.0.1'
 implementation 'com.rudderstack.android.integration:branch:0.1.3'
 
@@ -108,7 +108,7 @@ implementation 'com.google.android.gms:play-services-ads:16+'
 
 - Finally change the initialization of the SDK with the following
 
-```text
+```
 val rudderClient: RudderClient = RudderClient.getInstance(
     this,
     <WRITE_KEY>,
@@ -134,7 +134,7 @@ val rudderClient: RudderClient = RudderClient.getInstance(
 <li>Open the <code class="inline-code">Podfile</code> of your project and add the following line
 <span>
 
-```text
+```
 pod 'Rudder-Branch', '0.1.3'
 ```
 </span>
@@ -142,7 +142,7 @@ pod 'Rudder-Branch', '0.1.3'
 followed by
 <span>
 
-```text
+```
 $ pod install
 ```
 </span>
@@ -150,7 +150,7 @@ $ pod install
 <li>Finally change the SDK initialization with the following
 <span>
 
-```text
+```
 RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 [builder withDataPlaneUrl:<DATA_PLANE_URL>];
 [builder withFactory:[RudderBranchFactory instance]];
@@ -166,7 +166,7 @@ RudderConfigBuilder *builder = [[RudderConfigBuilder alloc] init];
 <li>Open your <code class="inline-code">app/build.gradle</code> (Module: app) file, add the following
 <span>
 
-```text
+```
 repositories {
     mavenCentral()
 }
@@ -176,7 +176,7 @@ repositories {
 <li>Add the following under <code class="inline-code">dependencies</code> section
 <span>
 
-```text
+```
 implementation 'com.rudderstack.android.sdk:core:1.0.1'
 implementation 'com.rudderstack.android.integration:branch:0.1.3'
 
@@ -191,7 +191,7 @@ implementation 'com.google.android.gms:play-services-ads:16+'
 <li>Finally change the initialization of the SDK with the following
 <span>
 
-```text
+```
 val rudderClient: RudderClient = RudderClient.getInstance(
     this,
     <WRITE_KEY>,
@@ -218,7 +218,7 @@ The `identify` call associates a user to their actions and also captures the tra
 
 A sample identify call captured from the RudderStack iOS SDK would look like the following:
 
-```text
+```
 [[RudderClient sharedInstance] identify:@"developer_user_id"
                                  traits:@{@"foo": @"bar", @"foo1": @"bar1"}];
 ```
@@ -235,14 +235,14 @@ The `track` call captures all the activities that the user performs, along with 
 
 A sample `track` call looks like the following:
 
-```text
+```
 [[RudderClient sharedInstance] track:@"test_event"
                           properties:@{@"key":@"value", @"foo": @"bar"}]
 ```
 
 For example, consider the following code snippet for a `track` event `Product Added` from your JavaScript SDK:
 
-```text
+```
 rudderanalytics.track('Product Added', {
   cart_id: '1234',
   products: [

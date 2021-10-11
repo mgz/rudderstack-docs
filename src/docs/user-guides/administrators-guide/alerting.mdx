@@ -24,7 +24,7 @@ If the RudderStack server starts in a degraded or maintenance mode, you will be 
 
 <div class="infoBlock">
 
-To learn more about the different running modes in RudderStack, please check our guide on the <a href="../administrators-guide/high-availability#normal-mode">RudderStack Server Running Modes</a>.
+To learn more about the different running modes in RudderStack, please check our guide on the <a href="https://rudderstack.com/docs/user-guides/administrators-guide/high-availability/#rudderstack-server-running-modes">RudderStack Server Running Modes</a>.
 
 </div>
 
@@ -36,7 +36,7 @@ Please follow these steps to configure PagerDuty:
 - Copy the `Integration Key`
 - Add the following environment variables:
 
-```text
+```
 ALERT_PROVIDER=pagerduty
 PG_ROUTING_KEY=<your_integration_key>
 ```
@@ -53,7 +53,7 @@ In order to configure VictorOps, please follow these steps:
 - Copy the `Integration Key`
 - Add the following environment variables:
 
-```text
+```
 ALERT_PROVIDER=victorops
 VICTOROPS_ROUTING_KEY=<your_victorops_routing_key>
 ```
@@ -91,7 +91,7 @@ RudderStack provides default values for alert configurations that would work wel
 
 A sample alert configuration in a RudderStack Enterprise Kubernetes deployment is as shown:
 
-```text
+```
 tasks:
       processor-transformer-request-time:
         vars:

@@ -14,7 +14,7 @@ With this feature, you can easily debug any errors in the failing events at a de
 
 <div class="warningBlock">
 
-To use this feature, make sure you have configured your source and destination in RudderStack. For more information on adding a source and destination in RudderStack, follow this <a href="../../connections/adding-source-and-destination-rudderstack/">guide</a>.
+To use this feature, make sure you have configured your source and destination in RudderStack. For more information on adding a source and destination in RudderStack, follow this <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack//">guide</a>.
 
 </div>
 
@@ -46,11 +46,11 @@ To view the live events collected from your source in real-time, follow these st
 
 <!-- <img src="../../../images/assets/image (115).png" /> -->
 
-<img src="../../../images/assets/image (115).png" alt="Ingest Data" />
+<img src="../../../../images/assets/image (115).png" alt="Ingest Data" />
 
 <div class="infoBlock">
 
-For details on the information available in the **Live Events** window, check the **Source Live Events** section.
+For details on the information available in the **Live Events** window, check the [**Source Live Events**](https://rudderstack.com/docs/get-started/live-events/#source-live-events) section.
 
 </div>
 
@@ -58,11 +58,11 @@ For details on the information available in the **Live Events** window, check th
 
 To view the live events sent to your destination in real-time, follow these steps:
 
-- Make sure you have configured a source and destination in RudderStack. Follow this [**guide**](../../connections/adding-source-and-destination-rudderstack/) for more information.
+- Make sure you have configured a source and destination in RudderStack. Follow this [**guide**](https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack//) for more information.
 
 <div class="warningBlock">
 
-Make sure your destination is configured in the **Cloud mode**. Refer to the <a href="../../connections/rudderstack-connection-modes/">Connection Modes</a> guide for more information on the Cloud mode.
+Make sure your destination is configured in the **Cloud mode**. Refer to the <a href="https://rudderstack.com/docs/connections/rudderstack-connection-modes//">Connection Modes</a> guide for more information on the Cloud mode.
 
 </div>
 
@@ -71,7 +71,7 @@ Make sure your destination is configured in the **Cloud mode**. Refer to the <a 
 <!-- <img src="../../../images/assets/image (117).png" /> -->
 
 <img
-  src="../../images/assets/image (117).png"
+  src="../../../images/assets/image (117).png"
   alt="Connections - Live Events"
 />
 <span class="imageTitle"></span>
@@ -88,7 +88,7 @@ Make sure your destination is configured in the **Cloud mode**. Refer to the <a 
 <!-- <img src="../../../images/assets/image (125).png" /> -->
 
 <img
-  src="../../images/assets/image (125).png"
+  src="../../../images/assets/image (125).png"
   alt="Events sent to the destination"
 />
 
@@ -127,7 +127,7 @@ The payload sent to the destination can be seen by clicking on an event. This is
 <!-- <img src="../../../images/assets/screen-shot-2021-06-30-at-10.03.52-pm.png" /> -->
 
 <img
-  src="../../images/assets/screen-shot-2021-06-30-at-10.03.52-pm.png"
+  src="../../../images/assets/screen-shot-2021-06-30-at-10.03.52-pm.png"
   alt="Payload to the destination"
 />
 
@@ -138,7 +138,7 @@ Suppose you are trying to send some events to Facebook Custom Audience but they 
 <!-- <img src="../../../images/assets/image (116).png" /> -->
 
 <img
-  src="../../images/assets/image (116).png"
+  src="../../../images/assets/image (116).png"
   alt="Custom Audience destination error"
 />
 
@@ -147,11 +147,11 @@ You can click on the **See full error** option to see the error response, as sho
 <!-- <img src="../../../images/assets/screen-shot-2021-07-08-at-4.21.13-pm.png" /> -->
 
 <img
-  src="../../images/assets/screen-shot-2021-07-08-at-4.21.13-pm.png"
+  src="../../../images/assets/screen-shot-2021-07-08-at-4.21.13-pm.png"
   alt="See full error"
 />
 
-As seen above, you were trying to send an `identify` event to Facebook Custom Audience, which the destination does not support. You can refer to the [**Custom Audience documentation**](../../destinations/advertising/fb-custom-audience) to confirm that only `track` events are supported. As a result, when RudderStack tries sending the `identify` event to the destination, an error is thrown. RudderStack tries sending this event several times before marking it as aborted.
+As seen above, you were trying to send an `identify` event to Facebook Custom Audience, which the destination does not support. You can refer to the [**Custom Audience documentation**](https://rudderstack.com/docs/destinations/advertising/fb-custom-audience) to confirm that only `track` events are supported. As a result, when RudderStack tries sending the `identify` event to the destination, an error is thrown. RudderStack tries sending this event several times before marking it as aborted.
 
 <div class="successBlock">
 
@@ -161,7 +161,7 @@ As seen above, you were trying to send an `identify` event to Facebook Custom Au
 
 <div class="warningBlock">
 
-Live events are shown for all the destinations. However, the **payload of the events** is not shown for some destinations like the <a href="../../destinations/storage-platforms/">object storage platforms</a> and the <a href="../../data-warehouse-integrations/">data warehouses</a> supported by RudderStack.
+Live events are shown for all the destinations. However, the **payload of the events** is not shown for some destinations like the <a href="https://rudderstack.com/docs/destinations/storage-platforms/">object storage platforms</a> and the <a href="https://rudderstack.com/docs/data-warehouse-integrations/">data warehouses</a> supported by RudderStack.
 
 </div>
 

@@ -29,7 +29,7 @@ If you are using **open-source RudderStack** and want to use your own bucket to 
 
 To capture the event dumps in your S3 bucket, uncomment the following lines in your [**docker.env**](https://github.com/rudderlabs/rudder-server/blob/master/build/docker.env#L45-L50) file: 
 
-```text
+```
 # JOBS_BACKUP_STORAGE_PROVIDER=S3
 # JOBS_BACKUP_BUCKET=<your_s3_bucket>
 # JOBS_BACKUP_PREFIX=<prefix>
@@ -59,7 +59,7 @@ The RudderStack team will then use the above credentials to authenticate RudderS
 
 To capture the event dumps in your GCS bucket, uncomment the following lines in your [**docker.env**](https://github.com/rudderlabs/rudder-server/blob/master/build/docker.env#L45-L50) file: 
 
-```text
+```
 # JOBS_BACKUP_STORAGE_PROVIDER=GCS
 # JOBS_BACKUP_BUCKET=<your_gcs_bucket>
 # JOBS_BACKUP_PREFIX=<prefix>
@@ -89,7 +89,7 @@ To use your own S3 bucket for RudderStack to dump the events, you need to perfor
 * Create a bucket using the Amazon [**S3**](https://aws.amazon.com/s3/) service.  
 * Create a new customer-managed [**policy**](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_managed-policies.html) with the following JSON:
 
-```text
+```
 {
     "Version": "2012-10-17",
     "Statement": [

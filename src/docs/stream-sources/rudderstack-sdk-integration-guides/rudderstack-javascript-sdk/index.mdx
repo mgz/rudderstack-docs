@@ -233,7 +233,7 @@ The `load()`method is defined as follows:
 
 The `options` parameter in the above `load` call looks like the following:
 
-```text
+```
 {
  logLevel: "DEBUG" | "INFO" | "WARN", 
  integrations: IntegrationOpts,
@@ -286,7 +286,7 @@ More information on the Load **`IntegrationOpts`** option can be found here:
 
 * The structure of **`QueueOpts`** looks like the following:
 
-```text
+```
 QueueOpts {
  maxRetryDelay: 360000, // Upper cap on maximum delay for an event
  minRetryDelay: 1000, // minimum delay before sending an event
@@ -372,7 +372,7 @@ The above `identify` call has the following parameters:
 
 The options parameter in the `identify` call looks like the following:
 
-```text
+```
     {
 integrations: IntegrationOpts,
 anonymousId: string,
@@ -486,7 +486,7 @@ rudderanalytics.identify("userId", { email1: "name@domain.com" }, () => {
 
 You can call the following method to parse the AMP Linker ID and set the **`anonymousId`** as shown:
 
-```text
+```
 setAnonymousId(null, "<version>*<checkSum>*<idName1>*<idValue1>*<idName2>*<idValue2>...")
 ```
 
@@ -578,7 +578,7 @@ The above code snippet has the following parameters:
 
 The `options` parameter in the `page` call looks like the following:
 
-```text
+```
     {
 integrations: IntegrationOpts,
 anonymousId: string,
@@ -662,7 +662,7 @@ The above code snippet has the following parameters:
 
 The `options` parameter in the `track` call looks like the following:
 
-```text
+```
     {
 integrations: IntegrationOpts,
 anonymousId: string,
@@ -737,7 +737,7 @@ The above `alias` call has the following parameters:
 
 The `options` parameter in the `alias` call looks like the following:
 
-```text
+```
     {
 integrations: IntegrationOpts,
 anonymousId: string,
@@ -813,7 +813,7 @@ The above `group` call has the following parameters:
 
 The `options` parameter in the `group` call looks like the following:
 
-```text
+```
     {
 integrations: IntegrationOpts,
 anonymousId: string,
@@ -1114,7 +1114,7 @@ To check if it has loaded correctly, open the JavaScript console in your browser
 
 In the console, run `rudderanalytics`. If it returns an object as shown in the following code snippet, it means that the `rudderanalytics.js` file has loaded successfully:
 
-```text
+```
 {Integrations: Object, _integrations: Object, _readied: true, _timeout: 300, _user: n_}
 ```
 
@@ -1183,6 +1183,6 @@ Reserved Keywords:
 
 ## Contact Us
 
-To know more about the RudderStack JavaScript SDK or to see it in action, you can [contact us](mailto:%20docs@rudderstack.com) or see the SDK [in action](https://rudderstack.com/request-a-demo). You can also talk to us on our [Slack](https://resources.rudderstack.com/join-rudderstack-slack) channel.
+To know more about the RudderStack JavaScript SDK or to see it in action, you can [contact us](mailto:%20docs@rudderstack.com) or see the SDK [in action](https://rudderstack.com/request-a-demo). You can also talk to us on our [Slack](https://rudderstack.com/join-rudderstack-slack-community) channel.
 
 In case you come across any issues while using this SDK, please feel free to submit them on our [GitHub issues page](https://github.com/rudderlabs/rudder-sdk-js/issues).

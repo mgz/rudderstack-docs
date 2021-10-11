@@ -12,7 +12,7 @@ RudderStack allows you to configure Snowflake as a destination to dump your even
 
 <div class="infoBlock">
 
-Please check our <a href="../data-warehouse-integrations/warehouse-schemas">Warehouse Schemas</a> guide to know how events are mapped to the tables in Snowflake.
+Please check our <a href="https://rudderstack.com/docs/data-warehouse-integrations/warehouse-schemas/">Warehouse Schemas</a> guide to know how events are mapped to the tables in Snowflake.
 
 </div>
 
@@ -41,7 +41,7 @@ You can set your data warehouse size as per your future data volume.
 
 Alternatively, you can also use SQL to create a warehouse, as shown:
 
-```text
+```
 CREATE WAREHOUSE "RUDDER_WAREHOUSE"
   WITH WAREHOUSE_SIZE = 'XSMALL'
     WAREHOUSE_TYPE = 'STANDARD'
@@ -69,7 +69,7 @@ The following screenshot demonstrates the **Create Database** option in Snowflak
 
 Alternatively, you can also use SQL to create a database, as shown:
 
-```text
+```
 CREATE DATABASE "RUDDER_EVENTS";
 ```
 
@@ -79,19 +79,19 @@ Please execute the following SQL commands to create a new role with the required
 
 - Create a new role
 
-```text
+```
 CREATE ROLE "RUDDER";
 ```
 
 - Grant access to the virtual warehouse
 
-```text
+```
 GRANT USAGE ON WAREHOUSE "RUDDER_WAREHOUSE" TO ROLE "RUDDER";
 ```
 
 - Grant access to the database
 
-```text
+```
 GRANT USAGE ON DATABASE "RUDDER_EVENTS" TO ROLE "RUDDER";
 GRANT CREATE SCHEMA ON DATABASE "RUDDER_EVENTS" TO ROLE "RUDDER";
 GRANT ALL ON ALL SCHEMAS IN DATABASE "RUDDER_EVENTS" TO ROLE "RUDDER";
@@ -105,7 +105,7 @@ Finally, please create a user to connect RudderStack to the previously created S
 
 Alternatively, you can use SQL to create a user in Snowflake, as shown:
 
-```text
+```
 CREATE USER "RUDDER_USER"
   MUST_CHANGE_PASSWORD = FALSE
   DEFAULT_ROLE = "RUDDER"
@@ -123,7 +123,7 @@ To do so, please follow these steps:
 
 <div class="infoBlock">
 
-Please follow our <a href="../connections/adding-source-and-destination-rudderstack">Adding a Source and Destination</a> guide to know how to add a source in RudderStack.
+Please follow our <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">Adding a Source and Destination</a> guide to know how to add a source in RudderStack.
 
 </div>
 
@@ -154,7 +154,7 @@ Please follow our <a href="../connections/adding-source-and-destination-rudderst
   - **AWS Secret Access Key** - This can be obtained from AWS Console. Please refer to the [Setting Up Amazon S3](https://rudderstack.com/docs/destinations-guides/amazon-s3#setting-up-amazon-s3) section for more details.
 - Please grant the following permissions to the IAM user:
 
-  ```text
+  ```
   "Effect": "Allow",
   "Action": [
     "s3:GetObject",
@@ -187,7 +187,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
 Replace <code class="inline-code">&lt;bucket&gt;</code> and <code class="inline-code">&lt;prefix&gt;</code> with your values in the JSON below. And create the policy with a name of your choice.
 <span>
 
-```text
+```
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -231,7 +231,7 @@ Replace <code class="inline-code">&lt;bucket&gt;</code> and <code class="inline-
 <li> Create cloud storage integration in Snowflake </li>
 <span>
 
-```text
+```
 CREATE STORAGE INTEGRATION <integration_name>
   TYPE = EXTERNAL_STAGE
   STORAGE_PROVIDER = S3
@@ -251,7 +251,7 @@ Record the values: <code class="inline-code">&lt;integration_name&gt;</code>.
 <li> Retrieve the AWS IAM user for your Snowflake account as shown:</li>
 <span>
 
-```text
+```
 DESC INTEGRATION <integration_name>;
 ```
 </span>
@@ -265,7 +265,7 @@ Choose the role created in Step 2 and edit the trust relationship with the follo
 JSON.
 <span>
 
-```text
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -296,7 +296,7 @@ JSON.
 <li> Grant integration access to role in Snowflake:</li>
 <span>
 
-```text
+```
 grant usage on integration <integration_name> to role <sf_role>
 ```
 </span>
@@ -319,7 +319,7 @@ Create a container in the storage account created above by navigating to **&lt;s
 <li>Create cloud storage integration in Snowflake:
 <span>
 
-```text
+```
   CREATE STORAGE INTEGRATION <integration_name>
   TYPE = EXTERNAL_STAGE
   STORAGE_PROVIDER = AZURE
@@ -343,7 +343,7 @@ navigating to <strong>Azure Active Directory</strong> - <strong>
 Replace <code class="inline-code">&lt;integration_name&gt;</code> with the integration name created in the previous step.
 <span>
 
-```text
+```
 DESC INTEGRATION <integration_name>;
 ```
 </span>
@@ -370,7 +370,7 @@ And record the values <code class="inline-code">AZURE_CONSENT_URL</code> and <co
 <li>Grant integration access to role in Snowflake:</li>
 <span>
 
-```text
+```
   grant usage on integration <integration_name> to role <sf_role>;
 ```
 </span>
@@ -389,7 +389,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
 <li>Create a Cloud Storage integration in Snowflake.</li>
 <span>
 
-```text
+```
  CREATE STORAGE INTEGRATION <integration_name>
    TYPE = EXTERNAL_STAGE
    STORAGE_PROVIDER = GCS
@@ -405,7 +405,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
   <li>
     <code class="inline-code">&lt;bucket&gt;</code> is the name of the Cloud
     Storage bucket that you created
-    <a href="../data-warehouse-integrations/snowflake#configuring-snowflake-in-rudderstack">
+    <a href="https://rudderstack.com/docs/data-warehouse-integrations/snowflake/#configuring-snowflake-in-rudderstack">
       above
     </a>
   </li>
@@ -422,7 +422,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
 </li>
 <span>
 
-```text
+```
  DESC STORAGE INTEGRATION <integration_name>;
 ```
 </span>
@@ -481,7 +481,7 @@ Detailed instructions can be found <a href="https://docs.snowflake.com/en/user-g
   <li> Grant usage to an external (i.e. Cloud Storage) stage that references the integration you created.
 <span>
 
-```text
+```
 GRANT USAGE ON INTEGRATION <integration_name> TO ROLE "RUDDER";
 ```
 </span>
@@ -492,7 +492,7 @@ GRANT USAGE ON INTEGRATION <integration_name> TO ROLE "RUDDER";
         <ul>
             <li>
               <code class="inline-code">"RUDDER"</code> is the name of the role that you
-              created above <a href="../data-warehouse-integrations/snowflake#creating-a-role-for-rudderstack">
+              created above <a href="https://rudderstack.com/docs/data-warehouse-integrations/snowflake/#creating-a-role-for-rudderstack">
                 here
               </a>
             </li>
