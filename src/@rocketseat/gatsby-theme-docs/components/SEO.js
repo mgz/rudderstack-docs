@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import urljoin from 'url-join';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from "react"
+import PropTypes from "prop-types"
+import Helmet from "react-helmet"
+import urljoin from "url-join"
+import { useStaticQuery, graphql } from "gatsby"
 
 export default function SEO({ description, title, slug, image, children }) {
   const { site } = useStaticQuery(
@@ -21,8 +21,8 @@ export default function SEO({ description, title, slug, image, children }) {
           }
         }
       }
-    `,
-  );
+    `
+  )
 
   const {
     siteTitle,
@@ -34,22 +34,22 @@ export default function SEO({ description, title, slug, image, children }) {
     siteLanguage,
     siteAuthor,
     siteIcon,
-  } = site.siteMetadata;
+  } = site.siteMetadata
 
-  const metaTitle = title ? `${title} - ${siteTitle}` : defaultTitle;
-  const metaUrl = urljoin(siteUrl, slug);
-  const metaImage = urljoin(siteUrl, image || siteImage);
-  const metaDescription = description || siteDescription;
+  const metaTitle = title ? `${title} - ${siteTitle}` : defaultTitle
+  const metaUrl = urljoin(siteUrl, slug)
+  const metaImage = urljoin(siteUrl, image || siteImage)
+  const metaDescription = description || siteDescription
 
   const schemaOrgJSONLD = [
     {
-      '@context': 'http://schema.org',
-      '@type': 'WebSite',
+      "@context": "http://schema.org",
+      "@type": "WebSite",
       url: metaUrl,
       name: title,
       alternateName: siteTitleShort,
     },
-  ];
+  ]
 
   return (
     <Helmet
@@ -80,6 +80,8 @@ export default function SEO({ description, title, slug, image, children }) {
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
+      <meta name="robots" content="noindex" />
+      <meta name="robots" content="nofollow" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={metaTitle} />
@@ -96,7 +98,7 @@ export default function SEO({ description, title, slug, image, children }) {
       </script>
       {children}
     </Helmet>
-  );
+  )
 }
 
 SEO.propTypes = {
@@ -108,12 +110,12 @@ SEO.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.node,
   ]),
-};
+}
 
 SEO.defaultProps = {
-  title: '',
-  description: '',
-  slug: '',
-  image: '',
-  children: '',
-};
+  title: "",
+  description: "",
+  slug: "",
+  image: "",
+  children: "",
+}
