@@ -25,7 +25,7 @@ export default function Docs({ mdx, pageContext }) {
   let docsBasePath = "/docs"
   let currentPageIndex = findIndex(
     postNavList,
-    (o,idx) => idx === 0 ? true : slug === docsBasePath + o.link
+    (o) => slug.replaceAll('/','') === 'docs' ? true : slug === docsBasePath + o.link
   )
   let currentPageItem = postNavList[currentPageIndex]
   let nextPageIndex =
