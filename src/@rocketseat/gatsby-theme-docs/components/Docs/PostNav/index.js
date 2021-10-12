@@ -1,14 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
-import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
+import React from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md"
 
-import { Container, Post } from './styles';
+import { Container, Post } from "./styles"
 
 export default function Docs({ prev, next, current }) {
-  let docsBasePath = '/docs';
-  return (
-    <Container className={current.title === "Home" || current.title === "FAQs" ? "single" : ''}>
+  let docsBasePath = "/docs"
+
+  return current ? (
+    <Container
+      className={
+        current.title === "Home" || current.title === "FAQs" ? "single" : ""
+      }
+    >
       {prev && current.title !== "Home" && (
         <Post isLeft>
           <Link to={docsBasePath + prev.link} className="previous">
@@ -32,7 +37,7 @@ export default function Docs({ prev, next, current }) {
         </Post>
       )}
     </Container>
-  );
+  ) : null
 }
 
 Docs.propTypes = {
@@ -44,9 +49,9 @@ Docs.propTypes = {
     label: PropTypes.string,
     link: PropTypes.string,
   }),
-};
+}
 
 Docs.defaultProps = {
   prev: null,
   next: null,
-};
+}

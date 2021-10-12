@@ -3,7 +3,7 @@ import { useState, useRef, Fragment, useEffect } from "react"
 import { jsx, css } from "@emotion/react"
 import PropTypes from "prop-types"
 
-import TableOfContents from "@rocketseat/gatsby-theme-docs/src/components/Docs/TOC"
+import TableOfContents from "../Docs/TOC/index"
 import Sidebar from "../Sidebar"
 import { Container, Main, Children } from "./styles"
 import DocsNavigation from "../../../../components/DocsNavigation"
@@ -21,13 +21,13 @@ export default function Layout({
   //const disableTOC = disableTableOfContents === true || !headings || headings.length === 0
   const disableTOC = false;
 
-  useEffect(() => {
-    /* console.log('Headings', headings); */
-  }, [])
-
   function handleMenuOpen() {
     setMenuOpen(!isMenuOpen)
   }
+
+  // useEffect(() => {
+  //   console.log('Headings', headings);
+  // }, [headings && headings.length])
 
   return (
     <Fragment>
