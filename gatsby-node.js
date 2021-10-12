@@ -324,28 +324,28 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const docPages_query = await graphql(`
-    {
-      allMdx {
-        nodes {
-          slug
-        }
-      }
-    }
-  `)
-  const docPages = docPages_query.data.allMdx.nodes || []
-  docPages.forEach((edge, index) => {
-    const path = edge.slug == "" ? "/docs/" : `${edge.slug}`
-    //console.log('docsPath', edge.frontmatter.slug);
+  // const docPages_query = await graphql(`
+  //   {
+  //     allMdx {
+  //       nodes {
+  //         slug
+  //       }
+  //     }
+  //   }
+  // `)
+  // const docPages = docPages_query.data.allMdx.nodes || []
+  // docPages.forEach((edge, index) => {
+  //   const path = edge.slug == "" ? "/docs/" : `${edge.slug}`
+  //   //console.log('docsPath', edge.frontmatter.slug);
 
-    createPage({
-      path,
-      component: require.resolve(
-        "./src/@rocketseat/gatsby-theme-docs/components/Layout/index.js"
-      ),
-      context: { slug: edge.slug },
-    })
-  })
+  //   createPage({
+  //     path,
+  //     component: require.resolve(
+  //       "./src/@rocketseat/gatsby-theme-docs/components/Layout/index.js"
+  //     ),
+  //     context: { slug: edge.slug },
+  //   })
+  // })
 
   const guides = await graphql(`
     {

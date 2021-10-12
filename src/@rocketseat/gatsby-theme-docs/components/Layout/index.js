@@ -25,9 +25,9 @@ export default function Layout({
     setMenuOpen(!isMenuOpen)
   }
 
-  useEffect(() => {
-    console.log('Headings', headings);
-  }, [headings && headings.length])
+  // useEffect(() => {
+  //   console.log('Headings', headings);
+  // }, [headings && headings.length])
 
   return (
     <Fragment>

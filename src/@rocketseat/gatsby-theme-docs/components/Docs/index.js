@@ -25,7 +25,7 @@ export default function Docs({ mdx, pageContext }) {
   let docsBasePath = "/docs"
   let currentPageIndex = findIndex(
     postNavList,
-    o => slug === docsBasePath + o.link
+    (o,idx) => idx === 0 ? true : slug === docsBasePath + o.link
   )
   let currentPageItem = postNavList[currentPageIndex]
   let nextPageIndex =
@@ -72,6 +72,7 @@ export default function Docs({ mdx, pageContext }) {
     h1Tags.innerHTML = descriptionSpan
   }, [])
 
+  
   return (
     <>
       <SEO title={title} description={description} slug={slug} />
