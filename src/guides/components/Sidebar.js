@@ -15,7 +15,7 @@ function Sidebar({
       function () {
         listenToScroll()
       },
-      false
+      {passive: true}
     )
   }, [])
 

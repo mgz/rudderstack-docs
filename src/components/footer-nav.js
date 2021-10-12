@@ -8,8 +8,8 @@ function renderFooterNav(menu) {
   const menudata = menuitems.map((menuitem, i) =>
     (() => {
       return (
-        <>
-          <li key={i} className="mt-4 block mr-2 md:mr-0">
+        <ul key={i}>
+          <li className="mt-4 block mr-2 md:mr-0">
             <SanityLink
               onclick={e => {
                 rudderslabTrackOnClick(
@@ -22,7 +22,7 @@ function renderFooterNav(menu) {
               classes="no-underline hover:underline text-gray-500"
             />
           </li>
-        </>
+        </ul>
       )
     })()
   )

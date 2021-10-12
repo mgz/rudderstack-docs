@@ -7,6 +7,8 @@ import YouTube from "react-youtube"
 const CenteredAlignedTitleWithYoutube = props => {
   useEffect(() => {
     import("@justinribeiro/lite-youtube")
+
+    console.log('Props title', props.title);
   }, [])
   let tmp_youtube_url_split = props.youtube.url.split("?")[0].split("/")
   // console.log(

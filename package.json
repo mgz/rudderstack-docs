@@ -26,6 +26,7 @@
     "algoliasearch": "^4.8.6",
     "assert": "^2.0.0",
     "autoprefixer": "^10.2.6",
+    "babel-plugin-transform-imports": "^2.0.0",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "gatsby": "^3.2.1",
