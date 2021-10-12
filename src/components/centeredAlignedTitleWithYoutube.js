@@ -42,16 +42,16 @@ const CenteredAlignedTitleWithYoutube = props => {
               className="video"
             ></iframe> */}
 
-            <YouTube
+            {/* <YouTube
               videoId={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
               className="video"
               onPlay={_onPlay}
-            />
+            /> */}
 
-            {/* <lite-youtube
+            <lite-youtube
               videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
               class="video"
-            ></lite-youtube> */}
+            ></lite-youtube>
           </div>
         </div>
       </div>
