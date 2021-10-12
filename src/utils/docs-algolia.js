@@ -18,7 +18,7 @@ function convertToSlug(pData) {
     .toLowerCase()
     .replace(" ", "-")
     .replace(/ /g, "-")
-    .replace(".", "-")
+    .replace(".", "")
     .replace("?", "")
     .replace(/[^\w-]+/g, "")
 }
