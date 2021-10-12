@@ -42,7 +42,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
- 
+
   const redirects = await graphql(`
     {
       allSanitySiteRedirects {
@@ -71,7 +71,6 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  
   const result = await graphql(`
     {
       allSanityBlog {
@@ -406,7 +405,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  /* const integration_connections = await graphql(`
+  const integration_connections = await graphql(`
     {
       allGoogleSpreadsheetR1RedRudderstackIcData {
         edges {
@@ -434,7 +433,7 @@ exports.createPages = async ({ graphql, actions }) => {
       ),
       context: { slug: edge.node.slug },
     })
-  })*/
+  })
 
   //Be A Hero Pages pages
   const l_BeAHeroPages = await graphql(`
