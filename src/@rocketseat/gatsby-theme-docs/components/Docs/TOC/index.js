@@ -194,7 +194,8 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
                 .filter(heading => heading.depth === 2 || heading.depth === 3)
                 .map((heading, i) => {
                   let idArr = generateId();
-                  const headingSlug = idArr[i];
+                  // console.log('idArr', idArr)
+                  const headingSlug = idArr[i][1];
 
                   return (
                     <li
