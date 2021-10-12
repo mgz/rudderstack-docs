@@ -1,8 +1,2 @@
 [[plugins]]
 package = "@netlify/plugin-gatsby"
-
-[[redirects]]
-  from = "/docs"
-  to = "/docs/home/"
-  status = 301
-  force = true
