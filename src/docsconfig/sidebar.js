@@ -63,7 +63,15 @@ export const jsonData = [
                  "content":[
                     
                  ]
-              }
+              },
+              {
+                  "key":"audit-logs",
+                  "title":"Audit Logs",
+                  "link":"/get-started/dashboard-overview/audit-logs/",
+                  "content":[
+                     
+                  ]
+               }
            ]
         },
         {

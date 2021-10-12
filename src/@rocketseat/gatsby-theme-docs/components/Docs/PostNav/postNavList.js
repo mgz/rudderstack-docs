@@ -57,6 +57,12 @@ export const postNavList = [
     "content":[]
  },
  {
+   "key":"audit-logs",
+   "title":"Audit Logs",
+   "link":"/get-started/dashboard-overview/audit-logs/",
+   "content":[]
+},
+ {
    "key":"control-plane-lite",
    "title":"Control Plane Lite",
    "link":"/get-started/control-plane-lite/",
