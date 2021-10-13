@@ -1206,6 +1206,12 @@ top: -60px;
   font-variant: no-common-ligatures no-discretionary-ligatures
     no-historical-ligatures no-contextual;
 }
+.childrenWrapper img{
+  @apply mx-auto;
+}
+.childrenWrapper .githubBadge{
+  @apply ml-0;
+}
 .childrenWrapper h1 code.inline-code,
 .childrenWrapper h2 code.inline-code {
   font-size: calc(100% - 5px);
