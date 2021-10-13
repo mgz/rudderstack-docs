@@ -106,6 +106,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
                       isSearchOpen={isSearchOpen}
                       onRefineHitsCountChange={setCurrentRefineHitsCount}
                       currentSearchText={currentSearchText}
+                      setSearchOpen={setSearchOpen}
                     />
                   </div>
                 </div>

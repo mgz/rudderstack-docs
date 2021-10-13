@@ -7,6 +7,7 @@
 
  import React from "react"
  import NoResultImage from '../images/noresultsearch.svg'
+ import { rudderslabTrackOnClick } from "../utils/common"
 
  const replaceStr = (str) => {
   let replaceText1 = '<ais-highlight-0000000000>',
@@ -31,7 +32,7 @@ const truncateStr = (str) => {
   return str;
 }
  
- const DocsSearchContent = ({ hits, currentSearchText }) => {
+ const DocsSearchContent = ({ hits, currentSearchText, setSearchOpen }) => {
 
    return (
     <div className="searchResultsWrapper">
@@ -48,7 +49,11 @@ const truncateStr = (str) => {
                 let pageTitle = item.SectionTitle ? replaceStr(item._highlightResult.SectionTitle.value) : replaceStr(item._highlightResult.pageTitle.value);
                 let sectionContent = item._highlightResult.sectionContent.value.trim() !== ""  ? truncateStr(replaceStr(item._highlightResult.sectionContent.value)) : '';
                   return (<div key={item.pageSlug + index} className="searchBlock">
-                    <a href={item.sectionId !== "" ? basePath + finalPath + '#' + item.sectionId : basePath + finalPath}>
+                    <a href={item.sectionId !== "" ? basePath + finalPath + '#' + item.sectionId : basePath + finalPath} 
+                      onClick={e => {
+                        setSearchOpen(false);
+                        rudderslabTrackOnClick("link", null, e, true);
+                      }}>
                       <p className="sectionTitle" dangerouslySetInnerHTML={{ __html: pageTitle }}></p>
                       <p className="description" dangerouslySetInnerHTML={{ __html: sectionContent}}></p>
                     </a>
