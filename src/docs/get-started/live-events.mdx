@@ -14,11 +14,11 @@ With this feature, you can easily debug any errors in the failing events at a de
 
 <div class="warningBlock">
 
-To use this feature, make sure you have configured your source and destination in RudderStack. For more information on adding a source and destination in RudderStack, follow this <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack//">guide</a>.
+To view the live events, make sure you have configured your source and destination in RudderStack. For more information on adding a source and destination in RudderStack, follow this <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack//">**guide**</a>.
 
 </div>
 
-## **How to View the Live Events**
+## How to view the live events
 
 This section includes the steps to view the live events for your sources and destinations.‌
 
@@ -98,7 +98,7 @@ For details on the information available in the **Live Events** window, check th
 
 </div>
 
-## **Source Live Events**
+## Source live events
 
 The **Live Events** feature gives you real-time visibility into the source events collected by RudderStack. The key information includes:
 
@@ -113,7 +113,7 @@ The **Live Events** feature gives you real-time visibility into the source event
   correctly on your website.
 </div>
 
-## **Destination Live Events**
+## Destination live events
 
 When routing events to a destination, it can be frustrating if the events sent do not show up in the destination and not knowing the reason for failure only makes it worse.
 
@@ -165,12 +165,34 @@ Live events are shown for all the destinations. However, the **payload of the ev
 
 </div>
 
-## **FAQs**
+## Transformation live events
 
-### **Why are my events failing?**
+<div class="infoBlock">
+
+  This feature is applicable for cases where you have connected a <a href="https://rudderstack.com/docs/transformations/#adding-a-transformation">**transformation**</a> to a destination.
+
+</div>
+
+RudderStack gives you the option of viewing the events before and after a transformation is applied.
+
+<img
+  src="https://user-images.githubusercontent.com/59817155/137110303-0e9f42f2-4b5d-4a1a-ab34-5cbeea10f2ec.png"
+  alt="Transformation Live Events"
+/>
+
+RudderStack also notifies you about any dropped events or any errors during the transformation along with the details, as shown in the following image:
+
+<img
+  src="https://user-images.githubusercontent.com/59817155/137110584-e2ff154e-8eba-42d3-9f3b-3022bb10f141.png"
+  alt="Dropped events"
+/>
+
+## FAQs
+
+### Why are my events failing?
 
 Routing events to a destination can fail for various reasons. Often, it is because the destination is configured incorrectly. Some other reasons could be incorrect/bad event payload structure, rate-limiting by the destination, etc. In some rare cases, the destination could be down too.
 
-## **Contact Us**
+## Contact us
 
-To know more about the Live Events Debugger, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.
+To know more about the Live Events feature, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.
