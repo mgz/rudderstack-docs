@@ -24,7 +24,6 @@ export default function Docs({ mdx, pageContext }) {
   const { slug } = mdx.fields
 
   let tmpSlug = slug.replace(/^\/|\/$/g, '')
-  console.log('tmpSlug',tmpSlug,mdx.fields)
   let docsBasePath = "/docs"
   
   
