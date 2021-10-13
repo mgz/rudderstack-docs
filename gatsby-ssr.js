@@ -30,6 +30,7 @@ import { isMobile, isBrowser } from "react-device-detect"
     
 }
 
+//code added to reduce page size 
  export const onPreRenderHTML = ({
   pathname,
   getHeadComponents,
