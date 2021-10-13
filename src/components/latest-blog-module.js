@@ -28,9 +28,7 @@ const BlogModule = () => {
               asset {
                 id
                 url
-                localFile {
-                  publicURL
-                }
+                
               }
             }
           }
@@ -55,7 +53,7 @@ const BlogModule = () => {
               className="block bg-white rounded-t rounded-b-none overflow-hidden shadow relative h-full"
             >
               <img
-                src={latestblog.node.blog_image.asset.localFile.publicURL}
+                src={latestblog.node.blog_image.asset.url}
                 alt={latestblog.node.title}
                 className="w-full"
                 loading="lazy"

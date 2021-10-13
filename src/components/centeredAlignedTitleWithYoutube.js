@@ -51,6 +51,7 @@ const CenteredAlignedTitleWithYoutube = props => {
             <lite-youtube
               videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
               class="video"
+              onClick={_onPlay}
             ></lite-youtube>
           </div>
         </div>

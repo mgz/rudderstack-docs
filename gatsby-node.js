@@ -42,7 +42,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
- 
+
   const redirects = await graphql(`
     {
       allSanitySiteRedirects {
@@ -64,14 +64,15 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const site_redirects = redirects.data.allSanitySiteRedirects.edges || []
   site_redirects.forEach(edge => {
-    createRedirect({
-      fromPath: edge.node.from_path,
-      toPath: edge.node.to_path,
-      isPermanent: edge.node.is_permanenet ? edge.node.is_permanenet : true,
-    })
+    if(edge.node.from_path !== "/docs"){
+      createRedirect({
+        fromPath: edge.node.from_path,
+        toPath: edge.node.to_path,
+        isPermanent: edge.node.is_permanenet ? edge.node.is_permanenet : true,
+      })
+    }
   })
 
-  
   const result = await graphql(`
     {
       allSanityBlog {
@@ -322,28 +323,28 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  const docPages_query = await graphql(`
-    {
-      allMdx {
-        nodes {
-          slug
-        }
-      }
-    }
-  `)
-  const docPages = docPages_query.data.allMdx.nodes || []
-  docPages.forEach((edge, index) => {
-    const path = edge.slug == "" ? "/docs" : `${edge.slug}`
-    //console.log('docsPath', edge.frontmatter.slug);
+  // const docPages_query = await graphql(`
+  //   {
+  //     allMdx {
+  //       nodes {
+  //         slug
+  //       }
+  //     }
+  //   }
+  // `)
+  // const docPages = docPages_query.data.allMdx.nodes || []
+  // docPages.forEach((edge, index) => {
+  //   const path = edge.slug == "" ? "/docs/" : `${edge.slug}`
+  //   //console.log('docsPath', edge.frontmatter.slug);
 
-    createPage({
-      path,
-      component: require.resolve(
-        "./src/@rocketseat/gatsby-theme-docs/components/Layout/index.js"
-      ),
-      context: { slug: edge.slug },
-    })
-  })
+  //   createPage({
+  //     path,
+  //     component: require.resolve(
+  //       "./src/@rocketseat/gatsby-theme-docs/components/Layout/index.js"
+  //     ),
+  //     context: { slug: edge.slug },
+  //   })
+  // })
 
   const guides = await graphql(`
     {
@@ -406,7 +407,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  /* const integration_connections = await graphql(`
+  const integration_connections = await graphql(`
     {
       allGoogleSpreadsheetR1RedRudderstackIcData {
         edges {
@@ -434,7 +435,7 @@ exports.createPages = async ({ graphql, actions }) => {
       ),
       context: { slug: edge.node.slug },
     })
-  })*/
+  })
 
   //Be A Hero Pages pages
   const l_BeAHeroPages = await graphql(`

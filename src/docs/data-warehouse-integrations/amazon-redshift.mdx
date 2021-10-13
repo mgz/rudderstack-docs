@@ -44,23 +44,23 @@ Please follow the steps below in order to create a new Redshift cluster:
 
 - Open the Redshift Console as shown:
 
-<img src="../../../images/assets/1 (3).png" /><span class="imageTitle">Redshift Console</span>
+<img src="../../../images/assets/1 (3).png" alt="Redshift Console" /><span class="imageTitle">Redshift Console</span>
 
 - Click on the **Create Cluster** option as shown:
 
-<img src="../../../images/assets/2 (5).png" />
+<img src="../../../images/assets/2 (5).png" alt="Create Cluster" />
 
 - Enter the cluster details**.** First, fill in the **Cluster identifier** and choose the instance type as shown:
 
-<img src="../../../images/assets/3 (4) (1) (1).png" /><span class="imageTitle">Redshift cluster configuration settings</span>
+<img src="../../../images/assets/3 (4) (1) (1).png" alt="Cluster Identifier" /><span class="imageTitle">Redshift cluster configuration settings</span>
 
 - Enter the number of nodes for your cluster. This will primarily depend on the amount of data you expect to work with.
 
-<img src="../../../images/assets/4 (1) (1).png" />
+<img src="../../../images/assets/4 (1) (1).png" alt="Enter the number of nodes" />
 
 - Enter the database name, and create the admin user with the name of your choice.
 
-<img src="../../../images/assets/5 (7).png" />
+<img src="../../../images/assets/5 (7).png" alt="Add Source" />
 
 <div class="warningBlock">
 
@@ -92,7 +92,7 @@ The username and password we provided earlier while creating the Redshift cluste
 
 - Click on the **Editor** option visible in the left pane. You can run the queries to create a new user to access the Redshift cluster in the **Query editor**, as shown in the image below:
 
-<img src="../../../images/assets/6 (1).png" />
+<img src="../../../images/assets/6 (1).png" alt="Query editor" />
 
 - The queries to create a new user are:
 
@@ -130,31 +130,31 @@ This procedure works for **EC2-VPC**. However, **EC2-Classic** works similarly.
 
 - Go to EC2 from the services on AWS console, as shown:
 
-<img src="../../../images/assets/7 (3).png" />
+<img src="../../../images/assets/7 (3).png" alt="Go to EC2" />
 
 - Go to **Security Groups** under **Network & Security** and click on **Create Security Group**.
 
-<img src="../../../images/assets/8 (1) (1).png" />
+<img src="../../../images/assets/8 (1) (1).png" alt="Create Security Group" />
 
 - Enter the details of the security group. The **Security group name** will be used to select the group later.
 
-<img src="../../../images/assets/9 (1).png" />
+<img src="../../../images/assets/9 (1).png" alt="Security group name" />
 
 - Add an **Inbound rule** with IPs listed above, and enter the Redshift port as `5439` in the **Port range** field, as shown:
 
-<img src="../../../images/assets/10.png" />
+<img src="../../../images/assets/10.png" alt="Port range" />
 
 - Next, go to the Redshift cluster and select **Properties**, where you can modify the network and security rules of the cluster.
 
-<img src="../../../images/assets/11.png" />
+<img src="../../../images/assets/11.png" alt="Properties" />
 
 - Edit the **Network and security** option, and choose the VPC security group you selected earlier.
 
-<img src="../../../images/assets/12.png" />
+<img src="../../../images/assets/12.png" alt="Network and security" />
 
 - Click on **Modify cluster** to finish the **Network and Security** setup.
 
-<img src="../../../images/assets/13.png" />
+<img src="../../../images/assets/13.png" alt="Modify cluster" />
 
 ### Configuring Redshift as a destination in RudderStack
 
@@ -172,7 +172,7 @@ Please follow our <a href="https://rudderstack.com/docs/connections/adding-sourc
 
 - Once you have set up the source, select **Redshift** from the list of destinations. Give your destination a name, and then click on **Next**. You will then see the following **Connection Credentials** screen:
 
-<img src="../../../images/assets/14.png" /><span class="imageTitle">Connection Settings for adding Redshift as a destination in RudderStack</span>
+<img src="../../../images/assets/14.png" alt="Select Redshift" /><span class="imageTitle">Connection Settings for adding Redshift as a destination in RudderStack</span>
 
 - Enter the details of the cluster you have created in the [Setting Up a Redshift Cluster](https://rudderstack.com/docs/destinations/amazon-redshift#setting-up-a-redshift-cluster) section. You will also need to create a S3 bucket to which the data will be dumped.
 - You will also need to enter the AWS Access Key ID and AWS Secret Access Key. you can avoid this by setting up permission for your S3 bucket by following [this guide](https://rudderstack.com/docs/data-warehouse-integration-guides/amazon-redshift#s3-permissions).

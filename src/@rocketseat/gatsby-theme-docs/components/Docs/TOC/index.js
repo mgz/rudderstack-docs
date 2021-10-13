@@ -31,8 +31,20 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
     return entries(map);
   }
 
+  /* const getDuplicates = arr => {
+    let map = {};
+    for(let i = 0; i < arr.length - 1; i++){
+      if(map.hasOwnProperty(arr[i][1].id)){
+        map[arr[i][1].id].push(i);
+      }else{
+        map[arr[i][1].id] = [i]
+      }
+    }
+    return entries(map);
+  } */
+
   const generateId = () => {
-    let tempArr = headings.filter(heading => heading.depth === 2 || heading.depth === 3);
+    let tempArr = headings !== null ? headings.filter(heading => heading.depth === 2 || heading.depth === 3) : offsets;
     let duplicates = getDuplicates(tempArr);
     let tempArr1 = {};
     duplicates.map((item,k) => {
@@ -48,8 +60,29 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
         tempArr1[item[1]] = item[0];
       }
     });
-    return tempArr1;
+    return entries(tempArr1);
   }
+
+  /* const generateId = () => {
+    let tempArr = offsets && entries(offsets);
+    let duplicates = getDuplicates(tempArr);
+    console.log('Duplicates', duplicates);
+    /* let tempArr1 = {};
+    duplicates.map((item,k) => {
+      if(item[1].length > 1){
+        for(let i = 0; i < item[1].length; i++){ //'xyz', [8,12]
+          if(i === 0){
+            tempArr1[item[1][0]] = slug(tempArr[item[1][i]].value);
+          }else{
+            tempArr1[item[1][i]] = slug(tempArr[item[1][i]].value) + '-' + i;
+          }
+        }
+      }else{
+        tempArr1[item[1]] = item[0];
+      }
+    });
+    return duplicates;
+  } */
 
   const getOffset = (element) => {
     var top = 0, left = 0;
@@ -62,7 +95,6 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
 };
 
   useEffect(() => {
-    generateId();
     if (!isMobile || disableTOC) {
       const allHeadings = document.querySelectorAll(`h2, h3`)
 
@@ -75,11 +107,13 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
                 if (!anchor) return {}
                 return {
                   id: heading.id,
+                  value: heading.textContent,
                   offset: getOffset(heading),
                 }
               })
               .filter(Boolean)
         )
+        generateId();
       }, 1000)
       
       /* setOffsets(
@@ -99,6 +133,7 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
 
   }, [width, height, contentRef, isMobile, disableTOC])
 
+  
   const activeHeading = useMemo(() => {
     if (!isMobile || disableTOC) {
       const scrollTop = y;
@@ -154,11 +189,13 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
           </h2>
           <nav>
             <ul>
-              {headings && headings
+              {
+              headings && headings
                 .filter(heading => heading.depth === 2 || heading.depth === 3)
                 .map((heading, i) => {
                   let idArr = generateId();
-                  const headingSlug = idArr[i];
+                  // console.log('idArr', idArr)
+                  const headingSlug = idArr[i][1];
 
                   return (
                     <li

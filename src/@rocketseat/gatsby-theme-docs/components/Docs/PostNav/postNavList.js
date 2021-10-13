@@ -5,7 +5,7 @@ export const postNavList = [
 {
     "key":"home",
     "title":"Home",
-    "link":"/home/",
+    "link":"",
     "content":[]
 },
 {
