@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import Sidebarctablock from "./Sidebarctablock.js"
-import $ from "jquery"
 
 function Sidebar({
   cta_block_title,
@@ -31,20 +30,38 @@ function Sidebar({
 
     // console.log("header-height", header_height, position, header_height + 50)
 
-    $(".details h2").each(function () {
+    /* $(".details h2").each(function () {
       if ($(window).scrollTop() >= $(this).offset().top - 100) {
         var id = $(this).attr("id")
         $(".menu li a").removeClass("active")
         $(".menu li a[data-attr=" + id + "]").addClass("active")
         $(".selectitem").text($(".menu li a.active").text())
       }
+    }) */
+
+    let details_h2 = document.querySelectorAll('.details h2');
+    details_h2.forEach((item, key) => {
+      if(window.scrollY >= item.offsetTop - 100){
+        let item_id = item.getAttribute('id');
+        Array.from(document.querySelectorAll('.menu li a')).forEach(el => el.classList.remove('active'));
+        let currentEl = document.querySelector("[data-attr='"+ item_id +"']");
+        currentEl.classList.add('active');
+        let menu_text = document.querySelector('.menu li a.active').textContent;
+        document.querySelector('.selectitem').textContent = menu_text;
+      }
     })
 
-    $("body").on("click", function (event) {
+    /* $("body").on("click", function (event) {
       if (!$(event.target).is(".menu") && !$(event.target).is(".selectitem")) {
         $(".menu").removeClass("active")
       }
-    })
+    }) */
+
+    document.querySelector('body').onclick = (el) => {
+      if(!(el.target) === document.querySelector('.menu') && !(el.target) === document.querySelector('.selectitem')){
+        document.querySelector('.menu').classList.remove('active');
+      }
+    }
 
     if (position > header_height - 55) {
       document
@@ -80,6 +97,26 @@ function Sidebar({
     
   }
 
+  function scrollToTop (duration) {
+    // cancel if already on top
+    if (document.scrollingElement.scrollTop === 0) return;
+
+    const cosParameter = document.scrollingElement.scrollTop / 2;
+    let scrollCount = 0, oldTimestamp = null;
+
+    function step (newTimestamp) {
+        if (oldTimestamp !== null) {
+            // if duration is 0 scrollCount will be Infinity
+            scrollCount += Math.PI * (newTimestamp - oldTimestamp) / duration;
+            if (scrollCount >= Math.PI) return document.scrollingElement.scrollTop = 0;
+            document.scrollingElement.scrollTop = cosParameter + cosParameter * Math.cos(scrollCount);
+        }
+        oldTimestamp = newTimestamp;
+        window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+}
+
   function handleClick(e) {
     var elems = document.querySelectorAll(".menu a")
 
@@ -91,21 +128,24 @@ function Sidebar({
     document.getElementsByClassName("selectitem")[0].innerHTML =
       e.currentTarget.innerHTML
     if (window.innerWidth <= 800) {
-      $(".menu").removeClass("active")
+      /* $(".menu").removeClass("active") */
+      document.querySelector('.menu').classList.remove('active');
     }
     e.preventDefault()
 
-    $("html, body").animate(
+    /* $("html, body").animate(
       {
         scrollTop:
           $("#" + e.currentTarget.getAttribute("data-attr")).offset().top - 60,
       },
       5
-    )
+    ) */
+    
   }
 
   function handleClickMobile() {
-    $(".menu").toggleClass("active")
+    /* $(".menu").toggleClass("active") */
+    document.querySelector('.menu').classList.toggle('active');
   }
 
   return (

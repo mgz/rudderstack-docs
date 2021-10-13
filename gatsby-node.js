@@ -17,17 +17,17 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
           },
         ],
       },
-      plugins: [
+      /* plugins: [
         new webpack.ProvidePlugin({
           $: "jquery",
           jQuery: "jquery",
           "window.jQuery": "jquery",
         }),
-      ],
+      ], */
       //devtool: "eval-source-map"
     })
   } else {
-    actions.setWebpackConfig({
+    /* actions.setWebpackConfig({
       plugins: [
         new webpack.ProvidePlugin({
           $: "jquery",
@@ -36,7 +36,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         }),
       ],
       //devtool: "eval-source-map"
-    })
+    }) */
   }
 }
 
