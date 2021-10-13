@@ -6,6 +6,7 @@ import { rudderslabTrackOnClick } from "../utils/common"
 import { StaticImage } from "gatsby-plugin-image"
 
 const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
+  // console.log('ContentIntegrationConnectionSpreadSheets',data)
   return (
     <Layout>
       <Helmet>
@@ -109,7 +110,8 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 >
                   <div className="flex justify-center align-center h-full">
                     <img
-                      src={data.integration_connection.destinationLogoImgUrl}
+                      // src={data.integration_connection.destinationLogoImgUrl}
+                      src={data.integration_connection.destinationLogoIconUrl}
                       className="h-5 sm:h-12 m-auto"
                       alt={data.integration_connection.destinationIntegration}
                       placeholder="tracedSVG"
@@ -200,9 +202,9 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                     {data.integration_connection.imageHeaderSource ===
                       "desktop" &&
                       data.integration_connection.imageHeaderName ===
-                        "ic_desktop_unity" && (
+                        "ic_desktop_amp-analytics" && (
                         <StaticImage
-                          src="../images/ic_desktop_unity.png"
+                          src="../images/ic_desktop_amp-analytics-v2.png"
                           alt="Header image"
                           placeholder="tracedSVG"
                           className={`object-cover integration-connection-hero-logo-primary-${data.integration_connection.imageHeaderSource}`}
@@ -297,8 +299,11 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                     >
                       <div className="flex justify-center align-center h-full">
                         <img
+                          // src={
+                          //   data.integration_connection.destinationLogoImgUrl
+                          // }
                           src={
-                            data.integration_connection.destinationLogoImgUrl
+                            data.integration_connection.destinationLogoIconUrl
                           }
                           className="h-5 sm:h-10 m-auto"
                           alt="RudderStack animation"
@@ -367,7 +372,8 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
 
                   <div className="int-conn-left-logo">
                     <img
-                      src={data.integration_connection.sourceLogoImgUrl}
+                      // src={data.integration_connection.sourceLogoImgUrl}
+                      src={data.integration_connection.sourceLogoIconUrl}
                       className="h-5 sm:h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
@@ -376,7 +382,8 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
 
                   <div className="int-conn-right-logo">
                     <img
-                      src={data.integration_connection.destinationLogoImgUrl}
+                      // src={data.integration_connection.destinationLogoImgUrl}
+                      src={data.integration_connection.destinationLogoIconUrl}
                       className="h-5 sm:h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
@@ -675,8 +682,8 @@ export const query = graphql`
       destinationDocsUrl
       destinationId
       destinationIntegration
-      destinationIntegrationContext
       destinationLogoImgUrl
+      destinationLogoIconUrl
       destinationSlug
       googleSpreadsheetId
       id
@@ -704,6 +711,7 @@ export const query = graphql`
       sourceIntegration
       sourceIntegrationContext
       sourceLogoImgUrl
+      sourceLogoIconUrl
       useCaseDesc1
       sourceSlug
       useCaseDesc2
