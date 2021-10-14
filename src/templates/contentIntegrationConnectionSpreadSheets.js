@@ -64,7 +64,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
               <span
                 className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
               >
-                Sign Up free
+                Sign up for free
               </span>
             </a>
             {/* 
