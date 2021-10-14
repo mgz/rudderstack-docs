@@ -7,6 +7,7 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion"
 import { jsonData } from "../../../docsconfig/sidebar"
+import {rudderslabTrackOnClick} from '../../../utils/common';
 
 const NestedAccordion = props => {
   const [loading, setLoading] = useState(true)
@@ -34,7 +35,7 @@ const NestedAccordion = props => {
                       : ""
                   }`}
                 >
-                  <a href={docsBasePath + item.link}>{item.title}</a>
+                  <a href={docsBasePath + item.link} onClick={(e) => rudderslabTrackOnClick("sidebarNav", null, e, true)}>{item.title}</a>
                 </AccordionItemButton>
               </AccordionItemHeading>
             </AccordionItem>
@@ -56,7 +57,7 @@ const NestedAccordion = props => {
                       : ""
                   }`}
                 >
-                  <a href={docsBasePath + item.link}>{item.title}</a>
+                  <a href={docsBasePath + item.link}  onClick={(e) => rudderslabTrackOnClick("sidebarNav", null, e, true)}>{item.title}</a>
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>{menuItemChildren}</AccordionItemPanel>

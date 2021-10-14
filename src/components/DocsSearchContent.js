@@ -7,7 +7,7 @@
 
  import React from "react"
  import NoResultImage from '../images/noresultsearch.svg'
- import { rudderslabTrackOnClick } from "../utils/common"
+ import { rudderslabTrackOnClick, rudderslabTrackOnSearch } from "../utils/common"
 
  const replaceStr = (str) => {
   let replaceText1 = '<ais-highlight-0000000000>',
@@ -43,16 +43,17 @@ const truncateStr = (str) => {
         ) : (
           <div className="searchResults">
             {
-              hits.map((item, index) => {                
+              hits.map((item, index) => {
                 let basePath = window.location.origin + '/docs/';
-                let finalPath = item.pageSlug.charAt(item.pageSlug.length - 1) === '/' ? item.pageSlug : item.pageSlug + '/';
+                let finalPath = item.pageSlug.charAt(item.pageSlug.length - 1) === '/' || item.pageSlug.charAt(item.pageSlug.length - 1) === '' ? item.pageSlug : item.pageSlug + '/';
                 let pageTitle = item.SectionTitle ? replaceStr(item._highlightResult.SectionTitle.value) : replaceStr(item._highlightResult.pageTitle.value);
                 let sectionContent = item._highlightResult.sectionContent.value.trim() !== ""  ? truncateStr(replaceStr(item._highlightResult.sectionContent.value)) : '';
                   return (<div key={item.pageSlug + index} className="searchBlock">
                     <a href={item.sectionId !== "" ? basePath + finalPath + '#' + item.sectionId : basePath + finalPath} 
                       onClick={e => {
                         setSearchOpen(false);
-                        rudderslabTrackOnClick("link", null, e, true);
+                        rudderslabTrackOnClick("link", pageTitle, e, true);
+                        rudderslabTrackOnSearch(currentSearchText);
                       }}>
                       <p className="sectionTitle" dangerouslySetInnerHTML={{ __html: pageTitle }}></p>
                       <p className="description" dangerouslySetInnerHTML={{ __html: sectionContent}}></p>

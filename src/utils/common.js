@@ -83,7 +83,11 @@ export const rudderslabTrackOnClick = (
       el = checkPrevSibbling(document.getElementById(e.target.id).parentElement)
         .innerHTML
     } catch {
-      el = document.getElementsByTagName("h1")[0].innerHTML
+      if(document.getElementsByTagName("h1")[0].hasChildNodes()){
+        el = document.getElementsByTagName("h1")[0].childNodes[0].textContent;
+      }else{
+        el = document.getElementsByTagName("h1")[0].innerHTML
+      }
     }
 
     if (!el) {
@@ -108,7 +112,7 @@ export const rudderslabTrackOnClick = (
     link_location: el ? el : sectionName,
     // e.target.baseURI,
     // we want to track where the link points, whether it is a URL or internal path
-    target_url: e.target.href ? e.target.href : e.target.baseURI,
+    target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
     click_type: eventType,
   })
 }
