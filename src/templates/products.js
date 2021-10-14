@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import "../lib/font-awesome"
+//import "../lib/font-awesome"
 //import loadable from "@loadable/component"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"

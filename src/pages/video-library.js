@@ -37,7 +37,7 @@ const VideoLibraryPage = ({ data }) => {
 
   return (
     <Layout>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <title>{`RudderStack Video Library | Rudderstack.com`}</title>
         <meta
           property="og:title"

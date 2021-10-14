@@ -1,5 +1,5 @@
 import React from "react"
-import "../lib/font-awesome"
+//import "../lib/font-awesome"
 import { StaticImage } from "gatsby-plugin-image"
 import Link from "gatsby-link"
 import { rudderslabTrackOnClick } from "../utils/common"

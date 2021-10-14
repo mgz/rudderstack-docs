@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import "../lib/font-awesome"
+//import "../lib/font-awesome"
 import Link from "gatsby-link"
 import { useStaticQuery, graphql } from "gatsby"
 // import { Helmet } from "react-helmet"
@@ -25,6 +25,8 @@ import WebisteBanner from "./websiteBanner"
 import { rudderslabTrackOnClick } from "../utils/common"
 
 import "../css/tailwind.css"
+import { faRss } from "@fortawesome/free-solid-svg-icons"
+import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
 const Layout = ({ location, showExplicitGradient, children }) => {
   const data = useStaticQuery(graphql`
@@ -182,7 +184,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                                 "footer-navigation",
                                 "Footer Navigation Section",
                                 e
-                              )
+                              ) 
                             }
                           >
                             {/* <img
@@ -200,7 +202,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           </a>
                         ) : (
                           <Link
-                            to={"/docs/home/"}
+                            to={"/docs/"}
                             onClick={e =>
                               rudderslabTrackOnClick(
                                 "footer-navigation",
@@ -252,7 +254,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             )
                           }
                         >
-                          <FontAwesomeIcon icon={socialitem.social_item_icon} />
+                          <FontAwesomeIcon icon={faRss} />
                         </a>
                       )
                     } else {
@@ -272,7 +274,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           }
                         >
                           <FontAwesomeIcon
-                            icon={["fab", socialitem.social_item_icon]}
+                            icon={socialitem.social_item_icon === 'twitter' ? faTwitter : faLinkedin}
                           />
                         </a>
                       )

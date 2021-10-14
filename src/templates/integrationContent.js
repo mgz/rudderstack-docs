@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import "../lib/font-awesome"
+//import "../lib/font-awesome"
 
 //import loadable from "@loadable/component"
 

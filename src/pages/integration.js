@@ -34,7 +34,7 @@ const Integration = props => {
   // }, [searchedText])
   return (
     <Layout>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <title>{`Integrations Library | RudderStack CDP`}</title>
         <meta
           property="og:title"

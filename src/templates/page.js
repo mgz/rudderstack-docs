@@ -183,7 +183,7 @@ const Page = props => {
 
   return (
     <Layout location={props.location}>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <meta name="description" content={data.page.meta_desc} />
 
         <title>{data.page.meta_title || data.page.title}</title>

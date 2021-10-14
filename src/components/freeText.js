@@ -1,7 +1,7 @@
 import React from "react";
 import PortableText from "./portableText";
 import Image from "./image"
-import '../lib/font-awesome';
+//import '../lib/font-awesome';
 import Link from "gatsby-link"
     
 const FreeText = (props) => {
