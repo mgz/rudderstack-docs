@@ -9,7 +9,7 @@ import slug from "@rocketseat/gatsby-theme-docs/src/util/slug"
 import { Wrapper, Container } from "./styles"
 import tailwindConfig, { theme } from "../../../../../../tailwind.config"
 import {entries} from "lodash-es"
-import { rudderslabTrackOnClick } from '../../../../../utils/common'
+import { rudderslabTrackOnClickDocs } from '../../../../../utils/common'
 
 export default function TableOfContents({ headings = [], disableTOC = false, contentRef, setTocOpen, isTocOpen = false }) {
   const { y } = useWindowScroll()
@@ -209,7 +209,7 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
                         href={`#${headingSlug}`}
                         onClick={(e) => {
                           isMobile && setTocOpen(false);
-                          rudderslabTrackOnClick("tableOfContents", null, e, true);
+                          rudderslabTrackOnClickDocs("tableOfContents", null, e, true);
                         }}
                         style={{
                           color:
