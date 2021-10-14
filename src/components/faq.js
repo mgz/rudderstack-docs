@@ -54,7 +54,9 @@ const Faq = ({ title, subTitle, isBlockContent, accordions = [] }) => {
   return (
     <div className="px-4 mx-auto">
       <Helmet>
-        <script type="application/ld+json">{JSON.stringify(ldJson)}</script>
+        {ldJson !== "" && (
+          <script type="application/ld+json">{JSON.stringify(ldJson)}</script>
+        )}
       </Helmet>
       <div className="max-w-screen-lg mx-auto flex flex-wrap m-auto">
         <div className="w-full md:w-1/4 px-4 md:pl-0 md:pr-10">
