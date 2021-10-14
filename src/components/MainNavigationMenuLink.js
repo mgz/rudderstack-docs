@@ -1,14 +1,14 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Image from "./image"
 import SanityLink from "./SanityLink"
 import { rudderslabTrackOnClick } from "../utils/common"
 
 const MainNavigationMenuLink = props => {
-  const [onClickEvent, setOnClickEvent] = useState(false)
+  // const [onClickEvent] = useState(props.currMenuIndex === props.i)
 
   let link = props.link
   let i = props.i
-
+ 
   return (
     <li
       key={i}
@@ -20,15 +20,18 @@ const MainNavigationMenuLink = props => {
         link={link}
         menuIndex={i}
         classes={`${
-          onClickEvent === true ? `active` : ``
+          props.currMenuIndex === i ? `active` : ``
         } parent-menu block text-base lg:mr-4 xl:mr-10 font-custom font-normal  p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm`}
         onclick={e => {
           if (link._rawSubMenuSection === null) {
             rudderslabTrackOnClick("navigation", "Header Navigation", e)
+          } else {
+            return props.onMainMenuClick(i)
           }
-          return link._rawSubMenuSection !== null && window.innerWidth < 1024
-            ? setOnClickEvent(!onClickEvent)
-            : () => false
+
+          // return link._rawSubMenuSection !== null && window.innerWidth < 1024
+          //   ? setOnClickEvent(!onClickEvent)
+          //   : () => false
         }}
       />
       {(() => {
@@ -41,7 +44,7 @@ const MainNavigationMenuLink = props => {
                   i >= 4 ? "lg:left-80 xl:left-96" : ""
                 }
                bg-whiteColor-custom lg:place-items-left ${
-                 onClickEvent === true ? `flex` : `flex hidden`
+                 props.currMenuIndex === i ? `flex` : `flex hidden`
                }
                overflow-y-auto lg:overflow-hidden h-80 lg:h-64
              `}
@@ -65,7 +68,7 @@ const MainNavigationMenuLink = props => {
                               {menuGroup.group_icon && (
                                 <Image
                                   props={menuGroup.group_icon.asset._ref}
-                                  classes="h-8 w-auto object-cover"
+                                  classes="w-10 h-auto object-cover"
                                 />
                               )}
                             </div>
