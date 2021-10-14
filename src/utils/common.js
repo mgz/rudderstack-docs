@@ -71,6 +71,7 @@ function checkPrevSibbling(currEl) {
   return returnEl
 }
 
+
 export const rudderslabTrackOnClick = (
   eventType,
   sectionName,
@@ -83,11 +84,7 @@ export const rudderslabTrackOnClick = (
       el = checkPrevSibbling(document.getElementById(e.target.id).parentElement)
         .innerHTML
     } catch {
-      if(document.getElementsByTagName("h1")[0].hasChildNodes()){
-        el = document.getElementsByTagName("h1")[0].childNodes[0].textContent;
-      }else{
-        el = document.getElementsByTagName("h1")[0].innerHTML
-      }
+      el = document.getElementsByTagName("h1")[0].innerHTML
     }
 
     if (!el) {
@@ -106,13 +103,13 @@ export const rudderslabTrackOnClick = (
   // console.log('track.log',e)
   window.rudderanalytics.track("click", {
     // not quite sure how to get link text, so the below is an example to get the text of the link
-    link_text: eventType === 'sectionLink' ? e.currentTarget.parentNode.innerText : e.currentTarget.innerText,
+    link_text: e.target.innerText,
     page_title: document.title,
 
     link_location: el ? el : sectionName,
     // e.target.baseURI,
     // we want to track where the link points, whether it is a URL or internal path
-    target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
+    target_url: e.target.href ? e.target.href : e.target.baseURI,
     click_type: eventType,
   })
 }
@@ -161,5 +158,53 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, event) => {
     ad_enabled: false,
     quality: event.target.playerInfo.playbackQuality,
     livestream: false,
+  })
+}
+
+export const rudderslabTrackOnClickDocs = (
+  eventType,
+  sectionName,
+  e,
+  isSeekSectionName
+) => {
+  let el
+  if (isSeekSectionName) {
+    try {
+      el = e.target.closest('h2').innerText || e.target.closest('h3').innerText;
+      /* console.log('Element', el);  */
+    } catch {
+      //console.log('Entered catch', e.target);
+      if(document.getElementsByTagName("h1")[0].hasChildNodes()){
+        el = document.getElementsByTagName("h1")[0].childNodes[0].textContent;
+      }else{
+        el = document.getElementsByTagName("h1")[0].innerHTML
+      }
+    }
+
+    if (!el) {
+      //console.log('Entered if !el', e.target);
+      el = document.getElementsByTagName("h1")
+    }
+  }
+
+  if (!window.rudderanalytics) {
+    return
+  }
+  // if (sectionName !== "") {
+  //   sectionName = sectionName
+  // } else {
+  //   sectionName = el
+  // }
+  // console.log('track.log',e)
+  window.rudderanalytics.track("click", {
+    // not quite sure how to get link text, so the below is an example to get the text of the link
+    link_text: eventType === 'sectionLink' ? e.currentTarget.parentNode.innerText : e.currentTarget.innerText,
+    page_title: document.title,
+
+    link_location: el ? el : sectionName,
+    // e.target.baseURI,
+    // we want to track where the link points, whether it is a URL or internal path
+    target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
+    click_type: eventType,
   })
 }
