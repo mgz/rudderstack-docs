@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Accordion from "./accordion"
 import { Helmet } from "react-helmet"
 const Faq = ({ title, subTitle, isBlockContent, accordions = [] }) => {
-  const [ldJson, setLdJsoin] = useState()
+  const [ldJson, setLdJsoin] = useState("")
 
   useEffect(() => {
     function arrangeData() {
@@ -38,11 +38,14 @@ const Faq = ({ title, subTitle, isBlockContent, accordions = [] }) => {
           },
         })
       })
-      setLdJsoin({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqArr,
-      })
+
+      if (faqArr.length > 0) {
+        setLdJsoin({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqArr,
+        })
+      }
     }
 
     arrangeData()

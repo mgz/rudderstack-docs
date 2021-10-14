@@ -1206,9 +1206,6 @@ top: -60px;
   font-variant: no-common-ligatures no-discretionary-ligatures
     no-historical-ligatures no-contextual;
 }
-.childrenWrapper .githubBadge{
-  @apply ml-0;
-}
 .childrenWrapper h1 code.inline-code,
 .childrenWrapper h2 code.inline-code {
   font-size: calc(100% - 5px);
@@ -1250,6 +1247,10 @@ top: -60px;
   max-width: 100%;
   @apply mb-4;
   @apply mx-auto;
+  max-width: 100%;
+}
+.childrenWrapper .githubBadge{
+  @apply ml-0;
 }
 .childrenWrapper th,.childrenWrapper td {
   margin: 0;
