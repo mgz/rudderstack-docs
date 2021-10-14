@@ -106,7 +106,7 @@ export const rudderslabTrackOnClick = (
   // console.log('track.log',e)
   window.rudderanalytics.track("click", {
     // not quite sure how to get link text, so the below is an example to get the text of the link
-    link_text: e.target.innerText,
+    link_text: eventType === 'sectionLink' ? e.currentTarget.parentNode.innerText : e.currentTarget.innerText,
     page_title: document.title,
 
     link_location: el ? el : sectionName,

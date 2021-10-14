@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import RsLogo from "../images/rudderstack-logo-v2.svg"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
@@ -108,7 +108,7 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
                       onRefineHitsCountChange={setCurrentRefineHitsCount}
                       currentSearchText={currentSearchText}
                       setSearchOpen={setSearchOpen}
-                      currentSearchText={currentSearchText}
+                      currentRefineHitsCount={currentRefineHitsCount}
                     />
                   </div>
                 </div>

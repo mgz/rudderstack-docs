@@ -15,7 +15,7 @@ import { forEach, findIndex } from "lodash"
 import { postNavList } from "./PostNav/postNavList"
 import { BlockMath, InlineMath } from "react-katex"
 import "katex/dist/katex.min.css"
-import {rudderslabTrackOnClick} from '../../../../utils/common'
+import {rudderslabTrackOnClick, rudderslabTrackOnYoutubeVideoPlayback} from '../../../../utils/common'
 import YouTube from "react-youtube"
 
 
@@ -42,7 +42,7 @@ export default function Docs({ mdx, pageContext }) {
   let prevPageItem = postNavList[prevPageIndex]
   let disableTableOfContents = false
 
-  const _onPlay = (event, title) => {
+  const _onPlay = (event,title) => {
     return rudderslabTrackOnYoutubeVideoPlayback(title, event)
   }
 
@@ -63,7 +63,7 @@ export default function Docs({ mdx, pageContext }) {
     TabPanel,
     BlockMath,
     InlineMath,
-    YouTube: props => <YouTube play={_onPlay} {...props} />
+    YouTube: props => <YouTube onPlay={e => _onPlay(e, props.videoTitle)} {...props} />
   }
 
   useEffect(() => {
@@ -82,8 +82,12 @@ export default function Docs({ mdx, pageContext }) {
     forEach(h1Tags, o => (o.innerHTML = title + descriptionSpan))
     h1Tags.innerHTML = descriptionSpan;
 
-    let ancTags = document.querySelectorAll('.childrenWrapper a');
+    let ancTags = document.querySelectorAll('.childrenWrapper a:not(.anchor, .next, .previous)');
     forEach(ancTags, o => (o.addEventListener('click', e => rudderslabTrackOnClick("link", null, e, true))))
+
+    let sectionLinks = document.querySelectorAll('.childrenWrapper a.anchor');
+    forEach(sectionLinks, o => (o.addEventListener('click', e => {rudderslabTrackOnClick("sectionLink", null, e, true)})))
+
   }, [])
 
   
