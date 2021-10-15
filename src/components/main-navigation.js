@@ -63,7 +63,7 @@ const MainNavigation = props => {
           <div className="flex items-center sm:mr-6 w-32 md:w-1/7">
             <Link
               to="/"
-              className="pl-4 sm:pl-0 pb-0 md:pb-3"
+              className="pl-4 sm:pl-0 pb-0 md:pb-3 md:pt-3"
               rel="noopener noreferrer"
             >
               <StaticImage
