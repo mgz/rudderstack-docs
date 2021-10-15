@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Link from "gatsby-link"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -10,6 +10,8 @@ import { rudderslabTrackOnClick } from "../utils/common"
 
 const MainNavigation = props => {
   const [isExpanded, toggleExpansion] = useState(false)
+  const [currMenuIndex, setCurrMenuIndex] = useState(null)
+
   const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
@@ -143,7 +145,15 @@ const MainNavigation = props => {
           >
             <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
               {mainmenu.map((link, i) => (
-                <MainNavigationMenuLink key={i} link={link} i={i} />
+                <MainNavigationMenuLink
+                  key={i}
+                  link={link}
+                  i={i}
+                  currMenuIndex={currMenuIndex}
+                  onMainMenuClick={idx =>
+                    setCurrMenuIndex(i === currMenuIndex ? null : idx)
+                  }
+                />
               ))}
             </ul>
             <div className="flex lg:pb-4">
