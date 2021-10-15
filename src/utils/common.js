@@ -71,6 +71,26 @@ function checkPrevSibbling(currEl) {
   return returnEl
 }
 
+function checkPrevSibbling1(currEl) {
+  let elem;
+  if(currEl !== null && (currEl.nodeName === 'H2' || currEl.nodeName === 'H3')){
+    elem = currEl.textContent;
+  }else{
+    if(currEl.previousElementSibling !== null && (currEl.previousElementSibling.nodeName === 'H2' || currEl.previousElementSibling.nodeName === 'H3')){
+      elem = currEl.previousElementSibling.textContent;
+    }else if(currEl.parentElement !== null && (currEl.parentElement.nodeName === 'H2' || currEl.parentElement.nodeName === 'H3')){
+      elem = currEl.parentElement.textContent;
+    }else if(currEl.parentElement.previousElementSibling !== null && (currEl.parentElement.previousElementSibling.nodeName === 'H2' || currEl.parentElement.previousElementSibling.nodeName === 'H3')){
+      elem = currEl.parentElement.previousElementSibling.textContent;
+    }else if(currEl.previousElementSibling === null){
+      return checkPrevSibbling1(currEl.parentElement);
+    }else if(elem !== ''){
+      return checkPrevSibbling1(currEl.previousElementSibling);
+    }
+  }
+  
+  return elem;
+}
 
 export const rudderslabTrackOnClick = (
   eventType,
@@ -161,6 +181,42 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, event) => {
   })
 }
 
+export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (sectionName, event) => {
+  // console.log("rudderslabTrackOnYoutubeVideoPlayback",event)
+  // console.log('getVideoData',event.target.getVideoData())
+  // console.log('getPlaybackRate',event.target.getPlaybackRate())
+  // console.log('showVideoInfo',event.target.showVideoInfo())
+  // console.log('getDuration',event.target.getDuration())
+  // console.log('getMediaReferenceTime',event.target.getMediaReferenceTime())
+
+  //console.log('Section Name', sectionName);
+  if (!window.rudderanalytics) {
+    return
+  }
+
+  window.rudderanalytics.track("video_playback_started", {
+    page_title: document.title,
+    video_location: sectionName ? sectionName : checkPrevSibbling1(event.target),
+
+    session_id: "",
+    content_asset_ids: [event.target.playerInfo.videoData.video_id],
+    content_pod_ids: [],
+    ad_asset_id: [],
+    ad_pod_id: [],
+    ad_type: [],
+    position: 0,
+    total_length: event.target.playerInfo.duration,
+    bitrate: null,
+    framerate: null,
+    video_player: "youtube",
+    sound: event.target.playerInfo.volume,
+    full_screen: false,
+    ad_enabled: false,
+    quality: event.target.playerInfo.playbackQuality,
+    livestream: false,
+  })
+}
+
 export const rudderslabTrackOnClickDocs = (
   eventType,
   sectionName,
@@ -170,10 +226,10 @@ export const rudderslabTrackOnClickDocs = (
   let el
   if (isSeekSectionName) {
     try {
-      el = e.target.closest('h2').innerText || e.target.closest('h3').innerText;
-      /* console.log('Element', el);  */
+      el = checkPrevSibbling1(e.currentTarget.parentElement);
+      //console.log('Entered try', el);
     } catch {
-      //console.log('Entered catch', e.target);
+      //console.log('Entered catch', e.currentTarget.parentElement.closest('h2'));
       if(document.getElementsByTagName("h1")[0].hasChildNodes()){
         el = document.getElementsByTagName("h1")[0].childNodes[0].textContent;
       }else{

@@ -15,7 +15,7 @@ import { forEach, findIndex } from "lodash"
 import { postNavList } from "./PostNav/postNavList"
 import { BlockMath, InlineMath } from "react-katex"
 import "katex/dist/katex.min.css"
-import {rudderslabTrackOnClickDocs, rudderslabTrackOnYoutubeVideoPlayback} from '../../../../utils/common'
+import {rudderslabTrackOnClickDocs, rudderslabTrackOnYoutubeVideoPlaybackDocs, checkPrevSibbling1} from '../../../../utils/common'
 import YouTube from "react-youtube"
 
 
@@ -62,8 +62,8 @@ export default function Docs({ mdx, pageContext }) {
     InlineMath,
     YouTube: props => <YouTube onPlay={event => {
       console.log('Event docs', event);
-      let sectionTitle = event.target.closest('h2').innerText || event.target.closest('h3').innerText;
-      rudderslabTrackOnYoutubeVideoPlayback(sectionTitle, event)
+      console.log('YT props', props);
+      rudderslabTrackOnYoutubeVideoPlaybackDocs(event.target.playerInfo.videoData.title, event)
     }} {...props} />
   }
 
