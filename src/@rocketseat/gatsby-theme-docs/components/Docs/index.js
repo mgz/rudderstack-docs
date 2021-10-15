@@ -61,8 +61,8 @@ export default function Docs({ mdx, pageContext }) {
     BlockMath,
     InlineMath,
     YouTube: props => <YouTube onPlay={event => {
-      console.log('Event docs', event);
-      console.log('YT props', props);
+      /* console.log('Event docs', event);
+      console.log('YT props', props); */
       rudderslabTrackOnYoutubeVideoPlaybackDocs(event.target.playerInfo.videoData.title, event)
     }} {...props} />
   }
