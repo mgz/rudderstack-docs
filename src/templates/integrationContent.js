@@ -91,6 +91,7 @@ const Singleintegration = ({ data }) => {
             data={data.integration._rawIntegrationLeftRightsection}
           />
         )}
+        
         {data.integration._rawHowtosetupsection && data.integration._rawSlug.current !== "amperity" && (
           <IntegrationHowToSetUp
             integrationLogo={data.integration._rawIntegrationLogo}
