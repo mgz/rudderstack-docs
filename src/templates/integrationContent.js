@@ -35,7 +35,6 @@ import clientConfig from "../../client-config"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Singleintegration = ({ data }) => {
-  // console.log("integration-data", data)
   const lv_testimonialsection = data.section_testimonials.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
   )
@@ -91,14 +90,15 @@ const Singleintegration = ({ data }) => {
             data={data.integration._rawIntegrationLeftRightsection}
           />
         )}
-        {data.integration._rawHowtosetupsection && (
+        
+        {data.integration._rawHowtosetupsection && data.integration._rawSlug.current !== "amperity" && (
           <IntegrationHowToSetUp
             integrationLogo={data.integration._rawIntegrationLogo}
             data={data.integration._rawHowtosetupsection}
           />
         )}
 
-        {data.integration._rawGetmoreoutofsection && (
+        {data.integration._rawGetmoreoutofsection && data.integration._rawSlug.current !== "amperity" && (
           <IntegrationGetMoreOutOf
             data={data.integration._rawGetmoreoutofsection}
           />
