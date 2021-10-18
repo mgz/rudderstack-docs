@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-function renderImage(image, classes, alt) {
+function renderImage(image, classes, alt, width, height) {
   const imgh = (() => {
     return (
       <img
@@ -10,6 +10,8 @@ function renderImage(image, classes, alt) {
         src={image.node.url} //Development code
         alt={alt ? alt : image.node._id}
         className={classes}
+        width={width && width !== null ? width : 'auto'}
+        height={height && height !== null ? height : 'auto'}
       />
     )
   })()
@@ -52,7 +54,7 @@ const Image = props => {
         const imgdata = data.sanityimages.edges.find(
           imgdata => imgdata.node._id === props.props
         )
-        return renderImage(imgdata, props.classes, props.alt)
+        return renderImage(imgdata, props.classes, props.alt, props.width, props.height)
       }}
     />
   )

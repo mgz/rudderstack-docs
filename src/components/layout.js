@@ -289,6 +289,8 @@ const Layout = ({ location, showExplicitGradient, children }) => {
               <img
                 src={footerlogo}
                 alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
+                width="148"
+                height="16"
               />
             </div>
             <div className="flex flex-wrap w-1/2 items-end">

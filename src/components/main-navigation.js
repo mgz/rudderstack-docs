@@ -71,6 +71,8 @@ const MainNavigation = props => {
                 src={"../images/rudderstack-logo-header-v2.png"}
                 alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
                 placeholder="tracedSVG"
+                width="306"
+                height="34"
               />
             </Link>
           </div>

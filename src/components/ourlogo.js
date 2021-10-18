@@ -35,6 +35,8 @@ function OurLogo(props) {
                   <Image
                     classes="object-contain h-full w-auto"
                     props={logoimage.asset._ref}
+                    width="210"
+                    height="40"
                   />
                 </span>
               </div>

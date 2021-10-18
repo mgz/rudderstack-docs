@@ -30,6 +30,8 @@ const ThreeCardsWithTitleLeftAligned = props => {
                     <Image
                       props={item.card_image.asset._ref}
                       classes="w-full object-cover"
+                      width="73"
+                      height="94"
                     />
                   </div>
                   <div className="text-3xl font-bold mb-6 mt-2 max-w-lg pr-0 md:pr-8 self-start">
