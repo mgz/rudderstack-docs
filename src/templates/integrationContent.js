@@ -91,14 +91,14 @@ const Singleintegration = ({ data }) => {
             data={data.integration._rawIntegrationLeftRightsection}
           />
         )}
-        {data.integration._rawHowtosetupsection && (
+        {data.integration._rawHowtosetupsection && data.integration._rawSlug.current !== "amperity" && (
           <IntegrationHowToSetUp
             integrationLogo={data.integration._rawIntegrationLogo}
             data={data.integration._rawHowtosetupsection}
           />
         )}
 
-        {data.integration._rawGetmoreoutofsection && (
+        {data.integration._rawGetmoreoutofsection && data.integration._rawSlug.current !== "amperity" && (
           <IntegrationGetMoreOutOf
             data={data.integration._rawGetmoreoutofsection}
           />
