@@ -1,4 +1,4 @@
-import React  from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Link from "gatsby-link"
@@ -66,7 +66,7 @@ const Singleblog = ({ data, location, ...props }) => {
         <meta property="twitter:description" content={blog.meta_desc} />
 
         {/* added by Hari on 2021-06-21 to show share card across twitter, linkedin and facebook */}
-        <meta property="og:url" content={location.href} />
+        {location && <meta property="og:url" content={location.href} />}
 
         <meta property="og:image" content={blog.blog_image.asset.url} />
         <meta property="twitter:card" content="summary" />
@@ -97,7 +97,7 @@ const Singleblog = ({ data, location, ...props }) => {
           <FacebookShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
           >
-            <p className="my-3 block" >
+            <p className="my-3 block">
               <StaticImage
                 src={"../images/blogfb.svg"}
                 placeholder="tracedSVG"
@@ -108,7 +108,7 @@ const Singleblog = ({ data, location, ...props }) => {
           <LinkedinShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
           >
-            <p className="block" >
+            <p className="block">
               <StaticImage
                 src={"../images/blogIn.svg"}
                 placeholder="tracedSVG"

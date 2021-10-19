@@ -25,7 +25,7 @@ class PreviewTemplate extends Component {
     const client = await sanityClient({
       projectId: process.env.GATSBY_SANITY_PROJECTID,
       dataset: process.env.GATSBY_SANITY_DATASET,
-      apiVersion: '2021-03-25',
+      apiVersion: "2021-03-25",
       token: process.env.GATSBY_SANITY_TOKEN, // or leave blank for unauthenticated usage
       useCdn: false,
     })
@@ -42,11 +42,10 @@ class PreviewTemplate extends Component {
         var blogdata = {}
         blogs.forEach(blog => {
           blogdata.blog = blog
-          blogdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
+          blogdata.section_get_started = this.props.frontblock.section_get_started
           blogdata.blog._rawDescription = blog.description
-          blogdata.blog.blog_image.asset.fluid = {
-            src: blogdata.blog.blog_image.asset.url,
-          }
+          blogdata.blog.blog_image.asset.url =
+            blogdata.blog.blog_image.asset.url
           this.setState({ data: blogdata })
         })
       })
@@ -59,7 +58,10 @@ class PreviewTemplate extends Component {
           page.sanitySchdemo = page
           page.sanitySchdemo._rawPagebuildersectionarray =
             page.pagebuildersectionarray
-          page.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
+
+          page.section_our_logos = this.props.frontblock.section_our_logos
+          page.section_testimonials = this.props.frontblock.section_testimonials
+          page.section_get_started = this.props.frontblock.section_get_started
           this.setState({ data: page })
         })
       })
@@ -72,7 +74,8 @@ class PreviewTemplate extends Component {
           page.thankyou = page
           page.thankyou._rawPagebuildersectionarray =
             page.pagebuildersectionarray
-          page.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
+          page.section_get_started = this.props.frontblock.section_get_started
+          // page.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
           this.setState({ data: page })
         })
       })
@@ -85,7 +88,9 @@ class PreviewTemplate extends Component {
         pages.forEach(page => {
           pagedata.page = page
           pagedata.page._rawPagebuildersectionarray =
-            page.pagebuildersectionarray
+            pagedata.pagebuildersectionarray
+          pagedata.section_our_logos = this.props.frontblock.section_our_logos
+          pagedata.section_testimonials = this.props.frontblock.section_testimonials
           this.setState({ data: pagedata })
         })
       })
@@ -99,18 +104,22 @@ class PreviewTemplate extends Component {
           productdata.product = product
           productdata.product._rawPagebuildersectionarray =
             product.pagebuildersectionarray
+          productdata.section_testimonials = this.props.frontblock.section_testimonials
+          productdata.section_get_started = this.props.frontblock.section_get_started
+
           productdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
           this.setState({ data: productdata })
         })
       })
     } else if (type === "integration") {
       const query =
-        "*[_id == $id]{...,integrationLogo{asset->{url}},similarDestination{sd_integrations[]->}}"
+        "*[_id == $id]{...,integrationLogo{asset->{url,_id}},similarDestination{sd_integrations[]->}}"
       component = "Integration"
 
       await client.fetch(query, params).then(integrations => {
         var intdata = {}
         integrations.forEach(integration => {
+
           intdata.integration = integration
           intdata.integration._rawFaqSection = integration.faqSection
           intdata.integration._rawGetmoreoutofsection =
@@ -122,15 +131,24 @@ class PreviewTemplate extends Component {
           intdata.integration._rawIntegrationLeftRightsection =
             integration.integrationLeftRightsection
           intdata.integration._rawIntegrationLogo = integration.integrationLogo
-          intdata.integration._rawIntegrationLogo.node = {
-            url: integration.integrationLogo.asset.url,
+          intdata.integration._rawIntegrationLogo = {
+            asset: {
+              url: integration.integrationLogo.asset.url,
+              _ref: integration.integrationLogo.asset._id,
+            },
           }
-          intdata.integration._rawIntegrationcategories =
-            integration.integrationcategories
-          intdata.integration._rawIntegrationtypes =
-            integration.integrationtypes
-          intdata.integration._rawSimilarDestination =
+
+          intdata.integration._rawSlug = integration.slug
+          // intdata.integration._rawIntegrationcategories =
+          //   integration.integrationcategories
+          // intdata.integration._rawIntegrationtypes =
+          //   integration.integrationtypes
+          intdata.integration.similarDestination =
             integration.similarDestination
+
+          intdata.section_testimonials = this.props.frontblock.section_testimonials
+          intdata.section_get_started = this.props.frontblock.section_get_started
+
           intdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
           this.setState({ data: intdata })
         })
@@ -154,6 +172,9 @@ class PreviewTemplate extends Component {
 
           contentdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
           contentdata.allSanityBlogauthor = this.props.frontblock.allSanityBlogauthor
+          contentdata.section_get_started = this.props.frontblock.section_get_started
+
+
           this.setState({ data: contentdata })
         })
       })
