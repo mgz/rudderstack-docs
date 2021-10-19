@@ -64,10 +64,9 @@ const Page = props => {
   //   }
   //   document.
 
-
   //   // Specify how to clean up after this effect:
   //   return function cleanup() {
-      
+
   //   };
   // })
 

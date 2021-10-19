@@ -8,6 +8,9 @@ import Demo from "./request-demo"
 import Thankyou from "./thankyou"
 import VideoContent from "./videoContent"
 import CaseStudyContent from "./caseStudyContent"
+import PageContent from "./pageContent"
+import VerticalLandingPageContent from './verticalLandingPageContent'
+import BeAHeroPageContent from './beAHeroPageContent'
 
 const sanityClient = require("@sanity/client")
 // const project_id = process.env.GATSBY_SANITY_PROJECTID
@@ -84,13 +87,16 @@ class PreviewTemplate extends Component {
       component = "Page"
 
       await client.fetch(query, params).then(pages => {
+        
         var pagedata = {}
         pages.forEach(page => {
+          // console.log(page,'pages data')
           pagedata.page = page
           pagedata.page._rawPagebuildersectionarray =
-            pagedata.pagebuildersectionarray
+            page.pagebuildersectionarray
           pagedata.section_our_logos = this.props.frontblock.section_our_logos
           pagedata.section_testimonials = this.props.frontblock.section_testimonials
+          pagedata.section_get_started = this.props.frontblock.section_get_started
           this.setState({ data: pagedata })
         })
       })
@@ -119,7 +125,6 @@ class PreviewTemplate extends Component {
       await client.fetch(query, params).then(integrations => {
         var intdata = {}
         integrations.forEach(integration => {
-
           intdata.integration = integration
           intdata.integration._rawFaqSection = integration.faqSection
           intdata.integration._rawGetmoreoutofsection =
@@ -171,10 +176,56 @@ class PreviewTemplate extends Component {
             content.videoLibraryCategoryType
 
           contentdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
+          contentdata.section_our_logos = this.props.frontblock.section_our_logos
           contentdata.allSanityBlogauthor = this.props.frontblock.allSanityBlogauthor
           contentdata.section_get_started = this.props.frontblock.section_get_started
 
+          this.setState({ data: contentdata })
+        })
+      })
+    } else if (type === "page") {
+      const query = "*[_id == $id]"
+      component = "pageContent"
 
+      await client.fetch(query, params).then(contents => {
+        let contentdata = {}
+        contents.forEach(content => {
+          contentdata.pagedata = content
+          contentdata.pagedata._rawPagebuildersection = content.pagebuildersection
+          contentdata.section_get_started = this.props.frontblock.section_get_started
+          contentdata.section_testimonials = this.props.frontblock.section_testimonials
+          contentdata.all_images = this.props.frontblock.all_images
+          this.setState({ data: contentdata })
+        })
+      })
+    }else if (type === "vertical_landing_page") {
+      const query = "*[_id == $id]"
+      component = "vertical_landing_page"
+
+      await client.fetch(query, params).then(contents => {
+        let contentdata = {}
+        contents.forEach(content => {
+          contentdata.pagedata = content
+          contentdata.pagedata._rawPagebuildersection = content.pagebuildersection
+          contentdata.section_our_logos = this.props.frontblock.section_our_logos
+          contentdata.section_get_started = this.props.frontblock.section_get_started
+          contentdata.section_testimonials = this.props.frontblock.section_testimonials
+          contentdata.all_images = this.props.frontblock.all_images
+          this.setState({ data: contentdata })
+        })
+      })
+    }else if (type === "be_a_hero_page") {
+      const query = "*[_id == $id]"
+      component = "be_a_hero_page"
+
+      await client.fetch(query, params).then(contents => {
+        let contentdata = {}
+        contents.forEach(content => {
+          contentdata.pagedata = content
+          contentdata.pagedata._rawPagebuildersection = content.pagebuildersection
+          contentdata.section_get_started = this.props.frontblock.section_get_started
+          contentdata.section_testimonials = this.props.frontblock.section_testimonials
+          contentdata.all_images = this.props.frontblock.all_images
           this.setState({ data: contentdata })
         })
       })
@@ -222,6 +273,15 @@ class PreviewTemplate extends Component {
           )}
           {component === "casestudiescontent" && (
             <CaseStudyContent data={this.state.data} />
+          )}
+          {component === "pageContent" && (
+            <PageContent data={this.state.data} />
+          )}
+          {component === "vertical_landing_page" && (
+            <VerticalLandingPageContent data={this.state.data} />
+          )}
+          {component === "be_a_hero_page" && (
+            <BeAHeroPageContent data={this.state.data} />
           )}
         </>
       )
