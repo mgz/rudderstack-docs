@@ -181,7 +181,7 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, event) => {
   })
 }
 
-export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (sectionName, event) => {
+export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (title, event) => {
   // console.log("rudderslabTrackOnYoutubeVideoPlayback",event)
   // console.log('getVideoData',event.target.getVideoData())
   // console.log('getPlaybackRate',event.target.getPlaybackRate())
@@ -196,8 +196,8 @@ export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (sectionName, event) =>
 
   window.rudderanalytics.track("video_playback_started", {
     page_title: document.title,
-    video_location: sectionName ? sectionName : checkPrevSibbling1(event.target),
-
+    video_location: "",
+    video_title: title,
     session_id: "",
     content_asset_ids: [event.target.playerInfo.videoData.video_id],
     content_pod_ids: [],

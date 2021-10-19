@@ -4,7 +4,7 @@ import { InstantSearch, Configure } from "react-instantsearch-dom"
 import algoliasearch from "algoliasearch/lite"
 import DocsSearchBox from "./DocsSearchBox"
 import DocSearchContentWrapper from "./DocSearchContentWrapper"
-import {rudderslabTrackOnClick} from '../utils/common'
+import {rudderslabTrackOnClickDocs} from '../utils/common'
 
 const searchClient = algoliasearch(
   process.env.GATSBY_ALGOLIA_APP_ID,
@@ -37,23 +37,23 @@ const DocsNavigation = ({ isMenuOpen, handleMenuOpen}) => {
           </svg>
         </div>
         <div className="docsLogo flex items-center">
-          <a href="/" onClick={(e) => rudderslabTrackOnClick("headerNav", null, e, true)}>
+          <a href="/" onClick={(e) => rudderslabTrackOnClickDocs("navigation", null, e, true)}>
             <img src={RsLogo} alt="RudderStack" className="mainLogo" />
           </a>
         </div>
         <nav className="docsNav">
           <ul className="docsNavList">
             <li>
-              <a href="/docs/" onClick={(e) => rudderslabTrackOnClick("headerNav", null, e, true)}>Home</a>
+              <a href="/docs/" onClick={(e) => rudderslabTrackOnClickDocs("navigation", null, e, true)}>Home</a>
             </li>
             <li>
-              <a href="https://github.com/rudderlabs/rudder-server" onClick={(e) => rudderslabTrackOnClick("headerNav", null, e, true)}>Github</a>
+              <a href="https://github.com/rudderlabs/rudder-server" onClick={(e) => rudderslabTrackOnClickDocs("navigation", null, e, true)}>Github</a>
             </li>
             <li>
-              <a href="/pricing" onClick={(e) => rudderslabTrackOnClick("headerNav", null, e, true)}>Pricing</a>
+              <a href="/pricing" onClick={(e) => rudderslabTrackOnClickDocs("navigation", null, e, true)}>Pricing</a>
             </li>
             <li>
-              <a href="https://app.rudderstack.com/signup?type=freetrial" onClick={(e) => rudderslabTrackOnClick("headerNav", null, e, true)}>
+              <a href="https://app.rudderstack.com/signup?type=freetrial" onClick={(e) => rudderslabTrackOnClickDocs("navigation", null, e, true)}>
                 Try for Free
               </a>
             </li>

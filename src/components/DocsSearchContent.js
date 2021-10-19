@@ -52,7 +52,7 @@ const truncateStr = (str) => {
                     <a href={item.sectionId !== "" ? basePath + finalPath + '#' + item.sectionId : basePath + finalPath} 
                       onClick={e => {
                         setSearchOpen(false);
-                        rudderslabTrackOnClickDocs("link", pageTitle, e, true);
+                        rudderslabTrackOnClickDocs("search_result", pageTitle, e, true);
                         rudderslabTrackOnSearch(currentSearchText);
                       }}>
                       <p className="sectionTitle" dangerouslySetInnerHTML={{ __html: pageTitle }}></p>

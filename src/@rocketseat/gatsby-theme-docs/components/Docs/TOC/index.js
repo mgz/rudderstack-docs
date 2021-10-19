@@ -209,7 +209,7 @@ export default function TableOfContents({ headings = [], disableTOC = false, con
                         href={`#${headingSlug}`}
                         onClick={(e) => {
                           isMobile && setTocOpen(false);
-                          rudderslabTrackOnClickDocs("tableOfContents", null, e, true);
+                          rudderslabTrackOnClickDocs("table_of_contents", null, e, true);
                         }}
                         style={{
                           color:
