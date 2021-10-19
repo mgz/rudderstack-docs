@@ -62,6 +62,15 @@ export const query = graphql `
               }
             }
           }
+
+          all_images: allSanityImageAsset {
+            edges {
+              node {
+                url
+                _id
+              }
+            }
+          }
       }
     `
 
