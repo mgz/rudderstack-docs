@@ -7,7 +7,7 @@
 
  import React from "react"
  import NoResultImage from '../images/noresultsearch.svg'
- import { rudderslabTrackOnClick, rudderslabTrackOnSearch } from "../utils/common"
+ import { rudderslabTrackOnClickDocs, rudderslabTrackOnSearch } from "../utils/common"
 
  const replaceStr = (str) => {
   let replaceText1 = '<ais-highlight-0000000000>',
@@ -52,7 +52,7 @@ const truncateStr = (str) => {
                     <a href={item.sectionId !== "" ? basePath + finalPath + '#' + item.sectionId : basePath + finalPath} 
                       onClick={e => {
                         setSearchOpen(false);
-                        rudderslabTrackOnClick("link", pageTitle, e, true);
+                        rudderslabTrackOnClickDocs("link", pageTitle, e, true);
                         rudderslabTrackOnSearch(currentSearchText);
                       }}>
                       <p className="sectionTitle" dangerouslySetInnerHTML={{ __html: pageTitle }}></p>
