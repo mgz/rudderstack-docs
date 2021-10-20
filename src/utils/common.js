@@ -120,7 +120,6 @@ export const rudderslabTrackOnClick = (
   // } else {
   //   sectionName = el
   // }
-  // console.log('track.log',e)
   window.rudderanalytics.track("click", {
     // not quite sure how to get link text, so the below is an example to get the text of the link
     link_text: e.target.innerText,
@@ -148,12 +147,6 @@ export const rudderslabTrackOnSearch = searchText => {
 }
 
 export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, event) => {
-  // console.log("rudderslabTrackOnYoutubeVideoPlayback",event)
-  // console.log('getVideoData',event.target.getVideoData())
-  // console.log('getPlaybackRate',event.target.getPlaybackRate())
-  // console.log('showVideoInfo',event.target.showVideoInfo())
-  // console.log('getDuration',event.target.getDuration())
-  // console.log('getMediaReferenceTime',event.target.getMediaReferenceTime())
   
   if (!window.rudderanalytics) {
     return
@@ -182,14 +175,7 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, event) => {
 }
 
 export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (title, event) => {
-  // console.log("rudderslabTrackOnYoutubeVideoPlayback",event)
-  // console.log('getVideoData',event.target.getVideoData())
-  // console.log('getPlaybackRate',event.target.getPlaybackRate())
-  // console.log('showVideoInfo',event.target.showVideoInfo())
-  // console.log('getDuration',event.target.getDuration())
-  // console.log('getMediaReferenceTime',event.target.getMediaReferenceTime())
 
-  //console.log('Section Name', sectionName);
   if (!window.rudderanalytics) {
     return
   }
@@ -227,9 +213,7 @@ export const rudderslabTrackOnClickDocs = (
   if (isSeekSectionName) {
     try {
       el = checkPrevSibbling1(e.currentTarget.parentElement);
-      //console.log('Entered try', el);
     } catch {
-      //console.log('Entered catch', e.currentTarget.parentElement.closest('h2'));
       if(document.getElementsByTagName("h1")[0].hasChildNodes()){
         el = document.getElementsByTagName("h1")[0].childNodes[0].textContent;
       }else{
@@ -251,7 +235,6 @@ export const rudderslabTrackOnClickDocs = (
   // } else {
   //   sectionName = el
   // }
-  // console.log('track.log',e)
   window.rudderanalytics.track("click", {
     // not quite sure how to get link text, so the below is an example to get the text of the link
     link_text: eventType === 'sectionLink' ? e.currentTarget.parentNode.innerText : e.currentTarget.innerText,
