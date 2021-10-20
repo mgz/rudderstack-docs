@@ -1,16 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
-import loadable from "@loadable/component"
+import Loadable from "@loadable/component"
 import { Helmet } from "react-helmet"
 import Hero from "../components/hero"
 import Tabs from "../components/tabs"
-import LeftRightImgCnt from "../components/left-right-image-content"
+//import LeftRightImgCnt from "../components/left-right-image-content"
 import LatestBlog from "../components/latest-blog"
 import MiddleBanner from "../components/middle-banner"
-import RightSideHiglightedContent from "../components/rightSideHiglightedContent"
+//import RightSideHiglightedContent from "../components/rightSideHiglightedContent"
 import FreeText from "../components/freeText"
 import GraphQLErrorList from "../components/graphql-error-list"
-import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
+//import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
 import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
 
 // import SEO from "../components/seo"
@@ -18,14 +18,10 @@ import Layout from "../components/layout"
 
 // const Hero = loadable(() => import("../components/hero"))
 // const Tabs = loadable(() => import("../components/tabs"))
-// const LeftRightImgCnt = loadable(() =>
-//   import("../components/left-right-image-content")
-// )
+const LeftRightImgCnt = Loadable(() => import("../components/left-right-image-content"))
 // const LatestBlog = loadable(() => import("../components/latest-blog"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
-// const RightSideHiglightedContent = loadable(() =>
-//   import("../components/rightSideHiglightedContent")
-// )
+const RightSideHiglightedContent = Loadable(() => import("../components/rightSideHiglightedContent"))
 // const FreeText = loadable(() => import("../components/freeText"))
 // const GraphQLErrorList = loadable(() =>
 //   import("../components/graphql-error-list")
@@ -33,8 +29,9 @@ import Layout from "../components/layout"
 // const SEO = loadable(() => import("../components/seo"))
 // const Layout = loadable(() => import("../components/layout"))
 
-const OurLogo = loadable(() => import("../components/ourlogo"))
-const Testimonial = loadable(() => import("../components/testimonial"))
+const OurLogo = Loadable(() => import("../components/ourlogo"))
+const Testimonial = Loadable(() => import("../components/testimonial"))
+const ThreeCardsWithTitleLeftAligned = Loadable(() => import("../components/threeCardsWithTitleLeftAligned"))
 
 export const query = graphql`
   query PageTemplateQuery($id: String!) {
@@ -64,10 +61,9 @@ const Page = props => {
   //   }
   //   document.
 
-
   //   // Specify how to clean up after this effect:
   //   return function cleanup() {
-      
+
   //   };
   // })
 
