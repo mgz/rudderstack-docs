@@ -23,6 +23,7 @@
     "assert": "^2.0.0",
     "autoprefixer": "^10.2.6",
     "dotenv": "^8.2.0",
+    "dpx": "^3.1.1",
     "gatsby": "^3.2.1",
     "gatsby-cli": "^3.2.0",
     "gatsby-plugin-algolia": "^0.18.0",
