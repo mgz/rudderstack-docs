@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md"
-
+import {rudderslabTrackOnClickDocs} from '../../../../../utils/common'
 import { Container, Post } from "./styles"
 
 export default function Docs({ prev, next, current }) {
@@ -16,7 +16,7 @@ export default function Docs({ prev, next, current }) {
     >
       {prev && current.title !== "Home" && (
         <Post isLeft>
-          <Link to={docsBasePath + prev.link} className="previous">
+          <Link to={docsBasePath + prev.link} className="previous" onClick={(e) => rudderslabTrackOnClickDocs("footer_docs_nav", null, e, true)}>
             <MdKeyboardArrowLeft className="postNavArrow" />
             <div className="postNavText">
               <p>Prev</p>
@@ -27,7 +27,7 @@ export default function Docs({ prev, next, current }) {
       )}
       {next && current.title !== "FAQs" && (
         <Post>
-          <Link to={docsBasePath + next.link} className="next">
+          <Link to={docsBasePath + next.link} className="next" onClick={(e) => rudderslabTrackOnClickDocs("footer_docs_nav", null, e, true)}>
             <div className="postNavText nextText">
               <p>Next</p>
               <h3>{next.title}</h3>
