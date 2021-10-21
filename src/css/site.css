@@ -1249,7 +1249,7 @@ top: -60px;
   max-width: 100%;
 }
 .childrenWrapper .githubBadge{
-  @apply ml-0;
+  @apply ml-0 !important;
 }
 .childrenWrapper th,.childrenWrapper td {
   margin: 0;
