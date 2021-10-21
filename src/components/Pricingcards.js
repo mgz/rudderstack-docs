@@ -273,7 +273,7 @@ function PricingCards(props) {
             target="_blank"
             rel="noreferrer"
           >
-            Learn more on Github
+            Learn more on GitHub
           </a>
         </div>
       </div>
