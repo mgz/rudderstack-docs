@@ -200,7 +200,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           </a>
                         ) : (
                           <Link
-                            to={"/docs/home/"}
+                            to={"/docs/"}
                             onClick={e =>
                               rudderslabTrackOnClick(
                                 "footer-navigation",
