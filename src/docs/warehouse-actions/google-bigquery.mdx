@@ -10,7 +10,7 @@ description: Step-by-step guide to ingest your data from Google BigQuery into Ru
 
 This guide will help you configure BigQuery as a source from which you can route event data to your desired destinations through RudderStack.
 
-## Granting Permissions
+## Granting permissions
 
 Follow these steps below to grant the necessary permissions for Warehouse Actions. For BigQuery, use the **BigQuery Console**.
 
@@ -93,69 +93,67 @@ GRANT `roles/bigquery.dataOwner`
      TO "serviceAccount:<SERVICE_ACCOUNT_ID>";
 ```
 
-## Setting up the Source
+## Setting up the source
 
 To set up Google BigQuery as a source in RudderStack, follow these steps:
 
-* Log into your <a href="https://app.rudderlabs.com/signup?type=freetrial">RudderStack dashboard</a>.
-* From the left panel, select **Sources**. Then, click on **Add Source**, as shown:
+* Log into your <a href="https://app.rudderstack.com">**RudderStack dashboard**</a>.
 
-<img src="../../../images/assets/image%20%2897%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29%20%283%29%20%287%29.png" />
+* From the left panel, select **Sources**. Then, click on **New Source** in the top right corner.
 
-* Scroll down to the **Warehouse Sources** and select **BigQuery**. Then, click on **Next**.
+* Click on **Warehouse Sources** and select **BigQuery**, as shown:
 
-<img src="../../../images/assets/screen-shot-2021-01-05-at-2.03.31-pm.png" />
+<img src="https://user-images.githubusercontent.com/59817155/138218312-55411916-3e24-4b08-bfad-7180e5f604e0.png" alt="BigQuery" />
 
-### Setting Up the Connection
+### Setting up the connection
 
-* Assign a name to your source, and click on **Create Credentials from Scratch**. Then, click on **Next**.
+* Assign a name for your source and click on **Create Credentials from Scratch**.
 
-<img src="../../../images/assets/screen-shot-2021-01-05-at-2.05.48-pm.png" />
+<img src="https://user-images.githubusercontent.com/59817155/138218620-a3849ac6-b316-476d-92b0-dfa892b2ba0f.png" />
 
 <div class="successBlock">
 
-If you've already configured BigQuery as a source before, the existing credentials will automatically appear in the above window.
+If you have already configured Google BigQuery as a source before, the existing credentials will automatically appear under **Use Existing Credentials**.
 </div>
 
-* Next, enter the **GCP project ID** and the **Credentials** JSON which RudderStack will use to import the data from your BigQuery instance.
+* Next, enter the BigQuery **Project**. Also, paste the **Credentials** JSON obtained by following the [**Creating and downloading the JSON key**](#creating-and-downloading-the-JSON-key) section above. RudderStack will use this JSON to import the data from your BigQuery instance.
 
-<img src="../../../images/assets/screen-shot-2021-01-05-at-2.07.29-pm.png" />
+<img src="https://user-images.githubusercontent.com/59817155/138219388-2d79154d-3b1e-4f4c-976a-9bd2b050209c.png" />
 
-### Specifying the Data to Import
+### Setting the data update schedule
 
-* Next, select the **Schema** and the **Table** from which you want RudderStack to import the data.
+* Next, you will be required to set the **Run Frequency** to schedule the data import from your BigQuery project to RudderStack.
 
-<img src="../../../images/assets/screen-shot-2021-01-05-at-5.18.59-pm.png" />
+* Optionally, can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option. Then, click on **Next**.
 
-<div class="warningBlock">
-
-Your table must include one of the following columns - `email`, `user_id`, or `anonymous_id`.
-</div>
-
-* Once you specify the table containing the required columns, you will be able to preview a snippet of your data, as shown below:
-
-<img src="../../../images/assets/screen-shot-2021-01-05-at-3.21.38-pm.png" />
-
-* Here, you can select all or only a few specific columns of your choice, search the columns by a keyword, and also edit the **JSON Trait Key**, as shown below. You can also preview the resultant JSON on the right. Once you've select the required table columns to import the data from, click on **Next**.
-
-<img src="../../../images/assets/screen-shot-2021-01-05-at-3.22.09-pm.png" />
-
-### Setting the Data Update Schedule
-
-* Next, you will be required to set the **Run Frequency** to schedule the data import from your PostgreSQL database to RudderStack. You can also specify the time when you want this synchronization to start, by choosing the time under the **Sync Starting At** option. Then, click on **Next**.
-
-<img src="../../../images/assets/screen-shot-2021-01-05-at-5.19.23-pm.png" />
+<img src="https://user-images.githubusercontent.com/59817155/138219597-5ed8025c-93fc-457c-a35b-74b33d0c922f.png" />
 
 That's it! BigQuery is now successfully configured as a source on your RudderStack dashboard.
 
-RudderStack will start importing data from your BigQuery instance as per the specified frequency. You can further connect this source to your preferred destinations by clicking on **Connect Destinations** or **Add Destinations**, as shown:
+## Specifying the data to import
 
-<img src="../../../images/assets/screen-shot-2021-01-06-at-2.55.24-pm%20%281%29.png" />
+Once you have set up the BigQuery source, you can connect it to an existing or new destination via the **Add Destination** button, as shown:
 
-<div class="infoBlock">
+<img src="https://user-images.githubusercontent.com/59817155/138221676-022211fb-9f01-44da-ad24-7ce41fbe4da5.png" />
 
-If you have already configured a destination on the RudderStack platform, choose the **Connect Destinations** option. To add a new destination from scratch, you can select the **Add Destination** option.
+Then, follow these steps:
+
+* Select the **Schema** and the **Table** from which you want RudderStack to import the data. You can also select the user identifiers (**user_id**/**anonymous_id**) from the dropdown list, as shown:
+
+<img src="https://user-images.githubusercontent.com/59817155/138225293-7452e0a4-6f3a-4cc1-a354-8c6c2b111572.png" />
+
+<div class="successBlock">
+
+For [**HubSpot**](https://rudderstack.com/docs/destinations/crm/hubspot/), [**Salesforce**](https://rudderstack.com/docs/destinations/crm/salesforce/), [**Mailchimp**](https://rudderstack.com/docs/destinations/marketing/mailchimp/), and [**Braze**](https://rudderstack.com/docs/destinations//marketing/braze/) destinations, you can also use the [**Visual Data Mapper**](https://rudderstack.com/docs/warehouse-actions/visual-data-mapper/) functionality to map your warehouse columns to specific destination fields.
 </div>
+
+Once you specify the table containing the required columns, you will be able to preview a snippet of your data. Here, you can search the columns by a specific keyword and select all or only specific columns of your choice. You can also edit the **JSON Trait Key** and  preview the resultant JSON on the right, as shown:
+
+<img src="https://user-images.githubusercontent.com/59817155/138226097-025a730f-e87c-4d56-8e93-1d1d2089114d.png" />
+
+* Once you have selected the required table columns to import the data, click on the **Save** button on the top right side of the configuration window.
+
+RudderStack will then start importing the data from your BigQuery table as per the specified frequency.
 
 ## FAQ
 
@@ -182,6 +180,6 @@ If this option gives an error, it means that one or more fields specified in the
 If this option gives an error, verify if you have successfully created the `rudderstack_` schema and given RudderStack the required permissions to access it. For more information, refer to [**this section**](https://docs.rudderstack.com/warehouse-actions/google-bigquery#creating-the-rudderstack-schema-and-granting-permissions).
 </div>
 
-## Contact Us
+## Contact us
 
-If you come across any issues while configuring Google BigQuery as a source on the RudderStack dashboard, please feel free to [contact us](mailto:%20docs@rudderstack.com). You can also start a conversation on our [Slack](https://rudderstack.com/join-rudderstack-slack-community) channel; we will be happy to talk to you!
+If you come across any issues while configuring BigQuery as a source on the RudderStack dashboard, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.
