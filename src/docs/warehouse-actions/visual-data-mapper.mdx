@@ -18,10 +18,11 @@ The **Visual Data Mapper** \(VDM\) offers an intuitive UI to easily map your war
 <div class="successBlock">
 
 To use this feature, you can use an existing <a href="https://rudderstack.com/docs/warehouse-actions/">warehouse source</a> and then connect it to a VDM-supported destination.
+</div>
 
-However, note that you can connect only one destination to a warehouse source. If you want to send data to multiple destinations, we recommend creating a source with the same settings for each destination.
+<div class="infoBlock">
 
-However, note that you can connect only one destination to a warehouse source. If you want to send data to multiple destinations, we recommend creating a new source with the same settings for each destination.
+You can connect only one destination to a Warehouse Actions source. If you want to send data from a warehouse source to multiple destinations, we recommend creating a new warehouse source with the same settings for each destination.
 </div>
 
 ## Using the Visual Data Mapper
@@ -32,23 +33,22 @@ To use the Visual Data Mapper, follow these steps:
 
 <div class="infoBlock">
 
-Follow our guide on <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">Adding a Source and Destination in RudderStack</a> for more information.
+Follow our guide on <a href="https://rudderstack.com/docs/connections/adding-source-and-destination-rudderstack/">**Adding a Source and Destination in RudderStack**</a> for more information.
 
 </div>
 
 * Configure the destination with the relevant settings and click on **Next**. You should then see the following screen:
-
   
 <img src="../assets/1 (28).png" />
 
 <div class="successBlock">
 
-The visual data mapping option is enabled for the supported destinations by default. 
+The Visual Data Mapper option is enabled for the supported destinations by default. 
 </div>
 
 <div class="warningBlock">
 
-Clicking on **Map with JSON** will cause the visual data mapping feature to be disabled - you can then configure the data via JSON.
+Clicking on **Map with JSON** will cause the Visual Data Mapper to be disabled. You can then configure the data via JSON.
 </div>
 
 * Choose the source warehouse **Schema** and **Table** from where you want to sync the data.
@@ -74,13 +74,13 @@ RudderStack automatically loads all the relevant destination objects. If you hav
 **RudderStack does not support objects that do not have any fields or a unique user identifier.**
 </div>
 
-### Choosing the Identifier
+### Choosing the identifier
 
 In the **Choose Identifier** section, specify the warehouse column to be used as the primary user identifier \(`user_id`\) and mapped to the destination field. An example is shown below:
 
 <img src="../assets/3 (28).png" />
 
-### Mapping the Fields
+### Mapping the fields
 
 In the **Map Fields** section, you can easily configure the source-destination field mappings. Follow these steps:
 
@@ -93,13 +93,13 @@ In the **Map Fields** section, you can easily configure the source-destination f
 RudderStack gives you full visibility into the name and type of the fields that you are mapping. 
 </div>
 
-#### Mandatory Mappings
+#### Mandatory mappings
 
 When sending events to some objects, there are some required fields that need to be mapped. These fields cant be removed from the mappings. For example, in case of the Salesforce **Account** object, **Account Name** is a required field, as seen in the following image:
 
 <img src="../assets/image (126).png" />
 
-#### Mapping Fields of Different Type/Format
+#### Mapping fields of different type/format
 
 In case you are mapping fields that are of a different type or format, you can use the [**Transformations**](https://rudderstack.com/docs/transformations/) feature to ensure there is no type mismatch while sending the events. 
 
@@ -107,7 +107,7 @@ For example, RudderStack lets you map the warehouse column `Phone` of type `stri
 
 <img src="../assets/6 (23).png" />
 
-### Creating a Custom Destination Field
+### Creating a custom destination field
 
 <div class="warningBlock">
 
@@ -125,6 +125,6 @@ RudderStack also lets you create a custom destination field and map it to a ware
 
 Once you have mapped all the source columns to the destination fields, click on **Next** to complete the destination configuration.
 
-## Contact Us
+## Contact us
 
 For any questions or issues on the Visual Data Mapper feature, you can [**contact us**](mailto:%20docs@rudderstack.com) or start a conversation on our [**Slack**](https://rudderstack.com/join-rudderstack-slack-community) channel.
