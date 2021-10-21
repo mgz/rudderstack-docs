@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import DocsSearchContent from './DocsSearchContent'
 import { connectHits } from "react-instantsearch-dom"
 
-const DocSearchHits = ({hits, onRefineHitsCountChange, currentSearchText }) => {
+const DocSearchHits = ({hits, onRefineHitsCountChange, currentSearchText, setSearchOpen }) => {
 
     useEffect(() => {
       if (!hits.length) {
@@ -18,6 +18,7 @@ const DocSearchHits = ({hits, onRefineHitsCountChange, currentSearchText }) => {
             <DocsSearchContent 
               hits={hits}
               currentSearchText={currentSearchText}
+              setSearchOpen={setSearchOpen}
             />
         </div>
     )

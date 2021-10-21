@@ -80,8 +80,6 @@ export default function SEO({ description, title, slug, image, children }) {
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta name="robots" content="noindex" />
-      <meta name="robots" content="nofollow" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={metaTitle} />

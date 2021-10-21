@@ -1276,7 +1276,8 @@ top: -60px;
   font-weight: bold;
 }
 .childrenWrapper iframe {
-  margin-bottom: 16px;
+  margin:0px auto 16px;
+  max-width: 100%;
 }
 .childrenWrapper .gatsby-highlight {
   font-family: Hack, SFMono-Regular, Menlo, Monaco, Consolas,
