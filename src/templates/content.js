@@ -98,24 +98,24 @@ const Singleblog = ({ data, location, ...props }) => {
           <FacebookShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
           >
-            <p className="my-3 block">
+            <span className="my-3 block">
               <StaticImage
                 src={"../images/icon-fb.svg"}
                 placeholder="tracedSVG"
                 alt="Facebook"
               />
-            </p>
+            </span>
           </FacebookShareButton>
           <LinkedinShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
           >
-            <p className="block">
+            <span className="block">
               <StaticImage
                 src={"../images/icon-linkedin.svg"}
                 placeholder="tracedSVG"
                 alt="linkdin"
               />
-            </p>
+            </span>
           </LinkedinShareButton>
         </div>
         <PortableText blocks={blog._rawDescription} />
