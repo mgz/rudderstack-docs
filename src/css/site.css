@@ -122,6 +122,9 @@ body {
   left : 8px
 } */
 
+.hero-case-studies{
+  background: linear-gradient(226.32deg, #6B96C3 -50.9%, #111168 108.01%);
+}
 .gradient-enable {
   background-image: url("../images/banner-gradiant.jpg");
   background-repeat: no-repeat;

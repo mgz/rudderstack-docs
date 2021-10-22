@@ -10,6 +10,7 @@ import LeftRightContentWithTitle from "../components/leftRightContentWithTitle"
 import HeroBannerWithCenterTextAndImage from "../components/heroBannerWithCenterTextAndImage"
 import CaseStuduiesPersonalize from "../components/caseStuduiesPersonalize"
 import Image from "../components/image"
+import HeroBannerCaseStudies from '../components/heroBannerCaseStudies'
 
 // const Layout = loadable(() =>
 //   import("../components/layout")
@@ -59,6 +60,14 @@ const CaseStudyContent = ({ data }) => {
           return (
             <div className="100%" key={section._key}>
               <LeftRightImgCnt applyGradientColorTheme={false} {...section} />{" "}
+            </div>
+          )
+        } else if(section._type === "hero_banner_case_studies"){
+          return (
+            <div className="100%" key={section._key}>
+              <HeroBannerCaseStudies
+                {...section}
+              />
             </div>
           )
         } else if (section._type === "banner_center_image") {
