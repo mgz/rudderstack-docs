@@ -1,31 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import PropTypes from 'prop-types';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import rangeParser from 'parse-numeric-range';
 import theme from 'prism-react-renderer/themes/dracula';
-import Prism from "prism-react-renderer/prism";
-import { LiveProvider, LiveEditor } from 'react-live';
 import { copyToClipboard } from '@rocketseat/gatsby-theme-docs/src/util/copy-to-clipboard';
-import scope from './LiveCodeScope';
 import {
   CopyCode,
   LineNo,
   Pre,
   PreHeader,
-  LiveWrapper,
-  LivePreview,
-  LiveError,
-  StyledEditor,
 } from './styles';
-(typeof global !== "undefined" ? global : window).Prism = Prism;
-/* require("prismjs/components/prism-kotlin");
-require("prismjs/components/prism-csharp");
-require("prismjs/components/prism-ruby");
-require("prismjs/components/prism-groovy");
-require("prismjs/components/prism-swift");
-require("prismjs/components/prism-java");
-require("prismjs/components/prism-dart");
-require("prismjs/components/prism-php"); */
 
 const calculateLinesToHighlight = (meta) => {
   const RE = /{([\d,-]+)}/;
@@ -60,34 +44,6 @@ export default function CodeHighlight({
       setCopied(false);
     }, 4000);
   };
-
-
-  if (live) {
-    return (
-      <LiveProvider
-        code={codeString}
-        noInline
-        theme={theme}
-        transformCode={(code) => `/** @jsx mdx */${code}`}
-        scope={scope}
-        Prism={Prism}
-      >
-        <LiveWrapper>
-          <LivePreview />
-
-          <StyledEditor>
-            <CopyCode onClick={handleClick} disabled={copied} hasTitle>
-              {copied ? 'Copied!' : 'Copy'}
-            </CopyCode>
-
-            <LiveEditor />
-          </StyledEditor>
-
-          <LiveError />
-        </LiveWrapper>
-      </LiveProvider>
-    );
-  }
 
   return (
     <>

@@ -12,7 +12,9 @@ import YouTube from "react-youtube"
 import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
 import TableContent from "./tableContent"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+//import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import theme from 'prism-react-renderer/themes/vsLight';
 import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
@@ -80,7 +82,43 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return <CustomAudioPlayer {...node} />
           },
           code: props => (
-            <SyntaxHighlighter
+            <Highlight
+              {...defaultProps}
+              language={props.node.language}
+              code={props.node.code}
+              theme={theme}
+            >
+              {({
+                style,
+                tokens,
+                getLineProps,
+                getTokenProps,
+              }) => (
+                <pre style={{overflow: 'auto', background: '#f5f2f0', padding: '1em'}}>
+                  {/* <CopyCode
+                    onClick={handleClick}
+                    disabled={copied}
+                    hasTitle={title}
+                  >
+                    {copied ? 'Copied!' : 'Copy'}
+                  </CopyCode> */}
+                  <code>
+                    {tokens.map((line, index) => {
+                      const lineProps = getLineProps({ line, key: index });
+
+                      return (
+                        <div {...lineProps}>
+                          {line.map((token, key) => (
+                            <span {...getTokenProps({ token, key })} />
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </code>
+                </pre>
+              )}
+            </Highlight>
+            /* <SyntaxHighlighter
               language={props.node.language}
               customStyle={{
                 fontSize: 14,
@@ -89,7 +127,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
               }}
             >
               {props.node.code}
-            </SyntaxHighlighter>
+            </SyntaxHighlighter> */
           ),
           // videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
           // instagram: ({ node }) => {

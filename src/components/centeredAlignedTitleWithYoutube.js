@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react"
 import PortableText from "./portableText"
 // import Image from "./image"
 import { rudderslabTrackOnYoutubeVideoPlayback } from "../utils/common"
-//import YouTube from "react-youtube"
-/* import("@justinribeiro/lite-youtube"); */
+import YouTube from "react-youtube"
+
 
 const CenteredAlignedTitleWithYoutube = props => {
 
@@ -11,6 +11,7 @@ const CenteredAlignedTitleWithYoutube = props => {
   
   useEffect(() => {
     /* setWindowOrigin(window.location.origin) */
+    /* import("@justinribeiro/lite-youtube"); */
   }, [])
   let tmp_youtube_url_split = props.youtube.url.split("?")[0].split("/")
   // console.log(
@@ -51,11 +52,11 @@ const CenteredAlignedTitleWithYoutube = props => {
               className="video"
             ></iframe> */}
 
-            {/* <YouTube
+            <YouTube
               videoId={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
               className="video"
               onPlay={_onPlay}
-            /> */}
+            />
 
             {/* <lite-youtube
               videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}

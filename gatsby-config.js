@@ -22,7 +22,7 @@ module.exports = {
   },
   pathPrefix: "/docs",
   plugins: [
-    `gatsby-plugin-preact`,
+    /* `gatsby-plugin-preact`, */
     `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-preconnect",

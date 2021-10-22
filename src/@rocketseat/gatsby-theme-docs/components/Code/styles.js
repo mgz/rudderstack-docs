@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
-import { darken } from 'polished';
-import {
+import darken  from 'polished/lib/color/darken';
+/* import {
   LiveError as AuxLiveError,
   LivePreview as AuxLivePreview,
-} from 'react-live';
+} from 'react-live'; */
 
 export const Pre = styled.pre`
   text-align: left;
@@ -68,29 +68,6 @@ export const StyledEditor = styled.div`
   .token {
     font-style: normal !important;
   }
-`;
-
-export const LivePreview = styled(AuxLivePreview)`
-  position: relative;
-  padding: 0.5rem;
-  background: white;
-  color: black;
-  height: auto;
-  overflow: hidden;
-`;
-
-export const LiveError = styled(AuxLiveError)`
-  display: block;
-  color: rgb(248, 248, 242);
-  white-space: pre-wrap;
-  text-align: left;
-  font-size: 14px;
-  font-family: Hack, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
-  font-variant: no-common-ligatures no-discretionary-ligatures
-    no-historical-ligatures no-contextual;
-  padding: 1rem;
-  background: rgb(255, 85, 85);
 `;
 
 export const PreHeader = styled.div`
