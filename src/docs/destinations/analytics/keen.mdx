@@ -78,18 +78,18 @@ Calling `extendEvents` adds the user object to all subsequent`recordEvent` calls
 
 A sample `identify` call is as shown in the following code snippet:
 
-```
+```javascript
 rudderanalytics.identify("my-userID", {
-        name: "Tintin",
-        city: "Brussels",
-        country: "Belgium",
-        email: "tintin@herge.com"
+  name: "Tintin",
+  city: "Brussels",
+  country: "Belgium",
+  email: "tintin@herge.com",
 });
 ```
 
 This will pass the below user to every subsequent event data:
 
-```
+```javascript
 user: {
   userId: "my-userID",
   traits: {
@@ -107,14 +107,14 @@ Calling `rudderanalytics.page()` will pass the `page` properties to the Keen col
 
 A sample `page` call is as shown in the snippet below:
 
-```
+```javascript
 // "home" is the name of the page.
 rudderanalytics.page("home", {
-        path: "path",
-        url: "url",
-        title: "title",
-        search: "search",
-        referrer: "referrer"
+  path: "path",
+  url: "url",
+  title: "title",
+  search: "search",
+  referrer: "referrer"
 });
 ```
 
@@ -134,12 +134,12 @@ Calling `rudderanalytics.track()` will pass the event properties to Keen on the 
 
 An example `track` call is as shown:
 
-```
+```javascript
 rudderanalytics.track("Track me", {
-        category: "category",
-        label: "label",
-        value: "value"
- });
+  category: "category",
+  label: "label",
+  value: "value",
+});
 ```
 
 The above call will send the following properties to Keen's `Track me` collection:
@@ -156,7 +156,7 @@ The `screen` call records the screen views of the user in your App. If you have 
 
 Here is a sample `screen` call in using RudderStack iOS SDK.
 
-```
+```objectivec
 [[RudderClient sharedInstance] screen:@"Main"
             properties:@{@"prop_key" : @"prop_value"}];
 ```
