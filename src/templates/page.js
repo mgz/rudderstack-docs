@@ -201,7 +201,7 @@ const Page = props => {
         case "leftrightcontentimagesection":
           el = (
             <div className="bg-blueNew-midnight_v2 100% pt-32" key={c._key}>
-              <LeftRightImgCnt applyGradientColorTheme={true} {...c} />{" "}
+              <LeftRightImgCnt applyGradientColorTheme={true} {...c} />
             </div>
           )
           break
@@ -229,10 +229,10 @@ const Page = props => {
           )
           break
         case "three_card_with_title":
-          el = <ThreeCardsWithTitleLeftAligned key={c._key} {...c} ref={halfPage} />
+          el = <ThreeCardsWithTitleLeftAligned key={c._key} {...c} />
           break
         case "centered_aligned_title_with_youtube":
-          el = hasScrolled ? <CenteredAlignedTitleWithYoutube key={c._key} {...c} /> : <p>Loading</p>
+          el = <CenteredAlignedTitleWithYoutube key={c._key} {...c} />
           break
         case "ref_section_testimonials":
           l_section_info = data.section_testimonials.edges.find(

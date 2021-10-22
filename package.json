@@ -100,6 +100,7 @@
   },
   "devDependencies": {
     "@netlify/plugin-gatsby": "^1.0.3",
+    "babel-preset-gatsby": "^2.0.0",
     "gatsby-plugin-perf-budgets": "0.0.18",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
     "prettier": "2.2.1"

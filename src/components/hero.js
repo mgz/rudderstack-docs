@@ -146,14 +146,14 @@ function Hero(props) {
                 placeholder="tracedSVG"
               />
             </div>
-            <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
-              {/* <div id="lottie" /> */}
+            {/* <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
+              {/* <div id="lottie" /> 
               {showAnimation && !isMobile && (
                 <Suspense fallback={<div></div>}>
                   <LottieAnim />
                 </Suspense>
               )}
-            </div>
+            </div> */}
             {/*
             <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
               <StaticImage

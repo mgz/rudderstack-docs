@@ -18,14 +18,14 @@ import {
   StyledEditor,
 } from './styles';
 (typeof global !== "undefined" ? global : window).Prism = Prism;
-require("prismjs/components/prism-kotlin");
+/* require("prismjs/components/prism-kotlin");
 require("prismjs/components/prism-csharp");
 require("prismjs/components/prism-ruby");
 require("prismjs/components/prism-groovy");
 require("prismjs/components/prism-swift");
 require("prismjs/components/prism-java");
 require("prismjs/components/prism-dart");
-require("prismjs/components/prism-php");
+require("prismjs/components/prism-php"); */
 
 const calculateLinesToHighlight = (meta) => {
   const RE = /{([\d,-]+)}/;
