@@ -101,7 +101,7 @@ You can copy-paste the entire code of any of the functions present in this repos
 
 - In case you want to perform any aggregation/roll-up operation on a micro batch of events, use the `transformBatch` feature, as shown:
 
-```
+```javascript
 /***
 * This function gets executed on a batch of events before it gets pushed to a destination
 * events    => JSON list of events sent to rudder
@@ -115,7 +115,7 @@ export function transformBatch(events, metadata) {
 }
 ```
 
-<div class="dangerBlock"> 
+<div class="dangerBlock">
 
 **Disclaimer for using <code class="inline-code">transformBatch</code>**
 
@@ -180,14 +180,15 @@ Let's say you want to import a function called **`rudderEmail`**, which returns 
 
 The following code snippet demonstrates how we can implement this use-case:
 
-```
-import { rudderEmail } from 'isRudderEmail'
+```javascript
+import { rudderEmail } from "isRudderEmail";
 export function transformEvent(event) {
-    const email = event.context && event.context.traits && event.context.traits.email;
-    if (email) {
-      if (!rudderEmail(email)) return;
-    }
-    return event;
+  const email =
+    event.context && event.context.traits && event.context.traits.email;
+  if (email) {
+    if (!rudderEmail(email)) return;
+  }
+  return event;
 }
 ```
 
@@ -207,23 +208,23 @@ When importing a single function or multiple functions from a library, it is imp
 The following snippets highlight how to properly import functions from a library:
 
 ```javascript
-Correct Way ✅
----------------
+// Correct Way ✅
+// ---------------
 import { getPrice } from getFinanceData;
 
-OR
+// OR
 
 import { getPrice, getRevenue, getProfit } from getFinanceData;
 ```
 
 ```javascript
-Incorrect Way ❌
------------------
+// Incorrect Way ❌
+// -----------------
 import {
   getPrice
 } from getFinanceData;
 
-OR
+// OR
 
 import {
   getPrice,
@@ -264,10 +265,10 @@ Since you may not need the metadata in every transformation, you can optionally 
 
 An example of this is as shown below:
 
-```
-export function transformEvent(event, metadata){
+```javascript
+export function transformEvent(event, metadata) {
   const meta = metadata(event);
-  event.sourceId = meta.sourceId
+  event.sourceId = meta.sourceId;
 
   return event;
 }
@@ -290,36 +291,36 @@ An example of how to use the `fetch` function in transformations is shown below:
     <TabPanel>
 <span>
 
-```
+```bash
 curl --location -X POST
 'https://api.rudderstack.com/accessTokens' \ -H 'Authorization: Basic
 Base64Enc(workspacetoken:)' \ -H 'Content-Type: application/json' \ -d
 '{ "name": "some-test-access-token", "description":
-"some-description" }' 
+"some-description" }'
 ```
 </span>
     </TabPanel>
     <TabPanel>
 <span>
 
-``` 
+```bash
 http POST 'https://api.rudderstack.com/accessTokens' \
 name=some-test-access-token description=some-description \
 Authorization:'Basic MXBUbGc2MlpZcUgycWtDMDVmc1hUZlJQRWZyOg==' \
-Content-Type:'application/json' 
+Content-Type:'application/json'
 ```
 </span>
     </TabPanel>
-    <TabPanel> 
+    <TabPanel>
 <span>
 
-```
+```javascript
 export async function transformEvent(event) {
   const res = await fetch("post_url", {
     method: "POST", // POST, PUT, DELETE, GET, etc.
     headers: {
-    "Content-Type": "application/json;charset=UTF-8",
-    "Authorization": "Bearer <your_authorization_token>"
+      "Content-Type": "application/json;charset=UTF-8",
+      Authorization: "Bearer <your_authorization_token>",
     },
     body: JSON.stringify(event),
   });
@@ -349,13 +350,13 @@ You can access event-related logs while running a test by including the `log()` 
 
 ```javascript
 export function transformEvent(event, metadata) {
-  const meta = metadata(event)
-  event.sourceId = meta.sourceId
+  const meta = metadata(event);
+  event.sourceId = meta.sourceId;
 
-  log("Event Name is", event.event, ";", "Message Id is", event.messageId)
-  log("Source Id is", meta.sourceId)
+  log("Event Name is", event.event, ";", "Message Id is", event.messageId);
+  log("Source Id is", meta.sourceId);
 
-  return event
+  return event;
 }
 ```
 

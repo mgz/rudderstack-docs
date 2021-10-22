@@ -222,8 +222,8 @@ rudderanalytics.group("sample_group_id", {
 
 To pass [super properties](https://posthog.com/docs/integrations/js-integration#super-properties) to PostHog JavaScript SDK, pass the key-value pairs as below:
 
-```
-This will set {superKey1: "value1", superKey2: "value2"} as super properties to PostHog SDK
+```javascript
+// This will set {superKey1: "value1", superKey2: "value2"} as super properties to PostHog SDK
 rudderanalytics.track("event", {prop: "value"}, {
   integrations: {
     POSTHOG: {
@@ -236,8 +236,8 @@ rudderanalytics.track("event", {prop: "value"}, {
 })
 ```
 
-```
-This will set {superKey3: "value3"} as set once super properties to PostHog SDK
+```javascript
+// This will set {superKey3: "value3"} as set once super properties to PostHog SDK
 rudderanalytics.track("event", {prop: "value"}, {
   integrations: {
     POSTHOG: {
@@ -249,8 +249,8 @@ rudderanalytics.track("event", {prop: "value"}, {
 })
 ```
 
-```
-This will unset super properties superKey1, superKey2, superKey3 to PostHog SDK
+```javascript
+// This will unset super properties superKey1, superKey2, superKey3 to PostHog SDK
 rudderanalytics.track("event", {prop: "value"}, {
   integrations: {
     POSTHOG: {
