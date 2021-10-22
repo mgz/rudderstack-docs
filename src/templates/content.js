@@ -79,15 +79,16 @@ const Singleblog = ({ data, location, ...props }) => {
           date={blog.blogdate}
           author={author_names}
           image={blog.blog_image}
+          blog={blog}
         />
       </div>
-      <div className="block-description relative pt-16 max-w-4xl m-auto px-4 md:px-12">
+      <div className="block-description relative pt-4 max-w-4xl m-auto px-4 md:px-16">
         {/*Blog Content*/}
-        <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-24 mt-3 top-0 lg:left-0 md:left-4">
+        <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-8 mt-3 top-0 lg:left-0 md:left-0">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
             {/* <a className="block" href="#"> */}
             <StaticImage
-              src={"../images/blogtwitter.svg"}
+              src={"../images/icon-twitter.svg"}
               placeholder="tracedSVG"
               className="text-blueNew-midnight"
               alt="twitter"
@@ -99,7 +100,7 @@ const Singleblog = ({ data, location, ...props }) => {
           >
             <p className="my-3 block">
               <StaticImage
-                src={"../images/blogfb.svg"}
+                src={"../images/icon-fb.svg"}
                 placeholder="tracedSVG"
                 alt="Facebook"
               />
@@ -110,7 +111,7 @@ const Singleblog = ({ data, location, ...props }) => {
           >
             <p className="block">
               <StaticImage
-                src={"../images/blogIn.svg"}
+                src={"../images/icon-linkedin.svg"}
                 placeholder="tracedSVG"
                 alt="linkdin"
               />
@@ -205,7 +206,7 @@ const Singleblog = ({ data, location, ...props }) => {
         </div>
       </section>
       {/*Blog Post*/}
-      <SignupV1 />
+      {/* <SignupV1 /> */}
       {/*Sign Up Section*/}
       <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
         {/*Subscription Component*/}

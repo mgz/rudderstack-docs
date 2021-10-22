@@ -96,6 +96,8 @@ module.exports = {
         matchFields: [
           "title",
           "blogimage",
+          "short_description",
+          "blog_authors",
           "weight",
           "slug",
           "blogdate",
