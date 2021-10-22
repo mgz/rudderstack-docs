@@ -58,7 +58,7 @@ Please follow our [Adding a Source and Destination](https://rudderstack.com/docs
 
 <div class="infoBlock">
 
-You can send an event `type` like `page,` `identify,` `track`.  
+You can send an event `type` like `page,` `identify,` `track`.
 For the `track` events you can specify the event name based on the `event` name in the payload.
 
 For example:
@@ -111,7 +111,7 @@ For the `key` fields provided in the attributes map, the `key` is searched in th
 
 For example:
 
-```
+```javascript
 rudderanalytics.track("Track me", {
   category: "category",
   label: "label",
@@ -130,7 +130,7 @@ For the above `track` call, you can specify an attribute mapping for `metadataID
 
 This will create the below attribute metadata object:
 
-```
+```javascript
 {
    metadataId: "sample-id"
 }
@@ -206,7 +206,7 @@ rudderanalytics.track("Track me", {
 
 <div class="infoBlock">
 
-If you have set all event type, event and * for mapping the priority will be given to <code class="inline-code">event</code> ,  
+If you have set all event type, event and * for mapping the priority will be given to <code class="inline-code">event</code> ,
 then <code class="inline-code">type</code> , followed by *.
 
 </div>

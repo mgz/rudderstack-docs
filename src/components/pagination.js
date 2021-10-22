@@ -19,7 +19,7 @@ const Pagination = ({
 }) => {
   // console.log("pagination", nbPages, selectedPageNo)
   return (
-    <ul className="flex">
+    <ul className="flex flex-wrap">
       {new Array(nbPages).fill(null).map((_, index) => {
         const page = index + 1
 
