@@ -2,7 +2,7 @@ import React from "react"
 //import PortableText from "./portableText";
 
 function Herobanner({ title, date, author, image, blog }) {
-  console.log("blog", blog)
+  // console.log("blog", blog)
   return (
     <div className="mx-auto items-center">
       {/* Left col */}

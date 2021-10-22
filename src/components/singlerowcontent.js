@@ -9,7 +9,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Singlerowcontent = ({ hit }) => {
-  console.log("hit", hit)
+  // console.log("hit", hit)
   let author_names = ""
   hit.blog_authors.forEach(row => {
     author_names += (author_names.length > 0 ? ", " : "By ") + row.author_name
@@ -41,7 +41,7 @@ const Singlerowcontent = ({ hit }) => {
             </h1>
             <p className="text-grayColor-custom md:mb-28">{hit.short_description}</p>
           </div>
-          {/* {hit.blog_authors[0] && (
+          {hit.blog_authors[0] && (
             <div className="flex items-center mx-auto mb-4 sm:flex-row flex-col mt-4 md:absolute md:bottom-0 px-8">
               <div className=" inline-flex items-center justify-center flex-shrink-0 mr-4">
                 <img
@@ -58,7 +58,7 @@ const Singlerowcontent = ({ hit }) => {
                 </div>
               </div>
             </div>
-          )} */}
+          )} 
         </Link>
       </div>
     </div>
