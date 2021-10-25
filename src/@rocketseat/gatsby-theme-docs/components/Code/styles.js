@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import darken  from 'polished/lib/color/darken';
 /* import {
   LiveError as AuxLiveError,
   LivePreview as AuxLivePreview,
@@ -39,12 +38,12 @@ export const Pre = styled.pre`
   }
 `;
 
-export const LiveWrapper = styled.div`
+/* export const LiveWrapper = styled.div`
   border-radius: 5px;
   box-shadow: 1px 1px 20px rgba(20, 20, 20, 0.27);
   overflow: hidden;
   margin-bottom: 32px;
-`;
+`; */
 
 export const StyledEditor = styled.div`
   font-family: Hack, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
@@ -71,7 +70,7 @@ export const StyledEditor = styled.div`
 `;
 
 export const PreHeader = styled.div`
-  background-color: ${darken('0.05', '#282a36')};
+  background-color: rgb(29, 31, 39);
   color: rgb(248, 248, 242, 0.75);
   font-size: 12px;
   line-height: 18px;

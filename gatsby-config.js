@@ -195,7 +195,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-styled-components`,
+    /* `gatsby-plugin-styled-components`, */
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -358,7 +358,7 @@ module.exports = {
     //   },
     // },
     "gatsby-plugin-use-query-params",
-   /*  {
+    /* {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         analyzerMode: "server",

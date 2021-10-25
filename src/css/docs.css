@@ -625,12 +625,13 @@ width: calc(100% - 500px);
 @apply px-5;
 @apply py-3;
 @apply pl-12;
-@apply bg-blueNew-skyblue;
-@apply border-l-2;
+@apply border-l-4;
 @apply border-blueNew-custom;
 @apply relative;
 @apply my-8;
+background-color:#F5F7F9 !important;
 border-radius: 0px 5px 5px 0px;
+line-height: 1.625;
 }
 .imageTitle {
 @apply block;
@@ -644,12 +645,13 @@ border-radius: 0px 5px 5px 0px;
 @apply px-5;
 @apply py-3;
 @apply pl-12;
-@apply bg-orange-warningBg;
-@apply border-l-2;
+@apply border-l-4;
 @apply border-orange-warningBorder;
 @apply relative;
 @apply my-8;
+background-color:#F5F7F9 !important;
 border-radius: 0px 5px 5px 0px;
+line-height: 1.625;
 }
 
 .dangerBlock {
@@ -657,12 +659,13 @@ border-radius: 0px 5px 5px 0px;
 @apply px-5;
 @apply py-3;
 @apply pl-12;
-@apply bg-red-dangerBg;
-@apply border-l-2;
+@apply border-l-4;
 @apply border-red-dangerBorder;
 @apply relative;
 @apply my-8;
+background-color:#F5F7F9 !important;
 border-radius: 0px 5px 5px 0px;
+line-height: 1.625;
 }
 
 .successBlock {
@@ -670,14 +673,14 @@ border-radius: 0px 5px 5px 0px;
 @apply px-5;
 @apply py-3;
 @apply pl-12;
-@apply bg-green-successBg;
-@apply border-l-2;
+@apply border-l-4;
 @apply border-green-successBorder;
 @apply relative;
 @apply my-8;
+background-color:#F5F7F9 !important;
 border-radius: 0px 5px 5px 0px;
+line-height: 1.625;
 }
-
 .infoBlock:before {
 content: url("../images/info-icon.svg");
 width: 1em;
