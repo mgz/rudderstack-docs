@@ -10,8 +10,8 @@ import MiddleBanner from "../components/middle-banner"
 //import RightSideHiglightedContent from "../components/rightSideHiglightedContent"
 import FreeText from "../components/freeText"
 import GraphQLErrorList from "../components/graphql-error-list"
-//import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
-//import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
+import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
+import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
 
 // import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -31,8 +31,8 @@ const RightSideHiglightedContent = loadable(() => import("../components/rightSid
 
 const OurLogo = loadable(() => import("../components/ourlogo"))
 const Testimonial = loadable(() => import("../components/testimonial"))
-const ThreeCardsWithTitleLeftAligned = loadable(() => import("../components/threeCardsWithTitleLeftAligned"))
-const CenteredAlignedTitleWithYoutube = loadable(() => import("../components/CenteredAlignedTitleWithYoutube"))
+/* const ThreeCardsWithTitleLeftAligned = loadable(() => import("../components/threeCardsWithTitleLeftAligned"))
+const CenteredAlignedTitleWithYoutube = loadable(() => import("../components/CenteredAlignedTitleWithYoutube")) */
 
 export const query = graphql`
   query PageTemplateQuery($id: String!) {
