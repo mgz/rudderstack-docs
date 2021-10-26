@@ -28,6 +28,7 @@
     "dotenv": "^8.2.0",
     "dpx": "^3.1.1",
     "gatsby": "^3.2.1",
+    "gatsby-background-image-es5": "^1.5.3",
     "gatsby-cli": "^3.2.0",
     "gatsby-plugin-algolia": "^0.18.0",
     "gatsby-plugin-feed": "^3.7.0",
