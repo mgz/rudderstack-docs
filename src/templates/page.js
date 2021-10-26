@@ -297,9 +297,6 @@ const Page = props => {
 
         <meta property="twitter:description" content={data.page.meta_desc} />
         {/* <meta property="og:type" content="article" /> */}
-        <link rel="preload" href="./fonts/Normal/Basis Grotesque.woff" as="font" crossOrigin="anonymous" />
-        <link rel="preload" href="./fonts/Medium/Basis Grotesque Medium.woff" as="font" crossOrigin="anonymous" />
-        <link rel="preload" href="./fonts/Bold/Basis Grotesque Bold.woff" as="font" crossOrigin="anonymous" />
       </Helmet>
 
       {/* <SEO
