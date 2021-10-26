@@ -1,6 +1,7 @@
 import React from "react"
 import PortableText from "./portableText"
 import Image from "./image"
+import { StaticImage } from "gatsby-plugin-image"
 
 const CSSidebarItem = props => {
   return (
@@ -12,7 +13,15 @@ const CSSidebarItem = props => {
       )}
       {props.sub_title && (
         <div className="text-4xl text-blueNew-midnight font-bold mb-4">
-          {props.sub_title}
+          <span>{props.sub_title}</span>
+          {props.sub_title_icon && props.sub_title_icon === "up" && (
+            <StaticImage
+              src="../images/arrow-upwards.svg"
+              alt="arrow-upwards"
+              placeholder="tracedSVG"
+              className="h-8 w-auto ml-8 mt-3"
+            />
+          )}
         </div>
       )}
       {props.content && (

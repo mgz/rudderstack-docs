@@ -65,7 +65,7 @@ const CaseStudyContent = ({ data, location }) => {
         } else if (section._type === "hero_banner_case_studies") {
           return (
             <div className="100%" key={section._key}>
-              <HeroBannerCaseStudies {...section} />
+              {/* <HeroBannerCaseStudies {...section} /> */}
             </div>
           )
         } else if (section._type === "case_studies_main_content") {

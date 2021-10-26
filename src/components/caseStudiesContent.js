@@ -6,26 +6,29 @@ import CSSidebarItem from "../components/csSideBarItem"
 const CaseStudiesContent = props => {
   console.log("casestudycontent", props)
   return (
-    <div className="max-w-6xl mx-auto flex flex-row py-24 px-2">
-      <div className="w-72  p-10 shadow-md border border-grayColor-lightBorder rounded-3xl ">
-        <div className="border-b border-grayColor-lightBorder">
-          {props.sidebar_data.top_section.map(row => {
-            return <CSSidebarItem {...row} />
-          })}
-        </div>
-        
-        <div className="border-b border-grayColor-lightBorder">
-          {props.sidebar_data.middle_section.map(row => {
-            return <CSSidebarItem {...row} />
-          })}
-        </div>
+    <div className="max-w-6xl mx-auto flex flex-col md:flex-row py-24 px-2">
+      <div>
+        <div className="w-72  p-10 shadow-md border border-grayColor-lightBorder rounded-3xl ">
+          <div className="border-b border-grayColor-lightBorder">
+            {props.sidebar_data.top_section.map(row => {
+              return <CSSidebarItem {...row} />
+            })}
+          </div>
 
-        <div className="">
-          {props.sidebar_data.bottom_section.map(row => {
-            return <CSSidebarItem {...row} />
-          })}
+          <div className="border-b border-grayColor-lightBorder">
+            {props.sidebar_data.middle_section.map(row => {
+              return <CSSidebarItem {...row} />
+            })}
+          </div>
+
+          <div className="">
+            {props.sidebar_data.bottom_section.map(row => {
+              return <CSSidebarItem {...row} />
+            })}
+          </div>
         </div>
       </div>
+
       <div className="max-w-3xl px-4 md:px-16 m-auto">
         <div className="pb-8">
           <StaticImage

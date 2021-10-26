@@ -127,10 +127,11 @@ body {
 }
 
 .hero-case-studies-bg-image{
-  background-image: url("../images/Union.png");
+  background-image: url("../images/Union2.png");
   background-repeat: no-repeat;
   /* background-size: 120% 50%; */
-  background-position: 0px 0px;
+  background-position: bottom;
+  background-size: cover;
 }
 
 .gradient-enable {
