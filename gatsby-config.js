@@ -212,20 +212,20 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    /* {
+    {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //host: `https://rudderstack-dataplane.rudderstack.com`,
-        loadType: "async",
+        loadType: "defer",
         trackPage: false,
-        // loadAsync: true,
+        //loadAsync: true,
         delayLoad: true,
         delayLoadTime: 1000,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
-    }, */
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
