@@ -118,6 +118,9 @@
   .comparison-banner {
     background-size: 0px 0px;
   }
+  .video-library-banner::before {
+    background-image: none; 
+  }
 }
 @media (max-width: 575px) {
   .product-video::before,
