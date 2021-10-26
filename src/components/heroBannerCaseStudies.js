@@ -7,8 +7,8 @@ const HeroBannerCaseStudies = props => {
   return (
     <div className="hero-case-studies ">
       <div className="hero-case-studies-bg-image">
-        <div className=" max-w-6xl  mx-auto px-4 py-12 md:py-32 flex flex-col lg:flex-row">
-          <div className="w-full text-whiteColor-custom lg:w-8/12">
+        <div className=" max-w-6xl  mx-auto px-4 py-12 md:py-32 flex flex-col md:flex-row">
+          <div className="w-full text-whiteColor-custom md:w-7/12 lg:w-8/12">
             <h1 className="text-4xl md:text-5xl leading-tight font-bold">{props.title}</h1>
             <div className="text-xl-2 max-w-xl mt-6">
               <PortableText
@@ -56,7 +56,7 @@ const HeroBannerCaseStudies = props => {
             </div>
           </div>
 
-          <div className="w-full lg:w-4/12 relative mt-10 lg:mt-0 md:flex">
+          <div className="w-full md:w-5/12 lg:w-4/12 relative mt-10 md:mt-0 md:flex">
             <div className="relative">
               <div className="absolute -top-1 left-8 bg-blueNew-midnight w-24 h-2 rounded-3xl"></div>
               <div className="bg-whiteColor-custom md:h-72 md:w-72 rounded-3xl p-10">

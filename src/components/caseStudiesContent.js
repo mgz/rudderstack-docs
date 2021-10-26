@@ -6,9 +6,9 @@ import CSSidebarItem from "../components/csSideBarItem"
 const CaseStudiesContent = props => {
   console.log("casestudycontent", props)
   return (
-    <div className="max-w-6xl mx-auto flex flex-col md:flex-row py-24 px-2">
+    <div className="max-w-6xl mx-auto flex flex-col md:flex-row py-12 md:py-24 px-2">
       <div>
-        <div className="w-72  p-10 shadow-md border border-grayColor-lightBorder rounded-3xl ">
+        <div className="w-full md:w-72 p-10 shadow-md border border-grayColor-lightBorder rounded-3xl ">
           <div className="border-b border-grayColor-lightBorder">
             {props.sidebar_data.top_section.map(row => {
               return <CSSidebarItem {...row} />
@@ -29,7 +29,7 @@ const CaseStudiesContent = props => {
         </div>
       </div>
 
-      <div className="max-w-3xl px-4 md:px-16 m-auto">
+      <div className="max-w-3xl px-4 pt-8 md:pt-0 lg:px-16">
         <div className="pb-8">
           <StaticImage
             src="../images/quatation-mark.png"
@@ -38,7 +38,7 @@ const CaseStudiesContent = props => {
             className="w-20 h-auto"
           />
           <div className="text-blueNew-midnight flex flex-col mt-2">
-            <h3 className="text-4xl leading-tight mb-4">
+            <h3 className="text-3xl-2 md:text-4xl leading-tight mb-4">
               {props.review_data.customer_review}
             </h3>
             <span className="text-tiny mb-1">
