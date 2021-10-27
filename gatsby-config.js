@@ -210,9 +210,9 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    /* `gatsby-plugin-sharp`, */
     `gatsby-transformer-sharp`,
-    {
+    /* {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
@@ -225,7 +225,7 @@ module.exports = {
         delayLoadTime: 1000,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
-    },
+    }, */
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -428,7 +428,7 @@ module.exports = {
         ],
       },
     }, */
-    `gatsby-plugin-perf-budgets`,
+    /* `gatsby-plugin-perf-budgets`, */
     /* {
       resolve: `gatsby-plugin-brotli`,
       options: {
