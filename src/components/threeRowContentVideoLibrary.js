@@ -36,7 +36,7 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                         }`}
                       </div>
 
-                      <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6 text-blueNew-midnight">
+                      <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6 text-blueNew-midnight min-h-0">
                         {hit.title}
                       </h2>
                     </Link>

@@ -68,7 +68,7 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
                 category === "Live" ? "| " + url_or_event_dttm : ""
               }`}
             </div>
-            <h1 className="block  my-2 text-2xl leading-tight font-bold text-blueNew-midnight">
+            <h1 className="block  pt-6 text-2xl leading-tight font-bold text-blueNew-midnight">
               {webinarObj.node.title}
             </h1>
             <p className="text-base text-grayColor-custom">
@@ -97,7 +97,7 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
             <img
               src={webinarObj.node.listing_image.asset.url}
               alt={webinarObj.node.title}
-              className="sm:h-full lg:max-w-2xl object-cover max-h-96"
+              className="sm:h-full lg:max-w-2xl sm:max-h-full sm:max-w-sm  sm:object-fill  object-cover max-h-96"
               // className="sm:h-full lg:max-w-2xl object-cover"
               loading="eager"
             />
