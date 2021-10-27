@@ -375,30 +375,41 @@ module.exports = {
         name: `markdown-pages`,
         path: `${__dirname}/src/docs`,
       },
-    },
-    /* {
+    }, */
+    {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx",".md"],
         gatsbyRemarkPlugins: [
-          {
+          /* {
             resolve: `gatsby-remark-embedder`,
             options:{
               services: {
                 'YouTube': "https://www.youtube.com/watch?v=vOaw9pKn6\_M"
               } 
             }
-          }
+          } */
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {},
+          },
         ]
       }
-    }, */
+    },
     {
       resolve: "@rocketseat/gatsby-theme-docs",
       options: {
         basePath: `/docs`,
         docsPath: `src/docs`,
         configPath: `src/docs`,
-        withMdx: true,
+        withMdx: false,
       },
     },
     /* {
