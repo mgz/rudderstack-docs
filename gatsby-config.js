@@ -406,7 +406,7 @@ module.exports = {
       options: {
         basePath: `/docs`,
         docsPath: `src/docs`,
-        configPath: `src/docsconfig`,
+        configPath: `src/docs`,
         withMdx: true,
       },
     },

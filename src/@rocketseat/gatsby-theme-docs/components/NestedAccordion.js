@@ -6,7 +6,7 @@ import {
   Accordion,
   AccordionItemPanel,
 } from "react-accessible-accordion"
-import { jsonData } from "../../../docsconfig/sidebar"
+import { jsonData } from "../../../docs/sidebar"
 import {rudderslabTrackOnClickDocs} from '../../../utils/common';
 
 const NestedAccordion = props => {

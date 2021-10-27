@@ -41,7 +41,7 @@ const MainNavigationMenuLink = props => {
             <div className="lg:pt-2">
               <div
                 className={`sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-md  lg:rounded-2xl py-1 lg:py-0 z-40  mx-auto ${
-                  i >= 4 ? "lg:left-80 xl:left-96" : ""
+                  i >= 3 ? "lg:left-80 xl:left-96" : ""
                 }
                bg-whiteColor-custom lg:place-items-left ${
                  props.currMenuIndex === i ? `flex` : `flex hidden`
