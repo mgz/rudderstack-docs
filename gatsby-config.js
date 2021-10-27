@@ -376,7 +376,7 @@ module.exports = {
         path: `${__dirname}/src/docs`,
       },
     }, */
-    {
+    /* {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx",".md"],
@@ -388,7 +388,7 @@ module.exports = {
                 'YouTube': "https://www.youtube.com/watch?v=vOaw9pKn6\_M"
               } 
             }
-          } */
+          } 
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -402,14 +402,14 @@ module.exports = {
           },
         ]
       }
-    },
+    }, */
     {
       resolve: "@rocketseat/gatsby-theme-docs",
       options: {
         basePath: `/docs`,
         docsPath: `src/docs`,
         configPath: `src/docs`,
-        withMdx: false,
+        withMdx: true,
       },
     },
     /* {

@@ -1,5 +1,5 @@
 const docsQuery = `{
-  docs:  allMdx {
+  docs: allMdx {
     edges {
       node {
         slug
