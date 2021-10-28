@@ -6,9 +6,9 @@ const VideoContentLesson = ({ data }) => {
   // console.log("ssss", data)
   return (
     <section className="100% bg-whiteColor-custom">
-      <div className="max-w-6xl px-4 mx-auto sm:pt-16 pb-16">
+      <div className="max-w-6xl lg:px-4 sm:px-6 mx-auto sm:pt-16 pb-16">
         <div className="flex lg:items-start items-center flex-wrap">
-          <div className="w-full lg:w-5/12 sm:w-full sm:p-6 sm:pl-0 mt-12 sm:mt-0">
+          <div className="w-full lg:w-5/12 sm:w-full lg:p-6 sm:pl-0 mt-12 sm:mt-0">
             <h3 className="text-3xl text-blueNew-midnight font-bold leading-tight mb-8">
               {data.herotitle}
             </h3>
