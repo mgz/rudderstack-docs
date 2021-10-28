@@ -125,7 +125,7 @@ const Singleblog = ({ data, location, ...props }) => {
             return (
               <div
                 key={item.author_name}
-                className="my-8 py-12 px-8 bg-blueNew-lighter rounded-2xl bg-opacity-50 flex items-center mx-auto pb-10 mb-10 sm:flex-row flex-col"
+                className="my-8 py-12 px-8 bg-blueNew-lighter rounded-2xl bg-opacity-50 flex items-center mx-auto pb-10 mb-10  flex-row"
               >
                 <div className="sm:w-32 sm:h-32 h-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
                   {/* <div className= "rounded-full"> */}
@@ -145,7 +145,7 @@ const Singleblog = ({ data, location, ...props }) => {
                     className="w-24 h-24 rounded-full"
                   /> */}
                 </div>
-                <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                <div className="flex-grow text-left sm:ml-1 lg:text-center mt-6 sm:mt-0">
                   <div className="text-xs font-bold uppercase text-blueNew-eastbay">
                     About the author
                   </div>
