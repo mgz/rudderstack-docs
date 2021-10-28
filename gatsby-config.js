@@ -212,7 +212,7 @@ module.exports = {
     `gatsby-plugin-image`,
     /* `gatsby-plugin-sharp`, */
     `gatsby-transformer-sharp`,
-    /* {
+     {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
@@ -225,7 +225,7 @@ module.exports = {
         delayLoadTime: 1000,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
-    }, */
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
