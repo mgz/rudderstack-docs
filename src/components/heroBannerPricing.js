@@ -132,7 +132,7 @@ const HeroBannerPricing = props => {
         </div>
 
         <div className="py-8 pt-5 md:pt-16 w-full text-lg md:text-xl text-center font-bold">
-          <p className="text-primary">{props.herobannerfootersmalltitle}</p>
+          {linktext && <p className="text-primary">{props.herobannerfootersmalltitle}</p> }
           <div className="mt-3 flex items-center">
             {(() => {
               if (linktext !== "") {
