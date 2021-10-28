@@ -21,7 +21,7 @@ import { Helmet } from "react-helmet"
 
 library.add(faArrowUp);
 
-const CaseStudies = ({ data }) => {
+const CaseStudies = ({ data,location }) => {
   // console.log('case-studies-full-data',data)
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
@@ -35,7 +35,7 @@ const CaseStudies = ({ data }) => {
   const [currentRefineText, setCurrentRefineText] = useState("")
   const [currentRefineHitsCount, setCurrentRefineHitsCount] = useState(0)
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet>
         <meta name="robots" content="noindex" />
         <meta name="robots" content="nofollow" />

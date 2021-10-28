@@ -65,6 +65,14 @@ const Layout = ({ location, showExplicitGradient, children }) => {
           }
         }
       }
+      allSanityWebsiteBannerDoc {
+        edges {
+          node {
+            _id
+            _rawWebsiteBanner
+          }
+        }
+      }
     }
   `)
   const copyright =
@@ -110,11 +118,15 @@ const Layout = ({ location, showExplicitGradient, children }) => {
       {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection &&
         data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection.banner_contents.map(
           banner => {
+            let webBanner = data.allSanityWebsiteBannerDoc.edges.find(
+              row => row.node._id === banner._ref
+            )
             return (
               <WebisteBanner
                 key={banner._key}
+                _key={banner._key}
                 currentSlug={location ? location.pathname : ""}
-                {...banner}
+                {...webBanner.node._rawWebsiteBanner}
               />
             )
           }

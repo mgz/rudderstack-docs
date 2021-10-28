@@ -34,7 +34,7 @@ import clientConfig from "../../client-config"
 // const Faq = loadable(() => import("../components/faq"))
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
-const Singleintegration = ({ data }) => {
+const Singleintegration = ({ data, location }) => {
   const lv_testimonialsection = data.section_testimonials.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
   )
@@ -60,7 +60,7 @@ const Singleintegration = ({ data }) => {
   }, [data.integration._rawFaqSection])
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet>
         <title>{data.integration.meta_title || data.integration.title}</title>
         <meta

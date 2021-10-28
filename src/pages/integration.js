@@ -33,7 +33,7 @@ const Integration = props => {
   //   rudderslabTrackOnSearch(searchedText)
   // }, [searchedText])
   return (
-    <Layout>
+    <Layout location={props.location}>
       <Helmet>
         <title>{`Integrations Library | RudderStack CDP`}</title>
         <meta
