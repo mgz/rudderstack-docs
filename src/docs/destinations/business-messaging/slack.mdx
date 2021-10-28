@@ -67,7 +67,7 @@ Add the regex expression without the global\(`g`\) parameter. It is added by Rud
 - Identify Template
 
 Provide the template that you want the identify event to be transformed to when sent to slack. We support [Handlebar expression](https://handlebarsjs.com/guide/expressions.html). The default template is,`Identified {{name}} <traits_key1>:<traits_value1> <traits_key2>:<traits_value2> ....`
-where the traits key and value are the key-value pairs in the traits object of [Identify](https://rudderstack.com/docs/get-started/rudderstack-api-spec#identifypayload) payload. The `name` field in the template is determined from either of the following:
+where the traits key and value are the key-value pairs in the traits object of [Identify](https://rudderstack.com/docs/rudderstack-api/api-specification/rudderstack-spec/identify/#sample-payload) payload. The `name` field in the template is determined from either of the following:
 
 1. `traits.name`
 2. `traits.firstName + traits.lastName`
