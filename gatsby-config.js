@@ -12,7 +12,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Rudderstack`,
-    description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
+    description: `RudderStack is the easiest way to stream data from your website or warehouse. With RudderStack, you can easily collect customer data from every platform.`,
     author: `@gatsbyjs`,
     siteUrl: "https://rudderstack.com",
     siteTitle: "RudderStack",
