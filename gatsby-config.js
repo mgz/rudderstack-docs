@@ -86,7 +86,7 @@ module.exports = {
         graphqlTag: "default",
       },
     },
-   {
+/*   {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -185,7 +185,7 @@ module.exports = {
           "idx"
         ],
       },
-    },
+    },*/
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
