@@ -223,6 +223,7 @@ module.exports = {
         //loadAsync: true,
         delayLoad: true,
         delayLoadTime: 1000,
+        useNewSDK: true,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
     },
