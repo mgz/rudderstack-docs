@@ -750,3 +750,20 @@ top: -60px;
   -webkit-background-size: 100%;
   background-size: 100%;
 }
+
+@media only screen and (min-width: 1024px) {
+  .submenu-align{
+    left: 15rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .submenu-align{
+    left: 30rem;
+  }
+}
+
+@media only screen and (min-width: 1536px) {
+  .submenu-align{
+    left: 45rem;
+  }
+}
