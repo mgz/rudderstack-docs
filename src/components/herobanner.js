@@ -25,7 +25,7 @@ function Herobanner({ title, date, author, image, blog }) {
         <p className="text-blueNew-midnight uppercase text-sm font-bold mx-4">
           {blog.blog_category}
         </p>
-        <h1 className="py-4 md:text-5xl-2 text-3xl m-auto text-blueNew-midnight mx-4">
+        <h1 className="py-4 md:text-5xl-2 text-3xl m-auto text-blueNew-midnight mx-4 lg:mx-0 md:mx-0">
           {title}
         </h1>
 

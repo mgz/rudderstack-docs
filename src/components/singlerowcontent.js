@@ -33,7 +33,7 @@ const Singlerowcontent = ({ hit }) => {
         <Link to={hit.slug} className="relative">
           <div class="px-8 pt-8 pb-4">
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
-              {hit.blog_category} fdgfdg
+              {hit.blog_category}
             </div>
             <h1 className="block  mt-4 mb-4 text-3xl leading-tight font-bold md:font-medium text-blueNew-midnight">
               {hit.title}
