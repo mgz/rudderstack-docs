@@ -19,13 +19,13 @@ const Singlerowcontent = ({ hit }) => {
       key="0"
       className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden shadow-md"
     >
-      <div className="sm:flex">
+      <div className="flex lg:flex-row flex-col">
         <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link to={hit.slug}>
             <img
               src={hit.blogimage.src}
               alt={hit.title}
-              className="sm:h-full lg:max-w-2xl object-cover"
+              className="sm:h-full w-full object-cover"
               loading="eager"
             />
           </Link>
@@ -33,7 +33,7 @@ const Singlerowcontent = ({ hit }) => {
         <Link to={hit.slug} className="relative">
           <div class="px-8 pt-8 pb-4">
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
-              {hit.blog_category}
+              {hit.blog_category} fdgfdg
             </div>
             <h1 className="block  mt-4 mb-4 text-3xl leading-tight font-bold md:font-medium text-blueNew-midnight">
               {hit.title}
