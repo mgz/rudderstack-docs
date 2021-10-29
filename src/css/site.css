@@ -767,3 +767,9 @@ top: -60px;
     left: 45rem;
   }
 }
+
+@media only screen and (min-width: 2400px) {
+  .submenu-align{
+    left: 62rem;
+  }
+}

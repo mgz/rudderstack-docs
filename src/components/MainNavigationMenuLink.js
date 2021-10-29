@@ -42,8 +42,7 @@ const MainNavigationMenuLink = props => {
               <div
                 className={`sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-md  lg:rounded-2xl py-1 lg:py-0 z-40  mx-auto ${
                   i >= 3 ? "submenu-align" : ""
-                }
-               bg-whiteColor-custom lg:place-items-left ${
+                } bg-whiteColor-custom lg:place-items-left ${
                  props.currMenuIndex === i ? `flex` : `flex hidden`
                }
                overflow-y-auto lg:overflow-hidden h-80 lg:h-64
