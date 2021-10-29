@@ -8,13 +8,13 @@ const MainNavigationMenuLink = props => {
 
   let link = props.link
   let i = props.i
- 
+
   return (
     <li
       key={i}
       className={`${
         link._rawSubMenuSection !== null ? `has-submenu group` : `group`
-      } mt-2 lg:mt-0 hover:font-bold text-whiteColor-custom lg:text-blueNew-midnight`}
+      } mt-2 lg:mt-0 hover:font-bold text-whiteColor-custom lg:text-blueNew-midnight `}
     >
       <SanityLink
         link={link}
@@ -41,13 +41,14 @@ const MainNavigationMenuLink = props => {
             <div className="lg:pt-2">
               <div
                 className={`sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-md  lg:rounded-2xl py-1 lg:py-0 z-40  mx-auto ${
-                  i >= 3 ? "lg:left-80 xl:left-96" : ""
+                  i >= 3 ? "submenu-align" : ""
                 }
                bg-whiteColor-custom lg:place-items-left ${
                  props.currMenuIndex === i ? `flex` : `flex hidden`
                }
                overflow-y-auto lg:overflow-hidden h-80 lg:h-64
              `}
+                //  lg:left-80 xl:left-96 2xl:left-1/2
               >
                 <ul
                   className={` flex flex-col lg:flex-row w-full lg:mx-auto my-0`}
