@@ -123,7 +123,7 @@ const Blog_new = ({ data, location }) => {
             )}
           </InstantSearch>
           {currentRefineHitsCount > 0 && (
-            <div className="md:flex justify-end">
+            <div className="flex justify-end mt-2">
               <div
                 aria-hidden="true"
                 className="text-sm mt-2 font-bold cursor-pointer md:-mt-2 lg:-mt-2"

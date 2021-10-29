@@ -82,9 +82,8 @@ const Singleblog = ({ data, location, ...props }) => {
           blog={blog}
         />
       </div>
-      <div className="block-description relative pt-4 max-w-4xl m-auto px-4 md:px-16">
-        {/*Blog Content*/}
-        <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-8 mt-3 top-0 lg:left-0 md:left-0">
+      <div>
+      <div className="social-icon_blog lg:hidden md:hidden flex gap-4 ml-6 max-w-2xl sm:justify-start justify-center  items-center">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
             {/* <a className="block" href="#"> */}
             <StaticImage
@@ -92,6 +91,8 @@ const Singleblog = ({ data, location, ...props }) => {
               placeholder="tracedSVG"
               className="text-blueNew-midnight"
               alt="twitter"
+              width={40}
+              height={40}
             />
             {/* </a> */}
           </TwitterShareButton>
@@ -103,6 +104,8 @@ const Singleblog = ({ data, location, ...props }) => {
                 src={"../images/icon-fb.svg"}
                 placeholder="tracedSVG"
                 alt="Facebook"
+                width={40}
+                height={40}
               />
             </span>
           </FacebookShareButton>
@@ -114,6 +117,51 @@ const Singleblog = ({ data, location, ...props }) => {
                 src={"../images/icon-linkedin.svg"}
                 placeholder="tracedSVG"
                 alt="linkdin"
+                width={40}
+                height={40}
+              />
+            </span>
+          </LinkedinShareButton>
+        </div>
+      </div>
+      <div className="block-description relative pt-4 max-w-4xl m-auto px-4 md:px-16">
+        {/*Blog Content*/}
+        <div className="social-icon_blog absolute hidden md:flex  justify-center items-center flex-col pt-8 mt-3 top-0 lg:left-0 md:left-0">
+          <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
+            {/* <a className="block" href="#"> */}
+            <StaticImage
+              src={"../images/icon-twitter.svg"}
+              placeholder="tracedSVG"
+              className="text-blueNew-midnight"
+              alt="twitter"
+              width={40}
+              height={40}
+            />
+            {/* </a> */}
+          </TwitterShareButton>
+          <FacebookShareButton
+            url={`https://rudderstack.com/blog/${blog.slug}`}
+          >
+            <span className="my-3 block">
+              <StaticImage
+                src={"../images/icon-fb.svg"}
+                placeholder="tracedSVG"
+                alt="Facebook"
+                width={40}
+                height={40}
+              />
+            </span>
+          </FacebookShareButton>
+          <LinkedinShareButton
+            url={`https://rudderstack.com/blog/${blog.slug}`}
+          >
+            <span className="block">
+              <StaticImage
+                src={"../images/icon-linkedin.svg"}
+                placeholder="tracedSVG"
+                alt="linkdin"
+                width={40}
+                height={40}
               />
             </span>
           </LinkedinShareButton>
@@ -145,14 +193,14 @@ const Singleblog = ({ data, location, ...props }) => {
                     className="w-24 h-24 rounded-full"
                   /> */}
                 </div>
-                <div className="flex-grow text-left sm:ml-1 lg:text-center mt-6 sm:mt-0">
+                <div className="flex-grow text-left ml-4 sm:ml-0 md:ml-0 lg:text-center mt-6  sm:mt-0">
                   <div className="text-xs font-bold uppercase text-blueNew-eastbay">
                     About the author
                   </div>
-                  <div className="leading-4 text-lg font-bold mt-4">
+                  <div className="leading-4 text-lg font-bold sm:mt-4 lg:mt-4 mt-2">
                     {item.author_name}
                   </div>
-                  <div className="mt-6 text-sm">{item.author_desc}</div>
+                  <div className="lg:mt-6 sm:mt-6 mt-2 text-sm">{item.author_desc}</div>
                 </div>
               </div>
             )
