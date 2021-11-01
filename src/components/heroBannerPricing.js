@@ -90,7 +90,13 @@ const HeroBannerPricing = props => {
                               )
                             } else {
                               return (
-                                <Link
+                                <a
+                                  className={
+                                    (item.button.btnhiglight === true
+                                      ? "btn-primary-sm"
+                                      : "btn-secondary-sm") +
+                                    ` inline-block font-bold`
+                                  }
                                   onClick={e =>
                                     rudderslabTrackOnClick(
                                       "button",
@@ -98,19 +104,10 @@ const HeroBannerPricing = props => {
                                       e
                                     )
                                   }
-                                  to={item.button.btnlink}
+                                  href={item.button.btnlink}
                                 >
-                                  <span
-                                    className={
-                                      (item.button.btnhiglight === true
-                                        ? "btn-primary-sm"
-                                        : "btn-secondary-sm") +
-                                      ` inline-block font-bold`
-                                    }
-                                  >
-                                    {item.button.btntext}
-                                  </span>
-                                </Link>
+                                  {item.button.btntext}
+                                </a>
                               )
                             }
                           })()}
