@@ -61,8 +61,6 @@ const PageContent = ({ data, location }) => {
                   section.herobanner_media.imageoption.asset._ref
               )
             }
-
-            console.log("segmentBanner", section.herobanner_media, imgInfo)
             return (
               <section
                 key={section._key}
