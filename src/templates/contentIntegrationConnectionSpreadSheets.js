@@ -97,7 +97,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 >
                   <div className="flex justify-center align-center h-full">
                     <img
-                      src={data.integration_connection.sourceLogoImgUrl}
+                      src={data.integration_connection.sourceLogoIconUrl}
                       className="h-5 sm:h-12 m-auto"
                       alt={data.integration_connection.sourceIntegration}
                       placeholder="tracedSVG"
@@ -356,7 +356,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 )
               }
             >
-              Read {data.integration_connection.sourceIntegration} Docs
+             {data.integration_connection.ctaButtonSource}
             </a>
           </div>
           <div className="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-7/12 sm:px-0 sm:items-center lg:items-start lg:mb-0">
@@ -477,7 +477,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 )
               }
             >
-              Read {data.integration_connection.destinationIntegration} Docs
+              {data.integration_connection.ctaButtonDestination}
             </a>
             {/*           
             <a href={"https://app.rudderstack.com/signup?type=freetrial"}>
@@ -719,6 +719,8 @@ export const query = graphql`
       useCaseHeader1
       useCaseHeader2
       useCaseHeader3
+      ctaButtonDestination
+      ctaButtonSource
     }
   }
 `
