@@ -49,7 +49,12 @@ const Image = props => {
             }
           }
         }
+<<<<<<< HEAD
       `} 
+=======
+      `} */
+      
+>>>>>>> origin/website-banner-v2
       render={data => {
         const imgdata = data.sanityimages.edges.find(
           imgdata => imgdata.node._id === props.props

@@ -33,8 +33,8 @@ const Integration = props => {
   //   rudderslabTrackOnSearch(searchedText)
   // }, [searchedText])
   return (
-    <Layout>
-      <Helmet htmlAttributes={{ lang: 'en' }}>
+    <Layout location={props.location}>
+      <Helmet>
         <title>{`Integrations Library | RudderStack CDP`}</title>
         <meta
           property="og:title"
