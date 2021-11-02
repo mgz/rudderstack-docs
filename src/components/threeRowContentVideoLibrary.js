@@ -26,7 +26,7 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                       />
                     </Link>
                   </div>
-                  <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-6 cursor-pointer">
+                  <div className="md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-6 cursor-pointer">
                     <Link to={hit.slug}>
                       <div className="flex-initial uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
                         {`${hit.category} ${
@@ -40,12 +40,11 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                         {hit.title}
                       </h2>
                     </Link>
-                  </div>
-                  <Link
+                    <Link className="w-full"
                     to={hit.slug}
                     onClick={e => rudderslabTrackOnClick("link", hit.title, e)}
                   >
-                    <div className="z-20 mt-4 w-10/12 text-sm absolute bottom-6 left-6 flex justify-between items-center">
+                    <div className="z-20 mt-4 w-full text-sm flex justify-between items-center">
                       <div>
                         <p className="relative text-black font-bold text-sm leading-normal hover:text-blueNew-eastbay">
                           <a
@@ -71,7 +70,9 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                       </div>
                     </div>
                   </Link>
-                </div>
+               
+                  </div>
+                  </div>
               </div>
             </section>
           )
