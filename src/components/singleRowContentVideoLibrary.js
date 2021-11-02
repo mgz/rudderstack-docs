@@ -60,8 +60,8 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
       key="0"
       className="w-full mx-auto bg-white rounded-3xl overflow-hidden shadow-md"
     >
-      <div className="flex lg:flex-row  flex-col">
-        <div class="px-4 md:px-12 pt-8 pb-4">
+      <div className="flex lg:flex-row flex-col">
+        <div class="px-4 md:px-12 pt-8 pb-4 lg:max-w-md">
           <Link to={webinarObj.node.slug.current}>
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {`${category} ${
@@ -92,13 +92,13 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
           </Link>
         </div>
 
-        <div className="flex-shrink-1 w-full">
+        <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link  to={webinarObj.node.slug.current}>
             <img
               src={webinarObj.node.listing_image.asset.url}
               alt={webinarObj.node.title}
               // className="sm:h-full w-full sm:max-h-full lg:max-w-2xl  object-cover max-h-96"
-              className="sm:h-full object-cover lg:max-w-2xl"
+              className="sm:h-full w-full object-cover"
               loading="eager"
             />
           </Link>
