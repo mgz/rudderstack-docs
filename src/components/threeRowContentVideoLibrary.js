@@ -45,7 +45,7 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                     to={hit.slug}
                     onClick={e => rudderslabTrackOnClick("link", hit.title, e)}
                   >
-                    <div className="z-20 mt-4 px-4 w-full w-10/12 text-sm absolute bottom-6  flex justify-between items-center">
+                    <div className="z-20 mt-4 px-4  w-full text-sm absolute bottom-6  flex justify-between items-center">
                       <div>
                         <p className="relative text-black font-bold text-sm leading-normal hover:text-blueNew-eastbay">
                           <a
