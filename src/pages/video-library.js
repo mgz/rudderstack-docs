@@ -93,7 +93,7 @@ const VideoLibraryPage = ({ data }) => {
               </div>
             </div>
 
-            <div className="flex flex-wrap flex-col sm:flex-row">
+            <div className="flex lg:flex-wrap flex-col lg:flex-row">
               <div className="">
                 <div id="hits-container">
                   <div data-reactroot>
