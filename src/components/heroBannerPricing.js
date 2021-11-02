@@ -128,49 +128,16 @@ const HeroBannerPricing = props => {
           </div>
         </div>
 
-        <div className="py-8 pt-5 md:pt-16 w-full text-lg md:text-xl text-center font-bold">
-          <p className="text-primary">{props.herobannerfootersmalltitle}</p>
-          <div className="mt-3 flex items-center">
-            {(() => {
-              if (linktext !== "") {
-                if (extralink === true) {
-                  return (
-                    <a
-                      onClick={e =>
-                        rudderslabTrackOnClick(
-                          "link",
-                          props.herobannerfootersmalltitle,
-                          e
-                        )
-                      }
-                      href={linkurl}
-                      className={`font-bold leading-normal mx-auto text-sm ${
-                        link_display_as_button ? "btn-primary-lg" : ""
-                      } relative sm:inline-block ${
-                        props.applyGradientColorTheme
-                          ? "lr-icon-gradient"
-                          : !link_display_as_button
-                          ? "lr-icon"
-                          : ""
-                      }`}
-                    >
-                      {linktext}
-                    </a>
-                  )
-                } else {
-                  return (
-                    <span
-                      className={`font-bold leading-normal mx-auto text-sm ${
-                        link_display_as_button ? "btn-primary-lg" : ""
-                      } relative sm:inline-block ${
-                        props.applyGradientColorTheme
-                          ? "lr-icon-gradient"
-                          : !link_display_as_button
-                          ? "lr-icon"
-                          : ""
-                      }`}
-                    >
-                      <Link
+        {props.herobannerfootersmalltitle && props.herobannerfootersmalltitle !== "" && (
+          <div className="py-8 pt-5 md:pt-16 w-full text-lg md:text-xl text-center font-bold">
+            <p className="text-primary">{props.herobannerfootersmalltitle}</p>
+
+            <div className="mt-3 flex items-center">
+              {(() => {
+                if (linktext !== "") {
+                  if (extralink === true) {
+                    return (
+                      <a
                         onClick={e =>
                           rudderslabTrackOnClick(
                             "link",
@@ -178,17 +145,53 @@ const HeroBannerPricing = props => {
                             e
                           )
                         }
-                        to={linkurl}
+                        href={linkurl}
+                        className={`font-bold leading-normal mx-auto text-sm ${
+                          link_display_as_button ? "btn-primary-lg" : ""
+                        } relative sm:inline-block ${
+                          props.applyGradientColorTheme
+                            ? "lr-icon-gradient"
+                            : !link_display_as_button
+                            ? "lr-icon"
+                            : ""
+                        }`}
                       >
                         {linktext}
-                      </Link>
-                    </span>
-                  )
+                      </a>
+                    )
+                  } else {
+                    return (
+                      <span
+                        className={`font-bold leading-normal mx-auto text-sm ${
+                          link_display_as_button ? "btn-primary-lg" : ""
+                        } relative sm:inline-block ${
+                          props.applyGradientColorTheme
+                            ? "lr-icon-gradient"
+                            : !link_display_as_button
+                            ? "lr-icon"
+                            : ""
+                        }`}
+                      >
+                        <Link
+                          onClick={e =>
+                            rudderslabTrackOnClick(
+                              "link",
+                              props.herobannerfootersmalltitle,
+                              e
+                            )
+                          }
+                          to={linkurl}
+                        >
+                          {linktext}
+                        </Link>
+                      </span>
+                    )
+                  }
                 }
-              }
-            })()}
+              })()}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* <PricingCards /> */}
