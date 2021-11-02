@@ -2,7 +2,7 @@ import React from "react"
 
 const VideoLibrarySpeakers = ({ speakers, allAuthors }) => {
   return (
-    <section className="100% bg-whiteColor-custom">
+    <section className="100% bg-whiteColor-custom px-4">
       <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap sm:pb-24 pb-6">
         <h3 className="w-full my-2 text-4xl md:text-5xl text-dark font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-28">
           Speakers

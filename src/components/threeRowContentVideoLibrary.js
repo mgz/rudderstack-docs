@@ -66,7 +66,7 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                           className="mr-2 m-auto"
                           icon={faClock}
                         />
-                        <p>{hit.duration}</p>
+                        {/* <p>{hit.duration}</p> */}
                       </div>
                     </div>
                   </Link>

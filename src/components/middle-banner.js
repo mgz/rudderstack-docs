@@ -24,7 +24,7 @@ const MiddleBanner = props => {
           <div
             className={`flex flex-wrap ${
               isLightTheme !== true ? "justify-items-center items-center" : ""
-            }  sm:flex-row`}
+            }  sm:flex-row sm:justify-center`}
           >
             <div className="flex items-start md:w-1/2 flex-row">
               <div className="">
