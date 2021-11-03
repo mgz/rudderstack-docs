@@ -20,7 +20,7 @@ const VideoLibraryContentHeader = ({
   return (
     <>
       {category === "Live" && (
-        <section className="w-full video-banner-bg px-4">
+        <section className="w-full video-banner-bg">
           <div className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-10 mx-auto relative banner-section ">
             <div className="flex flex-col items-center gap-0 md:gap-12 xl:gap-16 justify-center mx-auto sm:flex-row lg:p-0">
               <div className="z-20 flex flex-col justify-start  w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl sm:w-1/2 sm:px-0 lg:items-start lg:mb-0 hero-content ">

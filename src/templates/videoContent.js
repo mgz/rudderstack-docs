@@ -79,7 +79,7 @@ const videoContent = ({ data, location }) => {
         />
         <meta property="og:type" content="article" />
       </Helmet>
-      <div className="pt-0 font-custom">
+      <div className="pt-0 font-custom px-4">
         {/*banner*/}
         <VideoLibraryContentHeader
           data={data.videoLib}
@@ -106,11 +106,10 @@ const videoContent = ({ data, location }) => {
               </div>
             </section>
           )}
-
-        <section id="footer_section_for_demo">
+      </div>
+      <section id="footer_section_for_demo">
           <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
-      </div>
     </Layout>
   )
 }
