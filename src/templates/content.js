@@ -83,7 +83,7 @@ const Singleblog = ({ data, location, ...props }) => {
         />
       </div>
       <div>
-      <div className="social-icon_blog lg:hidden md:hidden flex gap-4 ml-6 max-w-2xl sm:justify-start justify-center  items-center">
+      <div className="social-icon_blog lg:hidden md:hidden flex gap-4 max-w-2xl sm:justify-start justify-center  items-center">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
             {/* <a className="block" href="#"> */}
             <StaticImage

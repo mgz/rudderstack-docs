@@ -22,7 +22,7 @@ function Herobanner({ title, date, author, image, blog }) {
       </div>
 
       <div className="mx-auto lg:max-w-3xl md:max-w-3xl  sm:max-w-2xl   md:mt-12 my-4 ">
-        <p className="text-blueNew-midnight uppercase text-sm font-bold mx-4">
+        <p className="text-blueNew-midnight ml-4 md:ml-0 lg:ml-0  uppercase text-sm font-bold">
           {blog.blog_category}
         </p>
         <h1 className="py-4 md:text-5xl-2 text-3xl m-auto text-blueNew-midnight mx-4 lg:mx-0 md:mx-0">
@@ -30,8 +30,8 @@ function Herobanner({ title, date, author, image, blog }) {
         </h1>
 
         {blog.blog_authors[0] && (
-          <div className="flex items-center mx-auto  mb-4 sm:flex-row flex-col mt-4">
-            <div className=" inline-flex items-center justify-center flex-shrink-0 mr-4">
+          <div className="flex items-center mx-auto gap-2  mb-4 sm:flex-row flex-col mt-4">
+            <div className=" inline-flex items-center justify-center flex-shrink-0 lg:mr-4">
               <img
                 src={blog.blog_authors[0].author_image.asset.url}
                 className="w-16 h-16 rounded-full"
