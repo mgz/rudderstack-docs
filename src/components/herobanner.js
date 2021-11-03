@@ -7,7 +7,7 @@ function Herobanner({ title, date, author, image, blog }) {
     <div className="mx-auto items-center">
       {/* Left col */}
       <div
-        className="w-full justify-center items-start text-center relative object-cover flex bg-cover bg-no-repeat max-w-5xl mx-auto"
+        className="w-full justify-center bg-center items-start text-center relative object-cover flex bg-cover bg-no-repeat max-w-5xl mx-auto"
         style={{ backgroundImage: `url(${image.asset.url})` }}
       >
         <div className="py-10 lg:py-0 w-full custom-hero-banner blog-banner-overlay flex justify-center items-center">
@@ -21,11 +21,11 @@ function Herobanner({ title, date, author, image, blog }) {
         </div>
       </div>
 
-      <div className="mx-auto lg:max-w-3xl md:max-w-3xl  sm:max-w-2xl   md:mt-12 my-4 ">
-        <p className="text-blueNew-midnight ml-4 md:ml-0 lg:ml-0  uppercase text-sm font-bold">
+      <div className="mx-auto blog-title-wrapper lg:max-w-4xl md:max-w-4xl sm:px-4 sm:max-w-4xl md:px-16 md:mt-12 my-4">
+        <p className="text-blueNew-midnight md:ml-0 lg:ml-0  uppercase text-sm font-bold">
           {blog.blog_category}
         </p>
-        <h1 className="py-4 md:text-5xl-2 text-3xl m-auto text-blueNew-midnight mx-4 lg:mx-0 md:mx-0">
+        <h1 className="py-4 md:text-5xl-2 text-3xl m-auto text-blueNew-midnight lg:mx-0 md:mx-0">
           {title}
         </h1>
 

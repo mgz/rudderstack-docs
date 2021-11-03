@@ -5,7 +5,7 @@ import Image from "./image"
 const VideoContentLesson = ({ data }) => {
   // console.log("ssss", data)
   return (
-    <section className="100% bg-whiteColor-custom px-4">
+    <section className="100% bg-whiteColor-custom">
       <div className="max-w-6xl  sm:px-6 mx-auto sm:pt-16 pb-16">
         <div className="flex lg:items-start items-center flex-wrap">
           <div className="w-full lg:w-5/12 sm:w-full lg:p-6 sm:pl-0 mt-12 sm:mt-0">

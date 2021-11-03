@@ -2406,6 +2406,10 @@ a.pageRef:hover .rightRefArrow {
   .childrenWrapper h2 {
     font-size: 22px;
   }
+  .blog-title-wrapper{
+    padding: 0px 16px;
+  }
+
 }
 
 

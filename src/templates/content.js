@@ -82,10 +82,9 @@ const Singleblog = ({ data, location, ...props }) => {
           blog={blog}
         />
       </div>
-      <div>
+      {/* <div>
       <div className="social-icon_blog lg:hidden md:hidden flex gap-4 max-w-2xl sm:justify-start justify-center  items-center">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
-            {/* <a className="block" href="#"> */}
             <StaticImage
               src={"../images/icon-twitter.svg"}
               placeholder="tracedSVG"
@@ -94,7 +93,6 @@ const Singleblog = ({ data, location, ...props }) => {
               width={40}
               height={40}
             />
-            {/* </a> */}
           </TwitterShareButton>
           <FacebookShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
@@ -123,10 +121,10 @@ const Singleblog = ({ data, location, ...props }) => {
             </span>
           </LinkedinShareButton>
         </div>
-      </div>
+      </div> */}
       <div className="block-description relative pt-4 max-w-4xl m-auto px-4 md:px-16">
         {/*Blog Content*/}
-        <div className="social-icon_blog absolute hidden md:flex  justify-center items-center flex-col pt-8 mt-3 top-0 lg:left-0 md:left-0">
+        <div className="social-icon_blog lg:absolute md:absolute flex-row  items-center flex gap-2 sm:justify-start justify-center  md:flex-col lg:flex-col  lg:pt-8 md:pt-8 lg:mt-3 md:mt-3 top-0 lg:left-0 md:left-0 top-0">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
             {/* <a className="block" href="#"> */}
             <StaticImage
