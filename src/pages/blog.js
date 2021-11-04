@@ -9,8 +9,7 @@ import { Helmet } from "react-helmet"
 import { InstantSearch, Configure } from "react-instantsearch-dom"
 import CustomHits from "../components/customHits"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { library } from "@fortawesome/fontawesome-svg-core"
-import "../lib/font-awesome"
+//import "../lib/font-awesome"
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons/faArrowUp"
 import Subscription from "../components/Subscription"
 import BlogNotFound from "../components/blogNotFound"
@@ -18,7 +17,6 @@ import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
 import { useQueryParam, StringParam } from "use-query-params"
 
-library.add(faArrowUp)
 const Blog_new = ({ data, location }) => {
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
@@ -38,7 +36,7 @@ const Blog_new = ({ data, location }) => {
   // console.log("category", category)
   return (
     <Layout location={location}>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <title>{`The RudderStack Blog | Rudderstack.com`}</title>
         <meta
           property="og:title"

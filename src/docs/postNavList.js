@@ -117,11 +117,41 @@ export const postNavList = [
     "content":[]
  },
  {
+    "key":"quick-start-guide",
+    "title":"Quick Start Guide",
+    "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/quick-start-guide/",
+    "content":[]
+ },
+ {
     "key":"javascript-sdk-enhancements",
     "title":"JavaScript SDK Enhancements",
     "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/javascript-sdk-enhancements/",
     "content":[]
  },
+ {
+    "key":"querystring-api",
+    "title":"Querystring API",
+    "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/querystring-api/",
+    "content":[]
+ },
+ {
+    "key":"detecting-adblocked-pages",
+    "title":"Detecting Ad-blocked Pages",
+    "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/detecting-adblocked-pages/",
+    "content":[]
+ },
+ {
+    "key":"version-migration-guide",
+    "title":"Version Migration Guide",
+    "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/version-migration-guide/",
+    "content":[]
+ },
+ {
+    "key":"js-sdk-faqs",
+    "title":"FAQs",
+    "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/js-sdk-faqs/",
+    "content":[]
+ }, 
  {
     "key":"rudderstack-android-sdk",
     "title":"Android",
@@ -180,6 +210,12 @@ export const postNavList = [
     "key":"rudderstack-python-sdk",
     "title":"Python",
     "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-python-sdk/",
+    "content":[]
+ },
+ {
+    "key":"rudderstack-rust-sdk",
+    "title":"Rust",
+    "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-rust-sdk/",
     "content":[]
  },
  {
@@ -1538,6 +1574,12 @@ export const postNavList = [
     "key":"rudderstack-control-plane-lite",
     "title":"How to Use the RudderStack Control Plane Lite",
     "link":"/user-guides/how-to-guides/rudderstack-control-plane-lite/",
+    "content":[]
+ },
+ {
+    "key":"dynamic-destination-configuration",
+    "title":"How to Configure a Destination via the Event Payload",
+    "link":"/user-guides/how-to-guides/dynamic-destination-configuration/",
     "content":[]
  },
  {

@@ -1,6 +1,6 @@
 module.exports = {
   important: true,
-  purge: [],
+  purge: false,
   darkMode: false, // or 'media' or 'class'
   theme: {
     minHeight: {

@@ -1,13 +1,13 @@
-import React from "react"
+import React, {useEffect, useState, useRef} from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import { Helmet } from "react-helmet"
 import Hero from "../components/hero"
 import Tabs from "../components/tabs"
-import LeftRightImgCnt from "../components/left-right-image-content"
+//import LeftRightImgCnt from "../components/left-right-image-content"
 import LatestBlog from "../components/latest-blog"
 import MiddleBanner from "../components/middle-banner"
-import RightSideHiglightedContent from "../components/rightSideHiglightedContent"
+//import RightSideHiglightedContent from "../components/rightSideHiglightedContent"
 import FreeText from "../components/freeText"
 import GraphQLErrorList from "../components/graphql-error-list"
 import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
@@ -18,14 +18,10 @@ import Layout from "../components/layout"
 
 // const Hero = loadable(() => import("../components/hero"))
 // const Tabs = loadable(() => import("../components/tabs"))
-// const LeftRightImgCnt = loadable(() =>
-//   import("../components/left-right-image-content")
-// )
+const LeftRightImgCnt = loadable(() => import("../components/left-right-image-content"))
 // const LatestBlog = loadable(() => import("../components/latest-blog"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
-// const RightSideHiglightedContent = loadable(() =>
-//   import("../components/rightSideHiglightedContent")
-// )
+const RightSideHiglightedContent = loadable(() => import("../components/rightSideHiglightedContent"))
 // const FreeText = loadable(() => import("../components/freeText"))
 // const GraphQLErrorList = loadable(() =>
 //   import("../components/graphql-error-list")
@@ -35,6 +31,8 @@ import Layout from "../components/layout"
 
 const OurLogo = loadable(() => import("../components/ourlogo"))
 const Testimonial = loadable(() => import("../components/testimonial"))
+/* const ThreeCardsWithTitleLeftAligned = loadable(() => import("../components/threeCardsWithTitleLeftAligned"))
+const CenteredAlignedTitleWithYoutube = loadable(() => import("../components/CenteredAlignedTitleWithYoutube")) */
 
 export const query = graphql`
   query PageTemplateQuery($id: String!) {
@@ -47,8 +45,109 @@ export const query = graphql`
   }
 `
 
+let intersectionObserver;
+let intersectionObserverOptions = {};
+const subscribers = new WeakMap();
+
+const handleIntersections = entries =>
+  entries.forEach(entry => subscribers.get(entry.target).call(null, entry));
+
+const getIntersectionObserver = () => {
+  if (!intersectionObserver) {
+    intersectionObserver = new IntersectionObserver(
+      handleIntersections,
+      intersectionObserverOptions
+    );
+  }
+
+  return intersectionObserver;
+};
+
+const setIntersectionObserverOptions = options => {
+  if (intersectionObserver) {
+    return;
+  }
+
+  intersectionObserverOptions = options;
+};
+
+const unwatch = domNode => {
+  intersectionObserver.unobserve(domNode);
+  subscribers.delete(domNode);
+};
+const watch = (domNode, callback) => {
+  if (!domNode || subscribers.has(domNode)) {
+    return;
+  }
+
+  subscribers.set(domNode, callback);
+  getIntersectionObserver().observe(domNode);
+
+  // eslint-disable-next-line consistent-return
+  return () => unwatch(domNode);
+};
+
+const getSubscribers = () => subscribers;
+
+const VO = {
+  getSubscribers,
+  setIntersectionObserverOptions,
+  unwatch,
+  watch,
+};
+
+function useIsVisible(nodeRef) {
+  const [isVisible, setVisible] = useState(false);
+
+  function handleVisibilityChange({ isIntersecting }) {
+    setVisible(isIntersecting);
+  }
+
+  useEffect(() => VO.watch(nodeRef.current, handleVisibilityChange), [nodeRef]);
+
+  return isVisible;
+}
+
+function useHasBeenVisible(nodeRef) {
+  const [isVisible, setVisible] = useState(false);
+
+  function handleVisibilityChange({ isIntersecting }) {
+    if (isIntersecting === true) {
+      setVisible(isIntersecting);
+    }
+  }
+
+  useEffect(() => VO.watch(nodeRef.current, handleVisibilityChange), [nodeRef]);
+
+  return isVisible;
+}
+
+// The `threshold` variable sets what portion of the element needs to be
+// visible before it fires. 0 = none, 1 = the entire thing. See
+// https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+function useHasBeenPartlyVisible(nodeRef, threshold = 0.5) {
+  const [isVisible, setVisible] = useState(false);
+
+  function handleVisibilityChange({ isIntersecting }) {
+    if (isIntersecting === true) {
+      setVisible(isIntersecting);
+    }
+  }
+
+  useEffect(() => {
+    setIntersectionObserverOptions({ threshold });
+    return VO.watch(nodeRef.current, handleVisibilityChange);
+  }, [nodeRef, threshold]);
+
+  return isVisible;
+}
+
+
 const Page = props => {
-  const { data, errors } = props
+  const { data, errors } = props;
+
+  const halfPage = useRef();
+  const hasScrolled = useHasBeenPartlyVisible(halfPage, 0.1);
 
   if (errors) {
     return (
@@ -102,7 +201,7 @@ const Page = props => {
         case "leftrightcontentimagesection":
           el = (
             <div className="bg-blueNew-midnight_v2 100% pt-32" key={c._key}>
-              <LeftRightImgCnt applyGradientColorTheme={true} {...c} />{" "}
+              <LeftRightImgCnt applyGradientColorTheme={true} {...c} />
             </div>
           )
           break
@@ -182,7 +281,7 @@ const Page = props => {
 
   return (
     <Layout location={props.location}>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <meta name="description" content={data.page.meta_desc} />
 
         <title>{data.page.meta_title || data.page.title}</title>

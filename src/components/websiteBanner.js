@@ -3,7 +3,6 @@ import PortableText from "./portableText"
 import Cookies from "universal-cookie"
 import { rudderslabTrackOnClick } from "../utils/common"
 
-
 const WebisteBanner = props => {
   const cookies = new Cookies()
   const [showBanner, setShowBanner] = useState(
@@ -16,20 +15,83 @@ const WebisteBanner = props => {
       : true
   )
 
-  // useEffect(() => {
-  //   if (props.exclude_paths) {
-  //     setShowBanner(
-  //       props.exclude_paths.find(kk => kk === props.currentSlug) === undefined
-  //     )
-  //   }
-  // }, [])
-
   useEffect(() => {
-    if (props.exclude_paths) {
-      setShowBanner(
-        props.exclude_paths.find(kk => kk === props.currentSlug) === undefined
-      )
-    }
+    let tmpShowBanner =
+      props.weibsite_banner_ie_type.condition === "all_option" ||
+      props.weibsite_banner_ie_type.condition === "exclude_option"
+        ? true
+        : false
+
+    let pathToIncludeExcludeSliced = []
+    let currPathSliced = props.currentSlug.split("/").filter(ll => ll !== "")
+
+    props.weibsite_banner_ie_type[
+      `${props.weibsite_banner_ie_type.condition}`
+    ] &&
+      props.weibsite_banner_ie_type[
+        `${props.weibsite_banner_ie_type.condition}`
+      ].paths
+        .sort()
+        .forEach(oo => {
+          pathToIncludeExcludeSliced = oo.split("/").filter(ll => ll !== "")
+
+          if (props.weibsite_banner_ie_type.condition === "include_option") {
+            if (tmpShowBanner !== true) {
+              if (currPathSliced.length > 0) {
+                for (let ii = 0; ii < currPathSliced.length; ii++) {
+                  if (
+                    pathToIncludeExcludeSliced[ii] === "*" &&
+                    pathToIncludeExcludeSliced[ii - 1] ===
+                      currPathSliced[ii - 1]
+                  ) {
+                    tmpShowBanner = true
+                    break
+                  } else if (
+                    pathToIncludeExcludeSliced[ii] === currPathSliced[ii] &&
+                    ii === pathToIncludeExcludeSliced.length - 1
+                  ) {
+                    tmpShowBanner = true
+                  } else if (
+                    pathToIncludeExcludeSliced[ii] !== currPathSliced[ii]
+                  ) {
+                    tmpShowBanner = false
+                  }
+                }
+              }
+              setShowBanner(tmpShowBanner)
+            }
+          } else if (
+            props.weibsite_banner_ie_type.condition === "exclude_option"
+          ) {
+            if (tmpShowBanner !== false) {
+              if (currPathSliced.length > 0) {
+                for (let ii = 0; ii < currPathSliced.length; ii++) {
+                  if (
+                    pathToIncludeExcludeSliced[ii] === "*" &&
+                    pathToIncludeExcludeSliced[ii - 1] ===
+                      currPathSliced[ii - 1]
+                  ) {
+                    tmpShowBanner = false
+                    break
+                  } else if (
+                    pathToIncludeExcludeSliced[ii] === currPathSliced[ii] &&
+                    ii === pathToIncludeExcludeSliced.length - 1
+                  ) {
+                    tmpShowBanner = false
+                  } else if (
+                    pathToIncludeExcludeSliced[ii] !== currPathSliced[ii]
+                  ) {
+                    tmpShowBanner = true
+                  }
+                }
+              }
+              // console.log("set for ", props.banner_name, tmpShowBanner)
+              setShowBanner(tmpShowBanner)
+            }
+          } else {
+            setShowBanner(tmpShowBanner)
+          }
+        })
   }, [props.exclude_paths, props.currentSlug])
 
   let date = new Date()
@@ -53,7 +115,7 @@ const WebisteBanner = props => {
         <a
           href={props.banner_button.cmnlink}
           className="font-bold underline pl-2 m-auto"
-          onClick={(e) => rudderslabTrackOnClick("banner", "website banner", e)}
+          onClick={e => rudderslabTrackOnClick("banner", "website banner", e)}
         >
           {props.banner_button.cmnlinktext} &#x2192;
         </a>

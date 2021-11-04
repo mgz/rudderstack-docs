@@ -75,6 +75,8 @@ const Testimonial = props => {
                                   <div className="usr_img mb-4">
                                     <Image
                                       props={testimonial.clientimage.asset._ref}
+                                      width="150"
+                                      height="150"
                                     />
                                   </div>
                                 </div>

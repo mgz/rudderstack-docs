@@ -25,7 +25,6 @@ import HeroBannerContactUs from "../components/heroBannerContactUs"
 import TwoCardsLeftAligned from "../components/twoCardsLeftAligned"
 import HeroBanner404 from "../components/heroBanner404"
 
-
 const Testimonial = loadable(() => import("../components/testimonial"))
 
 const PageContent = ({ data, location }) => {
@@ -54,29 +53,36 @@ const PageContent = ({ data, location }) => {
       <div className="font-custom">
         {data.pagedata._rawPagebuildersection.map(section => {
           if (section._type === "hero_banner_segment") {
-            let imgInfo = data.all_images.edges.find(
-              kk =>
-                kk.node._id ===
-                (section.herobanner_image
-                  ? section.herobanner_image.asset._ref
-                  : "")
-            )
-            // console.log("imgInfo", imgInfo)
+            let imgInfo
+            if (section.herobanner_media.condition === "imageoption") {
+              imgInfo = data.all_images.edges.find(
+                kk =>
+                  kk.node._id ===
+                  section.herobanner_media.imageoption.asset._ref
+              )
+            }
             return (
               <section
                 key={section._key}
                 className="w-full segment-desktop-banner lg:py-0 py-10 flex justify-center items-center relative overflow-hidden"
               >
-                <div
-                  className="comparison-banner"
-                  style={{
-                    backgroundImage: `url("${
-                      imgInfo ? imgInfo.node.url : ""
-                    }")`,
-                  }}
-                >
-                  <HeroSegment {...section} />
-                </div>
+                {section.herobanner_media.condition === "imageoption" && (
+                  <div
+                    className="comparison-banner"
+                    style={{
+                      backgroundImage: `url("${
+                        imgInfo ? imgInfo.node.url : ""
+                      }")`,
+                    }}
+                  >
+                    <HeroSegment {...section} />
+                  </div>
+                )}
+                {section.herobanner_media.condition === "videooption" && (
+                  <div className="comparison-banner">
+                    <HeroSegment {...section} />
+                  </div>
+                )}
               </section>
             )
           } else if (section._type === "hero_banner_cloud") {
@@ -200,7 +206,9 @@ const PageContent = ({ data, location }) => {
                 <CentredContentWithButton {...section} />
               </section>
             )
-          }else{return null}
+          } else {
+            return null
+          }
         })}
       </div>
     </Layout>

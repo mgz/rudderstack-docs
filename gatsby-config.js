@@ -22,6 +22,7 @@ module.exports = {
   },
   pathPrefix: "/docs",
   plugins: [
+    /* `gatsby-plugin-preact`, */
     `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-preconnect",
@@ -68,6 +69,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+        }
+      }
+    },
+    {
       resolve: `gatsby-source-sanity`,
       options: {
         projectId: process.env.GATSBY_SANITY_PROJECTID,
@@ -86,7 +95,7 @@ module.exports = {
         graphqlTag: "default",
       },
     },
-    {
+   {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -167,7 +176,7 @@ module.exports = {
         ],
       },
     },
-    {
+   {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -186,7 +195,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-styled-components`,
+    /* `gatsby-plugin-styled-components`, */
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -201,9 +210,9 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    /* `gatsby-plugin-sharp`, */
     `gatsby-transformer-sharp`,
-    {
+     {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
@@ -211,9 +220,10 @@ module.exports = {
         //host: `https://rudderstack-dataplane.rudderstack.com`,
         loadType: "defer",
         trackPage: false,
-        // loadAsync: true,
+        loadAsync: true,
         //delayLoad: true,
-        //delayLoadTime: 500,
+        //delayLoadTime: 1000,
+        //useNewSDK: true,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
     },
@@ -349,14 +359,14 @@ module.exports = {
     //   },
     // },
     "gatsby-plugin-use-query-params",
-    // {
-    //   resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-    //   options: {
-    //     analyzerMode: "server",
-    //     analyzerPort: "8888",
-    //     devMode: true,
-    //   },
-    // },
+    /* {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        analyzerMode: "server",
+        analyzerPort: "8888",
+        devMode: true,
+      },
+    }, */
     "gatsby-source-sanity-transform-images",
     `gatsby-plugin-meta-redirect`,
     "gatsby-plugin-preload-fonts",
@@ -430,5 +440,19 @@ module.exports = {
         ],
       },
     }, */
+    /* `gatsby-plugin-perf-budgets`, */
+    /* {
+      resolve: `gatsby-plugin-brotli`,
+      options: {
+        extensions: ['css', 'html', 'js', 'svg', 'json']
+      }
+    } */
+    {
+      resolve: 'gatsby-background-image-es5',
+      options: {
+        // add your own characters to escape, replacing the default ':/'
+        specialChars: '/:',
+      },
+    },
   ],
 }

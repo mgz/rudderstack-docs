@@ -1,4 +1,5 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-library.add(fab, fas)
+import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin'
+import { faRss } from '@fortawesome/free-solid-svg-icons/faRss'
+library.add(faTwitter, faLinkedin, faRss)

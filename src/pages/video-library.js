@@ -19,7 +19,7 @@ import SingleRowContentVideoLibrary from "../components/singleRowContentVideoLib
 import { useQueryParam, StringParam } from "use-query-params"
 import clientConfig from "../../client-config"
 
-const VideoLibraryPage = ({ data }) => {
+const VideoLibraryPage = ({ data, location }) => {
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
@@ -36,7 +36,7 @@ const VideoLibraryPage = ({ data }) => {
   const [category] = useQueryParam("category", StringParam)
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet>
         <title>{`RudderStack Video Library | Rudderstack.com`}</title>
         <meta

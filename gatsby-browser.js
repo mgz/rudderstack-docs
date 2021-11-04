@@ -10,7 +10,10 @@
 // import "@fontsource/plus-jakarta-sans/700.css"
 // import "./src/guides/css/main.css"
 
+import "./src/css/fonts.css"
 import "./src/css/site.css"
+import "./src/css/integrations.css"
+import "./src/css/docs.css"
 import "./src/css/cookies.css"
 import "./src/css/blog.css"
 import "./src/css/agreement.css"

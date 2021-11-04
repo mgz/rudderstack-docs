@@ -1,0 +1,10 @@
+{
+    "plugins": [
+        ["prismjs", {
+            "languages": ["javascript", "css", "markup", "groovy", "ruby", "kotlin", "php", "kotlin", "scala", "java", "dart", "objectivec", "json", "perl", "typescript", "rust", "python", "go", "haml", "swift", "bash", "csharp"],
+            "plugins": ["line-numbers"],
+            "theme": "twilight",
+            "css": false
+        }]
+    ]
+}

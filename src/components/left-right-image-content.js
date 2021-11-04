@@ -91,7 +91,7 @@ const LeftRightImgCnt = props => {
                           const imgref =
                             content.imageVideoConditionBlock.imageoption.asset
                               ._ref
-                          return <Image props={imgref} classes="w-full" />
+                          return <Image props={imgref} classes="w-full" width="540" height="297" />
                         }
                         return null
                       })()}
@@ -465,7 +465,7 @@ const LeftRightImgCnt = props => {
                           const imgref =
                             content.imageVideoConditionBlock.imageoption.asset
                               ._ref
-                          return <Image props={imgref} classes="w-full" />
+                          return <Image props={imgref} classes="w-full" width="540" height="297" />
                         }
                         return null
                       })()}

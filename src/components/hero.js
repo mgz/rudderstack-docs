@@ -141,13 +141,13 @@ function Hero(props) {
             </div> */}
             <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
               <StaticImage
-                src="../images/RubberStack_MAIN-3D_1-1_active_00000.png"
+                src="../images/RubberStack_MAIN-3D_1-1_active_00001.png"
                 alt="RudderStack animation"
                 placeholder="tracedSVG"
               />
             </div>
             <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
-              {/* <div id="lottie" /> */}
+              {/* <div id="lottie" />  */}
               {showAnimation && !isMobile && (
                 <Suspense fallback={<div></div>}>
                   <LottieAnim />

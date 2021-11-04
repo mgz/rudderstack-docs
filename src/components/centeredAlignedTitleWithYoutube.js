@@ -3,7 +3,7 @@ import PortableText from "./portableText"
 // import Image from "./image"
 import { rudderslabTrackOnYoutubeVideoPlayback } from "../utils/common"
 import YouTube from "react-youtube"
-/* import("@justinribeiro/lite-youtube"); */
+
 
 const CenteredAlignedTitleWithYoutube = props => {
 
@@ -11,6 +11,7 @@ const CenteredAlignedTitleWithYoutube = props => {
   
   useEffect(() => {
     /* setWindowOrigin(window.location.origin) */
+    /* import("@justinribeiro/lite-youtube"); */
   }, [])
   let tmp_youtube_url_split = props.youtube.url.split("?")[0].split("/")
   // console.log(

@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import "../lib/font-awesome"
+//import "../lib/font-awesome"
 import Link from "gatsby-link"
 import { useStaticQuery, graphql } from "gatsby"
 // import { Helmet } from "react-helmet"
@@ -25,6 +25,8 @@ import WebisteBanner from "./websiteBanner"
 import { rudderslabTrackOnClick } from "../utils/common"
 
 import "../css/tailwind.css"
+import { faRss } from "@fortawesome/free-solid-svg-icons"
+import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
 const Layout = ({ location, showExplicitGradient, children }) => {
   const data = useStaticQuery(graphql`
@@ -62,6 +64,14 @@ const Layout = ({ location, showExplicitGradient, children }) => {
               _rawSocialWidgetSection
             }
             _rawWebsiteBannerSection
+          }
+        }
+      }
+      allSanityWebsiteBannerDoc {
+        edges {
+          node {
+            _id
+            _rawWebsiteBanner
           }
         }
       }
@@ -110,11 +120,15 @@ const Layout = ({ location, showExplicitGradient, children }) => {
       {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection &&
         data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection.banner_contents.map(
           banner => {
+            let webBanner = data.allSanityWebsiteBannerDoc.edges.find(
+              row => row.node._id === banner._ref
+            )
             return (
               <WebisteBanner
                 key={banner._key}
+                _key={banner._key}
                 currentSlug={location ? location.pathname : ""}
-                {...banner}
+                {...webBanner.node._rawWebsiteBanner}
               />
             )
           }
@@ -182,7 +196,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                                 "footer-navigation",
                                 "Footer Navigation Section",
                                 e
-                              )
+                              ) 
                             }
                           >
                             {/* <img
@@ -252,7 +266,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             )
                           }
                         >
-                          <FontAwesomeIcon icon={socialitem.social_item_icon} />
+                          <FontAwesomeIcon icon={faRss} />
                         </a>
                       )
                     } else {
@@ -272,7 +286,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           }
                         >
                           <FontAwesomeIcon
-                            icon={["fab", socialitem.social_item_icon]}
+                            icon={socialitem.social_item_icon === 'twitter' ? faTwitter : faLinkedin}
                           />
                         </a>
                       )
@@ -287,6 +301,8 @@ const Layout = ({ location, showExplicitGradient, children }) => {
               <img
                 src={footerlogo}
                 alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
+                width="148"
+                height="16"
               />
             </div>
             <div className="flex flex-wrap w-1/2 items-end">
