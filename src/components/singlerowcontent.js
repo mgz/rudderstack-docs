@@ -17,7 +17,7 @@ const Singlerowcontent = ({ hit }) => {
   return (
     <div
       key="0"
-      className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden shadow-md"
+      className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden"
     >
       <div className="flex lg:flex-row flex-col">
         <div className="flex-shrink-1 sm:flex-shrink-1">
@@ -31,7 +31,7 @@ const Singlerowcontent = ({ hit }) => {
           </Link>
         </div>
         <Link to={hit.slug} className="relative">
-          <div class="px-8 pt-8 pb-4">
+          <div className="px-8 pt-8 pb-4">
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {hit.blog_category}
             </div>
