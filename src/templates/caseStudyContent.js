@@ -11,7 +11,7 @@ import HeroBannerWithCenterTextAndImage from "../components/heroBannerWithCenter
 import CaseStuduiesPersonalize from "../components/caseStuduiesPersonalize"
 import Image from "../components/image"
 
-// const Layout = loadable(() =>
+// const Layout = loadable(() => 
 //   import("../components/layout")
 // )
 // const LeftRightImgCnt = loadable(() =>
