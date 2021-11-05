@@ -34,11 +34,10 @@
   width: 100%;
 }
 
-
 .video-library-banner::before {
   background-image: url("../images/pipe-start-right.svg"),
     url("../images/pipe-start-left.svg");
-  background-position: top 180px right 0, top 180px left 0;
+  background-position: top 50% right 0, top 50% left 0;
   background-size: 40% auto;
   background-repeat: no-repeat;
   position: absolute;

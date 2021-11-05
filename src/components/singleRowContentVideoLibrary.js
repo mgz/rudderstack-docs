@@ -61,7 +61,7 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
       className="w-full mx-auto bg-white rounded-3xl overflow-hidden shadow-md"
     >
       <div className="flex lg:flex-row  flex-col">
-        <div class="px-4 md:px-12 pt-8 pb-4 lg:max-w-md">
+        <div className="px-4 md:px-12 pt-8 pb-4 lg:max-w-md">
           <Link to={webinarObj.node.slug.current}>
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {`${category} ${
@@ -74,9 +74,9 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
             <p className="text-base text-grayColor-custom">
               {webinarObj.node.shortdescription}
             </p>
-            <div class="mt-2 w-full flex justify-between items-center pt-6">
+            <div className="mt-2 w-full flex justify-between items-center pt-6">
               <a
-                class="btn-primary-lg md:mr-4 md:mb-0 mb-4"
+                className="btn-primary-lg md:mr-4 md:mb-0 mb-4"
                 href={webinarObj.node.slug.current}
                 onClick={e =>
                   rudderslabTrackOnClick("button", webinarObj.node.title, e)

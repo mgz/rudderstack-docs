@@ -79,7 +79,7 @@ const videoContent = ({ data, location }) => {
         />
         <meta property="og:type" content="article" />
       </Helmet>
-      <div className="pt-0 font-custom px-4">
+      <div className="pt-0 font-custom">
         {/*banner*/}
         <VideoLibraryContentHeader
           data={data.videoLib}
@@ -93,18 +93,22 @@ const videoContent = ({ data, location }) => {
           data={data.videoLib._rawTopicsToCoverSection}
           inputForm={inputForm}
         />
-        <VideoLibrarySpeakers
-          speakers={data.videoLib._rawSpekers}
-          allAuthors={data.allSanityBlogauthor}
-        />
+        <div className="px-4">
+          <VideoLibrarySpeakers
+            speakers={data.videoLib._rawSpekers}
+            allAuthors={data.allSanityBlogauthor}
+          />
+        </div>
         {data.videoLib._rawTranscript &&
           data.videoLib._rawTranscript.length > 0 && (
+          <div className="px-4">
             <section id="transcript">
               <div className="block-description relative py-8 max-w-4xl m-auto md:px-12">
                 <h1 className="text-4xl">Transcript</h1>
                 <PortableText blocks={data.videoLib._rawTranscript} />
               </div>
             </section>
+          </div>
           )}
       </div>
       <section id="footer_section_for_demo">
