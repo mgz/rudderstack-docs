@@ -31,7 +31,7 @@ module.exports = {
       red: {
         error: "#FF0000",
         dangerBorder: "#ff4642",
-        dangerBg: "#f5c3c2"
+        dangerBg: "#f5c3c2",
       },
       grayColor: {
         custom: "#4E4E4E",
@@ -41,19 +41,19 @@ module.exports = {
         priceCardBorder: "#E1E1E1",
         dark: "#101836",
         lightBorder: "#DEE2E7",
-        docsText: "#2F353F"
+        docsText: "#2F353F",
       },
       whiteColor: {
         custom: "#ffffff",
       },
-      orange:{
+      orange: {
         warningBorder: "#f77d05",
-        warningBg: "#f1be8d"
+        warningBg: "#f1be8d",
       },
       green: {
         successBg: "#c1ead7",
-        successBorder: "#26cb7c"
-      }
+        successBorder: "#26cb7c",
+      },
     },
     extend: {
       inset: {
@@ -66,6 +66,7 @@ module.exports = {
       },
       width: {
         120: "30rem",
+        18: "4.5rem",
       },
 
       colors: {
