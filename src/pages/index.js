@@ -1,3 +1,4 @@
+// test commit for testing build status and slack integration
 import React from "react";
 import { graphql } from "gatsby";
 import Errors from "../components/errors";
