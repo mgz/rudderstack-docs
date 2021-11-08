@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
 import MainNavigationMenuLink from "./MainNavigationMenuLink"
 import { rudderslabTrackOnClick } from "../utils/common"
-
+import { isMobile, isTablet, isBrowser } from "react-device-detect"
 // import Logo from "../images/logo.png"
 
 const MainNavigation = props => {
@@ -152,9 +152,11 @@ const MainNavigation = props => {
                   link={link}
                   i={i}
                   currMenuIndex={currMenuIndex}
-                  onMainMenuClick={idx =>
-                    setCurrMenuIndex(i === currMenuIndex ? null : idx)
-                  }
+                  onMainMenuClick={idx => {
+                    if (!isBrowser) {
+                      setCurrMenuIndex(i === currMenuIndex ? null : idx)
+                    }
+                  }}
                 />
               ))}
             </ul>
