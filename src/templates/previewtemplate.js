@@ -9,8 +9,8 @@ import Thankyou from "./thankyou"
 import VideoContent from "./videoContent"
 import CaseStudyContent from "./caseStudyContent"
 import PageContent from "./pageContent"
-import VerticalLandingPageContent from './verticalLandingPageContent'
-import BeAHeroPageContent from './beAHeroPageContent'
+import VerticalLandingPageContent from "./verticalLandingPageContent"
+import BeAHeroPageContent from "./beAHeroPageContent"
 
 const sanityClient = require("@sanity/client")
 // const project_id = process.env.GATSBY_SANITY_PROJECTID
@@ -87,7 +87,6 @@ class PreviewTemplate extends Component {
       component = "Page"
 
       await client.fetch(query, params).then(pages => {
-        
         var pagedata = {}
         pages.forEach(page => {
           // console.log(page,'pages data')
@@ -191,14 +190,15 @@ class PreviewTemplate extends Component {
         let contentdata = {}
         contents.forEach(content => {
           contentdata.pagedata = content
-          contentdata.pagedata._rawPagebuildersection = content.pagebuildersection
+          contentdata.pagedata._rawPagebuildersection =
+            content.pagebuildersection
           contentdata.section_get_started = this.props.frontblock.section_get_started
           contentdata.section_testimonials = this.props.frontblock.section_testimonials
           contentdata.all_images = this.props.frontblock.all_images
           this.setState({ data: contentdata })
         })
       })
-    }else if (type === "vertical_landing_page") {
+    } else if (type === "vertical_landing_page") {
       const query = "*[_id == $id]"
       component = "vertical_landing_page"
 
@@ -206,7 +206,8 @@ class PreviewTemplate extends Component {
         let contentdata = {}
         contents.forEach(content => {
           contentdata.pagedata = content
-          contentdata.pagedata._rawPagebuildersection = content.pagebuildersection
+          contentdata.pagedata._rawPagebuildersection =
+            content.pagebuildersection
           contentdata.section_our_logos = this.props.frontblock.section_our_logos
           contentdata.section_get_started = this.props.frontblock.section_get_started
           contentdata.section_testimonials = this.props.frontblock.section_testimonials
@@ -214,7 +215,7 @@ class PreviewTemplate extends Component {
           this.setState({ data: contentdata })
         })
       })
-    }else if (type === "be_a_hero_page") {
+    } else if (type === "be_a_hero_page") {
       const query = "*[_id == $id]"
       component = "be_a_hero_page"
 
@@ -222,7 +223,8 @@ class PreviewTemplate extends Component {
         let contentdata = {}
         contents.forEach(content => {
           contentdata.pagedata = content
-          contentdata.pagedata._rawPagebuildersection = content.pagebuildersection
+          contentdata.pagedata._rawPagebuildersection =
+            content.pagebuildersection
           contentdata.section_get_started = this.props.frontblock.section_get_started
           contentdata.section_testimonials = this.props.frontblock.section_testimonials
           contentdata.all_images = this.props.frontblock.all_images
@@ -266,22 +268,40 @@ class PreviewTemplate extends Component {
           {component === "Product" && <Product data={this.state.data} />}
           {component === "Page" && <Page data={this.state.data} />}
           {component === "Integration" && (
-            <Integration data={this.state.data} />
+            <Integration
+              data={this.state.data}
+              location={this.state.location}
+            />
           )}
           {component === "videocontent" && (
-            <VideoContent data={this.state.data} />
+            <VideoContent
+              data={this.state.data}
+              location={this.state.location}
+            />
           )}
           {component === "casestudiescontent" && (
-            <CaseStudyContent data={this.state.data} />
+            <CaseStudyContent
+              data={this.state.data}
+              location={this.state.location}
+            />
           )}
           {component === "pageContent" && (
-            <PageContent data={this.state.data} />
+            <PageContent
+              data={this.state.data}
+              location={this.state.location}
+            />
           )}
           {component === "vertical_landing_page" && (
-            <VerticalLandingPageContent data={this.state.data} />
+            <VerticalLandingPageContent
+              data={this.state.data}
+              location={this.state.location}
+            />
           )}
           {component === "be_a_hero_page" && (
-            <BeAHeroPageContent data={this.state.data} />
+            <BeAHeroPageContent
+              data={this.state.data}
+              location={this.state.location}
+            />
           )}
         </>
       )
