@@ -288,7 +288,7 @@ module.exports = {
         // The `spreadsheetId` is required, it is found in the url of your document:
         // https://docs.google.com/spreadsheets/d/<spreadsheetId>/edit#gid=0
         // spreadsheetId: "1_KWVijEYD7nNE6qoum8NmI3eabdwJjp10F_5T6dXoEg",
-        spreadsheetId: "1j_uHU3L6ywMnDHFb7ZljUZU07am5lH_v1r3cC4UJwf8",
+        spreadsheetId: "1SeF4KpLiA5G20gabdAAxQ1OmtItg7ERJzTGGqVG9ZBU",
 
         // The `spreadsheetName` is recommended, but optional
         // It is used as part of the id's during the node creation, as well as in the generated GraphQL-schema

@@ -78,7 +78,7 @@ const PreviewPage = ({data, location}) => {
 	var { type, pageId, isDraft } = queryString.parse(location.search);
   if (isDraft) {pageId = "drafts."+pageId}
 	return (
-	  <PreviewTemplate pageid={pageId} type={type} frontblock={data} />
+	  <PreviewTemplate pageid={pageId} type={type} frontblock={data} location={location} />
 	);
 };
 

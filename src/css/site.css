@@ -87,6 +87,18 @@ body {
   left : 8px
 } */
 
+.hero-case-studies{
+  background: linear-gradient(226.32deg, #6B96C3 -50.9%, #111168 108.01%);
+}
+
+.hero-case-studies-bg-image{
+  background-image: url("../images/Union2.png");
+  background-repeat: no-repeat;
+  /* background-size: 120% 50%; */
+  background-position: bottom;
+  background-size: cover;
+}
+
 .gradient-enable {
   background-image: url("../images/banner-gradiant.jpg");
   background-repeat: no-repeat;

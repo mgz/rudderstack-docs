@@ -10,6 +10,8 @@ import LeftRightContentWithTitle from "../components/leftRightContentWithTitle"
 import HeroBannerWithCenterTextAndImage from "../components/heroBannerWithCenterTextAndImage"
 import CaseStuduiesPersonalize from "../components/caseStuduiesPersonalize"
 import Image from "../components/image"
+import HeroBannerCaseStudies from "../components/heroBannerCaseStudies"
+import CaseStudiesContent from "../components/caseStudiesContent"
 
 // const Layout = loadable(() => 
 //   import("../components/layout")
@@ -31,10 +33,9 @@ import Image from "../components/image"
 const Testimonial = loadable(() => import("../components/testimonial"))
 const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
-const CaseStudyContent = ({ data }) => {
- 
+const CaseStudyContent = ({ data, location }) => {
   return (
-    <Layout>
+    <Layout location={location}>
       <Helmet>
         <title>{data.casestudy.meta_title || data.casestudy.title}</title>
         <meta
@@ -59,6 +60,18 @@ const CaseStudyContent = ({ data }) => {
           return (
             <div className="100%" key={section._key}>
               <LeftRightImgCnt applyGradientColorTheme={false} {...section} />{" "}
+            </div>
+          )
+        } else if (section._type === "hero_banner_case_studies") {
+          return (
+            <div className="100%" key={section._key}>
+              <HeroBannerCaseStudies {...section} />
+            </div>
+          )
+        } else if (section._type === "case_studies_main_content") {
+          return (
+            <div className="100%" key={section._key}>
+              <CaseStudiesContent {...section} />
             </div>
           )
         } else if (section._type === "banner_center_image") {
@@ -151,7 +164,7 @@ export const query = graphql`
       category
       _rawPagebuildersectionarray
     }
- 
+
     section_get_started: allSanitySectionGetStarted {
       edges {
         node {
