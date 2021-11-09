@@ -30,7 +30,7 @@ const Singlerowcontent = ({ hit }) => {
             />
           </Link>
         </div>
-        <Link to={hit.slug} className="relative">
+        <Link to={hit.slug} className="relative maxW50">
           <div className="px-8 pt-8 pb-4">
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {hit.blog_category}
@@ -58,7 +58,7 @@ const Singlerowcontent = ({ hit }) => {
                 </div>
               </div>
             </div>
-          )} 
+          )}
         </Link>
       </div>
     </div>

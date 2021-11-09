@@ -191,7 +191,7 @@ const Singleblog = ({ data, location, ...props }) => {
                     className="w-24 h-24 rounded-full"
                   /> */}
                 </div>
-                <div className="flex-grow text-left ml-4 sm:ml-0 md:ml-0 lg:text-center mt-6  sm:mt-0">
+                <div className="flex-grow text-left ml-4 sm:ml-0 md:ml-0 mt-6  sm:mt-0">
                   <div className="text-xs font-bold uppercase text-blueNew-eastbay">
                     About the author
                   </div>
@@ -209,7 +209,7 @@ const Singleblog = ({ data, location, ...props }) => {
       {/*Blog Content*/}
       <section className="bg-white pb-0">
         {/*Blog Post*/}
-        <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap pt-3 pb-12">
+        <div className="max-w-6xl px-4 md:px-4 mx-auto flex flex-wrap pt-3 pb-12">
           <h3 className="tracking-tight-2 w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-12">
             Recent Posts
           </h3>
