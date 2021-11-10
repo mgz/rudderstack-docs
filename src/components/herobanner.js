@@ -21,7 +21,7 @@ function Herobanner({ title, date, author, image, blog }) {
         </div>
       </div>
 
-      <div className="mx-auto blog-title-wrapper lg:max-w-4xl md:max-w-4xl sm:px-4 sm:max-w-4xl md:px-16 md:mt-12 my-4">
+      <div className="mx-auto blog-title-wrapper lg:max-w-5xl md:max-w-5xl sm:max-w-5xl md:mt-12 my-4">
         <p className="text-blueNew-midnight md:ml-0 lg:ml-0  uppercase text-sm font-bold">
           {blog.blog_category}
         </p>

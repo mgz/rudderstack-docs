@@ -122,9 +122,9 @@ const Singleblog = ({ data, location, ...props }) => {
           </LinkedinShareButton>
         </div>
       </div> */}
-      <div className="block-description relative pt-4 max-w-4xl m-auto px-4 md:px-16">
+      <div className="block-description relative pt-4 max-w-5xl m-auto">
         {/*Blog Content*/}
-        <div className="social-icon_blog lg:absolute md:absolute flex-row  items-center flex gap-2 sm:justify-start justify-center  md:flex-col lg:flex-col  lg:pt-8 md:pt-8 lg:mt-3 md:mt-3 top-0 lg:left-0 md:left-0 top-0">
+        <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center top-0 social-icon_blog">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
             {/* <a className="block" href="#"> */}
             <StaticImage

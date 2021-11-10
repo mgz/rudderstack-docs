@@ -90,14 +90,33 @@
   background-size: cover;
   background-position: top center;
 }
+.social-icon_blog{
+  position: absolute;
+  left: -55px;
+  flex-direction: column;
+  margin-top: 0.75rem;
+  padding-top: 2rem;
+}
 @media (min-width: 992px) {
   .custom-hero-banner {
     min-height: 550px;
   }
 }
+@media only screen and (max-width: 1200px){
+  .social-icon_blog{
+    flex-direction: row;
+    position: relative;
+    left: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+}
 @media only screen and (max-width: 1024px){
   .maxW50{
     max-width: 100%;
+  }
+  .block-description, .blog-title-wrapper{
+    padding: 0px 16px;
   }
 }
 @media only screen and (max-width: 767px) {
