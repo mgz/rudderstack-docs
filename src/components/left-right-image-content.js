@@ -13,7 +13,7 @@ const LeftRightImgCnt = props => {
     ? props.leftrightcontentsmalltitle
     : ""
   const contents = props.leftrightimageblock
-  // console.log('props',props)
+  console.log("props", props)
   return (
     <>
       <section className="left-right-section md:px-0 pb-6 md:pb-12">
@@ -44,6 +44,93 @@ const LeftRightImgCnt = props => {
               )}
             </div>
           )}
+
+          <div>
+            {props.header_media &&
+              props.header_media.condition === "imageoption" && (
+                <div className="my-10">
+                  <Image
+                    props={props.header_media.imageoption.asset._ref}
+                    classes="w-full"
+                  />
+                </div>
+              )}
+
+            {props.header_media_cta_cutton && (
+              <div className="mx-auto">
+                <>
+                  {(() => {
+                    if (
+                      props.header_media_cta_cutton.btnexternallink === true
+                    ) {
+                      return (
+                        <a
+                          key={props.header_media_cta_cutton._key}
+                          onClick={e =>
+                            rudderslabTrackOnClick(
+                              "button",
+                              props.productbannerheader,
+                              e
+                            )
+                          }
+                          className={
+                            (props.header_media_cta_cutton.btnhiglight === true
+                              ? "bg-blueNew-magenta text-white btn-primary-lg border-transparent hover:bg-white hover:text-blueNew-midnight"
+                              : "btn-secondary-lg hover:bg-blueNew-midnight") +
+                            ` sm:mr-4 md:mb-0 mb-6`
+                          }
+                          href={props.header_media_cta_cutton.btnlink}
+                        >
+                          {props.header_media_cta_cutton.btntext}
+                        </a>
+                      )
+                    } else {
+                      return (
+                        <span
+                          key={props.header_media_cta_cutton._key}
+                          className={
+                            (props.header_media_cta_cutton.btnhiglight === true
+                              ? "bg-blueNew-magenta text-white btn-primary-lg border-transparent hover:bg-white hover:text-blueNew-midnight"
+                              : "btn-secondary-lg hover:bg-blueNew-midnight") +
+                            ` sm:mr-4 md:mb-0 mb-4`
+                          }
+                        >
+                          <Link
+                            onClick={e =>
+                              rudderslabTrackOnClick(
+                                "button",
+                                props.productbannerheader,
+                                e
+                              )
+                            }
+                            to={props.header_media_cta_cutton.btnlink}
+                          >
+                            {props.header_media_cta_cutton.btntext}
+                          </Link>
+                        </span>
+                      )
+                    }
+                  })()}
+                </>
+              </div>
+            )}
+
+            {props.header_feature_items && (
+              <div className="flex flex-row bg-whiteColor-custom rounded-3xl my-8 p-4">
+                {props.header_feature_items.map(row => {
+                  return (
+                    <div key={row._key} className="w-1/4 flex flex-col pr-8">
+                      <Image
+                        props={row.card_image.asset._ref}
+                        classes="w-10 h-auto mb-4"
+                      />
+                      <span className="text-xl text-blueNew-midnight font-bold leading-tight">{row.title}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+          </div>
           {contents.map((content, i) =>
             (() => {
               if (content.condition === "right") {
@@ -91,7 +178,14 @@ const LeftRightImgCnt = props => {
                           const imgref =
                             content.imageVideoConditionBlock.imageoption.asset
                               ._ref
-                          return <Image props={imgref} classes="w-full" width="540" height="297" />
+                          return (
+                            <Image
+                              props={imgref}
+                              classes="w-full"
+                              width="540"
+                              height="297"
+                            />
+                          )
                         }
                         return null
                       })()}
@@ -156,7 +250,10 @@ const LeftRightImgCnt = props => {
                               : ""
                           }`}
                         >
-                          <PortableText blocks={portabletext} trackSectionHeader={title} />
+                          <PortableText
+                            blocks={portabletext}
+                            trackSectionHeader={title}
+                          />
                         </div>
                         <div
                           className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
@@ -352,7 +449,10 @@ const LeftRightImgCnt = props => {
                             : ""
                         }`}
                       >
-                        <PortableText blocks={portabletext} trackSectionHeader={title} />
+                        <PortableText
+                          blocks={portabletext}
+                          trackSectionHeader={title}
+                        />
                       </div>
                       <div
                         className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
@@ -403,7 +503,6 @@ const LeftRightImgCnt = props => {
                                 <a
                                   href={linkurl}
                                   onClick={e => {
-                                    
                                     rudderslabTrackOnClick("link", title, e)
                                   }}
                                   className={`font-bold leading-normal text-sm ${
@@ -465,7 +564,14 @@ const LeftRightImgCnt = props => {
                           const imgref =
                             content.imageVideoConditionBlock.imageoption.asset
                               ._ref
-                          return <Image props={imgref} classes="w-full" width="540" height="297" />
+                          return (
+                            <Image
+                              props={imgref}
+                              classes="w-full"
+                              width="540"
+                              height="297"
+                            />
+                          )
                         }
                         return null
                       })()}

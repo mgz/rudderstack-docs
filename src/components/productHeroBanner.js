@@ -5,32 +5,35 @@ import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
 } from "../utils/common"
+import Image from "./image"
 import YouTube from "react-youtube"
 
 const ProductHeroBanner = props => {
-  let tmp_youtube_url_split = props.productbanneryoutubeambed.url
-    .split("?")[0]
-    .split("/")
+  let tmp_youtube_url_split = []
+  if (props.herobanner_media.condition === "videooption") {
+    tmp_youtube_url_split = props.herobanner_media.videooption
+      .split("?")[0]
+      .split("/")
+  }
 
   const _onPlay = event => {
-    // console.log("play", event)
     return rudderslabTrackOnYoutubeVideoPlayback(
-      props.productbannerheader,
+      props.productbannertitle,
       event
     )
   }
 
   return (
-    <section className="w-full product-page_banner  lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
+    <section className="w-full  lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
       <div className="max-w-6xl w-full sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
         <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
           <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0sm:items-center lg:items-start lg:mb-0">
-            <h2 className="mb-8 md:my-4 md:text-6xl text-5xl  font-bold tracking-tight-2">
+            <h2 className="text-2xl  font-bold tracking-tight-2 text-blueNew-midnight">
               {props.productbannerheader}
             </h2>
-            <h3 className="text-3xl leading-10 font-bold md:mt-5 mb-8">
+            <h1 className="text-5xl-1 leading-tight font-bold md:mt-5 mb-8">
               {props.productbannertitle}
-            </h3>
+            </h1>
             <p className="text-lg leading-6 lg:pr-40">
               {props.productbannercontent}
             </p>
@@ -94,23 +97,30 @@ const ProductHeroBanner = props => {
           </div>
 
           <div className="relative w-full rounded-xl flex-grow justify-items-end lg:w-1/2 px-0 sm:items-center lg:items-start lg:mb-0">
-            <div class="iframe-container">
-              <div className="stack-frame-1"></div>
-              <div className="stack-frame-2"></div>
-              <YouTube
-                videoId={
-                  tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
-                }
-                className="video"
-                onPlay={_onPlay}
-              />
-              {/* <iframe
-                src={props.productbanneryoutubeambed.url}
-                frameborder="0"
-                allowfullscreen
-                class="video"
-              ></iframe> */}
-            </div>
+            {props.herobanner_media.condition === "videooption" && (
+              <div class="iframe-container">
+                <div className="stack-frame-1"></div>
+                <div className="stack-frame-2"></div>
+                <YouTube
+                  videoId={
+                    tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
+                  }
+                  className="video"
+                  onPlay={_onPlay}
+                />
+              </div>
+            )}
+
+            {props.herobanner_media.condition === "imageoption" && (
+              <div class="iframe-container">
+                <div className="stack-frame-1"></div>
+                <div className="stack-frame-2"></div>
+                <Image
+                  props={props.herobanner_media.imageoption.asset._ref}
+                  classes="video"
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

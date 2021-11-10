@@ -18,14 +18,7 @@ import clientConfig from "../../client-config"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Products = ({ data, location }) => {
-  const lv_testimonialsection = data.section_testimonials.edges.filter(
-    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
-  )
-
-  const lv_middlebannersection = data.section_get_started.edges.filter(
-    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
-  )
-
+  console.log('data',data)
   return (
     <Layout location={location}>
       <Helmet>
@@ -51,29 +44,36 @@ const Products = ({ data, location }) => {
             return <ProductImageWithListOfText key={row._id} {...row} />
           } else if (row._type === "leftrightcontentimagesection") {
             return (
-              // <div key={row._key} className="bg-gradiantsecondary 100%">
-              //   <LeftRightImgCnt applyGradientColorTheme={false} {...row} />
-              // </div>
-              <div key={row._key} className="100%">
-                <LeftRightImgCnt applyGradientColorTheme={false} {...row} />
+              <div key={row._key} className="100% bg-blueNew-midnight pt-20">
+                <LeftRightImgCnt applyGradientColorTheme={true} {...row} />
               </div>
+            )
+          } else if (row._type === "ref_section_get_started") {
+            let l_section_info = data.section_get_started.edges.find(
+              kl => kl.node._id === row._ref
+            )
+            return (
+              <section key={row._key} id="get_started">
+                <MiddleBanner {...l_section_info.node._rawGetStarted} />
+              </section>
+            )
+          } else if (row._type === "ref_section_testimonials") {
+            let l_section_info = data.section_testimonials.edges.find(
+              kl => kl.node._id === row._ref
+            )
+            return (
+              <section key={row._key} id="testimonial">
+                <Testimonial
+                  applyGradientColorTheme={true}
+                  isForDemoPage={true}
+                  {...l_section_info.node._rawTestimonials}
+                />
+              </section>
             )
           } else {
             return null
           }
         })}
-
-        <section id="testimonials">
-          <Testimonial
-            {...lv_testimonialsection[0].node._rawTestimonials}
-            applyGradientColorTheme={true}
-            isForDemoPage={true}
-          />
-        </section>
-
-        <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
-        </section>
       </div>
     </Layout>
   )

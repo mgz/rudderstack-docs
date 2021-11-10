@@ -90,12 +90,13 @@ const Layout = ({ location, showExplicitGradient, children }) => {
   const footerlogo =
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
 
-  // console.log("path", location, showExplicitGradient)
+  console.log("path", location, showExplicitGradient)
   // let diableGradient = false
   const [diableGradient] = React.useState(
     location &&
       (location.pathname.startsWith("/404") ||
         location.pathname.startsWith("/blog/") || 
+        location.pathname.startsWith("/product/") || 
         location.pathname.startsWith("/customers/"))
       ? true
       : false
