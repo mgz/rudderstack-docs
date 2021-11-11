@@ -46,16 +46,21 @@ const videoContent = ({ data, location }) => {
     category = "Learn RudderStack"
     url_or_event_dttm =
       data.videoLib._rawVideoLibraryCategoryType.learn_option &&
-      data.videoLib._rawVideoLibraryCategoryType.learn_option.url
+      data.videoLib._rawVideoLibraryCategoryType.learn_option.youtube.url
+    inputForm =
+      data.videoLib._rawVideoLibraryCategoryType.learn_option
+        .input_form
   } else if (
     data.videoLib._rawVideoLibraryCategoryType &&
     data.videoLib._rawVideoLibraryCategoryType.condition === "usecase_option"
   ) {
     category = "Use cases"
     url_or_event_dttm =
-      data.videoLib._rawVideoLibraryCategoryType.usecase_option.url
+      data.videoLib._rawVideoLibraryCategoryType.usecase_option.youtube.url
+    inputForm =
+      data.videoLib._rawVideoLibraryCategoryType.usecase_option.input_form
   }
-
+  // console.log("video-library", data.videoLib.title)
   return (
     <Layout
       location={location}
@@ -84,6 +89,7 @@ const videoContent = ({ data, location }) => {
         <VideoLibraryContentHeader
           data={data.videoLib}
           category={category}
+          location={location}
           url_or_event_dttm={url_or_event_dttm}
           inputForm={inputForm}
         />
