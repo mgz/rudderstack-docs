@@ -9,6 +9,7 @@ import ProductHeroBanner from "../components/productHeroBanner"
 import ProductImageWithListOfText from "../components/productImageWithListOfText"
 import LeftRightImgCnt from "../components/left-right-image-content"
 import Testimonial from "../components/testimonial"
+import TestimonialCardWithLeftHeading from "../components/testimonialCardWithLeftHeading"
 import clientConfig from "../../client-config"
 // const Layout = loadable(() => import("../components/layout"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
@@ -18,7 +19,7 @@ import clientConfig from "../../client-config"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Products = ({ data, location }) => {
-  console.log('data',data)
+  console.log("data", data)
   return (
     <Layout location={location}>
       <Helmet>
@@ -46,6 +47,12 @@ const Products = ({ data, location }) => {
             return (
               <div key={row._key} className="100% bg-blueNew-midnight pt-20">
                 <LeftRightImgCnt applyGradientColorTheme={true} {...row} />
+              </div>
+            )
+          } else if (row._type === "testimonial_card_with_left_heading") {
+            return (
+              <div key={row._key} className="">
+                <TestimonialCardWithLeftHeading {...row} />
               </div>
             )
           } else if (row._type === "ref_section_get_started") {
