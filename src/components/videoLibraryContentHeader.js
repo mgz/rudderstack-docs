@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import DynamicInputForm from "../components/dynamicInputForm"
-
+import { useQueryParam, StringParam } from "use-query-params"
 import { rudderslabTrackOnYoutubeVideoPlayback } from "../utils/common"
 import YouTube from "react-youtube"
 import Cookies from "universal-cookie"
@@ -11,23 +11,31 @@ const VideoLibraryContentHeader = ({
   url_or_event_dttm,
   inputForm,
   location,
+  skip_video_gateway_id,
 }) => {
+  const [video] = useQueryParam("video", StringParam)
   const cookies = new Cookies()
 
-  // console.log("ssss", category, url_or_event_dttm, data)
   let tmp_youtube_url_split = url_or_event_dttm.split("?")[0].split("/")
 
   const _onPlay = event => {
     return rudderslabTrackOnYoutubeVideoPlayback(data.title, event)
   }
 
+  // let showGateawayForm =
+  //   category === "Live" ||
+  //   cookies.get(`video-library-gatedformview-#${data._id}`) === "yes"
+  //     ? false
+  //     : true
+
   let showGateawayForm =
-    category === "Live" ||
-    cookies.get(`video-library-gatedformview-#${data._id}`) === "yes"
+    inputForm === undefined
+      ? false
+      : cookies.get(`video-library-gatedformview-#${data._id}`) === "yes" ||
+        skip_video_gateway_id === video
       ? false
       : true
-
-  // let showGateawayForm
+ 
   // if (category === "Live") {
   //   showGateawayForm = true
   // } else {
