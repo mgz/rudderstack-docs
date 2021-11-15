@@ -4,6 +4,7 @@ import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
 } from "../utils/common"
+import TestimonialFloating from "./testimonial_floating"
 import PortableText from "./portableText"
 import Image from "./image"
 
@@ -17,7 +18,7 @@ const TestimonialCardWithLeftHeading = props => {
             <h2 className="mb-8 md:mt-4 md:mb-0 md:text-4xl text-3xl  font-bold leading-none">
               {props.left_title}
             </h2>
-           
+
             <div className="block sm:flex justify-center items-center mt-12">
               {props.left_cta_button.map((btn, i) => (
                 <>
@@ -75,18 +76,7 @@ const TestimonialCardWithLeftHeading = props => {
             </div>
           </div>
           <div className="relative w-full px-5 rounded-lg flex-grow justify-items-end lg:w-2/5 sm:px-0 sm:items-center lg:items-start lg:mb-0">
-            <div class="iframe-container">
-              <div className="stack-frame-1"></div>
-              <div className="stack-frame-2"></div>
-              {/* <YouTube
-                videoId={
-                  tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
-                }
-                className="video"
-                onPlay={_onPlay}
-              />
-             */}
-            </div>
+            <TestimonialFloating {...props.testimonial} />
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ const LeftRightImgCnt = props => {
           <div>
             {props.header_media &&
               props.header_media.condition === "imageoption" && (
-                <div className="my-10">
+                <div className="max-w-screen-md mx-auto my-10">
                   <Image
                     props={props.header_media.imageoption.asset._ref}
                     classes="w-full"
@@ -57,7 +57,7 @@ const LeftRightImgCnt = props => {
               )}
 
             {props.header_media_cta_cutton && (
-              <div className="mx-auto">
+              <div className="w-72 mx-auto">
                 <>
                   {(() => {
                     if (
