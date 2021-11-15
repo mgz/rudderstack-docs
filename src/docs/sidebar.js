@@ -4,7 +4,7 @@ export const jsonData = [
      "title":"Home",
      "link":"",
      "content":[
-        
+
      ]
   },
   {
@@ -22,7 +22,7 @@ export const jsonData = [
                  "title":"Docker",
                  "link":"/get-started/installing-and-setting-up-rudderstack/docker/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -30,7 +30,7 @@ export const jsonData = [
                  "title":"Kubernetes",
                  "link":"/get-started/installing-and-setting-up-rudderstack/kubernetes/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -38,7 +38,7 @@ export const jsonData = [
                  "title":"Developer Machine Setup",
                  "link":"/get-started/installing-and-setting-up-rudderstack/developer-machine-setup/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -46,7 +46,7 @@ export const jsonData = [
                  "title":"Sending Test Events",
                  "link":"/get-started/installing-and-setting-up-rudderstack/sending-test-events/",
                  "content":[
-                    
+
                  ]
               }
            ]
@@ -61,7 +61,7 @@ export const jsonData = [
                  "title":"User Management",
                  "link":"/get-started/dashboard-overview/user-management/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -69,7 +69,7 @@ export const jsonData = [
                   "title":"Audit Logs",
                   "link":"/get-started/dashboard-overview/audit-logs/",
                   "content":[
-                     
+
                   ]
                }
            ]
@@ -79,7 +79,7 @@ export const jsonData = [
            "title":"Control Plane Lite",
            "link":"/get-started/control-plane-lite/",
            "content":[
-              
+
            ]
         },
         {
@@ -87,7 +87,7 @@ export const jsonData = [
            "title":"Live Events",
            "link":"/get-started/live-events/",
            "content":[
-              
+
            ]
         },
         {
@@ -95,7 +95,7 @@ export const jsonData = [
            "title":"Architecture",
            "link":"/get-started/rudderstack-architecture/",
            "content":[
-              
+
            ]
         }
      ]
@@ -110,7 +110,7 @@ export const jsonData = [
            "title":"How to Add a Source and Destination in RudderStack",
            "link":"/connections/adding-source-and-destination-rudderstack/",
            "content":[
-              
+
            ]
         },
         {
@@ -118,7 +118,7 @@ export const jsonData = [
            "title":"RudderStack Connection Modes: Cloud Mode vs Device Mode",
            "link":"/connections/rudderstack-connection-modes/",
            "content":[
-              
+
            ]
         }
      ]
@@ -143,15 +143,15 @@ export const jsonData = [
                        "title":"Quick Start Guide",
                        "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/quick-start-guide/",
                        "content":[
-                          
+
                        ]
-                    }, 
+                    },
                     {
                        "key":"javascript-sdk-enhancements",
                        "title":"JavaScript SDK Enhancements",
                        "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/javascript-sdk-enhancements/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -159,7 +159,7 @@ export const jsonData = [
                        "title":"Querystring API",
                        "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/querystring-api/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -167,7 +167,7 @@ export const jsonData = [
                        "title":"Detecting Ad-blocked Pages",
                        "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/detecting-adblocked-pages/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -175,7 +175,7 @@ export const jsonData = [
                        "title":"Version Migration Guide",
                        "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/version-migration-guide/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -183,7 +183,7 @@ export const jsonData = [
                        "title":"FAQs",
                        "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-javascript-sdk/js-sdk-faqs/",
                        "content":[
-                          
+
                        ]
                     }
                  ]
@@ -198,7 +198,7 @@ export const jsonData = [
                        "title":"How to Add an Application Class to Your Android App",
                        "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-android-sdk/add-an-application-class-to-you-android-application/",
                        "content":[
-                          
+
                        ]
                     }
                  ]
@@ -208,7 +208,7 @@ export const jsonData = [
                  "title":"iOS",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ios-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -216,7 +216,7 @@ export const jsonData = [
                  "title":"Unity",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/getting-started-with-unity-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -224,7 +224,7 @@ export const jsonData = [
                  "title":"React Native",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-react-native-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -232,7 +232,7 @@ export const jsonData = [
                  "title":"Flutter",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-flutter-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -240,7 +240,7 @@ export const jsonData = [
                "title":"Cordova",
                "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-cordova-sdk/",
                "content":[
-                  
+
                ]
             },
               {
@@ -248,7 +248,7 @@ export const jsonData = [
                  "title":"AMP Analytics",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/amp-analytics/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -256,7 +256,7 @@ export const jsonData = [
                  "title":"Java",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-java-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -264,7 +264,7 @@ export const jsonData = [
                  "title":"Python",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-python-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -272,7 +272,7 @@ export const jsonData = [
                  "title":"Rust",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-rust-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -280,7 +280,7 @@ export const jsonData = [
                  "title":"Node.js",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-node-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -288,7 +288,7 @@ export const jsonData = [
                  "title":"Go",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-go-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -296,7 +296,7 @@ export const jsonData = [
                  "title":"Ruby",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/rudderstack-ruby-sdk/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -304,7 +304,7 @@ export const jsonData = [
                  "title":".NET",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/dotnet/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -312,7 +312,7 @@ export const jsonData = [
                  "title":"PHP",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/php/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -320,7 +320,7 @@ export const jsonData = [
                  "title":"SDK FAQs",
                  "link":"/stream-sources/rudderstack-sdk-integration-guides/sdk-faqs/",
                  "content":[
-                    
+
                  ]
               }
            ]
@@ -330,7 +330,7 @@ export const jsonData = [
            "title":"Webhook Source",
            "link":"/stream-sources/webhook-source/",
            "content":[
-              
+
            ]
         },
         {
@@ -338,7 +338,7 @@ export const jsonData = [
            "title":"App Center",
            "link":"/stream-sources/appcenter/",
            "content":[
-              
+
            ]
         },
         {
@@ -346,7 +346,7 @@ export const jsonData = [
            "title":"AppsFlyer",
            "link":"/stream-sources/appsflyer/",
            "content":[
-              
+
            ]
         },
         {
@@ -354,7 +354,7 @@ export const jsonData = [
            "title":"Auth0",
            "link":"/stream-sources/auth0/",
            "content":[
-              
+
            ]
         },
         {
@@ -362,7 +362,7 @@ export const jsonData = [
            "title":"Customer.io",
            "link":"/stream-sources/customerio/",
            "content":[
-              
+
            ]
         },
         {
@@ -370,7 +370,7 @@ export const jsonData = [
            "title":"Extole",
            "link":"/stream-sources/extole/",
            "content":[
-              
+
            ]
         },
         {
@@ -378,7 +378,7 @@ export const jsonData = [
            "title":"Looker",
            "link":"/stream-sources/looker/",
            "content":[
-              
+
            ]
         },
         {
@@ -386,7 +386,7 @@ export const jsonData = [
            "title":"PostHog",
            "link":"/stream-sources/posthog/",
            "content":[
-              
+
            ]
         },
         {
@@ -394,7 +394,7 @@ export const jsonData = [
            "title":"Segment",
            "link":"/stream-sources/segment/",
            "content":[
-              
+
            ]
         }
      ]
@@ -409,7 +409,7 @@ export const jsonData = [
            "title":"ActiveCampaign",
            "link":"/cloud-extract-sources/activecampaign/",
            "content":[
-              
+
            ]
         },
         {
@@ -417,7 +417,7 @@ export const jsonData = [
            "title":"Bing Ads",
            "link":"/cloud-extract-sources/bing-ads/",
            "content":[
-              
+
            ]
         },
         {
@@ -425,7 +425,7 @@ export const jsonData = [
            "title":"Facebook Ads",
            "link":"/cloud-extract-sources/facebook-ads/",
            "content":[
-              
+
            ]
         },
         {
@@ -433,7 +433,7 @@ export const jsonData = [
            "title":"Freshdesk",
            "link":"/cloud-extract-sources/freshdesk/",
            "content":[
-              
+
            ]
         },
         {
@@ -441,7 +441,7 @@ export const jsonData = [
            "title":"Google AdWords",
            "link":"/cloud-extract-sources/google-adwords/",
            "content":[
-              
+
            ]
         },
         {
@@ -449,7 +449,7 @@ export const jsonData = [
            "title":"Google Analytics",
            "link":"/cloud-extract-sources/google-analytics/",
            "content":[
-              
+
            ]
         },
         {
@@ -457,7 +457,7 @@ export const jsonData = [
            "title":"Google Search Console",
            "link":"/cloud-extract-sources/google-search-console/",
            "content":[
-              
+
            ]
         },
         {
@@ -465,7 +465,7 @@ export const jsonData = [
            "title":"Google Sheets",
            "link":"/cloud-extract-sources/google-sheets/",
            "content":[
-              
+
            ]
         },
         {
@@ -478,9 +478,9 @@ export const jsonData = [
                "title":"HubSpot Data Model and Schema Information",
                "link":"/cloud-extract-sources/hubspot/hubspot-data-model-and-schema-information/",
                "content":[
-                  
+
                ]
-            },            
+            },
            ]
         },
         {
@@ -488,7 +488,7 @@ export const jsonData = [
            "title":"Intercom",
            "link":"/cloud-extract-sources/intercom/",
            "content":[
-              
+
            ]
         },
         {
@@ -496,7 +496,7 @@ export const jsonData = [
            "title":"Mailchimp",
            "link":"/cloud-extract-sources/mailchimp/",
            "content":[
-              
+
            ]
         },
         {
@@ -504,7 +504,7 @@ export const jsonData = [
            "title":"Mixpanel",
            "link":"/cloud-extract-sources/mixpanel/",
            "content":[
-              
+
            ]
         },
         {
@@ -512,7 +512,7 @@ export const jsonData = [
            "title":"Marketo",
            "link":"/cloud-extract-sources/marketo/",
            "content":[
-              
+
            ]
         },
         {
@@ -520,7 +520,7 @@ export const jsonData = [
            "title":"NetSuite",
            "link":"/cloud-extract-sources/netsuite/",
            "content":[
-              
+
            ]
         },
         {
@@ -528,7 +528,7 @@ export const jsonData = [
            "title":"Pipedrive",
            "link":"/cloud-extract-sources/pipedrive/",
            "content":[
-              
+
            ]
         },
         {
@@ -536,7 +536,7 @@ export const jsonData = [
            "title":"QuickBooks",
            "link":"/cloud-extract-sources/quickbooks/",
            "content":[
-              
+
            ]
         },
         {
@@ -549,7 +549,7 @@ export const jsonData = [
                  "title":"Schema Comparison: Rudderstack Vs Segment",
                  "link":"/cloud-extract-sources/salesforce/schema-comparison-rudderstack-vs-segment/",
                  "content":[
-                    
+
                  ]
               }
            ]
@@ -559,7 +559,7 @@ export const jsonData = [
          "title":"Salesforce Pardot",
          "link":"/cloud-extract-sources/salesforce-pardot/",
          "content":[
-            
+
             ]
          },
          {
@@ -567,7 +567,7 @@ export const jsonData = [
             "title":"Stripe",
             "link":"/cloud-extract-sources/stripe/",
             "content":[
-               
+
             ]
          },
          {
@@ -575,7 +575,7 @@ export const jsonData = [
             "title":"Xero",
             "link":"/cloud-extract-sources/xero/",
             "content":[
-               
+
             ]
          },
          {
@@ -583,7 +583,7 @@ export const jsonData = [
             "title":"Zendesk",
             "link":"/cloud-extract-sources/zendesk/",
             "content":[
-               
+
             ]
          },
          {
@@ -591,7 +591,7 @@ export const jsonData = [
             "title":"Zendesk Chat",
             "link":"/cloud-extract-sources/zendesk-chat/",
             "content":[
-               
+
             ]
          },
      ]
@@ -606,7 +606,7 @@ export const jsonData = [
            "title":"Amazon Redshift",
            "link":"/warehouse-actions/amazon-redshift/",
            "content":[
-              
+
            ]
         },
         {
@@ -614,7 +614,7 @@ export const jsonData = [
            "title":"Amazon S3",
            "link":"/warehouse-actions/amazon-s3/",
            "content":[
-              
+
            ]
         },
         {
@@ -622,7 +622,7 @@ export const jsonData = [
            "title":"ClickHouse",
            "link":"/warehouse-actions/clickhouse/",
            "content":[
-              
+
            ]
         },
         {
@@ -630,7 +630,7 @@ export const jsonData = [
            "title":"Google BigQuery",
            "link":"/warehouse-actions/google-bigquery/",
            "content":[
-              
+
            ]
         },
         {
@@ -638,7 +638,7 @@ export const jsonData = [
            "title":"PostgreSQL",
            "link":"/warehouse-actions/postgresql/",
            "content":[
-              
+
            ]
         },
         {
@@ -646,7 +646,7 @@ export const jsonData = [
            "title":"Snowflake",
            "link":"/warehouse-actions/snowflake/",
            "content":[
-              
+
            ]
         },
         {
@@ -654,7 +654,7 @@ export const jsonData = [
            "title":"Visual Data Mapper",
            "link":"/warehouse-actions/visual-data-mapper/",
            "content":[
-              
+
            ]
         }
      ]
@@ -674,7 +674,7 @@ export const jsonData = [
                  "title":"Google Analytics",
                  "link":"/destinations/analytics/google-analytics-ga/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -682,7 +682,7 @@ export const jsonData = [
                  "title":"Google Analytics 4",
                  "link":"/destinations/analytics/google-analytics-4/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -690,7 +690,7 @@ export const jsonData = [
                  "title":"Google Analytics 360",
                  "link":"/destinations/analytics/google-analytics-360/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -703,7 +703,7 @@ export const jsonData = [
                        "title":"Setting Up Adobe Analytics in RudderStack",
                        "link":"/destinations/analytics/adobe-analytics/setting-up-adobe-analytics-in-rudderstack/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -711,7 +711,7 @@ export const jsonData = [
                        "title":"Web Device Mode Settings",
                        "link":"/destinations/analytics/adobe-analytics/adobe-analytics-web-device-mode/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -719,7 +719,7 @@ export const jsonData = [
                        "title":"Mobile Device Mode Settings",
                        "link":"/destinations/analytics/adobe-analytics/adobe-analytics-mobile-device-mode/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -727,7 +727,7 @@ export const jsonData = [
                        "title":"Adobe Analytics Heartbeat Measurement",
                        "link":"/destinations/analytics/adobe-analytics/adobe-analytics-heartbeat/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -735,7 +735,7 @@ export const jsonData = [
                        "title":"E-commerce Events",
                        "link":"/destinations/analytics/adobe-analytics/e-commerce-events/",
                        "content":[
-                          
+
                        ]
                     }
                  ]
@@ -745,7 +745,7 @@ export const jsonData = [
                  "title":"Amplitude",
                  "link":"/destinations/analytics/amplitude/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -753,7 +753,7 @@ export const jsonData = [
                  "title":"Hotjar",
                  "link":"/destinations/analytics/hotjar/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -761,7 +761,7 @@ export const jsonData = [
                  "title":"Chartbeat",
                  "link":"/destinations/analytics/chartbeat/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -769,7 +769,7 @@ export const jsonData = [
                  "title":"FullStory",
                  "link":"/destinations/analytics/fullstory/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -777,7 +777,7 @@ export const jsonData = [
                  "title":"Mixpanel",
                  "link":"/destinations/analytics/mixpanel/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -785,7 +785,7 @@ export const jsonData = [
                "title":"Quantum Metric",
                "link":"/destinations/analytics/quantummetric/",
                "content":[
-                  
+
                ]
             },
               {
@@ -793,7 +793,7 @@ export const jsonData = [
                "title":"Firebase",
                "link":"/destinations/analytics/firebase/",
                "content":[
-                  
+
                ]
             },
               {
@@ -801,7 +801,7 @@ export const jsonData = [
                  "title":"Kissmetrics",
                  "link":"/destinations/analytics/kissmetrics/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -809,7 +809,7 @@ export const jsonData = [
                  "title":"Heap.io",
                  "link":"/destinations/analytics/heap.io/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -817,7 +817,7 @@ export const jsonData = [
                  "title":"Keen",
                  "link":"/destinations/analytics/keen/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -825,7 +825,7 @@ export const jsonData = [
                  "title":"Kubit",
                  "link":"/destinations/analytics/kubit/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -833,7 +833,7 @@ export const jsonData = [
                  "title":"AWS Personalize",
                  "link":"/destinations/analytics/aws-personalize/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -841,7 +841,7 @@ export const jsonData = [
                  "title":"Indicative",
                  "link":"/destinations/analytics/indicative/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -849,7 +849,7 @@ export const jsonData = [
                  "title":"Pendo",
                  "link":"/destinations/analytics/pendo/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -857,7 +857,7 @@ export const jsonData = [
                  "title":"PostHog",
                  "link":"/destinations/analytics/posthog/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -870,7 +870,7 @@ export const jsonData = [
                        "title":"Cloud Mode",
                        "link":"/destinations/analytics/profitwell/profitwell-cloud-mode/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -878,7 +878,7 @@ export const jsonData = [
                        "title":"Device Mode",
                        "link":"/destinations/analytics/profitwell/profitwell-web-device-mode/",
                        "content":[
-                          
+
                        ]
                     }
                  ]
@@ -888,7 +888,7 @@ export const jsonData = [
                  "title":"Lytics",
                  "link":"/destinations/analytics/lytics/",
                  "content":[
-                    
+
                  ]
               }
            ]
@@ -903,7 +903,7 @@ export const jsonData = [
                "title":"Salesforce",
                "link":"/destinations/crm/salesforce/",
                "content":[
-                  
+
                ]
             },
             {
@@ -911,7 +911,7 @@ export const jsonData = [
                "title":"HubSpot",
                "link":"/destinations/crm/hubspot/",
                "content":[
-                  
+
                ]
             },
             {
@@ -919,7 +919,7 @@ export const jsonData = [
                "title":"Variance",
                "link":"/destinations/crm/variance/",
                "content":[
-                  
+
                ]
             },
             {
@@ -927,7 +927,7 @@ export const jsonData = [
                "title":"Zendesk",
                "link":"/destinations/crm/zendesk/",
                "content":[
-                  
+
                ]
             },
             {
@@ -935,7 +935,7 @@ export const jsonData = [
                "title":"Delighted",
                "link":"/destinations/crm/delighted/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -950,7 +950,7 @@ export const jsonData = [
                "title":"Marketo",
                "link":"/destinations/marketing/marketo/",
                "content":[
-                  
+
                ]
             },
             {
@@ -958,7 +958,7 @@ export const jsonData = [
                "title":"Marketo Lead Import",
                "link":"/destinations/marketing/marketo-lead-import/",
                "content":[
-                  
+
                ]
             },
             {
@@ -971,7 +971,7 @@ export const jsonData = [
                      "title":"Setting Up Drip in RudderStack",
                      "link":"/destinations/marketing/drip/setting-up-drip-in-rudderstack/",
                      "content":[
-                        
+
                      ]
                   },
                   {
@@ -979,7 +979,7 @@ export const jsonData = [
                      "title":"Cloud Mode",
                      "link":"/destinations/marketing/drip/drip-cloud-mode/",
                      "content":[
-                        
+
                      ]
                   },
                   {
@@ -987,7 +987,7 @@ export const jsonData = [
                      "title":"Device Mode",
                      "link":"/destinations/marketing/drip/drip-web-device-mode/",
                      "content":[
-                        
+
                      ]
                   },
                ]
@@ -997,7 +997,7 @@ export const jsonData = [
                "title":"Qualtrics",
                "link":"/destinations/marketing/qualtrics/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1005,7 +1005,7 @@ export const jsonData = [
                "title":"Salesforce Marketing Cloud",
                "link":"/destinations/marketing/sfmc/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1013,7 +1013,7 @@ export const jsonData = [
                "title":"Ometria",
                "link":"/destinations/marketing/ometria/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1021,7 +1021,7 @@ export const jsonData = [
                "title":"CleverTap",
                "link":"/destinations/marketing/clevertap/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1029,7 +1029,7 @@ export const jsonData = [
                "title":"Braze",
                "link":"/destinations/marketing/braze/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1037,7 +1037,7 @@ export const jsonData = [
                "title":"Customer.io",
                "link":"/destinations/marketing/customer.io/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1045,7 +1045,7 @@ export const jsonData = [
                "title":"Mailchimp",
                "link":"/destinations/marketing/mailchimp/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1053,7 +1053,7 @@ export const jsonData = [
                "title":"MoEngage",
                "link":"/destinations/marketing/moengage/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1061,7 +1061,7 @@ export const jsonData = [
                "title":"Autopilot",
                "link":"/destinations/marketing/autopilot/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1069,7 +1069,7 @@ export const jsonData = [
                "title":"Gainsight",
                "link":"/destinations/marketing/gainsight/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1077,7 +1077,7 @@ export const jsonData = [
                "title":"Gainsight PX",
                "link":"/destinations/marketing/gainsight-px/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1085,7 +1085,7 @@ export const jsonData = [
                "title":"Leanplum",
                "link":"/destinations/marketing/leanplum/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1093,7 +1093,7 @@ export const jsonData = [
                "title":"Iterable",
                "link":"/destinations/marketing/iterable/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1101,7 +1101,7 @@ export const jsonData = [
                "title":"Appcues",
                "link":"/destinations/marketing/appcues/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1109,7 +1109,7 @@ export const jsonData = [
                "title":"Userlist",
                "link":"/destinations/marketing/userlist/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1117,7 +1117,7 @@ export const jsonData = [
                "title":"ActiveCampaign",
                "link":"/destinations/marketing/activecampaign/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1125,7 +1125,7 @@ export const jsonData = [
                "title":"Klaviyo",
                "link":"/destinations/marketing/klaviyo/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1140,7 +1140,7 @@ export const jsonData = [
                "title":"Adjust",
                "link":"/destinations/attribution/adjust/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1148,7 +1148,7 @@ export const jsonData = [
                "title":"Branch",
                "link":"/destinations/attribution/branchio/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1156,7 +1156,7 @@ export const jsonData = [
                "title":"Kochava",
                "link":"/destinations/attribution/kochava/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1164,7 +1164,7 @@ export const jsonData = [
                "title":"TVSquared",
                "link":"/destinations/attribution/tvsquared/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1172,7 +1172,7 @@ export const jsonData = [
                "title":"AppsFlyer",
                "link":"/destinations/attribution/appsflyer/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1182,7 +1182,7 @@ export const jsonData = [
            "title":"Webhooks",
            "link":"/destinations/webhooks/",
            "content":[
-              
+
            ]
         },
         {
@@ -1195,7 +1195,7 @@ export const jsonData = [
                "title":"Intercom",
                "link":"/destinations/business-messaging/intercom/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1203,7 +1203,7 @@ export const jsonData = [
                "title":"Slack",
                "link":"/destinations/business-messaging/slack/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1211,7 +1211,7 @@ export const jsonData = [
                "title":"Kustomer",
                "link":"/destinations/business-messaging/kustomer/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1219,7 +1219,7 @@ export const jsonData = [
                "title":"Trengo",
                "link":"/destinations/business-messaging/trengo/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1234,7 +1234,7 @@ export const jsonData = [
                "title":"Google Ads",
                "link":"/destinations/advertising/google-ads/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1242,7 +1242,7 @@ export const jsonData = [
                "title":"Facebook App Events",
                "link":"/destinations/advertising/facebook-app-events/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1250,7 +1250,7 @@ export const jsonData = [
                "title":"LinkedIn Insight Tag",
                "link":"/destinations/advertising/linkedin-insight-tag/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1258,7 +1258,7 @@ export const jsonData = [
                "title":"Reddit Pixel",
                "link":"/destinations/advertising/reddit-pixel/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1266,7 +1266,7 @@ export const jsonData = [
                "title":"Facebook Pixel",
                "link":"/destinations/advertising/fb-pixel/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1274,7 +1274,7 @@ export const jsonData = [
                "title":"Snap Pixel",
                "link":"/destinations/advertising/snap-pixel/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1282,7 +1282,7 @@ export const jsonData = [
                "title":"Facebook Custom Audience",
                "link":"/destinations/advertising/fb-custom-audience/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1290,7 +1290,7 @@ export const jsonData = [
                "title":"Lotame",
                "link":"/destinations/advertising/lotame/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1298,7 +1298,7 @@ export const jsonData = [
                "title":"Bing Ads",
                "link":"/destinations/advertising/bingads/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1306,7 +1306,7 @@ export const jsonData = [
                "title":"Pinterest Tag",
                "link":"/destinations/advertising/pinterest-ads/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1314,7 +1314,7 @@ export const jsonData = [
                "title":"Criteo",
                "link":"/destinations/advertising/criteo/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1329,7 +1329,7 @@ export const jsonData = [
                "title":"Segment",
                "link":"/destinations/customer-data-platform/segment/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1344,7 +1344,7 @@ export const jsonData = [
                "title":"Apache Kafka",
                "link":"/destinations/data-ingestion/kafka/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1352,7 +1352,7 @@ export const jsonData = [
                "title":"Amazon EventBridge",
                "link":"/destinations/data-ingestion/amazon-eventbridge/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1360,7 +1360,7 @@ export const jsonData = [
                "title":"Amazon Kinesis",
                "link":"/destinations/data-ingestion/amazon-kinesis/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1368,7 +1368,7 @@ export const jsonData = [
                "title":"Amazon Firehose",
                "link":"/destinations/data-ingestion/amazon-kinesis-firehose/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1376,7 +1376,7 @@ export const jsonData = [
                "title":"Azure Event Hubs",
                "link":"/destinations/data-ingestion/azure-event-hubs/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1384,7 +1384,7 @@ export const jsonData = [
                "title":"Confluent Cloud",
                "link":"/destinations/data-ingestion/confluent-cloud/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1392,7 +1392,7 @@ export const jsonData = [
                "title":"Google Pub/Sub",
                "link":"/destinations/data-ingestion/google-pub-sub/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1407,7 +1407,7 @@ export const jsonData = [
                "title":"Amazon S3",
                "link":"/destinations/storage-platforms/amazon-s3/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1415,7 +1415,7 @@ export const jsonData = [
                "title":"MinIO",
                "link":"/destinations/storage-platforms/minio/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1423,7 +1423,7 @@ export const jsonData = [
                "title":"Redis",
                "link":"/destinations/storage-platforms/redis/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1431,7 +1431,7 @@ export const jsonData = [
                "title":"Google Cloud Storage",
                "link":"/destinations/storage-platforms/google-cloud-storage/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1439,7 +1439,7 @@ export const jsonData = [
                "title":"DigitalOcean Spaces",
                "link":"/destinations/storage-platforms/digitalocean-spaces/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1447,7 +1447,7 @@ export const jsonData = [
                "title":"Azure Blob Storage",
                "link":"/destinations/storage-platforms/microsoft-azure-blob-storage/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1462,7 +1462,7 @@ export const jsonData = [
                "title":"Google Tag Manager",
                "link":"/destinations/tag-managers/google-tag-manager/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1477,7 +1477,7 @@ export const jsonData = [
                "title":"Split.io",
                "link":"/destinations/testing-and-personalization/splitio/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1485,7 +1485,7 @@ export const jsonData = [
                "title":"Algolia Insights",
                "link":"/destinations/testing-and-personalization/algolia-insights/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1493,7 +1493,7 @@ export const jsonData = [
                "title":"Monetate",
                "link":"/destinations/testing-and-personalization/monetate/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1501,7 +1501,7 @@ export const jsonData = [
                "title":"VWO (Visual Website Optimizer)",
                "link":"/destinations/testing-and-personalization/vwo-beta-visual-website-optimizer/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1509,7 +1509,7 @@ export const jsonData = [
                "title":"Optimizely Web",
                "link":"/destinations/testing-and-personalization/optimizely-web/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1517,7 +1517,7 @@ export const jsonData = [
                "title":"Optimizely Full Stack",
                "link":"/destinations/testing-and-personalization/optimizely-full-stack/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1532,7 +1532,7 @@ export const jsonData = [
                "title":"Google Sheets",
                "link":"/destinations/productivity/google-sheets/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1547,7 +1547,7 @@ export const jsonData = [
                "title":"Bugsnag",
                "link":"/destinations/error-reporting/bugsnag/",
                "content":[
-                  
+
                ]
             },
             {
@@ -1555,7 +1555,7 @@ export const jsonData = [
                "title":"Sentry",
                "link":"/destinations/error-reporting/sentry/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1570,7 +1570,7 @@ export const jsonData = [
                "title":"Visual Studio App Center",
                "link":"/destinations/continuous-integration/appcenter/",
                "content":[
-                  
+
                ]
             },
            ]
@@ -1587,7 +1587,7 @@ export const jsonData = [
            "title":"Amazon Redshift",
            "link":"/data-warehouse-integrations/amazon-redshift/",
            "content":[
-              
+
            ]
         },
         {
@@ -1595,7 +1595,7 @@ export const jsonData = [
            "title":"Identity Resolution",
            "link":"/data-warehouse-integrations/identity-resolution-in-rudderstack/",
            "content":[
-              
+
            ]
         },
         {
@@ -1603,7 +1603,7 @@ export const jsonData = [
            "title":"ClickHouse",
            "link":"/data-warehouse-integrations/clickhouse/",
            "content":[
-              
+
            ]
         },
         {
@@ -1611,7 +1611,7 @@ export const jsonData = [
            "title":"Google BigQuery",
            "link":"/data-warehouse-integrations/google-bigquery/",
            "content":[
-              
+
            ]
         },
         {
@@ -1619,7 +1619,7 @@ export const jsonData = [
            "title":"PostgreSQL",
            "link":"/data-warehouse-integrations/postgresql/",
            "content":[
-              
+
            ]
         },
         {
@@ -1627,7 +1627,7 @@ export const jsonData = [
            "title":"Snowflake",
            "link":"/data-warehouse-integrations/snowflake/",
            "content":[
-              
+
            ]
         },
         {
@@ -1635,7 +1635,7 @@ export const jsonData = [
            "title":"Warehouse FAQs",
            "link":"/data-warehouse-integrations/warehouse-faqs/",
            "content":[
-              
+
            ]
         },
         {
@@ -1643,7 +1643,7 @@ export const jsonData = [
            "title":"Warehouse Schemas",
            "link":"/data-warehouse-integrations/warehouse-schemas/",
            "content":[
-              
+
            ]
         },
         {
@@ -1651,7 +1651,7 @@ export const jsonData = [
            "title":"Azure Synapse",
            "link":"/data-warehouse-integrations/azure-synapse/",
            "content":[
-              
+
            ]
         },
         {
@@ -1659,7 +1659,7 @@ export const jsonData = [
            "title":"Microsoft SQL Server",
            "link":"/data-warehouse-integrations/microsoft-sql-server/",
            "content":[
-              
+
            ]
         },
         {
@@ -1667,7 +1667,7 @@ export const jsonData = [
            "title":"Amazon S3 Data Lake",
            "link":"/data-warehouse-integrations/s3-datalake/",
            "content":[
-              
+
            ]
         }
      ]
@@ -1682,7 +1682,7 @@ export const jsonData = [
            "title":"RudderTyper",
            "link":"/data-governance/rudder-typer/",
            "content":[
-              
+
            ]
         },
         {
@@ -1690,7 +1690,7 @@ export const jsonData = [
            "title":"Data Governance API",
            "link":"/data-governance/rudderstack-data-governance-api/",
            "content":[
-              
+
            ]
         }
      ]
@@ -1705,7 +1705,7 @@ export const jsonData = [
            "title":"Access Token",
            "link":"/transformations/api-access-token/",
            "content":[
-              
+
            ]
         },
         {
@@ -1713,7 +1713,7 @@ export const jsonData = [
            "title":"Transformations API",
            "link":"/transformations/rudderstack-transformation-api/",
            "content":[
-              
+
            ]
         },
         {
@@ -1721,7 +1721,7 @@ export const jsonData = [
            "title":"FAQ",
            "link":"/transformations/faq/",
            "content":[
-              
+
            ]
         }
      ]
@@ -1746,7 +1746,7 @@ export const jsonData = [
                        "title":"Identify",
                        "link":"/rudderstack-api/api-specification/rudderstack-spec/identify/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1754,7 +1754,7 @@ export const jsonData = [
                        "title":"Page",
                        "link":"/rudderstack-api/api-specification/rudderstack-spec/page/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1762,7 +1762,7 @@ export const jsonData = [
                        "title":"Screen",
                        "link":"/rudderstack-api/api-specification/rudderstack-spec/screen/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1770,7 +1770,7 @@ export const jsonData = [
                        "title":"Track",
                        "link":"/rudderstack-api/api-specification/rudderstack-spec/track/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1778,7 +1778,7 @@ export const jsonData = [
                        "title":"Group",
                        "link":"/rudderstack-api/api-specification/rudderstack-spec/group/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1786,7 +1786,7 @@ export const jsonData = [
                        "title":"Alias",
                        "link":"/rudderstack-api/api-specification/rudderstack-spec/alias/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1794,7 +1794,7 @@ export const jsonData = [
                        "title":"Common Fields",
                        "link":"/rudderstack-api/api-specification/rudderstack-spec/common-fields/",
                        "content":[
-                          
+
                        ]
                     }
                  ]
@@ -1809,7 +1809,7 @@ export const jsonData = [
                        "title":"Browsing",
                        "link":"/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/browsing/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1817,7 +1817,7 @@ export const jsonData = [
                        "title":"Promotions",
                        "link":"/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/promotions/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1825,7 +1825,7 @@ export const jsonData = [
                        "title":"Ordering",
                        "link":"/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/ordering/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1833,7 +1833,7 @@ export const jsonData = [
                        "title":"Coupons",
                        "link":"/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/coupons/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1841,7 +1841,7 @@ export const jsonData = [
                        "title":"Wishlist",
                        "link":"/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/wishlisting/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1849,7 +1849,7 @@ export const jsonData = [
                        "title":"Sharing",
                        "link":"/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/sharing/",
                        "content":[
-                          
+
                        ]
                     },
                     {
@@ -1857,7 +1857,7 @@ export const jsonData = [
                        "title":"Reviewing",
                        "link":"/rudderstack-api/api-specification/rudderstack-ecommerce-events-specification/reviewing/",
                        "content":[
-                          
+
                        ]
                     }
                  ]
@@ -1867,7 +1867,7 @@ export const jsonData = [
                  "title":"Video Events",
                  "link":"/rudderstack-api/api-specification/video-specification/",
                  "content":[
-                    
+
                  ]
               }
            ]
@@ -1877,7 +1877,7 @@ export const jsonData = [
            "title":"HTTP API",
            "link":"/rudderstack-api/http-api/",
            "content":[
-              
+
            ]
         },
         {
@@ -1885,7 +1885,7 @@ export const jsonData = [
            "title":"Pixel API",
            "link":"/rudderstack-api/pixel-api-spec/",
            "content":[
-              
+
            ]
         },
         {
@@ -1893,7 +1893,7 @@ export const jsonData = [
            "title":"User Suppression API",
            "link":"/rudderstack-api/user-suppression/",
            "content":[
-              
+
            ]
         }
      ]
@@ -1913,7 +1913,7 @@ export const jsonData = [
                  "title":"Migrating from Blendo to RudderStack",
                  "link":"/user-guides/migration-guides/blendo-rudderstack-migration/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -1921,7 +1921,7 @@ export const jsonData = [
                  "title":"Migrating from Segment to RudderStack",
                  "link":"/user-guides/migration-guides/rudderstack-migration-guide/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -1929,7 +1929,7 @@ export const jsonData = [
                  "title":"Migrating Your Warehouse Destination from Segment to RudderStack",
                  "link":"/user-guides/migration-guides/how-to-migrate-warehouse-destination-from-segment-to-rudderstack/",
                  "content":[
-                    
+
                  ]
               }
            ]
@@ -1944,7 +1944,7 @@ export const jsonData = [
                  "title":"OneLogin SSO Setup",
                  "link":"/user-guides/administrators-guide/onelogin-sso/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -1952,7 +1952,7 @@ export const jsonData = [
                  "title":"Okta SSO Setup",
                  "link":"/user-guides/administrators-guide/okta-sso/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -1960,7 +1960,7 @@ export const jsonData = [
                  "title":"Understanding the RudderStack Dashboard",
                  "link":"/user-guides/administrators-guide/rudderstack-dashboard/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -1968,7 +1968,7 @@ export const jsonData = [
                  "title":"Software Releases",
                  "link":"/user-guides/administrators-guide/software-releases/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -1976,7 +1976,7 @@ export const jsonData = [
                  "title":"High Availability",
                  "link":"/user-guides/administrators-guide/high-availability/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -1984,7 +1984,7 @@ export const jsonData = [
                  "title":"Horizontal Scaling",
                  "link":"/user-guides/administrators-guide/horizontal-scaling-1/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -1992,7 +1992,7 @@ export const jsonData = [
                  "title":"Bucket Configuration Settings for Event Backups",
                  "link":"/user-guides/administrators-guide/bucket-configuration-settings/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2000,7 +2000,7 @@ export const jsonData = [
                  "title":"Alerting Guide",
                  "link":"/user-guides/administrators-guide/alerting/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2008,7 +2008,7 @@ export const jsonData = [
                  "title":"Infrastructure Provisioning",
                  "link":"/user-guides/administrators-guide/infra-provisioning/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2016,7 +2016,7 @@ export const jsonData = [
                  "title":"Monitoring and Metrics",
                  "link":"/user-guides/administrators-guide/monitoring-and-metrics/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2024,7 +2024,7 @@ export const jsonData = [
                  "title":"Configuration Parameters",
                  "link":"/user-guides/administrators-guide/config-parameters/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2032,7 +2032,7 @@ export const jsonData = [
                  "title":"Troubleshooting Guide",
                  "link":"/user-guides/administrators-guide/admin-troubleshooting-guide/",
                  "content":[
-                    
+
                  ]
               }
            ]
@@ -2047,7 +2047,7 @@ export const jsonData = [
                  "title":"How to Use the RudderStack Control Plane Lite",
                  "link":"/user-guides/how-to-guides/rudderstack-control-plane-lite/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2055,7 +2055,7 @@ export const jsonData = [
                  "title":"How to Configure a Destination via the Event Payload",
                  "link":"/user-guides/how-to-guides/dynamic-destination-configuration/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2063,7 +2063,7 @@ export const jsonData = [
                  "title":"How to Submit an Integration Pull Request",
                  "link":"/user-guides/how-to-guides/how-to-submit-an-integration-pull-request/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2071,7 +2071,7 @@ export const jsonData = [
                  "title":"How to Use Custom Domains",
                  "link":"/user-guides/how-to-guides/custom-domains/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2079,7 +2079,7 @@ export const jsonData = [
                  "title":"How to Use AWS Lambda Functions with RudderStack",
                  "link":"/user-guides/how-to-guides/using-aws-lambda-functions-with-rudderstack/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2087,7 +2087,7 @@ export const jsonData = [
                  "title":"How to Debug Live Destination Events",
                  "link":"/user-guides/how-to-guides/live-destination-event-debugger/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2095,7 +2095,7 @@ export const jsonData = [
                  "title":"How to Filter Selective Destinations",
                  "link":"/user-guides/how-to-guides/how-to-filter-selective-destinations/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2108,7 +2108,7 @@ export const jsonData = [
                        "title":"Best Practices for Coding Transformation Functions in JavaScript",
                        "link":"/user-guides/how-to-guides/create-a-new-destination-transformer-for-rudder/best-practices-for-coding-transformation-functions-in-javascript/",
                        "content":[
-                          
+
                        ]
                     }
                  ]
@@ -2123,7 +2123,7 @@ export const jsonData = [
                        "title":"How to Add a Device Mode SDK to RudderStack JavaScript SDK",
                        "link":"/user-guides/how-to-guides/implement-native-js-sdk-integration/add-device-mode-sdk-to-js/",
                        "content":[
-                          
+
                        ]
                     }
                  ]
@@ -2133,7 +2133,7 @@ export const jsonData = [
                  "title":"How to Develop Integrations for RudderStack",
                  "link":"/user-guides/how-to-guides/developing-integrations-for-rudderstack/",
                  "content":[
-                    
+
                  ]
               },
               {
@@ -2141,7 +2141,7 @@ export const jsonData = [
                  "title":"How to Integrate RudderStack with a Gatsby Website",
                  "link":"/user-guides/how-to-guides/how-to-integrate-rudderstack-with-a-gatsby-website/",
                  "content":[
-                    
+
                  ]
               }
            ]
@@ -2153,7 +2153,7 @@ export const jsonData = [
      "title":"Glossary",
      "link":"/glossary/",
      "content":[
-        
+
      ]
   },
   {
@@ -2161,7 +2161,7 @@ export const jsonData = [
      "title":"FAQs",
      "link":"/faqs/",
      "content":[
-        
+
      ]
   }
 ]
