@@ -97,9 +97,12 @@
   margin-top: 0.75rem;
   padding-top: 2rem;
 }
-@media (min-width: 992px) {
-  .custom-hero-banner {
-    min-height: 550px;
+.custom-hero-banner, .blog-banner-overlay {
+  min-height: 400px;
+}
+@media (max-width: 640px) {
+  .custom-hero-banner, .blog-banner-overlay {
+    min-height: 250px;
   }
 }
 @media only screen and (max-width: 1200px){

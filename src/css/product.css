@@ -90,6 +90,13 @@
   }
 }
 
+@media only screen and (max-width: 1400px){
+  .video-library-banner::before {
+    background-size: 30% auto;
+    background-position: top 50% right -7%, top 50% left -7%;
+  }
+}
+
 @media (min-width: 1024px) {
   .product-page_banner {
     min-height: 700px;
@@ -103,7 +110,7 @@
 
 .video-library-banner::before {
   background-image: none;
-  
+
 }
 
 }
@@ -118,7 +125,7 @@
     background-size: 0px 0px;
   }
   .video-library-banner::before {
-    background-image: none; 
+    background-image: none;
   }
 }
 @media (max-width: 575px) {

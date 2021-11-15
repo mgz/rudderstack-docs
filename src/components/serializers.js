@@ -11,7 +11,7 @@ import ImageWithAddons from "./ImageWithAddons"
 import TableContent from "./tableContent"
 //import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/vsLight';
+import theme from 'prism-react-renderer/themes/dracula';
 import { rudderslabTrackOnClick } from "../utils/common"
 
 
@@ -47,7 +47,7 @@ const AuthorReference = ({ node }) => {
 
 const customSerializer = ({trackSectionHeader}) => {
   // let tmp = serializers
-  
+
   return {...serializers, trackSectionHeader}
 }
 
@@ -94,7 +94,7 @@ const serializers = {
             getLineProps,
             getTokenProps,
           }) => (
-            <pre style={{overflow: 'auto', background: '#f5f2f0', padding: '1em'}}>
+            <pre style={{overflow: 'auto', background: '#282A36', padding: '1em'}}>
               {/* <CopyCode
                 onClick={handleClick}
                 disabled={copied}
