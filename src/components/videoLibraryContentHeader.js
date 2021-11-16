@@ -1,9 +1,9 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import DynamicInputForm from "../components/dynamicInputForm"
 import { useQueryParam, StringParam } from "use-query-params"
 import { rudderslabTrackOnYoutubeVideoPlayback } from "../utils/common"
+import YouTube from "react-youtube"
 import Cookies from "universal-cookie"
-/* import YouTube from "react-youtube" */
 
 const VideoLibraryContentHeader = ({
   data,
@@ -39,7 +39,7 @@ const VideoLibraryContentHeader = ({
         skip_video_gateway_id === video
       ? false
       : true
-
+ 
   // if (category === "Live") {
   //   showGateawayForm = true
   // } else {
@@ -100,20 +100,13 @@ const VideoLibraryContentHeader = ({
                   <div class="iframe-container">
                     <div className="stack-frame-1"></div>
                     <div className="stack-frame-2"></div>
-                    {/* <YouTube
+                    <YouTube
                       videoId={
                         tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
                       }
                       className="video"
                       onPlay={_onPlay}
-                    /> */}
-                    <div onClick={e => _onPlay(e)}>
-                      <lite-youtube
-                        videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
-                        class="video"
-                        params="rel=0"
-                      ></lite-youtube>
-                    </div>
+                    />
                   </div>
                 </div>
               </div>

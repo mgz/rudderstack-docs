@@ -18,7 +18,7 @@ const DynamicInputForm = ({
   usebasin_endpoint,
   add_on_styling,
   location,
-  gatedCookieName,
+  gatedCookieName
 }) => {
   const cookies = new Cookies()
   const data = useStaticQuery(graphql`
