@@ -88,7 +88,7 @@ function checkPrevSibbling1(currEl) {
       return checkPrevSibbling1(currEl.previousElementSibling);
     }
   }
-  
+
   return elem;
 }
 
@@ -146,30 +146,29 @@ export const rudderslabTrackOnSearch = searchText => {
   })
 }
 
-export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, event) => {
-  
+export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, videoId) => {
+
   if (!window.rudderanalytics) {
     return
   }
   window.rudderanalytics.track("video_playback_started", {
     page_title: document.title,
     video_location: sectionName,
-
     session_id: "",
-    content_asset_ids: [event.target.playerInfo.videoData.video_id],
+    content_asset_ids: videoId /* || [event.target.playerInfo.videoData.video_id] */,
     content_pod_ids: [],
     ad_asset_id: [],
     ad_pod_id: [],
     ad_type: [],
     position: 0,
-    total_length: event.target.playerInfo.duration,
+    total_length: null /* || event.target.playerInfo.duration */ ,
     bitrate: null,
     framerate: null,
     video_player: "youtube",
-    sound: event.target.playerInfo.volume,
+    sound: /* event.target.playerInfo.volume || */ null,
     full_screen: false,
     ad_enabled: false,
-    quality: event.target.playerInfo.playbackQuality,
+    quality: /* event.target.playerInfo.playbackQuality || */ null,
     livestream: false,
   })
 }

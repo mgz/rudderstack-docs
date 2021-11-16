@@ -397,9 +397,9 @@ module.exports = {
             options:{
               services: {
                 'YouTube': "https://www.youtube.com/watch?v=vOaw9pKn6\_M"
-              } 
+              }
             }
-          } 
+          }
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -448,12 +448,5 @@ module.exports = {
         extensions: ['css', 'html', 'js', 'svg', 'json']
       }
     } */
-    {
-      resolve: 'gatsby-background-image-es5',
-      options: {
-        // add your own characters to escape, replacing the default ':/'
-        specialChars: '/:',
-      },
-    },
   ],
 }

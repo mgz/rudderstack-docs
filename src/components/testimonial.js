@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 /* import $ from "jquery"
 import "owl.carousel/dist/assets/owl.carousel.css"
 import "owl.carousel" */
@@ -6,6 +6,7 @@ import Image from "./image"
 import Link from "gatsby-link"
 import {Carousel} from 'react-responsive-carousel';
 import { rudderslabTrackOnClick } from "../utils/common"
+import bgImage from "../images/testimonial-bg-v3.webp"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
@@ -34,6 +35,15 @@ const Testimonial = props => {
     })
   } */
 
+  useEffect(() => {
+    [].forEach.call(document.querySelectorAll('div[data-src]'), function(div) {
+      div.setAttribute("style","background-image: url(" + div.getAttribute('data-src') + ");");
+      div.onload = function() {
+        div.removeAttribute('data-src');
+      };
+    });
+  })
+
   const testimonials = props.addtestimonial
   return (
     <>
@@ -49,6 +59,7 @@ const Testimonial = props => {
               ? "testimonila-bg-gradiant"
               : "testimonila-bg-gradiant-v2"
           } md:mt-32`}
+          data-src={bgImage} 
         >
           <div className="max-w-6xl mx-auto px-4 md:px-3 testimonial-img-wrap">
             <div className="row">

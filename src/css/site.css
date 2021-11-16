@@ -172,7 +172,7 @@ body {
 }
 
 .testimonila-bg-gradiant-v2 {
-  background-image: url("../images/testimonial-bg-v3.webp");
+  /* background-image: url("../images/testimonial-bg-v3.webp"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -184,7 +184,7 @@ body {
   background: linear-gradient(226.32deg, #6b96c3 -50.9%, #111168 108.01%);
 }
 .homepage-middle-bg-image {
-  background-image: url("../images/Union.svg");
+  /* background-image: url("../images/Union.svg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;

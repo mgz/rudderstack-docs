@@ -1,7 +1,7 @@
-import React from "react"
+import React, {useEffect} from "react"
 import PortableText from "./portableText"
 import { rudderslabTrackOnYoutubeVideoPlayback } from "../utils/common"
-import YouTube from "react-youtube"
+/* import YouTube from "react-youtube" */
 
 const HeroSegment = props => {
   let tmp_youtube_url_split = []
@@ -10,8 +10,12 @@ const HeroSegment = props => {
   }
 
   const _onPlay = event => {
-    return rudderslabTrackOnYoutubeVideoPlayback(props.herobannertitle, event)
+    return rudderslabTrackOnYoutubeVideoPlayback(props.herobannertitle, tmp_youtube_url_split[tmp_youtube_url_split.length - 1])
   }
+
+  useEffect(() => {
+    import("@justinribeiro/lite-youtube");
+  }, [])
 
   return (
     <div className="max-w-6xl px-4 md:px-3 sm:my-20 lg:mt-32 md:mb-20 mx-auto  relative banner-section flex flex-col lg:flex-row justify-start z-40">
@@ -32,11 +36,18 @@ const HeroSegment = props => {
           <div class="iframe-container">
             <div className="stack-frame-1"></div>
             <div className="stack-frame-2"></div>
-            <YouTube
+            {/* <YouTube
               videoId={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
               className="video"
               onPlay={_onPlay}
-            />
+            /> */}
+            <div onClick={e => _onPlay(e)}>
+              <lite-youtube
+                videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
+                class="video"
+                params="rel=0"
+              ></lite-youtube>
+            </div>
           </div>
         </div>
       )}

@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react"
 import PortableText from "./portableText"
 // import Image from "./image"
 import { rudderslabTrackOnYoutubeVideoPlayback } from "../utils/common"
-import YouTube from "react-youtube"
+/* import YouTube from "react-youtube" */
+import bgImage from '../images/Union.svg'
 
 
 const CenteredAlignedTitleWithYoutube = props => {
 
   /* const [windowOrigin, setWindowOrigin] = useState(null); */
-  
+
   useEffect(() => {
     /* setWindowOrigin(window.location.origin) */
-    /* import("@justinribeiro/lite-youtube"); */
+    import("@justinribeiro/lite-youtube");
   }, [])
   let tmp_youtube_url_split = props.youtube.url.split("?")[0].split("/")
   // console.log(
@@ -19,7 +20,7 @@ const CenteredAlignedTitleWithYoutube = props => {
   //   tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
   // )
   const _onPlay = event => {
-    return rudderslabTrackOnYoutubeVideoPlayback(props.title, event)
+    return rudderslabTrackOnYoutubeVideoPlayback(props.title, tmp_youtube_url_split[tmp_youtube_url_split.length - 1])
   }
 
   /* const ytOpts = {
@@ -28,6 +29,15 @@ const CenteredAlignedTitleWithYoutube = props => {
       origin: windowOrigin
     },
   }; */
+
+  useEffect(() => {
+    [].forEach.call(document.querySelectorAll('div[data-src]'), function(div) {
+      div.setAttribute("style","background-image: url(" + div.getAttribute('data-src') + ");");
+      div.onload = function() {
+        div.removeAttribute('data-src');
+      };
+    });
+  })
 
   return (
     <section className="md:mb-10">
@@ -52,21 +62,24 @@ const CenteredAlignedTitleWithYoutube = props => {
               className="video"
             ></iframe> */}
 
-            <YouTube
+            {/* <YouTube
               videoId={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
               className="video"
               onPlay={_onPlay}
-            />
+            /> */}
 
-            {/* <lite-youtube
-              videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
-              class="video"
-            ></lite-youtube> */}
+            <div onClick={e => _onPlay(e)}>
+              <lite-youtube
+                videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
+                class="video"
+                params="rel=0"
+              ></lite-youtube>
+            </div>
           </div>
         </div>
       </div>
       <div className="homepage-middle-bg-gradiant">
-        <div className="homepage-middle-bg-image text-whiteColor-custom pt-24 pb-12 md:pb-24">
+        <div className="homepage-middle-bg-image text-whiteColor-custom pt-24 pb-12 md:pb-24" data-src={bgImage}>
           <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
             <h3 className="mt-12 md:mt-24 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-4xl px-0 md:px-4">
               {props.footer_title}

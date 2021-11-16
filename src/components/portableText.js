@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, {useEffect} from "react"
 import clientConfig from "../../client-config"
 import BasePortableText from "@sanity/block-content-to-react"
 // import serializers from "./serializers"
@@ -8,7 +8,7 @@ import MainImage from "./MainImage"
 // import InstagramEmbed from "react-instagram-embed";
 // import LatexRenderer from "./Latex";
 import getYouTubeId from "get-youtube-id"
-import YouTube from "react-youtube"
+/* import YouTube from "react-youtube" */
 import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
 import TableContent from "./tableContent"
@@ -34,7 +34,9 @@ const AuthorReference = ({ node }) => {
 }
 
 const PortableText = ({ blocks, className, trackSectionHeader }) => {
-
+  useEffect(() => {
+    import("@justinribeiro/lite-youtube");
+  }, [])
   return (
     <BasePortableText
       blocks={blocks}
@@ -61,7 +63,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             const id = getYouTubeId(url)
             return (
               <div class="iframe-container mb-20 md:mb-0">
-                <YouTube
+                {/* <YouTube
                   key={node._key}
                   className="video"
                   videoId={id}
@@ -71,7 +73,18 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
                       event
                     )
                   }
-                />
+                /> */}
+                <div onClick={event =>
+                    rudderslabTrackOnYoutubeVideoPlayback(
+                      trackSectionHeader,
+                      id
+                    )}>
+                  <lite-youtube
+                    videoid={id}
+                    class="video"
+                    params="rel=0"
+                  ></lite-youtube>
+                </div>
               </div>
             )
           },
