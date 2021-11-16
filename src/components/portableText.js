@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import clientConfig from "../../client-config"
 import BasePortableText from "@sanity/block-content-to-react"
 // import serializers from "./serializers"
@@ -19,6 +19,7 @@ import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
 } from "../utils/common"
+import { copyToClipboard } from '@rocketseat/gatsby-theme-docs/src/util/copy-to-clipboard';
 
 const LargeQuotedText = ({ node }) => {
   return (
@@ -36,6 +37,16 @@ const AuthorReference = ({ node }) => {
 }
 
 const PortableText = ({ blocks, className, trackSectionHeader }) => {
+  const [copied, setCopied] = useState(false);
+  const handleClick = (data) => {
+    setCopied(true);
+    copyToClipboard(data);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 4000);
+  };
+
   return (
     <BasePortableText
       blocks={blocks}
@@ -81,7 +92,11 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             // The component we use to render the actual player
             return <CustomAudioPlayer {...node} />
           },
-          code: props => (
+          /* code: props => {
+            <CodeHighlight {...props} />
+          }, */
+          code: props => {
+            return (
             <Highlight
               {...defaultProps}
               language={props.node.language}
@@ -94,27 +109,29 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
                 getLineProps,
                 getTokenProps,
               }) => (
-                <pre style={{overflow: 'auto', background: '#282A36', padding: '1em'}}>
-                  {/* <CopyCode
-                    onClick={handleClick}
+                <pre style={{position: 'relative', overflow: 'auto', background: '#282A36'}}>
+                  <button
+                    onClick={() => handleClick(props.node.code)}
                     disabled={copied}
-                    hasTitle={title}
+                    className="copyButton"
                   >
                     {copied ? 'Copied!' : 'Copy'}
-                  </CopyCode> */}
-                  <code>
-                    {tokens.map((line, index) => {
-                      const lineProps = getLineProps({ line, key: index });
+                  </button>
+                  <div className="innerCodeBlock">
+                    <code>
+                      {tokens.map((line, index) => {
+                        const lineProps = getLineProps({ line, key: index });
 
-                      return (
-                        <div {...lineProps}>
-                          {line.map((token, key) => (
-                            <span {...getTokenProps({ token, key })} />
-                          ))}
-                        </div>
-                      );
-                    })}
-                  </code>
+                        return (
+                          <div {...lineProps}>
+                            {line.map((token, key) => (
+                              <span {...getTokenProps({ token, key })} />
+                            ))}
+                          </div>
+                        );
+                      })}
+                    </code>
+                  </div>
                 </pre>
               )}
             </Highlight>
@@ -127,8 +144,8 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
               }}
             >
               {props.node.code}
-            </SyntaxHighlighter> */
-          ),
+            </SyntaxHighlighter>*/
+          )},
           // videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
           // instagram: ({ node }) => {
           //   if (!node.url) return null;
