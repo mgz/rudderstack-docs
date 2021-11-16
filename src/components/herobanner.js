@@ -7,18 +7,9 @@ function Herobanner({ title, date, author, image, blog }) {
     <div className="mx-auto items-center">
       {/* Left col */}
       <div
-        className="w-full justify-center bg-center items-start text-center relative flex bg-cover bg-no-repeat max-w-5xl mx-auto custom-hero-banner"
-        style={{ backgroundImage: `url(${image.asset.url})` }}
-      >
-        <div className="py-10 lg:py-0 w-full blog-banner-overlay flex justify-center items-center">
-          <div className="px-3 w-full leading-normal text-2xl object-center z-10 text-white-custom table-cell align-middle h-40">
-            {/* <div className="text-sm leading-4">{date}</div> */}
-            {/* <h1 className="pt-10 pb-8 md:text-6xl text-4xl md:max-w-4xl m-auto">
-              {title}
-            </h1>
-            <div className="mt-3 text-sm font-bold">By {author}</div> */}
-          </div>
-        </div>
+        className="relative flex max-w-5xl mx-auto">
+          <img className="object-cover w-full" src={image.asset.url} alt="Rocketseat logo" style={{ width: 180 }} />
+          
       </div>
 
       <div className="mx-auto blog-title-wrapper lg:max-w-5xl md:max-w-5xl sm:max-w-5xl md:mt-12 my-4">
