@@ -8,7 +8,7 @@ function Herobanner({ title, date, author, image, blog }) {
       {/* Left col */}
       <div
         className="relative flex max-w-5xl mx-auto">
-          <img className="object-cover w-full" src={image.asset.url} alt="Rocketseat logo" style={{ width: 180 }} />
+          <img className="object-cover w-full" src={image.asset.url} alt="Blog banner" />
           
       </div>
 
