@@ -10,7 +10,7 @@ import YouTube from "react-youtube"
 
 const ProductHeroBanner = props => {
   let tmp_youtube_url_split = []
-  if (props.herobanner_media.condition === "videooption") {
+  if (props.herobanner_media && props.herobanner_media.condition === "videooption") {
     tmp_youtube_url_split = props.herobanner_media.videooption
       .split("?")[0]
       .split("/")
@@ -97,7 +97,7 @@ const ProductHeroBanner = props => {
           </div>
 
           <div className="relative w-full rounded-xl flex-grow justify-items-end lg:w-1/2 px-0 sm:items-center lg:items-start lg:mb-0">
-            {props.herobanner_media.condition === "videooption" && (
+            {props.herobanner_media && props.herobanner_media.condition === "videooption" && (
               <div class="iframe-container">
                 <div className="stack-frame-1"></div>
                 <div className="stack-frame-2"></div>
@@ -111,7 +111,7 @@ const ProductHeroBanner = props => {
               </div>
             )}
 
-            {props.herobanner_media.condition === "imageoption" && (
+            {props.herobanner_media && props.herobanner_media.condition === "imageoption" && (
               <div class="iframe-container">
                 <div className="stack-frame-1"></div>
                 <div className="stack-frame-2"></div>
