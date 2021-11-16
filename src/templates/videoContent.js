@@ -20,12 +20,14 @@ import clientConfig from "../../client-config"
 // const VideoLibrarySpeakers = loadable(() => import("../components/videoLibrarySpeakers"))
 
 const videoContent = ({ data, location }) => {
-  
+  // console.log("video-library", data)
+
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
   let category = ""
   let url_or_event_dttm = ""
+  let skip_video_gateway_id = ""
   let inputForm
   if (
     data.videoLib._rawVideoLibraryCategoryType &&
@@ -44,16 +46,34 @@ const videoContent = ({ data, location }) => {
     data.videoLib._rawVideoLibraryCategoryType.condition === "learn_option"
   ) {
     category = "Learn RudderStack"
-    url_or_event_dttm =
-      data.videoLib._rawVideoLibraryCategoryType.learn_option &&
-      data.videoLib._rawVideoLibraryCategoryType.learn_option.url
+    if (data.videoLib._rawVideoLibraryCategoryType.learn_option.youtube) {
+      url_or_event_dttm =
+        data.videoLib._rawVideoLibraryCategoryType.learn_option.youtube.url
+      skip_video_gateway_id =
+        data.videoLib._rawVideoLibraryCategoryType.learn_option.skip_gateway_id
+      inputForm =
+        data.videoLib._rawVideoLibraryCategoryType.learn_option.input_form
+    } else {
+      url_or_event_dttm =
+        data.videoLib._rawVideoLibraryCategoryType.learn_option.url
+    }
   } else if (
     data.videoLib._rawVideoLibraryCategoryType &&
     data.videoLib._rawVideoLibraryCategoryType.condition === "usecase_option"
   ) {
     category = "Use cases"
-    url_or_event_dttm =
-      data.videoLib._rawVideoLibraryCategoryType.usecase_option.url
+    if (data.videoLib._rawVideoLibraryCategoryType.usecase_option.youtube) {
+      url_or_event_dttm =
+        data.videoLib._rawVideoLibraryCategoryType.usecase_option.youtube.url
+      skip_video_gateway_id =
+        data.videoLib._rawVideoLibraryCategoryType.usecase_option
+          .skip_gateway_id
+      inputForm =
+        data.videoLib._rawVideoLibraryCategoryType.usecase_option.input_form
+    } else {
+      url_or_event_dttm =
+        data.videoLib._rawVideoLibraryCategoryType.usecase_option.url
+    }
   }
 
   return (
@@ -84,8 +104,11 @@ const videoContent = ({ data, location }) => {
         <VideoLibraryContentHeader
           data={data.videoLib}
           category={category}
+          location={location}
           url_or_event_dttm={url_or_event_dttm}
           inputForm={inputForm}
+          skip_video_gateway_id={skip_video_gateway_id}
+          // video={video}
         />
         <VideoContentLesson data={data.videoLib._rawHeroSection} />
         <VideoLibraryTopicsToCover
