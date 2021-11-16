@@ -60,23 +60,23 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
       key="0"
       className="w-full mx-auto bg-white rounded-3xl overflow-hidden shadow-md"
     >
-      <div className="sm:flex">
-        <div class="px-4 md:px-12 pt-8 pb-4">
+      <div className="flex lg:flex-row  flex-col">
+        <div className="px-4 md:px-12 pt-8 pb-4 lg:max-w-md">
           <Link to={webinarObj.node.slug.current}>
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {`${category} ${
                 category === "Live" ? "| " + url_or_event_dttm : ""
               }`}
             </div>
-            <h1 className="block  my-2 text-2xl leading-tight font-bold text-blueNew-midnight">
+            <h1 className="block  pt-6 text-2xl leading-tight font-bold text-blueNew-midnight">
               {webinarObj.node.title}
             </h1>
             <p className="text-base text-grayColor-custom">
               {webinarObj.node.shortdescription}
             </p>
-            <div class="mt-2 w-full flex justify-between items-center pt-6">
+            <div className="mt-2 w-full flex justify-between items-center pt-6">
               <a
-                class="btn-primary-lg md:mr-4 md:mb-0 mb-4"
+                className="btn-primary-lg md:mr-4 md:mb-0 mb-4"
                 href={webinarObj.node.slug.current}
                 onClick={e =>
                   rudderslabTrackOnClick("button", webinarObj.node.title, e)
@@ -97,8 +97,8 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
             <img
               src={webinarObj.node.listing_image.asset.url}
               alt={webinarObj.node.title}
-              className="sm:h-full lg:max-w-2xl object-cover max-h-96"
-              // className="sm:h-full lg:max-w-2xl object-cover"
+              // className="sm:h-full w-full sm:max-h-full lg:max-w-2xl  object-cover max-h-96"
+              className="sm:h-full w-full object-cover"
               loading="eager"
             />
           </Link>

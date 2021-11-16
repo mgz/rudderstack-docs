@@ -3,6 +3,9 @@ module.exports = {
   purge: false,
   darkMode: false, // or 'media' or 'class'
   theme: {
+    minHeight: {
+      '0': '8rem'
+     },
     letterSpacing: {
       "tight-2": "-.04em",
     },

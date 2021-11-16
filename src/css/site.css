@@ -70,7 +70,7 @@ body {
   height: 100%;
   background-position: top right;
 } */
-/* 
+/*
 .paragraph-check {
   position: relative;
 }
@@ -258,6 +258,9 @@ body {
   font-weight: 700 !important;
 }
 
+.maxW50{
+  max-width: 50%;
+}
 
 @media only screen and (max-width: 1023px) {
   .menu li.has-submenu a:after {
@@ -384,7 +387,7 @@ body {
   margin-right: 10px;
 }
 
-/* 
+/*
 .seeall-icon a {
   color: #6e6ea4;
 }
@@ -783,5 +786,10 @@ top: -60px;
 @media only screen and (min-width: 2400px) {
   .submenu-align{
     left: 62rem;
+  }
+}
+@media only screen and (max-width:640px){
+  .blog-title-wrapper, .lessonContainer{
+    padding: 0px 16px;
   }
 }

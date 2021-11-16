@@ -82,18 +82,17 @@ const Singleblog = ({ data, location, ...props }) => {
           blog={blog}
         />
       </div>
-      <div className="block-description relative pt-4 max-w-4xl m-auto px-4 md:px-16">
-        {/*Blog Content*/}
-        <div className="social-icon_blog absolute hidden md:flex justify-center items-center flex-col pt-8 mt-3 top-0 lg:left-0 md:left-0">
+      {/* <div>
+      <div className="social-icon_blog lg:hidden md:hidden flex gap-4 max-w-2xl sm:justify-start justify-center  items-center">
           <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
-            {/* <a className="block" href="#"> */}
             <StaticImage
               src={"../images/icon-twitter.svg"}
               placeholder="tracedSVG"
               className="text-blueNew-midnight"
               alt="twitter"
+              width={40}
+              height={40}
             />
-            {/* </a> */}
           </TwitterShareButton>
           <FacebookShareButton
             url={`https://rudderstack.com/blog/${blog.slug}`}
@@ -103,6 +102,8 @@ const Singleblog = ({ data, location, ...props }) => {
                 src={"../images/icon-fb.svg"}
                 placeholder="tracedSVG"
                 alt="Facebook"
+                width={40}
+                height={40}
               />
             </span>
           </FacebookShareButton>
@@ -114,6 +115,51 @@ const Singleblog = ({ data, location, ...props }) => {
                 src={"../images/icon-linkedin.svg"}
                 placeholder="tracedSVG"
                 alt="linkdin"
+                width={40}
+                height={40}
+              />
+            </span>
+          </LinkedinShareButton>
+        </div>
+      </div> */}
+      <div className="block-description relative pt-4 max-w-5xl m-auto">
+        {/*Blog Content*/}
+        <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center top-0 social-icon_blog">
+          <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
+            {/* <a className="block" href="#"> */}
+            <StaticImage
+              src={"../images/icon-twitter.svg"}
+              placeholder="tracedSVG"
+              className="text-blueNew-midnight"
+              alt="twitter"
+              width={40}
+              height={40}
+            />
+            {/* </a> */}
+          </TwitterShareButton>
+          <FacebookShareButton
+            url={`https://rudderstack.com/blog/${blog.slug}`}
+          >
+            <span className="my-3 block">
+              <StaticImage
+                src={"../images/icon-fb.svg"}
+                placeholder="tracedSVG"
+                alt="Facebook"
+                width={40}
+                height={40}
+              />
+            </span>
+          </FacebookShareButton>
+          <LinkedinShareButton
+            url={`https://rudderstack.com/blog/${blog.slug}`}
+          >
+            <span className="block">
+              <StaticImage
+                src={"../images/icon-linkedin.svg"}
+                placeholder="tracedSVG"
+                alt="linkdin"
+                width={40}
+                height={40}
               />
             </span>
           </LinkedinShareButton>
@@ -125,7 +171,7 @@ const Singleblog = ({ data, location, ...props }) => {
             return (
               <div
                 key={item.author_name}
-                className="my-8 py-12 px-8 bg-blueNew-lighter rounded-2xl bg-opacity-50 flex items-center mx-auto pb-10 mb-10 sm:flex-row flex-col"
+                className="my-8 py-12 px-8 bg-blueNew-lighter rounded-2xl bg-opacity-50 flex items-center mx-auto pb-10 mb-10  flex-row"
               >
                 <div className="sm:w-32 sm:h-32 h-20 sm:mr-10 inline-flex items-center justify-center flex-shrink-0">
                   {/* <div className= "rounded-full"> */}
@@ -145,14 +191,14 @@ const Singleblog = ({ data, location, ...props }) => {
                     className="w-24 h-24 rounded-full"
                   /> */}
                 </div>
-                <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                <div className="flex-grow text-left ml-4 sm:ml-0 md:ml-0 mt-6  sm:mt-0">
                   <div className="text-xs font-bold uppercase text-blueNew-eastbay">
                     About the author
                   </div>
-                  <div className="leading-4 text-lg font-bold mt-4">
+                  <div className="leading-4 text-lg font-bold sm:mt-4 lg:mt-4 mt-2">
                     {item.author_name}
                   </div>
-                  <div className="mt-6 text-sm">{item.author_desc}</div>
+                  <div className="lg:mt-6 sm:mt-6 mt-2 text-sm">{item.author_desc}</div>
                 </div>
               </div>
             )
@@ -163,7 +209,7 @@ const Singleblog = ({ data, location, ...props }) => {
       {/*Blog Content*/}
       <section className="bg-white pb-0">
         {/*Blog Post*/}
-        <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap pt-3 pb-12">
+        <div className="max-w-6xl px-4 md:px-4 mx-auto flex flex-wrap pt-3 pb-12">
           <h3 className="tracking-tight-2 w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-12">
             Recent Posts
           </h3>

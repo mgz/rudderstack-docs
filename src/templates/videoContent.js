@@ -116,24 +116,27 @@ const videoContent = ({ data, location }) => {
           data={data.videoLib._rawTopicsToCoverSection}
           inputForm={inputForm}
         />
-        <VideoLibrarySpeakers
-          speakers={data.videoLib._rawSpekers}
-          allAuthors={data.allSanityBlogauthor}
-        />
+        <div className="px-4">
+          <VideoLibrarySpeakers
+            speakers={data.videoLib._rawSpekers}
+            allAuthors={data.allSanityBlogauthor}
+          />
+        </div>
         {data.videoLib._rawTranscript &&
           data.videoLib._rawTranscript.length > 0 && (
+          <div className="px-4">
             <section id="transcript">
-              <div className="block-description relative py-8 max-w-4xl m-auto px-4 md:px-12">
+              <div className="block-description relative py-8 max-w-4xl m-auto md:px-12">
                 <h1 className="text-4xl">Transcript</h1>
                 <PortableText blocks={data.videoLib._rawTranscript} />
               </div>
             </section>
+          </div>
           )}
-
-        <section id="footer_section_for_demo">
+      </div>
+      <section id="footer_section_for_demo">
           <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
-      </div>
     </Layout>
   )
 }

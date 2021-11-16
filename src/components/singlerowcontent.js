@@ -17,21 +17,21 @@ const Singlerowcontent = ({ hit }) => {
   return (
     <div
       key="0"
-      className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden shadow-md"
+      className="w-full mx-auto bg-white rounded-3xl shadow-md overflow-hidden"
     >
-      <div className="sm:flex">
+      <div className="flex lg:flex-row flex-col">
         <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link to={hit.slug}>
             <img
               src={hit.blogimage.src}
               alt={hit.title}
-              className="sm:h-full lg:max-w-2xl object-cover"
+              className="sm:h-full w-full object-cover"
               loading="eager"
             />
           </Link>
         </div>
-        <Link to={hit.slug} className="relative">
-          <div class="px-8 pt-8 pb-4">
+        <Link to={hit.slug} className="relative maxW50">
+          <div className="px-8 pt-8 pb-4">
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {hit.blog_category}
             </div>
@@ -58,7 +58,7 @@ const Singlerowcontent = ({ hit }) => {
                 </div>
               </div>
             </div>
-          )} 
+          )}
         </Link>
       </div>
     </div>

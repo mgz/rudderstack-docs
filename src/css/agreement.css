@@ -1,5 +1,5 @@
 /*Agreement Custom Css*/
- 
+
 .agreement-description {
   font-family: "Basis Grotesque";
 }
@@ -29,7 +29,7 @@
 }
 /* .agreement-description p a
   {
-   
+
     @apply font-bold;
   } */
 .agreement-description figure,
@@ -45,7 +45,7 @@
 }
 /* .agreement-description a {
     @apply text-purpleNew-gigas;
-    
+
   } */
 .agreement-description li {
   @apply mt-7;
@@ -84,9 +84,12 @@
   background-size: cover;
   background-position: top center;
 }
-@media (min-width: 992px) {
-  .custom-hero-banner {
-    min-height: 550px;
+.custom-hero-banner, .blog-banner-overlay {
+  min-height: 400px;
+}
+@media (max-width: 640px) {
+  .custom-hero-banner, .blog-banner-overlay {
+    min-height: 250px;
   }
 }
 @media only screen and (max-width: 767px) {

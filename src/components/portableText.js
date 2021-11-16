@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import clientConfig from "../../client-config"
 import BasePortableText from "@sanity/block-content-to-react"
 // import serializers from "./serializers"
@@ -12,13 +12,11 @@ import YouTube from "react-youtube"
 import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
 import TableContent from "./tableContent"
-//import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/vsLight';
 import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
 } from "../utils/common"
+import CodeHighlight from "../@rocketseat/gatsby-theme-docs/components/Code"
 
 const LargeQuotedText = ({ node }) => {
   return (
@@ -36,6 +34,7 @@ const AuthorReference = ({ node }) => {
 }
 
 const PortableText = ({ blocks, className, trackSectionHeader }) => {
+
   return (
     <BasePortableText
       blocks={blocks}
@@ -81,54 +80,9 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             // The component we use to render the actual player
             return <CustomAudioPlayer {...node} />
           },
-          code: props => (
-            <Highlight
-              {...defaultProps}
-              language={props.node.language}
-              code={props.node.code}
-              theme={theme}
-            >
-              {({
-                style,
-                tokens,
-                getLineProps,
-                getTokenProps,
-              }) => (
-                <pre style={{overflow: 'auto', background: '#f5f2f0', padding: '1em'}}>
-                  {/* <CopyCode
-                    onClick={handleClick}
-                    disabled={copied}
-                    hasTitle={title}
-                  >
-                    {copied ? 'Copied!' : 'Copy'}
-                  </CopyCode> */}
-                  <code>
-                    {tokens.map((line, index) => {
-                      const lineProps = getLineProps({ line, key: index });
-
-                      return (
-                        <div {...lineProps}>
-                          {line.map((token, key) => (
-                            <span {...getTokenProps({ token, key })} />
-                          ))}
-                        </div>
-                      );
-                    })}
-                  </code>
-                </pre>
-              )}
-            </Highlight>
-            /* <SyntaxHighlighter
-              language={props.node.language}
-              customStyle={{
-                fontSize: 14,
-                marginTop: 0,
-                marginBottom: 16,
-              }}
-            >
-              {props.node.code}
-            </SyntaxHighlighter> */
-          ),
+          code: props => {
+            return (<CodeHighlight className={`language-${props.node.language}`} codeString={props.node.code} />)
+          },
           // videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
           // instagram: ({ node }) => {
           //   if (!node.url) return null;

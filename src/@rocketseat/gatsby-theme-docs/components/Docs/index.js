@@ -28,8 +28,8 @@ export default function Docs({ mdx, pageContext }) {
 
   let tmpSlug = slug.replace(/^\/|\/$/g, '')
   let docsBasePath = "/docs"
-  
-  
+
+
   let currentPageIndex = findIndex(
     postNavList,
     (o) => tmpSlug === 'docs' ? true : slug === docsBasePath + o.link
@@ -43,7 +43,7 @@ export default function Docs({ mdx, pageContext }) {
   let prevPageItem = postNavList[prevPageIndex]
   let disableTableOfContents = false
 
-  
+
   const shortCodes = {
     pre: preProps => {
       const props = preToCodeBlock(preProps)
@@ -75,9 +75,9 @@ export default function Docs({ mdx, pageContext }) {
       }
     })()
 
-    let descriptionSpan = `<span>${
+    let descriptionSpan = `<h2 class="pgdescription">${
       description === null ? "" : description
-    }</span>`
+    }</h2>`
     let h1Tags = document.querySelectorAll("h1")
     forEach(h1Tags, o => (o.innerHTML = title + descriptionSpan))
     h1Tags.innerHTML = descriptionSpan;
@@ -90,7 +90,7 @@ export default function Docs({ mdx, pageContext }) {
 
   }, [])
 
-  
+
   return (
     <>
       <SEO title={title} description={description} slug={slug} />

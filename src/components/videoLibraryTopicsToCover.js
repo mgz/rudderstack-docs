@@ -5,7 +5,7 @@ import DynamicInputForm from "../components/dynamicInputForm"
 
 const VideoLibraryTopicsToCover = props => {
   return (
-    <section className="bg-backgroundsecondary 100% left-right-section md:pt-24 md:pb-20 py-20">
+    <section className="bg-backgroundsecondary 100% left-right-section md:pt-24 md:pb-20 py-20 px-4">
       <div className="max-w-6xl px-4 md:px-3 mx-auto">
         <div className="flex items-center flex-wrap">
           <div className="w-full justify-center items-start md:text-left max-w-screen-md">
