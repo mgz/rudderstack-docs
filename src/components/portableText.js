@@ -16,7 +16,7 @@ import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
 } from "../utils/common"
-import CodeHighlight from "../@rocketseat/gatsby-theme-docs/components/Code"
+import Code from "../@rocketseat/gatsby-theme-docs/components/Code"
 
 const LargeQuotedText = ({ node }) => {
   return (
@@ -94,7 +94,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return <CustomAudioPlayer {...node} />
           },
           code: props => {
-            return (<CodeHighlight className={`language-${props.node.language}`} codeString={props.node.code} />)
+            return (<Code className={`language-${props.node.language}`} codeString={props.node.code} />)
           },
           // videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
           // instagram: ({ node }) => {
