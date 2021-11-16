@@ -18,7 +18,7 @@ const DynamicInputForm = ({
   usebasin_endpoint,
   add_on_styling,
   location,
-  gatedCookieName
+  gatedCookieName,
 }) => {
   const cookies = new Cookies()
   const data = useStaticQuery(graphql`
@@ -216,8 +216,8 @@ const DynamicInputForm = ({
             // window.ChiliPiper.submit()
             if (
               location &&
-              (location.pathname.startsWith("/request-demo") ||
-                location.pathname.startsWith("/enterprise-quote"))
+              (location.pathname === "/request-demo" ||
+                location.pathname === "/enterprise-quote")
             ) {
               window.ChiliPiper.submit(
                 "rudderstack",

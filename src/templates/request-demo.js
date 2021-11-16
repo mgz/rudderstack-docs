@@ -1,7 +1,6 @@
-import React  from "react"
+import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
-
 
 import Layout from "../components/layout"
 import DemoAdvantageItem from "../components/demoAdvantageItem"
@@ -208,7 +207,7 @@ const Demo = ({ data, htmlId, location }) => {
   //   }
   // }
 
-  // console.log("sss", location)
+  console.log("sss", location)
   return (
     <Layout location={location}>
       {/* <SEO title="Schedule Demo" /> */}
@@ -353,26 +352,27 @@ const Demo = ({ data, htmlId, location }) => {
           <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
-      {/* <Helmet>
- 
-        <script>
-          {`
-          function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
-          ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {formId: "request_demo_form_top"})
+      {location.pathname === "/request-demo-chili-piper-test" && (
+        <Helmet>
+          <script>
+            {`
+         function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
+         ChiliPiper.scheduling("rudderstack", "test_router", {title: "Thanks! What time works best for a quick call?"})
         `}
-        </script>
-        <script>
+          </script>
+          {/* <script>
           {`
           function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
           ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {formId: "request_demo_form_bottom"})
         `}
-        </script>
-        <script
-          src="https://js.na.chilipiper.com/marketing.js"
-          type="text/javascript"
-          async
-        />
-      </Helmet> */}
+        </script> */}
+          <script
+            src="https://js.na.chilipiper.com/marketing.js"
+            type="text/javascript"
+            async
+          />
+        </Helmet>
+      )}
     </Layout>
   )
 }
