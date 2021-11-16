@@ -12,14 +12,11 @@ import YouTube from "react-youtube"
 import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
 import TableContent from "./tableContent"
-//import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/dracula';
 import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
 } from "../utils/common"
-import { copyToClipboard } from '@rocketseat/gatsby-theme-docs/src/util/copy-to-clipboard';
+import CodeHighlight from "../@rocketseat/gatsby-theme-docs/components/Code"
 
 const LargeQuotedText = ({ node }) => {
   return (
@@ -37,15 +34,6 @@ const AuthorReference = ({ node }) => {
 }
 
 const PortableText = ({ blocks, className, trackSectionHeader }) => {
-  const [copied, setCopied] = useState(false);
-  const handleClick = (data) => {
-    setCopied(true);
-    copyToClipboard(data);
-
-    setTimeout(() => {
-      setCopied(false);
-    }, 4000);
-  };
 
   return (
     <BasePortableText
@@ -92,60 +80,9 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             // The component we use to render the actual player
             return <CustomAudioPlayer {...node} />
           },
-          /* code: props => {
-            <CodeHighlight {...props} />
-          }, */
           code: props => {
-            return (
-            <Highlight
-              {...defaultProps}
-              language={props.node.language}
-              code={props.node.code}
-              theme={theme}
-            >
-              {({
-                style,
-                tokens,
-                getLineProps,
-                getTokenProps,
-              }) => (
-                <pre style={{position: 'relative', overflow: 'auto', background: '#282A36'}}>
-                  <button
-                    onClick={() => handleClick(props.node.code)}
-                    disabled={copied}
-                    className="copyButton"
-                  >
-                    {copied ? 'Copied!' : 'Copy'}
-                  </button>
-                  <div className="innerCodeBlock">
-                    <code>
-                      {tokens.map((line, index) => {
-                        const lineProps = getLineProps({ line, key: index });
-
-                        return (
-                          <div {...lineProps}>
-                            {line.map((token, key) => (
-                              <span {...getTokenProps({ token, key })} />
-                            ))}
-                          </div>
-                        );
-                      })}
-                    </code>
-                  </div>
-                </pre>
-              )}
-            </Highlight>
-            /* <SyntaxHighlighter
-              language={props.node.language}
-              customStyle={{
-                fontSize: 14,
-                marginTop: 0,
-                marginBottom: 16,
-              }}
-            >
-              {props.node.code}
-            </SyntaxHighlighter>*/
-          )},
+            return (<CodeHighlight className={`language-${props.node.language}`} codeString={props.node.code} />)
+          },
           // videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
           // instagram: ({ node }) => {
           //   if (!node.url) return null;
