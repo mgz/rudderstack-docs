@@ -51,7 +51,9 @@ const TrankYou = ({ data, htmlId }) => {
           content={data.thankyou.meta_desc}
         />
         <meta property="og:type" content="article" />
-        <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>
+        {location && location.pathname.startsWith("/careers") && (
+          <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>
+        )}
       </Helmet>
 
       <div className="font-custom">
