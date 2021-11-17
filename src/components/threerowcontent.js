@@ -47,7 +47,7 @@ const Threerowcontent = ({ hits }) => {
                       </Link>
                     </div>
                     <Link to={hit.slug}>
-                      <div className="flex-initial mt-4 text-sm text-indigo-700 font-bold text-blueNew-eastbay absolute bottom-6 left-6">
+                      <div className="flex-initial mt-4 text-sm text-indigo-700 font-bold text-blueNew-eastbay absolute bottom-4 left-6">
                         <span>{author_names}</span>
                       </div>
                     </Link>

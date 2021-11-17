@@ -121,10 +121,10 @@ const Blog_new = ({ data, location }) => {
             )}
           </InstantSearch>
           {currentRefineHitsCount > 0 && (
-            <div className="hidden md:flex justify-end">
+            <div className="flex justify-end mt-2">
               <div
                 aria-hidden="true"
-                className="text-sm font-bold cursor-pointer -mt-2"
+                className="text-sm mt-2 font-bold cursor-pointer md:-mt-2 lg:-mt-2"
                 onClick={() => {
                   window.scrollTo(
                     {

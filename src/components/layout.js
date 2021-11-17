@@ -148,7 +148,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         <main>{children}</main>
         <CookiesConsent />
         <footer
-          className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0"
+          className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0 w-full mx-auto" 
           name={"footer-container"}
         >
           <div className="max-w-6xl mx-auto footer-menus-wrap">
@@ -187,7 +187,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                         />
                         {i === 0 ? (
                           <a
-                            href="https://resources.rudderstack.com/join-rudderstack-slack"
+                            href="https://rudderstack.com/join-rudderstack-slack-community"
                             target="_blank"
                             rel="noreferrer"
                             // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"

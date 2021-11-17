@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import clientConfig from "../../client-config"
 import BasePortableText from "@sanity/block-content-to-react"
 // import serializers from "./serializers"
@@ -8,17 +8,15 @@ import MainImage from "./MainImage"
 // import InstagramEmbed from "react-instagram-embed";
 // import LatexRenderer from "./Latex";
 import getYouTubeId from "get-youtube-id"
-import YouTube from "react-youtube"
+/* import YouTube from "react-youtube" */
 import CustomAudioPlayer from "./CustomAudioPlayer"
 import ImageWithAddons from "./ImageWithAddons"
 import TableContent from "./tableContent"
-//import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/vsLight';
 import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
 } from "../utils/common"
+import Code from "../@rocketseat/gatsby-theme-docs/components/Code"
 
 const LargeQuotedText = ({ node }) => {
   return (
@@ -36,6 +34,9 @@ const AuthorReference = ({ node }) => {
 }
 
 const PortableText = ({ blocks, className, trackSectionHeader }) => {
+  useEffect(() => {
+    import("@justinribeiro/lite-youtube");
+  }, [])
   return (
     <BasePortableText
       blocks={blocks}
@@ -62,7 +63,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             const id = getYouTubeId(url)
             return (
               <div class="iframe-container mb-20 md:mb-0">
-                <YouTube
+                {/* <YouTube
                   key={node._key}
                   className="video"
                   videoId={id}
@@ -72,7 +73,18 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
                       event
                     )
                   }
-                />
+                /> */}
+                <div onClick={event =>
+                    rudderslabTrackOnYoutubeVideoPlayback(
+                      trackSectionHeader,
+                      id
+                    )}>
+                  <lite-youtube
+                    videoid={id}
+                    class="video"
+                    params="rel=0"
+                  ></lite-youtube>
+                </div>
               </div>
             )
           },
@@ -81,54 +93,9 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             // The component we use to render the actual player
             return <CustomAudioPlayer {...node} />
           },
-          code: props => (
-            <Highlight
-              {...defaultProps}
-              language={props.node.language}
-              code={props.node.code}
-              theme={theme}
-            >
-              {({
-                style,
-                tokens,
-                getLineProps,
-                getTokenProps,
-              }) => (
-                <pre style={{overflow: 'auto', background: '#f5f2f0', padding: '1em'}}>
-                  {/* <CopyCode
-                    onClick={handleClick}
-                    disabled={copied}
-                    hasTitle={title}
-                  >
-                    {copied ? 'Copied!' : 'Copy'}
-                  </CopyCode> */}
-                  <code>
-                    {tokens.map((line, index) => {
-                      const lineProps = getLineProps({ line, key: index });
-
-                      return (
-                        <div {...lineProps}>
-                          {line.map((token, key) => (
-                            <span {...getTokenProps({ token, key })} />
-                          ))}
-                        </div>
-                      );
-                    })}
-                  </code>
-                </pre>
-              )}
-            </Highlight>
-            /* <SyntaxHighlighter
-              language={props.node.language}
-              customStyle={{
-                fontSize: 14,
-                marginTop: 0,
-                marginBottom: 16,
-              }}
-            >
-              {props.node.code}
-            </SyntaxHighlighter> */
-          ),
+          code: props => {
+            return (<Code className={`language-${props.node.language}`} codeString={props.node.code} />)
+          },
           // videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
           // instagram: ({ node }) => {
           //   if (!node.url) return null;

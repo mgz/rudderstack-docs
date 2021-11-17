@@ -14,9 +14,9 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
         {hits.map((hit, index) => {
           return (
             <section key={index} className="flex">
-              <div className="w-full relative overflow-hidden rounded-3xl flex shadow-md bg-white">
-                <div className="w-full flex-col">
-                  <div className="relative sm:block h-52">
+              <div className="w-full relative overflow-hidden rounded-3xl flex shadow-md bg-white flex-grow">
+                <div className="w-full flex flex-col">
+                  <div className="sm:block h-52">
                     <Link to={hit.slug}>
                       <img
                         src={hit.logoimage}
@@ -26,8 +26,8 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                       />
                     </Link>
                   </div>
-                  <div className="sm:max-w-sm sm:flex-none md:w-auto md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-6 cursor-pointer">
-                    <Link to={hit.slug}>
+                  <div className="sm:flex-none md:flex-auto flex flex-col items-start relative z-10 p-6 xl:p-6 cursor-pointer flex-auto">
+                    <Link to={hit.slug} className="flex-grow">
                       <div className="flex-initial uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
                         {`${hit.category} ${
                           hit.category === "Live"
@@ -36,16 +36,16 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                         }`}
                       </div>
 
-                      <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6 text-blueNew-midnight">
+                      <h2 className="flex-auto mt-2 text-lg md:text-xl-2 font-bold mb-6 text-blueNew-midnight min-h-0">
                         {hit.title}
                       </h2>
                     </Link>
-                  </div>
-                  <Link
+                    <Link
                     to={hit.slug}
                     onClick={e => rudderslabTrackOnClick("link", hit.title, e)}
+                    className="w-full"
                   >
-                    <div className="z-20 mt-4 w-10/12 text-sm absolute bottom-6 left-6 flex justify-between items-center">
+                    <div className="z-20 mt-4 w-full text-sm flex justify-between items-center">
                       <div>
                         <p className="relative text-black font-bold text-sm leading-normal hover:text-blueNew-eastbay">
                           <a
@@ -71,6 +71,7 @@ const ThreeRowContentVideoLibrary = ({ hits }) => {
                       </div>
                     </div>
                   </Link>
+                  </div>
                 </div>
               </div>
             </section>

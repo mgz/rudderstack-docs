@@ -12,7 +12,7 @@ module.exports = {
   },
   siteMetadata: {
     title: `Rudderstack`,
-    description: `RudderStack is the smart customer data pipeline. Connect your whole customer data stack. Warehouse-first, open source Segment alternative.`,
+    description: `RudderStack is the easiest way to stream data from your website or warehouse. With RudderStack, you can easily collect customer data from every platform.`,
     author: `@gatsbyjs`,
     siteUrl: "https://rudderstack.com",
     siteTitle: "RudderStack",
@@ -219,10 +219,11 @@ module.exports = {
         //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //host: `https://rudderstack-dataplane.rudderstack.com`,
         loadType: "defer",
-        trackPage: false,
-        loadAsync: true,
-        //delayLoad: true,
-        //delayLoadTime: 1000,
+        trackPage: true,
+        // loadAsync: true,
+
+        delayLoad: false,
+        // delayLoadTime: 500,
         //useNewSDK: true,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
@@ -396,9 +397,9 @@ module.exports = {
             options:{
               services: {
                 'YouTube': "https://www.youtube.com/watch?v=vOaw9pKn6\_M"
-              } 
+              }
             }
-          } 
+          }
           {
             resolve: `gatsby-remark-images`,
             options: {
@@ -447,12 +448,5 @@ module.exports = {
         extensions: ['css', 'html', 'js', 'svg', 'json']
       }
     } */
-    {
-      resolve: 'gatsby-background-image-es5',
-      options: {
-        // add your own characters to escape, replacing the default ':/'
-        specialChars: '/:',
-      },
-    },
   ],
 }

@@ -2,7 +2,7 @@ import React from "react"
 import Gist from 'super-react-gist'
 //import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/vsLight';
+import theme from 'prism-react-renderer/themes/dracula';
 
 const serializers = {
   types: {
@@ -37,7 +37,7 @@ const serializers = {
             getLineProps,
             getTokenProps,
           }) => (
-            <pre style={{overflow: 'auto', background: '#f5f2f0', padding: '1em'}}>
+            <pre style={{overflow: 'auto', background: '#282A36', padding: '1em'}}>
               {/* <CopyCode
                 onClick={handleClick}
                 disabled={copied}

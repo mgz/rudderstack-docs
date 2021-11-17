@@ -1,22 +1,27 @@
-import React from "react"
+import React, {useEffect} from "react"
 // import PortableText from "./portableText"
 import Link from "gatsby-link"
 import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
 } from "../utils/common"
-import YouTube from "react-youtube"
+/* import YouTube from "react-youtube" */
 
 const ProductHeroBanner = props => {
   let tmp_youtube_url_split = props.productbanneryoutubeambed.url
     .split("?")[0]
     .split("/")
 
+  useEffect(() => {
+    /* setWindowOrigin(window.location.origin) */
+    import("@justinribeiro/lite-youtube");
+  }, [])
+
   const _onPlay = event => {
     // console.log("play", event)
     return rudderslabTrackOnYoutubeVideoPlayback(
       props.productbannerheader,
-      event
+      tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
     )
   }
 
@@ -97,19 +102,26 @@ const ProductHeroBanner = props => {
             <div class="iframe-container">
               <div className="stack-frame-1"></div>
               <div className="stack-frame-2"></div>
-              <YouTube
+              {/* <YouTube
                 videoId={
                   tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
                 }
                 className="video"
                 onPlay={_onPlay}
-              />
+              /> */}
               {/* <iframe
                 src={props.productbanneryoutubeambed.url}
                 frameborder="0"
                 allowfullscreen
                 class="video"
               ></iframe> */}
+              <div onClick={e => _onPlay(e)}>
+                <lite-youtube
+                  videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
+                  class="video"
+                  params="rel=0"
+                ></lite-youtube>
+              </div>
             </div>
           </div>
         </div>

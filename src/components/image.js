@@ -6,7 +6,7 @@ function renderImage(image, classes, alt, width, height) {
     return (
       <img
         loading="lazy"
-        //  src={image.node.localFile.publicURL}  // Production code
+        /* src={image.node.localFile.publicURL} */  // Production code
         src={image.node.url} //Development code
         alt={alt ? alt : image.node._id}
         className={classes}
@@ -22,7 +22,20 @@ const Image = props => {
   return (
     <StaticQuery
       /* Development query below */
-      query={graphql`
+         query={graphql`
+         query {
+           sanityimages: allSanityImageAsset {
+             edges {
+               node {
+                 url
+                 _id
+               }
+             }
+           }
+         }
+       `}
+      /* Production query below */
+      /* query={graphql`
         query {
           sanityimages: allSanityImageAsset {
             edges {
@@ -33,23 +46,7 @@ const Image = props => {
             }
           }
         }
-      `}
-      /* Production query below */
-      // query={graphql`
-      //   query {
-      //     sanityimages: allSanityImageAsset {
-      //       edges {
-      //         node {
-      //           url
-      //           _id
-      //           localFile {
-      //             publicURL
-      //           }
-      //         }
-      //       }
-      //     }
-      //   }
-      // `}
+      `} */
       render={data => {
         const imgdata = data.sanityimages.edges.find(
           imgdata => imgdata.node._id === props.props

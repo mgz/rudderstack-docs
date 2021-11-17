@@ -70,7 +70,7 @@ body {
   height: 100%;
   background-position: top right;
 } */
-/* 
+/*
 .paragraph-check {
   position: relative;
 }
@@ -172,7 +172,7 @@ body {
 }
 
 .testimonila-bg-gradiant-v2 {
-  background-image: url("../images/testimonial-bg-v3.webp");
+  /* background-image: url("../images/testimonial-bg-v3.webp"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -184,7 +184,7 @@ body {
   background: linear-gradient(226.32deg, #6b96c3 -50.9%, #111168 108.01%);
 }
 .homepage-middle-bg-image {
-  background-image: url("../images/Union.svg");
+  /* background-image: url("../images/Union.svg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -258,6 +258,9 @@ body {
   font-weight: 700 !important;
 }
 
+.maxW50{
+  max-width: 50%;
+}
 
 @media only screen and (max-width: 1023px) {
   .menu li.has-submenu a:after {
@@ -384,7 +387,7 @@ body {
   margin-right: 10px;
 }
 
-/* 
+/*
 .seeall-icon a {
   color: #6e6ea4;
 }
@@ -783,5 +786,10 @@ top: -60px;
 @media only screen and (min-width: 2400px) {
   .submenu-align{
     left: 62rem;
+  }
+}
+@media only screen and (max-width:640px){
+  .blog-title-wrapper, .lessonContainer{
+    padding: 0px 16px;
   }
 }

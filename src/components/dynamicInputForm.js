@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheckSquare } from "@fortawesome/free-solid-svg-icons/faCheckSquare"
 import { faSquare } from "@fortawesome/free-regular-svg-icons/faSquare"
 import Select from "react-select"
+import Cookies from "universal-cookie"
 
 library.add(faCheckSquare, faSquare)
 
@@ -17,7 +18,9 @@ const DynamicInputForm = ({
   usebasin_endpoint,
   add_on_styling,
   location,
+  gatedCookieName
 }) => {
+  const cookies = new Cookies()
   const data = useStaticQuery(graphql`
     query FormInputQuery {
       allSanityFormInput {
@@ -213,8 +216,8 @@ const DynamicInputForm = ({
             // window.ChiliPiper.submit()
             if (
               location &&
-              (location.pathname.startsWith("/request-demo") ||
-                location.pathname.startsWith("/enterprise-quote"))
+              (location.pathname === "/request-demo" ||
+                location.pathname === "/enterprise-quote")
             ) {
               window.ChiliPiper.submit(
                 "rudderstack",
@@ -227,6 +230,20 @@ const DynamicInputForm = ({
                 }
               }`
               )
+            } else if (
+              location &&
+              location.pathname.startsWith("/video-library")
+            ) {
+              if (gatedCookieName && gatedCookieName.length > 0) {
+                let date = new Date()
+                date.setDate(date.getDate() + 15)
+
+                cookies.set(gatedCookieName, "yes", {
+                  path: location.pathname,
+                  expires: date,
+                })
+              }
+              navigate(on_success_navigate_url)
             } else {
               navigate(on_success_navigate_url)
             }
