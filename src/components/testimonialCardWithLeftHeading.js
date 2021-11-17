@@ -31,7 +31,7 @@ const TestimonialCardWithLeftHeading = props => {
                             (btn.btnhiglight === true
                               ? "btn-primary-lg"
                               : "btn-secondary-lg") +
-                            ` sm:mr-4 md:mb-0 mb-6 bg-white text-dark hover:bg-blueNew-midnight hover:text-white`
+                            ` sm:mr-4 md:mb-0 mb-6 hover:bg-blueNew-midnight hover:text-white`
                           }
                           onClick={e =>
                             rudderslabTrackOnClick(
