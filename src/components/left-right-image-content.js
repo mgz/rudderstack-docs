@@ -55,9 +55,8 @@ const LeftRightImgCnt = props => {
                   />
                 </div>
               )}
-
             {props.header_media_cta_cutton && (
-              <div className="w-72 mx-auto">
+              <div className="w-full md:w-80 mx-auto">
                 <>
                   {(() => {
                     if (
@@ -116,15 +115,22 @@ const LeftRightImgCnt = props => {
             )}
 
             {props.header_feature_items && (
-              <div className="flex flex-row bg-whiteColor-custom rounded-3xl my-8 p-4">
-                {props.header_feature_items.map(row => {
+              <div className="flex flex-col md:flex-row bg-whiteColor-custom rounded-3xl mt-16 p-4 mx-auto py-4 justify-center">
+                {props.header_feature_items.map((row, idx) => {
                   return (
-                    <div key={row._key} className="w-1/4 flex flex-col pr-8">
+                    <div
+                      key={row._key}
+                      className={`w-64 flex flex-row md:flex-col  ${
+                        idx === 0 ? "mt-0 md:pl-0" : "mt-4 md:mt-0  md:pr-8"
+                      }`}
+                    >
                       <Image
                         props={row.card_image.asset._ref}
                         classes="w-10 h-auto mb-4"
                       />
-                      <span className="text-xl text-blueNew-midnight font-bold leading-tight">{row.title}</span>
+                      <span className="text-xl text-blueNew-midnight font-bold leading-tight ml-4 md:ml-0">
+                        {row.title}
+                      </span>
                     </div>
                   )
                 })}

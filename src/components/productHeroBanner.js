@@ -31,7 +31,7 @@ const ProductHeroBanner = props => {
             <h2 className="text-2xl  font-bold tracking-tight-2 text-blueNew-midnight">
               {props.productbannerheader}
             </h2>
-            <h1 className="text-5xl-1 leading-tight font-bold md:mt-5 mb-8">
+            <h1 className="text-3xl-3 md:text-5xl-1 leading-tight font-bold mt-2 md:mt-5 mb-4 md:mb-8 pr-0 md:pr-16">
               {props.productbannertitle}
             </h1>
             <p className="text-lg leading-6 lg:pr-40">

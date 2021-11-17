@@ -16,6 +16,10 @@ const WebisteBanner = props => {
   )
 
   useEffect(() => {
+    // console.log("showBanner",props.banner_name, showBanner)
+  }, [showBanner])
+
+  useEffect(() => {
     let tmpShowBanner =
       props.weibsite_banner_ie_type.condition === "all_option" ||
       props.weibsite_banner_ie_type.condition === "exclude_option"
@@ -58,6 +62,7 @@ const WebisteBanner = props => {
                   }
                 }
               }
+              // console.log("set for include ", props.banner_name, tmpShowBanner)
               setShowBanner(tmpShowBanner)
             }
           } else if (
