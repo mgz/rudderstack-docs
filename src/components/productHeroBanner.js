@@ -10,7 +10,10 @@ import YouTube from "react-youtube"
 
 const ProductHeroBanner = props => {
   let tmp_youtube_url_split = []
-  if (props.herobanner_media && props.herobanner_media.condition === "videooption") {
+  if (
+    props.herobanner_media &&
+    props.herobanner_media.condition === "videooption"
+  ) {
     tmp_youtube_url_split = props.herobanner_media.videooption
       .split("?")[0]
       .split("/")
@@ -55,7 +58,7 @@ const ProductHeroBanner = props => {
                           }
                           className={
                             (btn.btnhiglight === true
-                              ? "bg-blueNew-midnight text-white btn-primary-lg border-transparent hover:bg-white hover:text-blueNew-midnight"
+                              ? "text-white btn-primary-lg border-transparent bg-blueNew-magenta hover:bg-blueNew-midnight" //hover:bg-whiteColor-custom hover:text-blueNew-midnight
                               : "btn-secondary-lg hover:bg-blueNew-midnight") +
                             ` sm:mr-4 md:mb-0 mb-6`
                           }
@@ -97,30 +100,30 @@ const ProductHeroBanner = props => {
           </div>
 
           <div className="relative w-full rounded-xl flex-grow justify-items-end lg:w-1/2 px-0 sm:items-center lg:items-start lg:mb-0">
-            {props.herobanner_media && props.herobanner_media.condition === "videooption" && (
-              <div class="iframe-container">
-                <div className="stack-frame-1"></div>
-                <div className="stack-frame-2"></div>
-                <YouTube
-                  videoId={
-                    tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
-                  }
-                  className="video"
-                  onPlay={_onPlay}
-                />
-              </div>
-            )}
+            {props.herobanner_media &&
+              props.herobanner_media.condition === "videooption" && (
+                <div class="iframe-container">
+                  <div className="product-banner-frame"></div>
+                  <YouTube
+                    videoId={
+                      tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
+                    }
+                    className="product-media"
+                    onPlay={_onPlay}
+                  />
+                </div>
+              )}
 
-            {props.herobanner_media && props.herobanner_media.condition === "imageoption" && (
-              <div class="iframe-container">
-                <div className="stack-frame-1"></div>
-                <div className="stack-frame-2"></div>
-                <Image
-                  props={props.herobanner_media.imageoption.asset._ref}
-                  classes="video"
-                />
-              </div>
-            )}
+            {props.herobanner_media &&
+              props.herobanner_media.condition === "imageoption" && (
+                <div class="iframe-container">
+                  <div className="product-banner-frame"></div>
+                  <Image
+                    props={props.herobanner_media.imageoption.asset._ref}
+                    classes="product-media"
+                  />
+                </div>
+              )}
           </div>
         </div>
       </div>

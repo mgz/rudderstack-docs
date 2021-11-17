@@ -29,7 +29,7 @@ const TestimonialCardWithLeftHeading = props => {
                           key={btn._key}
                           className={
                             (btn.btnhiglight === true
-                              ? "btn-primary-lg"
+                              ? "btn-primary-lg bg-blueNew-magenta"
                               : "btn-secondary-lg") +
                             ` sm:mr-4 md:mb-0 mb-6 hover:bg-blueNew-midnight hover:text-white`
                           }

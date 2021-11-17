@@ -20,12 +20,12 @@ module.exports = {
         midnight: "#17176E",
         midnight_v2: "#10174C",
         eastbay: "#3F3C7F",
-        magenta: "#6e6ea4",
+        magenta: "#7F66C8",
         midnight_sub: "#2e2e7c",
         cardBackground: "#f5f9f9",
       },
       purpleNew: {
-        custom: "#6e6ea4",
+        custom: "#7F66C8",
         gigas: "#4E3B97",
       },
       red: {

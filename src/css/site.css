@@ -87,11 +87,11 @@ body {
   left : 8px
 } */
 
-.hero-case-studies{
-  background: linear-gradient(226.32deg, #6B96C3 -50.9%, #111168 108.01%);
+.hero-case-studies {
+  background: linear-gradient(226.32deg, #6b96c3 -50.9%, #111168 108.01%);
 }
 
-.hero-case-studies-bg-image{
+.hero-case-studies-bg-image {
   background-image: url("../images/Union2.png");
   background-repeat: no-repeat;
   /* background-size: 120% 50%; */
@@ -257,7 +257,6 @@ body {
   border-bottom: 2px solid #17176e;
   font-weight: 700 !important;
 }
-
 
 @media only screen and (max-width: 1023px) {
   .menu li.has-submenu a:after {
@@ -436,6 +435,25 @@ body {
   z-index: 10;
 }
 
+.product-media {
+  position: absolute;
+  top: 40px;
+  left: 86px;
+  width: 88%;
+  height: 98%;
+  border-radius: 12px;
+  z-index: 30;
+}
+.product-banner-frame {
+  background: url("../images/product-list-bg.png") no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 16px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 20;
+}
 .check-icon::before {
   content: "";
   background: url("../images/check.svg") no-repeat;
@@ -764,24 +782,24 @@ top: -60px;
 }
 
 @media only screen and (min-width: 1024px) {
-  .submenu-align{
+  .submenu-align {
     left: 15rem;
   }
 }
 @media only screen and (min-width: 1280px) {
-  .submenu-align{
+  .submenu-align {
     left: 30rem;
   }
 }
 
 @media only screen and (min-width: 1536px) {
-  .submenu-align{
+  .submenu-align {
     left: 45rem;
   }
 }
 
 @media only screen and (min-width: 2400px) {
-  .submenu-align{
+  .submenu-align {
     left: 62rem;
   }
 }
