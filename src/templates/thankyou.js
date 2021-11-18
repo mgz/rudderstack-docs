@@ -51,9 +51,11 @@ const TrankYou = ({ data, htmlId }) => {
           content={data.thankyou.meta_desc}
         />
         <meta property="og:type" content="article" />
-        {location && location.pathname.startsWith("/careers") && (
-          <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>
-        )}
+        {location &&
+          (location.pathname.startsWith("/careers/") ||
+            location.pathname.startsWith("/careers")) && (
+            <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>
+          )}
       </Helmet>
 
       <div className="font-custom">
@@ -96,22 +98,24 @@ const TrankYou = ({ data, htmlId }) => {
               </div>
             </div>
           )}
-          {location && location.pathname.startsWith("/careers") && (
-            <div className="max-w-6xl mx-auto" id="grnhse_app"></div>
-            // <iframe
-            //   src={
-            //     "https://boards.greenhouse.io/embed/job_board?for=rudderstack"
-            //   }
-            //   width="100%"
-            //   frameborder="0"
-            //   // scrolling="no"
-            //   title="Rudderstack - Greenhouse Job Board"
-            //   scrolling="auto"
-            //   height="1200px"
-            //   // class="iframe-full-height"
-            //   // onLoad={resizeIframe}
-            // ></iframe>
-          )}
+          {location &&
+            (location.pathname.startsWith("/careers/") ||
+              location.pathname.startsWith("/careers")) && (
+              <div className="max-w-6xl mx-auto" id="grnhse_app"></div>
+              // <iframe
+              //   src={
+              //     "https://boards.greenhouse.io/embed/job_board?for=rudderstack"
+              //   }
+              //   width="100%"
+              //   frameborder="0"
+              //   // scrolling="no"
+              //   title="Rudderstack - Greenhouse Job Board"
+              //   scrolling="auto"
+              //   height="1200px"
+              //   // class="iframe-full-height"
+              //   // onLoad={resizeIframe}
+              // ></iframe>
+            )}
         </section>
 
         <section id="footer_section_for_demo">
