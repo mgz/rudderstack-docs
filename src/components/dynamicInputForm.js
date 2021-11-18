@@ -18,7 +18,7 @@ const DynamicInputForm = ({
   usebasin_endpoint,
   add_on_styling,
   location,
-  gatedCookieName
+  gatedCookieName,
 }) => {
   const cookies = new Cookies()
   const data = useStaticQuery(graphql`
@@ -216,7 +216,9 @@ const DynamicInputForm = ({
             // window.ChiliPiper.submit()
             if (
               location &&
-              (location.pathname === "/request-demo" ||
+              (location.pathname === "/request-demo/" ||
+                location.pathname === "/request-demo" ||
+                location.pathname === "/enterprise-quote/" ||
                 location.pathname === "/enterprise-quote")
             ) {
               window.ChiliPiper.submit(
@@ -231,8 +233,8 @@ const DynamicInputForm = ({
               }`
               )
             } else if (
-              location &&
-              location.pathname.startsWith("/video-library")
+              (location && location.pathname === "/video-library/") ||
+              location.pathname === "/video-library"
             ) {
               if (gatedCookieName && gatedCookieName.length > 0) {
                 let date = new Date()
@@ -244,6 +246,11 @@ const DynamicInputForm = ({
                 })
               }
               navigate(on_success_navigate_url)
+            } else if (
+              (location &&
+                location.pathname === "/request-demo-chili-piper-test/") ||
+              location.pathname === "/request-demo-chili-piper-test"
+            ) {
             } else {
               navigate(on_success_navigate_url)
             }
