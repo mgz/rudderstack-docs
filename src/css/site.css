@@ -437,10 +437,10 @@ body {
 
 .product-media {
   position: absolute;
-  top: 40px;
-  left: 86px;
-  width: 88%;
-  height: 98%;
+  top: 21px;
+  left: 72px;
+  width: 76%;
+  height: 86%;
   border-radius: 12px;
   z-index: 30;
 }
@@ -780,7 +780,24 @@ top: -60px;
   -webkit-background-size: 100%;
   background-size: 100%;
 }
-
+@media only screen and (min-width: 200px) and (max-width: 767px)  {
+  .product-media {
+    left: 34px;
+    top: 10px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px)  {
+  .product-media {
+    left: 110px;
+    top: 33px;
+  }
+}
+/* @media only screen and (min-width: 1024px) {
+  .product-media {
+    left: 110px;
+    top: 33px;
+  }
+} */
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;

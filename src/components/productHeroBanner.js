@@ -30,11 +30,11 @@ const ProductHeroBanner = props => {
     <section className="w-full  lg:py-0 py-10 flex justify-center items-center relative overflow-hidden">
       <div className="max-w-6xl w-full sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
         <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
-          <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0sm:items-center lg:items-start lg:mb-0">
+          <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-5/12 sm:px-0sm:items-center lg:items-start lg:mb-0">
             <h2 className="text-2xl  font-bold tracking-tight-2 text-blueNew-midnight">
               {props.productbannerheader}
             </h2>
-            <h1 className="text-3xl-3 md:text-5xl-1 leading-tight font-bold mt-2 md:mt-5 mb-4 md:mb-8 pr-0 md:pr-16">
+            <h1 className="text-3xl-3 md:text-5xl-1 leading-tight font-bold mt-2 md:mt-5 mb-4 md:mb-8 pr-0 ">
               {props.productbannertitle}
             </h1>
             <p className="text-lg leading-6 lg:pr-40">
@@ -99,7 +99,7 @@ const ProductHeroBanner = props => {
             </div>
           </div>
 
-          <div className="relative w-full rounded-xl flex-grow justify-items-end lg:w-1/2 px-0 sm:items-center lg:items-start lg:mb-0">
+          <div className="relative w-full rounded-xl flex-grow justify-items-end lg:w-7/12 px-0 sm:items-center lg:items-start lg:mb-0">
             {props.herobanner_media &&
               props.herobanner_media.condition === "videooption" && (
                 <div class="iframe-container">
