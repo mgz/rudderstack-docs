@@ -95,7 +95,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogs = result.data.allSanityBlog.edges || []
   blogs.forEach((edge, index) => {
     // console.log('for each blog',edge.node.slug)
-    const path = `/blog/${edge.node.slug.current}`
+    const path = `/blog/${edge.node.slug.current}/`
 
     createPage({
       path,
@@ -156,7 +156,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const products = products_result.data.allSanityProductPage.edges || []
   products.forEach((edge, index) => {
-    const path = `/product/${edge.node.slug.current}`
+    const path = `/product/${edge.node.slug.current}/`
 
     createPage({
       path,
@@ -186,7 +186,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const integrations = integration.data.allSanityIntegration.edges || []
   integrations.forEach((edge, index) => {
-    const path = `/integration/${edge.node.slug.current}`
+    const path = `/integration/${edge.node.slug.current}/`
     try {
       // if (1 === 2) {
       createPage({
@@ -224,7 +224,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const videoLibrary = videoLib.data.allSanityVideolibrary.edges || []
   videoLibrary.forEach((edge, index) => {
-    const path = `/video-library/${edge.node.slug.current}`
+    const path = `/video-library/${edge.node.slug.current}/`
 
     createPage({
       path,
@@ -254,7 +254,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const thankyoupages = thankyou.data.allSanityThankyoupages.edges || []
   thankyoupages.forEach((edge, index) => {
-    let path = edge.node.slug.current
+    let path = `${edge.node.slug.current}/`
 
     createPage({
       path,
@@ -284,7 +284,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const case_studies = caseStudies.data.allSanityCaseStudies.edges || []
   case_studies.forEach((edge, index) => {
-    const path = `/customers/${edge.node.slug.current}`
+    const path = `/customers/${edge.node.slug.current}/`
 
     createPage({
       path,
@@ -314,7 +314,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const sch_demo = schDemos.data.allSanitySchdemo.edges || []
   sch_demo.forEach((edge, index) => {
-    const path = `/${edge.node.slug.current}`
+    const path = `/${edge.node.slug.current}/`
 
     createPage({
       path,
@@ -345,7 +345,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pages = l_pages.data.allSanityPage.edges || []
   pages.forEach((edge, index) => {
-    const path = `/${edge.node.slug.current}`
+    const path = `/${edge.node.slug.current}/`
 
     createPage({
       path,
@@ -396,7 +396,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const projects = guides.data.allSanityContent.edges || []
   projects.forEach((edge, index) => {
-    const path = `/guides/${edge.node.slug}`
+    const path = `/guides/${edge.node.slug}/`
     createPage({
       path,
       component: require.resolve("./src/templates/contentGuides.js"),
@@ -427,7 +427,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const verticalPages =
     l_VertialPages.data.allSanityVerticalLandingPage.edges || []
   verticalPages.forEach((edge, index) => {
-    const path = `/${edge.node.slug.current}`
+    const path = `/${edge.node.slug.current}/`
 
     createPage({
       path,
@@ -1294,7 +1294,7 @@ exports.createPages = async ({ graphql, actions }) => {
     integration_connections.data.allGoogleSpreadsheetR1RedRudderstackIcData
       .edges || []
   int_conn_pages.forEach((edge, index) => {
-    const path = `${edge.node.slug}`
+    const path = `${edge.node.slug}/`
     let isExcluded = INTEGRATION_CONN_EXCLUDED_IDS.findIndex(
       oo => oo === edge.node.googleSpreadsheetId
     )
@@ -1332,7 +1332,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const beAHeroPages = l_BeAHeroPages.data.allSanityBeAHeroPage.edges || []
   beAHeroPages.forEach((edge, index) => {
-    const path = `/${edge.node.slug.current}`
+    const path = `/${edge.node.slug.current}/`
 
     createPage({
       path,
