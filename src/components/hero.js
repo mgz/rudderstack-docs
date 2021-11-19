@@ -31,6 +31,39 @@ function Hero(props) {
   //   })
   //   return () => anim.destroy() // optional clean up for unmounting
   // }, [])
+  let animationDelay = 2500;
+
+  let switchWord = (oldWord, newWord) => {
+		oldWord.classList.remove('is-visible');
+    oldWord.classList.add('is-hidden');
+		newWord.classList.remove('is-hidden');
+    newWord.classList.add('is-visible');
+	}
+
+  let hideWord = (word) => {
+		let nextWord = takeNext(word);
+    switchWord(word, nextWord);
+    setTimeout(function(){ hideWord(nextWord) }, animationDelay);
+	}
+
+  let takeNext = (word) => {
+		return (word.nextElementSibling) !== null ? word.nextElementSibling : word.parentNode.children[0];
+	}
+
+  let animateHeadline = (headlines) => {
+		let duration = animationDelay;
+    /* let words = document.querySelectorAll('.cd-words-wrapper span'),
+    width = 0;
+    console.log('Words', words);
+    Array.from(words, (el) => {
+      let wordWidth = el.innerWidth;
+        if (wordWidth > width) width = wordWidth;
+    });
+    document.querySelector('.cd-words-wrapper').style.width = width; */
+			//trigger animation
+    setTimeout(function(){ hideWord(document.getElementsByClassName('is-visible')[0]) }, duration);
+  }
+
 
   useEffect(() => {
     // console.log("isMobile,isTablet,isBrowser", isMobile, isTablet, isBrowser)
@@ -46,6 +79,7 @@ function Hero(props) {
   }, [])
 
   useEffect(() => {
+    animateHeadline(document.querySelector('.cd-headline'));
     if (showAnimation) {
     }
   }, [showAnimation])
@@ -58,8 +92,14 @@ function Hero(props) {
       </Helmet> */}
       <div className="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0">
         <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-          <h1 className="text-primary mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight">
-            {props.herobannertitle}
+          <h1 className="text-primary mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight cd-headline">
+            {/* {props.herobannertitle} */}
+            <span className="cd-words-unchanged">The customer data platform for </span>
+            <span className="cd-words-wrapper">
+              <span className="is-visible">developers</span>
+              <span>analysts</span>
+              <span>everyone</span>
+            </span>
           </h1>
           <PortableText
             blocks={props.herobannercontent}
@@ -123,7 +163,7 @@ function Hero(props) {
         <div className="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
           <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
             {/* <Helmet>
-              
+
             </Helmet> */}
             {/* <Image props={props.herobannerimage.asset._ref} classes="w-full" /> */}
             {/* <div className="w-full" ref={animationContainer} /> */}
