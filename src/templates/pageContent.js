@@ -24,6 +24,7 @@ import HeroBannerPricing from "../components/heroBannerPricing"
 import HeroBannerContactUs from "../components/heroBannerContactUs"
 import TwoCardsLeftAligned from "../components/twoCardsLeftAligned"
 import HeroBanner404 from "../components/heroBanner404"
+import AgreementContent from "../components/agreement_content"
 
 const Testimonial = loadable(() => import("../components/testimonial"))
 
@@ -107,6 +108,8 @@ const PageContent = ({ data, location }) => {
             return (
               <FourCardsWithTitleLeftAligned key={section._key} {...section} />
             )
+          } else if (section._type === "agreement_content") {
+            return <AgreementContent key={section._key} {...section} />
           } else if (section._type === "two_cards_left_aligned") {
             return <TwoCardsLeftAligned key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
