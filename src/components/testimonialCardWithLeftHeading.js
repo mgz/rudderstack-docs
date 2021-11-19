@@ -9,7 +9,7 @@ import PortableText from "./portableText"
 import Image from "./image"
 
 const TestimonialCardWithLeftHeading = props => {
-  console.log("TestimonialCardWithLeftHeading", props)
+  // console.log("TestimonialCardWithLeftHeading", props)
   return (
     <section className="">
       <div className="max-w-6xl px-4 md:px-3 py-10 md:py-20 mx-auto mt-10">

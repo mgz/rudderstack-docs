@@ -13,7 +13,7 @@ const LeftRightImgCnt = props => {
     ? props.leftrightcontentsmalltitle
     : ""
   const contents = props.leftrightimageblock
-  console.log("props", props)
+  // console.log("props", props)
   return (
     <>
       <section className="left-right-section md:px-0 pb-6 md:pb-12">

@@ -19,7 +19,7 @@ import clientConfig from "../../client-config"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Products = ({ data, location }) => {
-  console.log("data", data)
+  // console.log("data", data)
   return (
     <Layout location={location}>
       <Helmet>
