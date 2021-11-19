@@ -104,6 +104,37 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  const tutorial_result = await graphql(`
+    {
+      allSanityKnowledgeBase {
+        edges {
+          node {
+            title
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (tutorial_result.errors) {
+    throw tutorial_result.errors
+  }
+
+  const tutorials = tutorial_result.data.allSanityKnowledgeBase.edges || []
+  tutorials.forEach((edge, index) => {
+    // console.log('for each blog',edge.node.slug)
+    const path = `/knowledgebase/${edge.node.slug.current}`
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/singleTutorial.js"),
+      context: { slug: edge.node.slug.current },
+    })
+  })
+
   const products_result = await graphql(`
     {
       allSanityProductPage {

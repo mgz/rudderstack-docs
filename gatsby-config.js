@@ -195,6 +195,25 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
+        queries: require("./src/utils/knowledgebase-algolia"),
+        enablePartialUpdates: true,
+        matchFields: [
+          "title",
+          "knowledge_base_image",
+          "short_description",
+          "blog_authors",
+          "weight",
+          "slug",
+          "tutorial_date",
+          "knowledge_base_category",
+        ],
+      },
+    },
     /* `gatsby-plugin-styled-components`, */
     {
       resolve: `gatsby-plugin-manifest`,
