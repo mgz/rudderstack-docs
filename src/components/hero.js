@@ -11,9 +11,9 @@ import { StaticImage } from "gatsby-plugin-image"
 //import loadable from "@loadable/component";
 import { rudderslabTrackOnClick } from "../utils/common"
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
-const LottieAnim = React.lazy(() =>
+/* const LottieAnim = React.lazy(() =>
   import("../animations/homepage-animation-v2")
-)
+) */
 
 function Hero(props) {
   // const myHTML = `<h1>John Doe</h1>`;
@@ -180,19 +180,19 @@ function Hero(props) {
               <div id="lottie" />
             </div> */}
             <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
-              <StaticImage
+              {/* <StaticImage
                 src="../images/RubberStack_MAIN-3D_1-1_active_00001.png"
                 alt="RudderStack animation"
                 placeholder="tracedSVG"
-              />
+              /> */}
             </div>
             <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
               {/* <div id="lottie" />  */}
-              {showAnimation && !isMobile && (
+              {/* {showAnimation && !isMobile && (
                 <Suspense fallback={<div></div>}>
                   <LottieAnim />
                 </Suspense>
-              )}
+              )} */}
             </div>
             {/*
             <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
