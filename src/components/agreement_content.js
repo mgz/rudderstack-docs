@@ -3,7 +3,7 @@ import PortableText from "./portableText"
 import AgreementAccordianCard from "./agreement_accordian_card"
 
 const AgreementContent = props => {
-  console.log("AgreementContent", props)
+  /* console.log("AgreementContent", props) */
   return (
     <div className={`max-w-screen-${props.max_width} mx-auto`}>
       {props.agreement_items.map(row => {
@@ -18,7 +18,7 @@ const AgreementContent = props => {
           >
             {row.section_title && <div className="font-bold">{row.section_title}</div>}
             {row.section_content && (
-              <div className="leading-7 text-sm ">
+              <div className="leading-7 text-sm ppContent">
                 <PortableText blocks={row.section_content} />
               </div>
             )}
@@ -28,7 +28,7 @@ const AgreementContent = props => {
                   return (
                     <div
                       key={accGroup._key}
-                      className="flex flex-row flex-wrap"
+                      className="flex flex-row flex-wrap justify-between"
                     >
                       {accGroup.accordian_items.map(acc => {
                         return (
