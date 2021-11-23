@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@codemirror/lang-javascript": "^0.19.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
@@ -19,6 +20,7 @@
     "@rocketseat/gatsby-theme-docs": "^2.4.0",
     "@rocketseat/gatsby-theme-docs-core": "^2.3.2",
     "@sanity/block-content-to-react": "^2.0.7",
+    "@uiw/react-codemirror": "^4.2.4",
     "algoliasearch": "^4.8.6",
     "assert": "^2.0.0",
     "autoprefixer": "^10.2.6",
@@ -88,6 +90,7 @@
     "styled-components": "^5.2.3",
     "super-react-gist": "^1.0.4",
     "tailwindcss": "^2.0.4",
+    "typed.js": "^2.0.12",
     "universal-cookie": "^4.0.4",
     "use-query-params": "^1.2.3"
   },

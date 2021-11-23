@@ -12,6 +12,7 @@ import FreeText from "../components/freeText"
 import GraphQLErrorList from "../components/graphql-error-list"
 import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
 import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
+import CodeEditor from "../components/CodeEditor"
 
 // import SEO from "../components/seo"
 import Layout from "../components/layout"
@@ -229,7 +230,10 @@ const Page = props => {
           )
           break
         case "three_card_with_title":
-          el = <ThreeCardsWithTitleLeftAligned key={c._key} {...c} />
+          el = (<div>
+            <ThreeCardsWithTitleLeftAligned key={c._key} {...c} />
+            <CodeEditor />
+            </div>)
           break
         case "centered_aligned_title_with_youtube":
           el = <CenteredAlignedTitleWithYoutube key={c._key} {...c} />
