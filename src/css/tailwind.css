@@ -579,6 +579,10 @@ div > a.transperent-btn:last-child {
   .carousel.carousel-slider .control-arrow.control-prev {
     left: 25% !important;
   }
+  .w-1\/2.accWrapper{
+    max-width: 100%;
+    width: 100% !important;
+  }
 }
 @media only screen and (min-width: 640px) {
   .mobile-table {
