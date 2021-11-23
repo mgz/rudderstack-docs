@@ -21,7 +21,7 @@ const Singlerowcontent = ({ hit }) => {
     >
       <div className="flex lg:flex-row flex-col">
         <div className="flex-shrink-1 sm:flex-shrink-1">
-          <Link to={hit.slug}>
+          <Link to={`${hit.slug}/`}>
             <img
               src={hit.blogimage.src}
               alt={hit.title}
@@ -30,14 +30,14 @@ const Singlerowcontent = ({ hit }) => {
             />
           </Link>
         </div>
-        <Link to={hit.slug} className="relative maxW50">
+        <Link to={`${hit.slug}/`} className="relative maxW50">
           <div className="px-8 pt-8 pb-4">
             <div className="uppercase text-sm text-indigo-700 font-bold text-blueNew-eastbay">
               {hit.blog_category}
             </div>
             <h1 className="block  mt-4 mb-4 text-3xl leading-tight font-bold md:font-medium text-blueNew-midnight">
               {hit.title}
-              {/* <Link to={hit.slug}>{hit.title}</Link> */}
+              {/* <Link to={`${hit.slug}/`}>{hit.title}</Link> */}
             </h1>
             <p className="text-grayColor-custom md:mb-28">{hit.short_description}</p>
           </div>

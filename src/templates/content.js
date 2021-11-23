@@ -71,7 +71,7 @@ const Singleblog = ({ data, location, ...props }) => {
         <meta property="twitter:creator" content={author_names || blog.title} />
         <meta property="twitter:image:alt" content={blog.title} />
       </Helmet>
-      <div className="blog_banner">
+      <div className="blog_banner md:mt-12">
         <Herobanner
           title={blog.title}
           date={blog.blogdate}
@@ -124,7 +124,7 @@ const Singleblog = ({ data, location, ...props }) => {
         {/*Blog Content*/}
         <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center top-0 social-icon_blog">
           <TwitterShareButton
-            url={`https://rudderstack.com/blog/${blog.slug.current}`}
+            url={`https://rudderstack.com/blog/${blog.slug.current}/`}
           >
             {/* <a className="block" href="#"> */}
             <StaticImage
@@ -151,7 +151,7 @@ const Singleblog = ({ data, location, ...props }) => {
             </span>
           </FacebookShareButton> */}
           <LinkedinShareButton
-            url={`https://rudderstack.com/blog/${blog.slug.current}`}
+            url={`https://rudderstack.com/blog/${blog.slug.current}/`}
           >
             <span className="block">
               <StaticImage
@@ -209,6 +209,10 @@ const Singleblog = ({ data, location, ...props }) => {
         {/*Array Blog Author For Test Purpose*/}
       </div>
       {/*Blog Content*/}
+      <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
+        {/*Subscription Component*/}
+        <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
+      </div>
       <section className="bg-white pb-0">
         {/*Blog Post*/}
         <div className="max-w-6xl px-4 md:px-4 mx-auto flex flex-wrap pt-3 pb-12">
@@ -256,10 +260,7 @@ const Singleblog = ({ data, location, ...props }) => {
       {/*Blog Post*/}
       {/* <SignupV1 /> */}
       {/*Sign Up Section*/}
-      <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
-        {/*Subscription Component*/}
-        <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
-      </div>
+
       <section id="footer_section_for_demo">
         <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
       </section>
