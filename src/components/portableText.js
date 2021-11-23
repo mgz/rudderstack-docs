@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import clientConfig from "../../client-config"
 import BasePortableText from "@sanity/block-content-to-react"
 // import serializers from "./serializers"
@@ -35,7 +35,7 @@ const AuthorReference = ({ node }) => {
 
 const PortableText = ({ blocks, className, trackSectionHeader }) => {
   useEffect(() => {
-    import("@justinribeiro/lite-youtube");
+    import("@justinribeiro/lite-youtube")
   }, [])
   return (
     <BasePortableText
@@ -74,11 +74,14 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
                     )
                   }
                 /> */}
-                <div onClick={event =>
+                <div
+                  onClick={event =>
                     rudderslabTrackOnYoutubeVideoPlayback(
                       trackSectionHeader,
                       id
-                    )}>
+                    )
+                  }
+                >
                   <lite-youtube
                     videoid={id}
                     class="video"
@@ -93,8 +96,14 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             // The component we use to render the actual player
             return <CustomAudioPlayer {...node} />
           },
+
           code: props => {
-            return (<Code className={`language-${props.node.language}`} codeString={props.node.code} />)
+            return (
+              <Code
+                className={`language-${props.node.language}`}
+                codeString={props.node.code}
+              />
+            )
           },
           // videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
           // instagram: ({ node }) => {
