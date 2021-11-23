@@ -58,7 +58,7 @@ export default function SEO({ description, title, slug, image, children }) {
       alternateName: siteTitleShort,
     },
   ]
-  console.log("site meta info", title)
+  // console.log("site meta info", title)
   return (
     <Helmet
       htmlAttributes={{
