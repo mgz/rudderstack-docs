@@ -27,6 +27,10 @@
   @apply text-black-custom;
   @apply leading-7;
 }
+.block-description h4{
+  @apply font-semibold;
+  @apply mt-6;
+}
 .block-description p {
   @apply mt-6;
   @apply text-lg;
@@ -69,10 +73,10 @@
 
 } */
 .block-description li {
-  @apply mt-7;
+  @apply mt-2;
   @apply block;
   @apply relative;
-  @apply pl-8;
+  @apply pl-5;
 }
 .block-description li li {
   @apply mt-0;
@@ -82,11 +86,13 @@
 .block-description li::before {
   @apply absolute;
   content: "";
-  background: url("../images/arrow-right.svg");
+  /* background: url("../images/arrow-right.svg"); */
+  @apply bg-blueNew-midPurple;
   @apply bg-center;
-  @apply w-5;
-  @apply h-5;
-  @apply top-1;
+  @apply rounded-xl;
+  @apply w-3;
+  @apply h-3;
+  @apply top-2;
   @apply left-0;
 }
 .block-description li li::before {

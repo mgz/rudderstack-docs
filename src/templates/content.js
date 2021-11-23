@@ -48,8 +48,6 @@ const Singleblog = ({ data, location, ...props }) => {
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
-
-  // console.log("data", data)
   return (
     <Layout location={location}>
       <Helmet>
@@ -73,7 +71,7 @@ const Singleblog = ({ data, location, ...props }) => {
         <meta property="twitter:creator" content={author_names || blog.title} />
         <meta property="twitter:image:alt" content={blog.title} />
       </Helmet>
-      <div className="blog_banner">
+      <div className="blog_banner md:mt-12">
         <Herobanner
           title={blog.title}
           date={blog.blogdate}
@@ -125,7 +123,9 @@ const Singleblog = ({ data, location, ...props }) => {
       <div className="block-description relative pt-4 max-w-5xl m-auto">
         {/*Blog Content*/}
         <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center top-0 social-icon_blog">
-          <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
+          <TwitterShareButton
+            url={`https://rudderstack.com/blog/${blog.slug.current}/`}
+          >
             {/* <a className="block" href="#"> */}
             <StaticImage
               src={"../images/icon-twitter.svg"}
@@ -137,8 +137,8 @@ const Singleblog = ({ data, location, ...props }) => {
             />
             {/* </a> */}
           </TwitterShareButton>
-          <FacebookShareButton
-            url={`https://rudderstack.com/blog/${blog.slug}`}
+          {/* <FacebookShareButton
+            url={`https://rudderstack.com/blog/${blog.slug.current}/`}
           >
             <span className="my-3 block">
               <StaticImage
@@ -149,9 +149,9 @@ const Singleblog = ({ data, location, ...props }) => {
                 height={40}
               />
             </span>
-          </FacebookShareButton>
+          </FacebookShareButton> */}
           <LinkedinShareButton
-            url={`https://rudderstack.com/blog/${blog.slug}`}
+            url={`https://rudderstack.com/blog/${blog.slug.current}/`}
           >
             <span className="block">
               <StaticImage
@@ -198,7 +198,9 @@ const Singleblog = ({ data, location, ...props }) => {
                   <div className="leading-4 text-lg font-bold sm:mt-4 lg:mt-4 mt-2">
                     {item.author_name}
                   </div>
-                  <div className="lg:mt-6 sm:mt-6 mt-2 text-sm">{item.author_desc}</div>
+                  <div className="lg:mt-6 sm:mt-6 mt-2 text-sm">
+                    {item.author_desc}
+                  </div>
                 </div>
               </div>
             )
@@ -207,6 +209,10 @@ const Singleblog = ({ data, location, ...props }) => {
         {/*Array Blog Author For Test Purpose*/}
       </div>
       {/*Blog Content*/}
+      <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
+        {/*Subscription Component*/}
+        <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
+      </div>
       <section className="bg-white pb-0">
         {/*Blog Post*/}
         <div className="max-w-6xl px-4 md:px-4 mx-auto flex flex-wrap pt-3 pb-12">
@@ -254,10 +260,7 @@ const Singleblog = ({ data, location, ...props }) => {
       {/*Blog Post*/}
       {/* <SignupV1 /> */}
       {/*Sign Up Section*/}
-      <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
-        {/*Subscription Component*/}
-        <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
-      </div>
+
       <section id="footer_section_for_demo">
         <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
       </section>
