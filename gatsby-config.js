@@ -219,7 +219,7 @@ module.exports = {
         //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //host: `https://rudderstack-dataplane.rudderstack.com`,
         loadType: "defer",
-        trackPage: true,
+        trackPage: false,
         // loadAsync: true,
 
         delayLoad: false,
