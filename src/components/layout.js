@@ -98,7 +98,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
     location &&
       (location.pathname.startsWith("/404/") ||
         location.pathname.startsWith("/blog/") ||
-        location.pathname.startsWith("/privacy-policy-hs/") ||
+        location.pathname.startsWith("/privacy-policy/") ||
         location.pathname.startsWith("/privacy-policy-legal/") ||
         location.pathname.startsWith("/cookie-policy/") ||
         location.pathname.startsWith("/customers/"))
