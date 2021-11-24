@@ -6,7 +6,7 @@ const AgreementContent = props => {
   /* console.log("AgreementContent", props) */
   return (
     <div className={`max-w-screen-${props.max_width} mx-auto px-4`}>
-      {props.agreement_items.map(row => {
+      {props.agreement_items.map((row, idx) => {
         return (
           <div
             key={row._key}
@@ -16,10 +16,10 @@ const AgreementContent = props => {
                 : ""
             }`}
           >
-            {row.section_title && <div className="font-bold">{row.section_title}</div>}
+            {(row.section_title && idx !== 0) ? (<h2 className="font-bold" id={row._key}>{row.section_title}</h2>) : (<h1 className="font-bold" id={row._key}>{row.section_title}</h1>)}
             {row.section_content && (
               <div className="leading-7 text-sm ppContent">
-                <PortableText blocks={row.section_content} />
+                <PortableText blocks={row.section_content} trackSectionHeader={row.section_title} />
               </div>
             )}
             {row.accordian_content && (

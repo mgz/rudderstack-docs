@@ -191,6 +191,9 @@ p.accordion__title {
   font-size: 14px;
   font-weight: bold;
 }
+h2.font-bold{
+  font-size: 1em;
+}
 .accContentWrapper{
   border: 1px solid #C0C1C1 !important;
   border-top: none !important;

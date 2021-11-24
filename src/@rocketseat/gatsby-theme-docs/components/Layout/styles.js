@@ -56,8 +56,6 @@ export const Children = styled.div`
   }
 
   h1 {
-    padding-bottom: 24px;
-    border-bottom: 1px solid #dee2e7;
     color: #3d3d4d;
     overflow-wrap: break-word;
     margin: 24px 0px 16px 0px;
@@ -67,7 +65,7 @@ export const Children = styled.div`
   }
   h2, h3{
     margin: 45px 0 16px 0;
-  }  
+  }
   h4,
   h5,
   h6 {
