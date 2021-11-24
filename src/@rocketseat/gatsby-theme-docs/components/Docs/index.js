@@ -79,8 +79,8 @@ export default function Docs({ mdx, pageContext }) {
       description === null ? "" : description
     }</h2>`
     let h1Tags = document.querySelectorAll("h1")
-    forEach(h1Tags, o => (o.innerHTML = title + descriptionSpan))
-    h1Tags.innerHTML = descriptionSpan;
+    forEach(h1Tags, o => (o.insertAdjacentHTML('afterend', descriptionSpan)));
+    /* h1Tags.innerHTML = descriptionSpan; */
 
     let ancTags = document.querySelectorAll('.childrenWrapper a:not(.anchor, .next, .previous)');
     forEach(ancTags, o => (o.addEventListener('click', e => rudderslabTrackOnClickDocs("link", null, e, true))))
