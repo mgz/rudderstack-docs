@@ -1,6 +1,6 @@
 module.exports = {
   important: true,
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  purge: false,
   darkMode: false, // or 'media' or 'class'
   theme: {
     minHeight: {
