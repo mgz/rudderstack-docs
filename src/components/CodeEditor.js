@@ -45,9 +45,7 @@ const CodeEditor = () => {
             scene.wait(200),
             scene.type(`}\n`, 200),
             scene.wait(200),
-            scene.type(`}\n`, 200),
-            scene.wait(200),
-            scene.type(`)`, 200),
+            scene.type(`})`, 200),
         ])
 
         Movie.play();
@@ -75,7 +73,7 @@ const CodeEditor = () => {
     return(
         <div className="max-w-6xl mx-auto">
             <div className="codeBlockWrapper flex">
-                <div className="codeBlockLeft">
+                <div className="codeBlockLeft w-1/2">
                     <textarea id="code"></textarea>
                 </div>
             {/* <CodeMirror
