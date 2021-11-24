@@ -92,10 +92,15 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
   // console.log("path", location, showExplicitGradient)
   // let diableGradient = false
+
+  /* Disabling gradient for pages */
   const [diableGradient] = React.useState(
     location &&
       (location.pathname.startsWith("/404/") ||
-        location.pathname.startsWith("/blog/") || 
+        location.pathname.startsWith("/blog/") ||
+        location.pathname.startsWith("/privacy-policy-hs/") ||
+        location.pathname.startsWith("/privacy-policy-legal/") ||
+        location.pathname.startsWith("/cookie-policy/") ||
         location.pathname.startsWith("/customers/"))
       ? true
       : false
@@ -148,7 +153,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         <main>{children}</main>
         <CookiesConsent />
         <footer
-          className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0 w-full mx-auto" 
+          className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0 w-full mx-auto"
           name={"footer-container"}
         >
           <div className="max-w-6xl mx-auto footer-menus-wrap">
@@ -197,7 +202,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                                 "footer-navigation",
                                 "Footer Navigation Section",
                                 e
-                              ) 
+                              )
                             }
                           >
                             {/* <img
