@@ -26,6 +26,8 @@
     "autoprefixer": "^10.2.6",
     "babel-plugin-prismjs": "^2.1.0",
     "babel-plugin-transform-imports": "^2.0.0",
+    "codemirror": "^5.64.0",
+    "codemirror-movie": "^2.1.0",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "dpx": "^3.1.1",
