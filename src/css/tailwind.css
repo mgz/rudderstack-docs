@@ -152,10 +152,89 @@ button.accordion:focus {
 p.accordion__title {
   color: #000000;
 }
+.pp-accordion{
+  border: 1px solid #C0C1C1 !important;
+  border-bottom-color: #A8AAAB;
+  -webkit-box-shadow: 0 1px 0 #ebebec;
+  box-shadow: 0 1px 0 #ebebec;
+  -webkit-box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+  background: #FFF;
+  width: 100%;
+  padding: 10px !important;
+}
+.pp-accordion:nth-child(2n+1){
+  margin-right: 15px;
+}
+.w-1\/2.accWrapper{
+  max-width: calc(50% - 15px);
+}
+.accWrapper .accordion__title{
+  font-size: 13px !important;
+}
+.accWrapper .accordion__title:before{
+ top: 0px;
+}
+.pp-accordion.active{
+  border-bottom: 1px dotted #DDD !important;
+}
+.accContentWrapper p{
+  font-size: 13px;
+}
+.accContentWrapper h4{
+  font-size: 13px;
+  font-weight: bold;
+  padding-top: 19px;
+  margin-bottom: 0;
+}
+.ppContent h4{
+  font-size: 14px;
+  font-weight: bold;
+}
+.accContentWrapper{
+  border: 1px solid #C0C1C1 !important;
+  border-top: none !important;
+  padding: 10px;
+  padding-bottom: 10px !important;
+}
+.ppContent ul{
+  list-style: disc;
+  padding-top: 5px;
+}
+.ppContent ul li{
+  list-style: disc;
+  line-height: 19px;
+  font-size: 13px;
+  margin-left: 30px;
+  margin-top: 2px;
+}
 .faq-cta {
   --tw-shadow: 0 1px 24px rgba(0, 0, 0, 0.05), 0 1px 24px rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+div.font-bold{
+  margin-top: 20px;
+}
+.ppContent p, .ppContent ul{
+  margin: 5px 0px;
+}
+.hs-accordion{
+  width: 24px;
+  height: 24px;
+}
+.hs-accordion .accordion__title::after{
+  display: none;
+}
+.hsContentWrapper{
+  padding-right: 1rem;
+}
+.hsContentWrapper p{
+  font-size: 13px;
+}
+.accImage{
+  width: 24px;
+  max-width: 24px;
 }
 /* rangeslider Section Css */
 .rangeslider-horizontal {
@@ -499,6 +578,10 @@ div > a.transperent-btn:last-child {
   }
   .carousel.carousel-slider .control-arrow.control-prev {
     left: 25% !important;
+  }
+  .w-1\/2.accWrapper{
+    max-width: 100%;
+    width: 100% !important;
   }
 }
 @media only screen and (min-width: 640px) {
