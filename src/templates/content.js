@@ -53,21 +53,20 @@ const Singleblog = ({ data, location, ...props }) => {
       <Helmet>
         <title>{blog.meta_title || blog.title}</title>
         <meta property="og:title" content={blog.meta_title || blog.title} />
-
         <meta name="description" content={blog.meta_desc} />
         <meta property="og:description" content={blog.meta_desc} />
-        <meta
-          property="twitter:title"
-          content={blog.meta_title || blog.title}
-        />
         <meta property="og:type" content="article" />
-        <meta property="twitter:description" content={blog.meta_desc} />
-
         {/* added by Hari on 2021-06-21 to show share card across twitter, linkedin and facebook */}
         {location && <meta property="og:url" content={location.href} />}
 
         <meta property="og:image" content={blog.blog_image.asset.url} />
         <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content="@Rudderlabs" />
+        <meta property="twitter:title" content={blog.meta_title || blog.title} />
+        <meta property="twitter:description" content={blog.meta_desc} />
+        <meta property="twitter:image" content={blog.blog_image.asset.url} />
+        <meta property="twitter:image:height" content="65" />
+        <meta property="twitter:image:width" content="65" />
         <meta property="twitter:creator" content={author_names || blog.title} />
         <meta property="twitter:image:alt" content={blog.title} />
       </Helmet>
