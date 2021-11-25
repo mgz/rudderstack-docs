@@ -63,6 +63,7 @@ const CookiesConsent = () => {
                       } `}
                     >
                       <p>Privacy Overview</p>
+                      <br />
                       <div className="cli-privacy-content">
                         <div className="cli-privacy-content-text">
                           <p>
@@ -78,6 +79,10 @@ const CookiesConsent = () => {
                             option to opt-out of these cookies. But opting out
                             of some of these cookies may have an effect on your
                             browsing experience.
+                            <br /><br />
+                            This site uses cookies to improve your experience.
+                            We'll assume you're ok with this, but you can
+                            opt-out if you wish. Cookie Settings
                           </p>
                         </div>
                       </div>
