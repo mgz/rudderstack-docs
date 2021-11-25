@@ -12,15 +12,18 @@ const CodeEditor = () => {
         const CodeMirror = require('codemirror/lib/codemirror');
         require("codemirror/mode/javascript/javascript");
         require("codemirror/mode/shell/shell");
+
         let leftEditor = CodeMirror.fromTextArea(document.getElementById('code'), {
             lineNumbers: true,
             mode: "javascript",
+            autofocus: false
         });
         let rightEditor = CodeMirror.fromTextArea(document.getElementById('terminal'),{
             lineNumbers: false,
             readOnly: true,
             lineWrapping: true,
-            mode: "shell"
+            mode: "shell",
+            autofocus: false
         });
 
         leftEditorScenes = createMovie(leftEditor, scene => [
@@ -117,37 +120,42 @@ const CodeEditor = () => {
 
 
     return(
-        <div className="max-w-6xl mx-auto" id="codeEditorBlock">
-            <div className="codeBlockWrapper flex">
-                <div className="codeBlockLeft w-1/2">
-                    <div className="codeEditorFile">
-                        <div className="topEditorBlock flex">
-                            <div className="fileSwitchIcon flex">
-                                <span className="fileSwitchIconLeft">
-                                    <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10.3062 6.65882L0.317916 12.4255L0.317917 0.892113L10.3062 6.65882Z" fill="white"/>
-                                    </svg>
-                                </span>
-                                <span className="fileSwitchIconRight">
-                                    <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M10.3062 6.65882L0.317916 12.4255L0.317917 0.892113L10.3062 6.65882Z" fill="white"/>
-                                    </svg>
-                                </span>
+        <section className="py-19 relative section-gradient">
+            <span className="section-border absolute top-0 left-0 w-full block"></span>
+            <div className="max-w-6xl mx-auto" id="codeEditorBlock">
+                <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary">Install a SDK and Start Sending Data Today</h3>
+                <div className="codeBlockWrapper mt-16 mb-10 flex">
+                    <div className="codeBlockLeft w-1/2">
+                        <div className="codeEditorFile">
+                            <div className="topEditorBlock flex">
+                                <div className="fileSwitchIcon flex">
+                                    <span className="fileSwitchIconLeft">
+                                        <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3062 6.65882L0.317916 12.4255L0.317917 0.892113L10.3062 6.65882Z" fill="white"/>
+                                        </svg>
+                                    </span>
+                                    <span className="fileSwitchIconRight">
+                                        <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.3062 6.65882L0.317916 12.4255L0.317917 0.892113L10.3062 6.65882Z" fill="white"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div className="fileNameBlock">
+                                    <span className="editOn"></span>
+                                </div>
                             </div>
-                            <div className="fileNameBlock">
-                                <span className="editOn"></span>
-                            </div>
+                            <textarea id="code"></textarea>
                         </div>
-                        <textarea id="code"></textarea>
                     </div>
-                </div>
-                <div className="codeBlockRight w-1/2">
-                    <div className="codeEditorFile">
-                        <textarea id="terminal"></textarea>
+                    <div className="codeBlockRight w-1/2">
+                        <div className="codeEditorFile">
+                            <textarea id="terminal"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <span className="section-border absolute bottom-0 left-0 w-full block"></span>
+        </section>
     )
 }
 

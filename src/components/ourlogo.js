@@ -6,19 +6,15 @@ function OurLogo(props) {
   const logoimages = props.outlogoimage
   return (
     <section
-      className={`max-w-6xl px-4 ${
-        props.removeSectionVerticalMargin ? "" : "my-12"
-      }  md:px-3 mx-auto sm:${
-        props.removeSectionVerticalMargin ? "" : "my-24"
-      } flex flex-wrap flex-col md:flex-row items-center`}
+      className={`px-4 md:px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center py-19 section-gradient relative`}
     >
+      <span className="section-border block absolute top-0 left-0 w-full"></span>
       <div
-        className={`flex flex-col w-full justify-center items-start md:text-left ${
-          props.title_alignment === "left" ? "" : "max-w-2xl mx-auto"
-        }`}
+        className={`flex w-full justify-center`}
       >
-        <h3 className="my-4 text-2xl md:text-3xl text-primary font-bold leading-8	md:leading-10 text-center normal-case md:mx-0 mx-auto md:pl-6">
-          {maintitle}
+        <h3 className="my-4 text-4xl text-primary font-bold leading-8	md:leading-10 text-center normal-case md:mx-0 mx-auto">
+          {/* {maintitle} */}
+          11,000+ sites and apps run RudderStack
         </h3>
       </div>
       <div className="flex w-full justify-start flex-wrap mt-2 sm:mt-2 our-logos">
@@ -43,6 +39,7 @@ function OurLogo(props) {
             )
           })}
       </div>
+      <span className="section-border block absolute bottom-0 left-0 w-full"></span>
     </section>
   )
 }

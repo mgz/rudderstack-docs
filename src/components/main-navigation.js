@@ -167,7 +167,7 @@ const MainNavigation = props => {
                   rudderslabTrackOnClick("navigation", "header navigation", e)
                 }
               >
-                <span className="inline-block lg:p-2 lg:py-1.5 mt-6 lg:mt-0 font-custom font-bold mr-2">
+                <span className="inline-block lg:p-2 lg:py-1.5 mt-6 lg:mt-0 font-custom font-bold mr-2 text-white">
                   Log in
                 </span>
               </a>
@@ -184,7 +184,7 @@ const MainNavigation = props => {
                         )
                       }
                     >
-                      <span className="border-transparent inline-block text-white  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg ">
+                      <span className="border border-darkScheme-textPrimary bg-darkScheme-textPrimary text-darkScheme-textBlack  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg hover:bg-transparent hover:text-darkScheme-textPrimary">
                         {trybtn.btntext}
                       </span>
                     </a>

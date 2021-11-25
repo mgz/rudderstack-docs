@@ -1,6 +1,6 @@
 :root {
-  --primary: #17176e;
-  --secondary: #4e4e4e;
+  --primary: #ffffff;
+  --secondary: #D692F6;
   --darkblue: #10174c;
   --dark: #000;
   --blue: #0066ff;
@@ -100,9 +100,9 @@ body {
 }
 
 .gradient-enable {
-  background-image: url("../images/banner-gradiant.jpg");
+  /* background-image: url("../images/banner-gradiant.jpg"); */
   background-repeat: no-repeat;
-  background-color: white;
+  /* background-color: white; */
   width: 100%;
   height: 100%;
   background-position: top right;
@@ -771,7 +771,9 @@ top: -60px;
   position: relative;
   display: inline-block;
 }
-
+.cd-words-unchanged{
+  color: var(--primary);
+}
 .cd-words-wrapper span{
   display: inline-block;
   position: absolute;
@@ -779,6 +781,7 @@ top: -60px;
   left: 0;
   top: 0;
   opacity: 0;
+  color: #D692F6;
 }
 
 .cd-words-wrapper span.is-visible{
@@ -867,4 +870,19 @@ top: -60px;
 .hero-section{
   background-image: none;
   background-color: #070E1F;
+}
+.section-gradient{
+  background: rgb(62,53,209);
+  background: linear-gradient(120deg, rgba(62,53,209,1) 0%, rgba(134,248,224,1) 100%);
+}
+.section-border{
+  height: 10px;
+  background: rgb(7,14,31);
+  background: linear-gradient(120deg, rgba(7,14,31,1) 0%, rgba(62,53,209,1) 25%, rgba(134,248,224,1) 50%, rgba(243,225,253,1) 75%, rgba(214,146,246,1) 100%);
+}
+.separator-line{
+  background: #ffffff;
+  height: 130px;
+  width: 3px;
+  border-radius: 4px;
 }

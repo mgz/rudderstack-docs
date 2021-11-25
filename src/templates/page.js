@@ -46,109 +46,15 @@ export const query = graphql`
   }
 `
 
-let intersectionObserver;
-let intersectionObserverOptions = {};
-const subscribers = new WeakMap();
-
-const handleIntersections = entries =>
-  entries.forEach(entry => subscribers.get(entry.target).call(null, entry));
-
-const getIntersectionObserver = () => {
-  if (!intersectionObserver) {
-    intersectionObserver = new IntersectionObserver(
-      handleIntersections,
-      intersectionObserverOptions
-    );
-  }
-
-  return intersectionObserver;
-};
-
-const setIntersectionObserverOptions = options => {
-  if (intersectionObserver) {
-    return;
-  }
-
-  intersectionObserverOptions = options;
-};
-
-const unwatch = domNode => {
-  intersectionObserver.unobserve(domNode);
-  subscribers.delete(domNode);
-};
-const watch = (domNode, callback) => {
-  if (!domNode || subscribers.has(domNode)) {
-    return;
-  }
-
-  subscribers.set(domNode, callback);
-  getIntersectionObserver().observe(domNode);
-
-  // eslint-disable-next-line consistent-return
-  return () => unwatch(domNode);
-};
-
-const getSubscribers = () => subscribers;
-
-const VO = {
-  getSubscribers,
-  setIntersectionObserverOptions,
-  unwatch,
-  watch,
-};
-
-function useIsVisible(nodeRef) {
-  const [isVisible, setVisible] = useState(false);
-
-  function handleVisibilityChange({ isIntersecting }) {
-    setVisible(isIntersecting);
-  }
-
-  useEffect(() => VO.watch(nodeRef.current, handleVisibilityChange), [nodeRef]);
-
-  return isVisible;
-}
-
-function useHasBeenVisible(nodeRef) {
-  const [isVisible, setVisible] = useState(false);
-
-  function handleVisibilityChange({ isIntersecting }) {
-    if (isIntersecting === true) {
-      setVisible(isIntersecting);
-    }
-  }
-
-  useEffect(() => VO.watch(nodeRef.current, handleVisibilityChange), [nodeRef]);
-
-  return isVisible;
-}
 
 // The `threshold` variable sets what portion of the element needs to be
 // visible before it fires. 0 = none, 1 = the entire thing. See
 // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-function useHasBeenPartlyVisible(nodeRef, threshold = 0.5) {
-  const [isVisible, setVisible] = useState(false);
-
-  function handleVisibilityChange({ isIntersecting }) {
-    if (isIntersecting === true) {
-      setVisible(isIntersecting);
-    }
-  }
-
-  useEffect(() => {
-    setIntersectionObserverOptions({ threshold });
-    return VO.watch(nodeRef.current, handleVisibilityChange);
-  }, [nodeRef, threshold]);
-
-  return isVisible;
-}
-
 
 const Page = props => {
   const { data, errors } = props;
 
   const halfPage = useRef();
-  const hasScrolled = useHasBeenPartlyVisible(halfPage, 0.1);
 
   if (errors) {
     return (
@@ -199,13 +105,13 @@ const Page = props => {
         case "tabsection":
           el = <Tabs key={c._key} {...c} />
           break
-        case "leftrightcontentimagesection":
+        /* case "leftrightcontentimagesection":
           el = (
             <div className="bg-blueNew-midnight_v2 100% pt-32" key={c._key}>
               <LeftRightImgCnt applyGradientColorTheme={true} {...c} />
             </div>
           )
-          break
+          break */
         case "latestblogsection":
           el = <LatestBlog key={c._key} {...c} />
           break

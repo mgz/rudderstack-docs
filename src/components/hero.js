@@ -91,7 +91,7 @@ function Hero(props) {
         <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" />
       </Helmet> */}
-      <div className="flex flex-col items-center md:gap-12 xl:gap-24 justify-center mx-auto lg:flex-row lg:p-0">
+      <div className="flex flex-col items-center md:gap-4 xl:gap-4 justify-center mx-auto lg:flex-row lg:p-0">
         <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
           <h1 className="text-primary mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight cd-headline">
             {/* {props.herobannertitle} */}
@@ -101,7 +101,7 @@ function Hero(props) {
             blocks={props.herobannercontent}
             trackSectionHeader={props.herobannertitle}
           /> */}
-          <p className="cd-headline">
+          <p className="cd-headline font-bold">
             <span className="cd-words-unchanged">Effortlessly sync data into and out of your <br></br></span>
             <span className="cd-words-wrapper">
                 <span className="is-visible">data warehouse</span>
@@ -184,21 +184,16 @@ function Hero(props) {
             {/* <div className={`lotti-body`}>
               <div id="lottie" />
             </div> */}
-            <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
-              {/* <StaticImage
-                src="../images/RubberStack_MAIN-3D_1-1_active_00001.png"
-                alt="RudderStack animation"
+            <div className={`block`}>
+              <StaticImage
+                src="../images/hero-section-home.png"
+                alt="RudderStack"
                 placeholder="tracedSVG"
-              /> */}
+              />
             </div>
-            <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
-              {/* <div id="lottie" />  */}
-              {/* {showAnimation && !isMobile && (
-                <Suspense fallback={<div></div>}>
-                  <LottieAnim />
-                </Suspense>
-              )} */}
-            </div>
+            {/* <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
+
+            </div> */}
             {/*
             <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
               <StaticImage

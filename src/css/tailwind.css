@@ -34,10 +34,10 @@
     @apply w-5 h-4;
   }
   .btn-primary-lg {
-    @apply bg-darkblue text-white py-3 text-sm px-6 sm:px-10 text-center font-bold block rounded-lg border hover:bg-blueNew-midnight;
+    @apply bg-darkScheme-btnPrimaryBg text-darkScheme-textBlack py-3 text-sm px-6 sm:px-10 text-center font-bold block rounded-lg border border-darkScheme-btnPrimaryBg hover:bg-transparent hover:text-darkScheme-btnPrimaryBg;
   }
   .btn-secondary-lg {
-    @apply py-3 text-sm px-6 sm:px-10 text-center font-bold block rounded-lg border hover:text-white hover:bg-blueNew-eastbay;
+    @apply py-3 text-sm px-6 sm:px-10 text-center font-bold block border rounded-lg border-whiteColor-custom text-white hover:text-white hover:bg-blueNew-eastbay;
   }
   .btn-primary-sm {
     @apply bg-darkblue text-white py-2 px-6 md:px-8 lg:px-8 text-center block rounded-lg border text-sm hover:bg-blueNew-midnight;

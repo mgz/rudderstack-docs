@@ -137,7 +137,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
       <div
         id="main-container"
-        className={`gradient-${diableGradient ? "disable" : "enable"} dark:hero-section`}
+        className={`dark hero-section`}
       >
         {/* <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />

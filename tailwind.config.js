@@ -57,6 +57,12 @@ module.exports = {
         successBg: "#c1ead7",
         successBorder: "#26cb7c",
       },
+      darkScheme:{
+        textPrimary: "#ffffff",
+        btnPrimaryBg: "#86F8E0",
+        btnSecondaryBg: "#D692F6",
+        textBlack: "#000000"
+      }
     },
     extend: {
       inset: {
