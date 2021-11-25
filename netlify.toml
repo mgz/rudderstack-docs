@@ -2,6 +2,6 @@
 package = "@netlify/plugin-gatsby"
 
 [[redirects]]
-  from = "/careers"
+  from = "/careers/"
   to = "https://boards.greenhouse.io/rudderstack"
   status = 301
