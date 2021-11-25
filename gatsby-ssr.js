@@ -53,7 +53,6 @@ import { isMobile, isBrowser } from "react-device-detect"
     return 0;
 });
 
-console.log(headComponents, "before 56");
    headComponents.forEach(element => {
     if (element.type === "style" && element.props["data-href"]) {
       element.type = "link"
@@ -64,8 +63,7 @@ console.log(headComponents, "before 56");
       delete element.props["data-href"]
       delete element.props.dangerouslySetInnerHTML
     }
-  })
-  console.log(headComponents, "after 56");
+  });
 replaceHeadComponents(headComponents);
   // replaceHeadComponents(headComponents)
 } 
