@@ -187,6 +187,10 @@ p.accordion__title {
   padding-top: 19px;
   margin-bottom: 0;
 }
+.ppContent h1{
+  font-size: 24px;
+  /* font-weight: bold; */
+}
 .ppContent h4{
   font-size: 14px;
   font-weight: bold;
