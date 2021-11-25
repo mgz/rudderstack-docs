@@ -48,11 +48,12 @@ import { isMobile, isBrowser } from "react-device-detect"
   const headComponents = getHeadComponents()
   headComponents.sort((a, b) => {
     if (a.props && a.props["data-react-helmet"]) {
-        return 0;
+        return 1;
     }
-    return 1;
+    return 0;
 });
 
+console.log(headComponents, "before 56");
    headComponents.forEach(element => {
     if (element.type === "style" && element.props["data-href"]) {
       element.type = "link"
@@ -64,7 +65,7 @@ import { isMobile, isBrowser } from "react-device-detect"
       delete element.props.dangerouslySetInnerHTML
     }
   })
- 
+  console.log(headComponents, "after 56");
 replaceHeadComponents(headComponents);
   // replaceHeadComponents(headComponents)
 } 
