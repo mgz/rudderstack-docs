@@ -82,6 +82,7 @@ function Hero(props) {
     animateHeadline(document.querySelector('.cd-headline'));
     if (showAnimation) {
     }
+    document.documentElement.classList.add('dark')
   }, [showAnimation])
 
   return (
@@ -94,17 +95,21 @@ function Hero(props) {
         <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
           <h1 className="text-primary mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight cd-headline">
             {/* {props.herobannertitle} */}
-            <span className="cd-words-unchanged">The customer data platform for </span>
-            <span className="cd-words-wrapper">
-              <span className="is-visible">developers</span>
-              <span>analysts</span>
-              <span>everyone</span>
-            </span>
+            All your customer data pipelines in one platform
           </h1>
-          <PortableText
+          {/* <PortableText
             blocks={props.herobannercontent}
             trackSectionHeader={props.herobannertitle}
-          />
+          /> */}
+          <p className="cd-headline">
+            <span className="cd-words-unchanged">Effortlessly sync data into and out of your <br></br></span>
+            <span className="cd-words-wrapper">
+                <span className="is-visible">data warehouse</span>
+                <span>data lake</span>
+                <span>product tools</span>
+                <span>marketing tools</span>
+            </span>
+          </p>
           <div className="relative block sm:flex mt-12">
             {herobannerbutton.map((btn, i) => (
               <React.Fragment key={btn._key}>

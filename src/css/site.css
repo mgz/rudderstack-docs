@@ -862,3 +862,9 @@ top: -60px;
     padding: 0px 16px;
   }
 }
+
+/* Dark mode */
+.hero-section{
+  background-image: none;
+  background-color: #070E1F;
+}

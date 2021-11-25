@@ -1,14 +1,15 @@
 .codeBlockLeft{
   background: #3E35D1;
-  border-top-left-radius: 36px;
-  border-bottom-left-radius: 36px;
+  border-radius: 0px 0px 0px 20px;
 }
 .CodeMirror{
   color: #ffffff;
   background: transparent;
-  height: 350px;
+  height: 420px;
   position: relative;
   overflow: hidden;
+  font-family: monospace;
+  font-size: 16px;
 }
 .CodeMirror-gutter {
   white-space: normal;
@@ -17,13 +18,18 @@
   vertical-align: top;
   margin-bottom: -50px;
 }
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  background: none !important;
+  border: none !important;
+}
 .CodeMirror-gutters {
   position: absolute;
   left: 0;
   top: 0;
   min-height: 100%;
   z-index: 3;
-  border-right: 1px solid #ddd;
   background-color: transparent;
   white-space: nowrap;
 }
@@ -92,7 +98,7 @@
   font-size: inherit;
   margin: 0;
   white-space: pre;
-  word-wrap: normal;
+  word-wrap: break-word;
   line-height: inherit;
   color: inherit;
   z-index: 2;
@@ -101,13 +107,16 @@
   -webkit-tap-highlight-color: transparent;
   font-variant-ligatures: contextual;
 }
+.CodeMirror-wrap pre {
+  word-break: break-word;
+}
 div.CodeMirror-cursors {
   visibility: hidden;
   position: relative;
   z-index: 3;
 }
 .CodeMirror-cursor {
-  border-left: 1px solid black;
+  border-left: 1px solid white;
   border-right: none;
   width: 0;
 }
@@ -121,9 +130,60 @@ div.CodeMirror-cursors {
   z-index: 4;
 }
 .CodeMirror-linenumber {
-  padding: 0 3px 0 5px;
+  padding: 0 20px 0 5px;
   min-width: 20px;
   text-align: right;
-  color: #999;
+  color: #fff;
   white-space: nowrap;
+}
+/* Theming */
+.cm-string{
+  color: #7DAFDB;
+}
+.cm-atom{
+  color: #A93662;
+}
+.cm-number{
+  color: #AA80E9;
+}
+/* Code editor file */
+.codeEditorFile{
+  padding:60px 0px 20px 20px;
+  position: relative;
+}
+.topEditorBlock{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.fileSwitchIcon{
+  padding: 10px;
+}
+.fileSwitchIconLeft{
+  transform: rotate(-180deg);
+}
+.fileSwitchIconRight{
+  transform: rotate(0deg);
+  padding-left: 8px;
+}
+.fileNameBlock{
+  width: 200px;
+  background: #2F28AD;
+  height: 34px;
+  position: relative;
+  border-radius: 0px 0px 3px 3px;
+}
+.editOn{
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+.codeBlockRight{
+  background: #070E1F;
+  border-radius: 0px 20px 20px 0px;
 }
