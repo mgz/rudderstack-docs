@@ -23,7 +23,7 @@ const AgreementAccordianCard = props => {
     <div className={`${props.width} accWrapper my-4`}>
       {!props.open_defaul && (
       <button
-        className={`accordion pp-accordion pb-6 pl-4 flex flex-row-reverse ${setActive}`}
+        className={`accordion pp-accordion pb-6 pl-4 flex ${setActive}`}
         onClick={toggleAccordion}
       >
         {props.accordian_icon && (<Image
