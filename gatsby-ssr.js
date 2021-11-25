@@ -46,6 +46,12 @@ import { isMobile, isBrowser } from "react-device-detect"
   // console.log("inlining css for ", pathname)
 
   const headComponents = getHeadComponents()
+  headComponents.sort((a, b) => {
+    if (a.props && a.props["data-react-helmet"]) {
+        return 0;
+    }
+    return 1;
+});
 
    headComponents.forEach(element => {
     if (element.type === "style" && element.props["data-href"]) {
@@ -58,12 +64,7 @@ import { isMobile, isBrowser } from "react-device-detect"
       delete element.props.dangerouslySetInnerHTML
     }
   })
-  headComponents.sort((a, b) => {
-    if (a.props && a.props["data-react-helmet"]) {
-        return 0;
-    }
-    return 1;
-});
+ 
 replaceHeadComponents(headComponents);
   // replaceHeadComponents(headComponents)
 } 
