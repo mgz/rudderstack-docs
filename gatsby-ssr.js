@@ -55,8 +55,7 @@ import { isMobile, isBrowser } from "react-device-detect"
     return 0
   })
 
-  replaceHeadComponents(headComponents)
-/*    headComponents.forEach(element => {
+    headComponents.forEach(element => {
     if (element.type === "style" && element.props["data-href"]) {
       element.type = "link"
       element.props.href = element.props["data-href"]
@@ -67,6 +66,5 @@ import { isMobile, isBrowser } from "react-device-detect"
       delete element.props.dangerouslySetInnerHTML
     }
   })
-replaceHeadComponents(headComponents); */
-  // replaceHeadComponents(headComponents)
+replaceHeadComponents(headComponents); 
 } 
