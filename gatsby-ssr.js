@@ -47,7 +47,7 @@ import { isMobile, isBrowser } from "react-device-detect"
 
   const headComponents = getHeadComponents()
 
-  /* headComponents.forEach(element => {
+   headComponents.forEach(element => {
     if (element.type === "style" && element.props["data-href"]) {
       element.type = "link"
       element.props.href = element.props["data-href"]
@@ -57,7 +57,7 @@ import { isMobile, isBrowser } from "react-device-detect"
       delete element.props["data-href"]
       delete element.props.dangerouslySetInnerHTML
     }
-  }) */
+  })
   headComponents.sort((a, b) => {
     if (a.props && a.props["data-react-helmet"]) {
         return 0;
