@@ -126,7 +126,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return (
               <Code
                 className={`language-go`}
-                codeString={props.node.code}
+                codeString={props.node.code_go.code}
               />
             )
           },
@@ -134,7 +134,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return (
               <Code
                 className={`language-sql`}
-                codeString={props.node.code}
+                codeString={props.node.code_mysql.code}
               />
             )
           },
@@ -142,7 +142,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return (
               <Code
                 className={`language-tsx`}
-                codeString={props.node.code}
+                codeString={props.node.code_tsx.code}
               />
             )
           },
@@ -150,16 +150,17 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return (
               <Code
                 className={`language-yaml`}
-                codeString={props.node.code}
+                codeString={props.node.code_yaml.code}
               />
             )
           },
 
           code_java: props => {
+            console.log('code_java',props)
             return (
               <Code
                 className={`language-java`}
-                codeString={props.node.code}
+                codeString={props.node.code_java.code}
               />
             )
           },
@@ -168,7 +169,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return (
               <Code
                 className={`language-xml`}
-                codeString={props.node.code}
+                codeString={props.node.code_xml.code}
               />
             )
           },
@@ -177,7 +178,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return (
               <Code
                 className={`language-ruby`}
-                codeString={props.node.code}
+                codeString={props.node.code_ruby.code}
               />
             )
           },
