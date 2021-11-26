@@ -182,7 +182,7 @@ const CookiesConsent = () => {
             This site uses cookies to improve your experience. 
             If you want to learn more about cookies and why we use them, visit
             our{" "}
-            <a className="text-blueNew-custom font-bold" href="https://rudderstack.com/cookie-policy">cookie policy</a>.
+            <a className="text-blueNew-custom cursor-pointer font-bold" href="https://rudderstack.com/cookie-policy">cookie policy</a>.
             &nbsp;We'll assume you're ok with this, but you can opt-out if you wish
             <span aria-hidden="true" className="font-bold text-blueNew-custom self-center mx-2" 
               onClick={() => { 
