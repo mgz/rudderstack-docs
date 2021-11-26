@@ -5,7 +5,7 @@ import AgreementAccordianCard from "./agreement_accordian_card"
 const AgreementContent = props => {
   // console.log("AgreementContent", props)
   return (
-    <div className={`max-w-screen-${props.max_width} mx-auto px-4`}>
+    <div className={`max-w-screen-${props.max_width} mx-auto px-4 agreementContent`}>
       {props.agreement_items.map((row, idx) => {
         return (
           <div

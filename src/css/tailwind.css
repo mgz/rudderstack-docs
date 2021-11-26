@@ -220,7 +220,7 @@ h2.font-bold{
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-div.font-bold{
+.agreementContent div.font-bold{
   margin-top: 20px;
 }
 .ppContent p, .ppContent ul{
