@@ -18,20 +18,36 @@
 // You can delete this file if you're not using it.
 import React from "react"
 import { isMobile, isBrowser } from "react-device-detect"
+const { Helmet } = require("react-helmet")
 
-  
-  export const onRenderBody = ({pathname ,setPostBodyComponents }) => {
-  // if(pathname.includes("careers")){
-  //   setPostBodyComponents([
-  //     <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
-  //     //<script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
-  //   ])
-  // }
-    
+// export const onRenderBody = ({ pathname, setPostBodyComponents }) => {
+//   // if(pathname.includes("careers")){
+//   //   setPostBodyComponents([
+//   //     <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
+//   //     //<script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
+//   //   ])
+//   // }
+// }
+
+export const onRenderBody = (
+  { setHeadComponents, setHtmlAttributes, setBodyAttributes },
+  pluginOptions
+) => {
+  const helmet = Helmet.renderStatic()
+  setHtmlAttributes(helmet.htmlAttributes.toComponent())
+  setBodyAttributes(helmet.bodyAttributes.toComponent())
+  setHeadComponents([
+    helmet.title.toComponent(),
+    helmet.link.toComponent(),
+    helmet.meta.toComponent(),
+    helmet.noscript.toComponent(),
+    helmet.script.toComponent(),
+    helmet.style.toComponent(),
+  ])
 }
 
-//code added to reduce page size 
- export const onPreRenderHTML = ({
+//code added to reduce page size
+export const onPreRenderHTML = ({
   pathname,
   getHeadComponents,
   replaceHeadComponents,
@@ -55,7 +71,7 @@ import { isMobile, isBrowser } from "react-device-detect"
     return 0
   })
 
-    headComponents.forEach(element => {
+  headComponents.forEach(element => {
     if (element.type === "style" && element.props["data-href"]) {
       element.type = "link"
       element.props.href = element.props["data-href"]
@@ -66,5 +82,5 @@ import { isMobile, isBrowser } from "react-device-detect"
       delete element.props.dangerouslySetInnerHTML
     }
   })
-replaceHeadComponents(headComponents); 
-} 
+  replaceHeadComponents(headComponents)
+}
