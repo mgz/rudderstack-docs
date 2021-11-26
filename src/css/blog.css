@@ -95,17 +95,17 @@
   @apply bg-blueNew-midPurple;
   @apply bg-center;
   @apply rounded-xl;
-  @apply w-5;
-  @apply h-5;
+  @apply w-4;
+  @apply h-4;
   @apply top-1;
   @apply left-0;
   @apply text-whiteColor-custom;
   /* @apply pl-0.5; */
   @apply pt-0;
   @apply font-custom;
-  @apply text-tiny;
+  /* @apply text-tiny; */
+  font-size: 10px;
   padding-left: 6px;
-  
 }
 .block-description ol li::before {
   content: counter(item);
