@@ -148,7 +148,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         <main>{children}</main>
         <CookiesConsent />
         <footer
-          className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0 w-full mx-auto"
+          className="bg-darkScheme-textBlack px-4 sm:px-4 text-sm md:pt-0 w-full mx-auto"
           name={"footer-container"}
         >
           <div className="max-w-6xl mx-auto footer-menus-wrap">
@@ -191,7 +191,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             target="_blank"
                             rel="noreferrer"
                             // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                            className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
+                            className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                             onClick={e =>
                               rudderslabTrackOnClick(
                                 "footer-navigation",
@@ -225,7 +225,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             }
                           >
                             <span
-                              className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
+                              className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                               onClick={e =>
                                 rudderslabTrackOnClick(
                                   "footer-navigation",
@@ -255,7 +255,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                       return (
                         <a
                           key={socialitem._key}
-                          className="footer-social-icon bg-seegreen"
+                          className="footer-social-icon bg-darkScheme-textPrimary"
                           rel="noreferrer noopener"
                           aria-label="This is an external link "
                           href={socialitem.social_item_link}
@@ -274,7 +274,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                       return (
                         <a
                           key={socialitem._key}
-                          className="footer-social-icon bg-seegreen"
+                          className="footer-social-icon bg-darkScheme-textPrimary"
                           rel="noreferrer noopener"
                           aria-label="This is an external link "
                           href={socialitem.social_item_link}

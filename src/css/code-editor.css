@@ -111,9 +111,12 @@
   word-break: break-word;
 }
 div.CodeMirror-cursors {
-  visibility: hidden;
+  visibility: visible;
   position: relative;
   z-index: 3;
+}
+.codeBlockRight div.CodeMirror-cursors{
+  visibility: hidden;
 }
 .CodeMirror-cursor {
   border-left: 1px solid white;

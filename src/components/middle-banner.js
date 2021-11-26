@@ -10,14 +10,14 @@ const MiddleBanner = props => {
   const smalldescription = props.smalldescription
   const title = props.title
   const btns = props.addbuttons
-  const isLightTheme = props.is_light_theme ? true : false
+  const isLightTheme = false
   return (
     <>
       <section
         className={`${
           isLightTheme === true
             ? "text-blueNew-midnight"
-            : "bg-black-custom text-white"
+            : "bg-darkScheme-textBlack text-white"
         } 100% pt-10 md:py-28 px-0 sm:px-0`}
       >
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
@@ -89,8 +89,8 @@ const MiddleBanner = props => {
                               }
                               className={
                                 (btn.btnhiglight === true
-                                  ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay hover:text-white"
-                                  : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
+                                  ? "bg-transparent text-darkScheme-textPrimary border border-darkScheme-btnSecondaryBg btn-secondary-lg hover:bg-darkScheme-btnSecondaryBg hover:text-darkScheme-textBlack"
+                                  : "btn-secondary-lg") +
                                 ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
                               }
                               href={btn.btnlink}
@@ -107,7 +107,7 @@ const MiddleBanner = props => {
                                 className={
                                   (btn.btnhiglight === true
                                     ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
-                                    : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
+                                    : "btn-secondary-lg") +
                                   ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
                                 }
                               >

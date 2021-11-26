@@ -74,7 +74,7 @@ const CodeEditor = () => {
                 }, 200)
             },
             (editor, next, timer) => {
-                editor.replaceRange(`"Google Analytics": {"response": "200",\n\t "firstAttemptedAt": "${new Date().toISOString()}"}\n\n`,{line: 4, ch:0}, {line: 5});
+                editor.replaceRange(`Google-Analytics: {"response": "200",\n\t "firstAttemptedAt": "${new Date().toISOString()}"}\n\n`,{line: 4, ch:0}, {line: 5});
                 timer(() => {
                     next();
                 }, 100)
@@ -105,7 +105,7 @@ const CodeEditor = () => {
             threshold: 1.0
         }
 
-        let observer = new IntersectionObserver(() => leftEditorScenes.play(), options);
+        /* let observer = new IntersectionObserver(() => leftEditorScenes.play(), options);
         let target = document.getElementById('code');
         observer.observe(target);
 
@@ -114,7 +114,7 @@ const CodeEditor = () => {
                 leftEditorScenes.pause();
                 rightEditorScenes.pause();
             })
-        }
+        } */
 
     }, [])
 
