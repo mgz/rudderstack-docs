@@ -122,7 +122,66 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             // The component we use to render the actual player
             return <CustomAudioPlayer {...node} />
           },
+          code_go: props => {
+            return (
+              <Code
+                className={`language-go`}
+                codeString={props.node.code_go.code}
+              />
+            )
+          },
+          code_mysql: props => {
+            return (
+              <Code
+                className={`language-sql`}
+                codeString={props.node.code_mysql.code}
+              />
+            )
+          },
+          code_tsx: props => {
+            return (
+              <Code
+                className={`language-tsx`}
+                codeString={props.node.code_tsx.code}
+              />
+            )
+          },
+          code_yaml: props => {
+            return (
+              <Code
+                className={`language-yaml`}
+                codeString={props.node.code_yaml.code}
+              />
+            )
+          },
 
+          code_java: props => {
+            console.log('code_java',props)
+            return (
+              <Code
+                className={`language-java`}
+                codeString={props.node.code_java.code}
+              />
+            )
+          },
+
+          code_xml: props => {
+            return (
+              <Code
+                className={`language-xml`}
+                codeString={props.node.code_xml.code}
+              />
+            )
+          },
+
+          code_ruby: props => {
+            return (
+              <Code
+                className={`language-ruby`}
+                codeString={props.node.code_ruby.code}
+              />
+            )
+          },
           code: props => {
             return (
               <Code
