@@ -17,10 +17,11 @@
 
 // You can delete this file if you're not using it.
 import React from "react"
+import Helmet from 'react-helmet'
 import { isMobile, isBrowser } from "react-device-detect"
 
   
-  export const onRenderBody = ({pathname ,setPostBodyComponents }) => {
+  //export const onRenderBody = ({pathname ,setPostBodyComponents }) => {
   // if(pathname.includes("careers")){
   //   setPostBodyComponents([
   //     <script src="https://boards.greenhouse.io/embed/job_board/js?for=rudderstack"></script>,
@@ -28,26 +29,55 @@ import { isMobile, isBrowser } from "react-device-detect"
   //   ])
   // }
     
-}
+//}
 
 //code added to reduce page size 
- export const onPreRenderHTML = ({
+
+ export const onRenderBody = (
+  { setHeadComponents, setHtmlAttributes, setBodyAttributes },
+  pluginOptions
+) => {
+  const helmet = Helmet.renderStatic()
+  setHtmlAttributes(helmet.htmlAttributes.toComponent())
+  setBodyAttributes(helmet.bodyAttributes.toComponent())
+  setHeadComponents([
+    helmet.title.toComponent(),
+    helmet.link.toComponent(),
+    helmet.meta.toComponent(),
+    helmet.noscript.toComponent(),
+    helmet.script.toComponent(),
+    helmet.style.toComponent(),
+  ])
+}
+
+
+export const onPreRenderHTML = ({
+  getHeadComponents, replaceHeadComponents
+}) => {
+  const headComponents = getHeadComponents()
+
+  headComponents.sort((x, y) => {
+    if (x.props && x.props["data-react-helmet"]) {
+      return -1
+    } else if (y.props && y.props["data-react-helmet"]) {
+      return 1
+    }
+    return 0
+  })
+
+  replaceHeadComponents(headComponents)
+}
+/*  export const onPreRenderHTML = ({
   pathname,
   getHeadComponents,
   replaceHeadComponents,
 }) => {
   // console.log("inlining css for ", pathname, pathname.includes("/integration/"))
-  if (
-    process.env.NODE_ENV !== "production" ||
-    !pathname.includes("/integration/")
-  ) {
-    return
-  }
   // console.log("inlining css for ", pathname)
 
   const headComponents = getHeadComponents()
 
-  /* headComponents.forEach(element => {
+   headComponents.forEach(element => {
     if (element.type === "style" && element.props["data-href"]) {
       element.type = "link"
       element.props.href = element.props["data-href"]
@@ -57,13 +87,13 @@ import { isMobile, isBrowser } from "react-device-detect"
       delete element.props["data-href"]
       delete element.props.dangerouslySetInnerHTML
     }
-  }) */
+  })
   headComponents.sort((a, b) => {
     if (a.props && a.props["data-react-helmet"]) {
         return 0;
     }
     return 1;
 });
+
 replaceHeadComponents(headComponents);
-  // replaceHeadComponents(headComponents)
-} 
+}  */
