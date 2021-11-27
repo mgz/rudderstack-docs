@@ -19,6 +19,7 @@
 import React from "react"
 import Helmet from 'react-helmet'
 import { isMobile, isBrowser } from "react-device-detect"
+const { Helmet } = require("react-helmet")
 
   
   //export const onRenderBody = ({pathname ,setPostBodyComponents }) => {
@@ -76,6 +77,14 @@ export const onPreRenderHTML = ({
   // console.log("inlining css for ", pathname)
 
   const headComponents = getHeadComponents()
+  headComponents.sort((x, y) => {
+    if (x.props && x.props["data-react-helmet"]) {
+      return -1
+    } else if (y.props && y.props["data-react-helmet"]) {
+      return 1
+    }
+    return 0
+  })
 
    headComponents.forEach(element => {
     if (element.type === "style" && element.props["data-href"]) {
