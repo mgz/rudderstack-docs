@@ -17,7 +17,6 @@
 
 // You can delete this file if you're not using it.
 import React from "react"
-import Helmet from 'react-helmet'
 import { isMobile, isBrowser } from "react-device-detect"
 const { Helmet } = require("react-helmet")
 
