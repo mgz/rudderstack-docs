@@ -919,3 +919,14 @@ top: -60px;
 .testimonial-client-image{
   bottom: -60px;
 }
+.logo-slider{
+  display: block;
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.52, 0.01, 0, 1);
+}
+.logo-list{
+  height: 100px;
+}
+.logo-item img{
+  filter: brightness(0) invert(1);
+}

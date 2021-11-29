@@ -99,22 +99,32 @@ const CodeEditor = () => {
             }
         ]);
 
-        let options = {
-            root: document.getElementById('codeEditorBlock'),
-            rootMargin: '0px',
-            threshold: 1.0
+       let el = document.getElementById('codeEditorBlock');
+
+       function isInViewPort(element) {
+        // Get the bounding client rectangle position in the viewport
+            let bounding = element.getBoundingClientRect();
+
+            // Checking part. Here the code checks if it's *fully* visible
+            // Edit this part if you just want a partial visibility
+            if (
+                bounding.top >= 0 &&
+                bounding.left >= 0 &&
+                bounding.right <= (window.innerWidth || document.documentElement.clientWidth) &&
+                bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            ) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
-        /* let observer = new IntersectionObserver(() => leftEditorScenes.play(), options);
-        let target = document.getElementById('code');
-        observer.observe(target);
+        window.addEventListener('scroll', function (event) {
+            if(isInViewPort(el)){
+                leftEditorScenes.play();
+            }
+        }, false);
 
-        if(window !== undefined){
-            window.scroll(() => {
-                leftEditorScenes.pause();
-                rightEditorScenes.pause();
-            })
-        } */
 
     }, [])
 

@@ -47,12 +47,14 @@ const CenteredAlignedTitleWithYoutube = props => {
             <div className="w-9/12 mx-auto">
               <h3 className="text-darkScheme-btnSecondaryBg uppercase mb-5 text-2xl font-bold">Read the Blog</h3>
               <p className="text-darkScheme-textPrimary">Read the latest on solving data engineering problems, big picture data industry analysis, and product updates</p>
+              <a href="#" className="learn-more mt-2 text-darkScheme-textPrimary font-bold block"><span className="learn-more-text">Learn More</span><span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg">&gt;</span></a>
             </div>
           </div>
           <div className="w-1/2">
             <div className="w-9/12 mx-auto">
               <h3 className="text-darkScheme-btnSecondaryBg uppercase mb-5 text-2xl font-bold">Explore the platform</h3>
               <p className="text-darkScheme-textPrimary">Control all your customer data and securely send it anywhere</p>
+              <a href="#" className="learn-more mt-2 text-darkScheme-textPrimary font-bold block"><span className="learn-more-text">Learn More</span><span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg">&gt;</span></a>
             </div>
           </div>
         </div>
