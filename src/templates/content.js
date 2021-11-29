@@ -36,7 +36,7 @@ const Singleblog = ({ data, location, ...props }) => {
   const blogAuthors = data.blog.blog_authors
   // const maintitle = props.maintitle
   const viewalltext = "See all posts"
-  const viewallpostslink = "https://twitter-linkedin--rudderstack-sg.netlify.app/blog/"
+  const viewallpostslink = "https://rudderstack.com/blog/"
   const viewexternallink = false
   // const [items] = useState([1, 2]); {/*Array Blog Author For Test Purpose*/ }
 
@@ -44,7 +44,7 @@ const Singleblog = ({ data, location, ...props }) => {
   blogAuthors.forEach(row => {
     author_names += (author_names.length > 0 ? ", " : "") + row.author_name
   })
-  const blog_url = `https://twitter-linkedin--rudderstack-sg.netlify.app/blog/${blog.slug.current}/`;
+  const blog_url = `https://rudderstack.com/blog/${blog.slug.current}/`
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
@@ -59,12 +59,21 @@ const Singleblog = ({ data, location, ...props }) => {
         {/* added by Hari on 2021-06-21 to show share card across twitter, linkedin and facebook */}
         {location && <meta property="og:url" content={location.href} />}
         <meta property="og:description" content={blog.meta_desc} />
-        {blog.blogdate && <meta name ="publish_date" property="article:published_time" content={blog.blogdate} />}
+        {blog.blogdate && (
+          <meta
+            name="publish_date"
+            property="article:published_time"
+            content={blog.blogdate}
+          />
+        )}
         <meta name="author" property="article:author" content={author_names} />
         <meta property="og:image" content={blog.blog_image.asset.url} />
         <meta property="twitter:card" content="summary" />
         <meta property="twitter:site" content="@Rudderlabs" />
-        <meta property="twitter:title" content={blog.meta_title || blog.title} />
+        <meta
+          property="twitter:title"
+          content={blog.meta_title || blog.title}
+        />
         <meta property="twitter:description" content={blog.meta_desc} />
         <meta property="twitter:image" content={blog.blog_image.asset.url} />
         <meta property="twitter:image:height" content="65" />
@@ -123,22 +132,21 @@ const Singleblog = ({ data, location, ...props }) => {
       </div> */}
       <div className="block-description relative pt-4 max-w-5xl m-auto">
         {/*Blog Content*/}
-        <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center top-0 social-icon_blog">
-          <TwitterShareButton
-            url={blog_url}
-          >
-            {/* <a className="block" href="#"> */}
-            <StaticImage
-              src={"../images/icon-twitter.svg"}
-              placeholder="tracedSVG"
-              className="text-blueNew-midnight"
-              alt="twitter"
-              width={40}
-              height={40}
-            />
-            {/* </a> */}
-          </TwitterShareButton>
-          {/* <FacebookShareButton
+        <div className="social-icon-sticky">
+          <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center social-icon_blog top-0">
+            <TwitterShareButton url={blog_url}>
+              {/* <a className="block" href="#"> */}
+              <StaticImage
+                src={"../images/icon-twitter.svg"}
+                placeholder="tracedSVG"
+                className="text-blueNew-midnight"
+                alt="twitter"
+                width={40}
+                height={40}
+              />
+              {/* </a> */}
+            </TwitterShareButton>
+            {/* <FacebookShareButton
             url={`https://rudderstack.com/blog/${blog.slug.current}/`}
           >
             <span className="my-3 block">
@@ -151,19 +159,18 @@ const Singleblog = ({ data, location, ...props }) => {
               />
             </span>
           </FacebookShareButton> */}
-          <LinkedinShareButton
-            url={blog_url} mini= 'false' title={blog.title}
-          >
-            <span className="block">
-              <StaticImage
-                src={"../images/icon-linkedin.svg"}
-                placeholder="tracedSVG"
-                alt="linkdin"
-                width={40}
-                height={40}
-              />
-            </span>
-          </LinkedinShareButton>
+            <LinkedinShareButton url={blog_url} mini="false" title={blog.title}>
+              <span className="block">
+                <StaticImage
+                  src={"../images/icon-linkedin.svg"}
+                  placeholder="tracedSVG"
+                  alt="linkdin"
+                  width={40}
+                  height={40}
+                />
+              </span>
+            </LinkedinShareButton>
+          </div>
         </div>
         <PortableText blocks={blog._rawDescription} />
         <>
