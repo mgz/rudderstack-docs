@@ -31,9 +31,9 @@ const { Helmet } = require("react-helmet")
     
 //}
 
-//code added to reduce page size 
+//To reduce page size and to address the linkedin and tweet share issues.
 
- export const onRenderBody = (
+/*  export const onRenderBody = (
   { setHeadComponents, setHtmlAttributes, setBodyAttributes },
   pluginOptions
 ) => {
@@ -48,7 +48,7 @@ const { Helmet } = require("react-helmet")
     helmet.script.toComponent(),
     helmet.style.toComponent(),
   ])
-}
+} */
 
 
 export const onPreRenderHTML = ({
