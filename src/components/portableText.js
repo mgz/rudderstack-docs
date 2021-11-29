@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 import clientConfig from "../../client-config"
 import BasePortableText from "@sanity/block-content-to-react"
 // import serializers from "./serializers"
@@ -35,7 +35,33 @@ const AuthorReference = ({ node }) => {
 
 const PortableText = ({ blocks, className, trackSectionHeader }) => {
   useEffect(() => {
-    import("@justinribeiro/lite-youtube");
+    import("@justinribeiro/lite-youtube")
+
+    let tempAnchors = []
+    document.querySelectorAll("main a").forEach(anc => {
+      if (anc.getAttribute("href") && anc.getAttribute("href").includes("#"))
+        tempAnchors.push(anc)
+    })
+
+    tempAnchors.forEach(a => {
+      a.addEventListener("click", function (e) {
+        e.preventDefault()
+        let href = this.getAttribute("href")
+        href = href.substring(href.indexOf("#") + 1, href.length)
+        let elem =
+          document.getElementById(href) ||
+          document.querySelector(
+            "a[name=" + href.substring(1, href.length) + "]"
+          )
+        //gets Element with an id of the link's href
+        //or an anchor tag with a name attribute of the href of the link without the #
+        window.scroll({
+          top: elem.offsetTop - 92,
+          left: 0,
+          behavior: "smooth",
+        })
+      })
+    })
   }, [])
   return (
     <BasePortableText
@@ -74,11 +100,14 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
                     )
                   }
                 /> */}
-                <div onClick={event =>
+                <div
+                  onClick={event =>
                     rudderslabTrackOnYoutubeVideoPlayback(
                       trackSectionHeader,
                       id
-                    )}>
+                    )
+                  }
+                >
                   <lite-youtube
                     videoid={id}
                     class="video"
@@ -93,8 +122,73 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             // The component we use to render the actual player
             return <CustomAudioPlayer {...node} />
           },
+          code_go: props => {
+            return (
+              <Code
+                className={`language-go`}
+                codeString={props.node.code_go.code}
+              />
+            )
+          },
+          code_mysql: props => {
+            return (
+              <Code
+                className={`language-sql`}
+                codeString={props.node.code_mysql.code}
+              />
+            )
+          },
+          code_tsx: props => {
+            return (
+              <Code
+                className={`language-tsx`}
+                codeString={props.node.code_tsx.code}
+              />
+            )
+          },
+          code_yaml: props => {
+            return (
+              <Code
+                className={`language-yaml`}
+                codeString={props.node.code_yaml.code}
+              />
+            )
+          },
+
+          code_java: props => {
+            console.log('code_java',props)
+            return (
+              <Code
+                className={`language-java`}
+                codeString={props.node.code_java.code}
+              />
+            )
+          },
+
+          code_xml: props => {
+            return (
+              <Code
+                className={`language-xml`}
+                codeString={props.node.code_xml.code}
+              />
+            )
+          },
+
+          code_ruby: props => {
+            return (
+              <Code
+                className={`language-ruby`}
+                codeString={props.node.code_ruby.code}
+              />
+            )
+          },
           code: props => {
-            return (<Code className={`language-${props.node.language}`} codeString={props.node.code} />)
+            return (
+              <Code
+                className={`language-${props.node.language}`}
+                codeString={props.node.code}
+              />
+            )
           },
           // videoEmbed: ({ node }) => <ReactPlayer className="mt-6 mb-6" url={node.url} controls />,
           // instagram: ({ node }) => {

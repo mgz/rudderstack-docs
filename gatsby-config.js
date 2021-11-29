@@ -18,7 +18,7 @@ module.exports = {
     siteTitle: "RudderStack",
     defaultTitle: "Documentation - RudderStack",
     siteTitleShort: "RudderStack",
-    siteAuthor: "RudderStack"
+    siteAuthor: "RudderStack",
   },
   pathPrefix: "/docs",
   plugins: [
@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-preconnect",
       options: {
-        domains: ["https://rudderstack.com","https://localhost:8000"],
+        domains: ["https://rudderstack.com", "https://localhost:8000"],
       },
     },
     {
@@ -51,13 +51,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
-      options: {
-        siteUrl: process.env.RS_SITE_URL,
-      },
-    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -73,8 +66,8 @@ module.exports = {
       options: {
         defaults: {
           formats: [`auto`, `webp`],
-        }
-      }
+        },
+      },
     },
     {
       resolve: `gatsby-source-sanity`,
@@ -95,7 +88,7 @@ module.exports = {
         graphqlTag: "default",
       },
     },
-   {
+    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
@@ -176,13 +169,12 @@ module.exports = {
         ],
       },
     },
-   {
+    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.RS_GATSBY_ALGOLIA_APIKEY,
-        indexName:
-          process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs",
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_PREFIX + "_gatsby_docs",
         queries: require("./src/utils/docs-algolia"),
         enablePartialUpdates: true,
         matchFields: [
@@ -191,7 +183,7 @@ module.exports = {
           "sectionTitle",
           "sectionId",
           "sectionContent",
-          "idx"
+          "idx",
         ],
       },
     },
@@ -212,14 +204,14 @@ module.exports = {
     `gatsby-plugin-image`,
     /* `gatsby-plugin-sharp`, */
     `gatsby-transformer-sharp`,
-     {
+    {
       resolve: `gatsby-plugin-rudderstack`,
       options: {
         prodKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //devKey: process.env.RS_PRODUCTION_WRITE_KEY,
         //host: `https://rudderstack-dataplane.rudderstack.com`,
         loadType: "defer",
-        trackPage: true,
+        trackPage: false,
         // loadAsync: true,
 
         delayLoad: false,
@@ -369,8 +361,15 @@ module.exports = {
       },
     },
     "gatsby-source-sanity-transform-images",
-    `gatsby-plugin-meta-redirect`,
     "gatsby-plugin-preload-fonts",
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: process.env.RS_SITE_URL,
+      },
+    },
+    `gatsby-plugin-meta-redirect`,
     // make sure to put last in the array
     // {
     //   resolve: `gatsby-plugin-remote-images`,

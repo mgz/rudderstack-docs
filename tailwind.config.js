@@ -4,8 +4,8 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     minHeight: {
-      '0': '8rem'
-     },
+      0: "8rem",
+    },
     letterSpacing: {
       "tight-2": "-.04em",
     },
@@ -26,6 +26,7 @@ module.exports = {
         magenta: "#6e6ea4",
         midnight_sub: "#2e2e7c",
         cardBackground: "#f5f9f9",
+        midPurple: "#7F66C8",
       },
       purpleNew: {
         custom: "#6e6ea4",

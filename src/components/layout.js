@@ -92,10 +92,15 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
   // console.log("path", location, showExplicitGradient)
   // let diableGradient = false
+
+  /* Disabling gradient for pages */
   const [diableGradient] = React.useState(
     location &&
       (location.pathname.startsWith("/404/") ||
         location.pathname.startsWith("/blog/") ||
+        location.pathname.startsWith("/privacy-policy/") ||
+        location.pathname.startsWith("/privacy-policy-legal/") ||
+        location.pathname.startsWith("/cookie-policy/") ||
         location.pathname.startsWith("/customers/"))
       ? true
       : false
