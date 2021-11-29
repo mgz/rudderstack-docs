@@ -32,8 +32,5 @@ export const onPreRenderHTML = ({
 
   replaceHeadComponents(headComponents)
 }
-else {
-  return
-}
 }
  
