@@ -127,7 +127,7 @@
 .social-icon-sticky {
   position: sticky;
   top: 80px;
-  z-index: 40;
+  z-index: 30;
   background-color: white;
   padding-bottom: 6px;
 }

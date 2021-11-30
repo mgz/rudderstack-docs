@@ -4,13 +4,9 @@ export const onPreRenderHTML = ({
   replaceHeadComponents,
 }) => {
   if (
-    process.env.NODE_ENV !== "production" ||
-    !pathname.includes("/integration/") ||
-    !pathname.includes("/blog/")
+    pathname.includes("/integration/") ||
+    pathname.includes("/blog/")
   ) {
-    return
-  }
-
   const headComponents = getHeadComponents()
 
   headComponents.forEach(element => {
@@ -35,5 +31,6 @@ export const onPreRenderHTML = ({
   })
 
   replaceHeadComponents(headComponents)
+}
 }
  
