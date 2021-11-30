@@ -23,13 +23,13 @@ module.exports = {
         midnight: "#17176E",
         midnight_v2: "#10174C",
         eastbay: "#3F3C7F",
-        magenta: "#6e6ea4",
+        magenta: "#7F66C8",
         midnight_sub: "#2e2e7c",
         cardBackground: "#f5f9f9",
         midPurple: "#7F66C8",
       },
       purpleNew: {
-        custom: "#6e6ea4",
+        custom: "#7F66C8",
         gigas: "#4E3B97",
       },
       red: {
@@ -112,6 +112,7 @@ module.exports = {
         "3xl-4": "38px",
         "4xl": "40px",
         "5xl": "50px",
+        "5xl-1": "54px",
         "5xl-2": "60px",
         "6xl": "64px",
         "7xl": "5rem",

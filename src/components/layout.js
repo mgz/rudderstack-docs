@@ -100,6 +100,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         location.pathname.startsWith("/privacy-policy/") ||
         location.pathname.startsWith("/privacy-policy-legal/") ||
         location.pathname.startsWith("/cookie-policy/") ||
+        location.pathname.startsWith("/product/") ||
         location.pathname.startsWith("/customers/"))
       ? true
       : false
