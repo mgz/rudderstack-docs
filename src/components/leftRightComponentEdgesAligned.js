@@ -33,10 +33,11 @@ const LeftRightComponentEdgesAligned = props => {
                   }`}
                 >
                   <div className="wr-image-icon-block flex items-center justify-center">
-                    {/* <Image
-                      src={row.imageVideoConditionBlock.imageoption.asset.ref}
-                    /> */}
-                    <img src={warehouseWhite} />
+                    <Image
+                      props={
+                        row.imageVideoConditionBlock.imageoption.asset._ref
+                      }
+                    />
                   </div>
                 </div>
                 <div

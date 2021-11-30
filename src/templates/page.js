@@ -14,7 +14,7 @@ import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLef
 import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
 import CodeEditor from "../components/CodeEditor"
 import LeftRightComponentEdgesAligned from "../components/leftRightComponentEdgesAligned"
-
+import LeftRightMiddleBanner from "../components/leftRightMiddleBanner"
 // import SEO from "../components/seo"
 import Layout from "../components/layout"
 
@@ -37,6 +37,7 @@ const RightSideHiglightedContent = loadable(() =>
 
 const OurLogo = loadable(() => import("../components/ourlogo"))
 const Testimonial = loadable(() => import("../components/testimonial"))
+const TestimonialV2 = loadable(() => import("../components/testimonial_v2"))
 /* const ThreeCardsWithTitleLeftAligned = loadable(() => import("../components/threeCardsWithTitleLeftAligned"))
 const CenteredAlignedTitleWithYoutube = loadable(() => import("../components/CenteredAlignedTitleWithYoutube")) */
 
@@ -109,13 +110,6 @@ const Page = props => {
         case "tabsection":
           el = <Tabs key={c._key} {...c} />
           break
-        /* case "leftrightcontentimagesection":
-          el = (
-            <div className="bg-blueNew-midnight_v2 100% pt-32" key={c._key}>
-              <LeftRightImgCnt applyGradientColorTheme={true} {...c} />
-            </div>
-          )
-          break */
         case "latestblogsection":
           el = <LatestBlog key={c._key} {...c} />
           break
@@ -146,15 +140,13 @@ const Page = props => {
           el = <CodeEditor key={c._key} {...c} />
           break
         case "three_card_with_title":
-          el = (
-            <div>
-              <ThreeCardsWithTitleLeftAligned key={c._key} {...c} />
-              <CodeEditor />
-            </div>
-          )
+          el = <ThreeCardsWithTitleLeftAligned key={c._key} {...c} />
           break
         case "centered_aligned_title_with_youtube":
           el = <CenteredAlignedTitleWithYoutube key={c._key} {...c} />
+          break
+        case "left_right_middle_banner":
+          el = <LeftRightMiddleBanner key={c._key} {...c} />
           break
         case "ref_section_testimonials":
           l_section_info = data.section_testimonials.edges.find(
@@ -162,7 +154,7 @@ const Page = props => {
           )
 
           el = (
-            <Testimonial
+            <TestimonialV2
               key={c._key}
               applyGradientColorTheme={false}
               {...l_section_info.node._rawTestimonials}
