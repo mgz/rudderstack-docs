@@ -142,7 +142,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
       <div
         id="main-container"
-        className={location.pathname === '/' ? 'hero-section' : 'gradient-disable'}
+        className={location && location.pathname === '/' ? 'hero-section' : 'gradient-disable'}
       >
         {/* <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />
