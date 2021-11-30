@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import { Helmet } from "react-helmet"
@@ -13,16 +13,21 @@ import GraphQLErrorList from "../components/graphql-error-list"
 import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
 import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
 import CodeEditor from "../components/CodeEditor"
-
+import LeftRightComponentEdgesAligned from "../components/leftRightComponentEdgesAligned"
+import LeftRightMiddleBanner from "../components/leftRightMiddleBanner"
 // import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 // const Hero = loadable(() => import("../components/hero"))
 // const Tabs = loadable(() => import("../components/tabs"))
-const LeftRightImgCnt = loadable(() => import("../components/left-right-image-content"))
+const LeftRightImgCnt = loadable(() =>
+  import("../components/left-right-image-content")
+)
 // const LatestBlog = loadable(() => import("../components/latest-blog"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
-const RightSideHiglightedContent = loadable(() => import("../components/rightSideHiglightedContent"))
+const RightSideHiglightedContent = loadable(() =>
+  import("../components/rightSideHiglightedContent")
+)
 // const FreeText = loadable(() => import("../components/freeText"))
 // const GraphQLErrorList = loadable(() =>
 //   import("../components/graphql-error-list")
@@ -32,6 +37,7 @@ const RightSideHiglightedContent = loadable(() => import("../components/rightSid
 
 const OurLogo = loadable(() => import("../components/ourlogo"))
 const Testimonial = loadable(() => import("../components/testimonial"))
+const TestimonialV2 = loadable(() => import("../components/testimonial_v2"))
 /* const ThreeCardsWithTitleLeftAligned = loadable(() => import("../components/threeCardsWithTitleLeftAligned"))
 const CenteredAlignedTitleWithYoutube = loadable(() => import("../components/CenteredAlignedTitleWithYoutube")) */
 
@@ -46,15 +52,14 @@ export const query = graphql`
   }
 `
 
-
 // The `threshold` variable sets what portion of the element needs to be
 // visible before it fires. 0 = none, 1 = the entire thing. See
 // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 
 const Page = props => {
-  const { data, errors } = props;
-
-  const halfPage = useRef();
+  const { data, errors } = props
+  console.log("data", data)
+  const halfPage = useRef()
 
   if (errors) {
     return (
@@ -105,13 +110,6 @@ const Page = props => {
         case "tabsection":
           el = <Tabs key={c._key} {...c} />
           break
-        /* case "leftrightcontentimagesection":
-          el = (
-            <div className="bg-blueNew-midnight_v2 100% pt-32" key={c._key}>
-              <LeftRightImgCnt applyGradientColorTheme={true} {...c} />
-            </div>
-          )
-          break */
         case "latestblogsection":
           el = <LatestBlog key={c._key} {...c} />
           break
@@ -135,6 +133,12 @@ const Page = props => {
             <Testimonial key={c._key} applyGradientColorTheme={true} {...c} />
           )
           break
+        case "left_right_comp_edges_aligned":
+          el = <LeftRightComponentEdgesAligned key={c._key} {...c} />
+          break
+        case "code_edit_with_title":
+          el = <CodeEditor key={c._key} {...c} />
+          break
         case "three_card_with_title":
           el = (<div key={c._key}>
             <ThreeCardsWithTitleLeftAligned {...c} />
@@ -144,13 +148,16 @@ const Page = props => {
         case "centered_aligned_title_with_youtube":
           el = <CenteredAlignedTitleWithYoutube key={c._key} {...c} />
           break
+        case "left_right_middle_banner":
+          el = <LeftRightMiddleBanner key={c._key} {...c} />
+          break
         case "ref_section_testimonials":
           l_section_info = data.section_testimonials.edges.find(
             kl => kl.node._id === c._ref
           )
 
           el = (
-            <Testimonial
+            <TestimonialV2
               key={c._key}
               applyGradientColorTheme={false}
               {...l_section_info.node._rawTestimonials}
@@ -191,7 +198,7 @@ const Page = props => {
 
   return (
     <Layout location={props.location}>
-      <Helmet htmlAttributes={{ lang: 'en' }}>
+      <Helmet htmlAttributes={{ lang: "en" }}>
         <meta name="description" content={data.page.meta_desc} />
 
         <title>{data.page.meta_title || data.page.title}</title>

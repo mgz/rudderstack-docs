@@ -42,7 +42,7 @@ const MainNavigationMenuLink = props => {
               <div
                 className={`sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-md  lg:rounded-2xl py-1 lg:py-0 z-40  mx-auto ${
                   i >= 3 ? "submenu-align" : ""
-                } bg-whiteColor-custom lg:place-items-left ${
+                } lg:place-items-left ${
                  props.currMenuIndex === i ? `flex` : `flex hidden`
                }
                overflow-y-auto lg:overflow-hidden h-80 lg:h-64
@@ -63,7 +63,7 @@ const MainNavigationMenuLink = props => {
                               : "lg:border-grayColor-lighter-2x lg:border-r"
                           } `}
                         >
-                          <div className="flex flex-row lg:flex-col text-blueNew-midnight ">
+                          <div className="flex flex-row lg:flex-col text-darkScheme-textPrimary ">
                             <div className="mb-4 px-4 lg:px-12 w-18">
                               {menuGroup.group_icon && (
                                 <Image
@@ -85,7 +85,7 @@ const MainNavigationMenuLink = props => {
                                       return (
                                         <li
                                           key={j}
-                                          className="text-xs font-custom py-1 lg:py-2 font-bold hover:bg-blueNew-lighter px-4 lg:px-12"
+                                          className="text-xs font-custom py-1 lg:py-2 font-bold hover:bg- px-4 lg:px-12"
                                         >
                                           <a
                                             className={`border-b border-solid border-transparent`}

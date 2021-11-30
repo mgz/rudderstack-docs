@@ -1,8 +1,8 @@
 // test commit for testing build status and slack integration
-import React from "react";
-import { graphql } from "gatsby";
-import Errors from "../components/errors";
-import Page from "../templates/page";
+import React from "react"
+import { graphql } from "gatsby"
+import Errors from "../components/errors"
+import Page from "../templates/page"
 
 export const query = graphql`
   query FrontpageQuery {
@@ -54,16 +54,16 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
 const IndexPage = props => {
-  const { data, errors } = props;
+  const { data, errors, location } = props
 
   if (errors) {
-    return <Errors errors={errors} />;
+    return <Errors errors={errors} />
   }
 
-  return <Page data={data} />;
-};
+  return <Page data={data} location={location} />
+}
 
-export default IndexPage;
+export default IndexPage

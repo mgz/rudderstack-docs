@@ -11,6 +11,7 @@ import { StaticImage } from "gatsby-plugin-image"
 //import loadable from "@loadable/component";
 import { rudderslabTrackOnClick } from "../utils/common"
 import { isMobile, isTablet, isBrowser } from "react-device-detect"
+import Image from "./image"
 /* const LottieAnim = React.lazy(() =>
   import("../animations/homepage-animation-v2")
 ) */
@@ -31,27 +32,31 @@ function Hero(props) {
   //   })
   //   return () => anim.destroy() // optional clean up for unmounting
   // }, [])
-  let animationDelay = 2500;
+  let animationDelay = 2500
 
   let switchWord = (oldWord, newWord) => {
-		oldWord.classList.remove('is-visible');
-    oldWord.classList.add('is-hidden');
-		newWord.classList.remove('is-hidden');
-    newWord.classList.add('is-visible');
-	}
+    oldWord.classList.remove("is-visible")
+    oldWord.classList.add("is-hidden")
+    newWord.classList.remove("is-hidden")
+    newWord.classList.add("is-visible")
+  }
 
-  let hideWord = (word) => {
-		let nextWord = takeNext(word);
-    switchWord(word, nextWord);
-    setTimeout(function(){ hideWord(nextWord) }, animationDelay);
-	}
+  let hideWord = word => {
+    let nextWord = takeNext(word)
+    switchWord(word, nextWord)
+    setTimeout(function () {
+      hideWord(nextWord)
+    }, animationDelay)
+  }
 
-  let takeNext = (word) => {
-		return (word.nextElementSibling) !== null ? word.nextElementSibling : word.parentNode.children[0];
-	}
+  let takeNext = word => {
+    return word.nextElementSibling !== null
+      ? word.nextElementSibling
+      : word.parentNode.children[0]
+  }
 
-  let animateHeadline = (headlines) => {
-		let duration = animationDelay;
+  let animateHeadline = headlines => {
+    let duration = animationDelay
     /* let words = document.querySelectorAll('.cd-words-wrapper span'),
     width = 0;
     console.log('Words', words);
@@ -60,10 +65,11 @@ function Hero(props) {
         if (wordWidth > width) width = wordWidth;
     });
     document.querySelector('.cd-words-wrapper').style.width = width; */
-			//trigger animation
-    setTimeout(function(){ hideWord(document.getElementsByClassName('is-visible')[0]) }, duration);
+    //trigger animation
+    setTimeout(function () {
+      hideWord(document.getElementsByClassName("is-visible")[0])
+    }, duration)
   }
-
 
   useEffect(() => {
     // console.log("isMobile,isTablet,isBrowser", isMobile, isTablet, isBrowser)
@@ -79,10 +85,10 @@ function Hero(props) {
   }, [])
 
   useEffect(() => {
-    animateHeadline(document.querySelector('.cd-headline'));
+    animateHeadline(document.querySelector(".cd-headline"))
     if (showAnimation) {
     }
-    document.documentElement.classList.add('dark')
+    document.documentElement.classList.add("dark")
   }, [showAnimation])
 
   return (
@@ -94,20 +100,26 @@ function Hero(props) {
       <div className="flex flex-col items-center md:gap-4 xl:gap-4 justify-center mx-auto lg:flex-row lg:p-0">
         <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
           <h1 className="mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight cd-headline text-darkScheme-textPrimary">
-            {/* {props.herobannertitle} */}
-            All your customer data pipelines in one platform
+            {props.herobannertitle}
+            {/* All your customer data pipelines in one platform */}
           </h1>
           {/* <PortableText
             blocks={props.herobannercontent}
             trackSectionHeader={props.herobannertitle}
           /> */}
           <p className="cd-headline font-bold text-darkScheme-textPrimary">
-            <span className="cd-words-unchanged">Effortlessly sync data into and out of your <br></br></span>
+            <span className="cd-words-unchanged">
+              {props.word_switch_content.title}
+              <br></br>
+            </span>
             <span className="cd-words-wrapper">
-                <span className="is-visible">data warehouse</span>
-                <span>data lake</span>
-                <span>product tools</span>
-                <span>marketing tools</span>
+              {props.word_switch_content.word_switch_contents.map((rr, idx) => {
+                return (
+                  <span className={`${idx === 0 ? "is-visible" : ""}`}>
+                    {rr}
+                  </span>
+                )
+              })}
             </span>
           </p>
           <div className="relative block sm:flex mt-12">
@@ -185,11 +197,15 @@ function Hero(props) {
               <div id="lottie" />
             </div> */}
             <div className={`block`}>
-              <StaticImage
+              <Image
+                props={props.herobannerimage.asset._ref}
+                classes="w-full"
+              />
+              {/* <StaticImage
                 src="../images/hero-section-home.png"
                 alt="RudderStack"
                 placeholder="tracedSVG"
-              />
+              /> */}
             </div>
             {/* <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
 
