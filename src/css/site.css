@@ -1,6 +1,6 @@
 :root {
-  --primary: #ffffff;
-  --secondary: #D692F6;
+  --primary: #17176e;
+  --secondary: #4e4e4e;
   --darkblue: #10174c;
   --dark: #000;
   --blue: #0066ff;
@@ -701,12 +701,15 @@ body {
   height: 60vh;
   max-height: 460px;
 }
-.header-wrapper{
+.header-container{
   background: radial-gradient(246.91% 449.78% at -0.59% 6.73%, rgba(8, 15, 32, 0.8) 0%, rgba(255, 255, 255, 0.02) 100%);
   /* Transparent_3D_Look */
   backdrop-filter: blur(10px);
   /* Note: backdrop-filter has minimal browser support */
     border-radius: 0px 0px 14px 14px;
+}
+.main-logo img{
+  filter: brightness(0) invert(1);
 }
 .testimonials {
   position: relative;
@@ -777,9 +780,6 @@ top: -60px;
   vertical-align: top;
   position: relative;
   display: inline-block;
-}
-.cd-words-unchanged{
-  color: var(--primary);
 }
 .cd-words-wrapper span{
   display: inline-block;

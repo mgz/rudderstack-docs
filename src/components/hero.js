@@ -93,7 +93,7 @@ function Hero(props) {
       </Helmet> */}
       <div className="flex flex-col items-center md:gap-4 xl:gap-4 justify-center mx-auto lg:flex-row lg:p-0">
         <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-          <h1 className="text-primary mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight cd-headline">
+          <h1 className="mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight cd-headline text-darkScheme-textPrimary">
             {/* {props.herobannertitle} */}
             All your customer data pipelines in one platform
           </h1>
@@ -101,7 +101,7 @@ function Hero(props) {
             blocks={props.herobannercontent}
             trackSectionHeader={props.herobannertitle}
           /> */}
-          <p className="cd-headline font-bold">
+          <p className="cd-headline font-bold text-darkScheme-textPrimary">
             <span className="cd-words-unchanged">Effortlessly sync data into and out of your <br></br></span>
             <span className="cd-words-wrapper">
                 <span className="is-visible">data warehouse</span>

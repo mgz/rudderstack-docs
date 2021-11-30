@@ -238,7 +238,7 @@ function OurLogo(props) {
         <div
           className={`flex w-full justify-center`}
         >
-          <h3 className="my-4 text-4xl text-primary font-bold leading-8	md:leading-10 text-center normal-case md:mx-0 mx-auto">
+          <h3 className="my-4 text-4xl text-darkScheme-textPrimary font-bold leading-8	md:leading-10 text-center normal-case md:mx-0 mx-auto">
             {/* {maintitle} */}
             11,000+ sites and apps run RudderStack
           </h3>
@@ -273,8 +273,8 @@ function OurLogo(props) {
                   <Image
                       classes="object-contain h-full w-auto"
                       props={logoimage.asset._ref}
-                      width="210"
-                      height="40"
+                      width="144"
+                      height="50"
                     />
                 </li>
               )

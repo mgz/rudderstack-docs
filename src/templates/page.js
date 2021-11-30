@@ -136,8 +136,8 @@ const Page = props => {
           )
           break
         case "three_card_with_title":
-          el = (<div>
-            <ThreeCardsWithTitleLeftAligned key={c._key} {...c} />
+          el = (<div key={c._key}>
+            <ThreeCardsWithTitleLeftAligned {...c} />
             <CodeEditor />
             </div>)
           break

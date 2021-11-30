@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+import React, {useEffect} from "react"
 import PropTypes from "prop-types"
 
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -92,7 +92,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
   // console.log("path", location, showExplicitGradient)
   // let diableGradient = false
-
+   let pathName = '';
   /* Disabling gradient for pages */
   const [diableGradient] = React.useState(
     location &&
@@ -121,6 +121,10 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
   //   // diableGradient = true
   // }
+  useEffect(() => {
+    pathName = typeof(window) !== undefined ? window.location.pathname : ''
+  }, [])
+
   return (
     <React.Fragment>
       {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection &&
@@ -142,7 +146,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
       <div
         id="main-container"
-        className={`dark hero-section`}
+        className={pathName === '/' ? 'hero-section' : 'gradient-disable'}
       >
         {/* <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />
