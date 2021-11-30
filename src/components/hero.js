@@ -93,6 +93,7 @@ function Hero(props) {
 
   return (
     <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative gradiant-layer banner-section">
+      <div className="background-gradient-circles absolute top-1/4 left-14 keep-rotate"></div>
       {/* <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" />

@@ -63,7 +63,7 @@ const CodeEditor = props => {
           }, 50)
         },
       ]
-    })
+    });
 
     rightEditorScenes = createMovie(rightEditor, scene => {
       let tmCodeOutput = []
@@ -88,7 +88,7 @@ const CodeEditor = props => {
 
       return [
         ...tmCodeOutput,
-        
+
       ]
     })
 
@@ -118,7 +118,7 @@ const CodeEditor = props => {
       "scroll",
       function (event) {
         if (isInViewPort(el)) {
-          leftEditorScenes.play()
+          leftEditorScenes.play();
         }
       },
       false
