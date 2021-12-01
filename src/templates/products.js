@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import MiddleBanner from "../components/middle-banner"
 import ProductHeroBanner from "../components/productHeroBanner"
 import ProductImageWithListOfText from "../components/productImageWithListOfText"
-import LeftRightImgCnt from "../components/left-right-image-content"
+import LeftRightImgCnt_V2 from "../components/left-right-image-content-v2"
 import Testimonial from "../components/testimonial"
 import TestimonialCardWithLeftHeading from "../components/testimonialCardWithLeftHeading"
 import clientConfig from "../../client-config"
@@ -45,8 +45,13 @@ const Products = ({ data, location }) => {
             return <ProductImageWithListOfText key={row._id} {...row} />
           } else if (row._type === "leftrightcontentimagesection") {
             return (
-              <div key={row._key} className="100% bg-blueNew-midnight pt-10 md:pt-20">
-                <LeftRightImgCnt applyGradientColorTheme={true} {...row} />
+              <div
+                key={row._key}
+                className="section-gradient pt-10 md:pt-20 relative"
+              >
+                <span class="section-border block absolute top-0 left-0 w-full"></span>
+                <LeftRightImgCnt_V2 applyGradientColorTheme={true} {...row} />
+                <span class="section-border block absolute bottom-0 left-0 w-full"></span>
               </div>
             )
           } else if (row._type === "testimonial_card_with_left_heading") {

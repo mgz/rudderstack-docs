@@ -143,7 +143,12 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
       <div
         id="main-container"
-        className={location && location.pathname === '/' ? 'hero-section' : 'gradient-disable'}
+        className={
+          (location && location.pathname === "/") ||
+          location.pathname.startsWith("/product/")
+            ? "hero-section"
+            : "gradient-disable"
+        }
       >
         {/* <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />
@@ -293,7 +298,11 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                           }
                         >
                           <FontAwesomeIcon
-                            icon={socialitem.social_item_icon === 'twitter' ? faTwitter : faLinkedin}
+                            icon={
+                              socialitem.social_item_icon === "twitter"
+                                ? faTwitter
+                                : faLinkedin
+                            }
                           />
                         </a>
                       )
