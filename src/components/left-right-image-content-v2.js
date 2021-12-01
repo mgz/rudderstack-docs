@@ -175,7 +175,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      }  sm:p-6 sm:pl-0 mt-12 sm:mt-0`}
+                      } pl-8 pr-20 mt-12 sm:mt-0`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
@@ -186,8 +186,8 @@ const LeftRightImgCnt_V2 = props => {
                             <Image
                               props={imgref}
                               classes="w-full"
-                              width="540"
-                              height="297"
+                              // width="540"
+                              // height="297"
                             />
                           )
                         }
@@ -195,166 +195,175 @@ const LeftRightImgCnt_V2 = props => {
                       })()}
                     </div>
                     <div
+                      c
                       className={`w-full ${
                         content_display_ratio === "60:40"
                           ? "sm:w-3/5"
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } sm:p-6 sm:pr-0 left-right-content`}
+                      } pl-12`}
                     >
-                      <div className="align-middle md:pl-12">
-                        <p
-                          className={`mt-4 sm:mt-0 text-sm ${
-                            props.applyGradientColorTheme ? "text-seegreen" : ""
-                          } uppercase`}
-                        >
-                          {smalltitle}
-                        </p>
-                        {isTitleBigger === true ? (
-                          <h2
-                            className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
+                      <div className={`p-6 sm:p-12 left-right-content`}>
+                        <div className="align-middle">
+                          <p
+                            className={`mt-4 sm:mt-0 text-sm ${
+                              props.applyGradientColorTheme
+                                ? "text-seegreen"
+                                : ""
+                            } uppercase`}
+                          >
+                            {smalltitle}
+                          </p>
+                          {isTitleBigger === true ? (
+                            <h2
+                              className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
+                                props.applyGradientColorTheme
+                                  ? "text-white"
+                                  : titleColor === "midnightBlue"
+                                  ? "text-blueNew-midnight"
+                                  : titleColor === "black"
+                                  ? "text-black-custom"
+                                  : ""
+                              } font-bold leading-tight uppercase`}
+                            >
+                              {title}
+                            </h2>
+                          ) : (
+                            <h3
+                              className={`mt-2 mb-4 pb-2 text-2xl  ${
+                                props.applyGradientColorTheme
+                                  ? "text-white"
+                                  : titleColor === "midnightBlue"
+                                  ? "text-blueNew-midnight"
+                                  : titleColor === "black"
+                                  ? "text-black-custom"
+                                  : ""
+                              } font-bold leading-tight pr-0 md:pr-4 uppercase`}
+                            >
+                              {title}
+                            </h3>
+                          )}
+
+                          <div
+                            className={`${
                               props.applyGradientColorTheme
                                 ? "text-white"
-                                : titleColor === "midnightBlue"
-                                ? "text-blueNew-midnight"
-                                : titleColor === "black"
-                                ? "text-black-custom"
+                                : "text-grayColor-custom"
+                            } leading-7 text-sm sm:text-lg frtxt-contnt ${
+                              content.content_list_styling === "right_arrow"
+                                ? "arrow-list-items"
+                                : content.content_list_styling === "check"
+                                ? "circle-check-items"
                                 : ""
-                            } font-bold leading-tight`}
+                            }`}
                           >
-                            {title}
-                          </h2>
-                        ) : (
-                          <h3
-                            className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl  ${
-                              props.applyGradientColorTheme
-                                ? "text-white"
-                                : titleColor === "midnightBlue"
-                                ? "text-blueNew-midnight"
-                                : titleColor === "black"
-                                ? "text-black-custom"
-                                : ""
-                            } font-bold leading-tight pr-0 md:pr-4`}
+                            <PortableText
+                              blocks={portabletext}
+                              trackSectionHeader={title}
+                            />
+                          </div>
+                          <div
+                            className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
                           >
-                            {title}
-                          </h3>
-                        )}
+                            {content.pointer_contents &&
+                              content.pointer_contents.map(row => {
+                                return (
+                                  <div
+                                    key={row}
+                                    // className={`${
+                                    //   content.pointer_content_cols === "2"
+                                    //     ? "w-1/2"
+                                    //     : "w-full"
+                                    // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
 
-                        <div
-                          className={`${
-                            props.applyGradientColorTheme
-                              ? "text-white"
-                              : "text-grayColor-custom"
-                          } leading-7 text-sm sm:text-lg frtxt-contnt ${
-                            content.content_list_styling === "right_arrow"
-                              ? "arrow-list-items"
-                              : content.content_list_styling === "check"
-                              ? "circle-check-items"
-                              : ""
-                          }`}
-                        >
-                          <PortableText
-                            blocks={portabletext}
-                            trackSectionHeader={title}
-                          />
-                        </div>
-                        <div
-                          className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
-                        >
-                          {content.pointer_contents &&
-                            content.pointer_contents.map(row => {
-                              return (
-                                <div
-                                  key={row}
-                                  // className={`${
-                                  //   content.pointer_content_cols === "2"
-                                  //     ? "w-1/2"
-                                  //     : "w-full"
-                                  // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+                                    //
+                                    className={`my-2  ${
+                                      props.applyGradientColorTheme
+                                        ? "text-white font-normal"
+                                        : "text-grayColor-custom font-bold"
+                                    }  text-xl flex flex-row`}
+                                  >
+                                    <div className="w-10 h-10 pt-1 px-2">
+                                      {props.applyGradientColorTheme && (
+                                        <StaticImage
+                                          src="../images/check-light-icon.svg"
+                                          alt="Check"
+                                          placeholder="tracedSVG"
+                                        />
+                                      )}
 
-                                  //
-                                  className={`my-2  ${
-                                    props.applyGradientColorTheme
-                                      ? "text-white font-normal"
-                                      : "text-grayColor-custom font-bold"
-                                  }  text-xl flex flex-row`}
-                                >
-                                  <div className="w-10 h-10 pt-1 px-2">
-                                    {props.applyGradientColorTheme && (
-                                      <StaticImage
-                                        src="../images/check-light-icon.svg"
-                                        alt="Check"
-                                        placeholder="tracedSVG"
-                                      />
-                                    )}
-
-                                    {!props.applyGradientColorTheme && (
-                                      <StaticImage
-                                        src="../images/check-icon.svg"
-                                        alt="Check"
-                                        placeholder="tracedSVG"
-                                      />
-                                    )}
+                                      {!props.applyGradientColorTheme && (
+                                        <StaticImage
+                                          src="../images/check-icon.svg"
+                                          alt="Check"
+                                          placeholder="tracedSVG"
+                                        />
+                                      )}
+                                    </div>
+                                    <p className="w-full">{row}</p>
                                   </div>
-                                  <p className="w-full">{row}</p>
-                                </div>
-                              )
-                            })}
-                        </div>
-                        <div className="mt-4 flex items-center">
-                          {(() => {
-                            if (linktext !== "") {
-                              if (extralink === true) {
-                                return (
-                                  <a
-                                    onClick={e =>
-                                      rudderslabTrackOnClick("link", title, e)
-                                    }
-                                    href={linkurl}
-                                    className={`font-bold leading-normal text-sm ${
-                                      link_display_as_button
-                                        ? "btn-primary-lg"
-                                        : ""
-                                    } ${
-                                      props.applyGradientColorTheme
-                                        ? "lr-icon-gradient"
-                                        : !link_display_as_button
-                                        ? "lr-icon"
-                                        : ""
-                                    } `}
-                                  >
-                                    {linktext}
-                                  </a>
                                 )
-                              } else {
-                                return (
-                                  <span
-                                    className={`font-bold leading-normal text-sm ${
-                                      link_display_as_button
-                                        ? "btn-primary-lg"
-                                        : ""
-                                    } ${
-                                      props.applyGradientColorTheme
-                                        ? "lr-icon-gradient"
-                                        : !link_display_as_button
-                                        ? "lr-icon"
-                                        : ""
-                                    }`}
-                                  >
-                                    <Link
+                              })}
+                          </div>
+                          <div className="mt-4 flex items-center">
+                            {(() => {
+                              if (linktext !== "") {
+                                if (extralink === true) {
+                                  return (
+                                    <a
                                       onClick={e =>
                                         rudderslabTrackOnClick("link", title, e)
                                       }
-                                      to={linkurl}
+                                      href={linkurl}
+                                      className={`font-bold leading-normal text-sm ${
+                                        link_display_as_button
+                                          ? "btn-primary-lg"
+                                          : ""
+                                      } ${
+                                        props.applyGradientColorTheme
+                                          ? "lr-icon-gradient"
+                                          : !link_display_as_button
+                                          ? "lr-icon"
+                                          : ""
+                                      } `}
                                     >
                                       {linktext}
-                                    </Link>
-                                  </span>
-                                )
+                                    </a>
+                                  )
+                                } else {
+                                  return (
+                                    <span
+                                      className={`font-bold leading-normal text-sm ${
+                                        link_display_as_button
+                                          ? "btn-primary-lg"
+                                          : ""
+                                      } ${
+                                        props.applyGradientColorTheme
+                                          ? "lr-icon-gradient"
+                                          : !link_display_as_button
+                                          ? "lr-icon"
+                                          : ""
+                                      }`}
+                                    >
+                                      <Link
+                                        onClick={e =>
+                                          rudderslabTrackOnClick(
+                                            "link",
+                                            title,
+                                            e
+                                          )
+                                        }
+                                        to={linkurl}
+                                      >
+                                        {linktext}
+                                      </Link>
+                                    </span>
+                                  )
+                                }
                               }
-                            }
-                          })()}
+                            })()}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -399,159 +408,161 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } sm:p-6 sm:pl-0 md:pr-12 left-right-content`}
+                      } md:pr-12 `}
                     >
-                      <p
-                        className={`mt-4 sm:mt-0 ${
-                          props.applyGradientColorTheme ? "text-seegreen" : ""
-                        } text-sm uppercase`}
-                      >
-                        {smalltitle}
-                      </p>
-                      {/* <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
+                      <div className={`p-6  md:p-12 left-right-content`}>
+                        <p
+                          className={`mt-4 sm:mt-0 ${
+                            props.applyGradientColorTheme ? "text-seegreen" : ""
+                          } text-sm uppercase`}
+                        >
+                          {smalltitle}
+                        </p>
+                        {/* <h3 className="mt-2 mb-4 pb-2 text-2xl md:text-3xl text-primary font-bold leading-tight">
                         {title}
                       </h3> */}
-                      {isTitleBigger === true ? (
-                        <h2
-                          className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
+                        {isTitleBigger === true ? (
+                          <h2
+                            className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
+                              props.applyGradientColorTheme
+                                ? "text-white"
+                                : titleColor === "midnightBlue"
+                                ? "text-blueNew-midnight"
+                                : titleColor === "black"
+                                ? "text-black-custom"
+                                : ""
+                            } font-bold leading-tight uppercase`}
+                          >
+                            {title}
+                          </h2>
+                        ) : (
+                          <h3
+                            className={`mt-2 mb-4 pb-2 text-2xl ${
+                              props.applyGradientColorTheme
+                                ? "text-white"
+                                : titleColor === "midnightBlue"
+                                ? "text-blueNew-midnight"
+                                : titleColor === "black"
+                                ? "text-black-custom"
+                                : ""
+                            } font-bold leading-tight pr-0 md:pr-4 uppercase`}
+                          >
+                            {title}
+                          </h3>
+                        )}
+                        <div
+                          className={`${
                             props.applyGradientColorTheme
                               ? "text-white"
-                              : titleColor === "midnightBlue"
-                              ? "text-blueNew-midnight"
-                              : titleColor === "black"
-                              ? "text-black-custom"
+                              : "text-grayColor-custom"
+                          } leading-7 text-sm sm:text-lg frtxt-contnt ${
+                            content.content_list_styling === "right_arrow"
+                              ? "arrow-list-items"
+                              : content.content_list_styling === "check"
+                              ? "circle-check-items"
                               : ""
-                          } font-bold leading-tight `}
+                          }`}
                         >
-                          {title}
-                        </h2>
-                      ) : (
-                        <h3
-                          className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl ${
-                            props.applyGradientColorTheme
-                              ? "text-white"
-                              : titleColor === "midnightBlue"
-                              ? "text-blueNew-midnight"
-                              : titleColor === "black"
-                              ? "text-black-custom"
-                              : ""
-                          } font-bold leading-tight pr-0 md:pr-4`}
+                          <PortableText
+                            blocks={portabletext}
+                            trackSectionHeader={title}
+                          />
+                        </div>
+                        <div
+                          className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
                         >
-                          {title}
-                        </h3>
-                      )}
-                      <div
-                        className={`${
-                          props.applyGradientColorTheme
-                            ? "text-white"
-                            : "text-grayColor-custom"
-                        } leading-7 text-sm sm:text-lg frtxt-contnt ${
-                          content.content_list_styling === "right_arrow"
-                            ? "arrow-list-items"
-                            : content.content_list_styling === "check"
-                            ? "circle-check-items"
-                            : ""
-                        }`}
-                      >
-                        <PortableText
-                          blocks={portabletext}
-                          trackSectionHeader={title}
-                        />
-                      </div>
-                      <div
-                        className={`w-full grid grid-cols-1 md:grid-cols-${content.pointer_content_cols}`}
-                      >
-                        {content.pointer_contents &&
-                          content.pointer_contents.map(row => {
-                            return (
-                              <div
-                                key={row}
-                                // className={`${
-                                //   content.pointer_content_cols === "2"
-                                //     ? "w-1/2"
-                                //     : "w-full"
-                                // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
-                                className={`my-2  ${
-                                  props.applyGradientColorTheme
-                                    ? "text-white font-normal"
-                                    : "text-grayColor-custom font-bold"
-                                }  text-xl flex flex-row`}
-                              >
-                                <div className="w-10 h-10 pt-1 px-2">
-                                  {props.applyGradientColorTheme && (
-                                    <StaticImage
-                                      src="../images/check-light-icon.svg"
-                                      alt="Check"
-                                      placeholder="tracedSVG"
-                                    />
-                                  )}
+                          {content.pointer_contents &&
+                            content.pointer_contents.map(row => {
+                              return (
+                                <div
+                                  key={row}
+                                  // className={`${
+                                  //   content.pointer_content_cols === "2"
+                                  //     ? "w-1/2"
+                                  //     : "w-full"
+                                  // } my-2 font-bold text-grayColor-custom text-xl flex flex-row`}
+                                  className={`my-2  ${
+                                    props.applyGradientColorTheme
+                                      ? "text-white font-normal"
+                                      : "text-grayColor-custom font-bold"
+                                  }  text-xl flex flex-row`}
+                                >
+                                  <div className="w-10 h-10 pt-1 px-2">
+                                    {props.applyGradientColorTheme && (
+                                      <StaticImage
+                                        src="../images/check-light-icon.svg"
+                                        alt="Check"
+                                        placeholder="tracedSVG"
+                                      />
+                                    )}
 
-                                  {!props.applyGradientColorTheme && (
-                                    <StaticImage
-                                      src="../images/check-icon.svg"
-                                      alt="Check"
-                                      placeholder="tracedSVG"
-                                    />
-                                  )}
+                                    {!props.applyGradientColorTheme && (
+                                      <StaticImage
+                                        src="../images/check-icon.svg"
+                                        alt="Check"
+                                        placeholder="tracedSVG"
+                                      />
+                                    )}
+                                  </div>
+                                  <p className="w-full">{row}</p>
                                 </div>
-                                <p className="w-full">{row}</p>
-                              </div>
-                            )
-                          })}
-                      </div>
-                      <div className="mt-4 flex items-center">
-                        {(() => {
-                          if (linktext !== "") {
-                            if (extralink === true) {
-                              return (
-                                <a
-                                  href={linkurl}
-                                  onClick={e => {
-                                    rudderslabTrackOnClick("link", title, e)
-                                  }}
-                                  className={`font-bold leading-normal text-sm ${
-                                    link_display_as_button
-                                      ? "btn-primary-lg"
-                                      : ""
-                                  } relative sm:inline-block ${
-                                    props.applyGradientColorTheme
-                                      ? "lr-icon-gradient"
-                                      : !link_display_as_button
-                                      ? "lr-icon"
-                                      : ""
-                                  }`}
-                                >
-                                  {linktext}
-                                </a>
                               )
-                            } else {
-                              return (
-                                <span
-                                  className={`font-bold leading-normal text-sm ${
-                                    link_display_as_button
-                                      ? "btn-primary-lg"
-                                      : ""
-                                  } relative sm:inline-block ${
-                                    props.applyGradientColorTheme
-                                      ? "lr-icon-gradient"
-                                      : !link_display_as_button
-                                      ? "lr-icon"
-                                      : ""
-                                  }`}
-                                >
-                                  <Link
-                                    onClick={e =>
+                            })}
+                        </div>
+                        <div className="mt-4 flex items-center">
+                          {(() => {
+                            if (linktext !== "") {
+                              if (extralink === true) {
+                                return (
+                                  <a
+                                    href={linkurl}
+                                    onClick={e => {
                                       rudderslabTrackOnClick("link", title, e)
-                                    }
-                                    to={linkurl}
+                                    }}
+                                    className={`font-bold leading-normal text-sm ${
+                                      link_display_as_button
+                                        ? "btn-primary-lg"
+                                        : ""
+                                    } relative sm:inline-block ${
+                                      props.applyGradientColorTheme
+                                        ? "lr-icon-gradient"
+                                        : !link_display_as_button
+                                        ? "lr-icon"
+                                        : ""
+                                    }`}
                                   >
                                     {linktext}
-                                  </Link>
-                                </span>
-                              )
+                                  </a>
+                                )
+                              } else {
+                                return (
+                                  <span
+                                    className={`font-bold leading-normal text-sm ${
+                                      link_display_as_button
+                                        ? "btn-primary-lg"
+                                        : ""
+                                    } relative sm:inline-block ${
+                                      props.applyGradientColorTheme
+                                        ? "lr-icon-gradient"
+                                        : !link_display_as_button
+                                        ? "lr-icon"
+                                        : ""
+                                    }`}
+                                  >
+                                    <Link
+                                      onClick={e =>
+                                        rudderslabTrackOnClick("link", title, e)
+                                      }
+                                      to={linkurl}
+                                    >
+                                      {linktext}
+                                    </Link>
+                                  </span>
+                                )
+                              }
                             }
-                          }
-                        })()}
+                          })()}
+                        </div>
                       </div>
                     </div>
                     <div
@@ -561,7 +572,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } sm:p-6 sm:pr-0`}
+                      } pl-20 pr-8`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
@@ -572,8 +583,8 @@ const LeftRightImgCnt_V2 = props => {
                             <Image
                               props={imgref}
                               classes="w-full"
-                              width="540"
-                              height="297"
+                              // width="540"
+                              // height="297"
                             />
                           )
                         }
