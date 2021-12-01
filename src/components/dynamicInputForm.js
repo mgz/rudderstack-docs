@@ -133,6 +133,7 @@ const DynamicInputForm = ({
     })
     // console.log("validate form", errObj, formData)
     setFormErrors(errObj)
+    setIsLoading(false)
     return ret
   }
 
