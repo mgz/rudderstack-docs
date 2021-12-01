@@ -92,133 +92,134 @@ function Hero(props) {
   }, [showAnimation])
 
   return (
-    <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative gradiant-layer banner-section">
-      <div className="background-gradient-circles absolute top-1/4 left-14 keep-rotate"></div>
-      {/* <Helmet>
-        <script src={withPrefix("script.js")} type="text/javascript" />
-        <script src={withPrefix("script2.js")} type="text/javascript" />
-      </Helmet> */}
-      <div className="flex flex-col items-center md:gap-4 xl:gap-4 justify-center mx-auto lg:flex-row lg:p-0">
-        <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-          <h1 className="mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight cd-headline text-darkScheme-textPrimary">
-            {props.herobannertitle}
-            {/* All your customer data pipelines in one platform */}
-          </h1>
-          {/* <PortableText
-            blocks={props.herobannercontent}
-            trackSectionHeader={props.herobannertitle}
-          /> */}
-          <p className="cd-headline font-bold text-darkScheme-textPrimary">
-            <span className="cd-words-unchanged">
-              {props.word_switch_content.title}
-              <br></br>
-            </span>
-            <span className="cd-words-wrapper">
-              {props.word_switch_content.word_switch_contents.map((rr, idx) => {
-                return (
-                  <span className={`${idx === 0 ? "is-visible" : ""}`}>
-                    {rr}
-                  </span>
-                )
-              })}
-            </span>
-          </p>
-          <div className="relative block sm:flex mt-12">
-            {herobannerbutton.map((btn, i) => (
-              <React.Fragment key={btn._key}>
-                {(() => {
-                  if (btn.btnexternallink === true) {
-                    return (
-                      <a
-                        onClick={e =>
-                          rudderslabTrackOnClick(
-                            "button",
-                            props.herobannertitle,
-                            e
-                          )
-                        }
-                        key={btn._key}
-                        className={
-                          (btn.btnhiglight === true
-                            ? "btn-primary-lg"
-                            : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
-                        }
-                        href={btn.btnlink}
-                      >
-                        {btn.btntext}
-                      </a>
-                    )
-                  } else {
-                    return (
-                      <Link
-                        key={btn._key}
-                        to={btn.btnlink}
-                        onClick={e =>
-                          rudderslabTrackOnClick(
-                            "button",
-                            props.herobannertitle,
-                            e
-                          )
-                        }
-                      >
-                        <span
+    <section className="relative gradiant-layer banner-section pt-19 pb-40">
+      <div className="max-w-6xl mx-auto md:w-full md:px-4">
+        <div className="background-gradient-circles absolute top-1/4 left-14 keep-rotate"></div>
+        {/* <Helmet>
+          <script src={withPrefix("script.js")} type="text/javascript" />
+          <script src={withPrefix("script2.js")} type="text/javascript" />
+        </Helmet> */}
+        <div className="flex flex-col items-center justify-center mx-auto gap-10 lg:flex-row lg:p-0">
+          <div className="relative z-20 flex w-2/5 flex-col mb-8 text-2xl hero-content">
+            <h1 className="mb-8 md:my-4 text-5xl font-bold leading-tight cd-headline text-darkScheme-textPrimary">
+              {props.herobannertitle}
+              {/* All your customer data pipelines in one platform */}
+            </h1>
+            {/* <PortableText
+              blocks={props.herobannercontent}
+              trackSectionHeader={props.herobannertitle}
+            /> */}
+            <p className="cd-headline font-bold text-darkScheme-textPrimary">
+              <span className="cd-words-unchanged">
+                {props.word_switch_content.title}
+              </span>
+              <span className="cd-words-wrapper">
+                {props.word_switch_content.word_switch_contents.map((rr, idx) => {
+                  return (
+                    <span className={`${idx === 0 ? "is-visible" : ""}`}>
+                      {rr}
+                    </span>
+                  )
+                })}
+              </span>
+            </p>
+            <div className="relative block sm:flex mt-12">
+              {herobannerbutton.map((btn, i) => (
+                <React.Fragment key={btn._key}>
+                  {(() => {
+                    if (btn.btnexternallink === true) {
+                      return (
+                        <a
+                          onClick={e =>
+                            rudderslabTrackOnClick(
+                              "button",
+                              props.herobannertitle,
+                              e
+                            )
+                          }
+                          key={btn._key}
                           className={
                             (btn.btnhiglight === true
                               ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
                           }
+                          href={btn.btnlink}
                         >
                           {btn.btntext}
-                        </span>
-                      </Link>
-                    )
-                  }
-                })()}
-              </React.Fragment>
-            ))}
-          </div>
-        </div>
-        <div className="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0">
-          <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
-            {/* <Helmet>
-
-            </Helmet> */}
-            {/* <Image props={props.herobannerimage.asset._ref} classes="w-full" /> */}
-            {/* <div className="w-full" ref={animationContainer} /> */}
-            {/* <div dangerouslySetInnerHTML={{ __html: myHTML }} /> */}
-
-            {/*<div className="lotti-body" id="lottie"></div>*/}
-            {/* <div className="w-full">
-              <StaticImage src="../images/RubberStack_MAIN-3D_1-1_active_00000.png" alt="RudderStack animation" placeholder="tracedSVG" />
-            </div> */}
-            {/*<div className="lotti-body">
-              <div id="lottie" />
-            </div>*/}
-            {/* <div className={`lotti-body`}>
-              <div id="lottie" />
-            </div> */}
-            <div className={`block`}>
-              <Image
-                props={props.herobannerimage.asset._ref}
-                classes="w-full"
-              />
-              {/* <StaticImage
-                src="../images/hero-section-home.png"
-                alt="RudderStack"
-                placeholder="tracedSVG"
-              /> */}
+                        </a>
+                      )
+                    } else {
+                      return (
+                        <Link
+                          key={btn._key}
+                          to={btn.btnlink}
+                          onClick={e =>
+                            rudderslabTrackOnClick(
+                              "button",
+                              props.herobannertitle,
+                              e
+                            )
+                          }
+                        >
+                          <span
+                            className={
+                              (btn.btnhiglight === true
+                                ? "btn-primary-lg"
+                                : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                            }
+                          >
+                            {btn.btntext}
+                          </span>
+                        </Link>
+                      )
+                    }
+                  })()}
+                </React.Fragment>
+              ))}
             </div>
-            {/* <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
+          </div>
+          <div className="relative px-0 rounded-lg flex-grow sm:px-0 lg:mb-0">
+            <div className="relative rounded-md group sm:px-0">
+              {/* <Helmet>
 
-            </div> */}
-            {/*
-            <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
-              <StaticImage
-                src="../images/RubberStack_MAIN-3D_1-1_active_00000.png"
-                alt="RudderStack animation"
-                placeholder="tracedSVG"
-              />
-            </div> */}
+              </Helmet> */}
+              {/* <Image props={props.herobannerimage.asset._ref} classes="w-full" /> */}
+              {/* <div className="w-full" ref={animationContainer} /> */}
+              {/* <div dangerouslySetInnerHTML={{ __html: myHTML }} /> */}
+
+              {/*<div className="lotti-body" id="lottie"></div>*/}
+              {/* <div className="w-full">
+                <StaticImage src="../images/RubberStack_MAIN-3D_1-1_active_00000.png" alt="RudderStack animation" placeholder="tracedSVG" />
+              </div> */}
+              {/*<div className="lotti-body">
+                <div id="lottie" />
+              </div>*/}
+              {/* <div className={`lotti-body`}>
+                <div id="lottie" />
+              </div> */}
+              <div className={`block`}>
+                {/* <Image
+                  props={props.herobannerimage.asset._ref}
+                  classes="w-full"
+                /> */}
+                <StaticImage
+                  src="../images/homepage-right.png"
+                  alt="RudderStack"
+                  placeholder="tracedSVG"
+                />
+              </div>
+              {/* <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
+
+              </div> */}
+              {/*
+              <div className={`${showAnimation ? "hidden" : "block"} w-full`}>
+                <StaticImage
+                  src="../images/RubberStack_MAIN-3D_1-1_active_00000.png"
+                  alt="RudderStack animation"
+                  placeholder="tracedSVG"
+                />
+              </div> */}
+            </div>
           </div>
         </div>
       </div>

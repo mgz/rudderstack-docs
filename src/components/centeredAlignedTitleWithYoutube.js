@@ -41,7 +41,7 @@ const CenteredAlignedTitleWithYoutube = props => {
 
   return (
     <section className="py-12">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto md:w-full md:px-4">
         <div className="blog-section flex">
           <div className="w-1/2 border-r border-darkScheme-textPrimary">
             <div className="w-9/12 mx-auto">

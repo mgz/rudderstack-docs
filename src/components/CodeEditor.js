@@ -1,15 +1,19 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 /* import CodeMirror from "@uiw/react-codemirror"; */
 import createMovie from "codemirror-movie"
 /* import "codemirror/lib/codemirror.css" */
 
 const CodeEditor = props => {
-  let leftEditorScenes,
-    rightEditorScenes = null
+
+  let [editorFlag, setEditorFlag] = useState(false);
+
+  const [leftEditorScenes, setLeftEditorScenes] = useState(null);
+  const [rightEditorScenes, setRightEditorScenes] = useState(null);
   function replaceAll(str, find, replace) {
     var escapedFind = find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1")
     return str.replace(new RegExp(escapedFind, "g"), replace)
   }
+
 
   useEffect(() => {
     const CodeMirror = require("codemirror/lib/codemirror")
@@ -21,9 +25,10 @@ const CodeEditor = props => {
         ? props.code_input.line_number
         : false,
       mode: props.code_input.language,
-      autofocus: props.code_input.auto_focus
+      readOnly: "nocursor",
+      autofocus:/*  props.code_input.auto_focus
         ? props.code_input.auto_focus
-        : false,
+        : */ false,
     })
     let rightEditor = CodeMirror.fromTextArea(
       document.getElementById("terminal"),
@@ -31,21 +36,21 @@ const CodeEditor = props => {
         lineNumbers: props.code_output.line_number
           ? props.code_output.line_number
           : false,
-        readOnly: props.code_output.ready_only
+        readOnly:"nocursor" /* props.code_output.ready_only
           ? props.code_output.ready_only
-          : false,
+          : false */,
         lineWrapping: props.code_output.line_wrapping
           ? props.code_output.line_wrapping
           : false,
         mode: props.code_output.language,
-        autofocus: props.code_output.auto_focus
+        autofocus: /* props.code_output.auto_focus
           ? props.code_output.auto_focus
-          : false,
+          :*/ false,
       }
     )
 
-    leftEditorScenes = createMovie(leftEditor, scene => {
-      let tmCodeInput = []
+    setLeftEditorScenes(createMovie(leftEditor, scene => {
+      let tmCodeInput = [];
       props.code_input.code_contents.forEach(ppp => {
         tmCodeInput.push(
           scene.type(
@@ -63,9 +68,9 @@ const CodeEditor = props => {
           }, 50)
         },
       ]
-    });
+    }));
 
-    rightEditorScenes = createMovie(rightEditor, scene => {
+    setRightEditorScenes(createMovie(rightEditor, scene => {
       let tmCodeOutput = []
       let tmpLineNumber = 1
       props.code_output.code_contents.forEach((ppp, idx) => {
@@ -90,7 +95,7 @@ const CodeEditor = props => {
         ...tmCodeOutput,
 
       ]
-    })
+    }))
 
     let el = document.getElementById("codeEditorBlock")
 
@@ -118,17 +123,30 @@ const CodeEditor = props => {
       "scroll",
       function (event) {
         if (isInViewPort(el)) {
-          leftEditorScenes.play();
+          /* console.log('In viewport'); */
+          setEditorFlag(true);
+        }else{
+          /* console.log('out of viewport'); */
+          setEditorFlag(false);
         }
-      },
-      false
+      }
     )
   }, [])
+
+  useEffect(() => {
+    /* console.log('Editor scene', leftEditorScenes); */
+    if(leftEditorScenes && editorFlag){
+      leftEditorScenes.play();
+    }else if(leftEditorScenes){
+      leftEditorScenes.pause();
+    }
+    /* console.log('Editor flag', editorFlag); */
+  }, [editorFlag])
 
   return (
     <section className="py-19 relative section-gradient">
       <span className="section-border absolute top-0 left-0 w-full block"></span>
-      <div className="max-w-6xl mx-auto" id="codeEditorBlock">
+      <div className="max-w-6xl mx-auto md:w-full md:px-4" id="codeEditorBlock">
         <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary">
           {props.title}
         </h3>

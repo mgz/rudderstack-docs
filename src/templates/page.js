@@ -58,7 +58,7 @@ export const query = graphql`
 
 const Page = props => {
   const { data, errors } = props
-  console.log("data", data)
+  /* console.log("data", data) */
   const halfPage = useRef()
 
   if (errors) {

@@ -33,8 +33,6 @@ function OurLogo(props) {
       const logo5 = logoRefs.current[5]
       const logo6 = logoRefs.current[6]
       const logo7 = logoRefs.current[7]
-      const logo8 = logoRefs.current[8]
-      const logo9 = logoRefs.current[9]
 
       const pushToEnd = i => {
         logoRefs.current.push(logoRefs.current.splice(i, 1)[0])
@@ -63,7 +61,7 @@ function OurLogo(props) {
         tl.kill()
 
         logoRefs.current.forEach((logo, logoIndex) => {
-          if (logoIndex > 4) {
+          if (logoIndex > 3) {
             gsap.set(logo, {
               clearProps: 'transform',
             })
@@ -84,21 +82,21 @@ function OurLogo(props) {
         },
         onStart: () => {},
         onComplete: () => {
-          resetArray()
+          //resetArray()
           gsap.delayedCall(1, animateLogos)
         },
       })
 
       // A
-      tl.set(logo5, {
-        xPercent: 100,
+     /* tl.set(logo4, {
+        //xPercent: 0,
         yPercent: 0,
       })
-        .to(logo5, {
+        .to(logo4, {
           yPercent: -100,
         })
         .to(
-          logo1,
+          logo0,
           {
             yPercent: -200,
           },
@@ -107,45 +105,41 @@ function OurLogo(props) {
 
       // B
       tl.set(
-        logo6,
-        {
-          xPercent: 300,
-          yPercent: 0,
-        },
-        `+=${tlDelay}`
-      )
-        .to(logo3, {
-          xPercent: 400,
-        })
-        .to(
-          logo4,
-          {
-            yPercent: -200,
-          },
-          '<'
-        )
-        .to(
-          logo6,
-          {
-            yPercent: -100,
-          },
-          '<'
-        )
-
-      // C
-      tl.set(
-        logo7,
+        logo5,
         {
           xPercent: 100,
           yPercent: 0,
         },
         `+=${tlDelay}`
       )
-      tl.to(logo5, {
-        xPercent: 0,
-      })
         .to(
-          logo0,
+          logo5,
+          {
+            yPercent: -100,
+          },
+          '<'
+        )
+        .to(
+          logo1,
+          {
+            yPercent: -200,
+          },
+          '<'
+        ) .to(logo3, {
+          xPercent: 400,
+        })
+
+      // C
+      tl.set(
+        logo6,
+        {
+          xPercent: 200,
+          yPercent: 0,
+        },
+        `+=${tlDelay}`
+      )
+      tl.to(
+          logo7,
           {
             yPercent: -200,
           },
@@ -157,24 +151,26 @@ function OurLogo(props) {
             yPercent: -100,
           },
           '<'
-        )
+        ).to(logo2, {
+          xPercent: 0,
+        })
 
       // D
       tl.set(
-        logo8,
+        logo7,
         {
-          xPercent: 400,
+          xPercent: 300,
           yPercent: 0,
         },
         `+=${tlDelay}`
       )
-        .to(logo3, {
-          yPercent: -200,
+        .to(logo7, {
+          yPercent: -100,
         })
         .to(
-          logo8,
+          logo3,
           {
-            yPercent: -100,
+            yPercent: -200,
           },
           '<'
         )
@@ -188,25 +184,39 @@ function OurLogo(props) {
         },
         `+=${tlDelay}`
       )
-        .to(logo2, {
-          xPercent: 100,
-        })
         .to(
-          logo7,
+          logo4,
           {
             yPercent: -200,
           },
           '<'
         )
-        .to(
+         .to(
           logo9,
           {
             yPercent: -100,
           },
           '<'
-        )
+        ).to(logo2, {
+          xPercent: 100,
+        }) */
 
       // GSDevTools.create({ animation: id, css: 'z-index: 100' })
+
+      tl.set(logo0, {
+        //xPercent: 0,
+        yPercent: 0,
+      })
+        .to(logo0, {
+          yPercent: -100,
+        })
+        .to(
+          logo4,
+          {
+            yPercent: -200,
+          },
+          '<'
+        )
     }
 
     setTimeout(
@@ -234,7 +244,7 @@ function OurLogo(props) {
       className={`py-19 section-gradient relative`}
     >
       <span className="section-border block absolute top-0 left-0 w-full"></span>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto md:w-full md:px-4">
         <div
           className={`flex w-full justify-center`}
         >

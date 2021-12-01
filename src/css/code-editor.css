@@ -140,8 +140,11 @@ div.CodeMirror-cursors {
   white-space: nowrap;
 }
 /* Theming */
-.cm-string{
-  color: #7DAFDB;
+.codeBlockLeft .cm-string{
+  color: #86F8E0;
+}
+.codeBlockRight .cm-string{
+  color: #2EB67D;
 }
 .cm-atom{
   color: #f77b23;
@@ -153,6 +156,9 @@ div.CodeMirror-cursors {
 .codeEditorFile{
   padding:60px 0px 20px 20px;
   position: relative;
+}
+.codeBlockRight .codeEditorFile{
+  padding: 60px 0px 20px 50px;
 }
 .topEditorBlock{
   position: absolute;

@@ -11,7 +11,7 @@ const LeftRightComponentEdgesAligned = props => {
       <div className="background-gradient-circles absolute top-2/4 right-1/4 keep-rotate"></div>
       <div className="background-gradient-circles absolute top-1/4 left-1/4 keep-rotate"></div>
       <div className="background-gradient-circles absolute bottom-1/4 left-1/4 keep-rotate"></div>
-      <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center">
+      <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center md:w-full md:px-4">
         <h3 className="mb-0 text-4xl md:text-4xl font-bold leading-tight uppercase text-center text-darkScheme-btnPrimaryBg mt-9">
           {props.leftrightcontentmaintitle}
         </h3>

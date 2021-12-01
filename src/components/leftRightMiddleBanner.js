@@ -4,7 +4,7 @@ import PortableText from "./portableText"
 import { rudderslabTrackOnClick } from "../utils/common"
 
 const LeftRightMiddleBanner = props => {
-  console.log(props, "LeftRightMiddleBanner")
+  /* console.log(props, "LeftRightMiddleBanner") */
   return (
     <section className="py-12">
       <div className="max-w-6xl mx-auto">
