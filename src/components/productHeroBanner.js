@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, { useEffect } from "react"
 // import PortableText from "./portableText"
 import Link from "gatsby-link"
 import {
@@ -21,7 +21,7 @@ const ProductHeroBanner = props => {
 
   useEffect(() => {
     /* setWindowOrigin(window.location.origin) */
-    import("@justinribeiro/lite-youtube");
+    import("@justinribeiro/lite-youtube")
   }, [])
 
   const _onPlay = event => {
@@ -33,16 +33,16 @@ const ProductHeroBanner = props => {
 
   return (
     <section className="w-full  lg:py-0 py-10 flex justify-center items-center relative overflow-hidden gradiant-layer banner-section">
-      <div className="max-w-6xl w-full sm:pb-20 pb-4 p1-16 px-4 md:px-3 mx-auto">
+      <div className="max-w-6xl w-full sm:pb-20 pb-4 md:pt-16 p1-16 px-4 md:px-3 mx-auto">
         <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
           <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-5/12 sm:px-0sm:items-center lg:items-start lg:mb-0">
-            <h2 className="text-2xl  font-bold tracking-tight-2 text-blueNew-midnight">
+            <h2 className="text-2xl  font-bold tracking-tight-2 text-darkScheme-btnSecondaryBg">
               {props.productbannerheader}
             </h2>
-            <h1 className="text-3xl-3 xl:text-5xl-1 leading-tight font-bold mt-2 md:mt-5 mb-4 md:mb-8 pr-0 ">
+            <h1 className="text-3xl-3 xl:text-5xl-1 leading-tight font-bold mt-2 md:mt-5 mb-4 md:mb-8 pr-0 text-whiteColor-custom">
               {props.productbannertitle}
             </h1>
-            <p className="text-lg leading-6">
+            <p className="text-lg leading-6 text-whiteColor-custom">
               {props.productbannercontent}
             </p>
 
@@ -63,9 +63,8 @@ const ProductHeroBanner = props => {
                           }
                           className={
                             (btn.btnhiglight === true
-                              ? "text-white btn-primary-lg border-transparent bg-blueNew-magenta hover:bg-blueNew-midnight" //hover:bg-whiteColor-custom hover:text-blueNew-midnight
-                              : "btn-secondary-lg hover:bg-blueNew-midnight") +
-                            ` sm:mr-4 md:mb-0 mb-6`
+                              ? "btn-primary-lg"
+                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
                           }
                           href={btn.btnlink}
                         >
@@ -78,9 +77,8 @@ const ProductHeroBanner = props => {
                           key={btn._key}
                           className={
                             (btn.btnhiglight === true
-                              ? "bg-blueNew-midnight text-white btn-primary-lg border-transparent hover:bg-white hover:text-blueNew-midnight"
-                              : "btn-secondary-lg hover:bg-blueNew-midnight") +
-                            ` sm:mr-4 md:mb-0 mb-4`
+                              ? "btn-primary-lg"
+                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
                           }
                         >
                           <Link
@@ -108,7 +106,7 @@ const ProductHeroBanner = props => {
             {props.herobanner_media &&
               props.herobanner_media.condition === "videooption" && (
                 <div class="iframe-container">
-                  <div className="product-banner-frame"></div>
+                  {/* <div className="product-banner-frame"></div> */}
                   <YouTube
                     videoId={
                       tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
@@ -122,7 +120,7 @@ const ProductHeroBanner = props => {
             {props.herobanner_media &&
               props.herobanner_media.condition === "imageoption" && (
                 <div class="iframe-container">
-                  <div className="product-banner-frame"></div>
+                  {/* <div className="product-banner-frame"></div> */}
                   <Image
                     props={props.herobanner_media.imageoption.asset._ref}
                     classes="product-media"

@@ -4,6 +4,7 @@ import {
   rudderslabTrackOnClick,
   rudderslabTrackOnYoutubeVideoPlayback,
 } from "../utils/common"
+import { StaticImage } from "gatsby-plugin-image"
 import TestimonialFloatingSmall from "./testimonial_floating_small"
 import PortableText from "./portableText"
 import Image from "./image"
@@ -15,7 +16,16 @@ const TestimonialCardWithLeftHeading = props => {
       <div className="max-w-6xl px-4 md:px-3 py-10 md:py-20 mx-auto mt-10">
         <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
           <div className="z-20 flex flex-col w-full pb-1 md:mr-30 mb-20 md:mb-8 sm:mb-16 text-2xl lg:w-3/5 sm:px-0sm:items-center lg:items-start lg:mb-0 md:pr-44 ">
-            <h2 className="md:mt-4 mb-0 md:text-4xl text-3xl  font-bold leading-none">
+            <div className="">
+              <div className="w-32 lg:pt-16 md-pt-16">
+                <StaticImage
+                  src="../images/Arrow-new-theme.svg"
+                  placeholder="tracedSVG"
+                  alt="Get Started Image"
+                />
+              </div>
+            </div>
+            <h2 className="md:mt-4 mb-0 md:3xl-3 text-3xl  font-bold leading-none text-whiteColor-custom">
               {props.left_title}
             </h2>
 
@@ -29,9 +39,8 @@ const TestimonialCardWithLeftHeading = props => {
                           key={btn._key}
                           className={
                             (btn.btnhiglight === true
-                              ? "btn-primary-lg bg-blueNew-magenta"
-                              : "btn-secondary-lg") +
-                            ` sm:mr-4 md:mb-0 mb-6 hover:bg-blueNew-midnight hover:text-white`
+                              ? "btn-primary-lg "
+                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
                           }
                           onClick={e =>
                             rudderslabTrackOnClick(
