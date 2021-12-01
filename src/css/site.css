@@ -1040,3 +1040,19 @@ top: -60px;
 .logo-item img {
   filter: brightness(0) invert(1);
 }
+.background-gradient-circles{
+  width: 219px;
+  height: 133px;
+  background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(214, 146, 246, 0.35) 0%, rgba(134, 248, 224, 0.35) 100%);
+  filter: blur(60px);
+}
+.keep-rotate{
+  transform: rotateY(0deg) translateX(-100px) rotateY(0deg);
+  animation: bgrotate 4s ease infinite;
+}
+@keyframes bgrotate{
+  to{  transform:rotateY(360deg) translateX(-100px) rotateY(-360deg); }
+}
+@-webkit-keyframes bgrotate{
+  to{  transform:rotateY(360deg) translateX(-100px) rotateY(-360deg); }
+}

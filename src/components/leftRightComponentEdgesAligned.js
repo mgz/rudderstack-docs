@@ -4,11 +4,13 @@ import Image from "./image"
 import Link from "gatsby-link"
 import { rudderslabTrackOnClick } from "../utils/common"
 
-import warehouseWhite from "../images/warehouse-white.png"
 
 const LeftRightComponentEdgesAligned = props => {
   return (
-    <section className="py-19">
+    <section className="py-19 relative">
+      <div className="background-gradient-circles absolute top-2/4 right-1/4 keep-rotate"></div>
+      <div className="background-gradient-circles absolute top-1/4 left-1/4 keep-rotate"></div>
+      <div className="background-gradient-circles absolute bottom-1/4 left-1/4 keep-rotate"></div>
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center">
         <h3 className="mb-0 text-4xl md:text-4xl font-bold leading-tight uppercase text-center text-darkScheme-btnPrimaryBg mt-9">
           {props.leftrightcontentmaintitle}
