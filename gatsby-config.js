@@ -212,7 +212,7 @@ module.exports = {
         //host: `https://rudderstack-dataplane.rudderstack.com`,
         loadType: "defer",
         trackPage: false,
-        // loadAsync: true,
+        loadAsync: true,
 
         delayLoad: true,
         delayLoadTime: 500,

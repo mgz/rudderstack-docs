@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { navigate, useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import { library } from "@fortawesome/fontawesome-svg-core"
@@ -59,6 +59,11 @@ const DynamicInputForm = ({
   // let tmp = data.allSanityFormInput.nodes.find(
   //   oo => ref_form_input && oo._id === ref_form_input._ref
   // )
+
+  useEffect(() => {
+    console.log("isLoading", isLoading)
+  }, [isLoading])
+
   let formDefinition = data.allSanityFormInput.nodes.find(
     oo => ref_form_input && oo._id === ref_form_input._ref
   )
@@ -128,15 +133,19 @@ const DynamicInputForm = ({
     })
     // console.log("validate form", errObj, formData)
     setFormErrors(errObj)
+    setIsLoading(false)
     return ret
   }
 
   const onFormSubmit = data => {
     try {
+      // document
+      //   .getElementsByClassName("dyno-button")[0]
+      //   .setAttribute("disabled", true)
+
       if (!window.rudderanalytics) {
         return
       }
-      setIsLoading(true)
 
       var params = new URLSearchParams(document.location.search.substring(1))
 
@@ -263,19 +272,23 @@ const DynamicInputForm = ({
         })
     } catch (err) {
       console.log("errror exception", err)
-    } finally {
+      // document
+      //   .getElementsByClassName("dyno-button")[0]
+      //   .removeAttribute("disabled")
+
       setIsLoading(false)
+    } finally {
     }
   }
 
   //console.log("hari temp", formDefinition)
   return (
     <form
-      id={form_id}
+      id={`${form_id}`}
       onSubmit={e => {
+        setIsLoading(true)
         e.preventDefault()
         if (validateForm(formData) === false) {
-          // console.log("formData", formData)
           onFormSubmit(formData)
         }
       }}
@@ -403,9 +416,13 @@ const DynamicInputForm = ({
           )
         })}
       <button
-        class="btn-primary-lg mt-3 md:mb-0 mb-4"
+        className="dyno-button btn-primary-lg mt-3 md:mb-0 mb-4"
         disabled={isLoading}
-        type="submit"
+        // onClick={() => {
+        //   console.log("from button call")
+        //   setIsLoading(true)
+        // }}
+        type={"submit"}
       >
         {formDefinition && formDefinition.submit_button_text}
       </button>
