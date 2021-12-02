@@ -221,7 +221,7 @@ function OurLogo(props) {
 
     setTimeout(
       () => {
-        animateLogos()
+        //animateLogos()
       },
       tlDelay * 3 * 1000
     )
