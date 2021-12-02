@@ -21,7 +21,7 @@ const MainNavigationMenuLink = props => {
         menuIndex={i}
         classes={`${
           props.currMenuIndex === i ? `active` : ``
-        } parent-menu block text-darkScheme-textPrimary lg:mr-4 xl:mr-10 font-custom font-normal  p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm`}
+        } parent-menu block text-darkScheme-textPrimary lg:mr-4 xl:mr-10 font-custom font-normal  p-3  sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm mob-menu-link`}
         onclick={e => {
           if (link._rawSubMenuSection === null) {
             rudderslabTrackOnClick("navigation", "Header Navigation", e)
@@ -40,7 +40,7 @@ const MainNavigationMenuLink = props => {
           return (
             <div className="lg:pt-2">
               <div
-                className={`sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-md  lg:rounded-2xl py-1 lg:py-0 z-40  mx-auto ${
+                className={`sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-md  py-1 lg:py-0 z-40  mx-auto ${
                   i >= 3 ? "submenu-align" : ""
                 } lg:place-items-left ${
                  props.currMenuIndex === i ? `flex` : `flex hidden`
@@ -60,7 +60,7 @@ const MainNavigationMenuLink = props => {
                           className={`py-2 lg:py-6 ${
                             submenugroup.length - 1 === idx
                               ? ""
-                              : "lg:border-grayColor-lighter-2x lg:border-r"
+                              : "nav-separator"
                           } `}
                         >
                           <div className="flex flex-row lg:flex-col text-darkScheme-textPrimary ">

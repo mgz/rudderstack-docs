@@ -16,7 +16,7 @@ import { forEach, findIndex } from "lodash"
 import { postNavList } from "../../../../docs/postNavList"
 import { BlockMath, InlineMath } from "react-katex"
 import "katex/dist/katex.min.css"
-import {rudderslabTrackOnClickDocs, rudderslabTrackOnYoutubeVideoPlaybackDocs, checkPrevSibbling1} from '../../../../utils/common'
+import {rudderslabTrackOnClickDocs, rudderslabTrackOnYoutubeVideoPlaybackDocs} from '../../../../utils/common'
 import YouTube from "react-youtube"
 
 

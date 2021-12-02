@@ -8,7 +8,6 @@ const CodeEditor = props => {
   let [editorFlag, setEditorFlag] = useState(false);
 
   const [leftEditorScenes, setLeftEditorScenes] = useState(null);
-  const [rightEditorScenes, setRightEditorScenes] = useState(null);
   function replaceAll(str, find, replace) {
     var escapedFind = find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1")
     return str.replace(new RegExp(escapedFind, "g"), replace)
@@ -49,28 +48,7 @@ const CodeEditor = props => {
       }
     )
 
-    setLeftEditorScenes(createMovie(leftEditor, scene => {
-      let tmCodeInput = [];
-      props.code_input.code_contents.forEach(ppp => {
-        tmCodeInput.push(
-          scene.type(
-            replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
-            100
-          )
-        )
-        tmCodeInput.push(scene.wait(200))
-      })
-      return [
-        ...tmCodeInput,
-        (editor, next, timer) => {
-          timer(() => {
-            rightEditorScenes.play()
-          }, 50)
-        },
-      ]
-    }));
-
-    setRightEditorScenes(createMovie(rightEditor, scene => {
+    let rightEditorScenes = createMovie(rightEditor, scene => {
       let tmCodeOutput = []
       let tmpLineNumber = 1
       props.code_output.code_contents.forEach((ppp, idx) => {
@@ -95,13 +73,35 @@ const CodeEditor = props => {
         ...tmCodeOutput,
 
       ]
-    }))
+    })
+
+    setLeftEditorScenes(createMovie(leftEditor, scene => {
+      let tmCodeInput = [];
+      props.code_input.code_contents.forEach(ppp => {
+        tmCodeInput.push(
+          scene.type(
+            replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
+            100
+          )
+        )
+        tmCodeInput.push(scene.wait(200))
+      })
+      return [
+        ...tmCodeInput,
+        (editor, next, timer) => {
+          timer(() => {
+            rightEditorScenes.play()
+          }, 50)
+        },
+      ]
+    }));
 
     let el = document.getElementById("codeEditorBlock")
 
     function isInViewPort(element) {
       // Get the bounding client rectangle position in the viewport
-      let bounding = element.getBoundingClientRect()
+      let bounding = element.getBoundingClientRect();
+      /* console.log('Bounding rect', bounding); */
 
       // Checking part. Here the code checks if it's *fully* visible
       // Edit this part if you just want a partial visibility
@@ -123,10 +123,10 @@ const CodeEditor = props => {
       "scroll",
       function (event) {
         if (isInViewPort(el)) {
-          /* console.log('In viewport'); */
+          console.log('In viewport');
           setEditorFlag(true);
         }else{
-          /* console.log('out of viewport'); */
+          console.log('out of viewport');
           setEditorFlag(false);
         }
       }
@@ -146,11 +146,11 @@ const CodeEditor = props => {
   return (
     <section className="py-19 relative section-gradient">
       <span className="section-border absolute top-0 left-0 w-full block"></span>
-      <div className="max-w-6xl mx-auto md:w-full md:px-4" id="codeEditorBlock">
+      <div className="max-w-6xl mx-auto blockWrapper">
         <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary">
           {props.title}
         </h3>
-        <div className="codeBlockWrapper mt-16 mb-10 flex">
+        <div className="codeBlockWrapper mt-16 mb-10 flex" id="codeEditorBlock">
           <div className="codeBlockLeft w-1/2">
             <div className="codeEditorFile">
               <div className="topEditorBlock flex">

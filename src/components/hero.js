@@ -93,7 +93,7 @@ function Hero(props) {
 
   return (
     <section className="relative gradiant-layer banner-section pt-19 pb-40">
-      <div className="max-w-6xl mx-auto md:w-full md:px-4">
+      <div className="max-w-6xl mx-auto blockWrapper">
         <div className="background-gradient-circles absolute top-1/4 left-14 keep-rotate"></div>
         {/* <Helmet>
           <script src={withPrefix("script.js")} type="text/javascript" />
@@ -101,7 +101,7 @@ function Hero(props) {
         </Helmet> */}
         <div className="flex flex-col items-center justify-center mx-auto gap-10 lg:flex-row lg:p-0">
           <div className="relative z-20 flex w-2/5 flex-col mb-8 text-2xl hero-content">
-            <h1 className="mb-8 md:my-4 text-5xl font-bold leading-tight cd-headline text-darkScheme-textPrimary">
+            <h1 className="mb-8 md:my-4 text-5xl font-bold leading-tight cd-headline text-darkScheme-textPrimary section-title">
               {props.herobannertitle}
               {/* All your customer data pipelines in one platform */}
             </h1>

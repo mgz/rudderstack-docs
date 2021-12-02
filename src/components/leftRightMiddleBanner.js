@@ -7,10 +7,10 @@ const LeftRightMiddleBanner = props => {
   /* console.log(props, "LeftRightMiddleBanner") */
   return (
     <section className="py-12">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto blockWrapper">
         <div className="blog-section flex">
-          <div className="w-1/2 border-r border-darkScheme-textPrimary">
-            <div className="w-9/12 mx-auto">
+          <div className="w-1/2 border-r border-darkScheme-textPrimary blog-section-inner">
+            <div className="w-9/12 mx-auto mob-full">
               <h3 className="text-darkScheme-btnSecondaryBg uppercase mb-5 text-2xl font-bold">
                 {props.left_section.title}
               </h3>
@@ -23,23 +23,25 @@ const LeftRightMiddleBanner = props => {
               {props.left_section.addlink && (
                 <a
                   href={props.left_section.addlink.cmnlink}
-                  className="learn-more mt-2 text-darkScheme-textPrimary font-bold block"
+                  className="learn-more mt-2 text-darkScheme-textPrimary font-bold inline-block relative"
                   onClick={e =>
                     rudderslabTrackOnClick("link", props.left_section.title, e)
                   }
                 >
-                  <span className="learn-more-text">
+                  <span className="learn-more-text inline-block">
                     {props.left_section.addlink.cmnlinktext}
                   </span>
-                  <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg">
-                    &gt;
+                  <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">
+                    <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </span>
                 </a>
               )}
             </div>
           </div>
-          <div className="w-1/2">
-            <div className="w-9/12 mx-auto">
+          <div className="w-1/2 blog-section-inner">
+            <div className="w-9/12 mx-auto mob-full">
               <h3 className="text-darkScheme-btnSecondaryBg uppercase mb-5 text-2xl font-bold">
                 {props.right_section.title}
               </h3>
@@ -52,16 +54,18 @@ const LeftRightMiddleBanner = props => {
               {props.right_section.addlink && (
                 <a
                   href={props.right_section.addlink.cmnlink}
-                  className="learn-more mt-2 text-darkScheme-textPrimary font-bold block"
+                  className="learn-more mt-2 text-darkScheme-textPrimary font-bold inline-block relative"
                   onClick={e =>
                     rudderslabTrackOnClick("link", props.right_section.title, e)
                   }
                 >
-                  <span className="learn-more-text">
+                  <span className="learn-more-text inline-block">
                     {props.right_section.addlink.cmnlinktext}
                   </span>
-                  <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg">
-                    &gt;
+                  <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">
+                    <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </span>
                 </a>
               )}
