@@ -22,7 +22,7 @@ const LeftRightImgCnt_V2 = props => {
             <div
               className={`flex flex-col w-full justify-center items-start md:text-${
                 props.header_alignment !== "" ? props.header_alignment : "left"
-              } mx-auto max-w-screen-md`}
+              } mx-auto max-w-screen-xl`}
             >
               {smalltitle !== "" && (
                 <p
@@ -35,7 +35,7 @@ const LeftRightImgCnt_V2 = props => {
               )}
               {maintitle !== "" && (
                 <h3
-                  className={`md:mt-2 text-4xl md:text-5xl ${
+                  className={`md:mt-2 text-3xl-3 md:text-5xl text-center md:text-left ${
                     props.applyGradientColorTheme ? "text-white" : "text-dark"
                   }  font-bold leading-tight pr-0 md:pr-4`}
                 >
@@ -48,15 +48,23 @@ const LeftRightImgCnt_V2 = props => {
           <div>
             {props.header_media &&
               props.header_media.condition === "imageoption" && (
-                <div className="max-w-screen-md mx-auto my-10">
+                <div className="max-w-screen-md mx-auto my-10 relative left-right-content-center-image">
+                  {/* <div className="absolute z-10">
+                    <StaticImage
+                      src="../images/left-right-comp-back-image.png"
+                      placeholder="tracedSVG"
+                      alt="Image"
+                    />
+                  </div> */}
+
                   <Image
                     props={props.header_media.imageoption.asset._ref}
-                    classes="w-full"
+                    classes="p-10"
                   />
                 </div>
               )}
             {props.header_media_cta_cutton && (
-              <div className="w-full md:w-80 mx-auto">
+              <div className="md:w-80 md:mx-auto mx-4">
                 <>
                   {(() => {
                     if (
@@ -74,8 +82,9 @@ const LeftRightImgCnt_V2 = props => {
                           }
                           className={
                             (props.header_media_cta_cutton.btnhiglight === true
-                              ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
+                              ? "btn-primary-lg "
+                              : "btn-secondary-lg") +
+                            ` sm:mr-4 md:mb-0 mb-6 bg-whiteColor-custom`
                           }
                           href={props.header_media_cta_cutton.btnlink}
                         >
@@ -89,7 +98,8 @@ const LeftRightImgCnt_V2 = props => {
                           className={
                             (props.header_media_cta_cutton.btnhiglight === true
                               ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
+                              : "btn-secondary-lg") +
+                            ` sm:mr-4 md:mb-0 mb-6 bg-whiteColor-custom text-xs`
                           }
                         >
                           <Link
@@ -113,20 +123,20 @@ const LeftRightImgCnt_V2 = props => {
             )}
 
             {props.header_feature_items && (
-              <div className="flex flex-col md:flex-row left-right-comp-gradient rounded-3xl mt-16 p-4 mx-auto py-4 justify-center">
+              <div className="flex flex-col md:flex-row left-right-comp-gradient rounded-3xl pt-8 md:mt-16 p-4 md:mx-auto py-4 justify-center mx-8">
                 {props.header_feature_items.map((row, idx) => {
                   return (
                     <div
                       key={row._key}
-                      className={`w-64 flex flex-row md:flex-col  ${
-                        idx === 0 ? "mt-0 md:pl-0" : "mt-4 md:mt-0  md:pr-8"
+                      className={`md:w-64 flex flex-col ${
+                        idx === 0 ? "mt-0 md:pl-0" : "mt-12 md:mt-0  md:pr-8"
                       }`}
                     >
                       <Image
                         props={row.card_image.asset._ref}
-                        classes="w-10 h-auto mb-4"
+                        classes="w-10 h-auto mb-4 mx-auto"
                       />
-                      <span className="text-xl text-whiteColor-custom font-bold leading-tight ml-4 md:ml-0">
+                      <span className="text-lg text-whiteColor-custom font-bold leading-tight md:ml-0 px-6 md:px-0 text-center">
                         {row.title}
                       </span>
                     </div>
@@ -175,7 +185,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } pl-8 pr-20 mt-12 sm:mt-0`}
+                      } px-0 md:pr-20 pt-8 md:pt-0`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
@@ -195,16 +205,17 @@ const LeftRightImgCnt_V2 = props => {
                       })()}
                     </div>
                     <div
-                      c
                       className={`w-full ${
                         content_display_ratio === "60:40"
                           ? "sm:w-3/5"
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } pl-12`}
+                      } pl-0 md:pl-12`}
                     >
-                      <div className={`p-6 sm:p-12 left-right-content`}>
+                      <div
+                        className={`p-6 sm:p-12 left-right-content mx-4 md:mx-0`}
+                      >
                         <div className="align-middle">
                           <p
                             className={`mt-4 sm:mt-0 text-sm ${
@@ -399,7 +410,7 @@ const LeftRightImgCnt_V2 = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap pt-16 "
+                    className="flex items-center flex-wrap pt-6 md:pt-16"
                   >
                     <div
                       className={`${
@@ -410,7 +421,7 @@ const LeftRightImgCnt_V2 = props => {
                           : "sm:w-1/2"
                       } md:pr-12 `}
                     >
-                      <div className={`p-6  md:p-12 left-right-content`}>
+                      <div className={`p-6 md:p-12 left-right-content mx-4`}>
                         <p
                           className={`mt-4 sm:mt-0 ${
                             props.applyGradientColorTheme ? "text-seegreen" : ""
@@ -423,7 +434,7 @@ const LeftRightImgCnt_V2 = props => {
                       </h3> */}
                         {isTitleBigger === true ? (
                           <h2
-                            className={`mt-2 mb-4 pb-2 text-3xl-4 md:text-5xl ${
+                            className={`mt-2 mb-4 pb-2 text-sm md:text-3xl-4 ${
                               props.applyGradientColorTheme
                                 ? "text-white"
                                 : titleColor === "midnightBlue"
@@ -437,7 +448,7 @@ const LeftRightImgCnt_V2 = props => {
                           </h2>
                         ) : (
                           <h3
-                            className={`mt-2 mb-4 pb-2 text-2xl ${
+                            className={`mt-2 mb-4 pb-2 text-sm md:text-2xl ${
                               props.applyGradientColorTheme
                                 ? "text-white"
                                 : titleColor === "midnightBlue"
@@ -455,7 +466,7 @@ const LeftRightImgCnt_V2 = props => {
                             props.applyGradientColorTheme
                               ? "text-white"
                               : "text-grayColor-custom"
-                          } leading-7 text-sm sm:text-lg frtxt-contnt ${
+                          } leading-7 text-xs sm:text-lg frtxt-contnt ${
                             content.content_list_styling === "right_arrow"
                               ? "arrow-list-items"
                               : content.content_list_styling === "check"
@@ -572,7 +583,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } pl-20 pr-8`}
+                      } px-0 md:pl-20 pt-8 md:pt-0`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {

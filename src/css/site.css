@@ -91,6 +91,20 @@ body {
   background: linear-gradient(226.32deg, #6b96c3 -50.9%, #111168 108.01%);
 }
 
+.left-right-content-center-image {
+  background-image: url("../images/left-right-comp-back-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.product-hero-banner {
+  background-image: url("../images/product-banner.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 90%;
+  /* background-size: 1080px; */
+}
+
 .hero-case-studies-bg-image {
   background-image: url("../images/Union2.png");
   background-repeat: no-repeat;
@@ -472,11 +486,12 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 12px;
+  /* left: 60px; */
+  /* border-radius: 12px;
   padding-left: 10%;
   padding-right: 12%;
   padding-top: 3%;
-  padding-bottom: 4%;
+  padding-bottom: 4%; */
   z-index: 20;
 }
 
@@ -851,10 +866,10 @@ top: -60px;
   -webkit-background-size: 100%;
   background-size: 100%;
 }
-.cd-words-unchanged{
+.cd-words-unchanged {
   margin-right: 8px;
 }
-.cd-words-wrapper{
+.cd-words-wrapper {
   overflow: hidden;
   vertical-align: top;
   position: relative;
@@ -946,10 +961,19 @@ top: -60px;
   .submenu-align {
     left: 15rem;
   }
+  .product-hero-banner {
+    background-image: url("../images/product-banner.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 80%;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .submenu-align {
     left: 30rem;
+  }
+  .product-media {
+    left: 60px;
   }
 }
 
@@ -1023,6 +1047,21 @@ top: -60px;
   border-color: rgba(255, 255, 255, 0.46);
   height: 600px;
 }
+.testimonial-container {
+  border-color: rgba(255, 255, 255, 0.46);
+  height: 300px;
+  background: radial-gradient(
+    97.77% 308.45% at 0% 14.59%,
+    rgba(7, 14, 31, 0.4) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 36px;
+}
 .quotes {
   top: -70px;
 }
@@ -1043,23 +1082,39 @@ top: -60px;
 .logo-item img {
   filter: brightness(0) invert(1);
 }
-.background-gradient-circles{
+.background-gradient-circles {
   width: 219px;
   height: 133px;
-  background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(214, 146, 246, 0.35) 0%, rgba(134, 248, 224, 0.35) 100%);
+  background: radial-gradient(
+    100% 7106.9% at 4.49% 0%,
+    rgba(214, 146, 246, 0.35) 0%,
+    rgba(134, 248, 224, 0.35) 100%
+  );
   filter: blur(60px);
 }
-.keep-rotate{
+.keep-rotate {
   /* transform: rotateY(0deg) translateX(-100px) rotateY(0deg); */
   animation: bgrotate 10s ease infinite;
 }
-@keyframes bgrotate{
-  0%{background-position: 0% 50%}
-  50%{ background-position: 100% 50%  }
-  100%{background-position: 0% 50%}
+@keyframes bgrotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-@-webkit-keyframes bgrotate{
-  0%{background-position: 0% 50%}
-  50%{ background-position: 100% 50%  }
-  100%{background-position: 0% 50%}
+@-webkit-keyframes bgrotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
