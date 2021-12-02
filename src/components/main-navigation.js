@@ -90,7 +90,7 @@ const MainNavigation = props => {
                       )
                     }
                   >
-                    <span className="btn-primary-sm inline-block px-3 sm:px-6">
+                    <span className="btn-primary-sm border border-darkScheme-textPrimary bg-transparent text-darkScheme-textPrimary inline-block hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack">
                       {trybtn.btntext}
                     </span>
                   </a>
