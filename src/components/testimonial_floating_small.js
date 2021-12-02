@@ -9,7 +9,7 @@ const TestimonialFloatingSmall = props => {
   return (
     <div>
       <div className="carousel-item w-full relative">
-        <div className="carousel-inner-wrapper relative flex items-center justify-center border rounded-2xl px-4 py-8 mx-7">
+        <div className="testimonial-container relative flex items-center justify-center border rounded-2xl px-4 py-8 mx-7">
           <span className="quotes absolute">
             <svg
               width="154"

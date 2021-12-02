@@ -32,10 +32,10 @@ const ProductHeroBanner = props => {
   }
 
   return (
-    <section className="w-full  lg:py-0 py-10 flex justify-center items-center relative overflow-hidden gradiant-layer banner-section">
+    <section className="w-full  py-10 flex justify-center items-center relative overflow-hidden gradiant-layer banner-section product-hero-banner pb-16 md:pb-40">
       <div className="max-w-6xl w-full sm:pb-20 pb-4 md:pt-16 p1-16 px-4 md:px-3 mx-auto">
         <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
-          <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-5/12 sm:px-0sm:items-center lg:items-start lg:mb-0">
+          <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-6/12 sm:px-0sm:items-center lg:items-start lg:mb-0 pr-4 lg:pr-20">
             <h2 className="text-2xl  font-bold tracking-tight-2 text-darkScheme-btnSecondaryBg">
               {props.productbannerheader}
             </h2>
@@ -102,7 +102,7 @@ const ProductHeroBanner = props => {
             </div>
           </div>
 
-          <div className="relative w-full rounded-xl flex-grow justify-items-end lg:w-7/12 px-0 sm:items-center lg:items-start lg:mb-0">
+          <div className="relative w-full rounded-xl flex-grow justify-items-end lg:w-6/12 px-0 sm:items-center lg:items-start lg:mb-0">
             {props.herobanner_media &&
               props.herobanner_media.condition === "videooption" && (
                 <div class="iframe-container">
@@ -116,7 +116,6 @@ const ProductHeroBanner = props => {
                   />
                 </div>
               )}
-
             {props.herobanner_media &&
               props.herobanner_media.condition === "imageoption" && (
                 <div class="iframe-container">

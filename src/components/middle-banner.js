@@ -40,7 +40,7 @@ const MiddleBanner = props => {
 
                   {isLightTheme !== true && (
                     <StaticImage
-                      src="../images/Arrow-new-theme.svg"
+                      src="../images/Arrow.svg"
                       placeholder="tracedSVG"
                       alt="Get Started Image"
                     />
