@@ -1118,3 +1118,6 @@ top: -60px;
     background-position: 0% 50%;
   }
 }
+.mobile-menu img{
+  filter: brightness(0) invert(1);
+}

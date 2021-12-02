@@ -145,7 +145,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         id="main-container"
         className={
           (location && location.pathname === "/") ||
-          location.pathname.startsWith("/product/")
+          location && location.pathname.startsWith("/product/")
             ? "hero-section"
             : "gradient-disable"
         }
