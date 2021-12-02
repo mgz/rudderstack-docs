@@ -17,7 +17,7 @@ const MiddleBanner = props => {
         className={`${
           isLightTheme === true
             ? "text-blueNew-midnight"
-            : "bg-darkScheme-textBlack text-white"
+            : "hero-section text-white"
         } 100% pt-10 md:py-28 px-0 sm:px-0`}
       >
         <div className="max-w-6xl mx-auto blockWrapper">
@@ -72,7 +72,10 @@ const MiddleBanner = props => {
                       : "text-white"
                   }`}
                 >
-                  <PortableText blocks={smalldescription} trackSectionHeader={title} />
+                  <PortableText
+                    blocks={smalldescription}
+                    trackSectionHeader={title}
+                  />
                 </div>
 
                 {/* <p>{smalldescription}</p> */}
@@ -100,9 +103,13 @@ const MiddleBanner = props => {
                           )
                         } else {
                           return (
-                            <Link to={btn.btnlink} key={btn._key} onClick={e =>
-                              rudderslabTrackOnClick("button", title, e)
-                            }>
+                            <Link
+                              to={btn.btnlink}
+                              key={btn._key}
+                              onClick={e =>
+                                rudderslabTrackOnClick("button", title, e)
+                              }
+                            >
                               <span
                                 className={
                                   (btn.btnhiglight === true
