@@ -60,9 +60,9 @@ const DynamicInputForm = ({
   //   oo => ref_form_input && oo._id === ref_form_input._ref
   // )
 
-  useEffect(() => {
-    console.log("isLoading", isLoading)
-  }, [isLoading])
+  // useEffect(() => {
+  //   console.log("isLoading", isLoading)
+  // }, [isLoading])
 
   let formDefinition = data.allSanityFormInput.nodes.find(
     oo => ref_form_input && oo._id === ref_form_input._ref
