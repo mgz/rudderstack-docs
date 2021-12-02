@@ -5,11 +5,11 @@
     top: 104px;
     left: 474px;
   }
-  
+
   .integration-connection-hero-logo-primary-desktop {
     width: 488px;
   }
-  
+
   .integration-connection-hero-logo-mobile {
     position: absolute;
     width: 122px;
@@ -17,17 +17,17 @@
     top: 170px;
     left: 326px;
   }
-  
+
   .integration-connection-hero-logo-primary-mobile {
     width: 327px;
   }
-  
+
   .integration-connection-hero-container-warehouse {
     width: 490px;
     margin: auto;
     position: relative;
   }
-  
+
   .integration-connection-hero-logo-right-warehouse {
     position: absolute;
     width: 169px;
@@ -35,7 +35,7 @@
     top: 60px;
     left: 430px;
   }
-  
+
   .integration-connection-hero-logo-left-warehouse {
     position: absolute;
     width: 156px;
@@ -48,7 +48,7 @@
     margin: auto;
     position: relative;
   }
-  
+
   .int-conn-left-logo {
     display: flex;
     justify-content: center;
@@ -59,7 +59,7 @@
     height: 96px;
     width: 96px;
   }
-  
+
   .int-conn-right-logo {
     display: flex;
     justify-content: center;
@@ -76,7 +76,7 @@
       margin: auto;
       position: relative;
     }
-  
+
     .integration-connection-hero-logo-right-warehouse {
       position: absolute;
       width: 130px;
@@ -84,7 +84,7 @@
       top: 24px;
       left: 256px;
     }
-  
+
     .integration-connection-hero-logo-left-warehouse {
       position: absolute;
       width: 100px;
@@ -93,12 +93,12 @@
       left: 0px;
     }
   }
-  
+
   @media (max-width: 1023px) and (min-width: 640px) {
     .integration-connection-hero-logo-primary-desktop {
       width: 490px;
     }
-  
+
     .integration-connection-hero-logo-desktop {
       position: absolute;
       width: 122px;
@@ -106,19 +106,19 @@
       top: 104px;
       left: 474px;
     }
-  
+
     .integration-connection-hero-container-desktop {
       width: 520px;
       margin: auto;
       position: relative;
     }
-  
+
     .integration-connection-hero-container-warehouse {
       width: 490px;
       margin: auto;
       position: relative;
     }
-  
+
     .integration-connection-hero-logo-warehouse {
       position: absolute;
       width: 169px;
@@ -126,11 +126,11 @@
       top: 170px;
       left: 326px;
     }
-  
+
     .integration-connection-hero-logo-primary-mobile {
       width: 340px;
     }
-  
+
     .integration-connection-hero-logo-mobile {
       position: absolute;
       width: 122px;
@@ -138,7 +138,7 @@
       top: 170px;
       left: 326px;
     }
-  
+
     .integration-connection-hero-container-mobile {
       width: 520px;
       margin: auto;
@@ -157,7 +157,7 @@
       left: 280px;
     }
   }
-  
+
   @media only screen and (max-width: 639px) {
     .integration-connection-hero-logo-desktop {
       position: absolute;
@@ -166,17 +166,17 @@
       top: 30px;
       left: 172px;
     }
-  
+
     .integration-connection-hero-logo-primary-desktop {
       width: 180px;
     }
-  
+
     .integration-connection-hero-container-desktop {
       width: 300px;
       margin: auto;
       position: relative;
     }
-  
+
     .integration-connection-hero-logo-mobile {
       position: absolute;
       width: 84px;
@@ -184,13 +184,13 @@
       top: 110px;
       left: 206px;
     }
-  
+
     .integration-connection-hero-container-warehouse {
       width: 200px;
       margin: auto;
       position: relative;
     }
-  
+
     .integration-connection-hero-logo-right-warehouse {
       position: absolute;
       width: 80px;
@@ -198,7 +198,7 @@
       top: 20px;
       left: 170px;
     }
-  
+
     .integration-connection-hero-logo-left-warehouse {
       position: absolute;
       width: 78px;
@@ -206,23 +206,23 @@
       top: 0px;
       left: 0px;
     }
-  
+
     .integration-connection-hero-logo-primary-mobile {
       width: 208px;
     }
-  
+
     .integration-connection-hero-container-mobile {
       width: 300px;
       margin: auto;
       position: relative;
     }
-  
+
     .ic-middle-container {
       width: 300px;
       margin: auto;
       position: relative;
     }
-  
+
     .int-conn-left-logo {
       display: flex;
       justify-content: center;
@@ -233,7 +233,7 @@
       height: 52px;
       width: 52px;
     }
-  
+
     .int-conn-right-logo {
       display: flex;
       justify-content: center;
@@ -269,7 +269,7 @@
     top: 86px;
     z-index: 10;
   }
-  
+
   .search-cover,
   .filter-menu {
     @apply border;
@@ -284,14 +284,14 @@
     @apply bg-blueNew-eastbay;
     @apply cursor-pointer;
   }
-  
+
   .content-box {
     @apply border;
     @apply border-solid;
     @apply bg-blueNew-eastbay;
     /* border-color: #3f3c7f ; */
   }
-  
+
   .floatbtncoantiner {
     position: fixed;
     right: -100px;
@@ -300,18 +300,18 @@
     cursor: pointer;
     display: none;
   }
-  
+
   .floatbtnanimation {
     right: 20px;
   }
-  
+
   .circle-check-items ul li {
     @apply relative;
     @apply w-full;
     @apply pl-8;
     @apply mt-4;
   }
-  
+
   .circle-check-items ul li::before {
     @apply absolute;
     content: "";
@@ -323,7 +323,7 @@
     @apply top-1.5;
     @apply left-0;
   }
-  
+
   /*Source Integration Page Css*/
   .arrow-list-items ul li {
     @apply relative;
@@ -347,7 +347,7 @@
     height: 220px;
     border-bottom: 1px solid #e1e1e1;
   }
-  
+
   /*Video On Demand*/
   .video-banner-bg {
     background: url("../images/video-banner-bg.svg");
@@ -358,7 +358,7 @@
   .video-banner-bg .text-5xl {
     font-size: 48px !important;
   }
-  
+
   /*Video On Demand*/
   .conract-us-bg {
     background: url("../images/video-banner-bg.svg");
@@ -366,7 +366,7 @@
     background-position: right top;
     background-size: 51%;
   }
-  
+
   .speaker-pic {
     @apply w-36;
     @apply h-36;
@@ -375,23 +375,23 @@
   .speaker {
     background-color: #eef5f5;
   }
-  
+
   @media only screen and (min-width: 1023px) {
     .menu li.has-submenu:hover a:after {
       transform: rotate(225deg);
       top: 0px;
     }
   }
-  
+
   @media only screen and (max-width: 1120px) {
     .demo-submit-background {
       background-image: url("../images/form-submit-header-right.png");
       background-position: bottom right;
       background-size: 350px auto;
-  
+
       background-repeat: no-repeat;
     }
-  
+
     .demo-header-bg {
       background-image: none;
       background-position: bottom right;
@@ -399,15 +399,15 @@
       background-repeat: no-repeat;
     }
   }
-  
+
   @media only screen and (max-width: 1023px) {
     .about-us-banner {
       background-position: right 10px;
     }
-    .menu {
+    /* .menu {
       background-color: #fff !important;
       @apply w-full !important;
-    }
+    } */
     .sub-menu:after {
       display: none;
     }
@@ -430,7 +430,7 @@
       top: 8px;
     }
   }
-  
+
   @media (max-width: 992px) {
     .integration-banner::after {
       background-position: -30px 0px;
@@ -442,7 +442,7 @@
       height: 150px;
     }
   }
-  
+
   @media only screen and (max-width: 767px) {
     .integration-banner::after {
       top: 36px;
@@ -454,7 +454,7 @@
       background-position: right 25px;
     }
   }
-  
+
   @media only screen and (max-width: 639px) {
     /*Integration Page Css*/
     .floatbtncoantiner {
@@ -491,10 +491,10 @@
     /* Icon formatting - open */
     .filter-menu .tab input[type="checkbox"]:checked + label::after {
       transform: rotate(180deg);
-    }  
+    }
   }
-  
-  
+
+
   @media only screen and (max-width: 500px) {
     .about-us-banner {
       background: none;
@@ -504,7 +504,7 @@
       background-size: cover;
       background-position: center top;
     }
-  
+
     .demo-submit-background {
       background-image: none;
       background-repeat: no-repeat;
@@ -513,7 +513,7 @@
       background: none;
     }
   }
-  
+
   @media only screen and (max-width: 480px) {
     .integration-banner::before {
       right: -120px;

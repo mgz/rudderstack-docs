@@ -14,7 +14,7 @@ import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLef
 import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
 import CodeEditor from "../components/CodeEditor"
 import LeftRightComponentEdgesAligned from "../components/leftRightComponentEdgesAligned"
-import LeftRightMiddleBanner from "../components/leftRightMiddleBanner"
+import LeftRightMiddleBanner from "../components/LeftRightMiddleBanner"
 // import SEO from "../components/seo"
 import Layout from "../components/layout"
 

@@ -20,7 +20,7 @@ const MiddleBanner = props => {
             : "bg-darkScheme-textBlack text-white"
         } 100% pt-10 md:py-28 px-0 sm:px-0`}
       >
-        <div className="max-w-6xl mx-auto md:w-full md:px-4">
+        <div className="max-w-6xl mx-auto blockWrapper">
           <div
             className={`flex flex-wrap ${
               isLightTheme !== true ? "items-center" : ""

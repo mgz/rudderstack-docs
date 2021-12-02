@@ -11,11 +11,11 @@ const LeftRightComponentEdgesAligned = props => {
       <div className="background-gradient-circles absolute top-2/4 right-1/4 keep-rotate"></div>
       <div className="background-gradient-circles absolute top-1/4 left-1/4 keep-rotate"></div>
       <div className="background-gradient-circles absolute bottom-1/4 left-1/4 keep-rotate"></div>
-      <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center md:w-full md:px-4">
-        <h3 className="mb-0 text-4xl md:text-4xl font-bold leading-tight uppercase text-center text-darkScheme-btnPrimaryBg mt-9">
+      <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center blockWrapper">
+        <h3 className="mb-0 text-4xl md:text-4xl font-bold leading-tight uppercase text-center text-darkScheme-btnPrimaryBg mt-9 section-title">
           {props.leftrightcontentmaintitle}
         </h3>
-        <h2 className="text-5xl text-darkScheme-textPrimary leading-tight font-bold mt-16 text-center">
+        <h2 className="text-5xl text-darkScheme-textPrimary leading-tight font-bold mt-16 text-center section-title">
           {props.leftrightcontentsubtitle}
         </h2>
         <div className="why-rudderstack-wrapper max-w-4xl mx-auto">
@@ -43,7 +43,7 @@ const LeftRightComponentEdgesAligned = props => {
                   </div>
                 </div>
                 <div
-                  className={`flex self-${
+                  className={`wr-text-data-wrapper flex self-${
                     row.condition === "right" ? "end" : "start"
                   } w-1/2 -mt-12`}
                 >

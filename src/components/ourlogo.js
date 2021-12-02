@@ -244,11 +244,11 @@ function OurLogo(props) {
       className={`py-19 section-gradient relative`}
     >
       <span className="section-border block absolute top-0 left-0 w-full"></span>
-      <div className="max-w-6xl mx-auto md:w-full md:px-4">
+      <div className="max-w-6xl mx-auto blockWrapper">
         <div
           className={`flex w-full justify-center`}
         >
-          <h3 className="my-4 text-4xl text-darkScheme-textPrimary font-bold leading-8	md:leading-10 text-center normal-case md:mx-0 mx-auto">
+          <h3 className="my-4 text-4xl text-darkScheme-textPrimary font-bold text-center normal-case md:mx-0 mx-auto section-title">
             {/* {maintitle} */}
             11,000+ sites and apps run RudderStack
           </h3>

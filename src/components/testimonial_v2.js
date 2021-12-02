@@ -19,8 +19,8 @@ const TestimonialV2 = props => {
   const testimonials = props.addtestimonial
   return (
     <section className="section-gradient py-19 relative">
-      <div className="max-w-6xl mx-auto">
-        <div className="w-8/12 mx-auto">
+      <div className="max-w-6xl mx-auto blockWrapper">
+        <div className="w-8/12 mx-auto mob-full">
           <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary">
             {props.testimoniallabel}
           </h3>
@@ -35,7 +35,7 @@ const TestimonialV2 = props => {
             </div>
           </div>
         )}
-        <div className="carousel-wrapper flex pt-15">
+        <div className="carousel-wrapper pt-15">
           {isMobile ? (<Carousel
             showThumbs={false}
             showStatus={false}
@@ -48,7 +48,7 @@ const TestimonialV2 = props => {
               testimonials.map((testimonial, i) => {
                 return (
                   <div
-                    className="carousel-item w-1/3 relative"
+                    className="carousel-item relative"
                     key={i}
                     ref={ref}
                   >
@@ -88,8 +88,9 @@ const TestimonialV2 = props => {
                   </div>
                 )
               })}
-          </Carousel>) :
-            testimonials &&
+          </Carousel>) : (
+          <div className="flex desk-testimonial">
+            {testimonials &&
               testimonials.splice(0,3).map((testimonial, i) => {
                 return (
                   <div
@@ -132,7 +133,7 @@ const TestimonialV2 = props => {
                     </div>
                   </div>
                 )
-              })}
+              })}</div>)}
         </div>
       </div>
       <span className="section-border absolute bottom-0 left-0 w-full block"></span>
