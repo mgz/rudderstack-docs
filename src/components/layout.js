@@ -28,7 +28,7 @@ import "../css/tailwind.css"
 import { faRss } from "@fortawesome/free-solid-svg-icons"
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
-const Layout = ({ location, showExplicitGradient, children }) => {
+const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
   const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
@@ -144,8 +144,9 @@ const Layout = ({ location, showExplicitGradient, children }) => {
       <div
         id="main-container"
         className={
+          darkTheme ||
           (location && location.pathname === "/") ||
-          location && location.pathname.startsWith("/product/")
+          location.pathname.startsWith("/product/")
             ? "hero-section"
             : "gradient-disable"
         }

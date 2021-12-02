@@ -34,6 +34,8 @@ const ProductHeroBanner = props => {
   return (
     <section className="w-full  py-10 flex justify-center items-center relative overflow-hidden gradiant-layer banner-section product-hero-banner pb-16 md:pb-40">
       <div className="max-w-6xl w-full sm:pb-20 pb-4 md:pt-16 p1-16 px-4 md:px-3 mx-auto">
+        <div class="background-gradient-circles-xl absolute top-2/5 left-14 keep-rotate"></div>
+        <div class="background-gradient-circles-xl absolute bottom-1/4 right-14 keep-rotate"></div>
         <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
           <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-6/12 sm:px-0sm:items-center lg:items-start lg:mb-0 pr-4 lg:pr-20">
             <h2 className="text-2xl  font-bold tracking-tight-2 text-darkScheme-btnSecondaryBg">

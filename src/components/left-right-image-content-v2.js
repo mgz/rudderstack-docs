@@ -218,11 +218,7 @@ const LeftRightImgCnt_V2 = props => {
                       >
                         <div className="align-middle">
                           <p
-                            className={`mt-4 sm:mt-0 text-sm ${
-                              props.applyGradientColorTheme
-                                ? "text-seegreen"
-                                : ""
-                            } uppercase`}
+                            className={`mt-4 sm:mt-0 text-sm  text-darkScheme-btnSecondaryBg uppercase`}
                           >
                             {smalltitle}
                           </p>
@@ -423,9 +419,7 @@ const LeftRightImgCnt_V2 = props => {
                     >
                       <div className={`p-6 md:p-12 left-right-content mx-4`}>
                         <p
-                          className={`mt-4 sm:mt-0 ${
-                            props.applyGradientColorTheme ? "text-seegreen" : ""
-                          } text-sm uppercase`}
+                          className={`mt-4 sm:mt-0  text-sm uppercase text-darkScheme-btnSecondaryBg`}
                         >
                           {smalltitle}
                         </p>
