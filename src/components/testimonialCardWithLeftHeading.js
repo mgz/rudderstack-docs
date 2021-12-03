@@ -13,10 +13,32 @@ const TestimonialCardWithLeftHeading = props => {
   // console.log("TestimonialCardWithLeftHeading", props)
   return (
     <section className="relative">
-      <div class="background-gradient-circles-xl absolute top-2/5 left-14 keep-rotate"></div>
-      <div class="background-gradient-circles-xl absolute bottom-1/4 right-14 keep-rotate"></div>
+      {/* <div class="background-gradient-circles-xl absolute top-2/5 left-14 keep-rotate"></div>
+      <div class="background-gradient-circles-xl absolute bottom-1/4 right-14 keep-rotate"></div> */}
+      <div className="out-gradient-wrapper bottom-1/4 right-16">
+        <div className="grad1">
+          <div className="grad2">
+            <div className="grad3">
+              <div className="grad4">
+                <div className="grad5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="out-gradient-wrapper top-1/4 left-1/4">
+        <div className="grad1">
+          <div className="grad2">
+            <div className="grad3">
+              <div className="grad4">
+                <div className="grad5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="max-w-6xl px-4 md:px-3 py-10 md:py-20 mx-auto mt-10">
-        <div className="flex flex-col  justify-center mx-auto md:flex-row lg:p-0">
+        <div className="flex flex-col  justify-center mx-auto lg:flex-row lg:p-0">
           <div className="z-20 flex flex-col w-full pb-1 md:mr-30 mb-20 sm:mb-32 text-2xl lg:w-3/5 sm:px-0sm:items-center lg:items-start lg:mb-0 lg:pr-44 mx-auto">
             <div className="">
               <div className="w-32">
@@ -86,7 +108,7 @@ const TestimonialCardWithLeftHeading = props => {
               ))}
             </div>
           </div>
-          <div className="relative w-full md:px-5 rounded-lg flex-grow justify-items-end md:w-2/5 sm:px-0 sm:items-center lg:items-start lg:mb-0">
+          <div className="relative w-full md:px-5 rounded-lg flex-grow justify-items-end lg:w-2/5 sm:px-0 sm:items-center lg:items-start lg:mb-0">
             <TestimonialFloatingSmall {...props.testimonial} />
           </div>
         </div>

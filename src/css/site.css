@@ -1232,7 +1232,7 @@ to { box-shadow: 0 0 100px 15px #e2e747; }
 }
 @media only screen and (max-width: 1200px){
   .blockWrapper{
-    padding: 0px 16px;
+    padding: 0px 24px;
   }
   .desk-testimonial{
     flex-direction: column;

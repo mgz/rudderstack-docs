@@ -185,7 +185,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } px-0 md:pr-20 pt-8 md:pt-0`}
+                      } px-0 lg:pr-20 pt-8 md:pt-0`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
@@ -214,7 +214,7 @@ const LeftRightImgCnt_V2 = props => {
                       } pl-0 md:pl-12`}
                     >
                       <div
-                        className={`p-6 sm:p-12 left-right-content mx-4 md:mx-0`}
+                        className={`p-6 lg:p-12 left-right-content mx-4 md:mx-0`}
                       >
                         <div className="align-middle">
                           <p
@@ -417,7 +417,7 @@ const LeftRightImgCnt_V2 = props => {
                           : "sm:w-1/2"
                       } md:pr-12 `}
                     >
-                      <div className={`p-6 md:p-12 left-right-content mx-4`}>
+                      <div className={`p-6 lg:p-12 left-right-content mx-4`}>
                         <p
                           className={`mt-4 sm:mt-0  text-sm uppercase text-darkScheme-btnSecondaryBg`}
                         >
@@ -577,7 +577,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } px-0 md:pl-20 pt-8 md:pt-0`}
+                      } px-0 lg:pl-20 pt-8 md:pt-0`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
