@@ -147,7 +147,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
         className={
           darkTheme ||
           (location && location.pathname === "/") ||
-          location.pathname.startsWith("/product/")
+          (location && location.pathname.startsWith("/product/"))
             ? "hero-section"
             : "gradient-disable"
         }
