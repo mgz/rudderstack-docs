@@ -143,9 +143,9 @@ const MainNavigation = props => {
             id="main-nav-menu"
             className={`menu lg:flex ${
               isExpanded ? `block` : `hidden`
-            } py-4 pl-4 lg:pl-16 pr-4 justify-center items-center lg:items-center lg:w-auto w-full mt-2 lg:mt-0 lg:flex-1  lg:bg-transparent  lg:text-black-custom`}
+            } pl-4 lg:pl-16 pr-4 justify-center items-center lg:items-center lg:w-auto w-full mt-2 lg:mt-0 lg:flex-1  lg:bg-transparent  lg:text-black-custom`}
           >
-            <ul className="lg:flex-grow flex flex-col lg:flex-row list-none">
+            <ul className="lg:flex-grow flex flex-col lg:flex-row list-none mt-4">
               {mainmenu.map((link, i) => (
                 <MainNavigationMenuLink
                   key={i}

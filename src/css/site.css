@@ -1131,6 +1131,83 @@ top: -60px;
   width: 100%;
 }
 
+.code-ed-links-wrapper{
+  bottom: -50px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+}
+
+.grad1{
+  animation: one 5s ease-in-out infinite alternate;
+}
+
+@keyframes
+one { from {
+box-shadow: 0 0 250px 20px #070e1f;
+}
+
+to {box-shadow: 0 0 100px 15px #3e35d1; }
+}
+
+.grad2{
+  width: 90%;
+  animation: two 4s ease-in-out infinite alternate;
+}
+
+@keyframes
+two { from {
+box-shadow: 0 0 250px 20px #86f8e0;
+}
+
+to { box-shadow: 0 0 100px 15px #18C499; }
+}
+
+.grad3{
+  width: 80%;
+  animation: three 3s ease-in-out infinite alternate;
+}
+
+@keyframes
+three { from {
+box-shadow: 0 0 250px 20px #f3e1fd;
+}
+
+to { box-shadow: 0 0 100px 15px #d692f6 }
+}
+
+.grad4{
+  width: 70%;
+  animation: four 2s ease-in-out infinite alternate;
+}
+
+@keyframes
+four { from {
+shadow: 0 0 250px 20px #781848;
+}
+
+to { shadow: 0 0 100px 15px #F2BBE9; }
+}
+
+.grad5{
+  width: 60%;
+  animation: five 1s ease-in-out infinite alternate;
+}
+
+@keyframes
+five { from {
+box-shadow: 0 0 250px 20px #42F2A1;
+}
+
+to { box-shadow: 0 0 100px 15px #e2e747; }
+}
+
+.out-gradient-wrapper{
+  position: absolute;
+  width: 20%;
+  filter: blur(60px);
+}
+
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;
@@ -1162,13 +1239,16 @@ top: -60px;
   }
   .desk-testimonial .carousel-item{
     width: 100% !important;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
   }
   .desk-testimonial .carousel-item:last-child{
     margin-bottom: 0px;
   }
   .desk-testimonial .carousel-inner-wrapper{
     height: auto;
+  }
+  .logo-list .logo-item{
+    width: 33.33% !important;
   }
 }
 @media only screen and (max-width: 1024px){
@@ -1256,7 +1336,7 @@ top: -60px;
     width: 90%;
   }
   .carousel-item .carousel-inner-wrapper{
-    padding: 60px 15px !important;
+    padding: 90px 15px !important;
   }
   .testimonial-client-image{
     width: 120px;
@@ -1271,5 +1351,18 @@ top: -60px;
   .sub-menu img{
     /* filter: brightness(0) invert(1); */
     display: none;
+  }
+  .logo-list .logo-item{
+    width: 50% !important;
+  }
+  .code-ed-links-wrapper{
+    flex-direction: column;
+    bottom: -80px;
+  }
+  .code-ed-links-wrapper .code-ed-links{
+    width: 100% !important;
+  }
+  .code-ed-links.mob-hide{
+    display: none !important;
   }
 }

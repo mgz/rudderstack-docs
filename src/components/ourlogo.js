@@ -1,26 +1,13 @@
 import React, {useRef, useEffect} from "react"
 import Image from "./image"
 import gsap from 'gsap';
-/* import {GSDevTools} from 'gsap/GSDevTools';
-
-gsap.registerPlugin(GSDevTools) */
 
 function OurLogo(props) {
   const logoRefs = useRef([]);
   const tlDelay = 1
 
   useEffect(() => {
-    const rowLength = 4;
     let tl;
-
-    for(let i = 0; i < rowLength; i++){
-      const el = logoRefs.current[i];
-
-      gsap.set(el, {
-        yPercent: -100,
-        xPercent: i * 100
-      })
-    }
 
     const animateLogos = () => {
       if(logoRefs.current[0] === null) return
@@ -59,19 +46,6 @@ function OurLogo(props) {
       if (tl) {
         tl.clear()
         tl.kill()
-
-        logoRefs.current.forEach((logo, logoIndex) => {
-          if (logoIndex > 3) {
-            gsap.set(logo, {
-              clearProps: 'transform',
-            })
-          } else {
-            gsap.set(logo, {
-              yPercent: -100,
-              xPercent: logoIndex * 100,
-            })
-          }
-        })
       }
 
       tl = gsap.timeline({
@@ -87,141 +61,62 @@ function OurLogo(props) {
         },
       })
 
-      // A
-     /* tl.set(logo4, {
-        //xPercent: 0,
-        yPercent: 0,
-      })
-        .to(logo4, {
-          yPercent: -100,
-        })
-        .to(
-          logo0,
-          {
-            yPercent: -200,
-          },
-          '<'
-        )
 
-      // B
-      tl.set(
-        logo5,
-        {
-          xPercent: 100,
-          yPercent: 0,
-        },
-        `+=${tlDelay}`
-      )
-        .to(
-          logo5,
-          {
-            yPercent: -100,
-          },
-          '<'
-        )
-        .to(
-          logo1,
-          {
-            yPercent: -200,
-          },
-          '<'
-        ) .to(logo3, {
-          xPercent: 400,
-        })
 
-      // C
-      tl.set(
-        logo6,
-        {
-          xPercent: 200,
-          yPercent: 0,
-        },
-        `+=${tlDelay}`
-      )
-      tl.to(
-          logo7,
-          {
-            yPercent: -200,
-          },
-          '<'
-        )
-        .to(
-          logo7,
-          {
-            yPercent: -100,
-          },
-          '<'
-        ).to(logo2, {
-          xPercent: 0,
-        })
+    tl.to(logo0, {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo4, {
+      yPercent: -100
+    }, '<')
 
-      // D
-      tl.set(
-        logo7,
-        {
-          xPercent: 300,
-          yPercent: 0,
-        },
-        `+=${tlDelay}`
-      )
-        .to(logo7, {
-          yPercent: -100,
-        })
-        .to(
-          logo3,
-          {
-            yPercent: -200,
-          },
-          '<'
-        )
+    tl.to(logo2, {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo6, {
+      yPercent: -100
+    }, '<')
 
-      // E
-      tl.set(
-        logo9,
-        {
-          xPercent: 200,
-          yPercent: 0,
-        },
-        `+=${tlDelay}`
-      )
-        .to(
-          logo4,
-          {
-            yPercent: -200,
-          },
-          '<'
-        )
-         .to(
-          logo9,
-          {
-            yPercent: -100,
-          },
-          '<'
-        ).to(logo2, {
-          xPercent: 100,
-        }) */
+    tl.to(logo1, {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo5, {
+      yPercent: -100
+    }, '<')
 
-      // GSDevTools.create({ animation: id, css: 'z-index: 100' })
 
-      tl.set(logo0, {
-        //xPercent: 0,
-        yPercent: 0,
-      })
-        .to(logo0, {
-          yPercent: -100,
-        })
-        .to(
-          logo4,
-          {
-            yPercent: -200,
-          },
-          '<'
-        )
+    tl.to(logo3, {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo7, {
+      yPercent: -100
+    }, '<')
+
+    tl.to(logo2, {
+      yPercent: 0
+    },`+=${tlDelay}`).to(logo6, {
+      yPercent: 100
+    }, '<')
+
+    tl.to(logo0, {
+      yPercent: 0
+    },`+=${tlDelay}`).to(logo4, {
+      yPercent: 100
+    }, '<')
+
+    tl.to(logo3, {
+      yPercent: 0
+    },`+=${tlDelay}`).to(logo7, {
+      yPercent: 100
+    }, '<')
+
+    tl.to(logo1, {
+      yPercent: 0
+    },`+=${tlDelay}`).to(logo5, {
+      yPercent: 100
+    }, '<')
+
     }
 
     setTimeout(
       () => {
-        //animateLogos()
+        animateLogos()
       },
       tlDelay * 3 * 1000
     )
@@ -279,7 +174,7 @@ function OurLogo(props) {
           <ul className="logo-list relative flex flex-wrap overflow-hidden">
             {logoimages && logoimages.map((logoimage, i) => {
               return (
-                <li className="logo-item absolute top-full flex items-center justify-center w-1/4 h-full gap-5" key={i} ref={ref => (logoRefs.current[i] = ref)}>
+                <li className="logo-item flex items-center justify-center w-1/4 h-full gap-5" key={i} ref={ref => (logoRefs.current[i] = ref)}>
                   <Image
                       classes="object-contain h-full w-auto"
                       props={logoimage.asset._ref}

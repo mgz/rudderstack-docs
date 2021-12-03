@@ -93,8 +93,32 @@ function Hero(props) {
 
   return (
     <section className="relative gradiant-layer banner-section pt-19 pb-40">
+      <div className="out-gradient-wrapper bottom-1/4 right-16">
+        <div className="grad1">
+          <div className="grad2">
+            <div className="grad3">
+              <div className="grad4">
+                <div className="grad5">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="out-gradient-wrapper top-1/4 left-1/4">
+        <div className="grad1">
+          <div className="grad2">
+            <div className="grad3">
+              <div className="grad4">
+                <div className="grad5">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="max-w-6xl mx-auto blockWrapper">
-        <div className="background-gradient-circles absolute top-1/4 left-14 keep-rotate"></div>
+        {/* <div className="background-gradient-circles absolute top-1/4 left-14 keep-rotate"></div> */}
         {/* <Helmet>
           <script src={withPrefix("script.js")} type="text/javascript" />
           <script src={withPrefix("script2.js")} type="text/javascript" />
@@ -202,11 +226,15 @@ function Hero(props) {
                   props={props.herobannerimage.asset._ref}
                   classes="w-full"
                 /> */}
-                <StaticImage
+                {isMobile ? (<StaticImage
+                  src="../images/newhomepage-mob.png"
+                  alt="RudderStack"
+                  placeholder="tracedSVG"
+                />) : (<StaticImage
                   src="../images/homepage-right.png"
                   alt="RudderStack"
                   placeholder="tracedSVG"
-                />
+                />)}
               </div>
               {/* <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
 
