@@ -4,8 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 const TestimonialFloatingV2 = props => {
   const testimonial = props.addtestimonial ? props.addtestimonial[0] : props
   return (
-    <div>
-      <div class="background-gradient-circles-2xl absolute top-2/5 left-14 keep-rotate"></div>
+    <div className="relative">
+      <div class="background-gradient-circles-2xl absolute top-2/5 left-0 md:left-14 keep-rotate"></div>
       <div className="carousel-item max-w-4xl mx-auto relative">
         <div className="carousel-inner-wrapper-2 relative flex flex-col items-center justify-center border rounded-2xl px-10 py-20 mx-7">
           <div>

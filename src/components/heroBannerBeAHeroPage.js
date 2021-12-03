@@ -35,8 +35,8 @@ const HeroBannerBeAHeroPage = props => {
   return (
     <div className="mt-16 mx-auto pb-8 lg:pb-20">
       <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter relative">
-        <div class="background-gradient-circles-2xl absolute top-2/5 left-14 keep-rotate"></div>
-        <div class="background-gradient-circles-2xl absolute bottom-0 right-14 keep-rotate"></div>
+        <div class="background-gradient-circles-2xl absolute top-24 left-14 keep-rotate"></div>
+        <div class="background-gradient-circles-2xl absolute bottom-24 right-14 keep-rotate"></div>
         <div class="max-w-6xl md:mt-16 px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
           <div className="uppercase text-sm mb-5 text-darkScheme-btnSecondaryBg font-bold">
             {props.herobannersmalltitle}
