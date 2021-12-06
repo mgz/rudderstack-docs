@@ -32,7 +32,7 @@ const ProductHeroBanner = props => {
   }
 
   return (
-    <section className="w-full  py-10 flex justify-center items-center relative overflow-hidden gradiant-layer banner-section product-hero-banner pb-16 lg:pb-36">
+    <section className="w-full  py-10 flex justify-center items-center relative overflow-hidden gradiant-layer banner-section product-hero-banner pb-12 lg:pb-20">
       <div className="max-w-6xl w-full sm:pb-20 pb-4 md:pt-16 p1-16 px-4 sm:px-8 lg:px-3 mx-auto">
         {/* <div class="background-gradient-circles-xl absolute top-2/5 left-14 keep-rotate"></div>
         <div class="background-gradient-circles-xl absolute bottom-1/4 right-14 keep-rotate"></div> */}

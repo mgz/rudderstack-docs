@@ -1236,6 +1236,9 @@ top: -60px;
   .submenu-align {
     left: 30rem;
   }
+  .product-hero-banner {
+    background-size: 1200px;
+  }
 }
 
 @media only screen and (min-width: 1536px) {
