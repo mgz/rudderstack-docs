@@ -352,7 +352,9 @@ const Demo = ({ data, htmlId, location }) => {
           <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
-      {(location.pathname === "/request-demo-chili-piper-test/" || location.pathname === "/request-demo-chili-piper-test") && (
+      {((location && location.pathname === "/request-demo-chili-piper-test/") ||
+        (location &&
+          location.pathname === "/request-demo-chili-piper-test")) && (
         <Helmet>
           <script>
             {`
