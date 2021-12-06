@@ -101,7 +101,7 @@ body {
   background-image: url("../images/product-banner.png");
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-size: 90%;
+  background-size: 80%;
   /* background-size: 1080px; */
 }
 
@@ -1237,7 +1237,7 @@ top: -60px;
     left: 30rem;
   }
   .product-hero-banner {
-    background-size: 1200px;
+    background-size: 60%;
   }
 }
 

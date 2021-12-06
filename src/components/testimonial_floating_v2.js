@@ -16,7 +16,7 @@ const TestimonialFloatingV2 = props => {
           </div>
         </div>
       </div>
-      <div className="carousel-item max-w-4xl mx-auto relative">
+      <div className="carousel-item max-w-4xl mx-auto relative px-4 lg:px-0">
         <div className="carousel-inner-wrapper-2 relative flex flex-col items-center justify-center border rounded-2xl  py-20 mx-7">
           <div className="">
             <div>
