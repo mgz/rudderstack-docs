@@ -70,6 +70,7 @@ const BeAHeroPageContent = ({ data, location }) => {
                 <MiddleBanner
                   {...l_section_info.node._rawGetStarted}
                   showBottomBorder={true}
+                  smallerTitle={true}
                 />
               </section>
             )
