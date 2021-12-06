@@ -33,8 +33,8 @@ const HeroBannerBeAHeroPage = props => {
   }
 
   return (
-    <div className="mt-16 mx-auto pb-8 lg:pb-20">
-      <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter relative">
+    <div className="">
+      <section className="mx-auto pb-8 lg:pb-20 overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter relative">
         <div className="out-gradient-wrapper bottom-1/4 right-16">
           <div className="grad1">
             <div className="grad2">
