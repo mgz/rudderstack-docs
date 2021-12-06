@@ -611,6 +611,7 @@ body {
   color: #17176e;
   font-size: 22px;
   line-height: 160%;
+  max-width: 75%;
 }
 
 .demo-header {
@@ -1288,6 +1289,9 @@ to { box-shadow: 0 0 100px 15px #e2e747; }
   .wr-image-icon-block img{
     max-width: 75%;
   }
+  .hero-content p{
+    max-width: 100%;
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -1295,8 +1299,11 @@ to { box-shadow: 0 0 100px 15px #e2e747; }
   .lessonContainer {
     padding: 0px 16px;
   }
-  .blockWrapper .section-title{
+  .blockWrapper .section-title.cd-headline{
     font-size: 34px !important;
+  }
+  .blockWrapper .section-title{
+    font-size: 24px !important;
   }
   .separator-line{
     display: none;

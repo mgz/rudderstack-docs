@@ -93,6 +93,22 @@ const LeftRightComponentEdgesAligned = props => {
                         trackSectionHeader={row.title}
                       />
                     </div>
+                    <a
+                      href={'#'}
+                      className="learn-more mt-4 text-darkScheme-textPrimary font-bold inline-block relative"
+                      onClick={e =>
+                        rudderslabTrackOnClick("link", props.right_section.title, e)
+                      }
+                    >
+                      <span className="learn-more-text inline-block">
+                        {"Get started"}
+                      </span>
+                      <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">
+                        <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </span>
+                    </a>
                   </div>
                 </div>
               </div>
