@@ -35,7 +35,7 @@ const LeftRightImgCnt_V2 = props => {
               )}
               {maintitle !== "" && (
                 <h3
-                  className={`md:mt-2 text-3xl-3 md:text-5xl text-center md:text-left ${
+                  className={`md:mt-2 text-3xl-3 lg:text-5xl text-center lg:text-left ${
                     props.applyGradientColorTheme ? "text-white" : "text-dark"
                   }  font-bold leading-tight pr-0 md:pr-4`}
                 >
