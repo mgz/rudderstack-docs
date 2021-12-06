@@ -1327,6 +1327,19 @@ top: -60px;
   .logo-list .logo-item {
     width: 50% !important;
   }
+  .newsletter-wrapper .newsletter-block{
+    background: transparent !important;
+  }
+  .newsletter-wrapper .sign-up-text{
+    border-radius: 24px;
+    margin-top: 10px;
+    width: 100%;
+    background: #ffffff;
+  }
+  .newsletter-wrapper .newsletter-input{
+    padding: 12px 8px !important;
+    border-radius: 24px !important;
+  }
 }
 
 @media only screen and (max-width: 640px) {
