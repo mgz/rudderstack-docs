@@ -74,53 +74,61 @@ const SubscriptionV2 = props => {
   return (
     <>
       <div className="newsletter-wrapper mt-12 mb-10 max-w-xl mx-auto">
-        <div className="newsletter-block bg-darkScheme-textPrimary flex items-center rounded-2xl">
+        <div className="newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
           <form
             action="/"
             method="post"
-            className=""
+            className="flex w-full"
             noValidate="novalidate"
             id={props.formId ? props.formId : ""}
           >
-            <input
-              className="newsletter-input border-2 border-darkScheme-textPrimary rounded-2xl w-full p-2 text-darkScheme-textPrimary"
-              type="email"
-              name="email"
-              value={email}
-              size={40}
-              id="email"
-              aria-required="true"
-              aria-invalid="false"
-              placeholder="you@company.com"
-              onChange={e => {
-                setError(false)
-                setEmail(e.target.value)
-                setFormSubmittedSuccessfully(false)
-              }}
-            />
-            <span className="sign-up-text block font-bold py-3 px-10">
-              Sign Up for Newsletter
-            </span>
-            {error && (
-              <div
-                className="text-red-error text-sm mt-1"
-                role="alert"
-                aria-hidden="true"
-              >
-                The email address entered is invalid.
-              </div>
+            {!formSubmittedSuccessfully && (
+              <>
+                <input
+                  className="newsletter-input border-2 border-darkScheme-textPrimary rounded-2xl w-full p-2 text-darkScheme-textPrimary "
+                  type="email"
+                  name="email"
+                  value={email}
+                  size={40}
+                  id="email"
+                  aria-required="true"
+                  aria-invalid="false"
+                  placeholder="you@company.com"
+                  onChange={e => {
+                    setError(false)
+                    setEmail(e.target.value)
+                    setFormSubmittedSuccessfully(false)
+                  }}
+                />
+                <span
+                  className="sign-up-text block font-bold py-3 px-10 hover:text-darkScheme-btnSecondaryBg cursor-pointer "
+                  onClick={e => formSubmitted(e)}
+                >
+                  Sign Up for Newsletter
+                </span>
+              </>
             )}
+
             {formSubmittedSuccessfully && (
               <div
-                className="text-blueNew-midnight"
+                className="text-blueNew-midnight font-bold px-4 py-4 w-full text-center"
                 role="alert"
                 aria-hidden="true"
               >
-                Thank you for subscribing to our blog.
+                Thank you!
               </div>
             )}
           </form>
         </div>
+        {error && (
+          <div
+            className="text-red-error text-sm mt-1 w-full px-4"
+            role="alert"
+            aria-hidden="true"
+          >
+            The email address entered is invalid.
+          </div>
+        )}
       </div>
 
       {/* <div className="container my-4 py-16 px-3 flex items-center pb-10 mb-6 md:flex-row flex-col w-full md:w-3/5">

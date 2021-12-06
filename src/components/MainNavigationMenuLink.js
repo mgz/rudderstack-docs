@@ -14,7 +14,7 @@ const MainNavigationMenuLink = props => {
       key={i}
       className={`${
         link._rawSubMenuSection !== null ? `has-submenu group` : `group`
-      } mt-2 lg:mt-0 hover:font-bold text-whiteColor-custom lg:text-blueNew-midnight pb-4`}
+      } mt-2 lg:mt-0 hover:font-bold text-whiteColor-custom lg:text-blueNew-midnight md:pb-4`}
     >
       <SanityLink
         link={link}
@@ -73,7 +73,7 @@ const MainNavigationMenuLink = props => {
                               )}
                             </div> */}
                             <div>
-                              <div className="font-bold text-lg pb-2 lg:pb-4 leading-6 px-4 lg:px-12">
+                              <div className="font-bold text-lg pb-2 lg:pb-4 leading-6 px-4 lg:px-12 text-darkScheme-btnSecondaryBg md:text-darkScheme-textPrimary ">
                                 {menuGroup.group_title}
                               </div>
 
