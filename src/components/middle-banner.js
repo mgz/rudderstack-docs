@@ -18,7 +18,7 @@ const MiddleBanner = props => {
           isLightTheme === true
             ? "text-blueNew-midnight"
             : "hero-section text-white"
-        } 100% pt-10 md:py-28 px-0 sm:px-0 relative`}
+        } pt-10 pb-10 md:py-28 px-0 sm:px-0 relative`}
       >
         <div className="max-w-6xl mx-auto blockWrapper">
           <div
@@ -26,9 +26,9 @@ const MiddleBanner = props => {
               isLightTheme !== true ? "items-center" : ""
             }  sm:flex-row`}
           >
-            <div className="flex lg:items-start items-center w-full md:w-1/2 flex-row">
-              <div className="">
-                <div className="w-28 md:-pt-4">
+            <div className="flex lg:items-start md:items-center w-full md:w-1/2 flex-row">
+              <div>
+                <div className="w-8 md:w-32 md:-pt-4">
                   {/* <img src={ArrowImg} alt="Get Started Image" /> */}
                   {isLightTheme === true && (
                     <StaticImage
@@ -47,9 +47,9 @@ const MiddleBanner = props => {
                   )}
                 </div>
               </div>
-              <div className="w-full flex flex-col pr-8">
-                {props.small_title !== "" || props.small_title !== undefined  && (
-                  <p className="mb-4 font-bold text-darkScheme-btnSecondaryBg">
+              <div className="w-full flex flex-col pl-6 pr-0 md:pr-8 ">
+                {props.small_title && props.small_title !== "" && (
+                  <p className="mb-4 font-bold text-darkScheme-btnSecondaryBg text-xs md:text-lg">
                     {props.small_title}
                   </p>
                 )}
@@ -64,7 +64,7 @@ const MiddleBanner = props => {
               </div>
             </div>
             <div className="md:w-1/2 max-w-lg md:pl-4">
-              <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom">
+              <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom pl-14 md:pl-0">
                 <div
                   className={`frtxt-contnt ${
                     isLightTheme === true
@@ -92,7 +92,7 @@ const MiddleBanner = props => {
                               }
                               className={
                                 (btn.btnhiglight === true
-                                  ? "bg-transparent text-darkScheme-textPrimary border border-darkScheme-btnPrimaryBg btn-secondary-lg hover:bg-darkScheme-btnPrimaryBg hover:text-darkScheme-textBlack"
+                                  ? "bg-transparent text-darkScheme-textPrimary border border-darkScheme-btnPrimaryBg btn-secondary-lg bg-darkScheme-btnPrimaryBg hover:text-darkScheme-textBlack"
                                   : "btn-secondary-lg") +
                                 ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
                               }
