@@ -352,14 +352,14 @@ module.exports = {
     //   },
     // },
     "gatsby-plugin-use-query-params",
-    {
+    /* {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         analyzerMode: "server",
         analyzerPort: "8888",
         devMode: true,
       },
-    },
+    }, */
     "gatsby-source-sanity-transform-images",
     "gatsby-plugin-preload-fonts",
     `gatsby-plugin-react-helmet`,
