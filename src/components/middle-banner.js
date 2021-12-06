@@ -57,7 +57,7 @@ const MiddleBanner = props => {
                 <h3
                   className={`${
                     isLightTheme === true ? "text-3xl" : "text-5xl"
-                  }   font-bold font-custom leading-tight mb-4 w-3/4`}
+                  }   font-bold font-custom leading-tight mb-4 w-3/4 section-title`}
                 >
                   {title}
                 </h3>
@@ -92,7 +92,7 @@ const MiddleBanner = props => {
                               }
                               className={
                                 (btn.btnhiglight === true
-                                  ? "bg-transparent text-darkScheme-textPrimary border border-darkScheme-btnPrimaryBg btn-secondary-lg bg-darkScheme-btnPrimaryBg hover:text-darkScheme-textBlack"
+                                  ? "text-darkScheme-textBlack border border-darkScheme-btnPrimaryBg btn-secondary-lg bg-darkScheme-btnPrimaryBg hover:text-darkScheme-btnPrimaryBg hover:bg-transparent"
                                   : "btn-secondary-lg") +
                                 ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
                               }

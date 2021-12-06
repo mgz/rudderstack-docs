@@ -20,9 +20,10 @@ const TestimonialV2 = props => {
   const testimonials = props.addtestimonial
   return (
     <section className="section-gradient py-19 relative">
+      <span className="section-border absolute top-0 left-0 w-full block"></span>
       <div className="max-w-6xl mx-auto blockWrapper">
         <div className="w-8/12 mx-auto mob-full">
-          <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary">
+          <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary section-title">
             {props.testimoniallabel}
           </h3>
         </div>

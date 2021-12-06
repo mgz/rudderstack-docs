@@ -1266,9 +1266,9 @@ top: -60px;
   .desk-testimonial .carousel-inner-wrapper {
     height: auto;
   }
-  .logo-list .logo-item {
+  /* .logo-list .logo-item {
     width: 33.33% !important;
-  }
+  } */
 }
 @media only screen and (max-width: 1024px) {
   .carousel-wrapper {
@@ -1317,6 +1317,12 @@ top: -60px;
   }
   .hero-content p{
     max-width: 100%;
+  }
+  .signup-form{
+    flex-direction: column;
+  }
+  .logo-list .logo-item {
+    width: 50% !important;
   }
 }
 
@@ -1386,9 +1392,6 @@ top: -60px;
   .sub-menu img {
     /* filter: brightness(0) invert(1); */
     display: none;
-  }
-  .logo-list .logo-item {
-    width: 50% !important;
   }
   .code-ed-links-wrapper {
     flex-direction: column;

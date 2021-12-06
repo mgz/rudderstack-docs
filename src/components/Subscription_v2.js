@@ -78,7 +78,7 @@ const SubscriptionV2 = props => {
           <form
             action="/"
             method="post"
-            className="flex w-full"
+            className="flex w-full items-center signup-form"
             noValidate="novalidate"
             id={props.formId ? props.formId : ""}
           >
@@ -101,7 +101,7 @@ const SubscriptionV2 = props => {
                   }}
                 />
                 <span
-                  className="sign-up-text block font-bold py-3 px-10 hover:text-darkScheme-btnSecondaryBg cursor-pointer "
+                  className="sign-up-text block font-bold py-3 px-10 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
                   onClick={e => formSubmitted(e)}
                 >
                   Sign Up for Newsletter
