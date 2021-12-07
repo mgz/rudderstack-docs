@@ -13,36 +13,40 @@ function OurLogo(props) {
     const animateLogos = () => {
       if(logoRefs.current[0] === null) return
 
-      const logo0 = logoRefs.current[0]
-      const logo1 = logoRefs.current[1]
-      const logo2 = logoRefs.current[2]
-      const logo3 = logoRefs.current[3]
-      const logo4 = logoRefs.current[4]
-      const logo5 = logoRefs.current[5]
-      const logo6 = logoRefs.current[6]
-      const logo7 = logoRefs.current[7]
+      // const logo0 = logoRefs.current[0]
+      // const logo1 = logoRefs.current[1]
+      // const logo2 = logoRefs.current[2]
+      // const logo3 = logoRefs.current[3]
+      // const logo4 = logoRefs.current[4]
+      // const logo5 = logoRefs.current[5]
+      // const logo6 = logoRefs.current[6]
+      // const logo7 = logoRefs.current[7]
+      const logo=[]
+      logoimages && logoimages.forEach((logoimage, i) => {
+        logo.push(logoRefs.current[i])
+      })
 
-      const pushToEnd = i => {
-        logoRefs.current.push(logoRefs.current.splice(i, 1)[0])
-      }
+      // const pushToEnd = i => {
+      //   logoRefs.current.push(logoRefs.current.splice(i, 1)[0])
+      // }
 
-      const moveInArray = (oldIndex, newIndex) => {
-        logoRefs.current.splice(
-          newIndex,
-          0,
-          logoRefs.current.splice(oldIndex, 1)[0]
-        )
-      }
+      // const moveInArray = (oldIndex, newIndex) => {
+      //   logoRefs.current.splice(
+      //     newIndex,
+      //     0,
+      //     logoRefs.current.splice(oldIndex, 1)[0]
+      //   )
+      // }
 
-      const resetArray = () => {
-        pushToEnd(0)
-        pushToEnd(0)
-        pushToEnd(1)
-        pushToEnd(1)
-        pushToEnd(3)
-        moveInArray(1, 0)
-        moveInArray(4, 2)
-      }
+      // const resetArray = () => {
+      //   pushToEnd(0)
+      //   pushToEnd(0)
+      //   pushToEnd(1)
+      //   pushToEnd(1)
+      //   pushToEnd(3)
+      //   moveInArray(1, 0)
+      //   moveInArray(4, 2)
+      // }
 
       if (tl) {
         tl.clear()
@@ -62,78 +66,118 @@ function OurLogo(props) {
         },
       })
 
+      // logoimages && logoimages.forEach((logoimage, i) => {
+      //   if(i< (logoimages.length /2) ){
+      //     tl.to(logo[i], {
+      //       yPercent: -100
+      //     },`+=${tlDelay}`).to(logo[i+5], {
+      //       yPercent: -100
+      //     }, '<').set(logo[i], {
+      //       yPercent: 100
+      //     })
+      //   }else{
+      //     tl.to(logo[i], {
+      //       yPercent: -200
+      //     },`+=${tlDelay}`).to(logo[i-5], {
+      //       yPercent: 0
+      //     }, '<').set(logo[i], {
+      //       yPercent: 100
+      //     })
+      //   }        
+      // })
 
+     let arrLength = (logoimages.length / 2)
 
-    tl.to(logo0, {
-      yPercent: -100
-    },`+=${tlDelay}`).to(logo4, {
-      yPercent: -100
-    }, '<').set(logo0, {
-      yPercent: 100
-    })
-
-     tl.to(logo2, {
-      yPercent: -100
-    },`+=${tlDelay}`).to(logo6, {
-      yPercent: -100
-    }, '<').set(logo2, {
-      yPercent: 100
-    })
-
-    tl.to(logo1, {
-      yPercent: -100
-    },`+=${tlDelay}`).to(logo5, {
-      yPercent: -100
-    }, '<').set(logo1, {
-      yPercent: 100
-    })
-
-    tl.to(logo3, {
-      yPercent: -100
-    },`+=${tlDelay}`).to(logo7, {
-      yPercent: -100
-    }, '<').set(logo3, {
-      yPercent: 100
-    })
-
-    tl.to(logo6, {
-      yPercent: -200
-    },`+=${tlDelay}`).to(logo2, {
-      yPercent: 0
-    }, '<').set(logo6, {
-      yPercent: 100
-    })
-
-    tl.to(logo4, {
-      yPercent: -200
-    },`+=${tlDelay}`).to(logo0, {
-      yPercent: 0
-    }, "<").set(logo4, {
-      yPercent: 100
-    })
-
-    tl.to(logo7, {
-      yPercent: -200
-    },`+=${tlDelay}`).to(logo3, {
-      yPercent: 0
-    }, '<').set(logo7, {
-      yPercent: 100
-    })
-
-    tl.to(logo5, {
-      yPercent: -200
-    },`+=${tlDelay}`).to(logo1, {
-      yPercent: 0
-    }, '<').set(logo5, {
-      yPercent: 100
-    })
+    for (let kkk = 0;  kkk < arrLength; kkk+=1){
+        tl.to(logo[kkk], {
+          yPercent: -100
+        },`+=${tlDelay}`).to(logo[kkk+2], {
+          yPercent: (kkk*100)-100 
+        }, '<').set(logo[kkk], {
+          yPercent:   ((arrLength -1) * 100) 
+        })
+          
+        // tl.to(logo[kkk+1], {
+        //   yPercent: -100
+        // },`+=${tlDelay}`).to(logo[3], {
+        //   yPercent: -100
+        // }, '<').set(logo[1], {
+        //   yPercent: 400
+        // })
     }
+    
+
+    // tl.to(logo[0], {
+    //   yPercent: -100
+    // },`+=${tlDelay}`).to(logo[4], {
+    //   yPercent: -100
+    // }, '<').set(logo[0], {
+    //   yPercent: 100
+    // })
+
+    //  tl.to(logo[2], {
+    //   yPercent: -100
+    // },`+=${tlDelay}`).to(logo[6], {
+    //   yPercent: -100
+    // }, '<').set(logo[2], {
+    //   yPercent: 100
+    // })
+
+    // tl.to(logo[1], {
+    //   yPercent: -100
+    // },`+=${tlDelay}`).to(logo[5], {
+    //   yPercent: -100
+    // }, '<').set(logo[1], {
+    //   yPercent: 100
+    // })
+
+    // tl.to(logo[3], {
+    //   yPercent: -100
+    // },`+=${tlDelay}`).to(logo[7], {
+    //   yPercent: -100
+    // }, '<').set(logo[3], {
+    //   yPercent: 100
+    // })
+
+    // tl.to(logo[6], {
+    //   yPercent: -200
+    // },`+=${tlDelay}`).to(logo[2], {
+    //   yPercent: 0
+    // }, '<').set(logo[6], {
+    //   yPercent: 100
+    // })
+
+    // tl.to(logo[4], {
+    //   yPercent: -200
+    // },`+=${tlDelay}`).to(logo[0], {
+    //   yPercent: 0
+    // }, "<").set(logo[4], {
+    //   yPercent: 100
+    // })
+
+    // tl.to(logo[7], {
+    //   yPercent: -200
+    // },`+=${tlDelay}`).to(logo[3], {
+    //   yPercent: 0
+    // }, '<').set(logo[7], {
+    //   yPercent: 100
+    // })
+
+    // tl.to(logo[5], {
+    //   yPercent: -200
+    // },`+=${tlDelay}`).to(logo[1], {
+    //   yPercent: 0
+    // }, '<').set(logo[5], {
+    //   yPercent: 100
+    // })
+     }
 
     setTimeout(
       () => {
-        if(!isMobile){
-          animateLogos()
-        }
+        animateLogos()
+        // if(!isMobile){
+        //   animateLogos()
+        // }
       },
       tlDelay * 3 * 1000
     )
@@ -189,9 +233,9 @@ function OurLogo(props) {
         </div> */}
         <div className="logo-slider block w-full mt-10">
           <ul className="logo-list relative flex flex-wrap overflow-hidden">
-            {logoimages && logoimages.map((logoimage, i) => {
+            {logoimages && logoimages.filter((oo,iii) => iii<2).map((logoimage, i) => {
               return (
-                <li className="logo-item flex items-center justify-center w-1/4 h-full gap-5" key={i} ref={ref => (logoRefs.current[i] = ref)}>
+                <li className="logo-item flex items-center justify-center w-1/2 lg:w-1/5 h-full gap-5" key={i} ref={ref => (logoRefs.current[i] = ref)}>
                   <Image
                       classes="object-contain h-full w-auto"
                       props={logoimage.asset._ref}
