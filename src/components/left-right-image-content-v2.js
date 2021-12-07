@@ -82,9 +82,9 @@ const LeftRightImgCnt_V2 = props => {
                           }
                           className={
                             (props.header_media_cta_cutton.btnhiglight === true
-                              ? "btn-primary-lg "
+                              ? "btn-primary-lg hover:bg-transparent"
                               : "btn-secondary-lg") +
-                            ` sm:mr-4 md:mb-0 mb-6 bg-whiteColor-custom`
+                            ` sm:mr-4 md:mb-0 mb-6`
                           }
                           href={props.header_media_cta_cutton.btnlink}
                         >
@@ -95,12 +95,6 @@ const LeftRightImgCnt_V2 = props => {
                       return (
                         <span
                           key={props.header_media_cta_cutton._key}
-                          className={
-                            (props.header_media_cta_cutton.btnhiglight === true
-                              ? "btn-primary-lg"
-                              : "btn-secondary-lg") +
-                            ` sm:mr-4 md:mb-0 mb-6 bg-whiteColor-custom text-xs`
-                          }
                         >
                           <Link
                             onClick={e =>
@@ -109,6 +103,12 @@ const LeftRightImgCnt_V2 = props => {
                                 props.productbannerheader,
                                 e
                               )
+                            }
+                            className={
+                              (props.header_media_cta_cutton.btnhiglight === true
+                                ? "btn-primary-lg hover:bg-transparent"
+                                : "btn-secondary-lg") +
+                              ` sm:mr-4 md:mb-0 mb-6 text-xs`
                             }
                             to={props.header_media_cta_cutton.btnlink}
                           >

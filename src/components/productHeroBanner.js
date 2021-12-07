@@ -97,11 +97,6 @@ const ProductHeroBanner = props => {
                       return (
                         <span
                           key={btn._key}
-                          className={
-                            (btn.btnhiglight === true
-                              ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
-                          }
                         >
                           <Link
                             onClick={e =>
@@ -110,6 +105,11 @@ const ProductHeroBanner = props => {
                                 props.productbannerheader,
                                 e
                               )
+                            }
+                            className={
+                              (btn.btnhiglight === true
+                                ? "btn-primary-lg"
+                                : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
                             }
                             to={btn.btnlink}
                           >
