@@ -92,7 +92,7 @@ function Hero(props) {
   }, [showAnimation])
 
   return (
-    <section className="relative gradiant-layer banner-section pt-19 pb-40">
+    <section className="relative gradiant-layer banner-section pt-19 pb-40 hero-wrapper">
       <div className="out-gradient-wrapper bottom-1/4 right-16">
         <div className="grad1">
           <div className="grad2">

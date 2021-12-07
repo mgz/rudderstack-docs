@@ -1,6 +1,7 @@
 import React, {useRef, useEffect} from "react"
 import Image from "./image"
 import gsap from 'gsap';
+import { isMobile } from "react-device-detect";
 
 function OurLogo(props) {
   const logoRefs = useRef([]);
@@ -67,56 +68,72 @@ function OurLogo(props) {
       yPercent: -100
     },`+=${tlDelay}`).to(logo4, {
       yPercent: -100
-    }, '<')
+    }, '<').set(logo0, {
+      yPercent: 100
+    })
 
-    tl.to(logo2, {
+     tl.to(logo2, {
       yPercent: -100
     },`+=${tlDelay}`).to(logo6, {
       yPercent: -100
-    }, '<')
+    }, '<').set(logo2, {
+      yPercent: 100
+    })
 
     tl.to(logo1, {
       yPercent: -100
     },`+=${tlDelay}`).to(logo5, {
       yPercent: -100
-    }, '<')
-
+    }, '<').set(logo1, {
+      yPercent: 100
+    })
 
     tl.to(logo3, {
       yPercent: -100
     },`+=${tlDelay}`).to(logo7, {
       yPercent: -100
-    }, '<')
-
-    tl.to(logo2, {
-      yPercent: 0
-    },`+=${tlDelay}`).to(logo6, {
+    }, '<').set(logo3, {
       yPercent: 100
-    }, '<')
+    })
 
-    tl.to(logo0, {
+    tl.to(logo6, {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo2, {
       yPercent: 0
-    },`+=${tlDelay}`).to(logo4, {
+    }, '<').set(logo6, {
       yPercent: 100
-    }, '<')
+    })
 
-    tl.to(logo3, {
+    tl.to(logo4, {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo0, {
       yPercent: 0
-    },`+=${tlDelay}`).to(logo7, {
+    }, "<").set(logo4, {
       yPercent: 100
-    }, '<')
+    })
 
-    tl.to(logo1, {
+    tl.to(logo7, {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo3, {
       yPercent: 0
-    },`+=${tlDelay}`).to(logo5, {
+    }, '<').set(logo7, {
       yPercent: 100
-    }, '<')
+    })
 
+    tl.to(logo5, {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo1, {
+      yPercent: 0
+    }, '<').set(logo5, {
+      yPercent: 100
+    })
     }
 
     setTimeout(
       () => {
-        animateLogos()
+        if(!isMobile){
+          animateLogos()
+        }
       },
       tlDelay * 3 * 1000
     )
