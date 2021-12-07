@@ -83,101 +83,257 @@ function OurLogo(props) {
       //     }, '<').set(logo[i], {
       //       yPercent: 100
       //     })
-      //   }        
+      //   }
       // })
 
-     let arrLength = (logoimages.length / 2)
+    if(!isMobile){
 
-    for (let kkk = 0;  kkk < arrLength; kkk+=1){
-        tl.to(logo[kkk], {
+    /* for(let i = 0; i < logoimages.length / 2; i++){
+        tl.to(logo[i], {
           yPercent: -100
-        },`+=${tlDelay}`).to(logo[kkk+2], {
-          yPercent: (kkk*100)-100 
-        }, '<').set(logo[kkk], {
-          yPercent:   ((arrLength -1) * 100) 
+        },`+=${tlDelay}`).to(logo[i + 5], {
+          yPercent: -100
+        }, '<').set(logo[i], {
+          yPercent: 100
         })
-          
-        // tl.to(logo[kkk+1], {
-        //   yPercent: -100
-        // },`+=${tlDelay}`).to(logo[3], {
-        //   yPercent: -100
-        // }, '<').set(logo[1], {
-        //   yPercent: 400
-        // })
+
+        tl.to(logo[i+5], {
+          yPercent: -200
+        },`+=${tlDelay}`).to(logo[i], {
+          yPercent: 0
+        }, '<').set(logo[i+5], {
+          yPercent: 100
+        })
+      } */
+    tl.to(logo[0], {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo[5], {
+      yPercent: -100
+    }, '<').set(logo[0], {
+      yPercent: 100
+    })
+
+    tl.to(logo[2], {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo[7], {
+      yPercent: -100
+    }, '<').set(logo[2], {
+      yPercent: 100
+    })
+
+    tl.to(logo[1], {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo[6], {
+      yPercent: -100
+    }, '<').set(logo[1], {
+      yPercent: 100
+    })
+
+    tl.to(logo[3], {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo[8], {
+      yPercent: -100
+    }, '<').set(logo[3], {
+      yPercent: 100
+    })
+
+    tl.to(logo[4], {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo[9], {
+      yPercent: -100
+    }, '<').set(logo[4], {
+      yPercent: 100
+    })
+
+    tl.to(logo[6], {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo[1], {
+      yPercent: 0
+    }, '<').set(logo[6], {
+      yPercent: 100
+    })
+
+    tl.to(logo[7], {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo[2], {
+      yPercent: 0
+    }, '<').set(logo[7], {
+      yPercent: 100
+    })
+
+    tl.to(logo[5], {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo[0], {
+      yPercent: 0
+    }, '<').set(logo[5], {
+      yPercent: 100
+    })
+
+    tl.to(logo[9], {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo[4], {
+      yPercent: 0
+    }, '<').set(logo[9], {
+      yPercent: 100
+    })
+
+    tl.to(logo[8], {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo[3], {
+      yPercent: 0
+    }, '<').set(logo[8], {
+      yPercent: 100
+    })
+  }else{
+    /* Mobile version */
+    tl.to(logo[0], {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo[2], {
+      yPercent: -100
+    }, '<').set(logo[0], {
+      yPercent: 400
+    }).set(logo[4], {
+      yPercent: 100
+    }).set(logo[6], {
+      yPercent: 200
+    }).set(logo[8], {
+      yPercent: 300
+    })
+
+    tl.to(logo[1], {
+      yPercent: -100
+    },`+=${tlDelay}`).to(logo[3], {
+      yPercent: -100
+    }, '<').set(logo[1], {
+      yPercent: 400
+    }).set(logo[5], {
+      yPercent: 100
+    }).set(logo[7], {
+      yPercent: 200
+    }).set(logo[9], {
+      yPercent: 300
+    })
+
+    tl.to(logo[2], {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo[4], {
+      yPercent: -200
+    }, '<').set(logo[2], {
+      yPercent: 300
+    }).set(logo[6], {
+      yPercent: 200
+    }).set(logo[8], {
+      yPercent: 200
+    }).set(logo[0], {
+      yPercent: 300
+    })
+
+    tl.to(logo[3], {
+      yPercent: -200
+    },`+=${tlDelay}`).to(logo[5], {
+      yPercent: -200
+    }, '<').set(logo[3], {
+      yPercent: 400
+    }).set(logo[7], {
+      yPercent: 100
+    }).set(logo[9], {
+      yPercent: 200
+    }).set(logo[1], {
+      yPercent: 300
+    })
+
+    tl.to(logo[4], {
+      yPercent: -300
+    },`+=${tlDelay}`).to(logo[6], {
+      yPercent: -300
+    }, '<').set(logo[4], {
+      yPercent: 400
+    }).set(logo[8], {
+      yPercent: 100
+    }).set(logo[0], {
+      yPercent: 200
+    }).set(logo[2], {
+      yPercent: 300
+    })
+
+    tl.to(logo[5], {
+      yPercent: -300
+    },`+=${tlDelay}`).to(logo[7], {
+      yPercent: -300
+    }, '<').set(logo[5], {
+      yPercent: 400
+    }).set(logo[9], {
+      yPercent: 100
+    }).set(logo[1], {
+      yPercent: 200
+    }).set(logo[3], {
+      yPercent: 300
+    })
+
+    tl.to(logo[6], {
+      yPercent: -400
+    },`+=${tlDelay}`).to(logo[8], {
+      yPercent: -400
+    }, '<').set(logo[6], {
+      yPercent: 400
+    }).set(logo[0], {
+      yPercent: 100
+    }).set(logo[2], {
+      yPercent: 200
+    }).set(logo[4], {
+      yPercent: 300
+    })
+
+    tl.to(logo[7], {
+      yPercent: -400
+    },`+=${tlDelay}`).to(logo[9], {
+      yPercent: -400
+    }, '<').set(logo[7], {
+      yPercent: 400
+    }).set(logo[1], {
+      yPercent: 100
+    }).set(logo[3], {
+      yPercent: 200
+    }).set(logo[5], {
+      yPercent: 300
+    })
+
+    tl.to(logo[8], {
+      yPercent: -500
+    },`+=${tlDelay}`).to(logo[0], {
+      yPercent: 0
+    }, '<').set(logo[8], {
+      yPercent: 400
+    }).set(logo[2], {
+      yPercent: 100
+    }).set(logo[4], {
+      yPercent: 200
+    }).set(logo[6], {
+      yPercent: 300
+    })
+
+    tl.to(logo[9], {
+      yPercent: -500
+    },`+=${tlDelay}`).to(logo[1], {
+      yPercent: 0
+    }, '<').set(logo[9], {
+      yPercent: 400
+    }).set(logo[3], {
+      yPercent: 100
+    }).set(logo[5], {
+      yPercent: 200
+    }).set(logo[7], {
+      yPercent: 300
+    })
+  }
+
+
+
     }
-    
-
-    // tl.to(logo[0], {
-    //   yPercent: -100
-    // },`+=${tlDelay}`).to(logo[4], {
-    //   yPercent: -100
-    // }, '<').set(logo[0], {
-    //   yPercent: 100
-    // })
-
-    //  tl.to(logo[2], {
-    //   yPercent: -100
-    // },`+=${tlDelay}`).to(logo[6], {
-    //   yPercent: -100
-    // }, '<').set(logo[2], {
-    //   yPercent: 100
-    // })
-
-    // tl.to(logo[1], {
-    //   yPercent: -100
-    // },`+=${tlDelay}`).to(logo[5], {
-    //   yPercent: -100
-    // }, '<').set(logo[1], {
-    //   yPercent: 100
-    // })
-
-    // tl.to(logo[3], {
-    //   yPercent: -100
-    // },`+=${tlDelay}`).to(logo[7], {
-    //   yPercent: -100
-    // }, '<').set(logo[3], {
-    //   yPercent: 100
-    // })
-
-    // tl.to(logo[6], {
-    //   yPercent: -200
-    // },`+=${tlDelay}`).to(logo[2], {
-    //   yPercent: 0
-    // }, '<').set(logo[6], {
-    //   yPercent: 100
-    // })
-
-    // tl.to(logo[4], {
-    //   yPercent: -200
-    // },`+=${tlDelay}`).to(logo[0], {
-    //   yPercent: 0
-    // }, "<").set(logo[4], {
-    //   yPercent: 100
-    // })
-
-    // tl.to(logo[7], {
-    //   yPercent: -200
-    // },`+=${tlDelay}`).to(logo[3], {
-    //   yPercent: 0
-    // }, '<').set(logo[7], {
-    //   yPercent: 100
-    // })
-
-    // tl.to(logo[5], {
-    //   yPercent: -200
-    // },`+=${tlDelay}`).to(logo[1], {
-    //   yPercent: 0
-    // }, '<').set(logo[5], {
-    //   yPercent: 100
-    // })
-     }
 
     setTimeout(
       () => {
         animateLogos()
-        // if(!isMobile){
-        //   animateLogos()
-        // }
       },
       tlDelay * 3 * 1000
     )
@@ -233,7 +389,7 @@ function OurLogo(props) {
         </div> */}
         <div className="logo-slider block w-full mt-10">
           <ul className="logo-list relative flex flex-wrap overflow-hidden">
-            {logoimages && logoimages.filter((oo,iii) => iii<2).map((logoimage, i) => {
+            {logoimages && logoimages.map((logoimage, i) => {
               return (
                 <li className="logo-item flex items-center justify-center w-1/2 lg:w-1/5 h-full gap-5" key={i} ref={ref => (logoRefs.current[i] = ref)}>
                   <Image

@@ -1343,22 +1343,6 @@ top: -60px;
   .font-custom .hero-wrapper{
     padding-bottom: 4.75rem !important;
   }
-}
-
-@media only screen and (max-width: 640px) {
-  .blog-title-wrapper,
-  .lessonContainer {
-    padding: 0px 16px;
-  }
-  .blockWrapper .carousel-wrapper{
-    padding-top: 6rem !important
-  }
-  .blockWrapper .section-title.cd-headline{
-    font-size: 34px !important;
-  }
-  .blockWrapper .section-title{
-    font-size: 24px !important;
-  }
   .separator-line{
     display: none;
   }
@@ -1379,6 +1363,22 @@ top: -60px;
   }
   .blog-section .blog-section-inner {
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .blog-title-wrapper,
+  .lessonContainer {
+    padding: 0px 16px;
+  }
+  .blockWrapper .carousel-wrapper{
+    padding-top: 6rem !important
+  }
+  .blockWrapper .section-title.cd-headline{
+    font-size: 34px !important;
+  }
+  .blockWrapper .section-title{
+    font-size: 24px !important;
   }
   .wr-text-data h4 {
     font-size: 18px !important;
@@ -1426,7 +1426,6 @@ top: -60px;
     display: none !important;
   }
   .logo-list{
-    height: 100%;
-    row-gap: 30px;
+    height: 50px;
   }
 }
