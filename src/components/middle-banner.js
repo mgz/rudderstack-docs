@@ -28,7 +28,7 @@ const MiddleBanner = props => {
           >
             <div className="flex lg:items-start md:items-center w-full md:w-1/2 flex-row">
               <div>
-                <div className="w-8 lg:w-32 lg:-pt-4">
+                <div className="w-12 lg:-pt-4">
                   {/* <img src={ArrowImg} alt="Get Started Image" /> */}
                   {isLightTheme === true && (
                     <StaticImage
