@@ -140,14 +140,14 @@ function Hero(props) {
               <span className="cd-words-wrapper">
                 {props.word_switch_content.word_switch_contents.map((rr, idx) => {
                   return (
-                    <span className={`${idx === 0 ? "is-visible" : ""}`}>
+                    <span className={`${idx === 0 ? "is-visible" : ""}`} key={idx}>
                       {rr}
                     </span>
                   )
                 })}
               </span>
             </p>
-            <div className="relative block sm:flex mt-12">
+            <div className="relative flex flex-col mt-6 gap-6">
               {herobannerbutton.map((btn, i) => (
                 <React.Fragment key={btn._key}>
                   {(() => {
@@ -165,7 +165,7 @@ function Hero(props) {
                           className={
                             (btn.btnhiglight === true
                               ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
+                              : "btn-secondary-lg") + ` cta-btn sm:mr-4 md:mb-0 mb-6`
                           }
                           href={btn.btnlink}
                         >
