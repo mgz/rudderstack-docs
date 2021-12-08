@@ -49,13 +49,13 @@ const LeftRightImgCnt_V2 = props => {
             {props.header_media &&
               props.header_media.condition === "imageoption" && (
                 <div className="max-w-screen-md mx-auto my-10 relative left-right-content-center-image">
-                  {/* <div className="absolute z-10">
+                  <div className="absolute z-20">
                     <StaticImage
-                      src="../images/left-right-comp-back-image.png"
+                      src="../images/product-middle-banner-eclipse.png"
                       placeholder="tracedSVG"
                       alt="Image"
                     />
-                  </div> */}
+                  </div>
 
                   <Image
                     props={props.header_media.imageoption.asset._ref}
@@ -103,7 +103,8 @@ const LeftRightImgCnt_V2 = props => {
                               )
                             }
                             className={
-                              (props.header_media_cta_cutton.btnhiglight === true
+                              (props.header_media_cta_cutton.btnhiglight ===
+                              true
                                 ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
                                 : "btn-secondary-lg") +
                               ` sm:mr-4 md:mb-0 mb-6 text-xs bg-whiteColor-custom hover:bg-transparent border-whiteColor-custom hover:text-whiteColor-custom`
@@ -216,7 +217,7 @@ const LeftRightImgCnt_V2 = props => {
                       >
                         <div className="align-middle">
                           <p
-                            className={`mt-4 sm:mt-0 text-sm  text-darkScheme-btnSecondaryBg font-bold uppercase`}
+                            className={`mt-4 sm:mt-0 text-2xl  text-darkScheme-btnSecondaryBg font-bold uppercase`}
                           >
                             {smalltitle}
                           </p>
@@ -236,7 +237,7 @@ const LeftRightImgCnt_V2 = props => {
                             </h2>
                           ) : (
                             <h3
-                              className={`mt-2 mb-4 pb-2 text-lg  ${
+                              className={`mt-2 mb-4 pb-2 text-2xl-2  ${
                                 props.applyGradientColorTheme
                                   ? "text-white"
                                   : titleColor === "midnightBlue"
@@ -417,7 +418,7 @@ const LeftRightImgCnt_V2 = props => {
                     >
                       <div className={`p-6 lg:p-12 left-right-content mx-4`}>
                         <p
-                          className={`mt-4 sm:mt-0  text-sm uppercase text-darkScheme-btnSecondaryBg font-bold`}
+                          className={`mt-4 sm:mt-0  text-lg uppercase text-darkScheme-btnSecondaryBg font-bold`}
                         >
                           {smalltitle}
                         </p>
@@ -440,7 +441,7 @@ const LeftRightImgCnt_V2 = props => {
                           </h2>
                         ) : (
                           <h3
-                            className={`mt-2 mb-4 pb-2 text-lg md:text-2xl ${
+                            className={`mt-2 mb-4 pb-2 text-lg md:text-2xl-2 ${
                               props.applyGradientColorTheme
                                 ? "text-white"
                                 : titleColor === "midnightBlue"

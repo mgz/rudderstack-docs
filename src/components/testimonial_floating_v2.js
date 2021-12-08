@@ -12,12 +12,13 @@ const TestimonialFloatingV2 = props => {
               <div className="grad4">
                 <div className="grad5"></div>
               </div>
+              
             </div>
           </div>
         </div>
       </div>
-      <div className="carousel-item max-w-4xl mx-auto relative px-4 lg:px-0">
-        <div className="carousel-inner-wrapper-2 relative flex flex-col items-center justify-center border rounded-2xl px-3  py-20 mx-7">
+      <div className="carousel-item max-w-5xl mx-auto relative px-4 lg:px-0">
+        <div className="carousel-inner-wrapper-2 relative flex flex-col items-center justify-center border rounded-2xl px-3 lg:px-16  py-20 mx-7">
           <div className="">
             <div>
               <span className="hidden md:block -left-8 -top-16 absolute">
