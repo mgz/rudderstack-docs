@@ -12,6 +12,7 @@ const TestimonialFloatingV2 = props => {
               <div className="grad4">
                 <div className="grad5"></div>
               </div>
+              
             </div>
           </div>
         </div>
