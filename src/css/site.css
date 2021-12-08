@@ -152,7 +152,10 @@ body {
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
 }
-
+.cta-btn{
+  width: 225px;
+  height: 50px;
+}
 .bg-gradiantsecondary {
   background: #5677ae; /* Old browsers */
   background: -moz-linear-gradient(
@@ -300,11 +303,15 @@ body {
   display: none;
 }
 .sub-menu {
-  background: radial-gradient(246.91% 449.78% at -0.59% 6.73%, rgba(8, 15, 32, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
+  background: radial-gradient(246.91% 449.78% at -0.59% 6.73%, rgba(8, 15, 32, 0.4) 0%, rgba(255, 255, 255, 0.02) 100%);
+  background-color: #070E1F;
   box-shadow: -5px 4px 9px rgba(134, 248, 224, 0.1);
   backdrop-filter: blur(48px);
   border-radius: 0px 0px 14px 14px;
   top: 90px;
+}
+.inner-header-group{
+
 }
 .nav-separator {
   border-right: 1px solid rgba(255, 255, 255, 0.25);

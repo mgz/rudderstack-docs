@@ -50,7 +50,7 @@ const MainNavigationMenuLink = props => {
                 //  lg:left-80 xl:left-96 2xl:left-1/2
               >
                 <ul
-                  className={` flex flex-col lg:flex-row w-full lg:mx-auto my-0`}
+                  className={` flex flex-col lg:flex-row w-full lg:mx-auto my-0 inner-header-group`}
                 >
                   {submenugroup &&
                     submenugroup.map((menuGroup, idx) => {

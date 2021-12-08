@@ -82,7 +82,7 @@ const LeftRightImgCnt_V2 = props => {
                           }
                           className={
                             (props.header_media_cta_cutton.btnhiglight === true
-                              ? "btn-primary-lg hover:bg-transparent"
+                              ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
                               : "btn-secondary-lg") +
                             ` sm:mr-4 md:mb-0 mb-6`
                           }
@@ -106,7 +106,7 @@ const LeftRightImgCnt_V2 = props => {
                             }
                             className={
                               (props.header_media_cta_cutton.btnhiglight === true
-                                ? "btn-primary-lg hover:bg-transparent"
+                                ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
                                 : "btn-secondary-lg") +
                               ` sm:mr-4 md:mb-0 mb-6 text-xs`
                             }
