@@ -84,7 +84,7 @@ const LeftRightImgCnt_V2 = props => {
                             (props.header_media_cta_cutton.btnhiglight === true
                               ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
                               : "btn-secondary-lg") +
-                            ` sm:mr-4 md:mb-0 mb-6`
+                            ` sm:mr-4 md:mb-0 mb-6 bg-whiteColor-custom`
                           }
                           href={props.header_media_cta_cutton.btnlink}
                         >
@@ -93,9 +93,7 @@ const LeftRightImgCnt_V2 = props => {
                       )
                     } else {
                       return (
-                        <span
-                          key={props.header_media_cta_cutton._key}
-                        >
+                        <span key={props.header_media_cta_cutton._key}>
                           <Link
                             onClick={e =>
                               rudderslabTrackOnClick(
@@ -108,7 +106,7 @@ const LeftRightImgCnt_V2 = props => {
                               (props.header_media_cta_cutton.btnhiglight === true
                                 ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
                                 : "btn-secondary-lg") +
-                              ` sm:mr-4 md:mb-0 mb-6 text-xs`
+                              ` sm:mr-4 md:mb-0 mb-6 text-xs bg-whiteColor-custom hover:bg-transparent border-whiteColor-custom hover:text-whiteColor-custom`
                             }
                             to={props.header_media_cta_cutton.btnlink}
                           >
@@ -129,14 +127,14 @@ const LeftRightImgCnt_V2 = props => {
                     <div
                       key={row._key}
                       className={`md:w-64 flex flex-col ${
-                        idx === 0 ? "mt-0 md:pl-0" : "mt-12 md:mt-0  md:pr-8"
-                      }`}
+                        idx === 0 ? "mt-0 md:pl-0" : "mt-12 md:mt-0  "
+                      } md:pr-12`}
                     >
                       <Image
                         props={row.card_image.asset._ref}
-                        classes="w-10 h-auto mb-4 mx-auto"
+                        classes="w-10 h-auto mb-4 mx-auto md:mx-0"
                       />
-                      <span className="text-lg text-whiteColor-custom font-bold leading-tight md:ml-0 px-6 md:px-0 text-center">
+                      <span className="text-lg text-whiteColor-custom font-bold leading-tight md:ml-0 px-6 md:px-0 text-center md:text-left">
                         {row.title}
                       </span>
                     </div>
@@ -218,7 +216,7 @@ const LeftRightImgCnt_V2 = props => {
                       >
                         <div className="align-middle">
                           <p
-                            className={`mt-4 sm:mt-0 text-sm  text-darkScheme-btnSecondaryBg uppercase`}
+                            className={`mt-4 sm:mt-0 text-sm  text-darkScheme-btnSecondaryBg font-bold uppercase`}
                           >
                             {smalltitle}
                           </p>
@@ -238,7 +236,7 @@ const LeftRightImgCnt_V2 = props => {
                             </h2>
                           ) : (
                             <h3
-                              className={`mt-2 mb-4 pb-2 text-2xl  ${
+                              className={`mt-2 mb-4 pb-2 text-lg  ${
                                 props.applyGradientColorTheme
                                   ? "text-white"
                                   : titleColor === "midnightBlue"
@@ -246,7 +244,7 @@ const LeftRightImgCnt_V2 = props => {
                                   : titleColor === "black"
                                   ? "text-black-custom"
                                   : ""
-                              } font-bold leading-tight pr-0 md:pr-4 uppercase`}
+                              } font-bold leading-tight pr-0 md:pr-4`}
                             >
                               {title}
                             </h3>
@@ -419,7 +417,7 @@ const LeftRightImgCnt_V2 = props => {
                     >
                       <div className={`p-6 lg:p-12 left-right-content mx-4`}>
                         <p
-                          className={`mt-4 sm:mt-0  text-sm uppercase text-darkScheme-btnSecondaryBg`}
+                          className={`mt-4 sm:mt-0  text-sm uppercase text-darkScheme-btnSecondaryBg font-bold`}
                         >
                           {smalltitle}
                         </p>
@@ -442,7 +440,7 @@ const LeftRightImgCnt_V2 = props => {
                           </h2>
                         ) : (
                           <h3
-                            className={`mt-2 mb-4 pb-2 text-sm md:text-2xl ${
+                            className={`mt-2 mb-4 pb-2 text-lg md:text-2xl ${
                               props.applyGradientColorTheme
                                 ? "text-white"
                                 : titleColor === "midnightBlue"
@@ -450,7 +448,7 @@ const LeftRightImgCnt_V2 = props => {
                                 : titleColor === "black"
                                 ? "text-black-custom"
                                 : ""
-                            } font-bold leading-tight pr-0 md:pr-4 uppercase`}
+                            } font-bold leading-tight pr-0 md:pr-4`}
                           >
                             {title}
                           </h3>

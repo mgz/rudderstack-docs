@@ -101,7 +101,7 @@ body {
   background-image: url("../images/product-banner.png");
   background-repeat: no-repeat;
   background-position: bottom right;
-  background-size: 80%;
+  background-size: 70%;
   /* background-size: 1080px; */
 }
 
@@ -309,9 +309,6 @@ body {
   backdrop-filter: blur(48px);
   border-radius: 0px 0px 14px 14px;
   top: 90px;
-}
-.inner-header-group{
-
 }
 .nav-separator {
   border-right: 1px solid rgba(255, 255, 255, 0.25);
@@ -614,6 +611,9 @@ body {
 }
 .frtxt-contnt p {
   margin-bottom: 2rem;
+}
+.frtxt-contnt p:last-of-type {
+  margin-bottom: 4px;
 }
 .hero-content p {
   color: #17176e;
@@ -1029,12 +1029,17 @@ top: -60px;
 }
 .carousel-inner-wrapper {
   border-color: rgba(255, 255, 255, 0.46);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), radial-gradient(301.54% 178.49% at 39.58% -17.41%, rgba(62, 53, 209, 0.4) 0%, rgba(134, 248, 224, 0.4) 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    radial-gradient(
+      301.54% 178.49% at 39.58% -17.41%,
+      rgba(62, 53, 209, 0.4) 0%,
+      rgba(134, 248, 224, 0.4) 100%
+    );
   height: 350px;
 }
 .testimonial-container {
   border-color: rgba(255, 255, 255, 0.46);
-  height: 300px;
+  height: 320px;
   background: radial-gradient(
     97.77% 308.45% at 0% 14.59%,
     rgba(7, 14, 31, 0.4) 0%,
@@ -1056,7 +1061,7 @@ top: -60px;
 .testimonial-client-image {
   bottom: -60px;
 }
-.testimonial-client-image img{
+.testimonial-client-image img {
   border-radius: 50%;
 }
 .logo-slider {
@@ -1244,7 +1249,7 @@ top: -60px;
     left: 30rem;
   }
   .product-hero-banner {
-    background-size: 60%;
+    background-size: 70%;
   }
 }
 
@@ -1252,11 +1257,17 @@ top: -60px;
   .submenu-align {
     left: 45rem;
   }
+  .product-hero-banner {
+    background-size: 55%;
+  }
 }
 
 @media only screen and (min-width: 2400px) {
   .submenu-align {
     left: 62rem;
+  }
+  .product-hero-banner {
+    background-size: 50%;
   }
 }
 @media only screen and (max-width: 1200px) {
@@ -1325,32 +1336,32 @@ top: -60px;
   .wr-image-icon-block img {
     max-width: 75%;
   }
-  .hero-content p{
+  .hero-content p {
     max-width: 100%;
   }
-  .signup-form{
+  .signup-form {
     flex-direction: column;
   }
   .logo-list .logo-item {
     width: 50% !important;
   }
-  .newsletter-wrapper .newsletter-block{
+  .newsletter-wrapper .newsletter-block {
     background: transparent !important;
   }
-  .newsletter-wrapper .sign-up-text{
+  .newsletter-wrapper .sign-up-text {
     border-radius: 8px;
     margin-top: 10px;
     width: 100%;
     background: #ffffff;
   }
-  .newsletter-wrapper .newsletter-input{
+  .newsletter-wrapper .newsletter-input {
     padding: 17px 15px !important;
     border-radius: 8px !important;
   }
-  .font-custom .hero-wrapper{
+  .font-custom .hero-wrapper {
     padding-bottom: 4.75rem !important;
   }
-  .separator-line{
+  .separator-line {
     display: none;
   }
   .wr-data-block .wr-image-icon-wrapper,
@@ -1378,13 +1389,13 @@ top: -60px;
   .lessonContainer {
     padding: 0px 16px;
   }
-  .blockWrapper .carousel-wrapper{
-    padding-top: 6rem !important
+  .blockWrapper .carousel-wrapper {
+    padding-top: 6rem !important;
   }
-  .blockWrapper .section-title.cd-headline{
+  .blockWrapper .section-title.cd-headline {
     font-size: 34px !important;
   }
-  .blockWrapper .section-title{
+  .blockWrapper .section-title {
     font-size: 24px !important;
   }
   .wr-text-data h4 {
@@ -1432,7 +1443,7 @@ top: -60px;
   .code-ed-links.mob-hide {
     display: none !important;
   }
-  .logo-list{
+  .logo-list {
     height: 50px;
   }
 }

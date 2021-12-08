@@ -31,6 +31,7 @@ const TestimonialFloatingSmall = props => {
           <div className="testimonial-client-image absolute">
             <Image
               props={testimonial.clientimage.asset._ref}
+              // classes="w-16 h-16 md:w-32 md:h-32"
               width="120"
               height="120"
             />
