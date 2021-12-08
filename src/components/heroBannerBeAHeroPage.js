@@ -34,7 +34,7 @@ const HeroBannerBeAHeroPage = props => {
 
   return (
     <div className="">
-      <section className="mx-auto pb-8 pt-8 lg:pb-20 overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter relative blockWrapper">
+      <section className="mx-auto pb-8 pt-20 lg:pb-20 overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter relative blockWrapper">
         <div className="out-gradient-wrapper bottom-1/4 right-16">
           <div className="grad1">
             <div className="grad2">
@@ -58,7 +58,7 @@ const HeroBannerBeAHeroPage = props => {
           </div>
         </div>
         <div class="max-w-6xl px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
-          <div className="uppercase text-sm mb-5 text-darkScheme-btnSecondaryBg font-bold">
+          <div className="uppercase text-lg mb-5 text-darkScheme-btnSecondaryBg font-bold">
             {props.herobannersmalltitle}
           </div>
           <h1 className="text-3xl-3 md:text-5xl font-bold font-custom leading-snug text-whiteColor-custom">
@@ -89,7 +89,7 @@ const HeroBannerBeAHeroPage = props => {
               )}
           </div>
 
-          <div className="text-lg mt-4 max-w-screen-md text-whiteColor-custom">
+          <div className="text-2xl mt-4 max-w-screen-md text-whiteColor-custom">
             <PortableText blocks={props.herobannercontent} />
           </div>
         </div>
