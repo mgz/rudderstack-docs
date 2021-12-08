@@ -57,7 +57,7 @@ const LeftRightComponentEdgesAligned = props => {
         </h2>
         <div className="why-rudderstack-wrapper max-w-4xl mx-auto">
           {/* Map this block start */}
-          {props.leftrightimageblock.map(row => {
+          {props.leftrightimageblock.map((row, idx) => {
             return (
               <div
                 key={row._key}
@@ -94,15 +94,15 @@ const LeftRightComponentEdgesAligned = props => {
                         trackSectionHeader={row.title}
                       />
                     </div>
-                    {props.leftrightimageblock && props.leftrightimageblock.addlink && (<a
-                      href={props.leftrightimageblock.addlink.cmnlink}
+                    {props.leftrightimageblock && props.leftrightimageblock[idx].addlink && (<a
+                      href={props.leftrightimageblock[idx].addlink.cmnlink}
                       className="learn-more mt-4 text-darkScheme-textPrimary font-bold inline-block relative"
                       onClick={e =>
                         rudderslabTrackOnClick("link", props.right_section.title, e)
                       }
                     >
                       <span className="learn-more-text inline-block">
-                        {props.leftrightimageblock.addlink.cmnlinktext}
+                        {props.leftrightimageblock[idx].addlink.cmnlinktext}
                       </span>
                       <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">
                         <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
