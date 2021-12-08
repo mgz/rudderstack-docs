@@ -83,8 +83,7 @@ const LeftRightImgCnt_V2 = props => {
                           className={
                             (props.header_media_cta_cutton.btnhiglight === true
                               ? "btn-primary-lg hover:bg-transparent"
-                              : "btn-secondary-lg") +
-                            ` sm:mr-4 md:mb-0 mb-6`
+                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6 bg-whiteColor-custom`
                           }
                           href={props.header_media_cta_cutton.btnlink}
                         >
@@ -93,9 +92,7 @@ const LeftRightImgCnt_V2 = props => {
                       )
                     } else {
                       return (
-                        <span
-                          key={props.header_media_cta_cutton._key}
-                        >
+                        <span key={props.header_media_cta_cutton._key}>
                           <Link
                             onClick={e =>
                               rudderslabTrackOnClick(
@@ -105,10 +102,11 @@ const LeftRightImgCnt_V2 = props => {
                               )
                             }
                             className={
-                              (props.header_media_cta_cutton.btnhiglight === true
+                              (props.header_media_cta_cutton.btnhiglight ===
+                              true
                                 ? "btn-primary-lg hover:bg-transparent"
                                 : "btn-secondary-lg") +
-                              ` sm:mr-4 md:mb-0 mb-6 text-xs`
+                              ` sm:mr-4 md:mb-0 mb-6 text-xs bg-whiteColor-custom border-none hover:bg-darkScheme-btnPrimaryBg hover:text-black-custom`
                             }
                             to={props.header_media_cta_cutton.btnlink}
                           >
@@ -134,9 +132,9 @@ const LeftRightImgCnt_V2 = props => {
                     >
                       <Image
                         props={row.card_image.asset._ref}
-                        classes="w-10 h-auto mb-4 mx-auto"
+                        classes="w-10 h-auto mb-4 mx-auto md:mx-0"
                       />
-                      <span className="text-lg text-whiteColor-custom font-bold leading-tight md:ml-0 px-6 md:px-0 text-center">
+                      <span className="text-lg text-whiteColor-custom font-bold leading-tight md:ml-0 px-6 md:px-0 text-center md:text-left">
                         {row.title}
                       </span>
                     </div>
