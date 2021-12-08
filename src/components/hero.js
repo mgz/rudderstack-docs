@@ -168,8 +168,7 @@ function Hero(props) {
                           className={
                             (btn.btnhiglight === true
                               ? "btn-primary-lg"
-                              : "btn-secondary-lg") +
-                            ` cta-btn sm:mr-4 md:mb-0 mb-6`
+                              : "btn-secondary-lg") + ` cta-btn flex items-center justify-center`
                           }
                           href={btn.btnlink}
                         >
@@ -193,7 +192,7 @@ function Hero(props) {
                             className={
                               (btn.btnhiglight === true
                                 ? "btn-primary-lg"
-                                : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                                : "btn-secondary-lg") + ` flex items-center justify-center cta-btn`
                             }
                           >
                             {btn.btntext}
@@ -228,7 +227,7 @@ function Hero(props) {
               <div className={`block`}>
                 <Image
                   props={props.herobannerimage.asset._ref}
-                  classes="w-full"
+                  // classes="w-full"
                 />
                 {/* {isMobile ? (<StaticImage
                   src="../images/newhomepage-mob.png"
