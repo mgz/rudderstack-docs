@@ -66,7 +66,7 @@ const MiddleBanner = props => {
               </div>
             </div>
             <div className="md:w-1/2 max-w-lg md:pl-4">
-              <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom pl-14 md:pl-0">
+              <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom pl-16 md:pl-0">
                 <div
                   className={`frtxt-contnt ${
                     isLightTheme === true

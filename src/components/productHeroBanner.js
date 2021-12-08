@@ -58,7 +58,7 @@ const ProductHeroBanner = props => {
         </div>
         <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
           <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-6/12 sm:px-0sm:items-center lg:items-start lg:mb-0 pr-4 lg:pr-20">
-            <h2 className="text-2xl  font-bold tracking-tight-2 text-darkScheme-btnSecondaryBg">
+            <h2 className="text-2xl  font-bold tracking-tight-2 text-darkScheme-btnSecondaryBg uppercase">
               {props.productbannerheader}
             </h2>
             <h1 className="text-3xl-3 xl:text-5xl-1 leading-tight font-bold mt-2 md:mt-5 mb-4 md:mb-8 pr-0 text-whiteColor-custom">
