@@ -98,8 +98,7 @@ function Hero(props) {
           <div className="grad2">
             <div className="grad3">
               <div className="grad4">
-                <div className="grad5">
-                </div>
+                <div className="grad5"></div>
               </div>
             </div>
           </div>
@@ -110,8 +109,7 @@ function Hero(props) {
           <div className="grad2">
             <div className="grad3">
               <div className="grad4">
-                <div className="grad5">
-                </div>
+                <div className="grad5"></div>
               </div>
             </div>
           </div>
@@ -138,13 +136,18 @@ function Hero(props) {
                 {props.word_switch_content.title}
               </span>
               <span className="cd-words-wrapper">
-                {props.word_switch_content.word_switch_contents.map((rr, idx) => {
-                  return (
-                    <span className={`${idx === 0 ? "is-visible" : ""}`} key={idx}>
-                      {rr}
-                    </span>
-                  )
-                })}
+                {props.word_switch_content.word_switch_contents.map(
+                  (rr, idx) => {
+                    return (
+                      <span
+                        className={`${idx === 0 ? "is-visible" : ""}`}
+                        key={idx}
+                      >
+                        {rr}
+                      </span>
+                    )
+                  }
+                )}
               </span>
             </p>
             <div className="relative flex flex-col mt-6 gap-6">
@@ -165,7 +168,8 @@ function Hero(props) {
                           className={
                             (btn.btnhiglight === true
                               ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` cta-btn sm:mr-4 md:mb-0 mb-6`
+                              : "btn-secondary-lg") +
+                            ` cta-btn sm:mr-4 md:mb-0 mb-6`
                           }
                           href={btn.btnlink}
                         >
@@ -222,11 +226,11 @@ function Hero(props) {
                 <div id="lottie" />
               </div> */}
               <div className={`block`}>
-                {/* <Image
+                <Image
                   props={props.herobannerimage.asset._ref}
                   classes="w-full"
-                /> */}
-                {isMobile ? (<StaticImage
+                />
+                {/* {isMobile ? (<StaticImage
                   src="../images/newhomepage-mob.png"
                   alt="RudderStack"
                   placeholder="tracedSVG"
@@ -234,7 +238,7 @@ function Hero(props) {
                   src="../images/homepage-right.png"
                   alt="RudderStack"
                   placeholder="tracedSVG"
-                />)}
+                />)} */}
               </div>
               {/* <div className={`${showAnimation ? "block" : "hidden"} lotti-body`}>
 
