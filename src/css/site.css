@@ -303,12 +303,14 @@ body {
   display: none;
 }
 .sub-menu {
-  background: radial-gradient(246.91% 449.78% at -0.59% 6.73%, rgba(8, 15, 32, 0.4) 0%, rgba(255, 255, 255, 0.02) 100%);
   background-color: #070E1F;
   box-shadow: -5px 4px 9px rgba(134, 248, 224, 0.1);
   backdrop-filter: blur(48px);
   border-radius: 0px 0px 14px 14px;
   top: 90px;
+}
+.inner-header-group{
+  background: radial-gradient(246.91% 449.78% at -0.59% 6.73%, rgba(8, 15, 32, 0.4) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 .nav-separator {
   border-right: 1px solid rgba(255, 255, 255, 0.25);
@@ -613,7 +615,7 @@ body {
   margin-bottom: 2rem;
 }
 .frtxt-contnt p:last-of-type {
-  margin-bottom: 4px;
+  margin-bottom: 25px;
 }
 .hero-content p {
   color: #17176e;
@@ -1001,7 +1003,7 @@ top: -60px;
 .separator-line {
   background: #ffffff;
   height: 130px;
-  width: 3px;
+  width: 4px;
   border-radius: 4px;
 }
 .wr-image-icon-block {
@@ -1022,7 +1024,7 @@ top: -60px;
   outline: none;
 }
 .newsletter-input::placeholder {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.5);
 }
 .carousel-inner-wrapper-2 {
   border-color: rgba(255, 255, 255, 0.46);
@@ -1074,6 +1076,7 @@ top: -60px;
 }
 .logo-item img {
   filter: brightness(0) invert(1);
+  max-width: 70%;
 }
 .background-gradient-circles {
   width: 219px;

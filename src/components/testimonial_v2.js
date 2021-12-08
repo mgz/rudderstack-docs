@@ -75,9 +75,9 @@ const TestimonialV2 = props => {
                         />
                       </div>
                     </div>
-                    <div className="clients-details text-center text-darkScheme-textPrimary mt-16">
+                    <div className="clients-details text-center text-darkScheme-textPrimary mt-20">
                       <span className="block">- {testimonial.clientname}</span>
-                      <span className="block">
+                      <span className="block w-8/12 mx-auto">
                         {testimonial.clientdesignation}
                       </span>
                     </div>

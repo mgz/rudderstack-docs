@@ -33,7 +33,7 @@ const LeftRightMiddleBanner = props => {
       </div>
       <div className="max-w-6xl mx-auto blockWrapper">
         <div className="blog-section flex">
-          <div className="w-1/2 border-r border-darkScheme-textPrimary blog-section-inner">
+          <div className="w-1/2 border-r-2 border-darkScheme-textPrimary blog-section-inner">
             <div className="w-9/12 mx-auto mob-full">
               <h3 className="text-darkScheme-btnSecondaryBg uppercase mb-5 text-2xl font-bold">
                 {props.left_section.title}

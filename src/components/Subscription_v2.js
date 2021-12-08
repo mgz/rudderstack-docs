@@ -85,7 +85,7 @@ const SubscriptionV2 = props => {
             {!formSubmittedSuccessfully && (
               <>
                 <input
-                  className="newsletter-input border-2 border-darkScheme-textPrimary rounded-2xl w-full p-2 text-darkScheme-textPrimary "
+                  className="newsletter-input border-2 border-darkScheme-textPrimary rounded-2xl w-full py-2 px-4 text-darkScheme-textPrimary "
                   type="email"
                   name="email"
                   value={email}
