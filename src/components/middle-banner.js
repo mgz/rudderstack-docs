@@ -28,7 +28,7 @@ const MiddleBanner = props => {
           >
             <div className="flex lg:items-start md:items-center w-full md:w-1/2 flex-row">
               <div>
-                <div className="w-12 lg:-pt-4">
+                <div className="w-16 lg:-pt-4">
                   {/* <img src={ArrowImg} alt="Get Started Image" /> */}
                   {isLightTheme === true && (
                     <StaticImage
@@ -47,9 +47,9 @@ const MiddleBanner = props => {
                   )}
                 </div>
               </div>
-              <div className="w-full flex flex-col pl-6 pr-0 md:pr-8 ">
+              <div className="w-full flex flex-col pl-6 md:pl-12 pr-0 md:pr-8 ">
                 {props.small_title && props.small_title !== "" && (
-                  <p className="mb-4 font-bold text-darkScheme-btnSecondaryBg text-xs md:text-lg">
+                  <p className="mb-4 font-bold text-darkScheme-btnSecondaryBg text-xs md:text-2xl">
                     {props.small_title}
                   </p>
                 )}
@@ -65,8 +65,8 @@ const MiddleBanner = props => {
                 </h3>
               </div>
             </div>
-            <div className="md:w-1/2 max-w-lg md:pl-4">
-              <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom pl-16 md:pl-0">
+            <div className="md:w-1/2 max-w-lg md:pl-12 pt-0 md:pt-20">
+              <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom pl-20 md:pl-0">
                 <div
                   className={`frtxt-contnt ${
                     isLightTheme === true
