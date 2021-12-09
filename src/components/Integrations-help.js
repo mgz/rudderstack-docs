@@ -25,7 +25,7 @@ const IntegrationsHelpBox = () => {
     const params = new URLSearchParams(document.location.search.substring(1))
 
     window.rudderanalytics.identify(
-      "",
+      "form_submit",
       {
         email: email,
         form_id: "Integrations-sidebar-ReachOut-form",
@@ -65,6 +65,25 @@ const IntegrationsHelpBox = () => {
         },
       }
     )
+
+    fetch("https://usebasin.com/f/e672d655fba2.json", {
+      method: "post",
+      body: JSON.stringify({
+        email: email,
+        form_id: "Integrations-sidebar-ReachOut-form",
+        utm_source: params.get("utm_source"),
+        utm_medium: params.get("utm_medium"),
+        utm_campaign: params.get("utm_campaign"),
+        utm_content: params.get("utm_content"),
+        utm_term: params.get("utm_term"),
+        raid: params.get("raid"),
+        test_user: params.get("test_user"),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+
     setEmail("")
     setFormSubmittedSuccessfully(true)
   }
