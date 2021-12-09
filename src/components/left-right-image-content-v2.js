@@ -175,7 +175,7 @@ const LeftRightImgCnt_V2 = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap flex-col-reverse sm:flex-row pt-6 md:pt-16"
+                    className={`flex items-center flex-wrap flex-col-reverse sm:flex-row ${i ===0 ? 'pt-0' : 'pt-16'} md:pt-32 leftrightimgcontent-wrapper`}
                   >
                     <div
                       className={`w-full ${
@@ -184,7 +184,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } px-0 lg:pr-20 pt-8 md:pt-0`}
+                      } px-0 lg:pr-20 md:pt-0 leftrightimgcontent-items`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
@@ -210,7 +210,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } pl-0 md:pl-12`}
+                      } pl-0 lg:pl-12 leftrightimgcontent-items`}
                     >
                       <div
                         className={`p-6 lg:p-12 left-right-content mx-4 md:mx-0`}
@@ -405,7 +405,7 @@ const LeftRightImgCnt_V2 = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap pt-6 md:pt-16"
+                    className="flex items-center flex-wrap pt-16 md:pt-32 leftrightimgcontent-wrapper-col"
                   >
                     <div
                       className={`${
@@ -414,7 +414,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } md:pr-12 `}
+                      } lg:pr-12 leftrightimgcontent-items`}
                     >
                       <div className={`p-6 lg:p-12 left-right-content mx-4`}>
                         <p
@@ -449,7 +449,7 @@ const LeftRightImgCnt_V2 = props => {
                                 : titleColor === "black"
                                 ? "text-black-custom"
                                 : ""
-                            } font-bold leading-tight pr-0 md:pr-4`}
+                            } font-bold leading-tight pr-0 md:pr-4 `}
                           >
                             {title}
                           </h3>
@@ -576,7 +576,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } px-0 lg:pl-20 pt-8 md:pt-0`}
+                      } px-0 lg:pl-20 pt-8 md:pt-0 leftrightimgcontent-items`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {

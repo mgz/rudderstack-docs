@@ -26,7 +26,7 @@ const MiddleBanner = props => {
               isLightTheme !== true ? "items-center" : ""
             }  sm:flex-row`}
           >
-            <div className="flex lg:items-start md:items-center w-full md:w-1/2 flex-row">
+            <div className="flex lg:items-start w-full md:w-1/2 flex-row">
               <div>
                 <div className="w-12 lg:-pt-4">
                   {/* <img src={ArrowImg} alt="Get Started Image" /> */}
@@ -65,7 +65,7 @@ const MiddleBanner = props => {
                 </h3>
               </div>
             </div>
-            <div className="md:w-1/2 max-w-lg md:pl-4">
+            <div className="md:w-1/2 max-w-lg">
               <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom pl-16 md:pl-0">
                 <div
                   className={`frtxt-contnt ${
@@ -133,7 +133,7 @@ const MiddleBanner = props => {
           </div>
         </div>
         {props.showBottomBorder && (
-          <span class="section-border block absolute bottom-0 left-0 w-full"></span>
+          <span className="section-border block absolute bottom-0 left-0 w-full"></span>
         )}
       </section>
     </>

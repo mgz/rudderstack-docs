@@ -9,7 +9,7 @@ import Image from "./image"
 import YouTube from "react-youtube"
 
 const HeroBannerBeAHeroPage = props => {
-  console.log("HeroBannerBeAHeroPage", props)
+  /* console.log("HeroBannerBeAHeroPage", props) */
   let tmp_youtube_url_split = []
   if (
     props.herobanner_media &&
@@ -57,7 +57,7 @@ const HeroBannerBeAHeroPage = props => {
             </div>
           </div>
         </div>
-        <div class="max-w-6xl px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
+        <div className="max-w-6xl px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
           <div className="uppercase text-lg mb-5 text-darkScheme-btnSecondaryBg font-bold">
             {props.herobannersmalltitle}
           </div>
@@ -68,7 +68,7 @@ const HeroBannerBeAHeroPage = props => {
           <div className="relative w-full rounded-xl flex-grow justify-items-end sm:items-center lg:items-start lg:mb-0 px-4 py-8 md:px-32 md:py-12">
             {props.herobanner_media &&
               props.herobanner_media.condition === "videooption" && (
-                <div class="iframe-container">
+                <div className="iframe-container">
                   <YouTube
                     videoId={
                       tmp_youtube_url_split[tmp_youtube_url_split.length - 1]
@@ -80,7 +80,7 @@ const HeroBannerBeAHeroPage = props => {
               )}
             {props.herobanner_media &&
               props.herobanner_media.condition === "imageoption" && (
-                <div class="iframe-container">
+                <div className="iframe-container">
                   <Image
                     props={props.herobanner_media.imageoption.asset._ref}
                     // className="w-9/12 mx-auto"
@@ -95,17 +95,16 @@ const HeroBannerBeAHeroPage = props => {
         </div>
         <div className="block sm:flex justify-center items-center mt-12 mx-2">
           {props.herobannerbutton.map((btn, i) => (
-            <>
+            <div key={btn._key}>
               {(() => {
                 if (btn.btnexternallink === true) {
                   return (
                     <a
-                      key={btn._key}
                       className={
                         (btn.btnhiglight === true
                           ? "btn-primary-lg"
                           : "btn-secondary-lg") +
-                        ` sm:mr-4 md:mb-0 mb-6 `
+                        ` sm:mr-6 md:mb-0 mb-4 cta-btn`
                       }
                       onClick={e =>
                         rudderslabTrackOnClick(
@@ -136,7 +135,7 @@ const HeroBannerBeAHeroPage = props => {
                         className={
                           (btn.btnhiglight === true
                             ? "btn-primary-lg"
-                            : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                            : "btn-secondary-lg") + ` sm:mr-6 md:mb-0 mb-4 cta-btn`
                         }
                       >
                         {btn.btntext}
@@ -145,7 +144,7 @@ const HeroBannerBeAHeroPage = props => {
                   )
                 }
               })()}
-            </>
+            </div>
           ))}
         </div>
       </section>

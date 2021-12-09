@@ -12,7 +12,7 @@ import Image from "./image"
 const TestimonialCardWithLeftHeading = props => {
   // console.log("TestimonialCardWithLeftHeading", props)
   return (
-    <section className="relative">
+    <section className="relative bottomleftright-testimonial">
       {/* <div class="background-gradient-circles-xl absolute top-2/5 left-14 keep-rotate"></div>
       <div class="background-gradient-circles-xl absolute bottom-1/4 right-14 keep-rotate"></div> */}
       <div className="out-gradient-wrapper bottom-1/4 right-16">
@@ -37,23 +37,22 @@ const TestimonialCardWithLeftHeading = props => {
           </div>
         </div>
       </div>
-      <div className="max-w-6xl px-4 md:px-3 py-10 md:py-20 mx-auto mt-10">
-        <div className="flex flex-col  justify-center mx-auto lg:flex-row lg:p-0">
-          <div className="z-20 flex flex-col w-full pb-1 md:mr-30 mb-20 sm:mb-32 text-2xl lg:w-1/2 sm:px-0sm:items-center lg:items-start lg:mb-0 lg:pr-28 mx-auto">
-            <div className="">
-              <div className="w-32">
+      <div className="max-w-6xl px-4 md:px-3 py-10 md:py-20 mx-auto mt-20">
+        <div className="flex flex-col leftrightbottom-testimonial-wrapper justify-center mx-auto lg:flex-row lg:p-0">
+          <div className="z-20 flex flex-col w-full pb-1 md:mr-30 md:mb-32 text-2xl lg:w-1/2 sm:px-0sm:items-center lg:items-start lg:mb-0 lg:pr-28 mx-auto">
+            <div className="arrow-wrapper flex flex-row md:flex-col">
+              <div className="w-12 mr-5 md:w-32">
                 <StaticImage
                   src="../images/Arrow.svg"
                   placeholder="tracedSVG"
                   alt="Get Started Image"
                 />
               </div>
+              <h2 className="md:mt-6 mb-0 md:3xl-3 text-3xl  font-bold text-whiteColor-custom">
+                {props.left_title}
+              </h2>
             </div>
-            <h2 className="md:mt-4 mb-0 md:3xl-3 text-3xl  font-bold leading-none text-whiteColor-custom">
-              {props.left_title}
-            </h2>
-
-            <div className="block sm:flex justify-center items-center mt-12">
+            <div className="flex flex-col md:flex-row justify-center items-center mt-12">
               {props.left_cta_button.map((btn, i) => (
                 <>
                   {(() => {
@@ -64,7 +63,7 @@ const TestimonialCardWithLeftHeading = props => {
                           className={
                             (btn.btnhiglight === true
                               ? "btn-primary-lg "
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
+                              : "btn-secondary-lg") + ` sm:mr-6 mb-4 cta-btn`
                           }
                           onClick={e =>
                             rudderslabTrackOnClick(
@@ -95,7 +94,7 @@ const TestimonialCardWithLeftHeading = props => {
                             className={
                               (btn.btnhiglight === true
                                 ? "btn-primary-lg"
-                                : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                                : "btn-secondary-lg") + ` sm:mr-6 mb-4 cta-btn`
                             }
                           >
                             {btn.btntext}

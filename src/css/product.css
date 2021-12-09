@@ -127,6 +127,21 @@
   .video-library-banner::before {
     background-image: none;
   }
+  .left-right-section .leftrightimgcontent-wrapper, .bottomleftright-testimonial .leftrightbottom-testimonial-wrapper{
+    flex-direction: column-reverse !important;
+    row-gap: 60px;
+  }
+  .left-right-section .leftrightimgcontent-wrapper-col{
+    flex-direction: column !important;
+    row-gap: 60px;
+  }
+  .left-right-section .leftrightimgcontent-items{
+    width: 100% !important;
+  }
+  .left-right-section .leftrightimgcontent-items img{
+    max-width: 80% !important;
+    margin: 0px auto !important;
+  }
 }
 @media (max-width: 575px) {
   .product-video::before,

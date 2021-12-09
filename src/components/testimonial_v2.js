@@ -48,7 +48,7 @@ const TestimonialV2 = props => {
                     key={i}
                     ref={ref}
                   >
-                    <div className="carousel-inner-wrapper relative flex items-center justify-center border rounded-2xl px-15 py-24 mx-7">
+                    <div className="carousel-inner-wrapper relative flex items-center justify-center border rounded-3xl px-15 py-24 mx-7">
                       <span className="quotes absolute">
                         <svg
                           width="154"

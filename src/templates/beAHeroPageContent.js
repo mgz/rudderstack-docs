@@ -39,14 +39,13 @@ const BeAHeroPageContent = ({ data, location }) => {
             return <HeroBannerBeAHeroPage key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
             return (
-              <div className={`section-gradient py-20 relative`}>
-                <span class="section-border block absolute top-0 left-0 w-full"></span>
+              <div className={`section-gradient py-20 relative`} key={section._key}>
+                <span className="section-border block absolute top-0 left-0 w-full"></span>
                 <LeftRightImgCnt_V2
-                  key={section._key}
                   {...section}
                   applyGradientColorTheme={true}
                 />
-                <span class="section-border block absolute bottom-0 left-0 w-full"></span>
+                <span className="section-border block absolute bottom-0 left-0 w-full"></span>
               </div>
             )
           } else if (section._type === "ref_section_testimonials") {
