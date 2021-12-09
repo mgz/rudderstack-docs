@@ -28,7 +28,7 @@ const MiddleBanner = props => {
           >
             <div className="flex lg:items-start w-full md:w-1/2 flex-row">
               <div>
-                <div className="w-12 lg:-pt-4">
+                <div className="w-16 lg:-pt-4">
                   {/* <img src={ArrowImg} alt="Get Started Image" /> */}
                   {isLightTheme === true && (
                     <StaticImage
@@ -47,9 +47,9 @@ const MiddleBanner = props => {
                   )}
                 </div>
               </div>
-              <div className="w-full flex flex-col pl-6 pr-0 md:pr-8 ">
+              <div className="w-full flex flex-col pl-6 md:pl-12 pr-0 md:pr-8 ">
                 {props.small_title && props.small_title !== "" && (
-                  <p className="mb-4 font-bold text-darkScheme-btnSecondaryBg text-xs md:text-lg">
+                  <p className="mb-4 font-bold text-darkScheme-btnSecondaryBg text-xs md:text-2xl">
                     {props.small_title}
                   </p>
                 )}

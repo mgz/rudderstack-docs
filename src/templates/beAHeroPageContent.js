@@ -53,7 +53,7 @@ const BeAHeroPageContent = ({ data, location }) => {
               kl => kl.node._id === section._ref
             )
             return (
-              <section key={section._key} className="mt-40" id="testimonial">
+              <section key={section._key} className="mt-40 md:mt-52" id="testimonial">
                 <TestimonialFloatingV2
                   // applyGradientColorTheme={true}
                   {...l_section_info.node._rawTestimonials}
