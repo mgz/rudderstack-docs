@@ -56,7 +56,7 @@ const IntegrationsHelpBox = () => {
         utm_content: params.get("utm_content"),
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
-        test_user: params.get("test_user"),
+        // test_user: params.get("test_user"),
       },
       {
         traits: {
@@ -77,7 +77,7 @@ const IntegrationsHelpBox = () => {
         utm_content: params.get("utm_content"),
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
-        test_user: params.get("test_user"),
+        // test_user: params.get("test_user"),
       }),
       headers: {
         "Content-Type": "application/json",
