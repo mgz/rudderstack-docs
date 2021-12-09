@@ -68,7 +68,7 @@ const MainNavigation = props => {
             >
               <StaticImage
                 // src={"../images/rudderstack-logo-v2.svg"}
-                src={"../images/rudderstack-logo-header-v2.png"}
+                src={"../images/rudderstack-logo-white.png"}
                 alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
                 placeholder="tracedSVG"
                 width={306}
