@@ -1320,11 +1320,17 @@ top: -60px;
     );
     backdrop-filter: blur(10px);
   }
-  .header-wrapper .menu {
-    background: #070e1f;
-  }
   .testimonial-quotes{
     width: 120px;
+  }
+}
+
+@media only screen and (max-width: 1023px){
+  .header-wrapper .menu, .header-wrapper {
+    background: #070e1f;
+  }
+  .header-wrapper{
+    border-radius: 0px 0px 16px 16px;
   }
 }
 
@@ -1424,6 +1430,9 @@ top: -60px;
   }
   .carousel-wrapper > div {
     padding: 0px 0px 80px 0px;
+  }
+  .carousel-wrapper > div:last-child{
+    padding-bottom: 0px;
   }
   .carousel .slider-wrapper {
     padding-top: 80px;

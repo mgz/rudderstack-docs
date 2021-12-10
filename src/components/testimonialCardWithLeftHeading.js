@@ -13,8 +13,8 @@ const TestimonialCardWithLeftHeading = props => {
   // console.log("TestimonialCardWithLeftHeading", props)
   return (
     <section className="relative bottomleftright-testimonial">
-      {/* <div class="background-gradient-circles-xl absolute top-2/5 left-14 keep-rotate"></div>
-      <div class="background-gradient-circles-xl absolute bottom-1/4 right-14 keep-rotate"></div> */}
+      {/* <div className="background-gradient-circles-xl absolute top-2/5 left-14 keep-rotate"></div>
+      <div className="background-gradient-circles-xl absolute bottom-1/4 right-14 keep-rotate"></div> */}
       <div className="out-gradient-wrapper bottom-1/4 right-16">
         <div className="grad1">
           <div className="grad2">
@@ -37,7 +37,7 @@ const TestimonialCardWithLeftHeading = props => {
           </div>
         </div>
       </div>
-      <div className="max-w-6xl px-4 md:px-3 py-10 md:py-20 mx-auto mt-20">
+      <div className="max-w-6xl px-8 lg:px-5 py-10 md:py-20 mx-auto mt-20">
         <div className="flex flex-col leftrightbottom-testimonial-wrapper justify-center mx-auto lg:flex-row lg:p-0">
           <div className="z-20 flex flex-col w-full pb-1 md:mr-30 md:mb-32 text-2xl lg:w-1/2 sm:px-0sm:items-center lg:items-start lg:mb-0 lg:pr-20 mx-auto">
             <div className="arrow-wrapper flex flex-row md:flex-col">
@@ -54,7 +54,7 @@ const TestimonialCardWithLeftHeading = props => {
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center mt-12">
               {props.left_cta_button.map((btn, i) => (
-                <>
+                <div key={i}>
                   {(() => {
                     if (btn.btnexternallink === true) {
                       return (
@@ -103,7 +103,7 @@ const TestimonialCardWithLeftHeading = props => {
                       )
                     }
                   })()}
-                </>
+                </div>
               ))}
             </div>
           </div>
@@ -112,7 +112,7 @@ const TestimonialCardWithLeftHeading = props => {
           </div>
         </div>
       </div>
-      <span class="section-border block absolute bottom-0 left-0 w-full"></span>
+      <span className="section-border block absolute bottom-0 left-0 w-full"></span>
     </section>
   )
 }

@@ -49,9 +49,9 @@ const Products = ({ data, location }) => {
                 key={row._key}
                 className="section-gradient py-10 md:py-20 relative px-4 sm:px-8"
               >
-                <span class="section-border block absolute top-0 left-0 w-full"></span>
+                <span className="section-border block absolute top-0 left-0 w-full"></span>
                 <LeftRightImgCnt_V2 applyGradientColorTheme={true} {...row} />
-                <span class="section-border block absolute bottom-0 left-0 w-full"></span>
+                <span className="section-border block absolute bottom-0 left-0 w-full"></span>
               </div>
             )
           } else if (row._type === "testimonial_card_with_left_heading") {
