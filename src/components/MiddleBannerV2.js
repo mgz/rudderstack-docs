@@ -5,7 +5,7 @@ import Link from "gatsby-link"
 import { rudderslabTrackOnClick } from "../utils/common"
 import PortableText from "./portableText"
 
-const MiddleBanner = props => {
+const MiddleBannerV2 = props => {
   // console.log("MiddleBanner", props)
   const smalldescription = props.smalldescription
   const title = props.title
@@ -23,10 +23,10 @@ const MiddleBanner = props => {
         <div className="max-w-6xl mx-auto blockWrapper">
           <div
             className={`flex flex-wrap flex-col ${
-              isLightTheme !== true ? "items-center" : ""
+              isLightTheme !== true ? "" : ""
             }  lg:flex-row`}
           >
-            <div className="flex lg:items-start w-full lg:w-1/2 flex-row">
+            <div className="flex lg:items-start w-full lg:w-3/5 flex-row">
               <div>
                 <div className="w-10 md:w-16 lg:-pt-4">
                   {/* <img src={ArrowImg} alt="Get Started Image" /> */}
@@ -72,7 +72,7 @@ const MiddleBanner = props => {
                     isLightTheme === true
                       ? "text-grayColor-custom"
                       : "text-white"
-                  }`}
+                  } pt-0 lg:pt-14`}
                 >
                   <PortableText
                     blocks={smalldescription}
@@ -139,4 +139,4 @@ const MiddleBanner = props => {
     </>
   )
 }
-export default MiddleBanner
+export default MiddleBannerV2

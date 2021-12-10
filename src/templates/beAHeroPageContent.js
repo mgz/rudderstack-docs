@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
-import MiddleBanner from "../components/middle-banner"
+import MiddleBannerV2 from "../components/MiddleBannerV2"
 import loadable from "@loadable/component"
 import HeroBannerBeAHeroPage from "../components/heroBannerBeAHeroPage"
 import LeftRightImgCnt_V2 from "../components/left-right-image-content-v2"
@@ -66,7 +66,7 @@ const BeAHeroPageContent = ({ data, location }) => {
             )
             return (
               <section key={section._key} id="get_started">
-                <MiddleBanner
+                <MiddleBannerV2
                   {...l_section_info.node._rawGetStarted}
                   showBottomBorder={true}
                   smallerTitle={true}
