@@ -26,9 +26,7 @@ const CodeEditor = props => {
         : false,
       mode: props.code_input.language,
       readOnly: "nocursor",
-      autofocus:/*  props.code_input.auto_focus
-        ? props.code_input.auto_focus
-        : */ false,
+      autofocus: false,
     })
     let rightEditor = CodeMirror.fromTextArea(
       document.getElementById("terminal"),

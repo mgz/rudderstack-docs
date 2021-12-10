@@ -97,13 +97,6 @@ body {
   background-position: center;
   background-size: contain;
 }
-.product-hero-banner {
-  background-image: url("../images/product-banner.png");
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: 70%;
-  /* background-size: 1080px; */
-}
 
 .hero-case-studies-bg-image {
   background-image: url("../images/Union2.png");
@@ -195,6 +188,14 @@ body {
   background-position: top center;
   width: 100%;
   height: 100%;
+}
+
+.floating-testimonial-wrapper{
+  background: radial-gradient(
+    97.77% 308.45% at 0% 14.59%,
+    rgba(7, 14, 31, 0.4) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  )
 }
 
 .homepage-middle-bg-gradiant {
@@ -1006,6 +1007,10 @@ top: -60px;
   width: 4px;
   border-radius: 4px;
 }
+.why-rudderstack-wrapper{
+  width: 806px;
+  max-width: 100%;
+}
 .wr-image-icon-block {
   width: 250px;
   height: 250px;
@@ -1213,11 +1218,11 @@ top: -60px;
 
 @keyframes four {
   from {
-    shadow: 0 0 250px 20px #781848;
+    box-shadow: 0 0 250px 20px #781848;
   }
 
   to {
-    shadow: 0 0 100px 15px #f2bbe9;
+    box-shadow: 0 0 100px 15px #f2bbe9;
   }
 }
 
@@ -1293,6 +1298,9 @@ top: -60px;
   /* .logo-list .logo-item {
     width: 33.33% !important;
   } */
+  .cta-btn{
+    width: 190px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .carousel-wrapper {
@@ -1312,8 +1320,17 @@ top: -60px;
     );
     backdrop-filter: blur(10px);
   }
-  .header-wrapper .menu {
+  .testimonial-quotes{
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 1023px){
+  .header-wrapper .menu, .header-wrapper {
     background: #070e1f;
+  }
+  .header-wrapper{
+    border-radius: 0px 0px 16px 16px;
   }
 }
 
@@ -1413,6 +1430,9 @@ top: -60px;
   }
   .carousel-wrapper > div {
     padding: 0px 0px 80px 0px;
+  }
+  .carousel-wrapper > div:last-child{
+    padding-bottom: 0px;
   }
   .carousel .slider-wrapper {
     padding-top: 80px;

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
-import MiddleBanner from "../components/middle-banner"
+import MiddleBannerV2 from "../components/MiddleBannerV2"
 import loadable from "@loadable/component"
 import HeroBannerBeAHeroPage from "../components/heroBannerBeAHeroPage"
 import LeftRightImgCnt_V2 from "../components/left-right-image-content-v2"
@@ -39,14 +39,13 @@ const BeAHeroPageContent = ({ data, location }) => {
             return <HeroBannerBeAHeroPage key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
             return (
-              <div className={`section-gradient py-20 relative`}>
-                <span class="section-border block absolute top-0 left-0 w-full"></span>
+              <div className={`section-gradient py-20 relative`} key={section._key}>
+                <span className="section-border block absolute top-0 left-0 w-full"></span>
                 <LeftRightImgCnt_V2
-                  key={section._key}
                   {...section}
                   applyGradientColorTheme={true}
                 />
-                <span class="section-border block absolute bottom-0 left-0 w-full"></span>
+                <span className="section-border block absolute bottom-0 left-0 w-full"></span>
               </div>
             )
           } else if (section._type === "ref_section_testimonials") {
@@ -54,7 +53,7 @@ const BeAHeroPageContent = ({ data, location }) => {
               kl => kl.node._id === section._ref
             )
             return (
-              <section key={section._key} className="mt-40" id="testimonial">
+              <section key={section._key} className="mt-40 md:mt-52" id="testimonial">
                 <TestimonialFloatingV2
                   // applyGradientColorTheme={true}
                   {...l_section_info.node._rawTestimonials}
@@ -67,7 +66,7 @@ const BeAHeroPageContent = ({ data, location }) => {
             )
             return (
               <section key={section._key} id="get_started">
-                <MiddleBanner
+                <MiddleBannerV2
                   {...l_section_info.node._rawGetStarted}
                   showBottomBorder={true}
                   smallerTitle={true}

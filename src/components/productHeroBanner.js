@@ -32,8 +32,8 @@ const ProductHeroBanner = props => {
   }
 
   return (
-    <section className="w-full  py-0 flex justify-center items-center relative overflow-hidden gradiant-layer banner-section  pb-12 lg:pb-20">
-      <div className="max-w-6xl w-full sm:pb-20 pb-4 md:pt-16 p1-16 px-4 sm:px-8 lg:px-3 mx-auto">
+    <section className="w-full  py-0 flex justify-center items-center relative overflow-hidden gradiant-layer banner-section product-hero-banner pb-12 lg:pb-20">
+      <div className="max-w-6xl w-full sm:pb-20 pb-4 md:pt-16 pt-9 p1-16 px-4 sm:px-8 lg:px-5 mx-auto">
         <div className="out-gradient-wrapper bottom-1/4 right-16">
           <div className="grad1">
             <div className="grad2">
@@ -57,7 +57,7 @@ const ProductHeroBanner = props => {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0">
-          <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-6/12 sm:px-0sm:items-center lg:items-start lg:mb-0 pr-4 lg:pr-20">
+          <div className="z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-6/12 sm:px-0 lg:items-start lg:mb-0 pr-4 lg:pr-20">
             <h2 className="text-2xl  font-bold tracking-tight-2 text-darkScheme-btnSecondaryBg uppercase">
               {props.productbannerheader}
             </h2>
@@ -68,9 +68,9 @@ const ProductHeroBanner = props => {
               {props.productbannercontent}
             </p>
 
-            <div class="block sm:flex justify-center items-center mt-12">
+            <div className="block sm:flex items-center mt-12">
               {props.herobannerbutton.map((btn, i) => (
-                <>
+                <div key={i}>
                   {(() => {
                     if (btn.btnexternallink === true) {
                       return (
@@ -86,7 +86,7 @@ const ProductHeroBanner = props => {
                           className={
                             (btn.btnhiglight === true
                               ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
+                              : "btn-secondary-lg") + ` sm:mr-6 md:mb-0 mb-6 cta-btn`
                           }
                           href={btn.btnlink}
                         >
@@ -109,7 +109,7 @@ const ProductHeroBanner = props => {
                             className={
                               (btn.btnhiglight === true
                                 ? "btn-primary-lg"
-                                : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
+                                : "btn-secondary-lg") + ` sm:mr-6 md:mb-0 mb-6 cta-btn`
                             }
                             to={btn.btnlink}
                           >
@@ -119,7 +119,7 @@ const ProductHeroBanner = props => {
                       )
                     }
                   })()}
-                </>
+                </div>
               ))}
             </div>
           </div>
@@ -127,7 +127,7 @@ const ProductHeroBanner = props => {
           <div className="relative w-full rounded-xl flex-grow justify-items-end lg:w-6/12 px-0 sm:items-center lg:items-start lg:mb-0">
             {props.herobanner_media &&
               props.herobanner_media.condition === "videooption" && (
-                <div class="iframe-container">
+                <div className="iframe-container">
                   {/* <div className="product-banner-frame"></div> */}
                   <YouTube
                     videoId={
@@ -140,7 +140,7 @@ const ProductHeroBanner = props => {
               )}
             {props.herobanner_media &&
               props.herobanner_media.condition === "imageoption" && (
-                <div class="iframe-container">
+                <div className="iframe-container">
                   {/* <div className="product-banner-frame"></div> */}
                   <Image
                     props={props.herobanner_media.imageoption.asset._ref}

@@ -55,15 +55,15 @@ const LeftRightComponentEdgesAligned = props => {
         <h2 className="text-5xl text-darkScheme-textPrimary leading-tight font-bold mt-16 text-center section-title">
           {props.leftrightcontentsubtitle}
         </h2>
-        <div className="why-rudderstack-wrapper max-w-4xl mx-auto">
+        <div className="why-rudderstack-wrapper mx-auto">
           {/* Map this block start */}
-          {props.leftrightimageblock.map(row => {
+          {props.leftrightimageblock.map((row, idx) => {
             return (
               <div
                 key={row._key}
                 className={`wr-data-block image-${
                   row.condition === "right" ? "left" : "right"
-                }  relative py-20 flex flex-col max-w-2xl`}
+                }  relative py-20 flex flex-col`}
               >
                 <div className="separator-line mx-auto"></div>
                 <div
@@ -85,24 +85,24 @@ const LeftRightComponentEdgesAligned = props => {
                   } w-1/2 -mt-12`}
                 >
                   <div className="wr-text-data w-11/12">
-                    <h4 className="text-darkScheme-btnSecondaryBg uppercase font-bold text-3xl-3">
+                    <h4 className="text-darkScheme-btnSecondaryBg uppercase text-3xl-3 font-bold">
                       {row.title}
                     </h4>
-                    <div className="text-darkScheme-textPrimary mt-2">
+                    <div className="text-darkScheme-textPrimary mt-2 text-2xl">
                       <PortableText
                         blocks={row.content}
                         trackSectionHeader={row.title}
                       />
                     </div>
-                    {props.leftrightimageblock && props.leftrightimageblock.addlink && (<a
-                      href={props.leftrightimageblock.addlink.cmnlink}
+                    {props.leftrightimageblock && props.leftrightimageblock[idx].addlink && (<a
+                      href={props.leftrightimageblock[idx].addlink.cmnlink}
                       className="learn-more mt-4 text-darkScheme-textPrimary font-bold inline-block relative"
                       onClick={e =>
                         rudderslabTrackOnClick("link", props.right_section.title, e)
                       }
                     >
                       <span className="learn-more-text inline-block">
-                        {props.leftrightimageblock.addlink.cmnlinktext}
+                        {props.leftrightimageblock[idx].addlink.cmnlinktext}
                       </span>
                       <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">
                         <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
