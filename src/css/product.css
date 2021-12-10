@@ -10,7 +10,13 @@
   @apply top-3;
   @apply left-0;
 }
-
+.product-hero-banner {
+  /* background-image: url("../images/product-banner.png"); */
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 70%;
+  /* background-size: 1080px; */
+}
 .product-page_banner::before {
   background-image: url("../images/product-banner-line-2.png");
   background-position: bottom right;
@@ -33,7 +39,9 @@
   left: 5px;
   width: 100%;
 }
-
+.platform-hero-desc{
+  max-width: 864px;
+}
 .video-library-banner::before {
   background-image: url("../images/pipe-start-right.svg"),
     url("../images/pipe-start-left.svg");

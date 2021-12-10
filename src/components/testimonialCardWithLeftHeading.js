@@ -39,7 +39,7 @@ const TestimonialCardWithLeftHeading = props => {
       </div>
       <div className="max-w-6xl px-4 md:px-3 py-10 md:py-20 mx-auto mt-20">
         <div className="flex flex-col leftrightbottom-testimonial-wrapper justify-center mx-auto lg:flex-row lg:p-0">
-          <div className="z-20 flex flex-col w-full pb-1 md:mr-30 md:mb-32 text-2xl lg:w-1/2 sm:px-0sm:items-center lg:items-start lg:mb-0 lg:pr-28 mx-auto">
+          <div className="z-20 flex flex-col w-full pb-1 md:mr-30 md:mb-32 text-2xl lg:w-1/2 sm:px-0sm:items-center lg:items-start lg:mb-0 lg:pr-20 mx-auto">
             <div className="arrow-wrapper flex flex-row md:flex-col">
               <div className="w-12 mr-5 md:w-32">
                 <StaticImage
@@ -48,7 +48,7 @@ const TestimonialCardWithLeftHeading = props => {
                   alt="Get Started Image"
                 />
               </div>
-              <h2 className="md:mt-6 mb-0 md:3xl-3 text-3xl  font-bold text-whiteColor-custom">
+              <h2 className="md:mt-6 mb-0 md:3xl-3 md:text-3xl-3 text-xl font-bold text-whiteColor-custom">
                 {props.left_title}
               </h2>
             </div>

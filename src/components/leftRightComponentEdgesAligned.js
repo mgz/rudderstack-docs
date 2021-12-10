@@ -55,7 +55,7 @@ const LeftRightComponentEdgesAligned = props => {
         <h2 className="text-5xl text-darkScheme-textPrimary leading-tight font-bold mt-16 text-center section-title">
           {props.leftrightcontentsubtitle}
         </h2>
-        <div className="why-rudderstack-wrapper max-w-4xl mx-auto">
+        <div className="why-rudderstack-wrapper mx-auto">
           {/* Map this block start */}
           {props.leftrightimageblock.map((row, idx) => {
             return (
@@ -63,7 +63,7 @@ const LeftRightComponentEdgesAligned = props => {
                 key={row._key}
                 className={`wr-data-block image-${
                   row.condition === "right" ? "left" : "right"
-                }  relative py-20 flex flex-col max-w-2xl`}
+                }  relative py-20 flex flex-col`}
               >
                 <div className="separator-line mx-auto"></div>
                 <div
@@ -85,10 +85,10 @@ const LeftRightComponentEdgesAligned = props => {
                   } w-1/2 -mt-12`}
                 >
                   <div className="wr-text-data w-11/12">
-                    <h4 className="text-darkScheme-btnSecondaryBg uppercase font-bold text-3xl-3">
+                    <h4 className="text-darkScheme-btnSecondaryBg uppercase text-3xl-3 font-bold">
                       {row.title}
                     </h4>
-                    <div className="text-darkScheme-textPrimary mt-2">
+                    <div className="text-darkScheme-textPrimary mt-2 text-2xl">
                       <PortableText
                         blocks={row.content}
                         trackSectionHeader={row.title}

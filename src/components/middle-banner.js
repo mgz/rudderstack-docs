@@ -22,11 +22,11 @@ const MiddleBanner = props => {
       >
         <div className="max-w-6xl mx-auto blockWrapper">
           <div
-            className={`flex flex-wrap ${
+            className={`flex flex-wrap flex-col ${
               isLightTheme !== true ? "items-center" : ""
-            }  sm:flex-row`}
+            }  lg:flex-row`}
           >
-            <div className="flex lg:items-start w-full md:w-1/2 flex-row">
+            <div className="flex lg:items-start w-full lg:w-1/2 flex-row">
               <div>
                 <div className="w-16 lg:-pt-4">
                   {/* <img src={ArrowImg} alt="Get Started Image" /> */}
@@ -65,7 +65,7 @@ const MiddleBanner = props => {
                 </h3>
               </div>
             </div>
-            <div className="md:w-1/2 max-w-lg">
+            <div className="w-full lg:w-2/5">
               <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom pl-16 md:pl-0">
                 <div
                   className={`frtxt-contnt ${
@@ -117,7 +117,7 @@ const MiddleBanner = props => {
                                   (btn.btnhiglight === true
                                     ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
                                     : "btn-secondary-lg") +
-                                  ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
+                                  ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center lg:mr-4 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
                                 }
                               >
                                 {btn.btntext}

@@ -89,7 +89,7 @@ const HeroBannerBeAHeroPage = props => {
               )}
           </div>
 
-          <div className="text-2xl mt-4 max-w-screen-md text-whiteColor-custom">
+          <div className="text-2xl mt-4 text-whiteColor-custom platform-hero-desc">
             <PortableText blocks={props.herobannercontent} />
           </div>
         </div>

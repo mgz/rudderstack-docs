@@ -237,7 +237,7 @@ const LeftRightImgCnt_V2 = props => {
                             </h2>
                           ) : (
                             <h3
-                              className={`mt-2 mb-4 pb-2 text-2xl-2  ${
+                              className={`mt-2 mb-4 pb-2 text-2xl  ${
                                 props.applyGradientColorTheme
                                   ? "text-white"
                                   : titleColor === "midnightBlue"
@@ -441,7 +441,7 @@ const LeftRightImgCnt_V2 = props => {
                           </h2>
                         ) : (
                           <h3
-                            className={`mt-2 mb-4 pb-2 text-lg md:text-2xl-2 ${
+                            className={`mt-2 mb-4 pb-2 text-lg md:text-2xl ${
                               props.applyGradientColorTheme
                                 ? "text-white"
                                 : titleColor === "midnightBlue"
