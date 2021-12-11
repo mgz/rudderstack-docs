@@ -161,7 +161,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
         <main>{children}</main>
         <CookiesConsent />
         <footer
-          className="hero-section px-4 sm:px-4 text-sm md:pt-0 w-full mx-auto"
+          className="hero-section px-4 sm:px-4 text-sm md:pt-14 w-full mx-auto"
           name={"footer-container"}
         >
           <div className="max-w-6xl mx-auto footer-menus-wrap">

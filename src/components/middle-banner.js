@@ -17,8 +17,8 @@ const MiddleBanner = props => {
         className={`${
           isLightTheme === true
             ? "text-blueNew-midnight"
-            : "hero-section text-white"
-        } pt-10 pb-10 md:py-28 px-0 sm:px-0 relative`}
+            : "hero-section text-white pb-36"
+        } pt-24 md:px-0 pb-10 sm:px-0 relative`}
       >
         <div className="max-w-6xl mx-auto blockWrapper">
           <div
