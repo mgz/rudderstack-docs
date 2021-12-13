@@ -165,7 +165,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
           name={"footer-container"}
         >
           <div className="max-w-6xl mx-auto footer-menus-wrap">
-            <div className="w-full py-6 font-custom inline-block">
+            <div className="w-full pt-12 md:pt-6 font-custom inline-block">
               {footermenus.map((menu, i) => (
                 <div
                   key={menu._key}

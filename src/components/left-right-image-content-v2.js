@@ -64,7 +64,7 @@ const LeftRightImgCnt_V2 = props => {
                 </div>
               )}
             {props.header_media_cta_cutton && (
-              <div className="md:w-80 md:mx-auto mx-4">
+              <div className="md:w-96 md:mx-auto mx-4">
                 <>
                   {(() => {
                     if (
@@ -107,7 +107,7 @@ const LeftRightImgCnt_V2 = props => {
                               true
                                 ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
                                 : "btn-secondary-lg") +
-                              ` sm:mr-4 md:mb-0 mb-6 text-xs bg-whiteColor-custom hover:bg-transparent border-whiteColor-custom hover:text-whiteColor-custom`
+                              ` sm:mr-4 md:mb-0 mb-6 text-lg bg-whiteColor-custom hover:bg-transparent border-whiteColor-custom hover:text-whiteColor-custom`
                             }
                             to={props.header_media_cta_cutton.btnlink}
                           >
@@ -122,14 +122,14 @@ const LeftRightImgCnt_V2 = props => {
             )}
 
             {props.header_feature_items && (
-              <div className="flex flex-col md:flex-row left-right-comp-gradient rounded-3xl pt-8 md:mt-16 p-4 md:mx-auto py-4 justify-center mx-8">
+              <div className="flex flex-col md:flex-row left-right-comp-gradient rounded-3xl md:mt-16 md:mx-auto py-6 justify-center mx-4">
                 {props.header_feature_items.map((row, idx) => {
                   return (
                     <div
                       key={row._key}
                       className={`md:w-64 flex flex-col ${
-                        idx === 0 ? "mt-0 md:pl-0" : "mt-12 md:mt-0  "
-                      } md:pr-12`}
+                        idx === 0 ? "mt-0 md:pl-0" : "mt-12 md:mt-0 "
+                      } ${idx === props.header_feature_items.length - 1 ? 'md:pr-0' : 'md:pr-12'}`}
                     >
                       <Image
                         props={row.card_image.asset._ref}
@@ -175,7 +175,7 @@ const LeftRightImgCnt_V2 = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className={`flex items-center flex-wrap flex-col-reverse sm:flex-row ${i ===0 ? 'pt-0' : 'pt-16'} md:pt-32 leftrightimgcontent-wrapper`}
+                    className={`flex items-center flex-wrap flex-col-reverse sm:flex-row ${i ===0 ? 'pt-0' : 'pt-16'} md:pt-32 ${i === contents.length - 1 ?'leftrightimgcontent-wrapper' : 'leftrightimgcontent-wrapper-col'}`}
                   >
                     <div
                       className={`w-full ${
@@ -194,7 +194,7 @@ const LeftRightImgCnt_V2 = props => {
                           return (
                             <Image
                               props={imgref}
-                              classes="w-full"
+                              classes={`w-full ${i === 1 ? 'lg:block hidden' : ''}`}
                               // width="540"
                               // height="297"
                             />
@@ -405,7 +405,7 @@ const LeftRightImgCnt_V2 = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap pt-16 md:pt-32 leftrightimgcontent-wrapper-col"
+                    className={`flex items-center flex-wrap pt-16 md:pt-32 ${i === contents.length - 1 ?'leftrightimgcontent-wrapper' : 'leftrightimgcontent-wrapper-col'}`}
                   >
                     <div
                       className={`${

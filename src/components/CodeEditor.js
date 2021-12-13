@@ -219,7 +219,6 @@ const CodeEditor = props => {
           </div>
         </div>
       </div>
-      <span className="section-border absolute bottom-0 left-0 w-full block"></span>
     </section>
   )
 }

@@ -179,13 +179,13 @@ const CookiesConsent = () => {
       >
         <div className="flex flex-row w-full md:w-auto">
         <p className="self-center text-lg mr-4">
-            This site uses cookies to improve your experience. 
+            This site uses cookies to improve your experience.
             If you want to learn more about cookies and why we use them, visit
             our{" "}
             <a className="text-blueNew-custom cursor-pointer font-bold" href="https://rudderstack.com/cookie-policy">cookie policy</a>.
             &nbsp;We'll assume you're ok with this, but you can opt-out if you wish
-            <span aria-hidden="true" className="font-bold text-blueNew-custom self-center mx-2" 
-              onClick={() => { 
+            <span aria-hidden="true" className="font-bold text-blueNew-custom self-center mx-2"
+              onClick={() => {
                 setShowCookieSeting(true)
               }}
             >Cookie&nbsp;Settings.</span>
@@ -198,7 +198,7 @@ const CookiesConsent = () => {
         >
           <p
             aria-hidden="true"
-            className="btn-primary-lg cursor-pointer self-center w-full"
+            className="btn-primary-lg cursor-pointer self-center w-full hover:text-darkScheme-textBlack hover:border-darkScheme-textBlack"
             // href="#"
             onClick={() => {
               setShowConsent(false)

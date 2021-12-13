@@ -70,12 +70,11 @@ const ProductHeroBanner = props => {
 
             <div className="block sm:flex items-center mt-12">
               {props.herobannerbutton.map((btn, i) => (
-                <div key={i}>
+                <div key={btn._key}>
                   {(() => {
                     if (btn.btnexternallink === true) {
                       return (
                         <a
-                          key={btn._key}
                           onClick={e =>
                             rudderslabTrackOnClick(
                               "button",

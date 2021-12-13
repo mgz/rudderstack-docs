@@ -150,6 +150,9 @@
     max-width: 80% !important;
     margin: 0px auto !important;
   }
+  .left-right-content{
+    border-radius: 12px;
+  }
 }
 @media (max-width: 575px) {
   .product-video::before,
