@@ -1327,6 +1327,9 @@ top: -60px;
   .testimonial-quotes{
     width: 120px;
   }
+  .code-ed-links.mob-hide {
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 1023px){
@@ -1472,9 +1475,6 @@ top: -60px;
   }
   .code-ed-links-wrapper .code-ed-links {
     width: 100% !important;
-  }
-  .code-ed-links.mob-hide {
-    display: none !important;
   }
   .logo-list {
     height: 50px;
