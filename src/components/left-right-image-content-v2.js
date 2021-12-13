@@ -107,7 +107,7 @@ const LeftRightImgCnt_V2 = props => {
                               true
                                 ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
                                 : "btn-secondary-lg") +
-                              ` sm:mr-4 md:mb-0 mb-6 text-lg bg-whiteColor-custom hover:bg-transparent border-whiteColor-custom hover:text-whiteColor-custom`
+                              ` sm:mr-4 md:mb-0 mb-14 text-lg bg-whiteColor-custom hover:bg-transparent border-whiteColor-custom hover:text-whiteColor-custom`
                             }
                             to={props.header_media_cta_cutton.btnlink}
                           >
@@ -122,7 +122,7 @@ const LeftRightImgCnt_V2 = props => {
             )}
 
             {props.header_feature_items && (
-              <div className="flex flex-col md:flex-row left-right-comp-gradient rounded-3xl md:mt-16 md:mx-auto py-6 justify-center mx-4">
+              <div className="flex flex-col md:flex-row left-right-comp-gradient rounded-2xl lg:rounded-3xl md:mt-16 md:mx-auto py-6 px-4 justify-center mx-4">
                 {props.header_feature_items.map((row, idx) => {
                   return (
                     <div
@@ -175,7 +175,7 @@ const LeftRightImgCnt_V2 = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className={`flex items-center flex-wrap flex-col-reverse sm:flex-row ${i ===0 ? 'pt-0' : 'pt-16'} md:pt-32 ${i === contents.length - 1 ?'leftrightimgcontent-wrapper' : 'leftrightimgcontent-wrapper-col'}`}
+                    className={`flex items-center flex-wrap flex-col-reverse sm:flex-row ${i === 1 ? 'pt-0' : 'pt-16'} md:pt-19 ${i === contents.length - 1 ?'leftrightimgcontent-wrapper' : 'leftrightimgcontent-wrapper-col'}`}
                   >
                     <div
                       className={`w-full ${
@@ -405,7 +405,7 @@ const LeftRightImgCnt_V2 = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className={`flex items-center flex-wrap pt-16 md:pt-32 ${i === contents.length - 1 ?'leftrightimgcontent-wrapper' : 'leftrightimgcontent-wrapper-col'}`}
+                    className={`flex items-center flex-wrap pt-16 md:pt-19 ${i === contents.length - 1 ?'leftrightimgcontent-wrapper' : 'leftrightimgcontent-wrapper-col'}`}
                   >
                     <div
                       className={`${
@@ -459,7 +459,7 @@ const LeftRightImgCnt_V2 = props => {
                             props.applyGradientColorTheme
                               ? "text-white"
                               : "text-grayColor-custom"
-                          } leading-7 text-xs sm:text-lg frtxt-contnt ${
+                          } leading-7 text-lg sm:text-lg frtxt-contnt ${
                             content.content_list_styling === "right_arrow"
                               ? "arrow-list-items"
                               : content.content_list_styling === "check"
