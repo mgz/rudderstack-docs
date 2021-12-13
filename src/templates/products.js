@@ -50,7 +50,7 @@ const Products = ({ data, location }) => {
                 className="section-gradient py-10 md:py-20 relative px-4 sm:px-8"
               >
                 <span className="section-border block absolute top-0 left-0 w-full"></span>
-                <LeftRightImgCnt_V2 applyGradientColorTheme={true} {...row} />
+                <LeftRightImgCnt_V2 applyGradientColorTheme={true} {...row} location={location} />
                 <span className="section-border block absolute bottom-0 left-0 w-full"></span>
               </div>
             )

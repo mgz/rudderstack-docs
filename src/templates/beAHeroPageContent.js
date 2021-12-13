@@ -44,6 +44,7 @@ const BeAHeroPageContent = ({ data, location }) => {
                 <LeftRightImgCnt_V2
                   {...section}
                   applyGradientColorTheme={true}
+                  location={location}
                 />
                 <span className="section-border block absolute bottom-0 left-0 w-full"></span>
               </div>

@@ -88,7 +88,7 @@ const LeftRightComponentEdgesAligned = props => {
                     <h4 className="text-darkScheme-btnSecondaryBg uppercase text-3xl-3 font-bold">
                       {row.title}
                     </h4>
-                    <div className="text-darkScheme-textPrimary mt-2 text-2xl">
+                    <div className="text-darkScheme-textPrimary mt-2 md:text-2xl text-lg">
                       <PortableText
                         blocks={row.content}
                         trackSectionHeader={row.title}
@@ -101,10 +101,10 @@ const LeftRightComponentEdgesAligned = props => {
                         rudderslabTrackOnClick("link", props.right_section.title, e)
                       }
                     >
-                      <span className="learn-more-text inline-block text-2xl">
+                      <span className="learn-more-text inline-block md:text-2xl text-lg">
                         {props.leftrightimageblock[idx].addlink.cmnlinktext}
                       </span>
-                      <span className="learn-more-icon text-darkScheme-btnSecondaryBg inline-block align-middle pl-5">
+                      <span className="learn-more-icon lrlm-icon text-darkScheme-btnSecondaryBg inline-block pl-5">
                         <svg width="14" height="23" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>

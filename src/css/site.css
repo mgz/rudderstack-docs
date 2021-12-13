@@ -1247,6 +1247,10 @@ top: -60px;
   filter: blur(60px);
 }
 
+.lrlm-icon{
+  vertical-align: -4px;
+}
+
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;
@@ -1401,6 +1405,12 @@ top: -60px;
   }
   .blog-section .blog-section-inner {
     text-align: center;
+  }
+  .lrlm-icon{
+    vertical-align: -6px;
+  }
+  .lrlm-icon svg{
+    width: 8px;
   }
 }
 

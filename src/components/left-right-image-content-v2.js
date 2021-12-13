@@ -122,7 +122,7 @@ const LeftRightImgCnt_V2 = props => {
             )}
 
             {props.header_feature_items && (
-              <div className="flex flex-col md:flex-row left-right-comp-gradient rounded-2xl lg:rounded-3xl md:mt-16 md:mx-auto py-6 px-4 justify-center mx-4">
+              <div className="flex flex-col md:flex-row left-right-comp-gradient rounded-2xl lg:rounded-3xl md:mt-16 md:mx-auto py-6 px-4 justify-center">
                 {props.header_feature_items.map((row, idx) => {
                   return (
                     <div
@@ -175,7 +175,7 @@ const LeftRightImgCnt_V2 = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className={`flex items-center flex-wrap flex-col-reverse sm:flex-row ${i === 1 ? 'pt-0' : 'pt-16'} md:pt-19 ${i === contents.length - 1 ?'leftrightimgcontent-wrapper' : 'leftrightimgcontent-wrapper-col'}`}
+                    className={`flex items-center flex-wrap flex-col-reverse sm:flex-row ${i === 1 ? 'pt-0' : 'pt-16'} md:pt-19 ${i === contents.length - 1 && props.location.pathname === "/product/platform/" ? 'leftrightimgcontent-wrapper-col' : 'leftrightimgcontent-wrapper'}`}
                   >
                     <div
                       className={`w-full ${
@@ -213,7 +213,7 @@ const LeftRightImgCnt_V2 = props => {
                       } pl-0 lg:pl-12 leftrightimgcontent-items`}
                     >
                       <div
-                        className={`p-6 lg:p-12 left-right-content mx-4 md:mx-0`}
+                        className={`p-6 lg:p-12 left-right-content`}
                       >
                         <div className="align-middle">
                           <p
@@ -416,7 +416,7 @@ const LeftRightImgCnt_V2 = props => {
                           : "sm:w-1/2"
                       } lg:pr-12 leftrightimgcontent-items`}
                     >
-                      <div className={`p-6 lg:p-12 left-right-content mx-4`}>
+                      <div className={`p-6 lg:p-12 left-right-content`}>
                         <p
                           className={`mt-4 sm:mt-0  text-lg uppercase text-darkScheme-btnSecondaryBg font-bold`}
                         >
@@ -586,7 +586,7 @@ const LeftRightImgCnt_V2 = props => {
                           return (
                             <Image
                               props={imgref}
-                              classes="w-full"
+                              classes={`w-full ${i === 1 ? 'lg:block hidden' : ''}`}
                               // width="540"
                               // height="297"
                             />
