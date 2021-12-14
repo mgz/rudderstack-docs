@@ -36,10 +36,18 @@ export default function SEO({ description, title, slug, image, children }) {
     siteIcon,
   } = site.siteMetadata
 
-  const metaTitle = title ? `${title} - ${siteTitle}` : defaultTitle
+   //const metaTitle = title ? `${title} - ${siteTitle}` : defaultTitle
+  // const metaDescription = description || siteDescription
+  const metaTitle =
+    title !== "Home" 
+      ? `${title} | RudderStack Docs `
+      : "RudderStack Technical Documentation and Guides | RudderStack Docs"
+  const metaDescription =
+    title !== "Home" 
+      ? `Read detailed technical documentation on ${title} in RudderStack Docs.`
+      : "Check out our technical documentation and learn how to use RudderStack features, SDKs, and destination and source integrations."
   const metaUrl = urljoin(siteUrl, slug)
   const metaImage = urljoin(siteUrl, image || siteImage)
-  const metaDescription = description || siteDescription
 
   const schemaOrgJSONLD = [
     {
@@ -50,7 +58,7 @@ export default function SEO({ description, title, slug, image, children }) {
       alternateName: siteTitleShort,
     },
   ]
-
+  // console.log("site meta info", title)
   return (
     <Helmet
       htmlAttributes={{
@@ -59,6 +67,7 @@ export default function SEO({ description, title, slug, image, children }) {
       title={metaTitle}
     >
       {siteIcon && <link rel="icon" href={siteIcon} />}
+      <meta name="title" content={metaTitle} />
       <meta name="description" content={metaDescription} />
       <meta name="image" content={metaImage} />
 

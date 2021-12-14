@@ -126,7 +126,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const tutorials = tutorial_result.data.allSanityKnowledgeBase.edges || []
   tutorials.forEach((edge, index) => {
     // console.log('for each blog',edge.node.slug)
-    const path = `/knowledgebase/${edge.node.slug.current}`
+    const path = `/tutorials/${edge.node.slug.current}`
 
     createPage({
       path,

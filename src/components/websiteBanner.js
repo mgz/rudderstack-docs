@@ -103,7 +103,7 @@ const WebisteBanner = props => {
     <div
       className={`${
         showBanner ? "block" : "hidden"
-      } font-custom w-full top-0 left-0 py-2 z-40 sticky flex justify-between items-center px-4`}
+      } font-custom w-full top-0 left-0 py-2 z-40 flex justify-between items-center px-4`}
       style={{
         backgroundColor: props.banner_background_color,
         color: props.banner_text_color,

@@ -44,36 +44,44 @@ const Singleblog = ({ data, location, ...props }) => {
   blogAuthors.forEach(row => {
     author_names += (author_names.length > 0 ? ", " : "") + row.author_name
   })
-
+  const blog_url = `https://rudderstack.com/blog/${blog.slug.current}/`
   const lv_middlebannersection = data.section_get_started.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
   )
-
-  // console.log("data", data)
   return (
     <Layout location={location}>
       <Helmet>
         <title>{blog.meta_title || blog.title}</title>
         <meta property="og:title" content={blog.meta_title || blog.title} />
-
         <meta name="description" content={blog.meta_desc} />
+        <meta property="og:site_name" content="Rudderstack" />
+        <meta property="og:type" content="article" />
+        {/* added by Hari on 2021-06-21 to show share card across twitter, linkedin and facebook */}
+        {location && <meta property="og:url" content={location.href} />}
         <meta property="og:description" content={blog.meta_desc} />
+        {blog.blogdate && (
+          <meta
+            name="publish_date"
+            property="article:published_time"
+            content={blog.blogdate}
+          />
+        )}
+        <meta name="author" property="article:author" content={author_names} />
+        <meta property="og:image" content={blog.blog_image.asset.url} />
+        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:site" content="@Rudderlabs" />
         <meta
           property="twitter:title"
           content={blog.meta_title || blog.title}
         />
-        <meta property="og:type" content="article" />
         <meta property="twitter:description" content={blog.meta_desc} />
-
-        {/* added by Hari on 2021-06-21 to show share card across twitter, linkedin and facebook */}
-        {location && <meta property="og:url" content={location.href} />}
-
-        <meta property="og:image" content={blog.blog_image.asset.url} />
-        <meta property="twitter:card" content="summary" />
+        <meta property="twitter:image" content={blog.blog_image.asset.url} />
+        <meta property="twitter:image:height" content="65" />
+        <meta property="twitter:image:width" content="65" />
         <meta property="twitter:creator" content={author_names || blog.title} />
         <meta property="twitter:image:alt" content={blog.title} />
       </Helmet>
-      <div className="blog_banner">
+      <div className="blog_banner md:mt-12">
         <Herobanner
           title={blog.title}
           date={blog.blogdate}
@@ -124,21 +132,22 @@ const Singleblog = ({ data, location, ...props }) => {
       </div> */}
       <div className="block-description relative pt-4 max-w-5xl m-auto">
         {/*Blog Content*/}
-        <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center top-0 social-icon_blog">
-          <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
-            {/* <a className="block" href="#"> */}
-            <StaticImage
-              src={"../images/icon-twitter.svg"}
-              placeholder="tracedSVG"
-              className="text-blueNew-midnight"
-              alt="twitter"
-              width={40}
-              height={40}
-            />
-            {/* </a> */}
-          </TwitterShareButton>
-          <FacebookShareButton
-            url={`https://rudderstack.com/blog/${blog.slug}`}
+        <div className="social-icon-sticky">
+          <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center social-icon_blog top-0">
+            <TwitterShareButton url={blog_url}>
+              {/* <a className="block" href="#"> */}
+              <StaticImage
+                src={"../images/icon-twitter.svg"}
+                placeholder="tracedSVG"
+                className="text-blueNew-midnight"
+                alt="twitter"
+                width={40}
+                height={40}
+              />
+              {/* </a> */}
+            </TwitterShareButton>
+            {/* <FacebookShareButton
+            url={`https://rudderstack.com/blog/${blog.slug.current}/`}
           >
             <span className="my-3 block">
               <StaticImage
@@ -149,20 +158,19 @@ const Singleblog = ({ data, location, ...props }) => {
                 height={40}
               />
             </span>
-          </FacebookShareButton>
-          <LinkedinShareButton
-            url={`https://rudderstack.com/blog/${blog.slug}`}
-          >
-            <span className="block">
-              <StaticImage
-                src={"../images/icon-linkedin.svg"}
-                placeholder="tracedSVG"
-                alt="linkdin"
-                width={40}
-                height={40}
-              />
-            </span>
-          </LinkedinShareButton>
+          </FacebookShareButton> */}
+            <LinkedinShareButton url={blog_url} mini="false" title={blog.title}>
+              <span className="block">
+                <StaticImage
+                  src={"../images/icon-linkedin.svg"}
+                  placeholder="tracedSVG"
+                  alt="linkdin"
+                  width={40}
+                  height={40}
+                />
+              </span>
+            </LinkedinShareButton>
+          </div>
         </div>
         <PortableText blocks={blog._rawDescription} />
         <>
@@ -198,7 +206,9 @@ const Singleblog = ({ data, location, ...props }) => {
                   <div className="leading-4 text-lg font-bold sm:mt-4 lg:mt-4 mt-2">
                     {item.author_name}
                   </div>
-                  <div className="lg:mt-6 sm:mt-6 mt-2 text-sm">{item.author_desc}</div>
+                  <div className="lg:mt-6 sm:mt-6 mt-2 text-sm">
+                    {item.author_desc}
+                  </div>
                 </div>
               </div>
             )
@@ -207,6 +217,10 @@ const Singleblog = ({ data, location, ...props }) => {
         {/*Array Blog Author For Test Purpose*/}
       </div>
       {/*Blog Content*/}
+      <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
+        {/*Subscription Component*/}
+        <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
+      </div>
       <section className="bg-white pb-0">
         {/*Blog Post*/}
         <div className="max-w-6xl px-4 md:px-4 mx-auto flex flex-wrap pt-3 pb-12">
@@ -254,10 +268,7 @@ const Singleblog = ({ data, location, ...props }) => {
       {/*Blog Post*/}
       {/* <SignupV1 /> */}
       {/*Sign Up Section*/}
-      <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
-        {/*Subscription Component*/}
-        <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
-      </div>
+
       <section id="footer_section_for_demo">
         <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
       </section>
