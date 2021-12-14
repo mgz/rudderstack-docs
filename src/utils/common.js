@@ -247,20 +247,20 @@ export const rudderslabTrackOnClickDocs = (
   // } else {
   //   sectionName = el
   // }
-  console.log("before tract call", "click", {
-    // not quite sure how to get link text, so the below is an example to get the text of the link
-    link_text:
-      eventType === "sectionLink"
-        ? e.currentTarget.parentNode.innerText
-        : e.currentTarget.innerText,
-    page_title: document.title,
+  // console.log("before tract call", "click", {
+  //   // not quite sure how to get link text, so the below is an example to get the text of the link
+  //   link_text:
+  //     eventType === "sectionLink"
+  //       ? e.currentTarget.parentNode.innerText
+  //       : e.currentTarget.innerText,
+  //   page_title: document.title,
 
-    link_location: el ? el : sectionName,
-    // e.target.baseURI,
-    // we want to track where the link points, whether it is a URL or internal path
-    target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
-    click_type: eventType,
-  })
+  //   link_location: el ? el : sectionName,
+  //   // e.target.baseURI,
+  //   // we want to track where the link points, whether it is a URL or internal path
+  //   target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
+  //   click_type: eventType,
+  // })
   window.rudderanalytics.track("click", {
     // not quite sure how to get link text, so the below is an example to get the text of the link
     link_text:
@@ -275,5 +275,5 @@ export const rudderslabTrackOnClickDocs = (
     target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
     click_type: eventType,
   })
-  console.log('after track call')
+  // console.log('after track call')
 }
