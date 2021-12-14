@@ -65,7 +65,7 @@ const HeroBannerBeAHeroPage = props => {
             {props.herobannertitle}
           </h1>
 
-          <div className="relative w-full rounded-xl flex-grow justify-items-end sm:items-center lg:items-start lg:mb-0 px-4 py-8 md:px-32 md:py-12">
+          <div className="relative w-full rounded-xl flex-grow justify-items-end sm:items-center lg:items-start lg:mb-0 px-4 py-8 md:px-32 md:py-12 md:pb-0 pb-0">
             {props.herobanner_media &&
               props.herobanner_media.condition === "videooption" && (
                 <div className="iframe-container">

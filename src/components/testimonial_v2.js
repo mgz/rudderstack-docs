@@ -37,7 +37,7 @@ const TestimonialV2 = props => {
           // </div>
           <SubscriptionV2 formId={"signup_testimonial_top"} />
         )}
-        <div className="carousel-wrapper pt-15">
+        <div className="carousel-wrapper pt-10">
           <div className="flex desk-testimonial">
             {testimonials &&
               testimonials.splice(0, 3).map((testimonial, i) => {

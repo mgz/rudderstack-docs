@@ -206,7 +206,7 @@ const CodeEditor = props => {
                 </span>
               </span>
             </div>
-            <div className="flex justify-center w-1/2 code-ed-links items-center">
+            <div className="flex justify-center w-full lg:w-1/2 code-ed-links items-center">
               <span className="learn-more relative inline-block">
                 <Link to="#" className="inline-block text-darkScheme-textPrimary font-bold">Explore Destinations</Link>
                 <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">

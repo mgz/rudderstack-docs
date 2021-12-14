@@ -90,6 +90,10 @@
   @apply top-1;
   @apply left-0;
 }
+
+.iframe-container img{
+  margin: auto;
+}
 /*Cloud Desktop CSS*/
 
 @media (min-width: 1600px) /*Product Custom Css*/ {
