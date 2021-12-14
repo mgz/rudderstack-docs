@@ -39,6 +39,7 @@
   display: none;
   outline: none;
 }
+
 .CodeMirror-scroll, .CodeMirror-sizer, .CodeMirror-gutter, .CodeMirror-gutters, .CodeMirror-linenumber {
   box-sizing: content-box;
 }
@@ -155,6 +156,7 @@ div.CodeMirror-cursors {
 .cm-number{
   color: #D692F6;
 }
+.cm-editor.cm-focused { outline: none }
 /* Code editor file */
 .codeEditorFile{
   padding:60px 0px 20px 20px;
