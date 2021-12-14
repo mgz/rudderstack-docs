@@ -35,7 +35,7 @@ const NestedAccordion = props => {
                       : ""
                   }`}
                 >
-                  <a href={docsBasePath + item.link} onClick={(e) => rudderslabTrackOnClickDocs("sidebar_nav", null, e, true)}>{item.title}</a>
+                  <a href={docsBasePath + item.link} onClick={(e) => rudderslabTrackOnClickDocs("sidebar_nav", null, e, false)}>{item.title}</a>
                 </AccordionItemButton>
               </AccordionItemHeading>
             </AccordionItem>
@@ -57,7 +57,7 @@ const NestedAccordion = props => {
                       : ""
                   }`}
                 >
-                  <a href={docsBasePath + item.link}  onClick={(e) => rudderslabTrackOnClickDocs("sidebar_nav", null, e, true)}>{item.title}</a>
+                  <a href={docsBasePath + item.link}  onClick={(e) => rudderslabTrackOnClickDocs("sidebar_nav", null, e, false)}>{item.title}</a>
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>{menuItemChildren}</AccordionItemPanel>

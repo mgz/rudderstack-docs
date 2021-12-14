@@ -36,7 +36,7 @@ const SingleTutorial = ({ data, location, ...props }) => {
   const blogAuthors = data.tutorial.blog_authors
   // const maintitle = props.maintitle
   const viewalltext = "See all posts"
-  const viewallpostslink = "https://rudderstack.com/knowledgebase/"
+  const viewallpostslink = "https://rudderstack.com/tutorials/"
   const viewexternallink = false
   // const [items] = useState([1, 2]); {/*Array Blog Author For Test Purpose*/ }
 
@@ -54,7 +54,10 @@ const SingleTutorial = ({ data, location, ...props }) => {
     <Layout location={location}>
       <Helmet>
         <title>{tutorial.meta_title || tutorial.title}</title>
-        <meta property="og:title" content={tutorial.meta_title || tutorial.title} />
+        <meta
+          property="og:title"
+          content={tutorial.meta_title || tutorial.title}
+        />
 
         <meta name="description" content={tutorial.meta_desc} />
         <meta property="og:description" content={tutorial.meta_desc} />
@@ -68,12 +71,18 @@ const SingleTutorial = ({ data, location, ...props }) => {
         {/* added by Hari on 2021-06-21 to show share card across twitter, linkedin and facebook */}
         {location && <meta property="og:url" content={location.href} />}
 
-        <meta property="og:image" content={tutorial.knowledge_base_image.asset.url} />
+        <meta
+          property="og:image"
+          content={tutorial.knowledge_base_image.asset.url}
+        />
         <meta property="twitter:card" content="summary" />
-        <meta property="twitter:creator" content={author_names || tutorial.title} />
+        <meta
+          property="twitter:creator"
+          content={author_names || tutorial.title}
+        />
         <meta property="twitter:image:alt" content={tutorial.title} />
       </Helmet>
-      <div className="blog_banner">
+      <div className="blog_banner md:mt-12">
         <Herobanner
           title={tutorial.title}
           date={tutorial.tutorial_date}
@@ -82,87 +91,39 @@ const SingleTutorial = ({ data, location, ...props }) => {
           blog={tutorial}
         />
       </div>
-      {/* <div>
-      <div className="social-icon_blog lg:hidden md:hidden flex gap-4 max-w-2xl sm:justify-start justify-center  items-center">
-          <TwitterShareButton url={`https://rudderstack.com/blog/${blog.slug}`}>
-            <StaticImage
-              src={"../images/icon-twitter.svg"}
-              placeholder="tracedSVG"
-              className="text-blueNew-midnight"
-              alt="twitter"
-              width={40}
-              height={40}
-            />
-          </TwitterShareButton>
-          <FacebookShareButton
-            url={`https://rudderstack.com/blog/${blog.slug}`}
-          >
-            <span className="my-3 block">
-              <StaticImage
-                src={"../images/icon-fb.svg"}
-                placeholder="tracedSVG"
-                alt="Facebook"
-                width={40}
-                height={40}
-              />
-            </span>
-          </FacebookShareButton>
-          <LinkedinShareButton
-            url={`https://rudderstack.com/blog/${blog.slug}`}
-          >
-            <span className="block">
-              <StaticImage
-                src={"../images/icon-linkedin.svg"}
-                placeholder="tracedSVG"
-                alt="linkdin"
-                width={40}
-                height={40}
-              />
-            </span>
-          </LinkedinShareButton>
-        </div>
-      </div> */}
+
       <div className="block-description relative pt-4 max-w-5xl m-auto">
-        {/*Blog Content*/}
-        <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center top-0 social-icon_blog">
-          <TwitterShareButton url={`https://rudderstack.com/knowledgebase/${tutorial.slug}`}>
-            {/* <a className="block" href="#"> */}
-            <StaticImage
-              src={"../images/icon-twitter.svg"}
-              placeholder="tracedSVG"
-              className="text-blueNew-midnight"
-              alt="twitter"
-              width={40}
-              height={40}
-            />
-            {/* </a> */}
-          </TwitterShareButton>
-          <FacebookShareButton
-            url={`https://rudderstack.com/knowledgebase/${tutorial.slug}`}
-          >
-            <span className="my-3 block">
+        <div className="social-icon-sticky">
+          <div className="items-center flex gap-2 sm:justify-start md:justify-start justify-center social-icon_blog top-0">
+            <TwitterShareButton
+              url={`https://rudderstack.com/tutorials/${tutorial.slug}`}
+            >
+              
               <StaticImage
-                src={"../images/icon-fb.svg"}
+                src={"../images/icon-twitter.svg"}
                 placeholder="tracedSVG"
-                alt="Facebook"
+                className="text-blueNew-midnight"
+                alt="twitter"
                 width={40}
                 height={40}
               />
-            </span>
-          </FacebookShareButton>
-          <LinkedinShareButton
-            url={`https://rudderstack.com/knowledgebase/${tutorial.slug}`}
-          >
-            <span className="block">
-              <StaticImage
-                src={"../images/icon-linkedin.svg"}
-                placeholder="tracedSVG"
-                alt="linkdin"
-                width={40}
-                height={40}
-              />
-            </span>
-          </LinkedinShareButton>
+              {/* </a> */}
+            </TwitterShareButton>
+
+            <LinkedinShareButton
+              url={`https://rudderstack.com/tutorials/${tutorial.slug}`}
+            >
+              <span className="block">
+                <StaticImage
+                  src={"../images/icon-linkedin.svg"}
+                  placeholder="tracedSVG"
+                  alt="linkdin"
+                  width={40}
+                  height={40}
+                />
+              </span>
+            </LinkedinShareButton>
+          </div>
         </div>
         <PortableText blocks={tutorial._rawDescription} />
         <>
@@ -198,7 +159,9 @@ const SingleTutorial = ({ data, location, ...props }) => {
                   <div className="leading-4 text-lg font-bold sm:mt-4 lg:mt-4 mt-2">
                     {item.author_name}
                   </div>
-                  <div className="lg:mt-6 sm:mt-6 mt-2 text-sm">{item.author_desc}</div>
+                  <div className="lg:mt-6 sm:mt-6 mt-2 text-sm">
+                    {item.author_desc}
+                  </div>
                 </div>
               </div>
             )
@@ -207,56 +170,13 @@ const SingleTutorial = ({ data, location, ...props }) => {
         {/*Array Blog Author For Test Purpose*/}
       </div>
       {/*Blog Content*/}
-      <section className="bg-white pb-0">
-        {/*Blog Post*/}
-        <div className="max-w-6xl px-4 md:px-4 mx-auto flex flex-wrap pt-3 pb-12">
-          <h3 className="tracking-tight-2 w-full my-2 text-4xl md:text-5xl text-primary font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-12">
-            Recent Posts
-          </h3>
-          <BlogModule />
-          <div className="w-full text-center items-center mt-10 md:mt-12">
-            <p className="w-full my-2 text-black font-bold text-sm leading-tight text-center post-arrow right-image flex justify-center items-center hover:text-blueNew-custom">
-              <a
-                href={viewallpostslink}
-                onClick={e => rudderslabTrackOnClick("link", "Recent Posts", e)}
-                className="font-bold leading-normal text-sm lr-icon seeall-icon"
-              >
-                {(() => {
-                  if (viewexternallink === true) {
-                    return (
-                      <a
-                        onClick={e =>
-                          rudderslabTrackOnClick("link", "Recent Posts", e)
-                        }
-                        href={viewallpostslink}
-                      >
-                        {viewalltext}
-                      </a>
-                    )
-                  } else {
-                    return (
-                      <Link
-                        onClick={e =>
-                          rudderslabTrackOnClick("link", "Recent Posts", e)
-                        }
-                        to={viewallpostslink}
-                      >
-                        {viewalltext}
-                      </Link>
-                    )
-                  }
-                })()}
-              </a>
-            </p>
-          </div>
-        </div>
-      </section>
+
       {/*Blog Post*/}
       {/* <SignupV1 /> */}
       {/*Sign Up Section*/}
       <div className="max-w-6xl px-4 md:px-3 mx-auto flex items-center flex-wrap">
         {/*Subscription Component*/}
-        <Subscription formId={"Blog-detail-footer-Subscribe-form"} />
+        <Subscription formId={"Tutorials-detail-footer-Subscribe-form"} />
       </div>
       <section id="footer_section_for_demo">
         {/* <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} /> */}
