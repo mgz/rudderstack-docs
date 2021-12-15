@@ -60,9 +60,9 @@ const DynamicInputForm = ({
   //   oo => ref_form_input && oo._id === ref_form_input._ref
   // )
 
-  // useEffect(() => {
-  //   console.log("isLoading", isLoading)
-  // }, [isLoading])
+  useEffect(() => {
+    // console.log("isLoading", isLoading)
+  }, [isLoading])
 
   let formDefinition = data.allSanityFormInput.nodes.find(
     oo => ref_form_input && oo._id === ref_form_input._ref
@@ -133,7 +133,7 @@ const DynamicInputForm = ({
     })
     // console.log("validate form", errObj, formData)
     setFormErrors(errObj)
-    setIsLoading(false)
+    // setIsLoading(false)
     return ret
   }
 
@@ -146,6 +146,10 @@ const DynamicInputForm = ({
       if (!window.rudderanalytics) {
         return
       }
+      if (isLoading) {
+        return
+      }
+      setIsLoading(true)
 
       var params = new URLSearchParams(document.location.search.substring(1))
 
@@ -263,7 +267,7 @@ const DynamicInputForm = ({
             } else {
               navigate(on_success_navigate_url)
             }
-
+            // setIsLoading(false)
             // navigate(on_success_navigate_url)
           }
         })
@@ -276,7 +280,7 @@ const DynamicInputForm = ({
       //   .getElementsByClassName("dyno-button")[0]
       //   .removeAttribute("disabled")
 
-      setIsLoading(false)
+      // setIsLoading(false)
     } finally {
     }
   }
@@ -286,11 +290,11 @@ const DynamicInputForm = ({
     <form
       id={`${form_id}`}
       onSubmit={e => {
-        setIsLoading(true)
         e.preventDefault()
         if (validateForm(formData) === false) {
           onFormSubmit(formData)
         }
+        // setIsLoading(false)
       }}
       className={`demo_form px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg ${add_on_styling}`}
     >
