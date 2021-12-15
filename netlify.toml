@@ -5,3 +5,7 @@ package = "@netlify/plugin-gatsby"
   from = "/careers/"
   to = "https://boards.greenhouse.io/rudderstack"
   status = 301
+
+[build.environment]
+  GATSBY_BRANCH = "newhomepage"
+  
