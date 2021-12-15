@@ -46,6 +46,7 @@
 
 .CodeMirror-scroll, .CodeMirror-sizer, .CodeMirror-gutter, .CodeMirror-gutters, .CodeMirror-linenumber {
   box-sizing: content-box;
+  outline: none;
 }
 .CodeMirror-vscrollbar {
   right: 0;
