@@ -72,24 +72,39 @@ function checkPrevSibbling(currEl) {
 }
 
 function checkPrevSibbling1(currEl) {
-  let elem;
-  if(currEl !== null && (currEl.nodeName === 'H2' || currEl.nodeName === 'H3')){
-    elem = currEl.textContent;
-  }else{
-    if(currEl.previousElementSibling !== null && (currEl.previousElementSibling.nodeName === 'H2' || currEl.previousElementSibling.nodeName === 'H3')){
-      elem = currEl.previousElementSibling.textContent;
-    }else if(currEl.parentElement !== null && (currEl.parentElement.nodeName === 'H2' || currEl.parentElement.nodeName === 'H3')){
-      elem = currEl.parentElement.textContent;
-    }else if(currEl.parentElement.previousElementSibling !== null && (currEl.parentElement.previousElementSibling.nodeName === 'H2' || currEl.parentElement.previousElementSibling.nodeName === 'H3')){
-      elem = currEl.parentElement.previousElementSibling.textContent;
-    }else if(currEl.previousElementSibling === null){
-      return checkPrevSibbling1(currEl.parentElement);
-    }else if(elem !== ''){
-      return checkPrevSibbling1(currEl.previousElementSibling);
+  let elem
+  if (
+    currEl !== null &&
+    (currEl.nodeName === "H2" || currEl.nodeName === "H3")
+  ) {
+    elem = currEl.textContent
+  } else {
+    if (
+      currEl.previousElementSibling !== null &&
+      (currEl.previousElementSibling.nodeName === "H2" ||
+        currEl.previousElementSibling.nodeName === "H3")
+    ) {
+      elem = currEl.previousElementSibling.textContent
+    } else if (
+      currEl.parentElement !== null &&
+      (currEl.parentElement.nodeName === "H2" ||
+        currEl.parentElement.nodeName === "H3")
+    ) {
+      elem = currEl.parentElement.textContent
+    } else if (
+      currEl.parentElement.previousElementSibling !== null &&
+      (currEl.parentElement.previousElementSibling.nodeName === "H2" ||
+        currEl.parentElement.previousElementSibling.nodeName === "H3")
+    ) {
+      elem = currEl.parentElement.previousElementSibling.textContent
+    } else if (currEl.previousElementSibling === null) {
+      return checkPrevSibbling1(currEl.parentElement)
+    } else if (elem !== "") {
+      return checkPrevSibbling1(currEl.previousElementSibling)
     }
   }
 
-  return elem;
+  return elem
 }
 
 export const rudderslabTrackOnClick = (
@@ -147,7 +162,6 @@ export const rudderslabTrackOnSearch = searchText => {
 }
 
 export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, videoId) => {
-
   if (!window.rudderanalytics) {
     return
   }
@@ -161,7 +175,7 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, videoId) => {
     ad_pod_id: [],
     ad_type: [],
     position: 0,
-    total_length: null /* || event.target.playerInfo.duration */ ,
+    total_length: null /* || event.target.playerInfo.duration */,
     bitrate: null,
     framerate: null,
     video_player: "youtube",
@@ -174,7 +188,6 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, videoId) => {
 }
 
 export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (title, event) => {
-
   if (!window.rudderanalytics) {
     return
   }
@@ -211,11 +224,11 @@ export const rudderslabTrackOnClickDocs = (
   let el
   if (isSeekSectionName) {
     try {
-      el = checkPrevSibbling1(e.currentTarget.parentElement);
+      el = checkPrevSibbling1(e.currentTarget.parentElement)
     } catch {
-      if(document.getElementsByTagName("h1")[0].hasChildNodes()){
-        el = document.getElementsByTagName("h1")[0].childNodes[0].textContent;
-      }else{
+      if (document.getElementsByTagName("h1")[0].hasChildNodes()) {
+        el = document.getElementsByTagName("h1")[0].childNodes[0].textContent
+      } else {
         el = document.getElementsByTagName("h1")[0].innerHTML
       }
     }
@@ -234,9 +247,26 @@ export const rudderslabTrackOnClickDocs = (
   // } else {
   //   sectionName = el
   // }
+  // console.log("before tract call", "click", {
+  //   // not quite sure how to get link text, so the below is an example to get the text of the link
+  //   link_text:
+  //     eventType === "sectionLink"
+  //       ? e.currentTarget.parentNode.innerText
+  //       : e.currentTarget.innerText,
+  //   page_title: document.title,
+
+  //   link_location: el ? el : sectionName,
+  //   // e.target.baseURI,
+  //   // we want to track where the link points, whether it is a URL or internal path
+  //   target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
+  //   click_type: eventType,
+  // })
   window.rudderanalytics.track("click", {
     // not quite sure how to get link text, so the below is an example to get the text of the link
-    link_text: eventType === 'sectionLink' ? e.currentTarget.parentNode.innerText : e.currentTarget.innerText,
+    link_text:
+      eventType === "sectionLink"
+        ? e.currentTarget.parentNode.innerText
+        : e.currentTarget.innerText,
     page_title: document.title,
 
     link_location: el ? el : sectionName,
@@ -245,4 +275,5 @@ export const rudderslabTrackOnClickDocs = (
     target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
     click_type: eventType,
   })
+  // console.log('after track call')
 }
