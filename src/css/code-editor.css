@@ -1,6 +1,10 @@
 .codeBlockLeft{
   background: #3E35D1;
   border-radius: 0px 0px 0px 20px;
+  perspective: 1000;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
 .CodeMirror{
   color: #ffffff;
@@ -115,6 +119,12 @@ div.CodeMirror-cursors {
   visibility: visible;
   position: relative;
   z-index: 3;
+}
+.codeBlockRight{
+  perspective: 1000;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
 .codeBlockRight div.CodeMirror-cursors{
   visibility: hidden;

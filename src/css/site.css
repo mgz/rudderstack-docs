@@ -1075,6 +1075,10 @@ top: -60px;
   display: block;
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.52, 0.01, 0, 1);
+  perspective: 1000;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
 }
 .logo-list {
   height: 100px;
