@@ -19,9 +19,8 @@
 body {
   /* background: linear-gradient(180deg, #e3f1f1 0%, rgba(238, 244, 245, 0) 100%)
     no-repeat !important; */
-  height: 835px;
-  left: 0px;
-  top: -5px;
+    transform:translate3d(0,0,0);
+    -webkit-transform:translate3d(0,0,0);
 }
 .bg-hero-pattern {
   background-size: 100%;
