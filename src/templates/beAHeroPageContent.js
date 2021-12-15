@@ -99,7 +99,7 @@ const BeAHeroPageContent = ({ data, location }) => {
 
 export const query = graphql`
   query GetSingleBeAHeroPage($slug: String) {
-    pagedata: sanityBeAHeroPage(slug: { current: { eq: $slug } }) {
+    pagedata: sanityNewThemeBeAHeroPage(slug: { current: { eq: $slug } }) {
       title
       slug {
         current

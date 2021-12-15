@@ -137,7 +137,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const products_result = await graphql(`
     {
-      allSanityProductPage {
+      allSanityNewThemeProductPage {
         edges {
           node {
             title
@@ -154,7 +154,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw products_result.errors
   }
 
-  const products = products_result.data.allSanityProductPage.edges || []
+  const products = products_result.data.allSanityNewThemeProductPage.edges || []
   products.forEach((edge, index) => {
     const path = `/product/${edge.node.slug.current}/`
 
@@ -1313,7 +1313,7 @@ exports.createPages = async ({ graphql, actions }) => {
   //Be A Hero Pages pages
   const l_BeAHeroPages = await graphql(`
     {
-      allSanityBeAHeroPage {
+      allSanityNewThemeBeAHeroPage {
         edges {
           node {
             title
@@ -1330,7 +1330,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw l_BeAHeroPages.errors
   }
 
-  const beAHeroPages = l_BeAHeroPages.data.allSanityBeAHeroPage.edges || []
+  const beAHeroPages = l_BeAHeroPages.data.allSanityNewThemeBeAHeroPage.edges || []
   beAHeroPages.forEach((edge, index) => {
     const path = `/${edge.node.slug.current}/`
 
