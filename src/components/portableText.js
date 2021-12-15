@@ -184,7 +184,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return (
               <a
                 id={_key}
-                className={` underline text-purpleNew-gigas hover:text-blueNew-midnight`}
+                className={` underline text-darkScheme-textPrimary hover:text-darkScheme-btnSecondaryBg`}
                 href={mark.href}
                 onClick={e =>
                   rudderslabTrackOnClick(
