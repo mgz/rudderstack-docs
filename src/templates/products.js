@@ -95,7 +95,7 @@ export default Products
 
 export const pageQuery = graphql`
   query GetSingleProductPage($slug: String) {
-    product: sanityProductPage(slug: { current: { eq: $slug } }) {
+    product: sanityNewThemeProductPage(slug: { current: { eq: $slug } }) {
       _rawPagebuildersectionarray
       title
       slug {
