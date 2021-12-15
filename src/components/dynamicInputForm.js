@@ -247,7 +247,7 @@ const DynamicInputForm = ({
               )
             } else if (
               (location && location.pathname === "/video-library/") ||
-              location.pathname === "/video-library"
+              (location && location.pathname === "/video-library")
             ) {
               if (gatedCookieName && gatedCookieName.length > 0) {
                 let date = new Date()
@@ -262,7 +262,8 @@ const DynamicInputForm = ({
             } else if (
               (location &&
                 location.pathname === "/request-demo-chili-piper-test/") ||
-              location.pathname === "/request-demo-chili-piper-test"
+              (location &&
+                location.pathname === "/request-demo-chili-piper-test")
             ) {
             } else {
               navigate(on_success_navigate_url)
