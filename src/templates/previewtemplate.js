@@ -11,6 +11,7 @@ import CaseStudyContent from "./caseStudyContent"
 import PageContent from "./pageContent"
 import VerticalLandingPageContent from "./verticalLandingPageContent"
 import BeAHeroPageContent from "./beAHeroPageContent"
+import SingleTutorial from "./singleTutorial"
 
 const sanityClient = require("@sanity/client")
 // const project_id = process.env.GATSBY_SANITY_PROJECTID
@@ -50,6 +51,23 @@ class PreviewTemplate extends Component {
           blogdata.blog.blog_image.asset.url =
             blogdata.blog.blog_image.asset.url
           this.setState({ data: blogdata })
+        })
+      })
+    } else if (type === "knowledge_base") {
+      const query =
+        "*[_id == $id]{...,blog_authors[]->,knowledge_base_image{asset->{url}}}"
+      component = "SingleTutorial"
+
+      await client.fetch(query, params).then(knowledge_bases => {
+        var data = {}
+        knowledge_bases.forEach(knowledge_base => {
+          
+          data.tutorial = knowledge_base
+          data.section_get_started = this.props.frontblock.section_get_started
+          data.tutorial._rawDescription = knowledge_base.description
+          data.tutorial.knowledge_base_image.asset.url =
+            data.tutorial.knowledge_base_image.asset.url
+          this.setState({ data: data })
         })
       })
     } else if (type === "schdemo") {
@@ -265,6 +283,12 @@ class PreviewTemplate extends Component {
           {component === "Demo" && <Demo data={this.state.data} />}
           {component === "Thankyou" && <Thankyou data={this.state.data} />}
           {component === "Singleblog" && <Singleblog data={this.state.data} />}
+          {component === "SingleTutorial" && (
+            <SingleTutorial
+              data={this.state.data}
+              location={this.state.location}
+            />
+          )}
           {component === "Product" && <Product data={this.state.data} />}
           {component === "Page" && <Page data={this.state.data} />}
           {component === "Integration" && (
