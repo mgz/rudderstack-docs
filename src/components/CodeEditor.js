@@ -14,7 +14,9 @@ const CodeEditor = props => {
     var escapedFind = find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1")
     return str.replace(new RegExp(escapedFind, "g"), replace)
   }
-
+ 
+  console.log(process.env.GATSBY_BRANCH, "process.env.GATSBY_BRANCH");
+  console.log(process.env.BRANCH, "process.env.BRANCH");
 
   useEffect(() => {
     const CodeMirror = require("codemirror/lib/codemirror")
