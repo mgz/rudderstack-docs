@@ -186,7 +186,7 @@ function OurLogo(props) {
     })
   }else{
     /* Mobile version */
-    tl.to(logo[0], {
+    /* tl.to(logo[0], {
       yPercent: -100
     },`+=${tlDelay}`).to(logo[2], {
       yPercent: -100
@@ -324,7 +324,7 @@ function OurLogo(props) {
       yPercent: 200
     }).set(logo[7], {
       yPercent: 300
-    })
+    }) */
   }
 
 
@@ -350,7 +350,10 @@ function OurLogo(props) {
   }, [])
 
   const maintitle = props.customHeaderText || props.ourlogotitle
-  const logoimages = props.outlogoimage
+  const logoimages = props.outlogoimage;
+
+  const mobLogoImages = [logoimages[3], logoimages[7], logoimages[logoimages.length - 1], logoimages[2]];
+
   return (
     <section
       className={`py-19 section-gradient relative`}
@@ -389,11 +392,23 @@ function OurLogo(props) {
         </div> */}
         <div className="logo-slider block w-full mt-10">
           <ul className="logo-list relative flex flex-wrap overflow-hidden">
-            {logoimages && logoimages.map((logoimage, i) => {
+            {!isMobile && logoimages && logoimages.map((logoimage, i) => {
               return (
                 <li className="logo-item flex items-center justify-center w-1/2 lg:w-1/5 h-full gap-5" key={i} ref={ref => (logoRefs.current[i] = ref)}>
                   <Image
                       classes="object-contain h-full w-auto"
+                      props={logoimage.asset._ref}
+                      width="144"
+                      height="50"
+                    />
+                </li>
+              )
+            })}
+            {isMobile && logoimages && mobLogoImages.map((logoimage, i) =>{
+              return (
+                <li className="logo-item flex items-center justify-center w-1/2 lg:w-1/5 h-full gap-5" key={i} ref={ref => (logoRefs.current[i] = ref)}>
+                  <Image
+                      classes={`object-contain h-full ${i === 0 ? 'w-20' : 'w-auto'}`}
                       props={logoimage.asset._ref}
                       width="144"
                       height="50"

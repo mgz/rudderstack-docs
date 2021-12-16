@@ -1482,6 +1482,8 @@ top: -60px;
     width: 100% !important;
   }
   .logo-list {
-    height: 50px;
+    height: 100%;
+    row-gap: 40px;
+    align-items: center;
   }
 }

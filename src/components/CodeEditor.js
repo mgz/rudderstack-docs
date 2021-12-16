@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 /* import CodeMirror from "@uiw/react-codemirror"; */
 import createMovie from "codemirror-movie"
 import { Link } from "gatsby"
+import { isMobile } from "react-device-detect";
 /* import "codemirror/lib/codemirror.css" */
 
 const CodeEditor = props => {
@@ -118,25 +119,27 @@ const CodeEditor = props => {
       }
     }
 
-    window.addEventListener(
-      "scroll",
-      function (event) {
-        if (isInViewPort(el)) {
-          /* console.log('In viewport'); */
-          setEditorFlag(true);
-        }else{
-          /* console.log('out of viewport'); */
-          setEditorFlag(false);
+    if(!isMobile){
+      window.addEventListener(
+        "scroll",
+        function (event) {
+          if (isInViewPort(el)) {
+            /* console.log('In viewport'); */
+            setEditorFlag(true);
+          }else{
+            /* console.log('out of viewport'); */
+            setEditorFlag(false);
+          }
         }
-      }
-    )
+      )
+    }
   }, [])
 
   useEffect(() => {
     /* console.log('Editor scene', leftEditorScenes); */
-    if(leftEditorScenes && editorFlag){
+    if(leftEditorScenes && editorFlag && !isMobile){
       leftEditorScenes.play();
-    }else if(leftEditorScenes){
+    }else if(leftEditorScenes && !isMobile){
       leftEditorScenes.pause();
     }
     /* console.log('Editor flag', editorFlag); */
