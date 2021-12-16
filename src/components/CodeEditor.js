@@ -14,16 +14,16 @@ const CodeEditor = props => {
     var escapedFind = find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1")
     return str.replace(new RegExp(escapedFind, "g"), replace)
   }
- 
-  console.log(process.env.GATSBY_BRANCH, "process.env.GATSBY_BRANCH");
-  console.log(process.env.BRANCH, "process.env.BRANCH");
+
+  let leftEditor, rightEditor = null;
+
 
   useEffect(() => {
     const CodeMirror = require("codemirror/lib/codemirror")
     require("codemirror/mode/javascript/javascript")
     require("codemirror/mode/shell/shell")
 
-    let leftEditor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    leftEditor = CodeMirror.fromTextArea(document.getElementById("code"), {
       lineNumbers: props.code_input.line_number
         ? props.code_input.line_number
         : false,
@@ -31,7 +31,7 @@ const CodeEditor = props => {
       readOnly: "nocursor",
       autofocus: false,
     })
-    let rightEditor = CodeMirror.fromTextArea(
+    rightEditor = CodeMirror.fromTextArea(
       document.getElementById("terminal"),
       {
         lineNumbers: props.code_output.line_number
@@ -139,13 +139,35 @@ const CodeEditor = props => {
 
   useEffect(() => {
     /* console.log('Editor scene', leftEditorScenes); */
-    if(leftEditorScenes && editorFlag && !isMobile){
-      leftEditorScenes.play();
-    }else if(leftEditorScenes && !isMobile){
-      leftEditorScenes.pause();
+    if(!isMobile){
+      if(leftEditorScenes && editorFlag){
+        leftEditorScenes.play();
+      }else if(leftEditorScenes){
+        leftEditorScenes.pause();
+      }
     }
     /* console.log('Editor flag', editorFlag); */
   }, [editorFlag])
+
+  useEffect(() => {
+    if(isMobile){
+      let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
+      props.code_input.code_contents.forEach(ppp => {
+        leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
+      })
+      props.code_output.code_contents.forEach((ppp, idx) => {
+        rightCodeOutput.push(replaceAll(
+          replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
+          "<<CURRDATETIME>>",
+          `${new Date().toISOString()}`
+        ))
+      })
+
+
+      leftEditor.getDoc().setValue(leftCodeInput.join(""));
+      rightEditor.getDoc().setValue(rightCodeOutput.join(""));
+    }
+  }, [])
 
   return (
     <section className="py-19 relative section-gradient">

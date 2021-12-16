@@ -231,4 +231,7 @@ div.CodeMirror-cursors {
   .codeBlockRight .codeEditorFile{
     padding: 20px;
   }
+  .CodeMirror-scroll{
+    margin-right: 0px;
+  }
 }

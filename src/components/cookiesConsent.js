@@ -178,7 +178,7 @@ const CookiesConsent = () => {
         } bg-background pl-4 pr-4 sm:pr-20 py-4 fixed bottom-0 w-full text-center flex flex-col md:flex-row justify-center z-40 md:text-left`}
       >
         <div className="flex flex-row w-full md:w-auto">
-        <p className="self-center text-lg mr-4">
+        <p className="self-center text-sm md:text-lg mr-4">
             This site uses cookies to improve your experience.
             If you want to learn more about cookies and why we use them, visit
             our{" "}
@@ -198,7 +198,7 @@ const CookiesConsent = () => {
         >
           <p
             aria-hidden="true"
-            className="btn-primary-lg cursor-pointer self-center w-full hover:text-darkScheme-textBlack hover:border-darkScheme-textBlack"
+            className="md:btn-primary-lg cursor-pointer self-center w-full text-blueNew-custom font-bold md:hover:text-darkScheme-textBlack md:hover:border-darkScheme-textBlack"
             // href="#"
             onClick={() => {
               setShowConsent(false)
