@@ -20,5 +20,8 @@ import "./src/css/agreement.css"
 import "./src/css/product.css"
 
 export const onRouteUpdate = () => {
-  window.rudderanalytics && window.rudderanalytics.page("page_view")
+  window.rudderanalytics &&
+    window.rudderanalytics.page("page_view", {
+      branch: process.env.GATSBY_BRANCH,
+    })
 }
