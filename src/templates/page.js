@@ -35,7 +35,7 @@ const RightSideHiglightedContent = loadable(() =>
 // const SEO = loadable(() => import("../components/seo"))
 // const Layout = loadable(() => import("../components/layout"))
 
-const OurLogo = loadable(() => import("../components/ourlogo"))
+const OurLogo = loadable(() => import("../components/ourlogo_v2"))
 const Testimonial = loadable(() => import("../components/testimonial"))
 const TestimonialV2 = loadable(() => import("../components/testimonial_v2"))
 /* const ThreeCardsWithTitleLeftAligned = loadable(() => import("../components/threeCardsWithTitleLeftAligned"))

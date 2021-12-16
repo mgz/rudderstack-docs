@@ -88,7 +88,7 @@ const LeftRightComponentEdgesAligned = props => {
                     <h4 className="text-darkScheme-btnSecondaryBg uppercase text-3xl-3 font-bold">
                       {row.title}
                     </h4>
-                    <div className="text-darkScheme-textPrimary mt-2 md:text-2xl text-lg">
+                    <div className="text-darkScheme-textPrimary mt-2 md:text-2xl text-lg frtxt-contnt">
                       <PortableText
                         blocks={row.content}
                         trackSectionHeader={row.title}
