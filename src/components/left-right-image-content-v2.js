@@ -20,7 +20,7 @@ const LeftRightImgCnt_V2 = props => {
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           {(smalltitle !== "" || maintitle !== "") && (
             <div
-              className={`flex flex-col w-full justify-center items-start md:text-${
+              className={`flex flex-col w-full justify-center items-center md:text-${
                 props.header_alignment !== "" ? props.header_alignment : "left"
               } mx-auto max-w-screen-xl`}
             >
@@ -37,7 +37,7 @@ const LeftRightImgCnt_V2 = props => {
                 <h3
                   className={`md:mt-2 text-3xl-3 lg:text-5xl text-center lg:text-left ${
                     props.applyGradientColorTheme ? "text-white" : "text-dark"
-                  }  font-bold leading-tight pr-0 md:pr-4`}
+                  }  font-bold leading-tight pr-0`}
                 >
                   {maintitle}
                 </h3>
@@ -48,7 +48,7 @@ const LeftRightImgCnt_V2 = props => {
           <div>
             {props.header_media &&
               props.header_media.condition === "imageoption" && (
-                <div className="max-w-screen-md mx-auto my-10 relative left-right-content-center-image">
+                <div className="max-w-screen-md mx-auto my-16 relative left-right-content-center-image">
                   <div className="absolute z-20">
                     <StaticImage
                       src="../images/product-middle-banner-eclipse.png"
@@ -245,7 +245,7 @@ const LeftRightImgCnt_V2 = props => {
                                   : titleColor === "black"
                                   ? "text-black-custom"
                                   : ""
-                              } font-bold leading-tight pr-0 md:pr-4`}
+                              } font-bold leading-tight pr-0`}
                             >
                               {title}
                             </h3>

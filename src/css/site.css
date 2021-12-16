@@ -19,9 +19,8 @@
 body {
   /* background: linear-gradient(180deg, #e3f1f1 0%, rgba(238, 244, 245, 0) 100%)
     no-repeat !important; */
-  height: 835px;
-  left: 0px;
-  top: -5px;
+    /* transform:translate3d(0,0,0);
+    -webkit-transform:translate3d(0,0,0); */
 }
 .bg-hero-pattern {
   background-size: 100%;
@@ -1165,7 +1164,7 @@ top: -60px;
 }
 
 .code-ed-links-wrapper {
-  bottom: -50px;
+  bottom: -70px;
   left: 0px;
   right: 0px;
   width: 100%;
@@ -1483,6 +1482,8 @@ top: -60px;
     width: 100% !important;
   }
   .logo-list {
-    height: 50px;
+    height: 100%;
+    row-gap: 40px;
+    align-items: center;
   }
 }

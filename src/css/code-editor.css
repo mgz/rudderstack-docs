@@ -46,6 +46,7 @@
 
 .CodeMirror-scroll, .CodeMirror-sizer, .CodeMirror-gutter, .CodeMirror-gutters, .CodeMirror-linenumber {
   box-sizing: content-box;
+  outline: none;
 }
 .CodeMirror-vscrollbar {
   right: 0;
@@ -229,5 +230,8 @@ div.CodeMirror-cursors {
 @media only screen and (max-width: 768px){
   .codeBlockRight .codeEditorFile{
     padding: 20px;
+  }
+  .CodeMirror-scroll{
+    margin-right: 0px;
   }
 }

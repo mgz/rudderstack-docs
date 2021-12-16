@@ -7,4 +7,5 @@ package = "@netlify/plugin-gatsby"
   status = 301
 
 [build.environment]
-  GATSBY_BRANCH = "main"
+  GATSBY_BRANCH = "newhomepage"
+  

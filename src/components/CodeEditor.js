@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 /* import CodeMirror from "@uiw/react-codemirror"; */
 import createMovie from "codemirror-movie"
 import { Link } from "gatsby"
+import { isMobile } from "react-device-detect";
 /* import "codemirror/lib/codemirror.css" */
 
 const CodeEditor = props => {
@@ -14,13 +15,15 @@ const CodeEditor = props => {
     return str.replace(new RegExp(escapedFind, "g"), replace)
   }
 
+  let leftEditor, rightEditor = null;
+
 
   useEffect(() => {
     const CodeMirror = require("codemirror/lib/codemirror")
     require("codemirror/mode/javascript/javascript")
     require("codemirror/mode/shell/shell")
 
-    let leftEditor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    leftEditor = CodeMirror.fromTextArea(document.getElementById("code"), {
       lineNumbers: props.code_input.line_number
         ? props.code_input.line_number
         : false,
@@ -28,7 +31,7 @@ const CodeEditor = props => {
       readOnly: "nocursor",
       autofocus: false,
     })
-    let rightEditor = CodeMirror.fromTextArea(
+    rightEditor = CodeMirror.fromTextArea(
       document.getElementById("terminal"),
       {
         lineNumbers: props.code_output.line_number
@@ -118,29 +121,53 @@ const CodeEditor = props => {
       }
     }
 
-    window.addEventListener(
-      "scroll",
-      function (event) {
-        if (isInViewPort(el)) {
-          /* console.log('In viewport'); */
-          setEditorFlag(true);
-        }else{
-          /* console.log('out of viewport'); */
-          setEditorFlag(false);
+    if(!isMobile){
+      window.addEventListener(
+        "scroll",
+        function (event) {
+          if (isInViewPort(el)) {
+            /* console.log('In viewport'); */
+            setEditorFlag(true);
+          }else{
+            /* console.log('out of viewport'); */
+            setEditorFlag(false);
+          }
         }
-      }
-    )
+      )
+    }
   }, [])
 
   useEffect(() => {
     /* console.log('Editor scene', leftEditorScenes); */
-    if(leftEditorScenes && editorFlag){
-      leftEditorScenes.play();
-    }else if(leftEditorScenes){
-      leftEditorScenes.pause();
+    if(!isMobile){
+      if(leftEditorScenes && editorFlag){
+        leftEditorScenes.play();
+      }else if(leftEditorScenes){
+        leftEditorScenes.pause();
+      }
     }
     /* console.log('Editor flag', editorFlag); */
   }, [editorFlag])
+
+  useEffect(() => {
+    if(isMobile){
+      let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
+      props.code_input.code_contents.forEach(ppp => {
+        leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
+      })
+      props.code_output.code_contents.forEach((ppp, idx) => {
+        rightCodeOutput.push(replaceAll(
+          replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
+          "<<CURRDATETIME>>",
+          `${new Date().toISOString()}`
+        ))
+      })
+
+
+      leftEditor.getDoc().setValue(leftCodeInput.join(""));
+      rightEditor.getDoc().setValue(rightCodeOutput.join(""));
+    }
+  }, [])
 
   return (
     <section className="py-19 relative section-gradient">
@@ -198,7 +225,7 @@ const CodeEditor = props => {
           <div className="code-ed-links-wrapper flex absolute">
             <div className="flex justify-center w-1/2 code-ed-links items-center mob-hide">
               <span className="learn-more relative inline-block">
-                <Link to="#" className="inline-block text-darkScheme-textPrimary font-bold">Explore SDKs</Link>
+                <Link to="https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/" className="inline-block text-darkScheme-textPrimary font-bold">Explore SDKs</Link>
                 <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">
                   <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -208,7 +235,7 @@ const CodeEditor = props => {
             </div>
             <div className="flex justify-center w-full lg:w-1/2 code-ed-links items-center">
               <span className="learn-more relative inline-block">
-                <Link to="#" className="inline-block text-darkScheme-textPrimary font-bold">Explore Destinations</Link>
+                <Link to="https://rudderstack.com/integration/" className="inline-block text-darkScheme-textPrimary font-bold">Explore Destinations</Link>
                 <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">
                   <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
