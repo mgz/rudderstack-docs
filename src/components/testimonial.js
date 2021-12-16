@@ -65,7 +65,7 @@ const Testimonial = props => {
               ? "testimonila-bg-gradiant"
               : "testimonila-bg-gradiant-v2"
           } md:mt-32`}
-          data-src={bgImage}
+          data-src={props.applyGradientColorTheme ? null : bgImage}
         >
           <div className="max-w-6xl mx-auto px-4 md:px-3 testimonial-img-wrap">
             <div className="row">

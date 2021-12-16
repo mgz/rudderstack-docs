@@ -91,7 +91,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
   const footerlogo =
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
 
-  // console.log("path", location, showExplicitGradient)
+
   // let diableGradient = false
   /* Disabling gradient for pages */
   const [diableGradient] = React.useState(

@@ -141,6 +141,7 @@ export const rudderslabTrackOnClick = (
     page_title: document.title,
 
     link_location: el ? el : sectionName,
+    branch: process.env.GATSBY_BRANCH,
     // e.target.baseURI,
     // we want to track where the link points, whether it is a URL or internal path
     target_url: e.target.href ? e.target.href : e.target.baseURI,
@@ -178,6 +179,7 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, videoId) => {
     total_length: null /* || event.target.playerInfo.duration */,
     bitrate: null,
     framerate: null,
+    branch: process.env.GATSBY_BRANCH,
     video_player: "youtube",
     sound: /* event.target.playerInfo.volume || */ null,
     full_screen: false,
@@ -206,6 +208,7 @@ export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (title, event) => {
     total_length: event.target.playerInfo.duration,
     bitrate: null,
     framerate: null,
+    branch: process.env.GATSBY_BRANCH,
     video_player: "youtube",
     sound: event.target.playerInfo.volume,
     full_screen: false,
@@ -268,7 +271,7 @@ export const rudderslabTrackOnClickDocs = (
         ? e.currentTarget.parentNode.innerText
         : e.currentTarget.innerText,
     page_title: document.title,
-
+    branch: process.env.GATSBY_BRANCH,
     link_location: el ? el : sectionName,
     // e.target.baseURI,
     // we want to track where the link points, whether it is a URL or internal path
