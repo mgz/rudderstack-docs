@@ -225,7 +225,7 @@ const CodeEditor = props => {
           <div className="code-ed-links-wrapper flex absolute">
             <div className="flex justify-center w-1/2 code-ed-links items-center mob-hide">
               <span className="learn-more relative inline-block">
-                <Link to="#" className="inline-block text-darkScheme-textPrimary font-bold">Explore SDKs</Link>
+                <Link to="https://rudderstack.com/docs/stream-sources/rudderstack-sdk-integration-guides/" className="inline-block text-darkScheme-textPrimary font-bold">Explore SDKs</Link>
                 <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">
                   <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -235,7 +235,7 @@ const CodeEditor = props => {
             </div>
             <div className="flex justify-center w-full lg:w-1/2 code-ed-links items-center">
               <span className="learn-more relative inline-block">
-                <Link to="#" className="inline-block text-darkScheme-textPrimary font-bold">Explore Destinations</Link>
+                <Link to="https://rudderstack.com/integration/" className="inline-block text-darkScheme-textPrimary font-bold">Explore Destinations</Link>
                 <span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg inline-block">
                   <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
