@@ -130,6 +130,7 @@ const VideoRequestForm = props => {
           Email: data.email,
           Company: data.company,
           form_id: data.formId,
+          branch: process.env.GATSBY_BRANCH,
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
