@@ -335,7 +335,9 @@ body {
     rgba(214, 146, 246, 1) 100%
   );
 }
-
+.has-submenu:first-child .sub-menu{
+  max-height: 170px;
+}
 .lr-icon {
   @apply text-blueNew-magenta;
 }
