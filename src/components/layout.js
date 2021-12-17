@@ -278,6 +278,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
                             rel="noreferrer noopener"
                             aria-label="This is an external link "
                             href={socialitem.social_item_link}
+                            target="_blank"
                             onClick={e =>
                               rudderslabTrackOnClick(
                                 "footer-navigation",
@@ -297,6 +298,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
                             rel="noreferrer noopener"
                             aria-label="This is an external link "
                             href={socialitem.social_item_link}
+                            target="_blank"
                             onClick={e =>
                               rudderslabTrackOnClick(
                                 "footer-navigation",

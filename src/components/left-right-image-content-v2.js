@@ -84,7 +84,7 @@ const LeftRightImgCnt_V2 = props => {
                             (props.header_media_cta_cutton.btnhiglight === true
                               ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
                               : "btn-secondary-lg") +
-                            ` sm:mr-4 md:mb-0 mb-6 bg-whiteColor-custom`
+                            ` md:mr-4 md:mb-0 mb-14 bg-whiteColor-custom`
                           }
                           href={props.header_media_cta_cutton.btnlink}
                         >
@@ -107,7 +107,7 @@ const LeftRightImgCnt_V2 = props => {
                               true
                                 ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
                                 : "btn-secondary-lg") +
-                              ` sm:mr-4 md:mb-0 mb-14 text-lg bg-whiteColor-custom hover:bg-transparent border-whiteColor-custom hover:text-whiteColor-custom`
+                              ` md:mr-4 md:mb-0 mb-14 text-lg bg-whiteColor-custom hover:bg-transparent border-whiteColor-custom hover:text-whiteColor-custom`
                             }
                             to={props.header_media_cta_cutton.btnlink}
                           >
@@ -175,7 +175,7 @@ const LeftRightImgCnt_V2 = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className={`flex items-center flex-wrap flex-col-reverse sm:flex-row ${i === 1 ? 'pt-0' : 'pt-16'} md:pt-19 ${i === contents.length - 1 && props.location.pathname === "/product/platform/" ? 'leftrightimgcontent-wrapper-col' : 'leftrightimgcontent-wrapper'}`}
+                    className={`flex items-center flex-wrap flex-col-reverse sm:flex-row pt-16 md:pt-19 ${i === contents.length - 1 ? 'leftrightimgcontent-wrapper-col' : 'leftrightimgcontent-wrapper'}`}
                   >
                     <div
                       className={`w-full ${
@@ -184,7 +184,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } px-0 lg:pr-20 md:pt-0 leftrightimgcontent-items`}
+                      } ${i === contents.length - 1 ? 'hidden lg:block' : ''} px-0 lg:pr-20 md:pt-0 leftrightimgcontent-items`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
@@ -194,7 +194,7 @@ const LeftRightImgCnt_V2 = props => {
                           return (
                             <Image
                               props={imgref}
-                              classes={`w-full ${i === 1 ? 'lg:block hidden' : ''}`}
+                              classes={`w-full`}
                               // width="540"
                               // height="297"
                             />
@@ -576,7 +576,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } px-0 lg:pl-20 pt-8 md:pt-0 leftrightimgcontent-items`}
+                      } ${i === contents.length - 1 ? 'hidden lg:block' : ''} px-0 lg:pl-20 md:pt-0 leftrightimgcontent-items`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
@@ -586,7 +586,7 @@ const LeftRightImgCnt_V2 = props => {
                           return (
                             <Image
                               props={imgref}
-                              classes={`w-full ${i === 1 ? 'lg:block hidden' : ''}`}
+                              classes={`w-full`}
                               // width="540"
                               // height="297"
                             />

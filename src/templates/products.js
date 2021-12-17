@@ -40,7 +40,7 @@ const Products = ({ data, location }) => {
       <div className="font-custom">
         {(data.product._rawPagebuildersectionarray || []).map((row, idx) => {
           if (row._type === "product_banner") {
-            return <ProductHeroBanner key={row._id} {...row} />
+            return <ProductHeroBanner key={row._id + idx} {...row} />
           } else if (row._type === "image_with_list_of_text") {
             return <ProductImageWithListOfText key={row._id} {...row} />
           } else if (row._type === "leftrightcontentimagesection") {
