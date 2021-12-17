@@ -309,6 +309,9 @@ body {
   border-radius: 0px 0px 14px 14px;
   top: 90px;
 }
+.has-submenu:first-child .sub-menu{
+  max-height: 130px;
+}
 .inner-header-group{
   background: radial-gradient(246.91% 449.78% at -0.59% 6.73%, rgba(8, 15, 32, 0.4) 0%, rgba(255, 255, 255, 0.02) 100%);
 }

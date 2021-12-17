@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 /* import CodeMirror from "@uiw/react-codemirror"; */
 import createMovie from "codemirror-movie"
 import { Link } from "gatsby"
-import { isMobile } from "react-device-detect";
+import { isMobile, isSafari } from "react-device-detect";
 /* import "codemirror/lib/codemirror.css" */
 
 const CodeEditor = props => {
@@ -139,7 +139,7 @@ const CodeEditor = props => {
 
   useEffect(() => {
     /* console.log('Editor scene', leftEditorScenes); */
-    if(!isMobile){
+    if(!isMobile && !isSafari){
       if(leftEditorScenes && editorFlag){
         leftEditorScenes.play();
       }else if(leftEditorScenes){
@@ -150,7 +150,7 @@ const CodeEditor = props => {
   }, [editorFlag])
 
   useEffect(() => {
-    if(isMobile){
+    if(isMobile || isSafari){
       let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
       props.code_input.code_contents.forEach(ppp => {
         leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
