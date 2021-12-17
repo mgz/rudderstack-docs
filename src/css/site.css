@@ -296,7 +296,9 @@ body {
   border-color: transparent transparent #ffffff transparent;
   z-index: 9998; */
 }
-
+.has-submenu:first-child .sub-menu{
+  max-height: 170px;
+}
 .lr-icon {
   @apply text-blueNew-magenta;
 }
