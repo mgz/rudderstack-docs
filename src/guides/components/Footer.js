@@ -48,7 +48,7 @@ const Footer = () => {
               </ul>
             </li>
             <li>
-              © RudderLabs Inc.
+              © RudderStack Inc.
             </li>
           </ul>
         </div>
