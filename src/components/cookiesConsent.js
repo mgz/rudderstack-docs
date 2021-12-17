@@ -175,7 +175,7 @@ const CookiesConsent = () => {
       <div
         className={`${
           !showConsent ? "hidden" : ""
-        } bg-background pl-4 pr-4 sm:pr-20 py-4 fixed bottom-0 w-full text-center flex flex-col md:flex-row justify-center z-40 md:text-left`}
+        } bg-background pl-4 pr-4 md:pr-20 py-4 fixed bottom-0 w-full text-center flex flex-col md:flex-row justify-center z-40 md:text-left`}
       >
         <div className="flex flex-row w-full md:w-auto">
         <p className="self-center text-sm md:text-lg mr-4">
@@ -184,7 +184,7 @@ const CookiesConsent = () => {
             our{" "}
             <a className="text-blueNew-custom cursor-pointer font-bold" href="https://rudderstack.com/cookie-policy">cookie policy</a>.
             &nbsp;We'll assume you're ok with this, but you can opt-out if you wish
-            <span aria-hidden="true" className="font-bold text-blueNew-custom self-center mx-2"
+            <span aria-hidden="true" className="font-bold text-blueNew-custom self-center mx-2 cursor-pointer"
               onClick={() => {
                 setShowCookieSeting(true)
               }}
@@ -198,7 +198,7 @@ const CookiesConsent = () => {
         >
           <p
             aria-hidden="true"
-            className="md:btn-primary-lg cursor-pointer self-center w-full text-blueNew-custom font-bold md:hover:text-darkScheme-textBlack md:hover:border-darkScheme-textBlack"
+            className="my-4 md:my-0 md:px-10 md:py-4 md:bg-darkScheme-btnPrimaryBg md:rounded-lg md:border md:border-darkScheme-btnPrimaryBg md:text-darkScheme-textBlack cursor-pointer self-center w-full text-blueNew-custom font-bold hover:text-darkScheme-textBlack hover:border-darkScheme-textBlack md:hover:bg-transparent"
             // href="#"
             onClick={() => {
               setShowConsent(false)

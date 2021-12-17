@@ -184,7 +184,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } ${i === contents.length - 1 ? 'hidden lg:block' : ''} px-0 lg:pr-20 md:pt-0 leftrightimgcontent-items`}
+                      } ${i === contents.length - 1 ? 'hidden lg:block' : ''} px-0 lg:pr-20 pt-15 md:pt-0 leftrightimgcontent-items`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
@@ -576,7 +576,7 @@ const LeftRightImgCnt_V2 = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } ${i === contents.length - 1 ? 'hidden lg:block' : ''} px-0 lg:pl-20 md:pt-0 leftrightimgcontent-items`}
+                      } ${i === contents.length - 1 ? 'hidden lg:block' : ''} px-0 lg:pl-20 pt-15 md:pt-0 leftrightimgcontent-items`}
                     >
                       {(() => {
                         if (imgcondition === "imageoption") {
