@@ -31,6 +31,7 @@ const Subscription = props => {
       {
         email: email,
         form_id: props.formId,
+        branch: process.env.GATSBY_BRANCH,
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
         utm_campaign: params.get("utm_campaign"),
@@ -51,6 +52,7 @@ const Subscription = props => {
       {
         page: document.title,
         page_URL: window.location.href,
+        branch: process.env.GATSBY_BRANCH,
         form_id: "Blog-header-Subscribe-form",
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
