@@ -28,6 +28,7 @@ const IntegrationsHelpBox = () => {
       "form_submit",
       {
         email: email,
+        branch: process.env.GATSBY_BRANCH,
         form_id: "Integrations-sidebar-ReachOut-form",
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
@@ -49,6 +50,7 @@ const IntegrationsHelpBox = () => {
       {
         page: document.title,
         page_URL: window.location.href,
+        branch: process.env.GATSBY_BRANCH,
         form_id: "Integrations-sidebar-ReachOut-form",
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
