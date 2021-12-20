@@ -59,6 +59,7 @@
 //     click_type: "banner",
 //   })
 // }
+const { DateTime } = require("luxon")
 
 function checkPrevSibbling(currEl) {
   let returnEl
@@ -142,6 +143,9 @@ export const rudderslabTrackOnClick = (
 
     link_location: el ? el : sectionName,
     branch: process.env.GATSBY_BRANCH,
+    timezone: {
+      name: DateTime.now().zone.name,
+    },
     // e.target.baseURI,
     // we want to track where the link points, whether it is a URL or internal path
     target_url: e.target.href ? e.target.href : e.target.baseURI,
@@ -180,6 +184,9 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, videoId) => {
     bitrate: null,
     framerate: null,
     branch: process.env.GATSBY_BRANCH,
+    timezone: {
+      name: DateTime.now().zone.name,
+    },
     video_player: "youtube",
     sound: /* event.target.playerInfo.volume || */ null,
     full_screen: false,
@@ -209,6 +216,9 @@ export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (title, event) => {
     bitrate: null,
     framerate: null,
     branch: process.env.GATSBY_BRANCH,
+    timezone: {
+      name: DateTime.now().zone.name,
+    },
     video_player: "youtube",
     sound: event.target.playerInfo.volume,
     full_screen: false,
@@ -272,6 +282,9 @@ export const rudderslabTrackOnClickDocs = (
         : e.currentTarget.innerText,
     page_title: document.title,
     branch: process.env.GATSBY_BRANCH,
+    timezone: {
+      name: DateTime.now().zone.name,
+    },
     link_location: el ? el : sectionName,
     // e.target.baseURI,
     // we want to track where the link points, whether it is a URL or internal path

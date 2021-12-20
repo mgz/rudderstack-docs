@@ -90,7 +90,6 @@ const Layout = ({ location, showExplicitGradient, children }) => {
   const footerlogo =
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
 
-
   // let diableGradient = false
 
   /* Disabling gradient for pages */

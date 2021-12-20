@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { navigate } from "gatsby"
+const { DateTime } = require("luxon")
 
 const VideoRequestForm = props => {
   const [ setIsLoading] = useState(false)
@@ -76,6 +77,9 @@ const VideoRequestForm = props => {
           form_id: data.formId,
           conversion_page: document.title,
           branch: process.env.GATSBY_BRANCH,
+          timezone: {
+            name: DateTime.now().zone.name,
+          },
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
@@ -102,6 +106,9 @@ const VideoRequestForm = props => {
           category: data.sectionId,
           conversion_page: document.title,
           branch: process.env.GATSBY_BRANCH,
+          timezone: {
+            name: DateTime.now().zone.name,
+          },
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
@@ -131,6 +138,9 @@ const VideoRequestForm = props => {
           Company: data.company,
           form_id: data.formId,
           branch: process.env.GATSBY_BRANCH,
+          timezone: {
+            name: DateTime.now().zone.name,
+          },
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
