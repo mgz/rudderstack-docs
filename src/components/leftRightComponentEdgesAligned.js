@@ -76,6 +76,8 @@ const LeftRightComponentEdgesAligned = props => {
                       props={
                         row.imageVideoConditionBlock.imageoption.asset._ref
                       }
+                      width={166}
+                      height={161}
                     />
                   </div>
                 </div>

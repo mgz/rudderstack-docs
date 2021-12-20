@@ -83,10 +83,10 @@ export default function Docs({ mdx, pageContext }) {
     /* h1Tags.innerHTML = descriptionSpan; */
 
     let ancTags = document.querySelectorAll('.childrenWrapper a:not(.anchor, .next, .previous)');
-    forEach(ancTags, o => (o.addEventListener('click', e => rudderslabTrackOnClickDocs("link", null, e, true))))
+    forEach(ancTags, o => (o.addEventListener('click', e => rudderslabTrackOnClickDocs("link", null, e, true), {passive: true})))
 
     let sectionLinks = document.querySelectorAll('.childrenWrapper a.anchor');
-    forEach(sectionLinks, o => (o.addEventListener('click', e => {rudderslabTrackOnClickDocs("sectionLink", null, e, true)})))
+    forEach(sectionLinks, o => (o.addEventListener('click', e => {rudderslabTrackOnClickDocs("sectionLink", null, e, true)},{passive: true})))
 
   }, [])
 

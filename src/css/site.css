@@ -803,6 +803,9 @@ body {
 .main-logo img {
   filter: brightness(0) invert(1);
 }
+.main-logo svg{
+  max-width: 100%;
+}
 .testimonials {
   position: relative;
 }

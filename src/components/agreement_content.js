@@ -28,7 +28,7 @@ const AgreementContent = props => {
           left: 0,
           behavior: "smooth",
         })
-      })
+      }, {passive: true})
     })
   })
 

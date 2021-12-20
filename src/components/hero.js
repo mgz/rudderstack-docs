@@ -227,6 +227,8 @@ function Hero(props) {
               <div className={`block`}>
                 <Image
                   props={props.herobannerimage.asset._ref}
+                  width={704}
+                  height={413}
                   // classes="w-full"
                 />
                 {/* {isMobile ? (<StaticImage
