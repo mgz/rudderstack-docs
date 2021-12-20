@@ -6,7 +6,6 @@ import { rudderslabTrackOnClick } from "../utils/common"
 
 
 const LeftRightComponentEdgesAligned = props => {
-  console.log('Left edges', props);
   return (
     <section className="py-19 relative">
       {/* <div className="background-gradient-circles absolute top-2/4 right-1/4 keep-rotate"></div>
