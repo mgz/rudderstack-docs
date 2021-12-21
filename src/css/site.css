@@ -1327,14 +1327,6 @@ top: -60px;
   .banner-section .hero-content {
     width: 100% !important;
   }
-  .has-submenu .mob-menu-link {
-    background: radial-gradient(
-      246.91% 449.78% at -0.59% 6.73%,
-      rgba(8, 15, 32, 0.4) 0%,
-      rgba(255, 255, 255, 0.1) 100%
-    );
-    backdrop-filter: blur(10px);
-  }
   .testimonial-quotes{
     width: 120px;
   }
@@ -1345,6 +1337,11 @@ top: -60px;
     flex-direction: column;
     bottom: -70px;
   }
+  .logo-list {
+    height: 100%;
+    row-gap: 40px;
+    align-items: center;
+  }
 }
 
 @media only screen and (max-width: 1023px){
@@ -1353,6 +1350,14 @@ top: -60px;
   }
   .header-wrapper{
     border-radius: 0px 0px 16px 16px;
+  }
+  .has-submenu .mob-menu-link {
+    background: radial-gradient(
+      246.91% 449.78% at -0.59% 6.73%,
+      rgba(8, 15, 32, 0.4) 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    backdrop-filter: blur(10px);
   }
 }
 
@@ -1488,10 +1493,5 @@ top: -60px;
   }
   .code-ed-links-wrapper .code-ed-links {
     width: 100% !important;
-  }
-  .logo-list {
-    height: 100%;
-    row-gap: 40px;
-    align-items: center;
   }
 }
