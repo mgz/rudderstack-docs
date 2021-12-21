@@ -22,20 +22,20 @@ import "./src/css/code-editor.css"
 const { DateTime } = require("luxon")
 
 export const onRouteUpdate = () => {
-  // var delay = Math.max(0, 50)
+  var delay = 400
 
-  // window.setTimeout(function () {
-  //   window.rudderanalytics &&
-  //     window.rudderanalytics.page("page_view", {
-  //       branch: process.env.GATSBY_BRANCH,
-  //     })
-  // }, delay)
+  window.setTimeout(function () {
+    window.rudderanalytics &&
+      window.rudderanalytics.page("page_view", {
+        branch: process.env.GATSBY_BRANCH,
+      })
+  }, delay)
 
-  window.rudderanalytics &&
-    window.rudderanalytics.page("page_view", {
-      branch: process.env.GATSBY_BRANCH,
-      timezone: {
-        name: DateTime.now().zone.name,
-      },
-    })
+  // window.rudderanalytics &&
+  //   window.rudderanalytics.page("page_view", {
+  //     branch: process.env.GATSBY_BRANCH,
+  //     timezone: {
+  //       name: DateTime.now().zone.name,
+  //     },
+  //   })
 }
