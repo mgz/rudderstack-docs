@@ -6,10 +6,11 @@ import { isMobile } from "react-device-detect";
 function OurLogo(props) {
   const logoRefs = useRef([]);
   const tlDelay = 1
+  let winWidth = window.innerWidth;
+  console.log('Win width', winWidth);
 
   useEffect(() => {
     let tl;
-
     const animateLogos = () => {
       if(logoRefs.current[0] === null) return
 
@@ -86,7 +87,7 @@ function OurLogo(props) {
       //   }
       // })
 
-    if(!isMobile){
+    if(!isMobile && winWidth > 1024){
 
     /* for(let i = 0; i < logoimages.length / 2; i++){
         tl.to(logo[i], {
@@ -367,7 +368,7 @@ function OurLogo(props) {
     }
 
 
-  }, [])
+  }, [winWidth])
 
   const maintitle = props.customHeaderText || props.ourlogotitle
   const logoimages = props.outlogoimage;

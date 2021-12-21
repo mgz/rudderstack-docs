@@ -13,7 +13,7 @@ const Menu = ({
 }) => {
   // console.log('items',items)
   return (
-    <ul className="list-reset flex max-w-xl overflow-x-auto border-b border-grayColor-lighter">
+    <ul className="list-reset flex max-w-full overflow-x-auto border-b border-grayColor-lighter">
       <li key="ALL" className={`px-5 py-2 ${
             currentRefinement === null
               ? "font-bold border-b-2 border-blueNew-eastbay text-blueNew-eastbay"
