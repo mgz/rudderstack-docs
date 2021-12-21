@@ -254,6 +254,67 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                           className={`object-cover integration-connection-hero-logo-primary-${page_data.imageHeaderSource}`}
                         />
                       )}
+
+                    {page_data.imageHeaderSource === "desktop" &&
+                      page_data.imageHeaderName === "ic_desktop_next-js" && (
+                        <StaticImage
+                          src="../images/ic_desktop_next-js.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${page_data.imageHeaderSource}`}
+                        />
+                      )}
+
+                    {page_data.imageHeaderSource === "desktop" &&
+                      page_data.imageHeaderName === "ic_desktop_nuxt-js" && (
+                        <StaticImage
+                          src="../images/ic_desktop_nuxt-js.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${page_data.imageHeaderSource}`}
+                        />
+                      )}
+
+                    {page_data.imageHeaderSource === "desktop" &&
+                      page_data.imageHeaderName === "ic_desktop_gatsby" && (
+                        <StaticImage
+                          src="../images/ic_desktop_gatsby.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${page_data.imageHeaderSource}`}
+                        />
+                      )}
+
+                    {page_data.imageHeaderSource === "desktop" &&
+                      page_data.imageHeaderName === "ic_desktop_jekyll" && (
+                        <StaticImage
+                          src="../images/ic_desktop_jekyll.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${page_data.imageHeaderSource}`}
+                        />
+                      )}
+
+                    {page_data.imageHeaderSource === "desktop" &&
+                      page_data.imageHeaderName === "ic_desktop_hugo" && (
+                        <StaticImage
+                          src="../images/ic_desktop_hugo.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${page_data.imageHeaderSource}`}
+                        />
+                      )}
+
+                    {page_data.imageHeaderSource === "desktop" &&
+                      page_data.imageHeaderName === "ic_desktop_eleventy" && (
+                        <StaticImage
+                          src="../images/ic_desktop_eleventy.png"
+                          alt="Header image"
+                          placeholder="tracedSVG"
+                          className={`object-cover integration-connection-hero-logo-primary-${page_data.imageHeaderSource}`}
+                        />
+                      )}
+
                     <div
                       className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-${page_data.imageHeaderSource}`}
                     >
