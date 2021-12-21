@@ -18,6 +18,9 @@ import LeftRightMiddleBanner from "../components/LeftRightMiddleBanner"
 // import SEO from "../components/seo"
 import Layout from "../components/layout"
 
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 // const Hero = loadable(() => import("../components/hero"))
 // const Tabs = loadable(() => import("../components/tabs"))
 const LeftRightImgCnt = loadable(() =>
@@ -58,8 +61,51 @@ export const query = graphql`
 
 const Page = props => {
   const { data, errors } = props
-  /* console.log("data", data) */
-  const halfPage = useRef()
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const sections = gsap.utils.toArray('.triggers');
+    sections.forEach(section => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 80%",
+        end: "bottom 20%",
+        markers: true,
+        onEnter: function () {
+          gsap.fromTo(
+            section,
+            { y: 100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: "back",
+              overwrite: "auto"
+            }
+          );
+        },
+        onLeave: function () {
+          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
+        },
+        onEnterBack: function () {
+          gsap.fromTo(
+            section,
+            { y: -100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: "back",
+              overwrite: "auto"
+            }
+          );
+        },
+        onLeaveBack: function () {
+          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
+        }
+      })
+    });
+  }, [])
 
   if (errors) {
     return (
@@ -80,6 +126,7 @@ const Page = props => {
 
   //   };
   // })
+
 
   let l_section_info
   const page = data.page || data.route.page

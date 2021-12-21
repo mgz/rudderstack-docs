@@ -62,7 +62,7 @@ const LeftRightComponentEdgesAligned = props => {
                 key={row._key}
                 className={`wr-data-block image-${
                   row.condition === "right" ? "left" : "right"
-                }  relative py-20 flex flex-col`}
+                }  relative py-20 flex flex-col triggers`}
               >
                 <div className="separator-line mx-auto"></div>
                 <div
