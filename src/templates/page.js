@@ -72,7 +72,7 @@ const Page = props => {
         trigger: section,
         start: "top 20%",
         end: "bottom 20%",
-        markers: true,
+        markers: false,
         toggleActions: "play none none none",
         onEnter: function () {
           gsap.fromTo(
