@@ -94,7 +94,7 @@ const MiddleBanner = props => {
                               }
                               className={
                                 (btn.btnhiglight === true
-                                  ? "text-darkScheme-textPrimary border border-darkScheme-btnPrimaryBg btn-secondary-lg hover:text-darkScheme-textBlack hover:bg-darkScheme-btnPrimaryBg"
+                                  ? "text-darkScheme-textBlack border border-darkScheme-btnPrimaryBg bg-darkScheme-btnPrimaryBg hover:text-darkScheme-btnPrimaryBg hover:bg-transparent"
                                   : "btn-secondary-lg") +
                                 ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-6 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
                               }

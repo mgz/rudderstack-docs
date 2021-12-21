@@ -106,83 +106,103 @@ function OurLogo(props) {
         })
       } */
     tl.to(logo[0], {
-      yPercent: -100
+      yPercent: -100,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[5], {
-      yPercent: -100
+      yPercent: -100,
     }, '<').set(logo[0], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
 
     tl.to(logo[2], {
-      yPercent: -100
+      yPercent: -100,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[7], {
       yPercent: -100
     }, '<').set(logo[2], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
 
     tl.to(logo[1], {
-      yPercent: -100
+      yPercent: -100,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[6], {
       yPercent: -100
     }, '<').set(logo[1], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
 
     tl.to(logo[3], {
-      yPercent: -100
+      yPercent: -100,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[8], {
       yPercent: -100
     }, '<').set(logo[3], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
 
     tl.to(logo[4], {
-      yPercent: -100
+      yPercent: -100,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[9], {
       yPercent: -100
     }, '<').set(logo[4], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
 
     tl.to(logo[6], {
-      yPercent: -200
+      yPercent: -200,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[1], {
       yPercent: 0
     }, '<').set(logo[6], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
 
     tl.to(logo[7], {
-      yPercent: -200
+      yPercent: -200,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[2], {
       yPercent: 0
     }, '<').set(logo[7], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
 
     tl.to(logo[5], {
-      yPercent: -200
+      yPercent: -200,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[0], {
       yPercent: 0
     }, '<').set(logo[5], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
 
     tl.to(logo[9], {
-      yPercent: -200
+      yPercent: -200,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[4], {
       yPercent: 0
     }, '<').set(logo[9], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
 
     tl.to(logo[8], {
-      yPercent: -200
+      yPercent: -200,
+      opacity: 0
     },`+=${tlDelay}`).to(logo[3], {
       yPercent: 0
     }, '<').set(logo[8], {
-      yPercent: 100
+      yPercent: 100,
+      opacity: 1
     })
   }else{
     /* Mobile version */

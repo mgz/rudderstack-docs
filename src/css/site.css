@@ -369,10 +369,10 @@ body {
 }
 
 .lr-icon-gradient {
-  @apply text-seegreen;
+  color: #ffffff;
 }
 .lr-icon-gradient:hover {
-  @apply text-seegreenaction;
+  color: #86F8E0;
 }
 
 .lr-icon-gradient::before {
@@ -387,7 +387,7 @@ body {
   margin-right: 10px;
 }
 
-.lr-icon-gradient:hover:before {
+/* .lr-icon-gradient:hover:before {
   background: url("../images/arrow-right-seagreen-o.svg") no-repeat;
   background-position: center;
   width: 75%;
@@ -396,7 +396,7 @@ body {
   left: 50%;
   padding: 10px;
   margin-right: 10px;
-}
+} */
 
 .seeall-icon {
   color: #6e6ea4;
