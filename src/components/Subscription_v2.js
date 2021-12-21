@@ -75,7 +75,7 @@ const SubscriptionV2 = props => {
 
   return (
     <>
-      <div className="newsletter-wrapper mt-20 mb-10 max-w-xl mx-auto">
+      <div className="newsletter-wrapper mt-20 mb-10 max-w-xl mx-auto triggers">
         <div className="newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
           <form
             action="/"

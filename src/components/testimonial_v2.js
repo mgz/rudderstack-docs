@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, } from "react"
 /* import $ from "jquery"
 import "owl.carousel/dist/assets/owl.carousel.css"
 import "owl.carousel" */
@@ -15,12 +15,11 @@ import SubscriptionV2 from "./Subscription_v2"
 
 const TestimonialV2 = props => {
   //   console.log("testimonialsv2", props)
-  const ref = useRef(null)
 
   const testimonials = props.addtestimonial
   return (
     <section className="section-gradient py-19 relative">
-      <div className="max-w-6xl mx-auto blockWrapper">
+      <div className="max-w-6xl mx-auto blockWrapper triggers">
         <div className="w-8/12 mx-auto mob-full">
           <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary section-title">
             {props.testimoniallabel}
@@ -38,14 +37,13 @@ const TestimonialV2 = props => {
           <SubscriptionV2 formId={"signup_testimonial_top"} />
         )}
         <div className="carousel-wrapper pt-10">
-          <div className="flex desk-testimonial">
+          <div className="flex desk-testimonial triggers">
             {testimonials &&
               testimonials.splice(0, 3).map((testimonial, i) => {
                 return (
                   <div
                     className="carousel-item w-1/3 relative"
                     key={i}
-                    ref={ref}
                   >
                     <div className="carousel-inner-wrapper relative flex items-center justify-center border rounded-3xl px-15 py-24 mx-7">
                       <span className="quotes absolute">
