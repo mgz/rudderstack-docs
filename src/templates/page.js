@@ -66,9 +66,10 @@ const Page = props => {
     gsap.registerPlugin(ScrollTrigger);
     const sections = gsap.utils.toArray('.triggers');
     sections.forEach(section => {
+      gsap.set(section, {autoAlpha: 0});
       ScrollTrigger.create({
         trigger: section,
-        start: "top 80%",
+        start: "top 20%",
         end: "bottom 20%",
         markers: true,
         onEnter: function () {
@@ -85,9 +86,9 @@ const Page = props => {
           );
         },
         onLeave: function () {
-          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
+          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 1, overwrite: "auto" });
         },
-        onEnterBack: function () {
+        /* onEnterBack: function () {
           gsap.fromTo(
             section,
             { y: -100, autoAlpha: 0 },
@@ -102,7 +103,7 @@ const Page = props => {
         },
         onLeaveBack: function () {
           gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
-        }
+        } */
       })
     });
   }, [])

@@ -48,10 +48,10 @@ const LeftRightComponentEdgesAligned = props => {
         </div>
       </div>
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center blockWrapper">
-        <h3 className="mb-0 text-4xl md:text-4xl font-bold leading-tight uppercase text-center text-darkScheme-btnPrimaryBg mt-9 section-title">
+        <h3 className="mb-0 text-4xl md:text-4xl font-bold leading-tight uppercase text-center text-darkScheme-btnPrimaryBg mt-9 section-title triggers">
           {props.leftrightcontentmaintitle}
         </h3>
-        <h2 className="text-5xl text-darkScheme-textPrimary leading-tight font-bold mt-16 text-center section-title">
+        <h2 className="text-5xl text-darkScheme-textPrimary leading-tight font-bold mt-16 text-center section-title triggers">
           {props.leftrightcontentsubtitle}
         </h2>
         <div className="why-rudderstack-wrapper mx-auto">
