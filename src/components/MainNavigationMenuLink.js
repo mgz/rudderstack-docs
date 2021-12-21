@@ -14,14 +14,14 @@ const MainNavigationMenuLink = props => {
       key={i}
       className={`${
         link._rawSubMenuSection !== null ? `has-submenu group` : `group`
-      } mt-2 lg:mt-0 hover:font-bold text-whiteColor-custom lg:text-blueNew-midnight `}
+      } mt-2 lg:mt-0 hover:font-bold text-whiteColor-custom lg:text-blueNew-midnight md:pb-4`}
     >
       <SanityLink
         link={link}
         menuIndex={i}
         classes={`${
           props.currMenuIndex === i ? `active` : ``
-        } parent-menu block text-base lg:mr-4 xl:mr-10 font-custom font-normal  p-3  bg-blueNew-midnight_sub sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm`}
+        } parent-menu block text-darkScheme-textPrimary lg:mr-4 xl:mr-10 font-custom font-normal  p-3  sm:shadow-sm lg:py-2 lg:px-0 lg:bg-transparent lg:shadow-none rounded-lg lg:rounded-sm mob-menu-link`}
         onclick={e => {
           if (link._rawSubMenuSection === null) {
             rudderslabTrackOnClick("navigation", "Header Navigation", e)
@@ -40,9 +40,9 @@ const MainNavigationMenuLink = props => {
           return (
             <div className="lg:pt-2">
               <div
-                className={`sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-md  lg:rounded-2xl py-1 lg:py-0 z-40  mx-auto ${
+                className={`sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-md  py-1 lg:py-0 z-40  mx-auto ${
                   i >= 3 ? "submenu-align" : ""
-                } bg-whiteColor-custom lg:place-items-left ${
+                } lg:place-items-left ${
                  props.currMenuIndex === i ? `flex` : `flex hidden`
                }
                overflow-y-auto lg:overflow-hidden h-80 lg:h-64
@@ -50,7 +50,7 @@ const MainNavigationMenuLink = props => {
                 //  lg:left-80 xl:left-96 2xl:left-1/2
               >
                 <ul
-                  className={` flex flex-col lg:flex-row w-full lg:mx-auto my-0`}
+                  className={` flex flex-col lg:flex-row w-full lg:mx-auto my-0 inner-header-group`}
                 >
                   {submenugroup &&
                     submenugroup.map((menuGroup, idx) => {
@@ -60,19 +60,20 @@ const MainNavigationMenuLink = props => {
                           className={`py-2 lg:py-6 ${
                             submenugroup.length - 1 === idx
                               ? ""
-                              : "lg:border-grayColor-lighter-2x lg:border-r"
+                              : "nav-separator"
                           } `}
                         >
-                          <div className="flex flex-row lg:flex-col text-blueNew-midnight ">
-                          {menuGroup.group_icon && ( <div className="mb-4 px-4 lg:px-12 w-18">
+                          <div className="flex flex-row lg:flex-col text-darkScheme-textPrimary ">
+                            {/* <div className="mb-4 px-4 lg:px-12 w-18">
+                              {menuGroup.group_icon && (
                                 <Image
                                   props={menuGroup.group_icon.asset._ref}
                                   classes="w-10 md:w-auto h-auto md:w-8 object-cover"
                                 />
-                            </div>
                               )}
+                            </div> */}
                             <div>
-                              <div className="font-bold text-lg pb-2 lg:pb-4 leading-6 px-4 lg:px-12">
+                              <div className="font-bold text-lg pb-2 lg:pb-4 leading-6 px-4 lg:px-12 text-darkScheme-btnSecondaryBg md:text-darkScheme-textPrimary ">
                                 {menuGroup.group_title}
                               </div>
 
@@ -84,10 +85,10 @@ const MainNavigationMenuLink = props => {
                                       return (
                                         <li
                                           key={j}
-                                          className="text-xs font-custom py-1 lg:py-2 font-bold hover:bg-blueNew-lighter px-4 lg:px-12"
+                                          className="text-xs font-custom py-1 lg:py-2 font-bold hover:bg- px-4 lg:px-12"
                                         >
                                           <a
-                                            className={`border-b border-solid border-transparent`}
+                                            className={`border-b border-solid border-transparent hover:text-darkScheme-btnPrimaryBg`}
                                             rel="noopener noreferrer"
                                             href={submenu.sub_menu_item_link}
                                             target={

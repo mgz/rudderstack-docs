@@ -36,32 +36,6 @@ const AuthorReference = ({ node }) => {
 const PortableText = ({ blocks, className, trackSectionHeader }) => {
   useEffect(() => {
     import("@justinribeiro/lite-youtube")
-
-    let tempAnchors = []
-    document.querySelectorAll("main a").forEach(anc => {
-      if (anc.getAttribute("href") && anc.getAttribute("href").includes("#"))
-        tempAnchors.push(anc)
-    })
-
-    tempAnchors.forEach(a => {
-      a.addEventListener("click", function (e) {
-        e.preventDefault()
-        let href = this.getAttribute("href")
-        href = href.substring(href.indexOf("#") + 1, href.length)
-        let elem =
-          document.getElementById(href) ||
-          document.querySelector(
-            "a[name=" + href.substring(1, href.length) + "]"
-          )
-        //gets Element with an id of the link's href
-        //or an anchor tag with a name attribute of the href of the link without the #
-        window.scroll({
-          top: elem.offsetTop - 92,
-          left: 0,
-          behavior: "smooth",
-        })
-      })
-    })
   }, [])
   return (
     <BasePortableText
@@ -156,7 +130,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
           },
 
           code_java: props => {
-            console.log('code_java',props)
+            // console.log('code_java',props)
             return (
               <Code
                 className={`language-java`}
@@ -210,7 +184,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return (
               <a
                 id={_key}
-                className={` underline text-purpleNew-gigas hover:text-blueNew-midnight`}
+                className={`underline text-purpleNew-gigas hover:text-darkScheme-btnSecondaryBg`}
                 href={mark.href}
                 onClick={e =>
                   rudderslabTrackOnClick(

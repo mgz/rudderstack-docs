@@ -24,11 +24,12 @@ import CookiesConsent from "./cookiesConsent"
 import WebisteBanner from "./websiteBanner"
 import { rudderslabTrackOnClick } from "../utils/common"
 
+
 import "../css/tailwind.css"
 import { faRss } from "@fortawesome/free-solid-svg-icons"
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
-const Layout = ({ location, showExplicitGradient, children }) => {
+const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
   const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
@@ -90,8 +91,8 @@ const Layout = ({ location, showExplicitGradient, children }) => {
   const footerlogo =
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
 
-  // let diableGradient = false
 
+  // let diableGradient = false
   /* Disabling gradient for pages */
   const [diableGradient] = React.useState(
     location &&
@@ -101,6 +102,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         location.pathname.startsWith("/privacy-policy/") ||
         location.pathname.startsWith("/privacy-policy-legal/") ||
         location.pathname.startsWith("/cookie-policy/") ||
+        location.pathname.startsWith("/product/") ||
         location.pathname.startsWith("/customers/"))
       ? true
       : false
@@ -121,6 +123,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
   //   // diableGradient = true
   // }
+
   return (
     <React.Fragment>
       {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection &&
@@ -142,7 +145,13 @@ const Layout = ({ location, showExplicitGradient, children }) => {
 
       <div
         id="main-container"
-        className={`gradient-${diableGradient ? "disable" : "enable"}`}
+        className={
+          darkTheme ||
+          (location && location.pathname === "/") ||
+          (location && location.pathname.startsWith("/product/"))
+            ? "hero-section"
+            : "gradient-disable"
+        }
       >
         {/* <Helmet>
         <script src={withPrefix("script.js")} type="text/javascript" />
@@ -153,11 +162,11 @@ const Layout = ({ location, showExplicitGradient, children }) => {
         <main>{children}</main>
         <CookiesConsent />
         <footer
-          className="bg-black-custom px-4 sm:px-4 text-sm md:pt-0 w-full mx-auto"
+          className="hero-section px-4 sm:px-4 text-sm md:pt-14 w-full mx-auto"
           name={"footer-container"}
         >
           <div className="max-w-6xl mx-auto footer-menus-wrap">
-            <div className="w-full py-6 font-custom inline-block">
+            <div className="w-full pt-12 md:pt-6 font-custom inline-block">
               {footermenus.map((menu, i) => (
                 <div
                   key={menu._key}
@@ -196,7 +205,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             target="_blank"
                             rel="noreferrer"
                             // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                            className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
+                            className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                             onClick={e =>
                               rudderslabTrackOnClick(
                                 "footer-navigation",
@@ -230,7 +239,7 @@ const Layout = ({ location, showExplicitGradient, children }) => {
                             }
                           >
                             <span
-                              className="w-full md:w-auto font-bold py-3 my-6 bg-whiteColor-custom md:bg-black-custom text-black-custom md:text-whiteColor-custom md:hover:bg-blueNew-eastbay md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
+                              className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                               onClick={e =>
                                 rudderslabTrackOnClick(
                                   "footer-navigation",
@@ -250,72 +259,78 @@ const Layout = ({ location, showExplicitGradient, children }) => {
               })}
             </div>
           </div>
-          <div className="max-w-6xl w-full flex mx-auto flex-wrap  px-3">
-            <div className="flex">
-              {socialitems.map((socialitem, i) => (
-                <React.Fragment key={socialitem._key}>
-                  {(() => {
-                    let rss = /rss/
-                    if (rss.test(socialitem.social_item_icon)) {
-                      return (
-                        <a
-                          key={socialitem._key}
-                          className="footer-social-icon bg-seegreen"
-                          rel="noreferrer noopener"
-                          aria-label="This is an external link "
-                          href={socialitem.social_item_link}
-                          onClick={e =>
-                            rudderslabTrackOnClick(
-                              "footer-navigation",
-                              "Footer Navigation Section",
-                              e
-                            )
-                          }
-                        >
-                          <FontAwesomeIcon icon={faRss} />
-                        </a>
-                      )
-                    } else {
-                      return (
-                        <a
-                          key={socialitem._key}
-                          className="footer-social-icon bg-seegreen"
-                          rel="noreferrer noopener"
-                          aria-label="This is an external link "
-                          href={socialitem.social_item_link}
-                          onClick={e =>
-                            rudderslabTrackOnClick(
-                              "footer-navigation",
-                              "Footer Navigation Section",
-                              e
-                            )
-                          }
-                        >
-                          <FontAwesomeIcon
-                            icon={
-                              socialitem.social_item_icon === "twitter"
-                                ? faTwitter
-                                : faLinkedin
-                            }
-                          />
-                        </a>
-                      )
-                    }
-                  })()}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
+          {/* <div className="max-w-6xl w-full flex mx-auto flex-wrap  px-3">
+
+          </div> */}
           <div className="max-w-6xl pb-16 md:pb-32 py-4 w-full flex mx-auto flex-wrap  px-3">
             <div className="flex w-1/2 items-center text-white">
+              <div className="flex flex-col">
+              <div className="flex mb-5">
+                {socialitems.map((socialitem, i) => (
+                  <React.Fragment key={socialitem._key}>
+                    {(() => {
+                      let rss = /rss/
+                      if (rss.test(socialitem.social_item_icon)) {
+                        return (
+                          <a
+                            key={socialitem._key}
+                            className="footer-social-icon bg-darkScheme-textPrimary"
+                            rel="noreferrer noopener"
+                            aria-label="This is an external link "
+                            href={socialitem.social_item_link}
+                            target="_blank"
+                            onClick={e =>
+                              rudderslabTrackOnClick(
+                                "footer-navigation",
+                                "Footer Navigation Section",
+                                e
+                              )
+                            }
+                          >
+                            <FontAwesomeIcon icon={faRss} />
+                          </a>
+                        )
+                      } else {
+                        return (
+                          <a
+                            key={socialitem._key}
+                            className="footer-social-icon bg-darkScheme-textPrimary"
+                            rel="noreferrer noopener"
+                            aria-label="This is an external link "
+                            href={socialitem.social_item_link}
+                            target="_blank"
+                            onClick={e =>
+                              rudderslabTrackOnClick(
+                                "footer-navigation",
+                                "Footer Navigation Section",
+                                e
+                              )
+                            }
+                          >
+                            <FontAwesomeIcon
+                              icon={
+                                socialitem.social_item_icon === "twitter"
+                                  ? faTwitter
+                                  : faLinkedin
+                              }
+                            />
+                          </a>
+                        )
+                      }
+                    })()}
+                  </React.Fragment>
+                ))}
+              </div>
               <img
                 src={footerlogo}
                 alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
                 width="148"
                 height="16"
               />
+              </div>
             </div>
-            <div className="flex flex-wrap w-1/2 items-end">
+            <div className="flex flex-wrap w-1/2 items-end flex-col">
+              <StaticImage src="../images/footerbadge.png" className="self-end relative right-7 mb-4" alt="SOC 2 TYPE 2" />
               <p className="text-footer w-full text-right">{copyright}</p>
             </div>
           </div>

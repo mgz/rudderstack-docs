@@ -7,8 +7,9 @@ import Layout from "../components/layout"
 import MiddleBanner from "../components/middle-banner"
 import ProductHeroBanner from "../components/productHeroBanner"
 import ProductImageWithListOfText from "../components/productImageWithListOfText"
-import LeftRightImgCnt from "../components/left-right-image-content"
+import LeftRightImgCnt_V2 from "../components/left-right-image-content-v2"
 import Testimonial from "../components/testimonial"
+import TestimonialCardWithLeftHeading from "../components/testimonialCardWithLeftHeading"
 import clientConfig from "../../client-config"
 // const Layout = loadable(() => import("../components/layout"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
@@ -18,14 +19,7 @@ import clientConfig from "../../client-config"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Products = ({ data, location }) => {
-  const lv_testimonialsection = data.section_testimonials.edges.filter(
-    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
-  )
-
-  const lv_middlebannersection = data.section_get_started.edges.filter(
-    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
-  )
-
+  // console.log("data", data)
   return (
     <Layout location={location}>
       <Helmet>
@@ -46,34 +40,52 @@ const Products = ({ data, location }) => {
       <div className="font-custom">
         {(data.product._rawPagebuildersectionarray || []).map((row, idx) => {
           if (row._type === "product_banner") {
-            return <ProductHeroBanner key={row._id} {...row} />
+            return <ProductHeroBanner key={row._id + idx} {...row} />
           } else if (row._type === "image_with_list_of_text") {
             return <ProductImageWithListOfText key={row._id} {...row} />
           } else if (row._type === "leftrightcontentimagesection") {
             return (
-              // <div key={row._key} className="bg-gradiantsecondary 100%">
-              //   <LeftRightImgCnt applyGradientColorTheme={false} {...row} />
-              // </div>
-              <div key={row._key} className="100%">
-                <LeftRightImgCnt applyGradientColorTheme={false} {...row} />
+              <div
+                key={row._key}
+                className="section-gradient py-10 md:py-20 relative px-4 sm:px-8"
+              >
+                <span className="section-border block absolute top-0 left-0 w-full"></span>
+                <LeftRightImgCnt_V2 applyGradientColorTheme={true} {...row} location={location} />
+                <span className="section-border block absolute bottom-0 left-0 w-full"></span>
               </div>
+            )
+          } else if (row._type === "testimonial_card_with_left_heading") {
+            return (
+              <div key={row._key} className="">
+                <TestimonialCardWithLeftHeading {...row} />
+              </div>
+            )
+          } else if (row._type === "ref_section_get_started") {
+            let l_section_info = data.section_get_started.edges.find(
+              kl => kl.node._id === row._ref
+            )
+            return (
+              <section key={row._key} id="get_started">
+                <MiddleBanner {...l_section_info.node._rawGetStarted} />
+              </section>
+            )
+          } else if (row._type === "ref_section_testimonials") {
+            let l_section_info = data.section_testimonials.edges.find(
+              kl => kl.node._id === row._ref
+            )
+            return (
+              <section key={row._key} id="testimonial">
+                <Testimonial
+                  applyGradientColorTheme={true}
+                  isForDemoPage={true}
+                  {...l_section_info.node._rawTestimonials}
+                />
+              </section>
             )
           } else {
             return null
           }
         })}
-
-        <section id="testimonials">
-          <Testimonial
-            {...lv_testimonialsection[0].node._rawTestimonials}
-            applyGradientColorTheme={true}
-            isForDemoPage={true}
-          />
-        </section>
-
-        <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
-        </section>
       </div>
     </Layout>
   )
@@ -83,7 +95,7 @@ export default Products
 
 export const pageQuery = graphql`
   query GetSingleProductPage($slug: String) {
-    product: sanityProductPage(slug: { current: { eq: $slug } }) {
+    product: sanityNewThemeProductPage(slug: { current: { eq: $slug } }) {
       _rawPagebuildersectionarray
       title
       slug {

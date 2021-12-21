@@ -1,8 +1,37 @@
-import React from "react"
+import React, {useEffect} from "react"
 import PortableText from "./portableText"
 import AgreementAccordianCard from "./agreement_accordian_card"
 
 const AgreementContent = props => {
+
+  useEffect(() => {
+    let tempAnchors = []
+    document.querySelectorAll("main a").forEach(anc => {
+      if (anc.getAttribute("href") && anc.getAttribute("href").includes("#"))
+        tempAnchors.push(anc)
+    })
+
+    tempAnchors.forEach(a => {
+      a.addEventListener("click", function (e) {
+        e.preventDefault()
+        let href = this.getAttribute("href")
+        href = href.substring(href.indexOf("#") + 1, href.length)
+        let elem =
+          document.getElementById(href) ||
+          document.querySelector(
+            "a[name=" + href.substring(1, href.length) + "]"
+          )
+        //gets Element with an id of the link's href
+        //or an anchor tag with a name attribute of the href of the link without the #
+        window.scroll({
+          top: elem.offsetTop - 92,
+          left: 0,
+          behavior: "smooth",
+        })
+      }, {passive: true})
+    })
+  })
+
   // console.log("AgreementContent", props)
   return (
     <div className={`max-w-screen-${props.max_width} mx-auto px-4 agreementContent`}>

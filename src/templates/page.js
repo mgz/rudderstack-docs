@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from "react"
+import React, { useEffect, useState, useRef } from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import { Helmet } from "react-helmet"
@@ -12,16 +12,22 @@ import FreeText from "../components/freeText"
 import GraphQLErrorList from "../components/graphql-error-list"
 import ThreeCardsWithTitleLeftAligned from "../components/threeCardsWithTitleLeftAligned"
 import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleWithYoutube"
-
+import CodeEditor from "../components/CodeEditor"
+import LeftRightComponentEdgesAligned from "../components/leftRightComponentEdgesAligned"
+import LeftRightMiddleBanner from "../components/LeftRightMiddleBanner"
 // import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 // const Hero = loadable(() => import("../components/hero"))
 // const Tabs = loadable(() => import("../components/tabs"))
-const LeftRightImgCnt = loadable(() => import("../components/left-right-image-content"))
+const LeftRightImgCnt = loadable(() =>
+  import("../components/left-right-image-content")
+)
 // const LatestBlog = loadable(() => import("../components/latest-blog"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
-const RightSideHiglightedContent = loadable(() => import("../components/rightSideHiglightedContent"))
+const RightSideHiglightedContent = loadable(() =>
+  import("../components/rightSideHiglightedContent")
+)
 // const FreeText = loadable(() => import("../components/freeText"))
 // const GraphQLErrorList = loadable(() =>
 //   import("../components/graphql-error-list")
@@ -29,8 +35,9 @@ const RightSideHiglightedContent = loadable(() => import("../components/rightSid
 // const SEO = loadable(() => import("../components/seo"))
 // const Layout = loadable(() => import("../components/layout"))
 
-const OurLogo = loadable(() => import("../components/ourlogo"))
+const OurLogo = loadable(() => import("../components/ourlogo_v2"))
 const Testimonial = loadable(() => import("../components/testimonial"))
+const TestimonialV2 = loadable(() => import("../components/testimonial_v2"))
 /* const ThreeCardsWithTitleLeftAligned = loadable(() => import("../components/threeCardsWithTitleLeftAligned"))
 const CenteredAlignedTitleWithYoutube = loadable(() => import("../components/CenteredAlignedTitleWithYoutube")) */
 
@@ -45,109 +52,14 @@ export const query = graphql`
   }
 `
 
-let intersectionObserver;
-let intersectionObserverOptions = {};
-const subscribers = new WeakMap();
-
-const handleIntersections = entries =>
-  entries.forEach(entry => subscribers.get(entry.target).call(null, entry));
-
-const getIntersectionObserver = () => {
-  if (!intersectionObserver) {
-    intersectionObserver = new IntersectionObserver(
-      handleIntersections,
-      intersectionObserverOptions
-    );
-  }
-
-  return intersectionObserver;
-};
-
-const setIntersectionObserverOptions = options => {
-  if (intersectionObserver) {
-    return;
-  }
-
-  intersectionObserverOptions = options;
-};
-
-const unwatch = domNode => {
-  intersectionObserver.unobserve(domNode);
-  subscribers.delete(domNode);
-};
-const watch = (domNode, callback) => {
-  if (!domNode || subscribers.has(domNode)) {
-    return;
-  }
-
-  subscribers.set(domNode, callback);
-  getIntersectionObserver().observe(domNode);
-
-  // eslint-disable-next-line consistent-return
-  return () => unwatch(domNode);
-};
-
-const getSubscribers = () => subscribers;
-
-const VO = {
-  getSubscribers,
-  setIntersectionObserverOptions,
-  unwatch,
-  watch,
-};
-
-function useIsVisible(nodeRef) {
-  const [isVisible, setVisible] = useState(false);
-
-  function handleVisibilityChange({ isIntersecting }) {
-    setVisible(isIntersecting);
-  }
-
-  useEffect(() => VO.watch(nodeRef.current, handleVisibilityChange), [nodeRef]);
-
-  return isVisible;
-}
-
-function useHasBeenVisible(nodeRef) {
-  const [isVisible, setVisible] = useState(false);
-
-  function handleVisibilityChange({ isIntersecting }) {
-    if (isIntersecting === true) {
-      setVisible(isIntersecting);
-    }
-  }
-
-  useEffect(() => VO.watch(nodeRef.current, handleVisibilityChange), [nodeRef]);
-
-  return isVisible;
-}
-
 // The `threshold` variable sets what portion of the element needs to be
 // visible before it fires. 0 = none, 1 = the entire thing. See
 // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-function useHasBeenPartlyVisible(nodeRef, threshold = 0.5) {
-  const [isVisible, setVisible] = useState(false);
-
-  function handleVisibilityChange({ isIntersecting }) {
-    if (isIntersecting === true) {
-      setVisible(isIntersecting);
-    }
-  }
-
-  useEffect(() => {
-    setIntersectionObserverOptions({ threshold });
-    return VO.watch(nodeRef.current, handleVisibilityChange);
-  }, [nodeRef, threshold]);
-
-  return isVisible;
-}
-
 
 const Page = props => {
-  const { data, errors } = props;
-
-  const halfPage = useRef();
-  const hasScrolled = useHasBeenPartlyVisible(halfPage, 0.1);
+  const { data, errors } = props
+  /* console.log("data", data) */
+  const halfPage = useRef()
 
   if (errors) {
     return (
@@ -198,13 +110,6 @@ const Page = props => {
         case "tabsection":
           el = <Tabs key={c._key} {...c} />
           break
-        case "leftrightcontentimagesection":
-          el = (
-            <div className="bg-blueNew-midnight_v2 100% pt-32" key={c._key}>
-              <LeftRightImgCnt applyGradientColorTheme={true} {...c} />
-            </div>
-          )
-          break
         case "latestblogsection":
           el = <LatestBlog key={c._key} {...c} />
           break
@@ -228,11 +133,23 @@ const Page = props => {
             <Testimonial key={c._key} applyGradientColorTheme={true} {...c} />
           )
           break
+        case "left_right_comp_edges_aligned":
+          el = <LeftRightComponentEdgesAligned key={c._key} {...c} />
+          break
+        case "code_edit_with_title":
+          el = <CodeEditor key={c._key} {...c} />
+          break
         case "three_card_with_title":
-          el = <ThreeCardsWithTitleLeftAligned key={c._key} {...c} />
+          el = (<div key={c._key}>
+            <ThreeCardsWithTitleLeftAligned {...c} />
+            <CodeEditor />
+            </div>)
           break
         case "centered_aligned_title_with_youtube":
           el = <CenteredAlignedTitleWithYoutube key={c._key} {...c} />
+          break
+        case "left_right_middle_banner":
+          el = <LeftRightMiddleBanner key={c._key} {...c} />
           break
         case "ref_section_testimonials":
           l_section_info = data.section_testimonials.edges.find(
@@ -240,7 +157,7 @@ const Page = props => {
           )
 
           el = (
-            <Testimonial
+            <TestimonialV2
               key={c._key}
               applyGradientColorTheme={false}
               {...l_section_info.node._rawTestimonials}
@@ -281,7 +198,7 @@ const Page = props => {
 
   return (
     <Layout location={props.location}>
-      <Helmet htmlAttributes={{ lang: 'en' }}>
+      <Helmet htmlAttributes={{ lang: "en" }}>
         <meta name="description" content={data.page.meta_desc} />
 
         <title>{data.page.meta_title || data.page.title}</title>

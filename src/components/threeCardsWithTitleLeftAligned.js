@@ -38,7 +38,10 @@ const ThreeCardsWithTitleLeftAligned = props => {
                     {item.title}
                   </div>
                   <div className=" text-lg">
-                    <PortableText blocks={item.content} trackSectionHeader={props.title} />
+                    <PortableText
+                      blocks={item.content}
+                      trackSectionHeader={props.title}
+                    />
                   </div>
                 </div>
               </div>

@@ -40,74 +40,21 @@ const CenteredAlignedTitleWithYoutube = props => {
   })
 
   return (
-    <section className="md:mb-10">
-      <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
-        <h3 className="mt-16 md:mt-24 text-4xl md:text-5xl font-bold leading-tight text-center text-blueNew-midnight max-w-3xl">
-          {props.title}
-        </h3>
-        <div className="mt-4 text-lg  leading-tight text-center text-grayColor-custom max-w-2xl px-4">
-          <PortableText
-            blocks={props.content}
-            trackSectionHeader={props.title}
-          />
-        </div>
-        <div className="relative w-full rounded-lg flex-grow justify-items-end px-4 md:px-12 py-4 sm:items-center lg:items-start lg:mb-0 max-w-5xl -bottom-20 md:-bottom-16 pr-12">
-          <div className="iframe-container">
-            <div className="stack-frame-1"></div>
-            <div className="stack-frame-2"></div>
-            {/* <iframe
-              src={props.youtube.url}
-              frameborder="0"
-              allowfullscreen
-              className="video"
-            ></iframe> */}
-
-            {/* <YouTube
-              videoId={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
-              className="video"
-              onPlay={_onPlay}
-            /> */}
-
-            <div onClick={e => _onPlay(e)}>
-              <lite-youtube
-                videoid={tmp_youtube_url_split[tmp_youtube_url_split.length - 1]}
-                class="video"
-                params="rel=0"
-              ></lite-youtube>
+    <section className="py-12">
+      <div className="max-w-6xl mx-auto md:w-full md:px-4">
+        <div className="blog-section flex">
+          <div className="w-1/2 border-r border-darkScheme-textPrimary">
+            <div className="w-9/12 mx-auto">
+              <h3 className="text-darkScheme-btnSecondaryBg uppercase mb-5 text-2xl font-bold">Read the Blog</h3>
+              <p className="text-darkScheme-textPrimary">Read the latest on solving data engineering problems, big picture data industry analysis, and product updates</p>
+              <a href="#" className="learn-more mt-2 text-darkScheme-textPrimary font-bold block"><span className="learn-more-text">Learn More</span><span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg">&gt;</span></a>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="homepage-middle-bg-gradiant">
-        <div className="homepage-middle-bg-image text-whiteColor-custom pt-24 pb-12 md:pb-24" data-src={bgImage}>
-          <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center pb-12 md:pb-0">
-            <h3 className="mt-12 md:mt-24 mb-0 md:mb-12 text-4xl md:text-5xl font-bold leading-tight text-center max-w-4xl px-0 md:px-4">
-              {props.footer_title}
-            </h3>
-          </div>
-          <div className="max-w-5xl px-0 md:px-3 mx-auto mb-12">
-            {/*Data WorkFlow*/}
-            <div className="flex flex-wrap flex-row">
-              {props.two_card_items.map(item => {
-                return (
-                  <div
-                    key={item._key}
-                    className={`w-full md:w-1/2 sm:px-2 mt-5 `}
-                  >
-                    <div className="h-full flex flex-col items-center md:items-left text-center md:text-left py-10 px-8 rounded-2xl border-grayColor-custom shadow-md  mx-3 text-blueNew-midnight bg-whiteColor-custom">
-                      <div className="text-2xl-2 font-bold mb-2 mt-2 text-left pr-0 md:pr-4">
-                        {item.title}
-                      </div>
-                      <div className=" text-lg">
-                        <PortableText
-                          blocks={item.content}
-                          trackSectionHeader={props.footer_title}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
+          <div className="w-1/2">
+            <div className="w-9/12 mx-auto">
+              <h3 className="text-darkScheme-btnSecondaryBg uppercase mb-5 text-2xl font-bold">Explore the platform</h3>
+              <p className="text-darkScheme-textPrimary">Control all your customer data and securely send it anywhere</p>
+              <a href="#" className="learn-more mt-2 text-darkScheme-textPrimary font-bold block"><span className="learn-more-text">Learn More</span><span className="learn-more-icon pl-2 text-darkScheme-btnSecondaryBg">&gt;</span></a>
             </div>
           </div>
         </div>

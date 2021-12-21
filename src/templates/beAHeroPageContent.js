@@ -2,20 +2,20 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
-import MiddleBanner from "../components/middle-banner"
+import MiddleBannerV2 from "../components/MiddleBannerV2"
 import loadable from "@loadable/component"
 import HeroBannerBeAHeroPage from "../components/heroBannerBeAHeroPage"
-import LeftRightImgCnt from "../components/left-right-image-content"
+import LeftRightImgCnt_V2 from "../components/left-right-image-content-v2"
 
 const OurLogo = loadable(() => import("../components/ourlogo"))
-const TestimonialFloating = loadable(() =>
-  import("../components/testimonial_floating")
+const TestimonialFloatingV2 = loadable(() =>
+  import("../components/testimonial_floating_v2")
 )
 
 const BeAHeroPageContent = ({ data, location }) => {
   // console.log("BeAHeroPageContent", data)
   return (
-    <Layout location={location}>
+    <Layout location={location} darkTheme={true}>
       <Helmet>
         <title>{data.pagedata.meta_title || data.pagedata.title}</title>
         <meta
@@ -39,12 +39,14 @@ const BeAHeroPageContent = ({ data, location }) => {
             return <HeroBannerBeAHeroPage key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
             return (
-              <div className={`100% bg-black-custom pb-60 md:pb-40`}>
-                <LeftRightImgCnt
-                  key={section._key}
+              <div className={`section-gradient py-20 relative`} key={section._key}>
+                <span className="section-border block absolute top-0 left-0 w-full"></span>
+                <LeftRightImgCnt_V2
                   {...section}
                   applyGradientColorTheme={true}
+                  location={location}
                 />
+                <span className="section-border block absolute bottom-0 left-0 w-full"></span>
               </div>
             )
           } else if (section._type === "ref_section_testimonials") {
@@ -52,8 +54,8 @@ const BeAHeroPageContent = ({ data, location }) => {
               kl => kl.node._id === section._ref
             )
             return (
-              <section key={section._key} className="-mt-40" id="testimonial">
-                <TestimonialFloating
+              <section key={section._key} className="mt-40 md:mt-52" id="testimonial">
+                <TestimonialFloatingV2
                   // applyGradientColorTheme={true}
                   {...l_section_info.node._rawTestimonials}
                 />
@@ -65,7 +67,11 @@ const BeAHeroPageContent = ({ data, location }) => {
             )
             return (
               <section key={section._key} id="get_started">
-                <MiddleBanner {...l_section_info.node._rawGetStarted} />
+                <MiddleBannerV2
+                  {...l_section_info.node._rawGetStarted}
+                  showBottomBorder={true}
+                  smallerTitle={true}
+                />
               </section>
             )
           } else if (section._type === "ref_section_ourlogos") {
@@ -93,7 +99,7 @@ const BeAHeroPageContent = ({ data, location }) => {
 
 export const query = graphql`
   query GetSingleBeAHeroPage($slug: String) {
-    pagedata: sanityBeAHeroPage(slug: { current: { eq: $slug } }) {
+    pagedata: sanityNewThemeBeAHeroPage(slug: { current: { eq: $slug } }) {
       title
       slug {
         current

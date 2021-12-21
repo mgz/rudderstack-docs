@@ -1,0 +1,237 @@
+.codeBlockLeft{
+  background: #3E35D1;
+  border-radius: 0px 0px 0px 20px;
+  perspective: 1000;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
+.CodeMirror{
+  color: #ffffff;
+  background: transparent;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  font-family: monospace;
+  font-size: 16px;
+}
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: -50px;
+}
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  background: none !important;
+  border: none !important;
+}
+.CodeMirror-gutters {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  z-index: 3;
+  background-color: transparent;
+  white-space: nowrap;
+}
+.CodeMirror-vscrollbar, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+  outline: none;
+}
+
+.CodeMirror-scroll, .CodeMirror-sizer, .CodeMirror-gutter, .CodeMirror-gutters, .CodeMirror-linenumber {
+  box-sizing: content-box;
+  outline: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0;
+  bottom: 0;
+}
+.CodeMirror-gutter-filler {
+  left: 0;
+  bottom: 0;
+}
+.CodeMirror-scroll {
+  overflow: scroll !important;
+  margin-bottom: -50px;
+  margin-right: -50px;
+  padding-bottom: 50px;
+  height: 100%;
+  outline: none;
+  position: relative;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0;
+  left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 50px solid transparent;
+}
+.CodeMirror-lines {
+  cursor: text;
+  min-height: 1px;
+  padding: 4px 0px;
+}
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like {
+  padding: 0 4px;
+}
+.CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like {
+  border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: break-word;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  font-variant-ligatures: contextual;
+}
+.CodeMirror-wrap pre {
+  word-break: break-word;
+}
+div.CodeMirror-cursors {
+  visibility: visible;
+  position: relative;
+  z-index: 3;
+}
+.codeBlockRight{
+  perspective: 1000;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+}
+.codeBlockRight div.CodeMirror-cursors{
+  visibility: hidden;
+}
+.CodeMirror-cursor {
+  border-left: 1px solid white;
+  border-right: none;
+  width: 0;
+}
+.CodeMirror-cursor {
+  position: absolute;
+  pointer-events: none;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+.CodeMirror-linenumber {
+  padding: 0 20px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: #fff;
+  white-space: nowrap;
+}
+.codeBlockLeft .CodeMirror-linenumbers{
+  background: #3E35D1;
+}
+/* Theming */
+.codeBlockLeft .cm-string{
+  color: #86F8E0;
+}
+.codeBlockRight .cm-string{
+  color: #2EB67D;
+}
+.cm-atom{
+  color: #f77b23;
+}
+.cm-number{
+  color: #D692F6;
+}
+.cm-editor.cm-focused { outline: none }
+/* Code editor file */
+.codeEditorFile{
+  padding:60px 0px 20px 20px;
+  position: relative;
+}
+.codeBlockRight .codeEditorFile{
+  padding: 60px 0px 20px 50px;
+}
+.topEditorBlock{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.fileSwitchIcon{
+  padding: 10px;
+}
+.fileSwitchIconLeft{
+  transform: rotate(-180deg);
+}
+.fileSwitchIconRight{
+  transform: rotate(0deg);
+  padding-left: 8px;
+}
+.fileNameBlock{
+  width: 200px;
+  background: #2F28AD;
+  height: 34px;
+  position: relative;
+  border-radius: 0px 0px 3px 3px;
+}
+.editOn{
+  position: absolute;
+  right: 10px;
+  top: 12px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+.codeBlockRight{
+  background: #070E1F;
+  border-radius: 0px 20px 20px 0px;
+}
+
+@media only screen and (max-width: 1024px){
+  .codeBlockWrapper{
+    flex-direction: column;
+  }
+  .codeBlockWrapper .codeBlockLeft{
+    width: 100% !important;
+    border-radius: 0px 20px 0px 0px;
+  }
+  .codeBlockWrapper .codeBlockRight{
+    width: 100% !important;
+    border-radius: 0px 0px 20px 20px;
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .codeBlockRight .codeEditorFile{
+    padding: 20px;
+  }
+  .CodeMirror-scroll{
+    margin-right: 0px;
+  }
+}

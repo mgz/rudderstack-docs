@@ -10,25 +10,25 @@ const MiddleBanner = props => {
   const smalldescription = props.smalldescription
   const title = props.title
   const btns = props.addbuttons
-  const isLightTheme = props.is_light_theme ? true : false
+  const isLightTheme = false
   return (
     <>
       <section
         className={`${
           isLightTheme === true
             ? "text-blueNew-midnight"
-            : "bg-black-custom text-white"
-        } 100% pt-10 md:py-28 px-0 sm:px-0`}
+            : "hero-section text-white pb-16"
+        } pt-19 md:pt-24 md:px-0  sm:px-0 relative`}
       >
-        <div className="max-w-6xl px-4 md:px-3 mx-auto">
+        <div className="max-w-6xl mx-auto blockWrapper">
           <div
-            className={`flex flex-wrap ${
+            className={`flex flex-wrap flex-col ${
               isLightTheme !== true ? "items-center" : ""
-            }  sm:flex-row`}
+            }  lg:flex-row`}
           >
-            <div className="flex lg:items-start items-center md:w-1/2 flex-row">
-              <div className="">
-                <div className="w-32 lg:pt-16 md-pt-16">
+            <div className="flex lg:items-start w-full lg:w-1/2 flex-row">
+              <div>
+                <div className="w-10 md:w-16 lg:-pt-4">
                   {/* <img src={ArrowImg} alt="Get Started Image" /> */}
                   {isLightTheme === true && (
                     <StaticImage
@@ -40,31 +40,33 @@ const MiddleBanner = props => {
 
                   {isLightTheme !== true && (
                     <StaticImage
-                      src="../images/Arrow.svg"
+                      src="../images/Arrow-new-theme.svg"
                       placeholder="tracedSVG"
                       alt="Get Started Image"
                     />
                   )}
                 </div>
               </div>
-              <div className="w-full flex flex-col pr-8 md:pt-4 lg:pt-4">
-                {props.small_title !== "" && (
-                  <p className="mb-4 font-bold">{props.small_title}</p>
+              <div className="w-full flex flex-col pl-6 md:pl-12 pr-0 md:pr-8 ">
+                {props.small_title && props.small_title !== "" && (
+                  <p className="mb-4 font-bold text-darkScheme-btnSecondaryBg text-xs md:text-2xl">
+                    {props.small_title}
+                  </p>
                 )}
 
                 <h3
                   className={`${
-                    isLightTheme === true
-                      ? "text-3xl"
-                      : "text-3xl-3 md:text-5xl"
-                  }   font-bold font-custom leading-tight mb-4`}
+                    props.smallerTitle === true
+                      ? "text-2xl-2 md:text-3xl-3"
+                      : "text-5xl w-3/4"
+                  }   font-bold font-custom leading-tight mb-4  section-title`}
                 >
                   {title}
                 </h3>
               </div>
             </div>
-            <div className="md:w-1/2 max-w-lg md:pl-4">
-              <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom">
+            <div className="w-full lg:w-2/5">
+              <div className="align-middle text-sm md:text-lg leading-6 md:leading-7 font-custom pl-16 md:pl-28 lg:pl-0">
                 <div
                   className={`frtxt-contnt ${
                     isLightTheme === true
@@ -72,7 +74,10 @@ const MiddleBanner = props => {
                       : "text-white"
                   }`}
                 >
-                  <PortableText blocks={smalldescription} trackSectionHeader={title} />
+                  <PortableText
+                    blocks={smalldescription}
+                    trackSectionHeader={title}
+                  />
                 </div>
 
                 {/* <p>{smalldescription}</p> */}
@@ -89,9 +94,9 @@ const MiddleBanner = props => {
                               }
                               className={
                                 (btn.btnhiglight === true
-                                  ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay hover:text-white"
-                                  : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
-                                ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
+                                  ? "text-darkScheme-textBlack border border-darkScheme-btnPrimaryBg bg-darkScheme-btnPrimaryBg hover:text-darkScheme-btnPrimaryBg hover:bg-transparent"
+                                  : "btn-secondary-lg") +
+                                ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-6 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
                               }
                               href={btn.btnlink}
                             >
@@ -100,15 +105,19 @@ const MiddleBanner = props => {
                           )
                         } else {
                           return (
-                            <Link to={btn.btnlink} key={btn._key} onClick={e =>
-                              rudderslabTrackOnClick("button", title, e)
-                            }>
+                            <Link
+                              to={btn.btnlink}
+                              key={btn._key}
+                              onClick={e =>
+                                rudderslabTrackOnClick("button", title, e)
+                              }
+                            >
                               <span
                                 className={
                                   (btn.btnhiglight === true
                                     ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
-                                    : "btn-primary-lg bg-black-custom hover:bg-blueNew-eastbay") +
-                                  ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg md:mb-0 mb-4 md:flex block border leading-tight  font-custom`
+                                    : "btn-secondary-lg") +
+                                  ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center lg:mr-4 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
                                 }
                               >
                                 {btn.btntext}
@@ -123,6 +132,9 @@ const MiddleBanner = props => {
             </div>
           </div>
         </div>
+        {props.showBottomBorder && (
+          <span className="section-border block absolute bottom-0 left-0 w-full"></span>
+        )}
       </section>
     </>
   )

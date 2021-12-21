@@ -13,18 +13,18 @@ const Menu = ({
 }) => {
   // console.log('items',items)
   return (
-    <ul className="list-reset flex capitalize items-center overflow-x-auto overflow-y-hidden whitespace-nowrap xl:whitespace-normal w-full">
-      <li key="ALL">
-        <div
-          className={`px-4 sm:px-6 xl:px-8  pt-4 pb-4 border-solid text-sm md:text-base  w-auto inline-block ${
+    <ul className="list-reset flex max-w-xl overflow-x-auto border-b border-grayColor-lighter">
+      <li key="ALL" className={`px-5 py-2 ${
             currentRefinement === null
               ? "font-bold border-b-2 border-blueNew-eastbay text-blueNew-eastbay"
-              : "border-b border-grayColor-lighter"
-          }`}
-        > 
+              : ""
+          }`}>
+        <div
+          className={`text-sm md:text-base  w-max inline-block`}
+        >
           <a
             href={createURL("")}
-            className={"pb-0 md:pb-7"}
+            className={""}
             onClick={event => {
               event.preventDefault()
               // onCategoryChange("ALL")
@@ -37,17 +37,17 @@ const Menu = ({
       </li>
       {items.map(item => {
         return (
-          <li key={item.label}>
+          <li key={item.label} className={`px-5 py-2 ${
+            currentRefinement === item.label
+              ? "font-bold border-b-2 border-blueNew-eastbay text-blueNew-eastbay"
+              : ""
+          }`}>
             <div
-              className={`px-4 sm:px-6 xl:px-8 pt-4 pb-4 border-solid text-sm md:text-base  w-auto inline-block ${
-                currentRefinement === item.label
-                  ? "font-bold border-b-2 border-blueNew-eastbay text-blueNew-eastbay"
-                  : "border-b border-grayColor-lighter"
-              }`}
+              className={`text-sm md:text-base w-max inline-block`}
             >
               <a
                 href={createURL("")}
-                className={"pb-0 md:pb-7"}
+                className={""}
                 onClick={event => {
                   event.preventDefault()
                   // onCategoryChange(item.value)

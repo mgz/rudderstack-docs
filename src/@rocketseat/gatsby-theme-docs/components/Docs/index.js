@@ -16,7 +16,7 @@ import { forEach, findIndex } from "lodash"
 import { postNavList } from "../../../../docs/postNavList"
 import { BlockMath, InlineMath } from "react-katex"
 import "katex/dist/katex.min.css"
-import {rudderslabTrackOnClickDocs, rudderslabTrackOnYoutubeVideoPlaybackDocs, checkPrevSibbling1} from '../../../../utils/common'
+import {rudderslabTrackOnClickDocs, rudderslabTrackOnYoutubeVideoPlaybackDocs} from '../../../../utils/common'
 import YouTube from "react-youtube"
 
 
@@ -83,10 +83,10 @@ export default function Docs({ mdx, pageContext }) {
     /* h1Tags.innerHTML = descriptionSpan; */
 
     let ancTags = document.querySelectorAll('.childrenWrapper a:not(.anchor, .next, .previous)');
-    forEach(ancTags, o => (o.addEventListener('click', e => rudderslabTrackOnClickDocs("link", null, e, true))))
+    forEach(ancTags, o => (o.addEventListener('click', e => rudderslabTrackOnClickDocs("link", null, e, true), {passive: true})))
 
     let sectionLinks = document.querySelectorAll('.childrenWrapper a.anchor');
-    forEach(sectionLinks, o => (o.addEventListener('click', e => {rudderslabTrackOnClickDocs("sectionLink", null, e, true)})))
+    forEach(sectionLinks, o => (o.addEventListener('click', e => {rudderslabTrackOnClickDocs("sectionLink", null, e, true)},{passive: true})))
 
   }, [])
 

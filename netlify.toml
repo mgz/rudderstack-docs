@@ -8,3 +8,4 @@ package = "@netlify/plugin-gatsby"
 
 [build.environment]
   GATSBY_BRANCH = "main"
+

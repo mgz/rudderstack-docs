@@ -34,10 +34,10 @@
     @apply w-5 h-4;
   }
   .btn-primary-lg {
-    @apply bg-darkblue text-white py-3 text-sm px-6 sm:px-10 text-center font-bold block rounded-lg border hover:bg-blueNew-midnight;
+    @apply bg-darkScheme-btnPrimaryBg text-darkScheme-textBlack py-4 text-sm px-6 sm:px-10 text-center font-bold block rounded-lg border border-darkScheme-btnPrimaryBg hover:bg-transparent hover:text-darkScheme-btnPrimaryBg;
   }
   .btn-secondary-lg {
-    @apply py-3 text-sm px-6 sm:px-10 text-center font-bold block rounded-lg border hover:text-white hover:bg-blueNew-eastbay;
+    @apply py-4 text-sm px-6 sm:px-10 text-center font-bold block border rounded-lg border-whiteColor-custom text-white hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary;
   }
   .btn-primary-sm {
     @apply bg-darkblue text-white py-2 px-6 md:px-8 lg:px-8 text-center block rounded-lg border text-sm hover:bg-blueNew-midnight;
@@ -503,11 +503,11 @@ div > a.transperent-btn:last-child {
   }
 }
 @media only screen and (max-width: 1023px) {
-  .carousel.carousel-slider .control-arrow {
+  /*.carousel.carousel-slider .control-arrow {
     bottom: -20px !important;
     top: auto !important;
   }
-  .carousel.carousel-slider {
+   .carousel.carousel-slider {
     padding-bottom: 3rem;
   }
   .carousel.carousel-slider .control-arrow.control-next {
@@ -529,7 +529,7 @@ div > a.transperent-btn:last-child {
     background-size: 90px;
     left: 0px;
     top: auto;
-  }
+  } */
   /* .testimonials .owl-nav button.owl-prev,
   .testimonials .owl-nav button.owl-next {
     width: 50%;
@@ -580,12 +580,12 @@ div > a.transperent-btn:last-child {
   .accordion__section .accordion__content {
     padding-left: 0;
   }
-  .carousel.carousel-slider .control-arrow.control-next {
+  /* .carousel.carousel-slider .control-arrow.control-next {
     right: 25% !important;
   }
   .carousel.carousel-slider .control-arrow.control-prev {
     left: 25% !important;
-  }
+  } */
   .w-1\/2.accWrapper{
     max-width: 100%;
     width: 100% !important;
@@ -600,12 +600,12 @@ div > a.transperent-btn:last-child {
   .faq-cta-box {
     left: 0;
   }
-  .carousel.carousel-slider .control-arrow.control-next {
+  /* .carousel.carousel-slider .control-arrow.control-next {
     right: 20% !important;
   }
   .carousel.carousel-slider .control-arrow.control-prev {
     left: 20% !important;
-  }
+  } */
 }
 @media only screen and (max-width: 767px) and (min-width: 480px) {
   .faq-cta-box {
