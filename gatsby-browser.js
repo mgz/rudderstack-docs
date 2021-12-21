@@ -19,10 +19,23 @@ import "./src/css/blog.css"
 import "./src/css/agreement.css"
 import "./src/css/product.css"
 import "./src/css/code-editor.css"
+const { DateTime } = require("luxon")
 
 export const onRouteUpdate = () => {
+  // var delay = Math.max(0, 50)
+
+  // window.setTimeout(function () {
+  //   window.rudderanalytics &&
+  //     window.rudderanalytics.page("page_view", {
+  //       branch: process.env.GATSBY_BRANCH,
+  //     })
+  // }, delay)
+
   window.rudderanalytics &&
     window.rudderanalytics.page("page_view", {
       branch: process.env.GATSBY_BRANCH,
+      timezone: {
+        name: DateTime.now().zone.name,
+      },
     })
 }

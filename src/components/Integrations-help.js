@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+const { DateTime } = require("luxon")
 
 const IntegrationsHelpBox = () => {
   const [email, setEmail] = useState("")
@@ -29,6 +30,9 @@ const IntegrationsHelpBox = () => {
       {
         email: email,
         branch: process.env.GATSBY_BRANCH,
+        timezone: {
+          name: DateTime.now().zone.name,
+        },
         form_id: "Integrations-sidebar-ReachOut-form",
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
@@ -51,6 +55,9 @@ const IntegrationsHelpBox = () => {
         page: document.title,
         page_URL: window.location.href,
         branch: process.env.GATSBY_BRANCH,
+        timezone: {
+          name: DateTime.now().zone.name,
+        },
         form_id: "Integrations-sidebar-ReachOut-form",
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
@@ -73,6 +80,9 @@ const IntegrationsHelpBox = () => {
       body: JSON.stringify({
         email: email,
         branch: process.env.GATSBY_BRANCH,
+        timezone: {
+          name: DateTime.now().zone.name,
+        },
         form_id: "Integrations-sidebar-ReachOut-form",
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),

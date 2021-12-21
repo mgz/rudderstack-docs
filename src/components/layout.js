@@ -248,7 +248,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
                                 )
                               }
                             >
-                              Go to docs
+                              Go to Docs
                             </span>
                           </Link>
                         )}

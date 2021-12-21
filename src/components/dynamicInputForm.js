@@ -8,6 +8,8 @@ import { faSquare } from "@fortawesome/free-regular-svg-icons/faSquare"
 import Select from "react-select"
 import Cookies from "universal-cookie"
 
+const { DateTime } = require("luxon")
+
 library.add(faCheckSquare, faSquare)
 
 const DynamicInputForm = ({
@@ -160,6 +162,9 @@ const DynamicInputForm = ({
           form_id: form_id,
           conversion_page: document.title,
           branch: process.env.GATSBY_BRANCH,
+          timezone: {
+            name: DateTime.now().zone.name,
+          },
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
@@ -185,6 +190,9 @@ const DynamicInputForm = ({
           category: section_id,
           conversion_page: document.title,
           branch: process.env.GATSBY_BRANCH,
+          timezone: {
+            name: DateTime.now().zone.name,
+          },
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
@@ -208,6 +216,9 @@ const DynamicInputForm = ({
           ...data,
           form_id: form_id,
           branch: process.env.GATSBY_BRANCH,
+          timezone: {
+            name: DateTime.now().zone.name,
+          },
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
