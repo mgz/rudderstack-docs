@@ -40,7 +40,7 @@ const MainNavigationMenuLink = props => {
           return (
             <div className="lg:pt-2">
               <div
-                className={`sub-menu lg:group-hover:grid relative lg:absolute lg:shadow-md  py-1 lg:py-0 z-40  mx-auto ${
+                className={`sub-menu lg:group-hover:grid lg:absolute lg:shadow-md  py-1 lg:py-0 z-40  mx-auto ${
                   i >= 3 ? "submenu-align" : ""
                 } lg:place-items-left ${
                  props.currMenuIndex === i ? `flex` : `flex hidden`
