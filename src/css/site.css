@@ -1161,6 +1161,7 @@ top: -60px;
   bottom: -5px;
   background: #96f3f7;
   height: 3px;
+  border-radius: 18px;
   transition-property: width;
   transition-duration: 0.3s;
   transition-timing-function: ease-out;
