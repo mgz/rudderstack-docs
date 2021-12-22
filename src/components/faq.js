@@ -58,14 +58,14 @@ const Faq = ({ title, subTitle, isBlockContent, accordions = [] }) => {
           <script type="application/ld+json">{JSON.stringify(ldJson)}</script>
         )}
       </Helmet>
-      <div className="max-w-screen-lg mx-auto flex flex-wrap m-auto">
-        <div className="w-full md:w-1/4 px-4 md:pl-0 md:pr-10">
-          <h2 className="text-5xl font-bold mb-2">{title}</h2>
-          <h4 className="text-2xl-2 font-bold pt-2 mb-12 md:mb-0">
+      <div className="max-w-screen-lg mx-auto flex flex-wrap justify-between">
+        <div className="md:pr-15">
+          <h2 className="text-5xl font-bold text-darkScheme-textPrimary">{title}</h2>
+          <h4 className="text-2xl-2 font-bold pt-2 mb-12 md:mb-0 text-darkScheme-textPrimary">
             {subTitle}
           </h4>
         </div>
-        <div className="w-full md:w-3/4 2xl:pr-44 xl:pr-28 lg:pr-28 mt-2">
+        <div className="mt-2 faq-accBox">
           {accordions.map((accordion, key) => (
             <Accordion
               title={accordion.title}

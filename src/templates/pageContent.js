@@ -32,7 +32,7 @@ const PageContent = ({ data, location }) => {
   // console.log("data", data)
 
   return (
-    <Layout location={location}>
+    <Layout location={location} darkTheme={true}>
       <Helmet>
         <title>{data.pagedata.meta_title || data.pagedata.title}</title>
         <meta
@@ -182,9 +182,10 @@ const PageContent = ({ data, location }) => {
 
             return (
               <section
-                className="bg-grayColor-BgGray py-10 pt-40 md:pt-44 relative font-custom"
+                className="section-gradient py-10 relative font-custom"
                 key={section._key}
               >
+                <span className="section-border absolute top-0 left-0 w-full block"></span>
                 <MigrationSpecialists />
                 <Faq
                   title={section.faqtitle}

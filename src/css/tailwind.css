@@ -47,50 +47,8 @@
   }
 }
 
-/* cards css */
-@media only screen and (min-width: 1024px) {
-  .pricing-plans:after {
-    content: "";
-    position: absolute;
-    right: -95%;
-    top: 16%;
-    width: 100%;
-    height: 1px;
-    border-top: 10px solid #fff;
-  }
-  .pricing-plans:before {
-    content: "";
-    position: absolute;
-    left: -95%;
-    top: 35%;
-    width: 100%;
-    height: 1px;
-    border-top: 10px solid #fff;
-  }
-  .proCard:before {
-    content: "";
-    position: absolute;
-    right: -25px;
-    top: 34%;
-    width: 50px;
-    height: 1px;
-    border-top: 10px solid #fff;
-  }
-  .proCard:after {
-    content: "";
-    position: absolute;
-    left: -25px;
-    top: 15%;
-    width: 50px;
-    height: 1px;
-    border-top: 10px solid #fff;
-  }
-}
 
 /* Faq Section Css */
-.faqcta {
-  background-color: #ffffff;
-}
 .accordion {
   border: none;
 }

@@ -12,13 +12,13 @@ function Accordion(props) {
   return (
     <div className="accordion__section">
       <button
-        className={`accordion pb-6 pl-4 ${setActive}`}
+        className={`accordion pb-6 ${setActive}`}
         onClick={toggleAccordion}
       >
-        <p className="accordion__title text-xl font-bold">{props.title}</p>
+        <p className="accordion__title text-xl font-bold text-darkScheme-textPrimary">{props.title}</p>
       </button>
       {setActive === "active" && (
-        <div ref={content} className="accordion__content pb-12 pl-4">
+        <div ref={content} className="accordion__content">
           {props.isBlockContent && (
             <div className="accordion__text frtxt-contnt font-medium text-lg">
               <PortableText blocks={props.content} trackSectionHeader={props.title} />

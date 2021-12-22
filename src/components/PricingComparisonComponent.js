@@ -93,37 +93,38 @@ const PricingComparisonComponent = props => {
   return (
     <section
       id="pricing_comparison"
-      className="bg-white plans-section pb-20 md:pb-20 relative"
+      className="plans-section py-19 relative"
     >
-      <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-20 md:pb-20 text-center">
-        <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8">
+      <span className="section-border absolute top-0 left-0 w-full block"></span>
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-darkScheme-textPrimary font-bold text-5xl">
           {props.title}
         </h2>
 
-        <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
-          <table className="pricing-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
+        <div className="hidden sm:block my-14">
+          <table className="pricing-table relative sm:w-full table-fixed font-custom text-grayColor-custom">
             <thead>
               <tr>
                 <th
                   className={`${
                     sticky ? "sticky" : ""
-                  } top-14 lg:top-24 bg-white z-10`}
+                  } z-10`}
                 >
                   {""}
                 </th>
 
-                {props.pricing_columns.map(col => {
+                {props.pricing_columns.map((col, i) => {
                   return (
                     <th
                       key={col._key}
                       className={`${
                         sticky ? "sticky" : ""
-                      } top-14 lg:top-24 bg-white z-10`}
+                      } z-10`}
                     >
                       <div className="ellipse flex items-center justify-center h-20">
                         <Image props={col.image.asset._ref} />
                       </div>
-                      <div className="text-primary">
+                      <div className={`${i === 0 ? 'text-darkScheme-textPrimary' : 'text-darkScheme-btnPrimaryBg'} text-3xl-3`}>
                         {col.title}
                         <br />
                         <span className="text-lg text-grayColor-lighter">
@@ -147,7 +148,7 @@ const PricingComparisonComponent = props => {
                       </tr>
                     )}
                     <tr key={group.group}>
-                      <td className="p-4 text-primary text-lg text-left uppercase font-bold col-span-3">
+                      <td className="p-4 text-darkScheme-btnSecondaryBg text-2xl text-left uppercase font-bold">
                         {group.group}
                       </td>
                     </tr>
@@ -158,27 +159,24 @@ const PricingComparisonComponent = props => {
                           key={row.title}
                           className={`${
                             l_index % 2 === 0
-                              ? "bg-grayColor-BgGray"
-                              : "bg-whiteColor-custom"
+                              ? "grad-bg rounded-2xl"
+                              : "bg-transparent"
                           }`}
                         >
-                          <td className="p-4 text-base font-medium text-left w-2/4">
+                          <td className="p-4 text-lg text-left w-2/4 rounded-tl-2xl rounded-bl-2xl text-darkScheme-textPrimary opacity-50">
                             {row.title}
                           </td>
 
                           <td className="text-base py-4 px-12 w-1/4">
                             {row.free_val === "<<CHECK>>" && (
-                              <span className={`check-icon`} />
+                              <span className={`check-icon check-comparison`} />
                             )}
                             {row.free_val === "<<UNCHECK>>" && (
-                              <StaticImage
-                                src="../images/Line 2.svg"
-                                alt="Line"
-                              />
+                              <span className={`line-image`} />
                             )}
                             {row.free_val !== "<<UNCHECK>>" &&
                               row.free_val !== "<<CHECK>>" && (
-                                <span className="font-normal">
+                                <span className="font-normal text-darkScheme-textPrimary">
                                   {row.free_val}
                                 </span>
                               )}
@@ -186,36 +184,30 @@ const PricingComparisonComponent = props => {
 
                           <td className="text-base py-4 px-12 w-1/4">
                             {row.pro_val === "<<CHECK>>" && (
-                              <span className={`check-icon`} />
+                              <span className={`check-icon check-comparison`} />
                             )}
                             {row.pro_val === "<<UNCHECK>>" && (
-                              <StaticImage
-                                src="../images/Line 2.svg"
-                                alt="Line"
-                              />
+                              <span className={`line-image`} />
                             )}
                             {row.pro_val !== "<<UNCHECK>>" &&
                               row.pro_val !== "<<CHECK>>" && (
-                                <span className="font-normal">
+                                <span className="font-normal text-darkScheme-textPrimary">
                                   {row.pro_val}
                                 </span>
                               )}
                           </td>
 
-                          <td className="text-base py-4 px-12 w-1/4">
+                          <td className="text-base py-4 px-12 w-1/4 rounded-br-2xl rounded-tr-2xl">
                             {row.enterprice_val === "<<CHECK>>" && (
-                              <span className={`check-icon`} />
+                              <span className={`check-icon check-comparison`} />
                             )}
                             {row.enterprice_val === "<<UNCHECK>>" && (
-                              <StaticImage
-                                src="../images/Line 2.svg"
-                                alt="Line"
-                              />
+                              <span className={`line-image`} />
                             )}
                             {row.enterprice_val !== "<<UNCHECK>>" &&
                               row.enterprice_val !== "<<CHECK>>" &&
                               row.enterprice_val !== "TALKTOSALES" && (
-                                <span className="font-normal ">
+                                <span className="font-normal text-darkScheme-textPrimary">
                                   {row.enterprice_val}
                                 </span>
                               )}
@@ -250,14 +242,14 @@ const PricingComparisonComponent = props => {
             return (
               <div className="freeplan mt-16" key={oo._key}>
                 <div className="plan-header bg-white border border-grayColor-priceCardBorder rounded-2xl shadow-md sticky top-14 z-10">
-                  <div class="p-6 md:pt-8 md:pb-4">
+                  <div className="p-6 md:pt-8 md:pb-4">
                     <div className="ellipse flex items-center justify-center h-20">
                       <Image props={oo.image.asset._ref} />
                     </div>
-                    <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-midnight">
+                    <h3 className="font-medium leading-tight font-bold text-4xl text-blueNew-midnight">
                       {oo.title}
                     </h3>
-                    <div class="text-grayColor-lighter leading-6 text-sm py-2">
+                    <div className="text-grayColor-lighter leading-6 text-sm py-2">
                       {oo.subtitle}
                     </div>
                     {(() => {
@@ -323,7 +315,7 @@ const PricingComparisonComponent = props => {
                               } text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-4`}
                             >
                               {/* {(l_compare_value === "<<CHECK>>" || l_compare_value !== "<<UNCHECK>>") && ( */}
-                              <span className={`check-icon`} />
+                              <span className={`check-icon check-comparison`} />
                               {/* )} */}
                               <div className="flex flex-col pl-4">
                                 {row.title}
@@ -331,7 +323,7 @@ const PricingComparisonComponent = props => {
                                   {l_compare_value !== "<<UNCHECK>>" &&
                                     l_compare_value !== "<<CHECK>>" &&
                                     l_compare_value !== "TALKTOSALES" && (
-                                      <span className="font-normal">
+                                      <span className="font-normal text-darkScheme-textPrimary">
                                         {l_compare_value}
                                       </span>
                                     )}
