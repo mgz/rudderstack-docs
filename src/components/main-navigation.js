@@ -204,7 +204,7 @@ const MainNavigation = props => {
                         )
                       }
                     >
-                      <span className="border border-darkScheme-textPrimary bg-transparent text-darkScheme-textPrimary  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack">
+                      <span className="border border-darkScheme-btnPrimaryBg bg-darkScheme-btnPrimaryBg text-darkScheme-textBlack  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg hover:bg-transparent hover:text-darkScheme-btnPrimaryBg">
                         {trybtn.btntext}
                       </span>
                     </a>

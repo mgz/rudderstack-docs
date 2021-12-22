@@ -7,7 +7,7 @@ function OurLogo(props) {
   const logoRefs = useRef([]);
   const tlDelay = 1
   let winWidth = window.innerWidth;
-  console.log('Win width', winWidth);
+  /* console.log('Win width', winWidth); */
 
   useEffect(() => {
     let tl;
