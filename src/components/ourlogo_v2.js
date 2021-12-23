@@ -1,6 +1,7 @@
 import React, {useRef, useEffect} from "react"
 import Image from "./image"
 import gsap from 'gsap';
+import { Power4 } from "gsap";
 import { isMobile } from "react-device-detect";
 
 function OurLogo(props) {
@@ -59,6 +60,7 @@ function OurLogo(props) {
         delay: tlDelay,
         defaults: {
           duration: 1,
+          ease: Power4.easeInOut
         },
         onStart: () => {},
         onComplete: () => {

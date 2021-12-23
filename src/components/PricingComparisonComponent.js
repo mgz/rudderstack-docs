@@ -108,7 +108,7 @@ const PricingComparisonComponent = props => {
                 <th
                   className={`${
                     sticky ? "sticky" : ""
-                  } z-10`}
+                  } z-10 sticky-pricing-banner`}
                 >
                   {""}
                 </th>
@@ -119,12 +119,12 @@ const PricingComparisonComponent = props => {
                       key={col._key}
                       className={`${
                         sticky ? "sticky" : ""
-                      } z-10`}
+                      } z-10 sticky-pricing-banner`}
                     >
                       <div className="ellipse flex items-center justify-center h-20">
                         <Image props={col.image.asset._ref} />
                       </div>
-                      <div className={`${i === 0 ? 'text-darkScheme-textPrimary' : 'text-darkScheme-btnPrimaryBg'} text-3xl-3`}>
+                      <div className={`text-darkScheme-textPrimary text-3xl-3`}>
                         {col.title}
                         <br />
                         <span className="text-lg text-grayColor-lighter">
@@ -148,7 +148,7 @@ const PricingComparisonComponent = props => {
                       </tr>
                     )}
                     <tr key={group.group}>
-                      <td className="p-4 text-darkScheme-btnSecondaryBg text-2xl text-left uppercase font-bold">
+                      <td className="p-4 text-darkScheme-btnSecondaryBg text-2xl text-left uppercase font-bold" colSpan={"2"}>
                         {group.group}
                       </td>
                     </tr>
@@ -215,7 +215,7 @@ const PricingComparisonComponent = props => {
                             {row.enterprice_val === "TALKTOSALES" && (
                               <Link
                                 to="/enterprise-quote"
-                                className="text-sm  leading-sm font-bold mt-3 lr-icon mx-auto"
+                                className="text-sm  leading-sm font-bold py-2 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary mx-auto"
                                 target="_blank"
                                 rel="noreferrer"
                                 onClick={e =>
@@ -241,12 +241,12 @@ const PricingComparisonComponent = props => {
             // console.log(oo)
             return (
               <div className="freeplan mt-16" key={oo._key}>
-                <div className="plan-header bg-white border border-grayColor-priceCardBorder rounded-2xl shadow-md sticky top-14 z-10">
+                <div className="plan-header hero-section sticky top-14 z-10">
                   <div className="p-6 md:pt-8 md:pb-4">
                     <div className="ellipse flex items-center justify-center h-20">
                       <Image props={oo.image.asset._ref} />
                     </div>
-                    <h3 className="font-medium leading-tight font-bold text-4xl text-blueNew-midnight">
+                    <h3 className="font-medium leading-tight text-4xl text-darkScheme-textPrimary">
                       {oo.title}
                     </h3>
                     <div className="text-grayColor-lighter leading-6 text-sm py-2">
@@ -291,7 +291,7 @@ const PricingComparisonComponent = props => {
                   {pricingComparisionData.map((group, idx) => {
                     return (
                       <React.Fragment key={group.group}>
-                        <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+                        <div className="text-darkScheme-btnSecondaryBg text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                           {group.group}
                         </div>
                         {group.nodes.map((row, l_index) => {
@@ -312,7 +312,7 @@ const PricingComparisonComponent = props => {
                                 l_compare_value === "<<UNCHECK>>"
                                   ? "hidden"
                                   : "block"
-                              } text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-4`}
+                              } text-lg text-left font-medium text-darkScheme-textPrimary leading-7 flex py-3 pr-4`}
                             >
                               {/* {(l_compare_value === "<<CHECK>>" || l_compare_value !== "<<UNCHECK>>") && ( */}
                               <span className={`check-icon check-comparison`} />
@@ -331,7 +331,7 @@ const PricingComparisonComponent = props => {
                                 {l_compare_value === "TALKTOSALES" && (
                                   <Link
                                     to="/enterprise-quote"
-                                    className="text-sm  leading-sm font-bold mt-3 lr-icon "
+                                    className="text-sm  leading-sm font-bold mt-3 py-3 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary"
                                     target="_blank"
                                     rel="noreferrer"
                                     onClick={e =>

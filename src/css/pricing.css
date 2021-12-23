@@ -86,3 +86,7 @@
     color: rgba(255, 255, 255, 0.7);
     line-height: 36px;
 }
+.sticky-pricing-banner.sticky{
+    top: 90px;
+    background: #070e1f;
+}
