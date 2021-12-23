@@ -6,6 +6,7 @@ import { rudderslabTrackOnClick } from "../utils/common"
 
 
 const LeftRightComponentEdgesAligned = props => {
+  console.log('Props', props);
   return (
     <section className="py-19 relative">
       {/* <div className="background-gradient-circles absolute top-2/4 right-1/4 keep-rotate"></div>
@@ -99,7 +100,7 @@ const LeftRightComponentEdgesAligned = props => {
                       href={props.leftrightimageblock[idx].addlink.cmnlink}
                       className="learn-more mt-4 text-darkScheme-textPrimary font-bold inline-block relative"
                       onClick={e =>
-                        rudderslabTrackOnClick("link", props.right_section.title, e)
+                        rudderslabTrackOnClick("link", props.leftrightimageblock[idx].title, e)
                       }
                     >
                       <span className="learn-more-text inline-block md:text-2xl text-lg">

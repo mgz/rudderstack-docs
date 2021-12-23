@@ -312,7 +312,7 @@ const LeftRightImgCnt_V2 = props => {
                                 )
                               })}
                           </div>
-                          <div className="mt-4 flex items-center">
+                          <div>
                             {(() => {
                               if (linktext !== "") {
                                 if (extralink === true) {
@@ -322,7 +322,7 @@ const LeftRightImgCnt_V2 = props => {
                                         rudderslabTrackOnClick("link", title, e)
                                       }
                                       href={linkurl}
-                                      className={`font-bold leading-normal text-sm ${
+                                      className={`font-bold leading-normal text-sm mt-4 flex items-center ${
                                         link_display_as_button
                                           ? "btn-primary-lg"
                                           : ""
@@ -340,7 +340,7 @@ const LeftRightImgCnt_V2 = props => {
                                 } else {
                                   return (
                                     <span
-                                      className={`font-bold leading-normal text-sm ${
+                                      className={`font-bold leading-normal text-sm mt-4 flex items-center ${
                                         link_display_as_button
                                           ? "btn-primary-lg"
                                           : ""
@@ -513,7 +513,7 @@ const LeftRightImgCnt_V2 = props => {
                               )
                             })}
                         </div>
-                        <div className="mt-4 flex items-center">
+                        <div className="">
                           {(() => {
                             if (linktext !== "") {
                               if (extralink === true) {
@@ -523,7 +523,7 @@ const LeftRightImgCnt_V2 = props => {
                                     onClick={e => {
                                       rudderslabTrackOnClick("link", title, e)
                                     }}
-                                    className={`font-bold leading-normal text-sm ${
+                                    className={`font-bold leading-normal text-sm mt-4 flex items-center ${
                                       link_display_as_button
                                         ? "btn-primary-lg"
                                         : ""
@@ -541,7 +541,7 @@ const LeftRightImgCnt_V2 = props => {
                               } else {
                                 return (
                                   <span
-                                    className={`font-bold leading-normal text-sm ${
+                                    className={`font-bold leading-normal text-sm mt-4 flex items-center ${
                                       link_display_as_button
                                         ? "btn-primary-lg"
                                         : ""
