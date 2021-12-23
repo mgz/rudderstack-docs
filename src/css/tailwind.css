@@ -173,11 +173,11 @@ h2.font-bold{
   margin-left: 30px;
   margin-top: 2px;
 }
-.faq-cta {
+/* .faq-cta {
   --tw-shadow: 0 1px 24px rgba(0, 0, 0, 0.05), 0 1px 24px rgba(0, 0, 0, 0.05);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
+} */
 .agreementContent div.font-bold{
   margin-top: 20px;
 }

@@ -65,12 +65,12 @@ const Page = props => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const sections = gsap.utils.toArray('.triggers');
-    console.log('Sections', sections);
+    /* console.log('Sections', sections); */
     sections.forEach(section => {
       gsap.set(section, {autoAlpha: 0});
       ScrollTrigger.create({
         trigger: section,
-        start: "top 20%",
+        start: "top 60%",
         end: "bottom 20%",
         markers: false,
         toggleActions: "play none none none",

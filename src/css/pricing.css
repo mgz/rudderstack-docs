@@ -6,6 +6,9 @@
     /* Note: backdrop-filter has minimal browser support */
     border-radius: 24px;
 }
+.pricing-plans::before, .pricing-plans::after, .proCard:before, .proCard:after{
+    display: none;
+}
 .grad-bg{
     background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.21) 100%);
 }
