@@ -622,6 +622,9 @@ body {
 .frtxt-contnt p:last-of-type {
   margin-bottom: 25px;
 }
+.leftrightimgcontent-items .frtxt-contnt p:last-of-type{
+  margin-bottom: 0px;
+}
 .hero-content p {
   color: #17176e;
   font-size: 22px;

@@ -99,7 +99,7 @@ const LeftRightComponentEdgesAligned = props => {
                       href={props.leftrightimageblock[idx].addlink.cmnlink}
                       className="learn-more mt-4 text-darkScheme-textPrimary font-bold inline-block relative"
                       onClick={e =>
-                        rudderslabTrackOnClick("link", props.right_section.title, e)
+                        rudderslabTrackOnClick("link", props.leftrightimageblock[idx].title, e)
                       }
                     >
                       <span className="learn-more-text inline-block md:text-2xl text-lg">
