@@ -15,7 +15,7 @@ const IntegrationGetMoreOutOf = ({ data }) => {
     renderButton = (
       <a
         href={data.freetextctc.btnlink}
-        className="btn-primary-lg text-white"
+        className="btn-primary-lg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg"
         onClick={e => rudderslabTrackOnClick("button", data.freetexttitle, e)}
       >
         {data.freetextctc.btntext}
@@ -23,7 +23,7 @@ const IntegrationGetMoreOutOf = ({ data }) => {
     )
   } else if (data.freetextctc && data.freetextctc.btntext !== "") {
     renderButton = (
-      <span className="btn-primary-lg text-white">
+      <span className="btn-primary-lg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg">
         <Link
           to={data.freetextctc.btnlink}
           onClick={e => rudderslabTrackOnClick("button", data.freetexttitle, e)}

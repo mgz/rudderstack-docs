@@ -16,14 +16,14 @@ function IntegrationHero({ data }) {
       <a
         href={data.herocta.btnlink}
         onClick={e => rudderslabTrackOnClick("button", data.herotitle, e)}
-        className="btn-primary-lg text-white"
+        className="btn-primary-lg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg"
       >
         {data.herocta.btntext}
       </a>
     )
   } else if (data.herocta && data.herocta.btntext !== "") {
     renderButton = (
-      <span className="btn-primary-lg text-white">
+      <span className="btn-primary-lg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg">
         <Link
           onClick={e => rudderslabTrackOnClick("button", data.herotitle, e)}
           to={data.herocta.btnlink}
@@ -35,7 +35,7 @@ function IntegrationHero({ data }) {
   }
 
   return (
-    <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative banner-section">
+    <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-40 mx-auto relative banner-section integration-hero">
       <div className="flex flex-col items-center justify-center mx-auto lg:flex-row lg:p-0 ">
         <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content arrow-list-items">
           <h2 className="mb-8 md:my-4 md:text-6xl text-5xl font-bold leading-tight text-blueNew-midnight">
