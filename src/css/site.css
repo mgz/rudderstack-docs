@@ -631,6 +631,9 @@ body {
 .frtxt-contnt p:last-of-type {
   margin-bottom: 25px;
 }
+.leftrightimgcontent-items .frtxt-contnt p:last-of-type{
+  margin-bottom: 0px;
+}
 .hero-content p {
   color: #17176e;
   font-size: 22px;
@@ -1271,6 +1274,14 @@ top: -60px;
 .lrlm-icon {
   vertical-align: -4px;
 }
+form .disableActive{
+  @apply bg-grayColor-custom;
+  @apply text-darkScheme-textPrimary;
+  @apply cursor-not-allowed;
+  @apply border-grayColor-custom;
+  @apply hover:text-darkScheme-textPrimary;
+  @apply hover:bg-grayColor-custom;
+}
 
 @media only screen and (min-width: 1024px) {
   .submenu-align {
@@ -1504,5 +1515,10 @@ top: -60px;
   }
   .code-ed-links-wrapper .code-ed-links {
     width: 100% !important;
+  }
+}
+@media only screen and (min-width: 2800px){
+  .out-gradient-wrapper{
+    max-width: 300px;
   }
 }

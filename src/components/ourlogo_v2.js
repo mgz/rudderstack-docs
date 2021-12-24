@@ -1,6 +1,7 @@
 import React, {useRef, useEffect} from "react"
 import Image from "./image"
 import gsap from 'gsap';
+import { Power4 } from "gsap";
 import { isMobile } from "react-device-detect";
 
 function OurLogo(props) {
@@ -59,11 +60,12 @@ function OurLogo(props) {
         delay: tlDelay,
         defaults: {
           duration: 1,
+          ease: Power4.easeInOut
         },
         onStart: () => {},
         onComplete: () => {
           //resetArray()
-          gsap.delayedCall(1, animateLogos)
+          gsap.delayedCall(0.5, animateLogos)
         },
       })
 
@@ -107,8 +109,8 @@ function OurLogo(props) {
         })
       } */
     tl.to(logo[0], {
-      yPercent: -100,
-      opacity: 0
+      opacity: 0,
+      yPercent: -100
     },`+=${tlDelay}`).to(logo[5], {
       yPercent: -100,
     }, '<').set(logo[0], {
@@ -117,8 +119,8 @@ function OurLogo(props) {
     })
 
     tl.to(logo[2], {
-      yPercent: -100,
-      opacity: 0
+      opacity: 0,
+      yPercent: -100
     },`+=${tlDelay}`).to(logo[7], {
       yPercent: -100
     }, '<').set(logo[2], {
@@ -127,8 +129,8 @@ function OurLogo(props) {
     })
 
     tl.to(logo[1], {
-      yPercent: -100,
-      opacity: 0
+      opacity: 0,
+      yPercent: -100
     },`+=${tlDelay}`).to(logo[6], {
       yPercent: -100
     }, '<').set(logo[1], {
@@ -137,8 +139,8 @@ function OurLogo(props) {
     })
 
     tl.to(logo[3], {
-      yPercent: -100,
-      opacity: 0
+      opacity: 0,
+      yPercent: -100
     },`+=${tlDelay}`).to(logo[8], {
       yPercent: -100
     }, '<').set(logo[3], {
@@ -147,8 +149,8 @@ function OurLogo(props) {
     })
 
     tl.to(logo[4], {
-      yPercent: -100,
-      opacity: 0
+      opacity: 0,
+      yPercent: -100
     },`+=${tlDelay}`).to(logo[9], {
       yPercent: -100
     }, '<').set(logo[4], {
@@ -157,8 +159,8 @@ function OurLogo(props) {
     })
 
     tl.to(logo[6], {
-      yPercent: -200,
-      opacity: 0
+      opacity: 0,
+      yPercent: -200
     },`+=${tlDelay}`).to(logo[1], {
       yPercent: 0
     }, '<').set(logo[6], {
@@ -167,8 +169,8 @@ function OurLogo(props) {
     })
 
     tl.to(logo[7], {
-      yPercent: -200,
-      opacity: 0
+      opacity: 0,
+      yPercent: -200
     },`+=${tlDelay}`).to(logo[2], {
       yPercent: 0
     }, '<').set(logo[7], {
@@ -177,8 +179,8 @@ function OurLogo(props) {
     })
 
     tl.to(logo[5], {
-      yPercent: -200,
-      opacity: 0
+      opacity: 0,
+      yPercent: -200
     },`+=${tlDelay}`).to(logo[0], {
       yPercent: 0
     }, '<').set(logo[5], {
@@ -187,8 +189,8 @@ function OurLogo(props) {
     })
 
     tl.to(logo[9], {
-      yPercent: -200,
-      opacity: 0
+      opacity: 0,
+      yPercent: -200
     },`+=${tlDelay}`).to(logo[4], {
       yPercent: 0
     }, '<').set(logo[9], {
@@ -197,8 +199,8 @@ function OurLogo(props) {
     })
 
     tl.to(logo[8], {
-      yPercent: -200,
-      opacity: 0
+      opacity: 0,
+      yPercent: -200
     },`+=${tlDelay}`).to(logo[3], {
       yPercent: 0
     }, '<').set(logo[8], {
