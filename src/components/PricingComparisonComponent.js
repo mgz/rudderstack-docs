@@ -258,7 +258,7 @@ const PricingComparisonComponent = props => {
                           <a
                             className={
                               (oo.mobile_button.btnhiglight === true
-                                ? "btn-primary-sm"
+                                ? "btn-primary-sm bg-darkScheme-btnPrimaryBg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg hover:bg-transparent"
                                 : "btn-secondary-sm") +
                               ` inline-block font-bold leading-6`
                             }
@@ -273,7 +273,7 @@ const PricingComparisonComponent = props => {
                             <span
                               className={
                                 (oo.mobile_button.btnhiglight === true
-                                  ? "btn-primary-sm"
+                                  ? "btn-primary-sm bg-darkScheme-btnPrimaryBg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg hover:bg-transparent"
                                   : "btn-secondary-sm") +
                                 ` inline-block font-bold leading-6`
                               }
