@@ -101,7 +101,7 @@ const PricingComparisonComponent = props => {
           {props.title}
         </h2>
 
-        <div className="hidden sm:block my-14">
+        <div className="hidden lg:block my-14 px-4">
           <table className="pricing-table relative sm:w-full table-fixed font-custom text-grayColor-custom">
             <thead>
               <tr>
@@ -241,7 +241,7 @@ const PricingComparisonComponent = props => {
             // console.log(oo)
             return (
               <div className="freeplan mt-16" key={oo._key}>
-                <div className="plan-header hero-section sticky top-14 z-10">
+                <div className="plan-header hero-section sticky z-10">
                   <div className="p-6 md:pt-8 md:pb-4">
                     <div className="ellipse flex items-center justify-center h-20">
                       <Image props={oo.image.asset._ref} />
@@ -311,8 +311,8 @@ const PricingComparisonComponent = props => {
                               className={`${
                                 l_compare_value === "<<UNCHECK>>"
                                   ? "hidden"
-                                  : "block"
-                              } text-lg text-left font-medium text-darkScheme-textPrimary leading-7 flex py-3 pr-4`}
+                                  : "flex"
+                              } text-lg text-left font-medium text-darkScheme-textPrimary leading-7 py-3 pr-4`}
                             >
                               {/* {(l_compare_value === "<<CHECK>>" || l_compare_value !== "<<UNCHECK>>") && ( */}
                               <span className={`check-icon check-comparison`} />

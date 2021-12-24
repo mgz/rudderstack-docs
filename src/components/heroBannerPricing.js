@@ -51,7 +51,7 @@ const HeroBannerPricing = props => {
                           {item.smalltitle}
                         </div>
                         <div className="text-left">
-                          <ul className="h-52 text-lg">
+                          <ul className="h-56 text-lg">
                             {item.pricing_features.map((rr, idx) => {
                               return (
                                 <li

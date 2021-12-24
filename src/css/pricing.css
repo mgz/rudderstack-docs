@@ -90,3 +90,8 @@
     top: 90px;
     background: #070e1f;
 }
+@media only screen and (max-width: 1024px){
+    .sticky-pricing-banner.sticky, .plan-header{
+        top: 55px;
+    }
+}
