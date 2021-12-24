@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react"
 import createMovie from "codemirror-movie"
 import { Link } from "gatsby"
 import { isMobile, isSafari } from "react-device-detect";
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 /* import "codemirror/lib/codemirror.css" */
 
 const CodeEditor = props => {
@@ -100,10 +102,10 @@ const CodeEditor = props => {
 
     let el = document.getElementById("codeEditorBlock")
 
-    function isInViewPort(element) {
+    /* function isInViewPort(element) {
       // Get the bounding client rectangle position in the viewport
       let bounding = element.getBoundingClientRect();
-      /* console.log('Bounding rect', bounding); */
+      /* console.log('Bounding rect', bounding);
 
       // Checking part. Here the code checks if it's *fully* visible
       // Edit this part if you just want a partial visibility
@@ -119,21 +121,36 @@ const CodeEditor = props => {
       } else {
         return false
       }
-    }
+    } */
 
     if(!isMobile){
-      window.addEventListener(
+      gsap.registerPlugin(ScrollTrigger);
+      /* window.addEventListener(
         "scroll",
         function (event) {
           if (isInViewPort(el)) {
-            /* console.log('In viewport'); */
             setEditorFlag(true);
           }else{
-            /* console.log('out of viewport'); */
             setEditorFlag(false);
           }
         }
-      )
+      ) */
+      ScrollTrigger.create({
+        trigger: "#codeEditorBlock",
+        start: "top 80%",
+        onEnter: () => {
+          setEditorFlag(true)
+        },
+        onLeave: () => {
+          setEditorFlag(false)
+        },
+        onEnterBack: () => {
+          setEditorFlag(true)
+        },
+        onLeaveBack: () => {
+          setEditorFlag(false)
+        },
+      })
     }
   }, [])
 

@@ -6,7 +6,7 @@ import { rudderslabTrackOnClick } from "../utils/common"
 import { StaticImage } from "gatsby-plugin-image"
 
 const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
-  // console.log('ContentIntegrationConnectionSpreadSheets',data)
+  // console.log("ContentIntegrationConnectionSpreadSheets", data)
   let page_data = data.override_integration_connection
     ? data.override_integration_connection
     : data.integration_connection
@@ -31,7 +31,10 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
             </h1>
             <p className="text-lg text-grayColor-custom font-normal mb-4">
               Don’t go through the pain of direct integration. RudderStack’s{" "}
-              {page_data.sourceIntegration} makes it easy to send data from your{" "}
+              {page_data.sourceIntegrationOverridableText !== "NA"
+                ? page_data.sourceIntegrationOverridableText
+                : page_data.sourceIntegration}{" "}
+              makes it easy to send data from your{" "}
               {page_data.sourceIntegrationContext} to{" "}
               {page_data.destinationIntegration} ...and all of your other cloud
               tools.
@@ -94,7 +97,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 <div
                   className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-right-${page_data.imageHeaderSource}`}
                 >
-                  <div className="flex justify-center align-center h-full">
+                  <div className="flex justify-center align-center h-full ic-conn-source-hero">
                     <img
                       // src={page_data.destinationLogoImgUrl}
                       src={page_data.destinationLogoIconUrl}
@@ -318,7 +321,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                     <div
                       className={`bg-whiteColor-custom rounded-xl integration-connection-hero-logo-${page_data.imageHeaderSource}`}
                     >
-                      <div className="flex justify-center align-center h-full">
+                      <div className="flex justify-center align-center h-full ic-conn-source-hero">
                         <img
                           // src={
                           //   page_data.destinationLogoImgUrl
@@ -342,21 +345,30 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
         <div className="flex flex-col items-center md:gap-6 xl:gap-12 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
           <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-5/12 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
             <h2 className="text-primary mb-0 md:mb-8 md:my-4 text-2xl-2 font-bold leading-tight">
-              Easy {page_data.sourceIntegration} to{" "}
-              {page_data.destinationIntegration} Integration with RudderStack
+              Easy{" "}
+              {page_data.sourceIntegrationOverridableText !== "NA"
+                ? page_data.sourceIntegrationOverridableText
+                : page_data.sourceIntegration}{" "}
+              to {page_data.destinationIntegration} Integration with RudderStack
             </h2>
             <div className="py-4">
               <p className="text-lg text-grayColor-custom font-normal">
-                RudderStack’s open source {page_data.sourceIntegration} allows
-                you to integrate RudderStack with your{" "}
+                RudderStack’s open source{" "}
+                {page_data.sourceIntegrationOverridableText !== "NA"
+                  ? page_data.sourceIntegrationOverridableText
+                  : page_data.sourceIntegration}{" "}
+                allows you to integrate RudderStack with your{" "}
                 {page_data.sourceIntegrationContext} to track event data and
                 automatically send it to {page_data.destinationIntegration}.
                 <br />
                 <br />
-                With the RudderStack {page_data.sourceIntegration}, you do not
-                have to worry about having to learn, test, implement or deal
-                with changes in a new API and multiple endpoints every time
-                someone asks for a new integration.
+                With the RudderStack{" "}
+                {page_data.sourceIntegrationOverridableText !== "NA"
+                  ? page_data.sourceIntegrationOverridableText
+                  : page_data.sourceIntegration}
+                , you do not have to worry about having to learn, test,
+                implement or deal with changes in a new API and multiple
+                endpoints every time someone asks for a new integration.
               </p>
             </div>
 
@@ -727,6 +739,7 @@ export const query = graphql`
       useCaseHeader3
       ctaButtonDestination
       ctaButtonSource
+      sourceIntegrationOverridableText
     }
 
     override_integration_connection: googleSpreadsheetR1OverrideRedRudderstackIcData(
@@ -776,6 +789,7 @@ export const query = graphql`
       useCaseHeader3
       ctaButtonDestination
       ctaButtonSource
+      sourceIntegrationOverridableText
     }
   }
 `

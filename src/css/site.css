@@ -19,7 +19,7 @@
 body {
   /* background: linear-gradient(180deg, #e3f1f1 0%, rgba(238, 244, 245, 0) 100%)
     no-repeat !important; */
-    /* transform:translate3d(0,0,0);
+  /* transform:translate3d(0,0,0);
     -webkit-transform:translate3d(0,0,0); */
 }
 .bg-hero-pattern {
@@ -104,6 +104,11 @@ body {
   background-position: bottom;
   background-size: cover;
 }
+.ic-conn-source-hero {
+  border-width: 7px;
+  border-radius: 16px;
+  border-color: #99f2f3;
+}
 
 .gradient-enable {
   /* background-image: url("../images/banner-gradiant.jpg"); */
@@ -144,7 +149,7 @@ body {
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b96c3', endColorstr='#111168',GradientType=1 ); /* IE6-9 */
 }
-.cta-btn{
+.cta-btn {
   width: 225px;
   height: 50px;
 }
@@ -189,12 +194,12 @@ body {
   height: 100%;
 }
 
-.floating-testimonial-wrapper{
+.floating-testimonial-wrapper {
   background: radial-gradient(
     97.77% 308.45% at 0% 14.59%,
     rgba(7, 14, 31, 0.4) 0%,
     rgba(255, 255, 255, 0.04) 100%
-  )
+  );
 }
 
 .homepage-middle-bg-gradiant {
@@ -303,17 +308,21 @@ body {
   display: none;
 }
 .sub-menu {
-  background-color: #070E1F;
+  background-color: #070e1f;
   box-shadow: -5px 4px 9px rgba(134, 248, 224, 0.1);
   backdrop-filter: blur(48px);
   border-radius: 0px 0px 14px 14px;
   top: 90px;
 }
-.has-submenu:first-child .sub-menu{
+.has-submenu:first-child .sub-menu {
   max-height: 130px;
 }
-.inner-header-group{
-  background: radial-gradient(246.91% 449.78% at -0.59% 6.73%, rgba(8, 15, 32, 0.4) 0%, rgba(255, 255, 255, 0.02) 100%);
+.inner-header-group {
+  background: radial-gradient(
+    246.91% 449.78% at -0.59% 6.73%,
+    rgba(8, 15, 32, 0.4) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
 }
 .nav-separator {
   border-right: 1px solid rgba(255, 255, 255, 0.25);
@@ -335,7 +344,7 @@ body {
     rgba(214, 146, 246, 1) 100%
   );
 }
-.has-submenu:first-child .sub-menu{
+.has-submenu:first-child .sub-menu {
   max-height: 170px;
 }
 .lr-icon {
@@ -372,7 +381,7 @@ body {
   color: #ffffff;
 }
 .lr-icon-gradient:hover {
-  color: #86F8E0;
+  color: #86f8e0;
 }
 
 .lr-icon-gradient::before {
@@ -610,6 +619,9 @@ body {
 .frtxt-contnt p:last-of-type {
   margin-bottom: 25px;
 }
+.leftrightimgcontent-items .frtxt-contnt p:last-of-type{
+  margin-bottom: 0px;
+}
 .hero-content p {
   color: #17176e;
   font-size: 22px;
@@ -791,7 +803,7 @@ body {
 .main-logo img {
   filter: brightness(0) invert(1);
 }
-.main-logo svg{
+.main-logo svg {
   max-width: 100%;
 }
 .testimonials {
@@ -1002,7 +1014,7 @@ top: -60px;
   width: 4px;
   border-radius: 4px;
 }
-.why-rudderstack-wrapper{
+.why-rudderstack-wrapper {
   width: 806px;
   max-width: 100%;
 }
@@ -1326,8 +1338,16 @@ top: -60px;
   filter: blur(60px);
 }
 
-.lrlm-icon{
+.lrlm-icon {
   vertical-align: -4px;
+}
+form .disableActive{
+  @apply bg-grayColor-custom;
+  @apply text-darkScheme-textPrimary;
+  @apply cursor-not-allowed;
+  @apply border-grayColor-custom;
+  @apply hover:text-darkScheme-textPrimary;
+  @apply hover:bg-grayColor-custom;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -1381,7 +1401,7 @@ top: -60px;
   /* .logo-list .logo-item {
     width: 33.33% !important;
   } */
-  .cta-btn{
+  .cta-btn {
     width: 190px;
   }
 }
@@ -1395,7 +1415,7 @@ top: -60px;
   .banner-section .hero-content {
     width: 100% !important;
   }
-  .testimonial-quotes{
+  .testimonial-quotes {
     width: 120px;
   }
   .code-ed-links.mob-hide {
@@ -1412,11 +1432,12 @@ top: -60px;
   }
 }
 
-@media only screen and (max-width: 1023px){
-  .header-wrapper .menu, .header-wrapper {
+@media only screen and (max-width: 1023px) {
+  .header-wrapper .menu,
+  .header-wrapper {
     background: #070e1f;
   }
-  .header-wrapper{
+  .header-wrapper {
     border-radius: 0px 0px 16px 16px;
   }
   .has-submenu .mob-menu-link {
@@ -1499,10 +1520,10 @@ top: -60px;
   .blog-section .blog-section-inner {
     text-align: center;
   }
-  .lrlm-icon{
+  .lrlm-icon {
     vertical-align: -6px;
   }
-  .lrlm-icon svg{
+  .lrlm-icon svg {
     width: 8px;
   }
 }
@@ -1534,7 +1555,7 @@ top: -60px;
   .carousel-wrapper > div {
     padding: 0px 0px 80px 0px;
   }
-  .carousel-wrapper > div:last-child{
+  .carousel-wrapper > div:last-child {
     padding-bottom: 0px;
   }
   .carousel .slider-wrapper {
@@ -1561,5 +1582,10 @@ top: -60px;
   }
   .code-ed-links-wrapper .code-ed-links {
     width: 100% !important;
+  }
+}
+@media only screen and (min-width: 2800px){
+  .out-gradient-wrapper{
+    max-width: 300px;
   }
 }

@@ -183,6 +183,7 @@ const DynamicInputForm = ({
       window.rudderanalytics.track(
         "form_submit",
         {
+          ...data,
           page: document.title,
           page_URL: window.location.href,
           form_id: form_id,
@@ -219,6 +220,8 @@ const DynamicInputForm = ({
           timezone: {
             name: DateTime.now().zone.name,
           },
+          page_URL: window.location.href,
+          conversion_page: document.title,
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
@@ -435,7 +438,7 @@ const DynamicInputForm = ({
           )
         })}
       <button
-        className="dyno-button btn-primary-lg mt-3 md:mb-0 mb-4"
+        className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4 ${isLoading ? 'disableActive' : ''}`}
         disabled={isLoading}
         // onClick={() => {
         //   console.log("from button call")
