@@ -92,6 +92,17 @@
 }
 @media only screen and (max-width: 1024px){
     .sticky-pricing-banner.sticky, .plan-header{
-        top: 51px;
+        top: 50px;
+    }
+    .faq-accBox{
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 767px){
+    .faq-accBox .accordion__section .accordion__content{
+        padding-left: 50px;
+    }
+    .specialist-cta{
+        max-width: 85%;
     }
 }

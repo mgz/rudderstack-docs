@@ -20,9 +20,9 @@ const HeroBannerPricing = props => {
     : ""
 
   return (
-    <section className="py-19 relative">
+    <section className="md:py-19 py-12 relative">
       <div className="max-w-6xl mx-auto">
-        <h1 className="my-4 font-bold leading-snug text-darkScheme-textPrimary text-5xl text-center">
+        <h1 className="my-4 font-bold leading-snug text-darkScheme-textPrimary text-3xl-3 md:text-5xl text-center px-4">
           {props.herobannertitle}
         </h1>
       </div>
@@ -44,7 +44,7 @@ const HeroBannerPricing = props => {
                         {/* <div className="ellipse flex items-center justify-center h-20">
                           <Image props={item.image.asset._ref} />
                         </div> */}
-                        <h3 className="leading-tight md:leading-snug md:text-3xl-3 text-darkScheme-textPrimary mr-2 font-bold">
+                        <h3 className="leading-tight md:leading-snug text-3xl-3 text-darkScheme-textPrimary mr-2 font-bold">
                           {item.title}
                         </h3>
                         <div className="text-grayColor-lighter mt-2 mb-5 h-16 leading-7 text-base">

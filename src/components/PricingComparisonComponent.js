@@ -97,7 +97,7 @@ const PricingComparisonComponent = props => {
     >
       <span className="section-border absolute top-0 left-0 w-full block"></span>
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-darkScheme-textPrimary font-bold text-5xl">
+        <h2 className="text-darkScheme-textPrimary font-bold text-3xl-3 md:text-5xl px-4">
           {props.title}
         </h2>
 
@@ -287,7 +287,7 @@ const PricingComparisonComponent = props => {
                   </div>
                 </div>
 
-                <div className="plan-features mt-6 px-3 mb-20">
+                <div className="plan-features mt-6 px-4 mb-20">
                   {pricingComparisionData.map((group, idx) => {
                     return (
                       <React.Fragment key={group.group}>
