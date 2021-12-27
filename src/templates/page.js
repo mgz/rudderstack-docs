@@ -55,10 +55,6 @@ export const query = graphql`
   }
 `
 
-// The `threshold` variable sets what portion of the element needs to be
-// visible before it fires. 0 = none, 1 = the entire thing. See
-// https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-
 const Page = props => {
   const { data, errors } = props
 
