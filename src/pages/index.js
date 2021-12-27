@@ -12,6 +12,7 @@ export const query = graphql`
       slug {
         current
       }
+      enable_no_follow_no_index
       title
       meta_title
       meta_desc

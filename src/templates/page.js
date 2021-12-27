@@ -200,7 +200,12 @@ const Page = props => {
     <Layout location={props.location}>
       <Helmet htmlAttributes={{ lang: "en" }}>
         <meta name="description" content={data.page.meta_desc} />
-
+        {data.page.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.page.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <title>{data.page.meta_title || data.page.title}</title>
         <meta
           property="og:title"

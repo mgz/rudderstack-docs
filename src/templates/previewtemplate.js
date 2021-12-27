@@ -61,7 +61,6 @@ class PreviewTemplate extends Component {
       await client.fetch(query, params).then(knowledge_bases => {
         var data = {}
         knowledge_bases.forEach(knowledge_base => {
-          
           data.tutorial = knowledge_base
           data.section_get_started = this.props.frontblock.section_get_started
           data.tutorial._rawDescription = knowledge_base.description
@@ -100,7 +99,7 @@ class PreviewTemplate extends Component {
           this.setState({ data: page })
         })
       })
-    } else if (type === "frontpageblock") {
+    } else if (type === "frontpageblock" || type === "new_theme_front_page") {
       const query = "*[_id == $id]"
       component = "Page"
 
@@ -117,7 +116,7 @@ class PreviewTemplate extends Component {
           this.setState({ data: pagedata })
         })
       })
-    } else if (type === "product_page") {
+    } else if (type === "product_page" || type === "new_theme_product_page" ) {
       const query = "*[_id == $id]"
       component = "Product"
 
@@ -233,7 +232,7 @@ class PreviewTemplate extends Component {
           this.setState({ data: contentdata })
         })
       })
-    } else if (type === "be_a_hero_page") {
+    } else if (type === "be_a_hero_page" || type === "new_theme_be_a_hero_page") {
       const query = "*[_id == $id]"
       component = "be_a_hero_page"
 
