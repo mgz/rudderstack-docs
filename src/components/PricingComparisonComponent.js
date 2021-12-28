@@ -97,18 +97,18 @@ const PricingComparisonComponent = props => {
     >
       <span className="section-border absolute top-0 left-0 w-full block"></span>
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-darkScheme-textPrimary font-bold text-3xl-3 md:text-5xl px-4">
+        <h2 className="text-darkScheme-textPrimary font-bold text-3xl-3 md:text-5xl px-4 triggers">
           {props.title}
         </h2>
 
-        <div className="hidden lg:block my-14 px-4">
+        <div className="hidden lg:block my-14 lg:px-4 px-6">
           <table className="pricing-table relative sm:w-full table-fixed font-custom text-grayColor-custom">
             <thead>
               <tr>
                 <th
                   className={`${
                     sticky ? "sticky" : ""
-                  } z-10 sticky-pricing-banner`}
+                  } z-10 sticky-pricing-banner triggers`}
                 >
                   {""}
                 </th>
@@ -119,7 +119,7 @@ const PricingComparisonComponent = props => {
                       key={col._key}
                       className={`${
                         sticky ? "sticky" : ""
-                      } z-10 sticky-pricing-banner`}
+                      } z-10 sticky-pricing-banner triggers`}
                     >
                       <div className="ellipse flex items-center justify-center h-20">
                         <Image props={col.image.asset._ref} />
@@ -136,7 +136,7 @@ const PricingComparisonComponent = props => {
                 })}
               </tr>
             </thead>
-            <tbody>
+            <tbody className="triggers">
               {pricingComparisionData.map((group, idx) => {
                 return (
                   <React.Fragment key={group.group}>
@@ -287,13 +287,14 @@ const PricingComparisonComponent = props => {
                   </div>
                 </div>
 
-                <div className="plan-features mt-6 px-4 mb-20">
+                <div className="plan-features mt-6 lg:px-4 px-6 mb-20">
                   {pricingComparisionData.map((group, idx) => {
+                    /* console.log('Group', group); */
                     return (
                       <React.Fragment key={group.group}>
-                        <div className="text-darkScheme-btnSecondaryBg text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+                        {idx !== 1 && <div className="text-darkScheme-btnSecondaryBg text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                           {group.group}
-                        </div>
+                        </div>}
                         {group.nodes.map((row, l_index) => {
                           let l_compare_value =
                             colIndex === 0
@@ -303,7 +304,6 @@ const PricingComparisonComponent = props => {
                               : colIndex === 2
                               ? row["enterprice_val"]
                               : ""
-                          //   console.log("compare", l_compare_value)
 
                           return (
                             <div
@@ -312,7 +312,7 @@ const PricingComparisonComponent = props => {
                                 l_compare_value === "<<UNCHECK>>"
                                   ? "hidden"
                                   : "flex"
-                              } text-lg text-left font-medium text-darkScheme-textPrimary leading-7 py-3 pr-4`}
+                              } ${l_index % 2 === 0 ? 'grad-bg rounded-xl' : ''} text-lg text-left font-medium text-darkScheme-textPrimary leading-7 py-3 px-4`}
                             >
                               {/* {(l_compare_value === "<<CHECK>>" || l_compare_value !== "<<UNCHECK>>") && ( */}
                               <span className={`check-icon check-comparison`} />

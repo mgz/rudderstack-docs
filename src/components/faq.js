@@ -58,7 +58,7 @@ const Faq = ({ title, subTitle, isBlockContent, accordions = [] }) => {
           <script type="application/ld+json">{JSON.stringify(ldJson)}</script>
         )}
       </Helmet>
-      <div className="max-w-screen-lg mx-auto flex flex-wrap justify-between">
+      <div className="max-w-screen-lg mx-auto flex flex-wrap justify-between triggers">
         <div className="md:pr-15">
           <h2 className="text-5xl font-bold text-darkScheme-textPrimary">{title}</h2>
           <h4 className="text-2xl-2 font-bold pt-2 mb-12 md:mb-0 text-darkScheme-textPrimary">

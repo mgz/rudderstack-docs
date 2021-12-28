@@ -1,7 +1,9 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import MiddleBanner from "../components/middle-banner"
 import loadable from "@loadable/component"
 import CentredContentWithButton from "../components/centredContentWithButton"
@@ -30,6 +32,55 @@ const Testimonial = loadable(() => import("../components/testimonial"))
 
 const PageContent = ({ data, location }) => {
   // console.log("data", data)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const sections = gsap.utils.toArray('.triggers');
+    /* console.log('Sections', sections); */
+    sections.forEach(section => {
+      gsap.set(section, {autoAlpha: 0});
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 60%",
+        end: "bottom 20%",
+        markers: false,
+        toggleActions: "play none none none",
+        onEnter: function () {
+          gsap.fromTo(
+            section,
+            { y: 100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              stagger: 0.2,
+              ease: "back",
+              overwrite: "auto"
+            }
+          );
+        },
+        onLeave: function () {
+          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 1, overwrite: "auto" });
+        },
+        /* onEnterBack: function () {
+          gsap.fromTo(
+            section,
+            { y: -100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: "back",
+              overwrite: "auto"
+            }
+          );
+        },
+        onLeaveBack: function () {
+          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
+        } */
+      })
+    });
+  }, [])
 
   return (
     <Layout location={location} darkTheme={true}>

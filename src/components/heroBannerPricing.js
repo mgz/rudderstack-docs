@@ -22,14 +22,14 @@ const HeroBannerPricing = props => {
   return (
     <section className="md:py-19 py-12 relative">
       <div className="max-w-6xl mx-auto">
-        <h1 className="my-4 font-bold leading-snug text-darkScheme-textPrimary text-3xl-3 md:text-5xl text-center px-4">
+        <h1 className="my-4 font-bold leading-snug text-darkScheme-textPrimary text-3xl-3 md:text-5xl text-center px-4 triggers">
           {props.herobannertitle}
         </h1>
       </div>
 
       <div className="max-w-6xl px-4 md:px-3 lg:px-0 mx-auto flex flex-wrap items-center pb-18 font-custom">
         <div className="pricing-table-2 pt-1 md:pt-3 w-full">
-          <div className="mx-auto">
+          <div className="mx-auto triggers">
             <div className="pricing-plans relative lg:flex mt-6 md:mt-12 w-full">
               {props.pricing_cards.map((item, idx) => {
                 return (
@@ -51,7 +51,7 @@ const HeroBannerPricing = props => {
                           {item.smalltitle}
                         </div>
                         <div className="text-left">
-                          <ul className="h-56 text-lg">
+                          <ul className="md:h-56 text-lg">
                             {item.pricing_features.map((rr, idx) => {
                               return (
                                 <li
