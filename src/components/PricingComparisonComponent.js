@@ -95,7 +95,7 @@ const PricingComparisonComponent = props => {
       id="pricing_comparison"
       className="plans-section py-19 relative"
     >
-      <div className="out-gradient-wrapper bottom-0 right-16">
+      <div className="out-gradient-wrapper bottom-0 left-16">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
@@ -106,7 +106,7 @@ const PricingComparisonComponent = props => {
           </div>
         </div>
       </div>
-      <div className="out-gradient-wrapper top-1/2 left-1/4">
+      <div className="out-gradient-wrapper top-1/2 right-1/4">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
