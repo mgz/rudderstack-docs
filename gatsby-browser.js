@@ -21,21 +21,48 @@ import "./src/css/product.css"
 import "./src/css/code-editor.css"
 const { DateTime } = require("luxon")
 
-export const onRouteUpdate = () => {
-  // var delay = Math.max(0, 50)
+export const onRouteUpdate = (_ref, _ref2) => {
+  var prevLocation = _ref.prevLocation
 
-  // window.setTimeout(function () {
-  //   window.rudderanalytics &&
-  //     window.rudderanalytics.page("page_view", {
-  //       branch: process.env.GATSBY_BRANCH,
-  //     })
-  // }, delay)
+  function trackRudderStackPage() {
+    var delay = 1000
 
-  window.rudderanalytics &&
-    window.rudderanalytics.page("page_view", {
-      branch: process.env.GATSBY_BRANCH,
-      timezone: {
-        name: DateTime.now().zone.name,
-      },
-    })
+    window.setTimeout(function () {
+      window.rudderanalytics &&
+        window.rudderanalytics.page("page_view", {
+          branch: process.env.GATSBY_BRANCH,
+          timezone: {
+            name: DateTime.now().zone.name,
+          },
+        })
+    }, delay)
+  }
+
+  if (window.rudderSnippetLoaded === false) {
+    if (window.rudderSnippetLoading === true) {
+      // As the loading is in progress, set the alternate callback function
+      // to track page
+      window.rudderSnippetLoadedCallback = function () {
+        trackRudderStackPage()
+      }
+    } else {
+      // if it is not the first page
+      if (prevLocation) {
+        // Trigger the script loader and set the callback function
+        // to track page
+        window.rudderSnippetLoadedCallback = undefined
+        window.rudderSnippetLoader(function () {
+          trackRudderStackPage()
+        })
+      } else {
+        // As this is the first page, set the alternate callback function
+        // to track page and wait for the scroll event to occur (for SDK to get loaded)
+        window.rudderSnippetLoadedCallback = function () {
+          trackRudderStackPage()
+        }
+      }
+    }
+  } else {
+    trackRudderStackPage()
+  }
 }

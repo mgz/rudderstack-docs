@@ -1,6 +1,8 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+const { DateTime } = require("luxon")
+
 module.exports = {
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
@@ -232,9 +234,9 @@ module.exports = {
         loadType: "defer",
         trackPage: false,
         loadAsync: true,
-
         delayLoad: true,
-        delayLoadTime: 500,
+        // trackPageDelay: 1000,
+        delayLoadTime: 1000,
         useNewSDK: true,
         dataPlaneUrl: `https://rudderstack-dataplane.rudderstack.com`,
       },
