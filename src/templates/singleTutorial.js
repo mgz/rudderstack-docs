@@ -58,7 +58,12 @@ const SingleTutorial = ({ data, location, ...props }) => {
           property="og:title"
           content={tutorial.meta_title || tutorial.title}
         />
-
+        {tutorial.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {tutorial.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta name="description" content={tutorial.meta_desc} />
         <meta property="og:description" content={tutorial.meta_desc} />
         <meta
@@ -98,7 +103,6 @@ const SingleTutorial = ({ data, location, ...props }) => {
             <TwitterShareButton
               url={`https://rudderstack.com/tutorials/${tutorial.slug}`}
             >
-              
               <StaticImage
                 src={"../images/icon-twitter.svg"}
                 placeholder="tracedSVG"
@@ -197,6 +201,7 @@ export const query = graphql`
       }
       meta_title
       meta_desc
+      enable_no_follow_no_index
       _rawDescription
       tutorial_date(formatString: "MMMM DD, Y")
       blog_authors {

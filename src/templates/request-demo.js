@@ -32,6 +32,7 @@ export const query = graphql`
       }
       meta_title
       meta_desc
+      enable_no_follow_no_index
     }
     section_get_started: allSanitySectionGetStarted {
       edges {
@@ -215,6 +216,12 @@ const Demo = ({ data, htmlId, location }) => {
         <title>
           {data.sanitySchdemo.meta_title || data.sanitySchdemo.title}
         </title>
+        {data.sanitySchdemo.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.sanitySchdemo.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta
           property="og:title"
           content={data.sanitySchdemo.meta_title || data.sanitySchdemo.title}

@@ -9,6 +9,9 @@ export const query = graphql `
           sanityFrontpageblock{
             _rawPagebuildersectionarray
           }
+          sanityNewThemeFrontPage{
+            _rawPagebuildersectionarray
+          }
 
           allSanityBlogauthor {
             edges {

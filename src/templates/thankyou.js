@@ -36,6 +36,12 @@ const TrankYou = ({ data, htmlId }) => {
     <Layout>
       <Helmet>
         <title>{data.thankyou.meta_title || data.thankyou.title}</title>
+        {data.thankyou.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.thankyou.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta
           property="og:title"
           content={data.thankyou.meta_title || data.thankyou.title}
@@ -138,6 +144,7 @@ export const pageQuery = graphql`
       meta_title
       meta_desc
       title
+      enable_no_follow_no_index
     }
     section_get_started: allSanitySectionGetStarted {
       edges {

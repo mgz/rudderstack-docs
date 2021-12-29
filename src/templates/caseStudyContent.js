@@ -38,6 +38,12 @@ const CaseStudyContent = ({ data, location }) => {
     <Layout location={location}>
       <Helmet>
         <title>{data.casestudy.meta_title || data.casestudy.title}</title>
+        {data.casestudy.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.casestudy.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta
           property="og:title"
           content={data.casestudy.meta_title || data.casestudy.title}
@@ -162,6 +168,7 @@ export const query = graphql`
       weight
       article_dttm
       category
+      enable_no_follow_no_index
       _rawPagebuildersectionarray
     }
 
