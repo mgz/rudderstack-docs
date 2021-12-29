@@ -16,6 +16,12 @@ const VerticalLandingPageContent = ({ data, location }) => {
     <Layout location={location}>
       <Helmet>
         <title>{data.pagedata.meta_title || data.pagedata.title}</title>
+        {data.pagedata.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.pagedata.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta
           property="og:title"
           content={data.pagedata.meta_title || data.pagedata.title}
@@ -99,6 +105,7 @@ export const query = graphql`
       meta_title
       meta_desc
       id
+      enable_no_follow_no_index
       _rawPagebuildersection
     }
 

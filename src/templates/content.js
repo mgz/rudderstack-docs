@@ -52,6 +52,12 @@ const Singleblog = ({ data, location, ...props }) => {
     <Layout location={location}>
       <Helmet>
         <title>{blog.meta_title || blog.title}</title>
+        {blog.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {blog.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta property="og:title" content={blog.meta_title || blog.title} />
         <meta name="description" content={blog.meta_desc} />
         <meta property="og:site_name" content="Rudderstack" />
@@ -298,6 +304,7 @@ export const query = graphql`
       meta_title
       meta_desc
       _rawDescription
+      enable_no_follow_no_index
       blogdate(formatString: "MMMM DD, Y")
       blog_authors {
         author_name
