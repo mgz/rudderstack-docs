@@ -345,11 +345,8 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
         <div className="flex flex-col items-center md:gap-6 xl:gap-12 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
           <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-5/12 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
             <h2 className="text-primary mb-0 md:mb-8 md:my-4 text-2xl-2 font-bold leading-tight">
-              Easy{" "}
-              {page_data.sourceIntegrationOverridableText !== "NA"
-                ? page_data.sourceIntegrationOverridableText
-                : page_data.sourceIntegration}{" "}
-              to {page_data.destinationIntegration} Integration with RudderStack
+              Easy {page_data.sourceIntegration} to{" "}
+              {page_data.destinationIntegration} Integration with RudderStack
             </h2>
             <div className="py-4">
               <p className="text-lg text-grayColor-custom font-normal">
