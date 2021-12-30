@@ -92,9 +92,48 @@ const DynamicInputForm = ({
   const [formData, setFormData] = useState(tmpStructure)
   const [formError, setFormErrors] = useState(tmpStructure)
   const [formScript] = useState(scriptObject)
+
+  const [emailValidationRestrictedDomains] = useState([
+    "gmail.com",
+    "yahoo.com",
+    "outlook.com",
+    "hotmail.com",
+    "apple.com",
+    "protonmail.com",
+    "10minutemail.com",
+    "me.com",
+    "icloud.com",
+    "googlemail.com",
+    "mail.ru",
+    "live.com",
+    "aol.com",
+    "test.com",
+  ])
+
   function validateEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     return re.test(String(email).toLowerCase())
+  }
+
+  function validateNonCompanyDomains(email) {
+    let domain = email.split("@")[1]
+    let errorMessage =
+      emailValidationRestrictedDomains.findIndex(
+        oo => oo === domain.toLowerCase()
+      ) >= 0
+        ? "Please provide a valid company email address"
+        : ""
+    if (
+      location &&
+      (location.pathname === "/request-demo/" ||
+        location.pathname === "/request-demo" ||
+        location.pathname === "/enterprise-quote/" ||
+        location.pathname === "/enterprise-quote")
+    ) {
+      return errorMessage
+    } else {
+      return ""
+    }
   }
 
   function validateField(field, value) {
@@ -107,7 +146,7 @@ const DynamicInputForm = ({
       return col_validation.is_required && value.length === 0
         ? "This field is required."
         : value.length > 0 && validateEmail(value)
-        ? ""
+        ? validateNonCompanyDomains(value)
         : "Email is invalid"
     }
     if (col_validation.is_required) {
@@ -438,7 +477,9 @@ const DynamicInputForm = ({
           )
         })}
       <button
-        className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4 ${isLoading ? 'disableActive' : ''}`}
+        className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4 ${
+          isLoading ? "disableActive" : ""
+        }`}
         disabled={isLoading}
         // onClick={() => {
         //   console.log("from button call")
