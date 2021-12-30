@@ -13,7 +13,7 @@ import FourCardsWithTitle from "../components/fourCardsWithTitle"
 import FourCardsWithTitleLeftAligned from "../components/fourCardsWithTitleLeftAligned"
 import ThreeCardsWithTitle from "../components/threeCardsWithTitle"
 import SegmentComparisonComponent from "../components/segmentComparisonComponent"
-import PricingComparisonComponent from "../components/PricingComparisonComponent"
+import PricingComparisonComponentV2 from "../components/PricingComparisonComponentV2"
 import HeroBannerCloud from "../components/heroBannerCloud"
 import HeroBannerAboutUs from "../components/heroBannerAboutUs"
 import Leadership from "../components/leadership"
@@ -222,7 +222,7 @@ const PageContent = ({ data, location }) => {
             )
           } else if (section._type === "pricing_comparision_with_title") {
             return (
-              <PricingComparisonComponent key={section._key} {...section} />
+              <PricingComparisonComponentV2 key={section._key} {...section} />
             )
           } else if (section._type === "faq") {
             let tmp = []

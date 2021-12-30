@@ -57,7 +57,7 @@ const HeroBannerPricing = props => {
                 return (
                   <div
                     key={item._key}
-                    className={`pricing-plan-wrap lg:w-1/3 mt-4 mb-8 md:my-6 px-5 ${
+                    className={`pricing-plan-wrap w-96 max-w-full lg:w-1/3 mt-4 mb-8 md:my-6 mx-auto px-5 ${
                       idx === 1 ? "proCard relative" : ""
                     }`}
                   >
@@ -78,7 +78,7 @@ const HeroBannerPricing = props => {
                               return (
                                 <li
                                   key={idx}
-                                  className="relative text-darkScheme-textPrimary pricing-pointer-list"
+                                  className="relative text-darkScheme-textPrimary pricing-pointer-list text-base lg:"
                                 >
                                   <span className="w-7 check-icon inline-block align-top mr-5"></span>
                                   <span className="inline-block pricing-pointers">{rr}</span>
