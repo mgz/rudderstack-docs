@@ -388,7 +388,7 @@ body {
   content: "";
   background: url("../images/arrow-right-action.svg") no-repeat;
   background-position: center;
-  width: 75%;
+  width: 20px;
   height: 100%;
   top: 0;
   left: 50%;
