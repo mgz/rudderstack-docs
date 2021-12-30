@@ -18,6 +18,12 @@ const BeAHeroPageContent = ({ data, location }) => {
     <Layout location={location} darkTheme={true}>
       <Helmet>
         <title>{data.pagedata.meta_title || data.pagedata.title}</title>
+        {data.pagedata.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.pagedata.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta
           property="og:title"
           content={data.pagedata.meta_title || data.pagedata.title}
@@ -39,7 +45,10 @@ const BeAHeroPageContent = ({ data, location }) => {
             return <HeroBannerBeAHeroPage key={section._key} {...section} />
           } else if (section._type === "leftrightcontentimagesection") {
             return (
-              <div className={`section-gradient py-20 relative`} key={section._key}>
+              <div
+                className={`section-gradient py-20 relative`}
+                key={section._key}
+              >
                 <span className="section-border block absolute top-0 left-0 w-full"></span>
                 <LeftRightImgCnt_V2
                   {...section}
@@ -54,7 +63,11 @@ const BeAHeroPageContent = ({ data, location }) => {
               kl => kl.node._id === section._ref
             )
             return (
-              <section key={section._key} className="mt-40 md:mt-52" id="testimonial">
+              <section
+                key={section._key}
+                className="mt-40 md:mt-52"
+                id="testimonial"
+              >
                 <TestimonialFloatingV2
                   // applyGradientColorTheme={true}
                   {...l_section_info.node._rawTestimonials}
@@ -107,6 +120,7 @@ export const query = graphql`
       meta_title
       meta_desc
       id
+      enable_no_follow_no_index
       _rawPagebuildersection
     }
 

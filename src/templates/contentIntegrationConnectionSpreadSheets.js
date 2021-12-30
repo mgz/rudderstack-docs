@@ -342,51 +342,9 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
       </section>
 
       <section className=" px-4 md:px-3 py-12 md:py-24 mx-auto relative bg-whiteColor-custom banner-section">
-        <div className="flex flex-col items-center md:gap-6 xl:gap-12 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
-          <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-5/12 sm:px-0 sm:items-center lg:items-start lg:mb-0 hero-content">
-            <h2 className="text-primary mb-0 md:mb-8 md:my-4 text-2xl-2 font-bold leading-tight">
-              Easy{" "}
-              {page_data.sourceIntegrationOverridableText !== "NA"
-                ? page_data.sourceIntegrationOverridableText
-                : page_data.sourceIntegration}{" "}
-              to {page_data.destinationIntegration} Integration with RudderStack
-            </h2>
-            <div className="py-4">
-              <p className="text-lg text-grayColor-custom font-normal">
-                RudderStack’s open source{" "}
-                {page_data.sourceIntegrationOverridableText !== "NA"
-                  ? page_data.sourceIntegrationOverridableText
-                  : page_data.sourceIntegration}{" "}
-                allows you to integrate RudderStack with your{" "}
-                {page_data.sourceIntegrationContext} to track event data and
-                automatically send it to {page_data.destinationIntegration}.
-                <br />
-                <br />
-                With the RudderStack{" "}
-                {page_data.sourceIntegrationOverridableText !== "NA"
-                  ? page_data.sourceIntegrationOverridableText
-                  : page_data.sourceIntegration}
-                , you do not have to worry about having to learn, test,
-                implement or deal with changes in a new API and multiple
-                endpoints every time someone asks for a new integration.
-              </p>
-            </div>
-
-            <a
-              className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
-              href={page_data.sourceDocsUrl}
-              onClick={e =>
-                rudderslabTrackOnClick(
-                  "button",
-                  `Easy ${page_data.sourceIntegration} to ${page_data.destinationIntegration} Integration with RudderStack`,
-                  e
-                )
-              }
-            >
-              {page_data.ctaButtonSource}
-            </a>
-          </div>
-          <div className="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-7/12 sm:px-0 sm:items-center lg:items-start lg:mb-0">
+        <div className="flex flex-col-reverse items-center md:gap-6 xl:gap-12 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
+          
+          <div className="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-6/12 sm:px-0 sm:items-center lg:items-start lg:mb-0">
             <div className="ic-middle-container">
               <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
                 <div className="">
@@ -419,6 +377,47 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 </div>
               </div>
             </div>
+          </div>
+        
+          <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-6/12 sm:px-0 sm:items-center lg:items-start lg:mb-0 lg:pl-20 lg:pr-8">
+            <h2 className="text-primary mb-0 md:mb-8 md:my-4 text-2xl-2 font-bold leading-tight">
+              Easy {page_data.sourceIntegration} to{" "}
+              {page_data.destinationIntegration} Integration with RudderStack
+            </h2>
+            <div className="py-4">
+              <p className="text-lg text-grayColor-custom font-normal ">
+                RudderStack’s open source{" "}
+                {page_data.sourceIntegrationOverridableText !== "NA"
+                  ? page_data.sourceIntegrationOverridableText
+                  : page_data.sourceIntegration}{" "}
+                allows you to integrate RudderStack with your{" "}
+                {page_data.sourceIntegrationContext} to track event data and
+                automatically send it to {page_data.destinationIntegration}.
+                <br />
+                <br />
+                With the RudderStack{" "}
+                {page_data.sourceIntegrationOverridableText !== "NA"
+                  ? page_data.sourceIntegrationOverridableText
+                  : page_data.sourceIntegration}
+                , you do not have to worry about having to learn, test,
+                implement or deal with changes in a new API and multiple
+                endpoints every time someone asks for a new integration.
+              </p>
+            </div>
+
+            <a
+              className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
+              href={page_data.sourceDocsUrl}
+              onClick={e =>
+                rudderslabTrackOnClick(
+                  "button",
+                  `Easy ${page_data.sourceIntegration} to ${page_data.destinationIntegration} Integration with RudderStack`,
+                  e
+                )
+              }
+            >
+              {page_data.ctaButtonSource}
+            </a>
           </div>
         </div>
       </section>

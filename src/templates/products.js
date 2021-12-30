@@ -24,6 +24,12 @@ const Products = ({ data, location }) => {
     <Layout location={location}>
       <Helmet>
         <title>{data.product.meta_title || data.product.title}</title>
+        {data.product.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.product.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta
           property="og:title"
           content={data.product.meta_title || data.product.title}
@@ -104,6 +110,7 @@ export const pageQuery = graphql`
       _id
       meta_title
       meta_desc
+      enable_no_follow_no_index
     }
     section_get_started: allSanitySectionGetStarted {
       edges {

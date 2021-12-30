@@ -134,6 +134,7 @@ div.CodeMirror-cursors {
   border-left: 1px solid white;
   border-right: none;
   width: 0;
+  visibility: hidden;
 }
 .CodeMirror-cursor {
   position: absolute;

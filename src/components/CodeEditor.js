@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 /* import CodeMirror from "@uiw/react-codemirror"; */
 import createMovie from "codemirror-movie"
 import { Link } from "gatsby"
-import { isMobile, isSafari } from "react-device-detect";
+import { isMobile, isSafari, isFirefox } from "react-device-detect";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 /* import "codemirror/lib/codemirror.css" */
@@ -156,7 +156,7 @@ const CodeEditor = props => {
 
   useEffect(() => {
     /* console.log('Editor scene', leftEditorScenes); */
-    if(!isMobile && !isSafari){
+    if(!isMobile && !isSafari && !isFirefox){
       if(leftEditorScenes && editorFlag){
         leftEditorScenes.play();
       }else if(leftEditorScenes){
@@ -167,7 +167,7 @@ const CodeEditor = props => {
   }, [editorFlag])
 
   useEffect(() => {
-    if(isMobile || isSafari){
+    if(isMobile || isSafari || isFirefox){
       let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
       props.code_input.code_contents.forEach(ppp => {
         leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))

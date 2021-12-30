@@ -83,6 +83,12 @@ const videoContent = ({ data, location }) => {
     >
       <Helmet>
         <title>{data.videoLib.meta_title || data.videoLib.title}</title>
+        {data.videoLib.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.videoLib.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta
           property="og:title"
           content={data.videoLib.meta_title || data.videoLib.title}
@@ -161,6 +167,7 @@ export const pageQuery = graphql`
       meta_title
       duration
       id
+      enable_no_follow_no_index
     }
     section_get_started: allSanitySectionGetStarted {
       edges {

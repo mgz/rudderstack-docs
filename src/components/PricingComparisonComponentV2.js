@@ -259,17 +259,17 @@ const PricingComparisonComponentV2 = props => {
         </div>
 
         <div className="mobile-table font-custom">
-          <div className="freeplan mt-16 sticky flex">
+          <div className="freeplan mt-11 sticky sticky-pricing-banner flex">
           {props.pricing_columns.map((oo, colIndex) => {
             // console.log(oo)
             return (
                 <div className="pricing-wrapper w-1/3" key={oo._key}>
                   <div className="plan-header">
                     <div className="p-6 md:pt-8 md:pb-4">
-                      <div className="ellipse flex items-center justify-center h-12">
+                      <div className="ellipse flex items-center justify-center h-24">
                         <Image props={oo.image.asset._ref} />
                       </div>
-                      <h3 className="font-medium leading-tight text-darkScheme-textPrimary text-xs">
+                      <h3 className="font-medium leading-tight text-darkScheme-textPrimary text-base">
                         {oo.title}
                       </h3>
                       <div className="text-grayColor-lighter leading-6 text-sm py-2">
@@ -279,8 +279,49 @@ const PricingComparisonComponentV2 = props => {
                   </div>
                 </div>
               )
+          })}
+          </div>
+          <div className="plan-features">
+            {pricingComparisionData.map((item,key) => {
+              return(
+                <div className="pricing-block" key={item.group}>
+                  <div className="group-name text-darkScheme-btnSecondaryBg text-lg uppercase font-bold my-10 leading-6">{item.group}</div>
+                  {item.nodes.map((i,k) => {
+                    return (
+                      <div className={`pricing-row py-4 ${k % 2 === 0 ? 'grad-bg' : ''}`}>
+                        <div className="text-darkScheme-textPrimary pb-4">{i.title}</div>
+                        <div className="pricing-values flex">
+                          <div className="w-1/3 self-center">
+                            {i.free_val === "<<CHECK>>" ? <span className={`check-icon check-comparison`} /> : <span className={`line-image`} />}
+                          </div>
+                          <div className="w-1/3 self-center">
+                            {i.pro_val === "<<CHECK>>" ? <span className={`check-icon check-comparison`} /> : <span className={`line-image`} />}
+                          </div>
+                          <div className="w-1/3 self-center">
+                            {i.enterprice_val === "TALKTOSALES" ?
+                              (
+                                <Link
+                                  to="/enterprise-quote"
+                                  className="text-sm font-bold text-darkScheme-btnSecondaryBg mx-auto"
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={e =>
+                                    rudderslabTrackOnClick("link", item.group, e)
+                                  }
+                                >
+                                  Talk to sales
+                                </Link>
+                              ) : i.enterprice_val === "<<CHECK>>" ? <span className={`check-icon check-comparison`} /> : <span className={`line-image`} />
+                            }
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              )
             })}
-            </div>
+          </div>
         </div>
       </div>
     </section>

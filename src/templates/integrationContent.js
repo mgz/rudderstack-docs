@@ -63,6 +63,12 @@ const Singleintegration = ({ data, location }) => {
     <Layout location={location}>
       <Helmet>
         <title>{data.integration.meta_title || data.integration.title}</title>
+        {data.integration.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.integration.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
         <meta
           property="og:title"
           content={data.integration.meta_title || data.integration.title}
@@ -90,19 +96,21 @@ const Singleintegration = ({ data, location }) => {
             data={data.integration._rawIntegrationLeftRightsection}
           />
         )}
-        
-        {data.integration._rawHowtosetupsection && data.integration._rawSlug.current !== "amperity" && (
-          <IntegrationHowToSetUp
-            integrationLogo={data.integration._rawIntegrationLogo}
-            data={data.integration._rawHowtosetupsection}
-          />
-        )}
 
-        {data.integration._rawGetmoreoutofsection && data.integration._rawSlug.current !== "amperity" && (
-          <IntegrationGetMoreOutOf
-            data={data.integration._rawGetmoreoutofsection}
-          />
-        )}
+        {data.integration._rawHowtosetupsection &&
+          data.integration._rawSlug.current !== "amperity" && (
+            <IntegrationHowToSetUp
+              integrationLogo={data.integration._rawIntegrationLogo}
+              data={data.integration._rawHowtosetupsection}
+            />
+          )}
+
+        {data.integration._rawGetmoreoutofsection &&
+          data.integration._rawSlug.current !== "amperity" && (
+            <IntegrationGetMoreOutOf
+              data={data.integration._rawGetmoreoutofsection}
+            />
+          )}
 
         {faqData && (
           <section className="bg-grayColor-BgGray md:pt-32 md:pb-24 sm:pt-16 sm:pb-12 pt-11 pb-12 relative font-custom">
@@ -142,6 +150,7 @@ export const query = graphql`
       _rawIntegrationHeroSection
       _rawIntegrationLeftRightsection
       _rawIntegrationLogo
+      enable_no_follow_no_index
       similarDestination {
         sd_maintitle
         sd_integrations {
