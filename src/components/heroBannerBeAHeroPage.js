@@ -35,7 +35,7 @@ const HeroBannerBeAHeroPage = props => {
   return (
     <div className="">
       <section className="mx-auto pb-8 pt-20 lg:pb-20 overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter relative blockWrapper">
-        <div className="out-gradient-wrapper bottom-1/4 right-16">
+        {/* <div className="out-gradient-wrapper bottom-1/4 right-16">
           <div className="grad1">
             <div className="grad2">
               <div className="grad3">
@@ -56,7 +56,7 @@ const HeroBannerBeAHeroPage = props => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="max-w-6xl px-3 md:px-3 mx-auto flex flex-wrap flex-col md:items-center md:text-center">
           <div className="uppercase text-lg mb-5 text-darkScheme-btnSecondaryBg font-bold">
             {props.herobannersmalltitle}

@@ -5,7 +5,7 @@ const TestimonialFloatingV2 = props => {
   const testimonial = props.addtestimonial ? props.addtestimonial[0] : props
   return (
     <div className="relative">
-      <div className="out-gradient-wrapper top-1/4 left-1/4">
+      {/* <div className="out-gradient-wrapper top-1/4 left-1/4">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
@@ -16,7 +16,7 @@ const TestimonialFloatingV2 = props => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="carousel-item max-w-5xl mx-auto relative px-4 lg:px-0">
         <div className="floating-testimonial-wrapper carousel-inner-wrapper-2 relative flex flex-col items-center justify-center border rounded-2xl px-3 lg:px-16  py-20 mx-7">
           <div className="">
