@@ -93,7 +93,7 @@ function Hero(props) {
 
   return (
     <section className="relative gradiant-layer banner-section pt-19 pb-40 hero-wrapper">
-      <div className="out-gradient-wrapper bottom-1/4 right-16">
+      {/* <div className="out-gradient-wrapper bottom-1/4 right-16">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
@@ -114,7 +114,7 @@ function Hero(props) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="max-w-6xl mx-auto blockWrapper">
         {/* <div className="background-gradient-circles absolute top-1/4 left-14 keep-rotate"></div> */}
         {/* <Helmet>

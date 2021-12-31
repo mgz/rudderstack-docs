@@ -7,7 +7,7 @@ const LeftRightMiddleBanner = props => {
   /* console.log(props, "LeftRightMiddleBanner") */
   return (
     <section className="py-12 relative">
-      <div className="out-gradient-wrapper bottom-0 left-0">
+      {/* <div className="out-gradient-wrapper bottom-0 left-0">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
@@ -30,7 +30,7 @@ const LeftRightMiddleBanner = props => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="max-w-6xl mx-auto blockWrapper">
         <div className="blog-section flex">
           <div className="w-1/2 border-r-2 border-darkScheme-textPrimary blog-section-inner">
