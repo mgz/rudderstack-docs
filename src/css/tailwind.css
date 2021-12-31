@@ -426,9 +426,9 @@ div > a.transperent-btn:last-child {
     width: 100%;
   }
   /* For plan cards css*/
-  .plans-section {
+  /* .plans-section {
     line-height: 54px;
-  }
+  } */
   .custom-bg {
     background: #fff;
   }

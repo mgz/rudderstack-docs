@@ -285,19 +285,19 @@ const PricingComparisonComponentV2 = props => {
             {pricingComparisionData.map((item,key) => {
               return(
                 <div className="pricing-block" key={item.group}>
-                  <div className="group-name text-darkScheme-btnSecondaryBg text-lg uppercase font-bold my-10 leading-6">{item.group}</div>
+                  <div className="group-name text-darkScheme-btnSecondaryBg text-lg uppercase font-bold my-10">{item.group}</div>
                   {item.nodes.map((i,k) => {
                     return (
-                      <div className={`pricing-row py-4 ${k % 2 === 0 ? 'grad-bg' : ''}`}>
-                        <div className="text-darkScheme-textPrimary pb-4">{i.title}</div>
+                      <div className={`pricing-row py-4 pb-2 px-2 ${k % 2 === 0 ? 'grad-bg' : ''}`}>
+                        <div className="text-darkScheme-textPrimary">{i.title}</div>
                         <div className="pricing-values flex">
-                          <div className="w-1/3 self-center">
+                          <div className="w-1/3 self-center h-14 flex items-center justify-center">
                             {i.free_val === "<<CHECK>>" ? <span className={`check-icon check-comparison`} /> : <span className={`line-image`} />}
                           </div>
-                          <div className="w-1/3 self-center">
+                          <div className="w-1/3 self-center h-14 flex items-center justify-center">
                             {i.pro_val === "<<CHECK>>" ? <span className={`check-icon check-comparison`} /> : <span className={`line-image`} />}
                           </div>
-                          <div className="w-1/3 self-center">
+                          <div className="w-1/3 self-center h-14 flex items-center justify-center">
                             {i.enterprice_val === "TALKTOSALES" ?
                               (
                                 <Link
@@ -321,6 +321,28 @@ const PricingComparisonComponentV2 = props => {
                 </div>
               )
             })}
+            <div className="mt-20">
+              <div className="inline-block mr-4">
+                <a
+                  className={
+                    "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto rounded-lg font-bold text-darkScheme-textPrimary w-40 py-2"
+                  }
+                  href={"https://app.rudderstack.com/signup?type=freetrial"}
+                >
+                  Sign Up for Free
+                </a>
+              </div>
+              <div className="inline-block">
+                <Link
+                  className={
+                    "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto rounded-lg font-bold text-darkScheme-textPrimary w-40 py-2"
+                  }
+                  to={"/request-demo"}
+                >
+                  Get a Demo
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
