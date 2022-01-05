@@ -302,8 +302,8 @@ const DynamicInputForm = ({
               }`
               )
             } else if (
-              (location && location.pathname === "/video-library/") ||
-              (location && location.pathname === "/video-library")
+              location &&
+              location.pathname.startsWith("/video-library/")
             ) {
               if (gatedCookieName && gatedCookieName.length > 0) {
                 let date = new Date()
