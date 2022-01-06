@@ -13,9 +13,7 @@ const TestimonialCardWithLeftHeading = props => {
   // console.log("TestimonialCardWithLeftHeading", props)
   return (
     <section className="relative bottomleftright-testimonial">
-      {/* <div className="background-gradient-circles-xl absolute top-2/5 left-14 keep-rotate"></div>
-      <div className="background-gradient-circles-xl absolute bottom-1/4 right-14 keep-rotate"></div> */}
-      <div className="out-gradient-wrapper bottom-1/4 right-16">
+      {/* <div className="out-gradient-wrapper bottom-1/4 right-16">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
@@ -36,7 +34,7 @@ const TestimonialCardWithLeftHeading = props => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="max-w-6xl px-8 lg:px-5 py-10 md:py-20 mx-auto mt-20">
         <div className="flex flex-col leftrightbottom-testimonial-wrapper justify-center mx-auto lg:flex-row lg:p-0">
           <div className="z-20 flex flex-col w-full pb-1 md:mr-30 md:mb-32 pt-15 md:pt-0 text-2xl lg:w-1/2 sm:px-0 sm:items-center lg:items-start lg:mb-0 lg:pr-20 mx-auto">

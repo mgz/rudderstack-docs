@@ -10,7 +10,7 @@ import IntegrationHero from "../components/integrationHero"
 import IntegrationLeftRightContent from "../components/IntegrationLeftRightContent"
 import IntegrationHowToSetUp from "../components/IntegrationHowToSetUp"
 import IntegrationGetMoreOutOf from "../components/IntegrationGetMoreOutOf"
-import IntegrationSimilar from "../components/IntegrationSimilar"
+import IntegrationSimilarV2 from "../components/IntegrationSimilarV2"
 import MiddleBanner from "../components/middle-banner"
 import Faq from "../components/faq"
 import Testimonial from "../components/testimonial"
@@ -34,7 +34,8 @@ import clientConfig from "../../client-config"
 // const Faq = loadable(() => import("../components/faq"))
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
-const Singleintegration = ({ data, location }) => {
+const Singleintegration = ({ data, location, pageContext }) => {
+  // console.log("pageContext", pageContext)
   const lv_testimonialsection = data.section_testimonials.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
   )
@@ -123,9 +124,7 @@ const Singleintegration = ({ data, location }) => {
           </section>
         )}
 
-        {data.integration.similarDestination && (
-          <IntegrationSimilar data={data.integration.similarDestination} />
-        )}
+        <IntegrationSimilarV2 data={pageContext} />
 
         <section id="testimonials">
           <Testimonial

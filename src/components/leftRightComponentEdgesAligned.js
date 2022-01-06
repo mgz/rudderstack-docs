@@ -9,10 +9,7 @@ const LeftRightComponentEdgesAligned = props => {
   /* console.log('Props on left right', props); */
   return (
     <section className="py-19 relative">
-      {/* <div className="background-gradient-circles absolute top-2/4 right-1/4 keep-rotate"></div>
-      <div className="background-gradient-circles absolute top-1/4 left-1/4 keep-rotate"></div>
-      <div className="background-gradient-circles absolute bottom-1/4 left-1/4 keep-rotate"></div> */}
-      <div className="out-gradient-wrapper top-1/4 left-1/4">
+      {/* <div className="out-gradient-wrapper top-1/4 left-1/4">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
@@ -47,7 +44,7 @@ const LeftRightComponentEdgesAligned = props => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center blockWrapper">
         <h3 className="mb-0 text-4xl md:text-4xl font-bold leading-tight uppercase text-center text-darkScheme-btnPrimaryBg mt-9 section-title triggers">
           {props.leftrightcontentmaintitle}

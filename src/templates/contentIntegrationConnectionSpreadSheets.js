@@ -7,6 +7,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
   // console.log("ContentIntegrationConnectionSpreadSheets", data)
+  
   let page_data = data.override_integration_connection
     ? data.override_integration_connection
     : data.integration_connection
@@ -343,7 +344,6 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
 
       <section className=" px-4 md:px-3 py-12 md:py-24 mx-auto relative bg-whiteColor-custom banner-section">
         <div className="flex flex-col-reverse items-center md:gap-6 xl:gap-12 justify-center mx-auto lg:flex-row lg:p-0 max-w-6xl">
-          
           <div className="relative w-full px-0 rounded-lg flex-grow justify-items-end lg:w-6/12 sm:px-0 sm:items-center lg:items-start lg:mb-0">
             <div className="ic-middle-container">
               <div className="relative rounded-md group sm:px-0 sm:items-center lg:items-start">
@@ -378,7 +378,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
               </div>
             </div>
           </div>
-        
+
           <div className="relative z-20 flex flex-col w-full pb-1 mr-30 mb-8 sm:mb-16 text-2xl lg:w-6/12 sm:px-0 sm:items-center lg:items-start lg:mb-0 lg:pl-20 lg:pr-8">
             <h2 className="text-primary mb-0 md:mb-8 md:my-4 text-2xl-2 font-bold leading-tight">
               Easy {page_data.sourceIntegration} to{" "}
