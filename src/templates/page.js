@@ -66,7 +66,7 @@ const Page = props => {
       gsap.set(section, {autoAlpha: 0});
       ScrollTrigger.create({
         trigger: section,
-        start: "top 60%",
+        start: "top 80%",
         end: "bottom 20%",
         markers: false,
         toggleActions: "play none none none",

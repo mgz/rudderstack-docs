@@ -93,7 +93,7 @@ const HeroBannerPricing = props => {
                                   <a
                                     className={
                                       (item.button.btnhiglight === true
-                                        ? "cta-btn bg-darkScheme-textPrimary border border-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary flex items-center justify-center mx-auto rounded-lg"
+                                        ? "cta-btn bg-darkScheme-btnPrimaryBg text-darkScheme-textBlack border border-darkScheme-btnPrimaryBg hover:bg-transparent hover:text-darkScheme-btnPrimaryBg flex items-center justify-center mx-auto rounded-lg"
                                         : "btn-secondary-sm") +
                                       ` inline-block font-bold`
                                     }

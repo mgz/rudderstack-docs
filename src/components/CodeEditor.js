@@ -85,10 +85,10 @@ const CodeEditor = props => {
         tmCodeInput.push(
           scene.type(
             replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
-            100
+            80
           )
         )
-        tmCodeInput.push(scene.wait(200))
+        tmCodeInput.push(scene.wait(150))
       })
       return [
         ...tmCodeInput,
