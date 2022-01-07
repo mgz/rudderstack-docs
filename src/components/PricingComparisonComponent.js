@@ -261,7 +261,7 @@ const PricingComparisonComponent = props => {
                       {oo.subtitle}
                     </div>
                     {(() => {
-                      if ( oo.mobile_button.btnexternallink && oo.mobile_button.btnexternallink === true) {
+                      if ( btnexternallink && oo.mobile_button.btnexternallink === true) {
                         return (
                           <a
                             className={
