@@ -41,7 +41,7 @@ function Sidebar({
 
     let details_h2 = document.querySelectorAll('.details h2');
     details_h2.forEach((item, key) => {
-      if(window.scrollY >= item.offsetTop - 100){
+      if(window.scrollY >= (item.offsetTop + header_height)){
         let item_id = item.getAttribute('id');
         Array.from(document.querySelectorAll('.menu li a')).forEach(el => el.classList.remove('active'));
         let currentEl = document.querySelector("[data-attr='"+ item_id +"']");
@@ -94,7 +94,7 @@ function Sidebar({
         .getElementsByClassName("side-container")[0]
         .classList.remove("stick")
     }
-    
+
   }
 
   function scrollToTop (duration) {
@@ -131,7 +131,11 @@ function Sidebar({
       /* $(".menu").removeClass("active") */
       document.querySelector('.menu').classList.remove('active');
     }
-    e.preventDefault()
+    /* e.preventDefault() */
+
+    document
+  .getElementById(e.currentTarget.getAttribute("data-attr"))
+  .scrollIntoView({ behavior: 'smooth' });
 
     /* $("html, body").animate(
       {
@@ -140,7 +144,7 @@ function Sidebar({
       },
       5
     ) */
-    
+
   }
 
   function handleClickMobile() {
@@ -158,14 +162,14 @@ function Sidebar({
           {contents.map((section, index) => {
             return (
               <li key={section._key}>
-                <Link
-                  // to={`#` + `${section._key}`}
+                <a
+                  //to={`#` + `${section._key}`}
                   onClick={handleClick}
                   data-attr={section._key}
-                  className={`${index === 0 ? "active" : ""}`}
+                  className={`${index === 0 ? "active" : ""} sidebar-guides-link`}
                 >
                   {section.section_subtitle}
-                </Link>
+                </a>
               </li>
             )
           })}

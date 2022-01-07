@@ -81,6 +81,7 @@ const CodeEditor = props => {
 
     setLeftEditorScenes(createMovie(leftEditor, scene => {
       let tmCodeInput = [];
+      leftEditor.display.input.blur();
       props.code_input.code_contents.forEach(ppp => {
         tmCodeInput.push(
           scene.type(
@@ -155,10 +156,12 @@ const CodeEditor = props => {
   }, [])
 
   useEffect(() => {
-    /* console.log('Editor scene', leftEditorScenes); */
     if(!isMobile && !isSafari && !isFirefox){
       if(leftEditorScenes && editorFlag){
         leftEditorScenes.play();
+        if(leftEditorScenes.state === 'play'){
+          console.log('In play state', leftEditorScenes);
+        }
       }else if(leftEditorScenes){
         leftEditorScenes.pause();
       }

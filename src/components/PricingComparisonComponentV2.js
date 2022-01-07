@@ -123,7 +123,7 @@ const PricingComparisonComponentV2 = props => {
           {props.title}
         </h2>
 
-        <div className="hidden lg:block my-14 lg:px-4 px-6">
+        <div className="hidden lg:block mt-14 lg:px-4 px-6">
           <table className="pricing-table relative sm:w-full table-fixed font-custom text-grayColor-custom">
             <thead>
               <tr>
@@ -256,6 +256,28 @@ const PricingComparisonComponentV2 = props => {
               })}
             </tbody>
           </table>
+          <div className="mt-20">
+            <div className="inline-block mr-4">
+              <a
+                className={
+                  "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto rounded-lg font-bold text-darkScheme-textPrimary w-40 py-2"
+                }
+                href={"https://app.rudderstack.com/signup?type=freetrial"}
+              >
+                Sign Up for Free
+              </a>
+            </div>
+            <div className="inline-block">
+              <Link
+                className={
+                  "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto rounded-lg font-bold text-darkScheme-textPrimary w-40 py-2"
+                }
+                to={"/request-demo"}
+              >
+                Get a Demo
+              </Link>
+            </div>
+          </div>
         </div>
 
         <div className="mobile-table font-custom">
