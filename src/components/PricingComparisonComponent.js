@@ -261,35 +261,37 @@ const PricingComparisonComponent = props => {
                       {oo.subtitle}
                     </div>
                     {(() => {
-                      if (oo.mobile_button.btnexternallink === true) {
-                        return (
-                          <a
-                            className={
-                              (oo.mobile_button.btnhiglight === true
-                                ? "btn-primary-sm"
-                                : "btn-secondary-sm") +
-                              ` inline-block font-bold leading-6`
-                            }
-                            href={oo.mobile_button.btnlink}
-                          >
-                            {oo.mobile_button.btntext}
-                          </a>
-                        )
-                      } else {
-                        return (
-                          <Link to={oo.mobile_button.btnlink}>
-                            <span
+                      if(oo.mobile_button){
+                        if (oo.mobile_button.btnexternallink === true) {
+                          return (
+                            <a
                               className={
                                 (oo.mobile_button.btnhiglight === true
                                   ? "btn-primary-sm"
                                   : "btn-secondary-sm") +
                                 ` inline-block font-bold leading-6`
                               }
+                              href={oo.mobile_button.btnlink}
                             >
                               {oo.mobile_button.btntext}
-                            </span>
-                          </Link>
-                        )
+                            </a>
+                          )
+                        } else {
+                          return (
+                            <Link to={oo.mobile_button.btnlink}>
+                              <span
+                                className={
+                                  (oo.mobile_button.btnhiglight === true
+                                    ? "btn-primary-sm"
+                                    : "btn-secondary-sm") +
+                                  ` inline-block font-bold leading-6`
+                                }
+                              >
+                                {oo.mobile_button.btntext}
+                              </span>
+                            </Link>
+                          )
+                        }
                       }
                     })()}
                   </div>
