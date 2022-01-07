@@ -52,7 +52,7 @@ const HeroBannerPricing = props => {
                         </div>
                       </div>
                       <div className="p-6 pt-0 pb-10 max-w-xs mx-auto text-left">
-                        <ul className="h-52 text-lg">
+                        <ul className="h-60 text-lg">
                           {item.pricing_features.map((rr, idx) => {
                             return (
                               <li
