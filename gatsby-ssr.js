@@ -5,7 +5,8 @@ export const onPreRenderHTML = ({
 }) => {
   if (
     pathname.includes("/integration/") ||
-    pathname.includes("/blog/")
+    pathname.includes("/blog/") ||
+    pathname === ('/')
   ) {
   const headComponents = getHeadComponents()
 
