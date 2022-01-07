@@ -25,10 +25,10 @@ const IntegrationSimilarV2 = ({ data }) => {
         )
 
   return (
-    <section className="100% bg-whiteColor-custom">
+    <section className={`100% bg-whiteColor-custom ${eligibleNodes.length === 0 ? 'hidden' : 'block'}`}>
       <div className="max-w-6xl px-4 md:px-3 mx-auto flex flex-wrap pb-24">
         <h3 className="w-full my-2 text-4xl md:text-5xl text-dark font-bold leading-tight mb-8 md:mb-20 mt-6 md:mt-28">
-          Similer Integrations
+          Similar Integrations
         </h3>
         <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
           {eligibleNodes &&

@@ -1053,15 +1053,23 @@ exports.createPages = async ({ graphql, actions }) => {
       let integrationSpecificAssets = integration.data.allGoogleSpreadsheetR1IntegrationSpecificAssets.edges.find(
         oo => oo.node.sanityRelationSlug === edge.node.slug.current
       )
-      let comparableSlug = integrationSpecificAssets.node.integrationSlug
-      // console.log("sssssssss", integrationSpecificAssets.node.integrationSlug)
+      let comparableSlug = integrationSpecificAssets
+        ? integrationSpecificAssets.node.integrationSlug
+        : ""
 
-      let redICDataSource = integration.data.allGoogleSpreadsheetR1RedRudderstackIcData.edges.filter(
-        oo => oo.node.sourceSlug === comparableSlug
-      )
-      let redICDataDestination = integration.data.allGoogleSpreadsheetR1RedRudderstackIcData.edges.filter(
-        oo => oo.node.destinationSlug === comparableSlug
-      )
+      let redICDataSource =
+        comparableSlug != ""
+          ? integration.data.allGoogleSpreadsheetR1RedRudderstackIcData.edges.filter(
+              oo => oo.node.sourceSlug === comparableSlug
+            )
+          : ""
+      let redICDataDestination =
+        comparableSlug != ""
+          ? integration.data.allGoogleSpreadsheetR1RedRudderstackIcData.edges.filter(
+              oo => oo.node.destinationSlug === comparableSlug
+            )
+          : ""
+
       // if (1 === 2) {
       createPage({
         path,
@@ -1069,8 +1077,8 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           slug: edge.node.slug.current,
           integrationSpecificAssets,
-          redICDataSource,
-          redICDataDestination,
+          redICDataSource : redICDataSource || [],
+          redICDataDestination : redICDataDestination || [],
           excludedIds: INTEGRATION_CONN_EXCLUDED_IDS,
         },
       })
