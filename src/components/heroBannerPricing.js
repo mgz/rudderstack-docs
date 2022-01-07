@@ -21,7 +21,7 @@ const HeroBannerPricing = props => {
 
   return (
     <section className="md:py-19 py-12 relative">
-      <div className="out-gradient-wrapper bottom-0 right-16">
+      {/* <div className="out-gradient-wrapper bottom-0 right-16">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
@@ -42,7 +42,7 @@ const HeroBannerPricing = props => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="max-w-6xl mx-auto">
         <h1 className="my-4 font-bold leading-snug text-darkScheme-textPrimary text-3xl-3 md:text-5xl text-center px-4 triggers">
           {props.herobannertitle}
