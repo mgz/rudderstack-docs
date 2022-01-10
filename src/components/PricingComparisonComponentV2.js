@@ -119,7 +119,7 @@ const PricingComparisonComponentV2 = props => {
       </div> */}
       <span className="section-border absolute top-0 left-0 w-full block"></span>
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-darkScheme-textPrimary font-bold text-3xl-3 md:text-5xl px-4 triggers">
+        <h2 className="text-darkScheme-textPrimary font-bold text-3xl-3 md:text-5xl px-4">
           {props.title}
         </h2>
 
