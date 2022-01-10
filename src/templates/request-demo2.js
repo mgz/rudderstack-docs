@@ -10,6 +10,8 @@ import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
 import DynamicInputForm from "../components/dynamicInputForm"
+import Image from "../components/image"
+import { template } from "lodash-es"
 
 // const Layout = loadable(() => import("../components/layout"))
 // const SEO = loadable(() => import("../components/seo"))
@@ -22,7 +24,7 @@ import DynamicInputForm from "../components/dynamicInputForm"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
-/* export const query = graphql`
+export const query = graphql`
   query schDemo($slug: String) {
     sanitySchdemo(slug: { current: { eq: $slug } }) {
       title
@@ -73,7 +75,7 @@ import DynamicInputForm from "../components/dynamicInputForm"
       }
     }
   }
-` */
+`
 
 const Demo = ({ data, htmlId, location }) => {
   //console.log("request-demo", data)
@@ -207,8 +209,6 @@ const Demo = ({ data, htmlId, location }) => {
   //     setIsLoading(false)
   //   }
   // }
-
-  /* console.log("sss", location) */
   return (
     <Layout location={location}>
       {/* <SEO title="Schedule Demo" /> */}
@@ -243,120 +243,67 @@ const Demo = ({ data, htmlId, location }) => {
       </Helmet>
 
       <div className="font-custom">
-        <section id="demo_hdr">
-          <div className="demo-header">
-            <div className=" flex flex-col justify-center items-center demo-header-bg w-full">
-              <h1 className=" px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
-                {lv_scheduledemoheader[0].demo_header_text}
-              </h1>
-            </div>
-          </div>
-          <div className="bg-whiteColor-custom w-full">
-            <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
-              <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
-                <DynamicInputForm
-                  {...lv_scheduledemoheader[0].input_form}
-                  add_on_styling={"-top-24"}
-                  location={location}
-                />
-
-                {/* <DemoForm
-                  formId={`${location.pathname
-                    .replace("/", "")
-                    .replace("-", "_")}_form_top`}
-                  submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
-                  onDemoFormSubmit={onDemoFormSubmit}
-                  isLoading={isLoading}
-                  sectionId="demo_hdr"
-                /> */}
-              </div>
-              <div
-                className="w-full pr-4 sm:pl-4 pt-0 -mt-8 sm:mt-0 sm:pt-8 lg:pl-20  text-xl-2 md:w-3/6 text-grayColor-custom"
-                style={{ lineHeight: "35px" }}
-              >
-                <PortableText
-                  blocks={lv_scheduledemoheader[0].demo_right_content}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="demo_advantages">
-          {/* sm:px-12 lg:px-32 xl:px-60 */}
-          <div className="w-full bg-grayColor-BgGray">
-            <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
-              <div className="sm:mb-24 mb-10">
-                <span className="text-3xl md:text-5xl font-bold text-blueNew-midnight">
-                  {lv_demoadvantages[0].advantage_header_text}
-                </span>
-              </div>
-              <div className="flex flex-wrap flex-row">
-                {(lv_demoadvantages[0].demo_content || []).map((itm, idx) => {
-                  return (
-                    <div
-                      key={itm._key}
-                      className={`${
-                        idx === 2
-                          ? "w-full px-0 sm:px-12 lg:px-40"
-                          : "w-full sm:w-1/2"
-                      }`}
-                    >
-                      <DemoAdvantageItem data={itm} />
+        <section className="section-gradient">
+            <div className="request-wrapper flex">
+                <div className="request-left w-1/2">
+                    <div className="request-left-upper w-11/12 rounded-br-3xl">
+                        <div className="pt-19 pb-12 pr-10 flex">
+                            <div className="request-left-inner max-w-md ml-auto justify-self-end">
+                                <h1 className="text-5xl text-darkScheme-textPrimary font-bold leading-tight">In this 15 minute demo, you'll discover</h1>
+                                <div className="request-left-content mt-5">
+                                    <PortableText
+                                        blocks={lv_scheduledemoheader[0].demo_right_content}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  )
-                })}
-              </div>
+                    <div className="request-left-lower w-11/12 my-16">
+                        <div className="request-left-lower-inner flex pr-10 ml-auto">
+                            <div className="request-logos-wrapper">
+                                <ul className="logos-list flex mb-5">
+                                    {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
+                                        if(k === 2 || k === 3 || k === 8){
+                                            return (
+                                                <li key={k._key} className={`mr-16`}>
+                                                    <Image
+                                                        classes="object-contain"
+                                                        props={i.asset._ref}
+                                                        width="210"
+                                                        height="40"
+                                                    />
+                                                </li>
+                                            )
+                                        }
+                                    })}
+                                </ul>
+                                <ul className="logos-list flex ml-16">
+                                    {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
+                                        if(k === 0 || k === 1 || k === 6){
+                                            return (
+                                                <li key={k._key} className={`${k === 10 ? 'mr-0' : 'mr-16'}`}>
+                                                    <Image
+                                                        classes="object-contain"
+                                                        props={i.asset._ref}
+                                                        width="210"
+                                                        height="40"
+                                                    />
+                                                </li>
+                                            )
+                                        }
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="request-right w-1/2">
+                    <DynamicInputForm
+                    {...lv_scheduledemoheader[0].input_form}
+                    location={location}
+                    />
+                </div>
             </div>
-          </div>
-        </section>
-        <section id="logos" className="px-8">
-          <OurLogo
-            customHeaderText={`The top companies in the world use RudderStack to activate their customer data`}
-            {...lv_ourlogoblock[0].node._rawOurLogos}
-          />
-        </section>
-        <section id="testimonials">
-          <Testimonial
-            {...lv_testimonialsection[0].node._rawTestimonials}
-            isForDemoPage={true}
-          />
-        </section>
-        {/* sm:px-12 lg:px-32 xl:px-60 */}
-        <section id="demo_bottom">
-          <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 max-w-6xl mx-auto px-6 sm:mb-24 sm:mt-12 md:mt-36">
-            <div className="w-full pr-4 lg:pr-16 pt-0  text-xl  md:w-3/6 md:block">
-              <div className="mb-4">
-                <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight text-blueNew-midnight">
-                  {lv_demofooterleft[0].demo_footer_header_text}
-                </span>
-              </div>
-              <div className="text-xl-2 text-grayColor-custom mb-12">
-                <PortableText blocks={lv_demofooterleft[0].demo_footer_desc} />
-              </div>
-            </div>
-            <div className="w-full px-0 md:w-3/6 flex flex-row justify-end">
-              <DynamicInputForm
-                {...lv_demofooterleft[0].input_form}
-                add_on_styling={"top-0"}
-                location={location}
-              />
-
-              {/* <DemoForm
-                submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
-                formId={`${location.pathname
-                  .replace("/", "")
-                  .replace("-", "_")}_form_bottom`}
-                // formId="request_demo_form_bottom"
-                isFooterForm={true}
-                isLoading={isLoading}
-                onDemoFormSubmit={onDemoFormSubmit}
-                sectionId="demo_bottom"
-              /> */}
-            </div>
-          </div>
-        </section>
-        <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>
       {((location && location.pathname === "/request-demo-chili-piper-test/") ||

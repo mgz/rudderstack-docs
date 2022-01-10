@@ -1362,6 +1362,21 @@ form .disableActive{
   cursor: pointer;
 }
 
+/* Request Demo */
+
+.request-left-upper{
+  background: #070E1F;
+}
+.request-inner-container{
+  width: 1152px;
+}
+.request-left-content p{
+  color: #fff;
+}
+.logos-list img{
+  filter: brightness(0) invert(1);
+}
+
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;
