@@ -94,7 +94,7 @@ function Sidebar({
         .getElementsByClassName("side-container")[0]
         .classList.remove("stick")
     }
-    
+
   }
 
   function scrollToTop (duration) {
@@ -117,31 +117,35 @@ function Sidebar({
     window.requestAnimationFrame(step);
 }
 
-  function handleClick(e) {
-    var elems = document.querySelectorAll(".menu a")
+function handleClick(e) {
+  var elems = document.querySelectorAll(".menu a")
 
-    ;[].forEach.call(elems, function (el) {
-      el.classList.remove("active")
-    })
+  ;[].forEach.call(elems, function (el) {
+    el.classList.remove("active")
+  })
 
-    e.currentTarget.classList.add("active")
-    document.getElementsByClassName("selectitem")[0].innerHTML =
-      e.currentTarget.innerHTML
-    if (window.innerWidth <= 800) {
-      /* $(".menu").removeClass("active") */
-      document.querySelector('.menu').classList.remove('active');
-    }
-    e.preventDefault()
-
-    /* $("html, body").animate(
-      {
-        scrollTop:
-          $("#" + e.currentTarget.getAttribute("data-attr")).offset().top - 60,
-      },
-      5
-    ) */
-    
+  e.currentTarget.classList.add("active")
+  document.getElementsByClassName("selectitem")[0].innerHTML =
+    e.currentTarget.innerHTML
+  if (window.innerWidth <= 800) {
+    /* $(".menu").removeClass("active") */
+    document.querySelector('.menu').classList.remove('active');
   }
+  /* e.preventDefault() */
+
+  document
+.getElementById(e.currentTarget.getAttribute("data-attr"))
+.scrollIntoView({ behavior: 'smooth' });
+
+  /* $("html, body").animate(
+    {
+      scrollTop:
+        $("#" + e.currentTarget.getAttribute("data-attr")).offset().top - 60,
+    },
+    5
+  ) */
+
+}
 
   function handleClickMobile() {
     /* $(".menu").toggleClass("active") */
@@ -158,14 +162,14 @@ function Sidebar({
           {contents.map((section, index) => {
             return (
               <li key={section._key}>
-                <Link
-                  // to={`#` + `${section._key}`}
+                <a
+                  //to={`#` + `${section._key}`}
                   onClick={handleClick}
                   data-attr={section._key}
-                  className={`${index === 0 ? "active" : ""}`}
+                  className={`${index === 0 ? "active" : ""} sidebar-guides-link cursor-pointer`}
                 >
                   {section.section_subtitle}
-                </Link>
+                </a>
               </li>
             )
           })}
