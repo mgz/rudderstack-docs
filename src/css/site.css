@@ -503,15 +503,15 @@ body {
   z-index: 20;
 } */
 .product-media {
-  position: absolute;
-  width: 100%;
+  /* position: absolute;
   height: 100%;
-  /* left: 60px; */
+  left: 60px; */
   /* border-radius: 12px;
   padding-left: 10%;
   padding-right: 12%;
   padding-top: 3%;
   padding-bottom: 4%; */
+  width: 100%;
   z-index: 20;
 }
 
