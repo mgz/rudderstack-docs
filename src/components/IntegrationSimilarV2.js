@@ -54,26 +54,29 @@ const IntegrationSimilarV2 = ({ data }) => {
                   }`}
                 >
                   <div className="border border-grayColor-priceCardBorder rounded-3xl shadow-md overflow-hidden h-full">
-                    <div className="int-img lg:px-24 p-10 flex justify-center items-center">
-                      <img
-                        src={
-                          isSource
-                            ? oo.node.destinationLogoImgUrl
-                            : oo.node.sourceLogoImgUrl
-                        }
-                        alt={
-                          isSource
-                            ? oo.node.destinationSlug
-                            : oo.node.sourceSlug
-                        }
-                        // placeholder="tracedSVG"
-                        // className="w-20 h-auto"
-                        className="object-scale-down h-full w-full"
-                      />
+                    <div className="int-img lg:px-24 px-15 pt-5 flex flex-col justify-center items-center">
+                      <div className="h-24 flex items-center">
+                        <img
+                          src={
+                            isSource
+                              ? oo.node.destinationLogoImgUrl
+                              : oo.node.sourceLogoImgUrl
+                          }
+                          alt={
+                            isSource
+                              ? oo.node.destinationSlug
+                              : oo.node.sourceSlug
+                          }
+                          // placeholder="tracedSVG"
+                          // className="w-20 h-auto"
+                          className="object-scale-down w-24"
+                        />
+                      </div>
+                      <p className="text-center block my-3 capitalize font-bold">{oo.node.sourceSlug}</p>
                     </div>
                     <div className="flex items-center px-10 py-5">
                       <span className="font-bold leading-normal text-sm lr-icon relative sm:inline-block">
-                        <Link href={oo.node.slug}>View Integration</Link>
+                        <span>View Integration</span>
                       </span>
                     </div>
                   </div>

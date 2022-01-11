@@ -67,6 +67,7 @@
 }
 .accordion .accordion__title:before {
   background-image: url("../images/math-plus.svg");
+  background-position: center center;
   border: none;
   transform: rotate(0deg);
   background-size: 100%;
@@ -83,6 +84,7 @@
 }
 .accordion.active .accordion__title:after {
   background-image: url("../images/math-minus.svg");
+  background-position: center center;
   border: none;
   transform: rotate(0deg);
   background-size: 100%;

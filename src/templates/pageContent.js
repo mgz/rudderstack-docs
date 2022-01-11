@@ -83,7 +83,7 @@ const PageContent = ({ data, location }) => {
   }, [])
 
   return (
-    <Layout location={location} darkTheme={true}>
+    <Layout location={location} darkTheme={location.pathname.startsWith('/pricing') ? true : false}>
       <Helmet>
         <title>{data.pagedata.meta_title || data.pagedata.title}</title>
         {data.pagedata.enable_no_follow_no_index === true && (
