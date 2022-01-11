@@ -15,7 +15,7 @@ function Accordion(props) {
         className={`accordion pb-6 ${setActive}`}
         onClick={toggleAccordion}
       >
-        <p className="accordion__title text-xl font-bold text-darkScheme-textPrimary">{props.title}</p>
+        <p className={`accordion__title text-xl font-bold ${props.darkMode && props.darkMode !== undefined ? 'text-darkScheme-textPrimary' : 'text-darkScheme-textBlack'}`}>{props.title}</p>
       </button>
       {setActive === "active" && (
         <div ref={content} className="accordion__content">
