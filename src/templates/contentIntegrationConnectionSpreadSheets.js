@@ -7,7 +7,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
   // console.log("ContentIntegrationConnectionSpreadSheets", data)
-  
+
   let page_data = data.override_integration_connection
     ? data.override_integration_connection
     : data.integration_connection
@@ -57,7 +57,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 Sign up for free
               </span>
             </a>
-            {/* 
+            {/*
           <a
             className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
             href={page_data.destinationDocsUrl}
@@ -442,10 +442,10 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                       placeholder="tracedSVG"
                     />
                   </div>
-                  <div class="text-xl-2 font-bold mb-6 mt-2  text-blueNew-midnight">
+                  <div className="text-xl-2 font-bold mb-6 mt-2  text-blueNew-midnight">
                     {page_data.useCaseHeader1}
                   </div>
-                  <div class="text-grayColor-custom text-lg mb-8">
+                  <div className="text-grayColor-custom text-lg mb-8">
                     {page_data.useCaseDesc1}
                   </div>
                 </div>
@@ -461,10 +461,10 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                       placeholder="tracedSVG"
                     />
                   </div>
-                  <div class="text-xl-2 font-bold mb-6 mt-2  text-blueNew-midnight">
+                  <div className="text-xl-2 font-bold mb-6 mt-2  text-blueNew-midnight">
                     {page_data.useCaseHeader2}
                   </div>
-                  <div class="text-grayColor-custom text-lg mb-8">
+                  <div className="text-grayColor-custom text-lg mb-8">
                     {page_data.useCaseDesc2}
                   </div>
                 </div>
@@ -480,10 +480,10 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                       placeholder="tracedSVG"
                     />
                   </div>
-                  <div class="text-xl-2 font-bold mb-6 mt-2  text-blueNew-midnight">
+                  <div className="text-xl-2 font-bold mb-6 mt-2  text-blueNew-midnight">
                     {page_data.useCaseHeader3}
                   </div>
-                  <div class="text-grayColor-custom text-lg mb-8">
+                  <div className="text-grayColor-custom text-lg mb-8">
                     {page_data.useCaseDesc3}
                   </div>
                 </div>
@@ -504,7 +504,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
             >
               {page_data.ctaButtonDestination}
             </a>
-            {/*           
+            {/*
             <a href={"https://app.rudderstack.com/signup?type=freetrial"}>
               <span
                 className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
@@ -536,7 +536,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                     placeholder="tracedSVG"
                   />
                 </div>
-                <div class="text-xl-2 font-bold mt-2  text-blueNew-midnight pl-6 mb-16">
+                <div className="text-xl-2 font-bold mt-2  text-blueNew-midnight pl-6 mb-16">
                   {page_data.relevantIntegrationDesc1}
                 </div>
 
@@ -570,7 +570,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                     placeholder="tracedSVG"
                   />
                 </div>
-                <div class="text-xl-2 font-bold mt-2  text-blueNew-midnight pl-6 mb-16">
+                <div className="text-xl-2 font-bold mt-2  text-blueNew-midnight pl-6 mb-16">
                   {page_data.relevantIntegrationDesc2}
                 </div>
 
@@ -604,7 +604,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                     placeholder="tracedSVG"
                   />
                 </div>
-                <div class="text-xl-2 font-bold mt-2  text-blueNew-midnight pl-6 mb-16">
+                <div className="text-xl-2 font-bold mt-2  text-blueNew-midnight pl-6 mb-16">
                   {page_data.relevantIntegrationDesc3}
                 </div>
 
@@ -638,7 +638,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                     placeholder="tracedSVG"
                   />
                 </div>
-                <div class="text-xl-2 font-bold mt-2  text-blueNew-midnight pl-6 mb-16">
+                <div className="text-xl-2 font-bold mt-2  text-blueNew-midnight pl-6 mb-16">
                   {page_data.relevantIntegrationDesc4}
                 </div>
 
@@ -676,10 +676,10 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
                 placeholder="tracedSVG"
               />
             </div>
-            <div class="text-4xl md:text-5xl font-bold mb-6 mt-2  text-blueNew-midnight">
+            <div className="text-4xl md:text-5xl font-bold mb-6 mt-2  text-blueNew-midnight">
               About {page_data.destinationIntegration}
             </div>
-            <div class="text-grayColor-custom text-lg mb-8">
+            <div className="text-grayColor-custom text-lg mb-8">
               {page_data.destinationDescription}
             </div>
           </div>
