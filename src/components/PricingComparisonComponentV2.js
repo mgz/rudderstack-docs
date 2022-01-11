@@ -119,7 +119,7 @@ const PricingComparisonComponentV2 = props => {
       </div> */}
       <span className="section-border absolute top-0 left-0 w-full block"></span>
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-darkScheme-textPrimary font-bold text-3xl-3 md:text-5xl px-4 triggers">
+        <h2 className="text-darkScheme-textPrimary font-bold text-3xl-3 md:text-5xl px-4">
           {props.title}
         </h2>
 
@@ -158,102 +158,111 @@ const PricingComparisonComponentV2 = props => {
                 })}
               </tr>
             </thead>
-            <tbody className="triggers">
+            <tbody>
               {pricingComparisionData.map((group, idx) => {
                 return (
-                  <React.Fragment key={group.group}>
-                    {idx !== 0 && (
-                      <tr key={`${group.group}-x`}>
-                        <td className="p-2 text-primary text-lg text-left uppercase font-bold col-span-4">
-                          &nbsp;
-                        </td>
-                      </tr>
-                    )}
-                    <tr key={group.group}>
-                      <td className="p-4 text-darkScheme-btnSecondaryBg text-2xl text-left uppercase font-bold" colSpan={"2"}>
-                        {group.group}
-                      </td>
-                    </tr>
-                    {group.nodes.map((row, l_index) => {
-                      //   console.log(row, "sssw")
-                      return (
-                        <tr
-                          key={row.title}
-                          className={`${
-                            l_index % 2 === 0
-                              ? "grad-bg rounded-2xl"
-                              : "bg-transparent"
-                          }`}
-                        >
-                          <td className="p-4 text-lg text-left w-2/4 rounded-tl-2xl rounded-bl-2xl text-darkScheme-textPrimary opacity-50">
-                            {row.title}
-                          </td>
-
-                          <td className="text-base py-4 px-12 w-1/4">
-                            {row.free_val === "<<CHECK>>" && (
-                              <span className={`check-icon check-comparison`} />
-                            )}
-                            {row.free_val === "<<UNCHECK>>" && (
-                              <span className={`line-image`} />
-                            )}
-                            {row.free_val !== "<<UNCHECK>>" &&
-                              row.free_val !== "<<CHECK>>" && (
-                                <span className="font-normal text-darkScheme-textPrimary">
-                                  {row.free_val}
-                                </span>
+                  <tr className="triggers" key={group.group}>
+                      <td colSpan={"4"}>
+                        <table className="w-full">
+                          <tbody>
+                            <React.Fragment>
+                              {idx !== 0 && (
+                                <tr key={`${group.group}-x`}>
+                                  <td className="p-2 text-primary text-lg text-left uppercase font-bold col-span-4">
+                                    &nbsp;
+                                  </td>
+                                </tr>
                               )}
-                          </td>
+                              <tr key={group.group}>
+                                <td className="p-4 text-darkScheme-btnSecondaryBg text-2xl text-left uppercase font-bold" colSpan={"2"}>
+                                  {group.group}
+                                </td>
+                              </tr>
+                              {group.nodes.map((row, l_index) => {
+                                //   console.log(row, "sssw")
+                                return (
+                                  <tr
+                                    key={row.title}
+                                    className={`${
+                                      l_index % 2 === 0
+                                        ? "grad-bg rounded-2xl"
+                                        : "bg-transparent"
+                                    }`}
+                                  >
+                                    <td className="p-4 text-lg text-left w-1/4 rounded-tl-2xl rounded-bl-2xl text-darkScheme-textPrimary opacity-50">
+                                      {row.title}
+                                    </td>
 
-                          <td className="text-base py-4 px-12 w-1/4">
-                            {row.pro_val === "<<CHECK>>" && (
-                              <span className={`check-icon check-comparison`} />
-                            )}
-                            {row.pro_val === "<<UNCHECK>>" && (
-                              <span className={`line-image`} />
-                            )}
-                            {row.pro_val !== "<<UNCHECK>>" &&
-                              row.pro_val !== "<<CHECK>>" && (
-                                <span className="font-normal text-darkScheme-textPrimary">
-                                  {row.pro_val}
-                                </span>
-                              )}
-                          </td>
+                                    <td className="text-base py-4 px-12 w-1/4">
+                                      {row.free_val === "<<CHECK>>" && (
+                                        <span className={`check-icon check-comparison`} />
+                                      )}
+                                      {row.free_val === "<<UNCHECK>>" && (
+                                        <span className={`line-image`} />
+                                      )}
+                                      {row.free_val !== "<<UNCHECK>>" &&
+                                        row.free_val !== "<<CHECK>>" && (
+                                          <span className="font-normal text-darkScheme-textPrimary">
+                                            {row.free_val}
+                                          </span>
+                                        )}
+                                    </td>
 
-                          <td className="text-base py-4 px-12 w-1/4 rounded-br-2xl rounded-tr-2xl">
-                            {row.enterprice_val === "<<CHECK>>" && (
-                              <span className={`check-icon check-comparison`} />
-                            )}
-                            {row.enterprice_val === "<<UNCHECK>>" && (
-                              <span className={`line-image`} />
-                            )}
-                            {row.enterprice_val !== "<<UNCHECK>>" &&
-                              row.enterprice_val !== "<<CHECK>>" &&
-                              row.enterprice_val !== "TALKTOSALES" && (
-                                <span className="font-normal text-darkScheme-textPrimary">
-                                  {row.enterprice_val}
-                                </span>
-                              )}
+                                    <td className="text-base py-4 px-12 w-1/4">
+                                      {row.pro_val === "<<CHECK>>" && (
+                                        <span className={`check-icon check-comparison`} />
+                                      )}
+                                      {row.pro_val === "<<UNCHECK>>" && (
+                                        <span className={`line-image`} />
+                                      )}
+                                      {row.pro_val !== "<<UNCHECK>>" &&
+                                        row.pro_val !== "<<CHECK>>" && (
+                                          <span className="font-normal text-darkScheme-textPrimary">
+                                            {row.pro_val}
+                                          </span>
+                                        )}
+                                    </td>
 
-                            {row.enterprice_val === "TALKTOSALES" && (
-                              <Link
-                                to="/enterprise-quote"
-                                className="text-sm  leading-sm font-bold py-2 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary mx-auto"
-                                target="_blank"
-                                rel="noreferrer"
-                                onClick={e =>
-                                  rudderslabTrackOnClick("link", group.group, e)
-                                }
-                              >
-                                Talk to sales
-                              </Link>
-                            )}
-                          </td>
-                        </tr>
-                      )
-                    })}
-                  </React.Fragment>
-                )
+                                    <td className="text-base py-4 px-12 w-1/4 rounded-br-2xl rounded-tr-2xl">
+                                      {row.enterprice_val === "<<CHECK>>" && (
+                                        <span className={`check-icon check-comparison`} />
+                                      )}
+                                      {row.enterprice_val === "<<UNCHECK>>" && (
+                                        <span className={`line-image`} />
+                                      )}
+                                      {row.enterprice_val !== "<<UNCHECK>>" &&
+                                        row.enterprice_val !== "<<CHECK>>" &&
+                                        row.enterprice_val !== "TALKTOSALES" && (
+                                          <span className="font-normal text-darkScheme-textPrimary">
+                                            {row.enterprice_val}
+                                          </span>
+                                        )}
+
+                                      {row.enterprice_val === "TALKTOSALES" && (
+                                        <Link
+                                          to="/enterprise-quote"
+                                          className="text-sm  leading-sm font-bold py-2 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary mx-auto"
+                                          target="_blank"
+                                          rel="noreferrer"
+                                          onClick={e =>
+                                            rudderslabTrackOnClick("link", group.group, e)
+                                          }
+                                        >
+                                          Talk to sales
+                                        </Link>
+                                      )}
+                                    </td>
+                                  </tr>
+                                )
+                              })}
+                            </React.Fragment>
+                          </tbody>
+                      </table>
+                    </td>
+                  </tr>
+              )
               })}
+
             </tbody>
           </table>
           <div className="mt-20">
