@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import clientConfig from "../../client-config"
 import BasePortableText from "@sanity/block-content-to-react"
 // import serializers from "./serializers"
@@ -34,8 +34,17 @@ const AuthorReference = ({ node }) => {
 }
 
 const PortableText = ({ blocks, className, trackSectionHeader }) => {
+
+  let [darkMode, setDarkMode] = useState(false);
+
   useEffect(() => {
-    import("@justinribeiro/lite-youtube")
+    import("@justinribeiro/lite-youtube");
+    let checkDarkMode = document.getElementById('main-container');
+    if(checkDarkMode.classList.contains('hero-section')){
+      setDarkMode(true);
+    }else{
+      setDarkMode(false);
+    }
   }, [])
   return (
     <BasePortableText
@@ -184,7 +193,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
             return (
               <a
                 id={_key}
-                className={`underline text-darkScheme-textPrimary hover:text-darkScheme-btnPrimaryBg`}
+                className={`underline ${darkMode ? 'text-darkScheme-textPrimary hover:text-darkScheme-btnPrimaryBg' : 'text-blueNew-midnight hover:text-darkScheme-btnPrimaryBg'}`}
                 href={mark.href}
                 onClick={e =>
                   rudderslabTrackOnClick(

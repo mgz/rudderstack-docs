@@ -323,7 +323,7 @@ h2.font-bold{
 /* Style the accordion content title */
 .accordion__title {
   text-align: left;
-  font-family: "Basis Grotesque Pro", sans-serif;
+  /* font-family: "Basis Grotesque Pro", sans-serif; */
 }
 
 /* Style the accordion chevron icon */
@@ -339,9 +339,9 @@ h2.font-bold{
 }
 
 /* Style the accordion content text */
-.accordion__text {
+/* .accordion__text {
   font-family: "Basis Grotesque Pro", sans-serif;
-}
+} */
 /*our logo section*/
 .our-logos .owl-stage {
   display: flex;
