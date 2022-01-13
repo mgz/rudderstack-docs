@@ -1376,7 +1376,11 @@ form .disableActive{
 .logos-list img{
   filter: brightness(0) invert(1);
 }
-
+.request-left-lower{
+  background: url('../images/request-demo-bg.png') no-repeat;
+  background-position: left top;
+  background-size: 150px;
+}
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;

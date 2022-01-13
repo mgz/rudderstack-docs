@@ -9,7 +9,7 @@ import OurLogo from "../components/ourlogo"
 import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
-import DynamicInputForm from "../components/DynamicInputForm2"
+import DynamicInputForm from "../components/DynamicInputForm"
 import Image from "../components/image"
 import { template } from "lodash-es"
 
@@ -25,7 +25,7 @@ import { template } from "lodash-es"
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 export const query = graphql`
-  query schDemo($slug: String) {
+  query schDemo1($slug: String) {
     sanitySchdemo(slug: { current: { eq: $slug } }) {
       title
       _rawPagebuildersectionarray
@@ -243,7 +243,8 @@ const Demo = ({ data, htmlId, location }) => {
       </Helmet>
 
       <div className="font-custom">
-        <section className="section-gradient">
+        <section className="section-gradient relative">
+            <span className="section-border block absolute bottom-0 left-0 w-full"></span>
             <div className="request-wrapper flex">
                 <div className="request-left w-1/2">
                     <div className="request-left-upper w-11/12 rounded-br-3xl">
@@ -258,8 +259,8 @@ const Demo = ({ data, htmlId, location }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="request-left-lower w-11/12 my-16">
-                        <div className="request-left-lower-inner flex pr-10 ml-auto">
+                    <div className="request-left-lower w-11/12 py-16 pl-15">
+                        <div className="request-left-lower-inner flex ml-auto">
                             <div className="request-logos-wrapper">
                                 <ul className="logos-list flex mb-5">
                                     {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {

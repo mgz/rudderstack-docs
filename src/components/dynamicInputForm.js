@@ -39,6 +39,7 @@ const DynamicInputForm = ({
   `)
   // console.log("location", location)
   const [isLoading, setIsLoading] = useState(false)
+  const [isFromRequest, setIsFromRequest] = useState(false);
 
   // useEffect(() => {
   //   let tmp = data.allSanityFormInput.nodes.find(
@@ -65,6 +66,14 @@ const DynamicInputForm = ({
   useEffect(() => {
     // console.log("isLoading", isLoading)
   }, [isLoading])
+
+  useEffect(() => {
+    if(location.pathname.startsWith('/request-demo')){
+      setIsFromRequest(true);
+    }else{
+      setIsFromRequest(false);
+    }
+  }, [location.pathname])
 
   let formDefinition = data.allSanityFormInput.nodes.find(
     oo => ref_form_input && oo._id === ref_form_input._ref
@@ -353,7 +362,7 @@ const DynamicInputForm = ({
         }
         // setIsLoading(false)
       }}
-      className={`demo_form px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg ${add_on_styling}`}
+      className={`${isFromRequest ? 'request-form' : 'demo_form'} px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg ${add_on_styling}`}
     >
       {formDefinition &&
         formDefinition.formheader &&

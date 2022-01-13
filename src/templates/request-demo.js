@@ -22,7 +22,7 @@ import DynamicInputForm from "../components/dynamicInputForm"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 // const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
-/* export const query = graphql`
+export const query = graphql`
   query schDemo($slug: String) {
     sanitySchdemo(slug: { current: { eq: $slug } }) {
       title
@@ -73,7 +73,7 @@ import DynamicInputForm from "../components/dynamicInputForm"
       }
     }
   }
-` */
+`
 
 const Demo = ({ data, htmlId, location }) => {
   //console.log("request-demo", data)
