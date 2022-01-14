@@ -185,6 +185,7 @@ module.exports = {
           "sectionTitle",
           "sectionId",
           "sectionContent",
+          "searchAlias",
           "idx",
         ],
       },
