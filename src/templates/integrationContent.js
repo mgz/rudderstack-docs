@@ -124,7 +124,9 @@ const Singleintegration = ({ data, location, pageContext }) => {
           </section>
         )}
 
-        <IntegrationSimilarV2 data={pageContext} />
+        <IntegrationSimilarV2
+          data={pageContext ? pageContext : data.tPageContext}
+        />
 
         <section id="testimonials">
           <Testimonial
