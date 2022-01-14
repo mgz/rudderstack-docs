@@ -29,6 +29,32 @@ export const query = graphql `
             }
           }
 
+          allGoogleSpreadsheetR1IntegrationSpecificAssets {
+            edges {
+              node {
+                sanityRelationSlug
+                category
+                integrationSlug
+              }
+            }
+          }
+    
+          allGoogleSpreadsheetR1RedRudderstackIcData {
+            edges {
+              node {
+                slug
+                id
+                googleSpreadsheetId
+                sourceLogoIconUrl
+                sourceLogoImgUrl
+                destinationLogoIconUrl
+                destinationLogoImgUrl
+                destinationSlug
+                sourceSlug
+              }
+            }
+          }
+          
           section_get_started: allSanitySectionGetStarted {
             edges {
               node {

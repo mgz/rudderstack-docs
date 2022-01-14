@@ -116,7 +116,7 @@ class PreviewTemplate extends Component {
           this.setState({ data: pagedata })
         })
       })
-    } else if (type === "product_page" || type === "new_theme_product_page" ) {
+    } else if (type === "product_page" || type === "new_theme_product_page") {
       const query = "*[_id == $id]"
       component = "Product"
 
@@ -171,7 +171,36 @@ class PreviewTemplate extends Component {
           intdata.section_get_started = this.props.frontblock.section_get_started
 
           intdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
-          this.setState({ data: intdata })
+          let integrationSpecificAssets = this.props.frontblock.allGoogleSpreadsheetR1IntegrationSpecificAssets.edges.find(
+            oo => oo.node.sanityRelationSlug === integration.slug.current
+          )
+          let comparableSlug = integrationSpecificAssets
+            ? integrationSpecificAssets.node.integrationSlug
+            : ""
+
+          let redICDataSource =
+            comparableSlug != ""
+              ? this.props.frontblock.allGoogleSpreadsheetR1RedRudderstackIcData.edges.filter(
+                  oo => oo.node.sourceSlug === comparableSlug
+                )
+              : ""
+          let redICDataDestination =
+            comparableSlug != ""
+              ? this.props.frontblock.allGoogleSpreadsheetR1RedRudderstackIcData.edges.filter(
+                  oo => oo.node.destinationSlug === comparableSlug
+                )
+              : ""
+          let pageContext = {
+            integrationSpecificAssets: integrationSpecificAssets,
+            redICDataSource: redICDataSource || [],
+            redICDataDestination: redICDataDestination || [],
+            excludedIds: [],
+          }
+
+          this.setState({
+            data: { ...intdata, tPageContext: pageContext },
+            // pageContext,
+          })
         })
       })
     } else if (type === "videolibrary") {
@@ -232,7 +261,10 @@ class PreviewTemplate extends Component {
           this.setState({ data: contentdata })
         })
       })
-    } else if (type === "be_a_hero_page" || type === "new_theme_be_a_hero_page") {
+    } else if (
+      type === "be_a_hero_page" ||
+      type === "new_theme_be_a_hero_page"
+    ) {
       const query = "*[_id == $id]"
       component = "be_a_hero_page"
 

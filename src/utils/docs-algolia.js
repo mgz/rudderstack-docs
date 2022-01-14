@@ -11,6 +11,16 @@ const docsQuery = `{
       }
     }
   }
+
+  allSanityDocsSearchAlias {
+    edges {
+      node {
+        search_alias
+        search_text
+        id
+      }
+    }
+  }
 }`
 
 function convertToSlug(pData) {
@@ -39,6 +49,23 @@ const queries = [
 
         let content = tmpString.substring(strPos, endPos - 1)
 
+        let tttmp = data.allSanityDocsSearchAlias.edges.find(
+          kk =>
+            kk.node.search_alias ===
+            convertToSlug(
+              ignorePaths.indexOf(row.node.slug) === -1
+                ? row.node.tableOfContents.items[0].title
+                : ignorePaths[ignorePaths.indexOf(row.node.slug)]
+            )
+        )
+
+        let searchAlias = ""
+        if (tttmp) {
+
+          searchAlias = tttmp.node.search_text
+        }
+
+
         tmpString = tmpString.replace(content, "")
         tmpData.push({
           objectID:
@@ -51,6 +78,7 @@ const queries = [
           sectionId: convertToSlug(ignorePaths.indexOf(row.node.slug) === -1 ? row.node.tableOfContents.items[0].title : ignorePaths[ignorePaths.indexOf(row.node.slug)]),
           SectionTitle: convertToSlug(ignorePaths.indexOf(row.node.slug) === -1 ? row.node.tableOfContents.items[0].title : ignorePaths[ignorePaths.indexOf(row.node.slug)]),
           sectionContent: content,
+          searchAlias:searchAlias,
           idx: 1,
         })
 
@@ -69,6 +97,15 @@ const queries = [
           content = tmpString.substring(strPos, endPos - 1)
           tmpString = tmpString.replace(content, "")
 
+          let tttmp = data.allSanityDocsSearchAlias.edges.find(
+            kk => kk.node.search_alias === row.node.headings[i].value
+          )
+
+          let searchAlias = ""
+          if (tttmp) {
+            searchAlias = tttmp.node.search_text
+          }
+
           tmpData.push({
             objectID:
               row.node.slug + "-" + convertToSlug(row.node.headings[i].value),
@@ -78,6 +115,7 @@ const queries = [
             sectionId: convertToSlug(row.node.headings[i].value),
             SectionTitle: row.node.headings[i].value,
             sectionContent: content,
+            searchAlias: searchAlias,
             idx: i + 2,
           })
         }
