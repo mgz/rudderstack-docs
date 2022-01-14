@@ -53,7 +53,7 @@ const Singleintegration = ({ data, location, pageContext }) => {
           tmp.push({ title: rr.faq_question, content: rr.faq_answer })
         })
       setFaqData({
-        faqTitle: data.integration._rawFaqSection.faqtitle,
+        faqTitle: data.integration._rawFaqSection.faqtitle ? data.integration._rawFaqSection.faqtitle : "",
         faqSubTitle: data.integration._rawFaqSection.faqsubtitle,
         content: tmp,
       })
@@ -113,7 +113,7 @@ const Singleintegration = ({ data, location, pageContext }) => {
             />
           )}
 
-        {faqData && (
+        {faqData && faqData.faqTitle !== "" && (
           <section className="bg-grayColor-BgGray md:pt-32 md:pb-24 sm:pt-16 sm:pb-12 pt-11 pb-12 relative font-custom">
             <Faq
               title={faqData.faqTitle}
@@ -124,7 +124,9 @@ const Singleintegration = ({ data, location, pageContext }) => {
           </section>
         )}
 
-        <IntegrationSimilarV2 data={pageContext} />
+        <IntegrationSimilarV2
+          data={pageContext ? pageContext : data.tPageContext}
+        />
 
         <section id="testimonials">
           <Testimonial
