@@ -60,7 +60,7 @@ const Singleintegration = ({ data, location, pageContext }) => {
     }
   }, [data.integration._rawFaqSection])
 
-  console.log("pageContext",faqData)
+  // console.log("pageContext",faqData)
 
   return (
     <Layout location={location}>
