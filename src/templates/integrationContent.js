@@ -53,7 +53,7 @@ const Singleintegration = ({ data, location, pageContext }) => {
           tmp.push({ title: rr.faq_question, content: rr.faq_answer })
         })
       setFaqData({
-        faqTitle: data.integration._rawFaqSection.faqtitle,
+        faqTitle: data.integration._rawFaqSection.faqtitle ? data.integration._rawFaqSection.faqtitle : "",
         faqSubTitle: data.integration._rawFaqSection.faqsubtitle,
         content: tmp,
       })
