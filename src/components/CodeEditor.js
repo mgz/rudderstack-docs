@@ -154,20 +154,20 @@ const CodeEditor = props => {
     }
   }, [])
 
-  useEffect(() => {
-    /* console.log('Editor scene', leftEditorScenes); */
-    if(!isMobile && !isSafari && !isFirefox){
+  /*useEffect(() => {
+    /* console.log('Editor scene', leftEditorScenes);
+     if(!isMobile && !isSafari && !isFirefox){
       if(leftEditorScenes && editorFlag){
         leftEditorScenes.play();
       }else if(leftEditorScenes){
         leftEditorScenes.pause();
       }
     }
-    /* console.log('Editor flag', editorFlag); */
-  }, [editorFlag])
+    /* console.log('Editor flag', editorFlag);
+  }, [editorFlag]) */
 
   useEffect(() => {
-    if(isMobile || isSafari || isFirefox){
+    /* if(isMobile || isSafari || isFirefox){ */
       let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
       props.code_input.code_contents.forEach(ppp => {
         leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
@@ -183,7 +183,7 @@ const CodeEditor = props => {
 
       leftEditor.getDoc().setValue(leftCodeInput.join(""));
       rightEditor.getDoc().setValue(rightCodeOutput.join(""));
-    }
+    /* } */
   }, [])
 
   return (
