@@ -35,7 +35,7 @@ import clientConfig from "../../client-config"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Singleintegration = ({ data, location, pageContext }) => {
-  // console.log("pageContext", pageContext)
+  console.log("pageContext",data)
   const lv_testimonialsection = data.section_testimonials.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
   )
@@ -124,7 +124,7 @@ const Singleintegration = ({ data, location, pageContext }) => {
           </section>
         )}
 
-        <IntegrationSimilarV2 data={pageContext} />
+        <IntegrationSimilarV2 data={pageContext ? pageContext : data.tPageContext} />
 
         <section id="testimonials">
           <Testimonial
