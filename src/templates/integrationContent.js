@@ -113,7 +113,7 @@ const Singleintegration = ({ data, location, pageContext }) => {
             />
           )}
 
-        {faqData && (
+        {faqData && faqData.faqTitle !== "" && (
           <section className="bg-grayColor-BgGray md:pt-32 md:pb-24 sm:pt-16 sm:pb-12 pt-11 pb-12 relative font-custom">
             <Faq
               title={faqData.faqTitle}
