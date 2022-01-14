@@ -9,7 +9,7 @@ import OurLogo from "../components/ourlogo"
 import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
 import clientConfig from "../../client-config"
-import DynamicInputForm from "../components/DynamicInputForm"
+import DynamicInputForm from "../components/dynamicInputForm"
 import Image from "../components/image"
 import { template } from "lodash-es"
 
@@ -302,6 +302,7 @@ const Demo = ({ data, htmlId, location }) => {
                     <DynamicInputForm
                     {...lv_scheduledemoheader[0].input_form}
                     location={location}
+                    isFromRequest={true}
                     />
                 </div>
             </div>

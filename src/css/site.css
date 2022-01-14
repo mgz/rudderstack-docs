@@ -1381,6 +1381,25 @@ form .disableActive{
   background-position: left top;
   background-size: 150px;
 }
+.request-label{
+  color: #ffffff;
+  padding-left: 20px;
+}
+.request-input{
+  border-radius: 8px;
+  padding: 10px 20px;
+  outline: none;
+}
+.request-textarea{
+  height: calc(100% - 35px);
+  padding: 10px 20px;
+  border-radius: 8px;
+  outline: none;
+}
+.request-btn{
+  color: #ffffff;
+  background: #3E35D1;
+}
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;

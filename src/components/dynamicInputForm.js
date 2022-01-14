@@ -21,6 +21,7 @@ const DynamicInputForm = ({
   add_on_styling,
   location,
   gatedCookieName,
+  isFromRequest = false
 }) => {
   const cookies = new Cookies()
   const data = useStaticQuery(graphql`
@@ -39,7 +40,6 @@ const DynamicInputForm = ({
   `)
   // console.log("location", location)
   const [isLoading, setIsLoading] = useState(false)
-  const [isFromRequest, setIsFromRequest] = useState(false);
 
   // useEffect(() => {
   //   let tmp = data.allSanityFormInput.nodes.find(
@@ -67,17 +67,11 @@ const DynamicInputForm = ({
     // console.log("isLoading", isLoading)
   }, [isLoading])
 
-  useEffect(() => {
-    if(location.pathname.startsWith('/request-demo')){
-      setIsFromRequest(true);
-    }else{
-      setIsFromRequest(false);
-    }
-  }, [location.pathname])
 
   let formDefinition = data.allSanityFormInput.nodes.find(
     oo => ref_form_input && oo._id === ref_form_input._ref
-  )
+  );
+  /* console.log('Form fields', formDefinition._rawFields); */
 
   let tmpStructure
   let tmpStructureError
@@ -362,9 +356,9 @@ const DynamicInputForm = ({
         }
         // setIsLoading(false)
       }}
-      className={`${isFromRequest ? 'request-form' : 'demo_form'} px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full xl:w-120 md:max-w-lg ${add_on_styling}`}
+      className={`${isFromRequest ? 'request-form md:max-w-xl' : 'demo_form md:max-w-lg xl:w-120'} px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full ${add_on_styling}`}
     >
-      {formDefinition &&
+      {!isFromRequest && formDefinition &&
         formDefinition.formheader &&
         formDefinition.formheader !== "" && (
           <div className="mb-8">
@@ -374,7 +368,7 @@ const DynamicInputForm = ({
           </div>
         )}
 
-      {formDefinition &&
+      {!isFromRequest && formDefinition &&
         formDefinition._rawFields.map(field => {
           return (
             <React.Fragment key={field._key}>
@@ -485,10 +479,152 @@ const DynamicInputForm = ({
             </React.Fragment>
           )
         })}
+
+        {isFromRequest && formDefinition && (
+          <React.Fragment>
+            <div className="flex justify-between mb-5">
+                  {formDefinition && formDefinition._rawFields.slice(0,2).map((field, idx) => {
+                    return (
+                    <div className="form-block w-1/2">
+                      <div className={`w-11/12 ${idx === 1 ? 'ml-auto': ''}`}>
+                      {field.show_label === true && field.field_type !== "checkbox" && (
+                      <div className="text-lg mb-2 request-label">
+                        {field.field_label}{" "}
+                        {field.is_required && (
+                          <span className="text-darkScheme-textPrimary">*</span>
+                        )}
+                      </div>
+                    )}
+
+                    {field.field_type === "input" && (
+                      <input
+                        type="text"
+                        name={field.field_name}
+                        className="font-sm text-lg request-input w-full"
+                        value={formData[field.field_name]}
+                        placeholder={field.field_placeholder}
+                        onBlur={e => onBlur(field.field_name, e.target.value)}
+                        onChange={e => {
+                          setFormData({
+                            ...formData,
+                            [field.field_name]: e.target.value,
+                          })
+                        }}
+                      />
+                    )}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+            <div className="flex justify-between mb-5">
+              <div className="form-block w-1/2">
+              {formDefinition && formDefinition._rawFields.slice(2,formDefinition._rawFields.length - 1).map((field, idx) => {
+                return(
+                  <React.Fragment>
+                    <div className={`w-11/12`}>
+                      {field.show_label === true && field.field_type !== "checkbox" && (
+                      <div className={`text-lg mb-2 ${idx === 0 ? 'mt-0' : 'mt-5'} request-label`}>
+                        {field.field_label}{" "}
+                        {field.is_required && (
+                          <span className="text-darkScheme-textPrimary">*</span>
+                        )}
+                      </div>
+                    )}
+
+                    {field.field_type === "input" && (
+                      <input
+                        type="text"
+                        name={field.field_name}
+                        className="font-sm text-lg request-input w-full"
+                        value={formData[field.field_name]}
+                        placeholder={field.field_placeholder}
+                        onBlur={e => onBlur(field.field_name, e.target.value)}
+                        onChange={e => {
+                          setFormData({
+                            ...formData,
+                            [field.field_name]: e.target.value,
+                          })
+                        }}
+                      />
+                    )}
+
+                    {(field.field_type === "dropdown" ||
+                      field.field_type === "multidropdown") && (
+                      <Select
+                        isMulti={field.field_type === "multidropdown"}
+                        name="colors"
+                        options={field.field_dropdown_values.map(ii => ({
+                          value: ii,
+                          label: ii,
+                        }))}
+                        placeholder={field.field_placeholder}
+                        onChange={e => {
+                          let tmp = ""
+                          if (Array.isArray(e)) {
+                            e.forEach(rrrr => {
+                              tmp += (tmp === "" ? "" : ", ") + rrrr.value
+                            })
+                          } else {
+                            tmp = e.value
+                          }
+                          setFormData({
+                            ...formData,
+                            [field.field_name]: tmp,
+                          })
+                        }}
+                        className="custom-select-style w-full"
+                        classNamePrefix="custom-select-style-inner"
+                      />
+
+                    )}
+                    </div>
+                  </React.Fragment>
+                )
+              })}
+              </div>
+              <div className="form-block w-1/2">
+                {formDefinition && formDefinition._rawFields.slice(formDefinition._rawFields.length-1, formDefinition._rawFields.length).map((field, idx) => {
+                  return (
+                    <React.Fragment>
+                      <div className={`w-11/12 ml-auto h-full`}>
+                      {field.show_label === true && field.field_type !== "checkbox" && (
+                          <div className="text-lg mb-2 request-label">
+                            {field.field_label}{" "}
+                            {field.is_required && (
+                              <span className="text-darkScheme-textPrimary">*</span>
+                            )}
+                          </div>
+                      )}
+                      {field.field_type === "textarea" && (
+                        <textarea
+                          type="text"
+                          rows="4"
+                          name={field.field_name}
+                          className="font-sm text-lg resize-none request-textarea w-full"
+                          value={formData[field.field_name]}
+                          placeholder={field.field_placeholder}
+                          onBlur={e => onBlur(field.field_name, e.target.value)}
+                          onChange={e => {
+                            setFormData({
+                              ...formData,
+                              [field.field_name]: e.target.value,
+                            })
+                          }}
+                        />
+                      )}
+                      </div>
+                    </React.Fragment>
+                  )
+                })}
+              </div>
+            </div>
+          </React.Fragment>
+        )}
       <button
         className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4 ${
           isLoading ? "disableActive" : ""
-        }`}
+        } ${isFromRequest ? 'request-btn': ''}`}
         disabled={isLoading}
         // onClick={() => {
         //   console.log("from button call")
