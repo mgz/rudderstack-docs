@@ -72,7 +72,9 @@ const IntegrationSimilarV2 = ({ data }) => {
                           className="object-scale-down w-24"
                         />
                       </div>
-                      <p className="text-center block my-3 capitalize font-bold">{oo.node.sourceSlug}</p>
+                      <p className="text-center block my-3 capitalize font-bold">{isSource
+                              ? oo.node.destinationSlug
+                              : oo.node.sourceSlug}</p>
                     </div>
                     <div className="flex items-center px-10 py-5">
                       <span className="font-bold leading-normal text-sm lr-icon relative sm:inline-block">
