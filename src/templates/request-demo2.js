@@ -306,12 +306,12 @@ const Demo = ({ data, htmlId, location }) => {
                     isFromRequest={true}
                     />
                 </div>
-                <div className="request-logos-wrapper lg:hidden block mb-10">
-                  <ul className="logos-list flex mb-5">
+                <div className="request-logos-wrapper lg:hidden flex mb-10 w-11/12 mx-auto">
+                  <ul className="logos-list flex flex-col mb-5 w-1/2 items-center">
                       {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
                           if(k === 2 || k === 3 || k === 8){
                               return (
-                                  <li key={k._key} className={`mr-16`}>
+                                  <li key={k._key} className={`mb-5`}>
                                       <Image
                                           classes="object-contain"
                                           props={i.asset._ref}
@@ -323,11 +323,11 @@ const Demo = ({ data, htmlId, location }) => {
                           }
                       })}
                   </ul>
-                  <ul className="logos-list flex ml-16">
+                  <ul className="logos-list flex flex-col w-1/2 items-center">
                       {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
                           if(k === 0 || k === 1 || k === 6){
                               return (
-                                  <li key={k._key} className={`${k === 10 ? 'mr-0' : 'mr-16'}`}>
+                                  <li key={k._key} className="mb-5">
                                       <Image
                                           classes="object-contain"
                                           props={i.asset._ref}
