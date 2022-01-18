@@ -245,12 +245,12 @@ const Demo = ({ data, htmlId, location }) => {
       <div className="font-custom">
         <section className="section-gradient relative">
             <span className="section-border block absolute bottom-0 left-0 w-full"></span>
-            <div className="request-wrapper flex">
-                <div className="request-left w-1/2">
-                    <div className="request-left-upper w-11/12 rounded-br-3xl">
+            <div className="request-wrapper flex lg:flex-row flex-col">
+                <div className="request-left lg:w-1/2 w-full">
+                    <div className="request-left-upper lg:w-11/12 w-full lg:rounded-br-3xl">
                         <div className="pt-19 pb-12 pr-10 flex">
-                            <div className="request-left-inner max-w-md ml-auto justify-self-end">
-                                <h1 className="text-5xl text-darkScheme-textPrimary font-bold leading-tight">In this 15 minute demo, you'll discover</h1>
+                            <div className="request-left-inner w-full lg:max-w-md lg:ml-auto lg:justify-self-end">
+                                <h1 className="text-3xl lg:text-5xl text-darkScheme-textPrimary font-bold leading-tight">In this 15 minute demo, you'll discover</h1>
                                 <div className="request-left-content mt-5">
                                     <PortableText
                                         blocks={lv_scheduledemoheader[0].demo_right_content}
@@ -259,7 +259,7 @@ const Demo = ({ data, htmlId, location }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="request-left-lower w-11/12 py-16 pl-15">
+                    <div className="request-left-lower w-11/12 py-16 pl-15 hidden lg:block">
                         <div className="request-left-lower-inner flex ml-auto">
                             <div className="request-logos-wrapper">
                                 <ul className="logos-list flex mb-5">
@@ -298,13 +298,48 @@ const Demo = ({ data, htmlId, location }) => {
                         </div>
                     </div>
                 </div>
-                <div className="request-right w-1/2">
+                <span className="section-border lg:hidden block w-full"></span>
+                <div className="request-right lg:w-1/2 w-full">
                     <DynamicInputForm
                     {...lv_scheduledemoheader[0].input_form}
                     location={location}
                     isFromRequest={true}
                     />
                 </div>
+                <div className="request-logos-wrapper lg:hidden block mb-10">
+                  <ul className="logos-list flex mb-5">
+                      {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
+                          if(k === 2 || k === 3 || k === 8){
+                              return (
+                                  <li key={k._key} className={`mr-16`}>
+                                      <Image
+                                          classes="object-contain"
+                                          props={i.asset._ref}
+                                          width="210"
+                                          height="40"
+                                      />
+                                  </li>
+                              )
+                          }
+                      })}
+                  </ul>
+                  <ul className="logos-list flex ml-16">
+                      {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
+                          if(k === 0 || k === 1 || k === 6){
+                              return (
+                                  <li key={k._key} className={`${k === 10 ? 'mr-0' : 'mr-16'}`}>
+                                      <Image
+                                          classes="object-contain"
+                                          props={i.asset._ref}
+                                          width="210"
+                                          height="40"
+                                      />
+                                  </li>
+                              )
+                          }
+                      })}
+                  </ul>
+              </div>
             </div>
         </section>
       </div>

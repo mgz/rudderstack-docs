@@ -33,7 +33,7 @@ const TrankYou = ({ data, htmlId }) => {
   }
 
   return (
-    <Layout>
+    <Layout darkTheme={true}>
       <Helmet>
         <title>{data.thankyou.meta_title || data.thankyou.title}</title>
         {data.thankyou.enable_no_follow_no_index === true && (
@@ -65,21 +65,22 @@ const TrankYou = ({ data, htmlId }) => {
       </Helmet>
 
       <div className="font-custom">
-        <section id="demo_submit_hdr">
-          <div className="w-full demo-submit-background">
+        <section id="demo_submit_hdr" className="relative">
+          <span className="section-border absolute bottom-0 left-0 w-full"></span>
+          <div className="w-full">
             <div
               className={`${
                 lv_thankyoucontent[0].content_type === "agreement"
                   ? "max-w-6xl"
                   : "max-w-3xl"
-              } pt-24 mt-0 sm:mt-16 m-auto py-4 px-4`}
+              } pt-24 mt-0 m-auto py-4 px-4`}
             >
               <h1
                 className={`${
                   lv_thankyoucontent[0].content_type === "agreement"
                     ? "text-4xl md:text-6xl"
                     : "text-6xl"
-                } font-bold`}
+                } font-bold text-darkScheme-textPrimary`}
               >
                 {lv_thankyoucontent[0].thankyou_header_text}
               </h1>
@@ -94,7 +95,7 @@ const TrankYou = ({ data, htmlId }) => {
               } pb-32 sm:pb-44 m-auto px-4`}
             >
               <div
-                className={`text-grayColor-custom text-xl-2 ${
+                className={`text-darkScheme-textPrimary text-xl-2 ${
                   lv_thankyoucontent[0].content_type === "agreement"
                     ? "agreement-description"
                     : ""
@@ -124,7 +125,7 @@ const TrankYou = ({ data, htmlId }) => {
             )}
         </section>
 
-        <section id="footer_section_for_demo">
+        <section id="footer_section_for_demo" >
           <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
         </section>
       </div>

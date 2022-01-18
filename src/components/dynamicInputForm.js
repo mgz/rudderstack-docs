@@ -358,7 +358,7 @@ const DynamicInputForm = ({
       }}
       className={`${isFromRequest ? 'request-form md:max-w-xl' : 'demo_form md:max-w-lg xl:w-120'} px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full ${add_on_styling}`}
     >
-      {!isFromRequest && formDefinition &&
+      {formDefinition &&
         formDefinition.formheader &&
         formDefinition.formheader !== "" && (
           <div className="mb-8">
@@ -368,15 +368,15 @@ const DynamicInputForm = ({
           </div>
         )}
 
-      {!isFromRequest && formDefinition &&
+      {formDefinition &&
         formDefinition._rawFields.map(field => {
           return (
             <React.Fragment key={field._key}>
               {field.show_label === true && field.field_type !== "checkbox" && (
-                <div className="text-lg text-grayColor-custom mb-2 ">
+                <div className={`text-lg mb-2 ${isFromRequest ? 'request-label text-darkScheme-textPrimary': 'text-grayColor-custom'}`}>
                   {field.field_label}{" "}
                   {field.is_required && (
-                    <span className="text-blueNew-midnight">*</span>
+                    <span className={isFromRequest ? 'text-darkScheme-textPrimary' : `text-blueNew-midnight`}>*</span>
                   )}
                 </div>
               )}
@@ -385,7 +385,7 @@ const DynamicInputForm = ({
                 <input
                   type="text"
                   name={field.field_name}
-                  className="font-sm text-base"
+                  className={`${!isFromRequest ? 'font-sm text-base' : 'request-input'}`}
                   value={formData[field.field_name]}
                   placeholder={field.field_placeholder}
                   onBlur={e => onBlur(field.field_name, e.target.value)}
@@ -440,7 +440,7 @@ const DynamicInputForm = ({
                       [field.field_name]: tmp,
                     })
                   }}
-                  className="custom-select-style"
+                  className={`custom-select-style ${isFromRequest ? 'request-select': ''}`}
                   classNamePrefix="custom-select-style-inner"
                 />
               )}
@@ -480,7 +480,7 @@ const DynamicInputForm = ({
           )
         })}
 
-        {isFromRequest && formDefinition && (
+        {/* {isFromRequest && formDefinition && (
           <React.Fragment>
             <div className="flex justify-between mb-5">
                   {formDefinition && formDefinition._rawFields.slice(0,2).map((field, idx) => {
@@ -620,7 +620,7 @@ const DynamicInputForm = ({
               </div>
             </div>
           </React.Fragment>
-        )}
+        )} */}
       <button
         className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4 ${
           isLoading ? "disableActive" : ""
