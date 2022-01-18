@@ -1070,15 +1070,18 @@ exports.createPages = async ({ graphql, actions }) => {
             )
           : ""
 
-      // if (1 === 2) {
+      // if (!redICDataSource && !redICDataDestination) {
+      //   console.log("excluded node -> ", edge.node.slug.current)
+      // }
+
       createPage({
         path,
         component: require.resolve("./src/templates/integrationContent.js"),
         context: {
           slug: edge.node.slug.current,
           integrationSpecificAssets,
-          redICDataSource : redICDataSource || [],
-          redICDataDestination : redICDataDestination || [],
+          redICDataSource: redICDataSource || [],
+          redICDataDestination: redICDataDestination || [],
           excludedIds: INTEGRATION_CONN_EXCLUDED_IDS,
         },
       })

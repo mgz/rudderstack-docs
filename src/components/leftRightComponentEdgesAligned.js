@@ -46,27 +46,23 @@ const LeftRightComponentEdgesAligned = props => {
         </div>
       </div> */}
       <div className="max-w-6xl m-auto flex flex-col w-full justify-center items-center blockWrapper">
-        <h3 className="mb-0 text-4xl md:text-4xl font-bold leading-tight uppercase text-center text-darkScheme-btnPrimaryBg mt-9 section-title triggers">
+        <h3 className="mb-0 text-3xl md:text-4xl font-bold leading-tight uppercase text-center text-darkScheme-btnPrimaryBg mt-9 section-title triggers">
           {props.leftrightcontentmaintitle}
         </h3>
-        <h2 className="text-5xl text-darkScheme-textPrimary leading-tight font-bold mt-16 text-center section-title triggers">
+        <h2 className="md:text-5xl text-4xl text-darkScheme-textPrimary leading-tight font-bold mt-16 mb-5 text-center section-title triggers">
           {props.leftrightcontentsubtitle}
         </h2>
-        <div className="why-rudderstack-wrapper mx-auto">
+        <div className="why-rudderstack-wrapper mx-auto flex flex-col lg:flex-row triggers">
           {/* Map this block start */}
           {props.leftrightimageblock.map((row, idx) => {
             return (
               <div
                 key={row._key}
-                className={`wr-data-block image-${
-                  row.condition === "right" ? "left" : "right"
-                }  relative py-20 flex flex-col triggers`}
+                className={`wr-data-block relative lg:py-20 py-12 flex flex-col ${idx === 2 ? 'mr-0' : 'lg:mr-24'}`}
               >
-                <div className="separator-line mx-auto"></div>
+                {/* <div className="separator-line mx-auto"></div> */}
                 <div
-                  className={`wr-image-icon-wrapper flex -mt-12 self-${
-                    row.condition === "right" ? "start" : "end"
-                  }`}
+                  className={`wr-image-icon-wrapper flex mb-9 self-center lg:self-start`}
                 >
                   <div className="wr-image-icon-block flex items-center justify-center">
                     <Image
@@ -81,13 +77,13 @@ const LeftRightComponentEdgesAligned = props => {
                 <div
                   className={`wr-text-data-wrapper flex self-${
                     row.condition === "right" ? "end" : "start"
-                  } w-1/2 -mt-12`}
+                  }`}
                 >
-                  <div className="wr-text-data w-11/12">
-                    <h4 className="text-darkScheme-btnSecondaryBg uppercase text-3xl-3 font-bold">
+                  <div className="wr-text-data lg:w-11/12 w-full text-center lg:text-left">
+                    <h4 className="text-darkScheme-btnSecondaryBg uppercase text-2xl font-bold">
                       {row.title}
                     </h4>
-                    <div className="text-darkScheme-textPrimary mt-2 md:text-2xl text-lg frtxt-contnt">
+                    <div className="text-darkScheme-textPrimary mt-2 md:text-lg text-lg frtxt-contnt">
                       <PortableText
                         blocks={row.content}
                         trackSectionHeader={row.title}
