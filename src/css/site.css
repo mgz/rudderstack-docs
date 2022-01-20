@@ -794,6 +794,23 @@ body {
   height: 60vh;
   max-height: 460px;
 }
+.padding-top{
+  height: 90px;
+  padding-top: 90px;
+}
+.padding-top .header-container {
+  height: 90px;
+  transition: 0.2s all linear;
+}
+.padding-top.scroll-up .top-0{
+  top: 40px !important;
+  transition: 0.2s all linear;
+}
+.padding-top.scroll-down .top-0{
+  top: 0 !important;
+  transition: 0.2s all linear;
+}
+
 .header-container {
   background: radial-gradient(
     246.91% 449.78% at -0.59% 6.73%,
@@ -1377,6 +1394,16 @@ form .disableActive{
   .integration-hero .hero-content p {
     max-width: 100%;
   }
+  .padding-top{
+    height: 51px;
+    padding-top: 51px;
+    transition: 0.1s all linear;
+  }
+  .padding-top .header-container {
+    height: 51px;
+    transition: 0.1s all linear;
+  }
+ 
 }
 
 @media only screen and (max-width: 768px) {
@@ -1511,6 +1538,14 @@ form .disableActive{
   }
   .code-ed-links-wrapper .code-ed-links {
     width: 100% !important;
+  }
+  .padding-top.scroll-up .top-0 {
+      top: 65px !important;
+  }
+}
+@media only screen and (max-width: 355px){
+  .padding-top.scroll-up .top-0 {
+      top: 85px !important;
   }
 }
 @media only screen and (min-width: 2800px){
