@@ -12,11 +12,14 @@ const WebisteBanner = props => {
       : props.banner_visibility === "only_once" &&
         cookies.get(`viewed_website_banner-${props._key}`) === "yes"
       ? false
-      : true
+      : props.weibsite_banner_ie_type.condition === "all_option" ||
+        props.weibsite_banner_ie_type.condition === "exclude_option"
+      ? true
+      : false
   )
 
   useEffect(() => {
-    // console.log("showBanner",props.banner_name, showBanner)
+    // console.log("showBanner", props.banner_name, showBanner)
   }, [showBanner])
 
   useEffect(() => {
