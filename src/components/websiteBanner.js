@@ -19,28 +19,16 @@ const WebisteBanner = props => {
       ? true
       : false
   )
-  
-  
-  
+
   useEffect(() => {
-    // console.log("showBanner",props.banner_name, showBanner)
-    // const bannerClass = document.querySelector("#box");
-    // bannerClass.classList.contains("block");
     let addNewClass= document.getElementById("nav-header");
     if(showBanner) {
-      //alert('sdfd');
-     
       addNewClass.classList.add('top-header-show');
-     
     }
-
     else {
       addNewClass.classList.remove('top-header-show');
-    
     }
   }, [showBanner])
-
- 
 
   useEffect(() => {
     let tmpShowBanner =
