@@ -35,7 +35,7 @@ import clientConfig from "../../client-config"
 // const Testimonial = loadable(() => import("../components/testimonial"))
 
 const Singleintegration = ({ data, location, pageContext }) => {
-  // console.log("pageContext", pageContext)
+
   const lv_testimonialsection = data.section_testimonials.edges.filter(
     ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
   )
@@ -59,6 +59,8 @@ const Singleintegration = ({ data, location, pageContext }) => {
       })
     }
   }, [data.integration._rawFaqSection])
+
+  // console.log("pageContext",faqData)
 
   return (
     <Layout location={location}>
@@ -124,9 +126,7 @@ const Singleintegration = ({ data, location, pageContext }) => {
           </section>
         )}
 
-        <IntegrationSimilarV2
-          data={pageContext ? pageContext : data.tPageContext}
-        />
+        <IntegrationSimilarV2 data={pageContext ? pageContext : data.tPageContext} />
 
         <section id="testimonials">
           <Testimonial

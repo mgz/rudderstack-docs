@@ -38,7 +38,7 @@ export const query = graphql `
               }
             }
           }
-    
+
           allGoogleSpreadsheetR1RedRudderstackIcData {
             edges {
               node {
@@ -54,7 +54,6 @@ export const query = graphql `
               }
             }
           }
-          
           section_get_started: allSanitySectionGetStarted {
             edges {
               node {
