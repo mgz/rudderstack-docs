@@ -1,0 +1,54 @@
+.landing_logos_wrapper{
+    margin-top: 48px;
+}
+.testimonial_left{
+    width: 645px;
+    margin-right: 122px;
+}
+.testimonial_right{
+    width: calc(100% - 767px);
+}
+.logo_item{
+    margin-right: 80px;
+}
+.landing_logos_list_last{
+    margin:40px 0px 0px 76px;
+}
+.testimonial_quote{
+    background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.035) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    /* Transparent_3D_Look */
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 36px;
+    margin-top: 100px;
+    padding: 75px 46px;
+}
+.testimonial_quotes_text{
+    font-size: 22px;
+    line-height: 35px;
+    text-align: center;
+}
+.testimonial_client_logo{
+    width: 97px;
+    height: 97px;
+    position: absolute;
+    bottom: -43px;
+    left: calc(50% - 43px);
+}
+.testimonial_quotes_icon{
+    position: absolute;
+    top: -90px;
+    left: calc(50% - 77px);
+}
+.testimonial_landing_client_details{
+    text-align: center;
+    max-width: 285px;
+    margin: 70px auto 0px auto;
+}
+.testimonial_landing_client_details .testimonial_client{
+    font-size: 18px;
+    line-height: 25px;
+    color: #979797;
+}
