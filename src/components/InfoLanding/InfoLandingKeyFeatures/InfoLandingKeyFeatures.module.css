@@ -1,0 +1,46 @@
+.key_features_block{
+    background: url('../../../images/key-features-bg.svg') no-repeat;
+    background-size: 100% 100%;
+    margin-right: 32px;
+    padding: 25px 25px 50px 25px;
+    width: 392px;
+    position: relative;
+    box-sizing: border-box;
+}
+.key_features_block:before{
+    content: '';
+    background: url('../../../images/key-features-gradient-bar.svg') no-repeat;
+    position: absolute;
+    top:-4px;
+    right: 12px;
+    width: 164px;
+    height: 6px;
+    background-size: cover;
+}
+.key_features_block .key_features_text{
+    font-size: 20px;
+    line-height: 30px;
+}
+.key_features_block:nth-child(2) .key_features_text{
+    font-size: 22px;
+}
+.key_features_block:nth-child(2){
+    padding: 35px 25px 60px 25px;
+}
+.key_features_block:last-child{
+    margin-right: 0px;
+}
+.key_features_wrapper{
+    margin-top: 66px;
+}
+.key_features_list{
+    margin-bottom: 32px;
+}
+.key_features_image{
+    margin-bottom: 15px;
+    display: block;
+}
+.key_features_text{
+    font-family: "Basis Grotesque Mono", "Basis Grotesque", Arial, Helvetica, sans-serif;
+
+}
