@@ -21,7 +21,7 @@ const VideoLibrarySpeakers = ({ speakers, allAuthors }) => {
                   <div className=" py-12 sm:px-14 px-6 flex flex-col items-center text-center">
                     <div className="speaker-pic">
                       <img
-                        src={l_currentAuthor.node.author_image.asset.url}
+                        src={l_currentAuthor.node.author_image.asset.url+'?auto=format'}
                         alt={l_currentAuthor.node.author_name}
                         className="w-full h-full rounded-full"
                       />

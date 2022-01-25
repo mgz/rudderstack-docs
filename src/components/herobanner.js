@@ -8,7 +8,7 @@ function Herobanner({ title, date, author, image, blog }) {
       {/* Left col */}
       <div
         className="relative flex max-w-5xl mx-auto">
-          <img className="object-cover w-full" src={image.asset.url} alt="Blog banner" />
+          <img className="object-cover w-full" src={image.asset.url+'?auto=format'} alt="Blog banner" />
           
       </div>
 
@@ -24,7 +24,7 @@ function Herobanner({ title, date, author, image, blog }) {
           <div className="flex items-center mx-auto gap-2  mb-4 sm:flex-row flex-col mt-4">
             <div className=" inline-flex items-center justify-center flex-shrink-0 lg:mr-4">
               <img
-                src={blog.blog_authors[0].author_image.asset.url}
+                src={blog.blog_authors[0].author_image.asset.url+'?auto=format'}
                 className="w-16 h-16 rounded-full"
               />
             </div>

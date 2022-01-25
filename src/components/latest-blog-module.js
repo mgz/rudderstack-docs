@@ -53,7 +53,7 @@ const BlogModule = () => {
               className="block bg-white rounded-t rounded-b-none overflow-hidden shadow relative h-full"
             >
               <img
-                src={latestblog.node.blog_image.asset.url}
+                src={latestblog.node.blog_image.asset.url+'?auto=format'}
                 alt={latestblog.node.title}
                 className="w-full"
                 loading="lazy"

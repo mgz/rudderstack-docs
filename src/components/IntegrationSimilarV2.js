@@ -59,8 +59,8 @@ const IntegrationSimilarV2 = ({ data }) => {
                         <img
                           src={
                             isSource
-                              ? oo.node.destinationLogoImgUrl
-                              : oo.node.sourceLogoImgUrl
+                              ? oo.node.destinationLogoImgUrl+'?auto=format'
+                              : oo.node.sourceLogoImgUrl+'?auto=format'
                           }
                           alt={
                             isSource
