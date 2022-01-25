@@ -1336,6 +1336,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             slug
             googleSpreadsheetId
+            nodeH1Slug
           }
         }
       }
@@ -1362,6 +1363,14 @@ exports.createPages = async ({ graphql, actions }) => {
           "./src/templates/contentIntegrationConnectionSpreadSheets.js"
         ),
         context: { slug: edge.node.slug },
+      })
+
+      createPage({
+        path: `${edge.node.nodeH1Slug}/`,
+        component: require.resolve(
+          "./src/templates/contentIntegrationConnectionSpreadSheets.js"
+        ),
+        context: { slug: edge.node.slug, canonicalSourcePath: path },
       })
     }
   })
