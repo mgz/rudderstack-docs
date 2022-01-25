@@ -76,7 +76,7 @@ export const query = graphql`
 `
 
 const Demo = ({ data, htmlId, location }) => {
-  //console.log("request-demo", data)
+  console.log("request-demo", data)
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
