@@ -78,7 +78,7 @@ export const query = graphql`
 `
 
 const Demo = ({ data, htmlId, location }) => {
-  //console.log("request-demo", data)
+  console.log("request-demo", data)
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
@@ -306,40 +306,40 @@ const Demo = ({ data, htmlId, location }) => {
                     isFromRequest={true}
                     />
                 </div>
-                <div className="request-logos-wrapper lg:hidden flex mb-10 w-11/12 mx-auto">
-                  <ul className="logos-list flex mb-5 w-1/2 items-center">
-                      {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
-                          if(k === 2 || k === 3 || k === 8){
-                              return (
-                                  <li key={k._key} className={`mb-5`}>
-                                      <Image
-                                          classes="object-contain"
-                                          props={i.asset._ref}
-                                          width="210"
-                                          height="40"
-                                      />
-                                  </li>
-                              )
-                          }
-                      })}
-                  </ul>
-                  <ul className="logos-list flex flex-col w-1/2 items-center">
-                      {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
-                          if(k === 0 || k === 1 || k === 6){
-                              return (
-                                  <li key={k._key} className="mb-5">
-                                      <Image
-                                          classes="object-contain"
-                                          props={i.asset._ref}
-                                          width="210"
-                                          height="40"
-                                      />
-                                  </li>
-                              )
-                          }
-                      })}
-                  </ul>
-              </div>
+                <div className="request-logos-wrapper px-4 lg:hidden block">
+                    <ul className="logos-list flex mb-5 justify-center">
+                        {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
+                            if(k === 2 || k === 3 || k === 8){
+                                return (
+                                    <li key={k._key} className={`${k === 8 ? 'mr-0' : 'mr-0'}`}>
+                                        <Image
+                                            classes="object-contain"
+                                            props={i.asset._ref}
+                                            width="210"
+                                            height="40"
+                                        />
+                                    </li>
+                                )
+                            }
+                        })}
+                    </ul>
+                    <ul className="logos-list flex justify-center mb-10">
+                        {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
+                            if(k === 0 || k === 1 || k === 6){
+                                return (
+                                    <li key={k._key} className={`${k === 6 ? 'mr-0' : 'mr-0'}`}>
+                                        <Image
+                                            classes="object-contain"
+                                            props={i.asset._ref}
+                                            width="210"
+                                            height="40"
+                                        />
+                                    </li>
+                                )
+                            }
+                        })}
+                    </ul>
+                </div>
             </div>
         </section>
       </div>

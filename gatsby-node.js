@@ -1205,8 +1205,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const sch_demo = schDemos.data.allSanitySchdemo.edges || []
   sch_demo.forEach((edge, index) => {
-    /* let landingSplit = edge.node.slug.current;
-    const path = landingSplit.split('/')[0] === "new-theme" ? landingSplit.split('/')[1] : `/${edge.node.slug.current}/` */
+    const path = `/${edge.node.slug.current}/`
 
     createPage({
       path,
