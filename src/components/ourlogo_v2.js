@@ -388,7 +388,7 @@ function OurLogo(props) {
         >
           <h3 className="my-4 text-4xl text-darkScheme-textPrimary font-bold text-center normal-case md:mx-0 mx-auto section-title">
             {/* {maintitle} */}
-            11,000+ sites and apps run RudderStack
+            13,000+ sites and apps run RudderStack
           </h3>
         </div>
         {/* <div className="flex w-full justify-start flex-wrap mt-2 sm:mt-2 our-logos">
