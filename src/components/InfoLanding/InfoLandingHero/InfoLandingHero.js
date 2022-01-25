@@ -11,7 +11,7 @@ const InfoLandingHero = (
     return(
         <section className='landing-hero relative pt-24 pb-15'>
             <div className='landing-container'>
-                <div className='landing-hero-wrapper flex lg:flex-row flex-col'>
+                <div className='landing-hero-wrapper flex md:grid-cols-2 md:gap-2 grid grid-cols-1 gap-1'>
                     <div className={s.landing_hero_left}>
                         <span className={`${s.landing_hero_category} pink uppercase font-bold`}>{heroData.sub_title}</span>
                         <h1 className='landing-section-title'>{heroData.title}</h1>
@@ -27,7 +27,7 @@ const InfoLandingHero = (
                     </div>
                 </div>
                 <div className={s.landing_hero_pointers_wrapper}>
-                    <ul className='flex hero-pointer-list justify-between'>
+                    <ul className='flex hero-pointer-list  md:justify-center justify-content-start lg:justify-between lg:flex-nowrap flex-wrap'>
                         {heroData.icon_with_text_items.map((item, index) => {
                             return (
                                 <li className={`${s.hero_pointer_item} flex flex-col items-center justify-center`} key={item._key}>

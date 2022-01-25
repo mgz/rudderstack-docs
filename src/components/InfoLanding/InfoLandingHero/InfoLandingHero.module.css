@@ -1,7 +1,7 @@
 .landing_hero_left{
-    width: 476px;
-    margin-right: 84px;
-    padding-right: 60px;
+    width: auto;
+    margin-right: 0;
+    padding-right: 0;
 }
 .landing_hero_category{
     font-size: 24px;
@@ -23,3 +23,38 @@
     align-self: flex-start;
     padding: 0px 15px;
 }
+
+@media screen and (max-width:991px) {
+   
+    .hero_pointer_item{
+        width: 30%;
+        align-self: flex-start;
+        padding: 0px 15px 0px;
+        min-height: 170px;
+    }
+    .hero-pointer-list{
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+    }
+    
+}
+
+@media screen and (max-width:767px) {
+    .landing_hero_left{
+        width: 100%;
+        margin-right: 0;
+        padding-right: 0;
+        margin-bottom: 57px;
+    }
+
+    .hero_pointer_item{ 
+        width: 50%;
+    }
+    .hero_subtitle{
+        font-size: 12px;
+        line-height: 19px;
+    }
+}
+    
+ 

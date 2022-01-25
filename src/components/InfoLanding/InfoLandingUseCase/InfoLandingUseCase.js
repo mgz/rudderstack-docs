@@ -4,7 +4,7 @@ import * as s from './InfoLandingUseCase.module.css';
 
 const InfoLandingUseCase = (data) => {
     let useCaseData = data.data;
-    console.log("useCase Data", useCaseData);
+   // console.log("useCase Data", useCaseData);
     return (
         <section className='use-case-section relative py-24'>
             <div className='landing-container'>

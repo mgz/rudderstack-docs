@@ -1059,6 +1059,10 @@ top: -60px;
   height: 50px;
   flex: 1;
   outline: none;
+  background: rgb(7, 14, 31);
+  background: radial-gradient(100% 7106.9% at 4.49% 0%,
+  rgb(7 14 31 / 82%) 0%,
+ rgb(7 14 31 / 83%) 100%);
 }
 .newsletter-input::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -1442,7 +1446,7 @@ form .disableActive{
     width: 100%;
     background: #ffffff;
     padding: 16px 0px !important;
-    max-width: 260px;
+    max-width: 100%;
   }
   .newsletter-wrapper .newsletter-input {
     padding: 17px 15px !important;
@@ -1477,6 +1481,22 @@ form .disableActive{
   }
   .lrlm-icon svg {
     width: 8px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .signup-form {
+    flex-direction: column-reverse;
+  }
+  .newsletter-wrapper .sign-up-text{
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .newsletter-input{
+    background: rgba(255,255,255,0.25);
+  }
+  .newsletter-input::placeholder{
+    text-align: center;
   }
 }
 

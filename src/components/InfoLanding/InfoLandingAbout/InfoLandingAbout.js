@@ -10,7 +10,7 @@ const InfoLandingAbout = (
     return(
         <section className='about-section relative py-24'>
             <div className='landing-container'>
-                <div className='about-wrapper flex lg:flex-row flex-col justify-between'>
+                <div className='about-wrapper flex lg:flex-row flex-col justify-between grid xl:grid-cols-2 xl:gap-2 grid-cols-1 gap-1'>
                     <div className={s.about_wrapper_left}>
                         <h2 className='landing-section-title'>{aboutData.title}</h2>
                     </div>
