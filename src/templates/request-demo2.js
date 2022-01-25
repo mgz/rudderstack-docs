@@ -307,7 +307,7 @@ const Demo = ({ data, htmlId, location }) => {
                     />
                 </div>
                 <div className="request-logos-wrapper lg:hidden flex mb-10 w-11/12 mx-auto">
-                  <ul className="logos-list flex flex-col mb-5 w-1/2 items-center">
+                  <ul className="logos-list flex mb-5 w-1/2 items-center">
                       {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
                           if(k === 2 || k === 3 || k === 8){
                               return (

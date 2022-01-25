@@ -5,8 +5,8 @@ import Layout from "../components/layout"
 import { rudderslabTrackOnClick } from "../utils/common"
 import { StaticImage } from "gatsby-plugin-image"
 
-const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
-  // console.log("ContentIntegrationConnectionSpreadSheets", data)
+const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
+  // console.log("ContentIntegrationConnectionSpreadSheets", pageContext)
 
   let page_data = data.override_integration_connection
     ? data.override_integration_connection
@@ -21,6 +21,9 @@ const ContentIntegrationConnectionSpreadSheets = ({ data }) => {
         <meta property="og:description" content={page_data.metaDesc} />
         <meta property="twitter:description" content={page_data.metaDesc} />
         <meta property="og:type" content="article" />
+        {pageContext.canonicalSourcePath && (
+          <link rel="canonical" href={pageContext.canonicalSourcePath} />
+        )}
       </Helmet>
 
       <section className="max-w-6xl px-4 md:px-3 sm:my-20 md:mt-10 md:mb-24 mx-auto relative gradiant-layer banner-section pb-12 md:pb-0">
