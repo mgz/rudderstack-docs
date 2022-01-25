@@ -7,7 +7,7 @@ function renderImage(image, classes, alt, width, height) {
       <img
         loading="lazy"
         /* src={image.node.localFile.publicURL} */  // Production code
-        src={image.node.url+'?auto=format'} //Development code
+        src={image.node.url} //Development code
         alt={alt ? alt : image.node._id}
         className={classes}
         width={width && width !== null ? width : "auto"}
