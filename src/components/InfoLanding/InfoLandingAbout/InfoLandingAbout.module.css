@@ -2,9 +2,9 @@
     width: 448px;
     margin-right: 102px;
 }
-.about_wrapper_right{
+/* .about_wrapper_right{
     width: calc(100% - 550px);
-}
+} */
 .landing_pointers_general{
     margin-bottom: 42px;
 }
@@ -21,4 +21,12 @@
 }
 .landing_pointers_general_content_wrapper{
     width: calc(100% - 88px);
+}
+
+@media screen and (max-width:1024px) {
+    .about_wrapper_left{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 65px;
+    }
 }

@@ -38,3 +38,23 @@
     right: 0px;
     bottom: 0px;
 }
+
+@media screen and (max-width:1024px) {
+    .use_case_right{
+        width: 290px;
+        height: 290px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .use_case_left{
+        margin-bottom: 180px;
+    }
+    .use_case_right{
+        background: url('../../../images/usecase-mo-bg.svg')  no-repeat top left;
+        width: 100%;
+        height: 270px;
+        background-size: cover;
+        left: 0;
+    }
+}

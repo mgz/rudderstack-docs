@@ -35,6 +35,8 @@
 }
 .key_features_list{
     margin-bottom: 32px;
+    min-height: 230px;
+    background-size: cover;
 }
 .key_features_image{
     margin-bottom: 15px;
@@ -43,4 +45,78 @@
 .key_features_text{
     font-family: "Basis Grotesque Mono", "Basis Grotesque", Arial, Helvetica, sans-serif;
 
+}
+
+
+li.key_features_block:nth-child(2){
+    min-height: 250px;
+    place-self: flex-start;
+}
+li.key_features_block{
+    min-height: 230px;
+    place-self: flex-start;
+}
+.key_features_block{
+ background-size: cover;
+}
+
+@media screen and (max-width:1023px) {
+    li.key_features_block:nth-child(2), li.key_features_block{
+        place-self: flex-start;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 57px;
+        padding: 25px 25px 60px 25px;
+        min-height: 220px;
+    }
+    .key_features_block{
+        background: url('../../../images/key-feature-grediant-mo.svg') no-repeat;
+        background-size: cover;
+    }
+    .key_features_block span{
+        margin-bottom: 0;
+    }
+    .key_features_block span img{
+        max-width: 90px;
+        margin-right:40px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    li.key_features_block:nth-child(2), li.key_features_block{
+        min-height: 150px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    li.key_features_block:nth-child(2), li.key_features_block{
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        padding: 25px 25px 40px 25px;
+    }
+    .key_features_list{
+        margin-bottom: 0;
+    }
+    li.key_features_block span{
+        margin-bottom: 22px;
+    }
+    li.key_features_block:nth-child(2) .key_features_text, li.key_features_block .key_features_text {
+        font-size: 18px;
+        line-height: 25px;
+    }
+    li.key_features_block .key_features_image img{
+        max-width: 65px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    li.key_features_block{
+        background: url('../../../images/key-feature-gradient-small.png') no-repeat;
+        
+    }
+    li.key_features_block:nth-child(2), li.key_features_block{
+        min-height: 220px;
+    }
 }

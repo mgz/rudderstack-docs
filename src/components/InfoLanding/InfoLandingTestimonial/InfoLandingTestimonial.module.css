@@ -2,12 +2,11 @@
     margin-top: 48px;
 }
 .testimonial_left{
-    width: 645px;
-    margin-right: 122px;
+    margin-right: 30x;
 }
-.testimonial_right{
+/* .testimonial_right{
     width: calc(100% - 767px);
-}
+} */
 .logo_item{
     margin-right: 80px;
 }
@@ -51,4 +50,12 @@
     font-size: 18px;
     line-height: 25px;
     color: #979797;
+}
+
+@media screen and (max-width:1024px) {
+    .testimonial_right, .testimonial_left{
+        width: 100%;
+        margin:0;
+    }
+    
 }

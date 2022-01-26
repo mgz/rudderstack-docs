@@ -11,6 +11,7 @@ import { isMobile, isTablet, isBrowser } from "react-device-detect"
 const MainNavigation = props => {
   const [isExpanded, toggleExpansion] = useState(false)
   const [currMenuIndex, setCurrMenuIndex] = useState(null)
+  const [isScrollValueMoreThanHeaderHeight, setIsScrollValueMoreThanHeaderHeight] = useState(false);
 
   const data = useStaticQuery(graphql`
     {
@@ -50,14 +51,25 @@ const MainNavigation = props => {
   const trybtn =
     data.allSanitySiteSettings.edges[0].node.headerblock.try_free_btn
 
+    // scroll effect for fixed header 
+    useEffect(() => {
+      const handleScroll = () => {
+          setIsScrollValueMoreThanHeaderHeight(window.scrollY >= 15);
+      }
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll);
+    },[])
+
   // console.log("props.diableGradient", props.diableGradient)
   return (
     <>
-      <nav
+  
+    <div className={ "padding-top " + '' + (isScrollValueMoreThanHeaderHeight ? "scroll-down" : "scroll-up")}>
+      <nav id="nav-header"
         name={"header-container"}
         className={`gradient-${
           props.diableGradient ? "disable" : "enable"
-        } sticky top-0 z-40 header-container`}
+        } fixed top-0 z-40  header-container`}
       >
         <div className="max-w-6xl mx-auto sm:px-4 md:w-full md:px-4 flex items-center justify-between py-2 sm:py-2 lg:pb-0 flex-wrap header-wrapper">
           <div className="flex items-center sm:mr-6 w-36 lg:w-40">
@@ -232,6 +244,7 @@ const MainNavigation = props => {
           </div>
         </div>
       </nav>
+    </div>
     </>
   )
 }

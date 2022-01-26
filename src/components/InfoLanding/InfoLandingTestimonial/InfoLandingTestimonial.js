@@ -1,7 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import Image from '../../image';
-import * as s from './InfoLandingTestimonial.module.css'
+import * as s from './InfoLandingTestimonial.module.css';
+import InfoLandingForm from '../InfoLandingHero/InfoLandingForm'
 
 const InfoLandingTestimonial = (
     data,
@@ -12,7 +13,7 @@ const InfoLandingTestimonial = (
     return (
         <section className='testimonial-section relative py-24'>
             <div className='landing-container'>
-                <div className='testimonial-wrapper flex'>
+                <div className='testimonial-wrapper flex grid xl:grid-cols-2 xl:gap-2 grid-cols-1 gap-1 text-center xl:text-left'>
                     <div className={s.testimonial_left}>
                         <h2 className='landing-section-title mb-12'>{testimonialData.title}</h2>
                         {testimonialData.cta_butons.map((button, idx) => {
@@ -26,8 +27,11 @@ const InfoLandingTestimonial = (
                                 )
                             }
                         })}
+                        <div className='testimonial-form'> 
+                            <InfoLandingForm  />
+                        </div>
                         <div className={s.landing_logos_wrapper}>
-                            <ul className={`landing-logos-list flex`}>
+                            <ul className={`landing-logos-list flex xl:justify-start justify-center`}>
                                 {testimonialData.customer_logos.map((logo, index) => {
                                     if(index === 0 || index === 1 || index === 2){
                                         return(
@@ -40,7 +44,7 @@ const InfoLandingTestimonial = (
                                     }
                                 })}
                             </ul>
-                            <ul className={`landing-logos-list flex ${s.landing_logos_list_last}`}>
+                            <ul className={`landing-logos-list flex xl:justify-start justify-center ${s.landing_logos_list_last}`}>
                                 {testimonialData.customer_logos.map((logo, index) => {
                                     if(index === 3 || index === 4 || index === 5){
                                         return(
