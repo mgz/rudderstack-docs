@@ -236,4 +236,10 @@ div.CodeMirror-cursors {
   .CodeMirror-scroll{
     margin-right: 0px;
   }
+  .CodeMirror{
+    font-size: 14px;
+  }
+  .codeEditorFile{
+    padding:60px 0px 20px 10px;
+  }
 }
