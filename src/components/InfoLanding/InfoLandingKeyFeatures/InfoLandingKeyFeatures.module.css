@@ -1,11 +1,14 @@
 .key_features_block{
-    background: url('../../../images/key-features-bg.svg') no-repeat;
+    /* background: url('../../../images/key-features-bg.svg') no-repeat; */
+    background: url('../../../images/small-gray.png') no-repeat;
+    
     background-size: 100% 100%;
     margin-right: 32px;
     padding: 25px 25px 50px 25px;
     width: 392px;
     position: relative;
     box-sizing: border-box;
+    height: fit-content;
 }
 .key_features_block:before{
     content: '';
@@ -35,7 +38,7 @@
 }
 .key_features_list{
     margin-bottom: 32px;
-    min-height: 230px;
+    /* min-height: 230px; */
     background-size: cover;
 }
 .key_features_image{
@@ -47,7 +50,7 @@
 
 }
 
-
+/* 
 li.key_features_block:nth-child(2){
     min-height: 250px;
     place-self: flex-start;
@@ -58,6 +61,9 @@ li.key_features_block{
 }
 .key_features_block{
  background-size: cover;
+} */
+.pt-56  {
+    padding-top: 56px;
 }
 
 @media screen and (max-width:1023px) {
@@ -69,6 +75,7 @@ li.key_features_block{
         margin-bottom: 57px;
         padding: 25px 25px 60px 25px;
         min-height: 220px;
+        background-size: 100% 100%;
     }
     .key_features_block{
         background: url('../../../images/key-feature-grediant-mo.svg') no-repeat;
@@ -82,10 +89,15 @@ li.key_features_block{
         margin-right:40px;
     }
 }
-
+@media screen and (max-width:800px) {
+    li.key_features_block:nth-child(2), li.key_features_block{
+        background-size: cover;
+        min-height: 205px;
+    }
+}
 @media screen and (max-width:768px) {
     li.key_features_block:nth-child(2), li.key_features_block{
-        min-height: 150px;
+        min-height: 190px;
     }
 }
 

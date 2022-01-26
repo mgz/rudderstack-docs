@@ -1,10 +1,11 @@
 .landing-main{
     background: #070E1F;
+    font-family: 'Basis Grotesque', Arial, Helvetica, sans-serif;
 }
 .landing-container{
-    max-width: 1152px;
+    max-width: 1190px;
     margin:0px auto;
-    padding:0px 15px;
+    padding:0;
 }
 .landing-section-title{
     font-size: 54px;
@@ -60,23 +61,101 @@
     transition-timing-function: ease-out;
     width: 0;
 }
-
+.newsletter-wrapper{
+    max-width: 445px;
+}
+.newsletter-input{
+    max-width: 276px;
+}
+.sign-up-text{
+    font-size: 14px;
+}
+.about-section{
+    padding: 84px 0 67px;
+}
+.testimonial-section{
+    padding: 96px 0;
+}
+.use-case-section{
+    padding: 118px 0;
+}
+h2.landing-section-title{
+    letter-spacing: -2.4px;
+}
+@media screen and (max-width:1280px) {
+    .landing-container{
+        padding: 0 70px;
+    }
+}
 @media screen and (max-width:1024px) {
     .landing-section-title{
         font-size: 34px;
         line-height: 41px;
     }
-    .landing-container{
-        padding: 0px 80px;
+    h2.landing-section-title {
+        letter-spacing: -0.4px;
     }
 }
-
+@media screen and (max-width:1023px) {
+    .testimonial-form {
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:768px) {
+    /* .newsletter-wrapper .newsletter-block {
+        background: #fff !important;
+    }
+    .signup-form{
+        flex-direction: row;
+    }
+    .newsletter-wrapper .sign-up-text{
+        margin-top: 0;
+        width: auto;
+        padding: 0 1.75rem !important;
+    }
+    .newsletter-wrapper .newsletter-input {
+        padding: 0.5rem !important;
+        border-radius: 1rem !important;
+    } */
+    .newsletter-input,  .newsletter-wrapper{
+        max-width: 100%;
+        width: 100%;
+    } 
+    .signup-form {
+        flex-direction: column-reverse;
+      }
+      .newsletter-wrapper .sign-up-text{
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+}
 @media screen and (max-width:767px) {
+    .newsletter-input, .newsletter-wrapper{
+        max-width: 100%;
+        width: 100%;
+    }
     .landing-container{
         padding: 0px 22px;
     }
     .landing-section-title{
         font-size: 24px;
-        line-height: 28px;
+        line-height: 28px; 
+    }
+    
+    .sign-up-text {
+        font-size: 14px;
+    }
+    .about-section{
+        padding: 64px 0 22px;
+    }
+    .testimonial-section{
+        padding: 64px 0 52px;
+    }
+    .use-case-section{
+        padding: 64px 0;
+    }
+    .learn-more{
+        font-size: 18px;
     }
 }

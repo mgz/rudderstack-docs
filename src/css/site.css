@@ -1485,13 +1485,6 @@ form .disableActive{
 }
 
 @media screen and (max-width:767px) {
-  .signup-form {
-    flex-direction: column-reverse;
-  }
-  .newsletter-wrapper .sign-up-text{
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
   .newsletter-input{
     background: rgba(255,255,255,0.25);
   }
