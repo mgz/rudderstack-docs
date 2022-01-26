@@ -69,14 +69,14 @@ export const query = graphql`
 `
 
 const Demo = ({ data, htmlId, location, pageContext }) => {
-
+  /* console.log('slug', pageContext.slug); */
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
 
 
   const lv_ourlogoblock = data.section_our_logos.edges.filter(
-    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.ourLogos
+    ii => ii.node.section_name === "request demo"
   )
 
 
@@ -121,7 +121,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
             <div className="request-wrapper flex lg:flex-row flex-col">
                 <div className="request-left lg:w-1/2 w-full">
                     <div className="request-left-upper lg:w-11/12 w-full lg:rounded-br-3xl">
-                        <div className="pt-19 pb-12 pr-10 flex">
+                        <div className="pt-28 pb-12 pr-10 flex">
                             <div className="request-left-inner w-full lg:max-w-md lg:ml-auto lg:justify-self-end">
                                 <h1 className="text-3xl lg:text-5xl text-darkScheme-textPrimary font-bold leading-tight">In this 15 minute demo, you'll discover</h1>
                                 <div className="request-left-content mt-5">
@@ -139,7 +139,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                                     {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
                                         if(k === 2 || k === 3 || k === 8){
                                             return (
-                                                <li key={i._key} className={`mr-16`}>
+                                                <li key={k._key} className={`mr-16`}>
                                                     <Image
                                                         classes="object-contain"
                                                         props={i.asset._ref}
@@ -155,7 +155,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                                     {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
                                         if(k === 0 || k === 1 || k === 6){
                                             return (
-                                                <li key={i._key} className={`${k === 10 ? 'mr-0' : 'mr-16'}`}>
+                                                <li key={k._key} className={`${k === 10 ? 'mr-0' : 'mr-16'}`}>
                                                     <Image
                                                         classes="object-contain"
                                                         props={i.asset._ref}
@@ -172,19 +172,32 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                     </div>
                 </div>
                 <span className="section-border lg:hidden block w-full"></span>
-                <div className="request-right lg:w-1/2 w-full">
+                <div className="request-right lg:w-1/2 w-full pt-20">
                     <DynamicInputForm
                     {...lv_scheduledemoheader[0].input_form}
                     location={location}
                     isFromRequest={true}
                     />
                 </div>
-                <div className="request-logos-wrapper lg:hidden flex mb-10 w-11/12 mx-auto">
-                  <ul className="logos-list flex flex-col mb-5 w-1/2 items-center">
-                      {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
-                          if(k === 2 || k === 3 || k === 8){
+                <div className="request-logos-wrapper px-4 lg:hidden block">
+                    <ul className="logos-list flex mb-5 justify-center">
+                        {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
+                                return (
+                                    <li key={k._key} className={`${k === 8 ? 'mr-0' : 'mr-0'}`}>
+                                        <Image
+                                            classes="object-contain"
+                                            props={i.asset._ref}
+                                            width="210"
+                                            height="40"
+                                        />
+                                    </li>
+                                )
+                        })}
+                    </ul>
+                    <ul className="logos-list flex justify-center mb-10">
+                        {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
                               return (
-                                  <li key={i._key} className={`mb-5`}>
+                                  <li key={k._key} className={`${k === 6 ? 'mr-0' : 'mr-0'}`}>
                                       <Image
                                           classes="object-contain"
                                           props={i.asset._ref}
@@ -193,26 +206,9 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                                       />
                                   </li>
                               )
-                          }
-                      })}
-                  </ul>
-                  <ul className="logos-list flex flex-col w-1/2 items-center">
-                      {lv_ourlogoblock[0].node._rawOurLogos.outlogoimage.map((i,k) => {
-                          if(k === 0 || k === 1 || k === 6){
-                              return (
-                                  <li key={i._key} className="mb-5">
-                                      <Image
-                                          classes="object-contain"
-                                          props={i.asset._ref}
-                                          width="210"
-                                          height="40"
-                                      />
-                                  </li>
-                              )
-                          }
-                      })}
-                  </ul>
-              </div>
+                        })}
+                    </ul>
+                </div>
             </div>
         </section>
         )
