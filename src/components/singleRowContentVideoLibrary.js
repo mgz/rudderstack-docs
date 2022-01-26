@@ -95,7 +95,7 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
         <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link  to={webinarObj.node.slug.current}>
             <img
-              src={webinarObj.node.listing_image.asset.url}
+              src={webinarObj.node.listing_image.asset.url+'?auto=format'}
               alt={webinarObj.node.title}
               // className="sm:h-full w-full sm:max-h-full lg:max-w-2xl  object-cover max-h-96"
               className="sm:h-full w-full object-cover"
