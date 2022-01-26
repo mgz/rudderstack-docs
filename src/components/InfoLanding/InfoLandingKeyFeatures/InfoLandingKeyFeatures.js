@@ -9,7 +9,7 @@ const InfoLandingKeyFeatures = (
     ) => {
     let keyFeaturesData = data.data;
     return(
-        <section className='key-features relative pt-12 pb-24'>
+        <section className='key-features pt-14 relative pb-24'>
             <div className='landing-container'>
                 <h2 className='landing-section-title text-center'>{keyFeaturesData.title}</h2>
                 <div className={s.key_features_wrapper}>

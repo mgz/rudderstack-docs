@@ -75,7 +75,7 @@ const InfoLandingForm = props => {
 
   return (
     <>
-      <div className="newsletter-wrapper md:max-w-xl md:mx-auto">
+      <div className="newsletter-wrapper">
         <div className="newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
           <form
             action="/"
@@ -87,7 +87,7 @@ const InfoLandingForm = props => {
             {!formSubmittedSuccessfully && (
               <>
                 <input
-                  className="newsletter-input border border-darkScheme-textPrimary rounded-2xl w-full py-2 px-4 text-darkScheme-textPrimary "
+                  className="newsletter-input border border-darkScheme-textPrimary rounded-2xl w-full py-2 px-6 text-darkScheme-textPrimary "
                   type="email"
                   name="email"
                   value={email}
@@ -103,7 +103,7 @@ const InfoLandingForm = props => {
                   }}
                 />
                 <span
-                  className="sign-up-text block font-bold py-3 px-10 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
+                  className="sign-up-text block font-bold py-3 px-7 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
                   onClick={e => formSubmitted(e)}
                 >
                   Create an account

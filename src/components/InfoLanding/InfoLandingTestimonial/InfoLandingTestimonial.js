@@ -11,12 +11,12 @@ const InfoLandingTestimonial = (
     let testimonialData = data.data;
 
     return (
-        <section className='testimonial-section relative py-24'>
+        <section className='testimonial-section relative'>
             <div className='landing-container'>
-                <div className='testimonial-wrapper flex grid xl:grid-cols-2 xl:gap-2 grid-cols-1 gap-1 text-center xl:text-left'>
+                <div className='testimonial-wrapper flex  flex-col lg:flex-row  text-center lg:text-left'>
                     <div className={s.testimonial_left}>
                         <h2 className='landing-section-title mb-12'>{testimonialData.title}</h2>
-                        {testimonialData.cta_butons.map((button, idx) => {
+                        {/* {testimonialData.cta_butons.map((button, idx) => {
                             if(button.btnexternallink){
                                 return(
                                     <a href={button.btnlink} key={button._key} className='info-landing-cta'>{button.btntext}</a>
@@ -26,7 +26,7 @@ const InfoLandingTestimonial = (
                                     <Link className='info-landing-cta' to={button.btnlink} key={button._key}>{button.btntext}</Link>
                                 )
                             }
-                        })}
+                        })} */}
                         <div className='testimonial-form'> 
                             <InfoLandingForm  />
                         </div>
