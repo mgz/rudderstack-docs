@@ -51,7 +51,7 @@ const MainNavigation = props => {
   const trybtn =
     data.allSanitySiteSettings.edges[0].node.headerblock.try_free_btn
 
-    // scroll effect for fixed header 
+    // scroll effect for fixed header
     useEffect(() => {
       const handleScroll = () => {
           setIsScrollValueMoreThanHeaderHeight(window.scrollY >= 15);
@@ -63,8 +63,8 @@ const MainNavigation = props => {
   // console.log("props.diableGradient", props.diableGradient)
   return (
     <>
-  
-    <div className={ "padding-top " + '' + (isScrollValueMoreThanHeaderHeight ? "scroll-down" : "scroll-up")}>
+
+    <div className={ "header-offset " + '' + (isScrollValueMoreThanHeaderHeight ? "scroll-down" : "scroll-up")}>
       <nav id="nav-header"
         name={"header-container"}
         className={`gradient-${
