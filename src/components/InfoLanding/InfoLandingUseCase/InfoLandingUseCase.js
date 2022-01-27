@@ -2,7 +2,10 @@ import { Link } from 'gatsby';
 import React from 'react';
 import * as s from './InfoLandingUseCase.module.css';
 
-const InfoLandingUseCase = (data) => {
+const InfoLandingUseCase = (
+    data,
+    showDivider = true
+    ) => {
     let useCaseData = data.data;
    // console.log("useCase Data", useCaseData);
     return (
@@ -35,6 +38,7 @@ const InfoLandingUseCase = (data) => {
                     <div className={s.use_case_right}></div>
                 </div>
             </div>
+            {showDivider && (<div className='section-divider'></div>)}
         </section>
     )
 }

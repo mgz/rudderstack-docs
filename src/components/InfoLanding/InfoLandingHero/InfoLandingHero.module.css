@@ -45,7 +45,7 @@ h3.hero_subtitle{
 }
 @media screen and (max-width:991px) {
     h1 {
-        letter-spacing: 0; 
+        letter-spacing: 0;
     }
     .hero_pointer_item{
         width: 30%;
@@ -58,7 +58,7 @@ h3.hero_subtitle{
         align-items: center;
         text-align: center;
     }
-    .landing_hero_left{ 
+    .landing_hero_left{
         max-width: 100%;
     }
     h3.hero_subtitle{
@@ -96,7 +96,7 @@ h3.hero_subtitle{
         letter-spacing: 0;
         margin-top: 15px;
     }
-    .hero_pointer_item{ 
+    .hero_pointer_item{
         width: 50%;
     }
     h3.hero_subtitle{
@@ -104,7 +104,5 @@ h3.hero_subtitle{
         line-height: 19px;
         margin: 10px 0;
     }
+}
 
-} 
-    
- 
