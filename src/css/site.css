@@ -1415,7 +1415,7 @@ form .disableActive{
     height: 51px;
     transition: 0.1s all linear;
   }
-
+ 
 }
 
 @media only screen and (max-width: 768px) {
@@ -1451,15 +1451,7 @@ form .disableActive{
     width: 100%;
     background: #ffffff;
     padding: 16px 0px !important;
-<<<<<<< HEAD
-<<<<<<< HEAD
     max-width: 100%;
-=======
-    /* max-width: 260px; */
->>>>>>> b4a9df965f03983e3e509da2df814457a946f74b
-=======
-    /* max-width: 260px; */
->>>>>>> b4c1735938ceb53dc90711390c3f41abb4f1b78e
   }
   .newsletter-wrapper .newsletter-input {
     padding: 17px 15px !important;
