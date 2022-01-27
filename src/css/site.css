@@ -1010,6 +1010,11 @@ top: -60px;
   background-image: none;
   background-color: #070e1f;
 }
+.hero-wrapper{
+  background: url('../images/hero-bg-blur.webp') no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
 .section-gradient {
   background: rgb(62, 53, 209);
   background: linear-gradient(
@@ -1446,7 +1451,11 @@ form .disableActive{
     width: 100%;
     background: #ffffff;
     padding: 16px 0px !important;
+<<<<<<< HEAD
     max-width: 100%;
+=======
+    /* max-width: 260px; */
+>>>>>>> b4a9df965f03983e3e509da2df814457a946f74b
   }
   .newsletter-wrapper .newsletter-input {
     padding: 17px 15px !important;
