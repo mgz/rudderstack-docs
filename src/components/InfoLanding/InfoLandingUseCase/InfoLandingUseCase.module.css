@@ -2,6 +2,10 @@
     width: 730px;
     z-index: 2;
 }
+
+.use_case_section{
+    padding: 118px 0;
+}
 .use_case_list_item{
     margin-bottom: 26px;
     padding-left: 52px;
@@ -50,6 +54,9 @@
     }
 }
 @media screen and (max-width:1023px) {
+    .use_case_section {
+        padding: 66px 0;
+    }
     .use_case_list{
         margin-top: 33px;
     }
@@ -67,6 +74,9 @@
 }
 
 @media screen and (max-width:767px) {
+    .use_case_section{
+        padding: 64px 0;
+    }
     .use_case_left{
         margin-bottom: 230px;
     }

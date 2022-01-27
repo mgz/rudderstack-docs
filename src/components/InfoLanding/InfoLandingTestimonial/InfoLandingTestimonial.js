@@ -11,7 +11,7 @@ const InfoLandingTestimonial = (
     let testimonialData = data.data;
 
     return (
-        <section className='testimonial-section relative'>
+        <section className={`${s.testimonial_section} relative` }>
             <div className='landing-container'>
                 <div className='testimonial-wrapper flex  flex-col lg:flex-row  text-center lg:text-left'>
                     <div className={s.testimonial_left}>
@@ -27,7 +27,7 @@ const InfoLandingTestimonial = (
                                 )
                             }
                         })} */}
-                        <div className='testimonial-form'> 
+                        <div className={`${s.testimonial_form}`}> 
                             <InfoLandingForm  />
                         </div>
                         <div className={s.landing_logos_wrapper}>

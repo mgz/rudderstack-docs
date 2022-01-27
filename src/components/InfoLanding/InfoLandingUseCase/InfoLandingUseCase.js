@@ -9,7 +9,7 @@ const InfoLandingUseCase = (
     let useCaseData = data.data;
    // console.log("useCase Data", useCaseData);
     return (
-        <section className='use-case-section relative'>
+        <section className={`${s.use_case_section} relative`}>
             <div className='landing-container'>
                 <div className='use-case-wrapper flex'>
                     <div className={s.use_case_left}>

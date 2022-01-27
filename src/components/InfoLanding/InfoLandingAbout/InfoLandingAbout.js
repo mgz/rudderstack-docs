@@ -8,7 +8,7 @@ const InfoLandingAbout = (
     ) => {
     let aboutData = data.data;
     return(
-        <section className='about-section relative'>
+        <section className={`${s.about_section} relative`}>
             <div className='landing-container'>
                 <div className='about-wrapper flex lg:flex-row flex-col justify-between'>
                     <div className={s.about_wrapper_left}>

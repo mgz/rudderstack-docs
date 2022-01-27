@@ -10,6 +10,9 @@
     box-sizing: border-box;
     height: fit-content;
 }
+.key_features{
+    padding-top: 56px;
+}
 .key_features_block:before{
     content: '';
     background: url('../../../images/key-features-gradient-bar.svg') no-repeat;
@@ -67,6 +70,9 @@ li.key_features_block{
 }
 
 @media screen and (max-width:1023px) {
+    .key_features{
+        padding-top: 56px;
+    }
     li.key_features_block:nth-child(2), li.key_features_block{
         place-self: flex-start;
         width: 100%;

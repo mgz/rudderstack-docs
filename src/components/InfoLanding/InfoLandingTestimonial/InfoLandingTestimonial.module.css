@@ -1,6 +1,9 @@
 .landing_logos_wrapper{
     margin-top: 48px;
 }
+.testimonial_section{
+    padding: 96px 0;
+}
 .testimonial_left{
     margin-right: 85px;
     max-width: 685px;
@@ -62,8 +65,12 @@
     
 }
 @media screen and (max-width:1023px) {
-  
-    .testimonial-form{ 
+
+    .testimonial_section {
+        padding: 77px 0;
+    }
+
+    .testimonial_form{ 
         justify-content: center;
         display: flex;
     }
@@ -88,6 +95,9 @@
     }
 }
 @media screen and (max-width:767px) {
+    .testimonial_section{
+        padding: 45px 0 52px;
+    }
     .testimonial_quote{
         padding: 57px 21px;
     }

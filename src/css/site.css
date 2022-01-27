@@ -795,7 +795,8 @@ body {
   max-height: 460px;
 }
 .header-offset{
-  height: 90px;
+  height: 76px;
+  padding-top: 76px;
 }
 .header-offset .header-container {
   height: 90px;
@@ -1406,8 +1407,9 @@ form .disableActive{
     max-width: 100%;
   }
   .header-offset{
-    height: 51px;
+    height: 34px;
     transition: 0.1s all linear;
+    padding-top: 34px;
   }
   .header-offset .header-container {
     height: 51px;

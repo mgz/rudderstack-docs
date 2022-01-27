@@ -12,6 +12,7 @@
     line-height: 64px;
     color: #ffffff;
     font-weight: bold;
+    letter-spacing: -4px;
 }
 .pink{
     color: #D692F6;
@@ -70,18 +71,7 @@
 .sign-up-text{
     font-size: 14px;
 }
-.about-section{
-    padding: 84px 0 67px;
-}
-.testimonial-section{
-    padding: 96px 0;
-}
-.key-features{
-    padding-top: 56px;
-}
-.use-case-section{
-    padding: 118px 0;
-}
+
 h2.landing-section-title{
     letter-spacing: -2.4px;
 }
@@ -91,9 +81,6 @@ h2.landing-section-title{
     }
 }
 @media screen and (max-width:1024px) {
-    .about-section{
-        padding: 74px 0 42px;
-    }
     .landing-section-title{
         font-size: 34px;
         line-height: 41px;
@@ -104,20 +91,6 @@ h2.landing-section-title{
     }
 }
 @media screen and (max-width:1023px) {
-    .testimonial-form {
-        display: flex;
-        justify-content: center;
-    }
-   
-    .testimonial-section {
-        padding: 77px 0;
-    }
-    .key-features{
-        padding-top: 56px;
-    }
-    .use-case-section {
-        padding: 66px 0;
-    }
     .learn-more{
         font-size: 18px;
     }
@@ -179,15 +152,5 @@ h2.landing-section-title{
     
     .sign-up-text {
         font-size: 14px;
-    }
-    .about-section{
-        padding: 64px 0 22px;
-    }
-    .testimonial-section{
-        padding: 45px 0 52px;
-    }
-    .use-case-section{
-        padding: 64px 0;
-    }
-    
+    }    
 }
