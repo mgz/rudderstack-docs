@@ -48,7 +48,7 @@ const IntegrationSimilarV2 = ({ data }) => {
               return (
                 <Link
                   key={oo.node.id}
-                  to={oo.node.slug}
+                  to={oo.node.nodeH1Slug}
                   className={`${
                     ii < visibleIntegrationCount ? "block" : "hidden"
                   }`}
