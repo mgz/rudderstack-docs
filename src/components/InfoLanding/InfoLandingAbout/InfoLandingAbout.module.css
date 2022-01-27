@@ -37,12 +37,17 @@ p{
     .about_wrapper_left{
         width: 100%;
         margin-right: 0;
-        margin-bottom: 65px;
+    }
+}
+@media screen and (max-width:1023px) {
+    .about_wrapper_left{
+        max-width: 100%;
+        margin-bottom: 52px;
     }
 }
 @media screen and (max-width:767px) {
     .about_wrapper_left{
-        margin-bottom: 30px;
+        margin-bottom: 41px;
     }
     .landing_pointers_general_title{
         font-size: 18px;
@@ -50,5 +55,8 @@ p{
     }
     .landing_pointers_general{
         margin-bottom: 42px;
+    }
+    .landing_pointers_general_image{
+        margin-right: 25px;
     }
 }

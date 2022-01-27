@@ -76,6 +76,9 @@
 .testimonial-section{
     padding: 96px 0;
 }
+.key-features{
+    padding-top: 56px;
+}
 .use-case-section{
     padding: 118px 0;
 }
@@ -84,22 +87,42 @@ h2.landing-section-title{
 }
 @media screen and (max-width:1280px) {
     .landing-container{
-        padding: 0 70px;
+        padding: 0 68px;
     }
 }
 @media screen and (max-width:1024px) {
+    .about-section{
+        padding: 74px 0 42px;
+    }
     .landing-section-title{
         font-size: 34px;
         line-height: 41px;
+        letter-spacing: -1.3px;
     }
     h2.landing-section-title {
-        letter-spacing: -0.4px;
+        letter-spacing: -1.4px;
     }
 }
 @media screen and (max-width:1023px) {
     .testimonial-form {
         display: flex;
         justify-content: center;
+    }
+   
+    .testimonial-section {
+        padding: 77px 0;
+    }
+    .key-features{
+        padding-top: 56px;
+    }
+    .use-case-section {
+        padding: 66px 0;
+    }
+    .learn-more{
+        font-size: 18px;
+    }
+    .lrlm-icon svg {
+        width: 20px;
     }
 }
 @media screen and (max-width:768px) {
@@ -131,16 +154,27 @@ h2.landing-section-title{
       }
 }
 @media screen and (max-width:767px) {
+    h2.landing-section-title {
+        letter-spacing: -1px;
+    }
     .newsletter-input, .newsletter-wrapper{
         max-width: 100%;
         width: 100%;
     }
+    .newsletter-wrapper .sign-up-text{
+        padding:19px 0px 14px 0 !important;
+        margin-bottom: 15px;
+    }
+    
     .landing-container{
         padding: 0px 22px;
     }
     .landing-section-title{
         font-size: 24px;
         line-height: 28px; 
+        letter-spacing: -1px;
+        margin-right: 30px;
+        margin-top: 18px;
     }
     
     .sign-up-text {
@@ -150,12 +184,10 @@ h2.landing-section-title{
         padding: 64px 0 22px;
     }
     .testimonial-section{
-        padding: 64px 0 52px;
+        padding: 45px 0 52px;
     }
     .use-case-section{
         padding: 64px 0;
     }
-    .learn-more{
-        font-size: 18px;
-    }
+    
 }

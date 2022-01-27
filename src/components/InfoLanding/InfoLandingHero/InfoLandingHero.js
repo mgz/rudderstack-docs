@@ -9,9 +9,9 @@ const InfoLandingHero = (
     ) => {
     let heroData = data.data;
     return(
-        <section className='landing-hero relative pt-24 pb-20'>
+        <section className='landing-hero relative pt-24 sm:pb-20 pb-14'>
             <div className='landing-container'>
-                <div className='landing-hero-wrapper flex flex-col lg:flex-row'>
+                <div className='landing-hero-wrapper flex flex-col md:flex-row justify-between lg:gap-x-0 gap-x-5'>
                     <div className={s.landing_hero_left}>
                         <span className={`${s.landing_hero_category} pink uppercase font-bold`}>{heroData.sub_title}</span>
                         <h1 className='landing-section-title'>{heroData.title}</h1>
@@ -20,7 +20,7 @@ const InfoLandingHero = (
                             <InfoLandingForm />
                         </div>
                     </div>
-                    <div className='landing-hero-right'>
+                    <div className='landing-hero-right flex'>
                         <Image
                             props={heroData.right_image.asset._ref}
                          />
@@ -30,7 +30,7 @@ const InfoLandingHero = (
                     <ul className='flex hero-pointer-list  md:justify-center justify-content-start lg:justify-between lg:flex-nowrap flex-wrap'>
                         {heroData.icon_with_text_items.map((item, index) => {
                             return (
-                                <li className={`${s.hero_pointer_item} flex flex-col items-center justify-center`} key={item._key}>
+                                <li className={`${s.hero_pointer_item} flex flex-col items-center justify-start `} key={item._key}>
                                     <span className='hero-pointer-image'>
                                         <Image
                                             props={item.icon.asset._ref}
