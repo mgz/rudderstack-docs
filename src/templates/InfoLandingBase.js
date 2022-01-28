@@ -7,6 +7,8 @@ import InfoLandingAbout from "../components/InfoLanding/InfoLandingAbout/InfoLan
 import InfoLandingTestimonial from "../components/InfoLanding/InfoLandingTestimonial/InfoLandingTestimonial"
 import InfoLandingKeyFeatures from "../components/InfoLanding/InfoLandingKeyFeatures/InfoLandingKeyFeatures"
 import InfoLandingUseCase from "../components/InfoLanding/InfoLandingUseCase/InfoLandingUseCase"
+import InfoLeftContentRightImg from "../components/InfoLanding/InfoLeftContentRightImg/InfoLeftContentRightImg"
+
 import MainNavigation from "../components/main-navigation"
 import MiddleBanner from "../components/middle-banner"
 import FooterNav from "../components/footer-nav"
@@ -63,7 +65,8 @@ const InfoLandingBase = ({ data, location }) => {
                     )
                   case "left_right_content_with_right_background_image":
                     return(
-                      <InfoLandingUseCase data={node} key={node._key} />
+                      <InfoLandingUseCase data={node} key={node._key} />,
+                      <InfoLeftContentRightImg />
                     )
                   default:
                     return null;
