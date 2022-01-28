@@ -102,7 +102,12 @@
         padding: 57px 21px;
     }
     .testimonial_quotes_icon{
-        top: -110px;
+        top: -40px;
+        left: calc(50% - 47px);
+    }
+    .testimonial_quotes_icon svg {
+        width: 100px;
+        height: 60px;
     }
     .testimonial_quotes_text{
         font-size: 18px;
@@ -112,5 +117,15 @@
         font-size: 14px;
         line-height: 19px;
     }
-
+    .landing_logos_list_last{
+        margin-left: 0;
+    }
+    .logo_item{
+        margin-right: 20px;
+        align-items: inherit;
+        display: flex;
+    }
+    .logo_item:last-child{
+        margin-right: 0;
+    }
 }
