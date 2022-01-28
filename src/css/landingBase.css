@@ -3,7 +3,7 @@
     font-family: 'Basis Grotesque', Arial, Helvetica, sans-serif;
 }
 .landing-container{
-    max-width: 1190px;
+    max-width: 1152px;
     margin:0px auto;
     padding:0;
 }
@@ -75,6 +75,11 @@
 h2.landing-section-title{
     letter-spacing: -2.4px;
 }
+.landing-hero{
+    background: url('../images/hero-bg-blur.webp') no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+  }
 @media screen and (max-width:1280px) {
     .landing-container{
         padding: 0 68px;

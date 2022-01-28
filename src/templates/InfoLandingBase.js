@@ -39,43 +39,44 @@ const InfoLandingBase = ({ data, location }) => {
 
   return (
       <React.Fragment>
-        <MainNavigation />
-        <div className="landing-main">
-          {
-            data.sanityInfoLandingPage._rawPagebuildersection.map((node, index) => {
-              switch(node._type){
-                case "left_right_content_with_image_and_bullet_items":
-                  return(
-                    <InfoLandingHero data={node} key={node._key} />
-                  )
-                case "left_right_content_and_bullet_items":
-                  return(
-                    <InfoLandingAbout data={node} key={node._key} />
-                  )
-                case "left_right_content_with_logos_and_testimonial":
-                  return(
-                    <InfoLandingTestimonial data={node} key={node._key} />
-                  )
-                case "title_with_card_items":
-                  return(
-                    <InfoLandingKeyFeatures data={node} key={node._key} />
-                  )
-                case "left_right_content_with_right_background_image":
-                  return(
-                    <InfoLandingUseCase data={node} key={node._key} />
-                  )
-                default:
-                  return null;
-              }
-            })
-          }
-          {
-            middleBannerGetStarted[0].node._rawGetStarted._type === "middlebannersection" && (
-                <MiddleBanner {...middleBannerGetStarted[0].node._rawGetStarted} />
-              )
-          }
-        </div>
-        <footer
+        <div className="hero-section">
+          <MainNavigation />
+          <div className="landing-main">
+            {
+              data.sanityInfoLandingPage._rawPagebuildersection.map((node, index) => {
+                switch(node._type){
+                  case "left_right_content_with_image_and_bullet_items":
+                    return(
+                      <InfoLandingHero data={node} key={node._key} />
+                    )
+                  case "left_right_content_and_bullet_items":
+                    return(
+                      <InfoLandingAbout data={node} key={node._key} />
+                    )
+                  case "left_right_content_with_logos_and_testimonial":
+                    return(
+                      <InfoLandingTestimonial data={node} key={node._key} />
+                    )
+                  case "title_with_card_items":
+                    return(
+                      <InfoLandingKeyFeatures data={node} key={node._key} />
+                    )
+                  case "left_right_content_with_right_background_image":
+                    return(
+                      <InfoLandingUseCase data={node} key={node._key} />
+                    )
+                  default:
+                    return null;
+                }
+              })
+            }
+            {
+              middleBannerGetStarted[0].node._rawGetStarted._type === "middlebannersection" && (
+                  <MiddleBanner {...middleBannerGetStarted[0].node._rawGetStarted} />
+                )
+            }
+          </div>
+          <footer
           className="hero-section px-4 sm:px-4 text-sm md:pt-14 w-full mx-auto"
           name={"footer-container"}
         >
@@ -249,6 +250,7 @@ const InfoLandingBase = ({ data, location }) => {
             </div>
           </div>
         </footer>
+        </div>
       </React.Fragment>
   )
 }
