@@ -65,11 +65,10 @@ const InfoLandingBase = ({ data, location }) => {
                     )
                   case "left_right_content_with_right_background_image":
                     return(
-                      <InfoLandingUseCase data={node} key={node._key} />,
-                      <InfoLeftContentRightImg />
+                      <InfoLandingUseCase data={node} key={node._key} />
                     )
                   default:
-                    return null;
+                    return <InfoLeftContentRightImg />
                 }
               })
             }
