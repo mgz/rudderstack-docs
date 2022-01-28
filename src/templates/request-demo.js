@@ -121,7 +121,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
             <div className="request-wrapper flex lg:flex-row flex-col">
                 <div className="request-left lg:w-1/2 w-full">
                     <div className="request-left-upper lg:w-11/12 w-full lg:rounded-br-3xl">
-                        <div className="pt-28 pb-12 pr-10 flex">
+                        <div className="pt-20 pb-12 pr-10 flex">
                             <div className="request-left-inner w-full lg:max-w-md lg:ml-auto lg:justify-self-end">
                                 <h1 className="text-3xl lg:text-5xl text-darkScheme-textPrimary font-bold leading-tight">{data.sanitySchdemo._rawPagebuildersectionarray[0].demo_header_text}</h1>
                                 <div className="request-left-content mt-5">
@@ -133,12 +133,12 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                         </div>
                     </div>
                     <div className="request-left-lower w-11/12 py-16 pl-15 hidden lg:block">
-                        <div className="request-left-lower-inner flex ml-auto">
+                        <div className="request-left-lower-inner flex ml-auto justify-end">
                             <div className="request-logos-wrapper">
                                 <ul className="logos-list flex mb-5">
                                     {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i < 3).map((i,k) => {
                                             return (
-                                                <li key={k._key} className={`mr-16`}>
+                                                <li key={k._key} className={`mr-16 flex items-center`}>
                                                     <Image
                                                         classes="object-contain"
                                                         props={i.primary_image.asset._ref}
@@ -149,10 +149,10 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                                             )
                                     })}
                                 </ul>
-                                <ul className="logos-list flex ml-16">
+                                <ul className="logos-list flex">
                                     {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i > 2).map((i,k) => {
                                             return (
-                                                <li key={k._key} className={`${k === 10 ? 'mr-0' : 'mr-16'}`}>
+                                                <li key={k._key} className={`mr-16 flex items-center`}>
                                                     <Image
                                                         classes="object-contain"
                                                         props={i.primary_image.asset._ref}
@@ -168,7 +168,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                     </div>
                 </div>
                 <span className="section-border lg:hidden block w-full"></span>
-                <div className="request-right lg:w-1/2 w-full pt-20">
+                <div className="request-right lg:w-1/2 w-full pt-7">
                     <DynamicInputForm
                     {...data.sanitySchdemo._rawPagebuildersectionarray[0].input_form}
                     location={location}
@@ -177,12 +177,12 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                 </div>
                 <div className="request-logos-wrapper px-4 lg:hidden block">
                     <ul className="logos-list flex mb-5 justify-center">
-                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.map((i,k) => {
+                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i < 3).map((i,k) => {
                                 return (
-                                    <li key={k._key} className={`${k === 8 ? 'mr-0' : 'mr-0'}`}>
+                                    <li key={k._key} className={`${k === 2 ? 'mr-0' : 'mr-16'} flex items-center justify-center`}>
                                         <Image
-                                            classes="object-contain"
-                                            props={i.primary_image.asset._ref}
+                                            classes={`${i.secondary_image ? 'lw-image' : ''} object-contain`}
+                                            props={i.secondary_image ? i.secondary_image.asset._ref : i.primary_image.asset._ref}
                                             width="210"
                                             height="40"
                                         />
@@ -191,12 +191,12 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                         })}
                     </ul>
                     <ul className="logos-list flex justify-center mb-10">
-                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.map((i,k) => {
+                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i > 2).map((i,k) => {
                               return (
-                                  <li key={k._key} className={`${k === 6 ? 'mr-0' : 'mr-0'}`}>
+                                  <li key={k._key} className={`${k === 2 ? 'mr-0' : 'mr-16'} flex items-center justify-center`}>
                                       <Image
-                                          classes="object-contain"
-                                          props={i.primary_image.asset._ref}
+                                          classes={`${i.secondary_image ? 'lw-image' : ''} object-contain`}
+                                          props={i.secondary_image ? i.secondary_image.asset._ref : i.primary_image.asset._ref}
                                           width="210"
                                           height="40"
                                       />

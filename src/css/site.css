@@ -1398,10 +1398,12 @@ form .disableActive{
 .request-left-content p{
   color: #fff;
   font-size: 18px;
+  margin-bottom: 20px;
 }
 .logos-list img{
   filter: brightness(0) invert(1);
-  min-width: 120px;
+  /* min-width: 80px; */
+  max-width: 110px;
 }
 .request-left-lower{
   background: url('../images/request-demo-bg.png') no-repeat;
@@ -1431,6 +1433,10 @@ form .disableActive{
   background: #3E35D1 !important;
   border-color: #3E35D1 !important;
 }
+.logos-list img.lw-image{
+  width: 50px;
+}
+
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;
@@ -1462,6 +1468,12 @@ form .disableActive{
     background-size: 50%;
   }
 }
+@media only screen and (max-width: 1400px){
+  .logos-list img{
+    width: 90px;
+    max-width: 100%;
+  }
+}
 @media only screen and (max-width: 1200px) {
   .blockWrapper {
     padding: 0px 24px;
@@ -1484,9 +1496,6 @@ form .disableActive{
   } */
   .cta-btn {
     width: 190px;
-  }
-  .logos-list img{
-    min-width: 90px;
   }
   .request-left-inner{
     padding-left: 20px;
@@ -1560,7 +1569,10 @@ form .disableActive{
     height: 51px;
     transition: 0.1s all linear;
   }
-
+  .logos-list li{
+    width: 90px;
+    max-width: 30%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1690,6 +1702,10 @@ form .disableActive{
   }
   .header-offset.scroll-up .top-0.top-header-show {
       top: 65px !important;
+  }
+  .logos-list img{
+    width: 90px;
+    max-width: 100%;
   }
 }
 @media only screen and (max-width: 355px){
