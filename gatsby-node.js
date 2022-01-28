@@ -1206,9 +1206,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const sch_demo = schDemos.data.allSanitySchdemo.edges || []
   sch_demo.forEach((edge, index) => {
     let splitPath = edge.node.slug.current.split('/');
-    const path = splitPath[0] === "new-theme" ? splitPath[1] : `/${edge.node.slug.current}/`
+    const path = splitPath.length > 1 ? splitPath[1] : `/${edge.node.slug.current}/`
 
-    if(splitPath.length > 1){
+    if(splitPath[0] !== "curr-theme"){
       createPage({
         path,
         component: require.resolve("./src/templates/request-demo.js"),
