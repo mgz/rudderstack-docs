@@ -5,12 +5,12 @@ import { rudderslabTrackOnClick } from "../utils/common"
 
 const CentredContentWithButton = props => {
   return (
-    <div className="testimonials bg-white px-7 py-10 sm:py-20 text-primary margin-top-xl bg-hero-pattern-mobile sm:bg-hero-pattern bg-no-repeat bg-cover">
+    <div className="testimonials px-7 py-10 sm:py-20 text-primary margin-top-xl relative">
       <div className="w-full max-w-5xl m-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-blueNew-midnight">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-darkScheme-textPrimary">
           {props.title}
         </h2>
-        <div className="text-xl-2 text-grayColor-custom mt-4 mb-8">
+        <div className="text-xl-2 text-darkScheme-grayText mt-4 mb-8">
           <PortableText blocks={props.content} trackSectionHeader={props.title} />
         </div>
 
@@ -57,6 +57,7 @@ const CentredContentWithButton = props => {
           })()}
         </p>
       </div>
+      <span className="section-border absolute bottom-0 left-0 w-full block"></span>
     </div>
   )
 }

@@ -865,13 +865,13 @@ top: -60px;
   @apply mt-6 text-xl;
 } */
 
-.about-us-banner {
+/* .about-us-banner {
   background: url("../images/aboutus-banner.png");
   background-repeat: no-repeat;
   background-position: right top;
   -webkit-background-size: 51%;
   background-size: 51%;
-}
+} */
 .left-right-comp-gradient {
   background: rgba(255, 255, 255, 0.25);
   border: 0.5px solid #e1e1e1;
@@ -1385,6 +1385,10 @@ form .disableActive{
 
 .sidebar-guides-link{
   cursor: pointer;
+}
+
+.about-hero-subtitle{
+  max-width: 832px;
 }
 
 @media only screen and (min-width: 1024px) {

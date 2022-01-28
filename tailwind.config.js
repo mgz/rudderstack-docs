@@ -62,7 +62,8 @@ module.exports = {
         textPrimary: "#ffffff",
         btnPrimaryBg: "#86F8E0",
         btnSecondaryBg: "#D692F6",
-        textBlack: "#000000"
+        textBlack: "#000000",
+        grayText: "#C7C7C7"
       }
     },
     extend: {
