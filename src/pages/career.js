@@ -3,12 +3,16 @@ import {StaticImage} from 'gatsby-plugin-image'
 import Layout from "../components/layout"
 import Leadership from "../components/leadership"
 import AdvisorsAndInvestor from "../components/advisorsAndInvestors"
+import { Helmet } from "react-helmet"
 
 
 const CareerPage = ({ data, location })  => {
 
     return(
         <Layout location={location}>
+            <Helmet>
+                <title>{"Careers RudderStack | RudderStack.com"}</title>
+            </Helmet>
             <div className="career-page hero-section font-custom">
                 <section className="our-mission">
                     <div className="max-w-6xl w-full mx-auto">
@@ -96,7 +100,7 @@ const CareerPage = ({ data, location })  => {
                     </div>
                 </section>
                 <Leadership />
-                <AdvisorsAndInvestor />
+                <AdvisorsAndInvestor location={location} />
             </div>
        </Layout>
 

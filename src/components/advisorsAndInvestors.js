@@ -1,16 +1,21 @@
 import React, {useEffect, useState} from "react"
-import Image from "./image"
-import gsap, {ScrollTrigger, DrawSVGPlugin} from "gsap"
+
 import {StaticImage} from 'gatsby-plugin-image'
-import OurLogo from "./ourlogo_v2"
+
 import "../css/about.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faRss } from "@fortawesome/free-solid-svg-icons"
+import { faGoodreads, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons"
 
 const AdvisorsAndInvestor = props => {
 
-  let show
+  let [showCareer, setShowCareer] = useState(false);
 
-  /* useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+  useEffect(() => {
+    if(props.location.pathname.startsWith('/career')){
+      setShowCareer(true);
+    }
+    /* gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
     let rsTimeline = gsap.timeline({
       defaults: {
         duration: 1,
@@ -25,43 +30,43 @@ const AdvisorsAndInvestor = props => {
       }
     }
     );
-    rsTimeline.fromTo(".pathLine", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"},0)
-  }, []); */
+    rsTimeline.fromTo(".pathLine", {drawSVG: "100% 100%"}, {drawSVG: "0% 100%"},0) */
+  }, []);
 
   return (
-    <section className="company-profile-wrapper lg:pt-24 pt-10">
-      <div className="about-logos">
-        <h3 className="font-bold text-center text-darkScheme-textPrimary text-3xl-3">Over 13,000 sites and applications use RudderStack</h3>
-        <ul className="about-logos-list flex justify-between items-center max-w-6xl mx-auto mt-20 mb-40">
-          <li>
+    <section className="company-profile-wrapper lg:pt-24 pt-10 relative">
+      <div className="about-logos lg:px-0 px-4">
+        <h3 className="font-bold text-center text-darkScheme-textPrimary lg:text-3xl-3 text-2xl">Over 13,000 sites and applications use RudderStack</h3>
+        <ul className="about-logos-list lg:flex lg:justify-between items-center max-w-6xl mx-auto mt-20 lg:mb-40 mb-20 grid-cols-2 grid justify-items-center">
+          <li className="lg:mb-0 mb-3">
             <StaticImage
               src="../images/allbirds-white-logo.svg"
               placeholder="tracedSVG"
               alt="allbirds"
             />
           </li>
-          <li>
+          <li className="lg:mb-0 mb-3">
             <StaticImage
               src="../images/hinge-white-logo.svg"
               placeholder="tracedSVG"
               alt="Hinge"
             />
           </li>
-          <li>
+          <li className="lg:mb-0 mb-3">
           <StaticImage
               src="../images/priceline-white-logo.svg"
               placeholder="tracedSVG"
               alt="priceline"
             />
           </li>
-          <li>
+          <li className="lg:mb-0 mb-3">
             <StaticImage
               src="../images/stripe-white-logo.svg"
               placeholder="tracedSVG"
               alt="stripe"
             />
           </li>
-          <li>
+          <li className="lg:mb-0 mb-3">
             <StaticImage
               src="../images/ifttt-white-logo.svg"
               placeholder="tracedSVG"
@@ -70,10 +75,10 @@ const AdvisorsAndInvestor = props => {
           </li>
         </ul>
       </div>
-      <div className="timeline-block">
+      {!showCareer && (<div className="timeline-block">
           <div className="timeline-wrapper max-w-3xl mx-auto flex">
             <div className="timeline-content">
-              <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 font-bold block">2019</span>
+              <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 text-2xl font-bold block">2019</span>
               <span className="timeline-text text-darkScheme-textPrimary block">Seed Round</span>
             </div>
             <div className="timeline-border">
@@ -89,13 +94,13 @@ const AdvisorsAndInvestor = props => {
               </svg>
             </div>
             <div className="timeline-content">
-              <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 font-bold block">2020</span>
+              <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 text-2xl font-bold block">2020</span>
               <span className="timeline-text text-darkScheme-textPrimary block">Series A</span>
             </div>
           </div>
           <div className="timeline-wrapper max-w-3xl mx-auto flex">
             <div className="timeline-content">
-              <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 font-bold block">2021</span>
+              <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 text-2xl font-bold block">2021</span>
               <span className="timeline-text text-darkScheme-textPrimary block">Opening of India offices and Greenville office</span>
             </div>
             <div className="timeline-border">
@@ -107,12 +112,12 @@ const AdvisorsAndInvestor = props => {
           <div className="timeline-wrapper max-w-3xl mx-auto flex">
             <div className="timeline-border"></div>
             <div className="timeline-content">
-              <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 font-bold block">2022</span>
+              <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 text-2xl font-bold block">2022</span>
               <span className="timeline-text text-darkScheme-textPrimary block">Series B, 150+ Employees</span>
             </div>
           </div>
-        </div>
-        <section className="join-our-team">
+        </div>)}
+        {showCareer && (<section className="join-our-team">
           <div className="max-w-6xl w-full mx-auto flex flex-col lg:flex-row gap-0 lg:gap-20 join-our-team-wrapper">
               <div className="left-section">
                   <h2 className="career-page-heading text-darkScheme-textPrimary ">Join our team</h2>
@@ -124,8 +129,8 @@ const AdvisorsAndInvestor = props => {
                   <p className="text-darkScheme-grayText">We have a lot of growth ahead of us, and know not everyone fits perfectly into the roles we have listed. If your experience isn't a perfect match for the job description, but you're still a good fit for the role, apply. We want to work with smart people who are good at their job, and, a lot of times, those people have non-linear career paths.</p>
               </div>
           </div>
-        </section>
-        <section className="benifits">
+        </section>)}
+        {showCareer && (<section className="benifits">
           <div className="max-w-6xl w-full mx-auto join-our-team-wrapper">
               <h2 className="career-page-heading text-darkScheme-textPrimary ">Benefits</h2>
               <p className="text-darkScheme-grayText">Employee Experience matters the most to us. We want to invest in our team, enabling everyone to feel healthy, happy and supported while doing their best work at RudderStack.
@@ -150,13 +155,44 @@ const AdvisorsAndInvestor = props => {
               </div>
           </div>
           </div>
-        </section>
+        </section>)}
         <div className="timeline-map mt-28">
           <StaticImage
             src="../images/about-map.webp"
             alt="Map"
           />
         </div>
+        {showCareer && (<div className="join-team-bottom text-center py-10">
+          <h2 className="text-darkScheme-textPrimary font-bold mb-3 lg:text-3xl-3 text-2xl">Join Our Team</h2>
+          <p className="text-darkScheme-grayText mb-5">Help us make data engineers the heroes of their companies</p>
+          <a href="#" className="btn-primary-lg sm:mr-4 md:mb-0 mb-6 inline-block">View Open Positions</a>
+        </div>)}
+        {!showCareer && (<div className="keep-in-touch text-center py-10">
+          <h2 className="text-darkScheme-textPrimary font-bold mb-3 lg:text-3xl-3 text-2xl">Keep in touch</h2>
+          <ul className="flex social-keep-touch text-center justify-center gap-3">
+            <li>
+              <a href="#" className="footer-social-icon-kit bg-darkScheme-textPrimary">
+                <FontAwesomeIcon icon={faTwitter} size="lg" />
+              </a>
+            </li>
+            <li>
+              <a href="#" className="footer-social-icon-kit bg-darkScheme-textPrimary">
+                <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+              </a>
+            </li>
+            <li>
+              <a href="#" className="footer-social-icon-kit bg-darkScheme-textPrimary">
+                <FontAwesomeIcon icon={faRss} size="lg" />
+              </a>
+            </li>
+            <li>
+              <a href="#" className="footer-social-icon-kit bg-darkScheme-textPrimary">
+                <FontAwesomeIcon icon={faGoodreads} size="lg" />
+              </a>
+            </li>
+          </ul>
+        </div>)}
+      <span className="section-border absolute bottom-0 left-0 w-full"></span>
     </section>
   )
 }

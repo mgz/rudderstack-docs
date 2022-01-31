@@ -18,7 +18,7 @@ const Leadership = props => {
             <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary">Leadership & Investors</h2>
             <p className="text-darkScheme-grayText max-w-sm">We're an engineer-led team of data security, and marketing experts.</p>
           </div>
-          <div className="investors-images mt-8 leadership-img-block">
+          <div className="investors-images my-8 leadership-img-block">
             <StaticImage
               src="../images/leadership-investors.png"
               alt="leadership-investors"
@@ -26,7 +26,7 @@ const Leadership = props => {
           </div>
         </div>
       </div>
-      <div className="flex -mt-60 justify-center  lg:justify-end leadership-img-block ml-auto">
+      <div className="flex xl:-mt-60 justify-center lg:justify-end leadership-img-block lg:ml-auto lg:mr-0 mx-auto">
         <StaticImage
           src="../images/leadership-group2.webp"
           alt="leadership-investors"
@@ -40,13 +40,13 @@ const Leadership = props => {
           </div>
         </div>
         <div className="middle-right-images relative flex justify-end flex-col  lg:flex-row">
-          <div className="middle-right-image-wrapper mr-3">
+          <div className="middle-right-image-wrapper mr-3 lg:mb-0 mb-3">
             <StaticImage
               src="../images/leadership-group3.webp"
               alt="leadership-investors"
             />
           </div>
-          <div className="middle-right-image-wrapper ">
+          <div className="middle-right-image-wrapper lg:mb-0 mb-3">
             <StaticImage
               src="../images/leadership-group4.webp"
               alt="leadership-investors"
@@ -55,7 +55,7 @@ const Leadership = props => {
         </div>
       </div>
       <div className="flex justify-center lg:justify-end">
-        <div className="bottom-image-wrapper xl:-mt-36 lg:-mt-32">
+        <div className="bottom-image-wrapper xl:-mt-36 leadership-img-block">
           <StaticImage
             src="../images/leadership-group5.webp"
             alt="leadership-investors"

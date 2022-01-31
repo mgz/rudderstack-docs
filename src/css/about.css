@@ -39,13 +39,26 @@
     transform: scaleX(-1);
     left: 30px;
 }
-@media only screen and (max-width: 1200px){
-    .join-our-team-wrapper{
-        padding: 0px 16px;
+.footer-social-icon-kit{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1C1D61;
+}
+@media only screen and (max-width: 1280px){
+    .bottom-image-wrapper{
+        margin-top: -140px;
+        margin-right: 380px;
     }
 }
-
-@media screen and (max-width:1180px) {
+@media only screen and (max-width: 1200px){
+    .join-our-team-wrapper, .about-logos-list{
+        padding: 0px 16px;
+    }
     .right-side-content{
         margin-left: 0;
         padding-left: 20px;
@@ -54,35 +67,40 @@
         margin-left: 0;
         padding-left: 20px;
     }
-    .leadership-img-block {
-        max-width: 46%;
+    .leadership-img-block{
+        max-width: calc(100% - 30px);
+        margin: auto;
     }
+    .middle-right-image-wrapper img ,
+        .left-group-image img,
+        .leadership-img-block img {
+            display: block;
+            width: 100%;
+        }
+        .left-group-image {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .middle-right-image-wrapper {
+            text-align: center;
+        }
+        .middle-content {
+            padding-bottom: 30px;
+        }
+        .about-logos-list li{
+            max-width: 110px;
+        }
+        .bottom-image-wrapper{
+            margin-top: -140px;
+            margin-right: 380px;
+        }
 }
 
 @media screen and (max-width:1023px) {
-.leadership-img-block {
-    max-width: 100%;
-    margin: 0 !important;
-}
-.middle-right-image-wrapper img ,
-.left-group-image img,
-.leadership-img-block img {
-    display: block;
-    width: 100%;
-}
-.left-group-image {
-    margin-bottom: 30px;
-    text-align: center;
-}
-.middle-right-image-wrapper {
-    text-align: center;
-}
-.middle-content {
-    padding-bottom: 30px;
-}
-.bottom-image-wrapper {
-    margin-right: 0;
-}
+    .bottom-image-wrapper{
+        margin-top: 0;
+        margin-right: auto;
+    }
 }
 
 @media screen and (max-width:800px) {
@@ -118,5 +136,13 @@
         text-align: center;
         display: flex;
         justify-content: center;
+    }
+    .join-our-team .left-section{
+        max-width: 100%;
+    }
+    .footer-social-icon-kit{
+        font-size: 18px;
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
