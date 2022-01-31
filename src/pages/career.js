@@ -38,7 +38,7 @@ const CareerPage = ({ data, location })  => {
                         </div>
                         <div className="career-key-points">
                             <div className="career-point-wrapper">
-                                <div className="max-w-6xl w-full mx-auto">
+                                <div className="max-w-6xl w-full mx-auto ">
                                     <div className="icon">
                                         <StaticImage  src="../images/learning.svg"  alt="career-learning" />
                                     </div>
