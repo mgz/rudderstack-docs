@@ -1,40 +1,65 @@
 import React from "react"
 import Image from "./image"
+import {StaticImage} from 'gatsby-plugin-image'
+import '../css/about.css'
 
 const Leadership = props => {
   return (
-    <section className="">
-      <div className="max-w-6xl px-5 pt-16 md:pt-28 mx-auto">
-        <div className="flex flex-wrap w-full mb-8 md:mb-20 flex-col">
-          <h2 className="sm:text-5xl text-2xl font-bold mb-6 text-blueNew-midnight">
-            {props.title}
-          </h2>
-          <p className="w-full leading-relaxed text-sm sm:text-lg text-grayColor-custom">
-            {props.subtitle}
-          </p>
+    <section className="leadership relative pt-32 pb-16">
+      <div className="flex relative">
+        <div className="left-group-image">
+          <StaticImage
+            src="../images/leadership-group1.webp"
+            alt="leadership-group1"
+          />
         </div>
-        <div className="flex flex-wrap -m-4">
-          {props.leaderships.map(item => {
-            return (
-              <div
-                key={item._key}
-                className="p-4 w-full md:w-1/3 m-auto max-w-sm"
-              >
-                <div className="h-full border border-grayColor-priceCardBorder rounded-3xl overflow-hidden shadow-md">
-                  <Image
-                    props={item.image.asset._ref}
-                    classes="h-64 sm:h-72 w-full object-cover object-center"
-                  />
-                  <div className="py-4 text-center">
-                    <h3 className="title-font text-2xl font-medium mb-3">
-                      {item.name}
-                    </h3>
-                    <p className="leading-relaxed mb-3 text-xl">{item.role}</p>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
+        <div className="right-side-content">
+          <div className="content-title">
+            <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary">Leadership & Investors</h2>
+            <p className="text-darkScheme-grayText max-w-sm">We're an engineer-led team of data security, and marketing experts.</p>
+          </div>
+          <div className="investors-images mt-8 leadership-img-block">
+            <StaticImage
+              src="../images/leadership-investors.png"
+              alt="leadership-investors"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex -mt-60 justify-end leadership-img-block ml-auto">
+        <StaticImage
+          src="../images/leadership-group2.webp"
+          alt="leadership-investors"
+        />
+      </div>
+      <div className="flex justify-between mt-3">
+        <div className="middle-content">
+          <div className="content-title">
+            <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary">Team</h2>
+            <p className="text-darkScheme-grayText max-w-sm">RudderStack team is a diverse and talented people from around the world</p>
+          </div>
+        </div>
+        <div className="middle-right-images relative flex justify-end">
+          <div className="middle-right-image-wrapper mr-3">
+            <StaticImage
+              src="../images/leadership-group3.webp"
+              alt="leadership-investors"
+            />
+          </div>
+          <div className="middle-right-image-wrapper">
+            <StaticImage
+              src="../images/leadership-group4.webp"
+              alt="leadership-investors"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-end">
+        <div className="bottom-image-wrapper -mt-36">
+          <StaticImage
+            src="../images/leadership-group5.webp"
+            alt="leadership-investors"
+          />
         </div>
       </div>
     </section>

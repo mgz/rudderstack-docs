@@ -40,12 +40,12 @@ const FourCardsWithTitleLeftAligned = props => {
 
                   <h2 className="text-2xl-2 font-bold mb-2 text-darkScheme-btnSecondaryBg">{item.title}</h2>
 
-                  <div class="leading-relaxed text-sm sm:text-lg  text-darkScheme-grayText">
+                  <div className="leading-relaxed text-sm sm:text-lg  text-darkScheme-grayText">
                     <PortableText blocks={item.content} trackSectionHeader={item.title} />
                   </div>
 
                   {linktext !== "" && (
-                    <div class="flex items-center mt-8">
+                    <div className="flex items-center mt-8">
                       {(() => {
                         if (linktext !== "") {
                           if (extralink === true) {
