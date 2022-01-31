@@ -9,7 +9,7 @@ const CareerPage = ({ data, location })  => {
 
     return(
         <Layout location={location}>
-            <div className="career-page hero-section">
+            <div className="career-page hero-section font-custom">
                 <section className="our-mission">
                     <div className="max-w-6xl w-full mx-auto">
                         <p className="text-darkScheme-btnSecondaryBg our-mission-title">OUR MISSION</p>
