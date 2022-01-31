@@ -145,8 +145,7 @@ section.join-our-team {
     .join-our-team .right-section{
         padding-top: 0;
     }
-}
-@media screen and (max-width:767px) {
+ 
     .our-mission-title{
         font-size: 16px;
         line-height: 32px;
