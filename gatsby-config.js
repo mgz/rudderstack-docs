@@ -66,6 +66,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
+        forceBase64Format: `webp`, 
         defaults: {
           formats: [`auto`, `webp`],
         },
