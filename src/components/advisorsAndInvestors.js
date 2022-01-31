@@ -46,6 +46,45 @@ const AdvisorsAndInvestor = props => {
             <span className="timeline-text text-darkScheme-textPrimary block">Series B, 150+ Employees</span>
           </div>
         </div>
+        <section className="join-our-team">
+          <div className="max-w-6xl w-full mx-auto flex flex-col lg:flex-row gap-0 lg:gap-20">
+              <div className="left-section">
+                  <h2 className="career-page-heading text-darkScheme-textPrimary ">Join our team</h2>
+                  <p className="text-darkScheme-textPrimary ">Help us make data engineers the heroes of their companies.</p>
+              </div>
+              <div className="right-section">
+                  <p className="text-darkScheme-grayText">We’re looking to build and grow diverse teams in an inclusive environment. People do their best work and are happiest when they are free to be their unguarded selves. So we expect everyone that works at RudderStack brings their whole selves to work every day.</p>
+                  <p className="text-darkScheme-grayText">We want globally minded individuals who are passionate about the work they do, and inspire others around them. We value differing perspectives and believe they lead to growth and opportunity.</p>
+                  <p className="text-darkScheme-grayText">We have a lot of growth ahead of us, and know not everyone fits perfectly into the roles we have listed. If your experience isn't a perfect match for the job description, but you're still a good fit for the role, apply. We want to work with smart people who are good at their job, and, a lot of times, those people have non-linear career paths.</p>
+              </div>
+          </div>
+        </section>
+        <section className="benifits">
+          <div className="max-w-6xl w-full mx-auto">
+              <h2 className="career-page-heading text-darkScheme-textPrimary ">Benefits</h2>
+              <p className="text-darkScheme-grayText">Employee Experience matters the most to us. We want to invest in our team, enabling everyone to feel healthy, happy and supported while doing their best work at RudderStack.
+              </p>
+          <div className="flex flex-col md:flex-row">
+              <div className="left-section">
+                  <ul className="text-darkScheme-textPrimary ">
+                      <li>Remote First & Flexible Work Environment</li>
+                      <li>Competitive Compensation </li>
+                      <li>Company Equity</li>
+                      <li>Comprehensive Health Care</li>
+                      <li>Flexible Paid Time Off</li>
+                  </ul>
+              </div>
+              <div className="right-section">
+                  <ul className="text-darkScheme-textPrimary ">
+                      <li>Yearly Continuous Learning Fund</li>
+                      <li>WFH Setup Stipend </li>
+                      <li>Team Events and Gatherings</li>
+                      <li>Parental Leave </li>
+                  </ul>
+              </div>
+          </div>
+          </div>
+        </section>
         <div className="timeline-map mt-28">
           <StaticImage
             src="../images/about-map.webp"
