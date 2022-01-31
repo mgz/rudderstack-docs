@@ -20,6 +20,8 @@ import "./src/css/agreement.css"
 import "./src/css/product.css"
 import "./src/css/pricing.css"
 import "./src/css/code-editor.css"
+import "./src/css/career.css"
+
 const { DateTime } = require("luxon")
 
 export const onRouteUpdate = (_ref, _ref2) => {
