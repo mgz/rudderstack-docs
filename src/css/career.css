@@ -129,6 +129,7 @@ section.join-our-team {
     }
     .our-mission{
         padding-top: 60px;
+        padding-bottom: 0;
     }
     section.join-our-team{
         padding: 60px 0;
@@ -140,8 +141,7 @@ section.join-our-team {
     .join-our-team .right-section{
         padding-top: 0;
     }
-}
-@media screen and (max-width:767px) {
+ 
     .our-mission-title{
         font-size: 16px;
         line-height: 32px;

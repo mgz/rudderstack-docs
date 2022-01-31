@@ -6,7 +6,7 @@ import { rudderslabTrackOnClick } from "../utils/common"
 
 const FourCardsWithTitleLeftAligned = props => {
   return (
-    <section className="pb-8 md:pb-24 px-4 md:px-0 pt-20">
+    <section className="pb-8 md:pb-24 px-4 md:px-0 pt-20 relative">
       <div className="max-w-4xl m-auto flex flex-wrap w-full mb-24 flex-col md:text-center">
         {props.title !== "" && (
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-darkScheme-textPrimary">
