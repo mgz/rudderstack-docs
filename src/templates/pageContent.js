@@ -156,7 +156,7 @@ const PageContent = ({ data, location }) => {
           } else if (section._type === "leadership_section") {
             return <Leadership key={section._key} {...section} />
           } else if (section._type === "advisors_and_investors_section") {
-            return <AdvisorsAndInvestor key={section._key} {...section} />
+            return <AdvisorsAndInvestor key={section._key} location={location} {...section} />
           } else if (section._type === "pricing_calculate") {
             return <PricingCalculator key={section._key} {...section} />
           } else if (section._type === "hero_banner_404") {
