@@ -1,0 +1,109 @@
+.pricing-plan{
+    background: radial-gradient(97.77% 308.45% at 0% 14.59%, rgba(7, 14, 31, 0.4) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 24px;
+}
+.pricing-plans::before, .pricing-plans::after, .proCard:before, .proCard:after{
+    display: none;
+}
+.grad-bg{
+    background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.21) 100%);
+}
+
+.check-icon::before {
+    content: "";
+    background: url("../images/check-pricing.svg") no-repeat;
+    background-position: center;
+    width: 75%;
+    height: 100%;
+    background-size: 70% auto;
+    top: 0;
+    left: 50%;
+    padding: 12px;
+    margin-right: 22px;
+}
+.line-image::before{
+    content: "";
+    width: 25px;
+    height: 4px;
+    border-radius: 4px;
+    display: block;
+    background: #ffffff;
+    margin: 0px auto;
+}
+.check-comparison::before{
+    background-size: 100%;
+    margin-right:0px;
+}
+.pricing-pointers{
+    width: 70%;
+}
+.pricing-pointer-list{
+    margin-bottom: 10px;
+}
+.faqcta {
+    background: radial-gradient(97.77% 308.45% at 0% 14.59%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border:1px solid rgba(255, 255, 255, 0.5);
+}
+.specialist-icon::before{
+    content: "";
+    background: url('../images/arrow-light-blue.svg') no-repeat;
+    display: inline-block;
+    margin-right: 20px;
+    width: 30px;
+    height: 25px;
+    vertical-align: middle;
+}
+.faq-accBox{
+    max-width: 65%;
+}
+.faq-accBox .accordion .accordion__title:before {
+    background-image: url("../images/lightblue-plus.svg");
+    border: none;
+    transform: rotate(0deg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 5px;
+}
+.faq-accBox .accordion__title,.faq-accBox .accordion__content{
+    padding-right: 0px;
+    padding-left: 50px;
+}
+.faq-accBox .accordion.active .accordion__title:after{
+    background-image: url("../images/lightblue-minus.svg");
+    left: 0px;
+    top: 7px;
+    background-size: 100% 4px;
+}
+.hero-section .faq-accBox .accordion__text{
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 28px;
+}
+.sticky-pricing-banner.sticky{
+    top: 90px;
+    background: #070e1f;
+}
+@media only screen and (max-width: 1024px){
+    .sticky-pricing-banner.sticky, .plan-header{
+        top: 50px;
+    }
+    .faq-accBox{
+        max-width: 100%;
+    }
+}
+@media only screen and (max-width: 767px){
+    .faq-accBox .accordion__section .accordion__content{
+        padding-left: 50px;
+    }
+    .specialist-cta{
+        max-width: 75%;
+    }
+}

@@ -97,7 +97,7 @@ const VideoLibraryContentHeader = ({
                 <p className="sm:py-8">Duration: {data.duration}</p>
 
                 <div className="relative w-full rounded-lg flex-grow justify-items-end px-4 md:px-12 py-4 sm:items-center lg:items-start lg:mb-0">
-                  <div class="iframe-container">
+                  <div class="iframe-container video-library-container">
                     <div className="stack-frame-1"></div>
                     <div className="stack-frame-2"></div>
                     {/* <YouTube

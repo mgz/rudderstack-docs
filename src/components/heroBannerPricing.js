@@ -20,104 +20,126 @@ const HeroBannerPricing = props => {
     : ""
 
   return (
-    <section className="overflow-x-hidden bg-gradient-to-t from-white-custom via-blueNew-lighter to-blueNew-lighter custom-bg custom-gradient pt-8 md:pt-20">
-      <div className="max-w-screen-lg px-4 md:px-12 mx-auto flex flex-wrap flex-col items-center text-center">
-        <h1 className="my-4 text-5xl md:text-6xl font-bold font-custom leading-snug text-primary">
+    <section className="md:py-19 py-12 relative">
+      {/* <div className="out-gradient-wrapper bottom-0 right-16">
+        <div className="grad1">
+          <div className="grad2">
+            <div className="grad3">
+              <div className="grad4">
+                <div className="grad5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="out-gradient-wrapper top-10 left-1/4">
+        <div className="grad1">
+          <div className="grad2">
+            <div className="grad3">
+              <div className="grad4">
+                <div className="grad5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      <div className="max-w-6xl mx-auto">
+        <h1 className="my-4 font-bold leading-snug text-darkScheme-textPrimary text-3xl-3 md:text-5xl text-center px-4 triggers">
           {props.herobannertitle}
         </h1>
       </div>
 
       <div className="max-w-6xl px-4 md:px-3 lg:px-0 mx-auto flex flex-wrap items-center pb-18 font-custom">
         <div className="pricing-table-2 pt-1 md:pt-3 w-full">
-          <div className="mx-auto">
+          <div className="mx-auto triggers">
             <div className="pricing-plans relative lg:flex mt-6 md:mt-12 w-full">
               {props.pricing_cards.map((item, idx) => {
                 return (
                   <div
                     key={item._key}
-                    className={`pricing-plan-wrap lg:w-1/3 mt-4 mb-8 md:my-6 px-5 ${
+                    className={`pricing-plan-wrap w-96 max-w-full lg:w-1/3 mt-4 mb-8 md:my-6 mx-auto px-5 ${
                       idx === 1 ? "proCard relative" : ""
                     }`}
                   >
-                    <div className="pricing-plan bg-whiteColor-custom border border-grayColor-priceCardBorder rounded-2xl text-center mx-auto shadow-md">
-                      <div className="p-6 pt-12 md:pt-16 md:pb-4">
-                        <div className="ellipse flex items-center justify-center h-20">
+                    <div className="pricing-plan text-center mx-auto">
+                      <div className="px-7 py-9">
+                        {/* <div className="ellipse flex items-center justify-center h-20">
                           <Image props={item.image.asset._ref} />
-                        </div>
-                        <h3 className="font-medium leading-tight md:leading-snug text-4xl md:text-5xl text-primary mr-2 font-bold">
+                        </div> */}
+                        <h3 className="leading-tight md:leading-snug text-3xl-3 text-darkScheme-textPrimary mr-2 font-bold">
                           {item.title}
                         </h3>
-                        <div className="text-grayColor-lighter mt-2 h-16 leading-7 text-lg">
+                        <div className="text-grayColor-lighter mt-2 mb-5 h-16 leading-7 text-base">
                           {item.smalltitle}
                         </div>
-                      </div>
-                      <div className="p-6 pt-0 pb-10 max-w-xs mx-auto text-left">
-                        <ul className="h-60 text-lg">
-                          {item.pricing_features.map((rr, idx) => {
-                            return (
-                              <li
-                                key={idx}
-                                className="relative pl-8 p-1.5 text-grayColor-custom font-medium"
-                              >
-                                <span className="absolute top-2 w-7 left-0 check-icon"></span>
-                                {rr}
-                              </li>
-                            )
-                          })}
-                        </ul>
-                        <div className="mt-6 py-4 text-center">
-                          {(() => {
-                            if (item.button.btnexternallink === true) {
+                        <div className="text-left">
+                          <ul className="md:h-56 text-lg">
+                            {item.pricing_features.map((rr, idx) => {
                               return (
-                                <a
-                                  className={
-                                    (item.button.btnhiglight === true
-                                      ? "btn-primary-sm"
-                                      : "btn-secondary-sm") +
-                                    ` inline-block font-bold`
-                                  }
-                                  onClick={e =>
-                                    rudderslabTrackOnClick(
-                                      "button",
-                                      item.title,
-                                      e
-                                    )
-                                  }
-                                  href={item.button.btnlink}
+                                <li
+                                  key={idx}
+                                  className="relative text-darkScheme-textPrimary pricing-pointer-list text-base lg:"
                                 >
-                                  {item.button.btntext}
-                                </a>
+                                  <span className="w-7 check-icon inline-block align-top mr-5"></span>
+                                  <span className="inline-block pricing-pointers">{rr}</span>
+                                </li>
                               )
-                            } else {
-                              return (
-                                <a
-                                  className={
-                                    (item.button.btnhiglight === true
-                                      ? "btn-primary-sm"
-                                      : "btn-secondary-sm") +
-                                    ` inline-block font-bold`
-                                  }
-                                  onClick={e =>
-                                    rudderslabTrackOnClick(
-                                      "button",
-                                      item.title,
-                                      e
-                                    )
-                                  }
-                                  href={item.button.btnlink}
-                                >
-                                  {item.button.btntext}
-                                </a>
-                              )
-                            }
-                          })()}
+                            })}
+                          </ul>
+                          <div className="mt-6 py-4 text-center">
+                            {(() => {
+                              if (item.button.btnexternallink === true) {
+                                return (
+                                  <a
+                                    className={
+                                      (item.button.btnhiglight === true
+                                        ? "cta-btn bg-darkScheme-btnPrimaryBg text-darkScheme-textBlack border border-darkScheme-btnPrimaryBg hover:bg-transparent hover:text-darkScheme-btnPrimaryBg flex items-center justify-center mx-auto rounded-lg"
+                                        : "btn-secondary-sm") +
+                                      ` inline-block font-bold`
+                                    }
+                                    onClick={e =>
+                                      rudderslabTrackOnClick(
+                                        "button",
+                                        item.title,
+                                        e
+                                      )
+                                    }
+                                    href={item.button.btnlink}
+                                  >
+                                    {item.button.btntext}
+                                  </a>
+                                )
+                              } else {
+                                return (
+                                  <a
+                                    className={
+                                      (item.button.btnhiglight === true
+                                        ? "cta-btn bg-transparent text-darkScheme-btnPrimaryBg border border-darkScheme-btnPrimaryBg hover:bg-darkScheme-btnPrimaryBg hover:text-darkScheme-textBlack flex items-center justify-center mx-auto rounded-lg"
+                                        : "btn-secondary-sm") +
+                                      ` inline-block font-bold`
+                                    }
+                                    onClick={e =>
+                                      rudderslabTrackOnClick(
+                                        "button",
+                                        item.title,
+                                        e
+                                      )
+                                    }
+                                    href={item.button.btnlink}
+                                  >
+                                    {item.button.btntext}
+                                  </a>
+                                )
+                              }
+                            })()}
 
-                          {/* <a
-                            href="https://app.rudderlabs.com/signup?type=freetrial"
-                            className="btn-primary-sm inline-block font-bold"
-                          >
-                            Sign up free
-                          </a> */}
+                            {/* <a
+                              href="https://app.rudderlabs.com/signup?type=freetrial"
+                              className="btn-primary-sm inline-block font-bold"
+                            >
+                              Sign up free
+                            </a> */}
+                          </div>
                         </div>
                       </div>
                     </div>

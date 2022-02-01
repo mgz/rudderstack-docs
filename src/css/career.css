@@ -1,0 +1,195 @@
+.our-mission{
+    text-align: center;
+    padding-top: 92px;
+    padding-bottom: 125px;
+}
+.our-mission-title{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 140%;
+    margin-bottom: 43px;
+}
+.our-mission h1{
+    font-size: 64px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: -0.04em;
+    font-weight: bold;
+    margin-bottom: 31px;
+}
+.our-mission p.section-peragraph{
+    font-size: 24px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: 300;
+    max-width: 926px;
+    width: 100%;
+    margin: 0 auto 39px;
+}
+
+.career-point-wrapper {
+    border-bottom: 1px solid #606060;
+    border-top: 1px solid #606060;
+    padding: 33px 0;
+    background-color: rgba(255,255,255,0.04);
+    margin-bottom: 48px;
+}
+
+.career-point-wrapper  h3{
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 120%;
+    text-align: center;
+    margin-bottom: 18px;
+}
+.career-point-wrapper .icon{
+    margin-bottom: 12px;
+}
+.career-point-wrapper p.point-description{
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 160%;
+    text-align: center;
+    max-width: 936px;
+    margin: 0 auto;
+}
+.button-wrapper{
+    max-width: 230px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding-bottom: 43px;
+}
+section.join-our-team {
+    padding: 103px 0;
+}
+.join-our-team .left-section {
+    max-width: 330px;
+    width: 100%;
+}
+.career-page-heading{
+    font-weight: bold;
+    font-size: 54px;
+    line-height: 120%;
+    letter-spacing: -0.04em;
+}
+.join-our-team .left-section p{
+    font-size: 24px;
+    line-height: 160%;
+    font-weight: 300;
+}
+.join-our-team .right-section {
+    max-width: 819px;
+    width: 100%;
+    padding-top: 50px;
+}
+.join-our-team .right-section  p{
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 160%;
+    margin-bottom: 60px;
+}
+.join-our-team .right-section  p:last-child{
+    margin-bottom: 0;
+}
+.benifits {
+    padding-bottom: 30px;
+}
+.benifits p{
+    font-size: 24px;
+    line-height: 38.4px;
+    margin-top: 22px;
+    font-weight: 300;
+    margin-bottom: 39px;
+}
+.benifits ul li {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 210%;
+    background-image: url('../images/arrow-icon.png');
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    background-position: 0 14px;
+}
+.benifits  .left-section, .benifits  .right-section {
+    max-width: 50%;
+    width: 100%;
+}
+
+@media screen and (max-width:1200px) {
+    .career-page .w-full{
+        padding: 0 80px;
+    }
+}
+@media screen and (max-width:768px) {
+    .career-page .w-full{
+        padding: 0 20px;
+    }
+    .our-mission{
+        padding-top: 60px;
+        padding-bottom: 0;
+    }
+    section.join-our-team{
+        padding: 60px 0;
+    }
+    .join-our-team .left-section p , .join-our-team .right-section p {
+        margin-bottom: 15px;
+        padding-top: 15px;
+    }
+    .join-our-team .right-section{
+        padding-top: 0;
+    }
+ 
+    .our-mission-title{
+        font-size: 16px;
+        line-height: 32px;
+    }
+
+    .our-mission p.section-peragraph{
+        font-size: 18px;
+        line-height: 160%;
+    }
+    .our-mission h1{
+        font-size: 24px;
+        line-height: 120%;
+    }
+    .career-point-wrapper h3{
+        font-size: 18px;
+        line-height: 160%;
+    }
+    .career-point-wrapper p.point-description{
+        font-size: 18px;
+        line-height: 160%;
+    }
+    .career-page-heading{
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: -0.04em;
+    }
+
+    .join-our-team .left-section {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .join-our-team .left-section p , .join-our-team .right-section p {
+        font-size: 18px;
+        line-height: 160%;
+    }
+    .benifits  .left-section, .benifits  .right-section {
+        max-width: 100%;
+        width: 100%;
+    }
+    .benifits p, .benifits ul li{
+        font-size: 18px;
+        line-height: 160%;
+    }
+    .benifits ul li{
+        padding-left: 30px;
+        background-position: 0 7px;
+        background-size: 15px;
+        margin-bottom: 5px;
+    }
+}
