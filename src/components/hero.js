@@ -226,7 +226,7 @@ function Hero(props) {
               </div> */}
               <div className={`block`}>
                 <Image
-                  props={props.herobannerimage.asset._ref+'?auto=format'}
+                  props={props.herobannerimage.asset._ref}
                   width={704}
                   height={413}
                   loading="eager"
