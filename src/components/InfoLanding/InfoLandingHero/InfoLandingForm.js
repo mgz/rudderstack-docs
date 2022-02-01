@@ -46,7 +46,6 @@ const InfoLandingForm = props => {
         },
       }
     )
-
     window.rudderanalytics.track(
       "form_submit",
       {
