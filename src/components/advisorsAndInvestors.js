@@ -78,7 +78,7 @@ const setCardSeparation = () => {
 
   return (
     <section className="company-profile-wrapper lg:pt-24 pt-10 relative">
-      <div className="about-logos lg:px-0 px-4">
+      {!showCareer && (<div className="about-logos lg:px-0 px-4">
         <h3 className="font-bold text-center text-darkScheme-textPrimary lg:text-3xl-3 text-2xl">Over 13,000 sites and applications use RudderStack</h3>
         <ul className="about-logos-list lg:flex lg:justify-between items-center max-w-6xl mx-auto mt-20 lg:mb-40 mb-20 grid-cols-2 grid justify-items-center">
           <li className="lg:mb-0 mb-3">
@@ -117,7 +117,7 @@ const setCardSeparation = () => {
             />
           </li>
         </ul>
-      </div>
+      </div>)}
       {!showCareer && (<div className="timeline-block">
           <div className="timeline-wrapper lg:max-w-3xl max-w-sm mx-auto flex justify-between">
             <div className="timeline-content">
@@ -165,7 +165,7 @@ const setCardSeparation = () => {
             <div className="timeline-border"></div>
             <div className="timeline-content">
               <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 text-3xl-3 font-bold block">2022</span>
-              <span className="timeline-text text-darkScheme-textPrimary block">Series B, 150+ Employees</span>
+              <span className="timeline-text text-darkScheme-textPrimary block">114+ Employees</span>
             </div>
           </div>
         </div>)}

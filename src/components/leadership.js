@@ -19,11 +19,15 @@ const Leadership = props => {
             <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary">Leadership & Investors</h2>
             <p className="text-darkScheme-grayText max-w-sm">We're an engineer-led team of data security, and marketing experts.</p>
           </div>
-          <div className="investors-images my-8 leadership-img-block">
-            <StaticImage
-              src="../images/leadership-investors.png"
-              alt="leadership-investors"
-            />
+          <div className="investors-images my-8 w-4/5">
+            <ul className="investors-list flex gap-5">
+              <li>
+                <StaticImage src="../images/s8-capital-logo.svg" alt="S8 Capital" placeholder="tracedSVG" />
+              </li>
+              <li>
+                <StaticImage src="../images/kleiner-logo.svg" alt="Kleiner Perkins" placeholder="tracedSVG" />
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -37,7 +41,7 @@ const Leadership = props => {
         <div className="middle-content">
           <div className="content-title">
             <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary">Team</h2>
-            <p className="text-darkScheme-grayText max-w-sm">RudderStack team is a diverse and talented people from around the world</p>
+            <p className="text-darkScheme-grayText max-w-sm">The Rudderstack team is a group of diverse and talented individuals from around the world.</p>
           </div>
         </div>
         <div className="team-img-mobile">

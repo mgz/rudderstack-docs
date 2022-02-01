@@ -9,9 +9,10 @@ import { Helmet } from "react-helmet"
 const CareerPage = ({ data, location })  => {
 
     return(
-        <Layout location={location}>
+        <Layout location={location} darkTheme={true}>
             <Helmet>
                 <title>{"Careers RudderStack | RudderStack.com"}</title>
+                <meta name="description" content="We want globally minded individuals who are passionate about the work they do, and inspire others around them." />
             </Helmet>
             <div className="career-page hero-section font-custom">
                 <section className="our-mission">
@@ -91,8 +92,8 @@ const CareerPage = ({ data, location })  => {
                             </div>
                         </div>
                     </div>
-                        <a href="https://boards.greenhouse.io/rudderstack" className="button-wrapper">
-                        <span className="btn-primary-lg"> View Open Positions</span>
+                        <a href="https://boards.greenhouse.io/rudderstack" className="button-wrapper flex justify-center" target={"_blank"}>
+                            <span className="btn-primary-lg"> View Open Positions</span>
                         </a>
 
                         <span class="section-border absolute bottom-0 left-0 w-full block"></span>

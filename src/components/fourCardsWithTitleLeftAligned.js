@@ -21,7 +21,7 @@ const FourCardsWithTitleLeftAligned = props => {
       </div>
       <div className="max-w-6xl px-0 md:px-3 mx-auto">
         {/*Data WorkFlow*/}
-        <div className="flex flex-wrap flex-row justify-between">
+        <div className="flex flex-wrap justify-between xl:gap-20 gap-10">
           {props.four_card_items.map((item,k) => {
             const link_display_as_button = item.addlink
               ? item.addlink.cmn_display_as_button
@@ -32,8 +32,8 @@ const FourCardsWithTitleLeftAligned = props => {
             const linkurl = item.addlink ? item.addlink.cmnlink : ""
 
             return (
-              <div key={item._key} className="md:w-1/2 md:gap-32 mb-16 md:mb-16">
-                <div className={"lg:pr-36"}>
+              <div key={item._key} className="card-block-wrapper mb-16 md:mb-16">
+                <div>
                   <div className="w-16 h-16 inline-flex items-center justify-center">
                     <Image props={item.card_image.asset._ref} classes="" />
                   </div>

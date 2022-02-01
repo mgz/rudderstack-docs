@@ -1443,7 +1443,9 @@ form .disableActive{
 .about-hero-subtitle{
   max-width: 832px;
 }
-
+.card-block-wrapper{
+  width: calc(50% - 10rem);
+}
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;
@@ -1506,6 +1508,9 @@ form .disableActive{
   }
   .request-left-inner{
     padding-left: 20px;
+  }
+  .card-block-wrapper{
+    width: calc(50% - 50px);
   }
 }
 @media only screen and (max-width: 1024px) {
