@@ -21,7 +21,7 @@ const FourCardsWithTitleLeftAligned = props => {
       </div>
       <div className="max-w-6xl px-0 md:px-3 mx-auto">
         {/*Data WorkFlow*/}
-        <div className="flex flex-wrap justify-between xl:gap-20 gap-10">
+        <div className="flex flex-wrap lg:flex-row flex-col justify-between xl:gap-20 gap-10">
           {props.four_card_items.map((item,k) => {
             const link_display_as_button = item.addlink
               ? item.addlink.cmn_display_as_button

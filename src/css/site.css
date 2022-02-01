@@ -1585,6 +1585,10 @@ form .disableActive{
     width: 90px;
     max-width: 30%;
   }
+  .card-block-wrapper{
+    width: 100%;
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1664,6 +1668,9 @@ form .disableActive{
   }
   .newsletter-input::placeholder{
     text-align: center;
+  }
+  .card-block-wrapper{
+    text-align: left;
   }
 }
 
