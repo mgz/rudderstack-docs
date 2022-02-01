@@ -41,7 +41,7 @@ function Sidebar({
 
     let details_h2 = document.querySelectorAll('.details h2');
     details_h2.forEach((item, key) => {
-      if(window.scrollY >= item.offsetTop - 100){
+      if(window.scrollY >= (item.offsetTop + header_height)){
         let item_id = item.getAttribute('id');
         Array.from(document.querySelectorAll('.menu li a')).forEach(el => el.classList.remove('active'));
         let currentEl = document.querySelector("[data-attr='"+ item_id +"']");

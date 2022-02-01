@@ -16,7 +16,7 @@ const LeftRightImgCnt = props => {
   // console.log("props", props)
   return (
     <>
-      <section className="left-right-section md:px-0 pb-6 md:pb-12">
+      <section className="left-right-section md:px-0 pb-6 md:pb-12 relative">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           {(smalltitle !== "" || maintitle !== "") && (
             <div
@@ -233,7 +233,7 @@ const LeftRightImgCnt = props => {
                               props.applyGradientColorTheme
                                 ? "text-white"
                                 : titleColor === "midnightBlue"
-                                ? "text-blueNew-midnight"
+                                ? "text-darkScheme-textPrimary"
                                 : titleColor === "black"
                                 ? "text-black-custom"
                                 : ""
@@ -433,7 +433,7 @@ const LeftRightImgCnt = props => {
                             props.applyGradientColorTheme
                               ? "text-white"
                               : titleColor === "midnightBlue"
-                              ? "text-blueNew-midnight"
+                              ? "text-darkScheme-textPrimary"
                               : titleColor === "black"
                               ? "text-black-custom"
                               : ""
@@ -446,7 +446,7 @@ const LeftRightImgCnt = props => {
                         className={`${
                           props.applyGradientColorTheme
                             ? "text-white"
-                            : "text-grayColor-custom"
+                            : "text-darkScheme-grayText"
                         } leading-7 text-sm sm:text-lg frtxt-contnt ${
                           content.content_list_styling === "right_arrow"
                             ? "arrow-list-items"
@@ -588,6 +588,7 @@ const LeftRightImgCnt = props => {
             })()
           )}
         </div>
+        <span className="section-border absolute bottom-0 left-0 w-full block"></span>
       </section>
     </>
   )

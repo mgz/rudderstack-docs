@@ -171,7 +171,6 @@ class PreviewTemplate extends Component {
           intdata.section_get_started = this.props.frontblock.section_get_started
 
           intdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
-
           let integrationSpecificAssets = this.props.frontblock.allGoogleSpreadsheetR1IntegrationSpecificAssets.edges.find(
             oo => oo.node.sanityRelationSlug === integration.slug.current
           )

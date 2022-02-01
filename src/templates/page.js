@@ -18,6 +18,9 @@ import LeftRightMiddleBanner from "../components/LeftRightMiddleBanner"
 // import SEO from "../components/seo"
 import Layout from "../components/layout"
 
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 // const Hero = loadable(() => import("../components/hero"))
 // const Tabs = loadable(() => import("../components/tabs"))
 const LeftRightImgCnt = loadable(() =>
@@ -52,14 +55,56 @@ export const query = graphql`
   }
 `
 
-// The `threshold` variable sets what portion of the element needs to be
-// visible before it fires. 0 = none, 1 = the entire thing. See
-// https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-
 const Page = props => {
   const { data, errors } = props
-  /* console.log("data", data) */
-  const halfPage = useRef()
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const sections = gsap.utils.toArray('.triggers');
+    /* console.log('Sections', sections); */
+    sections.forEach(section => {
+      gsap.set(section, {autoAlpha: 0});
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 80%",
+        end: "bottom 20%",
+        markers: false,
+        toggleActions: "play none none none",
+        onEnter: function () {
+          gsap.fromTo(
+            section,
+            { y: 100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: "back",
+              overwrite: "auto"
+            }
+          );
+        },
+        onLeave: function () {
+          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 1, overwrite: "auto" });
+        },
+        /* onEnterBack: function () {
+          gsap.fromTo(
+            section,
+            { y: -100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: "back",
+              overwrite: "auto"
+            }
+          );
+        },
+        onLeaveBack: function () {
+          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
+        } */
+      })
+    });
+  }, [])
 
   if (errors) {
     return (
@@ -80,6 +125,7 @@ const Page = props => {
 
   //   };
   // })
+
 
   let l_section_info
   const page = data.page || data.route.page

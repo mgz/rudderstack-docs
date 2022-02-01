@@ -103,7 +103,8 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
         location.pathname.startsWith("/privacy-policy-legal/") ||
         location.pathname.startsWith("/cookie-policy/") ||
         location.pathname.startsWith("/product/") ||
-        location.pathname.startsWith("/customers/"))
+        location.pathname.startsWith("/customers/") ||
+        location.pathname.startsWith("/pricing/"))
       ? true
       : false
   )

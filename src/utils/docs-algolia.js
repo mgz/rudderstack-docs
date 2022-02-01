@@ -65,7 +65,7 @@ const queries = [
 
         let searchAlias = ""
         if (tttmp) {
-          
+
           searchAlias = tttmp.node.search_text
         }
 
@@ -97,6 +97,7 @@ const queries = [
           ),
           searchAlias: searchAlias,
           sectionContent: content,
+          searchAlias:searchAlias,
           idx: 1,
         })
 
