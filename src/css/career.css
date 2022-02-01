@@ -1,7 +1,6 @@
 .our-mission{
     text-align: center;
     padding-top: 92px;
-    padding-bottom: 125px;
 }
 .our-mission-title{
     font-weight: bold;
@@ -63,7 +62,7 @@
     padding-bottom: 43px;
 }
 section.join-our-team {
-    padding: 103px 0;
+    padding:0px 0px 103px 0;
 }
 .join-our-team .left-section {
     max-width: 330px;
@@ -83,7 +82,7 @@ section.join-our-team {
 .join-our-team .right-section {
     max-width: 819px;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 68px;
 }
 .join-our-team .right-section  p{
     font-weight: 300;
@@ -141,7 +140,7 @@ section.join-our-team {
     .join-our-team .right-section{
         padding-top: 0;
     }
- 
+
     .our-mission-title{
         font-size: 16px;
         line-height: 32px;
