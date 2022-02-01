@@ -2,5 +2,5 @@
 package = "@netlify/plugin-gatsby"
 
 [build.environment]
-  GATSBY_BRANCH = "test-site"
+  GATSBY_BRANCH = "main"
 
