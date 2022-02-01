@@ -10,7 +10,7 @@ const Leadership = props => {
       <div className="flex relative flex-col-reverse lg:flex-row justify-between gap-4">
         <div className="left-group-image">
           <StaticImage
-            src="../images/leadership-group1.png"
+            src="../images/leadership-group1-2.png"
             alt="leadership-group1"
           />
         </div>
