@@ -83,7 +83,7 @@ const PageContent = ({ data, location }) => {
   }, [])
 
   return (
-    <Layout location={location} darkTheme={location.pathname.startsWith('/pricing') ? true : false}>
+    <Layout location={location} darkTheme={location.pathname.startsWith('/pricing') || location.pathname.startsWith('/about') ? true : false}>
       <Helmet>
         <title>{data.pagedata.meta_title || data.pagedata.title}</title>
         {data.pagedata.enable_no_follow_no_index === true && (
@@ -156,7 +156,7 @@ const PageContent = ({ data, location }) => {
           } else if (section._type === "leadership_section") {
             return <Leadership key={section._key} {...section} />
           } else if (section._type === "advisors_and_investors_section") {
-            return <AdvisorsAndInvestor key={section._key} {...section} />
+            return <AdvisorsAndInvestor key={section._key} location={location} {...section} />
           } else if (section._type === "pricing_calculate") {
             return <PricingCalculator key={section._key} {...section} />
           } else if (section._type === "hero_banner_404") {

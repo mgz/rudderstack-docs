@@ -21,7 +21,8 @@ const DynamicInputForm = ({
   add_on_styling,
   location,
   gatedCookieName,
-  isFromRequest = false
+  isFromRequest = false,
+  additional_track_call,
 }) => {
   const cookies = new Cookies()
   const data = useStaticQuery(graphql`
@@ -252,6 +253,11 @@ const DynamicInputForm = ({
           },
         }
       )
+
+      if (additional_track_call && additional_track_call.length > 0) {
+        window.rudderanalytics.track(additional_track_call, {})
+      }
+
       // console.log("step3")
       fetch(usebasin_endpoint, {
         method: "post",

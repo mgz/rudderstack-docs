@@ -865,13 +865,13 @@ top: -60px;
   @apply mt-6 text-xl;
 } */
 
-.about-us-banner {
+/* .about-us-banner {
   background: url("../images/aboutus-banner.png");
   background-repeat: no-repeat;
   background-position: right top;
   -webkit-background-size: 51%;
   background-size: 51%;
-}
+} */
 .left-right-comp-gradient {
   background: rgba(255, 255, 255, 0.25);
   border: 0.5px solid #e1e1e1;
@@ -1052,6 +1052,10 @@ top: -60px;
   height: 50px;
   flex: 1;
   outline: none;
+  background: rgb(7, 14, 31);
+  background: radial-gradient(100% 7106.9% at 4.49% 0%,
+  rgb(7 14 31 / 82%) 0%,
+ rgb(7 14 31 / 83%) 100%);
 }
 .newsletter-input::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -1436,6 +1440,9 @@ form .disableActive{
 .logos-list img.lw-image{
   width: 50px;
 }
+.about-hero-subtitle{
+  max-width: 832px;
+}
 
 @media only screen and (min-width: 1024px) {
   .submenu-align {
@@ -1608,7 +1615,7 @@ form .disableActive{
     width: 100%;
     background: #ffffff;
     padding: 16px 0px !important;
-    /* max-width: 260px; */
+    max-width: 100%;
   }
   .newsletter-wrapper .newsletter-input {
     padding: 17px 15px !important;
@@ -1643,6 +1650,15 @@ form .disableActive{
   }
   .lrlm-icon svg {
     width: 8px;
+  }
+}
+
+@media screen and (max-width:767px) {
+  .newsletter-input{
+    background: rgba(255,255,255,0.25);
+  }
+  .newsletter-input::placeholder{
+    text-align: center;
   }
 }
 
