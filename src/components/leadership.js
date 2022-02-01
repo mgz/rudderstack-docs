@@ -6,10 +6,11 @@ import '../css/about.css'
 const Leadership = props => {
   return (
     <section className="leadership relative pt-32 pb-16">
-      <div className="flex relative flex-col-reverse lg:flex-row">
+      <div className="max-w-6xl mx-auto leadership-wrapper">
+      <div className="flex relative flex-col-reverse lg:flex-row justify-between">
         <div className="left-group-image">
           <StaticImage
-            src="../images/leadership-group1.webp"
+            src="../images/leadership-group1.png"
             alt="leadership-group1"
           />
         </div>
@@ -26,9 +27,9 @@ const Leadership = props => {
           </div>
         </div>
       </div>
-      <div className="flex xl:-mt-60 justify-center lg:justify-end leadership-img-block lg:ml-auto lg:mr-0 mx-auto">
+      <div className="flex lg:-mt-60 justify-center lg:justify-end leadership-img-block lg:ml-auto lg:mr-0 mx-auto">
         <StaticImage
-          src="../images/leadership-group2.webp"
+          src="../images/leadership-group2.png"
           alt="leadership-investors"
         />
       </div>
@@ -40,13 +41,13 @@ const Leadership = props => {
           </div>
         </div>
         <div className="middle-right-images relative flex justify-end flex-col  lg:flex-row">
-          <div className="middle-right-image-wrapper mr-3 lg:mb-0 mb-3">
+          <div className="middle-right-image-wrapper middle-right-left mr-3 lg:mb-0 mb-3">
             <StaticImage
               src="../images/leadership-group3.webp"
               alt="leadership-investors"
             />
           </div>
-          <div className="middle-right-image-wrapper lg:mb-0 mb-3">
+          <div className="middle-right-image-wrapper middle-right-right lg:mb-0 mb-3">
             <StaticImage
               src="../images/leadership-group4.webp"
               alt="leadership-investors"
@@ -55,12 +56,13 @@ const Leadership = props => {
         </div>
       </div>
       <div className="flex justify-center lg:justify-end">
-        <div className="bottom-image-wrapper xl:-mt-36 leadership-img-block">
+        <div className="bottom-image-wrapper leadership-img-block">
           <StaticImage
             src="../images/leadership-group5.webp"
             alt="leadership-investors"
           />
         </div>
+      </div>
       </div>
     </section>
   )
