@@ -1391,6 +1391,55 @@ form .disableActive{
   cursor: pointer;
 }
 
+/* Request Demo */
+
+.request-left-upper{
+  background: #070E1F;
+}
+.request-inner-container{
+  width: 1152px;
+}
+.request-left-content p{
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.logos-list img{
+  filter: brightness(0) invert(1);
+  /* min-width: 80px; */
+  max-width: 110px;
+}
+.request-left-lower{
+  background: url('../images/request-demo-bg.png') no-repeat;
+  background-position: left top;
+  background-size: 150px;
+}
+.request-label{
+  color: #ffffff;
+  padding-left: 20px;
+}
+.request-input{
+  border-radius: 8px;
+  padding: 13px 20px;
+  outline: none;
+}
+.request-textarea{
+  height: calc(100% - 35px);
+  padding: 13px 20px;
+  border-radius: 8px;
+  outline: none;
+}
+.request-form .css-yk16xz-control{
+  min-height: 50px;
+}
+.request-btn{
+  color: #ffffff !important;
+  background: #3E35D1 !important;
+  border-color: #3E35D1 !important;
+}
+.logos-list img.lw-image{
+  width: 50px;
+}
 .about-hero-subtitle{
   max-width: 832px;
 }
@@ -1426,6 +1475,12 @@ form .disableActive{
     background-size: 50%;
   }
 }
+@media only screen and (max-width: 1400px){
+  .logos-list img{
+    width: 90px;
+    max-width: 100%;
+  }
+}
 @media only screen and (max-width: 1200px) {
   .blockWrapper {
     padding: 0px 24px;
@@ -1448,6 +1503,9 @@ form .disableActive{
   } */
   .cta-btn {
     width: 190px;
+  }
+  .request-left-inner{
+    padding-left: 20px;
   }
 }
 @media only screen and (max-width: 1024px) {
@@ -1474,6 +1532,19 @@ form .disableActive{
     height: 100%;
     row-gap: 40px;
     align-items: center;
+  }
+  .request-left-inner h1{
+    font-size: 36px;
+    max-width: 80%;
+  }
+  .request-right form{
+    margin:0px auto;
+  }
+  .request-left-content p{
+    font-size: 16px;
+  }
+  .request-input{
+    padding: 11px 20px;
   }
 }
 
@@ -1505,7 +1576,10 @@ form .disableActive{
     height: 51px;
     transition: 0.1s all linear;
   }
-
+  .logos-list li{
+    width: 90px;
+    max-width: 30%;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1639,8 +1713,15 @@ form .disableActive{
   .code-ed-links-wrapper .code-ed-links {
     width: 100% !important;
   }
+  .request-left-inner h1{
+    max-width: 90%;
+  }
   .header-offset.scroll-up .top-0.top-header-show {
       top: 65px !important;
+  }
+  .logos-list img{
+    width: 90px;
+    max-width: 100%;
   }
 }
 @media only screen and (max-width: 355px){

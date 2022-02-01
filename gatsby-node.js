@@ -1206,13 +1206,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const sch_demo = schDemos.data.allSanitySchdemo.edges || []
   sch_demo.forEach((edge, index) => {
-    const path = `/${edge.node.slug.current}/`
+    let splitPath = edge.node.slug.current.split('/');
+    const path = splitPath.length > 1 ? splitPath[1] : `/${edge.node.slug.current}/`
 
-    createPage({
-      path,
-      component: require.resolve("./src/templates/request-demo.js"),
-      context: { slug: edge.node.slug.current },
-    })
+    if(splitPath[0] !== "curr-theme"){
+      createPage({
+        path,
+        component: require.resolve("./src/templates/request-demo.js"),
+        context: { slug: edge.node.slug.current },
+      })
+    }
   })
 
   //generic-pages
@@ -1337,6 +1340,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             slug
             googleSpreadsheetId
+            nodeH1Slug
           }
         }
       }
@@ -1363,6 +1367,14 @@ exports.createPages = async ({ graphql, actions }) => {
           "./src/templates/contentIntegrationConnectionSpreadSheets.js"
         ),
         context: { slug: edge.node.slug },
+      })
+
+      createPage({
+        path: `${edge.node.nodeH1Slug}/`,
+        component: require.resolve(
+          "./src/templates/contentIntegrationConnectionSpreadSheets.js"
+        ),
+        context: { slug: edge.node.slug, canonicalSourcePath: path },
       })
     }
   })
