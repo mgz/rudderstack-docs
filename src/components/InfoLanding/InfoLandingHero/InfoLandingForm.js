@@ -53,7 +53,7 @@ const InfoLandingForm = props => {
         page: document.title,
         page_URL: window.location.href,
         branch: process.env.GATSBY_BRANCH,
-        form_id: prop.formId,
+        form_id: props.formId,
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
         utm_campaign: params.get("utm_campaign"),
@@ -69,6 +69,7 @@ const InfoLandingForm = props => {
         },
       }
     )
+
     window.rudderanalytics.track("ads_cnv_app_signup",{})
 
     setEmail("")
