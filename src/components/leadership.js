@@ -5,7 +5,7 @@ import '../css/about.css'
 
 const Leadership = props => {
   return (
-    <section className="leadership relative pt-32 pb-16">
+    <section className="leadership relative md:pt-32 pt-10 pb-16">
       <div className="max-w-6xl mx-auto leadership-wrapper">
       <div className="flex relative flex-col-reverse lg:flex-row justify-between">
         <div className="left-group-image">
@@ -27,20 +27,26 @@ const Leadership = props => {
           </div>
         </div>
       </div>
-      <div className="flex lg:-mt-60 justify-center lg:justify-end leadership-img-block lg:ml-auto lg:mr-0 mx-auto">
+      <div className="flex lg:-mt-60 justify-center lg:justify-end leadership-img-block lg:ml-auto lg:mr-0 mx-auto team-img-desktop">
         <StaticImage
           src="../images/leadership-group2.png"
           alt="leadership-investors"
         />
       </div>
-      <div className="flex justify-between mt-3 flex-col  lg:flex-row">
+      <div className="flex justify-between mt-3 flex-col lg:flex-row team-section">
         <div className="middle-content">
           <div className="content-title">
             <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary">Team</h2>
             <p className="text-darkScheme-grayText max-w-sm">RudderStack team is a diverse and talented people from around the world</p>
           </div>
         </div>
-        <div className="middle-right-images relative flex justify-end flex-col  lg:flex-row">
+        <div className="team-img-mobile">
+          <StaticImage
+            src="../images/leadership-group2.png"
+            alt="leadership-investors"
+          />
+        </div>  
+        <div className="middle-right-images relative flex justify-end lg:flex-row flex-row-reverse">
           <div className="middle-right-image-wrapper middle-right-left mr-3 lg:mb-0 mb-3">
             <StaticImage
               src="../images/leadership-group3.webp"
@@ -55,7 +61,7 @@ const Leadership = props => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center lg:justify-end">
+      <div className="flex justify-start lg:justify-end">
         <div className="bottom-image-wrapper leadership-img-block">
           <StaticImage
             src="../images/leadership-group5.webp"
