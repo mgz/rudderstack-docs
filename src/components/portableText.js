@@ -40,7 +40,7 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
   useEffect(() => {
     import("@justinribeiro/lite-youtube");
     let checkDarkMode = document.getElementById('main-container');
-    if(checkDarkMode.classList.contains('hero-section')){
+    if(checkDarkMode && checkDarkMode.classList.contains('hero-section')){
       setDarkMode(true);
     }else{
       setDarkMode(false);
