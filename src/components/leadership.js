@@ -6,8 +6,8 @@ import '../css/about.css'
 const Leadership = props => {
   return (
     <section className="leadership relative md:pt-32 pt-10 pb-16">
-      <div className="max-w-6xl mx-auto leadership-wrapper">
-      <div className="flex relative flex-col-reverse lg:flex-row justify-between">
+      <div className="mx-auto leadership-wrapper">
+      <div className="flex relative flex-col-reverse lg:flex-row justify-between gap-4">
         <div className="left-group-image">
           <StaticImage
             src="../images/leadership-group1.png"
@@ -45,7 +45,7 @@ const Leadership = props => {
             src="../images/leadership-group2.png"
             alt="leadership-investors"
           />
-        </div>  
+        </div>
         <div className="middle-right-images relative flex justify-end lg:flex-row flex-row-reverse">
           <div className="middle-right-image-wrapper middle-right-left mr-3 lg:mb-0 mb-3">
             <StaticImage
