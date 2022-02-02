@@ -81,7 +81,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
 
 
   return (
-    <Layout location={location}>
+    <Layout location={location} darkTheme={true}>
       {/* <SEO title="Schedule Demo" /> */}
       <Helmet>
         <title>
