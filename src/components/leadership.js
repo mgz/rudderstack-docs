@@ -17,7 +17,7 @@ const Leadership = props => {
         <div className="right-side-content">
           <div className="content-title lg:pl-20 pl-0">
             <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary leading-tight">Leadership & Investors</h2>
-            <p className="text-darkScheme-grayText max-w-sm">We're an engineer-led team of data security, and marketing experts.</p>
+            <p className="text-darkScheme-grayText max-w-sm">We're an engineer-led team of data, security, and marketing experts.</p>
           </div>
           <div className="investors-images my-8">
             <ul className="investors-list lg:pl-20 pl-0">
@@ -44,7 +44,7 @@ const Leadership = props => {
         <div className="middle-content">
           <div className="content-title">
             <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary">Team</h2>
-            <p className="text-darkScheme-grayText max-w-sm">The Rudderstack team is a group of diverse and talented individuals from around the world.</p>
+            <p className="text-darkScheme-grayText max-w-sm">The RudderStack team is a group of diverse and talented individuals from around the world.</p>
           </div>
         </div>
         <div className="team-img-mobile">
