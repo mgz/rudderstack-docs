@@ -229,7 +229,7 @@ const LeftRightImgCnt = props => {
                           </h2>
                         ) : (
                           <h3
-                            className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl  ${
+                            className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl-3  ${
                               props.applyGradientColorTheme
                                 ? "text-white"
                                 : titleColor === "midnightBlue"
@@ -392,7 +392,7 @@ const LeftRightImgCnt = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap pt-16"
+                    className="flex items-center flex-wrap"
                   >
                     <div
                       className={`${
@@ -401,7 +401,7 @@ const LeftRightImgCnt = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } sm:p-6 sm:pl-0 md:pr-12`}
+                      } sm:pl-0`}
                     >
                       <p
                         className={`mt-4 sm:mt-0 ${
@@ -429,7 +429,7 @@ const LeftRightImgCnt = props => {
                         </h2>
                       ) : (
                         <h3
-                          className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl ${
+                          className={`mt-10 md:mt-2 mb-4 pb-2 text-2xl md:text-3xl-3 ${
                             props.applyGradientColorTheme
                               ? "text-white"
                               : titleColor === "midnightBlue"

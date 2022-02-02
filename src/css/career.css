@@ -65,7 +65,7 @@ section.join-our-team {
     padding:0px 0px 103px 0;
 }
 .join-our-team .left-section {
-    max-width: 330px;
+    max-width: 360px;
     width: 100%;
 }
 .career-page-heading{
@@ -122,6 +122,12 @@ section.join-our-team {
         padding: 0 80px;
     }
 }
+@media only screen and (max-width: 1024px){
+    .join-our-team .left-section{
+        text-align: center;
+        margin:0px auto
+    }
+}
 @media screen and (max-width:768px) {
     .career-page .w-full{
         padding: 0 20px;
@@ -129,9 +135,6 @@ section.join-our-team {
     .our-mission{
         padding-top: 60px;
         padding-bottom: 0;
-    }
-    section.join-our-team{
-        padding: 60px 0;
     }
     .join-our-team .left-section p , .join-our-team .right-section p {
         margin-bottom: 15px;

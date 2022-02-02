@@ -17,6 +17,7 @@
 }
 .timeline-content{
     width: 200px;
+    padding-left: 40px;
 }
 .timeline-border{
     width: calc(100% - 220px);
@@ -33,12 +34,11 @@
 }
 .timeline-border-animate{
     top: 10px;
-    left: -30px;
     width: 440px;
 }
 .svg-flip{
     transform: scaleX(-1);
-    left: 30px;
+    left: 90px;
 }
 .footer-social-icon-kit{
     width: 3.5rem;
@@ -124,12 +124,16 @@
     .timeline-border-animate{
         width: 130px;
         top: 20px;
+        left: -30px;
     }
-    .timeline-content{
+    /* .timeline-content{
         width: 150px;
-    }
+    } */
     .timeline-border{
         width: calc(100% - 170px);
+    }
+    .svg-flip{
+        left: 60px;
     }
 }
 

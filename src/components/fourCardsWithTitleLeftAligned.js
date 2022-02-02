@@ -19,7 +19,7 @@ const FourCardsWithTitleLeftAligned = props => {
           </p>
         )}
       </div>
-      <div className="max-w-6xl px-0 md:px-3 mx-auto">
+      <div className="max-w-5xl px-0 md:px-3 mx-auto">
         {/*Data WorkFlow*/}
         <div className="flex flex-wrap lg:flex-row flex-col justify-between xl:gap-20 gap-10">
           {props.four_card_items.map((item,k) => {

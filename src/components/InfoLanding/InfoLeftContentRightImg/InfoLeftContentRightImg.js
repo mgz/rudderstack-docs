@@ -22,7 +22,7 @@ const InfoLeftContentRightImg = (
                                 </a>
                             </div>
                         </div>
-                        <div className={`${s.img_wrapper_right} flex`}>
+                        <div className={`img_wrapper_right flex`}>
                              <img src="https://cdn.sanity.io/images/97bpcflt/production/e5e3d7a450c7f6522c3d80488f4074d1b528b64f-562x358.svg" />
                         </div>
                 </div>
