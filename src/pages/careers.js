@@ -87,7 +87,7 @@ const CareerPage = ({ data, location })  => {
                                 <div className="about-points">
 
                                     <h3 className="title text-darkScheme-btnSecondaryBg">We are customer centric</h3>
-                                    <p className="point-description text-darkScheme-textPrimary ">We listen actively, communicate authentically and always with respect. Take ownership, and do the right thing. Be accountable and principled, and act with integrity.</p>
+                                    <p className="point-description text-darkScheme-textPrimary ">We listen actively, communicate authentically and always with respect. Take ownership, and do the right thing.</p>
                                 </div>
                             </div>
                         </div>
