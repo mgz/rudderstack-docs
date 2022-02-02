@@ -165,7 +165,7 @@ const setCardSeparation = () => {
             <div className="timeline-border"></div>
             <div className="timeline-content">
               <span className="timeline-year text-darkScheme-btnSecondaryBg lg:text-5xl-1 text-3xl-3 font-bold block">2022</span>
-              <span className="timeline-text text-darkScheme-textPrimary block">114+ Employees</span>
+              <span className="timeline-text text-darkScheme-textPrimary block">Series B,<br/>114+ Employees</span>
             </div>
           </div>
         </div>)}

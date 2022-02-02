@@ -15,23 +15,26 @@ const Leadership = props => {
           />
         </div>
         <div className="right-side-content">
-          <div className="content-title">
-            <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary">Leadership & Investors</h2>
+          <div className="content-title pl-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary leading-tight">Leadership & Investors</h2>
             <p className="text-darkScheme-grayText max-w-sm">We're an engineer-led team of data security, and marketing experts.</p>
           </div>
-          <div className="investors-images my-8 w-4/5">
-            <ul className="investors-list flex gap-5">
-              <li>
+          <div className="investors-images my-8">
+            <ul className="investors-list pl-20">
+              <li className="inline-block mr-11">
                 <StaticImage src="../images/s8-capital-logo.svg" alt="S8 Capital" placeholder="tracedSVG" />
               </li>
-              <li>
+              <li className="inline-block">
+                <StaticImage src="../images/insight-partners-logo.svg" alt="Insight Partners" placeholder="tracedSVG" />
+              </li>
+              <li className="mt-5">
                 <StaticImage src="../images/kleiner-logo.svg" alt="Kleiner Perkins" placeholder="tracedSVG" />
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="flex lg:-mt-60 justify-center lg:justify-end leadership-img-block lg:ml-auto lg:mr-0 mx-auto team-img-desktop">
+      <div className="flex lg:-mt-52 justify-center lg:justify-end leadership-img-block lg:ml-auto lg:mr-0 mx-auto team-img-desktop">
         <StaticImage
           src="../images/leadership-group2.png"
           alt="leadership-investors"
