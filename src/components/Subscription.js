@@ -76,6 +76,9 @@ const Subscription = props => {
         },
       }
     )
+
+    window.rudderanalytics.track("ads_cnv_form_blog_sub", {})
+
     setEmail("")
     setFormSubmittedSuccessfully(true)
   }

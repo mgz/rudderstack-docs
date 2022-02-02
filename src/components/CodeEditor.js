@@ -81,14 +81,15 @@ const CodeEditor = props => {
 
     setLeftEditorScenes(createMovie(leftEditor, scene => {
       let tmCodeInput = [];
+      leftEditor.display.input.blur();
       props.code_input.code_contents.forEach(ppp => {
         tmCodeInput.push(
           scene.type(
             replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
-            100
+            80
           )
         )
-        tmCodeInput.push(scene.wait(200))
+        tmCodeInput.push(scene.wait(150))
       })
       return [
         ...tmCodeInput,
@@ -154,11 +155,13 @@ const CodeEditor = props => {
     }
   }, [])
 
-  /*useEffect(() => {
-    /* console.log('Editor scene', leftEditorScenes);
-     if(!isMobile && !isSafari && !isFirefox){
+  /* useEffect(() => {
+    if(!isMobile && !isSafari && !isFirefox){
       if(leftEditorScenes && editorFlag){
         leftEditorScenes.play();
+        if(leftEditorScenes.state === 'play'){
+          console.log('In play state', leftEditorScenes);
+        }
       }else if(leftEditorScenes){
         leftEditorScenes.pause();
       }
@@ -190,10 +193,10 @@ const CodeEditor = props => {
     <section className="py-19 relative section-gradient">
       <span className="section-border absolute top-0 left-0 w-full block"></span>
       <div className="max-w-6xl mx-auto blockWrapper">
-        <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary section-title">
+        <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary section-title triggers">
           {props.title}
         </h3>
-        <div className="codeBlockWrapper mt-16 mb-10 flex relative" >
+        <div className="codeBlockWrapper mt-16 mb-10 flex relative triggers" >
           <div className="codeBlockLeft w-1/2" id="codeEditorBlock">
             <div className="codeEditorFile">
               <div className="topEditorBlock flex">

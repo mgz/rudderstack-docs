@@ -17,7 +17,7 @@ const InfoLandingHero = (
                         <h1 className='landing-section-title'>{heroData.title}</h1>
                         <h3 className={s.hero_subtitle}>{heroData.content[0].children[0].text}</h3>
                         <div className='landing-hero-form-wrapper'>
-                            <InfoLandingForm />
+                            <InfoLandingForm formId="app_signup_mkt_site" />
                         </div>
                     </div>
                     <div className='landing-hero-right flex'>

@@ -93,37 +93,60 @@ const PricingComparisonComponent = props => {
   return (
     <section
       id="pricing_comparison"
-      className="bg-white plans-section pb-20 md:pb-20 relative"
+      className="plans-section py-19 relative"
     >
-      <div className="max-w-6xl px-6 sm:px-3 mx-auto flex-wrap items-center pt-20 md:pb-20 text-center">
-        <h2 className="sm:my-4 text-4xl sm:text-5xl font-bold font-custom sm:mb-8">
+      {/* <div className="out-gradient-wrapper bottom-0 left-16">
+        <div className="grad1">
+          <div className="grad2">
+            <div className="grad3">
+              <div className="grad4">
+                <div className="grad5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="out-gradient-wrapper top-1/2 right-1/4">
+        <div className="grad1">
+          <div className="grad2">
+            <div className="grad3">
+              <div className="grad4">
+                <div className="grad5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      <span className="section-border absolute top-0 left-0 w-full block"></span>
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-darkScheme-textPrimary font-bold text-3xl-3 md:text-5xl px-4 triggers">
           {props.title}
         </h2>
 
-        <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
-          <table className="pricing-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
+        <div className="hidden lg:block my-14 lg:px-4 px-6">
+          <table className="pricing-table relative sm:w-full table-fixed font-custom text-grayColor-custom">
             <thead>
               <tr>
                 <th
                   className={`${
                     sticky ? "sticky" : ""
-                  } top-14 lg:top-24 bg-white z-10`}
+                  } z-10 sticky-pricing-banner triggers`}
                 >
                   {""}
                 </th>
 
-                {props.pricing_columns.map(col => {
+                {props.pricing_columns.map((col, i) => {
                   return (
                     <th
                       key={col._key}
                       className={`${
                         sticky ? "sticky" : ""
-                      } top-14 lg:top-24 bg-white z-10`}
+                      } z-10 sticky-pricing-banner triggers`}
                     >
                       <div className="ellipse flex items-center justify-center h-20">
                         <Image props={col.image.asset._ref} />
                       </div>
-                      <div className="text-primary">
+                      <div className={`text-darkScheme-textPrimary text-3xl-3`}>
                         {col.title}
                         <br />
                         <span className="text-lg text-grayColor-lighter">
@@ -135,7 +158,7 @@ const PricingComparisonComponent = props => {
                 })}
               </tr>
             </thead>
-            <tbody>
+            <tbody className="triggers">
               {pricingComparisionData.map((group, idx) => {
                 return (
                   <React.Fragment key={group.group}>
@@ -147,7 +170,7 @@ const PricingComparisonComponent = props => {
                       </tr>
                     )}
                     <tr key={group.group}>
-                      <td className="p-4 text-primary text-lg text-left uppercase font-bold col-span-3">
+                      <td className="p-4 text-darkScheme-btnSecondaryBg text-2xl text-left uppercase font-bold" colSpan={"2"}>
                         {group.group}
                       </td>
                     </tr>
@@ -158,27 +181,24 @@ const PricingComparisonComponent = props => {
                           key={row.title}
                           className={`${
                             l_index % 2 === 0
-                              ? "bg-grayColor-BgGray"
-                              : "bg-whiteColor-custom"
+                              ? "grad-bg rounded-2xl"
+                              : "bg-transparent"
                           }`}
                         >
-                          <td className="p-4 text-base font-medium text-left w-2/4">
+                          <td className="p-4 text-lg text-left w-2/4 rounded-tl-2xl rounded-bl-2xl text-darkScheme-textPrimary opacity-50">
                             {row.title}
                           </td>
 
                           <td className="text-base py-4 px-12 w-1/4">
                             {row.free_val === "<<CHECK>>" && (
-                              <span className={`check-icon`} />
+                              <span className={`check-icon check-comparison`} />
                             )}
                             {row.free_val === "<<UNCHECK>>" && (
-                              <StaticImage
-                                src="../images/Line 2.svg"
-                                alt="Line"
-                              />
+                              <span className={`line-image`} />
                             )}
                             {row.free_val !== "<<UNCHECK>>" &&
                               row.free_val !== "<<CHECK>>" && (
-                                <span className="font-normal">
+                                <span className="font-normal text-darkScheme-textPrimary">
                                   {row.free_val}
                                 </span>
                               )}
@@ -186,36 +206,30 @@ const PricingComparisonComponent = props => {
 
                           <td className="text-base py-4 px-12 w-1/4">
                             {row.pro_val === "<<CHECK>>" && (
-                              <span className={`check-icon`} />
+                              <span className={`check-icon check-comparison`} />
                             )}
                             {row.pro_val === "<<UNCHECK>>" && (
-                              <StaticImage
-                                src="../images/Line 2.svg"
-                                alt="Line"
-                              />
+                              <span className={`line-image`} />
                             )}
                             {row.pro_val !== "<<UNCHECK>>" &&
                               row.pro_val !== "<<CHECK>>" && (
-                                <span className="font-normal">
+                                <span className="font-normal text-darkScheme-textPrimary">
                                   {row.pro_val}
                                 </span>
                               )}
                           </td>
 
-                          <td className="text-base py-4 px-12 w-1/4">
+                          <td className="text-base py-4 px-12 w-1/4 rounded-br-2xl rounded-tr-2xl">
                             {row.enterprice_val === "<<CHECK>>" && (
-                              <span className={`check-icon`} />
+                              <span className={`check-icon check-comparison`} />
                             )}
                             {row.enterprice_val === "<<UNCHECK>>" && (
-                              <StaticImage
-                                src="../images/Line 2.svg"
-                                alt="Line"
-                              />
+                              <span className={`line-image`} />
                             )}
                             {row.enterprice_val !== "<<UNCHECK>>" &&
                               row.enterprice_val !== "<<CHECK>>" &&
                               row.enterprice_val !== "TALKTOSALES" && (
-                                <span className="font-normal ">
+                                <span className="font-normal text-darkScheme-textPrimary">
                                   {row.enterprice_val}
                                 </span>
                               )}
@@ -223,7 +237,7 @@ const PricingComparisonComponent = props => {
                             {row.enterprice_val === "TALKTOSALES" && (
                               <Link
                                 to="/enterprise-quote"
-                                className="text-sm  leading-sm font-bold mt-3 lr-icon mx-auto"
+                                className="text-sm  leading-sm font-bold py-2 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary mx-auto"
                                 target="_blank"
                                 rel="noreferrer"
                                 onClick={e =>
@@ -249,15 +263,15 @@ const PricingComparisonComponent = props => {
             // console.log(oo)
             return (
               <div className="freeplan mt-16" key={oo._key}>
-                <div className="plan-header bg-white border border-grayColor-priceCardBorder rounded-2xl shadow-md sticky top-14 z-10">
-                  <div class="p-6 md:pt-8 md:pb-4">
+                <div className="plan-header hero-section sticky z-10">
+                  <div className="p-6 md:pt-8 md:pb-4">
                     <div className="ellipse flex items-center justify-center h-20">
                       <Image props={oo.image.asset._ref} />
                     </div>
-                    <h3 class="font-medium leading-tight font-bold text-4xl text-blueNew-midnight">
+                    <h3 className="font-medium leading-tight text-4xl text-darkScheme-textPrimary">
                       {oo.title}
                     </h3>
-                    <div class="text-grayColor-lighter leading-6 text-sm py-2">
+                    <div className="text-grayColor-lighter leading-6 text-sm py-2">
                       {oo.subtitle}
                     </div>
                     {(() => {
@@ -267,7 +281,7 @@ const PricingComparisonComponent = props => {
                             <a
                               className={
                                 (oo.mobile_button.btnhiglight === true
-                                  ? "btn-primary-sm"
+                                  ? "btn-primary-sm bg-darkScheme-btnPrimaryBg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg hover:bg-transparent"
                                   : "btn-secondary-sm") +
                                 ` inline-block font-bold leading-6`
                               }
@@ -297,13 +311,14 @@ const PricingComparisonComponent = props => {
                   </div>
                 </div>
 
-                <div className="plan-features mt-6 px-3 mb-20">
+                <div className="plan-features mt-6 lg:px-4 px-6 mb-20">
                   {pricingComparisionData.map((group, idx) => {
+                    /* console.log('Group', group); */
                     return (
                       <React.Fragment key={group.group}>
-                        <div className="text-blueNew-midnight text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
+                        {idx !== 1 && <div className="text-darkScheme-btnSecondaryBg text-lg text-left uppercase font-bold col-span-4 mb-2 mt-10 leading-6">
                           {group.group}
-                        </div>
+                        </div>}
                         {group.nodes.map((row, l_index) => {
                           let l_compare_value =
                             colIndex === 0
@@ -313,7 +328,6 @@ const PricingComparisonComponent = props => {
                               : colIndex === 2
                               ? row["enterprice_val"]
                               : ""
-                          //   console.log("compare", l_compare_value)
 
                           return (
                             <div
@@ -321,11 +335,11 @@ const PricingComparisonComponent = props => {
                               className={`${
                                 l_compare_value === "<<UNCHECK>>"
                                   ? "hidden"
-                                  : "block"
-                              } text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-4`}
+                                  : "flex"
+                              } ${l_index % 2 === 0 ? 'grad-bg rounded-xl' : ''} text-lg text-left font-medium text-darkScheme-textPrimary leading-7 py-3 px-4`}
                             >
                               {/* {(l_compare_value === "<<CHECK>>" || l_compare_value !== "<<UNCHECK>>") && ( */}
-                              <span className={`check-icon`} />
+                              <span className={`check-icon check-comparison`} />
                               {/* )} */}
                               <div className="flex flex-col pl-4">
                                 {row.title}
@@ -333,7 +347,7 @@ const PricingComparisonComponent = props => {
                                   {l_compare_value !== "<<UNCHECK>>" &&
                                     l_compare_value !== "<<CHECK>>" &&
                                     l_compare_value !== "TALKTOSALES" && (
-                                      <span className="font-normal">
+                                      <span className="font-normal text-darkScheme-textPrimary">
                                         {l_compare_value}
                                       </span>
                                     )}
@@ -341,7 +355,7 @@ const PricingComparisonComponent = props => {
                                 {l_compare_value === "TALKTOSALES" && (
                                   <Link
                                     to="/enterprise-quote"
-                                    className="text-sm  leading-sm font-bold mt-3 lr-icon "
+                                    className="text-sm  leading-sm font-bold mt-3 py-3 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary"
                                     target="_blank"
                                     rel="noreferrer"
                                     onClick={e =>

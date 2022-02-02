@@ -36,49 +36,38 @@ const InfoLandingBase = ({ data, location }) => {
   const footerlogo =
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
   const middleBannerGetStarted = data.section_get_started.edges.filter(
-      ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
-    )
+    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
+  )
 
   return (
-      <React.Fragment>
-        <div className="hero-section">
-          <MainNavigation />
-          <div className="landing-main">
-            {
-              data.sanityInfoLandingPage._rawPagebuildersection.map((node, index) => {
-                switch(node._type){
-                  case "left_right_content_with_image_and_bullet_items":
-                    return(
-                      <InfoLandingHero data={node} key={node._key} />
-                    )
-                  case "left_right_content_and_bullet_items":
-                    return(
-                      <InfoLandingAbout data={node} key={node._key} />
-                    )
-                  case "left_right_content_with_logos_and_testimonial":
-                    return(
-                      <InfoLandingTestimonial data={node} key={node._key} />
-                    )
-                  case "title_with_card_items":
-                    return(
-                      <InfoLandingKeyFeatures data={node} key={node._key} />
-                    )
-                  case "left_right_content_with_right_background_image":
-                    return(
-                      <InfoLandingUseCase data={node} key={node._key} />
-                    )
-                  default:
-                    return <InfoLeftContentRightImg />
-                }
-              })
+    <React.Fragment>
+      <div className="hero-section">
+        <MainNavigation />
+        <div className="landing-main">
+          {data.sanityInfoLandingPage._rawPagebuildersection.map(
+            (node, index) => {
+              switch (node._type) {
+                case "left_right_content_with_image_and_bullet_items":
+                  return <InfoLandingHero data={node} key={node._key} />
+                case "left_right_content_and_bullet_items":
+                  return <InfoLandingAbout data={node} key={node._key} />
+                case "left_right_content_with_logos_and_testimonial":
+                  return <InfoLandingTestimonial data={node} key={node._key} />
+                case "title_with_card_items":
+                  return <InfoLandingKeyFeatures data={node} key={node._key} />
+                case "left_right_content_with_right_background_image":
+                  return <InfoLandingUseCase data={node} key={node._key} />
+                default:
+                  return null
+              }
             }
-            {
-              middleBannerGetStarted[0].node._rawGetStarted._type === "middlebannersection" && (
-                  <MiddleBanner {...middleBannerGetStarted[0].node._rawGetStarted} />
-                )
-            }
-          </div>
-          <footer
+          )}
+          {middleBannerGetStarted[0].node._rawGetStarted._type ===
+            "middlebannersection" && (
+            <MiddleBanner {...middleBannerGetStarted[0].node._rawGetStarted} />
+          )}
+        </div>
+        <footer
           className="hero-section px-4 sm:px-4 text-sm md:pt-14 w-full mx-auto"
           name={"footer-container"}
         >
@@ -182,84 +171,88 @@ const InfoLandingBase = ({ data, location }) => {
           <div className="max-w-6xl pb-16 md:pb-32 py-4 w-full flex mx-auto flex-wrap  px-3">
             <div className="flex w-1/2 items-center text-white">
               <div className="flex flex-col">
-              <div className="flex mb-5">
-                {socialitems.map((socialitem, i) => (
-                  <React.Fragment key={socialitem._key}>
-                    {(() => {
-                      let rss = /rss/
-                      if (rss.test(socialitem.social_item_icon)) {
-                        return (
-                          <a
-                            key={socialitem._key}
-                            className="footer-social-icon bg-darkScheme-textPrimary"
-                            rel="noreferrer noopener"
-                            aria-label="This is an external link "
-                            href={socialitem.social_item_link}
-                            target="_blank"
-                            onClick={e =>
-                              rudderslabTrackOnClick(
-                                "footer-navigation",
-                                "Footer Navigation Section",
-                                e
-                              )
-                            }
-                          >
-                            <FontAwesomeIcon icon={faRss} />
-                          </a>
-                        )
-                      } else {
-                        return (
-                          <a
-                            key={socialitem._key}
-                            className="footer-social-icon bg-darkScheme-textPrimary"
-                            rel="noreferrer noopener"
-                            aria-label="This is an external link "
-                            href={socialitem.social_item_link}
-                            target="_blank"
-                            onClick={e =>
-                              rudderslabTrackOnClick(
-                                "footer-navigation",
-                                "Footer Navigation Section",
-                                e
-                              )
-                            }
-                          >
-                            <FontAwesomeIcon
-                              icon={
-                                socialitem.social_item_icon === "twitter"
-                                  ? faTwitter
-                                  : faLinkedin
+                <div className="flex mb-5">
+                  {socialitems.map((socialitem, i) => (
+                    <React.Fragment key={socialitem._key}>
+                      {(() => {
+                        let rss = /rss/
+                        if (rss.test(socialitem.social_item_icon)) {
+                          return (
+                            <a
+                              key={socialitem._key}
+                              className="footer-social-icon bg-darkScheme-textPrimary"
+                              rel="noreferrer noopener"
+                              aria-label="This is an external link "
+                              href={socialitem.social_item_link}
+                              target="_blank"
+                              onClick={e =>
+                                rudderslabTrackOnClick(
+                                  "footer-navigation",
+                                  "Footer Navigation Section",
+                                  e
+                                )
                               }
-                            />
-                          </a>
-                        )
-                      }
-                    })()}
-                  </React.Fragment>
-                ))}
-              </div>
-              <img
-                src={footerlogo}
-                alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
-                width="148"
-                height="16"
-              />
+                            >
+                              <FontAwesomeIcon icon={faRss} />
+                            </a>
+                          )
+                        } else {
+                          return (
+                            <a
+                              key={socialitem._key}
+                              className="footer-social-icon bg-darkScheme-textPrimary"
+                              rel="noreferrer noopener"
+                              aria-label="This is an external link "
+                              href={socialitem.social_item_link}
+                              target="_blank"
+                              onClick={e =>
+                                rudderslabTrackOnClick(
+                                  "footer-navigation",
+                                  "Footer Navigation Section",
+                                  e
+                                )
+                              }
+                            >
+                              <FontAwesomeIcon
+                                icon={
+                                  socialitem.social_item_icon === "twitter"
+                                    ? faTwitter
+                                    : faLinkedin
+                                }
+                              />
+                            </a>
+                          )
+                        }
+                      })()}
+                    </React.Fragment>
+                  ))}
+                </div>
+                <img
+                  src={footerlogo}
+                  alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
+                  width="148"
+                  height="16"
+                />
               </div>
             </div>
             <div className="flex flex-wrap w-1/2 items-end flex-col">
-              <StaticImage src="../images/footerbadge.png" className="self-end relative right-7 mb-4" alt="SOC 2 TYPE 2" />
+              <StaticImage
+                src="../images/footerbadge.png"
+                className="self-end relative right-7 mb-4"
+                alt="SOC 2 TYPE 2"
+              />
               <p className="text-footer w-full text-right">{copyright}</p>
             </div>
           </div>
         </footer>
-        </div>
-      </React.Fragment>
+      </div>
+    </React.Fragment>
   )
 }
 
 export const query = graphql`
   query GetLandingPage($slug: String) {
-    sanityInfoLandingPage(slug: {current: {eq: $slug}}) {
+    sanityInfoLandingPage(slug: { current: { eq: $slug } }) {
       title
       slug {
         current
@@ -318,4 +311,4 @@ export const query = graphql`
   }
 `
 
-export default InfoLandingBase;
+export default InfoLandingBase

@@ -16,7 +16,7 @@ const LeftRightImgCnt = props => {
   // console.log("props", props)
   return (
     <>
-      <section className="left-right-section md:px-0 pb-6 md:pb-12">
+      <section className="left-right-section md:px-0 pb-6 md:pb-12 relative">
         <div className="max-w-6xl px-4 md:px-3 mx-auto">
           {(smalltitle !== "" || maintitle !== "") && (
             <div
@@ -229,11 +229,11 @@ const LeftRightImgCnt = props => {
                           </h2>
                         ) : (
                           <h3
-                            className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl  ${
+                            className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl-3  ${
                               props.applyGradientColorTheme
                                 ? "text-white"
                                 : titleColor === "midnightBlue"
-                                ? "text-blueNew-midnight"
+                                ? "text-darkScheme-textPrimary"
                                 : titleColor === "black"
                                 ? "text-black-custom"
                                 : ""
@@ -392,7 +392,7 @@ const LeftRightImgCnt = props => {
                   <div
                     key={i}
                     id={section_id ? section_id : ""}
-                    className="flex items-center flex-wrap pt-16"
+                    className="flex items-center flex-wrap"
                   >
                     <div
                       className={`${
@@ -401,7 +401,7 @@ const LeftRightImgCnt = props => {
                           : content_display_ratio === "50:50"
                           ? "sm:w-1/2"
                           : "sm:w-1/2"
-                      } sm:p-6 sm:pl-0 md:pr-12`}
+                      } sm:pl-0`}
                     >
                       <p
                         className={`mt-4 sm:mt-0 ${
@@ -429,11 +429,11 @@ const LeftRightImgCnt = props => {
                         </h2>
                       ) : (
                         <h3
-                          className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl ${
+                          className={`mt-10 md:mt-2 mb-4 pb-2 text-2xl md:text-3xl-3 ${
                             props.applyGradientColorTheme
                               ? "text-white"
                               : titleColor === "midnightBlue"
-                              ? "text-blueNew-midnight"
+                              ? "text-darkScheme-textPrimary"
                               : titleColor === "black"
                               ? "text-black-custom"
                               : ""
@@ -446,7 +446,7 @@ const LeftRightImgCnt = props => {
                         className={`${
                           props.applyGradientColorTheme
                             ? "text-white"
-                            : "text-grayColor-custom"
+                            : "text-darkScheme-grayText"
                         } leading-7 text-sm sm:text-lg frtxt-contnt ${
                           content.content_list_styling === "right_arrow"
                             ? "arrow-list-items"
@@ -588,6 +588,7 @@ const LeftRightImgCnt = props => {
             })()
           )}
         </div>
+        <span className="section-border absolute bottom-0 left-0 w-full block"></span>
       </section>
     </>
   )
