@@ -81,7 +81,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
 
 
   return (
-    <Layout location={location} darkTheme={true}>
+    <Layout location={location} darkTheme={pageContext.slug.split('/')[0] === "new-theme" ? true : false}>
       {/* <SEO title="Schedule Demo" /> */}
       <Helmet>
         <title>

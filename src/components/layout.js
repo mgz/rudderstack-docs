@@ -147,7 +147,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
       <div
         id="main-container"
         className={
-          darkTheme ||
+          darkTheme === true ||
           (location && location.pathname === "/") ||
           (location && location.pathname.startsWith("/product/"))
             ? "hero-section"
