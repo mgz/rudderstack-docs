@@ -15,12 +15,12 @@ const Leadership = props => {
           />
         </div>
         <div className="right-side-content">
-          <div className="content-title pl-20">
+          <div className="content-title lg:pl-20 pl-0">
             <h2 className="text-4xl md:text-5xl font-bold text-darkScheme-textPrimary leading-tight">Leadership & Investors</h2>
             <p className="text-darkScheme-grayText max-w-sm">We're an engineer-led team of data security, and marketing experts.</p>
           </div>
           <div className="investors-images my-8">
-            <ul className="investors-list pl-20">
+            <ul className="investors-list lg:pl-20 pl-0">
               <li className="inline-block mr-11">
                 <StaticImage src="../images/s8-capital-logo.svg" alt="S8 Capital" placeholder="tracedSVG" />
               </li>
