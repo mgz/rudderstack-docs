@@ -27,6 +27,20 @@ const CareerPage = ({ data, location })  => {
                             <div className="career-point-wrapper">
                                 <div className="max-w-6xl w-full mx-auto">
                                     <div className="icon">
+                                        <StaticImage  src="../images/customer-centric.svg"  alt="customer-centric" />
+                                    </div>
+                                    <div className="about-points">
+
+                                        <h3 className="title text-darkScheme-btnSecondaryBg">We are customer centric</h3>
+                                        <p className="point-description text-darkScheme-textPrimary ">We wouldn’t be here without our customers. We foster a culture of service. A win for our customers is a win for RudderStack.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="career-key-points">
+                            <div className="career-point-wrapper">
+                                <div className="max-w-6xl w-full mx-auto">
+                                    <div className="icon">
                                         <StaticImage  src="../images/relationship.svg"  alt="career-relationship" />
                                     </div>
                                     <div className="about-points">
@@ -78,20 +92,6 @@ const CareerPage = ({ data, location })  => {
                                 </div>
                             </div>
                         </div>
-                        <div className="career-key-points">
-                        <div className="career-point-wrapper">
-                            <div className="max-w-6xl w-full mx-auto">
-                                <div className="icon">
-                                     <StaticImage  src="../images/customer-centric.svg"  alt="customer-centric" />
-                                </div>
-                                <div className="about-points">
-
-                                    <h3 className="title text-darkScheme-btnSecondaryBg">We are customer centric</h3>
-                                    <p className="point-description text-darkScheme-textPrimary ">We listen actively, communicate authentically and always with respect. Take ownership, and do the right thing.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                         <a href="https://boards.greenhouse.io/rudderstack" className="button-wrapper flex justify-center" target={"_blank"}>
                             <span className="btn-primary-lg"> View Open Positions</span>
                         </a>
