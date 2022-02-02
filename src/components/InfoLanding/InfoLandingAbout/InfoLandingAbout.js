@@ -14,7 +14,7 @@ const InfoLandingAbout = (
                     <div className={s.about_wrapper_left}>
                         <h2 className='landing-section-title'>{aboutData.title}</h2>
                     </div>
-                    <div className={s.about_wrapper_right}>
+                    <div className={"about_wrapper_right"}>
                         <ul className='about-pointers'>
                             {
                                 aboutData.icon_with_text_and_content_items.map((item, index) => {

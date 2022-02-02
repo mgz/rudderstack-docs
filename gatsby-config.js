@@ -59,6 +59,10 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+        defaults: {
+          quality: 90,
+          formats: [`auto`, `webp`]
+        }
       },
     },
     `gatsby-transformer-sharp`,
@@ -69,6 +73,7 @@ module.exports = {
         defaults: {
           formats: [`auto`, `webp`],
         },
+        defaultQuality: 90
       },
     },
     {

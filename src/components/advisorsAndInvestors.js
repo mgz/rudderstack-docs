@@ -41,7 +41,7 @@ const AdvisorsAndInvestor = props => {
     return () => {
       clearInterval(checker);
     } */
-  }, []);
+  }, [props.location.pathname]);
 
   /* const animateCards = (e,i) => {
 
@@ -80,7 +80,7 @@ const setCardSeparation = () => {
     <section className="company-profile-wrapper lg:pt-24 pt-10 relative">
       {!showCareer && (<div className="about-logos lg:px-0 px-4">
         <h3 className="font-bold text-center text-darkScheme-textPrimary lg:text-3xl-3 text-2xl">Over 13,000 sites and applications use RudderStack</h3>
-        <ul className="about-logos-list lg:flex lg:justify-between items-center max-w-6xl mx-auto mt-20 lg:mb-40 mb-20 grid-cols-2 grid justify-items-center">
+        <ul className="about-logos-list lg:flex lg:justify-between items-center max-w-6xl mx-auto mt-10 lg:mb-32 mb-20 grid-cols-2 grid justify-items-center">
           <li className="lg:mb-0 mb-3">
             <StaticImage
               src="../images/allbirds-white-logo.svg"
@@ -97,7 +97,7 @@ const setCardSeparation = () => {
           </li>
           <li className="lg:mb-0 mb-3">
           <StaticImage
-              src="../images/priceline-white-logo.svg"
+              src="../images/priceline-white-logo1.svg"
               placeholder="tracedSVG"
               alt="priceline"
             />
@@ -221,7 +221,7 @@ const setCardSeparation = () => {
         </div>)}
         {!showCareer && (<div className="keep-in-touch text-center py-10">
           <h2 className="text-darkScheme-textPrimary font-bold mb-3 lg:text-3xl-3 text-2xl">Keep in touch</h2>
-          <ul className="flex social-keep-touch text-center justify-center gap-3">
+          <ul className="flex social-keep-touch text-center justify-center gap-5">
             <li>
               <a href="https://twitter.com/RudderStack" className="footer-social-icon-kit bg-darkScheme-textPrimary" target={"_blank"}>
                 <FontAwesomeIcon icon={faTwitter} size="lg" />
