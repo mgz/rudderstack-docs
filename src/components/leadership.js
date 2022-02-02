@@ -36,6 +36,7 @@ const Leadership = props => {
       </div>
       <div className="flex lg:-mt-52 justify-center lg:justify-end leadership-img-block lg:ml-auto lg:mr-0 mx-auto team-img-desktop">
         <StaticImage
+
           src="../images/leadership-group2.png"
           alt="leadership-investors"
         />
