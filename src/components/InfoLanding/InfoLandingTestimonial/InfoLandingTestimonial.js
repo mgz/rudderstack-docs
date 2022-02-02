@@ -87,7 +87,7 @@ const InfoLandingTestimonial = (
                                 </li>
                                 <li className={s.logo_item}>
                                     <StaticImage
-                                        src='../../../images/grafana-logo.svg'
+                                        src='../../../images/grafana.svg'
                                         alt='grafana'
                                         placeholder='tracedSVG'
                                     />

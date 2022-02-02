@@ -119,7 +119,7 @@ const InfoLandingForm = props => {
                 role="alert"
                 aria-hidden="true"
               >
-                Thank you!
+                Check your email!
               </div>
             )}
           </form>
