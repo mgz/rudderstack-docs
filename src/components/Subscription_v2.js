@@ -78,11 +78,12 @@ const SubscriptionV2 = props => {
       <div className="newsletter-wrapper mt-20 mb-10 max-w-xl mx-auto triggers">
         <div className="newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
           <form
-            action="/"
-            method="post"
+            // action="/"
+            // method="post"
             className="flex w-full items-center signup-form"
             noValidate="novalidate"
             id={props.formId ? props.formId : ""}
+            onSubmit={e => formSubmitted(e)}
           >
             {!formSubmittedSuccessfully && (
               <>
@@ -104,7 +105,7 @@ const SubscriptionV2 = props => {
                 />
                 <span
                   className="sign-up-text block font-bold py-3 px-10 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
-                  onClick={e => formSubmitted(e)}
+                  type={"submit"}
                 >
                   Sign Up for Newsletter
                 </span>

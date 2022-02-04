@@ -69,7 +69,7 @@ const InfoLandingForm = props => {
       }
     )
 
-    window.rudderanalytics.track("ads_cnv_app_signup",{})
+    window.rudderanalytics.track("ads_cnv_app_signup", {})
 
     setEmail("")
     setFormSubmittedSuccessfully(true)
@@ -80,11 +80,12 @@ const InfoLandingForm = props => {
       <div className="newsletter-wrapper">
         <div className="newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
           <form
-            action="/"
-            method="post"
+            // action="/"
+            // method="post"
             className="flex w-full items-center signup-form"
             noValidate="novalidate"
             id={props.formId ? props.formId : ""}
+            onSubmit={e => formSubmitted(e)}
           >
             {!formSubmittedSuccessfully && (
               <>
@@ -106,7 +107,7 @@ const InfoLandingForm = props => {
                 />
                 <span
                   className="sign-up-text block font-bold py-3 px-7 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
-                  onClick={e => formSubmitted(e)}
+                  type={"submit"}
                 >
                   Create an account
                 </span>
