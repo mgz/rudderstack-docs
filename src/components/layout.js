@@ -259,15 +259,20 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
                 )
               })}
             </div>
-
+            <div>
             <noscript>
+             <img height="1" width="1" className="hidden" src="https://ws.zoominfo.com/pixel/61ba5bf54261e1001b0105cc"/>
+             </noscript>
+            </div>
+
+            {/* <noscript>
               <img
                 src="https://ws.zoominfo.com/pixel/61ba5bf54261e1001b0105cc"
                 width="1"
                 height="1"
                 style="display: block;"
               />
-            </noscript>
+            </noscript> */}
           </div>
           {/* <div className="max-w-6xl w-full flex mx-auto flex-wrap  px-3">
 
