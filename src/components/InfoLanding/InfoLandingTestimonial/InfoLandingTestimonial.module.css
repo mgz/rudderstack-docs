@@ -17,6 +17,7 @@
 .logo_item{
     margin-right: 50px;
     max-width: 100px;
+    min-width: 90px;
 }
 .landing_logos_list_last{
     margin:40px 0px 0px 76px;

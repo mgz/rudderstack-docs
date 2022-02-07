@@ -1,6 +1,12 @@
 .key_features_block{
     /* background: url('../../../images/key-features-bg.svg') no-repeat; */
-    background: url('../../../images/small-gray.png') no-repeat;
+    /* background: url('../../../images/small-gray.png') no-repeat; */
+    /* background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.035) 100%); */
+    background: #202837;
+    border: 1px solid #181F2F;
+    z-index: 1;
+    border-radius: 12px 12px 12px 0; 
+    border-bottom:none;
     background-size: 100% 100%;
     margin-right: 32px;
     padding: 25px 25px 50px 25px;
@@ -30,7 +36,7 @@
     content: '';
     background: url('../../../images/key-features-gradient-bar.svg') no-repeat;
     position: absolute;
-    top:-4px;
+    top:-10px;
     right: 12px;
     width: 164px;
     height: 6px;
@@ -65,24 +71,77 @@
     font-family: "Basis Grotesque Mono", "Basis Grotesque", Arial, Helvetica, sans-serif;
 
 }
-
-/* 
-li.key_features_block:nth-child(2){
-    min-height: 250px;
-    place-self: flex-start;
-}
-li.key_features_block{
-    min-height: 230px;
-    place-self: flex-start;
-}
-.key_features_block{
- background-size: cover;
-} */
+ 
 .pt-56  {
     padding-top: 56px;
 }
+.inside_layer{
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(32,40,55,1) 0%, rgba(7,14,31,1) 100%);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 0 12px 12px 0;
+}
+.bottom_layer {
+    background: #202837;
+    width: 107px;
+    height: 30px;
+    bottom: -28px;
+    position: absolute;
+    left: -1px;
+    border-left: 1px solid #181F2F;
+    border-radius: 0px 0px 0px 12px;
+    box-sizing: border-box;
+}
+
+.bottom_layer:before {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    border-bottom: 1px solid #181F2F;
+    z-index: 2;
+    left: 0px;
+    border-radius: 0 0 5px 12px;
+}
+
+.bottom_layer:after {
+    position: absolute;
+    content: '';
+    width: 87px;
+    height: 29px;
+    bottom: 0;
+    background-color: #202837;
+    transform: skew( -30deg);
+    left: auto;
+    right: -22px;
+    border-right: 1px solid #181F2F;
+    border-radius: 0 0 5px 0;
+}
+span.blank-span {
+    position: absolute;
+    content: '';
+    width: calc(100% - 143px);
+    height: 6px;
+    right: 8px;
+    bottom: -4px;
+    background-color: #060f1f;
+    border-top: 1px solid #181F2F;
+    border-radius: 23px 0 0 0;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 0 !important;
+}
 
 @media screen and (max-width:1023px) {
+    .key_features_list{
+        margin-bottom: 0;
+    }
     .key_features{
         padding-top: 68px;
     }
@@ -91,13 +150,11 @@ li.key_features_block{
         width: 100%;
         display: flex;
         align-items: center;
-        margin-bottom: 64px;
-        padding: 25px 25px 60px 25px;
-        min-height: 220px;
+        margin-bottom: 80px;
+        padding: 40px 25px 40px 25px; 
         background-size: 100% 100%;
     }
-    .key_features_block{
-        background: url('../../../images/key-feature-grediant-mo.svg') no-repeat;
+    .key_features_block{ 
         background-size: cover;
     }
     .key_features_block span{
@@ -108,15 +165,16 @@ li.key_features_block{
         margin-right:40px;
     }
 }
+
 @media screen and (max-width:800px) {
     li.key_features_block:nth-child(2), li.key_features_block{
         background-size: contain;
-        min-height: 172px;
+        min-height: auto;
     }
 }
 @media screen and (max-width:768px) {
     li.key_features_block:nth-child(2), li.key_features_block{
-        min-height: 190px;
+        min-height: auto;
         background-size: 100% 100%;
         justify-content: center;
     }
@@ -124,7 +182,7 @@ li.key_features_block{
 
 @media screen and (max-width:767px) {
     .key_features{
-        padding-top: 40px;
+        padding-top: 60px;
     }
     .key_features_wrapper{
         margin-top: 46px;
@@ -135,7 +193,7 @@ li.key_features_block{
     li.key_features_block:nth-child(2), li.key_features_block{
         flex-direction: column;
         align-items: flex-start;
-        margin-bottom: 40px;
+        margin-bottom: 70px;
         padding: 25px 25px 40px 25px;
     }
     .key_features_list{
@@ -154,8 +212,7 @@ li.key_features_block{
 }
 
 @media screen and (max-width:640px) {
-    li.key_features_block:nth-child(2), li.key_features_block{
-        min-height: 190px;
+    li.key_features_block:nth-child(2), li.key_features_block{ 
         background-size: cover;
         justify-content: center;
     }
@@ -163,12 +220,10 @@ li.key_features_block{
 
 @media screen and (max-width:414px) {
     li.key_features_block{
-        background: url('../../../images/key-feature-gradient-small.png') no-repeat;
         background-size: 100% 100%;
         
     }
     li.key_features_block:nth-child(2), li.key_features_block{
-        min-height: 220px;
         background-size: 100% 100%;
     }
 }
