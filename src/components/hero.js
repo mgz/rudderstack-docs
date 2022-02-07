@@ -229,6 +229,7 @@ function Hero(props) {
                   props={props.herobannerimage.asset._ref}
                   width={704}
                   height={413}
+                  loading="eager"
                   // classes="w-full"
                 />
                 {/* {isMobile ? (<StaticImage

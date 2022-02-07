@@ -64,11 +64,11 @@ const Faq = ({ title, subTitle, isBlockContent, accordions = [] }) => {
 
   return (
     <div className="px-4 mx-auto">
-      <Helmet>
+      {/* <Helmet>
         {ldJson !== "" && (
           <script type="application/ld+json">{JSON.stringify(ldJson)}</script>
         )}
-      </Helmet>
+      </Helmet>*/ }
       <div className="max-w-screen-lg mx-auto flex flex-wrap triggers">
         <div className="md:pr-15">
           <h2 className={`text-5xl font-bold ${darkMode ? 'text-darkScheme-textPrimary' : 'text-darkScheme-textBlack'}`}>{title}</h2>
