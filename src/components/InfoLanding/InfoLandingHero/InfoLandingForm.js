@@ -69,7 +69,7 @@ const InfoLandingForm = props => {
       }
     )
 
-    window.rudderanalytics.track("ads_cnv_app_signup", {})
+    window.rudderanalytics.track("ads_cnv_mkt_app_signup_started", {})
 
     setEmail("")
     setFormSubmittedSuccessfully(true)
