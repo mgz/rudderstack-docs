@@ -42,11 +42,12 @@ h3.hero_subtitle{
     .landing_hero_left{
         margin-bottom: 35px;
     }
+    .landing_hero_pointers_wrapper{
+        margin-top: 15px;
+    }
 }
 @media screen and (max-width:991px) {
-    h1 {
-        letter-spacing: 0;
-    }
+   
     .hero_pointer_item{
         width: 30%;
         align-self: flex-start;
@@ -66,9 +67,7 @@ h3.hero_subtitle{
         font-size: 14px;
         line-height: 21px;
     }
-    .landing_hero_pointers_wrapper{
-        margin-top: 50px;
-    }
+ 
     .landing_hero_pointers_wrapper p{
         font-size: 16px;
         line-height: 22px;
@@ -91,10 +90,6 @@ h3.hero_subtitle{
     }
     .hero_pointer_item{
         min-height: 153px;
-    }
-    h1 {
-        letter-spacing: 0;
-        margin-top: 15px;
     }
     .hero_pointer_item{
         width: 50%;

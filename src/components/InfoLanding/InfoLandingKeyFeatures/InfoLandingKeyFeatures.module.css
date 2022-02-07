@@ -1,7 +1,6 @@
 .key_features_block{
     /* background: url('../../../images/key-features-bg.svg') no-repeat; */
     background: url('../../../images/small-gray.png') no-repeat;
-    
     background-size: 100% 100%;
     margin-right: 32px;
     padding: 25px 25px 50px 25px;
@@ -9,9 +8,23 @@
     position: relative;
     box-sizing: border-box;
     height: fit-content;
+    margin-bottom: 60px;
 }
+
+/* .key_features_block:after{
+    background: url('../../../images/cropped.png') no-repeat;
+    position: absolute;
+    top: auto;
+    right: 0;
+    width: 101%;
+    height: 60px;
+    content: '';
+    bottom: -60px;
+    left: -3px;
+} */
+
 .key_features{
-    padding-top: 56px;
+    padding-top: 53px;
 }
 .key_features_block:before{
     content: '';
@@ -24,7 +37,7 @@
     background-size: cover;
 }
 .key_features_block .key_features_text{
-    font-size: 20px;
+    font-size: 22px;
     line-height: 30px;
 }
 .key_features_block:nth-child(2) .key_features_text{
@@ -45,7 +58,7 @@
     background-size: cover;
 }
 .key_features_image{
-    margin-bottom: 15px;
+    margin-bottom: 22px;
     display: block;
 }
 .key_features_text{
@@ -71,14 +84,14 @@ li.key_features_block{
 
 @media screen and (max-width:1023px) {
     .key_features{
-        padding-top: 56px;
+        padding-top: 68px;
     }
     li.key_features_block:nth-child(2), li.key_features_block{
         place-self: flex-start;
         width: 100%;
         display: flex;
         align-items: center;
-        margin-bottom: 57px;
+        margin-bottom: 64px;
         padding: 25px 25px 60px 25px;
         min-height: 220px;
         background-size: 100% 100%;
@@ -97,17 +110,28 @@ li.key_features_block{
 }
 @media screen and (max-width:800px) {
     li.key_features_block:nth-child(2), li.key_features_block{
-        background-size: cover;
-        min-height: 205px;
+        background-size: contain;
+        min-height: 172px;
     }
 }
 @media screen and (max-width:768px) {
     li.key_features_block:nth-child(2), li.key_features_block{
         min-height: 190px;
+        background-size: 100% 100%;
+        justify-content: center;
     }
 }
 
 @media screen and (max-width:767px) {
+    .key_features{
+        padding-top: 40px;
+    }
+    .key_features_wrapper{
+        margin-top: 46px;
+    }
+    .key_features_block .key_features_text{
+        font-size: 18px;
+    }
     li.key_features_block:nth-child(2), li.key_features_block{
         flex-direction: column;
         align-items: flex-start;
@@ -129,12 +153,22 @@ li.key_features_block{
     }
 }
 
-@media screen and (max-width:375px) {
+@media screen and (max-width:640px) {
+    li.key_features_block:nth-child(2), li.key_features_block{
+        min-height: 190px;
+        background-size: cover;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:414px) {
     li.key_features_block{
         background: url('../../../images/key-feature-gradient-small.png') no-repeat;
+        background-size: 100% 100%;
         
     }
     li.key_features_block:nth-child(2), li.key_features_block{
         min-height: 220px;
+        background-size: 100% 100%;
     }
 }
