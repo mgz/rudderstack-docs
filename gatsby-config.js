@@ -16,7 +16,7 @@ module.exports = {
     title: `Rudderstack`,
     description: `RudderStack is the easiest way to stream data from your website or warehouse. With RudderStack, you can easily collect customer data from every platform.`,
     author: `@gatsbyjs`,
-    siteUrl: "https://rudderstack.com",
+    siteUrl: "https://www.rudderstack.com",
     siteTitle: "RudderStack",
     defaultTitle: "Documentation - RudderStack",
     siteTitleShort: "RudderStack",
@@ -29,7 +29,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-preconnect",
       options: {
-        domains: ["https://rudderstack.com", "https://localhost:8000"],
+        domains: ["https://www.rudderstack.com", "https://localhost:8000"],
       },
     },
     {
