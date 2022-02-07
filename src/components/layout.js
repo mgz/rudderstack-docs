@@ -14,7 +14,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "gatsby-link"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
+<<<<<<< HEAD
 import { withPrefix } from "gatsby"
+=======
+// import { withPrefix } from "gatsby"
+>>>>>>> origin/canonical
 
 import MainNavigation from "../components/main-navigation"
 import FooterNav from "../components/footer-nav"
@@ -157,6 +161,11 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
         <script src={withPrefix("script2.js")} type="text/javascript" /> */}
 
           <script src={withPrefix("zoomInfo.js")} type="text/javascript" />
+          <script
+            defer
+            type="text/javascript"
+            src="https://api.huckabuy.com/s/d3d3LnJ1ZGRlcnN0YWNrLmNvbQ==/install.js"
+          ></script>
         </Helmet>
 
         <MainNavigation diableGradient={diableGradient} />
