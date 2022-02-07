@@ -14,12 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "gatsby-link"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-<<<<<<< HEAD
 import { withPrefix } from "gatsby"
-=======
-// import { withPrefix } from "gatsby"
->>>>>>> origin/canonical
-
 import MainNavigation from "../components/main-navigation"
 import FooterNav from "../components/footer-nav"
 import PortableText from "../components/portableText"
