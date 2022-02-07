@@ -77,8 +77,8 @@ const InfoLandingForm = props => {
 
   return (
     <>
-      <div className="newsletter-wrapper">
-        <div className="newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
+      <div className="landing-newsletter-wrapper">
+        <div className="landing-newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
           <form
             // action="/"
             // method="post"
@@ -90,7 +90,7 @@ const InfoLandingForm = props => {
             {!formSubmittedSuccessfully && (
               <>
                 <input
-                  className="newsletter-input border border-darkScheme-textPrimary rounded-2xl w-full py-2 px-6 text-darkScheme-textPrimary "
+                  className="landing-newsletter-input border border-darkScheme-textPrimary rounded-2xl w-full py-2 px-6 text-darkScheme-textPrimary "
                   type="email"
                   name="email"
                   value={email}
@@ -106,8 +106,8 @@ const InfoLandingForm = props => {
                   }}
                 />
                 <span
-                  className="sign-up-text block font-bold py-3 px-7 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
-                  type={"submit"}
+                  className="landing-sign-up-text block font-bold py-3 px-4 lg:px-7 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
+                  onClick={e => formSubmitted(e)}
                 >
                   Create an account
                 </span>

@@ -18,12 +18,17 @@ const InfoLandingKeyFeatures = (
                             if(index === 0 || index === 1 || index === 2){
                                 return (
                                     <li className={s.key_features_block} key={item._key}>
+                                        <div className={s.inside_layer}></div>
                                         <span className={s.key_features_image}>
                                             <Image
                                                 props={item.icon.asset._ref}
                                             />
                                         </span>
                                         <p className={s.key_features_text}>{item.title}</p>
+
+                                        <div className={s.bottom_layer} > 
+                                        </div>
+                                        <span class="blank-span"></span>
                                     </li>
                                 )
                             }
@@ -34,12 +39,16 @@ const InfoLandingKeyFeatures = (
                             if(index === 3 || index === 4 || index === 5){
                                 return (
                                     <li className={s.key_features_block} key={item._key}>
+                                       <div className={s.inside_layer}></div>
                                         <span className={s.key_features_image}>
                                             <Image
                                                 props={item.icon.asset._ref}
                                             />
                                         </span>
                                         <p className={s.key_features_text}>{item.title}</p>
+                                        <div className={s.bottom_layer} > 
+                                        </div>
+                                        <span class="blank-span"></span>
                                     </li>
                                 )
                             }
