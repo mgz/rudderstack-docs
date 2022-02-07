@@ -185,9 +185,10 @@ const MainNavigation = props => {
                   i={i}
                   currMenuIndex={currMenuIndex}
                   onMainMenuClick={idx => {
-                    if (!isBrowser) {
-                      setCurrMenuIndex(i === currMenuIndex ? null : idx)
-                    }
+                    /* if (!isBrowser) {
+
+                    } */
+                    setCurrMenuIndex(i === currMenuIndex ? null : idx)
                   }}
                 />
               ))}
