@@ -161,6 +161,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
             type="text/javascript"
             src="https://api.huckabuy.com/s/d3d3LnJ1ZGRlcnN0YWNrLmNvbQ==/install.js"
           ></script>
+          <meta property="og:image" content="../images/rudderstack_thumbnail.png"/>
         </Helmet>
 
         <MainNavigation diableGradient={diableGradient} />
