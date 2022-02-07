@@ -1066,6 +1066,7 @@ top: -60px;
 }
 .newsletter-input-hp::placeholder {
   color: rgba(255, 255, 255, 0.5);
+  text-align: left;
 }
 .newsletter-input::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -1677,7 +1678,7 @@ form .disableActive {
     background: rgba(255, 255, 255, 0.25);
   }
   .newsletter-input::placeholder {
-    text-align: center;
+    text-align: left;
   }
   .card-block-wrapper {
     text-align: left;
