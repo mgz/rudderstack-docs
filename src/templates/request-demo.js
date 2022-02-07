@@ -3,24 +3,17 @@ import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import DemoAdvantageItem from "../components/demoAdvantageItem"
-import PortableText from "../components/portableText"
 import OurLogo from "../components/ourlogo"
 import Testimonial from "../components/testimonial"
 import MiddleBanner from "../components/middle-banner"
-import clientConfig from "../../client-config"
+import DemoAdvantages from "../components/DemoAdvantages"
+import { ScheduleDemoHdr } from "../components/ScheduleDemoHdr"
+import { ScheduleDemoFooter } from "../components/ScheduleDemoFooter"
+import PortableText from "../components/portableText"
+import Image from "../components/image"
 import DynamicInputForm from "../components/dynamicInputForm"
+import clientConfig from "../../client-config"
 
-// const Layout = loadable(() => import("../components/layout"))
-// const SEO = loadable(() => import("../components/seo"))
-// const DemoForm = loadable(() => import("../components/demoForm"))
-// const DemoAdvantageItem = loadable(() =>
-//   import("../components/demoAdvantageItem")
-// )
-// const PortableText = loadable(() => import("../components/portableText"))
-// const OurLogo = loadable(() => import("../components/ourlogo"))
-// const Testimonial = loadable(() => import("../components/testimonial"))
-// const MiddleBanner = loadable(() => import("../components/middle-banner"))
 
 export const query = graphql`
   query schDemo($slug: String) {
@@ -75,142 +68,20 @@ export const query = graphql`
   }
 `
 
-const Demo = ({ data, htmlId, location }) => {
-  //console.log("request-demo", data)
+const Demo = ({ data, htmlId, location, pageContext }) => {
+  /* console.log('slug', pageContext.slug); */
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
 
-  const lv_demoadvantages = (
-    data.sanitySchdemo._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "demoadvantages")
-
-  const lv_demofooterleft = (
-    data.sanitySchdemo._rawPagebuildersectionarray || []
-  ).filter(ii => ii._type === "demofooterleft")
 
   const lv_ourlogoblock = data.section_our_logos.edges.filter(
-    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.ourLogos
+    ii => ii.node.section_name === "request demo"
   )
 
-  const lv_testimonialsection = data.section_testimonials.edges.filter(
-    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.testimonials
-  )
 
-  const lv_middlebannersection = data.section_get_started.edges.filter(
-    ii => ii.node._id === clientConfig.defaultCommonSection_Ids.getStarted
-  )
-  // const [isLoading, setIsLoading] = useState(false)
-
-  // const onDemoFormSubmit = data => {
-  //   // console.log('on demo submit',data)
-  //   try {
-  //     if (!window.rudderanalytics) {
-  //       return
-  //     }
-  //     setIsLoading(true)
-
-  //     var params = new URLSearchParams(document.location.search.substring(1))
-
-  //     window.rudderanalytics.identify(
-  //       data.email,
-  //       {
-  //         email: data.email,
-  //         firstName: data.firstName,
-  //         jobTitle: data.jobTitle,
-  //         company: data.company,
-  //         form_id: data.formId,
-  //         conversion_page: document.title,
-  //         utm_source: params.get("utm_source"),
-  //         utm_medium: params.get("utm_medium"),
-  //         utm_campaign: params.get("utm_campaign"),
-  //         utm_content: params.get("utm_content"),
-  //         utm_term: params.get("utm_term"),
-  //         raid: params.get("raid"),
-  //         test_user: params.get("test_user"),
-  //       },
-  //       {
-  //         integrations: {
-  //           Salesforce: true,
-  //         },
-  //       }
-  //     )
-  //     // console.log("step2")
-
-  //     window.rudderanalytics.track(
-  //       "form_submit",
-  //       {
-  //         page: document.title,
-  //         page_URL: window.location.href,
-  //         form_id: data.formId,
-  //         label: data.formId,
-  //         category: data.sectionId,
-  //         conversion_page: document.title,
-  //         utm_source: params.get("utm_source"),
-  //         utm_medium: params.get("utm_medium"),
-  //         utm_campaign: params.get("utm_campaign"),
-  //         utm_content: params.get("utm_content"),
-  //         utm_term: params.get("utm_term"),
-  //         raid: params.get("raid"),
-  //         test_user: params.get("test_user"),
-  //       },
-  //       {
-  //         traits: {
-  //           email: data.email,
-  //           firstName: data.firstName,
-  //           jobTitle: data.jobTitle,
-  //           company: data.company,
-  //           form_id: data.formId,
-  //           conversion_page: document.title,
-  //         },
-  //       }
-  //     )
-  //     // console.log("step3")
-  //     fetch("https://usebasin.com/f/73ab69b8652a.json", {
-  //       method: "post",
-  //       body: JSON.stringify({
-  //         "First-Name": data.firstName,
-  //         Email: data.email,
-  //         Company: data.company,
-  //         "Job-Title": data.jobTitle,
-  //         form_id: data.formId,
-  //         utm_source: params.get("utm_source"),
-  //         utm_medium: params.get("utm_medium"),
-  //         utm_campaign: params.get("utm_campaign"),
-  //         utm_content: params.get("utm_content"),
-  //         utm_term: params.get("utm_term"),
-  //         raid: params.get("raid"),
-  //         test_user: params.get("test_user"),
-  //       }),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     })
-  //       .then(res => {
-  //         // console.log('usebasin',res)
-  //         if (res.ok || res.statusText === "OK") {
-  //           // console.log("success ", res)
-  //           // window.ChiliPiper.scheduling(
-  //           //   "rudderstack",
-  //           //   "demo-or-quote-request",
-  //           //   { formId: data.formId }
-  //           // )
-  //           // navigate("/request-demo/thank-you")
-  //         }
-  //       })
-  //       .catch(err => {
-  //         throw err
-  //       })
-  //   } catch (err) {
-  //     console.log("errror exception", err)
-  //   } finally {
-  //     setIsLoading(false)
-  //   }
-  // }
-
-  /* console.log("sss", location) */
   return (
-    <Layout location={location}>
+    <Layout location={location} darkTheme={pageContext.slug.split('/')[0] === "new-theme" ? true : false}>
       {/* <SEO title="Schedule Demo" /> */}
       <Helmet>
         <title>
@@ -243,121 +114,162 @@ const Demo = ({ data, htmlId, location }) => {
       </Helmet>
 
       <div className="font-custom">
-        <section id="demo_hdr">
-          <div className="demo-header">
-            <div className=" flex flex-col justify-center items-center demo-header-bg w-full">
-              <h1 className=" px-2 text-5xl md:text-6xl font-bold max-w-screen-md leading-tight tracking-tighter">
-                {lv_scheduledemoheader[0].demo_header_text}
-              </h1>
-            </div>
-          </div>
-          <div className="bg-whiteColor-custom w-full">
-            <div className="bg-whiteColor-custom bg-current flex flex-row flex-wrap mb-10 md:-mb-7 lg:mb-2 pb-0 pt-12 max-w-6xl mx-auto px-6">
-              <div className="w-full md:w-3/6 mb-0 sm:-mb-20 md:mb-0 xl:flex xl:flex-row-reverse">
-                <DynamicInputForm
-                  {...lv_scheduledemoheader[0].input_form}
-                  add_on_styling={"-top-24"}
-                  location={location}
-                />
-
-                {/* <DemoForm
-                  formId={`${location.pathname
-                    .replace("/", "")
-                    .replace("-", "_")}_form_top`}
-                  submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
-                  onDemoFormSubmit={onDemoFormSubmit}
-                  isLoading={isLoading}
-                  sectionId="demo_hdr"
-                /> */}
-              </div>
-              <div
-                className="w-full pr-4 sm:pl-4 pt-0 -mt-8 sm:mt-0 sm:pt-8 lg:pl-20  text-xl-2 md:w-3/6 text-grayColor-custom"
-                style={{ lineHeight: "35px" }}
-              >
-                <PortableText
-                  blocks={lv_scheduledemoheader[0].demo_right_content}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section id="demo_advantages">
-          {/* sm:px-12 lg:px-32 xl:px-60 */}
-          <div className="w-full bg-grayColor-BgGray">
-            <div className="pb-0 pt-12 max-w-6xl mx-auto px-4 md:px-3 lg:pt-20 bg-grayColor-BgGray flex flex-col justify-center text-center">
-              <div className="sm:mb-24 mb-10">
-                <span className="text-3xl md:text-5xl font-bold text-blueNew-midnight">
-                  {lv_demoadvantages[0].advantage_header_text}
-                </span>
-              </div>
-              <div className="flex flex-wrap flex-row">
-                {(lv_demoadvantages[0].demo_content || []).map((itm, idx) => {
-                  return (
-                    <div
-                      key={itm._key}
-                      className={`${
-                        idx === 2
-                          ? "w-full px-0 sm:px-12 lg:px-40"
-                          : "w-full sm:w-1/2"
-                      }`}
-                    >
-                      <DemoAdvantageItem data={itm} />
+        {pageContext.slug.split('/')[0] === "new-theme" ?
+        (
+          <section className="section-gradient relative">
+            <span className="section-border block absolute bottom-0 left-0 w-full"></span>
+            <div className="request-wrapper flex lg:flex-row flex-col">
+                <div className="request-left lg:w-1/2 w-full">
+                    <div className="request-left-upper lg:w-11/12 w-full lg:rounded-br-3xl">
+                        <div className="pt-20 pb-12 pr-10 flex">
+                            <div className="request-left-inner w-full lg:max-w-md lg:ml-auto lg:justify-self-end">
+                                <h1 className="text-3xl lg:text-5xl text-darkScheme-textPrimary font-bold leading-tight">{data.sanitySchdemo._rawPagebuildersectionarray[0].demo_header_text}</h1>
+                                <div className="request-left-content mt-5">
+                                    <PortableText
+                                        blocks={data.sanitySchdemo._rawPagebuildersectionarray[0].demo_right_content}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  )
-                })}
-              </div>
+                    <div className="request-left-lower w-11/12 py-16 pl-15 hidden lg:block">
+                        <div className="request-left-lower-inner flex ml-auto justify-end">
+                            <div className="request-logos-wrapper">
+                                <ul className="logos-list flex mb-5">
+                                    {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i < 3).map((i,k) => {
+                                            return (
+                                                <li key={k._key} className={`mr-16 flex items-center`}>
+                                                    <Image
+                                                        classes="object-contain"
+                                                        props={i.primary_image.asset._ref}
+                                                        width="210"
+                                                        height="40"
+                                                    />
+                                                </li>
+                                            )
+                                    })}
+                                </ul>
+                                <ul className="logos-list flex">
+                                    {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i > 2).map((i,k) => {
+                                            return (
+                                                <li key={k._key} className={`mr-16 flex items-center`}>
+                                                    <Image
+                                                        classes="object-contain"
+                                                        props={i.primary_image.asset._ref}
+                                                        width="210"
+                                                        height="40"
+                                                    />
+                                                </li>
+                                            )
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span className="section-border lg:hidden block w-full"></span>
+                <div className="request-right lg:w-1/2 w-full pt-7">
+                    <DynamicInputForm
+                    {...data.sanitySchdemo._rawPagebuildersectionarray[0].input_form}
+                    location={location}
+                    isFromRequest={true}
+                    />
+                </div>
+                <div className="request-logos-wrapper px-4 lg:hidden block">
+                    <ul className="logos-list flex mb-5 justify-center">
+                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i < 3).map((i,k) => {
+                                return (
+                                    <li key={k._key} className={`${k === 2 ? 'mr-0' : 'mr-16'} flex items-center justify-center`}>
+                                        <Image
+                                            classes={`${i.secondary_image ? 'lw-image' : ''} object-contain`}
+                                            props={i.secondary_image ? i.secondary_image.asset._ref : i.primary_image.asset._ref}
+                                            width="210"
+                                            height="40"
+                                        />
+                                    </li>
+                                )
+                        })}
+                    </ul>
+                    <ul className="logos-list flex justify-center mb-10">
+                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i > 2).map((i,k) => {
+                              return (
+                                  <li key={k._key} className={`${k === 2 ? 'mr-0' : 'mr-16'} flex items-center justify-center`}>
+                                      <Image
+                                          classes={`${i.secondary_image ? 'lw-image' : ''} object-contain`}
+                                          props={i.secondary_image ? i.secondary_image.asset._ref : i.primary_image.asset._ref}
+                                          width="210"
+                                          height="40"
+                                      />
+                                  </li>
+                              )
+                        })}
+                    </ul>
+                </div>
             </div>
-          </div>
         </section>
-        <section id="logos" className="px-8">
-          <OurLogo
-            customHeaderText={`The top companies in the world use RudderStack to activate their customer data`}
-            {...lv_ourlogoblock[0].node._rawOurLogos}
-          />
-        </section>
-        <section id="testimonials">
-          <Testimonial
-            {...lv_testimonialsection[0].node._rawTestimonials}
-            isForDemoPage={true}
-          />
-        </section>
-        {/* sm:px-12 lg:px-32 xl:px-60 */}
-        <section id="demo_bottom">
-          <div className="bg-whiteColor-custom  bg-current flex flex-row flex-wrap my-8 max-w-6xl mx-auto px-6 sm:mb-24 sm:mt-12 md:mt-36">
-            <div className="w-full pr-4 lg:pr-16 pt-0  text-xl  md:w-3/6 md:block">
-              <div className="mb-4">
-                <span className="text-3xl-2 text-center sm:text-left sm:text-5xl font-medium leading-tight text-blueNew-midnight">
-                  {lv_demofooterleft[0].demo_footer_header_text}
-                </span>
-              </div>
-              <div className="text-xl-2 text-grayColor-custom mb-12">
-                <PortableText blocks={lv_demofooterleft[0].demo_footer_desc} />
-              </div>
-            </div>
-            <div className="w-full px-0 md:w-3/6 flex flex-row justify-end">
-              <DynamicInputForm
-                {...lv_demofooterleft[0].input_form}
-                add_on_styling={"top-0"}
-                location={location}
-              />
+        )
+         : (
+          <React.Fragment>
+            {data.sanitySchdemo._rawPagebuildersectionarray.map(section => {
+              if (section._type === "demoadvantages") {
+                return <DemoAdvantages key={section._key} {...section} />
+              } else if (section._type === "scheduledemoheader") {
+                return (
+                  <ScheduleDemoHdr
+                    key={section._key}
+                    {...section}
+                    location={location}
+                  />
+                )
+              } else if (section._type === "demofooterleft") {
+                return (
+                  <ScheduleDemoFooter
+                    key={section._key}
+                    {...section}
+                    location={location}
+                  />
+                )
+              } else if (section._type === "ref_section_get_started") {
+                let l_section_info = data.section_get_started.edges.find(
+                  kl => kl.node._id === section._ref
+                )
+                return (
+                  <section key={section._key} id="get_started">
+                    <MiddleBanner {...l_section_info.node._rawGetStarted} />
+                  </section>
+                )
+              } else if (section._type === "ref_section_testimonials") {
+                let l_section_info = data.section_testimonials.edges.find(
+                  kl => kl.node._id === section._ref
+                )
+                return (
+                  <section key={section._key} id="testimonial">
+                    <Testimonial
+                      applyGradientColorTheme={false}
+                      {...l_section_info.node._rawTestimonials}
+                    />
+                  </section>
+                )
+              } else if (section._type === "ref_section_ourlogos") {
+                let l_ourLogo_info = data.section_our_logos.edges.find(
+                  kl => kl.node._id === section._ref
+                )
 
-              {/* <DemoForm
-                submitDemoButtonName={lv_scheduledemoheader[0].button.btntext}
-                formId={`${location.pathname
-                  .replace("/", "")
-                  .replace("-", "_")}_form_bottom`}
-                // formId="request_demo_form_bottom"
-                isFooterForm={true}
-                isLoading={isLoading}
-                onDemoFormSubmit={onDemoFormSubmit}
-                sectionId="demo_bottom"
-              /> */}
-            </div>
-          </div>
-        </section>
-        <section id="footer_section_for_demo">
-          <MiddleBanner {...lv_middlebannersection[0].node._rawGetStarted} />
-        </section>
+                return (
+                  <section key={section._key} id="our_logos" className="px-8">
+                    <OurLogo
+                      key={section._key}
+                      customHeaderText={`The top companies in the world use RudderStack to activate their customer data`}
+                      {...l_ourLogo_info.node._rawOurLogos}
+                      // removeSectionVerticalMargin={true}
+                    />
+                  </section>
+                )
+              }
+            })}
+          </React.Fragment>
+        )}
+
       </div>
       {((location && location.pathname === "/request-demo-chili-piper-test/") ||
         (location &&

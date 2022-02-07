@@ -1,0 +1,199 @@
+.left-group-image{
+    max-width: 50%;
+}
+/* .leadership-img-block{
+    max-width: 50%;
+} */
+.bottom-image-wrapper{
+    margin-right: 305px;
+    margin-top: -106px;
+    max-width: 450px;
+}
+.middle-right-left{
+    max-width: 330px;
+}
+.middle-right-right{
+    max-width: 294px;
+}
+.timeline-content{
+    width: 200px;
+    padding-left: 40px;
+}
+.timeline-border{
+    width: calc(100% - 220px);
+    position: relative;
+    padding-bottom: 150px;
+}
+.company-profile-wrapper{
+    background: linear-gradient(172.77deg, rgba(7, 14, 31, 0.4) 13.85%, rgba(62, 53, 209, 0.4) 95.18%);
+}
+.timeline-map{
+    width: 95%;
+    margin: 0px auto;
+    text-align: center;
+}
+.timeline-border-animate{
+    top: 10px;
+    width: 440px;
+}
+.svg-flip{
+    transform: scaleX(-1);
+    left: 90px;
+}
+.footer-social-icon-kit{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 9999px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1C1D61;
+}
+.team-img-mobile {
+    display: none;
+}
+.leadership-wrapper{
+    max-width: 1104px;
+}
+@media only screen and (max-width: 1200px){
+    .join-our-team-wrapper, .about-logos-list{
+        padding: 0px 16px;
+    }
+    .leadership-wrapper{
+        padding: 0px 16px;
+    }
+    .right-side-content{
+        margin-left: 0;
+    }
+    .middle-right-image-wrapper img ,
+        .left-group-image img,
+        .leadership-img-block img {
+            display: block;
+            width: 100%;
+        }
+        .left-group-image {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .middle-right-image-wrapper {
+            text-align: center;
+        }
+        .middle-content {
+            padding-bottom: 30px;
+            margin-left: 0;
+            margin-top: -90px;
+        }
+        .about-logos-list li{
+            max-width: 110px;
+        }
+        .leadership-img-block img {
+            width: 100%;
+            max-width: 100%;
+        }
+        .leadership-img-block {
+            max-width: 52%;
+        }
+
+}
+
+@media screen and (max-width:1023px) {
+    .bottom-image-wrapper{
+        margin-right: 0;
+        margin-top: -126px;
+        margin-left: 308px;
+    }
+    .team-img-desktop {
+        display: none !important;
+    }
+    .leadership-img-block {
+        max-width: 400px;
+    }
+    .middle-right-right{
+        margin-right: 20px;
+    }
+    .left-group-image{
+        max-width: 100%;
+        justify-content: flex-end;
+        display: flex;
+    }
+    .team-img-mobile {
+        margin-bottom: 5px;
+        display: block;
+    }
+    .timeline-border-animate{
+        width: 130px;
+        top: 20px;
+        left: -30px;
+    }
+    /* .timeline-content{
+        width: 150px;
+    } */
+    .timeline-border{
+        width: calc(100% - 170px);
+    }
+    .svg-flip{
+        left: 60px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    /* .timeline-border svg{
+        display: none;
+    }
+    .timeline-wrapper {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+    }
+    .timeline-wrapper:after{
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 50%;
+        border: 1px dashed #fff;
+        top: 60px;
+        left: 50%;
+    }
+    .timeline-wrapper:last-child:after{
+        display: none;
+    }
+    .timeline-content {
+        width: 100%;
+    }
+    .timeline-border {
+        width: auto;
+        position: relative;
+        padding-bottom: 150px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    } */
+    .join-our-team .left-section{
+        max-width: 100%;
+    }
+    .footer-social-icon-kit{
+        font-size: 18px;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .bottom-image-wrapper {
+        margin-right: 40px;
+        margin-top: -17%;
+        margin-left: 43%;
+    }
+    .team-section{
+        margin-right: 60px;
+    }
+}
+@media screen and (max-width:700px) {
+    .bottom-image-wrapper {
+        margin-top: -16%;
+        margin-left: 41%;
+    }
+}

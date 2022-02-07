@@ -5,6 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+const { graphql } = require("gatsby")
 var webpack = require("webpack")
 
 const INTEGRATION_CONN_EXCLUDED_IDS = [
@@ -1206,13 +1207,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const sch_demo = schDemos.data.allSanitySchdemo.edges || []
   sch_demo.forEach((edge, index) => {
-    const path = `/${edge.node.slug.current}/`
+    let splitPath = edge.node.slug.current.split('/');
+    const path = splitPath.length > 1 ? splitPath[1] : `/${edge.node.slug.current}/`
 
-    createPage({
-      path,
-      component: require.resolve("./src/templates/request-demo.js"),
-      context: { slug: edge.node.slug.current },
-    })
+    if(splitPath[0] !== "new-theme"){
+      createPage({
+        path,
+        component: require.resolve("./src/templates/request-demo.js"),
+        context: { slug: edge.node.slug.current },
+      })
+    }
   })
 
   //generic-pages
@@ -1406,5 +1410,37 @@ exports.createPages = async ({ graphql, actions }) => {
       component: require.resolve("./src/templates/beAHeroPageContent.js"),
       context: { slug: edge.node.slug.current },
     })
-  })
+  });
+
+  //Info landing pages
+  const infoLandingQuery = await graphql(`
+  {
+    allSanityInfoLandingPage {
+      edges {
+        node {
+          slug {
+            current
+          }
+          title
+        }
+      }
+    }
+  }`
+  );
+
+  if (infoLandingQuery.errors) {
+    throw infoLandingQuery.errors
+  }
+
+  const infoLandingPages =
+  infoLandingQuery.data.allSanityInfoLandingPage.edges || []
+  infoLandingPages.forEach((edge, index) => {
+    const path = `/${edge.node.slug.current}/`
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/InfoLandingBase.js"),
+      context: { slug: edge.node.slug.current },
+    })
+  });
 }

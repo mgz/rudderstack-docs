@@ -4,7 +4,7 @@ import Page from "./page"
 import Singleblog from "./content"
 import Product from "./products"
 import Integration from "./integrationContent"
-import Demo from "./request-demo"
+import Demo from "./request-demo2"
 import Thankyou from "./thankyou"
 import VideoContent from "./videoContent"
 import CaseStudyContent from "./caseStudyContent"
@@ -171,7 +171,6 @@ class PreviewTemplate extends Component {
           intdata.section_get_started = this.props.frontblock.section_get_started
 
           intdata.sanityFrontpageblock = this.props.frontblock.sanityFrontpageblock
-
           let integrationSpecificAssets = this.props.frontblock.allGoogleSpreadsheetR1IntegrationSpecificAssets.edges.find(
             oo => oo.node.sanityRelationSlug === integration.slug.current
           )

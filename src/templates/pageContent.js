@@ -1,7 +1,9 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import MiddleBanner from "../components/middle-banner"
 import loadable from "@loadable/component"
 import CentredContentWithButton from "../components/centredContentWithButton"
@@ -11,7 +13,7 @@ import FourCardsWithTitle from "../components/fourCardsWithTitle"
 import FourCardsWithTitleLeftAligned from "../components/fourCardsWithTitleLeftAligned"
 import ThreeCardsWithTitle from "../components/threeCardsWithTitle"
 import SegmentComparisonComponent from "../components/segmentComparisonComponent"
-import PricingComparisonComponent from "../components/PricingComparisonComponent"
+import PricingComparisonComponentV2 from "../components/PricingComparisonComponentV2"
 import HeroBannerCloud from "../components/heroBannerCloud"
 import HeroBannerAboutUs from "../components/heroBannerAboutUs"
 import Leadership from "../components/leadership"
@@ -31,8 +33,57 @@ const Testimonial = loadable(() => import("../components/testimonial"))
 const PageContent = ({ data, location }) => {
   // console.log("data", data)
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const sections = gsap.utils.toArray('.triggers');
+    /* console.log('Sections', sections); */
+    sections.forEach(section => {
+      gsap.set(section, {autoAlpha: 0});
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 80%",
+        end: "bottom 20%",
+        markers: false,
+        toggleActions: "play none none none",
+        onEnter: function () {
+          gsap.fromTo(
+            section,
+            { y: 100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              stagger: 0.2,
+              ease: "back",
+              overwrite: "auto"
+            }
+          );
+        },
+        onLeave: function () {
+          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 1, overwrite: "auto" });
+        },
+        /* onEnterBack: function () {
+          gsap.fromTo(
+            section,
+            { y: -100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: "back",
+              overwrite: "auto"
+            }
+          );
+        },
+        onLeaveBack: function () {
+          gsap.fromTo(section, { autoAlpha: 1 }, { autoAlpha: 0, overwrite: "auto" });
+        } */
+      })
+    });
+  }, [])
+
   return (
-    <Layout location={location}>
+    <Layout location={location} darkTheme={location.pathname.startsWith('/pricing') || location.pathname.startsWith('/about') ? true : false}>
       <Helmet>
         <title>{data.pagedata.meta_title || data.pagedata.title}</title>
         {data.pagedata.enable_no_follow_no_index === true && (
@@ -105,7 +156,7 @@ const PageContent = ({ data, location }) => {
           } else if (section._type === "leadership_section") {
             return <Leadership key={section._key} {...section} />
           } else if (section._type === "advisors_and_investors_section") {
-            return <AdvisorsAndInvestor key={section._key} {...section} />
+            return <AdvisorsAndInvestor key={section._key} location={location} {...section} />
           } else if (section._type === "pricing_calculate") {
             return <PricingCalculator key={section._key} {...section} />
           } else if (section._type === "hero_banner_404") {
@@ -177,7 +228,7 @@ const PageContent = ({ data, location }) => {
             )
           } else if (section._type === "pricing_comparision_with_title") {
             return (
-              <PricingComparisonComponent key={section._key} {...section} />
+              <PricingComparisonComponentV2 key={section._key} {...section} />
             )
           } else if (section._type === "faq") {
             let tmp = []
@@ -188,9 +239,10 @@ const PageContent = ({ data, location }) => {
 
             return (
               <section
-                className="bg-grayColor-BgGray py-10 pt-40 md:pt-44 relative font-custom"
+                className="section-gradient py-10 relative font-custom"
                 key={section._key}
               >
+                <span className="section-border absolute top-0 left-0 w-full block"></span>
                 <MigrationSpecialists />
                 <Faq
                   title={section.faqtitle}
@@ -198,6 +250,7 @@ const PageContent = ({ data, location }) => {
                   accordions={tmp}
                   isBlockContent={true}
                 />
+                <span className="section-border absolute bottom-0 left-0 w-full block"></span>
               </section>
             )
           } else if (section._type === "ref_section_get_started") {

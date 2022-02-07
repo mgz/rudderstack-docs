@@ -1,12 +1,12 @@
 /*
-=============== 
+===============
 Fonts
 ===============
 */
 /* @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap"); */
 
 /*
-=============== 
+===============
 Variables
 ===============
 */
@@ -39,7 +39,7 @@ Variables
   --guides-fixed-width: 700px;
 }
 /*
-  =============== 
+  ===============
   Global Styles
   ===============
   */
@@ -501,7 +501,7 @@ Variables
 
 @media (max-width: 767px) {
   #guides-container .side-container.stick {
-    top: 55px;
+    top: 50px;
   }
   #guides-container .side-container {
     padding-left: 0px;

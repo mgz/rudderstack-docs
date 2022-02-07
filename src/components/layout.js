@@ -101,7 +101,8 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
         location.pathname.startsWith("/privacy-policy-legal/") ||
         location.pathname.startsWith("/cookie-policy/") ||
         location.pathname.startsWith("/product/") ||
-        location.pathname.startsWith("/customers/"))
+        location.pathname.startsWith("/customers/") ||
+        location.pathname.startsWith("/pricing/"))
       ? true
       : false
   )
@@ -144,7 +145,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
       <div
         id="main-container"
         className={
-          darkTheme ||
+          darkTheme === true ||
           (location && location.pathname === "/") ||
           (location && location.pathname.startsWith("/product/"))
             ? "hero-section"

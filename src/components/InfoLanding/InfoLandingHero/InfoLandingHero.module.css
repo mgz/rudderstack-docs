@@ -1,0 +1,108 @@
+.landing_hero_left{
+    width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+    max-width: 476px;
+}
+ 
+h3.hero_subtitle{
+    font-weight: 400;
+    margin: 21px 79px  23px 0;
+}
+.landing_hero_category{
+    font-size: 24px;
+    margin-bottom: 24px;
+    line-height:32px;
+}
+.hero_subtitle{
+    color: #C4C4C4;
+    font-size: 18px;
+    margin: 24px 0px;
+    line-height: 25.2px;
+}
+.landing_hero_pointers_wrapper{
+    margin-top: 107px;
+}
+.hero_pointer_text{
+    padding-top: 18px;
+}
+.hero_pointer_item{
+    width: 25%;
+    align-self: flex-start;
+    padding: 0px 15px;
+}
+.landing_hero_pointers_wrapper p{
+    font-size: 20px;
+    line-height: 32px;
+}
+.hero_pointer_image{
+    min-height: 46px;
+}
+@media screen and (max-width:1023px) {
+    .landing_hero_left{
+        margin-bottom: 35px;
+    }
+}
+@media screen and (max-width:991px) {
+    h1 {
+        letter-spacing: 0;
+    }
+    .hero_pointer_item{
+        width: 30%;
+        align-self: flex-start;
+        padding: 0px 15px 0px;
+        min-height: 170px;
+    }
+    .hero-pointer-list{
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+    }
+    .landing_hero_left{
+        max-width: 100%;
+    }
+    h3.hero_subtitle{
+        margin: 7px 25px  23px 0;
+        font-size: 14px;
+        line-height: 21px;
+    }
+    .landing_hero_pointers_wrapper{
+        margin-top: 50px;
+    }
+    .landing_hero_pointers_wrapper p{
+        font-size: 16px;
+        line-height: 22px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .landing_hero_category{
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .landing_hero_left{
+        width: 100%;
+        margin-right: 0;
+        padding-right: 0;
+        max-width: 100%;
+    }
+    .landing_hero_pointers_wrapper{
+        margin-top: 47px;
+    }
+    .hero_pointer_item{
+        min-height: 153px;
+    }
+    h1 {
+        letter-spacing: 0;
+        margin-top: 15px;
+    }
+    .hero_pointer_item{
+        width: 50%;
+    }
+    h3.hero_subtitle{
+        font-size: 14px;
+        line-height: 19px;
+        margin: 10px 0;
+    }
+}
+

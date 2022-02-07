@@ -92,8 +92,8 @@ function Hero(props) {
   }, [showAnimation])
 
   return (
-    <section className="relative gradiant-layer banner-section pt-19 pb-40 hero-wrapper">
-      {/* <div className="out-gradient-wrapper bottom-1/4 right-16">
+    <section className="relative gradiant-layer banner-section pt-19 pb-40 hero-wrapper triggers">
+      {/* <div className="out-gradient-wrapper bottom-0 right-16">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
@@ -104,7 +104,7 @@ function Hero(props) {
           </div>
         </div>
       </div>
-      <div className="out-gradient-wrapper top-1/4 left-1/4">
+      <div className="out-gradient-wrapper top-10 left-1/4">
         <div className="grad1">
           <div className="grad2">
             <div className="grad3">
