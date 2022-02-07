@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { StaticImage } from "gatsby-plugin-image"
 
 const SubscriptionV2 = props => {
   const [email, setEmail] = useState("")
@@ -103,12 +102,12 @@ const SubscriptionV2 = props => {
                     setFormSubmittedSuccessfully(false)
                   }}
                 />
-                <span
+                <button
                   className="sign-up-text block font-bold py-3 px-10 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center mx-auto"
                   type={"submit"}
                 >
                   Sign Up for Newsletter
-                </span>
+                </button>
               </>
             )}
 
