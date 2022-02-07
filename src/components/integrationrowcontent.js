@@ -25,7 +25,7 @@ const Integrationrowcontent = ({ hits }) => {
                 </div>
                 <div className="sm:block h-24">
                   <img
-                    src={hit.logoimage}
+                    src={hit.logoimage+'?auto=format'}
                     alt={hit.title}
                     className="object-scale-down h-full w-full"
                     loading="eager"

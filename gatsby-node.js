@@ -1037,6 +1037,7 @@ exports.createPages = async ({ graphql, actions }) => {
             destinationLogoImgUrl
             destinationSlug
             sourceSlug
+            nodeH1Slug
           }
         }
       }

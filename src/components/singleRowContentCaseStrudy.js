@@ -53,7 +53,7 @@ const SingleRowContentCaseStudy = ({ data }) => {
         <div className="flex-shrink-1 sm:flex-shrink-1">
           <Link to={caseStudyObj.node.slug.current}>
             <img
-              src={caseStudyObj.node.listing_image.asset.url}
+              src={caseStudyObj.node.listing_image.asset.url+'?auto=format'}
               alt={caseStudyObj.node.title}
               // className="sm:h-full lg:max-w-2xl object-cover max-h-96"
               className="sm:h-full lg:max-w-2xl object-cover"

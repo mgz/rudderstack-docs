@@ -23,7 +23,7 @@
          <div className="flex-shrink-1 sm:flex-shrink-1">
            <Link to={hit.slug}>
              <img
-               src={hit.knowledge_base_image.asset.url}
+               src={hit.knowledge_base_image.asset.url+'?auto=format'}
                alt={hit.title}
                className="sm:h-full w-full object-cover"
                loading="eager"
@@ -45,7 +45,7 @@
              <div className="flex items-center mx-auto mb-4 sm:flex-row flex-col mt-4 md:absolute md:bottom-0 px-8">
                <div className=" inline-flex items-center justify-center flex-shrink-0 mr-4">
                  <img
-                   src={hit.blog_authors[0].author_image.asset.url}
+                   src={hit.blog_authors[0].author_image.asset.url+'?auto=format'}
                    className="w-16 h-16 rounded-full"
                  />
                </div>
