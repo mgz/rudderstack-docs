@@ -13,7 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 //import "../lib/font-awesome"
 import Link from "gatsby-link"
 import { useStaticQuery, graphql } from "gatsby"
-// import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet"
 // import { withPrefix } from "gatsby"
 
 import MainNavigation from "../components/main-navigation"
@@ -127,6 +127,9 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
 
   return (
     <React.Fragment>
+      <Helmet>
+        <meta property="og:image" content="../images/rudderstack_thumbnail.png"/>
+      </Helmet>
       {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection &&
         data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection.banner_contents.map(
           banner => {
