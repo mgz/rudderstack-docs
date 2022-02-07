@@ -13,8 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 //import "../lib/font-awesome"
 import Link from "gatsby-link"
 import { useStaticQuery, graphql } from "gatsby"
-// import { Helmet } from "react-helmet"
-// import { withPrefix } from "gatsby"
+import { Helmet } from "react-helmet"
+import { withPrefix } from "gatsby"
 
 import MainNavigation from "../components/main-navigation"
 import FooterNav from "../components/footer-nav"
@@ -23,7 +23,6 @@ import { StaticImage } from "gatsby-plugin-image"
 import CookiesConsent from "./cookiesConsent"
 import WebisteBanner from "./websiteBanner"
 import { rudderslabTrackOnClick } from "../utils/common"
-
 
 import "../css/tailwind.css"
 import { faRss } from "@fortawesome/free-solid-svg-icons"
@@ -91,7 +90,6 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
   const footerlogo =
     data.allSanitySiteSettings.edges[0].node.footerblock.footer_logo.asset.url
 
-
   // let diableGradient = false
   /* Disabling gradient for pages */
   const [diableGradient] = React.useState(
@@ -154,10 +152,12 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
             : "gradient-disable"
         }
       >
-        {/* <Helmet>
-        <script src={withPrefix("script.js")} type="text/javascript" />
-        <script src={withPrefix("script2.js")} type="text/javascript" />
-      </Helmet> */}
+        <Helmet>
+          {/* <script src={withPrefix("script.js")} type="text/javascript" />
+        <script src={withPrefix("script2.js")} type="text/javascript" /> */}
+
+          <script src={withPrefix("zoomInfo.js")} type="text/javascript" />
+        </Helmet>
 
         <MainNavigation diableGradient={diableGradient} />
         <main>{children}</main>
@@ -259,6 +259,20 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
                 )
               })}
             </div>
+            <div>
+            <noscript>
+             <img height="1" width="1" className="hidden" src="https://ws.zoominfo.com/pixel/61ba5bf54261e1001b0105cc"/>
+             </noscript>
+            </div>
+
+            {/* <noscript>
+              <img
+                src="https://ws.zoominfo.com/pixel/61ba5bf54261e1001b0105cc"
+                width="1"
+                height="1"
+                style="display: block;"
+              />
+            </noscript> */}
           </div>
           {/* <div className="max-w-6xl w-full flex mx-auto flex-wrap  px-3">
 
@@ -266,72 +280,76 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
           <div className="max-w-6xl pb-16 md:pb-32 py-4 w-full flex mx-auto flex-wrap  px-3">
             <div className="flex w-1/2 items-center text-white">
               <div className="flex flex-col">
-              <div className="flex mb-5">
-                {socialitems.map((socialitem, i) => (
-                  <React.Fragment key={socialitem._key}>
-                    {(() => {
-                      let rss = /rss/
-                      if (rss.test(socialitem.social_item_icon)) {
-                        return (
-                          <a
-                            key={socialitem._key}
-                            className="footer-social-icon bg-darkScheme-textPrimary"
-                            rel="noreferrer noopener"
-                            aria-label="This is an external link "
-                            href={socialitem.social_item_link}
-                            target="_blank"
-                            onClick={e =>
-                              rudderslabTrackOnClick(
-                                "footer-navigation",
-                                "Footer Navigation Section",
-                                e
-                              )
-                            }
-                          >
-                            <FontAwesomeIcon icon={faRss} />
-                          </a>
-                        )
-                      } else {
-                        return (
-                          <a
-                            key={socialitem._key}
-                            className="footer-social-icon bg-darkScheme-textPrimary"
-                            rel="noreferrer noopener"
-                            aria-label="This is an external link "
-                            href={socialitem.social_item_link}
-                            target="_blank"
-                            onClick={e =>
-                              rudderslabTrackOnClick(
-                                "footer-navigation",
-                                "Footer Navigation Section",
-                                e
-                              )
-                            }
-                          >
-                            <FontAwesomeIcon
-                              icon={
-                                socialitem.social_item_icon === "twitter"
-                                  ? faTwitter
-                                  : faLinkedin
+                <div className="flex mb-5">
+                  {socialitems.map((socialitem, i) => (
+                    <React.Fragment key={socialitem._key}>
+                      {(() => {
+                        let rss = /rss/
+                        if (rss.test(socialitem.social_item_icon)) {
+                          return (
+                            <a
+                              key={socialitem._key}
+                              className="footer-social-icon bg-darkScheme-textPrimary"
+                              rel="noreferrer noopener"
+                              aria-label="This is an external link "
+                              href={socialitem.social_item_link}
+                              target="_blank"
+                              onClick={e =>
+                                rudderslabTrackOnClick(
+                                  "footer-navigation",
+                                  "Footer Navigation Section",
+                                  e
+                                )
                               }
-                            />
-                          </a>
-                        )
-                      }
-                    })()}
-                  </React.Fragment>
-                ))}
-              </div>
-              <img
-                src={footerlogo}
-                alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
-                width="148"
-                height="16"
-              />
+                            >
+                              <FontAwesomeIcon icon={faRss} />
+                            </a>
+                          )
+                        } else {
+                          return (
+                            <a
+                              key={socialitem._key}
+                              className="footer-social-icon bg-darkScheme-textPrimary"
+                              rel="noreferrer noopener"
+                              aria-label="This is an external link "
+                              href={socialitem.social_item_link}
+                              target="_blank"
+                              onClick={e =>
+                                rudderslabTrackOnClick(
+                                  "footer-navigation",
+                                  "Footer Navigation Section",
+                                  e
+                                )
+                              }
+                            >
+                              <FontAwesomeIcon
+                                icon={
+                                  socialitem.social_item_icon === "twitter"
+                                    ? faTwitter
+                                    : faLinkedin
+                                }
+                              />
+                            </a>
+                          )
+                        }
+                      })()}
+                    </React.Fragment>
+                  ))}
+                </div>
+                <img
+                  src={footerlogo}
+                  alt={data.allSanitySiteSettings.edges[0].node.sitetitle}
+                  width="148"
+                  height="16"
+                />
               </div>
             </div>
             <div className="flex flex-wrap w-1/2 items-end flex-col">
-              <StaticImage src="../images/footerbadge.png" className="self-end relative right-7 mb-4" alt="SOC 2 TYPE 2" />
+              <StaticImage
+                src="../images/footerbadge.png"
+                className="self-end relative right-7 mb-4"
+                alt="SOC 2 TYPE 2"
+              />
               <p className="text-footer w-full text-right">{copyright}</p>
             </div>
           </div>
