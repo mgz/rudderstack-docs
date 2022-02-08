@@ -122,7 +122,7 @@
     border-right: 1px solid #181F2F;
     border-radius: 0 0 5px 0;
 }
-span.blank-span {
+span.blank_span {
     position: absolute;
     content: '';
     width: calc(100% - 143px);

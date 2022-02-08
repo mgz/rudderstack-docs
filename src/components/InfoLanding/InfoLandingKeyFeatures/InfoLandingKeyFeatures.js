@@ -28,7 +28,7 @@ const InfoLandingKeyFeatures = (
 
                                         <div className={s.bottom_layer} > 
                                         </div>
-                                        <span class="blank-span"></span>
+                                        <span className={s.blank_span}></span>
                                     </li>
                                 )
                             }
@@ -48,7 +48,7 @@ const InfoLandingKeyFeatures = (
                                         <p className={s.key_features_text}>{item.title}</p>
                                         <div className={s.bottom_layer} > 
                                         </div>
-                                        <span class="blank-span"></span>
+                                        <span className={s.blank_span}></span>
                                     </li>
                                 )
                             }
