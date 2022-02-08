@@ -317,38 +317,78 @@ const PricingComparisonComponentV2 = props => {
               return(
                 <div className="pricing-block" key={item.group}>
                   <div className="group-name text-darkScheme-btnSecondaryBg text-lg uppercase font-bold my-10">{item.group}</div>
-                  {item.nodes.map((i,k) => {
-                    return (
-                      <div className={`pricing-row py-4 pb-2 px-2 ${k % 2 === 0 ? 'grad-bg' : ''}`}>
-                        <div className="text-darkScheme-textPrimary">{i.title}</div>
-                        <div className="pricing-values flex">
-                          <div className="w-1/3 self-center h-14 flex items-center justify-center">
-                            {i.free_val === "<<CHECK>>" ? <span className={`check-icon check-comparison`} /> : <span className={`line-image`} />}
+                  {item.nodes.map((row, l_index) => {
+                                //   console.log(row, "sssw")
+                        return (
+                          <div
+                            key={row.title}
+                            className={`pricing-row py-4 pb-2 px-2 ${l_index % 2 === 0 ? 'grad-bg' : ''}`}
+                          >
+                            <div className="text-darkScheme-textPrimary">{row.title}</div>
+                            <div className="pricing-values flex">
+                              <div className="w-1/3 self-center h-14 flex items-center justify-center">
+                                {row.free_val === "<<CHECK>>" && (
+                                  <span className={`check-icon check-comparison`} />
+                                )}
+                                {row.free_val === "<<UNCHECK>>" && (
+                                  <span className={`line-image`} />
+                                )}
+                                {row.free_val !== "<<UNCHECK>>" &&
+                                  row.free_val !== "<<CHECK>>" && (
+                                    <span className="font-normal text-darkScheme-textPrimary">
+                                      {row.free_val}
+                                    </span>
+                                  )}
+                              </div>
+
+                              <div className="w-1/3 self-center h-14 flex items-center justify-center">
+                                {row.pro_val === "<<CHECK>>" && (
+                                  <span className={`check-icon check-comparison`} />
+                                )}
+                                {row.pro_val === "<<UNCHECK>>" && (
+                                  <span className={`line-image`} />
+                                )}
+                                {row.pro_val !== "<<UNCHECK>>" &&
+                                  row.pro_val !== "<<CHECK>>" && (
+                                    <span className="font-normal text-darkScheme-textPrimary">
+                                      {row.pro_val}
+                                    </span>
+                                  )}
+                              </div>
+
+                              <div className="w-1/3 self-center h-14 flex items-center justify-center rounded-br-2xl rounded-tr-2xl">
+                                {row.enterprice_val === "<<CHECK>>" && (
+                                  <span className={`check-icon check-comparison`} />
+                                )}
+                                {row.enterprice_val === "<<UNCHECK>>" && (
+                                  <span className={`line-image`} />
+                                )}
+                                {row.enterprice_val !== "<<UNCHECK>>" &&
+                                  row.enterprice_val !== "<<CHECK>>" &&
+                                  row.enterprice_val !== "TALKTOSALES" && (
+                                    <span className="font-normal text-darkScheme-textPrimary">
+                                      {row.enterprice_val}
+                                    </span>
+                                  )}
+
+                                {row.enterprice_val === "TALKTOSALES" && (
+                                  <Link
+                                    to="/enterprise-quote"
+                                    className="text-sm font-bold text-darkScheme-btnSecondaryBg mx-auto"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    onClick={e =>
+                                      rudderslabTrackOnClick("link", item.group, e)
+                                    }
+                                  >
+                                    Talk to sales
+                                  </Link>
+                                )}
+                              </div>
+                            </div>
                           </div>
-                          <div className="w-1/3 self-center h-14 flex items-center justify-center">
-                            {i.pro_val === "<<CHECK>>" ? <span className={`check-icon check-comparison`} /> : <span className={`line-image`} />}
-                          </div>
-                          <div className="w-1/3 self-center h-14 flex items-center justify-center">
-                            {i.enterprice_val === "TALKTOSALES" ?
-                              (
-                                <Link
-                                  to="/enterprise-quote"
-                                  className="text-sm font-bold text-darkScheme-btnSecondaryBg mx-auto"
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  onClick={e =>
-                                    rudderslabTrackOnClick("link", item.group, e)
-                                  }
-                                >
-                                  Talk to sales
-                                </Link>
-                              ) : i.enterprice_val === "<<CHECK>>" ? <span className={`check-icon check-comparison`} /> : <span className={`line-image`} />
-                            }
-                          </div>
-                        </div>
-                      </div>
-                    )
-                  })}
+                        )
+                      })}
                 </div>
               )
             })}
