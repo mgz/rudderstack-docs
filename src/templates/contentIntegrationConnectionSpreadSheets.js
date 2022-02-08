@@ -90,7 +90,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                 >
                   <div className="flex justify-center align-center h-full">
                     <img
-                      src={page_data.sourceLogoIconUrl}
+                      src={page_data.sourceLogoIconUrl+'?auto=format'}
                       className="h-5 sm:h-12 m-auto"
                       alt={page_data.sourceIntegration}
                       placeholder="tracedSVG"
@@ -330,7 +330,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                           // src={
                           //   page_data.destinationLogoImgUrl
                           // }
-                          src={page_data.destinationLogoIconUrl}
+                          src={page_data.destinationLogoIconUrl+'?auto=format'}
                           className="h-5 sm:h-10 m-auto"
                           alt="RudderStack animation"
                           placeholder="tracedSVG"
@@ -361,7 +361,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                   <div className="int-conn-left-logo">
                     <img
                       // src={page_data.sourceLogoImgUrl}
-                      src={page_data.sourceLogoIconUrl}
+                      src={page_data.sourceLogoIconUrl+'?auto=format'}
                       className="h-5 sm:h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
@@ -439,7 +439,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                 <div className="h-full flex flex-col justify-start items-start text-left py-10 px-8 bg-blueNew-cardBackground rounded-2xl">
                   <div className="h-8 mb-10">
                     <img
-                      src={page_data.destinationLogoImgUrl}
+                      src={page_data.destinationLogoImgUrl+'?auto=format'}
                       className="h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
@@ -458,7 +458,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                 <div className="h-full flex flex-col justify-start items-start text-left py-10 px-8 bg-blueNew-cardBackground rounded-2xl">
                   <div className="h-8 mb-10">
                     <img
-                      src={page_data.destinationLogoImgUrl}
+                      src={page_data.destinationLogoImgUrl+'?auto=format'}
                       className="h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
@@ -477,7 +477,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                 <div className="h-full flex flex-col justify-start items-start text-left py-10 px-8 bg-blueNew-cardBackground rounded-2xl">
                   <div className="h-8 mb-10">
                     <img
-                      src={page_data.destinationLogoImgUrl}
+                      src={page_data.destinationLogoImgUrl+'?auto=format'}
                       className="h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
@@ -533,7 +533,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
-                    src={page_data.relevantIntegrationLogoUrl1}
+                    src={page_data.relevantIntegrationLogoUrl1+'?auto=format'}
                     className="h-8 m-auto"
                     alt="RudderStack animation"
                     placeholder="tracedSVG"
@@ -567,7 +567,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
-                    src={page_data.relevantIntegrationLogoUrl2}
+                    src={page_data.relevantIntegrationLogoUrl2+'?auto=format'}
                     className="h-8 m-auto"
                     alt="RudderStack animation"
                     placeholder="tracedSVG"
@@ -601,7 +601,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
-                    src={page_data.relevantIntegrationLogoUrl3}
+                    src={page_data.relevantIntegrationLogoUrl3+'?auto=format'}
                     className="h-8 m-auto"
                     alt="RudderStack animation"
                     placeholder="tracedSVG"
@@ -635,7 +635,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
-                    src={page_data.relevantIntegrationLogoUrl4}
+                    src={page_data.relevantIntegrationLogoUrl4+'?auto=format'}
                     className="h-8 m-auto"
                     alt="RudderStack animation"
                     placeholder="tracedSVG"
@@ -673,7 +673,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
           <div className="h-full flex flex-col justify-center text-center py-10 px-8 items-center ">
             <div className="h-8 mb-2">
               <img
-                src={page_data.destinationLogoImgUrl}
+                src={page_data.destinationLogoImgUrl+'?auto=format'}
                 className="h-8 m-auto"
                 alt="RudderStack animation"
                 placeholder="tracedSVG"

@@ -105,12 +105,13 @@ const InfoLandingForm = props => {
                     setFormSubmittedSuccessfully(false)
                   }}
                 />
-                <span
-                  className="sign-up-text block font-bold py-3 px-7 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
+                <button
+                  className="sign-up-text block font-bold  hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
                   type={"submit"}
+                  onClick={e => formSubmitted(e)}
                 >
                   Create an account
-                </span>
+                </button>
               </>
             )}
 
