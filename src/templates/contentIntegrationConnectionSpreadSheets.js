@@ -439,7 +439,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                 <div className="h-full flex flex-col justify-start items-start text-left py-10 px-8 bg-blueNew-cardBackground rounded-2xl">
                   <div className="h-8 mb-10">
                     <img
-                      src={page_data.destinationLogoImgUrl+'?auto=format'}
+                      src={page_data.destinationLogoImgUrl}
                       className="h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
@@ -458,7 +458,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                 <div className="h-full flex flex-col justify-start items-start text-left py-10 px-8 bg-blueNew-cardBackground rounded-2xl">
                   <div className="h-8 mb-10">
                     <img
-                      src={page_data.destinationLogoImgUrl+'?auto=format'}
+                      src={page_data.destinationLogoImgUrl}
                       className="h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
@@ -477,7 +477,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                 <div className="h-full flex flex-col justify-start items-start text-left py-10 px-8 bg-blueNew-cardBackground rounded-2xl">
                   <div className="h-8 mb-10">
                     <img
-                      src={page_data.destinationLogoImgUrl+'?auto=format'}
+                      src={page_data.destinationLogoImgUrl}
                       className="h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
