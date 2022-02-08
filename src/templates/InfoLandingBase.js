@@ -8,7 +8,9 @@ import InfoLandingTestimonial from "../components/InfoLanding/InfoLandingTestimo
 import InfoLandingKeyFeatures from "../components/InfoLanding/InfoLandingKeyFeatures/InfoLandingKeyFeatures"
 import InfoLandingUseCase from "../components/InfoLanding/InfoLandingUseCase/InfoLandingUseCase"
 import InfoLeftContentRightImg from "../components/InfoLanding/InfoLeftContentRightImg/InfoLeftContentRightImg"
- import InfoLandingHeroWithForm from "../components/InfoLanding/InfoLandingHero/InfoLandingHeroWithForm"
+import InfoLandingHeroWithForm from "../components/InfoLanding/InfoLandingHero/InfoLandingHeroWithForm"
+import CompetitorCenterContent from "../components/InfoLanding/CompetitorCenterContent/CompetitorCenterContent"
+import CompetitorComparison from "../components/InfoLanding/CompetitorComparison/CompetitorComparison"
 
 import Layout from "../components/layout"
 
@@ -53,11 +55,10 @@ const InfoLandingBase = ({ data, location }) => {
             (node, index) => {
               switch (node._type) {
                 case "left_right_content_with_image_and_bullet_items":
-                  return  <InfoLandingHeroWithForm /> 
+                  return  <CompetitorComparison />
+                   {/* <CompetitorCenterContent /> */}
+                  {/* <InfoLandingHeroWithForm />  */}
                  {/*  <InfoLandingHero data={node} key={node._key} /> */} 
-
-                 
-                 
                 case "left_right_content_and_bullet_items":
                   return <InfoLandingAbout data={node} key={node._key} />
                 case "left_right_content_with_logos_and_testimonial":
@@ -66,7 +67,6 @@ const InfoLandingBase = ({ data, location }) => {
                   return <InfoLandingKeyFeatures data={node} key={node._key} />
                 case "left_right_content_with_right_background_image":
                   return <InfoLandingUseCase data={node} key={node._key} />
-                 
                 default:
                   return null
               }

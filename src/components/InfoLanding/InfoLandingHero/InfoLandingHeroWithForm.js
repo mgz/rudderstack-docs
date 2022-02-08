@@ -9,7 +9,7 @@ const InfoLandingHeroWithForm = (
    let formData = data.data;
     return(
         <section className={`${s.usecase_hero_from} relative landing-hero-form-wrapper`}>
-            <div className="landing-container w-100">
+            <div className="landing-container">
                 <div className="flex flex-col lg:flex-row">
                     <div className={s.usecase_left_content}>
                         <p className={`${s.usecase_text} text-darkScheme-btnSecondaryBg`}>USE CASES</p>

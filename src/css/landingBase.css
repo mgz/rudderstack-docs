@@ -93,6 +93,13 @@ h2.landing-section-title{
   .landing-newsletter-input::placeholder {
     color: rgba(255, 255, 255, 0.5);
   }
+
+  .comparison-table  .sticky-pricing-banner.sticky { 
+    background: transparent;
+}
+.comparison-table  .sticky-pricing-banner:first-child{
+    background-color: #070e1f;
+}
   @media screen and (max-width:1440px) {
   .landing-hero-form-wrapper .landing-container{
         max-width: 100%;
