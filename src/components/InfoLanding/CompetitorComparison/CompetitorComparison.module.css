@@ -1,28 +1,14 @@
 .competitor_comparison_wrapper{
     padding-top: 100px;
 }
-.check-icon::before {
-    content: "";
-    background: url("../../../images/check-pricing.svg") no-repeat;
-    background-position: center;
-    width: 75%;
-    height: 100%;
-    background-size: 70% auto;
-    top: 0;
-    left: 50%;
-    padding: 12px;
-    margin-right: 22px;
+.competitor_comparison_table thead{
+    background: #070e1f;
+    position: sticky;
+    top: 90px;
+    z-index: 1;
 }
-.line-image::before{
-    content: "";
-    width: 25px;
-    height: 4px;
-    border-radius: 4px;
-    display: block;
-    background: #ffffff;
-    margin: 0px auto;
-}
-.check-comparison::before{
-    background-size: 100%;
-    margin-right:0px;
+.freeplan_wrapper{
+    background-color: #070e1f;
+    position: sticky;
+    top: 50px;
 }

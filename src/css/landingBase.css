@@ -100,7 +100,7 @@ h2.landing-section-title{
 .comparison-table  .sticky-pricing-banner:first-child{
     background-color: #070e1f;
 }
-  @media screen and (max-width:1440px) {
+@media screen and (max-width:1440px) {
   .landing-hero-form-wrapper .landing-container{
         max-width: 100%;
         padding: 0;
@@ -130,6 +130,12 @@ h2.landing-section-title{
     }
     .data-img{
         display: none !important;
+    }
+    .comparison-table .sticky-pricing-banner:first-child {
+        background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.21) 100%);
+    }
+    .comparison-table .landing-container{
+        padding: 0;
     }
 }
 @media (min-width:768px) and (max-width:991px) {
@@ -163,6 +169,7 @@ h2.landing-section-title{
     }
 }
 @media screen and (max-width:767px) {
+
     h2.landing-section-title {
         letter-spacing: -1px;
         margin-top: 15px;
