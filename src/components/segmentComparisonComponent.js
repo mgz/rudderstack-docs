@@ -94,7 +94,7 @@ const SegmentComparisonComponent = props => {
           {props.title}
         </h2>
 
-        <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
+        <div className="hidden lg:block w-auto max-w-screen-lg m-auto">
           <table className="comparision-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
             <thead>
               <tr>
