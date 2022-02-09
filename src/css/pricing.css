@@ -25,6 +25,12 @@
     padding: 12px;
     margin-right: 22px;
 }
+.check-icon.light-check-icon:before{
+    content: "";
+    background: url("../images/check.svg") no-repeat;
+    background-position: center;
+    margin-right: 0px;
+}
 .line-image::before{
     content: "";
     width: 25px;
