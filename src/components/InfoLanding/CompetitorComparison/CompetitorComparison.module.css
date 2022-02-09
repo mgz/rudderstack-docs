@@ -1,0 +1,14 @@
+.competitor_comparison_wrapper{
+    padding-top: 100px;
+}
+.competitor_comparison_table thead{
+    background: #070e1f;
+    position: sticky;
+    top: 90px;
+    z-index: 1;
+}
+.freeplan_wrapper{
+    background-color: #070e1f;
+    position: sticky;
+    top: 50px;
+}

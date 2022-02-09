@@ -8,6 +8,10 @@ import InfoLandingTestimonial from "../components/InfoLanding/InfoLandingTestimo
 import InfoLandingKeyFeatures from "../components/InfoLanding/InfoLandingKeyFeatures/InfoLandingKeyFeatures"
 import InfoLandingUseCase from "../components/InfoLanding/InfoLandingUseCase/InfoLandingUseCase"
 import InfoLeftContentRightImg from "../components/InfoLanding/InfoLeftContentRightImg/InfoLeftContentRightImg"
+import InfoLandingHeroWithForm from "../components/InfoLanding/InfoLandingHero/InfoLandingHeroWithForm"
+import CompetitorCenterContent from "../components/InfoLanding/CompetitorCenterContent/CompetitorCenterContent"
+import CompetitorComparison from "../components/InfoLanding/CompetitorComparison/CompetitorComparison"
+
 import Layout from "../components/layout"
 
 import MainNavigation from "../components/main-navigation"
@@ -20,6 +24,7 @@ import { faRss } from "@fortawesome/free-solid-svg-icons"
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { rudderslabTrackOnClick } from "../utils/common"
 import clientConfig from "../../client-config"
+
 
 import "../css/landingBase.css"
 
@@ -50,7 +55,10 @@ const InfoLandingBase = ({ data, location }) => {
             (node, index) => {
               switch (node._type) {
                 case "left_right_content_with_image_and_bullet_items":
-                  return <InfoLandingHero data={node} key={node._key} />
+                  return  <CompetitorComparison />
+                   {/* <CompetitorCenterContent /> */}
+                  {/* <InfoLandingHeroWithForm />  */}
+                 {/*  <InfoLandingHero data={node} key={node._key} /> */} 
                 case "left_right_content_and_bullet_items":
                   return <InfoLandingAbout data={node} key={node._key} />
                 case "left_right_content_with_logos_and_testimonial":

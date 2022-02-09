@@ -38,6 +38,33 @@ h3.hero_subtitle{
 .hero_pointer_image{
     min-height: 46px;
 }
+
+/* info landing hero with form css  */
+.usecase_hero_from{
+    margin-top: 18px;
+}
+.usecase_left_content{
+    padding: 41px 50px 80px 70px
+}
+.usecase_right_content{
+    width: 100%;
+    background-image: url('../../../images/form-bg-vector.png');
+    height: 850px;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.usecase_section_title{
+    margin: 20px 0;
+}
+.usecase_section_pera{
+    margin-bottom: 44px;
+}
+.usecase_text{
+    font-size: 24px;
+    line-height: 32px;
+}
+
 @media screen and (max-width:1023px) {
     .landing_hero_left{
         margin-bottom: 35px;
@@ -98,6 +125,18 @@ h3.hero_subtitle{
         font-size: 14px;
         line-height: 19px;
         margin: 10px 0;
+    }
+    .usecase_left_content{
+        padding: 28px 20px;
+    }
+    .usecase_text{
+        font-size: 16px;
+    }
+    .usecase_section_title{
+        margin: 15px 0 10px;
+    }
+    .usecase_section_pera{
+        margin-bottom: 0;
     }
 }
 

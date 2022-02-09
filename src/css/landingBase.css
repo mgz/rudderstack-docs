@@ -12,7 +12,7 @@
     line-height: 64px;
     color: #ffffff;
     font-weight: bold;
-    letter-spacing: -4px;
+    letter-spacing: -0.04em;
 }
 .pink{
     color: #D692F6;
@@ -94,7 +94,19 @@ h2.landing-section-title{
   .landing-newsletter-input::placeholder {
     color: rgba(255, 255, 255, 0.5);
   }
-  
+
+  .comparison-table  .sticky-pricing-banner.sticky { 
+    background: transparent;
+}
+.comparison-table  .sticky-pricing-banner:first-child{
+    background-color: #070e1f;
+}
+@media screen and (max-width:1440px) {
+  .landing-hero-form-wrapper .landing-container{
+        max-width: 100%;
+        padding: 0;
+    }
+  }
 @media screen and (max-width:1280px) {
     .landing-container{
         padding: 0 68px;
@@ -116,6 +128,15 @@ h2.landing-section-title{
     }
     .lrlm-icon svg {
         width: 20px;
+    }
+    .data-img{
+        display: none !important;
+    }
+    .comparison-table .sticky-pricing-banner:first-child {
+        background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.21) 100%);
+    }
+    .comparison-table .landing-container{
+        padding: 0;
     }
 }
 @media (min-width:768px) and (max-width:991px) {
@@ -149,6 +170,7 @@ h2.landing-section-title{
     }
 }
 @media screen and (max-width:767px) {
+
     h2.landing-section-title {
         letter-spacing: -1px;
         margin-top: 15px;
@@ -175,8 +197,8 @@ h2.landing-section-title{
     .landing-section-title{
         font-size: 24px;
         line-height: 28px;
-        letter-spacing: -1px;
-        margin-right: 30px;
+        letter-spacing: -0.04em;
+        margin-right: 0;
         margin-top: 18px;
     }
 
