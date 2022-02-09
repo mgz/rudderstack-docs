@@ -114,7 +114,16 @@ export const rudderslabTrackOnClick = (
   e,
   isSeekSectionName
 ) => {
-  let el
+  let el;
+  let urlString = window !== undefined ? window.location.href : "";
+  let paramString = urlString.split('?')[1];
+  let queryString = new URLSearchParams(paramString);
+  let queryParams = {};
+
+  for (let pair of queryString.entries()) {
+  queryParams[pair[0]] = pair[1];
+  }
+
   if (isSeekSectionName) {
     try {
       el = checkPrevSibbling(document.getElementById(e.target.id).parentElement)
@@ -150,6 +159,8 @@ export const rudderslabTrackOnClick = (
     // we want to track where the link points, whether it is a URL or internal path
     target_url: e.target.href ? e.target.href : e.target.baseURI,
     click_type: eventType,
+    gclid: queryParams.gclid ? queryParams.gclid : "",
+    utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
   })
 }
 
@@ -160,9 +171,20 @@ export const rudderslabTrackOnSearch = searchText => {
   if (!window.rudderanalytics) {
     return
   }
+  let el;
+  let urlString = window !== undefined ? window.location.href : "";
+  let paramString = urlString.split('?')[1];
+  let queryString = new URLSearchParams(paramString);
+  let queryParams = {};
+
+  for (let pair of queryString.entries()) {
+  queryParams[pair[0]] = pair[1];
+  }
   window.rudderanalytics.track("search", {
     page_title: document.title,
     search_text: searchText,
+    gclid: queryParams.gclid ? queryParams.gclid : "",
+    utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
   })
 }
 
@@ -170,6 +192,15 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, videoId) => {
   if (!window.rudderanalytics) {
     return
   }
+  let urlString = window !== undefined ? window.location.href : "";
+  let paramString = urlString.split('?')[1];
+  let queryString = new URLSearchParams(paramString);
+  let queryParams = {};
+
+  for (let pair of queryString.entries()) {
+    queryParams[pair[0]] = pair[1];
+  }
+
   window.rudderanalytics.track("video_playback_started", {
     page_title: document.title,
     video_location: sectionName,
@@ -193,6 +224,8 @@ export const rudderslabTrackOnYoutubeVideoPlayback = (sectionName, videoId) => {
     ad_enabled: false,
     quality: /* event.target.playerInfo.playbackQuality || */ null,
     livestream: false,
+    gclid: queryParams.gclid ? queryParams.gclid : "",
+    utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
   })
 }
 
@@ -200,6 +233,7 @@ export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (title, event) => {
   if (!window.rudderanalytics) {
     return
   }
+
 
   window.rudderanalytics.track("video_playback_started", {
     page_title: document.title,
@@ -225,6 +259,8 @@ export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (title, event) => {
     ad_enabled: false,
     quality: event.target.playerInfo.playbackQuality,
     livestream: false,
+    gclid: queryParams.gclid ? queryParams.gclid : "",
+    utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
   })
 }
 
@@ -235,6 +271,14 @@ export const rudderslabTrackOnClickDocs = (
   isSeekSectionName
 ) => {
   let el
+  let urlString = window !== undefined ? window.location.href : "";
+  let paramString = urlString.split('?')[1];
+  let queryString = new URLSearchParams(paramString);
+  let queryParams = {};
+
+  for (let pair of queryString.entries()) {
+    queryParams[pair[0]] = pair[1];
+  }
   if (isSeekSectionName) {
     try {
       el = checkPrevSibbling1(e.currentTarget.parentElement)
@@ -290,6 +334,8 @@ export const rudderslabTrackOnClickDocs = (
     // we want to track where the link points, whether it is a URL or internal path
     target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
     click_type: eventType,
+    gclid: queryParams.gclid ? queryParams.gclid : "",
+    utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
   })
   // console.log('after track call')
 }

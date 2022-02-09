@@ -25,10 +25,18 @@ import "./src/css/career.css"
 const { DateTime } = require("luxon")
 
 export const onRouteUpdate = (_ref, _ref2) => {
-  var prevLocation = _ref.prevLocation
+  let prevLocation = _ref.prevLocation
 
   function trackRudderStackPage() {
-    var delay = 1000
+    let delay = 1000;
+    let urlString = window !== undefined ? window.location.href : "";
+    let paramString = urlString.split('?')[1];
+    let queryString = new URLSearchParams(paramString);
+    let queryParams = {};
+
+    for (let pair of queryString.entries()) {
+      queryParams[pair[0]] = pair[1];
+    }
 
     window.setTimeout(function () {
       window.rudderanalytics &&
@@ -37,6 +45,8 @@ export const onRouteUpdate = (_ref, _ref2) => {
           timezone: {
             name: DateTime.now().zone.name,
           },
+          gclid: queryParams.gclid ? queryParams.gclid : "",
+          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
         })
     }, delay)
   }
