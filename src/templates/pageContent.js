@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import { graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
@@ -32,6 +32,17 @@ const Testimonial = loadable(() => import("../components/testimonial"))
 
 const PageContent = ({ data, location }) => {
   // console.log("data", data)
+
+  let [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    let checkDarkMode = document.getElementById('main-container');
+    if(checkDarkMode.classList.contains('hero-section')){
+      setDarkMode(true);
+    }else{
+      setDarkMode(false);
+    }
+  }, [])
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -224,7 +235,7 @@ const PageContent = ({ data, location }) => {
             )
           } else if (section._type === "comparision_with_title") {
             return (
-              <SegmentComparisonComponent key={section._key} {...section} />
+              <SegmentComparisonComponent key={section._key} {...section} darkMode={darkMode} />
             )
           } else if (section._type === "pricing_comparision_with_title") {
             return (
@@ -265,7 +276,7 @@ const PageContent = ({ data, location }) => {
           } else if (section._type === "centered_content_with_button") {
             return (
               <section key={section._key} id="explorerudderstack_section">
-                <CentredContentWithButton {...section} />
+                <CentredContentWithButton {...section} darkMode={darkMode} />
               </section>
             )
           } else {

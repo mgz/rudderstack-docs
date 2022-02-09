@@ -567,7 +567,7 @@ div > a.transperent-btn:last-child {
     left: 20% !important;
   } */
 }
-@media only screen and (max-width: 767px) and (min-width: 480px) {
+/* @media only screen and (max-width: 767px) and (min-width: 480px) {
   .faq-cta-box {
     left: calc(50% - 227px);
   }
@@ -577,7 +577,7 @@ div > a.transperent-btn:last-child {
     left: calc(50% - 350px);
     max-width: 700px;
   }
-}
+} */
 @media only screen and (min-width: 1024px) {
   .faq-cta-box {
     left: 10%;
