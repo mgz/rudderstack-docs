@@ -7,8 +7,85 @@
     top: 90px;
     z-index: 1;
 }
+
+.check_icon::before {
+    content: "";
+    background: url("../../../images/check-pricing.svg") no-repeat;
+    background-position: center;
+    width: 75%;
+    height: 100%;
+    background-size: 70% auto;
+    top: 0;
+    left: 50%;
+    padding: 12px;
+    margin-right: 22px;
+}
+.line_image::before{
+    content: "";
+    width: 25px;
+    height: 4px;
+    border-radius: 4px;
+    display: block;
+    background: #ffffff;
+    margin: 0px auto;
+}
+.check_comparison::before{
+    background-size: 100%;
+    margin-right:0px;
+}
+
 .freeplan_wrapper{
     background-color: #070e1f;
     position: sticky;
     top: 50px;
+}
+.upper_row_wrapper{
+    background-color: #070e1f;
+    border-radius: 15px;
+}
+.upper_row{
+    border-radius: 20px;
+    justify-content: flex-end;
+    position: sticky;
+    z-index: 1;
+    top:90px;
+}
+.upper_row .grad_bg{
+    background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.21) 100%);
+}
+.table_inside_contain .grad_bg:nth-child(2n-1){
+    background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.21) 100%);
+}
+@media screen and (max-width:1023px) {
+    .upper_row{
+        top:50px;
+    }
+    .upper_row_wrapper{
+        border-radius: 0;
+    }
+    .logo_compare{
+        max-width: 170px;
+        width: 100%;
+    }
+    .table_inside_contain .grad_bg:nth-child(2n){
+        background: radial-gradient(100% 7106.9% at 4.49% 0%, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.21) 100%);
+    }
+    .table_inside_contain .grad_bg:nth-child(2n-1){
+        background: transparent;
+    }
+    .competitor_comparison_wrapper{
+        padding-top: 45px;
+    }
+}
+@media screen and (max-width:767px) {
+    .logo_compare{
+        max-width: 150px;
+        width: 100%;
+    }
+}
+@media screen and (max-width:375px) {
+    .logo_compare{
+        max-width: 120px;
+        width: 100%;
+    }
 }
