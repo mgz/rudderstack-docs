@@ -35,6 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
+        resolveSiteUrl: () => "https://www.rudderstack.com",
         output: `/`,
       },
     },
@@ -70,7 +71,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
-        forceBase64Format: `webp`, 
+        forceBase64Format: `webp`,
         defaults: {
           formats: [`auto`, `webp`],
         },
@@ -225,7 +226,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon2.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
