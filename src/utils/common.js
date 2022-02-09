@@ -115,14 +115,6 @@ export const rudderslabTrackOnClick = (
   isSeekSectionName
 ) => {
   let el;
-  let urlString = window !== undefined ? window.location.href : "";
-  let paramString = urlString.split('?')[1];
-  let queryString = new URLSearchParams(paramString);
-  let queryParams = {};
-
-  for (let pair of queryString.entries()) {
-    queryParams[pair[0]] = pair[1];
-  }
 
   if (isSeekSectionName) {
     try {
@@ -158,9 +150,7 @@ export const rudderslabTrackOnClick = (
     // e.target.baseURI,
     // we want to track where the link points, whether it is a URL or internal path
     target_url: e.target.href ? e.target.href : e.target.baseURI,
-    click_type: eventType,
-    gclid: queryParams.gclid ? queryParams.gclid : "",
-    utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
+    click_type: eventType
   })
 }
 
