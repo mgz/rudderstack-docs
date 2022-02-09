@@ -35,6 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
+        resolveSiteUrl: () => "https://www.rudderstack.com",
         output: `/`,
       },
     },
