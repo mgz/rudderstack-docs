@@ -41,6 +41,7 @@ const queries = [
       let ignorePaths = ["LICENSE", "contributing"]
       data.docs.edges.map(row => {
         let tmpString = row.node.excerpt
+        // console.log('slug', row.node.slug)
         //extract header paragraph
         let strPos =
           ignorePaths.indexOf(row.node.slug) === -1 &&
