@@ -95,5 +95,4 @@ const CompetitorComparison = props => {
     )
 }
 
-
 export default CompetitorComparison
