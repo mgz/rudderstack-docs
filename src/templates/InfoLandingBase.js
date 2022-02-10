@@ -54,11 +54,12 @@ const InfoLandingBase = ({ data, location }) => {
           {data.sanityInfoLandingPage._rawPagebuildersection.map(
             (node, index) => {
               switch (node._type) {
+                case "two_columns_with_form":
+                  return <InfoLandingHeroWithForm />
                 case "left_right_content_with_image_and_bullet_items":
-                  return  <CompetitorComparison />
+                  return <InfoLandingHero data={node} key={node._key} />
                    {/* <CompetitorCenterContent /> */}
-                  {/* <InfoLandingHeroWithForm />  */}
-                 {/*  <InfoLandingHero data={node} key={node._key} /> */} 
+                 {/*   <CompetitorComparison /> */}
                 case "left_right_content_and_bullet_items":
                   return <InfoLandingAbout data={node} key={node._key} />
                 case "left_right_content_with_logos_and_testimonial":
