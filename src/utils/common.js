@@ -234,6 +234,14 @@ export const rudderslabTrackOnYoutubeVideoPlaybackDocs = (title, event) => {
     return
   }
 
+  let urlString = window !== undefined ? window.location.href : "";
+  let paramString = urlString.split('?')[1];
+  let queryString = new URLSearchParams(paramString);
+  let queryParams = {};
+
+  for (let pair of queryString.entries()) {
+    queryParams[pair[0]] = pair[1];
+  }
 
   window.rudderanalytics.track("video_playback_started", {
     page_title: document.title,

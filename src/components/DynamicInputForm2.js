@@ -192,7 +192,15 @@ const DynamicInputForm = ({
       }
       setIsLoading(true)
 
-      var params = new URLSearchParams(document.location.search.substring(1))
+      let params = new URLSearchParams(document.location.search.substring(1));
+      let urlString = window !== undefined ? window.location.href : "";
+      let paramString = urlString.split('?')[1];
+      let queryString = new URLSearchParams(paramString);
+      let queryParams = {};
+
+      for (let pair of queryString.entries()) {
+        queryParams[pair[0]] = pair[1];
+      }
 
       window.rudderanalytics.identify(
         data[formDefinition.tracking_field_name],
@@ -211,6 +219,8 @@ const DynamicInputForm = ({
           utm_term: params.get("utm_term"),
           raid: params.get("raid"),
           test_user: params.get("test_user"),
+          gclid: queryParams.gclid ? queryParams.gclid : "",
+          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
         },
         {
           integrations: {
@@ -240,6 +250,8 @@ const DynamicInputForm = ({
           utm_term: params.get("utm_term"),
           raid: params.get("raid"),
           test_user: params.get("test_user"),
+          gclid: queryParams.gclid ? queryParams.gclid : "",
+          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
         },
         {
           traits: {
@@ -268,6 +280,8 @@ const DynamicInputForm = ({
           utm_term: params.get("utm_term"),
           raid: params.get("raid"),
           test_user: params.get("test_user"),
+          gclid: queryParams.gclid ? queryParams.gclid : "",
+          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
         }),
         headers: {
           "Content-Type": "application/json",
