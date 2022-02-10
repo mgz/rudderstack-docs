@@ -105,6 +105,7 @@ const SubscriptionV2 = props => {
                 <button
                   className="sign-up-text block font-bold py-3 px-10 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center mx-auto"
                   type={"submit"}
+                  onClick={e => formSubmitted(e)}
                 >
                   Sign Up for Newsletter
                 </button>
