@@ -3,11 +3,14 @@ import PortableText from "./portableText"
 import Cookies from "universal-cookie"
 import { rudderslabTrackOnClick } from "../utils/common"
 
+
+
 const WebisteBanner = props => {
   const cookies = new Cookies()
   const [showBanner, setShowBanner] = useState(
-    props.banner_visibility === "every_visit"
-      ? true
+    props.banner_visibility === "every_visit" &&
+      cookies.get(`viewed_website_banner-${props._key}`) === "yes"
+      ? false
       : props.banner_visibility === "only_once" &&
         cookies.get(`viewed_website_banner-${props._key}`) === "yes"
       ? false
@@ -17,14 +20,15 @@ const WebisteBanner = props => {
       : false
   )
 
-  useEffect(() => {
-    let addNewClass = document.getElementById("nav-header")
-    if (showBanner) {
-      addNewClass.classList.add("top-header-show")
-    } else {
-      addNewClass.classList.remove("top-header-show")
+  /* useEffect(() => {
+    let addNewClass= document.getElementById("nav-header");
+    if(showBanner) {
+      addNewClass.classList.add('top-header-show');
     }
-  }, [showBanner])
+    else {
+      addNewClass.classList.remove('top-header-show');
+    }
+  }, [showBanner]) */
 
   useEffect(() => {
     let tmpShowBanner =
@@ -112,10 +116,10 @@ const WebisteBanner = props => {
   )
 
   return props._type && props._type === "website_banner_top_sticky" ? (
-    <div
-      id="box"
+
+    <div id="box"
       className={`${
-        showBanner === true ? "block" : "hidden"
+        showBanner ? "block" : "hidden"
       } font-custom w-full top-0 left-0 py-2 z-40 flex justify-between items-center px-4 website-banner-top`}
       style={{
         backgroundColor: props.banner_background_color,
@@ -142,6 +146,7 @@ const WebisteBanner = props => {
               path: "/",
               expires: date,
             })
+
           }}
           className="cursor-pointer font-bold"
         >
@@ -151,6 +156,8 @@ const WebisteBanner = props => {
         <span />
       )}
     </div>
+
+
   ) : null
 }
 

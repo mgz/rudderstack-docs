@@ -58,6 +58,17 @@ export const query = graphql`
 const Page = props => {
   const { data, errors } = props
 
+  let [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    let checkDarkMode = document.getElementById('main-container');
+    if(checkDarkMode.classList.contains('hero-section')){
+      setDarkMode(true);
+    }else{
+      setDarkMode(false);
+    }
+  }, [])
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const sections = gsap.utils.toArray('.triggers');

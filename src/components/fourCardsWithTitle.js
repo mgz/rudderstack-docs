@@ -22,7 +22,7 @@ const FourCardsWithTitle = props => {
       </div>
       <div className="max-w-6xl px-0 md:px-3 mx-auto">
         {/*Data WorkFlow*/}
-        <div className="flex flex-wrap flex-row ">
+        <div className="flex flex-wrap flex-row justify-center lg:justify-start">
           {props.four_card_items.map(item => {
             const link_display_as_button = item.addlink
               ? item.addlink.cmn_display_as_button

@@ -673,7 +673,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
           <div className="h-full flex flex-col justify-center text-center py-10 px-8 items-center ">
             <div className="h-8 mb-2">
               <img
-                src={page_data.destinationLogoImgUrl+'?auto=format'}
+                src={page_data.destinationLogoImgUrl}
                 className="h-8 m-auto"
                 alt="RudderStack animation"
                 placeholder="tracedSVG"

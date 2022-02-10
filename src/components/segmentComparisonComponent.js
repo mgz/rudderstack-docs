@@ -94,12 +94,12 @@ const SegmentComparisonComponent = props => {
           {props.title}
         </h2>
 
-        <div className="hidden sm:block w-auto max-w-screen-lg m-auto">
+        <div className="hidden lg:block w-auto max-w-screen-lg m-auto">
           <table className="comparision-table relative sm:w-full table-fixed font-custom bg-white text-grayColor-custom">
             <thead>
               <tr>
                 <th
-                  
+
                   className={`${
                     sticky ? "sticky" : ""
                   } top-14 lg:top-20 bg-white z-10`}
@@ -175,7 +175,7 @@ const SegmentComparisonComponent = props => {
                           </td>
                           <td className="text-base py-4 px-12 w-1/4">
                             {row.rudderstack_val === "<<CHECK>>" && (
-                              <span className={`check-icon`} />
+                              <span className={`check-icon ${!props.darkMode ? 'light-check-icon' : ''}`} />
                             )}
                             {row.rudderstack_val === "<<UNCHECK>>" && (
                               <StaticImage
@@ -192,7 +192,7 @@ const SegmentComparisonComponent = props => {
                           </td>
                           <td className="text-base py-4 px-12 w-1/4">
                             {row.segment_val === "<<CHECK>>" && (
-                              <span className={`check-icon`} />
+                              <span className={`check-icon ${!props.darkMode ? 'light-check-icon' : ''}`} />
                             )}
                             {row.segment_val === "<<UNCHECK>>" && (
                               <StaticImage
@@ -266,7 +266,7 @@ const SegmentComparisonComponent = props => {
                               } text-lg text-left font-medium text-grayColor-custom leading-7 flex py-3 pr-4`}
                             >
                               {/* {(row[oo] === "<<CHECK>>" || row[oo] !== "<<UNCHECK>>") && ( */}
-                              <span className={`check-icon`} />
+                              <span className={`check-icon ${!props.darkMode ? 'light-check-icon' : ''}`} />
                               {/* )} */}
                               <div className="flex flex-col pl-4">
                                 {row.title}
