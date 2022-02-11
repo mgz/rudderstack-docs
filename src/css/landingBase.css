@@ -29,6 +29,10 @@
     left: 0px;
     right: 0px;
 }
+.usecase-right-part .section-divider{
+    bottom: auto;
+    top: 0;
+}
 /* .info-landing-cta{
     color: #ffffff;
     background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);

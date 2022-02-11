@@ -10,7 +10,7 @@ const CompetitorComparison = props => {
             <div className="landing-container flex flex-col text-center items-center">
                 <h1 className="landing-section-title">RudderStack vs. Snowplow</h1>
                 <div className="mt-2 lg:mt-14 w-full relative">
-                    <div className={`${s.table_heading} block lg:hidden text-darkScheme-btnSecondaryBg flex justify-center lg:justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl text-left uppercase font-bold`}>
+                    <div className="block lg:hidden  text-darkScheme-btnSecondaryBg flex justify-center lg:justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl text-left uppercase font-bold">
                         <h3> CORE FEATURES </h3>
                     </div>
                     <div className={`${s.upper_row} flex`}>
@@ -31,8 +31,8 @@ const CompetitorComparison = props => {
                         </div>
                     </div>
 
-                    <div className={`${s.main_table_content} `}>
-                        <div className={`${s.table_heading} hidden lg:block text-darkScheme-btnSecondaryBg flex justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl text-left uppercase font-bold`}>
+                    <div>
+                        <div className="hidden lg:block text-darkScheme-btnSecondaryBg flex justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl text-left uppercase font-bold">
                             <h3> CORE FEATURES </h3>
                         </div>
                         <div className={`${s.table_inside_contain}`}>

@@ -44,7 +44,12 @@ h3.hero_subtitle{
     margin-top: 18px;
 }
 .usecase_left_content{
-    padding: 41px 50px 80px 70px
+    padding: 41px 50px 80px 68px;
+    background-image: url("../../../images/blog-overlay.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-color: #080F20;
 }
 .usecase_right_content{
     width: 100%;
@@ -127,7 +132,7 @@ h3.hero_subtitle{
         margin: 10px 0;
     }
     .usecase_left_content{
-        padding: 28px 20px;
+        padding: 28px 22px;
     }
     .usecase_text{
         font-size: 16px;
