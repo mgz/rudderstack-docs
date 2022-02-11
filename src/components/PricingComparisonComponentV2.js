@@ -187,7 +187,7 @@ const PricingComparisonComponentV2 = props => {
                                     <div className="py-7 px-10 text-lg text-left rounded-tl-2xl rounded-bl-2xl text-darkScheme-textPrimary opacity-50 tab-first">
                                       {row.title}
                                     </div>
-                                    <div className="flex pricing-values-block">
+                                    <div className="flex pricing-values-block items-center">
                                       <div className="text-base py-4 w-1/3">
                                         {row.free_val === "<<CHECK>>" && (
                                           <span className={`check-icon check-comparison`} />
