@@ -70,6 +70,9 @@
   @apply top-1;
   @apply left-0;
 }
+.hero-section .agreement-description li::before{
+  filter: brightness(0) invert(1);
+}
 .agreement-description li li::before {
   content: none;
 }
