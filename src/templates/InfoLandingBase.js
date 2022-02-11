@@ -55,7 +55,7 @@ const InfoLandingBase = ({ data, location }) => {
             (node, index) => {
               switch (node._type) {
                 case "two_columns_with_form":
-                  return <InfoLandingHeroWithForm />
+                  return <InfoLandingHeroWithForm data={node} key={node._key}  />
                 case "left_right_content_with_image_and_bullet_items":
                   return <InfoLandingHero data={node} key={node._key} />
                    {/* <CompetitorCenterContent /> */}
