@@ -6,11 +6,11 @@ import { rudderslabTrackOnClick } from "../utils/common"
 
 
 const PricingComparisonComponentV2 = props => {
-  const [sticky, setSticky] = useState(true)
+  /* const [sticky, setSticky] = useState(true)
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll, { passive: true })
-  }, [])
+  }, []) */
 
   const handleScroll = () => {
     // console.log(
@@ -31,7 +31,7 @@ const PricingComparisonComponentV2 = props => {
     //         .getElementsByClassName("pricing-table")[0]
     //         .getBoundingClientRect().top
     // )
-    if (
+    /* if (
       window.scrollY >
       window.scrollY +
         document
@@ -41,7 +41,7 @@ const PricingComparisonComponentV2 = props => {
       setSticky(true)
     } else {
       setSticky(false)
-    }
+    } */
 
     // if (
     //   document.getElementsByClassName("pricing-table")[0].offsetHeight -
@@ -124,147 +124,143 @@ const PricingComparisonComponentV2 = props => {
         </h2>
 
         <div className="hidden lg:block mt-14 lg:px-4 px-6">
-          <table className="pricing-table relative sm:w-full table-fixed font-custom text-grayColor-custom">
-            <thead>
-              <tr>
-                <th
-                  className={`${
-                    sticky ? "sticky" : ""
-                  } z-10 sticky-pricing-banner triggers`}
-                >
-                  {""}
-                </th>
-
+          <div className="pricing-table relative sm:w-full font-custom text-grayColor-custom">
+            <div className="flex sticky z-10 sticky-pricing-banner">
+              <div
+                className={`tab-first`}
+              >
+                {""}
+              </div>
+              <div className="pricing-values-block flex">
                 {props.pricing_columns.map((col, i) => {
                   return (
-                    <th
+                    <div
                       key={col._key}
-                      className={`${
-                        sticky ? "sticky" : ""
-                      } z-10 sticky-pricing-banner triggers`}
+                      className={`w-1/3 ellipse-block`}
                     >
-                      <div className="ellipse flex items-center justify-center h-20">
+                      <div className="flex items-center justify-center h-20">
                         <Image props={col.image.asset._ref} />
                       </div>
-                      <div className={`text-darkScheme-textPrimary text-3xl-3`}>
+                      <div className={`text-darkScheme-textPrimary text-3xl-3 font-bold`}>
                         {col.title}
                         <br />
                         <span className="text-lg text-grayColor-lighter">
                           {col.subtitle}
                         </span>
                       </div>
-                    </th>
+                    </div>
                   )
                 })}
-              </tr>
-            </thead>
-            <tbody>
+              </div>
+            </div>
+            <div>
               {pricingComparisionData.map((group, idx) => {
                 return (
-                  <tr className="triggers" key={group.group}>
-                      <td colSpan={"4"}>
-                        <table className="w-full">
-                          <tbody>
+                  <div className="triggers" key={group.group}>
+                      <div>
+                        <div className="w-full">
+                          <div>
                             <React.Fragment>
                               {idx !== 0 && (
-                                <tr key={`${group.group}-x`}>
-                                  <td className="p-2 text-primary text-lg text-left uppercase font-bold col-span-4">
+                                <div key={`${group.group}-x`}>
+                                  <div className="p-2 text-primary text-lg text-left uppercase font-bold">
                                     &nbsp;
-                                  </td>
-                                </tr>
+                                  </div>
+                                </div>
                               )}
-                              <tr key={group.group}>
-                                <td className="p-4 text-darkScheme-btnSecondaryBg text-2xl text-left uppercase font-bold" colSpan={"2"}>
+                              <div key={group.group}>
+                                <div className="px-10 py-7 text-darkScheme-btnSecondaryBg text-2xl text-left uppercase font-bold" >
                                   {group.group}
-                                </td>
-                              </tr>
+                                </div>
+                              </div>
                               {group.nodes.map((row, l_index) => {
                                 //   console.log(row, "sssw")
                                 return (
-                                  <tr
+                                  <div
                                     key={row.title}
                                     className={`${
                                       l_index % 2 === 0
                                         ? "grad-bg rounded-2xl"
                                         : "bg-transparent"
-                                    }`}
+                                    } flex items-center`}
                                   >
-                                    <td className="p-4 text-lg text-left w-1/4 rounded-tl-2xl rounded-bl-2xl text-darkScheme-textPrimary opacity-50">
+                                    <div className="py-7 px-10 text-lg text-left rounded-tl-2xl rounded-bl-2xl text-darkScheme-textPrimary opacity-50 tab-first">
                                       {row.title}
-                                    </td>
-
-                                    <td className="text-base py-4 px-12 w-1/4">
-                                      {row.free_val === "<<CHECK>>" && (
-                                        <span className={`check-icon check-comparison`} />
-                                      )}
-                                      {row.free_val === "<<UNCHECK>>" && (
-                                        <span className={`line-image`} />
-                                      )}
-                                      {row.free_val !== "<<UNCHECK>>" &&
-                                        row.free_val !== "<<CHECK>>" && (
-                                          <span className="font-normal text-darkScheme-textPrimary">
-                                            {row.free_val}
-                                          </span>
+                                    </div>
+                                    <div className="flex pricing-values-block">
+                                      <div className="text-base py-4 w-1/3">
+                                        {row.free_val === "<<CHECK>>" && (
+                                          <span className={`check-icon check-comparison`} />
                                         )}
-                                    </td>
-
-                                    <td className="text-base py-4 px-12 w-1/4">
-                                      {row.pro_val === "<<CHECK>>" && (
-                                        <span className={`check-icon check-comparison`} />
-                                      )}
-                                      {row.pro_val === "<<UNCHECK>>" && (
-                                        <span className={`line-image`} />
-                                      )}
-                                      {row.pro_val !== "<<UNCHECK>>" &&
-                                        row.pro_val !== "<<CHECK>>" && (
-                                          <span className="font-normal text-darkScheme-textPrimary">
-                                            {row.pro_val}
-                                          </span>
+                                        {row.free_val === "<<UNCHECK>>" && (
+                                          <span className={`line-image`} />
                                         )}
-                                    </td>
+                                        {row.free_val !== "<<UNCHECK>>" &&
+                                          row.free_val !== "<<CHECK>>" && (
+                                            <span className="font-normal text-darkScheme-textPrimary">
+                                              {row.free_val}
+                                            </span>
+                                          )}
+                                      </div>
 
-                                    <td className="text-base py-4 px-12 w-1/4 rounded-br-2xl rounded-tr-2xl">
-                                      {row.enterprice_val === "<<CHECK>>" && (
-                                        <span className={`check-icon check-comparison`} />
-                                      )}
-                                      {row.enterprice_val === "<<UNCHECK>>" && (
-                                        <span className={`line-image`} />
-                                      )}
-                                      {row.enterprice_val !== "<<UNCHECK>>" &&
-                                        row.enterprice_val !== "<<CHECK>>" &&
-                                        row.enterprice_val !== "TALKTOSALES" && (
-                                          <span className="font-normal text-darkScheme-textPrimary">
-                                            {row.enterprice_val}
-                                          </span>
+                                      <div className="text-base py-4 w-1/3">
+                                        {row.pro_val === "<<CHECK>>" && (
+                                          <span className={`check-icon check-comparison`} />
                                         )}
+                                        {row.pro_val === "<<UNCHECK>>" && (
+                                          <span className={`line-image`} />
+                                        )}
+                                        {row.pro_val !== "<<UNCHECK>>" &&
+                                          row.pro_val !== "<<CHECK>>" && (
+                                            <span className="font-normal text-darkScheme-textPrimary">
+                                              {row.pro_val}
+                                            </span>
+                                          )}
+                                      </div>
 
-                                      {row.enterprice_val === "TALKTOSALES" && (
-                                        <Link
-                                          to="/enterprise-quote"
-                                          className="text-sm  leading-sm font-bold py-2 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary mx-auto"
-                                          target="_blank"
-                                          rel="noreferrer"
-                                          onClick={e =>
-                                            rudderslabTrackOnClick("link", group.group, e)
-                                          }
-                                        >
-                                          Talk to sales
-                                        </Link>
-                                      )}
-                                    </td>
-                                  </tr>
+                                      <div className="text-base py-4 w-1/3 rounded-br-2xl rounded-tr-2xl">
+                                        {row.enterprice_val === "<<CHECK>>" && (
+                                          <span className={`check-icon check-comparison`} />
+                                        )}
+                                        {row.enterprice_val === "<<UNCHECK>>" && (
+                                          <span className={`line-image`} />
+                                        )}
+                                        {row.enterprice_val !== "<<UNCHECK>>" &&
+                                          row.enterprice_val !== "<<CHECK>>" &&
+                                          row.enterprice_val !== "TALKTOSALES" && (
+                                            <span className="font-normal text-darkScheme-textPrimary">
+                                              {row.enterprice_val}
+                                            </span>
+                                          )}
+
+                                        {row.enterprice_val === "TALKTOSALES" && (
+                                          <Link
+                                            to="/enterprise-quote"
+                                            className="text-sm  leading-sm font-bold py-2 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary mx-auto"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            onClick={e =>
+                                              rudderslabTrackOnClick("link", group.group, e)
+                                            }
+                                          >
+                                            Talk to sales
+                                          </Link>
+                                        )}
+                                      </div>
+                                    </div>
+                                  </div>
                                 )
                               })}
                             </React.Fragment>
-                          </tbody>
-                      </table>
-                    </td>
-                  </tr>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
               )
               })}
 
-            </tbody>
-          </table>
+            </div>
+          </div>
           <div className="mt-20">
             <div className="inline-block mr-4">
               <a
@@ -297,7 +293,7 @@ const PricingComparisonComponentV2 = props => {
                 <div className="pricing-wrapper w-1/3" key={oo._key}>
                   <div className="plan-header">
                     <div className="p-6 md:pt-8 md:pb-4">
-                      <div className="ellipse flex items-center justify-center h-24">
+                      <div className="ellipse flex items-center justify-center lg:h-24 h-14">
                         <Image props={oo.image.asset._ref} />
                       </div>
                       <h3 className="font-medium leading-tight text-darkScheme-textPrimary text-base">
