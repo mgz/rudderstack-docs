@@ -45,7 +45,8 @@
     margin-right:0px;
 }
 .pricing-pointers{
-    width: 70%;
+    width: 80%;
+    font-size: 20px;
 }
 .pricing-pointer-list{
     margin-bottom: 10px;
@@ -96,6 +97,21 @@
 .sticky-pricing-banner.sticky{
     top: 90px;
     background: #070e1f;
+}
+.tab-first{
+    width: 400px;
+}
+.pricing-values-block{
+    width: calc(100% - 400px);
+}
+.ellipse-block:first-child img{
+    width: 40px;
+}
+.ellipse-block:nth-child(2) img{
+    width: 50px;
+}
+.ellipse-block:last-child img{
+    width: 60px;
 }
 @media only screen and (max-width: 1024px){
     .sticky-pricing-banner.sticky, .plan-header{
