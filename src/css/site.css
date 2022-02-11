@@ -621,6 +621,9 @@ body {
 .hero-section .agreement-description p{
   @apply text-darkScheme-textPrimary;
 }
+.hero-section .frtxt-contnt p{
+  @apply text-darkScheme-textPrimary;
+}
 .hero-content p {
   color: #17176e;
   font-size: 22px;
