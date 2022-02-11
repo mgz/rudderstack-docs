@@ -1210,7 +1210,7 @@ exports.createPages = async ({ graphql, actions }) => {
     let splitPath = edge.node.slug.current.split('/');
     const path = splitPath.length > 1 ? splitPath[1] : `/${edge.node.slug.current}/`
 
-    if(splitPath[0] !== "new-theme"){
+    if(splitPath[0] !== "curr-theme"){
       createPage({
         path,
         component: require.resolve("./src/templates/request-demo.js"),
