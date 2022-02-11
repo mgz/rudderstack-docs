@@ -53,14 +53,6 @@ const PortableText = ({ blocks, className, trackSectionHeader }) => {
       // serializers={{...serializers,trackSectionHeader:trackSectionHeader}}
       serializers={{
         types: {
-          // block: props =>
-          //   // Check if we have an override for the “style”
-          //   overrides[props.node.style]
-          //     ? // if so, call the function and pass in the children, ignoring
-          //       // the other unnecessary props
-          //       overrides[props.node.style]({ children: props.children })
-          //     : // otherwise, fallback to the provided default with all props
-          //       BlockContent.defaultSerializers.types.block(props),
           large_quoted_text: LargeQuotedText,
           authorReference: AuthorReference,
           mainImage: ({ node }) => <MainImage mainImage={node} alt="" />,

@@ -20,7 +20,7 @@ const WebisteBanner = props => {
       : false
   )
 
-  /* useEffect(() => {
+  useEffect(() => {
     let addNewClass= document.getElementById("nav-header");
     if(showBanner) {
       addNewClass.classList.add('top-header-show');
@@ -28,7 +28,7 @@ const WebisteBanner = props => {
     else {
       addNewClass.classList.remove('top-header-show');
     }
-  }, [showBanner]) */
+  }, [showBanner])
 
   useEffect(() => {
     let tmpShowBanner =

@@ -18,7 +18,7 @@ const MainImage = ({ mainImage, width = 1200, _key }) => {
       loading="lazy"
       key={_key}
       alt={_key}
-      src={imgUrl+'?auto=format'}
+      src={imgUrl}
     />
   ) : (
     <></>

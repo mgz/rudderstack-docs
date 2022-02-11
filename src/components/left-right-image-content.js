@@ -1,11 +1,12 @@
-import React from "react"
+import React, {useState} from "react"
 import PortableText from "./portableText"
 import Image from "./image"
 import Link from "gatsby-link"
 import { StaticImage } from "gatsby-plugin-image"
 import { rudderslabTrackOnClick } from "../utils/common"
 
-const LeftRightImgCnt = props => {
+const LeftRightImgCnt = (props) => {
+
   const maintitle = props.leftrightcontentmaintitle
     ? props.leftrightcontentmaintitle
     : ""
@@ -13,6 +14,7 @@ const LeftRightImgCnt = props => {
     ? props.leftrightcontentsmalltitle
     : ""
   const contents = props.leftrightimageblock
+  let showDivider = props.location !== undefined && !props.location.pathname.startsWith('/customer') ? true : false
   // console.log("props", props)
   return (
     <>
@@ -230,7 +232,7 @@ const LeftRightImgCnt = props => {
                         ) : (
                           <h3
                             className={`mt-2 mb-4 pb-2 text-2xl md:text-3xl-3  ${
-                              props.applyGradientColorTheme
+                              props.location !== undefined && props.location.pathname.startsWith('/customer') ? "text-blueNew-midnight" : props.applyGradientColorTheme
                                 ? "text-white"
                                 : titleColor === "midnightBlue"
                                 ? "text-darkScheme-textPrimary"
@@ -430,7 +432,7 @@ const LeftRightImgCnt = props => {
                       ) : (
                         <h3
                           className={`mt-10 md:mt-2 mb-4 pb-2 text-2xl md:text-3xl-3 ${
-                            props.applyGradientColorTheme
+                            props.location !== undefined && props.location.pathname.startsWith('/customer') ? "text-blueNew-midnight" : props.applyGradientColorTheme
                               ? "text-white"
                               : titleColor === "midnightBlue"
                               ? "text-darkScheme-textPrimary"
@@ -588,7 +590,7 @@ const LeftRightImgCnt = props => {
             })()
           )}
         </div>
-        <span className="section-border absolute bottom-0 left-0 w-full block"></span>
+        {showDivider && <span className="section-border absolute bottom-0 left-0 w-full block"></span>}
       </section>
     </>
   )
