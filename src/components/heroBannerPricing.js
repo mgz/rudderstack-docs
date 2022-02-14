@@ -62,7 +62,7 @@ const HeroBannerPricing = props => {
                     }`}
                   >
                     <div className="pricing-plan text-center mx-auto">
-                      <div className="px-7 py-9">
+                      <div className="px-6 py-9">
                         {/* <div className="ellipse flex items-center justify-center h-20">
                           <Image props={item.image.asset._ref} />
                         </div> */}
