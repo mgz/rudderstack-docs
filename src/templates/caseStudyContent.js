@@ -13,7 +13,7 @@ import Image from "../components/image"
 import HeroBannerCaseStudies from "../components/heroBannerCaseStudies"
 import CaseStudiesContent from "../components/caseStudiesContent"
 
-// const Layout = loadable(() => 
+// const Layout = loadable(() =>
 //   import("../components/layout")
 // )
 // const LeftRightImgCnt = loadable(() =>
@@ -130,6 +130,7 @@ const CaseStudyContent = ({ data, location }) => {
               <LeftRightImgCnt
                 applyGradientColorTheme={false}
                 {...l_section_info.node._rawSignup}
+                location={location}
               />
             </div>
           )

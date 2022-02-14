@@ -48,6 +48,7 @@ const VerticalLandingPageContent = ({ data, location }) => {
                   key={section._key}
                   {...section}
                   applyGradientColorTheme={false}
+                  location={location}
                 />
               </div>
             )

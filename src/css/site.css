@@ -615,6 +615,15 @@ body {
 .leftrightimgcontent-items .frtxt-contnt p:last-of-type {
   margin-bottom: 0px;
 }
+.gradient-disable .frtxt-contnt p, .gradient-disable .frtxt-contnt li{
+  @apply text-grayColor-custom
+}
+.hero-section .agreement-description p{
+  @apply text-darkScheme-textPrimary;
+}
+.hero-section .frtxt-contnt p{
+  @apply text-darkScheme-textPrimary;
+}
 .hero-content p {
   color: #17176e;
   font-size: 22px;

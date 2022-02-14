@@ -1,6 +1,8 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+const EXCLUDED_SITEMAP_SLUGS = require("./static/sitemap-excluded-slugs")
+
 const { DateTime } = require("luxon")
 
 module.exports = {
@@ -35,8 +37,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        resolveSiteUrl: () => "https://www.rudderstack.com",
         output: `/`,
+        excludes: EXCLUDED_SITEMAP_SLUGS,
       },
     },
     {
@@ -62,8 +64,8 @@ module.exports = {
         path: `${__dirname}/src/images`,
         defaults: {
           quality: 90,
-          formats: [`auto`, `webp`]
-        }
+          formats: [`auto`, `webp`],
+        },
       },
     },
     `gatsby-transformer-sharp`,
@@ -75,7 +77,7 @@ module.exports = {
         defaults: {
           formats: [`auto`, `webp`],
         },
-        defaultQuality: 90
+        defaultQuality: 90,
       },
     },
     {
@@ -226,7 +228,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon2.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
