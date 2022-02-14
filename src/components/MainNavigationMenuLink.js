@@ -85,7 +85,7 @@ const MainNavigationMenuLink = props => {
                                       return (
                                         <li
                                           key={j}
-                                          className="text-base font-custom py-1 lg:py-2 font-bold hover:bg- px-4 lg:px-12"
+                                          className="text-base font-custom py-1 lg:py-2 hover:bg- px-4 lg:px-12"
                                         >
                                           <a
                                             className={`border-b border-solid border-transparent hover:text-darkScheme-btnPrimaryBg`}
