@@ -16,14 +16,14 @@ function IntegrationHero({ data }) {
       <a
         href={data.herocta.btnlink}
         onClick={e => rudderslabTrackOnClick("button", data.herotitle, e)}
-        className="btn-primary-lg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg"
+        className="btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
       >
         {data.herocta.btntext}
       </a>
     )
   } else if (data.herocta && data.herocta.btntext !== "") {
     renderButton = (
-      <span className="btn-primary-lg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg">
+      <span className="btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary">
         <Link
           onClick={e => rudderslabTrackOnClick("button", data.herotitle, e)}
           to={data.herocta.btnlink}

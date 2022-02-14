@@ -217,7 +217,7 @@ const setCardSeparation = () => {
         {showCareer && (<div className="join-team-bottom text-center py-10">
           <h2 className="text-darkScheme-textPrimary font-bold mb-3 lg:text-3xl-3 text-2xl">Join Our Team</h2>
           <p className="text-darkScheme-grayText mb-5">Help us make data engineers the heroes of their companies</p>
-          <a href="https://boards.greenhouse.io/rudderstack" className="btn-primary-lg sm:mr-4 md:mb-0 mb-6 inline-block" target={"_blank"}>View Open Positions</a>
+          <a href="https://boards.greenhouse.io/rudderstack" className="btn-primary-lg sm:mr-4 md:mb-0 mb-6 inline-block border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary" target={"_blank"}>View Open Positions</a>
         </div>)}
         {!showCareer && (<div className="keep-in-touch text-center py-10">
           <h2 className="text-darkScheme-textPrimary font-bold mb-3 lg:text-3xl-3 text-2xl">Keep in touch</h2>

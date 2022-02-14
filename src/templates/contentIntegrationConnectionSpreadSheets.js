@@ -55,7 +55,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               href={"https://app.rudderstack.com/signup?type=freetrial"}
             >
               <span
-                className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
+                className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
               >
                 Sign up for free
               </span>

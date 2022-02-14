@@ -76,7 +76,7 @@ const SingleRowContentVideoLibrary = ({ data, dataWeightWise }) => {
             </p>
             <div className="mt-2 w-full flex justify-between items-center pt-6">
               <a
-                className="btn-primary-lg md:mr-4 md:mb-0 mb-4"
+                className="btn-primary-lg md:mr-4 md:mb-0 mb-4 border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                 href={webinarObj.node.slug.current}
                 onClick={e =>
                   rudderslabTrackOnClick("button", webinarObj.node.title, e)

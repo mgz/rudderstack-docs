@@ -93,7 +93,7 @@ const CareerPage = ({ data, location })  => {
                             </div>
                         </div>
                         <a href="https://boards.greenhouse.io/rudderstack" className="button-wrapper flex justify-center" target={"_blank"}>
-                            <span className="btn-primary-lg"> View Open Positions</span>
+                            <span className="btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"> View Open Positions</span>
                         </a>
 
                         <span class="section-border absolute bottom-0 left-0 w-full block"></span>

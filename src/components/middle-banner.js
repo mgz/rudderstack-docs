@@ -94,9 +94,9 @@ const MiddleBanner = props => {
                               }
                               className={
                                 (btn.btnhiglight === true
-                                  ? "text-darkScheme-textBlack border border-darkScheme-btnPrimaryBg bg-darkScheme-btnPrimaryBg hover:text-darkScheme-btnPrimaryBg hover:bg-transparent"
+                                  ? "text-darkScheme-textPrimary "
                                   : "btn-secondary-lg") +
-                                ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-6 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
+                                ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-6 rounded-lg md:mb-0 mb-4 flex justify-center items-center leading-tight  font-custom cta-btn text-darkScheme-textPrimary bg-darkScheme-btnPrimaryBg border-none`
                               }
                               href={btn.btnlink}
                             >

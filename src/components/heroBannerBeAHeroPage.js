@@ -104,7 +104,7 @@ const HeroBannerBeAHeroPage = props => {
                         (btn.btnhiglight === true
                           ? "btn-primary-lg"
                           : "btn-secondary-lg") +
-                        ` sm:mr-6 md:mb-0 mb-4 cta-btn`
+                        ` sm:mr-6 md:mb-0 mb-4 cta-btn `
                       }
                       onClick={e =>
                         rudderslabTrackOnClick(
@@ -135,7 +135,7 @@ const HeroBannerBeAHeroPage = props => {
                         className={
                           (btn.btnhiglight === true
                             ? "btn-primary-lg"
-                            : "btn-secondary-lg") + ` sm:mr-6 md:mb-0 mb-4 cta-btn`
+                            : "btn-secondary-lg") + ` sm:mr-6 md:mb-0 mb-4 cta-btn border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`
                         }
                       >
                         {btn.btntext}
