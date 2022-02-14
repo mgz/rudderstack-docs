@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from 'react';
 import * as s from './InfoLandingHero.module.css';
 import DynamicInputForm from '../../dynamicInputForm';
 import Image from '../../image';
@@ -8,7 +8,7 @@ const InfoLandingHeroWithForm = (
     showDivider
     ) => {
    let formData = data.data;
-   console.log("some", formData);
+   /* console.log("some", formData); */
     return(
         <section className={`${s.usecase_hero_from} relative landing-hero-form-wrapper`}>
             <div className="section-gradient">
@@ -25,8 +25,8 @@ const InfoLandingHeroWithForm = (
                     </div>
                      <div className={`${s.usecase_right_content} usecase-right-part relative lg:w-1/2 w-full xl:px-19 lg:px-0`}>
                         {showDivider && (<div className='section-divider md:hidden block'></div>)}
-                        <div className={`${s.form_max_width}`}>   
-                            <DynamicInputForm {...formData.input_form}  isFromRequest={true} /> 
+                        <div className={`${s.form_max_width}`}>
+                            <DynamicInputForm {...formData.input_form}  isFromRequest={true} />
                         </div>
                     </div>
                     {showDivider && (<div className='section-divider'></div>)}
@@ -38,4 +38,3 @@ const InfoLandingHeroWithForm = (
 
 export default InfoLandingHeroWithForm
 
- 

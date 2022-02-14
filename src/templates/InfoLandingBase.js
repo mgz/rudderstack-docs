@@ -66,6 +66,8 @@ const InfoLandingBase = ({ data, location }) => {
                   return <InfoLandingTestimonial data={node} key={node._key} />
                 case "title_with_card_items":
                   return <InfoLandingKeyFeatures data={node} key={node._key} />
+                case "left_content_with_link_and_right_image":
+                  return <InfoLeftContentRightImg data={node} key={node._key} />
                 case "left_right_content_with_right_background_image":
                   return <InfoLandingUseCase data={node} key={node._key} />
                 default:
