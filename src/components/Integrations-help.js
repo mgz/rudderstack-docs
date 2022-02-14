@@ -50,7 +50,7 @@ const IntegrationsHelpBox = () => {
     )
 
     window.rudderanalytics.track(
-      "Integrations-sidebar-ReachOut-form",
+      "form_submit",
       {
         page: document.title,
         page_URL: window.location.href,

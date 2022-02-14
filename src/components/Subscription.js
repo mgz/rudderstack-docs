@@ -52,7 +52,7 @@ const Subscription = props => {
     )
 
     window.rudderanalytics.track(
-      props.formId,
+      "form_submit",
       {
         page: document.title,
         page_URL: window.location.href,
@@ -60,7 +60,7 @@ const Subscription = props => {
         timezone: {
           name: DateTime.now().zone.name,
         },
-        form_id: "Blog-header-Subscribe-form",
+        form_id: props.formId,
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
         utm_campaign: params.get("utm_campaign"),
