@@ -38,14 +38,18 @@ h3.hero_subtitle{
 .hero_pointer_image{
     min-height: 46px;
 }
+.form_max_width{
+    max-width: 100%;
+    width: 500px;
+}
 
 /* info landing hero with form css  */
 .usecase_hero_from{
     margin-top: 18px;
 }
 .usecase_left_content{
-    padding: 41px 50px 80px 68px;
-    background-image: url("../../../images/blog-overlay.svg");
+    padding: 48px 50px 80px 68px;
+    background-image: url("../../../images/use-case-herobg.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -64,10 +68,18 @@ h3.hero_subtitle{
 }
 .usecase_section_pera{
     margin-bottom: 44px;
+    max-width: 400px;
+    width: 100%;
 }
 .usecase_text{
     font-size: 24px;
     line-height: 32px;
+}
+.usecase_left_content_wrapper{
+    max-width: 500px;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 @media screen and (max-width:1023px) {
@@ -76,6 +88,10 @@ h3.hero_subtitle{
     }
     .landing_hero_pointers_wrapper{
         margin-top: 15px;
+    }
+    .form_max_width{
+        max-width: 100%;
+        width: 100%;
     }
 }
 @media screen and (max-width:991px) {
@@ -103,6 +119,10 @@ h3.hero_subtitle{
     .landing_hero_pointers_wrapper p{
         font-size: 16px;
         line-height: 22px;
+    }
+    .usecase_left_content_wrapper{
+        max-width: 440px;
+
     }
 }
 
@@ -142,6 +162,9 @@ h3.hero_subtitle{
     }
     .usecase_section_pera{
         margin-bottom: 0;
+    }
+    .usecase_left_content_wrapper, .usecase_section_pera{
+        max-width: 100%;
     }
 }
 

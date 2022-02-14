@@ -14,8 +14,8 @@ const InfoLandingHeroWithForm = (
             <div className="section-gradient">
                 <div className="flex flex-col md:flex-row">
                     <div className={`${s.usecase_left_content} lg:w-1/2 w-full`}>
-                        <div className="lg:w-11/12 w-full">
-                            <div className="w-full lg:max-w-md lg:ml-auto lg:justify-self-end">
+                        <div className="w-full">
+                            <div className={`${s.usecase_left_content_wrapper} w-full lg:ml-auto lg:justify-self-end`}>
                                 <p className={`${s.usecase_text} text-darkScheme-btnSecondaryBg uppercase font-bold`}>{formData.sub_title}</p>
                                 <h1 className={`${s.usecase_section_title} landing-section-title`}>{formData.title}</h1>
                                 <p className={`${s.usecase_section_pera} text-darkScheme-grayText`} >{formData.content[0].children[0].text}</p>
@@ -23,9 +23,11 @@ const InfoLandingHeroWithForm = (
                             </div>
                         </div>
                     </div>
-                     <div className={`${s.usecase_right_content} usecase-right-part relative lg:w-1/2 w-full lg:px-19`}>
+                     <div className={`${s.usecase_right_content} usecase-right-part relative lg:w-1/2 w-full xl:px-19 lg:10`}>
                         {showDivider && (<div className='section-divider md:hidden block'></div>)}
-                             <DynamicInputForm {...formData.input_form}  isFromRequest={true} />
+                        <div className={`${s.form_max_width}`}>   
+                            <DynamicInputForm {...formData.input_form}  isFromRequest={true} /> 
+                         </div>
                     </div>
                     {showDivider && (<div className='section-divider'></div>)}
                 </div>
