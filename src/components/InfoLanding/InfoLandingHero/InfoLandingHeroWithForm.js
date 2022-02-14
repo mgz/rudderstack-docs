@@ -23,11 +23,11 @@ const InfoLandingHeroWithForm = (
                             </div>
                         </div>
                     </div>
-                     <div className={`${s.usecase_right_content} usecase-right-part relative lg:w-1/2 w-full xl:px-19 lg:10`}>
+                     <div className={`${s.usecase_right_content} usecase-right-part relative lg:w-1/2 w-full xl:px-19 lg:px-0`}>
                         {showDivider && (<div className='section-divider md:hidden block'></div>)}
                         <div className={`${s.form_max_width}`}>   
                             <DynamicInputForm {...formData.input_form}  isFromRequest={true} /> 
-                         </div>
+                        </div>
                     </div>
                     {showDivider && (<div className='section-divider'></div>)}
                 </div>

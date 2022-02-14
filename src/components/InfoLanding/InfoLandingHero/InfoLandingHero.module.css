@@ -49,19 +49,12 @@ h3.hero_subtitle{
 }
 .usecase_left_content{
     padding: 48px 50px 80px 68px;
-    background-image: url("../../../images/use-case-herobg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
     background-color: #080F20;
 }
 .usecase_right_content{
-    width: 100%;
-    background-image: url('../../../images/form-bg-vector.png');
-    height: 850px;
+    width: 100%; 
+    background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
     display: flex;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .usecase_section_title{
     margin: 20px 0;
@@ -81,17 +74,18 @@ h3.hero_subtitle{
     padding-left: 0;
     padding-right: 0;
 }
-
+@media screen and (max-width:1280px) {
+    .form_max_width{
+        max-width: 100%;
+        width: 100%;
+    }
+} 
 @media screen and (max-width:1023px) {
     .landing_hero_left{
         margin-bottom: 35px;
     }
     .landing_hero_pointers_wrapper{
         margin-top: 15px;
-    }
-    .form_max_width{
-        max-width: 100%;
-        width: 100%;
     }
 }
 @media screen and (max-width:991px) {
