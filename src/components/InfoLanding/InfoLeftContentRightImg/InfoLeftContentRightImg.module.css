@@ -10,7 +10,11 @@
     margin-bottom: 25px;
     color: #C4C4C4;
 }
-
+.left_content_title{
+    font-size: 34px;
+    color: #ffffff;
+    font-weight: bold;
+}
 @media screen and (max-width:1023px){
     .content_wrapper_left{
         max-width: 100%;

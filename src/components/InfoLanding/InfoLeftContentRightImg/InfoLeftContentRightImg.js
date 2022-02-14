@@ -1,5 +1,6 @@
 import { Link } from 'gatsby';
 import React from 'react';
+import Image from '../../image';
 import * as s from './InfoLeftContentRightImg.module.css';
 
 const InfoLeftContentRightImg = (
@@ -13,7 +14,7 @@ const InfoLeftContentRightImg = (
             <div className='landing-container'>
                 <div className='content-wrapper flex lg:flex-row flex-col justify-between gap-10'>
                         <div className={`${s.content_wrapper_left}`}>
-                            <h2 className='landing-section-title'>{useCaseData.title}</h2>
+                            <h2 className={s.left_content_title}>{useCaseData.title}</h2>
                             <p className={`${s.section_pera}`}>{useCaseData.content[0].children[0].text}</p>
                             <div>
                                 <a href="#" className='learn-more'>
@@ -23,7 +24,7 @@ const InfoLeftContentRightImg = (
                             </div>
                         </div>
                         <div className={`img_wrapper_right flex justify-center`}>
-                            <img src="https://cdn.sanity.io/images/97bpcflt/production/e5e3d7a450c7f6522c3d80488f4074d1b528b64f-562x358.svg" />
+                            <Image props={useCaseData.right_image.asset._ref} />
                         </div>
                 </div>
             </div>

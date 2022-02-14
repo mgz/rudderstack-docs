@@ -4,7 +4,7 @@
     padding-right: 0;
     max-width: 476px;
 }
- 
+
 h3.hero_subtitle{
     font-weight: 400;
     margin: 21px 79px  23px 0;
@@ -52,7 +52,7 @@ h3.hero_subtitle{
     background-color: #080F20;
 }
 .usecase_right_content{
-    width: 100%; 
+    width: 100%;
     background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
     display: flex;
 }
@@ -79,7 +79,7 @@ h3.hero_subtitle{
         max-width: 100%;
         width: 100%;
     }
-} 
+}
 @media screen and (max-width:1023px) {
     .landing_hero_left{
         margin-bottom: 35px;
@@ -87,9 +87,18 @@ h3.hero_subtitle{
     .landing_hero_pointers_wrapper{
         margin-top: 15px;
     }
+    .usecase_left_content{
+        padding: 48px 16px;
+    }
+    .form_max_width form{
+        margin: auto;
+    }
+    .usecase_left_content_wrapper, .usecase_section_pera{
+        max-width: 100%;
+    }
 }
 @media screen and (max-width:991px) {
-   
+
     .hero_pointer_item{
         width: 30%;
         align-self: flex-start;
@@ -109,14 +118,10 @@ h3.hero_subtitle{
         font-size: 14px;
         line-height: 21px;
     }
- 
+
     .landing_hero_pointers_wrapper p{
         font-size: 16px;
         line-height: 22px;
-    }
-    .usecase_left_content_wrapper{
-        max-width: 440px;
-
     }
 }
 
