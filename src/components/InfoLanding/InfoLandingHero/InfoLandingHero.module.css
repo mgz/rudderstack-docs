@@ -51,6 +51,9 @@ h3.hero_subtitle{
 .usecase_left_content{
     padding: 41px 50px 80px 68px;
     background-color: #080F20;
+    background-image: url('../../../images/use-case-herobg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .usecase_right_content{
     width: 100%;
