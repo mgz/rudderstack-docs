@@ -168,7 +168,7 @@ function Hero(props) {
                           className={
                             (btn.btnhiglight === true
                               ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` cta-btn flex items-center justify-center`
+                              : "btn-secondary-lg") + ` cta-btn flex items-center justify-center border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`
                           }
                           href={btn.btnlink}
                         >

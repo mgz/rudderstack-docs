@@ -89,7 +89,7 @@ const IntegrationSimilarV2 = ({ data }) => {
 
         {visibleIntegrationCount < eligibleNodes.length && (<div className="w-full my-2 mt-12 text-blueNew-magenta flex justify-center">
           <p
-            className="btn-primary-lg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg w-64 cursor-pointer"
+            className="btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary  w-64 cursor-pointer"
             onClick={() => {
               setVisibleIntegrationCount(visibleIntegrationCount + 6)
             }}
