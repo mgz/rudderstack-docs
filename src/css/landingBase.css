@@ -72,7 +72,7 @@
 .newsletter-input{
     max-width: 276px;
 }
-.sign-up-text{
+.landing-sign-up-text{
     font-size: 14px;
     width: calc(100% - 276px);
 }
@@ -177,7 +177,7 @@ h2.landing-section-title{
         max-width: 100%;
         width: 100%;
     }
-    .landing-newsletter-wrapper .sign-up-text{
+    .landing-newsletter-wrapper .landing-sign-up-text{
         padding:19px 0px 14px 0 !important;
         margin-bottom: 15px;
         background: #ffffff;
@@ -204,7 +204,7 @@ h2.landing-section-title{
         margin-top: 18px;
     }
 
-    .sign-up-text {
+    .landing-sign-up-text {
         font-size: 14px;
     }
     .learn-more {

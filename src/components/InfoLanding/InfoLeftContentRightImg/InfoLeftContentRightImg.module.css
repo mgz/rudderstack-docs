@@ -14,6 +14,8 @@
     font-size: 34px;
     color: #ffffff;
     font-weight: bold;
+    line-height: 40.8px;
+    letter-spacing: -0.04em;
 }
 @media screen and (max-width:1023px){
     .content_wrapper_left{
