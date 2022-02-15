@@ -119,9 +119,9 @@ h2.landing-section-title{
     h2.landing-section-title {
         letter-spacing: -1.4px;
     }
-    /* .landing-container{
+    .landing-container{
         padding: 0 16px;
-    } */
+    }
 }
 @media screen and (max-width:1023px) {
     .learn-more{
