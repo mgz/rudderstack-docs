@@ -20,3 +20,9 @@
         max-width: 100%;
     }
 }
+
+@media screen and (max-width:767px) {
+    .leftContent_rightImg_section{
+        padding: 56px 0;
+    }
+}

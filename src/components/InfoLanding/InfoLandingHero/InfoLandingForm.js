@@ -119,7 +119,7 @@ const InfoLandingForm = props => {
                   }}
                 />
                 <button
-                  className="sign-up-text block font-bold  hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
+                  className="landing-sign-up-text block font-bold  hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
                   type={"submit"}
                   onClick={e => formSubmitted(e)}
                 >

@@ -47,6 +47,9 @@
     .about_section{
         padding: 74px 0 80px;
     }
+    .landing_pointers_general:last-child{
+        margin-bottom: 0;
+    }
 }
 @media screen and (max-width:767px) {
     .about_section{

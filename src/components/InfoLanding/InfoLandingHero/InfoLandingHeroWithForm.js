@@ -12,14 +12,14 @@ const InfoLandingHeroWithForm = (
     return(
         <section className={`${s.usecase_hero_from} relative landing-hero-form-wrapper`}>
             <div className="section-gradient">
-                <div className="flex flex-col lg:flex-row">
+                <div className="flex flex-col md:flex-row">
                     <div className={`${s.usecase_left_content} lg:w-1/2 w-full`}>
                         <div className="w-full">
-                            <div className={`${s.usecase_left_content_wrapper} w-full lg:ml-auto lg:justify-self-end`}>
+                            <div className={`${s.usecase_left_content_wrapper} w-full lg-5 xl:ml-auto lg:justify-self-end`}>
                                 <p className={`${s.usecase_text} text-darkScheme-btnSecondaryBg uppercase font-bold`}>{formData.sub_title}</p>
                                 <h1 className={`${s.usecase_section_title} landing-section-title`}>{formData.title}</h1>
                                 <p className={`${s.usecase_section_pera} text-darkScheme-grayText`} >{formData.content[0].children[0].text}</p>
-                                <Image props={formData.right_image.asset._ref} classes="hidden md:block" />
+                                <Image props={formData.right_image.asset._ref} classes="hidden md:block " />
                             </div>
                         </div>
                     </div>
