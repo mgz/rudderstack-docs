@@ -55,8 +55,8 @@ function HeroBannerVerticalLanding(props) {
                         <span
                           className={
                             (btn.btnhiglight === true
-                              ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4 border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`
+                              ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
                           }
                         >
                           {btn.btntext}
