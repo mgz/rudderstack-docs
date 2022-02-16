@@ -77,6 +77,7 @@
     .testimonial_form{
         justify-content: center;
         display: flex;
+        margin-top: 48px;
     }
     .testimonial_left{
         margin-right: 0;
@@ -87,9 +88,11 @@
     .testimonial_right{
         max-width: 100%;
         width: 100%;
-        margin-top: 70px;
+        margin-top: 30px;
     }
-
+    .landing_logos_wrapper{
+        margin-top: 0;
+    }
 
 }
 @media screen and (max-width:991px) {

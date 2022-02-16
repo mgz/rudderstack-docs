@@ -49,7 +49,7 @@ const MiddleBannerV2 = props => {
               </div>
               <div className="w-full flex flex-col pl-6 md:pl-12 pr-0 md:pr-8 ">
                 {props.small_title && props.small_title !== "" && (
-                  <p className="mb-4 font-bold text-darkScheme-btnSecondaryBg text-xs md:text-2xl">
+                  <p className="mb-4 font-bold text-darkScheme-btnSecondaryBg text-xs md:text-2xl pt-2">
                     {props.small_title}
                   </p>
                 )}

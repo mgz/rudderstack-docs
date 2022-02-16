@@ -42,14 +42,13 @@ h3.hero_subtitle{
     max-width: 100%;
     width: 500px;
     padding-bottom: 72px;
+    padding-top: 10px;
 }
 
 /* info landing hero with form css  */
-.usecase_hero_from{
-    margin-top: 18px;
-}
+
 .usecase_left_content{
-    padding: 41px 50px 80px 68px;
+    padding: 59px 50px 80px 68px;
     background-color: #080F20;
     background-image: url('../../../images/use-case-herobg.png');
     background-repeat: no-repeat;
@@ -82,6 +81,11 @@ h3.hero_subtitle{
     .form_max_width{
         max-width: 100%;
         width: 100%;
+    }
+}
+@media screen and (max-width:1024px) {
+    .usecase_left_content{
+        padding-left: 16px;
     }
 }
 @media screen and (max-width:1023px) {
@@ -168,6 +172,7 @@ h3.hero_subtitle{
     }
     .form_max_width{
         padding-bottom: 0;
+        padding-top: 0;
     }
 }
 
