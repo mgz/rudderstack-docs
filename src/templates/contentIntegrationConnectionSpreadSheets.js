@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import { rudderslabTrackOnClick } from "../utils/common"
 import { StaticImage } from "gatsby-plugin-image"
+import SignupShortForm from "../components/SignupShortForm"
 
 const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
   // console.log("ContentIntegrationConnectionSpreadSheets", pageContext)
@@ -43,8 +44,8 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               {page_data.destinationIntegration} ...and all of your other cloud
               tools.
             </p>
-
-            <a
+            <SignupShortForm />
+            {/* <a
               onClick={e =>
                 rudderslabTrackOnClick(
                   "button",
@@ -59,7 +60,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               >
                 Sign up for free
               </span>
-            </a>
+            </a> */}
             {/*
           <a
             className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
