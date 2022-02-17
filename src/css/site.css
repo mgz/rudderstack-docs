@@ -1506,6 +1506,12 @@ form .disableActive {
     background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
     transition: 0.3s all linear;
 }
+.bg-darkScheme-btnSecondaryBg{
+  background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
+  transition: all 0.3s ease;
+  border: 4px solid transparent;
+}
+
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;
