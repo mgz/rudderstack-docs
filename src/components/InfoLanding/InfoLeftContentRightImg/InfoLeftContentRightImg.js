@@ -23,8 +23,8 @@ const InfoLeftContentRightImg = (
                                 </a>
                             </div>
                         </div>
-                        <div className={`img_wrapper_right flex justify-center`}>
-                            <Image props={useCaseData.right_image.asset._ref} />
+                        <div className={s.img_wrapper_right}>
+                            <Image props={useCaseData.right_image.asset._ref}  />
                         </div>
                 </div>
             </div>

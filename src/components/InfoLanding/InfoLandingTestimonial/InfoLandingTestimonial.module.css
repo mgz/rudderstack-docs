@@ -97,7 +97,7 @@
 }
 @media screen and (max-width:991px) {
     .testimonial_quote{
-        padding: 107px 85px 48px 85px;
+        padding: 107px 85px 78px 85px;
     }
     .testimonial_quotes_icon{
         top: -60px;
@@ -111,7 +111,7 @@
         padding: 45px 0 60px;
     }
     .testimonial_quote{
-        padding: 57px 21px;
+        padding: 57px 21px 78px  21px;
     }
     .testimonial_quotes_icon{
         top: -40px;

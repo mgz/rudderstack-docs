@@ -21,6 +21,9 @@
     .content_wrapper_left{
         max-width: 100%;
     }
+    .img_wrapper_right img{
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width:767px) {
