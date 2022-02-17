@@ -12,7 +12,7 @@
     line-height: 64px;
     color: #ffffff;
     font-weight: bold;
-    letter-spacing: -4px;
+    letter-spacing: -0.04em;
 }
 .pink{
     color: #D692F6;
@@ -28,6 +28,10 @@
     bottom: 0px;
     left: 0px;
     right: 0px;
+}
+.usecase-right-part .section-divider{
+    bottom: auto;
+    top: 0;
 }
 /* .info-landing-cta{
     color: #ffffff;
@@ -62,13 +66,13 @@
     transition-timing-function: ease-out;
     width: 0;
 }
-.newsletter-wrapper{
+.landing-newsletter-wrapper{
     max-width: 445px;
 }
 .newsletter-input{
     max-width: 276px;
 }
-.sign-up-text{
+.landing-sign-up-text{
     font-size: 14px;
     width: calc(100% - 276px);
 }
@@ -80,6 +84,26 @@ h2.landing-section-title{
     background: url('../images/hero-bg-blur.webp') no-repeat;
     background-size: cover;
     background-position: bottom center;
+  }
+  .landing-newsletter-input {
+    background: #8da3e1;
+    height: 50px;
+    flex: 1;
+    outline: none;
+    background: rgb(7, 14, 31);
+    background: radial-gradient(100% 7106.9% at 4.49% 0%,
+    rgb(7 14 31 / 82%) 0%,
+   rgb(7 14 31 / 83%) 100%);
+  }
+  .landing-newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+@media screen and (max-width:1440px) {
+  .landing-hero-form-wrapper .landing-container{
+        max-width: 100%;
+        padding: 0;
+    }
   }
 @media screen and (max-width:1280px) {
     .landing-container{
@@ -95,6 +119,9 @@ h2.landing-section-title{
     h2.landing-section-title {
         letter-spacing: -1.4px;
     }
+    .landing-container{
+        padding: 0 16px;
+    }
 }
 @media screen and (max-width:1023px) {
     .learn-more{
@@ -103,45 +130,67 @@ h2.landing-section-title{
     .lrlm-icon svg {
         width: 20px;
     }
+    .data-img{
+        display: none !important;
+    }
+    .comparison-table .landing-container{
+        padding: 0;
+    }
+}
+@media (min-width:768px) and (max-width:991px) {
+    .landing-newsletter-wrapper .landing-sign-up-text {
+        font-size: 14px;
+    }
 }
 @media screen and (max-width:768px) {
-    /* .newsletter-wrapper .newsletter-block {
-        background: #fff !important;
-    }
-    .signup-form{
-        flex-direction: row;
-    }
-    .newsletter-wrapper .sign-up-text{
-        margin-top: 0;
-        width: auto;
-        padding: 0 1.75rem !important;
-    }
-    .newsletter-wrapper .newsletter-input {
-        padding: 0.5rem !important;
-        border-radius: 1rem !important;
-    } */
-    .newsletter-input,  .newsletter-wrapper{
+    .landing-newsletter-wrapper .landing-newsletter-block {
+        background: transparent !important;
+      }
+      .landing-newsletter-wrapper .landing-sign-up-text {
+        border-radius: 8px;
+        margin-top: 10px;
+        width: 100%;
+        background: #ffffff;
+        padding: 16px 0px !important;
+        max-width: 100%;
+      }
+      .landing-newsletter-wrapper .landing-newsletter-input {
+        padding: 17px 15px !important;
+        border-radius: 8px !important;
+      }
+
+    .newsletter-input,  .landing-newsletter-wrapper{
         max-width: 100%;
         width: 100%;
     }
-    /* .signup-form {
-        flex-direction: column-reverse;
-      } */
-      .newsletter-wrapper .sign-up-text{
-        margin-top: 10px;
-      }
+    .landing-signup-form {
+        flex-direction: column;
+    }
 }
 @media screen and (max-width:767px) {
+
     h2.landing-section-title {
         letter-spacing: -1px;
+        margin-top: 15px;
     }
-    .newsletter-input, .newsletter-wrapper{
+    .newsletter-input, .landing-newsletter-wrapper{
         max-width: 100%;
         width: 100%;
     }
-    .newsletter-wrapper .sign-up-text{
+    .landing-newsletter-wrapper .landing-sign-up-text{
         padding:19px 0px 14px 0 !important;
         margin-bottom: 15px;
+        background: #ffffff;
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+
+    .landing-newsletter-input{
+        background: rgba(255,255,255,0.25);
+    }
+    .landing-newsletter-input::placeholder{
+    text-align: center;
     }
 
     .landing-container{
@@ -150,12 +199,22 @@ h2.landing-section-title{
     .landing-section-title{
         font-size: 24px;
         line-height: 28px;
-        letter-spacing: -1px;
-        margin-right: 30px;
+        letter-spacing: -0.04em;
+        margin-right: 0;
         margin-top: 18px;
     }
 
-    .sign-up-text {
+    .landing-sign-up-text {
         font-size: 14px;
     }
+    .learn-more {
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .landing-newsletter-block {
+        flex-direction: column;
+      }
 }

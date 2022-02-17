@@ -4,7 +4,7 @@
     padding-right: 0;
     max-width: 476px;
 }
- 
+
 h3.hero_subtitle{
     font-weight: 400;
     margin: 21px 79px  23px 0;
@@ -38,15 +38,72 @@ h3.hero_subtitle{
 .hero_pointer_image{
     min-height: 46px;
 }
+.form_max_width{
+    max-width: 100%;
+    width: 500px;
+    padding-bottom: 72px;
+    padding-top: 10px;
+}
+
+/* info landing hero with form css  */
+
+.usecase_left_content{
+    padding: 59px 50px 80px 68px;
+    background-color: #080F20;
+    background-image: url('../../../images/use-case-herobg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.usecase_right_content{
+    width: 100%;
+    background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
+    display: flex;
+}
+.usecase_section_title{
+    margin: 20px 0;
+}
+.usecase_section_pera{
+    margin-bottom: 44px;
+    max-width: 400px;
+    width: 100%;
+}
+.usecase_text{
+    font-size: 24px;
+    line-height: 32px;
+}
+.usecase_left_content_wrapper{
+    max-width: 500px;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+@media screen and (max-width:1280px) {
+    .form_max_width{
+        max-width: 100%;
+        width: 100%;
+    }
+}
+@media screen and (max-width:1024px) {
+    .usecase_left_content{
+        padding-left: 16px;
+    }
+}
 @media screen and (max-width:1023px) {
     .landing_hero_left{
         margin-bottom: 35px;
     }
+    .landing_hero_pointers_wrapper{
+        margin-top: 15px;
+    }
+    .form_max_width form{
+        margin: auto;
+    }
+    .usecase_left_content_wrapper, .usecase_section_pera{
+        max-width: 100%;
+    }
 }
 @media screen and (max-width:991px) {
-    h1 {
-        letter-spacing: 0;
-    }
+
     .hero_pointer_item{
         width: 30%;
         align-self: flex-start;
@@ -66,9 +123,7 @@ h3.hero_subtitle{
         font-size: 14px;
         line-height: 21px;
     }
-    .landing_hero_pointers_wrapper{
-        margin-top: 50px;
-    }
+
     .landing_hero_pointers_wrapper p{
         font-size: 16px;
         line-height: 22px;
@@ -92,10 +147,6 @@ h3.hero_subtitle{
     .hero_pointer_item{
         min-height: 153px;
     }
-    h1 {
-        letter-spacing: 0;
-        margin-top: 15px;
-    }
     .hero_pointer_item{
         width: 50%;
     }
@@ -103,6 +154,25 @@ h3.hero_subtitle{
         font-size: 14px;
         line-height: 19px;
         margin: 10px 0;
+    }
+    .usecase_left_content{
+        padding: 28px 22px;
+    }
+    .usecase_text{
+        font-size: 16px;
+    }
+    .usecase_section_title{
+        margin: 15px 0 10px;
+    }
+    .usecase_section_pera{
+        margin-bottom: 0;
+    }
+    .usecase_left_content_wrapper, .usecase_section_pera{
+        max-width: 100%;
+    }
+    .form_max_width{
+        padding-bottom: 0;
+        padding-top: 0;
     }
 }
 

@@ -2,12 +2,13 @@
     margin-top: 48px;
 }
 .testimonial_section{
-    padding: 96px 0;
+    padding: 61px 0 68px;
 }
 .testimonial_left{
     margin-right: 85px;
     max-width: 685px;
     width: 100%;
+    padding-top: 81px;
 }
 .testimonial_right{
     max-width: 420px;
@@ -16,6 +17,7 @@
 .logo_item{
     margin-right: 50px;
     max-width: 100px;
+    min-width: 90px;
 }
 .landing_logos_list_last{
     margin:40px 0px 0px 76px;
@@ -75,17 +77,22 @@
     .testimonial_form{
         justify-content: center;
         display: flex;
+        margin-top: 48px;
     }
     .testimonial_left{
         margin-right: 0;
         max-width: 100%;
-        width: 100%;
+        width: 100%; 
+        padding-top: 0;
     }
     .testimonial_right{
         max-width: 100%;
         width: 100%;
+        margin-top: 30px;
     }
-
+    .landing_logos_wrapper{
+        margin-top: 0;
+    }
 
 }
 @media screen and (max-width:991px) {
@@ -97,8 +104,11 @@
     }
 }
 @media screen and (max-width:767px) {
+    .landing_logos_wrapper{
+        margin-top: 33px;
+    }
     .testimonial_section{
-        padding: 45px 0 52px;
+        padding: 45px 0 60px;
     }
     .testimonial_quote{
         padding: 57px 21px;
@@ -118,6 +128,12 @@
     .testimonial_landing_client_details  .testimonial_client{
         font-size: 14px;
         line-height: 19px;
+    }
+    .testimonial_right{
+        margin-top: 0;
+    }
+    .testimonial_quote{
+        margin-top: 60px;
     }
     .landing_logos_list_last{
         margin-left: 0;

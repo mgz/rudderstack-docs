@@ -19,7 +19,7 @@ const InfoLandingUseCase = (
                                 return(
                                     <li className={s.use_case_list_item} key={item._key}>
                                         <h4 className={`${s.list_title} pink`}>{item.title}</h4>
-                                        <p>{item.content[0].children[0].text}</p>
+                                        <p className={`${s.usecase_pera}`}>{item.content[0].children[0].text}</p>
                                     </li>
                                 )
                             })}

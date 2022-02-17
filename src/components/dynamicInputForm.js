@@ -665,7 +665,7 @@ const DynamicInputForm = ({
           </React.Fragment>
         )} */}
       <button
-        className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4 ${
+        className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4 text-darkScheme-textPrimary bg-darkScheme-btnPrimaryBg border-none ${
           isLoading ? "disableActive" : ""
         } ${isFromRequest ? "request-btn" : ""}`}
         disabled={isLoading}
