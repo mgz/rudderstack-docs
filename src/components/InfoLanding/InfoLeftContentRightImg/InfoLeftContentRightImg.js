@@ -8,7 +8,7 @@ const InfoLeftContentRightImg = (
     showDivider = true
     ) => {
     let useCaseData = data.data;
-    console.log("useCase Data", useCaseData);
+    //console.log("useCase Data", useCaseData);
     return (
         <section className={`${s.leftContent_rightImg_section} relative`}>
             <div className='landing-container'>
