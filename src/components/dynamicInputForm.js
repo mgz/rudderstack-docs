@@ -22,7 +22,7 @@ const DynamicInputForm = ({
   location,
   gatedCookieName,
   isFromRequest = false,
-  additional_track_call,
+  additional_track_calls,
 }) => {
   const cookies = new Cookies()
   const data = useStaticQuery(graphql`
@@ -68,10 +68,9 @@ const DynamicInputForm = ({
     // console.log("isLoading", isLoading)
   }, [isLoading])
 
-
   let formDefinition = data.allSanityFormInput.nodes.find(
     oo => ref_form_input && oo._id === ref_form_input._ref
-  );
+  )
   /* console.log('Form fields', formDefinition._rawFields); */
 
   let tmpStructure
@@ -196,7 +195,15 @@ const DynamicInputForm = ({
       }
       setIsLoading(true)
 
-      var params = new URLSearchParams(document.location.search.substring(1))
+      let params = new URLSearchParams(document.location.search.substring(1))
+      let urlString = window !== undefined ? window.location.href : "";
+      let paramString = urlString.split('?')[1];
+      let queryString = new URLSearchParams(paramString);
+      let queryParams = {};
+
+      for (let pair of queryString.entries()) {
+        queryParams[pair[0]] = pair[1];
+      }
 
       window.rudderanalytics.identify(
         data[formDefinition.tracking_field_name],
@@ -215,6 +222,8 @@ const DynamicInputForm = ({
           utm_term: params.get("utm_term"),
           raid: params.get("raid"),
           test_user: params.get("test_user"),
+          gclid: queryParams.gclid ? queryParams.gclid : "",
+          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
         },
         {
           integrations: {
@@ -244,6 +253,8 @@ const DynamicInputForm = ({
           utm_term: params.get("utm_term"),
           raid: params.get("raid"),
           test_user: params.get("test_user"),
+          gclid: queryParams.gclid ? queryParams.gclid : "",
+          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
         },
         {
           traits: {
@@ -254,9 +265,11 @@ const DynamicInputForm = ({
         }
       )
 
-      if (additional_track_call && additional_track_call.length > 0) {
-        window.rudderanalytics.track(additional_track_call, {})
-      }
+      additional_track_calls &&
+        additional_track_calls.length > 0 &&
+        additional_track_calls.map(rrr => window.rudderanalytics.track(rrr, {}))
+
+      // window.rudderanalytics.track(additional_track_call, {})
 
       // console.log("step3")
       fetch(usebasin_endpoint, {
@@ -277,6 +290,8 @@ const DynamicInputForm = ({
           utm_term: params.get("utm_term"),
           raid: params.get("raid"),
           test_user: params.get("test_user"),
+          gclid: queryParams.gclid ? queryParams.gclid : "",
+          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
         }),
         headers: {
           "Content-Type": "application/json",
@@ -362,7 +377,11 @@ const DynamicInputForm = ({
         }
         // setIsLoading(false)
       }}
-      className={`${isFromRequest ? 'request-form md:max-w-xl' : 'demo_form md:max-w-lg xl:w-120'} px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full ${add_on_styling}`}
+      className={`${
+        isFromRequest
+          ? "request-form md:max-w-xl"
+          : "demo_form md:max-w-lg xl:w-120"
+      } px-4 py-8 sm:pt-12 sm:px-8 sm:pb-16 flex flex-col w-full ${add_on_styling}`}
     >
       {formDefinition &&
         formDefinition.formheader &&
@@ -379,10 +398,24 @@ const DynamicInputForm = ({
           return (
             <React.Fragment key={field._key}>
               {field.show_label === true && field.field_type !== "checkbox" && (
-                <div className={`text-lg mb-2 ${isFromRequest ? 'request-label text-darkScheme-textPrimary': 'text-grayColor-custom'}`}>
+                <div
+                  className={`text-lg mb-2 ${
+                    isFromRequest
+                      ? "request-label text-darkScheme-textPrimary"
+                      : "text-grayColor-custom"
+                  }`}
+                >
                   {field.field_label}{" "}
                   {field.is_required && (
-                    <span className={isFromRequest ? 'text-darkScheme-textPrimary' : `text-blueNew-midnight`}>*</span>
+                    <span
+                      className={
+                        isFromRequest
+                          ? "text-darkScheme-textPrimary"
+                          : `text-blueNew-midnight`
+                      }
+                    >
+                      *
+                    </span>
                   )}
                 </div>
               )}
@@ -391,7 +424,9 @@ const DynamicInputForm = ({
                 <input
                   type="text"
                   name={field.field_name}
-                  className={`${!isFromRequest ? 'font-sm text-base' : 'request-input'}`}
+                  className={`${
+                    !isFromRequest ? "font-sm text-base" : "request-input"
+                  }`}
                   value={formData[field.field_name]}
                   placeholder={field.field_placeholder}
                   onBlur={e => onBlur(field.field_name, e.target.value)}
@@ -446,7 +481,9 @@ const DynamicInputForm = ({
                       [field.field_name]: tmp,
                     })
                   }}
-                  className={`custom-select-style ${isFromRequest ? 'request-select': ''}`}
+                  className={`custom-select-style ${
+                    isFromRequest ? "request-select" : ""
+                  }`}
                   classNamePrefix="custom-select-style-inner"
                 />
               )}
@@ -486,7 +523,7 @@ const DynamicInputForm = ({
           )
         })}
 
-        {/* {isFromRequest && formDefinition && (
+      {/* {isFromRequest && formDefinition && (
           <React.Fragment>
             <div className="flex justify-between mb-5">
                   {formDefinition && formDefinition._rawFields.slice(0,2).map((field, idx) => {
@@ -630,7 +667,7 @@ const DynamicInputForm = ({
       <button
         className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4 text-darkScheme-textPrimary bg-darkScheme-btnPrimaryBg border-none ${
           isLoading ? "disableActive" : ""
-        } ${isFromRequest ? 'request-btn': ''}`}
+        } ${isFromRequest ? "request-btn" : ""}`}
         disabled={isLoading}
         // onClick={() => {
         //   console.log("from button call")

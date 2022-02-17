@@ -28,77 +28,79 @@ const InfoLandingTestimonial = (
                                 )
                             }
                         })} */}
-                        <div className={`${s.testimonial_form}`}>
-                            <InfoLandingForm  />
-                        </div>
-                        <div className={s.landing_logos_wrapper}>
-                            <ul className={`landing-logos-list flex xl:justify-start justify-center items-center`}>
-                                {/* {testimonialData.customer_logos.map((logo, index) => {
-                                    if(index === 0 || index === 1 || index === 2){
-                                        return(
-                                            <li key={logo._key} className={s.logo_item}>
-                                                <Image
-                                                    props={logo.asset._ref}
-                                                />
-                                            </li>
-                                        )
-                                    }
-                                })} */}
-                                <li className={s.logo_item}>
-                                    <StaticImage
-                                        src='../../../images/allbirds-white-logo.svg'
-                                        alt='allbirds'
-                                        placeholder='tracedSVG'
-                                    />
-                                </li>
-                                <li className={s.logo_item}>
-                                    <StaticImage
-                                        src='../../../images/stripe-white-logo.svg'
-                                        alt='stripe'
-                                        placeholder='tracedSVG'
-                                    />
-                                </li>
-                                <li className={s.logo_item}>
-                                    <StaticImage
-                                        src='../../../images/wealthfront-white-logo.svg'
-                                        alt='wealthfront'
-                                        placeholder='tracedSVG'
-                                    />
-                                </li>
-                            </ul>
-                            <ul className={`landing-logos-list flex xl:justify-start justify-center items-center ${s.landing_logos_list_last}`}>
-                                {/* {testimonialData.customer_logos.map((logo, index) => {
-                                    if(index === 3 || index === 4 || index === 5){
-                                        return(
-                                            <li key={logo._key} className={s.logo_item}>
-                                                <Image
-                                                    props={logo.asset._ref}
-                                                />
-                                            </li>
-                                        )
-                                    }
-                                })} */}
-                                <li className={s.logo_item}>
-                                    <StaticImage
-                                        src='../../../images/hinge-white-logo.svg'
-                                        alt='hinge'
-                                        placeholder='tracedSVG'
-                                    />
-                                </li>
-                                <li className={s.logo_item}>
-                                    <StaticImage
-                                        src='../../../images/grafana.svg'
-                                        alt='grafana'
-                                        placeholder='tracedSVG'
-                                    />
-                                </li>
-                                <li className={s.logo_item}>
-                                    <StaticImage
-                                        src='../../../images/priceline-white-logo.svg'
-                                        alt='priceline'
-                                    />
-                                </li>
-                            </ul>
+                        <div className="flex lg:flex-col flex-col-reverse">
+                            <div className={`${s.testimonial_form}`}>
+                                <InfoLandingForm  />
+                            </div>
+                            <div className={s.landing_logos_wrapper}>
+                                <ul className={`landing-logos-list flex xl:justify-start justify-center items-center`}>
+                                    {/* {testimonialData.customer_logos.map((logo, index) => {
+                                        if(index === 0 || index === 1 || index === 2){
+                                            return(
+                                                <li key={logo._key} className={s.logo_item}>
+                                                    <Image
+                                                        props={logo.asset._ref}
+                                                    />
+                                                </li>
+                                            )
+                                        }
+                                    })} */}
+                                    <li className={s.logo_item}>
+                                        <StaticImage
+                                            src='../../../images/allbirds-white-logo.svg'
+                                            alt='allbirds'
+                                            placeholder='tracedSVG'
+                                        />
+                                    </li>
+                                    <li className={s.logo_item}>
+                                        <StaticImage
+                                            src='../../../images/stripe-white-logo.svg'
+                                            alt='stripe'
+                                            placeholder='tracedSVG'
+                                        />
+                                    </li>
+                                    <li className={s.logo_item}>
+                                        <StaticImage
+                                            src='../../../images/wealthfront-white-logo.svg'
+                                            alt='wealthfront'
+                                            placeholder='tracedSVG'
+                                        />
+                                    </li>
+                                </ul>
+                                <ul className={`landing-logos-list flex xl:justify-start justify-center items-center ${s.landing_logos_list_last}`}>
+                                    {/* {testimonialData.customer_logos.map((logo, index) => {
+                                        if(index === 3 || index === 4 || index === 5){
+                                            return(
+                                                <li key={logo._key} className={s.logo_item}>
+                                                    <Image
+                                                        props={logo.asset._ref}
+                                                    />
+                                                </li>
+                                            )
+                                        }
+                                    })} */}
+                                    <li className={s.logo_item}>
+                                        <StaticImage
+                                            src='../../../images/hinge-white-logo.svg'
+                                            alt='hinge'
+                                            placeholder='tracedSVG'
+                                        />
+                                    </li>
+                                    <li className={s.logo_item}>
+                                        <StaticImage
+                                            src='../../../images/grafana.svg'
+                                            alt='grafana'
+                                            placeholder='tracedSVG'
+                                        />
+                                    </li>
+                                    <li className={s.logo_item}>
+                                        <StaticImage
+                                            src='../../../images/priceline-white-logo.svg'
+                                            alt='priceline'
+                                        />
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div className={s.testimonial_right}>

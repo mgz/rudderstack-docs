@@ -375,6 +375,16 @@
   .speaker {
     background-color: #eef5f5;
   }
+  .signup-input-text{
+    max-width: 276px;
+    height: 60px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+  }
+  .signup-short-button{
+    max-width: 220px;
+    height: 60px;
+  }
 
   @media only screen and (min-width: 1023px) {
     .menu li.has-submenu:hover a:after {
@@ -452,6 +462,9 @@
     .integration-banner::before {
       right: -160px;
       background-position: right 25px;
+    }
+    .signup-short-button{
+      min-width: 276px;
     }
   }
 

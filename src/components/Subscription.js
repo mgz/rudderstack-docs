@@ -25,7 +25,15 @@ const Subscription = props => {
     if (!window.rudderanalytics) {
       return
     }
-    const params = new URLSearchParams(document.location.search.substring(1))
+    const params = new URLSearchParams(document.location.search.substring(1));
+    let urlString = window !== undefined ? window.location.href : "";
+    let paramString = urlString.split('?')[1];
+    let queryString = new URLSearchParams(paramString);
+    let queryParams = {};
+
+    for (let pair of queryString.entries()) {
+      queryParams[pair[0]] = pair[1];
+    }
 
     window.rudderanalytics.identify(
       email,
@@ -43,6 +51,8 @@ const Subscription = props => {
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
         test_user: params.get("test_user"),
+        gclid: queryParams.gclid ? queryParams.gclid : "",
+        utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
       },
       {
         integrations: {
@@ -52,7 +62,7 @@ const Subscription = props => {
     )
 
     window.rudderanalytics.track(
-      props.formId,
+      "form_submit",
       {
         page: document.title,
         page_URL: window.location.href,
@@ -60,7 +70,7 @@ const Subscription = props => {
         timezone: {
           name: DateTime.now().zone.name,
         },
-        form_id: "Blog-header-Subscribe-form",
+        form_id: props.formId,
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
         utm_campaign: params.get("utm_campaign"),
@@ -68,6 +78,8 @@ const Subscription = props => {
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
         test_user: params.get("test_user"),
+        gclid: queryParams.gclid ? queryParams.gclid : "",
+        utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
       },
       {
         traits: {

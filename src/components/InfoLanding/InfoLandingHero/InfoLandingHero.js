@@ -9,7 +9,7 @@ const InfoLandingHero = (
     ) => {
     let heroData = data.data;
     return(
-        <section className='landing-hero relative pt-9 sm:pt-24 sm:pb-20 pb-14'>
+        <section className='landing-hero relative pt-9 md:pt-24 md:pb-20 pb-8'>
             <div className='landing-container'>
                 <div className='landing-hero-wrapper flex flex-col md:flex-row justify-between lg:gap-x-0 gap-x-5'>
                     <div className={s.landing_hero_left}>
