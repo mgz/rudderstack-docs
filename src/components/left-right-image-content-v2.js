@@ -83,7 +83,7 @@ const LeftRightImgCnt_V2 = props => {
                           className={
                             (props.header_media_cta_cutton.btnhiglight === true
                               ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
-                              : "btn-secondary-lg") +
+                              : "btn-secondary-lg button-gradient-border") +
                             ` md:mr-4 md:mb-0 mb-14 bg-whiteColor-custom`
                           }
                           href={props.header_media_cta_cutton.btnlink}

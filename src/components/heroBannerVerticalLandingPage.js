@@ -56,7 +56,7 @@ function HeroBannerVerticalLanding(props) {
                           className={
                             (btn.btnhiglight === true
                               ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
-                              : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                              : "btn-secondary-lg button-gradient-border") + ` sm:mr-4 md:mb-0 mb-4`
                           }
                         >
                           {btn.btntext}

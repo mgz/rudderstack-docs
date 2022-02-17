@@ -26,7 +26,7 @@ const CentredContentWithButton = props => {
                   className={
                     (props.button.btnhiglight === true
                       ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
-                      : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
+                      : "btn-secondary-lg button-gradient-border") + ` sm:mr-4 md:mb-0 mb-6`
                   }
                   href={props.button.btnlink}
                 >
@@ -46,7 +46,7 @@ const CentredContentWithButton = props => {
                     className={
                       (props.button.btnhiglight === true
                         ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
-                        : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                        : "btn-secondary-lg button-gradient-border") + ` sm:mr-4 md:mb-0 mb-4`
                     }
                   >
                     {props.button.btntext}

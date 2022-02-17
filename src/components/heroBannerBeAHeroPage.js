@@ -102,8 +102,8 @@ const HeroBannerBeAHeroPage = props => {
                     <a
                       className={
                         (btn.btnhiglight === true
-                          ? "btn-primary-lg"
-                          : "btn-secondary-lg") +
+                          ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                          : "btn-secondary-lg button-gradient-border") +
                         ` sm:mr-6 md:mb-0 mb-4 cta-btn `
                       }
                       onClick={e =>
@@ -135,7 +135,7 @@ const HeroBannerBeAHeroPage = props => {
                         className={
                           (btn.btnhiglight === true
                             ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
-                            : "btn-secondary-lg") + ` sm:mr-6 md:mb-0 mb-4 cta-btn`
+                            : "btn-secondary-lg button-gradient-border") + ` sm:mr-6 md:mb-0 mb-4 cta-btn`
                         }
                       >
                         {btn.btntext}
