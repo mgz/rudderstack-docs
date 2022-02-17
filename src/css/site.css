@@ -1473,7 +1473,8 @@ form .disableActive {
   background:  linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.button-gradient-border {
+
+/* .button-gradient-border {
   position: relative;
   z-index: 0;
   border: none;
@@ -1505,7 +1506,8 @@ form .disableActive {
 .button-gradient-border:hover:before{
     background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
     transition: 0.3s all linear;
-}
+} */
+
 .bg-darkScheme-btnSecondaryBg{
   background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
   transition: all 0.3s ease;
