@@ -107,7 +107,7 @@ h2.landing-section-title{
   }
 @media screen and (max-width:1280px) {
     .landing-container{
-        padding: 0 68px;
+        padding: 0 16px;
     }
 }
 @media screen and (max-width:1024px) {

@@ -8,7 +8,7 @@ const InfoLeftContentRightImg = (
     showDivider = true
     ) => {
     let useCaseData = data.data;
-    console.log("useCase Data", useCaseData);
+    //console.log("useCase Data", useCaseData);
     return (
         <section className={`${s.leftContent_rightImg_section} relative`}>
             <div className='landing-container'>
@@ -23,8 +23,8 @@ const InfoLeftContentRightImg = (
                                 </a>
                             </div>
                         </div>
-                        <div className={`img_wrapper_right flex justify-center`}>
-                            <Image props={useCaseData.right_image.asset._ref} />
+                        <div className={s.img_wrapper_right}>
+                            <Image props={useCaseData.right_image.asset._ref}  />
                         </div>
                 </div>
             </div>
