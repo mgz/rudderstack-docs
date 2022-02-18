@@ -113,8 +113,8 @@ const MiddleBanner = props => {
                               }
                               className={
                                 (btn.btnhiglight === true
-                                  ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
-                                  : "btn-secondary-lg") +
+                                  ? "bg-white text-primary btn-secondary-lg button-gradient-border"
+                                  : "btn-secondary-lg button-gradient-border") +
                                 ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight cta-btn font-custom`
                               }
                             >

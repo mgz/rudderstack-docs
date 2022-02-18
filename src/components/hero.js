@@ -191,7 +191,7 @@ function Hero(props) {
                           <span
                             className={
                               (btn.btnhiglight === true
-                                ? "btn-primary-lg"
+                                ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                 : "btn-secondary-lg button-gradient-border") + ` flex items-center justify-center cta-btn`
                             }
                           >

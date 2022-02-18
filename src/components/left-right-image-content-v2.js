@@ -82,7 +82,7 @@ const LeftRightImgCnt_V2 = props => {
                           }
                           className={
                             (props.header_media_cta_cutton.btnhiglight === true
-                              ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
+                              ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                               : "btn-secondary-lg button-gradient-border") +
                             ` md:mr-4 md:mb-0 mb-14 bg-whiteColor-custom`
                           }
@@ -105,8 +105,8 @@ const LeftRightImgCnt_V2 = props => {
                             className={
                               (props.header_media_cta_cutton.btnhiglight ===
                               true
-                                ? "btn-primary-lg border-darkScheme-textPrimary bg-darkScheme-textPrimary hover:bg-transparent hover:text-darkScheme-textPrimary"
-                                : "btn-secondary-lg") +
+                                ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                                : "btn-secondary-lg button-gradient-border") +
                               ` md:mr-4 md:mb-0 mb-14 text-lg bg-whiteColor-custom hover:bg-transparent border-whiteColor-custom hover:text-whiteColor-custom`
                             }
                             to={props.header_media_cta_cutton.btnlink}
@@ -324,7 +324,7 @@ const LeftRightImgCnt_V2 = props => {
                                       href={linkurl}
                                       className={`font-bold leading-normal text-sm mt-4 flex items-center ${
                                         link_display_as_button
-                                          ? "btn-primary-lg"
+                                          ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                           : ""
                                       } ${
                                         props.applyGradientColorTheme
@@ -342,7 +342,7 @@ const LeftRightImgCnt_V2 = props => {
                                     <span
                                       className={`font-bold leading-normal text-sm mt-4 flex items-center ${
                                         link_display_as_button
-                                          ? "btn-primary-lg"
+                                          ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                           : ""
                                       } ${
                                         props.applyGradientColorTheme
@@ -525,7 +525,8 @@ const LeftRightImgCnt_V2 = props => {
                                     }}
                                     className={`font-bold leading-normal text-sm mt-4 flex items-center ${
                                       link_display_as_button
-                                        ? "btn-primary-lg"
+                                        ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+
                                         : ""
                                     } relative sm:inline-block ${
                                       props.applyGradientColorTheme
@@ -543,7 +544,7 @@ const LeftRightImgCnt_V2 = props => {
                                   <span
                                     className={`font-bold leading-normal text-sm mt-4 flex items-center ${
                                       link_display_as_button
-                                        ? "btn-primary-lg"
+                                        ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                         : ""
                                     } relative sm:inline-block ${
                                       props.applyGradientColorTheme

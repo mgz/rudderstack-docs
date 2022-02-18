@@ -58,8 +58,8 @@ const ThreeCardsWithTitleLeftAligned = props => {
                   key={props.button._key}
                   className={
                     (props.button.btnhiglight === true
-                      ? "btn-primary-lg"
-                      : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-6`
+                      ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                      : "btn-secondary-lg button-gradient-border") + ` sm:mr-4 md:mb-0 mb-6`
                   }
                   href={props.button.btnlink}
                   onClick={e =>
@@ -81,8 +81,8 @@ const ThreeCardsWithTitleLeftAligned = props => {
                   <span
                     className={
                       (props.button.btnhiglight === true
-                        ? "btn-primary-lg"
-                        : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                        ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                        : "btn-secondary-lg button-gradient-border") + ` sm:mr-4 md:mb-0 mb-4`
                     }
                   >
                     {props.button.btntext}
