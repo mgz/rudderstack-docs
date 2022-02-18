@@ -58,8 +58,10 @@ const InfoLandingBase = ({ data, location }) => {
                   return <InfoLandingHeroWithForm data={node} key={node._key}  />
                 case "left_right_content_with_image_and_bullet_items":
                   return <InfoLandingHero data={node} key={node._key} />
-                   {/* <CompetitorCenterContent /> */}
-                 {/*   <CompetitorComparison /> */}
+                case "center_content_with_button":
+                  return <CompetitorCenterContent data={node} key={node._key} />
+                case "comparison_with_logos":
+                  return <CompetitorComparison data={node} key={node._key} />
                 case "left_right_content_and_bullet_items":
                   return <InfoLandingAbout data={node} key={node._key} />
                 case "left_right_content_with_logos_and_testimonial":
