@@ -4,32 +4,11 @@ import DynamicInputForm from '../../dynamicInputForm';
 import Image from '../../image';
 import { Helmet } from 'react-helmet';
 
-const InfoLandingHeroWithForm = (
-    data,
-    showDivider,
-    location
-    ) => {
-   let formData = data.data;
-   /* console.log("some", formData); */
+const InfoLandingHeroWithForm = ({data,showDivider,location}) => {
+   let formData = data;
+   /* console.log("some", location); */
     return(
         <section className={`${s.usecase_hero_from} relative landing-hero-form-wrapper`}>
-            {((location && location.pathname === "/request-demo-chili-piper-test/") ||
-                (location &&
-                location.pathname === "/request-demo-chili-piper-test")) && (
-                    <Helmet>
-                        <script>
-                            {`
-                        function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
-                        ChiliPiper.scheduling("rudderstack", "test_router", {title: "Thanks! What time works best for a quick call?"})
-                        `}
-                        </script>
-                        <script
-                            src="https://js.na.chilipiper.com/marketing.js"
-                            type="text/javascript"
-                            async
-                        />
-                    </Helmet>
-            )}
             <div className="section-gradient">
                 <div className="flex flex-col md:flex-row">
                     <div className={`${s.usecase_left_content} lg:w-1/2 w-full`}>
@@ -45,7 +24,7 @@ const InfoLandingHeroWithForm = (
                      <div className={`${s.usecase_right_content} usecase-right-part relative lg:w-1/2 w-full xl:px-19 lg:px-0`}>
                         {showDivider && (<div className='section-divider md:hidden block'></div>)}
                         <div className={`${s.form_max_width}`}>
-                            <DynamicInputForm {...formData.input_form}  isFromRequest={true} />
+                            <DynamicInputForm {...formData.input_form}  isFromRequest={true} location={location} />
                         </div>
                     </div>
                     {showDivider && (<div className='section-divider'></div>)}

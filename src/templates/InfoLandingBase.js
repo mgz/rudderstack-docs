@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import { graphql, Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -29,6 +29,8 @@ import clientConfig from "../../client-config"
 import "../css/landingBase.css"
 
 const InfoLandingBase = ({ data, location }) => {
+
+
   const copyright =
     data.allSanitySiteSettings.edges[0].node.footerblock.copy_right_text
   const footermenus =
@@ -55,7 +57,7 @@ const InfoLandingBase = ({ data, location }) => {
             (node, index) => {
               switch (node._type) {
                 case "two_columns_with_form":
-                  return <InfoLandingHeroWithForm data={node} key={node._key}  />
+                  return <InfoLandingHeroWithForm data={node} key={node._key} location={location} />
                 case "left_right_content_with_image_and_bullet_items":
                   return <InfoLandingHero data={node} key={node._key} />
                 case "center_content_with_button":
