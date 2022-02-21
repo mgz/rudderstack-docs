@@ -13,7 +13,7 @@ const CompetitorCenterContent = (  ) => {
                      the platform that is right for you.
                 </p>
                 <p className={`${s.power_of_rudderstack} text-darkScheme-textPrimary`}>Ready to see the power of RudderStack? Talk to sales for a demo.</p>
-                <button className="cta-btn btn-primary-lg">Talk to sales</button>
+                <button className="text-darkScheme-textPrimary bg-darkScheme-btnPrimaryBg border-none btn-primary-lg">Talk to sales</button>
             </div>
         </section>
     )
