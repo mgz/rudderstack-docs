@@ -9,7 +9,7 @@ const InfoLandingKeyFeatures = (
     ) => {
     let keyFeaturesData = data.data;
     return(
-        <section className={`${s.key_features} relative pb-24`}>
+        <section className={`${s.key_features} relative pb-20`}>
             <div className='landing-container'>
                 <h2 className='landing-section-title text-center'>{keyFeaturesData.title}</h2>
                 <div className={s.key_features_wrapper}>
@@ -18,12 +18,17 @@ const InfoLandingKeyFeatures = (
                             if(index === 0 || index === 1 || index === 2){
                                 return (
                                     <li className={s.key_features_block} key={item._key}>
+                                        <div className={s.inside_layer}></div>
                                         <span className={s.key_features_image}>
                                             <Image
                                                 props={item.icon.asset._ref}
                                             />
                                         </span>
                                         <p className={s.key_features_text}>{item.title}</p>
+
+                                        <div className={s.bottom_layer} > 
+                                        </div>
+                                        <span className={s.blank_span}></span>
                                     </li>
                                 )
                             }
@@ -34,12 +39,16 @@ const InfoLandingKeyFeatures = (
                             if(index === 3 || index === 4 || index === 5){
                                 return (
                                     <li className={s.key_features_block} key={item._key}>
+                                       <div className={s.inside_layer}></div>
                                         <span className={s.key_features_image}>
                                             <Image
                                                 props={item.icon.asset._ref}
                                             />
                                         </span>
                                         <p className={s.key_features_text}>{item.title}</p>
+                                        <div className={s.bottom_layer} > 
+                                        </div>
+                                        <span className={s.blank_span}></span>
                                     </li>
                                 )
                             }

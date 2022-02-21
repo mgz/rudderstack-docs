@@ -1,6 +1,7 @@
 import React, { useState } from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
-const SubscriptionV2 = props => {
+const SignupShortForm = props => {
   const [email, setEmail] = useState("")
   const [error, setError] = useState(false)
   const [formSubmittedSuccessfully, setFormSubmittedSuccessfully] = useState(
@@ -23,16 +24,7 @@ const SubscriptionV2 = props => {
     if (!window.rudderanalytics) {
       return
     }
-    const params = new URLSearchParams(document.location.search.substring(1));
-    let urlString = window !== undefined ? window.location.href : "";
-    let paramString = urlString.split('?')[1];
-    let queryString = new URLSearchParams(paramString);
-    let queryParams = {};
-
-    for (let pair of queryString.entries()) {
-      queryParams[pair[0]] = pair[1];
-    }
-
+    const params = new URLSearchParams(document.location.search.substring(1))
 
     window.rudderanalytics.identify(
       email,
@@ -47,8 +39,6 @@ const SubscriptionV2 = props => {
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
         test_user: params.get("test_user"),
-        gclid: queryParams.gclid ? queryParams.gclid : "",
-        utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
       },
       {
         integrations: {
@@ -56,7 +46,6 @@ const SubscriptionV2 = props => {
         },
       }
     )
-
     window.rudderanalytics.track(
       "form_submit",
       {
@@ -71,8 +60,6 @@ const SubscriptionV2 = props => {
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
         test_user: params.get("test_user"),
-        gclid: queryParams.gclid ? queryParams.gclid : "",
-        utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
       },
       {
         traits: {
@@ -81,26 +68,30 @@ const SubscriptionV2 = props => {
         },
       }
     )
+
+    window.rudderanalytics.track("ads_cnv_mkt_app_signup_started", {})
+
     setEmail("")
     setFormSubmittedSuccessfully(true)
   }
 
   return (
     <>
-      <div className="newsletter-wrapper mt-20 mb-10 max-w-xl mx-auto triggers">
-        <div className="newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
+      <div className="signup-short-form-wrapper">
+        <div className=" bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
           <form
             // action="/"
             // method="post"
             className="flex w-full items-center signup-form"
             noValidate="novalidate"
-            id={props.formId ? props.formId : ""}
+            /* id={props.formId ? props.formId : ""} */
+            id="app_signup_mkt_site"
             onSubmit={e => formSubmitted(e)}
           >
             {!formSubmittedSuccessfully && (
               <>
                 <input
-                  className="newsletter-input-hp border-2 border-darkScheme-textPrimary rounded-2xl w-full py-2 px-4 text-darkScheme-textPrimary "
+                  className="signup-input-text border border-darkScheme-grayCustom text-base w-full py-2 px-6 text-darkScheme-textBlack md:mr-4 mr-0 md:mb-0 mb-4"
                   type="email"
                   name="email"
                   value={email}
@@ -116,11 +107,11 @@ const SubscriptionV2 = props => {
                   }}
                 />
                 <button
-                  className="sign-up-text block font-bold py-3 px-10 hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center mx-auto"
+                  className="font-bold btn-primary-lg text-center signup-short-button w-full md:w-auto px-6"
                   type={"submit"}
                   onClick={e => formSubmitted(e)}
                 >
-                  Sign Up for Newsletter
+                  Try this integration
                 </button>
               </>
             )}
@@ -131,7 +122,7 @@ const SubscriptionV2 = props => {
                 role="alert"
                 aria-hidden="true"
               >
-                Thank you!
+                Check your email!
               </div>
             )}
           </form>
@@ -224,4 +215,4 @@ const SubscriptionV2 = props => {
   )
 }
 
-export default SubscriptionV2
+export default SignupShortForm

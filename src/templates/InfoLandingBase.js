@@ -8,6 +8,10 @@ import InfoLandingTestimonial from "../components/InfoLanding/InfoLandingTestimo
 import InfoLandingKeyFeatures from "../components/InfoLanding/InfoLandingKeyFeatures/InfoLandingKeyFeatures"
 import InfoLandingUseCase from "../components/InfoLanding/InfoLandingUseCase/InfoLandingUseCase"
 import InfoLeftContentRightImg from "../components/InfoLanding/InfoLeftContentRightImg/InfoLeftContentRightImg"
+import InfoLandingHeroWithForm from "../components/InfoLanding/InfoLandingHero/InfoLandingHeroWithForm"
+import CompetitorCenterContent from "../components/InfoLanding/CompetitorCenterContent/CompetitorCenterContent"
+import CompetitorComparison from "../components/InfoLanding/CompetitorComparison/CompetitorComparison"
+
 import Layout from "../components/layout"
 
 import MainNavigation from "../components/main-navigation"
@@ -20,6 +24,7 @@ import { faRss } from "@fortawesome/free-solid-svg-icons"
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { rudderslabTrackOnClick } from "../utils/common"
 import clientConfig from "../../client-config"
+
 
 import "../css/landingBase.css"
 
@@ -49,14 +54,20 @@ const InfoLandingBase = ({ data, location }) => {
           {data.sanityInfoLandingPage._rawPagebuildersection.map(
             (node, index) => {
               switch (node._type) {
+                case "two_columns_with_form":
+                  return <InfoLandingHeroWithForm data={node} key={node._key}  />
                 case "left_right_content_with_image_and_bullet_items":
                   return <InfoLandingHero data={node} key={node._key} />
+                   {/* <CompetitorCenterContent /> */}
+                 {/*   <CompetitorComparison /> */}
                 case "left_right_content_and_bullet_items":
                   return <InfoLandingAbout data={node} key={node._key} />
                 case "left_right_content_with_logos_and_testimonial":
                   return <InfoLandingTestimonial data={node} key={node._key} />
                 case "title_with_card_items":
                   return <InfoLandingKeyFeatures data={node} key={node._key} />
+                case "left_content_with_link_and_right_image":
+                  return <InfoLeftContentRightImg data={node} key={node._key} />
                 case "left_right_content_with_right_background_image":
                   return <InfoLandingUseCase data={node} key={node._key} />
                 default:

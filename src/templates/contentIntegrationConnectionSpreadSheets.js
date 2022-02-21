@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import { rudderslabTrackOnClick } from "../utils/common"
 import { StaticImage } from "gatsby-plugin-image"
+import SignupShortForm from "../components/SignupShortForm"
 
 const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
   // console.log("ContentIntegrationConnectionSpreadSheets", pageContext)
@@ -43,8 +44,8 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               {page_data.destinationIntegration} ...and all of your other cloud
               tools.
             </p>
-
-            <a
+            <SignupShortForm />
+            {/* <a
               onClick={e =>
                 rudderslabTrackOnClick(
                   "button",
@@ -55,11 +56,11 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               href={"https://app.rudderstack.com/signup?type=freetrial"}
             >
               <span
-                className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
+                className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
               >
                 Sign up for free
               </span>
-            </a>
+            </a> */}
             {/*
           <a
             className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
@@ -409,7 +410,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
             </div>
 
             <a
-              className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
+              className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
               href={page_data.sourceDocsUrl}
               onClick={e =>
                 rudderslabTrackOnClick(
@@ -495,7 +496,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
           </div>
           <div className="w-full sm:w-96 px-4 m-auto">
             <a
-              className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
+              className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
               href={page_data.destinationDocsUrl}
               onClick={e =>
                 rudderslabTrackOnClick(
@@ -555,7 +556,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                   }
                 >
                   <span
-                    className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
+                    className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
                   >
                     View Integration
                   </span>
@@ -589,7 +590,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                   }
                 >
                   <span
-                    className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
+                    className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
                   >
                     View Integration
                   </span>
@@ -623,7 +624,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                   }
                 >
                   <span
-                    className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
+                    className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
                   >
                     View Integration
                   </span>
@@ -657,7 +658,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                   }
                 >
                   <span
-                    className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold`}
+                    className={`btn-primary-lg md:mb-0 mb-4 my-4 font-bold border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
                   >
                     View Integration
                   </span>

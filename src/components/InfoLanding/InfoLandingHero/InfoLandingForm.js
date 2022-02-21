@@ -24,7 +24,16 @@ const InfoLandingForm = props => {
     if (!window.rudderanalytics) {
       return
     }
-    const params = new URLSearchParams(document.location.search.substring(1))
+    const params = new URLSearchParams(document.location.search.substring(1));
+    let urlString = window !== undefined ? window.location.href : "";
+    let paramString = urlString.split('?')[1];
+    let queryString = new URLSearchParams(paramString);
+    let queryParams = {};
+
+    for (let pair of queryString.entries()) {
+      queryParams[pair[0]] = pair[1];
+    }
+
 
     window.rudderanalytics.identify(
       email,
@@ -39,6 +48,8 @@ const InfoLandingForm = props => {
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
         test_user: params.get("test_user"),
+        gclid: queryParams.gclid ? queryParams.gclid : "",
+        utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
       },
       {
         integrations: {
@@ -60,6 +71,8 @@ const InfoLandingForm = props => {
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
         test_user: params.get("test_user"),
+        gclid: queryParams.gclid ? queryParams.gclid : "",
+        utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
       },
       {
         traits: {
@@ -77,8 +90,8 @@ const InfoLandingForm = props => {
 
   return (
     <>
-      <div className="newsletter-wrapper">
-        <div className="newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
+      <div className="landing-newsletter-wrapper">
+        <div className="landing-newsletter-block bg-darkScheme-textPrimary flex justify-center items-center rounded-2xl">
           <form
             // action="/"
             // method="post"
@@ -90,7 +103,7 @@ const InfoLandingForm = props => {
             {!formSubmittedSuccessfully && (
               <>
                 <input
-                  className="newsletter-input border border-darkScheme-textPrimary rounded-2xl w-full py-2 px-6 text-darkScheme-textPrimary "
+                  className="landing-newsletter-input border border-darkScheme-textPrimary rounded-2xl w-full py-2 px-6 text-darkScheme-textPrimary "
                   type="email"
                   name="email"
                   value={email}
@@ -106,7 +119,7 @@ const InfoLandingForm = props => {
                   }}
                 />
                 <button
-                  className="sign-up-text block font-bold  hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
+                  className="landing-sign-up-text block font-bold  hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
                   type={"submit"}
                   onClick={e => formSubmitted(e)}
                 >

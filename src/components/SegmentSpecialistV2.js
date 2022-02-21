@@ -12,7 +12,7 @@ const SegmentSpecialistV2 = props => {
 
         <Link to={props.button.btnlink}>
           <span
-            className={`btn-primary-lg mb-0 md:mb-4 w-full sm:w-72 sm:mx-auto py-4`}
+            className={`btn-primary-lg mb-0 md:mb-4 w-full sm:w-72 sm:mx-auto py-4 border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
           >
             {props.button.btntext}
           </span>

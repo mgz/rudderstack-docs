@@ -10,9 +10,24 @@
     margin-bottom: 25px;
     color: #C4C4C4;
 }
-
+.left_content_title{
+    font-size: 34px;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 40.8px;
+    letter-spacing: -0.04em;
+}
 @media screen and (max-width:1023px){
     .content_wrapper_left{
         max-width: 100%;
+    }
+    .img_wrapper_right img{
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .leftContent_rightImg_section{
+        padding: 56px 0;
     }
 }

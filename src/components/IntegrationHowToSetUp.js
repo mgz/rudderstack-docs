@@ -18,14 +18,14 @@ const IntegrationHowToSetUp = ({ data, integrationLogo }) => {
       <a
         onClick={e => rudderslabTrackOnClick("button", data.freetexttitle, e)}
         href={data.freetextctc.btnlink}
-        className="btn-primary-lg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg"
+        className="btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
       >
         {data.freetextctc.btntext}
       </a>
     )
   } else if (data.freetextctc && data.freetextctc.btntext !== "") {
     renderButton = (
-      <span className="btn-primary-lg text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg">
+      <span className="btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary">
         <Link
           onClick={e => rudderslabTrackOnClick("button", data.freetexttitle, e)}
           to={data.freetextctc.btnlink}

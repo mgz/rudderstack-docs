@@ -1453,9 +1453,7 @@ form .disableActive {
   min-height: 50px;
 }
 .request-btn {
-  color: #ffffff !important;
-  background: #3e35d1 !important;
-  border-color: #3e35d1 !important;
+  color: #ffffff !important; 
 }
 .logos-list img.lw-image {
   width: 50px;
@@ -1465,6 +1463,15 @@ form .disableActive {
 }
 .card-block-wrapper {
   width: calc(50% - 68px);
+}
+
+.bg-darkScheme-btnPrimaryBg{
+  background :linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
+  transition: 0.3s all linear;
+}
+.bg-darkScheme-btnPrimaryBg:hover{ 
+  background:  linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 @media only screen and (min-width: 1024px) {
   .submenu-align {

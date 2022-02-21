@@ -23,7 +23,15 @@ const IntegrationsHelpBox = () => {
     if (!window.rudderanalytics) {
       return
     }
-    const params = new URLSearchParams(document.location.search.substring(1))
+    const params = new URLSearchParams(document.location.search.substring(1));
+    let urlString = window !== undefined ? window.location.href : "";
+    let paramString = urlString.split('?')[1];
+    let queryString = new URLSearchParams(paramString);
+    let queryParams = {};
+
+    for (let pair of queryString.entries()) {
+      queryParams[pair[0]] = pair[1];
+    }
 
     window.rudderanalytics.identify(
       "form_submit",
@@ -41,6 +49,8 @@ const IntegrationsHelpBox = () => {
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
         test_user: params.get("test_user"),
+        gclid: queryParams.gclid ? queryParams.gclid : "",
+        utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
       },
       {
         integrations: {
@@ -50,7 +60,7 @@ const IntegrationsHelpBox = () => {
     )
 
     window.rudderanalytics.track(
-      "Integrations-sidebar-ReachOut-form",
+      "form_submit",
       {
         page: document.title,
         page_URL: window.location.href,
@@ -65,6 +75,8 @@ const IntegrationsHelpBox = () => {
         utm_content: params.get("utm_content"),
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
+        gclid: queryParams.gclid ? queryParams.gclid : "",
+        utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
         // test_user: params.get("test_user"),
       },
       {
@@ -90,6 +102,8 @@ const IntegrationsHelpBox = () => {
         utm_content: params.get("utm_content"),
         utm_term: params.get("utm_term"),
         raid: params.get("raid"),
+        gclid: queryParams.gclid ? queryParams.gclid : "",
+        utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
         // test_user: params.get("test_user"),
       }),
       headers: {
@@ -142,7 +156,7 @@ const IntegrationsHelpBox = () => {
           <input
             type="submit"
             defaultValue="Submit"
-            className="w-full text-sm leading-4 btn-primary-lg cursor-pointer"
+            className="w-full text-sm leading-4 btn-primary-lg cursor-pointer border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
             onClick={e => formSubmitted(e)}
           />
           <span className="ajax-loader" />
