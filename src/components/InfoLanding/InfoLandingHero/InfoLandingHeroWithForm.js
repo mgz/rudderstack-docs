@@ -2,15 +2,34 @@ import React from 'react';
 import * as s from './InfoLandingHero.module.css';
 import DynamicInputForm from '../../dynamicInputForm';
 import Image from '../../image';
+import { Helmet } from 'react-helmet';
 
 const InfoLandingHeroWithForm = (
     data,
-    showDivider
+    showDivider,
+    location
     ) => {
    let formData = data.data;
    /* console.log("some", formData); */
     return(
         <section className={`${s.usecase_hero_from} relative landing-hero-form-wrapper`}>
+            {((location && location.pathname === "/request-demo-chili-piper-test/") ||
+                (location &&
+                location.pathname === "/request-demo-chili-piper-test")) && (
+                    <Helmet>
+                        <script>
+                            {`
+                        function q(a){return function(){ChiliPiper[a].q=(ChiliPiper[a].q||[]).concat([arguments])}}window.ChiliPiper=window.ChiliPiper||"submit scheduling showCalendar submit widget bookMeeting".split(" ").reduce(function(a,b){a[b]=q(b);return a},{});
+                        ChiliPiper.scheduling("rudderstack", "test_router", {title: "Thanks! What time works best for a quick call?"})
+                        `}
+                        </script>
+                        <script
+                            src="https://js.na.chilipiper.com/marketing.js"
+                            type="text/javascript"
+                            async
+                        />
+                    </Helmet>
+            )}
             <div className="section-gradient">
                 <div className="flex flex-col md:flex-row">
                     <div className={`${s.usecase_left_content} lg:w-1/2 w-full`}>
