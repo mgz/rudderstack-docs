@@ -1616,6 +1616,9 @@ form .disableActive {
     width: 100%;
     text-align: center;
   }
+  .nav-separator {
+      border-right: none;
+  }
 }
 
 @media only screen and (max-width: 768px) {

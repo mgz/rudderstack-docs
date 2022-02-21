@@ -45,7 +45,7 @@ const MainNavigationMenuLink = props => {
                 } lg:place-items-left ${
                  props.currMenuIndex === i ? `flex` : `flex hidden`
                }
-               overflow-y-auto lg:overflow-hidden h-80 lg:h-64
+               overflow-y-auto lg:overflow-hidden h-80 lg:h-72
              `}
                 //  lg:left-80 xl:left-96 2xl:left-1/2
               >
