@@ -50,8 +50,8 @@ const HeroBannerCaseStudies = props => {
                           key={btn._key}
                           className={
                             (btn.btnhiglight === true
-                              ? "btn-primary-lg"
-                              : "btn-secondary-lg") +
+                              ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                              : "btn-secondary-lg button-gradient-border") +
                             ` sm:mr-4 md:mb-0 mb-6 bg-white text-dark hover:bg-blueNew-midnight hover:text-white`
                           }
                           href={btn.btnlink}
@@ -65,8 +65,8 @@ const HeroBannerCaseStudies = props => {
                           <span
                             className={
                               (btn.btnhiglight === true
-                                ? "btn-primary-lg"
-                                : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                                ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                                : "btn-secondary-lg button-gradient-border") + ` sm:mr-4 md:mb-0 mb-4`
                             }
                           >
                             {btn.btntext}

@@ -24,7 +24,7 @@ const Description = ({ section }) => {
         </div>
       )}
       {section.block_button_text && (
-        <Link to={section.block_button_url} className="btn-secondary-lg leading-normal text-sm border-darkScheme-btnPrimaryBg bg-darkScheme-btnPrimaryBg  py-4 hover:bg-transparent text-darkScheme-textBlack hover:text-darkScheme-btnPrimaryBg">
+        <Link to={section.block_button_url} className="btn-secondary-lg leading-normal text-sm button-gradient-border">
           {section.block_button_text}
         </Link>
       )}

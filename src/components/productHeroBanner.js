@@ -84,8 +84,8 @@ const ProductHeroBanner = props => {
                           }
                           className={
                             (btn.btnhiglight === true
-                              ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` sm:mr-6 md:mb-0 mb-6 cta-btn`
+                              ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                              : "btn-secondary-lg button-gradient-border") + ` sm:mr-6 md:mb-0 mb-6 cta-btn`
                           }
                           href={btn.btnlink}
                         >
@@ -107,8 +107,8 @@ const ProductHeroBanner = props => {
                             }
                             className={
                               (btn.btnhiglight === true
-                                ? "btn-primary-lg"
-                                : "btn-secondary-lg") + ` sm:mr-6 md:mb-0 mb-6 cta-btn`
+                                ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                                : "btn-secondary-lg button-gradient-border") + ` sm:mr-6 md:mb-0 mb-6 cta-btn`
                             }
                             to={btn.btnlink}
                           >

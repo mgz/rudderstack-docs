@@ -94,8 +94,8 @@ const MiddleBannerV2 = props => {
                               }
                               className={
                                 (btn.btnhiglight === true
-                                  ? "text-darkScheme-textBlack border border-darkScheme-btnPrimaryBg btn-secondary-lg bg-darkScheme-btnPrimaryBg hover:text-darkScheme-btnPrimaryBg hover:bg-transparent"
-                                  : "btn-secondary-lg") +
+                                  ? "text-darkScheme-textBlack btn-secondary-lg button-gradient-border"
+                                  : "btn-secondary-lg button-gradient-border") +
                                 ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-6 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
                               }
                               href={btn.btnlink}
@@ -115,8 +115,8 @@ const MiddleBannerV2 = props => {
                               <span
                                 className={
                                   (btn.btnhiglight === true
-                                    ? "bg-white text-primary btn-secondary-lg hover:bg-blueNew-eastbay"
-                                    : "btn-secondary-lg") +
+                                    ? "bg-white text-primary btn-secondary-lg button-gradient-border"
+                                    : "btn-secondary-lg button-gradient-border") +
                                   ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center lg:mr-4 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
                                 }
                               >
