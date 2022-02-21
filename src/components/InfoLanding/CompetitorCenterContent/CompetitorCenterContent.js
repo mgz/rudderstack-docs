@@ -11,7 +11,7 @@ const CompetitorCenterContent = ({data}) => {
                     {data.description}
                 </p>
                 {data.subtitle !== "" && <p className={`${s.power_of_rudderstack} text-darkScheme-textPrimary`}>{data.subtitle}</p>}
-                <button className="cta-btn btn-primary-lg">Talk to sales</button>
+                <button className="cta-btn btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary">Talk to sales</button>
             </div>
             {data.showDivider && (<div className='section-divider'></div>)}
         </section>
