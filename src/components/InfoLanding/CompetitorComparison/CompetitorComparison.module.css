@@ -68,8 +68,14 @@
 .compare_table_wrapper{
     margin-bottom: 30px;
 }
+.compare_table_wrapper:last-child{
+    margin-bottom: 0px;
+}
 .heading_desktop{
     max-width: 400px;
+}
+.competitor_bg{
+    padding-bottom: 220px;
 }
 @media screen and (max-width:1023px) {
     .upper_row{

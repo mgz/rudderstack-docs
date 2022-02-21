@@ -74,6 +74,8 @@ const InfoLandingBase = ({ data, location }) => {
                   return <InfoLeftContentRightImg data={node} key={node._key} />
                 case "left_right_content_with_right_background_image":
                   return <InfoLandingUseCase data={node} key={node._key} />
+                case "center_content_with_background":
+                  return <CompetitorCenterContent data={node} key={node._key} />
                 default:
                   return null
               }

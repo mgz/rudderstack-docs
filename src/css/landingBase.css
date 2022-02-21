@@ -98,7 +98,12 @@ h2.landing-section-title{
   .landing-newsletter-input::placeholder {
     color: rgba(255, 255, 255, 0.5);
   }
-
+.sectionbg{
+    padding:100px 0px 200px 0px;
+    background: url('../images/use-case-bg.svg') no-repeat;
+    background-position: 100% 150px;
+    background-size: 450px;
+}
 @media screen and (max-width:1440px) {
   .landing-hero-form-wrapper .landing-container{
         max-width: 100%;
