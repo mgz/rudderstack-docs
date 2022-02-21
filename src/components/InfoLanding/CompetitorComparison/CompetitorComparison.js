@@ -18,7 +18,7 @@ const CompetitorComparison = (
             <div className="landing-container flex flex-col text-center items-center">
                 <h1 className="landing-section-title">{segmentData.title} </h1>
                 <div className="mt-2 lg:mt-14 w-full relative">
-                    <div className="block lg:hidden  text-darkScheme-btnSecondaryBg flex justify-center lg:justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl text-left uppercase font-bold">
+                    <div className="block lg:hidden flex justify-center lg:justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl text-left uppercase font-bold">
                         <h3> {segmentData.group_items.group_items[0].group_name} </h3>
                     </div>
                     <div className={`${s.upper_row} flex`}>
@@ -42,7 +42,7 @@ const CompetitorComparison = (
                         {table_row.map((item, i) => {
                             return (
                                 <div key={item._key} className={`${s.compare_table_wrapper}`}>
-                                    <div className={`${s.heading_desktop}  text-darkScheme-btnSecondaryBg flex justify-center lg:justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl text-left uppercase font-bold`}>
+                                    <div className={`${s.heading_desktop} flex justify-center lg:justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl text-left uppercase font-bold`}>
                                         <h3> {item.group_name} </h3>
                                     </div>
 
@@ -52,7 +52,7 @@ const CompetitorComparison = (
                                                 
                                                 <div className={`${s.grad_bg} flex lg:rounded-2xl items-center `} key={row_data._key}>
                                                     <div className="w-full  flex-row hidden lg:flex items-center">
-                                                        <div className="w-1/3 p-7 text-darkScheme-textPrimary justify-start flex">{row_data.cells[0]}</div>
+                                                        <div className="w-1/3 p-7 text-darkScheme-textPrimary justify-start flex text-left">{row_data.cells[0]}</div>
                                                         <div className="w-1/3 p-7">
                                                             <span className={
                                                                 row_data.cells[1] === 'CHECK' ? `${s.check_icon} ${s.check_comparison}` : row_data.cells[1] === '' ? `${s.line_image}` : `${s.show_text}`} >
