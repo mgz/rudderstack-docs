@@ -8,7 +8,7 @@ const InfoLandingHeroWithForm = ({data,showDivider,location}) => {
    let formData = data;
    /* console.log("some", location); */
     return(
-        <section className={`${s.usecase_hero_from} relative landing-hero-form-wrapper`}>
+        <section className={`usecase_hero_from relative landing-hero-form-wrapper`}>
             <div className="section-gradient">
                 <div className="flex flex-col md:flex-row">
                     <div className={`${s.usecase_left_content} lg:w-1/2 w-full`}>
