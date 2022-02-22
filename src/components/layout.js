@@ -155,12 +155,12 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
           {/* <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" /> */}
         <meta name="google-site-verification" content="zUWXWnpUbNfAJB-jC1cJEwgO1-wXVdrRkwrL9wN_u_s" />
-          <script src={withPrefix("zoomInfo.js")} type="text/javascript" />
-          <script
+           <script src={withPrefix("zoomInfo.js")} type="text/javascript" />
+          {/*<script
             defer
             type="text/javascript"
-            src="https://api.huckabuy.com/s/d3d3LnJ1ZGRlcnN0YWNrLmNvbQ==/install.js"
-          ></script>
+            src="https://api.huckabuy.com/s/d3d3LnJ1ZGRlcnN0YWNrLmNvbQ==/install.js" 
+          ></script>*/}
           <meta property="og:image" content="../images/rudderstack_thumbnail.png"/>
         </Helmet>
 
