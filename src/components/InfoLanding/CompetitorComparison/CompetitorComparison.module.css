@@ -103,6 +103,9 @@
     .heading_desktop{
         max-width: 100%; 
     }
+    .compare_table_wrapper{
+        margin-bottom: 10px;
+    }
 }
 @media screen and (max-width:767px) {
     .logo_compare{

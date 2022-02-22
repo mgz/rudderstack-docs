@@ -42,7 +42,7 @@ const CompetitorComparison = (
                         {table_row.map((item, i) => {
                             return (
                                 <div key={item._key} className={`${s.compare_table_wrapper}`}>
-                                    <div className={`${s.heading_desktop} flex justify-center lg:justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl text-left uppercase font-bold`}>
+                                    <div className={`${s.heading_desktop} flex justify-center lg:justify-start p-6 text-darkScheme-btnSecondaryBg text-lg lg:text-2xl lg:text-left uppercase font-bold`}>
                                         <h3> {item.group_name} </h3>
                                     </div>
 
@@ -51,38 +51,19 @@ const CompetitorComparison = (
                                             return (
                                                 
                                                 <div className={`${s.grad_bg} flex lg:rounded-2xl items-center `} key={row_data._key}>
-                                                    <div className="w-full  flex-row hidden lg:flex items-center">
-                                                        <div className="w-1/3 p-7 text-darkScheme-textPrimary justify-start flex text-left">{row_data.cells[0]}</div>
-                                                        <div className="w-1/3 p-7">
+                                                    <div className="w-full  flex-row lg:flex items-center">
+                                                        <div className="lg:w-1/3 w-full lg:p-7 pt-5 pb-1 text-darkScheme-textPrimary justify-center  lg:justify-start flex text-left">{row_data.cells[0]}</div>
+                                                        <div className="lg:w-1/3 w-1/2 lg:p-7 pt-2 pb-5  inline-flex justify-center">
                                                             <span className={
                                                                 row_data.cells[1] === 'CHECK' ? `${s.check_icon} ${s.check_comparison}` : row_data.cells[1] === '' ? `${s.line_image}` : `${s.show_text}`} >
                                                                 <span>  {row_data.cells[1]} </span>
                                                             </span>
                                                         </div>
-                                                        <div className="w-1/3 p-7">
+                                                        <div className="lg:w-1/3 w-1/2 lg:p-7 pt-2 pb-5  inline-flex justify-center">
                                                             <span className={
                                                                 row_data.cells[2] === 'CHECK' ? `${s.check_icon} ${s.check_comparison}` : row_data.cells[2] === '' ? `${s.line_image}` : `${s.show_text}`} >
                                                                 <span>  {row_data.cells[2]} </span>
                                                             </span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="py-2 px-4 w-full flex-col flex block lg:hidden">
-                                                        <div className="text-darkScheme-textPrimary pb-1">{row_data.cells[0]}</div>
-                                                        <div className="flex">
-                                                            <div className="w-1/2 self-center h-10 flex items-center justify-center">
-                                                                <span className={row_data.cells[1] === 'CHECK' ?
-                                                                    `${s.check_icon} ${s.check_comparison}` :
-                                                                    `${s.line_image}`} />
-
-                                                            </div>
-                                                            <div className="w-1/2 self-center h-10 flex items-center justify-center">
-                                                                <span className={row_data.cells[2] === '' ?
-                                                                    `${s.line_image} ` :
-                                                                    `${s.check_icon} ${s.check_comparison}`} />
-                                                            </div>
-
-
                                                         </div>
                                                     </div>
                                                 </div>
