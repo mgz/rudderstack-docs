@@ -45,7 +45,7 @@ const MainNavigationMenuLink = props => {
                 } lg:place-items-left ${
                  props.currMenuIndex === i ? `flex` : `flex hidden`
                }
-               overflow-y-auto lg:overflow-hidden h-80 lg:h-64
+               overflow-y-auto lg:overflow-hidden h-80 lg:h-72
              `}
                 //  lg:left-80 xl:left-96 2xl:left-1/2
               >
@@ -85,7 +85,7 @@ const MainNavigationMenuLink = props => {
                                       return (
                                         <li
                                           key={j}
-                                          className="text-xs font-custom py-1 lg:py-2 font-bold hover:bg- px-4 lg:px-12"
+                                          className="text-base font-custom py-1 lg:py-2 hover:bg- px-4 lg:px-12"
                                         >
                                           <a
                                             className={`border-b border-solid border-transparent hover:text-darkScheme-btnPrimaryBg`}

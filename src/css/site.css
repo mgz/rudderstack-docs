@@ -299,6 +299,9 @@ body {
     border-right: 2px solid rgba(255, 255, 255);
     border-bottom: 2px solid rgba(255, 255, 255);
   }
+  .has-submenu:first-child .sub-menu {
+    max-height: 160px;
+  }
 }
 
 .menu li.has-submenu a.active:after {
@@ -313,9 +316,6 @@ body {
   backdrop-filter: blur(48px);
   border-radius: 0px 0px 14px 14px;
   top: 90px;
-}
-.has-submenu:first-child .sub-menu {
-  max-height: 130px;
 }
 .inner-header-group {
   background: radial-gradient(
@@ -345,7 +345,7 @@ body {
   );
 }
 .has-submenu:first-child .sub-menu {
-  max-height: 170px;
+  max-height: 190px;
 }
 .lr-icon {
   @apply text-blueNew-magenta;
@@ -1615,6 +1615,9 @@ form .disableActive {
   .card-block-wrapper {
     width: 100%;
     text-align: center;
+  }
+  .nav-separator {
+      border-right: none;
   }
 }
 
