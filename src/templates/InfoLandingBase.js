@@ -25,7 +25,6 @@ import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { rudderslabTrackOnClick } from "../utils/common"
 import clientConfig from "../../client-config"
 
-
 import "../css/landingBase.css"
 
 const InfoLandingBase = ({ data, location }) => {
@@ -46,40 +45,47 @@ const InfoLandingBase = ({ data, location }) => {
   )
 
   return (
-    <Layout darkTheme={true}>
+    <Layout darkTheme={true} location={location}>
       <Helmet>
-        <title>{data.sanityInfoLandingPage.meta_title || data.sanityInfoLandingPage.title}</title>
+        <title>
+          {data.sanityInfoLandingPage.meta_title ||
+            data.sanityInfoLandingPage.title}
+        </title>
       </Helmet>
-        <div className="landing-main">
-          {data.sanityInfoLandingPage._rawPagebuildersection.map(
-            (node, index) => {
-              switch (node._type) {
-                case "two_columns_with_form":
-                  return <InfoLandingHeroWithForm data={node} key={node._key}  />
-                case "left_right_content_with_image_and_bullet_items":
-                  return <InfoLandingHero data={node} key={node._key} />
-                   {/* <CompetitorCenterContent /> */}
-                 {/*   <CompetitorComparison /> */}
-                case "left_right_content_and_bullet_items":
-                  return <InfoLandingAbout data={node} key={node._key} />
-                case "left_right_content_with_logos_and_testimonial":
-                  return <InfoLandingTestimonial data={node} key={node._key} />
-                case "title_with_card_items":
-                  return <InfoLandingKeyFeatures data={node} key={node._key} />
-                case "left_content_with_link_and_right_image":
-                  return <InfoLeftContentRightImg data={node} key={node._key} />
-                case "left_right_content_with_right_background_image":
-                  return <InfoLandingUseCase data={node} key={node._key} />
-                default:
-                  return null
-              }
+      <div className="landing-main">
+        {data.sanityInfoLandingPage._rawPagebuildersection.map(
+          (node, index) => {
+            switch (node._type) {
+              case "two_columns_with_form":
+                return <InfoLandingHeroWithForm data={node} key={node._key} />
+              case "left_right_content_with_image_and_bullet_items":
+                return <InfoLandingHero data={node} key={node._key} />
+                {
+                  /* <CompetitorCenterContent /> */
+                }
+                {
+                  /*   <CompetitorComparison /> */
+                }
+              case "left_right_content_and_bullet_items":
+                return <InfoLandingAbout data={node} key={node._key} />
+              case "left_right_content_with_logos_and_testimonial":
+                return <InfoLandingTestimonial data={node} key={node._key} />
+              case "title_with_card_items":
+                return <InfoLandingKeyFeatures data={node} key={node._key} />
+              case "left_content_with_link_and_right_image":
+                return <InfoLeftContentRightImg data={node} key={node._key} />
+              case "left_right_content_with_right_background_image":
+                return <InfoLandingUseCase data={node} key={node._key} />
+              default:
+                return null
             }
-          )}
-          {middleBannerGetStarted[0].node._rawGetStarted._type ===
-            "middlebannersection" && (
-            <MiddleBanner {...middleBannerGetStarted[0].node._rawGetStarted} />
-          )}
-        </div>
+          }
+        )}
+        {middleBannerGetStarted[0].node._rawGetStarted._type ===
+          "middlebannersection" && (
+          <MiddleBanner {...middleBannerGetStarted[0].node._rawGetStarted} />
+        )}
+      </div>
     </Layout>
   )
 }

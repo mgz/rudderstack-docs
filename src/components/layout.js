@@ -21,6 +21,9 @@ import PortableText from "../components/portableText"
 import { StaticImage } from "gatsby-plugin-image"
 import CookiesConsent from "./cookiesConsent"
 import WebisteBanner from "./websiteBanner"
+import ScriptContentHead from "./ScriptContentHead"
+import ScriptContentBody from "./ScriptContentBody"
+
 import { rudderslabTrackOnClick } from "../utils/common"
 
 import "../css/tailwind.css"
@@ -63,6 +66,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
               _rawSocialWidgetSection
             }
             _rawWebsiteBannerSection
+            _rawWebsiteScripts
           }
         }
       }
@@ -121,7 +125,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
 
   //   // diableGradient = true
   // }
-
+  // console.log("allSanitySiteSettings", data.allSanitySiteSettings)
   return (
     <React.Fragment>
       {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection &&
@@ -141,6 +145,18 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
           }
         )}
 
+      {data.allSanitySiteSettings.edges[0].node._rawWebsiteScripts.map(
+        script => {
+          return (
+            <ScriptContentHead
+              key={script._key}
+              currentSlug={location ? location.pathname : ""}
+              {...script}
+            />
+          )
+        }
+      )}
+
       <div
         id="main-container"
         className={
@@ -154,14 +170,20 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
         <Helmet>
           {/* <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" /> */}
-        <meta name="google-site-verification" content="zUWXWnpUbNfAJB-jC1cJEwgO1-wXVdrRkwrL9wN_u_s" />
+          <meta
+            name="google-site-verification"
+            content="zUWXWnpUbNfAJB-jC1cJEwgO1-wXVdrRkwrL9wN_u_s"
+          />
           <script src={withPrefix("zoomInfo.js")} type="text/javascript" />
           <script
             defer
             type="text/javascript"
             src="https://api.huckabuy.com/s/d3d3LnJ1ZGRlcnN0YWNrLmNvbQ==/install.js"
           ></script>
-          <meta property="og:image" content="../images/rudderstack_thumbnail.png"/>
+          <meta
+            property="og:image"
+            content="../images/rudderstack_thumbnail.png"
+          />
         </Helmet>
 
         <MainNavigation diableGradient={diableGradient} />
@@ -171,6 +193,17 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
           className="hero-section px-4 sm:px-4 text-sm md:pt-14 w-full mx-auto"
           name={"footer-container"}
         >
+          {data.allSanitySiteSettings.edges[0].node._rawWebsiteScripts.map(
+            script => {
+              return (
+                <ScriptContentBody
+                  key={script._key}
+                  currentSlug={location ? location.pathname : ""}
+                  {...script}
+                />
+              )
+            }
+          )}
           <div className="max-w-6xl mx-auto footer-menus-wrap">
             <div className="w-full pt-12 md:pt-6 font-custom inline-block">
               {footermenus.map((menu, i) => (
@@ -265,9 +298,14 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
               })}
             </div>
             <div>
-            <noscript>
-             <img height="1" width="1" className="hidden" src="https://ws.zoominfo.com/pixel/61ba5bf54261e1001b0105cc"/>
-             </noscript>
+              <noscript>
+                <img
+                  height="1"
+                  width="1"
+                  className="hidden"
+                  src="https://ws.zoominfo.com/pixel/61ba5bf54261e1001b0105cc"
+                />
+              </noscript>
             </div>
 
             {/* <noscript>
