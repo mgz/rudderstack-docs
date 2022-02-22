@@ -26,7 +26,7 @@ const InfoLandingHero = (
                          />
                     </div>
                 </div>
-                <div className={s.landing_hero_pointers_wrapper}>
+                {heroData.icon_with_text_items && <div className={s.landing_hero_pointers_wrapper}>
                     <ul className='flex hero-pointer-list  md:justify-center justify-content-start lg:justify-between lg:flex-nowrap flex-wrap'>
                         {heroData.icon_with_text_items.map((item, index) => {
                             return (
@@ -41,7 +41,7 @@ const InfoLandingHero = (
                             )
                         })}
                     </ul>
-                </div>
+                </div>}
             </div>
             {showDivider && (<div className='section-divider'></div>)}
         </section>
