@@ -12,7 +12,7 @@ const CompetitorCenterContent = ({data}) => {
                     {data.description}
                 </p>
                 {data.subtitle !== "" && <p className={`${s.power_of_rudderstack} text-darkScheme-textPrimary`}>{data.subtitle}</p>}
-                {data.center_cta && data.center_cta.btnlink ? (<Link className="cta-btn btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary" to={data.center_cta.btnlink}>{data.center_cta.btntext}</Link>) : (<a href={data.center_cta.cmnexternallink} className="cta-btn btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary">{data.center_cta.cmnlinktext}</a>) }
+                {data.center_cta && data.center_cta.btnlink ? (<Link className="btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary" to={data.center_cta.btnlink}>{data.center_cta.btntext}</Link>) : (<a href={data.center_cta.cmnexternallink} className="btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary">{data.center_cta.cmnlinktext}</a>) }
             </div>
             {data.showDivider && (<div className='section-divider'></div>)}
         </section>
