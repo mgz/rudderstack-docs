@@ -309,8 +309,8 @@ const DynamicInputForm = ({
             // window.ChiliPiper.submit()
             if (
               location &&
-              (location.pathname === "/request-demo/" ||
-                location.pathname === "/request-demo" ||
+              (/* location.pathname === "/request-demo/" ||
+                location.pathname === "/request-demo" || */
                 location.pathname === "/enterprise-quote/" ||
                 location.pathname === "/enterprise-quote")
             ) {
