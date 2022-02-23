@@ -1565,6 +1565,9 @@ form .disableActive {
     row-gap: 40px;
     align-items: center;
   }
+  .logo-item img{
+    max-width: 160px;
+  }
   .request-left-inner h1 {
     font-size: 36px;
     max-width: 80%;
@@ -1764,6 +1767,9 @@ form .disableActive {
   .logos-list img {
     width: 90px;
     max-width: 100%;
+  }
+  .logo-item img{
+    max-width: 110px;
   }
 }
 @media only screen and (max-width: 355px) {
