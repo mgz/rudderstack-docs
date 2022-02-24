@@ -169,7 +169,7 @@ const HeroBannerPricing = props => {
                         }
                         href={linkurl}
                         className={`font-bold leading-normal mx-auto text-sm ${
-                          link_display_as_button ? "btn-primary-lg" : ""
+                          link_display_as_button ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary" : ""
                         } relative sm:inline-block ${
                           props.applyGradientColorTheme
                             ? "lr-icon-gradient"
@@ -185,7 +185,7 @@ const HeroBannerPricing = props => {
                     return (
                       <span
                         className={`font-bold leading-normal mx-auto text-sm ${
-                          link_display_as_button ? "btn-primary-lg" : ""
+                          link_display_as_button ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary" : ""
                         } relative sm:inline-block ${
                           props.applyGradientColorTheme
                             ? "lr-icon-gradient"

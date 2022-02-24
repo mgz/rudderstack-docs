@@ -29,11 +29,13 @@ const InfoLandingTestimonial = (
                             }
                         })} */}
                         <div className="flex lg:flex-col flex-col-reverse">
-                            <div className={`${s.testimonial_form}`}>
+                            {testimonialData.testimonial.button ? (
+                                <a href={testimonialData.testimonial.button.btnlink} className={`cta-btn btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary`}>{testimonialData.testimonial.button.btntext}</a>
+                            ) : (<div className={`${s.testimonial_form}`}>
                                 <InfoLandingForm  />
-                            </div>
+                            </div>)}
                             <div className={s.landing_logos_wrapper}>
-                                <ul className={`landing-logos-list flex xl:justify-start justify-center items-center`}>
+                                <ul className={`landing-logos-list flex lg:justify-start justify-center items-center`}>
                                     {/* {testimonialData.customer_logos.map((logo, index) => {
                                         if(index === 0 || index === 1 || index === 2){
                                             return(
@@ -67,7 +69,7 @@ const InfoLandingTestimonial = (
                                         />
                                     </li>
                                 </ul>
-                                <ul className={`landing-logos-list flex xl:justify-start justify-center items-center ${s.landing_logos_list_last}`}>
+                                <ul className={`landing-logos-list flex lg:justify-start justify-center items-center ${s.landing_logos_list_last}`}>
                                     {/* {testimonialData.customer_logos.map((logo, index) => {
                                         if(index === 3 || index === 4 || index === 5){
                                             return(

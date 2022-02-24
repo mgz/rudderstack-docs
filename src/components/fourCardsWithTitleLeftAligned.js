@@ -60,7 +60,7 @@ const FourCardsWithTitleLeftAligned = props => {
                                   )
                                 }
                                 className={`font-bold leading-normal text-sm ${
-                                  link_display_as_button ? "btn-primary-lg" : ""
+                                  link_display_as_button ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary" : ""
                                 } ${
                                   props.applyGradientColorTheme
                                     ? "lr-icon-gradient"
@@ -76,7 +76,7 @@ const FourCardsWithTitleLeftAligned = props => {
                             return (
                               <span
                                 className={`font-bold leading-normal text-sm ${
-                                  link_display_as_button ? "btn-primary-lg" : ""
+                                  link_display_as_button ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary" : ""
                                 } ${
                                   props.applyGradientColorTheme
                                     ? "lr-icon-gradient"

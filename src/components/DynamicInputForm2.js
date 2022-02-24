@@ -491,7 +491,7 @@ const DynamicInputForm = ({
           )
         })}
       <button
-        className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4 ${
+        className={`dyno-button btn-primary-lg mt-3 md:mb-0 mb-4  border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary ${
           isLoading ? "disableActive" : ""
         }`}
         disabled={isLoading}

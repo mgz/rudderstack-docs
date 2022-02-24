@@ -76,8 +76,9 @@ const LeftRightImgCnt = (props) => {
                           }
                           className={
                             (props.header_media_cta_cutton.btnhiglight === true
-                              ? "bg-blueNew-magenta text-white btn-primary-lg border-transparent hover:bg-white hover:text-blueNew-midnight"
-                              : "btn-secondary-lg hover:bg-blueNew-midnight") +
+                              ? " btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                              
+                              : "btn-secondary-lg button-gradient-border") +
                             ` sm:mr-4 md:mb-0 mb-6`
                           }
                           href={props.header_media_cta_cutton.btnlink}
@@ -91,8 +92,8 @@ const LeftRightImgCnt = (props) => {
                           key={props.header_media_cta_cutton._key}
                           className={
                             (props.header_media_cta_cutton.btnhiglight === true
-                              ? "bg-blueNew-magenta text-white btn-primary-lg border-transparent hover:bg-white hover:text-blueNew-midnight"
-                              : "btn-secondary-lg hover:bg-blueNew-midnight") +
+                              ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                              : "btn-secondary-lg button-gradient-border") +
                             ` sm:mr-4 md:mb-0 mb-4`
                           }
                         >
@@ -318,7 +319,7 @@ const LeftRightImgCnt = (props) => {
                                     href={linkurl}
                                     className={`font-bold leading-normal text-sm ${
                                       link_display_as_button
-                                        ? "btn-primary-lg"
+                                        ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                         : ""
                                     } ${
                                       props.applyGradientColorTheme
@@ -336,7 +337,7 @@ const LeftRightImgCnt = (props) => {
                                   <span
                                     className={`font-bold leading-normal text-sm ${
                                       link_display_as_button
-                                        ? "btn-primary-lg"
+                                        ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                         : ""
                                     } ${
                                       props.applyGradientColorTheme
@@ -515,7 +516,7 @@ const LeftRightImgCnt = (props) => {
                                   }}
                                   className={`font-bold leading-normal text-sm ${
                                     link_display_as_button
-                                      ? "btn-primary-lg"
+                                      ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                       : ""
                                   } relative sm:inline-block ${
                                     props.applyGradientColorTheme
@@ -533,7 +534,7 @@ const LeftRightImgCnt = (props) => {
                                 <span
                                   className={`font-bold leading-normal text-sm ${
                                     link_display_as_button
-                                      ? "btn-primary-lg"
+                                      ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                       : ""
                                   } relative sm:inline-block ${
                                     props.applyGradientColorTheme

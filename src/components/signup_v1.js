@@ -21,7 +21,8 @@ const SignupV1 = props => {
           </p>
 
           <a
-            className="btn-primary-lg cursor-pointer w-full sm:w-44"
+            className="btn-primary-lg cursor-pointer w-full sm:w-44 border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary
+            "
             href={"https://app.rudderstack.com/signup"}
             onClick={e =>
               rudderslabTrackOnClick("button", "Explore RudderStack Today", e)
