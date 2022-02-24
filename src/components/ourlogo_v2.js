@@ -379,9 +379,9 @@ function OurLogo(props) {
 
   return (
     <section
-      className={`py-19 section-gradient relative triggers`}
+      className={`py-19 relative triggers`}
     >
-      <span className="section-border block absolute top-0 left-0 w-full"></span>
+      {/* <span className="section-border block absolute top-0 left-0 w-full"></span> */}
       <div className="max-w-6xl mx-auto blockWrapper">
         <div
           className={`flex w-full justify-center`}
