@@ -25,7 +25,6 @@ import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { rudderslabTrackOnClick } from "../utils/common"
 import clientConfig from "../../client-config"
 
-
 import "../css/landingBase.css"
 
 const InfoLandingBase = ({ data, location }) => {
@@ -48,9 +47,32 @@ const InfoLandingBase = ({ data, location }) => {
   )
 
   return (
-    <Layout darkTheme={true}>
+    <Layout darkTheme={true} location={location}>
       <Helmet>
-        <title>{data.sanityInfoLandingPage.meta_title || data.sanityInfoLandingPage.title}</title>
+        <title>
+          {data.sanityInfoLandingPage.meta_title ||
+            data.sanityInfoLandingPage.title}
+        </title>
+        {data.sanityInfoLandingPage.enable_no_follow_no_index === true && (
+          <meta name="robots" content="noindex" data-react-helmet="true" />
+        )}
+        {data.sanityInfoLandingPage.enable_no_follow_no_index === true && (
+          <meta name="robots" content="nofollow" data-react-helmet="true" />
+        )}
+        <meta
+          property="og:title"
+          content={data.sanityInfoLandingPage.meta_title || data.sanityInfoLandingPage.title}
+        />
+        <meta
+          property="twitter:title"
+          content={data.sanityInfoLandingPage.meta_title || data.sanityInfoLandingPage.title}
+        />
+        <meta name="description" content={data.sanityInfoLandingPage.meta_desc} />
+        <meta property="og:description" content={data.sanityInfoLandingPage.meta_desc} />
+        <meta
+          property="twitter:description"
+          content={data.sanityInfoLandingPage.meta_desc}
+        />
       </Helmet>
         <div className="landing-main">
           {data.sanityInfoLandingPage._rawPagebuildersection.map(
@@ -80,12 +102,12 @@ const InfoLandingBase = ({ data, location }) => {
                   return null
               }
             }
-          )}
-          {middleBannerGetStarted[0].node._rawGetStarted._type ===
-            "middlebannersection" && (
-            <MiddleBanner {...middleBannerGetStarted[0].node._rawGetStarted} />
-          )}
-        </div>
+        )}
+        {middleBannerGetStarted[0].node._rawGetStarted._type ===
+          "middlebannersection" && (
+          <MiddleBanner {...middleBannerGetStarted[0].node._rawGetStarted} />
+        )}
+      </div>
     </Layout>
   )
 }

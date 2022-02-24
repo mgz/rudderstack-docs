@@ -30,7 +30,7 @@ const InfoLandingHero = (
                 </div>
                 {heroData.icon_with_text_items && <div className={s.landing_hero_pointers_wrapper}>
                     <ul className='flex hero-pointer-list  md:justify-center justify-content-start lg:justify-between lg:flex-nowrap flex-wrap'>
-                        {heroData.icon_with_text_items.map((item, index) => {
+                        {heroData.icon_with_text_items && heroData.icon_with_text_items.map((item, index) => {
                             return (
                                 <li className={`${s.hero_pointer_item} flex flex-col items-center justify-start `} key={item._key}>
                                     <span className={`${s.hero_pointer_image}`}>

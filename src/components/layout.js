@@ -21,6 +21,9 @@ import PortableText from "../components/portableText"
 import { StaticImage } from "gatsby-plugin-image"
 import CookiesConsent from "./cookiesConsent"
 import WebisteBanner from "./websiteBanner"
+import ScriptContentHead from "./ScriptContentHead"
+import ScriptContentBody from "./ScriptContentBody"
+
 import { rudderslabTrackOnClick } from "../utils/common"
 
 import "../css/tailwind.css"
@@ -63,6 +66,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
               _rawSocialWidgetSection
             }
             _rawWebsiteBannerSection
+            _rawWebsiteScripts
           }
         }
       }
@@ -121,7 +125,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
 
   //   // diableGradient = true
   // }
-
+  // console.log("allSanitySiteSettings", data.allSanitySiteSettings)
   return (
     <React.Fragment>
       {data.allSanitySiteSettings.edges[0].node._rawWebsiteBannerSection &&
@@ -140,6 +144,18 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
             )
           }
         )}
+
+      {data.allSanitySiteSettings.edges[0].node._rawWebsiteScripts.map(
+        script => {
+          return (
+            <ScriptContentHead
+              key={script._key}
+              currentSlug={location ? location.pathname : ""}
+              {...script}
+            />
+          )
+        }
+      )}
 
       <div
         id="main-container"
@@ -171,6 +187,17 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
           className="hero-section px-4 sm:px-4 text-sm md:pt-14 w-full mx-auto"
           name={"footer-container"}
         >
+          {data.allSanitySiteSettings.edges[0].node._rawWebsiteScripts.map(
+            script => {
+              return (
+                <ScriptContentBody
+                  key={script._key}
+                  currentSlug={location ? location.pathname : ""}
+                  {...script}
+                />
+              )
+            }
+          )}
           <div className="max-w-6xl mx-auto footer-menus-wrap">
             <div className="w-full pt-12 md:pt-6 font-custom inline-block">
               {footermenus.map((menu, i) => (
@@ -265,9 +292,14 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
               })}
             </div>
             <div>
-            <noscript>
-             <img height="1" width="1" className="hidden" src="https://ws.zoominfo.com/pixel/61ba5bf54261e1001b0105cc"/>
-             </noscript>
+              <noscript>
+                <img
+                  height="1"
+                  width="1"
+                  className="hidden"
+                  src="https://ws.zoominfo.com/pixel/61ba5bf54261e1001b0105cc"
+                />
+              </noscript>
             </div>
 
             {/* <noscript>
