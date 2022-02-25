@@ -46,13 +46,12 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
             </p>
             <SignupShortForm />
             {page_data.guideUrl !== "NA" && (
-              <div className="learn-more-wrapper flex md:justify-end justify-center w-full text-lg mt-2 max-w-md">
-                <a
-                  className="learn-more text-black-custom text-lg font-normal"
-                  href={page_data.guideUrl}
-                >
-                  Follow the Guide
-                </a>
+              <div className="learn-more-wrapper flex md:justify-end justify-center w-full text-lg mt-4 md:max-w-md md:ml-5 text-blueNew-midnight">
+              <a className="learn-more text-black-custom text-lg font-normal font-semibold  text-blueNew-midnight"
+                  href={page_data.guideUrl}>
+                  <span className="italic mr-1"> Or follow the setup guide</span>
+                  <span>	&#62;  </span>
+              </a> 
               </div>
             )}
             {/* <a
