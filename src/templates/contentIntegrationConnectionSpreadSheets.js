@@ -44,7 +44,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               {page_data.destinationIntegration} ...and all of your other cloud
               tools.
             </p>
-            <SignupShortForm />
+            <SignupShortForm formId={props.formId} />
             {/* <a
               onClick={e =>
                 rudderslabTrackOnClick(
