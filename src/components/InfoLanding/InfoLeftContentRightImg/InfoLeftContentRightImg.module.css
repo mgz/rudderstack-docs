@@ -2,7 +2,7 @@
     padding: 95px 0;
 }
 .content_wrapper_left{
-    max-width: 566px;
+    max-width: 590px;
     width: 100%;
 }
 .content_wrapper_left .section_pera{
@@ -11,14 +11,11 @@
     color: #C4C4C4;
 }
 .left_content_title{
-    font-size: 54px;
+    font-size: 34px;
     color: #ffffff;
     font-weight: bold;
-    line-height: 64.8px;
+    line-height: 40.8px;
     letter-spacing: -0.04em;
-}
-.landing_hero_cta{
-    max-width: 320px;
 }
 @media screen and (max-width:1023px){
     .content_wrapper_left{

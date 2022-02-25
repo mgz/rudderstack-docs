@@ -61,6 +61,7 @@
     color: #979797;
 }
 
+
 @media screen and (max-width:1024px) {
     .testimonial_right, .testimonial_left{
         width: 100%;
