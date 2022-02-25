@@ -33,7 +33,7 @@ const InfoLandingTestimonial = (
                                 <InfoLandingForm  />
                             </div>
                             <div className={s.landing_logos_wrapper}>
-                                <ul className={`landing-logos-list flex xl:justify-start justify-center items-center`}>
+                                <ul className={`landing-logos-list flex lg:justify-start justify-center items-center`}>
                                     {/* {testimonialData.customer_logos.map((logo, index) => {
                                         if(index === 0 || index === 1 || index === 2){
                                             return(
@@ -67,7 +67,7 @@ const InfoLandingTestimonial = (
                                         />
                                     </li>
                                 </ul>
-                                <ul className={`landing-logos-list flex xl:justify-start justify-center items-center ${s.landing_logos_list_last}`}>
+                                <ul className={`landing-logos-list flex lg:justify-start justify-center items-center ${s.landing_logos_list_last}`}>
                                     {/* {testimonialData.customer_logos.map((logo, index) => {
                                         if(index === 3 || index === 4 || index === 5){
                                             return(

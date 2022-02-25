@@ -236,7 +236,7 @@ const PricingComparisonComponentV2 = props => {
                                         {row.enterprice_val === "TALKTOSALES" && (
                                           <Link
                                             to="/enterprise-quote"
-                                            className="text-sm  leading-sm font-bold py-2 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary mx-auto"
+                                            className="text-sm  leading-sm font-bold py-2 px-7 rounded-2xl button-gradient-border  mx-auto"
                                             target="_blank"
                                             rel="noreferrer"
                                             onClick={e =>
@@ -265,7 +265,7 @@ const PricingComparisonComponentV2 = props => {
             <div className="inline-block mr-4">
               <a
                 className={
-                  "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto rounded-lg font-bold text-darkScheme-textPrimary w-40 py-2"
+                  "button-gradient-border flex items-center justify-center mx-auto rounded-lg font-bold w-40 py-2"
                 }
                 href={"https://app.rudderstack.com/signup?type=freetrial"}
               >
@@ -275,7 +275,7 @@ const PricingComparisonComponentV2 = props => {
             <div className="inline-block">
               <Link
                 className={
-                  "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto rounded-lg font-bold text-darkScheme-textPrimary w-40 py-2"
+                  "button-gradient-border  flex items-center justify-center mx-auto rounded-lg font-bold w-40 py-2"
                 }
                 to={"/request-demo"}
               >

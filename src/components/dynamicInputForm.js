@@ -311,6 +311,8 @@ const DynamicInputForm = ({
               location &&
               (location.pathname === "/request-demo/" ||
                 location.pathname === "/request-demo" ||
+                location.pathname === "/info/use-case/data-analytics" ||
+                location.pathname === "/info/use-case/data-analytics/" ||
                 location.pathname === "/enterprise-quote/" ||
                 location.pathname === "/enterprise-quote")
             ) {
