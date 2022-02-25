@@ -495,8 +495,8 @@ border-width: 0;
 }
 
 .sidebar-nav-content a {
-@apply block;
-@apply p-1 pr-5;
+@apply inline-block;
+@apply p-1;
 @apply font-medium;
 color: #6c6c80;
 }
@@ -508,7 +508,7 @@ color: #6c6c80;
 .nestedAccordion .accordion__button {
 @apply bg-white;
 @apply relative;
-@apply pl-2;
+@apply pr-5 pl-2;
 @apply outline-none;
 }
 .nestedAccordion .accordion__button:hover {
