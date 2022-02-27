@@ -103,10 +103,10 @@ const CodeEditor = props => {
 
     let el = document.getElementById("codeEditorBlock")
 
-    /* function isInViewPort(element) {
+     function isInViewPort(element) {
       // Get the bounding client rectangle position in the viewport
       let bounding = element.getBoundingClientRect();
-      /* console.log('Bounding rect', bounding);
+      /* console.log('Bounding rect', bounding); */
 
       // Checking part. Here the code checks if it's *fully* visible
       // Edit this part if you just want a partial visibility
@@ -122,11 +122,11 @@ const CodeEditor = props => {
       } else {
         return false
       }
-    } */
+    }
 
     if(!isMobile){
       gsap.registerPlugin(ScrollTrigger);
-      /* window.addEventListener(
+       window.addEventListener(
         "scroll",
         function (event) {
           if (isInViewPort(el)) {
@@ -135,7 +135,7 @@ const CodeEditor = props => {
             setEditorFlag(false);
           }
         }
-      ) */
+      )
       ScrollTrigger.create({
         trigger: "#codeEditorBlock",
         start: "top 80%",
@@ -155,8 +155,8 @@ const CodeEditor = props => {
     }
   }, [])
 
-  /* useEffect(() => {
-    if(!isMobile && !isSafari && !isFirefox){
+   useEffect(() => {
+    // if(!isMobile && !isSafari && !isFirefox){
       if(leftEditorScenes && editorFlag){
         leftEditorScenes.play();
         if(leftEditorScenes.state === 'play'){
@@ -165,29 +165,29 @@ const CodeEditor = props => {
       }else if(leftEditorScenes){
         leftEditorScenes.pause();
       }
-    }
-    /* console.log('Editor flag', editorFlag);
-  }, [editorFlag]) */
+    // }
+    //  console.log('Editor flag', editorFlag);
+  }, [editorFlag])
 
-  useEffect(() => {
+  // useEffect(() => {
     /* if(isMobile || isSafari || isFirefox){ */
-      let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
-      props.code_input.code_contents.forEach(ppp => {
-        leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
-      })
-      props.code_output.code_contents.forEach((ppp, idx) => {
-        rightCodeOutput.push(replaceAll(
-          replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
-          "<<CURRDATETIME>>",
-          `${new Date().toISOString()}`
-        ))
-      })
+      // let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
+      // props.code_input.code_contents.forEach(ppp => {
+      //   leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
+      // })
+      // props.code_output.code_contents.forEach((ppp, idx) => {
+      //   rightCodeOutput.push(replaceAll(
+      //     replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
+      //     "<<CURRDATETIME>>",
+      //     `${new Date().toISOString()}`
+      //   ))
+      // })
 
 
-      leftEditor.getDoc().setValue(leftCodeInput.join(""));
-      rightEditor.getDoc().setValue(rightCodeOutput.join(""));
+      // leftEditor.getDoc().setValue(leftCodeInput.join(""));
+      // rightEditor.getDoc().setValue(rightCodeOutput.join(""));
     /* } */
-  }, [])
+  // }, [])
 
   return (
     <section className="py-19 relative section-gradient">
