@@ -14,7 +14,7 @@ const InfoLandingHero = (
             <div className='landing-container'>
                 <div className='landing-hero-wrapper flex flex-col md:flex-row justify-between lg:gap-x-0 gap-x-5'>
                     <div className={s.landing_hero_left}>
-                        <span className={`${s.landing_hero_category} pink uppercase font-bold`}>{heroData.sub_title}</span>
+                        <span className={`${s.landing_hero_category} pink uppercase font-bold mb-3 block`}>{heroData.sub_title}</span>
                         <h1 className='landing-section-title'>{heroData.title}</h1>
                         <h3 className={s.hero_subtitle}>{heroData.content[0].children[0].text}</h3>
                         {heroData.center_cta && heroData.center_cta.btnlink ? (<Link to={heroData.center_cta.btnlink} className={`btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary ${s.landing_hero_cta}`}>{heroData.center_cta.btntext}</Link>) : heroData.center_cta && heroData.center_cta.btnlink ? (<a href={heroData.center_cta.btnlink} className={`btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary ${s.landing_hero_cta}`}>{heroData.center_cta.btntext}</a>) : ""} 
@@ -22,7 +22,7 @@ const InfoLandingHero = (
                             <InfoLandingForm formId="app_signup_mkt_site" />
                         </div>}
                     </div>
-                    <div className='landing-hero-right'>
+                    <div className={`${s.hero_image} landing-hero-right`}>
                         <Image
                             props={heroData.right_image.asset._ref}
                          />
