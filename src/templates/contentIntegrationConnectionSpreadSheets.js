@@ -44,10 +44,10 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               {page_data.destinationIntegration} ...and all of your other cloud
               tools.
             </p>
-            <SignupShortForm />
+            <SignupShortForm formId="app_signup_mkt_site" />
             {page_data.guideUrl !== "NA" && (
               <div className="learn-more-wrapper flex md:justify-end justify-center w-full text-lg mt-4 md:max-w-md md:ml-5 text-blueNew-midnight">
-              <a className="learn-more text-black-custom text-lg font-normal font-semibold  text-blueNew-midnight"
+              <a className="learn-moretext-lg font-normal  text-blueNew-midnight"
                   href={page_data.guideUrl}>
                   <span className="italic mr-1"> Or follow the setup guide</span>
                   <span>	&#62;  </span>

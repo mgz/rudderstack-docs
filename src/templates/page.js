@@ -15,6 +15,7 @@ import CenteredAlignedTitleWithYoutube from "../components/centeredAlignedTitleW
 import CodeEditor from "../components/CodeEditor"
 import LeftRightComponentEdgesAligned from "../components/leftRightComponentEdgesAligned"
 import LeftRightMiddleBanner from "../components/LeftRightMiddleBanner"
+import AnnounceBanner from "../components/AnnounceBanner"
 // import SEO from "../components/seo"
 import Layout from "../components/layout"
 
@@ -154,6 +155,9 @@ const Page = props => {
         case "herobanner":
           el = <Hero key={c._key} {...c} />
           break
+        case "announce_banner":
+          el = <AnnounceBanner key={c._key} {...c} />
+           break
         case "ourlogoblock":
           el = <OurLogo key={c._key} {...c} />
           break

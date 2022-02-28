@@ -16,7 +16,7 @@ const InfoLandingTestimonial = (
             <div className='landing-container'>
                 <div className='testimonial-wrapper flex  flex-col lg:flex-row  text-center lg:text-left'>
                     <div className={s.testimonial_left}>
-                        <h2 className='landing-section-title mb-12'>{testimonialData.title}</h2>
+                        <h2 className='landing-section-title lg:mb-12 mb-5'>{testimonialData.title}</h2>
                         {/* {testimonialData.cta_butons.map((button, idx) => {
                             if(button.btnexternallink){
                                 return(
@@ -29,9 +29,11 @@ const InfoLandingTestimonial = (
                             }
                         })} */}
                         <div className="flex lg:flex-col flex-col-reverse">
-                            <div className={`${s.testimonial_form}`}>
+                            {testimonialData.testimonial.button ? (
+                                <a href={testimonialData.testimonial.button.btnlink} className={`cta-btn btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary`}>{testimonialData.testimonial.button.btntext}</a>
+                            ) : (<div className={`${s.testimonial_form}`}>
                                 <InfoLandingForm  />
-                            </div>
+                            </div>)}
                             <div className={s.landing_logos_wrapper}>
                                 <ul className={`landing-logos-list flex lg:justify-start justify-center items-center`}>
                                     {/* {testimonialData.customer_logos.map((logo, index) => {
