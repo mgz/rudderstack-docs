@@ -131,7 +131,7 @@ const WebisteBanner = props => {
         <PortableText blocks={props.banner_content} />
         <a
           href={props.banner_button.cmnlink}
-          className="font-bold underline pl-2 m-auto"
+          className="font-bold underline pl-2 m-auto register-now-btn"
           onClick={e => rudderslabTrackOnClick("banner", "website banner", e)}
         >
           {props.banner_button.cmnlinktext} &#x2192;
@@ -148,7 +148,7 @@ const WebisteBanner = props => {
             })
 
           }}
-          className="cursor-pointer font-bold"
+          className="cursor-pointer font-bold close-btn"
         >
           X
         </span>

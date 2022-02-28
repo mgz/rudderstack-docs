@@ -1522,6 +1522,10 @@ form .disableActive {
     background: transparent;
     resize: none;
 }
+.CodeMirror-code:focus, .CodeMirror-code:focus-visible {
+  border: none;
+  outline: none;
+}
 
 @media only screen and (min-width: 1024px) {
   .submenu-align {
@@ -1650,9 +1654,9 @@ form .disableActive {
     max-width: 100%;
   }
   .header-offset {
-    height: 34px;
+    height: 51px;
     transition: 0.1s all linear;
-    padding-top: 34px;
+    padding-top: 51px;
   }
   .header-offset .header-container {
     height: 51px;
@@ -1740,6 +1744,17 @@ form .disableActive {
   .lrlm-icon svg {
     width: 8px;
   }
+  .website-banner-top p{
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  .website-banner-top .register-now-btn{
+    font-size: 14px;
+    min-width: 115px;
+  }
+  .website-banner-top .close-btn{
+    margin-left: 5px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -1816,7 +1831,7 @@ form .disableActive {
     max-width: 100%;
   }
 }
-@media only screen and (max-width: 355px) {
+@media only screen and (max-width: 420px) {
   .header-offset.scroll-up .top-0.top-header-show {
     top: 85px !important;
   }

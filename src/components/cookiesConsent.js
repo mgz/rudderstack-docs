@@ -199,7 +199,7 @@ const CookiesConsent = () => {
           <p
             aria-hidden="true"
             className="my-4 md:my-0 md:px-10 md:py-4 md:rounded-lg md:border cursor-pointer self-center text-center w-full text-blueNew-custom font-bold
-            border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+            border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary py-3 lg:py-4"
             // href="#"
             onClick={() => {
               setShowConsent(false)
