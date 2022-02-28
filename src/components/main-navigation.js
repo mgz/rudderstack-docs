@@ -234,7 +234,7 @@ const MainNavigation = props => {
                         )
                       }
                     >
-                      <span className="border-transparent inline-block text-white  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg ">
+                      <span className="border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary inline-block  text-sm normal-case font-custom rounded-lg px-8 py-1.5 hidden lg:block btn-primary-lg ">
                         {trybtn.btntext}
                       </span>
                     </Link>

@@ -21,7 +21,7 @@ const HeroBannerIntegrationConnection = props => {
           </p>
 
           <a
-            className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold`}
+            className={`btn-primary-lg sm:mr-4 md:mb-0 mb-4 my-4 font-bold border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`}
             href={props.integration_connection.destination_docs_url}
           >
             Read {props.integration_connection.destination_integration} Docs

@@ -98,7 +98,12 @@ h2.landing-section-title{
   .landing-newsletter-input::placeholder {
     color: rgba(255, 255, 255, 0.5);
   }
-
+.sectionbg{
+    padding:100px 0px 200px 0px;
+    background: url('../images/use-case-bg.svg') no-repeat;
+    background-position: 100% 150px;
+    background-size: 450px;
+}
 @media screen and (max-width:1440px) {
   .landing-hero-form-wrapper .landing-container{
         max-width: 100%;
@@ -136,6 +141,12 @@ h2.landing-section-title{
     .comparison-table .landing-container{
         padding: 0;
     }
+    .sectionbg{
+        padding: 0 0px 58px 0px;
+        background-position: 100% -30%;
+        background-size: 300px;
+    }
+
 }
 @media (min-width:768px) and (max-width:991px) {
     .landing-newsletter-wrapper .landing-sign-up-text {
@@ -168,6 +179,11 @@ h2.landing-section-title{
     }
 }
 @media screen and (max-width:767px) {
+    .sectionbg{
+        padding: 0 0px 117px 0px;
+        background-position: 100% 170%;
+        background-size: 200px;
+    }
 
     h2.landing-section-title {
         letter-spacing: -1px;
@@ -217,4 +233,7 @@ h2.landing-section-title{
     .landing-newsletter-block {
         flex-direction: column;
       }
+      .sectionbg{ 
+        background-position: 110% 151%; 
+    }
 }

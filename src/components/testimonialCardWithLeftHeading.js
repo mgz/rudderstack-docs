@@ -60,8 +60,8 @@ const TestimonialCardWithLeftHeading = props => {
                           key={btn._key}
                           className={
                             (btn.btnhiglight === true
-                              ? "btn-primary-lg "
-                              : "btn-secondary-lg") + ` sm:mr-6 mb-4 cta-btn`
+                              ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                              : "btn-secondary-lg button-gradient-border") + ` sm:mr-6 mb-4 cta-btn`
                           }
                           onClick={e =>
                             rudderslabTrackOnClick(
@@ -91,8 +91,8 @@ const TestimonialCardWithLeftHeading = props => {
                           <span
                             className={
                               (btn.btnhiglight === true
-                                ? "btn-primary-lg"
-                                : "btn-secondary-lg") + ` sm:mr-6 mb-4 cta-btn`
+                                ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                                : "btn-secondary-lg button-gradient-border") + ` sm:mr-6 mb-4 cta-btn`
                             }
                           >
                             {btn.btntext}

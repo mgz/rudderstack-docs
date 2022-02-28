@@ -43,7 +43,8 @@ const TwoCardsLeftAligned = props => {
                                 )
                               }
                               className={`font-bold leading-normal text-sm md:absolute md:bottom-16 ${
-                                link_display_as_button ? "btn-primary-lg" : ""
+                                link_display_as_button ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary" 
+                                : ""
                               } ${
                                 props.applyGradientColorTheme
                                   ? "lr-icon-gradient"
@@ -59,7 +60,7 @@ const TwoCardsLeftAligned = props => {
                           return (
                             <span
                               className={`font-bold leading-normal text-sm md:absolute md:bottom-16 ${
-                                link_display_as_button ? "btn-primary-lg" : ""
+                                link_display_as_button ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary" : ""
                               } ${
                                 props.applyGradientColorTheme
                                   ? "lr-icon-gradient"

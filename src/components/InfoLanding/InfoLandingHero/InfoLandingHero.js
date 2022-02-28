@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import Image from '../../image';
 import InfoLandingForm from './InfoLandingForm';
@@ -16,9 +17,10 @@ const InfoLandingHero = (
                         <span className={`${s.landing_hero_category} pink uppercase font-bold`}>{heroData.sub_title}</span>
                         <h1 className='landing-section-title'>{heroData.title}</h1>
                         <h3 className={s.hero_subtitle}>{heroData.content[0].children[0].text}</h3>
-                        <div className='landing-hero-form-wrapper'>
+                        {heroData.center_cta && heroData.center_cta.btnlink ? (<Link to={heroData.center_cta.btnlink} className="btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary">{heroData.center_cta.btntext}</Link>) : heroData.center_cta && heroData.center_cta.btnlink ? (<a href={heroData.center_cta.btnlink} className="btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary">{heroData.center_cta.btntext}</a>) : ""} 
+                        {heroData.show_getstarted && <div className='landing-hero-form-wrapper'>
                             <InfoLandingForm formId="app_signup_mkt_site" />
-                        </div>
+                        </div>}
                     </div>
                     <div className='landing-hero-right flex'>
                         <Image
@@ -26,7 +28,7 @@ const InfoLandingHero = (
                          />
                     </div>
                 </div>
-                <div className={s.landing_hero_pointers_wrapper}>
+                {heroData.icon_with_text_items && <div className={s.landing_hero_pointers_wrapper}>
                     <ul className='flex hero-pointer-list  md:justify-center justify-content-start lg:justify-between lg:flex-nowrap flex-wrap'>
                         {heroData.icon_with_text_items && heroData.icon_with_text_items.map((item, index) => {
                             return (
@@ -41,7 +43,7 @@ const InfoLandingHero = (
                             )
                         })}
                     </ul>
-                </div>
+                </div>}
             </div>
             {showDivider && (<div className='section-divider'></div>)}
         </section>

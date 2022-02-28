@@ -198,7 +198,8 @@ const CookiesConsent = () => {
         >
           <p
             aria-hidden="true"
-            className="my-4 md:my-0 md:px-10 md:py-4 md:bg-darkScheme-btnPrimaryBg md:rounded-lg md:border md:border-darkScheme-btnPrimaryBg md:text-darkScheme-textBlack cursor-pointer self-center text-center w-full text-blueNew-custom font-bold hover:text-darkScheme-textBlack hover:border-darkScheme-textBlack md:hover:bg-transparent"
+            className="my-4 md:my-0 md:px-10 md:py-4 md:rounded-lg md:border cursor-pointer self-center text-center w-full text-blueNew-custom font-bold
+            border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
             // href="#"
             onClick={() => {
               setShowConsent(false)

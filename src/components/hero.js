@@ -167,8 +167,8 @@ function Hero(props) {
                           key={btn._key}
                           className={
                             (btn.btnhiglight === true
-                              ? "btn-primary-lg"
-                              : "btn-secondary-lg") + ` cta-btn flex items-center justify-center border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary`
+                              ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                              : "btn-secondary-lg button-gradient-border") + ` cta-btn flex items-center justify-center`
                           }
                           href={btn.btnlink}
                         >
@@ -191,8 +191,8 @@ function Hero(props) {
                           <span
                             className={
                               (btn.btnhiglight === true
-                                ? "btn-primary-lg"
-                                : "btn-secondary-lg") + ` flex items-center justify-center cta-btn`
+                                ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                                : "btn-secondary-lg button-gradient-border") + ` flex items-center justify-center cta-btn`
                             }
                           >
                             {btn.btntext}

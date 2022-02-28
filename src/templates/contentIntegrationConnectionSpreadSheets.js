@@ -7,7 +7,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import SignupShortForm from "../components/SignupShortForm"
 
 const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
-  // console.log("ContentIntegrationConnectionSpreadSheets", pageContext)
+  // console.log("ContentIntegrationConnectionSpreadSheets", data)
 
   let page_data = data.override_integration_connection
     ? data.override_integration_connection
@@ -45,6 +45,15 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               tools.
             </p>
             <SignupShortForm />
+            {page_data.guideUrl !== "NA" && (
+              <div className="learn-more-wrapper flex md:justify-end justify-center w-full text-lg mt-4 md:max-w-md md:ml-5 text-blueNew-midnight">
+              <a className="learn-more text-black-custom text-lg font-normal font-semibold  text-blueNew-midnight"
+                  href={page_data.guideUrl}>
+                  <span className="italic mr-1"> Or follow the setup guide</span>
+                  <span>	&#62;  </span>
+              </a> 
+              </div>
+            )}
             {/* <a
               onClick={e =>
                 rudderslabTrackOnClick(
@@ -91,7 +100,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                 >
                   <div className="flex justify-center align-center h-full">
                     <img
-                      src={page_data.sourceLogoIconUrl+'?auto=format'}
+                      src={page_data.sourceLogoIconUrl + "?auto=format"}
                       className="h-5 sm:h-12 m-auto"
                       alt={page_data.sourceIntegration}
                       placeholder="tracedSVG"
@@ -331,7 +340,9 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                           // src={
                           //   page_data.destinationLogoImgUrl
                           // }
-                          src={page_data.destinationLogoIconUrl+'?auto=format'}
+                          src={
+                            page_data.destinationLogoIconUrl + "?auto=format"
+                          }
                           className="h-5 sm:h-10 m-auto"
                           alt="RudderStack animation"
                           placeholder="tracedSVG"
@@ -362,7 +373,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
                   <div className="int-conn-left-logo">
                     <img
                       // src={page_data.sourceLogoImgUrl}
-                      src={page_data.sourceLogoIconUrl+'?auto=format'}
+                      src={page_data.sourceLogoIconUrl + "?auto=format"}
                       className="h-5 sm:h-8 m-auto"
                       alt="RudderStack animation"
                       placeholder="tracedSVG"
@@ -534,7 +545,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
-                    src={page_data.relevantIntegrationLogoUrl1+'?auto=format'}
+                    src={page_data.relevantIntegrationLogoUrl1 + "?auto=format"}
                     className="h-8 m-auto"
                     alt="RudderStack animation"
                     placeholder="tracedSVG"
@@ -568,7 +579,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
-                    src={page_data.relevantIntegrationLogoUrl2+'?auto=format'}
+                    src={page_data.relevantIntegrationLogoUrl2 + "?auto=format"}
                     className="h-8 m-auto"
                     alt="RudderStack animation"
                     placeholder="tracedSVG"
@@ -602,7 +613,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
-                    src={page_data.relevantIntegrationLogoUrl3+'?auto=format'}
+                    src={page_data.relevantIntegrationLogoUrl3 + "?auto=format"}
                     className="h-8 m-auto"
                     alt="RudderStack animation"
                     placeholder="tracedSVG"
@@ -636,7 +647,7 @@ const ContentIntegrationConnectionSpreadSheets = ({ data, pageContext }) => {
               <div className="h-full flex flex-col justify-start items-start text-left py-10 px-2 pr-2 bg-blueNew-cardBackground rounded-2xl relative">
                 <div className="h-8 mb-2 pl-6">
                   <img
-                    src={page_data.relevantIntegrationLogoUrl4+'?auto=format'}
+                    src={page_data.relevantIntegrationLogoUrl4 + "?auto=format"}
                     className="h-8 m-auto"
                     alt="RudderStack animation"
                     placeholder="tracedSVG"
@@ -743,6 +754,7 @@ export const query = graphql`
       ctaButtonDestination
       ctaButtonSource
       sourceIntegrationOverridableText
+      guideUrl
     }
 
     override_integration_connection: googleSpreadsheetR1OverrideRedRudderstackIcData(
@@ -793,6 +805,7 @@ export const query = graphql`
       ctaButtonDestination
       ctaButtonSource
       sourceIntegrationOverridableText
+      guideUrl
     }
   }
 `
