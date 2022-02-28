@@ -16,7 +16,7 @@ const InfoLandingTestimonial = (
             <div className='landing-container'>
                 <div className='testimonial-wrapper flex  flex-col lg:flex-row  text-center lg:text-left'>
                     <div className={s.testimonial_left}>
-                        <h2 className='landing-section-title mb-12'>{testimonialData.title}</h2>
+                        <h2 className='landing-section-title lg:mb-12 mb-5'>{testimonialData.title}</h2>
                         {/* {testimonialData.cta_butons.map((button, idx) => {
                             if(button.btnexternallink){
                                 return(

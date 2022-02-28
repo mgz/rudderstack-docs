@@ -11,10 +11,10 @@
     color: #C4C4C4;
 }
 .left_content_title{
-    font-size: 34px;
+    font-size: 54px;
     color: #ffffff;
     font-weight: bold;
-    line-height: 40.8px;
+    line-height: 64.8px;
     letter-spacing: -0.04em;
 }
 @media screen and (max-width:1023px){

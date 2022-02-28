@@ -18,8 +18,7 @@ const InfoLeftContentRightImg = (
                             <p className={`${s.section_pera}`}>{useCaseData.content[0].children[0].text}</p>
                             <div>
                                 <a href={useCaseData.addlink.cmnlink} className='learn-more'>
-                                    <span className='inline-block learn-more-text'>{useCaseData.addlink.cmnlinktext} </span>
-                                    <span className="learn-more-icon lrlm-icon text-darkScheme-btnSecondaryBg inline-block pl-5"><svg width="14" height="23" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg></span>
+                                    <span className='inline-block learn-more-text'>{useCaseData.addlink.cmnlinktext} <span className="learn-more-icon lrlm-icon text-darkScheme-btnSecondaryBg inline-block pl-5"><svg width="14" height="23" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg></span></span>
                                 </a>
                             </div>
                         </div>
