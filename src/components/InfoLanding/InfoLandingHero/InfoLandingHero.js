@@ -6,7 +6,7 @@ import * as s from './InfoLandingHero.module.css';
 
 const InfoLandingHero = (
     data,
-    showDivider = true
+    show_divider = true
     ) => {
     let heroData = data.data;
     return(
@@ -45,7 +45,7 @@ const InfoLandingHero = (
                     </ul>
                 </div>}
             </div>
-            {showDivider && (<div className='section-divider'></div>)}
+            {show_divider && (<div className='section-divider'></div>)}
         </section>
     )
 }
