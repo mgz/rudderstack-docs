@@ -137,6 +137,7 @@ const Page = props => {
   //   };
   // })
 
+  // console.log('hpdata', data)
 
   let l_section_info
   const page = data.page || data.route.page
