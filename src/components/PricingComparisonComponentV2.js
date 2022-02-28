@@ -265,7 +265,7 @@ const PricingComparisonComponentV2 = props => {
             <div className="inline-block mr-4">
               <a
                 className={
-                  "button-gradient-border flex items-center justify-center mx-auto rounded-lg font-bold w-40 py-2"
+                  "button-gradient-border flex items-center justify-center mx-auto font-bold w-40 py-2"
                 }
                 href={"https://app.rudderstack.com/signup?type=freetrial"}
               >
@@ -275,7 +275,7 @@ const PricingComparisonComponentV2 = props => {
             <div className="inline-block">
               <Link
                 className={
-                  "button-gradient-border  flex items-center justify-center mx-auto rounded-lg font-bold w-40 py-2"
+                  "button-gradient-border  flex items-center justify-center mx-auto font-bold w-40 py-2"
                 }
                 to={"/request-demo"}
               >
@@ -392,7 +392,7 @@ const PricingComparisonComponentV2 = props => {
               <div className="inline-block mr-4">
                 <a
                   className={
-                    "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto rounded-lg font-bold text-darkScheme-textPrimary w-40 py-2"
+                    "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto font-bold text-darkScheme-textPrimary w-40 py-2"
                   }
                   href={"https://app.rudderstack.com/signup?type=freetrial"}
                 >
@@ -402,7 +402,7 @@ const PricingComparisonComponentV2 = props => {
               <div className="inline-block">
                 <Link
                   className={
-                    "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto rounded-lg font-bold text-darkScheme-textPrimary w-40 py-2"
+                    "bg-transparent border border-darkScheme-textPrimary hover:bg-darkScheme-textPrimary hover:text-darkScheme-textBlack flex items-center justify-center mx-auto font-bold text-darkScheme-textPrimary w-40 py-2"
                   }
                   to={"/request-demo"}
                 >

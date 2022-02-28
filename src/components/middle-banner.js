@@ -96,7 +96,7 @@ const MiddleBanner = props => {
                                 (btn.btnhiglight === true
                                   ? "text-darkScheme-textPrimary "
                                   : "btn-secondary-lg button-gradient-border") +
-                                ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-6 rounded-lg md:mb-0 mb-4 flex justify-center items-center leading-tight  font-custom cta-btn text-darkScheme-textPrimary bg-darkScheme-btnPrimaryBg border-none`
+                                ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-6 md:mb-0 mb-4 flex justify-center items-center leading-tight  font-custom cta-btn text-darkScheme-textPrimary bg-darkScheme-btnPrimaryBg border-none`
                               }
                               href={btn.btnlink}
                             >
@@ -115,7 +115,7 @@ const MiddleBanner = props => {
                                 (btn.btnhiglight === true
                                   ? "bg-white text-primary btn-secondary-lg button-gradient-border"
                                   : "btn-secondary-lg button-gradient-border") +
-                                ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight cta-btn font-custom`
+                                ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mb-0 mb-4 flex justify-center items-center border leading-tight cta-btn font-custom`
                               }
                             >
                                 {btn.btntext}                             
