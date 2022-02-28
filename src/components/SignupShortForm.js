@@ -85,7 +85,7 @@ const SignupShortForm = props => {
             className="flex w-full items-center signup-form"
             noValidate="novalidate"
             /* id={props.formId ? props.formId : ""} */
-            id="app_signup_mkt_site"
+            id={props.formId}
             onSubmit={e => formSubmitted(e)}
           >
             {!formSubmittedSuccessfully && (

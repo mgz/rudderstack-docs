@@ -94,7 +94,7 @@ const MiddleBannerV2 = props => {
                               }
                               className={
                                 (btn.btnhiglight === true
-                                  ? "text-darkScheme-textBlack btn-secondary-lg button-gradient-border"
+                                  ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                   : "btn-secondary-lg button-gradient-border") +
                                 ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-6 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
                               }
@@ -115,7 +115,7 @@ const MiddleBannerV2 = props => {
                               <span
                                 className={
                                   (btn.btnhiglight === true
-                                    ? "bg-white text-primary btn-secondary-lg button-gradient-border"
+                                    ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                     : "btn-secondary-lg button-gradient-border") +
                                   ` font-bold py-3 text-sm md:px-8 lg:px-8 px-2 text-center lg:mr-4 rounded-lg md:mb-0 mb-4 flex justify-center items-center border leading-tight  font-custom cta-btn`
                                 }
