@@ -12,5 +12,6 @@ module.exports = {
     getStarted: "f2bb4eb1-2af1-4b6c-adfc-ab52e9652a49",
     ourLogos: "553d41dc-bf7d-4bd6-a6cc-3d2ebf08074b",
     signUp: "8e6bed1f-b6d7-4cb0-9acf-bb6f3a710699",
+    integration_connection_try_this:""
   },
 }
