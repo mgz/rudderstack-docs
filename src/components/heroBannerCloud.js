@@ -51,7 +51,7 @@ const HeroBannerCloud = props => {
                             (btn.btnhiglight === true
                               ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                               : "btn-secondary-lg button-gradient-border  text-dark ") +
-                            ` sm:mr-4 md:mb-0 mb-6 bg-white border rounded-lg hover:bg-blueNew-midnight hover:text-white`
+                            ` sm:mr-4 md:mb-0 mb-6 bg-white border hover:bg-blueNew-midnight hover:text-white`
                           }
                           onClick={e =>
                             rudderslabTrackOnClick(
