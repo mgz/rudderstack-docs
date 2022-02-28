@@ -124,7 +124,7 @@ const CodeEditor = props => {
       }
     }
 
-    if(!isMobile){
+    // if(!isMobile){
       gsap.registerPlugin(ScrollTrigger);
        window.addEventListener(
         "scroll",
@@ -152,7 +152,7 @@ const CodeEditor = props => {
           setEditorFlag(false)
         },
       })
-    }
+    // }
   }, [])
 
    useEffect(() => {
@@ -169,8 +169,8 @@ const CodeEditor = props => {
     //  console.log('Editor flag', editorFlag);
   }, [editorFlag])
 
-  // useEffect(() => {
-    /* if(isMobile || isSafari || isFirefox){ */
+   useEffect(() => {
+    //  if(isMobile || isSafari || isFirefox){
       // let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
       // props.code_input.code_contents.forEach(ppp => {
       //   leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
@@ -186,8 +186,8 @@ const CodeEditor = props => {
 
       // leftEditor.getDoc().setValue(leftCodeInput.join(""));
       // rightEditor.getDoc().setValue(rightCodeOutput.join(""));
-    /* } */
-  // }, [])
+    // }
+   }, [])
 
   return (
     <section className="py-19 relative section-gradient code-editor-section">
