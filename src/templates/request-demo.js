@@ -271,7 +271,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
         )}
 
       </div>
-      {((location && location.pathname === "/request-demo-chili-piper-test/") ||
+      {/* {((location && location.pathname === "/request-demo-chili-piper-test/") ||
         (location &&
           location.pathname === "/request-demo-chili-piper-test")) && (
         <Helmet>
@@ -293,7 +293,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
             async
           />
         </Helmet>
-      )}
+      )} */}
     </Layout>
   )
 }

@@ -307,49 +307,49 @@ const DynamicInputForm = ({
             //   { formId: data.formId }
             // )
             // window.ChiliPiper.submit()
-            if (
-              location &&
-              (location.pathname === "/request-demo/" ||
-                location.pathname === "/request-demo" ||
-                location.pathname === "/info/use-case/data-analytics" ||
-                location.pathname === "/info/use-case/data-analytics/" ||
-                location.pathname === "/enterprise-quote/" ||
-                location.pathname === "/enterprise-quote")
-            ) {
-              window.ChiliPiper.submit(
-                "rudderstack",
-                "demo-or-quote-request",
-                `{
-                formId: "${form_id}",
-                map: true,
-                lead: {
-                ${formScript}
-                }
-              }`
-              )
-            } else if (
-              location &&
-              location.pathname.startsWith("/video-library/")
-            ) {
-              if (gatedCookieName && gatedCookieName.length > 0) {
-                let date = new Date()
-                date.setDate(date.getDate() + 15)
+            // if (
+            //   location &&
+            //   (location.pathname === "/request-demo/" ||
+            //     location.pathname === "/request-demo" ||
+            //     location.pathname === "/info/use-case/data-analytics" ||
+            //     location.pathname === "/info/use-case/data-analytics/" ||
+            //     location.pathname === "/enterprise-quote/" ||
+            //     location.pathname === "/enterprise-quote")
+            // ) {
+            //   window.ChiliPiper.submit(
+            //     "rudderstack",
+            //     "demo-or-quote-request",
+            //     `{
+            //     formId: "${form_id}",
+            //     map: true,
+            //     lead: {
+            //     ${formScript}
+            //     }
+            //   }`
+            //   )
+            // } else if (
+            //   location &&
+            //   location.pathname.startsWith("/video-library/")
+            // ) {
+            //   if (gatedCookieName && gatedCookieName.length > 0) {
+            //     let date = new Date()
+            //     date.setDate(date.getDate() + 15)
 
-                cookies.set(gatedCookieName, "yes", {
-                  path: location.pathname,
-                  expires: date,
-                })
-              }
-              navigate(on_success_navigate_url)
-            } else if (
-              (location &&
-                location.pathname === "/request-demo-chili-piper-test/") ||
-              (location &&
-                location.pathname === "/request-demo-chili-piper-test")
-            ) {
-            } else {
-              navigate(on_success_navigate_url)
-            }
+            //     cookies.set(gatedCookieName, "yes", {
+            //       path: location.pathname,
+            //       expires: date,
+            //     })
+            //   }
+            //   navigate(on_success_navigate_url)
+            // } else if (
+            //   (location &&
+            //     location.pathname === "/request-demo-chili-piper-test/") ||
+            //   (location &&
+            //     location.pathname === "/request-demo-chili-piper-test")
+            // ) {
+            // } else {
+            //   navigate(on_success_navigate_url)
+            // }
             // setIsLoading(false)
             // navigate(on_success_navigate_url)
           }
