@@ -190,7 +190,7 @@ const CodeEditor = props => {
   // }, [])
 
   return (
-    <section className="py-19 relative section-gradient">
+    <section className="py-19 relative section-gradient code-editor-section">
       <span className="section-border absolute top-0 left-0 w-full block"></span>
       <div className="max-w-6xl mx-auto blockWrapper">
         <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary section-title triggers">
