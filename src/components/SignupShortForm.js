@@ -85,7 +85,7 @@ const SignupShortForm = props => {
             className="flex w-full items-center signup-form"
             noValidate="novalidate"
             /* id={props.formId ? props.formId : ""} */
-            id="app_signup_mkt_site"
+            id={props.formId}
             onSubmit={e => formSubmitted(e)}
           >
             {!formSubmittedSuccessfully && (
@@ -107,7 +107,7 @@ const SignupShortForm = props => {
                   }}
                 />
                 <button
-                  className="font-bold btn-primary-lg text-center signup-short-button w-full md:w-auto px-6"
+                  className="font-bold btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary text-center signup-short-button w-full md:w-auto px-6"
                   type={"submit"}
                   onClick={e => formSubmitted(e)}
                 >

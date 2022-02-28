@@ -49,8 +49,8 @@ const TestimonialFloating = props => {
                       <a
                         className={`${
                           testimonial.button.btnhiglight
-                            ? "btn-primary-lg bg-black-custom hover:bg-blueNew-midnight border-white text-white"
-                            : "btn-secondary-large"
+                            ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                            : "btn-secondary-large button-gradient-border"
                         } inline-block`}
                         href={testimonial.button.btnlink}
                       >
@@ -63,8 +63,8 @@ const TestimonialFloating = props => {
                         <span
                           className={
                             (testimonial.button.btnhiglight === true
-                              ? "btn-primary-lg"
-                              : "btn-secondary-lg bg-black-custom hover:bg-blueNew-midnight border-white text-white") +
+                              ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                              : "btn-secondary-lg button-gradient-border") +
                             ` inline-block`
                           }
                         >

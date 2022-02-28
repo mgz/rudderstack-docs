@@ -237,7 +237,7 @@ const PricingComparisonComponent = props => {
                             {row.enterprice_val === "TALKTOSALES" && (
                               <Link
                                 to="/enterprise-quote"
-                                className="text-sm  leading-sm font-bold py-2 px-7 border border-darkScheme-textPrimary rounded-2xl text-darkScheme-textPrimary hover:text-darkScheme-textBlack hover:bg-darkScheme-textPrimary mx-auto"
+                                className="text-sm  leading-sm font-bold py-2 px-7 rounded-2xl button-gradient-border mx-auto"
                                 target="_blank"
                                 rel="noreferrer"
                                 onClick={e =>
