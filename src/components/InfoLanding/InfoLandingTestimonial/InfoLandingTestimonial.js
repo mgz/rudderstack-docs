@@ -29,9 +29,11 @@ const InfoLandingTestimonial = (
                             }
                         })} */}
                         <div className="flex lg:flex-col flex-col-reverse">
-                            <div className={`${s.testimonial_form}`}>
+                            {testimonialData.testimonial.button ? (
+                                <a href={testimonialData.testimonial.button.btnlink} className={`cta-btn btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary`}>{testimonialData.testimonial.button.btntext}</a>
+                            ) : (<div className={`${s.testimonial_form}`}>
                                 <InfoLandingForm  />
-                            </div>
+                            </div>)}
                             <div className={s.landing_logos_wrapper}>
                                 <ul className={`landing-logos-list flex lg:justify-start justify-center items-center`}>
                                     {/* {testimonialData.customer_logos.map((logo, index) => {
