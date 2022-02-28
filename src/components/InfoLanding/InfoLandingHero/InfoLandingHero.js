@@ -3,6 +3,7 @@ import Image from "../../image"
 import InfoLandingForm from "./InfoLandingForm"
 import DynamicInputFormSingleRow from "../../DynamicInputFormSingleRow"
 import * as s from "./InfoLandingHero.module.css"
+import { Link } from "gatsby"
 
 const InfoLandingHero = (data, showDivider = true) => {
   let heroData = data.data
