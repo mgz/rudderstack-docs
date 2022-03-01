@@ -69,7 +69,7 @@ const CodeEditor = props => {
           tmpLineNumber += 3
           timer(() => {
             next()
-          }, 200)
+          }, 10)
         })
       })
 
@@ -86,17 +86,17 @@ const CodeEditor = props => {
         tmCodeInput.push(
           scene.type(
             replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
-            80
+            5
           )
         )
-        tmCodeInput.push(scene.wait(150))
+        tmCodeInput.push(scene.wait(0))
       })
       return [
         ...tmCodeInput,
         (editor, next, timer) => {
           timer(() => {
             rightEditorScenes.play()
-          }, 50)
+          }, 5)
         },
       ]
     }));
