@@ -157,7 +157,7 @@ export const rudderslabTrackOnClick = (
     },
     // e.target.baseURI,
     // we want to track where the link points, whether it is a URL or internal path
-    target_url: e.target.href ? e.target.href : e.target.baseURI,
+    target_url: e.currentTarget.href ? e.currentTarget.href : e.target.baseURI,
     click_type: eventType,
     gclid: queryParams.gclid ? queryParams.gclid : "",
     utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""

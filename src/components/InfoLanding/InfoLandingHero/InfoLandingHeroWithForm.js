@@ -4,7 +4,7 @@ import DynamicInputForm from '../../dynamicInputForm';
 import Image from '../../image';
 import { Helmet } from 'react-helmet';
 
-const InfoLandingHeroWithForm = ({data,showDivider,location}) => {
+const InfoLandingHeroWithForm = ({data,location}) => {
    let formData = data;
    /* console.log("some", location); */
     return(
@@ -22,12 +22,12 @@ const InfoLandingHeroWithForm = ({data,showDivider,location}) => {
                         </div>
                     </div>
                      <div className={`${s.usecase_right_content} usecase-right-part relative lg:w-1/2 w-full xl:px-19 lg:px-0`}>
-                        {showDivider && (<div className='section-divider md:hidden block'></div>)}
+                        {formData.show_divider && (<div className='section-divider md:hidden block'></div>)}
                         <div className={`${s.form_max_width}`}>
                             <DynamicInputForm {...formData.input_form}  isFromRequest={true} location={location} />
                         </div>
                     </div>
-                    {showDivider && (<div className='section-divider'></div>)}
+                    {formData.show_divider && (<div className='section-divider'></div>)}
                 </div>
             </div>
         </section>

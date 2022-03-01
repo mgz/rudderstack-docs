@@ -111,15 +111,15 @@
         padding: 45px 0 60px;
     }
     .testimonial_quote{
-        padding: 57px 21px 78px  21px;
+        padding: 130px 21px 78px  21px;
     }
     .testimonial_quotes_icon{
-        top: -40px;
-        left: calc(50% - 47px);
+        top: -65px;
+        left: calc(50% - 75px);
     }
     .testimonial_quotes_icon svg {
-        width: 100px;
-        height: 60px;
+        width: 150px;
+        height: 130px;
     }
     .testimonial_quotes_text{
         font-size: 18px;
@@ -133,7 +133,7 @@
         margin-top: 0;
     }
     .testimonial_quote{
-        margin-top: 60px;
+        margin-top: 90px;
     }
     .landing_logos_list_last{
         margin-left: 0;
