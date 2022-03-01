@@ -8,7 +8,7 @@ const InfoLeftContentRightImg = (
     showDivider = true
     ) => {
     let useCaseData = data.data;
-    //console.log("useCase Data", useCaseData);
+   // console.log("useCase Data", useCaseData);
     return (
         <section className={`${s.leftContent_rightImg_section} relative`}>
             <div className='landing-container'>
@@ -17,14 +17,13 @@ const InfoLeftContentRightImg = (
                             <h2 className={`${s.left_content_title}`}>{useCaseData.title}</h2>
                             <p className={`${s.section_pera}`}>{useCaseData.content[0].children[0].text}</p>
                             <div>
-                                <a href="https://www.rudderstack.com/blog/your-guide-to-creating-a-warehouse-first-data-analytics-stack/" className='learn-more'>
-                                    <span className='inline-block learn-more-text'>See how RudderStack powers analytics</span>
-                                    <span className="learn-more-icon lrlm-icon text-darkScheme-btnSecondaryBg inline-block pl-5"><svg width="14" height="23" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg></span>
+                                <a href={useCaseData.addlink.cmnlink} className='learn-more'>
+                                    <span className='inline-block learn-more-text'>{useCaseData.addlink.cmnlinktext} <span className="learn-more-icon lrlm-icon text-darkScheme-btnSecondaryBg inline-block pl-5"><svg width="14" height="23" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 5.5L1 10" stroke="#86F8E0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path></svg></span></span>
                                 </a>
                             </div>
                         </div>
                         <div className={s.img_wrapper_right}>
-                            <Image props={useCaseData.right_image.asset._ref}  />
+                            <Image props={useCaseData.right_image.asset._ref}/>
                         </div>
                 </div>
             </div>

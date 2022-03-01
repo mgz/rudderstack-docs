@@ -1473,6 +1473,47 @@ form .disableActive {
   background:  linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+.button-gradient-border {
+  position: relative;
+  z-index: 0;
+  border: none;
+  color: #fff !important;
+}
+.button-gradient-border::before{
+  position: absolute;
+  content: '';
+  top: 1.5px;
+  left: 1.5px;
+  width: calc(100% - 3px);
+  height: calc(100% - 3px);
+  background: #070e1f;
+  border-radius: 5px;
+  z-index: -1;
+}
+.button-gradient-border::after{
+  position: absolute;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
+  z-index: -2;
+  border-radius: 7px;
+}
+.button-gradient-border:hover:before{
+    background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
+    transition: 0.3s all linear;
+}
+
+.bg-darkScheme-btnSecondaryBg{
+  background: linear-gradient(135.55deg, #3E35D1 6.09%, #86F8E0 116.03%);
+  transition: all 0.3s ease;
+  border: 4px solid transparent;
+}
+
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;

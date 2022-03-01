@@ -160,7 +160,7 @@ const LeftRightImgCntWithCentedHeading = props => {
                                   }
                                   className={`font-bold leading-normal text-sm ${
                                     link_display_as_button
-                                      ? "btn-primary-lg"
+                                      ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                       : ""
                                   } ${
                                     props.applyGradientColorTheme
@@ -178,7 +178,7 @@ const LeftRightImgCntWithCentedHeading = props => {
                                 <span
                                   className={`font-bold leading-normal text-sm ${
                                     link_display_as_button
-                                      ? "btn-primary-lg"
+                                      ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                                       : ""
                                   } ${
                                     props.applyGradientColorTheme
@@ -300,7 +300,7 @@ const LeftRightImgCntWithCentedHeading = props => {
                                   rudderslabTrackOnClick("link", title, e)
                                 }
                                 className={`font-bold leading-normal text-sm ${
-                                  link_display_as_button ? "btn-primary-lg" : ""
+                                  link_display_as_button ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary" : ""
                                 } relative sm:inline-block ${
                                   props.applyGradientColorTheme
                                     ? "lr-icon-gradient"
@@ -316,7 +316,7 @@ const LeftRightImgCntWithCentedHeading = props => {
                             return (
                               <span
                                 className={`font-bold leading-normal text-sm ${
-                                  link_display_as_button ? "btn-primary-lg" : ""
+                                  link_display_as_button ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary" : ""
                                 } relative sm:inline-block ${
                                   props.applyGradientColorTheme
                                     ? "lr-icon-gradient"

@@ -49,9 +49,9 @@ const HeroBannerCloud = props => {
                           key={btn._key}
                           className={
                             (btn.btnhiglight === true
-                              ? "btn-primary-lg"
-                              : "btn-secondary-lg") +
-                            ` sm:mr-4 md:mb-0 mb-6 bg-white text-dark hover:bg-blueNew-midnight hover:text-white`
+                              ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                              : "btn-secondary-lg button-gradient-border  text-dark ") +
+                            ` sm:mr-4 md:mb-0 mb-6 bg-white border rounded-lg hover:bg-blueNew-midnight hover:text-white`
                           }
                           onClick={e =>
                             rudderslabTrackOnClick(
@@ -81,8 +81,8 @@ const HeroBannerCloud = props => {
                           <span
                             className={
                               (btn.btnhiglight === true
-                                ? "btn-primary-lg"
-                                : "btn-secondary-lg") + ` sm:mr-4 md:mb-0 mb-4`
+                                ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
+                                : "btn-secondary-lg button-gradient-border") + ` sm:mr-4 md:mb-0 mb-4`
                             }
                           >
                             {btn.btntext}
