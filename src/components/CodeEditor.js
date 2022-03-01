@@ -124,7 +124,7 @@ const CodeEditor = props => {
       }
     }
 
-    // if(!isMobile){
+    if(!isMobile){
       gsap.registerPlugin(ScrollTrigger);
        window.addEventListener(
         "scroll",
@@ -152,11 +152,11 @@ const CodeEditor = props => {
           setEditorFlag(false)
         },
       })
-    // }
+    }
   }, [])
 
    useEffect(() => {
-    // if(!isMobile && !isSafari && !isFirefox){
+    if(!isMobile){
       if(leftEditorScenes && editorFlag){
         leftEditorScenes.play();
         if(leftEditorScenes.state === 'play'){
@@ -165,28 +165,28 @@ const CodeEditor = props => {
       }else if(leftEditorScenes){
         leftEditorScenes.pause();
       }
-    // }
+    }
     //  console.log('Editor flag', editorFlag);
   }, [editorFlag])
 
    useEffect(() => {
-    //  if(isMobile || isSafari || isFirefox){
-      // let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
-      // props.code_input.code_contents.forEach(ppp => {
-      //   leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
-      // })
-      // props.code_output.code_contents.forEach((ppp, idx) => {
-      //   rightCodeOutput.push(replaceAll(
-      //     replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
-      //     "<<CURRDATETIME>>",
-      //     `${new Date().toISOString()}`
-      //   ))
-      // })
+     if(isMobile){
+      let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
+      props.code_input.code_contents.forEach(ppp => {
+        leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
+      })
+      props.code_output.code_contents.forEach((ppp, idx) => {
+        rightCodeOutput.push(replaceAll(
+          replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
+          "<<CURRDATETIME>>",
+          `${new Date().toISOString()}`
+        ))
+      })
 
 
-      // leftEditor.getDoc().setValue(leftCodeInput.join(""));
-      // rightEditor.getDoc().setValue(rightCodeOutput.join(""));
-    // }
+      leftEditor.getDoc().setValue(leftCodeInput.join(""));
+      rightEditor.getDoc().setValue(rightCodeOutput.join(""));
+    }
    }, [])
 
   return (
