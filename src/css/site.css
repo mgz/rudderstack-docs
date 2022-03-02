@@ -1057,7 +1057,7 @@ top: -60px;
   max-width: 75%;
 }
 .newsletter-input-hp {
-  background: rgba(255, 255, 255, 0.25) !important;
+  background: #8da3e1!important;
   height: 50px;
   flex: 1;
   outline: none;
@@ -1763,7 +1763,9 @@ form .disableActive {
   .website-banner-top .close-btn{
     margin-left: 5px;
   }
-
+  .newsletter-input-hp{
+    flex: auto;
+  }
 }
 
 @media screen and (max-width: 767px) {

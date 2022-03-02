@@ -206,7 +206,7 @@ function Hero(props) {
             </div>
           </div>
           <div className="relative px-0 rounded-lg flex-grow sm:px-0 lg:mb-0">
-            <div className="relative rounded-md group sm:px-0 max-w-2xl">
+            <div className="relative rounded-md group sm:px-0 max-w-xl lg:ml-auto">
               {/* <Helmet>
 
               </Helmet> */}

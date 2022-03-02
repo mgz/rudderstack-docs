@@ -220,7 +220,7 @@ const DynamicInputFormSingleRow = props => {
                     props.formTheme === "light-hp"
                       ? "newsletter-input-hp"
                       : "landing-newsletter-input"
-                  }  border border-darkScheme-textPrimary rounded-2xl w-full py-2 px-6 text-darkScheme-textPrimary `}
+                  } border border-darkScheme-textPrimary rounded-2xl w-full py-2 px-4 text-darkScheme-textPrimary`}
                   type={formDefinition._rawFields[0].additional_validation}
                   name={formDefinition._rawFields[0].field_name}
                   value={formData[formDefinition._rawFields[0].field_name]}
@@ -245,7 +245,9 @@ const DynamicInputFormSingleRow = props => {
                   }}
                 />
                 <button
-                  className="sign-up-text block font-bold  hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center"
+                  className={`${props.formTheme === "light-hp"
+                  ? "sign-up-text"
+                  : "landing-sign-up-text"} block font-bold  hover:text-darkScheme-btnSecondaryBg cursor-pointer text-center`}
                   type={"submit"}
                   onClick={e => formSubmitted(e)}
                 >
