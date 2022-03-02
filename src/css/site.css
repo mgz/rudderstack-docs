@@ -1057,21 +1057,18 @@ top: -60px;
   max-width: 75%;
 }
 .newsletter-input-hp {
-  background: #8da3e1 !important;
+  background: rgba(255, 255, 255, 0.25) !important;
   height: 50px;
   flex: 1;
   outline: none;
 }
+
 .newsletter-input {
   height: 50px;
   flex: 1;
   outline: none;
   background: rgb(7, 14, 31);
-  background: radial-gradient(
-    100% 7106.9% at 4.49% 0%,
-    rgb(7 14 31 / 82%) 0%,
-    rgb(7 14 31 / 83%) 100%
-  );
+  background: linear-gradient(120deg, rgb(113 123 218) 0%, rgb(104 115 219) 100% );
 }
 .newsletter-input-hp::placeholder {
   color: rgba(255, 255, 255, 0.5);
@@ -1527,6 +1524,11 @@ form .disableActive {
   outline: none;
 }
 
+.newsletter-wrapper .sign-up-text {
+  font-size: 14px;
+  width:  calc(100% - 276px);
+}
+
 @media only screen and (min-width: 1024px) {
   .submenu-align {
     left: 15rem;
@@ -1758,12 +1760,11 @@ form .disableActive {
   .website-banner-top .close-btn{
     margin-left: 5px;
   }
+
 }
 
 @media screen and (max-width: 767px) {
-  .newsletter-input {
-    background: rgba(255, 255, 255, 0.25);
-  }
+ 
   .newsletter-input::placeholder {
     text-align: left;
   }
