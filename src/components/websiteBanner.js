@@ -3,8 +3,6 @@ import PortableText from "./portableText"
 import Cookies from "universal-cookie"
 import { rudderslabTrackOnClick } from "../utils/common"
 
-
-
 const WebisteBanner = props => {
   const cookies = new Cookies()
   const [showBanner, setShowBanner] = useState(
@@ -21,12 +19,17 @@ const WebisteBanner = props => {
   )
 
   useEffect(() => {
-    let addNewClass= document.getElementById("nav-header");
-    if(showBanner) {
-      addNewClass.classList.add('top-header-show');
-    }
-    else {
-      addNewClass.classList.remove('top-header-show');
+    let addNewClass = document.getElementById("nav-header")
+    let bannerVisibleClass = document.getElementById(
+      `website-banner-${props._key}`
+    )
+
+    if (showBanner) {
+      addNewClass.classList.add("top-header-show")
+      bannerVisibleClass.classList.add("block")
+    } else {
+      addNewClass.classList.remove("top-header-show")
+      bannerVisibleClass.classList.add("hidden")
     }
   }, [showBanner])
 
@@ -116,11 +119,9 @@ const WebisteBanner = props => {
   )
 
   return props._type && props._type === "website_banner_top_sticky" ? (
-
-    <div id="box"
-      className={`${
-        showBanner ? "block" : "hidden"
-      } font-custom w-full top-0 left-0 py-2 z-40 flex justify-between items-center px-4 website-banner-top`}
+    <div
+      id={`website-banner-${props._key}`}
+      className={`${""} font-custom w-full top-0 left-0 py-2 z-40 flex justify-between items-center px-4 website-banner-top`}
       style={{
         backgroundColor: props.banner_background_color,
         color: props.banner_text_color,
@@ -146,7 +147,6 @@ const WebisteBanner = props => {
               path: "/",
               expires: date,
             })
-
           }}
           className="cursor-pointer font-bold close-btn"
         >
@@ -156,8 +156,6 @@ const WebisteBanner = props => {
         <span />
       )}
     </div>
-
-
   ) : null
 }
 

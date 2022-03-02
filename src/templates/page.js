@@ -63,6 +63,7 @@ const Page = props => {
 
   useEffect(() => {
     let checkDarkMode = document.getElementById('main-container');
+    
     if(checkDarkMode.classList.contains('hero-section')){
       setDarkMode(true);
     }else{
