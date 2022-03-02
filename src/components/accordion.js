@@ -17,8 +17,7 @@ function Accordion(props) {
       >
         <p className={`accordion__title text-xl font-bold ${props.darkMode && props.darkMode !== undefined ? 'text-darkScheme-textPrimary' : 'text-darkScheme-textBlack'}`}>{props.title}</p>
       </button>
-      {setActive === "active" && (
-        <div ref={content} className="accordion__content">
+        <div ref={content} className={`accordion__content ${setActive}`}>
           {props.isBlockContent && (
             <div className="accordion__text frtxt-contnt font-medium text-lg">
               <PortableText blocks={props.content} trackSectionHeader={props.title} />
@@ -31,7 +30,6 @@ function Accordion(props) {
             />
           )}
         </div>
-      )}
     </div>
   )
 }
