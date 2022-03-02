@@ -1,4 +1,4 @@
-import React, { useEffect, } from "react"
+import React, { useEffect } from "react"
 /* import $ from "jquery"
 import "owl.carousel/dist/assets/owl.carousel.css"
 import "owl.carousel" */
@@ -10,11 +10,12 @@ import { rudderslabTrackOnClick } from "../utils/common"
 import bgImage from "../images/testimonial-bg-v3.webp"
 import { isMobile } from "react-device-detect"
 import SubscriptionV2 from "./Subscription_v2"
+import DynamicInputFormSingleRow from "./DynamicInputFormSingleRow"
 
 /* import "react-responsive-carousel/lib/styles/carousel.min.css" */
 
 const TestimonialV2 = props => {
-  //   console.log("testimonialsv2", props)
+  // console.log("testimonialsv2", props)
 
   const testimonials = props.addtestimonial
   return (
@@ -25,7 +26,11 @@ const TestimonialV2 = props => {
             {props.testimoniallabel}
           </h3>
         </div>
-        {props.show_signup === true && (
+        <DynamicInputFormSingleRow
+          formTheme="light-hp"
+          {...props.form_input_single_row}
+        />
+        {/* {props.show_signup === true && (
           // <div className="newsletter-wrapper mt-12 mb-10 max-w-xl mx-auto">
           //   <div className="newsletter-block bg-darkScheme-textPrimary flex items-center rounded-2xl">
           //     <input className="newsletter-input border-2 border-darkScheme-textPrimary rounded-2xl w-full p-2 text-darkScheme-textPrimary" />
@@ -35,16 +40,14 @@ const TestimonialV2 = props => {
           //   </div>
           // </div>
           <SubscriptionV2 formId={"signup_testimonial_top"} />
-        )}
+
+        )} */}
         <div className="carousel-wrapper pt-10">
           <div className="flex desk-testimonial triggers">
             {testimonials &&
               testimonials.splice(0, 3).map((testimonial, i) => {
                 return (
-                  <div
-                    className="carousel-item w-1/3 relative"
-                    key={i}
-                  >
+                  <div className="carousel-item w-1/3 relative" key={i}>
                     <div className="carousel-inner-wrapper relative flex items-center justify-center border rounded-3xl px-15 py-24 mx-7">
                       <span className="quotes absolute">
                         <svg
