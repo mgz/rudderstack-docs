@@ -151,7 +151,7 @@ body {
 }
 .cta-btn {
   width: 225px;
-  height: 50px;
+  height: 60px;
 }
 .bg-gradiantsecondary {
   background: #5677ae; /* Old browsers */
@@ -1586,6 +1586,9 @@ form .disableActive {
   } */
   .cta-btn {
     width: 190px;
+  }
+  .hero-home-cta-wrapper{
+    flex-direction: column;
   }
   .request-left-inner {
     padding-left: 20px;

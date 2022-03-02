@@ -162,7 +162,7 @@ const CodeEditor = props => {
       if(leftEditorScenes && editorFlag){
         leftEditorScenes.play();
         if(leftEditorScenes.state === 'play'){
-          console.log('In play state', leftEditorScenes);
+          /* console.log('In play state', leftEditorScenes); */
         }
       }else if(leftEditorScenes){
         leftEditorScenes.pause();
