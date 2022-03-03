@@ -44,6 +44,9 @@ h3.hero_subtitle{
     padding-bottom: 72px;
     padding-top: 10px;
 }
+.landing_hero_right{
+    max-width: 643px;
+}
 
 /* info landing hero with form css  */
 
@@ -92,6 +95,9 @@ h3.hero_subtitle{
 @media screen and (max-width:1024px) {
     .usecase_left_content{
         padding-left: 16px;
+    }
+    .landing_hero_left, .landing_hero_right{
+        max-width: 100%;
     }
 }
 @media screen and (max-width:1023px) {

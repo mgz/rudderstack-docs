@@ -31,7 +31,7 @@ const InfoLandingHero = (data, show_divider = true) => {
               />
             </div>}
           </div>
-          <div className="landing-hero-right">
+          <div className={s.landing_hero_right}>
             <Image props={heroData.right_image.asset._ref} />
           </div>
         </div>
