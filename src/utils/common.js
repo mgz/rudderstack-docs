@@ -124,9 +124,6 @@ export const rudderslabTrackOnClick = (
   queryParams[pair[0]] = pair[1];
   }
 
-  console.log('Current target', e.currentTarget.href);
-  console.log('Base URI', e.target.baseURI);
-
   if (isSeekSectionName) {
     try {
       el = checkPrevSibbling(document.getElementById(e.target.id).parentElement)
