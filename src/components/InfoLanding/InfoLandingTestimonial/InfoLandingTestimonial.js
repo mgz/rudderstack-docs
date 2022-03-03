@@ -28,11 +28,11 @@ const InfoLandingTestimonial = (data, show_divider = true) => {
                                 )
                             }
                         })} */}
-            <div className="flex lg:flex-col flex-col-reverse">
+            <div className="flex lg:flex-col flex-col-reverse items-center lg:items-start">
               {testimonialData.testimonial.button ? (
                 <a
                   href={testimonialData.testimonial.button.btnlink}
-                  className={`cta-btn btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary`}
+                  className={`cta-btn lg:block hidden btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary`}
                 >
                   {testimonialData.testimonial.button.btntext}
                 </a>
@@ -48,7 +48,7 @@ const InfoLandingTestimonial = (data, show_divider = true) => {
 
                             </div> */}
 
-              <div className={s.landing_logos_wrapper}>
+              <div className={`${s.landing_logos_wrapper} mb-6 lg:mb-0 `}>
                 <ul
                   className={`landing-logos-list flex xl:justify-start justify-center items-center`}
                 >
@@ -159,6 +159,14 @@ const InfoLandingTestimonial = (data, show_divider = true) => {
                 </p>
               </div>
             </div>
+            {testimonialData.testimonial.button && (<div className="flex justify-center mt-8">
+                <a
+                  href={testimonialData.testimonial.button.btnlink}
+                  className={`cta-btn lg:hidden block btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary`}
+                >
+                  {testimonialData.testimonial.button.btntext}
+                </a>
+            </div>)}
           </div>
         </div>
       </div>
