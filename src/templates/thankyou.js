@@ -20,7 +20,7 @@ const TrankYou = ({ data, htmlId }) => {
   )
   // console.log('path debug 1', location && location.pathname.startsWith("/careers"))
   // console.log('path debug 2', location && location.pathname.startsWith("careers"))
-  // console.log('path debug 3', location && location.pathname)
+  // console.log('path debug 3', location && location.pathname,data)
 
   function resizeIframe(obj) {
     // console.log(
