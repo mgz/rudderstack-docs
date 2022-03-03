@@ -14,7 +14,6 @@ import Image from "../components/image"
 import DynamicInputForm from "../components/dynamicInputForm"
 import clientConfig from "../../client-config"
 
-
 export const query = graphql`
   query schDemo($slug: String) {
     sanitySchdemo(slug: { current: { eq: $slug } }) {
@@ -69,19 +68,21 @@ export const query = graphql`
 `
 
 const Demo = ({ data, htmlId, location, pageContext }) => {
-  /* console.log('slug', pageContext.slug); */
+  // /* console.log('slug', pageContext.slug); */
+  // console.log("data", data)
   const lv_scheduledemoheader = (
     data.sanitySchdemo._rawPagebuildersectionarray || []
   ).filter(ii => ii._type === "scheduledemoheader")
-
 
   const lv_ourlogoblock = data.section_our_logos.edges.filter(
     ii => ii.node.section_name === "request demo"
   )
 
-
   return (
-    <Layout location={location} darkTheme={pageContext.slug.split('/')[0] === "new-theme" ? true : false}>
+    <Layout
+      location={location}
+      darkTheme={pageContext.slug.split("/")[0] === "new-theme" ? true : false}
+    >
       {/* <SEO title="Schedule Demo" /> */}
       <Helmet>
         <title>
@@ -114,162 +115,208 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
       </Helmet>
 
       <div className="font-custom">
-        {pageContext.slug.split('/')[0] === "new-theme" ?
-        (
-          <section className="section-gradient relative">
-            <span className="section-border block absolute bottom-0 left-0 w-full"></span>
-            <div className="request-wrapper flex lg:flex-row flex-col">
-                <div className="request-left lg:w-1/2 w-full">
-                    <div className="request-left-upper lg:w-11/12 w-full lg:rounded-br-3xl">
+        <React.Fragment>
+          {data.sanitySchdemo._rawPagebuildersectionarray.map(section => {
+            if (section._type === "demoadvantages") {
+              return <DemoAdvantages key={section._key} {...section} />
+            } else if (
+              section._type === "left_right_content_with_form_and_logos"
+            ) {
+              return (
+                <section className="section-gradient relative">
+                  <span className="section-border block absolute bottom-0 left-0 w-full"></span>
+                  <div className="request-wrapper flex lg:flex-row flex-col">
+                    <div className="request-left lg:w-1/2 w-full">
+                      <div className="request-left-upper lg:w-11/12 w-full lg:rounded-br-3xl">
                         <div className="pt-20 pb-12 pr-10 flex">
-                            <div className="request-left-inner w-full lg:max-w-md lg:ml-auto lg:justify-self-end">
-                                <h1 className="text-3xl lg:text-5xl text-darkScheme-textPrimary font-bold leading-tight">{data.sanitySchdemo._rawPagebuildersectionarray[0].demo_header_text}</h1>
-                                <div className="request-left-content mt-5">
-                                    <PortableText
-                                        blocks={data.sanitySchdemo._rawPagebuildersectionarray[0].demo_right_content}
-                                    />
-                                </div>
+                          <div className="request-left-inner w-full lg:max-w-md lg:ml-auto lg:justify-self-end">
+                            <h1 className="text-3xl lg:text-5xl text-darkScheme-textPrimary font-bold leading-tight">
+                              {
+                                data.sanitySchdemo
+                                  ._rawPagebuildersectionarray[0]
+                                  .demo_header_text
+                              }
+                            </h1>
+                            <div className="request-left-content mt-5">
+                              <PortableText
+                                blocks={
+                                  data.sanitySchdemo
+                                    ._rawPagebuildersectionarray[0]
+                                    .demo_right_content
+                                }
+                              />
                             </div>
+                          </div>
                         </div>
-                    </div>
-                    <div className="request-left-lower w-11/12 py-16 pl-15 hidden lg:block">
+                      </div>
+                      <div className="request-left-lower w-11/12 py-16 pl-15 hidden lg:block">
                         <div className="request-left-lower-inner flex ml-auto justify-end">
-                            <div className="request-logos-wrapper">
-                                <ul className="logos-list flex mb-5">
-                                    {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i < 3).map((i,k) => {
-                                            return (
-                                                <li key={k._key} className={`mr-16 flex items-center`}>
-                                                    <Image
-                                                        classes="object-contain"
-                                                        props={i.primary_image.asset._ref}
-                                                        width="210"
-                                                        height="40"
-                                                    />
-                                                </li>
-                                            )
-                                    })}
-                                </ul>
-                                <ul className="logos-list flex">
-                                    {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i > 2).map((i,k) => {
-                                            return (
-                                                <li key={k._key} className={`mr-16 flex items-center`}>
-                                                    <Image
-                                                        classes="object-contain"
-                                                        props={i.primary_image.asset._ref}
-                                                        width="210"
-                                                        height="40"
-                                                    />
-                                                </li>
-                                            )
-                                    })}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <span className="section-border lg:hidden block w-full"></span>
-                <div className="request-right lg:w-1/2 w-full pt-7">
-                    <DynamicInputForm
-                    {...data.sanitySchdemo._rawPagebuildersectionarray[0].input_form}
-                    location={location}
-                    isFromRequest={true}
-                    />
-                </div>
-                <div className="request-logos-wrapper px-4 lg:hidden block">
-                    <ul className="logos-list flex mb-5 justify-center">
-                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i < 3).map((i,k) => {
-                                return (
-                                    <li key={k._key} className={`${k === 2 ? 'mr-0' : 'mr-16'} flex items-center justify-center`}>
-                                        <Image
-                                            classes={`${i.secondary_image ? 'lw-image' : ''} object-contain`}
-                                            props={i.secondary_image ? i.secondary_image.asset._ref : i.primary_image.asset._ref}
-                                            width="210"
-                                            height="40"
-                                        />
-                                    </li>
-                                )
-                        })}
-                    </ul>
-                    <ul className="logos-list flex justify-center mb-10">
-                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage.filter((o, i) => i > 2).map((i,k) => {
-                              return (
-                                  <li key={k._key} className={`${k === 2 ? 'mr-0' : 'mr-16'} flex items-center justify-center`}>
+                          <div className="request-logos-wrapper">
+                            <ul className="logos-list flex mb-5">
+                              {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage
+                                .filter((o, i) => i < 3)
+                                .map((i, k) => {
+                                  return (
+                                    <li
+                                      key={k._key}
+                                      className={`mr-16 flex items-center`}
+                                    >
                                       <Image
-                                          classes={`${i.secondary_image ? 'lw-image' : ''} object-contain`}
-                                          props={i.secondary_image ? i.secondary_image.asset._ref : i.primary_image.asset._ref}
-                                          width="210"
-                                          height="40"
+                                        classes="object-contain"
+                                        props={i.primary_image.asset._ref}
+                                        width="210"
+                                        height="40"
                                       />
-                                  </li>
-                              )
-                        })}
-                    </ul>
-                </div>
-            </div>
-        </section>
-        )
-         : (
-          <React.Fragment>
-            {data.sanitySchdemo._rawPagebuildersectionarray.map(section => {
-              if (section._type === "demoadvantages") {
-                return <DemoAdvantages key={section._key} {...section} />
-              } else if (section._type === "scheduledemoheader") {
-                return (
-                  <ScheduleDemoHdr
-                    key={section._key}
-                    {...section}
-                    location={location}
+                                    </li>
+                                  )
+                                })}
+                            </ul>
+                            <ul className="logos-list flex">
+                              {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage
+                                .filter((o, i) => i > 2)
+                                .map((i, k) => {
+                                  return (
+                                    <li
+                                      key={k._key}
+                                      className={`mr-16 flex items-center`}
+                                    >
+                                      <Image
+                                        classes="object-contain"
+                                        props={i.primary_image.asset._ref}
+                                        width="210"
+                                        height="40"
+                                      />
+                                    </li>
+                                  )
+                                })}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <span className="section-border lg:hidden block w-full"></span>
+                    <div className="request-right lg:w-1/2 w-full pt-7">
+                      <DynamicInputForm
+                        {...data.sanitySchdemo._rawPagebuildersectionarray[0]
+                          .input_form}
+                        location={location}
+                        isFromRequest={true}
+                      />
+                    </div>
+                    <div className="request-logos-wrapper px-4 lg:hidden block">
+                      <ul className="logos-list flex mb-5 justify-center">
+                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage
+                          .filter((o, i) => i < 3)
+                          .map((i, k) => {
+                            return (
+                              <li
+                                key={k._key}
+                                className={`${
+                                  k === 2 ? "mr-0" : "mr-16"
+                                } flex items-center justify-center`}
+                              >
+                                <Image
+                                  classes={`${
+                                    i.secondary_image ? "lw-image" : ""
+                                  } object-contain`}
+                                  props={
+                                    i.secondary_image
+                                      ? i.secondary_image.asset._ref
+                                      : i.primary_image.asset._ref
+                                  }
+                                  width="210"
+                                  height="40"
+                                />
+                              </li>
+                            )
+                          })}
+                      </ul>
+                      <ul className="logos-list flex justify-center mb-10">
+                        {data.sanitySchdemo._rawPagebuildersectionarray[0].ourlogoimage
+                          .filter((o, i) => i > 2)
+                          .map((i, k) => {
+                            return (
+                              <li
+                                key={k._key}
+                                className={`${
+                                  k === 2 ? "mr-0" : "mr-16"
+                                } flex items-center justify-center`}
+                              >
+                                <Image
+                                  classes={`${
+                                    i.secondary_image ? "lw-image" : ""
+                                  } object-contain`}
+                                  props={
+                                    i.secondary_image
+                                      ? i.secondary_image.asset._ref
+                                      : i.primary_image.asset._ref
+                                  }
+                                  width="210"
+                                  height="40"
+                                />
+                              </li>
+                            )
+                          })}
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+              )
+            } else if (section._type === "scheduledemoheader") {
+              return (
+                <ScheduleDemoHdr
+                  key={section._key}
+                  {...section}
+                  location={location}
+                />
+              )
+            } else if (section._type === "demofooterleft") {
+              return (
+                <ScheduleDemoFooter
+                  key={section._key}
+                  {...section}
+                  location={location}
+                />
+              )
+            } else if (section._type === "ref_section_get_started") {
+              let l_section_info = data.section_get_started.edges.find(
+                kl => kl.node._id === section._ref
+              )
+              return (
+                <section key={section._key} id="get_started">
+                  <MiddleBanner {...l_section_info.node._rawGetStarted} />
+                </section>
+              )
+            } else if (section._type === "ref_section_testimonials") {
+              let l_section_info = data.section_testimonials.edges.find(
+                kl => kl.node._id === section._ref
+              )
+              return (
+                <section key={section._key} id="testimonial">
+                  <Testimonial
+                    applyGradientColorTheme={false}
+                    {...l_section_info.node._rawTestimonials}
                   />
-                )
-              } else if (section._type === "demofooterleft") {
-                return (
-                  <ScheduleDemoFooter
+                </section>
+              )
+            } else if (section._type === "ref_section_ourlogos") {
+              let l_ourLogo_info = data.section_our_logos.edges.find(
+                kl => kl.node._id === section._ref
+              )
+
+              return (
+                <section key={section._key} id="our_logos" className="px-8">
+                  <OurLogo
                     key={section._key}
-                    {...section}
-                    location={location}
+                    customHeaderText={`The top companies in the world use RudderStack to activate their customer data`}
+                    {...l_ourLogo_info.node._rawOurLogos}
+                    // removeSectionVerticalMargin={true}
                   />
-                )
-              } else if (section._type === "ref_section_get_started") {
-                let l_section_info = data.section_get_started.edges.find(
-                  kl => kl.node._id === section._ref
-                )
-                return (
-                  <section key={section._key} id="get_started">
-                    <MiddleBanner {...l_section_info.node._rawGetStarted} />
-                  </section>
-                )
-              } else if (section._type === "ref_section_testimonials") {
-                let l_section_info = data.section_testimonials.edges.find(
-                  kl => kl.node._id === section._ref
-                )
-                return (
-                  <section key={section._key} id="testimonial">
-                    <Testimonial
-                      applyGradientColorTheme={false}
-                      {...l_section_info.node._rawTestimonials}
-                    />
-                  </section>
-                )
-              } else if (section._type === "ref_section_ourlogos") {
-                let l_ourLogo_info = data.section_our_logos.edges.find(
-                  kl => kl.node._id === section._ref
-                )
-
-                return (
-                  <section key={section._key} id="our_logos" className="px-8">
-                    <OurLogo
-                      key={section._key}
-                      customHeaderText={`The top companies in the world use RudderStack to activate their customer data`}
-                      {...l_ourLogo_info.node._rawOurLogos}
-                      // removeSectionVerticalMargin={true}
-                    />
-                  </section>
-                )
-              }
-            })}
-          </React.Fragment>
-        )}
-
+                </section>
+              )
+            }
+          })}
+        </React.Fragment>
       </div>
       {/* {((location && location.pathname === "/request-demo-chili-piper-test/") ||
         (location &&
@@ -287,7 +334,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
           ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {formId: "request_demo_form_bottom"})
         `}
         </script> */}
-          {/*<script
+      {/*<script
             src="https://js.na.chilipiper.com/marketing.js"
             type="text/javascript"
             async
