@@ -249,7 +249,7 @@ const DynamicInputForm = ({
           timezone: {
             name: DateTime.now().zone.name,
           },
-          estimated_event_volume: params.get("estimated_event_volume"),
+          // estimated_event_volume: params.get("estimated_event_volume"),
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
@@ -287,7 +287,7 @@ const DynamicInputForm = ({
           timezone: {
             name: DateTime.now().zone.name,
           },
-          estimated_event_volume: params.get("estimated_event_volume"),
+          // estimated_event_volume: params.get("estimated_event_volume"),
           page_URL: window.location.href,
           conversion_page: document.title,
           utm_source: params.get("utm_source"),
