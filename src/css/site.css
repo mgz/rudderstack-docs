@@ -1646,7 +1646,7 @@ form .disableActive {
 @media only screen and (max-width: 1023px) {
   .header-wrapper .menu,
   .header-wrapper {
-    background: #070e1f;
+    /* background: #070e1f; */
   }
   .header-wrapper {
     border-radius: 0px 0px 16px 16px;

@@ -1,7 +1,7 @@
 module.exports = {
   important: true,
   purge: false,
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: "class", // or 'media' or 'class'
   theme: {
     minHeight: {
       0: "8rem",
@@ -14,6 +14,7 @@ module.exports = {
       current: "currentColor",
       black: {
         custom: "#10174C" /*footer nav btn */,
+        darkBg: "#070e1f",
       },
       blueNew: {
         lighter: "#EEF5F5",
@@ -58,13 +59,13 @@ module.exports = {
         successBg: "#c1ead7",
         successBorder: "#26cb7c",
       },
-      darkScheme:{
+      darkScheme: {
         textPrimary: "#ffffff",
         btnPrimaryBg: "#86F8E0",
         btnSecondaryBg: "#D692F6",
         textBlack: "#000000",
-        grayText: "#C7C7C7"
-      }
+        grayText: "#C7C7C7",
+      },
     },
     extend: {
       inset: {
