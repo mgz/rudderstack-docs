@@ -196,13 +196,13 @@ const DynamicInputForm = ({
       setIsLoading(true)
 
       let params = new URLSearchParams(document.location.search.substring(1))
-      let urlString = window !== undefined ? window.location.href : "";
-      let paramString = urlString.split('?')[1];
-      let queryString = new URLSearchParams(paramString);
-      let queryParams = {};
+      let urlString = window !== undefined ? window.location.href : ""
+      let paramString = urlString.split("?")[1]
+      let queryString = new URLSearchParams(paramString)
+      let queryParams = {}
 
       for (let pair of queryString.entries()) {
-        queryParams[pair[0]] = pair[1];
+        queryParams[pair[0]] = pair[1]
       }
 
       window.rudderanalytics.identify(
@@ -215,6 +215,7 @@ const DynamicInputForm = ({
           timezone: {
             name: DateTime.now().zone.name,
           },
+          estimated_event_volume: params.get("estimated_event_volume"),
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
@@ -223,7 +224,9 @@ const DynamicInputForm = ({
           raid: params.get("raid"),
           test_user: params.get("test_user"),
           gclid: queryParams.gclid ? queryParams.gclid : "",
-          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
+          utm_referrer: queryParams.utm_referrer
+            ? queryParams.utm_referrer
+            : "",
         },
         {
           integrations: {
@@ -246,6 +249,7 @@ const DynamicInputForm = ({
           timezone: {
             name: DateTime.now().zone.name,
           },
+          estimated_event_volume: params.get("estimated_event_volume"),
           utm_source: params.get("utm_source"),
           utm_medium: params.get("utm_medium"),
           utm_campaign: params.get("utm_campaign"),
@@ -254,7 +258,9 @@ const DynamicInputForm = ({
           raid: params.get("raid"),
           test_user: params.get("test_user"),
           gclid: queryParams.gclid ? queryParams.gclid : "",
-          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
+          utm_referrer: queryParams.utm_referrer
+            ? queryParams.utm_referrer
+            : "",
         },
         {
           traits: {
@@ -281,6 +287,7 @@ const DynamicInputForm = ({
           timezone: {
             name: DateTime.now().zone.name,
           },
+          estimated_event_volume: params.get("estimated_event_volume"),
           page_URL: window.location.href,
           conversion_page: document.title,
           utm_source: params.get("utm_source"),
@@ -291,7 +298,9 @@ const DynamicInputForm = ({
           raid: params.get("raid"),
           test_user: params.get("test_user"),
           gclid: queryParams.gclid ? queryParams.gclid : "",
-          utm_referrer: queryParams.utm_referrer ? queryParams.utm_referrer : ""
+          utm_referrer: queryParams.utm_referrer
+            ? queryParams.utm_referrer
+            : "",
         }),
         headers: {
           "Content-Type": "application/json",
@@ -362,7 +371,6 @@ const DynamicInputForm = ({
       // document
       //   .getElementsByClassName("dyno-button")[0]
       //   .removeAttribute("disabled")
-
       // setIsLoading(false)
     } finally {
     }
