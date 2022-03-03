@@ -11,8 +11,8 @@ const InfoLandingHero = (data, show_divider = true) => {
   return (
     <section className="landing-hero relative pt-9 md:pt-24 md:pb-20 pb-8">
       <div className="landing-container">
-        <div className="landing-hero-wrapper flex flex-col md:flex-row justify-between lg:gap-x-0 gap-x-5">
-          <div className={s.landing_hero_left}>
+        <div className="landing-hero-wrapper flex flex-col lg:flex-row justify-between lg:gap-x-0 gap-x-5">
+          <div className={`${s.landing_hero_left} lg:text-left text-center`}>
             <span
               className={`${s.landing_hero_category} pink uppercase font-bold`}
             >
@@ -22,16 +22,16 @@ const InfoLandingHero = (data, show_divider = true) => {
             <h3 className={s.hero_subtitle}>
               {heroData.content[0].children[0].text}
             </h3>
-            {heroData.center_cta && heroData.center_cta.btnlink ? (<Link to={heroData.center_cta.btnlink} className="btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary">{heroData.center_cta.btntext}</Link>) : heroData.center_cta && heroData.center_cta.btnlink ? (<a href={heroData.center_cta.btnlink} className="btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary">{heroData.center_cta.btntext}</a>) : ""} 
-            <div className="landing-hero-form-wrapper">
+            {heroData.center_cta && heroData.center_cta.btnlink ? (<Link to={heroData.center_cta.btnlink} className={`btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary lg:ml-0 mx-auto ${s.landing_hero_cta}`}>{heroData.center_cta.btntext}</Link>) : heroData.center_cta && heroData.center_cta.btnlink ? (<a href={heroData.center_cta.btnlink} className={`btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary lg:ml-0 mx-auto ${s.landing_hero_cta}`}>{heroData.center_cta.btntext}</a>) : ""} 
+            {heroData.show_getstarted && <div className="landing-hero-form-wrapper">
               {/* <InfoLandingForm formId="app_signup_mkt_site" /> */}
               <DynamicInputFormSingleRow
                 formTheme="dark"
                 {...heroData.form_input_single_row}
               />
-            </div>
+            </div>}
           </div>
-          <div className="landing-hero-right flex">
+          <div className={s.landing_hero_right}>
             <Image props={heroData.right_image.asset._ref} />
           </div>
         </div>
