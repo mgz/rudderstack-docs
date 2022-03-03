@@ -271,7 +271,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
         )}
 
       </div>
-      {((location && location.pathname === "/request-demo-chili-piper-test/") ||
+      {/* {((location && location.pathname === "/request-demo-chili-piper-test/") ||
         (location &&
           location.pathname === "/request-demo-chili-piper-test")) && (
         <Helmet>
@@ -287,13 +287,13 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
           ChiliPiper.scheduling("rudderstack", "demo-or-quote-request", {formId: "request_demo_form_bottom"})
         `}
         </script> */}
-          <script
+          {/*<script
             src="https://js.na.chilipiper.com/marketing.js"
             type="text/javascript"
             async
           />
         </Helmet>
-      )}
+      )} */}
     </Layout>
   )
 }

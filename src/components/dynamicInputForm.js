@@ -301,12 +301,12 @@ const DynamicInputForm = ({
           // console.log('usebasin',res)
           if (res.ok || res.statusText === "OK") {
             // console.log("success ", res)
-            // window.ChiliPiper.scheduling(
-            //   "rudderstack",
-            //   "demo-or-quote-request",
-            //   { formId: data.formId }
-            // )
-            // window.ChiliPiper.submit()
+            /* window.ChiliPiper.scheduling(
+              "rudderstack",
+              "demo-or-quote-request",
+              { formId: data.formId }
+            )
+            window.ChiliPiper.submit()
             if (
               location &&
               (location.pathname === "/request-demo/" ||
@@ -349,9 +349,9 @@ const DynamicInputForm = ({
             ) {
             } else {
               navigate(on_success_navigate_url)
-            }
-            // setIsLoading(false)
-            // navigate(on_success_navigate_url)
+            } */
+            setIsLoading(false)
+            navigate(on_success_navigate_url)
           }
         })
         .catch(err => {
@@ -679,13 +679,13 @@ const DynamicInputForm = ({
       >
         {formDefinition && formDefinition.submit_button_text}
       </button>
-      <Helmet>
+      {/* <Helmet>
         <script
           src="https://js.na.chilipiper.com/marketing.js"
           type="text/javascript"
           async
         />
-      </Helmet>
+      </Helmet> */}
     </form>
   )
 }
