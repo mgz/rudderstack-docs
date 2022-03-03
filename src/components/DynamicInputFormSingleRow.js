@@ -128,7 +128,7 @@ const DynamicInputFormSingleRow = props => {
       formData.email,
       {
         email: formData.email,
-        form_id: props.formId,
+        form_id: props.form_id,
         conversion_page: document.title,
         branch: process.env.GATSBY_BRANCH,
         timezone: {
@@ -160,7 +160,7 @@ const DynamicInputFormSingleRow = props => {
         timezone: {
           name: DateTime.now().zone.name,
         },
-        form_id: props.formId,
+        form_id: props.form_id,
         utm_source: params.get("utm_source"),
         utm_medium: params.get("utm_medium"),
         utm_campaign: params.get("utm_campaign"),
@@ -174,7 +174,7 @@ const DynamicInputFormSingleRow = props => {
       {
         traits: {
           email: formData.email,
-          form_id: props.formId,
+          form_id: props.form_id,
         },
       }
     )
