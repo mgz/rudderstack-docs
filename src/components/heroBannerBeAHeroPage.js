@@ -104,7 +104,7 @@ const HeroBannerBeAHeroPage = props => {
                         (btn.btnhiglight === true
                           ? "btn-primary-lg border-none bg-darkScheme-btnPrimaryBg text-darkScheme-textPrimary"
                           : "btn-secondary-lg button-gradient-border") +
-                        ` sm:mr-6 md:mb-0 mb-4 cta-btn `
+                        ` sm:mr-6 md:mb-0 mb-4 cta-btn flex items-center justify-center`
                       }
                       onClick={e =>
                         rudderslabTrackOnClick(
