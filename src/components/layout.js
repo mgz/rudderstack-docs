@@ -171,6 +171,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
           {/* <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" /> */}
         <meta name="google-site-verification" content="zUWXWnpUbNfAJB-jC1cJEwgO1-wXVdrRkwrL9wN_u_s" />
+        <meta name="google-site-verification" content="2uyEwWzrl4WduqCxL4jz6VDvbaNlgUsiocnbCcs2og0" />
            <script src={withPrefix("zoomInfo.js")} type="text/javascript" />
           {/*<script
             defer
