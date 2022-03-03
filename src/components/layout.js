@@ -238,7 +238,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
                             target="_blank"
                             rel="noreferrer"
                             // className="w-full md:w-auto font-bold py-3 my-6 btn-primary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                            className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg button-gradient-border md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
+                            className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg md:mb-0 text-sm lg:px-4 px-2 text-center lg:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                             onClick={e =>
                               rudderslabTrackOnClick(
                                 "footer-navigation",
@@ -272,7 +272,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
                             }
                           >
                             <span
-                              className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg button-gradient-border md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
+                              className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
                               onClick={e =>
                                 rudderslabTrackOnClick(
                                   "footer-navigation",

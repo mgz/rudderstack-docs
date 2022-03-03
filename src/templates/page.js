@@ -63,6 +63,7 @@ const Page = props => {
 
   useEffect(() => {
     let checkDarkMode = document.getElementById('main-container');
+    
     if(checkDarkMode.classList.contains('hero-section')){
       setDarkMode(true);
     }else{
@@ -138,6 +139,7 @@ const Page = props => {
   //   };
   // })
 
+  // console.log('hpdata', data)
 
   let l_section_info
   const page = data.page || data.route.page

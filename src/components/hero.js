@@ -150,7 +150,7 @@ function Hero(props) {
                 )}
               </span>
             </p>
-            <div className="relative flex flex-row mt-6 gap-6">
+            <div className="relative flex hero-home-cta-wrapper mt-6 gap-6">
               {herobannerbutton.map((btn, i) => (
                 <React.Fragment key={btn._key}>
                   {(() => {
@@ -206,7 +206,7 @@ function Hero(props) {
             </div>
           </div>
           <div className="relative px-0 rounded-lg flex-grow sm:px-0 lg:mb-0">
-            <div className="relative rounded-md group sm:px-0 max-w-2xl">
+            <div className="relative rounded-md group sm:px-0 max-w-xl lg:ml-auto">
               {/* <Helmet>
 
               </Helmet> */}

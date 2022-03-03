@@ -105,7 +105,7 @@
 }
 @media screen and (max-width:767px) {
     .landing_logos_wrapper{
-        margin-top: 33px;
+        margin-bottom: 40px;
     }
     .testimonial_section{
         padding: 45px 0 60px;
@@ -137,6 +137,7 @@
     }
     .landing_logos_list_last{
         margin-left: 0;
+        margin-top: 20px;
     }
     .logo_item{
         margin-right: 20px;

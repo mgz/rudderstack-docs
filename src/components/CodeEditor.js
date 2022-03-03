@@ -69,7 +69,7 @@ const CodeEditor = props => {
           tmpLineNumber += 3
           timer(() => {
             next()
-          }, 200)
+          }, 150)
         })
       })
 
@@ -86,27 +86,29 @@ const CodeEditor = props => {
         tmCodeInput.push(
           scene.type(
             replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`),
-            80
+            {
+              delay: 30
+            }
           )
         )
-        tmCodeInput.push(scene.wait(150))
+        tmCodeInput.push(scene.wait(0))
       })
       return [
         ...tmCodeInput,
         (editor, next, timer) => {
           timer(() => {
             rightEditorScenes.play()
-          }, 50)
+          }, 5)
         },
       ]
     }));
 
     let el = document.getElementById("codeEditorBlock")
 
-    /* function isInViewPort(element) {
+     function isInViewPort(element) {
       // Get the bounding client rectangle position in the viewport
       let bounding = element.getBoundingClientRect();
-      /* console.log('Bounding rect', bounding);
+      /* console.log('Bounding rect', bounding); */
 
       // Checking part. Here the code checks if it's *fully* visible
       // Edit this part if you just want a partial visibility
@@ -122,11 +124,11 @@ const CodeEditor = props => {
       } else {
         return false
       }
-    } */
+    }
 
     if(!isMobile){
       gsap.registerPlugin(ScrollTrigger);
-      /* window.addEventListener(
+       window.addEventListener(
         "scroll",
         function (event) {
           if (isInViewPort(el)) {
@@ -135,7 +137,7 @@ const CodeEditor = props => {
             setEditorFlag(false);
           }
         }
-      ) */
+      )
       ScrollTrigger.create({
         trigger: "#codeEditorBlock",
         start: "top 80%",
@@ -155,22 +157,22 @@ const CodeEditor = props => {
     }
   }, [])
 
-  /* useEffect(() => {
-    if(!isMobile && !isSafari && !isFirefox){
+   useEffect(() => {
+    if(!isMobile){
       if(leftEditorScenes && editorFlag){
         leftEditorScenes.play();
         if(leftEditorScenes.state === 'play'){
-          console.log('In play state', leftEditorScenes);
+          /* console.log('In play state', leftEditorScenes); */
         }
       }else if(leftEditorScenes){
         leftEditorScenes.pause();
       }
     }
-    /* console.log('Editor flag', editorFlag);
-  }, [editorFlag]) */
+    //  console.log('Editor flag', editorFlag);
+  }, [editorFlag])
 
-  useEffect(() => {
-    /* if(isMobile || isSafari || isFirefox){ */
+   useEffect(() => {
+     if(isMobile){
       let leftCodeInput = [], rightCodeOutput = [], tmpLineNumber = 1;
       props.code_input.code_contents.forEach(ppp => {
         leftCodeInput.push(replaceAll(replaceAll(ppp, "<<NEWLINE>>", `\n`), "<<TAB>>", `\t`))
@@ -186,11 +188,11 @@ const CodeEditor = props => {
 
       leftEditor.getDoc().setValue(leftCodeInput.join(""));
       rightEditor.getDoc().setValue(rightCodeOutput.join(""));
-    /* } */
-  }, [])
+    }
+   }, [])
 
   return (
-    <section className="py-19 relative section-gradient">
+    <section className="py-19 relative section-gradient code-editor-section">
       <span className="section-border absolute top-0 left-0 w-full block"></span>
       <div className="max-w-6xl mx-auto blockWrapper">
         <h3 className="font-bold text-4xl text-center text-darkScheme-textPrimary section-title triggers">
