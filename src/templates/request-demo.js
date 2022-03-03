@@ -81,7 +81,8 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
   return (
     <Layout
       location={location}
-      darkTheme={pageContext.slug.split("/")[0] === "new-theme" ? true : false}
+      /* darkTheme={pageContext.slug.split("/")[0] === "new-theme" ? true : false} */
+      darkTheme={true}
     >
       {/* <SEO title="Schedule Demo" /> */}
       <Helmet>
@@ -123,7 +124,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
               section._type === "left_right_content_with_form_and_logos"
             ) {
               return (
-                <section className="section-gradient relative">
+                <section className="section-gradient relative" key={section._key}>
                   <span className="section-border block absolute bottom-0 left-0 w-full"></span>
                   <div className="request-wrapper flex lg:flex-row flex-col">
                     <div className="request-left lg:w-1/2 w-full">
@@ -158,7 +159,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                                 .map((i, k) => {
                                   return (
                                     <li
-                                      key={k._key}
+                                      key={i._key}
                                       className={`mr-16 flex items-center`}
                                     >
                                       <Image
@@ -177,7 +178,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                                 .map((i, k) => {
                                   return (
                                     <li
-                                      key={k._key}
+                                      key={i._key}
                                       className={`mr-16 flex items-center`}
                                     >
                                       <Image
@@ -210,7 +211,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                           .map((i, k) => {
                             return (
                               <li
-                                key={k._key}
+                                key={i._key}
                                 className={`${
                                   k === 2 ? "mr-0" : "mr-16"
                                 } flex items-center justify-center`}
@@ -237,7 +238,7 @@ const Demo = ({ data, htmlId, location, pageContext }) => {
                           .map((i, k) => {
                             return (
                               <li
-                                key={k._key}
+                                key={i._key}
                                 className={`${
                                   k === 2 ? "mr-0" : "mr-16"
                                 } flex items-center justify-center`}
