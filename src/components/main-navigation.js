@@ -16,6 +16,20 @@ const MainNavigation = props => {
     setIsScrollValueMoreThanHeaderHeight,
   ] = useState(false)
 
+  const [width, setWidth] = useState()
+  useEffect(() => {
+    setWidth(window.innerWidth)
+    window.addEventListener("resize", () => {
+      setWidth(window.innerWidth)
+    })
+    return () => {
+      window.removeEventListener("resize", () => {})
+    }
+  }, [])
+
+  // useEffect(() => {
+  //   console.log("width", width)
+  // }, [width])
   const data = useStaticQuery(graphql`
     {
       allSanitySiteSettings {
@@ -258,10 +272,9 @@ const MainNavigation = props => {
                     i={i}
                     currMenuIndex={currMenuIndex}
                     onMainMenuClick={idx => {
-                      setCurrMenuIndex(i === currMenuIndex ? null : idx)
-                      // if (!isBrowser) {
-
-                      // }
+                      if (!isBrowser || width < 1023) {
+                        setCurrMenuIndex(i === currMenuIndex ? null : idx)
+                      }
                     }}
                   />
                 ))}
