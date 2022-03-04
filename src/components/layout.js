@@ -170,14 +170,20 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
         <Helmet>
           {/* <script src={withPrefix("script.js")} type="text/javascript" />
         <script src={withPrefix("script2.js")} type="text/javascript" /> */}
-        <meta name="google-site-verification" content="zUWXWnpUbNfAJB-jC1cJEwgO1-wXVdrRkwrL9wN_u_s" />
-           <script src={withPrefix("zoomInfo.js")} type="text/javascript" />
+          <meta
+            name="google-site-verification"
+            content="zUWXWnpUbNfAJB-jC1cJEwgO1-wXVdrRkwrL9wN_u_s"
+          />
+          <script src={withPrefix("zoomInfo.js")} type="text/javascript" />
           {/*<script
             defer
             type="text/javascript"
             src="https://api.huckabuy.com/s/d3d3LnJ1ZGRlcnN0YWNrLmNvbQ==/install.js" 
           ></script>*/}
-          <meta property="og:image" content="../images/rudderstack_thumbnail.png"/>
+          <meta
+            property="og:image"
+            content="../images/rudderstack_thumbnail.png"
+          />
         </Helmet>
 
         <MainNavigation diableGradient={diableGradient} />
@@ -271,9 +277,7 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
                               )
                             }
                           >
-                            <span
-                              className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom"
-                            >
+                            <span className="w-full md:w-auto font-bold py-3 my-6 btn-secondary-lg md:mb-0 text-sm md:px-8 lg:px-8 px-2 text-center md:mr-4 rounded-lg mb-4 inline-block border leading-tight border-white font-custom">
                               Go to Docs
                             </span>
                           </Link>
@@ -375,11 +379,22 @@ const Layout = ({ location, showExplicitGradient, darkTheme, children }) => {
               </div>
             </div>
             <div className="flex flex-wrap w-1/2 items-end flex-col">
-              <StaticImage
-                src="../images/footerbadge.png"
-                className="self-end relative right-7 mb-4"
-                alt="SOC 2 TYPE 2"
-              />
+              <div className="flex flex-row">
+                <StaticImage
+                  src="../images/fotter-badge-hippa.png"
+                  className="self-end relative right-7 mb-4 mr-2"
+                  alt="HIPPA Compliant"
+                  width={45}
+                />
+
+                <StaticImage
+                  src="../images/footerbadge.png"
+                  className="self-end relative right-7 mb-4"
+                  alt="SOC 2 TYPE 2"
+                  width={45}
+                />
+              </div>
+
               <p className="text-footer w-full text-right">{copyright}</p>
             </div>
           </div>
