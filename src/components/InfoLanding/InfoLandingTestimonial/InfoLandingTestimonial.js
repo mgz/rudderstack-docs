@@ -32,7 +32,7 @@ const InfoLandingTestimonial = (data, show_divider = true) => {
               {testimonialData.testimonial.button ? (
                 <a
                   href={testimonialData.testimonial.button.btnlink}
-                  className={`cta-btn lg:block hidden btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary`}
+                  className={`cta-btn lg:flex justify-center items-center hidden btn-primary-lg bg-darkScheme-btnPrimaryBg border-none text-darkScheme-textPrimary`}
                 >
                   {testimonialData.testimonial.button.btntext}
                 </a>
